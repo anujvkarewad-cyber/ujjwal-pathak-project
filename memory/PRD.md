@@ -18,25 +18,32 @@ frontend/src/
 ├── components/
 │   ├── layout/                 # Sidebar, Topbar
 │   ├── dashboard/              # KPICard, RecentActivity, UpcomingTasks
-│   ├── students/               # StudentTable (search, filters, pagination)
+│   ├── students/               # StudentTable
 │   ├── charts/                 # All Recharts wrappers
-│   └── common/                 # RiskBadge, StatusBadge
+│   └── common/                 # RiskBadge, Skeleton
 ├── pages/                      # Dashboard, Students, StudentProfile,
 │                               # DailyTracker, Leaderboard, Announcements,
 │                               # Reports, Settings
 ├── hooks/useTheme.js           # useSyncExternalStore shared theme
 ├── utils/format.js             # cn, initials, colors
-└── data/                       # students.js (50 deterministic students),
-                                # dashboard.js, announcements.js
+├── api/                        # 🔑 REPLACEABLE DATA LAYER
+│   ├── config.js               #   env-driven APPS_SCRIPT_URL
+│   ├── client.js               #   single apiCall() switching mock↔fetch
+│   ├── local-adapter.js        #   mock impl. reading from data/*.js
+│   ├── {students,dashboard,tracker,leaderboard,
+│   │   announcements,reports,mentor}.js
+│   ├── hooks.js                #   react-query hooks used by all pages
+│   └── README.md               #   Apps Script contract (all 20 actions)
+└── data/                       # dummy JSON — ONLY imported by api/local-adapter.js
 ```
 
-## Data Source Contract (for later Google Apps Script swap)
-All data comes from `src/data/*.js` as plain exports. Swap each named export for a `fetch()` call to Apps Script — same shape.
+## Data Source Contract
+Pages NEVER import from `src/data/*.js` directly. They call react-query hooks from
+`@/api/hooks`, which call `apiCall(action, payload)` in `api/client.js`. When
+`REACT_APP_APPS_SCRIPT_URL` is empty, the mock adapter is used. When set, real
+`fetch()` to Apps Script kicks in — zero component code changes required.
 
-- `students` — array of 50 student objects (id, name, batch, attempt, group, level, attendance %, studyHours, mcqAccuracy, submissionRate, risk, status, weekly[7], monthly[4], tracker[14], mentorNotes[])
-- `kpis()` — aggregated dashboard KPIs
-- `announcements` — array of announcement objects
-- Batches: **Super 30, Super 11, Last 15 Days, Last 40 Days** · Attempt: **Sept 2026**
+Complete action list documented in `/app/frontend/src/api/README.md`.
 
 ## What's Implemented (Feb 19, 2026)
 - Dashboard: 8 KPI cards (total, active, pending, at-risk, avg hours, attendance, MCQ, submission), attendance area chart, performance donut, weekly study bars, batch overview bars, recent activity, upcoming tasks
