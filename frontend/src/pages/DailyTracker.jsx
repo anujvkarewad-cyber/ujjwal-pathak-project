@@ -77,9 +77,14 @@ export default function DailyTracker() {
   </tr>
 </thead>
             <tbody>
-              {isLoading && Array.from({ length: 5 }).map((_, i) => (
-                <tr
-  key={s.id}
+              {isLoading &&
+  Array.from({ length: 5 }).map((_, i) => (
+    <tr key={i} className="border-b border-slate-100 dark:border-slate-800">
+      <td className="px-5 py-3" colSpan={7}>
+        <Skeleton className="h-8 w-full" />
+      </td>
+    </tr>
+))}
   className="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors"
 >
   <td className="px-5 py-3">
