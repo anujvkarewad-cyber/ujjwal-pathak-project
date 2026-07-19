@@ -65,17 +65,17 @@ export default function DailyTracker() {
 
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
-            <thead>
-              <tr className="text-left text-[10px] uppercase tracking-[0.18em] font-semibold text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/40 border-b border-slate-200 dark:border-slate-800">
-                <th className="px-5 py-3">Student</th>
-                <th className="px-5 py-3">Batch</th>
-                <th className="px-5 py-3">Subjects</th>
-                <th className="px-5 py-3">Tomorrow Target</th>
-              
-                <th className="px-5 py-3">Submitted</th>
-                <th className="px-5 py-3">Study Proof</th>
-              </tr>
-            </thead>
+           <thead>
+  <tr className="text-left text-[10px] uppercase tracking-[0.18em] font-semibold text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/40 border-b border-slate-200 dark:border-slate-800">
+    <th className="px-5 py-3">Student</th>
+    <th className="px-5 py-3">Batch</th>
+    <th className="px-5 py-3">Hours</th>
+    <th className="px-5 py-3">Subjects</th>
+    <th className="px-5 py-3">Tomorrow Target</th>
+    <th className="px-5 py-3">Submitted</th>
+    <th className="px-5 py-3">Study Proof</th>
+  </tr>
+</thead>
             <tbody>
               {isLoading && Array.from({ length: 5 }).map((_, i) => (
                 <tr key={i} className="border-b border-slate-100 dark:border-slate-800"><td className="px-5 py-3" colSpan={7}><Skeleton className="h-8 w-full" /></td></tr>
