@@ -46,6 +46,15 @@ Pages NEVER import from `src/data/*.js` directly. They call react-query hooks fr
 Complete action list documented in `/app/frontend/src/api/README.md`.
 
 ## What's Implemented (Feb 19, 2026)
+- Full frontend + replaceable API layer (all pages use `@/api/hooks`, no direct `data/*` imports)
+- **LIVE Google Apps Script backend** connected to sheet `1oYYodP_XcbJOjrP5c4PirQDCnl54NFyPUbf7lwM1Ycc`:
+  - JSONP transport in `api/client.js` bypasses Apps Script CORS-on-redirect issue
+  - `/app/apps_script/Code.gs` implements all 20 actions; reads Students by column *header* name (alias support) so any column order works
+  - `setupSheets()` auto-creates missing tabs (Students, Announcements, MentorNotes, Mentor, Notifications, MCQ, Attendance)
+  - New Google Form submissions on "Form responses 1" automatically flow into the dashboard on next refresh
+  - Verified live: 14 real students displayed (Simran Ahuja, SANSKRITI ATHGHARA, Anumita Singh, Rashi Agrawal, Kiran BHAGAT, Jigmi Chunawala, Kartik Sharma, Bhumi Khandelwal + more), real batches, real study hours (6.3h avg), real attendance %
+  - Verified writes: announcement create/pin, mentor note add, profile/notification updates all persist to the sheet
+- Dashboard KPIs, charts, batch overview, tracker, leaderboard, announcements, reports, settings — all consume live sheet data
 - Dashboard: 8 KPI cards (total, active, pending, at-risk, avg hours, attendance, MCQ, submission), attendance area chart, performance donut, weekly study bars, batch overview bars, recent activity, upcoming tasks
 - Students: table with avatars, search, 4 filter dropdowns (batch/attempt/group/status), pagination, risk & status badges, attendance progress bars, view action
 - Student Profile: personal info card, 4 stat cards, weekly line chart, monthly bar chart, performance radar, mentor notes, 14-day tracker heatmap
