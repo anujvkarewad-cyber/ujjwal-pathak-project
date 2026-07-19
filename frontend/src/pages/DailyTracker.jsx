@@ -73,11 +73,12 @@ export default function DailyTracker() {
                 <th className="px-5 py-3">MCQs</th>
                 <th className="px-5 py-3">Accuracy</th>
                 <th className="px-5 py-3">Submitted</th>
+                <th className="px-5 py-3">Study Proof</th>
               </tr>
             </thead>
             <tbody>
               {isLoading && Array.from({ length: 5 }).map((_, i) => (
-                <tr key={i} className="border-b border-slate-100 dark:border-slate-800"><td className="px-5 py-3" colSpan={6}><Skeleton className="h-8 w-full" /></td></tr>
+                <tr key={i} className="border-b border-slate-100 dark:border-slate-800"><td className="px-5 py-3" colSpan={7}><Skeleton className="h-8 w-full" /></td></tr>
               ))}
               {!isLoading && (data?.list || []).map(s => (
                 <tr key={s.id} className="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
@@ -99,6 +100,20 @@ export default function DailyTracker() {
                       ? <span className="inline-flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 text-xs font-semibold"><CheckCircle2 className="w-4 h-4" /> Submitted</span>
                       : <span className="inline-flex items-center gap-1.5 text-rose-600 dark:text-rose-400 text-xs font-semibold"><XCircle className="w-4 h-4" /> Missed</span>}
                   </td>
+                  <td className="px-5 py-3">
+  {s.entry.proofUrl ? (
+    <a
+      href={s.entry.proofUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center rounded-lg bg-blue-600 px-3 py-1 text-xs font-semibold text-white hover:bg-blue-700"
+    >
+      View Proof
+    </a>
+  ) : (
+    <span className="text-slate-400 text-xs">No Proof</span>
+  )}
+</td>
                 </tr>
               ))}
             </tbody>
