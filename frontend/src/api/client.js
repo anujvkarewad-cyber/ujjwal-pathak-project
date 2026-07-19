@@ -1,32 +1,66 @@
 // Single entry point for all API calls. Switches between local mock and
 // Google Apps Script based on the REACT_APP_APPS_SCRIPT_URL env variable.
 //
-// When you deploy your Apps Script Web App, your `doPost(e)` should:
-//   1. Parse JSON from `e.postData.contents` → `{ action, payload }`
-//   2. Route on `action` and return `ContentService.createTextOutput(
-//        JSON.stringify({ result: <same shape as local-adapter> })
-//      ).setMimeType(ContentService.MimeType.JSON)`
-//   3. On errors, return `{ error: '<message>' }`.
+// TRANSPORT:
+//   • Local dev / no URL       → src/api/local-adapter.js (mock)
+//   • Google Apps Script (all) → JSONP <script> tag (bypasses CORS entirely)
+//
+// Why JSONP? Apps Script Web Apps return a 302 redirect that trips CORS
+// intermittently in browsers (ERR_ABORTED). JSONP loads via a plain <script>
+// tag which is exempt from CORS, so calls work 100% of the time. The URL
+// length limit (~2KB) is comfortably above any payload the dashboard sends.
 
 import { APPS_SCRIPT_URL, USE_MOCK, MOCK_DELAY_MS } from './config';
 import { handle as mockHandle } from './local-adapter';
 
 const wait = (ms) => new Promise(r => setTimeout(r, ms));
+let jsonpCounter = 0;
+
+function jsonpCall(action, payload) {
+  return new Promise((resolve, reject) => {
+    const cb = 'upmCb_' + Date.now().toString(36) + '_' + (++jsonpCounter);
+    const script = document.createElement('script');
+
+    const cleanup = () => {
+      try { delete window[cb]; } catch (_) { window[cb] = undefined; }
+      if (script.parentNode) script.parentNode.removeChild(script);
+      clearTimeout(timer);
+    };
+
+    const timer = setTimeout(() => {
+      cleanup();
+      reject(new Error(`API ${action} timed out`));
+    }, 30000);
+
+    window[cb] = (data) => {
+      cleanup();
+      if (data && data.error) return reject(new Error(data.error));
+      resolve(data && data.result !== undefined ? data.result : data);
+    };
+
+    const url = new URL(APPS_SCRIPT_URL);
+    url.searchParams.set('action', action);
+    url.searchParams.set('callback', cb);
+    if (payload && Object.keys(payload).length) {
+      url.searchParams.set('payload', JSON.stringify(payload));
+    }
+    // Cache buster so browsers don't reuse stale JS responses.
+    url.searchParams.set('_', String(Date.now()));
+
+    script.src = url.toString();
+    script.async = true;
+    script.onerror = () => {
+      cleanup();
+      reject(new Error(`API ${action} failed to load`));
+    };
+    document.head.appendChild(script);
+  });
+}
 
 export async function apiCall(action, payload = {}) {
   if (USE_MOCK) {
     if (MOCK_DELAY_MS > 0) await wait(MOCK_DELAY_MS);
     return mockHandle(action, payload);
   }
-  // Real Google Apps Script call.
-  // Note: text/plain content-type avoids CORS preflight for Apps Script.
-  const res = await fetch(APPS_SCRIPT_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-    body: JSON.stringify({ action, payload }),
-  });
-  if (!res.ok) throw new Error(`API ${action} failed with status ${res.status}`);
-  const data = await res.json();
-  if (data.error) throw new Error(data.error);
-  return data.result ?? data;
+  return jsonpCall(action, payload);
 }

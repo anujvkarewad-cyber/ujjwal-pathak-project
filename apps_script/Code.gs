@@ -56,19 +56,38 @@ function doPost(e) {
 }
 
 function doGet(e) {
-  const action = (e && e.parameter && e.parameter.action) || '';
+  const params = (e && e.parameter) || {};
+  const action = params.action || '';
+
+  // JSONP wrapper — bypasses CORS. If ?callback=xyz is present we return
+  //   xyz({ result }) or xyz({ error }) as JavaScript.
+  const wrap = (obj) => {
+    if (params.callback) {
+      // Basic sanitisation of the callback name.
+      const cb = String(params.callback).replace(/[^A-Za-z0-9_$]/g, '');
+      return ContentService
+        .createTextOutput(cb + '(' + JSON.stringify(obj) + ')')
+        .setMimeType(ContentService.MimeType.JAVASCRIPT);
+    }
+    return jsonOut(obj);
+  };
+
   if (!action) {
-    return jsonOut({
+    return wrap({
       ok: true,
-      message: 'Ujjwal Pathak Mentorship API is live. Use POST with { action, payload }.',
-      version: '1.0.0',
+      message: 'Ujjwal Pathak Mentorship API is live. Use ?action=<name>&callback=<fn> (JSONP) or POST with { action, payload }.',
+      version: '1.1.0',
     });
   }
   try {
-    const result = handleAction(action, {});
-    return jsonOut({ result });
+    let payload = {};
+    if (params.payload) {
+      try { payload = JSON.parse(params.payload); } catch (_) { payload = {}; }
+    }
+    const result = handleAction(action, payload);
+    return wrap({ result });
   } catch (err) {
-    return jsonOut({ error: String((err && err.message) || err) });
+    return wrap({ error: String((err && err.message) || err) });
   }
 }
 
@@ -194,9 +213,14 @@ function syncStudentsFromForm(ss) {
   const formSh = ss.getSheetByName(CONFIG.FORM_RESPONSES_SHEET);
   if (!formSh) return;
   const studentsSh = ss.getSheetByName(CONFIG.STUDENTS_SHEET);
+  const idx = headerIndex_(studentsSh);
+  const idCol = findAliasCol_(idx, STUDENT_ALIASES.id);
+  if (idCol == null) return; // No id-like column found — user's schema is different.
+
   const existing = new Set(
     studentsSh.getLastRow() > 1
-      ? studentsSh.getRange(2, 1, studentsSh.getLastRow() - 1, 1).getValues().map(r => String(r[0]).trim().toUpperCase())
+      ? studentsSh.getRange(2, idCol + 1, studentsSh.getLastRow() - 1, 1)
+          .getValues().map(r => String(r[0]).trim().toUpperCase())
       : []
   );
 
@@ -204,20 +228,33 @@ function syncStudentsFromForm(ss) {
   const idsSeen = new Set();
   responses.forEach(r => idsSeen.add(r.studentId));
 
-  const toAppend = [];
+  const numCols = studentsSh.getLastColumn();
   const today = fmtDate_(new Date());
+  const toAppend = [];
+
+  const setByAlias = (row, key, val) => {
+    const col = findAliasCol_(idx, STUDENT_ALIASES[key] || [key.toLowerCase()]);
+    if (col != null) row[col] = val;
+  };
+
   Array.from(idsSeen).sort().forEach(id => {
     if (!id) return;
     if (existing.has(id)) return;
     const name = displayNameFromId_(id);
-    toAppend.push([
-      id, name, '', '', CONFIG.DEFAULT_AVATAR + encodeURIComponent(name),
-      CONFIG.DEFAULT_BATCH, CONFIG.DEFAULT_ATTEMPT, CONFIG.DEFAULT_GROUP,
-      CONFIG.DEFAULT_LEVEL, '', today, CONFIG.DEFAULT_STATUS
-    ]);
+    const row = new Array(numCols).fill('');
+    setByAlias(row, 'id', id);
+    setByAlias(row, 'name', name);
+    setByAlias(row, 'avatar', CONFIG.DEFAULT_AVATAR + encodeURIComponent(name));
+    setByAlias(row, 'batch', CONFIG.DEFAULT_BATCH);
+    setByAlias(row, 'attempt', CONFIG.DEFAULT_ATTEMPT);
+    setByAlias(row, 'group', CONFIG.DEFAULT_GROUP);
+    setByAlias(row, 'level', CONFIG.DEFAULT_LEVEL);
+    setByAlias(row, 'joinedOn', today);
+    setByAlias(row, 'status', CONFIG.DEFAULT_STATUS);
+    toAppend.push(row);
   });
   if (toAppend.length) {
-    studentsSh.getRange(studentsSh.getLastRow() + 1, 1, toAppend.length, 12).setValues(toAppend);
+    studentsSh.getRange(studentsSh.getLastRow() + 1, 1, toAppend.length, numCols).setValues(toAppend);
   }
 }
 
@@ -255,24 +292,71 @@ function readForm_(sh) {
   return out;
 }
 
+// Shared column-header aliases so the mentor can name columns however they
+// like ("Student ID", "Full Name", etc.).
+const STUDENT_ALIASES = {
+  id: ['id', 'student id', 'studentid', 'uid', 'student_id'],
+  name: ['name', 'full name', 'student name', 'fullname'],
+  email: ['email', 'email id', 'e-mail', 'emailid'],
+  phone: ['phone', 'mobile', 'contact', 'phone number', 'contact number'],
+  avatar: ['avatar', 'photo', 'photo url', 'picture'],
+  batch: ['batch', 'batch name'],
+  attempt: ['attempt', 'exam attempt', 'exam'],
+  group: ['group', 'group name'],
+  level: ['level', 'exam level', 'ca level', 'course'],
+  city: ['city', 'location'],
+  joinedOn: ['joinedon', 'joined on', 'joined', 'enrollment date', 'enrolled on', 'joining date'],
+  status: ['status'],
+};
+
+function findAliasCol_(idx, aliases) {
+  for (const a of aliases) if (idx[a] != null) return idx[a];
+  return null;
+}
+
 function readStudents_(ss) {
   const sh = ss.getSheetByName(CONFIG.STUDENTS_SHEET);
   if (sh.getLastRow() < 2) return [];
-  const values = sh.getRange(2, 1, sh.getLastRow() - 1, 12).getValues();
-  return values.map(r => ({
-    id: String(r[0]).trim(),
-    name: String(r[1] || '').trim() || displayNameFromId_(r[0]),
-    email: String(r[2] || ''),
-    phone: String(r[3] || ''),
-    avatar: String(r[4] || '') || (CONFIG.DEFAULT_AVATAR + encodeURIComponent(String(r[1] || r[0]))),
-    batch: String(r[5] || CONFIG.DEFAULT_BATCH),
-    attempt: String(r[6] || CONFIG.DEFAULT_ATTEMPT),
-    group: String(r[7] || CONFIG.DEFAULT_GROUP),
-    level: String(r[8] || CONFIG.DEFAULT_LEVEL),
-    city: String(r[9] || ''),
-    joinedOn: fmtDate_(r[10]) || '',
-    status: String(r[11] || CONFIG.DEFAULT_STATUS),
-  }));
+  const idx = headerIndex_(sh);
+  const values = sh.getRange(2, 1, sh.getLastRow() - 1, sh.getLastColumn()).getValues();
+
+  const pick = (row, key, fallback) => {
+    const col = findAliasCol_(idx, STUDENT_ALIASES[key] || [key.toLowerCase()]);
+    if (col == null) return fallback;
+    const v = row[col];
+    return (v === '' || v == null) ? fallback : v;
+  };
+
+  return values
+    .filter(r => String(pick(r, 'id', '')).trim() !== '')
+    .map(r => {
+      const id = String(pick(r, 'id', '')).trim();
+      const name = String(pick(r, 'name', '') || displayNameFromId_(id)).trim();
+      return {
+        id,
+        name,
+        email: String(pick(r, 'email', '')),
+        phone: String(pick(r, 'phone', '')),
+        avatar: String(pick(r, 'avatar', '')) || (CONFIG.DEFAULT_AVATAR + encodeURIComponent(name)),
+        batch: String(pick(r, 'batch', CONFIG.DEFAULT_BATCH)),
+        attempt: String(pick(r, 'attempt', CONFIG.DEFAULT_ATTEMPT)),
+        group: String(pick(r, 'group', CONFIG.DEFAULT_GROUP)),
+        level: String(pick(r, 'level', CONFIG.DEFAULT_LEVEL)),
+        city: String(pick(r, 'city', '')),
+        joinedOn: fmtDate_(pick(r, 'joinedOn', '')) || '',
+        status: String(pick(r, 'status', CONFIG.DEFAULT_STATUS)),
+      };
+    });
+}
+
+function headerIndex_(sh) {
+  const headers = sh.getRange(1, 1, 1, sh.getLastColumn()).getValues()[0];
+  const out = {};
+  headers.forEach((h, i) => {
+    const key = String(h || '').trim().toLowerCase();
+    if (key) out[key] = i;
+  });
+  return out;
 }
 
 function readMcq_(ss) {
