@@ -1,0 +1,38 @@
+export const announcements = [
+  {
+    id: 'ANN-001',
+    title: 'Mock Test 5 — Schedule Released',
+    body: 'The 5th Mock Test for Sept 2026 attempt starts on Feb 26. All Super 30 & Super 11 batch students must appear. Timings shared on WhatsApp.',
+    audience: 'Super 30, Super 11',
+    date: '2026-02-20',
+    pinned: true,
+    author: 'Ujjwal Pathak',
+  },
+  {
+    id: 'ANN-002',
+    title: 'Doubt Session — Advanced Accounts',
+    body: 'Live doubt clearing session for Advanced Accounts (Amalgamation & Reconstruction) tomorrow at 8 PM. Bring your queries.',
+    audience: 'All Batches',
+    date: '2026-02-18',
+    pinned: false,
+    author: 'Ujjwal Pathak',
+  },
+  {
+    id: 'ANN-003',
+    title: 'Attendance Policy — Reminder',
+    body: 'Minimum 80% attendance required to be eligible for the final mock series. Students below the threshold will be contacted individually.',
+    audience: 'All Batches',
+    date: '2026-02-15',
+    pinned: false,
+    author: 'Ujjwal Pathak',
+  },
+  {
+    id: 'ANN-004',
+    title: 'Study Material — Costing Revamped Notes',
+    body: 'Updated Costing summary notes are available in the resources section. Download and revise before this Sunday.',
+    audience: 'Last 15 Days, Last 40 Days',
+    date: '2026-02-10',
+    pinned: false,
+    author: 'Ujjwal Pathak',
+  },
+];

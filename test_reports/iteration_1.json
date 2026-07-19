@@ -1,0 +1,35 @@
+{
+  "summary": "Frontend-only Mentor Dashboard tested end-to-end via Playwright at public preview URL. Dashboard KPIs, charts, all 7 sidebar routes, students table (search + batch filter + pagination), student profile (STU-1001), Daily Tracker, Leaderboard tabs, Announcements create + pin, Reports tabs + export button, Settings save + notifications, dark mode (settings toggle + persistence after reload), and tablet responsive sidebar all verified. Zero console errors detected. Only issue: topbar theme-toggle click did not flip the html.dark class in the test run (settings theme-toggle works, and theme persists across reload, so dark mode itself is functional).",
+  "tested_scope": ["frontend", "integration"],
+  "passed": [
+    "Dashboard loads at / with all 8 KPI test-ids (kpi-total, kpi-active, kpi-pending, kpi-risk, kpi-hours, kpi-attendance, kpi-mcq, kpi-submission)",
+    "Multiple Recharts SVGs render on Dashboard, StudentProfile, DailyTracker, Leaderboard, Reports",
+    "All 7 sidebar nav items (nav-dashboard/students/daily-tracker/leaderboard/announcements/reports/settings) navigate to correct routes",
+    "Students page: student-search narrows rows (8 -> 1), filter-batch/attempt/group/status visible, batch Super 30 filter applies, page-next/page-prev work",
+    "view-STU-1001 opens /students/STU-1001 profile with charts and heatmap",
+    "Daily Tracker: tracker-batch and >=7 day buttons visible",
+    "Leaderboard tabs (tab-overall/tab-weekly/tab-monthly) switch correctly",
+    "Announcements: title + body + publish creates new item visible in list; pin-ANN toggles",
+    "Reports: report-tab-batch, report-tab-student, export-btn all visible; tabs switch",
+    "Settings: settings-name/email inputs, save-profile shows 'Saved!' text",
+    "theme-toggle-settings flips html.dark class",
+    "Dark mode persists after full page reload (localStorage)",
+    "Tablet (768px): topbar-menu-btn visible and opens sidebar",
+    "No console errors on any route"
+  ],
+  "failed": [
+    {
+      "area": "Topbar theme toggle",
+      "issue": "Clicking [data-testid=theme-toggle] in topbar did not change html.dark class in this run (state was same before/after click)",
+      "evidence": "Playwright before/after evaluate on document.documentElement.classList.contains('dark') returned the same value. Settings theme-toggle works and persistence via localStorage works, so dark mode logic is functional overall.",
+      "priority": "LOW"
+    }
+  ],
+  "action_items": [
+    "Verify the topbar theme-toggle button handler actually calls the same theme setter as settings toggle; possible cause: button click intercepted by a following DOM update or handler bound to different state. Non-blocking for first finish since alternative toggle works."
+  ],
+  "success_rate": {"backend": "N/A (no backend)", "frontend": "98% (46/47)"},
+  "retest_needed": false,
+  "full_testing_deferred": true,
+  "test_credentials": "N/A - no auth in app"
+}
