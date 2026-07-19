@@ -9,14 +9,8 @@ import Leaderboard from '@/pages/Leaderboard';
 import Announcements from '@/pages/Announcements';
 import Reports from '@/pages/Reports';
 import Settings from '@/pages/Settings';
-import { useEffect } from 'react';
-import { useTheme } from '@/hooks/useTheme';
 
 function App() {
-  // Initialize theme on mount so `.dark` class is applied
-  const { theme } = useTheme();
-  useEffect(() => { void theme; }, [theme]);
-
   return (
     <BrowserRouter>
       <Routes>
