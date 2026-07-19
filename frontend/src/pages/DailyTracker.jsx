@@ -71,7 +71,7 @@ export default function DailyTracker() {
                 <th className="px-5 py-3">Batch</th>
                 <th className="px-5 py-3">Subjects</th>
                 <th className="px-5 py-3">Tomorrow Target</th>
-                <th className="px-5 py-3">Accuracy</th>
+              
                 <th className="px-5 py-3">Submitted</th>
                 <th className="px-5 py-3">Study Proof</th>
               </tr>
