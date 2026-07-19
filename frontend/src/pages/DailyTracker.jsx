@@ -69,8 +69,8 @@ export default function DailyTracker() {
               <tr className="text-left text-[10px] uppercase tracking-[0.18em] font-semibold text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/40 border-b border-slate-200 dark:border-slate-800">
                 <th className="px-5 py-3">Student</th>
                 <th className="px-5 py-3">Batch</th>
-                <th className="px-5 py-3">Hours</th>
-                <th className="px-5 py-3">MCQs</th>
+                <th className="px-5 py-3">Subjects</th>
+                <th className="px-5 py-3">Tomorrow Target</th>
                 <th className="px-5 py-3">Accuracy</th>
                 <th className="px-5 py-3">Submitted</th>
                 <th className="px-5 py-3">Study Proof</th>
@@ -93,8 +93,13 @@ export default function DailyTracker() {
                   </td>
                   <td className="px-5 py-3 text-slate-600 dark:text-slate-300">{s.batch}</td>
                   <td className="px-5 py-3 font-semibold text-slate-800 dark:text-slate-200">{s.entry.hours}h</td>
-                  <td className="px-5 py-3 text-slate-600 dark:text-slate-300">{s.entry.mcqCount}</td>
-                  <td className="px-5 py-3 font-semibold text-slate-800 dark:text-slate-200">{s.entry.mcqAccuracy}%</td>
+                  <td className="px-5 py-3 text-slate-600 dark:text-slate-300">
+  {s.entry.subjects || "—"}
+</td>
+
+<td className="px-5 py-3 text-slate-600 dark:text-slate-300">
+  {s.entry.tomorrowTarget || "—"}
+</td>
                   <td className="px-5 py-3">
                     {s.entry.submitted
                       ? <span className="inline-flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 text-xs font-semibold"><CheckCircle2 className="w-4 h-4" /> Submitted</span>
