@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft, Mail, Phone, MapPin, Calendar, StickyNote } from 'lucide-react';
-import { students } from '@/data/students';
+import { ArrowLeft, Mail, Phone, MapPin, Calendar, StickyNote, X } from 'lucide-react';
 import { RiskBadge, StatusBadge } from '@/components/common/RiskBadge';
 import { StudentWeeklyLine, StudentMonthlyBar, PerformanceRadar } from '@/components/charts/Charts';
+import { Skeleton } from '@/components/common/Skeleton';
+import { useStudent, useAddMentorNote } from '@/api/hooks';
 import { cn } from '@/utils/format';
 
 const Stat = ({ label, value, suffix, tone = 'text-slate-900 dark:text-white' }) => (
@@ -14,7 +16,22 @@ const Stat = ({ label, value, suffix, tone = 'text-slate-900 dark:text-white' })
 
 export default function StudentProfile() {
   const { id } = useParams();
-  const s = students.find(x => x.id === id);
+  const { data: s, isLoading } = useStudent(id);
+  const [noteOpen, setNoteOpen] = useState(false);
+  const [noteText, setNoteText] = useState('');
+  const addNote = useAddMentorNote();
+
+  if (isLoading) {
+    return (
+      <div className="space-y-4">
+        <Skeleton className="h-6 w-32" />
+        <Skeleton className="h-40 w-full" />
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {Array.from({ length: 4 }).map((_, i) => <Skeleton key={i} className="h-24 w-full" />)}
+        </div>
+      </div>
+    );
+  }
 
   if (!s) {
     return (
@@ -26,6 +43,14 @@ export default function StudentProfile() {
       </div>
     );
   }
+
+  const submitNote = (e) => {
+    e.preventDefault();
+    if (!noteText.trim()) return;
+    addNote.mutate({ id: s.id, note: noteText.trim() }, {
+      onSuccess: () => { setNoteText(''); setNoteOpen(false); },
+    });
+  };
 
   return (
     <div className="space-y-6" data-testid="student-profile">
@@ -84,7 +109,7 @@ export default function StudentProfile() {
             <StickyNote className="w-4 h-4 text-[#2563EB]" />
             <h3 className="font-heading font-semibold text-slate-900 dark:text-white">Mentor Notes</h3>
           </div>
-          <ul className="space-y-3">
+          <ul className="space-y-3 max-h-64 overflow-y-auto pr-1">
             {s.mentorNotes.map((n, i) => (
               <li key={i} className="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800">
                 <div className="text-[11px] uppercase tracking-[0.18em] font-semibold text-slate-500 dark:text-slate-400">{n.date}</div>
@@ -92,7 +117,7 @@ export default function StudentProfile() {
               </li>
             ))}
           </ul>
-          <button className="mt-3 w-full h-10 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm font-semibold transition-colors" data-testid="add-note-btn">Add Note</button>
+          <button onClick={() => setNoteOpen(true)} className="mt-3 w-full h-10 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm font-semibold transition-colors" data-testid="add-note-btn">Add Note</button>
         </div>
       </div>
 
@@ -110,6 +135,34 @@ export default function StudentProfile() {
           <span className="inline-flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-rose-300 dark:bg-rose-500/40" /> Missed</span>
         </div>
       </div>
+
+      {noteOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm" onClick={() => setNoteOpen(false)}>
+          <form onClick={(e) => e.stopPropagation()} onSubmit={submitNote} className="w-full max-w-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5" data-testid="add-note-dialog">
+            <div className="flex items-center justify-between">
+              <h4 className="font-heading font-semibold text-slate-900 dark:text-white">Add Mentor Note</h4>
+              <button type="button" onClick={() => setNoteOpen(false)} className="p-1 text-slate-400 hover:text-slate-700 dark:hover:text-white" aria-label="Close">
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Notes are visible to {s.name} on their next session.</p>
+            <textarea
+              data-testid="note-text"
+              value={noteText}
+              onChange={(e) => setNoteText(e.target.value)}
+              rows={5}
+              placeholder="Write a short note..."
+              className="mt-3 w-full px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 outline-none focus:border-[#2563EB] text-sm text-slate-800 dark:text-slate-200 resize-none"
+            />
+            <div className="mt-4 flex items-center justify-end gap-2">
+              <button type="button" onClick={() => setNoteOpen(false)} className="h-9 px-4 rounded-lg border border-slate-200 dark:border-slate-800 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">Cancel</button>
+              <button type="submit" disabled={addNote.isPending} data-testid="save-note-btn" className="h-9 px-4 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm font-semibold transition-colors disabled:opacity-60">
+                {addNote.isPending ? 'Saving...' : 'Save Note'}
+              </button>
+            </div>
+          </form>
+        </div>
+      )}
     </div>
   );
 }

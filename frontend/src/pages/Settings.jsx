@@ -1,6 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Bell, Moon, Sun, Mail, MessageSquare, Save } from 'lucide-react';
 import { useTheme } from '@/hooks/useTheme';
+import {
+  useMentorProfile, useUpdateMentorProfile,
+  useNotificationSettings, useUpdateNotificationSettings,
+} from '@/api/hooks';
+import { Skeleton } from '@/components/common/Skeleton';
 import { cn } from '@/utils/format';
 
 const Toggle = ({ checked, onChange, testid }) => (
@@ -17,18 +22,36 @@ const Toggle = ({ checked, onChange, testid }) => (
 
 export default function Settings() {
   const { theme, toggle } = useTheme();
-  const [name, setName] = useState('Ujjwal Pathak');
-  const [email, setEmail] = useState('mentor@upmentorship.in');
-  const [emailNotif, setEmailNotif] = useState(true);
-  const [smsNotif, setSmsNotif] = useState(false);
-  const [dailyDigest, setDailyDigest] = useState(true);
+  const { data: mentor, isLoading: mentorLoading } = useMentorProfile();
+  const { data: notifs } = useNotificationSettings();
+  const updateProfile = useUpdateMentorProfile();
+  const updateNotifs = useUpdateNotificationSettings();
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [saved, setSaved] = useState(false);
+
+  useEffect(() => {
+    if (mentor) { setName(mentor.name); setEmail(mentor.email); }
+  }, [mentor]);
 
   const save = (e) => {
     e.preventDefault();
-    setSaved(true);
-    setTimeout(() => setSaved(false), 2000);
+    updateProfile.mutate({ name, email }, {
+      onSuccess: () => { setSaved(true); setTimeout(() => setSaved(false), 2000); },
+    });
   };
+
+  const flip = (key) => () => notifs && updateNotifs.mutate({ [key]: !notifs[key] });
+
+  if (mentorLoading || !mentor) {
+    return (
+      <div className="space-y-4 max-w-4xl">
+        <Skeleton className="h-64 w-full" />
+        <Skeleton className="h-32 w-full" />
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6 max-w-4xl" data-testid="settings-page">
@@ -37,7 +60,7 @@ export default function Settings() {
         <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Update your public profile details.</p>
         <div className="mt-5 flex items-center gap-4">
           <img
-            src="https://images.unsplash.com/photo-1589386417686-0d34b5903d23?crop=entropy&cs=srgb&fm=jpg&q=85&w=200"
+            src={mentor.avatar}
             alt="Mentor"
             className="w-20 h-20 rounded-2xl object-cover ring-4 ring-slate-100 dark:ring-slate-800"
           />
@@ -58,8 +81,8 @@ export default function Settings() {
         </div>
         <div className="mt-5 flex items-center justify-end gap-2">
           {saved && <span className="text-xs text-emerald-600 dark:text-emerald-400 font-semibold">Saved!</span>}
-          <button type="submit" data-testid="save-profile" className="h-10 px-5 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm font-semibold inline-flex items-center gap-2 transition-colors">
-            <Save className="w-4 h-4" /> Save Changes
+          <button type="submit" disabled={updateProfile.isPending} data-testid="save-profile" className="h-10 px-5 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm font-semibold inline-flex items-center gap-2 transition-colors disabled:opacity-60">
+            <Save className="w-4 h-4" /> {updateProfile.isPending ? 'Saving...' : 'Save Changes'}
           </button>
         </div>
       </form>
@@ -86,11 +109,11 @@ export default function Settings() {
         <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Choose what you want to be notified about.</p>
         <div className="mt-5 space-y-3">
           {[
-            { icon: Mail, label: 'Email notifications', desc: 'Weekly reports & risk alerts via email', v: emailNotif, s: setEmailNotif, tid: 'notif-email' },
-            { icon: MessageSquare, label: 'SMS notifications', desc: 'Urgent risk alerts via SMS', v: smsNotif, s: setSmsNotif, tid: 'notif-sms' },
-            { icon: Bell, label: 'Daily digest', desc: 'A summary of yesterday, every morning', v: dailyDigest, s: setDailyDigest, tid: 'notif-daily' },
-          ].map((n, i) => (
-            <div key={i} className="flex items-center justify-between p-4 rounded-lg bg-slate-50 dark:bg-slate-800/40">
+            { icon: Mail, label: 'Email notifications', desc: 'Weekly reports & risk alerts via email', k: 'emailNotif', tid: 'notif-email' },
+            { icon: MessageSquare, label: 'SMS notifications', desc: 'Urgent risk alerts via SMS', k: 'smsNotif', tid: 'notif-sms' },
+            { icon: Bell, label: 'Daily digest', desc: 'A summary of yesterday, every morning', k: 'dailyDigest', tid: 'notif-daily' },
+          ].map((n) => (
+            <div key={n.k} className="flex items-center justify-between p-4 rounded-lg bg-slate-50 dark:bg-slate-800/40">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 flex items-center justify-center">
                   <n.icon className="w-4 h-4 text-[#2563EB]" />
@@ -100,7 +123,7 @@ export default function Settings() {
                   <div className="text-xs text-slate-500 dark:text-slate-400">{n.desc}</div>
                 </div>
               </div>
-              <Toggle checked={n.v} onChange={() => n.s(v => !v)} testid={n.tid} />
+              <Toggle checked={!!notifs?.[n.k]} onChange={flip(n.k)} testid={n.tid} />
             </div>
           ))}
         </div>

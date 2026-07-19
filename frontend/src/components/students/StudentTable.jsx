@@ -1,8 +1,9 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, ChevronLeft, ChevronRight, Eye } from 'lucide-react';
-import { students as ALL, batchOptions, attemptOptions, groupOptions, statusOptions } from '@/data/students';
 import { RiskBadge, StatusBadge } from '@/components/common/RiskBadge';
+import { Skeleton } from '@/components/common/Skeleton';
+import { useStudents } from '@/api/hooks';
 import { cn } from '@/utils/format';
 
 const PAGE_SIZE = 8;
@@ -21,6 +22,10 @@ function FilterSelect({ value, onChange, options, testid }) {
 }
 
 export default function StudentTable() {
+  const { data, isLoading } = useStudents();
+  const all = data?.students;
+  const options = data?.options;
+
   const [q, setQ] = useState('');
   const [batch, setBatch] = useState('All Batches');
   const [attempt, setAttempt] = useState('All Attempts');
@@ -29,7 +34,8 @@ export default function StudentTable() {
   const [page, setPage] = useState(1);
 
   const filtered = useMemo(() => {
-    return ALL.filter(s => {
+    const src = all || [];
+    return src.filter(s => {
       if (q && !`${s.name} ${s.id} ${s.email}`.toLowerCase().includes(q.toLowerCase())) return false;
       if (batch !== 'All Batches' && s.batch !== batch) return false;
       if (attempt !== 'All Attempts' && s.attempt !== attempt) return false;
@@ -37,12 +43,11 @@ export default function StudentTable() {
       if (status !== 'All Status' && s.status !== status) return false;
       return true;
     });
-  }, [q, batch, attempt, group, status]);
+  }, [all, q, batch, attempt, group, status]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const current = Math.min(page, totalPages);
   const rows = filtered.slice((current - 1) * PAGE_SIZE, current * PAGE_SIZE);
-
   const wrap = (fn) => (v) => { fn(v); setPage(1); };
 
   return (
@@ -63,12 +68,14 @@ export default function StudentTable() {
             Showing <span className="font-semibold text-slate-700 dark:text-slate-200">{filtered.length}</span> students
           </span>
         </div>
-        <div className="flex flex-wrap gap-2">
-          <FilterSelect value={batch} onChange={wrap(setBatch)} options={batchOptions} testid="filter-batch" />
-          <FilterSelect value={attempt} onChange={wrap(setAttempt)} options={attemptOptions} testid="filter-attempt" />
-          <FilterSelect value={group} onChange={wrap(setGroup)} options={groupOptions} testid="filter-group" />
-          <FilterSelect value={status} onChange={wrap(setStatus)} options={statusOptions} testid="filter-status" />
-        </div>
+        {options && (
+          <div className="flex flex-wrap gap-2">
+            <FilterSelect value={batch} onChange={wrap(setBatch)} options={options.batchOptions} testid="filter-batch" />
+            <FilterSelect value={attempt} onChange={wrap(setAttempt)} options={options.attemptOptions} testid="filter-attempt" />
+            <FilterSelect value={group} onChange={wrap(setGroup)} options={options.groupOptions} testid="filter-group" />
+            <FilterSelect value={status} onChange={wrap(setStatus)} options={options.statusOptions} testid="filter-status" />
+          </div>
+        )}
       </div>
 
       <div className="overflow-x-auto">
@@ -86,7 +93,12 @@ export default function StudentTable() {
             </tr>
           </thead>
           <tbody>
-            {rows.map((s) => (
+            {isLoading && Array.from({ length: 5 }).map((_, i) => (
+              <tr key={i} className="border-b border-slate-100 dark:border-slate-800">
+                <td className="px-5 py-3" colSpan={8}><Skeleton className="h-8 w-full" /></td>
+              </tr>
+            ))}
+            {!isLoading && rows.map((s) => (
               <tr key={s.id} className="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors" data-testid={`row-${s.id}`}>
                 <td className="px-5 py-3">
                   <div className="flex items-center gap-3">
@@ -119,7 +131,7 @@ export default function StudentTable() {
                 </td>
               </tr>
             ))}
-            {rows.length === 0 && (
+            {!isLoading && rows.length === 0 && (
               <tr><td colSpan={8} className="px-5 py-16 text-center text-sm text-slate-500 dark:text-slate-400">No students match your filters.</td></tr>
             )}
           </tbody>

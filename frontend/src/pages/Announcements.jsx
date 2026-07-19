@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import { Pin, Send, Users, Calendar } from 'lucide-react';
-import { announcements as SEED } from '@/data/announcements';
+import { useAnnouncements, useCreateAnnouncement, useTogglePinAnnouncement } from '@/api/hooks';
+import { Skeleton } from '@/components/common/Skeleton';
 import { cn } from '@/utils/format';
 
 export default function Announcements() {
-  const [list, setList] = useState(SEED);
+  const { data: list = [], isLoading } = useAnnouncements();
+  const createMut = useCreateAnnouncement();
+  const pinMut = useTogglePinAnnouncement();
+
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [audience, setAudience] = useState('All Batches');
@@ -12,20 +16,11 @@ export default function Announcements() {
   const create = (e) => {
     e.preventDefault();
     if (!title.trim() || !body.trim()) return;
-    const item = {
-      id: `ANN-${String(list.length + 1).padStart(3, '0')}`,
-      title: title.trim(),
-      body: body.trim(),
-      audience,
-      date: new Date().toISOString().slice(0, 10),
-      pinned: false,
-      author: 'Ujjwal Pathak',
-    };
-    setList([item, ...list]);
-    setTitle(''); setBody(''); setAudience('All Batches');
+    createMut.mutate(
+      { title: title.trim(), body: body.trim(), audience },
+      { onSuccess: () => { setTitle(''); setBody(''); setAudience('All Batches'); } }
+    );
   };
-
-  const togglePin = (id) => setList(list.map(a => a.id === id ? { ...a, pinned: !a.pinned } : a));
 
   const pinned = list.filter(a => a.pinned);
   const rest = list.filter(a => !a.pinned);
@@ -58,35 +53,43 @@ export default function Announcements() {
           >
             {['All Batches', 'Super 30', 'Super 11', 'Last 15 Days', 'Last 40 Days'].map(o => <option key={o}>{o}</option>)}
           </select>
-          <button type="submit" data-testid="publish-announcement" className="w-full h-11 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm font-semibold inline-flex items-center justify-center gap-2 transition-colors">
-            <Send className="w-4 h-4" /> Publish
+          <button
+            type="submit"
+            disabled={createMut.isPending}
+            data-testid="publish-announcement"
+            className="w-full h-11 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm font-semibold inline-flex items-center justify-center gap-2 transition-colors disabled:opacity-60"
+          >
+            <Send className="w-4 h-4" /> {createMut.isPending ? 'Publishing...' : 'Publish'}
           </button>
         </form>
 
         <div className="lg:col-span-2 space-y-4">
+          {isLoading && <Skeleton className="h-32 w-full" />}
           {pinned.length > 0 && (
             <div>
               <div className="text-[11px] uppercase tracking-[0.18em] font-semibold text-slate-500 dark:text-slate-400 mb-2 flex items-center gap-1.5">
                 <Pin className="w-3 h-3" /> Pinned
               </div>
               <div className="space-y-3">
-                {pinned.map(a => <Card key={a.id} a={a} togglePin={togglePin} pinned />)}
+                {pinned.map(a => <Card key={a.id} a={a} onPin={() => pinMut.mutate(a.id)} pinned />)}
               </div>
             </div>
           )}
-          <div>
-            <div className="text-[11px] uppercase tracking-[0.18em] font-semibold text-slate-500 dark:text-slate-400 mb-2">History</div>
-            <div className="space-y-3">
-              {rest.map(a => <Card key={a.id} a={a} togglePin={togglePin} />)}
+          {rest.length > 0 && (
+            <div>
+              <div className="text-[11px] uppercase tracking-[0.18em] font-semibold text-slate-500 dark:text-slate-400 mb-2">History</div>
+              <div className="space-y-3">
+                {rest.map(a => <Card key={a.id} a={a} onPin={() => pinMut.mutate(a.id)} />)}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>
   );
 }
 
-function Card({ a, togglePin, pinned }) {
+function Card({ a, onPin, pinned }) {
   return (
     <div className={cn(
       'border rounded-xl p-5 transition-colors',
@@ -104,7 +107,7 @@ function Card({ a, togglePin, pinned }) {
           </div>
         </div>
         <button
-          onClick={() => togglePin(a.id)}
+          onClick={onPin}
           data-testid={`pin-${a.id}`}
           className={cn('p-2 rounded-lg transition-colors', pinned ? 'text-[#2563EB] bg-blue-100 dark:bg-blue-500/20' : 'text-slate-400 hover:text-[#2563EB] hover:bg-slate-100 dark:hover:bg-slate-800')}
           aria-label="Toggle pin"

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Download, FileBarChart2, UserSquare2 } from 'lucide-react';
-import { students } from '@/data/students';
 import { BatchBarChart } from '@/components/charts/Charts';
-import { batchOverview } from '@/data/dashboard';
+import { useBatchReport, useStudentReport } from '@/api/hooks';
+import { Skeleton } from '@/components/common/Skeleton';
 import { cn } from '@/utils/format';
 
 const TABS = [
@@ -12,6 +12,8 @@ const TABS = [
 
 export default function Reports() {
   const [tab, setTab] = useState('batch');
+  const { data: batch, isLoading: batchLoading } = useBatchReport();
+  const { data: studentReport, isLoading: srLoading } = useStudentReport();
 
   return (
     <div className="space-y-6" data-testid="reports-page">
@@ -41,7 +43,7 @@ export default function Reports() {
           <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5">
             <h3 className="font-heading font-semibold text-slate-900 dark:text-white">Batch Performance</h3>
             <p className="text-xs text-slate-500 dark:text-slate-400 mb-2 mt-0.5">Comparative view — attendance & MCQ accuracy</p>
-            <BatchBarChart data={batchOverview} />
+            {batchLoading || !batch ? <Skeleton className="h-[260px] w-full" /> : <BatchBarChart data={batch} />}
           </div>
           <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
             <table className="w-full text-sm">
@@ -55,7 +57,7 @@ export default function Reports() {
                 </tr>
               </thead>
               <tbody>
-                {batchOverview.map(b => (
+                {(batch || []).map(b => (
                   <tr key={b.name} className="border-b border-slate-100 dark:border-slate-800">
                     <td className="px-5 py-3 font-semibold text-slate-900 dark:text-white">{b.name}</td>
                     <td className="px-5 py-3 text-slate-700 dark:text-slate-300">{b.students}</td>
@@ -90,7 +92,10 @@ export default function Reports() {
                 </tr>
               </thead>
               <tbody>
-                {students.slice(0, 20).map(s => (
+                {srLoading && Array.from({ length: 5 }).map((_, i) => (
+                  <tr key={i} className="border-b border-slate-100 dark:border-slate-800"><td className="px-5 py-3" colSpan={6}><Skeleton className="h-8 w-full" /></td></tr>
+                ))}
+                {(studentReport || []).slice(0, 20).map(s => (
                   <tr key={s.id} className="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
                     <td className="px-5 py-3">
                       <div className="flex items-center gap-3">

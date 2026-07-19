@@ -1,7 +1,8 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Trophy, Medal, Award, Crown } from 'lucide-react';
-import { students } from '@/data/students';
+import { useLeaderboard } from '@/api/hooks';
+import { Skeleton } from '@/components/common/Skeleton';
 import { cn } from '@/utils/format';
 
 const TABS = [
@@ -10,25 +11,10 @@ const TABS = [
   { key: 'monthly', label: 'Monthly' },
 ];
 
-function score(s, mode) {
-  if (mode === 'weekly') {
-    const avgH = s.weekly.reduce((a, w) => a + w.hours, 0) / s.weekly.length;
-    const avgM = s.weekly.reduce((a, w) => a + w.mcq, 0) / s.weekly.length;
-    return Math.round(avgH * 5 + avgM);
-  }
-  if (mode === 'monthly') {
-    const avgA = s.monthly.reduce((a, m) => a + m.attendance, 0) / s.monthly.length;
-    const avgM = s.monthly.reduce((a, m) => a + m.mcq, 0) / s.monthly.length;
-    return Math.round((avgA + avgM) / 2);
-  }
-  return Math.round((s.attendance + s.mcqAccuracy + s.submissionRate) / 3);
-}
-
 export default function Leaderboard() {
   const [tab, setTab] = useState('overall');
-  const ranked = useMemo(() => {
-    return [...students].map(s => ({ ...s, score: score(s, tab) })).sort((a, b) => b.score - a.score);
-  }, [tab]);
+  const { data: ranked = [], isLoading } = useLeaderboard(tab);
+
   const top3 = ranked.slice(0, 3);
   const rest = ranked.slice(3, 20);
   const podium = [
@@ -55,17 +41,23 @@ export default function Leaderboard() {
         ))}
       </div>
 
-      <div className="grid grid-cols-3 gap-4 items-end">
-        {podium.map(({ s, icon: Icon, tone, rank, height }) => s && (
-          <div key={rank} className={cn('rounded-xl p-5 border border-slate-200 dark:border-slate-800 bg-gradient-to-b', tone, height, 'flex flex-col items-center justify-end text-center')}>
-            <Icon className={cn('w-6 h-6 mb-2', rank === 1 ? 'text-amber-500' : rank === 2 ? 'text-slate-500' : 'text-orange-500')} />
-            <img src={s.avatar} alt={s.name} className="w-14 h-14 rounded-full object-cover ring-4 ring-white dark:ring-slate-900 mb-2" />
-            <div className="font-heading font-bold text-slate-900 dark:text-white text-sm">{s.name}</div>
-            <div className="text-xs text-slate-500 dark:text-slate-400">{s.batch}</div>
-            <div className="mt-1 font-heading text-xl font-bold text-[#2563EB]">{s.score}</div>
-          </div>
-        ))}
-      </div>
+      {isLoading ? (
+        <div className="grid grid-cols-3 gap-4 items-end">
+          {[0, 1, 2].map(i => <Skeleton key={i} className="h-32 w-full" />)}
+        </div>
+      ) : (
+        <div className="grid grid-cols-3 gap-4 items-end">
+          {podium.map(({ s, icon: Icon, tone, rank, height }) => s && (
+            <div key={rank} className={cn('rounded-xl p-5 border border-slate-200 dark:border-slate-800 bg-gradient-to-b', tone, height, 'flex flex-col items-center justify-end text-center')}>
+              <Icon className={cn('w-6 h-6 mb-2', rank === 1 ? 'text-amber-500' : rank === 2 ? 'text-slate-500' : 'text-orange-500')} />
+              <img src={s.avatar} alt={s.name} className="w-14 h-14 rounded-full object-cover ring-4 ring-white dark:ring-slate-900 mb-2" />
+              <div className="font-heading font-bold text-slate-900 dark:text-white text-sm">{s.name}</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400">{s.batch}</div>
+              <div className="mt-1 font-heading text-xl font-bold text-[#2563EB]">{s.score}</div>
+            </div>
+          ))}
+        </div>
+      )}
 
       <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
         <div className="px-5 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center gap-2">
