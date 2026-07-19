@@ -1,0 +1,132 @@
+{
+  "theme": "modern_saas_dashboard",
+  "mode": "toggle",
+  "typography": {
+    "fonts": {
+      "headings": "Manrope, sans-serif",
+      "body": "IBM Plex Sans, sans-serif"
+    },
+    "hierarchy": {
+      "h1": "text-4xl tracking-tight font-bold",
+      "h2": "text-3xl tracking-tight font-semibold",
+      "h3": "text-2xl tracking-tight font-medium",
+      "h4": "text-xl font-medium",
+      "body": "text-sm md:text-base leading-relaxed",
+      "labels": "text-xs uppercase tracking-[0.2em] font-semibold"
+    },
+    "installation": "Ensure fonts are imported via Google Fonts in index.css"
+  },
+  "colors": {
+    "primary": "#2563EB",
+    "primary_hover": "#1D4ED8",
+    "secondary": "#1E40AF",
+    "background_light": "#F8FAFC",
+    "surface_light": "#FFFFFF",
+    "background_dark": "#020617",
+    "surface_dark": "#0F172A",
+    "text_light": "#0F172A",
+    "text_muted_light": "#64748B",
+    "text_dark": "#F8FAFC",
+    "text_muted_dark": "#94A3B8",
+    "border_light": "#E2E8F0",
+    "border_dark": "#1E293B",
+    "accents": {
+      "success": "#10B981",
+      "warning": "#F59E0B",
+      "danger": "#EF4444"
+    },
+    "rules": [
+      "Use #2563EB strategically for active states and primary CTAs.",
+      "Never use pure black or pure white for text; use slated neutral tints.",
+      "Ensure minimum 4.5:1 contrast ratio."
+    ]
+  },
+  "layouts": {
+    "dashboard_grid": "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6",
+    "kpi_cards": "col-span-1",
+    "main_chart": "col-span-1 lg:col-span-3 md:col-span-3",
+    "sidebar_layout": "flex h-screen overflow-hidden bg-slate-50 dark:bg-slate-950",
+    "sidebar": "w-64 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900",
+    "main_content": "flex-1 flex flex-col overflow-y-auto"
+  },
+  "surfaces_and_cards": {
+    "style": "Flat Solid",
+    "light_mode": "bg-white border border-slate-200 shadow-sm rounded-xl",
+    "dark_mode": "bg-slate-900 border border-slate-800 shadow-sm rounded-xl",
+    "interactive_hover": "hover:shadow-md hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-200",
+    "padding": "p-6",
+    "rules": [
+      "Do NOT use complete transparent backgrounds for overlays, dropdowns, or headers.",
+      "Ensure cards have solid backgrounds so content inside is always readable."
+    ]
+  },
+  "components": {
+    "charts": {
+      "library": "recharts",
+      "usage": "Use Recharts for Area, Bar, and Pie charts. Ensure tooltips have solid backgrounds matching the surface color with borders.",
+      "colors": ["#2563EB", "#10B981", "#F59E0B", "#EF4444"]
+    },
+    "icons": {
+      "library": "lucide-react",
+      "size": "w-5 h-5",
+      "strokeWidth": "2"
+    },
+    "table": {
+      "style": "w-full text-sm text-left",
+      "header": "text-xs text-slate-500 uppercase bg-slate-50 dark:bg-slate-800/50 dark:text-slate-400 border-b",
+      "row": "border-b border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
+    },
+    "badges": {
+      "base": "px-2.5 py-0.5 rounded-full text-xs font-medium border",
+      "success": "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-500/10 dark:text-emerald-400 dark:border-emerald-500/20"
+    }
+  },
+  "motion": {
+    "hover_states": "transform transition-transform duration-200 hover:-translate-y-0.5",
+    "page_transitions": "animate-in fade-in slide-in-from-bottom-4 duration-500",
+    "rules": [
+      "No transition: all. Use specific properties.",
+      "Keep animations subtle and performant."
+    ]
+  },
+  "accessibility": {
+    "focus_states": "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900",
+    "aria_labels": "Ensure all icon-only buttons have aria-labels.",
+    "testing": "All interactive elements MUST have data-testid attributes."
+  },
+  "media": {
+    "avatars": {
+      "students": [
+        "https://images.unsplash.com/photo-1514960919797-5ff58c52e5ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2OTV8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBzdHVkZW50JTIwcG9ydHJhaXR8ZW58MHx8fHwxNzg0NDI5OTc0fDA&ixlib=rb-4.1.0&q=85",
+        "https://images.unsplash.com/photo-1548810020-ea2f1da35cff?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2OTV8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBzdHVkZW50JTIwcG9ydHJhaXR8ZW58MHx8fHwxNzg0NDI5OTc0fDA&ixlib=rb-4.1.0&q=85",
+        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2OTV8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBzdHVkZW50JTIwcG9ydHJhaXR8ZW58MHx8fHwxNzg0NDI5OTc0fDA&ixlib=rb-4.1.0&q=85",
+        "https://images.unsplash.com/photo-1544168190-79c17527004f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2OTV8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBzdHVkZW50JTIwcG9ydHJhaXR8ZW58MHx8fHwxNzg0NDI5OTc0fDA&ixlib=rb-4.1.0&q=85",
+        "https://images.pexels.com/photos/7983621/pexels-photo-7983621.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      ],
+      "mentors": [
+        "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjh8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBpbmRpYW4lMjBtZW50b3IlMjBwb3J0cmFpdHxlbnwwfHx8fDE3ODQ0Mjk5NzR8MA&ixlib=rb-4.1.0&q=85"
+      ]
+    },
+    "rules": "Use these images for dummy data representing users."
+  },
+  "instructions_to_main_agent": [
+    "You are building a premium React (Vite) + Tailwind CSS dashboard.",
+    "Do NOT center the main app container. Dashboards must take full viewport width and use a sidebar layout.",
+    "Implement a dark/light mode toggle in the Settings or Topbar.",
+    "Use standard HTML/Tailwind for layouts and basic interactive components if Shadcn UI is not pre-installed or complex. If you generate your own components, ensure they match the 'surfaces_and_cards' specifications exactly.",
+    "Ensure the sidebar navigation clearly indicates the active state with the primary color (#2563EB or slate-100 depending on mode).",
+    "Use Recharts for the Analytics/Performance charts. Make them responsive.",
+    "Make sure all files are valid .jsx / .js. Do not use TypeScript (.tsx) as instructed.",
+    "Generate dummy JSON data for students matching the 'Batch' values: Super 30, Super 11, Last 15 Days, Last 40 Days, and 'Attempt': Sept 2026.",
+    "Include data-testid attributes on key elements like sidebar links, buttons, table rows, and forms."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Do not use generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy and subtle borders.",
+    "Never use AI assistant Emoji characters.",
+    "Add micro-animations to all interactive elements, but DO NOT use 'transition: all'.",
+    "Always use modern button styles with interaction animations and clear focus states.",
+    "Prioritize optical alignment over strict geometric alignment.",
+    "Ensure all text over varied backgrounds meets the 4.5:1 contrast ratio."
+  ]
+}
