@@ -171,11 +171,15 @@ export default function DailyTracker() {
         ✕
       </button>
 
-      <img
-        src={selectedProof}
-        alt="Study Proof"
-        className="w-full max-h-[70vh] object-contain rounded-lg"
-      />
+      <div className="text-xs text-blue-600 break-all mb-4">
+  {selectedProof}
+</div>
+
+<img
+  src={selectedProof}
+  alt="Study Proof"
+  className="w-full max-h-[70vh] object-contain rounded-lg"
+/>
 
     </div>
   </div>
