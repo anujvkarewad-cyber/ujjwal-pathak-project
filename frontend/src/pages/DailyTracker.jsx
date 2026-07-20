@@ -143,15 +143,15 @@ export default function DailyTracker() {
 
         <td className="px-5 py-3">
   {s.entry.proofUrl ? (
-    <button
-      onClick={() => window.open(s.entry.proofUrl, "_blank", "noopener,noreferrer")}
-      className="inline-flex items-center rounded-lg bg-blue-600 px-3 py-1 text-xs font-semibold text-white hover:bg-blue-700"
-    >
-      View Proof
-    </button>
-  ) : (
-    <span className="text-slate-400 text-xs">No Proof</span>
-  )}
+  <button
+    onClick={() => window.open(s.entry.proofUrl, "_blank", "noopener,noreferrer")}
+    className="inline-flex items-center rounded-lg bg-blue-600 px-3 py-1 text-xs font-semibold text-white hover:bg-blue-700"
+  >
+    View Proof
+  </button>
+) : (
+  <span className="text-slate-400 text-xs">No Proof</span>
+)}
 </td>
       </tr>
     ))}
@@ -159,22 +159,4 @@ export default function DailyTracker() {
           </table>
         </div>
       </div>
-      {selectedProof && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80">
-    <div className="relative bg-white rounded-xl shadow-2xl p-4 max-w-2xl w-[90%]">
-
-      <button
-        onClick={() => setSelectedProof(null)}
-        className="absolute top-3 right-3 bg-red-500 hover:bg-red-600 text-white rounded-full w-8 h-8"
-      >
-        ✕
-      </button>
-
-      <div className="text-xs text-blue-600 break-all mb-4">
-  {selectedProof}
-</div>
-
-
-    </div>
-  );
-}
+      }
