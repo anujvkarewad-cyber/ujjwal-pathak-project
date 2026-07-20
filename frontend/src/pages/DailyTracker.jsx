@@ -7,6 +7,7 @@ import { cn } from '@/utils/format';
 export default function DailyTracker() {
   const [batch, setBatch] = useState('All Batches');
   const [dayIndex, setDayIndex] = useState(13);
+  const [selectedProof, setSelectedProof] = useState(null);
   const { data: sData } = useStudents();
   const { data, isLoading } = useTrackerDay({ dayIndex, batch });
 
@@ -143,14 +144,12 @@ export default function DailyTracker() {
 
         <td className="px-5 py-3">
           {s.entry.proofUrl ? (
-            <a
-              href={s.entry.proofUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center rounded-lg bg-blue-600 px-3 py-1 text-xs font-semibold text-white hover:bg-blue-700"
-            >
-              View Proof
-            </a>
+            <button
+  onClick={() => setSelectedProof(s.entry.proofUrl)}
+  className="inline-flex items-center rounded-lg bg-blue-600 px-3 py-1 text-xs font-semibold text-white hover:bg-blue-700"
+>
+  View Proof
+</button>
           ) : (
             <span className="text-slate-400 text-xs">No Proof</span>
           )}
@@ -161,6 +160,26 @@ export default function DailyTracker() {
           </table>
         </div>
       </div>
+      {selectedProof && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
+    <div className="relative max-w-5xl w-full">
+
+      <button
+        onClick={() => setSelectedProof(null)}
+        className="absolute -top-12 right-0 bg-white rounded-lg px-4 py-2 font-semibold"
+      >
+        ✕ Close
+      </button>
+
+      <img
+        src={selectedProof}
+        alt="Study Proof"
+        className="w-full max-h-[85vh] object-contain rounded-xl bg-white"
+      />
+
+    </div>
+  </div>
+)}
     </div>
   );
 }
