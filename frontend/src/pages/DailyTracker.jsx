@@ -178,9 +178,14 @@ export default function DailyTracker() {
 <img
   src={selectedProof}
   alt="Study Proof"
-  className="w-full max-h-[70vh] object-contain rounded-lg"
+  className="w-full max-h-[70vh] rounded-lg border"
+  onLoad={() => console.log("Image Loaded")}
+  onError={(e) => {
+    console.log("Image Failed");
+    console.log(selectedProof);
+    console.log(e);
+  }}
 />
-
     </div>
   </div>
 )}
