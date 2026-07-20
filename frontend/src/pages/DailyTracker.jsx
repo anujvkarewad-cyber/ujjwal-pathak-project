@@ -161,20 +161,20 @@ export default function DailyTracker() {
         </div>
       </div>
       {selectedProof && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
-    <div className="relative max-w-5xl w-full">
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80">
+    <div className="relative bg-white rounded-xl shadow-2xl p-4 max-w-2xl w-[90%]">
 
       <button
         onClick={() => setSelectedProof(null)}
-        className="absolute -top-12 right-0 bg-white rounded-lg px-4 py-2 font-semibold"
+        className="absolute top-3 right-3 bg-red-500 hover:bg-red-600 text-white rounded-full w-8 h-8"
       >
-        ✕ Close
+        ✕
       </button>
 
       <img
         src={selectedProof}
         alt="Study Proof"
-        className="w-full max-h-[85vh] object-contain rounded-xl bg-white"
+        className="w-full max-h-[70vh] object-contain rounded-lg"
       />
 
     </div>
