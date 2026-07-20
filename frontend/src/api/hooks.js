@@ -99,7 +99,15 @@ export const useNotificationSettings = () =>
 
 export const useUpdateNotificationSettings = () => {
   const qc = useQueryClient();
-  // ── Feedback ─────────────────────────────────────────────────────────────
+
+  return useMutation({
+    mutationFn: mentorApi.updateNotificationSettings,
+    onSuccess: () =>
+      qc.invalidateQueries({ queryKey: ['notifications'] }),
+  });
+};
+
+// ── Feedback ─────────────────────────────────────────────
 
 export const useSendFeedback = () => {
   return useMutation({
@@ -119,7 +127,7 @@ export const useMarkFeedbackRead = () => {
 
   return useMutation({
     mutationFn: feedbackApi.markFeedbackRead,
-    onSuccess: (_data, id) => {
+    onSuccess: () => {
       qc.invalidateQueries({ queryKey: ['feedback'] });
     },
   });
