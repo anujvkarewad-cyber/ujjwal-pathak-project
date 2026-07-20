@@ -19,6 +19,7 @@ export default function DailyTracker() {
   const last7Start = Math.max(0, days.length - 7);
 
   return (
+    <>
     <div className="space-y-6" data-testid="daily-tracker-page">
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5">
@@ -268,5 +269,6 @@ export default function DailyTracker() {
     </div>
   </div>
 )}
+    </>
 );
 }
