@@ -7,7 +7,6 @@ import { cn } from '@/utils/format';
 export default function DailyTracker() {
   const [batch, setBatch] = useState('All Batches');
   const [dayIndex, setDayIndex] = useState(13);
-  const [selectedProof, setSelectedProof] = useState(null);
   const { data: sData } = useStudents();
   const { data, isLoading } = useTrackerDay({ dayIndex, batch });
 
@@ -143,17 +142,17 @@ export default function DailyTracker() {
         </td>
 
         <td className="px-5 py-3">
-          {s.entry.proofUrl ? (
-            <button
-  onClick={() => setSelectedProof(s.entry.proofUrl)}
-  className="inline-flex items-center rounded-lg bg-blue-600 px-3 py-1 text-xs font-semibold text-white hover:bg-blue-700"
->
-  View Proof
-</button>
-          ) : (
-            <span className="text-slate-400 text-xs">No Proof</span>
-          )}
-        </td>
+  {s.entry.proofUrl ? (
+    <button
+      onClick={() => window.open(s.entry.proofUrl, "_blank", "noopener,noreferrer")}
+      className="inline-flex items-center rounded-lg bg-blue-600 px-3 py-1 text-xs font-semibold text-white hover:bg-blue-700"
+    >
+      View Proof
+    </button>
+  ) : (
+    <span className="text-slate-400 text-xs">No Proof</span>
+  )}
+</td>
       </tr>
     ))}
 </tbody>
@@ -175,20 +174,7 @@ export default function DailyTracker() {
   {selectedProof}
 </div>
 
-<img
-  src={selectedProof}
-  alt="Study Proof"
-  className="w-full max-h-[70vh] rounded-lg border"
-  onLoad={() => console.log("Image Loaded")}
-  onError={(e) => {
-    console.log("Image Failed");
-    console.log(selectedProof);
-    console.log(e);
-  }}
-/>
-    </div>
-  </div>
-)}
+
     </div>
   );
 }
