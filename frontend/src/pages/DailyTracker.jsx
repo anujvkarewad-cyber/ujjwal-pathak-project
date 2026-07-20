@@ -77,6 +77,7 @@ export default function DailyTracker() {
     <th className="px-5 py-3">Submission Time</th>
     <th className="px-5 py-3">Submitted</th>
     <th className="px-5 py-3">Study Proof</th>
+    <th className="px-5 py-3">Actions</th>
   </tr>
 </thead>
             <tbody>
@@ -86,7 +87,7 @@ export default function DailyTracker() {
         key={i}
         className="border-b border-slate-100 dark:border-slate-800"
       >
-        <td className="px-5 py-3" colSpan={10}>
+        <td className="px-5 py-3" colSpan={11}>
           <Skeleton className="h-8 w-full" />
         </td>
       </tr>
@@ -180,6 +181,14 @@ export default function DailyTracker() {
 ) : (
   <span className="text-slate-400 text-xs">No Proof</span>
 )}
+</td>
+        <td className="px-5 py-3">
+  <button
+    className="rounded-lg bg-indigo-600 px-3 py-1 text-xs font-semibold text-white hover:bg-indigo-700"
+    onClick={() => alert(`Send Feedback to ${s.name}`)}
+  >
+    Send Feedback
+  </button>
 </td>
       </tr>
     ))}
