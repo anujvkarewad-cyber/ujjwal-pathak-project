@@ -1,8 +1,13 @@
 import { useState } from 'react';
 import { CheckCircle2, XCircle, Filter } from 'lucide-react';
-import { useTrackerDay, useStudents } from '@/api/hooks';
+import {
+  useTrackerDay,
+  useStudents,
+  useSendFeedback,
+} from '@/api/hooks';
 import { Skeleton } from '@/components/common/Skeleton';
 import { cn } from '@/utils/format';
+
 
 export default function DailyTracker() {
   const [batch, setBatch] = useState('All Batches');
@@ -13,6 +18,7 @@ export default function DailyTracker() {
   const [feedbackPriority, setFeedbackPriority] = useState("Normal");
   const { data: sData } = useStudents();
   const { data, isLoading } = useTrackerDay({ dayIndex, batch });
+  const sendFeedbackMutation = useSendFeedback();
 
   const batchOptions = sData?.options?.batchOptions || ['All Batches'];
   const days = data?.days || [];
@@ -251,13 +257,24 @@ export default function DailyTracker() {
 
         <button
           onClick={() => {
-            console.log({
-              student: selectedStudent,
-              message: feedbackMessage,
-              priority: feedbackPriority
-            });
-
-            setFeedbackOpen(false);
+            sendFeedbackMutation.mutate(
+  {
+    studentId: selectedStudent.id,
+    mentor: "Ujjwal Sir",
+    message: feedbackMessage,
+    priority: feedbackPriority,
+  },
+  {
+    onSuccess: () => {
+      alert("Feedback sent successfully!");
+      setFeedbackOpen(false);
+    },
+    onError: (err) => {
+      alert("Failed to send feedback.");
+      console.error(err);
+    },
+  }
+);
           }}
           className="px-4 py-2 rounded-lg bg-blue-600 text-white"
         >
