@@ -176,11 +176,7 @@ export default function DailyTracker() {
 </div>
 
 <img
-  src={
-  selectedProof.includes("open?id=")
-    ? `https://drive.google.com/uc?export=view&id=${selectedProof.split("open?id=")[1]}`
-    : selectedProof
-}
+  src={selectedProof}
   alt="Study Proof"
   className="w-full max-h-[70vh] object-contain rounded-lg"
 />
