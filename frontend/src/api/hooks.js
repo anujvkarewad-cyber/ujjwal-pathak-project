@@ -9,6 +9,7 @@ import * as leaderboardApi from './leaderboard';
 import * as announcementsApi from './announcements';
 import * as reportsApi from './reports';
 import * as mentorApi from './mentor';
+import * as feedbackApi from './feedback';
 
 // ── Students ────────────────────────────────────────────────────────────
 export const useStudents = () =>
@@ -98,6 +99,31 @@ export const useNotificationSettings = () =>
 
 export const useUpdateNotificationSettings = () => {
   const qc = useQueryClient();
+  // ── Feedback ─────────────────────────────────────────────────────────────
+
+export const useSendFeedback = () => {
+  return useMutation({
+    mutationFn: feedbackApi.sendFeedback,
+  });
+};
+
+export const useStudentFeedback = (studentId) =>
+  useQuery({
+    queryKey: ['feedback', studentId],
+    queryFn: () => feedbackApi.getFeedback(studentId),
+    enabled: !!studentId,
+  });
+
+export const useMarkFeedbackRead = () => {
+  const qc = useQueryClient();
+
+  return useMutation({
+    mutationFn: feedbackApi.markFeedbackRead,
+    onSuccess: (_data, id) => {
+      qc.invalidateQueries({ queryKey: ['feedback'] });
+    },
+  });
+};
   return useMutation({
     mutationFn: mentorApi.updateNotificationSettings,
     onSuccess: () => qc.invalidateQueries({ queryKey: ['notifications'] }),
