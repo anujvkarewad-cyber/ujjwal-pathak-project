@@ -72,6 +72,9 @@ export default function DailyTracker() {
     <th className="px-5 py-3">Hours</th>
     <th className="px-5 py-3">Subjects</th>
     <th className="px-5 py-3">Tomorrow Target</th>
+    <th className="px-5 py-3">Reason</th>
+    <th className="px-5 py-3">Mentor Support</th>
+    <th className="px-5 py-3">Submission Time</th>
     <th className="px-5 py-3">Submitted</th>
     <th className="px-5 py-3">Study Proof</th>
   </tr>
@@ -83,7 +86,7 @@ export default function DailyTracker() {
         key={i}
         className="border-b border-slate-100 dark:border-slate-800"
       >
-        <td className="px-5 py-3" colSpan={7}>
+        <td className="px-5 py-3" colSpan={10}>
           <Skeleton className="h-8 w-full" />
         </td>
       </tr>
@@ -125,10 +128,34 @@ export default function DailyTracker() {
         </td>
 
         <td className="px-5 py-3 text-slate-600 dark:text-slate-300">
-          {s.entry.tomorrowTarget || "—"}
-        </td>
+  {s.entry.tomorrowTarget || "—"}
+</td>
 
-        <td className="px-5 py-3">
+<td className="px-5 py-3 text-slate-600 dark:text-slate-300">
+  {s.entry.reason || "—"}
+</td>
+
+<td className="px-5 py-3">
+  {s.entry.mentorSupport ? (
+    <span
+      className={`inline-flex rounded-full px-2 py-1 text-xs font-semibold ${
+        s.entry.mentorSupport === "Yes"
+          ? "bg-emerald-100 text-emerald-700"
+          : "bg-slate-100 text-slate-600"
+      }`}
+    >
+      {s.entry.mentorSupport}
+    </span>
+  ) : (
+    "—"
+  )}
+</td>
+
+<td className="px-5 py-3 text-slate-600 dark:text-slate-300">
+  {s.entry.submissionTime || "—"}
+</td>
+
+<td className="px-5 py-3">
           {s.entry.submitted ? (
             <span className="inline-flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 text-xs font-semibold">
               <CheckCircle2 className="w-4 h-4" />
