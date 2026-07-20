@@ -132,8 +132,4 @@ export const useMarkFeedbackRead = () => {
     },
   });
 };
-  return useMutation({
-    mutationFn: mentorApi.updateNotificationSettings,
-    onSuccess: () => qc.invalidateQueries({ queryKey: ['notifications'] }),
-  });
-};
+
