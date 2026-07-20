@@ -91,6 +91,8 @@ export default function DailyTracker() {
 
   {!isLoading &&
     (data?.list || []).map((s) => (
+      {console.log(s.entry)}
+      return(        
       <tr
         key={s.id}
         className="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors"
