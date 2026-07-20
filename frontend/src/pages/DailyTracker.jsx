@@ -7,6 +7,10 @@ import { cn } from '@/utils/format';
 export default function DailyTracker() {
   const [batch, setBatch] = useState('All Batches');
   const [dayIndex, setDayIndex] = useState(13);
+  const [feedbackOpen, setFeedbackOpen] = useState(false);
+  const [selectedStudent, setSelectedStudent] = useState(null);
+  const [feedbackMessage, setFeedbackMessage] = useState("");
+  const [feedbackPriority, setFeedbackPriority] = useState("Normal");
   const { data: sData } = useStudents();
   const { data, isLoading } = useTrackerDay({ dayIndex, batch });
 
@@ -185,7 +189,12 @@ export default function DailyTracker() {
         <td className="px-5 py-3">
   <button
     className="rounded-lg bg-indigo-600 px-3 py-1 text-xs font-semibold text-white hover:bg-indigo-700"
-    onClick={() => alert(`Send Feedback to ${s.name}`)}
+    onClick={() => {
+  setSelectedStudent(s);
+  setFeedbackMessage("");
+  setFeedbackPriority("Normal");
+  setFeedbackOpen(true);
+}}
   >
     Send Feedback
   </button>
@@ -197,5 +206,67 @@ export default function DailyTracker() {
       </div>
     </div>
   </div>
+    {feedbackOpen && (
+  <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+    <div className="bg-white dark:bg-slate-900 rounded-xl shadow-xl w-[500px] p-6">
+
+      <h2 className="text-xl font-bold mb-4">
+        Send Feedback
+      </h2>
+
+      <p className="mb-3 text-sm text-slate-500">
+        Student:
+        <span className="font-semibold text-slate-900 dark:text-white ml-1">
+          {selectedStudent?.name}
+        </span>
+      </p>
+
+      <textarea
+        rows={5}
+        value={feedbackMessage}
+        onChange={(e) => setFeedbackMessage(e.target.value)}
+        placeholder="Write your feedback..."
+        className="w-full border rounded-lg p-3 mb-4 dark:bg-slate-800"
+      />
+
+      <select
+        value={feedbackPriority}
+        onChange={(e) => setFeedbackPriority(e.target.value)}
+        className="w-full border rounded-lg p-3 mb-5 dark:bg-slate-800"
+      >
+        <option>Normal</option>
+        <option>Important</option>
+        <option>Urgent</option>
+      </select>
+
+      <div className="flex justify-end gap-3">
+
+        <button
+          onClick={() => setFeedbackOpen(false)}
+          className="px-4 py-2 rounded-lg bg-slate-300"
+        >
+          Cancel
+        </button>
+
+        <button
+          onClick={() => {
+            console.log({
+              student: selectedStudent,
+              message: feedbackMessage,
+              priority: feedbackPriority
+            });
+
+            setFeedbackOpen(false);
+          }}
+          className="px-4 py-2 rounded-lg bg-blue-600 text-white"
+        >
+          Send
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+)}
 );
 }
