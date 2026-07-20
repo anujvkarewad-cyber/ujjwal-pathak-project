@@ -156,7 +156,9 @@ export default function DailyTracker() {
       </tr>
     ))}
 </tbody>
-          </table>
-        </div>
+                  </table>
       </div>
-      }
+    </div>
+  </div>
+);
+}
