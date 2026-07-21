@@ -72,10 +72,12 @@ const exportCSV = () => {
             </button>
           ))}
         </div>
-      <button
-  onClick={() => alert("Clicked")}
-  className="h-10 px-4 rounded-lg bg-blue-600 text-white"
+     <button
+  onClick={exportCSV}
+  data-testid="export-btn"
+  className="h-10 px-4 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm font-semibold inline-flex items-center gap-2 transition-colors"
 >
+  <Download className="w-4 h-4" />
   Export Report
 </button>
         <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5">
