@@ -4,6 +4,8 @@ import { BatchBarChart } from '@/components/charts/Charts';
 import { useBatchReport, useStudentReport } from '@/api/hooks';
 import { Skeleton } from '@/components/common/Skeleton';
 import { cn } from '@/utils/format';
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
 
 const TABS = [
   { key: 'batch', label: 'Batch Report', icon: FileBarChart2 },
@@ -14,45 +16,91 @@ export default function Reports() {
   const [tab, setTab] = useState('batch');
   const { data: batch, isLoading: batchLoading } = useBatchReport();
   const { data: studentReport, isLoading: srLoading } = useStudentReport();
-const exportCSV = () => {
-  const rows =
-    tab === "batch"
-      ? [
-          ["Batch", "Students", "Attendance", "Study Hours", "MCQ", "Health"],
-          ...(batch?.batches || []).map(b => [
-            b.batch,
-            b.students,
-            b.attendance,
-            b.studyHours,
-            b.mcq,
-            b.health,
-          ]),
-        ]
-      : [
-          ["Student ID", "Name", "Batch", "Attendance", "Study Hours", "MCQ", "Submission"],
-          ...(studentReport || []).map(s => [
-            s.studentId,
-            s.name,
-            s.batch,
-            s.attendance,
-            s.studyHours,
-            s.mcq,
-            s.submission,
-          ]),
-        ];
+const exportPDF = () => {
+  const doc = new jsPDF();
 
-  const csv = rows.map(r => r.join(",")).join("\n");
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(18);
+  doc.text("Ujjwal Pathak Mentorship", 14, 18);
 
-  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+  doc.setFontSize(13);
+  doc.text(
+    tab === "batch" ? "Batch Report" : "Student Report",
+    14,
+    28
+  );
 
-  const url = URL.createObjectURL(blob);
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  doc.text(`Generated: ${new Date().toLocaleString()}`, 14, 35);
 
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = `${tab}-report.csv`;
-  a.click();
+  if (tab === "batch") {
+    autoTable(doc, {
+      startY: 42,
+      head: [[
+        "Batch",
+        "Students",
+        "Attendance %",
+        "Study Hours",
+        "MCQ %",
+        "Health"
+      ]],
+      body: (batch?.batches || []).map(b => [
+        b.batch,
+        b.students,
+        `${b.attendance}%`,
+        `${b.studyHours}h`,
+        `${b.mcq}%`,
+        b.health,
+      ]),
+      theme: "grid",
+      headStyles: {
+        fillColor: [37, 99, 235],
+        textColor: 255,
+      },
+    });
+  } else {
+    autoTable(doc, {
+      startY: 42,
+      head: [[
+        "Student ID",
+        "Name",
+        "Batch",
+        "Attendance %",
+        "Study Hours",
+        "MCQ %",
+        "Submission %"
+      ]],
+      body: (studentReport || []).map(s => [
+        s.studentId,
+        s.name,
+        s.batch,
+        `${s.attendance}%`,
+        `${s.studyHours}h`,
+        `${s.mcq}%`,
+        `${s.submission}%`,
+      ]),
+      theme: "grid",
+      headStyles: {
+        fillColor: [37, 99, 235],
+        textColor: 255,
+      },
+    });
+  }
 
-  URL.revokeObjectURL(url);
+  const totalPages = doc.internal.getNumberOfPages();
+
+  for (let i = 1; i <= totalPages; i++) {
+    doc.setPage(i);
+    doc.setFontSize(9);
+    doc.text(
+      `Page ${i} of ${totalPages}`,
+      doc.internal.pageSize.getWidth() - 35,
+      doc.internal.pageSize.getHeight() - 10
+    );
+  }
+
+  doc.save(`${tab}-report.pdf`);
 };
   return (
     <div className="space-y-6" data-testid="reports-page">
@@ -73,7 +121,7 @@ const exportCSV = () => {
           ))}
         </div>
      <button
-  onClick={exportCSV}
+  onClick={exportPDF}
   data-testid="export-btn"
   className="h-10 px-4 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm font-semibold inline-flex items-center gap-2 transition-colors"
 >
