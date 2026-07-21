@@ -14,7 +14,46 @@ export default function Reports() {
   const [tab, setTab] = useState('batch');
   const { data: batch, isLoading: batchLoading } = useBatchReport();
   const { data: studentReport, isLoading: srLoading } = useStudentReport();
+const exportCSV = () => {
+  const rows =
+    tab === "batch"
+      ? [
+          ["Batch", "Students", "Attendance", "Study Hours", "MCQ", "Health"],
+          ...(batch?.batches || []).map(b => [
+            b.batch,
+            b.students,
+            b.attendance,
+            b.studyHours,
+            b.mcq,
+            b.health,
+          ]),
+        ]
+      : [
+          ["Student ID", "Name", "Batch", "Attendance", "Study Hours", "MCQ", "Submission"],
+          ...(studentReport || []).map(s => [
+            s.studentId,
+            s.name,
+            s.batch,
+            s.attendance,
+            s.studyHours,
+            s.mcq,
+            s.submission,
+          ]),
+        ];
 
+  const csv = rows.map(r => r.join(",")).join("\n");
+
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `${tab}-report.csv`;
+  a.click();
+
+  URL.revokeObjectURL(url);
+};
   return (
     <div className="space-y-6" data-testid="reports-page">
       <div className="flex flex-wrap items-center justify-between gap-3">
@@ -33,9 +72,11 @@ export default function Reports() {
             </button>
           ))}
         </div>
-        <button data-testid="export-btn" className="h-10 px-4 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm font-semibold inline-flex items-center gap-2 transition-colors">
-          <Download className="w-4 h-4" /> Export Report
-        </button>
+        <button
+  onClick={exportCSV}
+  data-testid="export-btn"
+  className="h-10 px-4 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm font-semibold inline-flex items-center gap-2 transition-colors"
+>
       </div>
 
       {tab === 'batch' ? (
