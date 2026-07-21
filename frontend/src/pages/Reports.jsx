@@ -43,7 +43,7 @@ export default function Reports() {
           <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5">
             <h3 className="font-heading font-semibold text-slate-900 dark:text-white">Batch Performance</h3>
             <p className="text-xs text-slate-500 dark:text-slate-400 mb-2 mt-0.5">Comparative view — attendance & MCQ accuracy</p>
-            {batchLoading || !batch ? <Skeleton className="h-[260px] w-full" /> : <BatchBarChart data={batch} />}
+            {batchLoading || !batch ? <Skeleton className="h-[260px] w-full" /> : <BatchBarChart data={batch.batches} />}
           </div>
           <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
             <table className="w-full text-sm">
@@ -57,9 +57,9 @@ export default function Reports() {
                 </tr>
               </thead>
               <tbody>
-                {(batch || []).map(b => (
-                  <tr key={b.name} className="border-b border-slate-100 dark:border-slate-800">
-                    <td className="px-5 py-3 font-semibold text-slate-900 dark:text-white">{b.name}</td>
+                {(batch?.batches || []).map(b => (
+                  <tr key={b.batch} className="border-b border-slate-100 dark:border-slate-800">
+                    <td className="px-5 py-3 font-semibold text-slate-900 dark:text-white">{b.batch}</td>
                     <td className="px-5 py-3 text-slate-700 dark:text-slate-300">{b.students}</td>
                     <td className="px-5 py-3 text-slate-700 dark:text-slate-300">{b.attendance}%</td>
                     <td className="px-5 py-3 text-slate-700 dark:text-slate-300">{b.mcq}%</td>
@@ -96,21 +96,23 @@ export default function Reports() {
                   <tr key={i} className="border-b border-slate-100 dark:border-slate-800"><td className="px-5 py-3" colSpan={6}><Skeleton className="h-8 w-full" /></td></tr>
                 ))}
                 {(studentReport || []).slice(0, 20).map(s => (
-                  <tr key={s.id} className="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
+                  <tr key={s.studentId} className="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
                     <td className="px-5 py-3">
                       <div className="flex items-center gap-3">
-                        <img src={s.avatar} alt="" className="w-8 h-8 rounded-full object-cover" />
+                       <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold">
+  {s.name?.charAt(0)}
+</div>
                         <div>
                           <div className="font-semibold text-slate-900 dark:text-white">{s.name}</div>
-                          <div className="text-xs text-slate-500">{s.id}</div>
+                          <div className="text-xs text-slate-500">{s.studentId}</div>
                         </div>
                       </div>
                     </td>
                     <td className="px-5 py-3 text-slate-600 dark:text-slate-300">{s.batch}</td>
                     <td className="px-5 py-3 text-slate-700 dark:text-slate-200">{s.attendance}%</td>
                     <td className="px-5 py-3 text-slate-700 dark:text-slate-200">{s.studyHours}h</td>
-                    <td className="px-5 py-3 text-slate-700 dark:text-slate-200">{s.mcqAccuracy}%</td>
-                    <td className="px-5 py-3 text-slate-700 dark:text-slate-200">{s.submissionRate}%</td>
+                    <td className="px-5 py-3 text-slate-700 dark:text-slate-200">{s.mcq}%</td>
+                    <td className="px-5 py-3 text-slate-700 dark:text-slate-200">{s.submission}%</td>
                   </tr>
                 ))}
               </tbody>
