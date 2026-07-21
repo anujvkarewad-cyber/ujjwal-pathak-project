@@ -256,30 +256,40 @@ export default function DailyTracker() {
         </button>
 
         <button
-          onClick={() => {
-            sendFeedbackMutation.mutate(
-  {
-    studentId: selectedStudent.id,
-    mentor: "Ujjwal Sir",
-    message: feedbackMessage,
-    priority: feedbackPriority,
-  },
-  {
-    onSuccess: () => {
-      alert("Feedback sent successfully!");
-      setFeedbackOpen(false);
-    },
-    onError: (err) => {
-      alert("Failed to send feedback.");
-      console.error(err);
-    },
-  }
-);
-          }}
-          className="px-4 py-2 rounded-lg bg-blue-600 text-white"
-        >
-          Send
-        </button>
+  onClick={() => {
+    console.log("SEND BUTTON CLICKED");
+    console.log("Student =", selectedStudent);
+    console.log("Payload =", {
+      studentId: selectedStudent.id,
+      mentor: "Ujjwal Sir",
+      message: feedbackMessage,
+      priority: feedbackPriority,
+    });
+
+    sendFeedbackMutation.mutate(
+      {
+        studentId: selectedStudent.id,
+        mentor: "Ujjwal Sir",
+        message: feedbackMessage,
+        priority: feedbackPriority,
+      },
+      {
+        onSuccess: (res) => {
+          console.log("SUCCESS", res);
+          alert("Feedback sent successfully!");
+          setFeedbackOpen(false);
+        },
+        onError: (err) => {
+          console.error("ERROR", err);
+          alert("Failed to send feedback.");
+        },
+      }
+    );
+  }}
+  className="px-4 py-2 rounded-lg bg-blue-600 text-white"
+>
+  Send
+</button>
 
       </div>
 
