@@ -80,6 +80,9 @@ const exportCSV = () => {
   <Download className="w-4 h-4" />
   Export Report
 </button>
+      </div>
+      {tab === 'batch' ? (
+  <>
         <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5">
             <h3 className="font-heading font-semibold text-slate-900 dark:text-white">Batch Performance</h3>
             <p className="text-xs text-slate-500 dark:text-slate-400 mb-2 mt-0.5">Comparative view — attendance & MCQ accuracy</p>
