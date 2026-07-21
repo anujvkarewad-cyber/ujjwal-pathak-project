@@ -72,16 +72,15 @@ const exportCSV = () => {
             </button>
           ))}
         </div>
-        <button
+       <button
   onClick={exportCSV}
   data-testid="export-btn"
   className="h-10 px-4 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm font-semibold inline-flex items-center gap-2 transition-colors"
 >
-      </div>
-
-      {tab === 'batch' ? (
-        <>
-          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5">
+  <Download className="w-4 h-4" />
+  Export Report
+</button>
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5">
             <h3 className="font-heading font-semibold text-slate-900 dark:text-white">Batch Performance</h3>
             <p className="text-xs text-slate-500 dark:text-slate-400 mb-2 mt-0.5">Comparative view — attendance & MCQ accuracy</p>
             {batchLoading || !batch ? <Skeleton className="h-[260px] w-full" /> : <BatchBarChart data={batch.batches} />}
