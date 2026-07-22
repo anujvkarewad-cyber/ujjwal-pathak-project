@@ -1,8 +1,25 @@
 import { Search, Bell, Sun, Moon, Menu } from 'lucide-react';
 import { useTheme } from '@/hooks/useTheme';
+import { useState, useEffect } from 'react';
+import { getMentorNotifications } from '@/api/dashboard';
 
 export default function Topbar({ onMenu, title, subtitle }) {
   const { theme, toggle } = useTheme();
+  const [notifications, setNotifications] = useState([]);
+  const [open, setOpen] = useState(false);
+ 
+useEffect(() => {
+  loadNotifications();
+}, []);
+
+async function loadNotifications() {
+  try {
+    const data = await getMentorNotifications();
+    setNotifications(data || []);
+  } catch (e) {
+    console.error(e);
+  }
+}
   return (
     <header className="h-16 flex items-center gap-4 px-4 sm:px-6 lg:px-8 border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur sticky top-0 z-20">
       <button
@@ -39,14 +56,42 @@ export default function Topbar({ onMenu, title, subtitle }) {
           {theme === 'dark' ? <Sun className="w-[18px] h-[18px]" /> : <Moon className="w-[18px] h-[18px]" />}
         </button>
 
-        <button
-          className="relative p-2.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
-          aria-label="Notifications"
-          data-testid="topbar-notifications"
-        >
-          <Bell className="w-[18px] h-[18px]" />
-          <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-[#2563EB] ring-2 ring-white dark:ring-slate-900" />
-        </button>
+        <div className="relative">
+
+  <button
+    onClick={() => setOpen(!open)}
+    className="relative p-2.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+    aria-label="Notifications"
+  >
+    <Bell className="w-[18px] h-[18px]" />
+
+    {notifications.length > 0 && (
+      <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] rounded-full w-5 h-5 flex items-center justify-center">
+        {notifications.length}
+      </span>
+    )}
+  </button>
+
+  {open && (
+    <div className="absolute right-0 mt-2 w-96 bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 z-50">
+
+      {notifications.length === 0 ? (
+        <div className="p-4 text-sm text-slate-500">
+          No notifications
+        </div>
+      ) : (
+        notifications.map((n, i) => (
+          <div key={i} className="p-4 border-b border-slate-200 dark:border-slate-700">
+            <div className="font-semibold">{n.title}</div>
+            <div className="text-sm text-slate-500">{n.message}</div>
+          </div>
+        ))
+      )}
+
+    </div>
+  )}
+
+</div>
       </div>
     </header>
   );
