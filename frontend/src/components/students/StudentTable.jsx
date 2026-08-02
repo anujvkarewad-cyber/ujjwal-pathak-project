@@ -86,7 +86,6 @@ export default function StudentTable() {
               <th className="px-5 py-3">Batch</th>
               <th className="px-5 py-3">Group</th>
               <th className="px-5 py-3">Attendance</th>
-              <th className="px-5 py-3">MCQ %</th>
               <th className="px-5 py-3">Status</th>
               <th className="px-5 py-3">Risk</th>
               <th className="px-5 py-3 text-right">Actions</th>
@@ -95,7 +94,7 @@ export default function StudentTable() {
           <tbody>
             {isLoading && Array.from({ length: 5 }).map((_, i) => (
               <tr key={i} className="border-b border-slate-100 dark:border-slate-800">
-                <td className="px-5 py-3" colSpan={8}><Skeleton className="h-8 w-full" /></td>
+                <td className="px-5 py-3" colSpan={7}><Skeleton className="h-8 w-full" /></td>
               </tr>
             ))}
             {!isLoading && rows.map((s) => (
@@ -119,9 +118,6 @@ export default function StudentTable() {
                     <span className="text-xs font-semibold text-slate-700 dark:text-slate-200 w-8 text-right">{s.attendance}%</span>
                   </div>
                 </td>
-                <td className="px-5 py-3">
-                  <span className="text-sm font-semibold text-slate-800 dark:text-slate-200">{s.mcqAccuracy}%</span>
-                </td>
                 <td className="px-5 py-3"><StatusBadge status={s.status} /></td>
                 <td className="px-5 py-3"><RiskBadge risk={s.risk} /></td>
                 <td className="px-5 py-3 text-right">
@@ -132,7 +128,7 @@ export default function StudentTable() {
               </tr>
             ))}
             {!isLoading && rows.length === 0 && (
-              <tr><td colSpan={8} className="px-5 py-16 text-center text-sm text-slate-500 dark:text-slate-400">No students match your filters.</td></tr>
+              <tr><td colSpan={7} className="px-5 py-16 text-center text-sm text-slate-500 dark:text-slate-400">No students match your filters.</td></tr>
             )}
           </tbody>
         </table>
