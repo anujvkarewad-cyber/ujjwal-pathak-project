@@ -431,14 +431,23 @@ function enrichStudents_(ss) {
     const monthly = aggregateMonthly_(tracker.length ? tracker : []);
 
     // Metrics
-    const submittedCount = tracker.filter(t => t.submitted).length;
-    const submissionRate = tracker.length ? Math.round((submittedCount / tracker.length) * 100) : 0;
+    // Only judge a student over the days since they actually joined — a
+    // student who joined today (or a few days ago) shouldn't be scored
+    // against days before they even enrolled.
+    const joinDate = s.joinedOn || '';
+    const effectiveDays = joinDate ? days.filter(d => d >= joinDate) : days;
+    const effectiveTracker = joinDate ? tracker.filter(t => t.date >= joinDate) : tracker;
+    const hasHistory = effectiveDays.length > 0;
 
     // Attendance % — from Attendance tab in window, or fallback to submissionRate
-    const attWindow = myAttendance.filter(a => days.indexOf(a.date) >= 0);
-    const attRate = attWindow.length
-      ? Math.round((attWindow.filter(a => a.present).length / days.length) * 100)
-      : submissionRate;
+    const attWindow = myAttendance.filter(a => effectiveDays.indexOf(a.date) >= 0);
+    const effectiveSubmitted = effectiveTracker.filter(t => t.submitted).length;
+    const effectiveSubmissionRate = hasHistory ? Math.round((effectiveSubmitted / effectiveDays.length) * 100) : 100;
+    const attRate = !hasHistory
+      ? 100
+      : attWindow.length
+        ? Math.round((attWindow.filter(a => a.present).length / effectiveDays.length) * 100)
+        : effectiveSubmissionRate;
 
     // MCQ % — average from MCQ tab in window
     const mcqWindow = myMcq.filter(m => days.indexOf(m.date) >= 0);
@@ -450,20 +459,23 @@ function enrichStudents_(ss) {
     const submitted7 = last7.filter(t => t.submitted);
     const avgHours = submitted7.length ? round1_(submitted7.reduce((a, x) => a + x.hours, 0) / submitted7.length) : 0;
 
-    // Risk assessment
+    // Risk assessment — skip flagging until the student has at least one day
+    // of history to be fairly judged on.
     let risk = 'Healthy';
-    if (attRate < 70) risk = 'At Risk';
-    else if (attRate < 80) risk = 'Watch';
+    if (hasHistory) {
+      if (attRate < 70) risk = 'At Risk';
+      else if (attRate < 80) risk = 'Watch';
+    }
 
     // Status
     const lastSubmitted = tracker.slice(-3).some(t => t.submitted);
-    const status = risk === 'At Risk' ? 'At Risk' : (lastSubmitted ? 'Active' : 'Inactive');
+    const status = risk === 'At Risk' ? 'At Risk' : (!hasHistory || lastSubmitted ? 'Active' : 'Inactive');
 
     return Object.assign({}, s, {
       attendance: attRate,
       studyHours: avgHours,
       mcqAccuracy,
-      submissionRate,
+      submissionRate: effectiveSubmissionRate,
       risk,
       status,
       weekly,
