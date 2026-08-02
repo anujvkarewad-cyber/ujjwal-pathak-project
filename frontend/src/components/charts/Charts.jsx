@@ -79,7 +79,6 @@ export function BatchBarChart({ data }) {
         <Tooltip content={<TooltipStyle suffix="%" />} cursor={{ fill: 'rgba(37,99,235,0.06)' }} />
         <Legend iconType="circle" wrapperStyle={{ fontSize: 12 }} />
         <Bar dataKey="attendance" fill="#2563EB" name="Attendance" radius={[6, 6, 0, 0]} />
-        <Bar dataKey="mcq" fill="#10B981" name="MCQ Accuracy" radius={[6, 6, 0, 0]} />
       </BarChart>
     </ResponsiveContainer>
   );
@@ -95,7 +94,6 @@ export function StudentWeeklyLine({ data }) {
         <Tooltip content={<TooltipStyle />} />
         <Legend iconType="circle" wrapperStyle={{ fontSize: 12 }} />
         <Line type="monotone" dataKey="hours" stroke="#2563EB" strokeWidth={2.5} dot={{ r: 4 }} name="Study Hours" />
-        <Line type="monotone" dataKey="mcq" stroke="#10B981" strokeWidth={2.5} dot={{ r: 4 }} name="MCQ %" />
       </LineChart>
     </ResponsiveContainer>
   );
@@ -111,7 +109,6 @@ export function StudentMonthlyBar({ data }) {
         <Tooltip content={<TooltipStyle />} cursor={{ fill: 'rgba(37,99,235,0.06)' }} />
         <Legend iconType="circle" wrapperStyle={{ fontSize: 12 }} />
         <Bar dataKey="attendance" fill="#2563EB" name="Attendance %" radius={[6, 6, 0, 0]} />
-        <Bar dataKey="mcq" fill="#10B981" name="MCQ %" radius={[6, 6, 0, 0]} />
         <Bar dataKey="hours" fill="#F59E0B" name="Hours" radius={[6, 6, 0, 0]} />
       </BarChart>
     </ResponsiveContainer>
@@ -122,7 +119,6 @@ export function PerformanceRadar({ student }) {
   const data = [
     { subject: 'Attendance', value: student.attendance, full: 100 },
     { subject: 'Study Hours', value: Math.min(100, student.studyHours * 10), full: 100 },
-    { subject: 'MCQ', value: student.mcqAccuracy, full: 100 },
     { subject: 'Submissions', value: student.submissionRate, full: 100 },
     { subject: 'Consistency', value: Math.round((student.attendance + student.submissionRate) / 2), full: 100 },
   ];
