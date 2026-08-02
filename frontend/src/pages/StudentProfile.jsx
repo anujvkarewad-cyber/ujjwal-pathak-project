@@ -121,8 +121,8 @@ export default function StudentProfile() {
       </div>
 
       <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5">
-        <h3 className="font-heading font-semibold text-slate-900 dark:text-white">Daily Tracker · Last 14 days</h3>
-        <div className="mt-4 grid grid-cols-7 sm:grid-cols-14 gap-1.5">
+        <h3 className="font-heading font-semibold text-slate-900 dark:text-white">Daily Tracker · Last 5 days</h3>
+        <div className="mt-4 grid grid-cols-5 gap-1.5">
           {s.tracker.map((d, i) => (
             <div key={i} title={`${d.date} · ${d.hours}h`} className={cn('aspect-square rounded-md flex items-center justify-center text-[10px] font-semibold', d.submitted ? 'bg-emerald-500/90 text-white' : 'bg-rose-100 dark:bg-rose-500/20 text-rose-600 dark:text-rose-400')}>
               {d.date.slice(-2)}
