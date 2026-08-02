@@ -1,9 +1,8 @@
-import { CheckCircle2, AlertTriangle, Target, Calendar, StickyNote, Send } from 'lucide-react';
+import { CheckCircle2, AlertTriangle, Calendar, StickyNote, Send } from 'lucide-react';
 import { cn } from '@/utils/format';
 
 const ICONS = {
   submission: { icon: Send, tone: 'bg-blue-50 text-[#2563EB] dark:bg-blue-500/10 dark:text-blue-400' },
-  mcq: { icon: Target, tone: 'bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400' },
   risk: { icon: AlertTriangle, tone: 'bg-rose-50 text-rose-600 dark:bg-rose-500/10 dark:text-rose-400' },
   attendance: { icon: CheckCircle2, tone: 'bg-violet-50 text-violet-600 dark:bg-violet-500/10 dark:text-violet-400' },
   note: { icon: StickyNote, tone: 'bg-amber-50 text-amber-600 dark:bg-amber-500/10 dark:text-amber-400' },
@@ -39,3 +38,4 @@ export default function RecentActivity({ items }) {
     </div>
   );
 }
+
