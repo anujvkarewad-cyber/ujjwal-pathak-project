@@ -26,8 +26,8 @@ export default function StudentProfile() {
       <div className="space-y-4">
         <Skeleton className="h-6 w-32" />
         <Skeleton className="h-40 w-full" />
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          {Array.from({ length: 4 }).map((_, i) => <Skeleton key={i} className="h-24 w-full" />)}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+          {Array.from({ length: 3 }).map((_, i) => <Skeleton key={i} className="h-24 w-full" />)}
         </div>
       </div>
     );
@@ -78,17 +78,16 @@ export default function StudentProfile() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
         <Stat label="Attendance" value={s.attendance} suffix="%" tone={s.attendance >= 80 ? 'text-emerald-600 dark:text-emerald-400' : 'text-amber-600 dark:text-amber-400'} />
         <Stat label="Study Hours / day" value={s.studyHours} suffix="h" />
-        <Stat label="MCQ Accuracy" value={s.mcqAccuracy} suffix="%" />
         <Stat label="Weekly Submission" value={s.submissionRate} suffix="%" />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <div className="lg:col-span-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5">
           <h3 className="font-heading font-semibold text-slate-900 dark:text-white">Weekly Progress</h3>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mb-2 mt-0.5">Daily study hours & MCQ accuracy</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mb-2 mt-0.5">Daily study hours</p>
           <StudentWeeklyLine data={s.weekly} />
         </div>
         <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5">
@@ -101,7 +100,7 @@ export default function StudentProfile() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <div className="lg:col-span-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5">
           <h3 className="font-heading font-semibold text-slate-900 dark:text-white">Monthly Progress</h3>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mb-2 mt-0.5">Attendance, MCQ & hours by week</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mb-2 mt-0.5">Attendance & hours by week</p>
           <StudentMonthlyBar data={s.monthly} />
         </div>
         <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5">
@@ -125,7 +124,7 @@ export default function StudentProfile() {
         <h3 className="font-heading font-semibold text-slate-900 dark:text-white">Daily Tracker · Last 14 days</h3>
         <div className="mt-4 grid grid-cols-7 sm:grid-cols-14 gap-1.5">
           {s.tracker.map((d, i) => (
-            <div key={i} title={`${d.date} · ${d.hours}h · ${d.mcqAccuracy}%`} className={cn('aspect-square rounded-md flex items-center justify-center text-[10px] font-semibold', d.submitted ? 'bg-emerald-500/90 text-white' : 'bg-rose-100 dark:bg-rose-500/20 text-rose-600 dark:text-rose-400')}>
+            <div key={i} title={`${d.date} · ${d.hours}h`} className={cn('aspect-square rounded-md flex items-center justify-center text-[10px] font-semibold', d.submitted ? 'bg-emerald-500/90 text-white' : 'bg-rose-100 dark:bg-rose-500/20 text-rose-600 dark:text-rose-400')}>
               {d.date.slice(-2)}
             </div>
           ))}
