@@ -30,19 +30,16 @@ function generateStudents(count = 50) {
     const last = LAST_NAMES[Math.floor(r(2) * LAST_NAMES.length)];
     const attendance = Math.floor(60 + r(3) * 40);
     const studyHours = +(2 + r(4) * 8).toFixed(1);
-    const mcqAccuracy = Math.floor(50 + r(5) * 45);
     const submissionRate = Math.floor(50 + r(6) * 50);
-    const risk = attendance < 70 || mcqAccuracy < 60 ? 'At Risk' : (attendance < 80 ? 'Watch' : 'Healthy');
+    const risk = attendance < 70 ? 'At Risk' : (attendance < 80 ? 'Watch' : 'Healthy');
     const status = risk === 'At Risk' ? 'At Risk' : (r(7) > 0.15 ? 'Active' : 'Inactive');
     const weekly = Array.from({ length: 7 }, (_, d) => ({
       day: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'][d],
       hours: +(1 + seededRandom(i * 10 + d) * 9).toFixed(1),
-      mcq: Math.floor(40 + seededRandom(i * 20 + d) * 55),
     }));
     const monthly = Array.from({ length: 4 }, (_, w) => ({
       week: `Week ${w + 1}`,
       attendance: Math.floor(60 + seededRandom(i * 30 + w) * 40),
-      mcq: Math.floor(50 + seededRandom(i * 40 + w) * 45),
       hours: +(15 + seededRandom(i * 50 + w) * 40).toFixed(1),
     }));
     students.push({
@@ -59,7 +56,6 @@ function generateStudents(count = 50) {
       risk,
       attendance,
       studyHours,
-      mcqAccuracy,
       submissionRate,
       joinedOn: `2025-${String(Math.floor(1 + r(12) * 9)).padStart(2, '0')}-${String(Math.floor(1 + r(13) * 27)).padStart(2, '0')}`,
       city: ['Mumbai', 'Delhi', 'Bengaluru', 'Chennai', 'Pune', 'Kolkata', 'Hyderabad', 'Ahmedabad'][Math.floor(r(14) * 8)],
@@ -73,8 +69,6 @@ function generateStudents(count = 50) {
         date: `2026-02-${String(d + 1).padStart(2, '0')}`,
         submitted: seededRandom(i * 60 + d) > 0.2,
         hours: +(1 + seededRandom(i * 70 + d) * 8).toFixed(1),
-        mcqCount: Math.floor(20 + seededRandom(i * 80 + d) * 80),
-        mcqAccuracy: Math.floor(50 + seededRandom(i * 90 + d) * 45),
       })),
     });
   }
