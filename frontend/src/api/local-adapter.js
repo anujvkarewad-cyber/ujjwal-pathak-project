@@ -34,15 +34,13 @@ const state = {
 function scoreForMode(s, mode) {
   if (mode === 'weekly') {
     const avgH = s.weekly.reduce((a, w) => a + w.hours, 0) / s.weekly.length;
-    const avgM = s.weekly.reduce((a, w) => a + w.mcq, 0) / s.weekly.length;
-    return Math.round(avgH * 5 + avgM);
+    return Math.round(avgH * 10);
   }
   if (mode === 'monthly') {
     const avgA = s.monthly.reduce((a, m) => a + m.attendance, 0) / s.monthly.length;
-    const avgM = s.monthly.reduce((a, m) => a + m.mcq, 0) / s.monthly.length;
-    return Math.round((avgA + avgM) / 2);
+    return Math.round(avgA);
   }
-  return Math.round((s.attendance + s.mcqAccuracy + s.submissionRate) / 3);
+  return Math.round((s.attendance + s.submissionRate) / 2);
 }
 
 export function handle(action, payload = {}) {
@@ -135,7 +133,7 @@ export function handle(action, payload = {}) {
       return state.students.map(s => ({
         id: s.id, name: s.name, avatar: s.avatar, batch: s.batch,
         attendance: s.attendance, studyHours: s.studyHours,
-        mcqAccuracy: s.mcqAccuracy, submissionRate: s.submissionRate,
+        submissionRate: s.submissionRate,
       }));
 
     // ── Mentor / Settings ─────────────────────────────────────────────────
