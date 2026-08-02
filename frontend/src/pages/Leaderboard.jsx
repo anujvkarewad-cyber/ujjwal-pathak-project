@@ -71,7 +71,6 @@ export default function Leaderboard() {
               <th className="px-5 py-3">Student</th>
               <th className="px-5 py-3">Batch</th>
               <th className="px-5 py-3">Attendance</th>
-              <th className="px-5 py-3">MCQ</th>
               <th className="px-5 py-3 text-right">Score</th>
             </tr>
           </thead>
@@ -87,7 +86,6 @@ export default function Leaderboard() {
                 </td>
                 <td className="px-5 py-3 text-slate-600 dark:text-slate-300">{s.batch}</td>
                 <td className="px-5 py-3 text-slate-700 dark:text-slate-200">{s.attendance}%</td>
-                <td className="px-5 py-3 text-slate-700 dark:text-slate-200">{s.mcqAccuracy}%</td>
                 <td className="px-5 py-3 text-right font-heading font-bold text-[#2563EB]">{s.score}</td>
               </tr>
             ))}
@@ -97,3 +95,4 @@ export default function Leaderboard() {
     </div>
   );
 }
+
