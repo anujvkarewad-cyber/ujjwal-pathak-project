@@ -42,7 +42,6 @@ const exportPDF = () => {
         "Students",
         "Attendance %",
         "Study Hours",
-        "MCQ %",
         "Health"
       ]],
       body: (batch?.batches || []).map(b => [
@@ -50,7 +49,6 @@ const exportPDF = () => {
         b.students,
         `${b.attendance}%`,
         `${b.studyHours}h`,
-        `${b.mcq}%`,
         b.health,
       ]),
       theme: "grid",
@@ -68,7 +66,6 @@ const exportPDF = () => {
         "Batch",
         "Attendance %",
         "Study Hours",
-        "MCQ %",
         "Submission %"
       ]],
       body: (studentReport || []).map(s => [
@@ -77,7 +74,6 @@ const exportPDF = () => {
         s.batch,
         `${s.attendance}%`,
         `${s.studyHours}h`,
-        `${s.mcq}%`,
         `${s.submission}%`,
       ]),
       theme: "grid",
@@ -133,7 +129,7 @@ const exportPDF = () => {
   <>
         <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5">
             <h3 className="font-heading font-semibold text-slate-900 dark:text-white">Batch Performance</h3>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mb-2 mt-0.5">Comparative view — attendance & MCQ accuracy</p>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mb-2 mt-0.5">Comparative view — attendance across batches</p>
             {batchLoading || !batch ? <Skeleton className="h-[260px] w-full" /> : <BatchBarChart data={batch.batches} />}
           </div>
           <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
@@ -143,7 +139,6 @@ const exportPDF = () => {
                   <th className="px-5 py-3">Batch</th>
                   <th className="px-5 py-3">Students</th>
                   <th className="px-5 py-3">Avg Attendance</th>
-                  <th className="px-5 py-3">Avg MCQ</th>
                   <th className="px-5 py-3">Health</th>
                 </tr>
               </thead>
@@ -153,7 +148,6 @@ const exportPDF = () => {
                     <td className="px-5 py-3 font-semibold text-slate-900 dark:text-white">{b.batch}</td>
                     <td className="px-5 py-3 text-slate-700 dark:text-slate-300">{b.students}</td>
                     <td className="px-5 py-3 text-slate-700 dark:text-slate-300">{b.attendance}%</td>
-                    <td className="px-5 py-3 text-slate-700 dark:text-slate-300">{b.mcq}%</td>
                     <td className="px-5 py-3">
                       <span className={cn(
                         'inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium border',
@@ -178,13 +172,12 @@ const exportPDF = () => {
                   <th className="px-5 py-3">Batch</th>
                   <th className="px-5 py-3">Attendance</th>
                   <th className="px-5 py-3">Study Hours</th>
-                  <th className="px-5 py-3">MCQ %</th>
                   <th className="px-5 py-3">Submission %</th>
                 </tr>
               </thead>
               <tbody>
                 {srLoading && Array.from({ length: 5 }).map((_, i) => (
-                  <tr key={i} className="border-b border-slate-100 dark:border-slate-800"><td className="px-5 py-3" colSpan={6}><Skeleton className="h-8 w-full" /></td></tr>
+                  <tr key={i} className="border-b border-slate-100 dark:border-slate-800"><td className="px-5 py-3" colSpan={5}><Skeleton className="h-8 w-full" /></td></tr>
                 ))}
                 {(studentReport || []).slice(0, 20).map(s => (
                   <tr key={s.studentId} className="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
@@ -202,7 +195,6 @@ const exportPDF = () => {
                     <td className="px-5 py-3 text-slate-600 dark:text-slate-300">{s.batch}</td>
                     <td className="px-5 py-3 text-slate-700 dark:text-slate-200">{s.attendance}%</td>
                     <td className="px-5 py-3 text-slate-700 dark:text-slate-200">{s.studyHours}h</td>
-                    <td className="px-5 py-3 text-slate-700 dark:text-slate-200">{s.mcq}%</td>
                     <td className="px-5 py-3 text-slate-700 dark:text-slate-200">{s.submission}%</td>
                   </tr>
                 ))}
