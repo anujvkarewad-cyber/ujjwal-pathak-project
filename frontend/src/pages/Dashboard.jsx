@@ -1,4 +1,4 @@
-import { Users, UserCheck, ClipboardList, AlertTriangle, Clock, CalendarCheck, Target, LineChart } from 'lucide-react';
+import { Users, UserCheck, ClipboardList, AlertTriangle, Clock, CalendarCheck, LineChart } from 'lucide-react';
 import KPICard from '@/components/dashboard/KPICard';
 import RecentActivity from '@/components/dashboard/RecentActivity';
 import UpcomingTasks from '@/components/dashboard/UpcomingTasks';
@@ -33,7 +33,6 @@ export default function Dashboard() {
     { icon: AlertTriangle, label: 'At Risk', value: k.atRisk, tone: 'rose', delta: -1, testid: 'kpi-risk' },
     { icon: Clock, label: 'Avg Study Hours', value: k.avgHours, suffix: 'h', tone: 'violet', delta: 6, testid: 'kpi-hours' },
     { icon: CalendarCheck, label: 'Overall Attendance', value: k.avgAttendance, suffix: '%', tone: 'emerald', delta: 3, testid: 'kpi-attendance' },
-    { icon: Target, label: 'Overall MCQ Accuracy', value: k.avgMcq, suffix: '%', tone: 'blue', delta: 2, testid: 'kpi-mcq' },
     { icon: LineChart, label: 'Weekly Submission', value: k.weeklySub, suffix: '%', tone: 'slate', delta: 5, testid: 'kpi-submission' },
   ] : [];
 
@@ -41,7 +40,7 @@ export default function Dashboard() {
     <div className="space-y-6" data-testid="dashboard-page">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {kLoading
-          ? Array.from({ length: 8 }).map((_, i) => <CardSkeleton key={i} />)
+          ? Array.from({ length: 7 }).map((_, i) => <CardSkeleton key={i} />)
           : cards.map((c, i) => <KPICard key={i} {...c} />)}
       </div>
 
@@ -58,7 +57,7 @@ export default function Dashboard() {
         <ChartCard title="Weekly Study Hours" subtitle="Avg hours vs 7h target" testid="weekly-study">
           {weekly ? <WeeklyStudyBarChart data={weekly} /> : <Skeleton className="h-[260px] w-full" />}
         </ChartCard>
-        <ChartCard title="Batch Overview" subtitle="Attendance & MCQ accuracy by batch" testid="batch-overview" wide>
+        <ChartCard title="Batch Overview" subtitle="Attendance by batch" testid="batch-overview" wide>
           {batch ? <BatchBarChart data={batch} /> : <Skeleton className="h-[260px] w-full" />}
         </ChartCard>
       </div>
