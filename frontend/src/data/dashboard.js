@@ -7,14 +7,12 @@ export const kpis = () => {
   const pending = students.filter(s => !s.tracker[s.tracker.length - 1].submitted).length;
   const avgHours = +(students.reduce((a, s) => a + s.studyHours, 0) / total).toFixed(1);
   const avgAttendance = Math.round(students.reduce((a, s) => a + s.attendance, 0) / total);
-  const avgMcq = Math.round(students.reduce((a, s) => a + s.mcqAccuracy, 0) / total);
   const weeklySub = Math.round(students.reduce((a, s) => a + s.submissionRate, 0) / total);
-  return { total, active, atRisk, pending, avgHours, avgAttendance, avgMcq, weeklySub };
+  return { total, active, atRisk, pending, avgHours, avgAttendance, weeklySub };
 };
 
 export const recentActivity = [
   { id: 1, type: 'submission', student: 'Aarav Sharma', action: 'submitted daily tracker', time: '2 min ago', avatar: 0 },
-  { id: 2, type: 'mcq', student: 'Diya Patel', action: 'completed 50 MCQs — 92% accuracy', time: '18 min ago', avatar: 1 },
   { id: 3, type: 'risk', student: 'Rohan Verma', action: 'flagged At Risk (attendance dropped)', time: '1 hr ago', avatar: 2 },
   { id: 4, type: 'attendance', student: 'Kavya Iyer', action: 'marked present for morning session', time: '2 hr ago', avatar: 3 },
   { id: 5, type: 'note', student: 'Ishaan Nair', action: 'received a mentor note', time: '3 hr ago', avatar: 4 },
@@ -50,10 +48,10 @@ export const performanceMix = [
 ];
 
 export const batchOverview = [
-  { name: 'Super 30', students: 30, attendance: 92, mcq: 84 },
-  { name: 'Super 11', students: 11, attendance: 88, mcq: 79 },
-  { name: 'Last 15 Days', students: 4, attendance: 76, mcq: 71 },
-  { name: 'Last 40 Days', students: 5, attendance: 81, mcq: 74 },
+  { name: 'Super 30', students: 30, attendance: 92 },
+  { name: 'Super 11', students: 11, attendance: 88 },
+  { name: 'Last 15 Days', students: 4, attendance: 76 },
+  { name: 'Last 40 Days', students: 5, attendance: 81 },
 ];
 
 export const upcomingTasks = [
@@ -61,5 +59,4 @@ export const upcomingTasks = [
   { id: 2, title: 'Publish mock test results', due: 'Tomorrow', priority: 'medium' },
   { id: 3, title: 'Send progress reports to parents', due: 'Feb 24', priority: 'medium' },
   { id: 4, title: 'Schedule 1:1 with At Risk students', due: 'Feb 25', priority: 'high' },
-  { id: 5, title: 'Update MCQ question bank', due: 'Feb 27', priority: 'low' },
 ];
