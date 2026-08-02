@@ -37,7 +37,7 @@ const CONFIG = {
   DEFAULT_GROUP: 'Both Groups',
   DEFAULT_LEVEL: 'CA Intermediate',
   DEFAULT_STATUS: 'Active',
-  TRACKER_DAYS: 14,
+  TRACKER_DAYS: 5,
   DEFAULT_AVATAR: 'https://ui-avatars.com/api/?background=2563EB&color=fff&size=200&name=',
 };
 
@@ -452,7 +452,7 @@ function enrichStudents_(ss) {
 
     // Risk assessment
     let risk = 'Healthy';
-    if (attRate < 70 || (mcqAccuracy && mcqAccuracy < 60)) risk = 'At Risk';
+    if (attRate < 70) risk = 'At Risk';
     else if (attRate < 80) risk = 'Watch';
 
     // Status
