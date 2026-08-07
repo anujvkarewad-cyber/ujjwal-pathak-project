@@ -23,6 +23,7 @@ import { announcements as SEED_ANNOUNCEMENTS } from '@/data/announcements';
 const state = {
   students: SEED_STUDENTS.map(s => ({ ...s, mentorNotes: [...s.mentorNotes] })),
   announcements: [...SEED_ANNOUNCEMENTS],
+  notes: [],
   mentor: {
     name: 'Ujjwal Pathak',
     email: 'mentor@upmentorship.in',
@@ -123,6 +124,31 @@ export function handle(action, payload = {}) {
       state.announcements = state.announcements.map(a =>
         a.id === payload.id ? { ...a, pinned: !a.pinned } : a
       );
+      return { ok: true };
+    }
+
+    // ── Notes (PDF study material) ──────────────────────────────────────────
+    case 'notes.list':
+      return state.notes;
+    case 'notes.create': {
+      const item = {
+        id: `NOTE-${String(state.notes.length + 1).padStart(3, '0')}`,
+        title: payload.title,
+        description: payload.description || '',
+        subject: payload.subject || '',
+        audience: payload.audience || 'All Batches',
+        fileName: payload.fileName || 'note.pdf',
+        fileSize: payload.fileData ? Math.round((payload.fileData.length * 3) / 4) : 0,
+        fileId: `mock-${Date.now()}`,
+        fileUrl: '#',
+        uploadedBy: state.mentor.name,
+        date: new Date().toISOString().slice(0, 10),
+      };
+      state.notes = [item, ...state.notes];
+      return item;
+    }
+    case 'notes.delete': {
+      state.notes = state.notes.filter(n => n.id !== payload.id);
       return { ok: true };
     }
 
