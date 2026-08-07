@@ -64,3 +64,27 @@ export async function apiCall(action, payload = {}) {
   }
   return jsonpCall(action, payload);
 }
+
+// For payloads too large for a JSONP query string (e.g. base64 PDF uploads).
+// Sent as a plain-text POST body so the browser treats it as a "simple
+// request" and skips the CORS preflight (which Apps Script doesn't handle).
+function postCall(action, payload) {
+  return fetch(APPS_SCRIPT_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify({ action, payload }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data && data.error) throw new Error(data.error);
+      return data && data.result !== undefined ? data.result : data;
+    });
+}
+
+export async function apiCallLarge(action, payload = {}) {
+  if (USE_MOCK) {
+    if (MOCK_DELAY_MS > 0) await wait(MOCK_DELAY_MS);
+    return mockHandle(action, payload);
+  }
+  return postCall(action, payload);
+}
