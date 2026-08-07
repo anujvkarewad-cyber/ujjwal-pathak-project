@@ -131,7 +131,7 @@ export default function Notes() {
             onChange={(e) => setAudience(e.target.value)}
             className="w-full h-11 px-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm text-slate-700 dark:text-slate-200 outline-none focus:border-[#2563EB]"
           >
-            {['All Batches', 'Super 30', 'Super 11', 'Last 15 Days', 'Last 40 Days'].map(o => <option key={o}>{o}</option>)}
+            {['All Batches', 'Super 30', 'Super 11', 'Last 16 Days', 'Last 30 Days'].map(o => <option key={o}>{o}</option>)}
           </select>
 
           <label
