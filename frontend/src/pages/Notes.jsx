@@ -35,11 +35,12 @@ export default function Notes() {
   const [description, setDescription] = useState('');
   const [subject, setSubject] = useState('');
   const [audience, setAudience] = useState('All Batches');
+  const [group, setGroup] = useState('Both Groups');
   const [file, setFile] = useState(null);
   const [error, setError] = useState('');
 
   const resetForm = () => {
-    setTitle(''); setDescription(''); setSubject(''); setAudience('All Batches');
+    setTitle(''); setDescription(''); setSubject(''); setAudience('All Batches');setGroup('Both Groups');
     setFile(null);
     if (fileInputRef.current) fileInputRef.current.value = '';
   };
@@ -75,6 +76,7 @@ export default function Notes() {
           description: description.trim(),
           subject: subject.trim(),
           audience,
+          group,
           fileName: file.name,
           mimeType: file.type,
           fileData,
@@ -133,6 +135,15 @@ export default function Notes() {
           >
             {['All Batches', 'Super 30', 'Super 11', 'Last 16 Days', 'Last 30 Days'].map(o => <option key={o}>{o}</option>)}
           </select>
+
+          <select
+  data-testid="note-group"
+  value={group}
+  onChange={(e) => setGroup(e.target.value)}
+  className="w-full h-11 px-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm text-slate-700 dark:text-slate-200 outline-none focus:border-[#2563EB]"
+>
+  {['Both Groups', 'Group 1', 'Group 2'].map(o => <option key={o}>{o}</option>)}
+</select>
 
           <label
             htmlFor="note-file"
@@ -222,6 +233,7 @@ export default function Notes() {
                   <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
                     {n.subject && <span className="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">{n.subject}</span>}
                     <span className="inline-flex items-center gap-1"><Users className="w-3 h-3" />{n.audience}</span>
+                    <span className="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">{n.group}</span>
                     <span className="inline-flex items-center gap-1"><Calendar className="w-3 h-3" />{n.date}</span>
                     <span>{n.fileName} · {formatSize(n.fileSize)}</span>
                   </div>
