@@ -4,6 +4,17 @@ import { useNotes, useCreateNote, useDeleteNote } from '@/api/hooks';
 import { Skeleton } from '@/components/common/Skeleton';
 
 const MAX_FILE_MB = 20;
+const SUBJECT_GROUP_MAP = {
+  'Costing': 'Group 2',
+  'Audit': 'Group 2',
+  'FM': 'Group 2',
+  'SM': 'Group 2',
+  'Accounts': 'Group 1',
+  'Law': 'Group 1',
+  'DT': 'Group 1',
+  'GST': 'Group 1',
+};
+const SUBJECTS = Object.keys(SUBJECT_GROUP_MAP);
 
 function formatSize(bytes) {
   if (!bytes) return '';
@@ -33,16 +44,26 @@ export default function Notes() {
 
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [subject, setSubject] = useState('');
+  const [subject, setSubject] = useState(SUBJECTS[0]);
+  const [group, setGroup] = useState(SUBJECT_GROUP_MAP[SUBJECTS[0]]);
   const [audience, setAudience] = useState('All Batches');
-  const [group, setGroup] = useState('Both Groups');
   const [file, setFile] = useState(null);
   const [error, setError] = useState('');
 
   const resetForm = () => {
-    setTitle(''); setDescription(''); setSubject(''); setAudience('All Batches');setGroup('Both Groups');
+    setTitle('');
+    setDescription('');
+    setSubject(SUBJECTS[0]);
+    setGroup(SUBJECT_GROUP_MAP[SUBJECTS[0]]);
+    setAudience('All Batches');
     setFile(null);
     if (fileInputRef.current) fileInputRef.current.value = '';
+  };
+
+  const onSubjectChange = (e) => {
+    const s = e.target.value;
+    setSubject(s);
+    setGroup(SUBJECT_GROUP_MAP[s] || 'Both Groups');
   };
 
   const onFileChange = (e) => {
@@ -112,13 +133,19 @@ export default function Notes() {
             placeholder="Title (e.g. Costing — Chapter 4 Notes)"
             className="w-full h-11 px-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 outline-none focus:border-[#2563EB] text-sm text-slate-800 dark:text-slate-200"
           />
-          <input
+
+          <select
             data-testid="note-subject"
             value={subject}
-            onChange={(e) => setSubject(e.target.value)}
-            placeholder="Subject (optional)"
-            className="w-full h-11 px-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 outline-none focus:border-[#2563EB] text-sm text-slate-800 dark:text-slate-200"
-          />
+            onChange={onSubjectChange}
+            className="w-full h-11 px-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm text-slate-700 dark:text-slate-200 outline-none focus:border-[#2563EB]"
+          >
+            {SUBJECTS.map(s => <option key={s} value={s}>{s}</option>)}
+          </select>
+          <div className="text-xs text-slate-500 dark:text-slate-400 -mt-1">
+            Auto-assigned to <b>{group}</b> based on subject
+          </div>
+
           <textarea
             data-testid="note-description"
             value={description}
@@ -127,6 +154,7 @@ export default function Notes() {
             rows={3}
             className="w-full px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 outline-none focus:border-[#2563EB] text-sm text-slate-800 dark:text-slate-200 resize-none"
           />
+
           <select
             data-testid="note-audience"
             value={audience}
@@ -135,15 +163,6 @@ export default function Notes() {
           >
             {['All Batches', 'Super 30', 'Super 11', 'Last 16 Days', 'Last 30 Days'].map(o => <option key={o}>{o}</option>)}
           </select>
-
-          <select
-  data-testid="note-group"
-  value={group}
-  onChange={(e) => setGroup(e.target.value)}
-  className="w-full h-11 px-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm text-slate-700 dark:text-slate-200 outline-none focus:border-[#2563EB]"
->
-  {['Both Groups', 'Group 1', 'Group 2'].map(o => <option key={o}>{o}</option>)}
-</select>
 
           <label
             htmlFor="note-file"
