@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, Users, ClipboardList, Trophy, Megaphone, FileBarChart2, Settings, GraduationCap } from 'lucide-react';
+import { LayoutDashboard, Users, ClipboardList, Trophy, Megaphone, FileText, FileBarChart2, Settings, GraduationCap } from 'lucide-react';
 import { cn } from '@/utils/format';
 
 const NAV = [
@@ -8,6 +8,7 @@ const NAV = [
   { to: '/daily-tracker', label: 'Daily Tracker', icon: ClipboardList, testid: 'nav-daily-tracker' },
   { to: '/leaderboard', label: 'Leaderboard', icon: Trophy, testid: 'nav-leaderboard' },
   { to: '/announcements', label: 'Announcements', icon: Megaphone, testid: 'nav-announcements' },
+  { to: '/notes', label: 'Notes', icon: FileText, testid: 'nav-notes' },
   { to: '/reports', label: 'Reports', icon: FileBarChart2, testid: 'nav-reports' },
   { to: '/settings', label: 'Settings', icon: Settings, testid: 'nav-settings' },
 ];
