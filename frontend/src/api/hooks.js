@@ -7,6 +7,7 @@ import * as dashboardApi from './dashboard';
 import * as trackerApi from './tracker';
 import * as leaderboardApi from './leaderboard';
 import * as announcementsApi from './announcements';
+import * as notesApi from './notes';
 import * as reportsApi from './reports';
 import * as mentorApi from './mentor';
 import * as feedbackApi from './feedback';
@@ -73,6 +74,26 @@ export const useTogglePinAnnouncement = () => {
   return useMutation({
     mutationFn: (id) => announcementsApi.togglePinAnnouncement(id),
     onSuccess: () => qc.invalidateQueries({ queryKey: ['announcements'] }),
+  });
+};
+
+// ── Notes (PDF study material) ────────────────────────────────────────────
+export const useNotes = () =>
+  useQuery({ queryKey: ['notes'], queryFn: notesApi.getNotes });
+
+export const useCreateNote = () => {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: notesApi.createNote,
+    onSuccess: () => qc.invalidateQueries({ queryKey: ['notes'] }),
+  });
+};
+
+export const useDeleteNote = () => {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: (id) => notesApi.deleteNote(id),
+    onSuccess: () => qc.invalidateQueries({ queryKey: ['notes'] }),
   });
 };
 
