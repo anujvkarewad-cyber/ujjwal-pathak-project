@@ -1,4 +1,4 @@
-import { apiCall, apiCallLarge } from './client';
+import { apiCall, apiCallLarge, apiCallLargeWithProgress } from './client';
 
 export const getNotes = () => apiCall('notes.list');
 
@@ -7,3 +7,5 @@ export const getNotes = () => apiCall('notes.list');
 export const createNote = (payload) => apiCallLarge('notes.create', payload);
 
 export const deleteNote = (id) => apiCall('notes.delete', { id });
+export const createNoteWithProgress = (payload, onProgress) =>
+  apiCallLargeWithProgress('notes.create', payload, onProgress);
