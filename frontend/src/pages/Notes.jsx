@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { FileText, UploadCloud, FolderUp, Trash2, Download, Users, Calendar, X, Gauge } from 'lucide-react';
 import { useNotes, useDeleteNote } from '@/api/hooks';
-import { createNoteWithProgress } from '@/api/notes';
+import { createNoteChunked } from '@/api/notes';
 import { useQueryClient } from '@tanstack/react-query';
 import { Skeleton } from '@/components/common/Skeleton';
 
@@ -130,9 +130,17 @@ export default function Notes() {
 
     for (let i = 0; i < files.length; i++) {
       const file = files[i];
+
+      // Speed tracking is done here (client-side, per file) rather than
+      // inside createNoteChunked, since chunk-upload progress ticks are
+      // per-chunk, not per-byte — this smooths that into a speed estimate
+      // similar to what the old single-shot XHR gave us.
+      let lastLoaded = 0;
+      let lastTime = Date.now();
+
       try {
         const fileData = await fileToBase64(file);
-        await createNoteWithProgress(
+        await createNoteChunked(
           {
             title: titleFromFilename(file.name),
             description: description.trim(),
@@ -144,13 +152,22 @@ export default function Notes() {
             fileData,
           },
           (p) => {
+            const now = Date.now();
+            const elapsedSec = (now - lastTime) / 1000;
+            const deltaBytes = p.loaded - lastLoaded;
+            const speedBps = elapsedSec > 0.15 ? deltaBytes / elapsedSec : null;
+            if (speedBps !== null) {
+              lastLoaded = p.loaded;
+              lastTime = now;
+            }
+
             setBatch(prev => prev && ({
               ...prev,
               fileIndex: i,
               fileName: file.name,
               fileLoaded: p.loaded,
               fileTotal: p.total,
-              speedBps: p.speedBps ?? prev.speedBps,
+              speedBps: speedBps ?? prev.speedBps,
               batchLoaded: bytesDoneBefore + p.loaded,
             }));
           }
