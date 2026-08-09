@@ -9,6 +9,17 @@
 // intermittently in browsers (ERR_ABORTED). JSONP loads via a plain <script>
 // tag which is exempt from CORS, so calls work 100% of the time. The URL
 // length limit (~2KB) is comfortably above any payload the dashboard sends.
+//
+// LARGE PAYLOADS (file uploads): Apps Script's POST handling is noticeably
+// less reliable than its GET/JSONP handling once the body grows past a few
+// hundred KB — the browser-to-script.googleusercontent.com hand-off that
+// Apps Script does internally on every POST is more likely to drop the
+// connection mid-transfer as the body gets bigger. There's no hard
+// documented ceiling; it's a reliability curve, not a wall. So large files
+// are uploaded in small chunks (see api/notes.js: createNoteChunked) —
+// each chunk is small enough to be reliable on its own, and apiCallWithRetry
+// below gives every chunk a couple of automatic retries to absorb any
+// residual flakiness.
 
 import { APPS_SCRIPT_URL, USE_MOCK, MOCK_DELAY_MS } from './config';
 import { handle as mockHandle } from './local-adapter';
@@ -92,6 +103,11 @@ export async function apiCallLarge(action, payload = {}) {
 // POST with real upload-progress + speed tracking (XHR gives byte-level
 // progress events; fetch() does not expose upload progress reliably).
 // onProgress is called as onProgress({ loaded, total, percent, speedBps }).
+//
+// NOTE: kept for callers that still want a single-shot upload with native
+// XHR progress (e.g. small, non-PDF payloads). For PDF notes, prefer the
+// chunked path in api/notes.js — see the transport note at the top of this
+// file for why single large POSTs to Apps Script aren't reliable.
 function postCallWithProgress(action, payload, onProgress) {
   return new Promise((resolve, reject) => {
     const body = JSON.stringify({ action, payload });
@@ -148,4 +164,29 @@ export async function apiCallLargeWithProgress(action, payload = {}, onProgress)
     return mockHandle(action, payload);
   }
   return postCallWithProgress(action, payload, onProgress);
+}
+
+// Retries a request-making function a few times with exponential backoff.
+// Used for chunked uploads: each chunk is small and should almost always
+// succeed on the first try, but this absorbs the occasional transient
+// Apps Script POST failure without surfacing it to the user.
+//
+// fn: () => Promise<T>  — must create a *new* request each call (don't
+//     pass an already-started promise)
+// attempts: total tries including the first (default 3)
+// baseDelayMs: delay before the 2nd try; doubles each subsequent retry
+//     (e.g. 600 → 600ms, 1200ms, 2400ms, ...)
+export async function apiCallWithRetry(fn, attempts = 3, baseDelayMs = 600) {
+  let lastErr;
+  for (let i = 0; i < attempts; i++) {
+    try {
+      return await fn();
+    } catch (err) {
+      lastErr = err;
+      if (i < attempts - 1) {
+        await wait(baseDelayMs * Math.pow(2, i));
+      }
+    }
+  }
+  throw lastErr;
 }
