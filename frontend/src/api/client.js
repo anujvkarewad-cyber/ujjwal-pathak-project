@@ -88,3 +88,64 @@ export async function apiCallLarge(action, payload = {}) {
   }
   return postCall(action, payload);
 }
+
+// POST with real upload-progress + speed tracking (XHR gives byte-level
+// progress events; fetch() does not expose upload progress reliably).
+// onProgress is called as onProgress({ loaded, total, percent, speedBps }).
+function postCallWithProgress(action, payload, onProgress) {
+  return new Promise((resolve, reject) => {
+    const body = JSON.stringify({ action, payload });
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', APPS_SCRIPT_URL, true);
+    xhr.setRequestHeader('Content-Type', 'text/plain;charset=utf-8');
+
+    let lastLoaded = 0;
+    let lastTime = Date.now();
+
+    xhr.upload.onprogress = (e) => {
+      if (!e.lengthComputable || !onProgress) return;
+      const now = Date.now();
+      const elapsedSec = (now - lastTime) / 1000;
+      const deltaBytes = e.loaded - lastLoaded;
+      // Smoothed instantaneous speed; skip near-zero intervals to avoid spikes.
+      const speedBps = elapsedSec > 0.15 ? deltaBytes / elapsedSec : null;
+      if (speedBps !== null) {
+        lastLoaded = e.loaded;
+        lastTime = now;
+      }
+      onProgress({
+        loaded: e.loaded,
+        total: e.total,
+        percent: Math.round((e.loaded / e.total) * 100),
+        speedBps: speedBps,
+      });
+    };
+
+    xhr.onload = () => {
+      try {
+        const data = JSON.parse(xhr.responseText);
+        if (data && data.error) { reject(new Error(data.error)); return; }
+        resolve(data && data.result !== undefined ? data.result : data);
+      } catch (err) {
+        reject(err);
+      }
+    };
+    xhr.onerror = () => reject(new Error('Network error during upload'));
+    xhr.send(body);
+  });
+}
+
+export async function apiCallLargeWithProgress(action, payload = {}, onProgress) {
+  if (USE_MOCK) {
+    if (onProgress) {
+      // Fake a smooth progress bar in mock/dev mode.
+      const total = (payload.fileData || '').length || 100000;
+      for (let p = 0; p <= 100; p += 20) {
+        onProgress({ loaded: (p / 100) * total, total, percent: p, speedBps: 900000 });
+        await wait(80);
+      }
+    }
+    return mockHandle(action, payload);
+  }
+  return postCallWithProgress(action, payload, onProgress);
+}
