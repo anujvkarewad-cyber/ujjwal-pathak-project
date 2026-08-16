@@ -1,8 +1,10 @@
 // Mentor analytics API functions (mentor-only, consented summaries only).
-import { apiCall, USE_MOCK } from './backendClient';
-import { mockAnalytics } from './local-content';
+//
+// These always hit the live FastAPI backend through `apiCall`. The DEMO/mock
+// adapter has been removed from this path.
+import { apiCall } from './backendClient';
 
-const call = (path, opts) => (USE_MOCK ? mockAnalytics(path, opts) : apiCall(path, opts));
+const call = (path, opts) => apiCall(path, opts);
 
 export const analyticsOverview = () => call('/api/analytics/overview');
 export const studentsList = () => call('/api/analytics/students');

@@ -1,11 +1,14 @@
 // AI Content review API functions (mentor-only).
-import { apiCall, USE_MOCK } from './backendClient';
-import { mockContent } from './local-content';
+//
+// These always hit the live FastAPI backend through `apiCall`. The DEMO/mock
+// adapter has been removed from this path so the dashboard can never show
+// synthetic "DEMO question …" content instead of the real generated bank.
+import { apiCall } from './backendClient';
 
-const call = (path, opts) => (USE_MOCK ? mockContent(path, opts) : apiCall(path, opts));
+const call = (path, opts) => apiCall(path, opts);
 
 export const loginMentor = (email, password) =>
-  USE_MOCK ? Promise.resolve({ token: 'mock-token', email, role: 'mentor' }) : apiCall('/api/auth/login', { method: 'POST', body: { email, password } });
+  apiCall('/api/auth/login', { method: 'POST', body: { email, password } });
 
 export const contentStats = () => call('/api/content/stats');
 export const listQueue = (params) => call('/api/content/queue', { params });

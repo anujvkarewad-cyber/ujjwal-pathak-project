@@ -1,33 +1,71 @@
 // Home-dashboard card: pending chapter MCQs with one-click approve.
+//
+// Fetches the LIVE backend directly (GET /api/content/stats and
+// GET /api/content/queue) rather than going through any mock adapter, so this
+// card always reflects the real generated chapter bank (~4,700 MCQs) and can
+// never render DEMO content.
+import { useCallback, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { BookOpenCheck, CheckCircle2, ChevronRight } from 'lucide-react';
 import { toast } from 'sonner';
-import { useContentStats, useDecideQuestion, useReviewQueue } from '@/api/hooks-content';
+import { apiCall } from '@/api/backendClient';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/common/Skeleton';
 import { DifficultyBadge, TypeBadge } from '@/components/content/ContentBadges';
 
 export default function McqReviewPanel() {
   const navigate = useNavigate();
-  const { data: stats, isLoading: statsLoading } = useContentStats();
-  const { data: queue, isLoading: queueLoading } = useReviewQueue({ status: 'needs_review', limit: 6 });
-  const decide = useDecideQuestion();
+  const [stats, setStats] = useState(null);
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [approving, setApproving] = useState(false);
+
+  const load = useCallback(async () => {
+    setLoading(true);
+    try {
+      const [s, q] = await Promise.all([
+        apiCall('/api/content/stats'),
+        apiCall('/api/content/queue', { params: { status: 'needs_review', limit: 6 } }),
+      ]);
+      setStats(s);
+      setItems(q?.items || []);
+    } catch (e) {
+      setStats(null);
+      setItems([]);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    load();
+  }, [load]);
+
+  const approve = async (id, event) => {
+    event.stopPropagation();
+    setApproving(true);
+    try {
+      await apiCall(`/api/content/questions/${id}/decision`, {
+        method: 'POST',
+        body: {
+          decision: 'approve',
+          comment: 'Approved from dashboard',
+          warningsAcknowledged: true,
+          attemptSpecificRiskConfirmed: true,
+        },
+      });
+      toast.success('MCQ approved');
+      await load();
+    } catch (e) {
+      toast.error(e.message);
+    } finally {
+      setApproving(false);
+    }
+  };
 
   const pending = stats?.needsReview ?? 0;
   const total = stats?.total ?? 0;
   const approved = stats?.approved ?? 0;
-  const items = queue?.items || [];
-
-  const approve = (id, event) => {
-    event.stopPropagation();
-    decide.mutate(
-      { id, decision: 'approve', comment: 'Approved from dashboard', warningsAcknowledged: true, attemptSpecificRiskConfirmed: true },
-      {
-        onSuccess: () => toast.success('MCQ approved'),
-        onError: (e) => toast.error(e.message),
-      }
-    );
-  };
 
   return (
     <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl" data-testid="mcq-review-panel">
@@ -36,7 +74,16 @@ export default function McqReviewPanel() {
           <BookOpenCheck className="w-5 h-5" />
         </div>
         <div className="min-w-0">
-          <h3 className="font-heading font-semibold text-slate-900 dark:text-white">MCQ Review</h3>
+          <div className="flex items-center gap-2">
+            <h3 className="font-heading font-semibold text-slate-900 dark:text-white">MCQ Review</h3>
+            <span
+              className="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300"
+              data-testid="live-bank-badge"
+              title="Serving the live generated chapter bank (not demo data)"
+            >
+              Live Bank · V2
+            </span>
+          </div>
           <p className="text-xs text-slate-500 dark:text-slate-400">Approve generated chapter questions before students practice them.</p>
         </div>
         <Link to="/ai-content/queue" className="ml-auto text-sm font-semibold text-[#2563EB] hover:underline inline-flex items-center gap-1">
@@ -45,16 +92,16 @@ export default function McqReviewPanel() {
       </div>
 
       <div className="grid grid-cols-3 divide-x divide-slate-200 dark:divide-slate-800 border-b border-slate-200 dark:border-slate-800">
-        <Stat label="In bank" value={statsLoading ? '—' : total.toLocaleString()} />
-        <Stat label="Awaiting approval" value={statsLoading ? '—' : pending.toLocaleString()} accent />
-        <Stat label="Approved" value={statsLoading ? '—' : approved.toLocaleString()} />
+        <Stat label="In bank" value={loading ? '—' : total.toLocaleString()} />
+        <Stat label="Awaiting approval" value={loading ? '—' : pending.toLocaleString()} accent />
+        <Stat label="Approved" value={loading ? '—' : approved.toLocaleString()} />
       </div>
 
       <div className="divide-y divide-slate-100 dark:divide-slate-800">
-        {queueLoading && Array.from({ length: 3 }).map((_, i) => (
+        {loading && Array.from({ length: 3 }).map((_, i) => (
           <div key={i} className="p-4"><Skeleton className="h-10 w-full" /></div>
         ))}
-        {!queueLoading && items.map((q) => (
+        {!loading && items.map((q) => (
           <div
             key={q.id}
             className="p-4 flex flex-wrap items-start gap-3 hover:bg-slate-50/80 dark:hover:bg-slate-800/40 cursor-pointer"
@@ -71,14 +118,14 @@ export default function McqReviewPanel() {
             <Button
               size="sm"
               className="bg-emerald-600 hover:bg-emerald-700 text-white"
-              disabled={decide.isPending}
+              disabled={approving}
               onClick={(e) => approve(q.id, e)}
             >
               <CheckCircle2 className="w-3.5 h-3.5 mr-1" /> Approve
             </Button>
           </div>
         ))}
-        {!queueLoading && items.length === 0 && (
+        {!loading && items.length === 0 && (
           <p className="p-6 text-sm text-slate-500 text-center">
             {total === 0 ? 'No chapter MCQs imported yet.' : 'No questions waiting for approval.'}
           </p>

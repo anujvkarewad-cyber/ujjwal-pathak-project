@@ -85,3 +85,43 @@ def test_manifest_404_without_publish(client, tmp_path, monkeypatch):
     monkeypatch.setattr(settings, "content_dir", Path(str(tmp_path)))
     res = client.get("/api/content/student/manifest.json")
     assert res.status_code == 404
+
+
+def test_bank_json_only_serves_approved(client):
+    """bank.json exposes only approved/release_candidate/published questions,
+    mapped into the student-app question shape."""
+    import asyncio
+
+    from db import CONTENT_QUESTIONS, get_db
+    from tests.fixtures import seed_full_chapter, seed_sync
+
+    seed_sync(seed_full_chapter)
+
+    # Nothing approved → empty bank.
+    res = client.get("/api/content/student/bank.json")
+    assert res.status_code == 200
+    assert res.json()["count"] == 0
+
+    async def _approve_one_of_each():
+        db = get_db()
+        plain = await db[CONTENT_QUESTIONS].find_one({"questionType": "mcq"})
+        await db[CONTENT_QUESTIONS].update_one({"id": plain["id"]}, {"$set": {"status": "approved"}})
+        scenario = await db[CONTENT_QUESTIONS].find_one({"questionType": "scenario_mcq"})
+        await db[CONTENT_QUESTIONS].update_one({"id": scenario["id"]}, {"$set": {"status": "approved"}})
+
+    seed_sync(_approve_one_of_each)
+
+    res = client.get("/api/content/student/bank.json")
+    data = res.json()
+    assert data["revision"] == "live-approved-v2"
+    assert data["count"] == 2
+    assert {q["kind"] for q in data["questions"]} == {"normal", "case-study"}
+
+    normal = next(q for q in data["questions"] if q["kind"] == "normal")
+    assert normal["subject"] == "Accounting"
+    assert normal["difficulty"] in {"Easy", "Medium", "Hard"}  # mapped from easy/moderate/hard
+    assert isinstance(normal["answer"], int)  # 0-based correct-option index
+    assert len(normal["options"]) == 4
+
+    case = next(q for q in data["questions"] if q["kind"] == "case-study")
+    assert case["caseStudy"]["passage"]  # passage joined from the scenario doc
