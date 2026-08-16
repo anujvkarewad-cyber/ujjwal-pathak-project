@@ -19,7 +19,7 @@ process.env.MONGO_URL = 'memory://';
 process.env.MEMORY_DB_FILE = path.join(TMP, 'memdb.json');
 process.env.DB_NAME = 'e2e';
 process.env.EXPECTED_CHAPTER_COUNT = '2';
-delete process.env.STUDENT_REPO_PATH;
+process.env.STUDENT_REPO_PATH = ''; // empty, so dotenv can't re-inject the repo's .env value
 
 const { config } = await import('../src/lib/config.mjs');
 const { saveJob } = await import('../src/lib/jobs.mjs');
@@ -235,7 +235,7 @@ test('publish gate fails closed on a draft question (child process, shared memor
     DB_NAME: 'e2e',
     EXPECTED_CHAPTER_COUNT: '2',
   };
-  delete env.STUDENT_REPO_PATH;
+  env.STUDENT_REPO_PATH = ''; // dotenv would re-inject the repo .env value otherwise
   let failed = false;
   try {
     execFileSync(process.execPath, ['src/stage-11-publish.mjs', '--chapter=ch-acc-01'], { cwd: ROOT, env, stdio: 'pipe' });

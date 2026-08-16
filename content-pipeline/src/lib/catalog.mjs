@@ -136,38 +136,65 @@ export function loadCatalog({ failOnEmpty = true, snapshotPath = null, tsPath = 
   let entries = null;
   let source = '';
 
-  const tsCandidate = tsPath || (config.studentRepoPath
-    ? path.resolve(config.studentRepoPath, 'mobile/src/data/icaiChapterCatalog.ts')
-    : null);
-  if (tsCandidate && fs.existsSync(tsCandidate)) {
-    const srcText = fs.readFileSync(tsCandidate, 'utf8');
+  // Explicit arguments win over environment-configured sources.
+  if (tsPath && fs.existsSync(tsPath)) {
+    const srcText = fs.readFileSync(tsPath, 'utf8');
     let parsed = parseTsArrayLiteral(srcText);
-    if (parsed && Array.isArray(parsed)) {
-      entries = parsed;
-    } else {
-      // Real file builds the catalog from a chapterGroups literal —
-      // expand it with the same logic the file itself uses.
+    if (!parsed || !Array.isArray(parsed) || parsed.length === 0) {
       const groups = parseTsArrayLiteral(srcText, 'chapterGroups');
-      if (groups && Array.isArray(groups)) {
-        entries = expandChapterGroups(groups);
+      if (groups && Array.isArray(groups) && groups.length > 0) parsed = expandChapterGroups(groups);
+    }
+    if (parsed && Array.isArray(parsed) && parsed.length > 0) {
+      entries = parsed;
+      source = tsPath;
+    } else {
+      fail('catalog', `Could not parse chapter array from ${tsPath}`);
+    }
+  } else if (tsPath) {
+    fail('catalog', `Catalog TS file not found: ${tsPath}`);
+  }
+
+  if (!entries && snapshotPath && fs.existsSync(snapshotPath)) {
+    const snap = JSON.parse(fs.readFileSync(snapshotPath, 'utf8'));
+    if (Array.isArray(snap.chapters)) {
+      entries = snap.chapters;
+      source = snapshotPath;
+    } else {
+      fail('catalog', `Catalog snapshot ${snapshotPath} has no "chapters" array`);
+    }
+  } else if (!entries && snapshotPath) {
+    fail('catalog', `Catalog snapshot not found: ${snapshotPath}`);
+  }
+
+  if (!entries) {
+    const tsCandidate = config.studentRepoPath
+      ? path.resolve(config.studentRepoPath, 'mobile/src/data/icaiChapterCatalog.ts')
+      : null;
+    if (tsCandidate && fs.existsSync(tsCandidate)) {
+      const srcText = fs.readFileSync(tsCandidate, 'utf8');
+      let parsed = parseTsArrayLiteral(srcText);
+      if (!parsed || !Array.isArray(parsed) || parsed.length === 0) {
+        const groups = parseTsArrayLiteral(srcText, 'chapterGroups');
+        if (groups && Array.isArray(groups) && groups.length > 0) parsed = expandChapterGroups(groups);
+      }
+      if (parsed && Array.isArray(parsed) && parsed.length > 0) {
+        entries = parsed;
+        source = tsCandidate;
+      } else {
+        fail('catalog', `Could not parse chapter array from ${tsCandidate}`);
       }
     }
-    if (entries) {
-      source = tsCandidate;
-    } else {
-      fail('catalog', `Could not parse chapter array from ${tsCandidate}`);
+    if (!entries) {
+      const snapPath = config.catalogSnapshotPath;
+      if (fs.existsSync(snapPath)) {
+        const snap = JSON.parse(fs.readFileSync(snapPath, 'utf8'));
+        entries = Array.isArray(snap.chapters) ? snap.chapters : null;
+        source = snapPath;
+      }
     }
-  }
-  if (!entries) {
-    const snapPath = snapshotPath || config.catalogSnapshotPath;
-    if (fs.existsSync(snapPath)) {
-      const snap = JSON.parse(fs.readFileSync(snapPath, 'utf8'));
-      entries = Array.isArray(snap.chapters) ? snap.chapters : null;
-      source = snapPath;
+    if (!entries) {
+      fail('catalog', 'No catalog found. Set STUDENT_REPO_PATH or provide config/chapters.json (stage-0).');
     }
-  }
-  if (!entries) {
-    fail('catalog', 'No catalog found. Set STUDENT_REPO_PATH or provide config/chapters.json (stage-0).');
   }
 
   const chapters = entries.map(normalizeChapterEntry).filter(Boolean);
