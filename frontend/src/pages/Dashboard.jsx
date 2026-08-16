@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import KPICard from '@/components/dashboard/KPICard';
 import RecentActivity from '@/components/dashboard/RecentActivity';
 import UpcomingTasks from '@/components/dashboard/UpcomingTasks';
-import McqReviewPanel from '@/components/dashboard/McqReviewPanel';
 import { AttendanceAreaChart, WeeklyStudyBarChart, PerformancePieChart, BatchBarChart } from '@/components/charts/Charts';
 import { CardSkeleton, Skeleton } from '@/components/common/Skeleton';
 import {
@@ -43,8 +42,6 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-6" data-testid="dashboard-page">
-      <McqReviewPanel />
-
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <button
           type="button"
