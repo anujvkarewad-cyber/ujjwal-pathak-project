@@ -2,18 +2,21 @@
 // Separate from the existing Apps Script client (client.js) — existing pages
 // keep using their current transport untouched.
 //
-// Base URL: REACT_APP_MENTOR_API_URL. When empty, calls route to the local
-// mock adapter (local-content.js), consistent with the existing mock pattern.
+// Base URL: REACT_APP_MENTOR_API_URL. When empty the client defaults to
+// same-origin and always talks to the live backend — there is no mock
+// fallback, so the dashboard can never show DEMO content.
 
-const RAW_BASE_URL = (process.env.REACT_APP_MENTOR_API_URL || '').trim();
-// ''                        → mock adapter (no backend configured)
+const RAW_BASE_URL = (process.env.REACT_APP_MENTOR_API_URL || 'same-origin').trim();
 // 'same-origin' | 'proxy' | '/' → same-origin backend (dev-server proxy or the
 //                             FastAPI static deployment) — used in Codespaces,
 //                             where the browser cannot reach localhost:8010
 // 'http(s)://…'             → absolute backend URL (e.g. http://localhost:8010)
+// The mock adapter has been REMOVED from the data path: when the env var is
+// empty the client defaults to same-origin, so the live API is always hit and
+// the dashboard can never fall back to DEMO content.
 const SAME_ORIGIN = ['same-origin', 'proxy', '/'].includes(RAW_BASE_URL.toLowerCase());
 const BASE_URL = SAME_ORIGIN ? '' : RAW_BASE_URL.replace(/\/$/, '');
-export const USE_MOCK = !RAW_BASE_URL;
+export const USE_MOCK = false;
 export const RELATIVE_BASE = SAME_ORIGIN || BASE_URL.startsWith('/');
 
 export const AUTH_EVENT = 'upm:auth-required';
