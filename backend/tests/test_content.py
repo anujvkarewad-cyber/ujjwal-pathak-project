@@ -19,6 +19,16 @@ def _seed(status="needs_review"):
     asyncio.run(run())
 
 
+def test_content_stats(client, mentor_headers):
+    _seed()
+    res = client.get("/api/content/stats", headers=mentor_headers)
+    assert res.status_code == 200
+    body = res.json()
+    assert body["total"] == 50
+    assert body["needsReview"] == 50
+    assert body["chapters"] >= 1
+
+
 def test_queue_lists_and_filters(client, mentor_headers):
     _seed()
     res = client.get("/api/content/queue", headers=mentor_headers)
@@ -34,6 +44,14 @@ def test_queue_lists_and_filters(client, mentor_headers):
     assert res.json()["total"] == 50
     res = client.get("/api/content/queue?chapterId=nope", headers=mentor_headers)
     assert res.json()["total"] == 0
+
+    paged = client.get("/api/content/queue?limit=10&offset=10", headers=mentor_headers)
+    assert paged.status_code == 200
+    body = paged.json()
+    assert body["total"] == 50
+    assert body["limit"] == 10
+    assert body["offset"] == 10
+    assert len(body["items"]) == 10
 
 
 def test_edit_question_revalidates(client, mentor_headers):

@@ -172,6 +172,17 @@ export const mockContent = async (path, { method = 'GET', body = null, params = 
   await wait();
   if (path.startsWith('/api/auth/login')) return { token: 'mock-token', email: body?.email, role: 'mentor' };
 
+  if (path === '/api/content/stats') {
+    return {
+      total: store.questions.length,
+      chapters: store.chapters.length,
+      needsReview: store.questions.filter((q) => q.status === 'needs_review').length,
+      approved: store.questions.filter((q) => ['approved', 'release_candidate', 'published'].includes(q.status)).length,
+      rejected: store.questions.filter((q) => q.status === 'rejected').length,
+      changesRequested: store.questions.filter((q) => q.status === 'changes_requested').length,
+    };
+  }
+
   if (path === '/api/content/queue') {
     let items = [...store.questions];
     if (params?.chapterId) items = items.filter((q) => q.chapterId === params.chapterId);
@@ -183,7 +194,9 @@ export const mockContent = async (path, { method = 'GET', body = null, params = 
       const want = params.hasWarnings === true || params.hasWarnings === 'true';
       items = items.filter((q) => Boolean((q.validation?.warnings || []).length) === want);
     }
-    return { total: items.length, items: items.slice(0, Number(params?.limit || 100)) };
+    const limit = Number(params?.limit || 100);
+    const offset = Number(params?.offset || 0);
+    return { total: items.length, limit, offset, items: items.slice(offset, offset + limit) };
   }
 
   const qMatch = path.match(/^\/api\/content\/questions\/([^/]+)$/);

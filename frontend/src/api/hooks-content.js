@@ -5,6 +5,8 @@ import * as contentApi from './content';
 import * as analyticsApi from './analytics';
 
 // ── AI Content ────────────────────────────────────────────────────────────
+export const useContentStats = () =>
+  useQuery({ queryKey: ['content.stats'], queryFn: contentApi.contentStats });
 export const useReviewQueue = (params) =>
   useQuery({ queryKey: ['content.queue', params], queryFn: () => contentApi.listQueue(params), enabled: params !== null });
 export const useQuestion = (id) =>
@@ -57,6 +59,7 @@ export const useDecideScenario = () => {
       qc.invalidateQueries({ queryKey: ['content.queue'] });
       qc.invalidateQueries({ queryKey: ['content.chapters'] });
       qc.invalidateQueries({ queryKey: ['content.audit'] });
+      qc.invalidateQueries({ queryKey: ['content.stats'] });
     },
   });
 };

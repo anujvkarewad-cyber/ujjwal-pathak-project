@@ -34,7 +34,13 @@ async def bootstrap():
     """Prepare the DB before uvicorn starts serving."""
     await ensure_indexes()
 
-    if _flag("SEED_DEMO"):
+    from persist import dump_store, restore_store
+
+    restored = await restore_store()
+    if restored:
+        print("[dev_server] restored previous mentor approvals from disk")
+
+    if _flag("SEED_DEMO") and not restored:
         import seed_demo
 
         await seed_demo.seed()
@@ -49,6 +55,8 @@ async def bootstrap():
         )
         if not report.get("ok"):
             print("[dev_server] generated content not imported — the API starts with an empty content DB.")
+        else:
+            await dump_store()
 
 
 def main():
