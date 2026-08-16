@@ -1,0 +1,39 @@
+name: frontend
+
+on:
+  push:
+    paths:
+      - "frontend/src/**"
+      - "frontend/public/**"
+      - "frontend/package.json"
+      - "frontend/package-lock.json"
+  pull_request:
+    paths:
+      - "frontend/src/**"
+      - "frontend/public/**"
+      - "frontend/package.json"
+      - "frontend/package-lock.json"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      # @emergentbase/visual-edits is served from the deployment platform's
+      # asset host, which is not reachable from GitHub runners. The app
+      # (craco.config.js) already degrades gracefully when it is missing, so
+      # strip it for the CI install only — the repo files are never modified.
+      - name: Strip platform-only dev dependency
+        run: |
+          node -e "const fs=require('fs');const p=JSON.parse(fs.readFileSync('package.json','utf8'));delete p.devDependencies['@emergentbase/visual-edits'];fs.writeFileSync('package.json',JSON.stringify(p,null,2));"
+      - run: npm install --no-audit --no-fund
+      - run: CI=true npm test -- --watchAll=false
+      - run: CI=false npm run build

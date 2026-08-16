@@ -108,6 +108,16 @@ let webpackConfig = {
 };
 
 webpackConfig.devServer = (devServerConfig) => {
+  // NEW: proxy /api to the FastAPI mentor backend during local development.
+  // The production deployment serves both from one origin (FastAPI static).
+  devServerConfig.proxy = [
+    {
+      context: ['/api'],
+      target: process.env.MENTOR_API_PROXY_TARGET || 'http://localhost:8010',
+      changeOrigin: true,
+    },
+  ];
+
   // Add health check endpoints if enabled
   if (config.enableHealthCheck && setupHealthEndpoints && healthPluginInstance) {
     const originalSetupMiddlewares = devServerConfig.setupMiddlewares;

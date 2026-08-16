@@ -1,0 +1,35 @@
+{
+  "name": "content-pipeline",
+  "version": "0.1.0",
+  "description": "CA Inter AI Chapter MCQ Engine — source ingestion, AI generation, validation, review staging and publishing pipeline",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "ingest": "npm run stage:catalog && npm run stage:drive && npm run stage:extract && npm run stage:normalize && npm run stage:map",
+    "stage:catalog": "node src/stage-0-catalog.mjs",
+    "stage:drive": "node src/stage-1-drive.mjs",
+    "stage:extract": "node src/stage-2-extract.mjs",
+    "stage:normalize": "node src/stage-3-normalize.mjs",
+    "stage:map": "node src/stage-4-map.mjs",
+    "stage:generate": "node src/stage-5-generate.mjs",
+    "stage:validate-schema": "node src/stage-6-validate-schema.mjs",
+    "stage:validate-content": "node src/stage-7-validate-content.mjs",
+    "stage:duplicates": "node src/stage-8-duplicates.mjs",
+    "stage:coverage": "node src/stage-9-coverage.mjs",
+    "stage:stage": "node src/stage-10-stage.mjs",
+    "stage:publish": "node src/stage-11-publish.mjs",
+    "stage:verify": "node src/stage-12-verify.mjs",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "dotenv": "^16.4.5",
+    "googleapis": "^140.0.1",
+    "mammoth": "^1.8.0",
+    "mongodb": "^6.8.0",
+    "pdf-parse": "^1.1.1"
+  }
+}
