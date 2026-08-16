@@ -1,5 +1,9 @@
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, Users, ClipboardList, Trophy, Megaphone, FileText, FileBarChart2, Settings, GraduationCap } from 'lucide-react';
+import {
+  LayoutDashboard, Users, ClipboardList, Trophy, Megaphone, FileText, FileBarChart2, Settings, GraduationCap,
+  Sparkles, ListChecks, Grid3X3, BookOpenCheck, Layers, FlaskConical, PackageCheck, History,
+  BarChart3, UserSearch, GitCompareArrows, School, Table2, UserX, TrendingUp, CheckSquare,
+} from 'lucide-react';
 import { cn } from '@/utils/format';
 
 const NAV = [
@@ -11,6 +15,29 @@ const NAV = [
   { to: '/notes', label: 'Notes', icon: FileText, testid: 'nav-notes' },
   { to: '/reports', label: 'Reports', icon: FileBarChart2, testid: 'nav-reports' },
   { to: '/settings', label: 'Settings', icon: Settings, testid: 'nav-settings' },
+];
+
+// NEW — AI Content review & publishing center (additive; existing nav untouched)
+const AI_CONTENT_NAV = [
+  { to: '/ai-content/queue', label: 'Review Queue', icon: ListChecks, testid: 'nav-ai-queue' },
+  { to: '/ai-content/coverage', label: 'Chapter Coverage', icon: Grid3X3, testid: 'nav-ai-coverage' },
+  { to: '/ai-content/questions', label: 'Question Review', icon: BookOpenCheck, testid: 'nav-ai-questions' },
+  { to: '/ai-content/scenarios', label: 'Scenario Review', icon: Layers, testid: 'nav-ai-scenarios' },
+  { to: '/ai-content/references', label: 'Calibration References', icon: FlaskConical, testid: 'nav-ai-references' },
+  { to: '/ai-content/releases', label: 'Approved Releases', icon: PackageCheck, testid: 'nav-ai-releases' },
+  { to: '/ai-content/audit', label: 'Audit History', icon: History, testid: 'nav-ai-audit' },
+];
+
+// NEW — student analytics (additive)
+const ANALYTICS_NAV = [
+  { to: '/analytics', label: 'All Students Overview', icon: BarChart3, testid: 'nav-an-overview' },
+  { to: '/analytics/students', label: 'Student Profile Analysis', icon: UserSearch, testid: 'nav-an-students' },
+  { to: '/analytics/groups', label: 'Group I / Group II', icon: GitCompareArrows, testid: 'nav-an-groups' },
+  { to: '/analytics/subjects', label: 'Subject Analysis', icon: School, testid: 'nav-an-subjects' },
+  { to: '/analytics/heatmap', label: 'Chapter Heatmap', icon: Table2, testid: 'nav-an-heatmap' },
+  { to: '/analytics/weak', label: 'Weak & At-Risk', icon: UserX, testid: 'nav-an-weak' },
+  { to: '/analytics/improvement', label: 'Improvement Tracking', icon: TrendingUp, testid: 'nav-an-improvement' },
+  { to: '/analytics/followups', label: 'Follow-up Actions', icon: CheckSquare, testid: 'nav-an-followups' },
 ];
 
 export default function Sidebar({ open, onClose }) {
@@ -41,29 +68,38 @@ export default function Sidebar({ open, onClose }) {
         </div>
 
         <nav className="flex-1 overflow-y-auto px-3 py-5 space-y-1">
-          <div className="px-3 pb-2 text-[10px] uppercase tracking-[0.22em] font-semibold text-slate-400 dark:text-slate-500">
-            Main
-          </div>
-          {NAV.map(({ to, label, icon: Icon, testid }) => (
-            <NavLink
-              key={to}
-              to={to}
-              end={to === '/'}
-              onClick={onClose}
-              data-testid={testid}
-              className={({ isActive }) =>
-                cn(
-                  'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium',
-                  'transition-colors duration-150',
-                  isActive
-                    ? 'bg-[#2563EB] text-white shadow-sm shadow-blue-500/25'
-                    : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-white'
-                )
-              }
-            >
-              <Icon className="w-[18px] h-[18px]" strokeWidth={2} />
-              <span>{label}</span>
-            </NavLink>
+          {[
+            { title: 'Main', items: NAV },
+            { title: 'AI Content', items: AI_CONTENT_NAV, icon: Sparkles },
+            { title: 'Analytics', items: ANALYTICS_NAV },
+          ].map(({ title, items, icon: GroupIcon }) => (
+            <div key={title}>
+              <div className="px-3 pt-3 pb-2 text-[10px] uppercase tracking-[0.22em] font-semibold text-slate-400 dark:text-slate-500 flex items-center gap-1.5">
+                {GroupIcon && <GroupIcon className="w-3 h-3" />}
+                {title}
+              </div>
+              {items.map(({ to, label, icon: Icon, testid }) => (
+                <NavLink
+                  key={to}
+                  to={to}
+                  end={to === '/'}
+                  onClick={onClose}
+                  data-testid={testid}
+                  className={({ isActive }) =>
+                    cn(
+                      'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium',
+                      'transition-colors duration-150',
+                      isActive
+                        ? 'bg-[#2563EB] text-white shadow-sm shadow-blue-500/25'
+                        : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-white'
+                    )
+                  }
+                >
+                  <Icon className="w-[18px] h-[18px]" strokeWidth={2} />
+                  <span>{label}</span>
+                </NavLink>
+              ))}
+            </div>
           ))}
         </nav>
 

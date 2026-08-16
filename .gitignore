@@ -76,14 +76,24 @@ agenthub/agents/youtube/db
 # Build caches
 .cache/
 
+# Content pipeline artifacts (source caches, work state, published bundles)
+content-pipeline/.cache/
+content-pipeline/state/
+content-pipeline/dist/
+content-pipeline/secrets/
+content-pipeline/config/*.json
+!content-pipeline/config/chapters.json
+
 memory/test_credentials.md
 
 # Mobile development
 android-sdk/
 .env
 .env.*
+!.env.example
 *.env
 credentials.json
 *.key
 .credentials
 frontend/node_modules/.cache/default-development/0.pack
+backend/tests/fixture_dist/

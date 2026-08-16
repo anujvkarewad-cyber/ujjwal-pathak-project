@@ -1,0 +1,37 @@
+name: content-pipeline
+
+on:
+  push:
+    paths:
+      - "content-pipeline/**"
+  pull_request:
+    paths:
+      - "content-pipeline/**"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: content-pipeline
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: content-pipeline/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - name: Fail closed on missing catalog
+        run: |
+          # The pipeline must refuse to run without the official chapter catalog.
+          set +e
+          node src/stage-0-catalog.mjs > /tmp/cat.log 2>&1
+          code=$?
+          set -e
+          if [ "$code" -eq 0 ]; then
+            echo "stage-0 unexpectedly succeeded without a catalog"
+            exit 1
+          fi
+          grep -q "No catalog" /tmp/cat.log

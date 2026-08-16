@@ -1,12 +1,14 @@
-import { Search, Bell, Sun, Moon, Menu } from 'lucide-react';
+import { Search, Bell, Sun, Moon, Menu, ShieldCheck } from 'lucide-react';
 import { useTheme } from '@/hooks/useTheme';
 import { useState, useEffect } from 'react';
 import { getMentorNotifications } from '@/api/dashboard';
+import LoginDialog from '@/components/content/LoginDialog';
 
 export default function Topbar({ onMenu, title, subtitle }) {
   const { theme, toggle } = useTheme();
   const [notifications, setNotifications] = useState([]);
   const [open, setOpen] = useState(false);
+  const [loginOpen, setLoginOpen] = useState(false);
  
 useEffect(() => {
   loadNotifications();
@@ -37,6 +39,15 @@ async function loadNotifications() {
       </div>
 
       <div className="ml-auto flex items-center gap-2 sm:gap-3">
+        <button
+          onClick={() => setLoginOpen(true)}
+          className="p-2.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:text-[#2563EB] transition-colors"
+          aria-label="Mentor sign-in for AI Content and Analytics"
+          data-testid="mentor-login-btn"
+          title="Mentor sign-in (AI Content + Analytics)"
+        >
+          <ShieldCheck className="w-[18px] h-[18px]" />
+        </button>
         <div className="hidden md:flex items-center gap-2 h-10 px-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 w-72">
           <Search className="w-4 h-4 text-slate-400" />
           <input
@@ -72,7 +83,7 @@ async function loadNotifications() {
     )}
   </button>
 
-  {open && (
+          {open && (
     <div className="absolute right-0 mt-2 w-96 bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 z-50">
 
       {notifications.length === 0 ? (
@@ -93,6 +104,8 @@ async function loadNotifications() {
 
 </div>
       </div>
+
+      <LoginDialog open={loginOpen} onOpenChange={setLoginOpen} />
     </header>
   );
 }
