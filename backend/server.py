@@ -82,10 +82,30 @@ app.include_router(analytics.router)
 # frontend build directory is absent, the catch-all simply 404s.
 FRONTEND_BUILD_DIR = ROOT_DIR.parent / 'frontend' / 'build'
 
-from fastapi.responses import FileResponse, Response
+from fastapi.responses import FileResponse, JSONResponse, Response
+
+# Path prefixes that belong to the API surface, never to the SPA. A request
+# under one of these that reached the catch-all matched NO real route, so it
+# must return a JSON 404 — serving index.html here is what produced
+# `Unexpected token '<', "<!doctype "... is not valid JSON` in the browser:
+# fetch() saw HTTP 200 + text/html and res.json() choked on the markup.
+API_PREFIXES = ('api', 'docs', 'redoc', 'openapi.json')
+
+
+def _is_api_path(full_path: str) -> bool:
+    head = full_path.lstrip('/').split('/', 1)[0]
+    return head in API_PREFIXES
+
 
 @app.get('/{full_path:path}', include_in_schema=False)
 async def spa_fallback(full_path: str):
+    # Unknown API route → JSON 404 (never the SPA shell).
+    if _is_api_path(full_path):
+        return JSONResponse(
+            {'detail': f'Not Found: /{full_path.lstrip("/")}'},
+            status_code=404,
+        )
+
     if FRONTEND_BUILD_DIR.is_dir():
         candidate = (FRONTEND_BUILD_DIR / full_path).resolve()
         build_root = FRONTEND_BUILD_DIR.resolve()
