@@ -5,12 +5,16 @@
 // Base URL: REACT_APP_MENTOR_API_URL. When empty, calls route to the local
 // mock adapter (local-content.js), consistent with the existing mock pattern.
 
-const BASE_URL = (process.env.REACT_APP_MENTOR_API_URL || '').replace(/\/$/, '');
-// ''            → mock adapter (no backend configured)
-// '/api'        → same-origin backend (dev proxy or FastAPI static deployment)
-// 'http(s)://…' → absolute backend URL
-export const USE_MOCK = !BASE_URL;
-export const RELATIVE_BASE = BASE_URL.startsWith('/');
+const RAW_BASE_URL = (process.env.REACT_APP_MENTOR_API_URL || '').trim();
+// ''                        → mock adapter (no backend configured)
+// 'same-origin' | 'proxy' | '/' → same-origin backend (dev-server proxy or the
+//                             FastAPI static deployment) — used in Codespaces,
+//                             where the browser cannot reach localhost:8010
+// 'http(s)://…'             → absolute backend URL (e.g. http://localhost:8010)
+const SAME_ORIGIN = ['same-origin', 'proxy', '/'].includes(RAW_BASE_URL.toLowerCase());
+const BASE_URL = SAME_ORIGIN ? '' : RAW_BASE_URL.replace(/\/$/, '');
+export const USE_MOCK = !RAW_BASE_URL;
+export const RELATIVE_BASE = SAME_ORIGIN || BASE_URL.startsWith('/');
 
 export const AUTH_EVENT = 'upm:auth-required';
 const TOKEN_KEY = 'upm_mentor_token';
