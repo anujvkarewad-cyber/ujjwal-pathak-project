@@ -73,5 +73,44 @@ export async function apiCall(path, { method = 'GET', body = null, params = null
     err.status = res.status;
     throw err;
   }
-  return res.json();
+  return parseJson(res, url);
+}
+
+// Reads the body as JSON, but fails with a diagnosable message when the server
+// answered with something else (almost always the SPA's index.html).
+//
+// Without this guard the raw failure surfaced to users as:
+//   Unexpected token '<', "<!doctype "... is not valid JSON
+// which says nothing about *why* HTML came back. The usual causes are a
+// mistyped/unregistered API path falling through to the SPA catch-all, or the
+// dev server proxy not forwarding /api to the FastAPI backend.
+async function parseJson(res, url) {
+  const contentType = res.headers.get('content-type') || '';
+  const text = await res.text();
+
+  if (!contentType.includes('json')) {
+    const looksLikeHtml = /^\s*<(?:!doctype|html)/i.test(text);
+    const err = new Error(
+      looksLikeHtml
+        ? `Expected JSON from ${url} but received an HTML page (HTTP ${res.status}). ` +
+          'The request did not reach the API — check that the path is a real API route ' +
+          'and that the dev server proxies /api to the backend.'
+        : `Expected JSON from ${url} but received "${contentType || 'unknown content type'}" (HTTP ${res.status}).`
+    );
+    err.status = res.status;
+    err.contentType = contentType;
+    err.bodyPreview = text.slice(0, 200);
+    throw err;
+  }
+
+  if (!text) return null; // 204 / empty body
+
+  try {
+    return JSON.parse(text);
+  } catch (cause) {
+    const err = new Error(`Malformed JSON received from ${url}: ${cause.message}`);
+    err.status = res.status;
+    err.bodyPreview = text.slice(0, 200);
+    throw err;
+  }
 }
