@@ -26,7 +26,7 @@ function Select({ label, value, onChange, options }) {
 export default function References() {
   const [source, setSource] = useState('');
   const [attempt, setAttempt] = useState('');
-  const { data, isLoading } = useReviewQueue({ limit: 500 });
+  const { data, isLoading } = useReviewQueue({ limit: 5000 });
 
   const rows = useMemo(() => {
     const out = [];

@@ -110,6 +110,48 @@ def test_convert_file_shapes_documents(generated_dir):
 
     # every imported question passes the backend's own validation
     assert [e for q in questions for e in q["validation"]["errors"]] == []
+    assert len({q["id"] for q in questions}) == 50
+
+
+def test_convert_file_remints_colliding_scenario_ids(tmp_path):
+    """Real generated files reuse plain IDs for scenario MCQs (…_011)."""
+    payload = {
+        "chapterId": "advanced-accounting-1",
+        "plain": [
+            {
+                "id": "adp_q_advanced-accounting-1_011",
+                "prompt": "Plain question eleven about SMC classification under the rules?",
+                "options": ["A text here", "B text here", "C text here", "D text here"],
+                "answerIndex": 0,
+                "explanation": "Plain eleven explanation covering the applicable rule in enough detail.",
+                "difficulty": "Easy",
+                "conceptTags": ["smc"],
+            }
+        ],
+        "scenarios": [
+            {
+                "passage": "A listed company borrows fifty four crore for ten days during the year under review.",
+                "linkedMcqs": [
+                    {
+                        "id": "adp_q_advanced-accounting-1_011",
+                        "prompt": "Scenario question that reused the plain id — what is the classification?",
+                        "options": ["SMC", "Non-SMC", "Level IV", "Exempt"],
+                        "answerIndex": 1,
+                        "explanation": "Borrowings exceeded the SMC ceiling even for a few days, so Non-SMC applies.",
+                        "difficulty": "Medium",
+                        "conceptTags": ["smc"],
+                    }
+                ],
+            }
+        ],
+    }
+    path = tmp_path / "advanced-accounting-1.json"
+    path.write_text(json.dumps(payload), encoding="utf-8")
+    result = imp.convert_file(path, {})
+    ids = [q["id"] for q in result["questions"]]
+    assert len(ids) == 2
+    assert len(set(ids)) == 2
+    assert "adp_q_advanced-accounting-1_011" in ids
 
 
 def test_run_import_writes_documents_and_purges_demo(generated_dir):

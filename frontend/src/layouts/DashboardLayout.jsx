@@ -9,8 +9,11 @@ const TITLES = {
   '/daily-tracker': { title: 'Daily Tracker', subtitle: 'Track daily submissions across batches' },
   '/leaderboard': { title: 'Leaderboard', subtitle: 'Top performers across time frames' },
   '/announcements': { title: 'Announcements', subtitle: 'Broadcast updates to your students' },
+  '/notes': { title: 'Notes', subtitle: 'Mentor notes for students' },
   '/reports': { title: 'Reports', subtitle: 'Detailed batch & student reports' },
   '/settings': { title: 'Settings', subtitle: 'Manage your mentor profile and preferences' },
+  '/ai-content': { title: 'MCQ Review', subtitle: 'Approve chapter MCQs before students see them' },
+  '/analytics': { title: 'Analytics', subtitle: 'Consented chapter mastery and follow-ups' },
 };
 
 export default function DashboardLayout() {

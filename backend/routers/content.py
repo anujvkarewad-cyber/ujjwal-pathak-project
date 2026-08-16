@@ -20,6 +20,7 @@ from db import (
     get_db,
 )
 from models import DecisionRequest, QuestionUpdate
+from persist import dump_store
 
 router = APIRouter(prefix="/api/content", tags=["content"])
 
@@ -52,6 +53,26 @@ def _push_history(doc: dict, to: str, by: str):
     doc["status"] = to
 
 
+@router.get("/stats")
+async def content_stats(claims: dict = Depends(require_mentor)):
+    """Counts for the main mentor dashboard MCQ review card."""
+    db = get_db()
+    total = await db[CONTENT_QUESTIONS].count_documents({})
+    chapters = await db[CONTENT_CHAPTERS].count_documents({})
+    needs_review = await db[CONTENT_QUESTIONS].count_documents({"status": "needs_review"})
+    approved = await db[CONTENT_QUESTIONS].count_documents({"status": {"$in": list(APPROVED_SET)}})
+    rejected = await db[CONTENT_QUESTIONS].count_documents({"status": "rejected"})
+    changes = await db[CONTENT_QUESTIONS].count_documents({"status": "changes_requested"})
+    return {
+        "total": total,
+        "chapters": chapters,
+        "needsReview": needs_review,
+        "approved": approved,
+        "rejected": rejected,
+        "changesRequested": changes,
+    }
+
+
 @router.get("/queue")
 async def review_queue(
     subject: Optional[str] = None,
@@ -61,8 +82,8 @@ async def review_queue(
     difficulty: Optional[str] = None,
     status: Optional[str] = None,
     hasWarnings: Optional[bool] = None,
-    limit: int = Query(default=100, le=500),
-    offset: int = 0,
+    limit: int = Query(default=100, ge=1, le=5000),
+    offset: int = Query(default=0, ge=0),
     claims: dict = Depends(require_mentor),
 ):
     db = get_db()
@@ -77,6 +98,18 @@ async def review_queue(
         filt["difficulty"] = difficulty
     if status:
         filt["status"] = status
+    if hasWarnings is True:
+        filt["validation.warnings.0"] = {"$exists": True}
+    elif hasWarnings is False:
+        filt["$and"] = filt.get("$and", []) + [
+            {
+                "$or": [
+                    {"validation.warnings": {"$exists": False}},
+                    {"validation.warnings": []},
+                    {"validation.warnings": None},
+                ]
+            }
+        ]
     # group filter needs the catalog/group denormalized on questions
     # (group is stamped on chapter records; questions carry subject only)
     if group:
@@ -84,7 +117,7 @@ async def review_queue(
         async for c in db[CONTENT_CHAPTERS].find({"group": group}, {"chapterId": 1}):
             chapter_ids.append(c["chapterId"])
         if not chapter_ids:
-            return {"total": 0, "items": []}
+            return {"total": 0, "limit": limit, "offset": offset, "items": []}
         filt["chapterId"] = {"$in": chapter_ids}
 
     total = await db[CONTENT_QUESTIONS].count_documents(filt)
@@ -92,12 +125,8 @@ async def review_queue(
     items = []
     async for doc in cursor:
         doc.pop("_id", None)
-        if hasWarnings is not None:
-            has = bool((doc.get("validation") or {}).get("warnings"))
-            if has != hasWarnings:
-                continue
         items.append(doc)
-    return {"total": total, "items": items}
+    return {"total": total, "limit": limit, "offset": offset, "items": items}
 
 
 @router.get("/questions/{question_id}")
@@ -149,6 +178,7 @@ async def update_question(question_id: str, body: QuestionUpdate, claims: dict =
         await db[CONTENT_QUESTIONS].replace_one({"id": question_id, "status": {"$nin": ["superseded"]}}, candidate)
 
     await _audit(db, question_id, "question", "edit", claims.get("sub", "mentor"), {"fields": [k for k, v in editable.items() if v is not None]})
+    await dump_store()
     candidate.pop("_id", None)
     return candidate
 
@@ -185,6 +215,7 @@ async def decide_question(question_id: str, body: DecisionRequest, claims: dict 
 
     await db[CONTENT_QUESTIONS].replace_one({"id": question_id, "status": {"$nin": ["superseded"]}}, doc)
     await _audit(db, question_id, "question", decision, claims.get("sub", "mentor"), {"comment": body.comment})
+    await dump_store()
     doc.pop("_id", None)
     return doc
 
@@ -258,6 +289,7 @@ async def decide_scenario(scenario_id: str, body: DecisionRequest, claims: dict 
             await db[CONTENT_QUESTIONS].replace_one({"id": q["id"]}, q)
         await _audit(db, scenario_id, "scenario", "reject_block", claims.get("sub", "mentor"), {"questions": question_ids, "comment": body.comment})
 
+    await dump_store()
     scenario.pop("_id", None)
     return scenario
 

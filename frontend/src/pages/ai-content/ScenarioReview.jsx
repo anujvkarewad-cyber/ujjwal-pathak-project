@@ -64,7 +64,7 @@ function ScenarioBlock({ scenarioId }) {
 }
 
 export default function ScenarioReview() {
-  const { data, isLoading } = useReviewQueue({ questionType: 'scenario_mcq', limit: 500 });
+  const { data, isLoading } = useReviewQueue({ questionType: 'scenario_mcq', limit: 5000 });
   const [openScenarioId, setOpenScenarioId] = useState(null);
 
   const groups = {};

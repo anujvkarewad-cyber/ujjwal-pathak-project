@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Toaster } from 'sonner';
 import '@/App.css';
 import DashboardLayout from '@/layouts/DashboardLayout';
 import Dashboard from '@/pages/Dashboard';
@@ -31,6 +32,7 @@ import FollowUps from '@/pages/analytics/FollowUps';
 function App() {
   return (
     <BrowserRouter>
+      <Toaster position="top-right" richColors />
       <Routes>
         <Route element={<DashboardLayout />}>
           <Route index element={<Dashboard />} />

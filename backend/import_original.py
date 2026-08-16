@@ -375,6 +375,27 @@ def content_hash(payload: dict) -> str:
 
 
 # ───────────────────────────── document builders ───────────────────────────
+def _unique_question_id(raw: dict, chapter_id: str, seq: int, used_ids: Optional[set] = None) -> str:
+    """Keep the source id when unique; remint if a later scenario reuses it.
+
+    The Gemini generator numbers scenario MCQs as `_011`… which collides with
+    plain Q11. Without this, Mongo upserts overwrite ~8 questions per chapter
+    and the bank never reaches 50 × 94.
+    """
+    qid = raw.get("id") if isinstance(raw.get("id"), str) and raw.get("id", "").startswith("adp_") else None
+    qid = qid or f"adp_q_{chapter_id}_{seq:03d}"
+    if used_ids is None:
+        return qid
+    if qid in used_ids:
+        qid = f"adp_q_{chapter_id}_{seq:03d}"
+        n = seq
+        while qid in used_ids:
+            n += 1
+            qid = f"adp_q_{chapter_id}_{n:03d}"
+    used_ids.add(qid)
+    return qid
+
+
 def build_question(
     raw: dict,
     chapter: dict,
@@ -386,10 +407,10 @@ def build_question(
     generated_at: str,
     source_path: str,
     derive_refs: bool = True,
+    used_ids: Optional[set] = None,
 ) -> dict:
     chapter_id = chapter["chapterId"]
-    qid = raw.get("id") if isinstance(raw.get("id"), str) and raw.get("id", "").startswith("adp_") else None
-    qid = qid or f"adp_q_{chapter_id}_{seq:03d}"
+    qid = _unique_question_id(raw, chapter_id, seq, used_ids)
 
     prompt = str(_first(raw, PROMPT_KEYS) or "").strip()
     options = normalize_options(_first(raw, OPTION_KEYS))
@@ -555,6 +576,7 @@ def convert_file(path: Path, catalog: dict[str, dict], derive_refs: bool = True)
     source_path = str(path)
 
     questions: list[dict] = []
+    used_ids: set[str] = set()
     for i, raw in enumerate(plain_raw):
         if not isinstance(raw, dict):
             continue
@@ -568,6 +590,7 @@ def convert_file(path: Path, catalog: dict[str, dict], derive_refs: bool = True)
                 generated_at=generated_at,
                 source_path=source_path,
                 derive_refs=derive_refs,
+                used_ids=used_ids,
             )
         )
 
@@ -604,6 +627,7 @@ def convert_file(path: Path, catalog: dict[str, dict], derive_refs: bool = True)
                 generated_at=generated_at,
                 source_path=source_path,
                 derive_refs=derive_refs,
+                used_ids=used_ids,
             )
             questions.append(question)
             qids.append(question["id"])

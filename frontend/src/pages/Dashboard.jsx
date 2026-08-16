@@ -1,13 +1,16 @@
-import { Users, UserCheck, ClipboardList, AlertTriangle, Clock, CalendarCheck, LineChart } from 'lucide-react';
+import { Users, UserCheck, ClipboardList, AlertTriangle, Clock, CalendarCheck, LineChart, BookOpenCheck } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import KPICard from '@/components/dashboard/KPICard';
 import RecentActivity from '@/components/dashboard/RecentActivity';
 import UpcomingTasks from '@/components/dashboard/UpcomingTasks';
+import McqReviewPanel from '@/components/dashboard/McqReviewPanel';
 import { AttendanceAreaChart, WeeklyStudyBarChart, PerformancePieChart, BatchBarChart } from '@/components/charts/Charts';
 import { CardSkeleton, Skeleton } from '@/components/common/Skeleton';
 import {
   useDashboardKpis, useRecentActivity, useWeeklyStudy,
   useAttendanceTrend, usePerformanceMix, useBatchOverview, useUpcomingTasks,
 } from '@/api/hooks';
+import { useContentStats } from '@/api/hooks-content';
 
 const ChartCard = ({ title, subtitle, children, testid, wide }) => (
   <div className={`${wide ? 'lg:col-span-2 ' : ''}bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5`} data-testid={testid}>
@@ -18,6 +21,7 @@ const ChartCard = ({ title, subtitle, children, testid, wide }) => (
 );
 
 export default function Dashboard() {
+  const navigate = useNavigate();
   const { data: k, isLoading: kLoading } = useDashboardKpis();
   const { data: activity } = useRecentActivity();
   const { data: weekly } = useWeeklyStudy();
@@ -25,6 +29,7 @@ export default function Dashboard() {
   const { data: perfMix } = usePerformanceMix();
   const { data: batch } = useBatchOverview();
   const { data: tasks } = useUpcomingTasks();
+  const { data: mcqStats } = useContentStats();
 
   const cards = k ? [
     { icon: Users, label: 'Total Students', value: k.total, tone: 'blue', delta: 4, testid: 'kpi-total' },
@@ -38,7 +43,22 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-6" data-testid="dashboard-page">
+      <McqReviewPanel />
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <button
+          type="button"
+          onClick={() => navigate('/ai-content/queue')}
+          className="text-left"
+        >
+          <KPICard
+            icon={BookOpenCheck}
+            label="MCQs awaiting approval"
+            value={mcqStats?.needsReview ?? '—'}
+            tone="amber"
+            testid="kpi-mcq-pending"
+          />
+        </button>
         {kLoading
           ? Array.from({ length: 7 }).map((_, i) => <CardSkeleton key={i} />)
           : cards.map((c, i) => <KPICard key={i} {...c} />)}

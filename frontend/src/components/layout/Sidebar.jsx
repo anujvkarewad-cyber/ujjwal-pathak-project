@@ -8,6 +8,7 @@ import { cn } from '@/utils/format';
 
 const NAV = [
   { to: '/', label: 'Dashboard', icon: LayoutDashboard, testid: 'nav-dashboard' },
+  { to: '/ai-content/queue', label: 'MCQ Review', icon: BookOpenCheck, testid: 'nav-mcq-review' },
   { to: '/students', label: 'Students', icon: Users, testid: 'nav-students' },
   { to: '/daily-tracker', label: 'Daily Tracker', icon: ClipboardList, testid: 'nav-daily-tracker' },
   { to: '/leaderboard', label: 'Leaderboard', icon: Trophy, testid: 'nav-leaderboard' },

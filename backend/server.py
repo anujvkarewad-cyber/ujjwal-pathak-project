@@ -117,4 +117,10 @@ async def startup_db_client():
 
 @app.on_event("shutdown")
 async def shutdown_db_client():
+    try:
+        from persist import dump_store
+
+        await dump_store()
+    except Exception:
+        logging.getLogger(__name__).exception("failed to persist content store")
     await close_db()

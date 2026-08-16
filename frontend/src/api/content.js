@@ -7,6 +7,7 @@ const call = (path, opts) => (USE_MOCK ? mockContent(path, opts) : apiCall(path,
 export const loginMentor = (email, password) =>
   USE_MOCK ? Promise.resolve({ token: 'mock-token', email, role: 'mentor' }) : apiCall('/api/auth/login', { method: 'POST', body: { email, password } });
 
+export const contentStats = () => call('/api/content/stats');
 export const listQueue = (params) => call('/api/content/queue', { params });
 export const getQuestion = (id) => call(`/api/content/questions/${id}`);
 export const updateQuestion = (id, patch) => call(`/api/content/questions/${id}`, { method: 'PUT', body: patch });

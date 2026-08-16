@@ -20,6 +20,7 @@ os.environ["MENTOR_PASSWORD_HASH"] = CryptContext(schemes=["bcrypt"], deprecated
 os.environ.setdefault("DEV_AUTH_BYPASS", "0")
 os.environ.setdefault("SYNC_SECRET", "test-sync-secret")
 os.environ.setdefault("CONTENT_DIR", str(BACKEND_DIR / "tests" / "fixture_dist"))
+os.environ["CONTENT_PERSIST"] = "0"
 
 import pytest  # noqa: E402
 
