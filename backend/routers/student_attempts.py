@@ -7,9 +7,7 @@ password. Only completed, size-bounded Daily/Practice attempts are accepted.
 from datetime import datetime, timezone
 
 import httpx
-from fastapi import APIRouter, Depends, HTTPException, Query
-
-from auth import require_mentor
+from fastapi import APIRouter, HTTPException
 from config import settings
 from db import ANALYTICS_AUDIT_SYNC, STUDENT_MCQ_ATTEMPTS, get_db
 from models import StudentMcqSyncRequest, StudentTokenRequest
@@ -112,20 +110,3 @@ async def restore_student_attempts(body: StudentTokenRequest):
         "daily": daily[: settings.mcq_daily_retention],
         "practice": practice[: settings.mcq_practice_retention],
     }
-
-
-@router.get("/student-attempts/mentor")
-async def mentor_student_attempts(
-    studentId: str = Query(min_length=1, max_length=64),
-    limit: int = Query(default=100, ge=1, le=330),
-    claims: dict = Depends(require_mentor),
-):
-    """Mentor-readable raw attempt history; the mentor UI can consume this later."""
-    student_id = studentId.strip().upper()
-    db = get_db()
-    items = []
-    async for doc in db[STUDENT_MCQ_ATTEMPTS].find(
-        {"studentId": student_id}, {"_id": 0}
-    ).sort("completedAt", -1).limit(limit):
-        items.append(doc)
-    return {"studentId": student_id, "items": items}

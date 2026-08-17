@@ -63,7 +63,7 @@ def _restore_body(student_id="UMP0001", password="secret"):
     return {"studentId": student_id, "password": password}
 
 
-def test_completed_attempts_sync_restore_and_mentor_read(client, mentor_headers):
+def test_completed_attempts_sync_and_restore(client):
     response = client.post(
         "/api/student-attempts/sync",
         json=_sync_body(attempts=[_daily(), _practice()]),
@@ -77,12 +77,9 @@ def test_completed_attempts_sync_restore_and_mentor_read(client, mentor_headers)
     assert restored["daily"][0]["answers"] == {"q1": 0, "q2": 2}
     assert restored["practice"][0]["score"] == 1
 
-    mentor = client.get(
-        "/api/student-attempts/mentor?studentId=UMP0001",
-        headers=mentor_headers,
-    )
-    assert mentor.status_code == 200
-    assert len(mentor.json()["items"]) == 2
+    # Raw histories are intentionally not exposed through a mentor endpoint
+    # while production DEV_AUTH_BYPASS remains enabled.
+    assert client.get("/api/student-attempts/mentor?studentId=UMP0001").status_code == 404
 
 
 def test_attempts_are_isolated_by_student(client):
