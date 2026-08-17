@@ -65,19 +65,24 @@ async def _promote_complete_scenarios(db, chapter_id: str, by: str = "system") -
     """
     if not chapter_id:
         return 0
-    promoted = 0
+    pending = []
     async for scenario in db[CONTENT_SCENARIOS].find(
         {"chapterId": chapter_id, "status": {"$nin": list(APPROVED_SET | {"rejected", "superseded"})}}
     ):
+        pending.append(scenario)
+    if not pending:
+        return 0
+    # Single pass: collect the chapter's approved question ids once instead of
+    # issuing 4 find_one() calls per pending scenario.
+    approved_ids = set()
+    async for q in db[CONTENT_QUESTIONS].find(
+        {"chapterId": chapter_id, "status": {"$in": list(APPROVED_SET)}}, {"id": 1}
+    ):
+        approved_ids.add(q.get("id"))
+    promoted = 0
+    for scenario in pending:
         qids = scenario.get("questionIds") or []
-        if len(qids) != 4:
-            continue
-        approved = 0
-        for qid in qids:
-            q = await db[CONTENT_QUESTIONS].find_one({"id": qid, "status": {"$in": list(APPROVED_SET)}})
-            if q:
-                approved += 1
-        if approved != 4:
+        if len(qids) != 4 or not all(qid in approved_ids for qid in qids):
             continue
         sid = scenario.get("scenarioId")
         scenario.pop("_id", None)
@@ -447,20 +452,70 @@ async def list_chapters(
     chapters = []
     async for c in db[CONTENT_CHAPTERS].find(filt).sort("chapterId", 1):
         c.pop("_id", None)
-        # refresh coverage from DB counts. If every linked MCQ is already
-        # approved, promote the parent scenario so the Gate button is not
-        # stuck after question-by-question review.
-        if await db[CONTENT_SCENARIOS].count_documents({"chapterId": c["chapterId"], "status": {"$nin": list(APPROVED_SET | {"rejected", "superseded"})}}):
-            await _promote_complete_scenarios(db, c["chapterId"], claims.get("sub", "mentor"))
-        plain = await db[CONTENT_QUESTIONS].count_documents({"chapterId": c["chapterId"], "questionType": "mcq", "status": {"$in": list(APPROVED_SET)}})
-        scenarios = await db[CONTENT_SCENARIOS].count_documents({"chapterId": c["chapterId"], "status": {"$in": list(APPROVED_SET)}})
-        scenario_mcqs = await db[CONTENT_QUESTIONS].count_documents({"chapterId": c["chapterId"], "questionType": "scenario_mcq", "status": {"$in": list(APPROVED_SET)}})
-        c["coverage"] = {
-            "plainApproved": plain, "plainTarget": 30,
-            "scenariosApproved": scenarios, "scenariosTarget": 5,
-            "scenarioMcqsApproved": scenario_mcqs, "scenarioMcqsTarget": 20,
-        }
         chapters.append(c)
+    if not chapters:
+        return {"items": []}
+
+    by_id = {c["chapterId"]: c for c in chapters if c.get("chapterId")}
+    wanted = set(by_id)
+    pending_scenarios: dict = {}          # chapterId -> [scenario, ...] not yet approved
+    approved_scenarios: dict = {}         # chapterId -> count
+    approved_qids: dict = {}              # chapterId -> {question id, ...} (approved)
+    plain_counts: dict = {}               # chapterId -> approved plain MCQ count
+    scenario_mcq_counts: dict = {}        # chapterId -> approved scenario MCQ count
+
+    # Single pass over questions: one full scan instead of 2 count_documents
+    # per chapter (mongomock has no indexes, so per-chapter counts were O(N)
+    # full-collection scans — ~14s for 94 chapters / 4700 questions).
+    async for q in db[CONTENT_QUESTIONS].find(
+        {"status": {"$in": list(APPROVED_SET)}}, {"chapterId": 1, "questionType": 1, "id": 1}
+    ):
+        cid = q.get("chapterId")
+        if cid not in wanted:
+            continue
+        approved_qids.setdefault(cid, set()).add(q.get("id"))
+        if q.get("questionType") == "mcq":
+            plain_counts[cid] = plain_counts.get(cid, 0) + 1
+        elif q.get("questionType") == "scenario_mcq":
+            scenario_mcq_counts[cid] = scenario_mcq_counts.get(cid, 0) + 1
+
+    # Single pass over scenarios: split approved vs pending per chapter.
+    async for s in db[CONTENT_SCENARIOS].find({}):
+        cid = s.get("chapterId")
+        if cid not in wanted:
+            continue
+        status = s.get("status")
+        if status in APPROVED_SET:
+            approved_scenarios[cid] = approved_scenarios.get(cid, 0) + 1
+        elif status not in ("rejected", "superseded"):
+            pending_scenarios.setdefault(cid, []).append(s)
+
+    # Promote scenario blocks whose 4 linked MCQs are already approved, so the
+    # Gate button is not stuck after question-by-question review.
+    by = claims.get("sub", "mentor")
+    for cid, scenarios_list in pending_scenarios.items():
+        qids_approved = approved_qids.get(cid, set())
+        for scenario in scenarios_list:
+            qids = scenario.get("questionIds") or []
+            if len(qids) != 4 or not all(qid in qids_approved for qid in qids):
+                continue
+            sid = scenario.get("scenarioId")
+            scenario.pop("_id", None)
+            _push_history(scenario, "approved", by)
+            scenario["approval"] = scenario.get("approval") or {
+                "mentorId": by,
+                "at": _now(),
+                "comments": "auto-approved: all 4 linked MCQs approved",
+            }
+            await db[CONTENT_SCENARIOS].replace_one({"scenarioId": sid}, scenario)
+            approved_scenarios[cid] = approved_scenarios.get(cid, 0) + 1
+
+    for cid, c in by_id.items():
+        c["coverage"] = {
+            "plainApproved": plain_counts.get(cid, 0), "plainTarget": 30,
+            "scenariosApproved": approved_scenarios.get(cid, 0), "scenariosTarget": 5,
+            "scenarioMcqsApproved": scenario_mcq_counts.get(cid, 0), "scenarioMcqsTarget": 20,
+        }
     return {"items": chapters}
 
 
