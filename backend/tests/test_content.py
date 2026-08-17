@@ -193,6 +193,46 @@ def test_chapter_gate_and_approve(client, mentor_headers):
     assert ch["coverage"]["plainApproved"] == 30
 
 
+def test_gate_promotes_scenarios_after_question_approval(client, mentor_headers):
+    """Approving all 50 questions (not the scenario docs) used to leave the
+    Gate button locked on '5 scenarios not all approved'. Opening / approving
+    the gate must auto-promote complete scenario blocks."""
+    _seed()
+
+    async def approve_questions_only():
+        db = get_db()
+        await db[CONTENT_QUESTIONS].update_many(
+            {"chapterId": "ch-acc-01"},
+            {"$set": {"status": "approved", "warningsAcknowledged": True}},
+        )
+
+    asyncio.run(approve_questions_only())
+
+    res = client.get("/api/content/chapters/ch-acc-01/gate", headers=mentor_headers)
+    assert res.status_code == 200, res.text
+    body = res.json()
+    assert body["publishable"] is True, body
+    assert body["coverage"]["scenariosApproved"] == 5
+
+    res = client.post("/api/content/chapters/ch-acc-01/approve", headers=mentor_headers)
+    assert res.status_code == 200, res.text
+    assert res.json()["ok"] is True
+
+    res = client.post("/api/content/chapters/ch-acc-01/publish", headers=mentor_headers, json={"warningsAcknowledged": True})
+    assert res.status_code == 200, res.text
+    published = res.json()
+    assert published["ok"] is True
+    assert published["status"] == "published"
+    assert published["revision"] == 1
+
+    chapters = client.get("/api/content/chapters", headers=mentor_headers).json()["items"]
+    ch = next(c for c in chapters if c["chapterId"] == "ch-acc-01")
+    assert ch["status"] == "published"
+
+    releases = client.get("/api/content/releases", headers=mentor_headers).json()["items"]
+    assert releases and releases[0]["revision"] == 1
+
+
 def test_gate_fails_on_incomplete_chapter(client, mentor_headers):
     _seed()
     async def approve_partial():

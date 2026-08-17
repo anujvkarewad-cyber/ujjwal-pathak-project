@@ -4,12 +4,15 @@ Review status flow (docs §7.1):
 generated → auto_validated → needs_review → changes_requested | rejected | approved
 → release_candidate → published → superseded
 """
+import hashlib
+import json
 from datetime import datetime, timezone
 from typing import Optional
 
 from fastapi import APIRouter, Depends, HTTPException, Query
 
 from auth import require_mentor
+from config import settings
 from content_validation import chapter_gate, validate_question, validate_scenario
 from db import (
     CONTENT_AUDIT,
@@ -19,7 +22,7 @@ from db import (
     CONTENT_SCENARIOS,
     get_db,
 )
-from models import DecisionRequest, QuestionUpdate
+from models import ChapterPublishRequest, DecisionRequest, QuestionUpdate
 from persist import dump_store
 
 router = APIRouter(prefix="/api/content", tags=["content"])
@@ -51,6 +54,138 @@ def _push_history(doc: dict, to: str, by: str):
     history.append({"from": prev, "to": to, "by": by, "at": _now()})
     doc["statusHistory"] = history
     doc["status"] = to
+
+
+async def _promote_complete_scenarios(db, chapter_id: str, by: str = "system") -> int:
+    """Approve scenario blocks whose 4 linked MCQs are already approved.
+
+    Mentors typically approve questions one-by-one (Review Queue / Approve &
+    Next). Without this, the chapter Gate stays locked on
+    \"5 scenarios not all approved\" even after all 50 questions are approved.
+    """
+    if not chapter_id:
+        return 0
+    promoted = 0
+    async for scenario in db[CONTENT_SCENARIOS].find(
+        {"chapterId": chapter_id, "status": {"$nin": list(APPROVED_SET | {"rejected", "superseded"})}}
+    ):
+        qids = scenario.get("questionIds") or []
+        if len(qids) != 4:
+            continue
+        approved = 0
+        for qid in qids:
+            q = await db[CONTENT_QUESTIONS].find_one({"id": qid, "status": {"$in": list(APPROVED_SET)}})
+            if q:
+                approved += 1
+        if approved != 4:
+            continue
+        sid = scenario.get("scenarioId")
+        scenario.pop("_id", None)
+        _push_history(scenario, "approved", by)
+        scenario["approval"] = scenario.get("approval") or {
+            "mentorId": by,
+            "at": _now(),
+            "comments": "auto-approved: all 4 linked MCQs approved",
+        }
+        await db[CONTENT_SCENARIOS].replace_one({"scenarioId": sid}, scenario)
+        promoted += 1
+    return promoted
+
+
+def _content_hash(payload) -> str:
+    blob = json.dumps(payload, sort_keys=True, ensure_ascii=False, default=str)
+    return "sha256:" + hashlib.sha256(blob.encode("utf-8")).hexdigest()
+
+
+def _strip_id(doc: dict) -> dict:
+    out = dict(doc)
+    out.pop("_id", None)
+    return out
+
+
+async def _load_publishable(db, chapter_id: str):
+    questions = []
+    async for q in db[CONTENT_QUESTIONS].find({"chapterId": chapter_id, "status": {"$in": list(APPROVED_SET)}}):
+        questions.append(_strip_id(q))
+    scenarios = []
+    async for s in db[CONTENT_SCENARIOS].find({"chapterId": chapter_id, "status": {"$in": list(APPROVED_SET)}}):
+        scenarios.append(_strip_id(s))
+    return questions, scenarios
+
+
+def _write_release_files(revision: int, chapter_id: str, questions: list, scenarios: list, published_at: str, published_by: str) -> dict:
+    """Write a stage-11-compatible manifest + chapter chunks so students can fetch them."""
+    root = settings.content_dir
+    root.mkdir(parents=True, exist_ok=True)
+    (root / "web" / "chunks").mkdir(parents=True, exist_ok=True)
+    (root / "mobile" / "chunks").mkdir(parents=True, exist_ok=True)
+
+    plain = [q for q in questions if q.get("questionType") == "mcq"]
+    scenario_qs = [q for q in questions if q.get("questionType") == "scenario_mcq"]
+    bundle = {
+        "chapterId": chapter_id,
+        "revision": revision,
+        "catalogRevision": "may-2026",
+        "plainQuestions": plain,
+        "scenarios": [
+            {
+                "scenarioId": s.get("scenarioId"),
+                "passage": s.get("passage"),
+                "icaiSourceRefs": s.get("icaiSourceRefs"),
+                "calibrationRefs": s.get("calibrationRefs"),
+                "questionIds": s.get("questionIds"),
+                "questions": [q for q in scenario_qs if q.get("id") in (s.get("questionIds") or [])],
+            }
+            for s in scenarios
+        ],
+    }
+    digest = _content_hash(bundle)
+    short = digest.replace("sha256:", "")[:8]
+    web_rel = f"chunks/{chapter_id}.r{revision}.{short}.json"
+    mobile_rel = f"chunks/m/{chapter_id}.r{revision}.{short}.json"
+    (root / "web" / "chunks").mkdir(parents=True, exist_ok=True)
+    (root / "mobile" / "chunks" / "m").mkdir(parents=True, exist_ok=True)
+    payload = json.dumps(bundle, ensure_ascii=False, default=str, indent=2) + "\n"
+    (root / "web" / web_rel).parent.mkdir(parents=True, exist_ok=True)
+    (root / "mobile" / mobile_rel).parent.mkdir(parents=True, exist_ok=True)
+    (root / "web" / web_rel).write_text(payload, encoding="utf-8")
+    (root / "mobile" / mobile_rel).write_text(payload, encoding="utf-8")
+
+    chapter_entry = {
+        "chapterId": chapter_id,
+        "counts": {
+            "plain": len(plain),
+            "scenarios": len(scenarios),
+            "scenarioMcqs": len(scenario_qs),
+            "total": len(plain) + len(scenario_qs),
+        },
+        "questionIds": sorted(q.get("id") for q in questions if q.get("id")),
+        "chunkWeb": web_rel,
+        "chunkMobile": mobile_rel,
+        "contentHash": digest,
+    }
+
+    manifest_path = root / "published-manifest.json"
+    prev = {}
+    if manifest_path.is_file():
+        try:
+            prev = json.loads(manifest_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            prev = {}
+    kept = [c for c in (prev.get("chapters") or []) if c.get("chapterId") != chapter_id]
+    kept.append(chapter_entry)
+    manifest = {
+        "schemaVersion": 1,
+        "revision": revision,
+        "publishedAt": published_at,
+        "publishedBy": published_by,
+        "catalogRevision": "may-2026",
+        "chapters": sorted(kept, key=lambda c: c.get("chapterId") or ""),
+    }
+    tmp = manifest_path.with_suffix(".tmp")
+    tmp.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    tmp.replace(manifest_path)
+    return {"manifest": manifest, "chapter": chapter_entry}
 
 
 @router.get("/stats")
@@ -312,7 +447,11 @@ async def list_chapters(
     chapters = []
     async for c in db[CONTENT_CHAPTERS].find(filt).sort("chapterId", 1):
         c.pop("_id", None)
-        # refresh coverage from DB counts
+        # refresh coverage from DB counts. If every linked MCQ is already
+        # approved, promote the parent scenario so the Gate button is not
+        # stuck after question-by-question review.
+        if await db[CONTENT_SCENARIOS].count_documents({"chapterId": c["chapterId"], "status": {"$nin": list(APPROVED_SET | {"rejected", "superseded"})}}):
+            await _promote_complete_scenarios(db, c["chapterId"], claims.get("sub", "mentor"))
         plain = await db[CONTENT_QUESTIONS].count_documents({"chapterId": c["chapterId"], "questionType": "mcq", "status": {"$in": list(APPROVED_SET)}})
         scenarios = await db[CONTENT_SCENARIOS].count_documents({"chapterId": c["chapterId"], "status": {"$in": list(APPROVED_SET)}})
         scenario_mcqs = await db[CONTENT_QUESTIONS].count_documents({"chapterId": c["chapterId"], "questionType": "scenario_mcq", "status": {"$in": list(APPROVED_SET)}})
@@ -328,29 +467,30 @@ async def list_chapters(
 @router.get("/chapters/{chapter_id}/gate")
 async def chapter_gate_status(chapter_id: str, claims: dict = Depends(require_mentor)):
     db = get_db()
-    questions = []
-    async for q in db[CONTENT_QUESTIONS].find({"chapterId": chapter_id, "status": {"$in": list(APPROVED_SET)}}):
-        q.pop("_id", None)
-        questions.append(q)
-    scenarios = []
-    async for s in db[CONTENT_SCENARIOS].find({"chapterId": chapter_id, "status": {"$in": list(APPROVED_SET)}}):
-        s.pop("_id", None)
-        scenarios.append(s)
+    chapter = await db[CONTENT_CHAPTERS].find_one({"chapterId": chapter_id})
+    if not chapter:
+        raise HTTPException(status_code=404, detail="Chapter not found")
+    await _promote_complete_scenarios(db, chapter_id, claims.get("sub", "mentor"))
+    questions, scenarios = await _load_publishable(db, chapter_id)
     gate = chapter_gate(chapter_id, questions, scenarios)
-    return {"chapterId": chapter_id, "publishable": len(gate["errors"]) == 0, **gate}
+    return {
+        "chapterId": chapter_id,
+        "chapterTitle": chapter.get("chapterTitle") or chapter_id,
+        "chapterStatus": chapter.get("status") or "needs_review",
+        "publishable": len(gate["errors"]) == 0,
+        **gate,
+    }
 
 
 @router.post("/chapters/{chapter_id}/approve")
 async def approve_chapter(chapter_id: str, claims: dict = Depends(require_mentor)):
-    """Mentor confirms the chapter gate → release candidate. The actual bundle
-    build + manifest publish is done by the pipeline (stage-11)."""
+    """Mentor confirms the chapter gate → release candidate."""
     db = get_db()
-    questions = []
-    async for q in db[CONTENT_QUESTIONS].find({"chapterId": chapter_id, "status": {"$in": list(APPROVED_SET)}}):
-        questions.append(q)
-    scenarios = []
-    async for s in db[CONTENT_SCENARIOS].find({"chapterId": chapter_id, "status": {"$in": list(APPROVED_SET)}}):
-        scenarios.append(s)
+    chapter = await db[CONTENT_CHAPTERS].find_one({"chapterId": chapter_id})
+    if not chapter:
+        raise HTTPException(status_code=404, detail="Chapter not found")
+    await _promote_complete_scenarios(db, chapter_id, claims.get("sub", "mentor"))
+    questions, scenarios = await _load_publishable(db, chapter_id)
     gate = chapter_gate(chapter_id, questions, scenarios)
     if gate["errors"]:
         raise HTTPException(status_code=422, detail={"message": "Chapter gate not met", "errors": gate["errors"]})
@@ -366,7 +506,98 @@ async def approve_chapter(chapter_id: str, claims: dict = Depends(require_mentor
         {"$set": {"status": "release_candidate", "releaseCandidate": {"at": _now(), "by": claims.get("sub")}}},
     )
     await _audit(db, chapter_id, "chapter", "approve_chapter", claims.get("sub", "mentor"), {"coverage": gate["coverage"]})
-    return {"ok": True, "chapterId": chapter_id, "coverage": gate["coverage"]}
+    await dump_store()
+    return {"ok": True, "chapterId": chapter_id, "status": "release_candidate", "coverage": gate["coverage"]}
+
+
+@router.post("/chapters/{chapter_id}/publish")
+async def publish_chapter(
+    chapter_id: str,
+    body: ChapterPublishRequest = ChapterPublishRequest(),
+    claims: dict = Depends(require_mentor),
+):
+    """Mentor publishes a gated chapter from the dashboard (no pipeline CLI).
+
+    Promotes approved items → release_candidate → published, writes a release
+    record + student bundles, and persists so the Gate button actually ships
+    content after approve-to-publish.
+    """
+    db = get_db()
+    chapter = await db[CONTENT_CHAPTERS].find_one({"chapterId": chapter_id})
+    if not chapter:
+        raise HTTPException(status_code=404, detail="Chapter not found")
+    by = claims.get("sub", "mentor")
+    await _promote_complete_scenarios(db, chapter_id, by)
+    questions, scenarios = await _load_publishable(db, chapter_id)
+    gate = chapter_gate(chapter_id, questions, scenarios)
+    if gate["errors"]:
+        raise HTTPException(status_code=422, detail={"message": "Chapter gate not met", "errors": gate["errors"]})
+    if gate["warnings"] and not body.warningsAcknowledged:
+        raise HTTPException(status_code=422, detail={"message": "Warnings require acknowledgement", "warnings": gate["warnings"]})
+
+    published_at = _now()
+    latest = None
+    async for row in db[CONTENT_RELEASES].find({}).sort("revision", -1).limit(1):
+        latest = row
+    revision = int((latest or {}).get("revision") or 0) + 1
+
+    files_written = False
+    chapter_entry = None
+    manifest = None
+    try:
+        written = _write_release_files(revision, chapter_id, questions, scenarios, published_at, by)
+        manifest = written["manifest"]
+        chapter_entry = written["chapter"]
+        files_written = True
+    except OSError:
+        chapter_entry = {
+            "chapterId": chapter_id,
+            "counts": gate["coverage"],
+            "questionIds": [q.get("id") for q in questions],
+            "contentHash": _content_hash({"chapterId": chapter_id, "revision": revision}),
+        }
+        manifest = {
+            "schemaVersion": 1,
+            "revision": revision,
+            "publishedAt": published_at,
+            "publishedBy": by,
+            "catalogRevision": "may-2026",
+            "chapters": [chapter_entry],
+        }
+
+    await db[CONTENT_QUESTIONS].update_many(
+        {"chapterId": chapter_id, "status": {"$in": ["approved", "release_candidate"]}},
+        {"$set": {"status": "published", "publishedInRevision": revision, "publishedAt": published_at}},
+    )
+    await db[CONTENT_SCENARIOS].update_many(
+        {"chapterId": chapter_id, "status": {"$in": ["approved", "release_candidate"]}},
+        {"$set": {"status": "published", "publishedInRevision": revision, "publishedAt": published_at}},
+    )
+    await db[CONTENT_CHAPTERS].update_one(
+        {"chapterId": chapter_id},
+        {"$set": {"status": "published", "releaseCandidate": {"revision": revision, "at": published_at, "by": by}}},
+    )
+    await db[CONTENT_RELEASES].insert_one(
+        {
+            "revision": revision,
+            "manifest": manifest,
+            "publishedAt": published_at,
+            "publishedBy": by,
+            "chapters": [chapter_id],
+            "gates": [{"chapterId": chapter_id, **gate}],
+        }
+    )
+    await _audit(db, chapter_id, "chapter", "publish", by, {"revision": revision, "coverage": gate["coverage"]})
+    await dump_store()
+    return {
+        "ok": True,
+        "chapterId": chapter_id,
+        "status": "published",
+        "revision": revision,
+        "coverage": gate["coverage"],
+        "filesWritten": files_written,
+        "chapter": chapter_entry,
+    }
 
 
 @router.get("/releases")

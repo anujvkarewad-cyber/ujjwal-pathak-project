@@ -257,6 +257,8 @@ export const mockContent = async (path, { method = 'GET', body = null, params = 
     if (questions.filter((q) => q.questionType === 'scenario_mcq').length !== 20) errors.push('all 20 scenario MCQs not approved');
     return {
       chapterId: ch.chapterId,
+      chapterTitle: ch.chapterTitle,
+      chapterStatus: ch.status,
       publishable: errors.length === 0,
       errors,
       warnings: [],
@@ -277,7 +279,30 @@ export const mockContent = async (path, { method = 'GET', body = null, params = 
       if (q.status === 'approved') q.status = 'release_candidate';
     }
     store.audit.push({ at: new Date().toISOString(), by: 'demo-mentor', action: 'approve_chapter', entityId: ch.chapterId, entityType: 'chapter', detail: {} });
-    return { ok: true, chapterId: ch.chapterId, coverage: gate.coverage };
+    return { ok: true, chapterId: ch.chapterId, status: 'release_candidate', coverage: gate.coverage };
+  }
+  const chPublish = path.match(/^\/api\/content\/chapters\/([^/]+)\/publish$/);
+  if (chPublish) {
+    const ch = store.chapters.find((c) => c.chapterId === chPublish[1]);
+    const gate = await mockContent(`/api/content/chapters/${ch.chapterId}/gate`);
+    if (!gate.publishable) throw Object.assign(new Error(JSON.stringify(gate.errors)), { status: 422 });
+    ch.status = 'published';
+    for (const q of store.questions.filter((q) => q.chapterId === ch.chapterId)) {
+      if (['approved', 'release_candidate'].includes(q.status)) q.status = 'published';
+    }
+    for (const s of store.scenarios.filter((s) => s.chapterId === ch.chapterId)) {
+      if (['approved', 'release_candidate'].includes(s.status)) s.status = 'published';
+    }
+    const revision = (store.releases[0]?.revision || 0) + 1;
+    store.releases.unshift({
+      revision,
+      publishedAt: new Date().toISOString(),
+      publishedBy: 'demo-mentor',
+      chapters: [ch.chapterId],
+      manifest: { schemaVersion: 1, revision, chapters: [{ chapterId: ch.chapterId, counts: gate.coverage }] },
+    });
+    store.audit.push({ at: new Date().toISOString(), by: 'demo-mentor', action: 'publish', entityId: ch.chapterId, entityType: 'chapter', detail: { revision } });
+    return { ok: true, chapterId: ch.chapterId, status: 'published', revision, coverage: gate.coverage, filesWritten: false };
   }
 
   if (path === '/api/content/releases') return { items: store.releases };

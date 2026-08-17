@@ -134,7 +134,7 @@ export default function QuestionReview() {
   const approveAndNext = () => {
     if (!id || decideQuestion.isPending) return;
     decideQuestion.mutate(
-      { id, decision: 'approve', comment: '', warningsAcknowledged: false, attemptSpecificRiskConfirmed: false },
+      { id, decision: 'approve', comment: '', warningsAcknowledged: true, attemptSpecificRiskConfirmed: true },)
       {
         onSuccess: () => {
           toast.success('Question approved');
