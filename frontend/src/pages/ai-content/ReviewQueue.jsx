@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, Filter, AlertTr
 import { useChapters, useReviewQueue } from '@/api/hooks-content';
 import { Skeleton } from '@/components/common/Skeleton';
 import { StatusBadge, DifficultyBadge, TypeBadge } from '@/components/content/ContentBadges';
+import { loadQueueContext, saveQueueContext, saveQueueListState } from '@/utils/reviewQueueSession';
 import { cn } from '@/utils/format';
 
 const SUBJECTS = ['Accounts', 'Law', 'Taxation', 'Costing', 'Audit', 'FM', 'SM'];
@@ -32,14 +33,19 @@ function Select({ label, value, onChange, options, all = 'All' }) {
 
 export default function ReviewQueue() {
   const navigate = useNavigate();
-  const [subject, setSubject] = useState('');
-  const [chapterId, setChapterId] = useState('');
-  const [questionType, setQuestionType] = useState('');
-  const [difficulty, setDifficulty] = useState('');
-  const [status, setStatus] = useState('');
-  const [hasWarnings, setHasWarnings] = useState('');
-  const [pageSize, setPageSize] = useState(50);
-  const [page, setPage] = useState(1);
+  // Resume the reviewer's previous session state (filters / page / page size)
+  // so Back from Question Review returns to the same spot — not page 1.
+  const saved = useMemo(() => loadQueueContext(), []);
+  const [subject, setSubject] = useState(saved.filters.subject || '');
+  const [chapterId, setChapterId] = useState(saved.filters.chapterId || '');
+  const [questionType, setQuestionType] = useState(saved.filters.questionType || '');
+  const [difficulty, setDifficulty] = useState(saved.filters.difficulty || '');
+  const [status, setStatus] = useState(saved.filters.status || '');
+  const [hasWarnings, setHasWarnings] = useState(
+    saved.filters.hasWarnings === true ? 'true' : saved.filters.hasWarnings === false ? 'false' : saved.filters.hasWarnings || ''
+  );
+  const [pageSize, setPageSize] = useState(saved.size || 50);
+  const [page, setPage] = useState(saved.page || 1);
 
   const { data: chaptersData } = useChapters();
   const chapterOptions = useMemo(() => {
@@ -53,6 +59,11 @@ export default function ReviewQueue() {
   }, [chaptersData, subject]);
 
   useEffect(() => { setPage(1); }, [subject, chapterId, questionType, difficulty, status, hasWarnings, pageSize]);
+
+  // Keep the saved queue session fresh so Back / refresh returns here.
+  useEffect(() => {
+    saveQueueListState({ filters: { subject, chapterId, questionType, difficulty, status, hasWarnings }, page, size: pageSize });
+  }, [subject, chapterId, questionType, difficulty, status, hasWarnings, page, pageSize]);
 
   const params = useMemo(
     () => ({
@@ -77,6 +88,11 @@ export default function ReviewQueue() {
   const importedChapters = chaptersData?.items?.length || 0;
 
   const go = (next) => setPage(Math.min(pageCount, Math.max(1, next)));
+
+  // Clamp a restored page back into range (e.g. after the bank changed size).
+  useEffect(() => {
+    if (total > 0 && page > pageCount) setPage(pageCount);
+  }, [total, page, pageCount]);
 
   const isProxyError = error?.message?.includes('HTML page') || error?.message?.includes('Backend not reachable') || error?.isHtmlError;
 
@@ -195,16 +211,15 @@ export default function ReviewQueue() {
                     className="border-b border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors cursor-pointer"
                     onClick={() => {
                       // Save queue context for Prev/Next navigation in Question Review
-                      try {
-                        const ids = items.map(x => x.id);
-                        sessionStorage.setItem('reviewQueueIds', JSON.stringify(ids));
-                        sessionStorage.setItem('reviewQueueIndex', String(idx));
-                        sessionStorage.setItem('reviewQueuePage', String(page));
-                        sessionStorage.setItem('reviewQueuePageSize', String(pageSize));
-                        sessionStorage.setItem('reviewQueueTotal', String(total));
-                        // Save filters too so Back preserves them
-                        sessionStorage.setItem('reviewQueueFilters', JSON.stringify({ subject, chapterId, questionType, difficulty, status, hasWarnings }));
-                      } catch {}
+                      // (and Back restoring this exact page + filters).
+                      saveQueueContext({
+                        ids: items.map(x => x.id),
+                        index: idx,
+                        page,
+                        size: pageSize,
+                        total,
+                        filters: { subject, chapterId, questionType, difficulty, status, hasWarnings },
+                      });
                       navigate(`/ai-content/questions?id=${q.id}`);
                     }}
                   >
