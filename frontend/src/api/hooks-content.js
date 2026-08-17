@@ -8,7 +8,12 @@ import * as analyticsApi from './analytics';
 export const useContentStats = () =>
   useQuery({ queryKey: ['content.stats'], queryFn: contentApi.contentStats });
 export const useReviewQueue = (params) =>
-  useQuery({ queryKey: ['content.queue', params], queryFn: () => contentApi.listQueue(params), enabled: params !== null });
+  useQuery({
+    queryKey: ['content.queue', params],
+    queryFn: () => contentApi.listQueue(params),
+    enabled: params !== null,
+    placeholderData: (previousData) => previousData,
+  });
 export const useQuestion = (id) =>
   useQuery({ queryKey: ['content.question', id], queryFn: () => contentApi.getQuestion(id), enabled: !!id });
 export const useScenario = (id) =>

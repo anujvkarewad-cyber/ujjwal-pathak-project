@@ -73,6 +73,7 @@ export default function ReviewQueue() {
       difficulty,
       status,
       hasWarnings: hasWarnings === '' ? undefined : hasWarnings === 'true',
+      view: 'summary',
       limit: pageSize,
       offset: (page - 1) * pageSize,
     }),

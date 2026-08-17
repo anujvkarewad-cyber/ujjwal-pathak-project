@@ -7,7 +7,7 @@ generated → auto_validated → needs_review → changes_requested | rejected |
 import hashlib
 import json
 from datetime import datetime, timezone
-from typing import Optional
+from typing import Literal, Optional
 
 from fastapi import APIRouter, Depends, HTTPException, Query
 
@@ -222,6 +222,7 @@ async def review_queue(
     difficulty: Optional[str] = None,
     status: Optional[str] = None,
     hasWarnings: Optional[bool] = None,
+    view: Optional[Literal["summary", "scenario_index", "references"]] = None,
     limit: int = Query(default=100, ge=1, le=5000),
     offset: int = Query(default=0, ge=0),
     claims: dict = Depends(require_mentor),
@@ -261,7 +262,40 @@ async def review_queue(
         filt["chapterId"] = {"$in": chapter_ids}
 
     total = await db[CONTENT_QUESTIONS].count_documents(filt)
-    cursor = db[CONTENT_QUESTIONS].find(filt).sort([("chapterId", 1), ("id", 1)]).skip(offset).limit(limit)
+
+    # List screens need only a small projection. Returning complete question
+    # documents (options, explanations, histories, similarity and metadata)
+    # made a 50-row page ~128 KiB and the 4,700-row reference/index requests
+    # ~12 MiB. Full documents remain available from /questions/{id}.
+    projections = {
+        "summary": {
+            "_id": 0,
+            "id": 1,
+            "prompt": 1,
+            "chapterId": 1,
+            "chapterTitle": 1,
+            "questionType": 1,
+            "difficulty": 1,
+            "status": 1,
+            "validation.warnings": 1,
+        },
+        "scenario_index": {
+            "_id": 0,
+            "id": 1,
+            "chapterId": 1,
+            "status": 1,
+            "scenario": 1,
+        },
+        "references": {
+            "_id": 0,
+            "id": 1,
+            "prompt": 1,
+            "icaiSourceRefs": 1,
+            "calibrationRefs": 1,
+        },
+    }
+    projection = projections.get(view)
+    cursor = db[CONTENT_QUESTIONS].find(filt, projection).sort([("chapterId", 1), ("id", 1)]).skip(offset).limit(limit)
     items = []
     async for doc in cursor:
         doc.pop("_id", None)

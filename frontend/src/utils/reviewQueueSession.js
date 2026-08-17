@@ -69,6 +69,7 @@ export function queueFiltersToParams(filters = {}, limit, offset) {
     difficulty: filters.difficulty || undefined,
     status: filters.status || undefined,
     hasWarnings: hw === '' || hw === null || hw === undefined ? undefined : hw === true || hw === 'true',
+    view: 'summary',
     limit,
     offset,
   };

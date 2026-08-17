@@ -25,7 +25,7 @@ export default function McqReviewPanel() {
     try {
       const [s, q] = await Promise.all([
         apiCall('/api/content/stats'),
-        apiCall('/api/content/queue', { params: { status: 'needs_review', limit: 6 } }),
+        apiCall('/api/content/queue', { params: { status: 'needs_review', view: 'summary', limit: 6 } }),
       ]);
       setStats(s);
       setItems(q?.items || []);

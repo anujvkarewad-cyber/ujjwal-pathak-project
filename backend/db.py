@@ -73,6 +73,9 @@ async def reset_db():
 async def ensure_indexes():
     db = get_db()
     await db[CONTENT_QUESTIONS].create_index([("chapterId", 1), ("status", 1)])
+    await db[CONTENT_QUESTIONS].create_index([("chapterId", 1), ("id", 1)])
+    await db[CONTENT_QUESTIONS].create_index([("status", 1), ("chapterId", 1), ("id", 1)])
+    await db[CONTENT_QUESTIONS].create_index([("questionType", 1), ("chapterId", 1), ("id", 1)])
     await db[CONTENT_QUESTIONS].create_index("id")
     await db[CONTENT_QUESTIONS].create_index("status")
     await db[CONTENT_SCENARIOS].create_index([("chapterId", 1), ("status", 1)])

@@ -53,6 +53,25 @@ def test_queue_lists_and_filters(client, mentor_headers):
     assert body["offset"] == 10
     assert len(body["items"]) == 10
 
+    summary = client.get("/api/content/queue?view=summary&limit=1", headers=mentor_headers)
+    item = summary.json()["items"][0]
+    assert item["prompt"]
+    assert "options" not in item
+    assert "generationMeta" not in item
+    assert "warnings" in item.get("validation", {})
+
+    scenario_index = client.get(
+        "/api/content/queue?questionType=scenario_mcq&view=scenario_index&limit=1",
+        headers=mentor_headers,
+    ).json()["items"][0]
+    assert scenario_index["scenario"]["scenarioId"]
+    assert "prompt" not in scenario_index
+
+    references = client.get("/api/content/queue?view=references&limit=1", headers=mentor_headers).json()["items"][0]
+    assert references["icaiSourceRefs"]
+    assert references["calibrationRefs"]
+    assert "options" not in references
+
 
 def test_edit_question_revalidates(client, mentor_headers):
     _seed()
