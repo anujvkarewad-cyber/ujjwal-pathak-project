@@ -6,14 +6,21 @@
 // same-origin and always talks to the live backend — there is no mock
 // fallback, so the dashboard can never show DEMO content.
 
-const RAW_BASE_URL = (process.env.REACT_APP_MENTOR_API_URL || 'same-origin').trim();
-// 'same-origin' | 'proxy' | '/' → same-origin backend (dev-server proxy or the
-//                             FastAPI static deployment) — used in Codespaces,
-//                             where the browser cannot reach localhost:8010
-// 'http(s)://…'             → absolute backend URL (e.g. http://localhost:8010)
-// The mock adapter has been REMOVED from the data path: when the env var is
-// empty the client defaults to same-origin, so the live API is always hit and
-// the dashboard can never fall back to DEMO content.
+const DEPLOYED_BACKEND_URL = 'https://ujjwal-pathak-project.onrender.com';
+const CONFIGURED_BASE_URL = (process.env.REACT_APP_MENTOR_API_URL || 'same-origin').trim();
+const IS_VERCEL_STATIC_HOST = typeof window !== 'undefined' && window.location.hostname.endsWith('.vercel.app');
+
+// The checked-in development .env intentionally says "same-origin" so the CRA
+// dev server can proxy /api to localhost:8010. A static Vercel deployment has
+// no such proxy, however: /api would fall through to index.html. Route that
+// specific production case to the deployed FastAPI service. An explicit
+// absolute REACT_APP_MENTOR_API_URL still takes precedence.
+const RAW_BASE_URL = IS_VERCEL_STATIC_HOST && ['same-origin', 'proxy', '/'].includes(CONFIGURED_BASE_URL.toLowerCase())
+  ? DEPLOYED_BACKEND_URL
+  : CONFIGURED_BASE_URL;
+
+// 'same-origin' | 'proxy' | '/' → same-origin backend (local dev-server proxy
+// 'http(s)://…'                 → absolute backend URL
 const SAME_ORIGIN = ['same-origin', 'proxy', '/'].includes(RAW_BASE_URL.toLowerCase());
 const BASE_URL = SAME_ORIGIN ? '' : RAW_BASE_URL.replace(/\/$/, '');
 export const USE_MOCK = false;

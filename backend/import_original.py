@@ -766,14 +766,41 @@ async def _upsert_scenario(db, doc: dict, force: bool, stats: dict):
         stats["scenarios_inserted"] += 1
 
 
-async def _upsert_chapter(db, chapter: dict, questions: list[dict], scenarios: list[dict], source_path: str):
+async def _upsert_chapter(
+    db,
+    chapter: dict,
+    questions: list[dict],
+    scenarios: list[dict],
+    source_path: str,
+    force: bool = False,
+):
+    """Refresh import metadata without undoing a mentor's chapter decision.
+
+    Question/scenario upserts already protect touched records. Previously this
+    chapter upsert unconditionally reset `published` or `release_candidate` to
+    `needs_review` on every Render startup, making the dashboard contradict the
+    underlying question statuses.
+    """
     plain = len([q for q in questions if q["questionType"] == "mcq"])
     scenario_mcqs = len([q for q in questions if q["questionType"] == "scenario_mcq"])
-    await db[CONTENT_CHAPTERS].update_one(
-        {"chapterId": chapter["chapterId"]},
-        {
-            "$set": {
-                **chapter,
+    existing = await db[CONTENT_CHAPTERS].find_one({"chapterId": chapter["chapterId"]})
+    preserve_decision = bool(existing and existing.get("status") in MENTOR_TOUCHED and not force)
+
+    fields = {
+        **chapter,
+        "imported": {
+            "plain": plain,
+            "scenarios": len(scenarios),
+            "scenarioMcqs": scenario_mcqs,
+            "sourceFile": source_path,
+            "importedAt": _now(),
+            "importedBy": IMPORTER,
+        },
+        "updatedAt": _now(),
+    }
+    if not preserve_decision:
+        fields.update(
+            {
                 "status": "needs_review",
                 "coverage": {
                     "plainApproved": 0,
@@ -783,17 +810,13 @@ async def _upsert_chapter(db, chapter: dict, questions: list[dict], scenarios: l
                     "scenarioMcqsApproved": 0,
                     "scenarioMcqsTarget": SCENARIO_TARGET * MCQS_PER_SCENARIO,
                 },
-                "imported": {
-                    "plain": plain,
-                    "scenarios": len(scenarios),
-                    "scenarioMcqs": scenario_mcqs,
-                    "sourceFile": source_path,
-                    "importedAt": _now(),
-                    "importedBy": IMPORTER,
-                },
-                "updatedAt": _now(),
+                "releaseCandidate": None,
             }
-        },
+        )
+
+    await db[CONTENT_CHAPTERS].update_one(
+        {"chapterId": chapter["chapterId"]},
+        {"$set": fields},
         upsert=True,
     )
 
@@ -901,7 +924,7 @@ async def run_import(
             await _upsert_question(db, question, force, stats)
         for scenario in scenarios:
             await _upsert_scenario(db, scenario, force, stats)
-        await _upsert_chapter(db, chapter, questions, scenarios, str(path))
+        await _upsert_chapter(db, chapter, questions, scenarios, str(path), force=force)
 
     report = {
         "ok": True,

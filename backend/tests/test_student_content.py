@@ -87,9 +87,8 @@ def test_manifest_404_without_publish(client, tmp_path, monkeypatch):
     assert res.status_code == 404
 
 
-def test_bank_json_only_serves_approved(client):
-    """bank.json exposes only approved/release_candidate/published questions,
-    mapped into the student-app question shape."""
+def test_bank_json_only_serves_published(client):
+    """bank.json exposes published questions only, mapped into student shape."""
     import asyncio
 
     from db import CONTENT_QUESTIONS, get_db
@@ -97,24 +96,47 @@ def test_bank_json_only_serves_approved(client):
 
     seed_sync(seed_full_chapter)
 
-    # Nothing approved → empty bank.
+    # Nothing approved → empty bank and lightweight polling metadata.
     res = client.get("/api/content/student/bank.json")
     assert res.status_code == 200
     assert res.json()["count"] == 0
+    meta = client.get("/api/content/student/bank-meta.json")
+    assert meta.status_code == 200
+    assert meta.json() == {"revision": "published-r0", "count": 0}
+    assert "no-store" in meta.headers["cache-control"]
 
     async def _approve_one_of_each():
         db = get_db()
         plain = await db[CONTENT_QUESTIONS].find_one({"questionType": "mcq"})
         await db[CONTENT_QUESTIONS].update_one({"id": plain["id"]}, {"$set": {"status": "approved"}})
         scenario = await db[CONTENT_QUESTIONS].find_one({"questionType": "scenario_mcq"})
-        await db[CONTENT_QUESTIONS].update_one({"id": scenario["id"]}, {"$set": {"status": "approved"}})
+        await db[CONTENT_QUESTIONS].update_one({"id": scenario["id"]}, {"$set": {"status": "release_candidate"}})
 
     seed_sync(_approve_one_of_each)
 
+    # Approval and release-candidate are review workflow states, not student
+    # publication states.
+    res = client.get("/api/content/student/bank.json")
+    assert res.json()["count"] == 0
+
+    async def _publish_both():
+        db = get_db()
+        await db[CONTENT_QUESTIONS].update_many(
+            {"status": {"$in": ["approved", "release_candidate"]}},
+            {"$set": {"status": "published"}},
+        )
+
+    seed_sync(_publish_both)
+
     res = client.get("/api/content/student/bank.json")
     data = res.json()
-    assert data["revision"] == "live-approved-v2"
+    assert data["revision"] == "published-r0"
     assert data["count"] == 2
+    assert data["count"] == len(data["questions"])
+    assert res.headers["x-content-revision"] == "0"
+    assert "no-store" in res.headers["cache-control"]
+    meta = client.get("/api/content/student/bank-meta.json")
+    assert meta.json() == {"revision": "published-r0", "count": 2}
     assert {q["kind"] for q in data["questions"]} == {"normal", "case-study"}
 
     normal = next(q for q in data["questions"] if q["kind"] == "normal")

@@ -2,12 +2,11 @@
 
 - /manifest.json and /chunks/{platform}/{file} serve the contents of
   CONTENT_DIR (published bundles written by the pipeline's gated stage-11).
-- /bank.json serves the LIVE practice bank — every mentor-approved /
-  release_candidate / published question from the content store, mapped into
-  the student-app question shape.
+- /bank.json serves the LIVE practice bank — only questions from chapters the
+  mentor actually published, mapped into the student-app question shape.
 
-No draft content can be exposed by construction: the bundle routes only read
-gated stage-11 output, and bank.json filters strictly on approved statuses.
+No draft or merely-approved content can be exposed by construction: the bundle
+routes only read gated stage-11 output, and bank.json filters on `published`.
 """
 from datetime import datetime, timezone
 from pathlib import Path
@@ -16,7 +15,7 @@ from fastapi import APIRouter, HTTPException
 from fastapi.responses import FileResponse, JSONResponse
 
 from config import settings
-from db import CONTENT_QUESTIONS, CONTENT_SCENARIOS, get_db
+from db import CONTENT_QUESTIONS, CONTENT_RELEASES, CONTENT_SCENARIOS, get_db
 
 router = APIRouter(prefix="/api/content/student", tags=["student-content"])
 
@@ -24,8 +23,9 @@ MANIFEST_NAME = "published-manifest.json"
 CACHE_IMMUTABLE = "public, max-age=31536000, immutable"
 CACHE_MANIFEST = "public, max-age=300"
 
-# Live practice bank: only questions a mentor has actually acted on.
-APPROVED_STATUSES = {"approved", "release_candidate", "published"}
+# Student visibility is a publish boundary, not an approval boundary. Individual
+# question approval and chapter release-candidate status remain mentor-only.
+STUDENT_VISIBLE_STATUSES = {"published"}
 
 _DIFFICULTY_MAP = {"easy": "Easy", "moderate": "Medium", "hard": "Hard"}
 
@@ -101,30 +101,64 @@ def _student_question(doc: dict, scenarios: dict) -> dict:
     return q
 
 
+async def _latest_release_revision(db) -> int:
+    async for release in db[CONTENT_RELEASES].find({}).sort("revision", -1).limit(1):
+        return int(release.get("revision") or 0)
+    return 0
+
+
+@router.get("/bank-meta.json")
+async def live_bank_meta():
+    """Small polling endpoint; clients fetch the full bank only on a revision change."""
+    db = get_db()
+    revision = await _latest_release_revision(db)
+    count = await db[CONTENT_QUESTIONS].count_documents(
+        {"status": {"$in": list(STUDENT_VISIBLE_STATUSES)}}
+    )
+    return JSONResponse(
+        {"revision": f"published-r{revision}", "count": count},
+        headers={
+            "Cache-Control": "no-store, max-age=0",
+            "X-Content-Revision": str(revision),
+        },
+    )
+
+
 @router.get("/bank.json")
 async def live_bank():
-    """Live practice bank: every mentor-approved / release-candidate / published
-    question, in the student-app question shape. Public (student-facing)."""
+    """Current published question bank in the student-app shape.
+
+    Successful empty responses are authoritative: clients must clear any older
+    cached/static bank instead of silently showing removed preview questions.
+    """
     db = get_db()
     scenarios: dict = {}
-    # Load the passage text for every scenario (not just approved ones): the
-    # question itself is gated by its own approval status, while the passage is
-    # static text needed to render an approved case-study MCQ meaningfully.
+    # Passage text is joined only to a student-visible question. Loading all
+    # scenario records here does not expose them in the response by itself.
     async for s in db[CONTENT_SCENARIOS].find({}):
         scenarios[s["scenarioId"]] = s
 
     questions: list = []
-    async for doc in db[CONTENT_QUESTIONS].find({"status": {"$in": list(APPROVED_STATUSES)}}).sort(
-        [("chapterId", 1), ("id", 1)]
-    ):
+    async for doc in db[CONTENT_QUESTIONS].find(
+        {"status": {"$in": list(STUDENT_VISIBLE_STATUSES)}}
+    ).sort([("chapterId", 1), ("id", 1)]):
         questions.append(_student_question(doc, scenarios))
 
-    return {
-        "revision": "live-approved-v2",
+    latest_revision = await _latest_release_revision(db)
+
+    payload = {
+        "revision": f"published-r{latest_revision}",
         "generatedAt": _now(),
         "count": len(questions),
         "questions": questions,
     }
+    return JSONResponse(
+        payload,
+        headers={
+            "Cache-Control": "no-store, max-age=0",
+            "X-Content-Revision": str(latest_revision),
+        },
+    )
 
 
 def _safe_path(relative: str) -> Path:

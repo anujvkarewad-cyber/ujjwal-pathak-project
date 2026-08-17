@@ -189,12 +189,19 @@ def test_run_import_writes_documents_and_purges_demo(generated_dir):
         await db[CONTENT_QUESTIONS].update_one(
             {"id": "adp_q_advanced-accounting-1_001"}, {"$set": {"status": "approved"}}
         )
+        await db[CONTENT_CHAPTERS].update_one(
+            {"chapterId": "advanced-accounting-1"},
+            {"$set": {"status": "published", "releaseCandidate": {"revision": 7}}},
+        )
         again = await imp.run_import(str(generated_dir), quiet=True)
         assert again["stats"]["questions_inserted"] == 0
         assert again["stats"]["questions_unchanged"] == 99
         assert again["stats"]["questions_protected"] == 1
         approved = await db[CONTENT_QUESTIONS].find_one({"id": "adp_q_advanced-accounting-1_001"})
         assert approved["status"] == "approved"
+        preserved_chapter = await db[CONTENT_CHAPTERS].find_one({"chapterId": "advanced-accounting-1"})
+        assert preserved_chapter["status"] == "published"
+        assert preserved_chapter["releaseCandidate"] == {"revision": 7}
 
     asyncio.run(scenario())
 
