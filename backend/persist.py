@@ -26,6 +26,7 @@ from db import (
     CONTENT_QUESTIONS,
     CONTENT_RELEASES,
     CONTENT_SCENARIOS,
+    STUDENT_MCQ_ATTEMPTS,
     get_db,
 )
 
@@ -42,6 +43,7 @@ COLLECTIONS = (
     ANALYTICS_TRENDS,
     ANALYTICS_FOLLOWUPS,
     ANALYTICS_AUDIT_SYNC,
+    STUDENT_MCQ_ATTEMPTS,
 )
 
 BACKEND_DIR = Path(__file__).resolve().parent

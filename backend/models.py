@@ -3,9 +3,9 @@ Mirrors the canonical content model defined in
 docs/integration-design.md §4 and content-pipeline/src/lib/schemas.mjs."""
 from datetime import date
 from enum import Enum
-from typing import List, Optional
+from typing import Dict, List, Literal, Optional
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 
 class Decision(str, Enum):
@@ -44,6 +44,72 @@ class ChapterPublishRequest(BaseModel):
 class LoginRequest(BaseModel):
     email: str
     password: str
+
+
+class StudentTokenRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    studentId: str = Field(min_length=1, max_length=64)
+    password: str = Field(min_length=1, max_length=256, repr=False)
+
+
+class McqPracticeConfig(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    group: str = Field(default="Combined", max_length=32)
+    subject: str = Field(default="All Subjects", max_length=80)
+    chapter: str = Field(default="All Chapters", max_length=240)
+    mode: str = Field(default="Mixed", max_length=32)
+    difficulty: str = Field(default="Mixed", max_length=32)
+    requestedCount: int = Field(default=10, ge=1, le=50)
+
+
+class StudentMcqAttempt(BaseModel):
+    """A completed attempt safe to restore on another student device."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    attemptId: str = Field(min_length=1, max_length=180)
+    kind: Literal["daily", "practice"]
+    bankRevision: str = Field(default="unknown", max_length=120)
+    date: Optional[str] = Field(default=None, max_length=16)
+    group: Optional[str] = Field(default=None, max_length=32)
+    config: Optional[McqPracticeConfig] = None
+    questionIds: List[str] = Field(default_factory=list, min_length=1, max_length=50)
+    answers: Dict[str, int] = Field(default_factory=dict)
+    startedAt: int = Field(ge=0)
+    completedAt: int = Field(ge=0)
+    score: int = Field(ge=0, le=50)
+    total: int = Field(ge=1, le=50)
+    durationSeconds: int = Field(ge=0, le=24 * 60 * 60)
+
+    @field_validator("answers")
+    @classmethod
+    def validate_answers(cls, answers: Dict[str, int]):
+        if len(answers) > 50:
+            raise ValueError("at most 50 answers are allowed")
+        if any(not isinstance(choice, int) or choice < 0 or choice > 3 for choice in answers.values()):
+            raise ValueError("answer choices must be integers from 0 to 3")
+        return answers
+
+    @model_validator(mode="after")
+    def validate_attempt(self):
+        question_ids = set(self.questionIds)
+        if len(question_ids) != len(self.questionIds):
+            raise ValueError("questionIds must be unique")
+        if any(question_id not in question_ids for question_id in self.answers):
+            raise ValueError("answers contain an unknown questionId")
+        if self.score > self.total or self.total != len(self.questionIds):
+            raise ValueError("score/total does not match the question list")
+        if self.kind == "daily" and (not self.date or not self.group):
+            raise ValueError("daily attempts require date and group")
+        if self.kind == "practice" and self.config is None:
+            raise ValueError("practice attempts require config")
+        return self
+
+
+class StudentMcqSyncRequest(StudentTokenRequest):
+    attempts: List[StudentMcqAttempt] = Field(default_factory=list, max_length=330)
 
 
 class MasteryBand(str, Enum):

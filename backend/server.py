@@ -10,7 +10,7 @@ import uuid
 from datetime import datetime, timezone
 
 from db import get_db, close_db, ensure_indexes
-from routers import auth_router, content, student_content, student_sync, analytics
+from routers import auth_router, content, student_attempts, student_content, student_sync, analytics
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -88,6 +88,7 @@ app.include_router(api_router)
 app.include_router(auth_router.router)
 app.include_router(content.router)
 app.include_router(student_content.router)
+app.include_router(student_attempts.router)
 app.include_router(student_sync.router)
 app.include_router(analytics.router)
 
