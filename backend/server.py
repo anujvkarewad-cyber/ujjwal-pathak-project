@@ -156,16 +156,35 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+def _bootstrap_requested() -> bool:
+    """True when the process should seed/import content at startup.
+
+    Makes `uvicorn server:app --host 0.0.0.0 --port $PORT` (Render/Railway/Fly
+    start command) behave like `python -m dev_server`: restore the persisted
+    store and import the generated chapters when the usual env flags are set.
+    Tests and plain production deployments (no flags) are unaffected.
+    """
+    if os.environ.get('BOOTSTRAP_DONE') == '1':  # dev_server already ran it in-process
+        return False
+    flags = ('IMPORT_GENERATED', 'SEED_DEMO', 'SEED_ALL')
+    return any(os.environ.get(f, '').strip().lower() in ('1', 'true', 'yes', 'on') for f in flags)
+
+
 @app.on_event("startup")
 async def startup_db_client():
     await ensure_indexes()
+    if _bootstrap_requested():
+        from dev_server import bootstrap
+
+        await bootstrap()
+        os.environ['BOOTSTRAP_DONE'] = '1'
 
 @app.on_event("shutdown")
 async def shutdown_db_client():
     try:
-        from persist import dump_store
+        from persist import dump_store_sync
 
-        await dump_store()
+        await dump_store_sync()
     except Exception:
         logging.getLogger(__name__).exception("failed to persist content store")
     await close_db()

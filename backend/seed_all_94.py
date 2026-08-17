@@ -157,8 +157,8 @@ async def seed_all():
 
     # Dump to content-store.json so dev_server can restore quickly on Render (fast restore vs slow seed)
     try:
-        from persist import dump_store
-        await dump_store()
+        from persist import dump_store_sync
+        await dump_store_sync()
         from persist import store_path
         p = store_path()
         if p.is_file():

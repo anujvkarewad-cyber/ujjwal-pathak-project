@@ -1,0 +1,27 @@
+# Render blueprint for the FastAPI mentor backend.
+# Deploy: Render dashboard → New → Blueprint → point at this repo.
+# (Frontend goes to Vercel separately — see docs/DEPLOYMENT.md.)
+services:
+  - type: web
+    name: ujjwal-pathak-mentor-api
+    runtime: python
+    rootDir: backend
+    plan: free
+    buildCommand: pip install -r requirements.txt && pip install mongomock-motor
+    startCommand: uvicorn server:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.11
+      - key: MONGO_URL
+        value: memory://          # swap for a MongoDB Atlas URI for permanent storage
+      - key: DB_NAME
+        value: ujjwal_pathak
+      - key: DEV_AUTH_BYPASS
+        value: "1"                # set to 0 + configure MENTOR_EMAIL/MENTOR_PASSWORD_HASH for real auth
+      - key: IMPORT_GENERATED
+        value: "1"
+      - key: GENERATED_DIR
+        value: ../content-pipeline/generated
+      - key: CORS_ORIGINS
+        value: "*"                # tighten to your Vercel URL once known
