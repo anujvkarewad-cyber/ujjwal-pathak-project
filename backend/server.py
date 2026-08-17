@@ -20,7 +20,22 @@ load_dotenv(ROOT_DIR / '.env')
 db = get_db()
 
 # Create the main app without a prefix
-app = FastAPI()
+app = FastAPI(
+    title="Ujjwal Pathak Mentor API",
+    description="Mentor dashboard APIs + SPA hosting",
+    version="1.0.0"
+)
+
+# FIX: CORS must be added BEFORE routers so preflight works for all routes
+# This is critical for cloud previews where frontend and backend are on different ports
+# And fixes the HTML error when browser tries cross-origin fetch
+app.add_middleware(
+    CORSMiddleware,
+    allow_credentials=True,
+    allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
@@ -82,47 +97,57 @@ app.include_router(analytics.router)
 # frontend build directory is absent, the catch-all simply 404s.
 FRONTEND_BUILD_DIR = ROOT_DIR.parent / 'frontend' / 'build'
 
-from fastapi.responses import FileResponse, JSONResponse, Response
+from fastapi.responses import FileResponse, JSONResponse
 
 # Path prefixes that belong to the API surface, never to the SPA. A request
 # under one of these that reached the catch-all matched NO real route, so it
 # must return a JSON 404 — serving index.html here is what produced
 # `Unexpected token '<', "<!doctype "... is not valid JSON` in the browser:
 # fetch() saw HTTP 200 + text/html and res.json() choked on the markup.
-API_PREFIXES = ('api', 'docs', 'redoc', 'openapi.json')
+# FIX: Expanded and hardened to prevent ANY /api/* from ever returning HTML
+API_PREFIXES = ('api', 'docs', 'redoc', 'openapi.json', 'openapi.yml')
 
 
 def _is_api_path(full_path: str) -> bool:
-    head = full_path.lstrip('/').split('/', 1)[0]
-    return head in API_PREFIXES
+    clean = full_path.lstrip('/').lower()
+    if not clean:
+        return False
+    head = clean.split('/', 1)[0]
+    if head in API_PREFIXES:
+        return True
+    # Any path starting with api/ is API
+    if clean.startswith('api/'):
+        return True
+    return False
 
 
 @app.get('/{full_path:path}', include_in_schema=False)
 async def spa_fallback(full_path: str):
     # Unknown API route → JSON 404 (never the SPA shell).
+    # This is THE fix for "Expected JSON but received HTML"
     if _is_api_path(full_path):
         return JSONResponse(
-            {'detail': f'Not Found: /{full_path.lstrip("/")}'},
+            {'detail': f'Not Found: /{full_path.lstrip("/")}', 'code': 'API_ROUTE_NOT_FOUND'},
             status_code=404,
         )
 
     if FRONTEND_BUILD_DIR.is_dir():
-        candidate = (FRONTEND_BUILD_DIR / full_path).resolve()
-        build_root = FRONTEND_BUILD_DIR.resolve()
-        if full_path and str(candidate).startswith(str(build_root)) and candidate.is_file():
-            return FileResponse(candidate)
-        index = FRONTEND_BUILD_DIR / 'index.html'
-        if index.is_file():
-            return FileResponse(index, media_type='text/html')
-    return Response('{"message":"Hello World"}', media_type='application/json')
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_credentials=True,
-    allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+        try:
+            candidate = (FRONTEND_BUILD_DIR / full_path).resolve()
+            build_root = FRONTEND_BUILD_DIR.resolve()
+            # Security: prevent path traversal
+            if full_path and str(candidate).startswith(str(build_root)) and candidate.is_file():
+                return FileResponse(candidate)
+            index = FRONTEND_BUILD_DIR / 'index.html'
+            if index.is_file():
+                return FileResponse(index, media_type='text/html')
+        except Exception:
+            pass
+    # No frontend build — return JSON, not HTML, to avoid confusing the client
+    return JSONResponse(
+        {'message': 'API running. Frontend not built. Run npm run build in frontend/ or run frontend dev server on port 3000.'},
+        status_code=200
+    )
 
 # Configure logging
 logging.basicConfig(

@@ -2,7 +2,7 @@
 // full chapter bank (~4,700 MCQs) is browsable. Click opens Question Review.
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, Filter } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, Filter, AlertTriangle, RefreshCw } from 'lucide-react';
 import { useChapters, useReviewQueue } from '@/api/hooks-content';
 import { Skeleton } from '@/components/common/Skeleton';
 import { StatusBadge, DifficultyBadge, TypeBadge } from '@/components/content/ContentBadges';
@@ -67,7 +67,7 @@ export default function ReviewQueue() {
     }),
     [subject, chapterId, questionType, difficulty, status, hasWarnings, pageSize, page]
   );
-  const { data, isLoading, isError, error } = useReviewQueue(params);
+  const { data, isLoading, isError, error, refetch, isFetching } = useReviewQueue(params);
 
   const total = data?.total ?? 0;
   const items = data?.items || [];
@@ -77,6 +77,8 @@ export default function ReviewQueue() {
   const importedChapters = chaptersData?.items?.length || 0;
 
   const go = (next) => setPage(Math.min(pageCount, Math.max(1, next)));
+
+  const isProxyError = error?.message?.includes('HTML page') || error?.message?.includes('Backend not reachable') || error?.isHtmlError;
 
   return (
     <div className="space-y-4" data-testid="review-queue">
@@ -117,7 +119,55 @@ export default function ReviewQueue() {
         </label>
       </div>
 
-      {isError && <p className="text-sm text-rose-600">{error.message}</p>}
+      {isError && (
+        <div className={cn("rounded-xl p-4 space-y-3 border", 
+          isProxyError 
+            ? "bg-amber-50 dark:bg-amber-500/10 border-amber-200 dark:border-amber-900/50" 
+            : "bg-rose-50 dark:bg-rose-500/10 border-rose-200 dark:border-rose-900/50"
+        )}>
+          <div className="flex items-start gap-2">
+            <AlertTriangle className={cn("w-5 h-5 mt-0.5", isProxyError ? "text-amber-600" : "text-rose-600")} />
+            <div className="flex-1">
+              <p className={cn("text-sm font-semibold", isProxyError ? "text-amber-800 dark:text-amber-200" : "text-rose-700 dark:text-rose-300")}>
+                {isProxyError ? "Backend connection issue — Review Queue API unreachable" : "Failed to load Review Queue"}
+              </p>
+              <p className={cn("text-sm mt-1 whitespace-pre-wrap break-words", isProxyError ? "text-amber-700 dark:text-amber-300" : "text-rose-600 dark:text-rose-400")}>
+                {error.message}
+              </p>
+            </div>
+          </div>
+          
+          {isProxyError && (
+            <div className="text-xs text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-900 rounded-lg p-3 border border-slate-200 dark:border-slate-700 space-y-2">
+              <p className="font-semibold">✅ How to fix (the HTML error):</p>
+              <ol className="list-decimal pl-4 space-y-1.5">
+                <li><strong>Backend not running?</strong> Open terminal 1: <code className="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded font-mono">./run-backend.sh</code> — wait for <code>Uvicorn running on http://0.0.0.0:8010</code></li>
+                <li><strong>Frontend proxy:</strong> Terminal 2: <code className="bg-slate-100 px-1.5 py-0.5 rounded font-mono">./run-frontend.sh</code> — ensure env says <code>mentor API: same-origin</code></li>
+                <li><strong>Test directly:</strong> <code className="bg-slate-100 px-1.5 py-0.5 rounded font-mono">curl http://localhost:8010/api/content/queue?limit=1</code> should return JSON, not HTML</li>
+                <li><strong>Cloud (Codespaces/E2B):</strong> Never set <code>REACT_APP_MENTOR_API_URL=http://localhost:8010</code> in browser — use <code>same-origin</code> so CRA proxies /api</li>
+                <li>This fix adds proxy error JSON (502) instead of HTML, and backend now returns JSON 404 for /api/* never HTML</li>
+              </ol>
+            </div>
+          )}
+
+          <div className="flex gap-2">
+            <button
+              onClick={() => refetch()}
+              disabled={isFetching}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-semibold hover:bg-slate-800 disabled:opacity-50"
+            >
+              <RefreshCw className={cn("w-3.5 h-3.5", isFetching && "animate-spin")} />
+              Retry
+            </button>
+            <button
+              onClick={() => window.location.reload()}
+              className="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800"
+            >
+              Reload page
+            </button>
+          </div>
+        </div>
+      )}
 
       <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
         <table className="w-full text-sm text-left" data-testid="queue-table">
@@ -164,8 +214,8 @@ export default function ReviewQueue() {
                     <td className="px-4 py-3"><ChevronRight className="w-4 h-4 text-slate-300" /></td>
                   </tr>
                 ))}
-            {!isLoading && items.length === 0 && (
-              <tr><td colSpan={7} className="px-4 py-8 text-center text-sm text-slate-500">No questions match the filters.</td></tr>
+            {!isLoading && !isError && items.length === 0 && (
+              <tr><td colSpan={7} className="px-4 py-8 text-center text-sm text-slate-500">No questions match the filters. {total===0 && "Check if backend has imported content — look for [import] logs in backend terminal."}</td></tr>
             )}
           </tbody>
         </table>

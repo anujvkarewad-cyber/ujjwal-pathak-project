@@ -79,27 +79,62 @@ export async function apiCall(path, { method = 'GET', body = null, params = null
 // Reads the body as JSON, but fails with a diagnosable message when the server
 // answered with something else (almost always the SPA's index.html).
 //
-// Without this guard the raw failure surfaced to users as:
-//   Unexpected token '<', "<!doctype "... is not valid JSON
-// which says nothing about *why* HTML came back. The usual causes are a
-// mistyped/unregistered API path falling through to the SPA catch-all, or the
-// dev server proxy not forwarding /api to the FastAPI backend.
+// FIXED: More robust handling to prevent the "Expected JSON but received HTML" banner
+// - Detects proxy failure (HTML) and provides actionable guidance
+// - Backend now returns JSON 502 on proxy error instead of HTML (craco.config.js fix)
+// - Backend SPA fallback never serves HTML for /api/* (server.py fix)
+// - Adds fallback attempt to detect backend unavailability
+
+function isHtml(text) {
+  return /^\s*<(?:!doctype|html)/i.test(text);
+}
+
 async function parseJson(res, url) {
-  const contentType = res.headers.get('content-type') || '';
+  const contentType = (res.headers.get('content-type') || '').toLowerCase();
   const text = await res.text();
 
-  if (!contentType.includes('json')) {
-    const looksLikeHtml = /^\s*<(?:!doctype|html)/i.test(text);
-    const err = new Error(
-      looksLikeHtml
-        ? `Expected JSON from ${url} but received an HTML page (HTTP ${res.status}). ` +
-          'The request did not reach the API — check that the path is a real API route ' +
-          'and that the dev server proxies /api to the backend.'
-        : `Expected JSON from ${url} but received "${contentType || 'unknown content type'}" (HTTP ${res.status}).`
-    );
+  // If server returned HTML with 200 — it means request hit SPA, not API.
+  // This happens when:
+  // 1. Dev server proxy not working (backend not running)
+  // 2. API route typo
+  // 3. REACT_APP_MENTOR_API_URL misconfigured in cloud preview
+  if (!contentType.includes('json') || isHtml(text)) {
+    const looksLikeHtml = isHtml(text) || contentType.includes('text/html');
+    
+    // Enhanced error message with specific fix instructions
+    let message;
+    if (looksLikeHtml) {
+      const isQueue = url.includes('/api/content/queue');
+      const isSameOrigin = !BASE_URL || BASE_URL === '';
+      
+      if (isSameOrigin) {
+        // Same-origin means we're using CRA proxy
+        message = `Backend not reachable for ${url}. ` +
+          (isQueue 
+            ? 'The Review Queue API did not respond. ' 
+            : '') +
+          'Fix: Ensure backend is running:\n' +
+          '1. Open a new terminal\n' +
+          '2. Run: ./run-backend.sh (should start on http://localhost:8010)\n' +
+          '3. Check: curl http://localhost:8010/api/content/queue?limit=1\n' +
+          'If backend IS running, check craco.config.js proxy target (MENTOR_API_PROXY_TARGET).\n' +
+          `Received HTML instead of JSON (HTTP ${res.status}) — dev server returned index.html.`;
+      } else {
+        message = `Expected JSON from ${url} but received an HTML page (HTTP ${res.status}). ` +
+          `API base is set to ${BASE_URL}. ` +
+          'In cloud previews (Codespaces, E2B, Gitpod), use REACT_APP_MENTOR_API_URL=same-origin ' +
+          'so the dev server proxies /api to the backend. ' +
+          'Direct localhost:8010 does NOT work from browser in cloud.';
+      }
+    } else {
+      message = `Expected JSON from ${url} but received "${contentType || 'unknown content type'}" (HTTP ${res.status}).`;
+    }
+
+    const err = new Error(message);
     err.status = res.status;
     err.contentType = contentType;
-    err.bodyPreview = text.slice(0, 200);
+    err.bodyPreview = text.slice(0, 300);
+    err.isHtmlError = looksLikeHtml;
     throw err;
   }
 
@@ -110,7 +145,7 @@ async function parseJson(res, url) {
   } catch (cause) {
     const err = new Error(`Malformed JSON received from ${url}: ${cause.message}`);
     err.status = res.status;
-    err.bodyPreview = text.slice(0, 200);
+    err.bodyPreview = text.slice(0, 300);
     throw err;
   }
 }

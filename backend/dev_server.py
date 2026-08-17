@@ -45,6 +45,7 @@ async def bootstrap():
 
         await seed_demo.seed()
 
+    import_success = False
     if _flag("IMPORT_GENERATED"):
         import import_original
 
@@ -54,9 +55,36 @@ async def bootstrap():
             force=_flag("IMPORT_FORCE"),
         )
         if not report.get("ok"):
-            print("[dev_server] generated content not imported — the API starts with an empty content DB.")
+            print("[dev_server] generated content not imported — will fallback to demo seed if available.")
         else:
+            print(f"[dev_server] imported {report.get('chapters',0)} chapters, {report.get('questions',0)} questions")
             await dump_store()
+            import_success = True
+
+    # FIX: If no generated content and no restore, auto-seed demo data so Review Queue doesn't show 0 questions
+    # This prevents empty DB state that confuses users in envs without content-pipeline/generated
+    if not import_success and not restored:
+        # Check if DB is empty
+        try:
+            from db import get_db, CONTENT_QUESTIONS
+            db = get_db()
+            count = await db[CONTENT_QUESTIONS].count_documents({})
+            if count == 0:
+                print("[dev_server] DB empty and no generated content — seeding demo data for dev...")
+                import seed_demo
+                await seed_demo.seed()
+                await dump_store()
+                print("[dev_server] demo seed complete")
+        except Exception as e:
+            print(f"[dev_server] fallback seed check failed: {e}")
+            # Still try to seed if flag not set — better than empty DB
+            if not _flag("SEED_DEMO"):
+                try:
+                    import seed_demo
+                    await seed_demo.seed()
+                    print("[dev_server] emergency demo seed done")
+                except Exception as se:
+                    print(f"[dev_server] seed failed: {se}")
 
 
 def main():

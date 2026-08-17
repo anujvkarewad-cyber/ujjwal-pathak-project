@@ -108,15 +108,40 @@ let webpackConfig = {
 };
 
 webpackConfig.devServer = (devServerConfig) => {
-  // NEW: proxy /api to the FastAPI mentor backend during local development.
-  // The production deployment serves both from one origin (FastAPI static).
-  devServerConfig.proxy = [
-    {
-      context: ['/api'],
-      target: process.env.MENTOR_API_PROXY_TARGET || 'http://localhost:8010',
+  // FIX: Robust proxy for FastAPI backend — works in both webpack-dev-server v4 and v5
+  // Production deployment serves both from one origin (FastAPI static).
+  // Dev: browser -> CRA dev server (3000) -> proxy -> FastAPI (8010)
+  // This prevents the "Expected JSON but received HTML" error which happens
+  // when proxy fails and CRA returns index.html with 200.
+  const proxyTarget = process.env.MENTOR_API_PROXY_TARGET || 'http://localhost:8010';
+  
+  // Object syntax works for both v4 and v5. Array syntax was breaking in v5.
+  devServerConfig.proxy = {
+    '/api': {
+      target: proxyTarget,
       changeOrigin: true,
+      secure: false,
+      xfwd: true,
+      logLevel: 'debug',
+      timeout: 30000,
+      proxyTimeout: 30000,
+      // If backend is down, return JSON 502 instead of falling through to index.html
+      onError: (err, req, res) => {
+        console.error(`[proxy] ERROR proxying ${req.method} ${req.url} -> ${proxyTarget}:`, err.message);
+        console.error('[proxy] Is backend running? Run ./run-backend.sh in another terminal');
+        if (!res.headersSent) {
+          res.writeHead(502, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ 
+            detail: `Backend unreachable at ${proxyTarget}. Ensure ./run-backend.sh is running on port 8010.`,
+            code: 'PROXY_ERROR'
+          }));
+        }
+      },
+      onProxyReq: (proxyReq, req) => {
+        // console.log(`[proxy] ${req.method} ${req.url} -> ${proxyTarget}${req.url}`);
+      }
     },
-  ];
+  };
 
   // Add health check endpoints if enabled
   if (config.enableHealthCheck && setupHealthEndpoints && healthPluginInstance) {

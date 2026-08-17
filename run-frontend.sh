@@ -30,11 +30,19 @@ export WDS_SOCKET_PORT="${WDS_SOCKET_PORT:-0}"
 # craco.config.js proxies /api to this target
 export MENTOR_API_PROXY_TARGET="${MENTOR_API_PROXY_TARGET:-http://localhost:${BACKEND_PORT}}"
 
+# FIX: Default to same-origin proxy for ALL environments (local, Codespaces, Gitpod, E2B, etc.)
+# Why: same-origin uses CRA dev server proxy /api -> http://localhost:8010
+# - Works locally (proxy forwards)
+# - Works in cloud previews (browser cannot reach localhost:8010 directly, but can reach dev server which proxies)
+# - Prevents "Expected JSON but received HTML" when browser tries localhost in cloud
+# If you REALLY want direct API calls (e.g., local VS Code desktop with backend on different host),
+# set REACT_APP_MENTOR_API_URL=http://localhost:8010 explicitly or FORCE_DIRECT_API=1
 if [ -z "${REACT_APP_MENTOR_API_URL:-}" ]; then
-  if [ -n "${CODESPACE_NAME:-}" ] || [ -n "${GITPOD_WORKSPACE_ID:-}" ]; then
-    REACT_APP_MENTOR_API_URL="same-origin"
-  else
+  if [ "${FORCE_DIRECT_API:-}" = "1" ]; then
     REACT_APP_MENTOR_API_URL="http://localhost:${BACKEND_PORT}"
+  else
+    # same-origin is safest for cloud previews (Codespaces, Gitpod, E2B, etc.)
+    REACT_APP_MENTOR_API_URL="same-origin"
   fi
 fi
 export REACT_APP_MENTOR_API_URL
