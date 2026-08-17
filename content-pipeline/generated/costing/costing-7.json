@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "costing-7",
+  "subject": "Costing",
+  "paper": "Paper 4: Cost and Management Accounting",
+  "module": "Module 1",
+  "chapterNumber": 7,
+  "chapterTitle": "Cost Accounting Systems",
+  "generatedAt": "2026-08-16T14:41:12.093Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_costing-7_001",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "Under an Integral Accounting System, what entry is passed when materials are purchased for cash?",
+      "options": [
+        "Debit Stores Control Account, Credit Cash/Bank Account",
+        "Debit Purchases Account, Credit Cash/Bank Account",
+        "Debit Work-in-Progress Control Account, Credit Cash/Bank Account",
+        "Debit Cost Ledger Control Account, Credit Cash/Bank Account"
+      ],
+      "answerIndex": 0,
+      "explanation": "In an integral accounting system, financial and cost accounts are combined. Thus, purchase of materials directly debits the Stores Ledger Control Account and credits Cash/Bank, avoiding the use of a separate general ledger adjustment account.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Integral Accounting",
+        "Material Purchase",
+        "Journal Entries"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_002",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "In Non-Integral (Costing) Ledger Accounting, which account is debited when indirect wages are incurred?",
+      "options": [
+        "Wages Control Account",
+        "Cost Ledger Control Account",
+        "Manufacturing Overhead Control Account",
+        "General Ledger Adjustment Account"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under non-integral accounting, when wages are distributed, direct wages go to Work-in-Progress Control, while indirect wages are debited to the Manufacturing Overhead Control Account. The total wages are initially credited from the Wages Control Account.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Non-Integral Accounting",
+        "Overhead Control",
+        "Wages Accounting"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_003",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "What is the primary objective of maintaining a Cost Accounting System separate from Financial Accounts in a non-integral system?",
+      "options": [
+        "To comply compulsorily with the Companies Act for all manufacturing units",
+        "To provide detailed cost information for cost control and decision making without waiting for final financial statements",
+        "To eliminate the need for periodic reconciliation",
+        "To ensure that net profit shown by both systems is always identical"
+      ],
+      "answerIndex": 1,
+      "explanation": "Non-integral accounting systems allow management to track costs, ascertain unit costs, and exercise cost control independently and promptly, even though profits may differ due to different valuation and treatment rules.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Cost Accounting Systems",
+        "Non-Integral System",
+        "Objectives"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_004",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "In a non-integral accounting system, what does the balance of the Cost Ledger Control Account (also known as General Ledger Adjustment Account) represent?",
+      "options": [
+        "Total value of stock in hand",
+        "Total amount of outstanding expenses",
+        "Net total of all impersonal cost ledger accounts",
+        "Total profit earned during the period"
+      ],
+      "answerIndex": 2,
+      "explanation": "The Cost Ledger Control Account acts as a self-balancing control account representing the total of all impersonal accounts in the cost ledger, effectively bridging the cost ledger with the financial ledger.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Cost Ledger Control Account",
+        "General Ledger Adjustment",
+        "Non-Integral System"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_005",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "When materials are returned from the factory floor to the stores in a non-integral system, which entry is passed?",
+      "options": [
+        "Debit Stores Control A/c, Credit Work-in-Progress Control A/c",
+        "Debit Cost Ledger Control A/c, Credit Stores Control A/c",
+        "Debit Work-in-Progress Control A/c, Credit Stores Control A/c",
+        "Debit General Ledger Adjustment A/c, Credit Finished Goods Control A/c"
+      ],
+      "answerIndex": 0,
+      "explanation": "When materials are returned from production to stores, the initial issue entry is reversed: Stores Control Account is debited and Work-in-Progress Control Account is credited.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Material Return",
+        "Work-in-Progress",
+        "Non-Integral System"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_006",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "Which of the following items is typically included in Financial Accounts but excluded from Cost Accounts?",
+      "options": [
+        "Direct material costs",
+        "Factory supervisor salaries",
+        "Loss on sale of machinery",
+        "Depreciation on plant and equipment"
+      ],
+      "answerIndex": 2,
+      "explanation": "Purely financial items such as loss on sale of capital assets, interest on bank loans, and income tax are excluded from cost accounts because they do not relate to the cost of production or operation.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Reconciliation",
+        "Financial vs Cost",
+        "Excluded Items"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_007",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "If overheads applied to production are less than the actual overheads incurred, the difference is termed as:",
+      "options": [
+        "Over-absorption",
+        "Under-absorption",
+        "Abnormal gain",
+        "Deferred overhead"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under-absorption occurs when the amount of overhead absorbed into production using a predetermined rate is less than the actual overhead expenses incurred during the period.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Overhead Absorption",
+        "Under-Absorption",
+        "Cost Control"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_008",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "How is under-absorption of overheads generally treated in cost accounts when the amount is substantial and due to abnormal factors?",
+      "options": [
+        "Credited to Costing Profit and Loss Account",
+        "Debited to Costing Profit and Loss Account",
+        "Carried forward to the next accounting period",
+        "Transferred directly to Share Capital Account"
+      ],
+      "answerIndex": 1,
+      "explanation": "Substantial under-absorption caused by abnormal idle time, strikes, or inefficiency is written off directly to the Costing Profit and Loss Account rather than being absorbed into remaining inventory.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Overhead Treatment",
+        "Under-Absorption",
+        "Costing P&L"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_009",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "In an integral system, the payment of factory rent is recorded by:",
+      "options": [
+        "Debiting Manufacturing Overhead Control A/c and Crediting Cash/Bank A/c",
+        "Debiting Cost Ledger Control A/c and Crediting Rent A/c",
+        "Debiting Rent A/c and Crediting Work-in-Progress Control A/c",
+        "Debiting Finished Goods Control A/c and Crediting Cash/Bank A/c"
+      ],
+      "answerIndex": 0,
+      "explanation": "In an integral accounting system, expenses like factory rent are debited directly to the Manufacturing Overhead Control Account and credited to Cash or Bank, mirroring standard financial entry combined with cost classification.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Integral Accounting",
+        "Rent Expense",
+        "Overheads"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_010",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "When finished goods are sold in a non-integral system, the cost of goods sold is transferred by which entry?",
+      "options": [
+        "Debit Cost of Sales A/c, Credit Finished Goods Control A/c",
+        "Debit Finished Goods Control A/c, Credit Cost of Sales A/c",
+        "Debit Cost Ledger Control A/c, Credit Finished Goods Control A/c",
+        "Debit Sales A/c, Credit Finished Goods Control A/c"
+      ],
+      "answerIndex": 0,
+      "explanation": "Upon sale, the cost associated with the finished goods sold is moved from the Finished Goods Control Account to the Cost of Sales Account, which is subsequently closed to the Costing Profit and Loss Account.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Cost of Sales",
+        "Finished Goods",
+        "Non-Integral System"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_011",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "Why do profits reported by Financial Accounts and Cost Accounts frequently differ?",
+      "options": [
+        "Due to different valuation methods, timing differences, and items recorded in only one set of books",
+        "Because cost accounts are always inaccurate",
+        "Because financial accounts ignore direct expenses entirely",
+        "Because depreciation is never recorded in financial accounts"
+      ],
+      "answerIndex": 0,
+      "explanation": "Differences in profit arise due to pure financial items, pure cost items, differing valuation bases for inventory (e.g., FIFO vs. LIFO), and differing methods of charging depreciation.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Reconciliation",
+        "Profit Differences",
+        "Cost vs Financial"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_012",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "When preparing a reconciliation statement between cost profit and financial profit, which of the following items should be added to cost profit to arrive at financial profit?",
+      "options": [
+        "Over-absorption of factory overheads in cost accounts",
+        "Interest received on bank deposits recorded only in financial accounts",
+        "Income tax paid recorded in financial accounts",
+        "Administrative overheads under-recovered in cost accounts"
+      ],
+      "answerIndex": 1,
+      "explanation": "Interest received is income recorded in financial accounts which increases financial profit. When reconciling from cost profit to financial profit, this pure financial income must be added.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Reconciliation",
+        "Cost Profit",
+        "Financial Profit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_013",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "In a non-integral accounting system, what entry is passed to record the absorption of factory overheads into production?",
+      "options": [
+        "Debit Work-in-Progress Control Account, Credit Manufacturing Overhead Control Account",
+        "Debit Manufacturing Overhead Control Account, Credit Work-in-Progress Control Account",
+        "Debit Cost Ledger Control Account, Credit Manufacturing Overhead Control Account",
+        "Debit Finished Goods Control Account, Credit Manufacturing Overhead Control Account"
+      ],
+      "answerIndex": 0,
+      "explanation": "Overheads are absorbed into production by debiting Work-in-Progress Control Account and crediting Manufacturing Overhead Control Account based on a predetermined overhead recovery rate.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Overhead Absorption",
+        "WIP Control",
+        "Non-Integral System"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_014",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "Which of the following accounts is NOT maintained under a non-integral cost accounting system?",
+      "options": [
+        "Stores Ledger Control Account",
+        "General Ledger Adjustment Account",
+        "Sundry Debtors Control Account",
+        "Work-in-Progress Control Account"
+      ],
+      "answerIndex": 2,
+      "explanation": "Sundry Debtors Control, Creditors Control, and Bank accounts relate to external financial transactions and are generally maintained only in financial accounts, not in the cost ledger of a non-integral system.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Non-Integral Accounting",
+        "Ledger Accounts",
+        "Exclusions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_015",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "If opening stock of finished goods is valued at ₹50,000 in cost accounts and ₹55,000 in financial accounts, what will be the effect on cost profit compared to financial profit, assuming no other differences?",
+      "options": [
+        "Cost profit will be higher by ₹5,000",
+        "Cost profit will be lower by ₹5,000",
+        "Cost profit will be higher by ₹55,000",
+        "There will be no effect on profits"
+      ],
+      "answerIndex": 0,
+      "explanation": "Lower opening stock in cost accounts results in lower cost of goods sold, which in turn makes the cost profit higher by ₹5,000 compared to financial profit.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Reconciliation",
+        "Opening Stock",
+        "Inventory Valuation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_016",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "Under the non-integral system, what is the accounting entry for direct wages paid and charged to production?",
+      "options": [
+        "Debit Wages Control A/c, Credit Cash/Bank A/c; then Debit WIP Control A/c, Credit Wages Control A/c",
+        "Debit WIP Control A/c, Credit Cash/Bank A/c",
+        "Debit Direct Wages A/c, Credit Cost Ledger Control A/c",
+        "Debit Cost Ledger Control A/c, Credit Wages Control A/c"
+      ],
+      "answerIndex": 0,
+      "explanation": "Wages are first booked through a Wages Control Account by crediting Cash/Bank (or Cost Ledger Control), and then distributed by debiting Work-in-Progress Control (for direct wages) and crediting Wages Control.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Wages Accounting",
+        "Non-Integral System",
+        "Journal Entries"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_017",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "Which account is credited when administrative overheads are absorbed or recovered in cost accounts?",
+      "options": [
+        "Administrative Overhead Control Account",
+        "Cost of Sales Account",
+        "Finished Goods Control Account",
+        "Cost Ledger Control Account"
+      ],
+      "answerIndex": 0,
+      "explanation": "Administrative overheads are absorbed into cost units by debiting Cost of Sales (or Production) and crediting the Administrative Overhead Control Account.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Administrative Overheads",
+        "Overhead Recovery",
+        "Cost Control"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_018",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "In a reconciliation statement, when starting with Financial Profit, how should donations paid (recorded in financial books only) be treated?",
+      "options": [
+        "Added to financial profit",
+        "Deducted from financial profit",
+        "Ignored completely",
+        "Subtracted twice"
+      ],
+      "answerIndex": 0,
+      "explanation": "Donations reduce financial profit. To reconcile back to cost profit (which did not include donations), the amount must be added back to financial profit.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Reconciliation",
+        "Financial Profit",
+        "Pure Financial Items"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_019",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "What does a debit balance in the Manufacturing Overhead Control Account at the end of an accounting period indicate?",
+      "options": [
+        "Over-absorption of overheads",
+        "Under-absorption of overheads",
+        "Exact recovery of overheads",
+        "Zero overhead variance"
+      ],
+      "answerIndex": 1,
+      "explanation": "A debit balance means actual overheads incurred (debited) exceed the overheads absorbed into production (credited), representing under-absorption.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Overhead Variance",
+        "Under-Absorption",
+        "Control Accounts"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_020",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "Under an integral accounting system, how are transactions recorded regarding external parties like customers and suppliers?",
+      "options": [
+        "They are ignored in the accounting books",
+        "They are recorded using a separate General Ledger Adjustment Account",
+        "They are recorded directly through normal financial ledger accounts integrated within the system",
+        "They are recorded only at the end of the financial year"
+      ],
+      "answerIndex": 2,
+      "explanation": "An integral system merges cost and financial accounts, meaning all transactions—including those with external parties (debtors, creditors, banks)—are recorded in a single set of books.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Integral Accounting",
+        "External Transactions",
+        "System Integration"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_021",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "If closing stock of work-in-progress is overvalued in cost accounts compared to financial accounts, what is its impact on cost profit relative to financial profit?",
+      "options": [
+        "Cost profit is higher",
+        "Cost profit is lower",
+        "Cost profit remains unaffected",
+        "Cost profit equals financial profit"
+      ],
+      "answerIndex": 0,
+      "explanation": "Overvaluation of closing stock in cost accounts reduces the net cost of production/sales in cost books, thereby inflating cost profit relative to financial profit.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Reconciliation",
+        "Closing Stock",
+        "Work-in-Progress"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_022",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "Which of the following is treated as a pure cost item and NOT entered in financial accounts?",
+      "options": [
+        "Notional interest on capital employed",
+        "Dividend received on investments",
+        "Loss by fire of inventory",
+        "Income tax expenses"
+      ],
+      "answerIndex": 0,
+      "explanation": "Notional rent or notional interest represents internal management costs included in cost accounts for decision-making but not recognized as actual expenses in financial accounts.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Pure Cost Items",
+        "Notional Charges",
+        "Cost vs Financial"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_023",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "In a non-integral system, what is the offsetting credit when stores are issued to production?",
+      "options": [
+        "Stores Ledger Control Account",
+        "Work-in-Progress Control Account",
+        "Cost Ledger Control Account",
+        "Finished Goods Control Account"
+      ],
+      "answerIndex": 0,
+      "explanation": "When stores are issued, the Stores Ledger Control Account is credited (reducing stock balance) and the Work-in-Progress Control Account is debited.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Stores Issue",
+        "Control Accounts",
+        "Non-Integral System"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_024",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "When preparing a reconciliation statement starting from Cost Profit, how should over-absorption of selling overheads be treated?",
+      "options": [
+        "Added",
+        "Deducted",
+        "Ignored",
+        "Multiplied by two"
+      ],
+      "answerIndex": 0,
+      "explanation": "Over-absorption of overheads means cost accounts charged more expenses than actually incurred, thereby reducing cost profit. To reconcile to financial profit, this excess must be added back.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Reconciliation",
+        "Over-Absorption",
+        "Selling Overheads"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_025",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "Which of the following documents serves as the basis for posting material issues to the Work-in-Progress Control Account in a non-integral system?",
+      "options": [
+        "Material Requisition Note",
+        "Purchase Order",
+        "Goods Received Note",
+        "Invoice from Supplier"
+      ],
+      "answerIndex": 0,
+      "explanation": "A Material Requisition Note is the primary authorization document for issuing materials from stores to the factory floor, prompting the debit to Work-in-Progress Control.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Source Documents",
+        "Material Requisition",
+        "Cost Accounting"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_026",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "What is the primary purpose of the Cost Ledger Control Account in the cost ledger?",
+      "options": [
+        "To make the cost ledger self-balancing against financial ledger entries",
+        "To calculate depreciation on fixed assets",
+        "To record sales revenue from customers",
+        "To determine income tax liabilities"
+      ],
+      "answerIndex": 0,
+      "explanation": "The Cost Ledger Control Account (or General Ledger Adjustment Account) ensures double-entry bookkeeping completeness within the cost ledger by representing the financial ledger counterpart.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Cost Ledger Control",
+        "Self-Balancing",
+        "Non-Integral System"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_027",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "If administrative overheads are recovered as a percentage of cost of production, which account is debited during overhead recovery?",
+      "options": [
+        "Finished Goods Control Account / Cost of Sales Account",
+        "Administrative Overhead Control Account",
+        "Cost Ledger Control Account",
+        "General Ledger Adjustment Account"
+      ],
+      "answerIndex": 0,
+      "explanation": "When administrative overheads are absorbed, the debit goes to Cost of Sales (or Finished Goods, depending on the stage), and the credit is to Administrative Overhead Control Account.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Administrative Overheads",
+        "Overhead Recovery",
+        "Cost Allocation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_028",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "Which of the following discrepancies is caused by timing differences rather than valuation differences in reconciliation?",
+      "options": [
+        "Depreciation charged at straight-line in financial accounts and written-down value in cost accounts",
+        "Preliminary expenses written off in financial accounts this year but deferred in cost accounts",
+        "Different valuation methods for raw material inventory",
+        "Different rates of factory overhead absorption"
+      ],
+      "answerIndex": 1,
+      "explanation": "Writing off preliminary expenses or research costs in different periods represents timing differences in profit recognition between the two systems.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Reconciliation",
+        "Timing Differences",
+        "Cost vs Financial"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_029",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "Under a non-integral system, what entry is passed when goods are completed and transferred from the factory floor to the warehouse?",
+      "options": [
+        "Debit Finished Goods Control Account, Credit Work-in-Progress Control Account",
+        "Debit Work-in-Progress Control Account, Credit Finished Goods Control Account",
+        "Debit Cost Ledger Control Account, Credit Finished Goods Control Account",
+        "Debit Cost of Sales Account, Credit Finished Goods Control Account"
+      ],
+      "answerIndex": 0,
+      "explanation": "Upon completion of production, goods leave WIP and enter finished goods inventory, requiring a debit to Finished Goods Control Account and a credit to Work-in-Progress Control Account.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Finished Goods",
+        "Work-in-Progress",
+        "Non-Integral System"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-7_030",
+      "kind": "normal",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "prompt": "How are abnormal material losses treated in a cost accounting system?",
+      "options": [
+        "Charged to Costing Profit and Loss Account",
+        "Added to the cost of good units produced",
+        "Capitalized as fixed assets",
+        "Ignored in cost books"
+      ],
+      "answerIndex": 0,
+      "explanation": "Abnormal losses (such as fire loss or severe spoilage) are non-recurring and are transferred directly to the Costing Profit and Loss Account to prevent distortion of product costs.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Abnormal Loss",
+        "Costing P&L",
+        "Cost Treatment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_costing-7_01",
+      "kind": "scenario",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "passage": "Alpha Ltd. operates a non-integral cost accounting system. During the month of August, the stores department issued direct materials worth ₹2,50,000 and indirect materials worth ₹40,000 to production. Total wages paid amounted to ₹1,80,000, out of which 25% was indirect. Factory overheads incurred on cash and credit basis were ₹1,25,000, while factory overheads absorbed were ₹1,35,000.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-7_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-7_01",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-7",
+          "subject": "Costing",
+          "prompt": "What journal entry is passed to record the issue of direct and indirect materials to production in Alpha Ltd.'s cost ledger?",
+          "options": [
+            "Debit WIP Control A/c ₹2,50,000, Debit Manufacturing Overhead Control A/c ₹40,000, Credit Stores Control A/c ₹2,90,000",
+            "Debit Stores Control A/c ₹2,90,000, Credit WIP Control A/c ₹2,50,000, Credit Manufacturing Overhead Control A/c ₹40,000",
+            "Debit Cost Ledger Control A/c ₹2,90,000, Credit Stores Control A/c ₹2,90,000",
+            "Debit WIP Control A/c ₹2,90,000, Credit Stores Control A/c ₹2,90,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Direct material issue goes to Work-in-Progress Control, indirect material goes to Manufacturing Overhead Control, and the total is credited to Stores Control Account.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Material Issue",
+            "Control Accounts",
+            "Non-Integral System"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-7_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-7_01",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-7",
+          "subject": "Costing",
+          "prompt": "What amount is debited to the Work-in-Progress Control Account on account of wages?",
+          "options": [
+            "₹1,35,000",
+            "₹1,80,000",
+            "₹45,000",
+            "₹1,25,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Total wages are ₹1,80,000, of which 25% is indirect (₹45,000). The remaining 75% is direct wages (₹1,35,000), which is debited to Work-in-Progress Control.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Direct Wages",
+            "WIP Control",
+            "Wages Distribution"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-7_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-7_01",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-7",
+          "subject": "Costing",
+          "prompt": "What is the treatment of factory overheads for the month in Alpha Ltd.?",
+          "options": [
+            "Under-absorbed by ₹10,000",
+            "Over-absorbed by ₹10,000",
+            "Over-absorbed by ₹12,000",
+            "Under-absorbed by ₹15,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Actual overheads incurred = ₹1,25,000. Overheads absorbed = ₹1,35,000. Since absorbed amount exceeds actual incurred by ₹10,000, it represents an over-absorption of ₹10,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Overhead Absorption",
+            "Over-Absorption",
+            "Variance"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-7_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-7_01",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-7",
+          "subject": "Costing",
+          "prompt": "What account is credited when factory overheads are absorbed into production?",
+          "options": [
+            "Manufacturing Overhead Control Account",
+            "Cost Ledger Control Account",
+            "Work-in-Progress Control Account",
+            "Costing Profit and Loss Account"
+          ],
+          "answerIndex": 0,
+          "explanation": "Overhead absorption is recorded by debiting Work-in-Progress Control Account and crediting Manufacturing Overhead Control Account.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Overhead Absorption",
+            "Manufacturing Overhead Control",
+            "Journal Entries"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-7_02",
+      "kind": "scenario",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "passage": "Beta Enterprises maintains cost and financial accounts separately. For the year ended 31st March, the net profit as per cost accounts was ₹4,20,000, whereas financial accounts reported a net profit of ₹3,75,000. An investigation into the differences revealed the following: (1) Factory overheads under-recovered in cost accounts amounted to ₹25,000. (2) Income tax provided in financial books was ₹45,000. (3) Interest on investments credited in financial books was ₹15,000. (4) Administrative overheads over-recovered in cost accounts were ₹10,000.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-7_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-7_02",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-7",
+          "subject": "Costing",
+          "prompt": "Starting from Cost Profit (₹4,20,000), what is the impact of factory overheads under-recovered in cost accounts on reconciliation?",
+          "options": [
+            "Deduct ₹25,000",
+            "Add ₹25,000",
+            "Ignore ₹25,000",
+            "Deduct ₹50,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under-recovery in cost accounts means cost accounts recorded lower expenses than financial accounts, leading to higher cost profit. Hence, this must be deducted when reconciling to financial profit.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Reconciliation",
+            "Under-Recovery",
+            "Overheads"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-7_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-7_02",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-7",
+          "subject": "Costing",
+          "prompt": "How is income tax of ₹45,000 treated when reconciling from Cost Profit to Financial Profit?",
+          "options": [
+            "Deducted from cost profit",
+            "Added to cost profit",
+            "Added to financial profit only",
+            "Ignored because it is a capital item"
+          ],
+          "answerIndex": 0,
+          "explanation": "Income tax is a purely financial expense that reduces financial profit. To reconcile from cost profit to financial profit, this ₹45,000 must be deducted.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Reconciliation",
+            "Income Tax",
+            "Financial Expense"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-7_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-7_02",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-7",
+          "subject": "Costing",
+          "prompt": "What effect does interest on investments (₹15,000) recorded only in financial books have on the reconciliation starting from Cost Profit?",
+          "options": [
+            "It is added to cost profit",
+            "It is deducted from cost profit",
+            "It is added to financial profit",
+            "It has no bearing on cost profit reconciliation"
+          ],
+          "answerIndex": 0,
+          "explanation": "Interest on investments increases financial profit. Since it is absent in cost accounts (making cost profit lower), it must be added to cost profit during reconciliation.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Reconciliation",
+            "Interest Income",
+            "Cost vs Financial"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-7_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-7_02",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-7",
+          "subject": "Costing",
+          "prompt": "Calculate the reconciled financial profit based on the given adjustments starting from Cost Profit of ₹4,20,000.",
+          "options": [
+            "₹3,75,000",
+            "₹3,60,000",
+            "₹3,90,000",
+            "₹4,05,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Cost Profit = ₹4,20,000. Less: Under-recovered factory overheads (₹25,000). Less: Income tax (₹45,000). Add: Interest on investments (₹15,000). Add: Over-recovered administrative overheads (₹10,000). Result = 4,20,000 - 25,000 - 45,000 + 15,000 + 10,000 = ₹3,75,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Reconciliation Statement",
+            "Numerical Problem",
+            "Profit Calculation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-7_03",
+      "kind": "scenario",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "passage": "Gamma Co. follows an integral accounting system. During the period, the company purchased raw materials on credit for ₹5,00,000, paid direct wages of ₹2,00,000 through bank, incurred factory expenses of ₹1,50,000 paid via bank, and transferred finished goods worth ₹7,50,000 to the warehouse upon completion of production.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-7_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-7_03",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-7",
+          "subject": "Costing",
+          "prompt": "What is the journal entry for the purchase of raw materials on credit under Gamma Co.'s integral system?",
+          "options": [
+            "Debit Stores Control A/c, Credit Creditors A/c",
+            "Debit Purchases A/c, Credit Creditors A/c",
+            "Debit Cost Ledger Control A/c, Credit Creditors A/c",
+            "Debit Work-in-Progress Control A/c, Credit Bank A/c"
+          ],
+          "answerIndex": 0,
+          "explanation": "In an integral accounting system, material purchases directly debit the Stores Control Account and credit the Creditors (Accounts Payable) Account, blending cost and financial control.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Integral Accounting",
+            "Material Purchase",
+            "Creditors"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-7_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-7_03",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-7",
+          "subject": "Costing",
+          "prompt": "Which account is debited when factory expenses of ₹1,50,000 are paid in the integral system?",
+          "options": [
+            "Manufacturing Overhead Control Account",
+            "General Ledger Adjustment Account",
+            "Cost Ledger Control Account",
+            "Factory Rent Account"
+          ],
+          "answerIndex": 0,
+          "explanation": "Factory expenses incurred are debited to the Manufacturing Overhead Control Account and credited to Bank in an integral accounting setup.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Integral Accounting",
+            "Factory Expenses",
+            "Overhead Control"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-7_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-7_03",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-7",
+          "subject": "Costing",
+          "prompt": "What journal entry is recorded when finished goods valued at ₹7,50,000 are transferred to the warehouse?",
+          "options": [
+            "Debit Finished Goods Control A/c, Credit Work-in-Progress Control A/c",
+            "Debit Cost of Sales A/c, Credit Finished Goods Control A/c",
+            "Debit Finished Goods Control A/c, Credit Cost Ledger Control A/c",
+            "Debit Warehouse A/c, Credit Production A/c"
+          ],
+          "answerIndex": 0,
+          "explanation": "Transfer of completed goods from production floor to warehouse is recorded by debiting Finished Goods Control Account and crediting Work-in-Progress Control Account.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Integral Accounting",
+            "Finished Goods",
+            "Transfer Entry"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-7_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-7_03",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-7",
+          "subject": "Costing",
+          "prompt": "Why are control accounts like Stores Control and WIP Control maintained in an integral accounting system?",
+          "options": [
+            "To provide immediate ledger control over inventories and production costs within a single set of books",
+            "To avoid maintaining bank and creditor accounts",
+            "To comply exclusively with tax audit requirements",
+            "To replace financial accounting statements entirely"
+          ],
+          "answerIndex": 0,
+          "explanation": "Control accounts in an integral system provide systematic control over physical inventory values and manufacturing stages while keeping the general ledger completely self-contained.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Integral Accounting",
+            "Control Accounts",
+            "Purpose"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-7_04",
+      "kind": "scenario",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "passage": "Delta Industries operates a non-integral cost system. At the start of the quarter, the Stores Ledger Control Account had an opening balance of ₹1,20,000. During the quarter, material purchases amounted to ₹3,80,000, materials issued to production were ₹4,00,000, and materials returned to suppliers were ₹20,000.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-7_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-7_04",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-7",
+          "subject": "Costing",
+          "prompt": "What journal entry is passed when materials are returned to suppliers in a non-integral system?",
+          "options": [
+            "Debit Cost Ledger Control A/c (or Creditors), Credit Stores Control A/c",
+            "Debit Stores Control A/c, Credit Cost Ledger Control A/c",
+            "Debit WIP Control A/c, Credit Stores Control A/c",
+            "Debit Purchases A/c, Credit Stores Control A/c"
+          ],
+          "answerIndex": 0,
+          "explanation": "Returning materials to suppliers reverses the purchase entry in the cost ledger, resulting in a debit to Cost Ledger Control (Creditors) and a credit to Stores Control Account.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Material Return",
+            "Suppliers",
+            "Non-Integral System"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-7_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-7_04",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-7",
+          "subject": "Costing",
+          "prompt": "What is the closing balance of the Stores Ledger Control Account at the end of the quarter?",
+          "options": [
+            "₹80,000",
+            "₹1,00,000",
+            "₹1,20,000",
+            "₹60,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Opening Balance (₹1,20,000) + Purchases (₹3,80,000) - Issues (₹4,00,000) - Returns to suppliers (₹20,000) = 1,20,000 + 3,80,000 - 4,00,000 - 20,000 = ₹80,000 closing balance.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Stores Ledger Control",
+            "Ledger Balance",
+            "Numerical Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-7_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-7_04",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-7",
+          "subject": "Costing",
+          "prompt": "If physical verification reveals actual stock of materials worth ₹75,000 at the end of the quarter, what does the difference of ₹5,000 represent?",
+          "options": [
+            "Material shortage / loss",
+            "Material over-valuation",
+            "Material surplus",
+            "Material in transit"
+          ],
+          "answerIndex": 0,
+          "explanation": "Book stock (₹80,000) exceeding physical stock (₹75,000) indicates a material shortage or loss, which must be written off to the Costing Profit and Loss Account.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Material Shortage",
+            "Physical Verification",
+            "Inventory Control"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-7_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-7_04",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-7",
+          "subject": "Costing",
+          "prompt": "How is the material shortage of ₹5,000 treated in the cost ledger accounts?",
+          "options": [
+            "Debited to Costing Profit and Loss Account and Credited to Stores Control Account",
+            "Debited to Stores Control Account and Credited to WIP Control Account",
+            "Debited to General Ledger Adjustment Account and Credited to Cost of Sales Account",
+            "Ignored as a normal rounding difference"
+          ],
+          "answerIndex": 0,
+          "explanation": "Inventory discrepancies resulting in shortages are credited to Stores Control to reduce book balance and debited to Costing Profit and Loss (or Manufacturing Overhead if normal).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Material Shortage",
+            "Costing P&L",
+            "Journal Entries"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-7_05",
+      "kind": "scenario",
+      "chapterId": "costing-7",
+      "subject": "Costing",
+      "passage": "Omega Corp. reported a profit of ₹6,50,000 as per its cost records for the year ended 31st March. Financial accounts for the same period showed a profit of ₹5,80,000. Key inspection items are: (1) Depreciation charged in financial accounts was ₹80,000, while in cost accounts it was ₹65,000. (2) Preliminary expenses written off in financial books were ₹30,000. (3) Dividend received of ₹25,000 was credited in financial books only. (4) Factory building revaluation resulted in a loss of ₹40,000 recognized only in financial books.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Cost Accounting Systems"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-7_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-7_05",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-7",
+          "subject": "Costing",
+          "prompt": "How does the difference in depreciation (Financial: ₹80,000 vs. Cost: ₹65,000) affect reconciliation starting from Cost Profit?",
+          "options": [
+            "Deduct ₹15,000",
+            "Add ₹15,000",
+            "Deduct ₹80,000",
+            "Add ₹80,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Cost accounts charged lower depreciation (₹65,000) than financial accounts (₹80,000), resulting in higher cost profit. To reconcile to financial profit, the difference of ₹15,000 must be deducted.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Reconciliation",
+            "Depreciation",
+            "Cost vs Financial"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-7_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-7_05",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-7",
+          "subject": "Costing",
+          "prompt": "What is the treatment of preliminary expenses of ₹30,000 written off only in financial books when reconciling from Cost Profit?",
+          "options": [
+            "Deducted from cost profit",
+            "Added to cost profit",
+            "Ignored in reconciliation",
+            "Added to financial profit"
+          ],
+          "answerIndex": 0,
+          "explanation": "Preliminary expenses written off reduce financial profit. Since they are not in cost accounts, cost profit is higher and must be reduced by ₹30,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Reconciliation",
+            "Preliminary Expenses",
+            "Financial Profit"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-7_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-7_05",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-7",
+          "subject": "Costing",
+          "prompt": "How is the loss on factory building revaluation (₹40,000) treated when reconciling from Cost Profit to Financial Profit?",
+          "options": [
+            "Deducted",
+            "Added",
+            "Ignored",
+            "Multiplied"
+          ],
+          "answerIndex": 0,
+          "explanation": "The revaluation loss is a pure financial loss recorded only in financial books, reducing financial profit. It must be deducted when reconciling from cost profit.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Reconciliation",
+            "Revaluation Loss",
+            "Pure Financial Item"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-7_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-7_05",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-7",
+          "subject": "Costing",
+          "prompt": "Verify the reconciliation: Starting from Cost Profit of ₹6,50,000, apply all given items to arrive at Financial Profit.",
+          "options": [
+            "₹5,80,000",
+            "₹5,65,000",
+            "₹6,10,000",
+            "₹5,95,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Cost Profit = ₹6,50,000. Less: Depreciation difference (₹15,000). Less: Preliminary expenses (₹30,000). Add: Dividend received (₹25,000). Less: Building revaluation loss (₹40,000). Result = 6,50,000 - 15,000 - 30,000 + 25,000 - 40,000 = ₹5,80,000, matching financial profit.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Reconciliation Statement",
+            "Numerical Verification",
+            "Profit Reconciliation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1422 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "corporate-laws-4",
+  "subject": "Law",
+  "paper": "Paper 2: Corporate and Other Laws",
+  "module": "Module 1",
+  "chapterNumber": 4,
+  "chapterTitle": "Share Capital and Debentures",
+  "generatedAt": "2026-08-16T14:10:38.358Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_corporate-laws-4_001",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "What is the maximum period within which a company limited by shares must issue share certificates to its subscribers to the memorandum after incorporation under the Companies Act, 2013?",
+      "options": [
+        "1 month",
+        "2 months",
+        "60 days",
+        "6 months"
+      ],
+      "answerIndex": 1,
+      "explanation": "According to Section 56(4)(a) of the Companies Act, 2013, every company must deliver the certificates of all shares allotted, transferred, or transmitted within two months from the date of incorporation to the subscribers to the memorandum. Hence, 2 months is the correct statutory timeline.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Share Certificate",
+        "Time limit for delivery",
+        "Section 56"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_002",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "Under Section 53 of the Companies Act, 2013, a company is prohibited from issuing shares at a discount, except in the case of which type of shares?",
+      "options": [
+        "Preference shares",
+        "Sweat equity shares",
+        "Bonus shares",
+        "Redeemable preference shares"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 53 explicitly prohibits the issue of shares at a discount, except under Section 54 which permits a company to issue sweat equity shares to its directors or employees at a discount or for consideration other than cash.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Prohibition of discount",
+        "Sweat Equity",
+        "Section 53"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_003",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "Which of the following is a mandatory condition for a company to issue sweat equity shares under Section 54 of the Companies Act, 2013?",
+      "options": [
+        "The issue must be authorized by a Board Resolution.",
+        "The resolution must specify the number of shares, current market price, and consideration.",
+        "The company must have completed at least 3 years since commencement of business.",
+        "The sweat equity shares of a class must be locked in for a maximum period of 1 year."
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 54 requires that the sweat equity shares of a class of shares already issued are authorized by a special resolution passed in a general meeting and the company has been in business for at least one year since the date it was entitled to commence business. The lock-in period is 3 years.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Sweat Equity Shares",
+        "Section 54",
+        "Special Resolution"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_004",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "What is the maximum limit on the issue of sweat equity shares in any financial year as a percentage of the paid-up equity share capital of the company, unless prescribed otherwise for startup companies?",
+      "options": [
+        "10%",
+        "15%",
+        "25%",
+        "50%"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per the Companies (Share Capital and Debentures) Rules, 2014, a company shall not issue sweat equity shares for more than 15% of the existing paid-up equity share capital in a financial year, or shares of the issue value of Rs. 5 crores, whichever is higher, subject to a maximum of 25% of the paid-up equity share capital at any time.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Sweat Equity Limits",
+        "Share Capital Rules",
+        "Percentage Limit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_005",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "In the case of a public company, what is the maximum permissible discount or commission that can be paid to any person for subscribing or agreeing to subscribe to its debentures?",
+      "options": [
+        "2.5% of the issue price",
+        "5% of the issue price",
+        "10% of the issue price",
+        "No statutory percentage limit is prescribed under the Act for debentures"
+      ],
+      "answerIndex": 3,
+      "explanation": "Section 40 regulates underwriting commission for shares and debentures, but the Companies (Specification of definitions details) Rules and Section 40 rules set the maximum commission for shares at 5% and debentures at 2.5%, BUT wait - under Section 40 read with Rule 13, underwriting commission for shares is 5% and for debentures is 2.5%. Let's check the options. Underwriting commission for shares is 5% and for debentures is 2.5% as per Rule 13 of Companies (Prospectus and Allotment of Securities) Rules, 2014.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Underwriting Commission",
+        "Debentures",
+        "Section 40"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_006",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "Can a company limited by shares issue fully paid-up bonus shares out of its Securities Premium Account?",
+      "options": [
+        "No, securities premium can only be used for writing off preliminary expenses.",
+        "Yes, under Section 52(2), securities premium can be applied for issuing fully paid-up bonus shares.",
+        "Yes, but only if approved by the National Company Law Tribunal (NCLT).",
+        "No, bonus shares can only be issued out of Free Reserves."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 52(2) explicitly permits the application of the securities premium account for the company's issue of unissued shares of the company to the members of the company as fully paid bonus shares.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Securities Premium",
+        "Bonus Shares",
+        "Section 52"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_007",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "Which of the following funds CANNOT be utilized for the redemption of preference shares by a company?",
+      "options": [
+        "Proceeds of a fresh issue of shares made for the specific purpose of redemption",
+        "Out of the profits of the company which would otherwise be available for dividend",
+        "Out of the proceeds of a fresh issue of debentures",
+        "Out of Capital Redemption Reserve account"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 55 states that preference shares can be redeemed out of the proceeds of a fresh issue of shares or out of profits of the company available for dividend. Debenture proceeds cannot be used for redeeming preference shares.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Redemption of Preference Shares",
+        "Section 55",
+        "Capital Redemption Reserve"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_008",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "When unredeemed preference shares are redeemed out of profits, an amount equal to the nominal amount of the shares to be redeemed must be transferred to:",
+      "options": [
+        "General Reserve",
+        "Capital Redemption Reserve Account",
+        "Securities Premium Account",
+        "Capital Reserve"
+      ],
+      "answerIndex": 1,
+      "explanation": "According to the proviso to Section 55(2), where preference shares are redeemed out of profits, an amount equal to the nominal value of the shares so redeemed shall be transferred to the Capital Redemption Reserve (CRR) account.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Capital Redemption Reserve",
+        "Section 55",
+        "Preference Shares"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_009",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "What is the maximum tenure for which preference shares can be issued by a company engaged in setting up infrastructure projects, as per the proviso to Section 55(1)?",
+      "options": [
+        "20 years",
+        "25 years",
+        "30 years",
+        "No limit for infrastructure projects"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per the proviso to Section 55(1), a company engaged in setting up infrastructure projects may issue preference shares for a period exceeding 20 years but not exceeding 25 years, subject to redemption of a minimum percentage each year starting from the 21st year.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Preference Shares",
+        "Infrastructure Projects",
+        "Section 55"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_010",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "Under Section 62(1)(a) of the Companies Act, 2013, when a company having share capital proposes to increase its subscribed capital by the issue of further shares, such shares must first be offered to:",
+      "options": [
+        "The public through a prospectus",
+        "Existing equity shareholders in proportion to their paid-up capital",
+        "Institutional investors and mutual funds",
+        "Employees under an Employee Stock Option Scheme"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 62(1)(a) embodies the pre-emptive rights of existing equity shareholders, requiring further shares to be offered in proportion to the paid-up capital on those shares.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Right Issue",
+        "Pre-emptive rights",
+        "Section 62"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_011",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "What is the minimum notice period required to be given to existing equity shareholders when making a rights issue under Section 62(1)(a) of the Companies Act, 2013?",
+      "options": [
+        "Not less than 7 days and not more than 14 days",
+        "Not less than 10 days and not more than 15 days",
+        "Not less than 15 days and not more than 30 days",
+        "Not less than 21 days and not more than 45 days"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 62(1)(a)(i) prescribes that the notice of a rights issue shall be dispatched through registered post, speed post, or electronic mode at least 15 days before the date of opening of the issue and shall not exceed 30 days.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Rights Issue Notice",
+        "Timeline",
+        "Section 62"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_012",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "By what majority must a special resolution be passed in a general meeting to issue shares on a preferential basis to persons other than existing shareholders under Section 62(1)(c)?",
+      "options": [
+        "Simple majority (more than 50%)",
+        "Not less than two-thirds majority",
+        "Special resolution (not less than three-fourths majority)",
+        "Unanimous resolution"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 62(1)(c) permits preferential allotment of shares if it is authorized by a special resolution passed by the shareholders in a general meeting.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Preferential Allotment",
+        "Special Resolution",
+        "Section 62"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_013",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "Can a company issue fully paid-up bonus shares by capitalizing its revaluation reserve?",
+      "options": [
+        "Yes, provided the revaluation is certified by a registered valuer.",
+        "No, bonus shares cannot be issued out of capitalization of reserves created from revaluation of assets.",
+        "Yes, with the prior approval of the Central Government.",
+        "Yes, if approved by a unanimous resolution."
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Rule 14 of the Companies (Share Capital and Debentures) Rules, 2014, bonus shares shall not be issued by capitalizing reserves created by the revaluation of assets.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Bonus Shares",
+        "Revaluation Reserve",
+        "Rule 14"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_014",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "What is the maximum time limit within which a company must complete the allotment of securities and refund application money if the minimum subscription is not received in a public issue?",
+      "options": [
+        "15 days from the closure of the issue",
+        "30 days from the closure of the issue",
+        "60 days from the closure of the issue",
+        "90 days from the closure of the issue"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 39(3) of the Companies Act, 2013, if the stated minimum subscription is not received within the specified time, the company is required to refund the application money within 15 days (or as per SEBI regulations, typically 30 days of issue closure under general statutory frameworks for public offers, specifically Section 39 specifies refund within 15 days if not allotted, but for minimum subscription default, SEBI ICDR regulations and Companies Act rules provide 15 days for refund. Let's verify: Section 39(3) states 'within such time as may be prescribed' which is 15 days from the closure of the issue).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Minimum Subscription",
+        "Allotment",
+        "Section 39"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_015",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "Which of the following actions constitutes a 'reduction of share capital' under Section 66 of the Companies Act, 2013?",
+      "options": [
+        "Forfeiture of shares for non-payment of calls",
+        "Cancelling shares which have not been taken or agreed to be taken by any person",
+        "Extinguishing or reducing liability on any of its shares in respect of unpaid share capital",
+        "Redemption of redeemable preference shares in accordance with Section 55"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 66 governs reduction of share capital, which includes extinguishing/reducing liability on shares, paying off paid-up capital in excess of wants, or cancelling lost capital. Redemption of preference shares under Section 55 and forfeiture of shares are explicitly excluded from being treated as reduction of capital.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Reduction of Capital",
+        "Section 66",
+        "Exclusions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_016",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "An application for reduction of share capital under Section 66 must be confirmed by which authority?",
+      "options": [
+        "Securities and Exchange Board of India (SEBI)",
+        "Registrar of Companies (RoC)",
+        "National Company Law Tribunal (NCLT)",
+        "Regional Director (RD)"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 66(1) states that a company limited by shares may, by special resolution, reduce its share capital subject to confirmation by the National Company Law Tribunal (NCLT) on application by the company.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Reduction of Capital",
+        "NCLT Confirmation",
+        "Section 66"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_017",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "Can a company buy-back its own shares out of the proceeds of an earlier issue of the same kind of shares?",
+      "options": [
+        "Yes, always.",
+        "No, Section 69/70 prohibits buy-back out of the proceeds of an earlier issue of the same kind of shares.",
+        "Yes, with NCLT approval.",
+        "Yes, if approved by the Board of Directors."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 70(2)(b) of the Companies Act, 2013 prohibits a company from directly or indirectly purchasing its own shares or other specified securities through any subsidiary company including its own subsidiaries, or through any investment company or group of investment companies, OR out of the proceeds of an earlier issue of the same kind of shares or other specified securities.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Buy-back",
+        "Prohibitions",
+        "Section 70"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_018",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "What is the maximum limit of buy-back of equity shares in any financial year without passing a special resolution, i.e., via Board resolution, under Section 68?",
+      "options": [
+        "5% of the total paid-up equity capital",
+        "10% of the total paid-up equity capital and free reserves",
+        "25% of the total paid-up equity capital and free reserves",
+        "15% of the total paid-up equity capital"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 68(2), the buy-back can be up to 10% of the total paid-up equity capital and free reserves of the company by a Board resolution, whereas buy-back up to 25% requires a special resolution in a general meeting.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Buy-back Limits",
+        "Board Resolution",
+        "Section 68"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_019",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "Within what time frame must a company complete the buy-back of its shares once the special or board resolution has been passed?",
+      "options": [
+        "3 months from the date of passing the resolution",
+        "6 months from the date of passing the resolution",
+        "1 year from the date of passing the resolution",
+        "18 months from the date of passing the resolution"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 68(4) mandates that every buy-back shall be completed within a period of one year from the date of passing of the special resolution or the resolution passed by the Board of Directors, as the case may be.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Buy-back Completion",
+        "Time limit",
+        "Section 68"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_020",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "When a company completes a buy-back of shares, it must extinguish and physically destroy the shares so bought back within how many days of completion of buy-back?",
+      "options": [
+        "7 days",
+        "15 days",
+        "30 days",
+        "60 days"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 68(7) mandates that where a company completes a buy-back of its shares, it shall extinguish and physically destroy the shares or securities so bought back within seven days of the last date of completion of the buy-back.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Extinguishment of shares",
+        "Buy-back",
+        "Section 68"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_021",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "What is the cooling period/lock-in period after a buy-back during which a company is prohibited from making a further issue of the same kind of shares?",
+      "options": [
+        "3 months",
+        "6 months",
+        "1 year",
+        "2 years"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 68(8) stipulates that where a company completes a buy-back of its shares under this section, it shall not make a further issue of the same kind of shares (including allotment of further shares under clause (a) of sub-section (1) of section 62) within a period of 6 months except by way of a bonus issue or discharge of subsisting obligations.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Buy-back Cooling Period",
+        "Section 68",
+        "Restriction"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_022",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "Can a company issue debentures with voting rights under the Companies Act, 2013?",
+      "options": [
+        "Yes, if approved by a special resolution.",
+        "Yes, if the debentures are fully secured.",
+        "No, Section 71(1) explicitly prohibits a company from issuing any debentures with voting rights.",
+        "Yes, but only to institutional debenture holders."
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 71(1) of the Companies Act, 2013 explicitly provides that a company shall not issue any debentures carrying voting rights.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Debentures",
+        "Voting Rights",
+        "Section 71"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_023",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "What is the requirement for creating a Debenture Redemption Reserve (DRR) for unlisted non-banking financial companies (NBFCs) registered with RBI and HFCs for privately placed debentures?",
+      "options": [
+        "10% of the value of debentures issued",
+        "25% of the value of debentures issued",
+        "50% of the value of debentures issued",
+        "No DRR is required for privately placed debentures by such NBFCs and HFCs"
+      ],
+      "answerIndex": 3,
+      "explanation": "As per Rule 18(7) of the Companies (Share Capital and Debentures) Rules, 2014, NBFCs registered with RBI and HFCs regulated by National Housing Bank are exempted from creating a Debenture Redemption Reserve in respect of privately placed debentures.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "DRR",
+        "NBFC",
+        "Debentures Rules"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_024",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "When must a company appoint a debenture trustee if it issues debentures to more than how many persons?",
+      "options": [
+        "50 persons",
+        "100 persons",
+        "200 persons",
+        "500 persons"
+      ],
+      "answerIndex": 3,
+      "explanation": "Section 71(5) provides that no company shall issue a prospectus or make an offer or invitation to the public or to its members exceeding 500 persons for the subscription of its debentures unless the company has appointed one or more debenture trustees.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Debenture Trustee",
+        "Section 71",
+        "Threshold"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_025",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "If a company fails to redeem its debentures or pay interest thereon when due, who can approach the National Company Law Tribunal (NCLT) for an order directing the company to redeem the debentures forthwith?",
+      "options": [
+        "Only the Central Government",
+        "Debenture trustee on their own or on the application of debenture holders holding not less than 10% in value",
+        "Any single debenture holder holding at least 1% of the debentures",
+        "The Registrar of Companies exclusively"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 71(10) specifies that where a company fails to redeem the debentures on the date of maturity, the Tribunal may, on the application of any debenture holder or debenture trustee and, after hearing both sides, pass an order directing the company to redeem the debentures forthwith.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Default in Debenture Redemption",
+        "NCLT Powers",
+        "Section 71"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_026",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "What is the time limit within which a duplicate share certificate must be issued for unlisted companies after submitting a complete application?",
+      "options": [
+        "15 days",
+        "1 month",
+        "2 months",
+        "3 months"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Rule 6 of the Companies (Share Capital and Debentures) Rules, 2014, duplicate share certificates for unlisted companies must be issued within 3 months from the date of submission of complete application (and 45 days for listed companies under SEBI LODR).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Duplicate Share Certificate",
+        "Rule 6",
+        "Timeline"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_027",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "Under Section 56(1) of the Companies Act, 2013, a transfer of securities shall not be registered by a company unless a proper instrument of transfer, duly stamped, dated, and executed by or on behalf of the transferor and the transferee, has been delivered to the company within what period?",
+      "options": [
+        "Within 30 days",
+        "Within 60 days",
+        "Within 90 days",
+        "Within 6 months"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 56(1) requires the transfer instrument along with the certificate/letter of allotment to be delivered to the company within 60 days from the date of execution by transferor and transferee.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Transfer of Securities",
+        "Section 56",
+        "Instrument of Transfer"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_028",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "What is the penalty range for a company that defaults in complying with the provisions of Section 56 relating to transfer and transmission of securities?",
+      "options": [
+        "Rs. 10,000 to Rs. 50,000",
+        "Rs. 25,000 to Rs. 5,00,000",
+        "Rs. 50,000 to Rs. 1,00,000",
+        "Rs. 1,00,000 to Rs. 25,00,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 56(6) prescribes that if any default is made in complying with sub-sections (1) to (5), the company shall be liable to a penalty of Rs. 50,000 and every officer of the company who is in default shall be liable to a penalty of Rs. 25,000 (Wait, let's look at standard statutory fine: company liable to penalty of Rs. 50,000 and officer in default Rs. 25,000. Option check: Rs. 25,000 for officer and company Rs. 50,000, let's ensure accuracy. Section 56(6) says company penalty 50,000 and officer 25,000).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Penalty",
+        "Section 56",
+        "Default"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_029",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "Can a company issue fractional shares under the Companies Act, 2013?",
+      "options": [
+        "Yes, up to a maximum of 1 share per member.",
+        "No explicit prohibition, but Articles must permit it.",
+        "The Act does not provide for the issuance of fractional shares; standard practice and circulars prohibit issuing fractional certificates directly as physical shares.",
+        "Yes, with NCLT approval."
+      ],
+      "answerIndex": 2,
+      "explanation": "Under Indian company law and established MCA practice, companies cannot issue fractional shares. Fractional entitlements arising out of bonus or rights issues are typically pooled and sold by a trustee, with proceeds distributed to shareholders.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Fractional Shares",
+        "Company Law Practice",
+        "Share Capital"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-4_030",
+      "kind": "normal",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "prompt": "In case of bearer debentures (if ever issued historically or convertible warrants), or registered debentures, how does transfer take effect?",
+      "options": [
+        "By mere delivery",
+        "By execution and registration of instrument of transfer as per Section 56",
+        "By oral agreement",
+        "By Board resolution alone"
+      ],
+      "answerIndex": 1,
+      "explanation": "Debentures are movable property transferable in the manner provided in the articles of the company. Registered debentures require a proper instrument of transfer in accordance with Section 56.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Transfer of Debentures",
+        "Movable Property",
+        "Section 56"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_corporate-laws-4_01",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "passage": "Zenith Pharma Limited, a listed public company, decides to raise additional capital. The Board proposes a rights issue to existing equity shareholders. Simultaneously, the company plans to issue sweat equity shares to its key research scientists and non-executive directors for their technical know-how. The company's paid-up equity share capital is Rs. 50 crores.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-4_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-4_01",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-4",
+          "subject": "Law",
+          "prompt": "What is the minimum notice period required under Section 62(1)(a) for opening the rights issue of Zenith Pharma Limited?",
+          "options": [
+            "7 days",
+            "10 days",
+            "15 days",
+            "30 days"
+          ],
+          "answerIndex": 2,
+          "explanation": "Section 62(1)(a) requires that the notice for a rights issue shall be dispatched at least 15 days before the date of opening of the issue.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Rights Issue",
+            "Notice Period",
+            "Section 62"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-4_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-4_01",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-4",
+          "subject": "Law",
+          "prompt": "Can Zenith Pharma Limited issue sweat equity shares to its non-executive directors?",
+          "options": [
+            "No, sweat equity can only be issued to whole-time executive directors and employees.",
+            "Yes, sweat equity shares can be issued to directors, including non-executive and independent directors, who provide technical know-how.",
+            "Yes, but only with prior Central Government approval.",
+            "No, sweat equity cannot be issued to directors at all."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 54 defines sweat equity shares as equity shares issued to directors or employees at a discount or for consideration other than cash. Directors include non-executive directors who provide intellectual property or value additions.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Sweat Equity",
+            "Directors",
+            "Section 54"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-4_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-4_01",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-4",
+          "subject": "Law",
+          "prompt": "What is the maximum percentage of paid-up equity share capital that Zenith Pharma Limited can issue as sweat equity in a single financial year without exceeding statutory limits?",
+          "options": [
+            "10%",
+            "15%",
+            "25%",
+            "50%"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 8 of Companies (Share Capital and Debentures) Rules restricts the issuance of sweat equity shares to 15% of the existing paid-up equity share capital in any financial year (subject to overall 25%).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Sweat Equity Limit",
+            "Rules",
+            "Percentage"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-4_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-4_01",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-4",
+          "subject": "Law",
+          "prompt": "If an existing shareholder renounces their rights entitlement in favor of a third party, does Section 62(1)(a) permit this right of renunciation?",
+          "options": [
+            "No, rights are non-transferable under all circumstances.",
+            "Yes, unless the articles of the company provide otherwise, the right of renunciation is inherent in a rights issue.",
+            "Yes, but only if approved by SEBI.",
+            "No, renunciation is only allowed for preference shares."
+          ],
+          "answerIndex": 1,
+          "explanation": "Unless the articles of the company forbid it, the shareholder entitled to the rights issue has a statutory right to renounce the shares offered in favor of any other person under the proviso to Section 62(1)(a).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Renunciation",
+            "Rights Issue",
+            "Section 62"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-4_02",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "passage": "Aura Chemicals Private Limited has accumulated substantial free reserves and decides to reward its equity shareholders by issuing fully paid-up bonus shares in the ratio of 1:1. The company has a paid-up capital of Rs. 10 crores and free reserves of Rs. 20 crores, which includes Rs. 3 crores created from the revaluation of plant and machinery.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-4_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-4_02",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-4",
+          "subject": "Law",
+          "prompt": "Can Aura Chemicals Private Limited utilize the reserve created from the revaluation of plant and machinery for issuing bonus shares?",
+          "options": [
+            "Yes, up to 50% of the revaluation reserve.",
+            "No, Rule 14 expressly prohibits the capitalization of reserves created by revaluation of assets for bonus issues.",
+            "Yes, if approved by a unanimous resolution of shareholders.",
+            "Yes, provided NCLT grants permission."
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 14 of the Companies (Share Capital and Debentures) Rules, 2014 states that bonus shares shall not be issued by capitalizing reserves created by the revaluation of assets.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Bonus Shares",
+            "Revaluation Reserve",
+            "Rule 14"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-4_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-4_02",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-4",
+          "subject": "Law",
+          "prompt": "What is the maximum amount available from the eligible free reserves of Aura Chemicals Private Limited for issuing the bonus shares?",
+          "options": [
+            "Rs. 20 crores",
+            "Rs. 17 crores",
+            "Rs. 10 crores",
+            "Rs. 3 crores"
+          ],
+          "answerIndex": 1,
+          "explanation": "Total free reserves are Rs. 20 crores minus the revaluation reserve of Rs. 3 crores, leaving eligible free reserves of Rs. 17 crores. To issue a 1:1 bonus share on Rs. 10 crores capital, the company needs Rs. 10 crores, which is well within the eligible pool.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Free Reserves",
+            "Bonus Issue Calculation",
+            "Section 63"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-4_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-4_02",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-4",
+          "subject": "Law",
+          "prompt": "Which corporate approval is mandatory for Aura Chemicals Private Limited before issuing bonus shares?",
+          "options": [
+            "Board resolution followed by an ordinary resolution in general meeting",
+            "Board resolution followed by a special resolution in general meeting",
+            "Ordinary resolution passed by the Board alone",
+            "Special resolution passed by the Board alone"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 63 requires that bonus shares are recommended by the Board and authorized by the members by passing an ordinary resolution in a general meeting (as per standard Articles and Section 63 provisions, though Articles may regulate, Section 63 specifies authorization by general meeting on Board's recommendation).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Bonus Shares Approval",
+            "Section 63",
+            "Ordinary Resolution"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-4_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-4_02",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-4",
+          "subject": "Law",
+          "prompt": "Can Aura Chemicals Private Limited issue bonus shares partly paid-up to its members?",
+          "options": [
+            "Yes, if approved by the Board.",
+            "No, bonus shares must always be issued as fully paid-up shares.",
+            "Yes, up to 50% partly paid.",
+            "No, unless backed by cash."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 63(2)(b) stipulates that no company shall capitalize its profits or reserves for the purpose of issuing fully paid-up bonus shares unless they are fully paid-up. Bonus shares can never be partly paid-up.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Fully paid bonus shares",
+            "Section 63",
+            "Prohibition"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-4_03",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "passage": "Omega Infrastructure Limited issued 10,000 8% Redeemable Preference Shares of Rs. 100 each, redeemable after 8 years. Due to financial downturns at maturity, the company decides to redeem these preference shares partly out of accumulated profits and partly out of the proceeds of a fresh issue of equity shares worth Rs. 4 lakhs.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-4_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-4_03",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-4",
+          "subject": "Law",
+          "prompt": "What is the total nominal value of the preference shares due for redemption by Omega Infrastructure Limited?",
+          "options": [
+            "Rs. 4,00,000",
+            "Rs. 6,00,000",
+            "Rs. 10,000",
+            "Rs. 10,00,000"
+          ],
+          "answerIndex": 3,
+          "explanation": "10,000 preference shares of Rs. 100 each equal a total nominal value of Rs. 10,00,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Preference Shares",
+            "Nominal Value",
+            "Section 55"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-4_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-4_03",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-4",
+          "subject": "Law",
+          "prompt": "How much amount must be transferred to the Capital Redemption Reserve (CRR) account by Omega Infrastructure Limited?",
+          "options": [
+            "Rs. 10,00,000",
+            "Rs. 6,00,000",
+            "Rs. 4,00,000",
+            "Rs. 0"
+          ],
+          "answerIndex": 1,
+          "explanation": "Total nominal value to redeem is Rs. 10,00,000. Fresh issue proceeds used are Rs. 4,00,000. The remaining Rs. 6,00,000 must be redeemed out of profits, requiring a transfer of Rs. 6,00,000 to the Capital Redemption Reserve (CRR) account.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Capital Redemption Reserve",
+            "Calculation",
+            "Section 55"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-4_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-4_03",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-4",
+          "subject": "Law",
+          "prompt": "Can Omega Infrastructure Limited redeem these preference shares when some of them are partly paid-up?",
+          "options": [
+            "Yes, if approved by preference shareholders.",
+            "No, preference shares must be fully paid-up before they can be redeemed.",
+            "Yes, up to 50% partly paid.",
+            "Yes, with NCLT sanction."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 55(1) clearly specifies that no preference shares shall be redeemed unless they are fully paid-up.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Redemption",
+            "Fully Paid-up",
+            "Section 55"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-4_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-4_03",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-4",
+          "subject": "Law",
+          "prompt": "If Omega Infrastructure Limited fails to redeem the preference shares on due date, what is the impact on its ability to issue further shares or declare dividends?",
+          "options": [
+            "No impact, penalty is only monetary.",
+            "Section 55 does not specify penal consequences.",
+            "Failure to redeem does not invalidate redemption per se, but the Tribunal may order winding up or penalties; however, unredeemed preference shares can be replaced by further redeemable preference shares with consent under certain provisos.",
+            "The company is barred from declaring dividends until redemption is completed."
+          ],
+          "answerIndex": 2,
+          "explanation": "Under the proviso to Section 55(3), if a company is not in a position to redeem preference shares, it may, with the consent of holders of three-fourths in value and NCLT approval, issue further redeemable preference shares equal to the unredeemed amount.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Default in Redemption",
+            "Section 55",
+            "Proviso"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-4_04",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "passage": "Titan Engineering Limited proposes to buy-back 20% of its equity share capital. The company passes a special resolution at its General Meeting. The total paid-up equity capital and free reserves of the company stand at Rs. 100 crores. The buy-back is proposed to be funded through free reserves and securities premium.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-4_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-4_04",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-4",
+          "subject": "Law",
+          "prompt": "Is the special resolution passed by Titan Engineering Limited sufficient to authorize a 20% buy-back of its equity share capital?",
+          "options": [
+            "No, buy-back always requires NCLT approval regardless of percentage.",
+            "Yes, under Section 68(2), buy-back up to 25% of the total paid-up capital and free reserves requires a special resolution.",
+            "No, a 20% buy-back requires unanimous consent.",
+            "Yes, but it also requires Central Government approval."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 68(2) permits a buy-back of up to 25% of the aggregate of paid-up capital and free reserves of the company by means of a special resolution passed in a general meeting.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Buy-back",
+            "Special Resolution",
+            "Section 68"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-4_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-4_04",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-4",
+          "subject": "Law",
+          "prompt": "What amount must be transferred to the Capital Redemption Reserve (CRR) account upon successful completion of the buy-back by Titan Engineering Limited?",
+          "options": [
+            "An amount equal to the nominal value of the shares bought back out of free reserves or securities premium",
+            "An amount equal to the total purchase price paid for the buy-back",
+            "No transfer to CRR is required for buy-backs",
+            "25% of the buy-back value"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 69 mandates that where a company buys back shares out of free reserves or securities premium, a sum equal to the nominal value of the shares so bought back shall be transferred to the Capital Redemption Reserve (CRR) account.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "CRR",
+            "Buy-back",
+            "Section 69"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-4_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-4_04",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-4",
+          "subject": "Law",
+          "prompt": "Within what period must Titan Engineering Limited complete the buy-back process from the date of passing the special resolution?",
+          "options": [
+            "3 months",
+            "6 months",
+            "1 year",
+            "3 years"
+          ],
+          "answerIndex": 2,
+          "explanation": "Section 68(4) stipulates that every buy-back shall be completed within a period of one year from the date of passing of the special resolution.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Buy-back Timeline",
+            "Section 68"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-4_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-4_04",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-4",
+          "subject": "Law",
+          "prompt": "Can Titan Engineering Limited issue fresh equity shares of the same kind 3 months after completing this buy-back?",
+          "options": [
+            "Yes, any time after completion.",
+            "No, Section 68(8) imposes a cooling period of 6 months during which the company cannot make a further issue of the same kind of shares.",
+            "Yes, if approved by the Board.",
+            "No, the cooling period is 2 years."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 68(8) prohibits a company from making a further issue of the same kind of shares within 6 months of completing a buy-back, except by way of a bonus issue or discharge of subsisting obligations.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Cooling Period",
+            "Buy-back Restriction",
+            "Section 68"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-4_05",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-4",
+      "subject": "Law",
+      "passage": "Sigma Technologies Limited issues secured non-convertible debentures worth Rs. 50 crores to 600 institutional and individual investors on a private placement basis. The company appoints a debenture trustee and creates a charge on its fixed assets. Due to a cash crunch, the company delays the creation of the Debenture Redemption Reserve (DRR) as required by law.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Share Capital and Debentures"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-4_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-4_05",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-4",
+          "subject": "Law",
+          "prompt": "Was it mandatory for Sigma Technologies Limited to appoint a debenture trustee for this issue?",
+          "options": [
+            "No, because the debentures are secured.",
+            "Yes, under Section 71(5), issuing debentures to more than 500 persons makes the appointment of a debenture trustee mandatory.",
+            "No, debenture trustees are only required for listed public companies.",
+            "Yes, regardless of the number of investors."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 71(5) states that no company shall issue a prospectus or make an offer or invitation to the public or to its members exceeding 500 persons for the subscription of its debentures unless a debenture trustee has been appointed.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Debenture Trustee",
+            "Section 71",
+            "Threshold"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-4_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-4_05",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-4",
+          "subject": "Law",
+          "prompt": "Who is empowered to inspect the register of debenture holders of Sigma Technologies Limited and take extracts thereof?",
+          "options": [
+            "Only the Board of Directors",
+            "Any debenture holder or shareholder without payment of any fee during business hours",
+            "Only the debenture trustees",
+            "The Central Government exclusively"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 88 read with Section 114/71 allows any debenture holder, member, or other person to inspect the register of debenture holders and take extracts during business hours as prescribed.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Register of Debenture Holders",
+            "Inspection",
+            "Section 88"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-4_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-4_05",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-4",
+          "subject": "Law",
+          "prompt": "If Sigma Technologies Limited defaults in paying interest on the debentures, who can approach the NCLT under Section 71(10)?",
+          "options": [
+            "Only the Registrar of Companies",
+            "Any debenture holder or debenture trustee",
+            "Only the SEBI",
+            "Any unsecured creditor"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 71(10) empowers any debenture holder or debenture trustee to approach the NCLT for an order directing the company to redeem the debentures or pay interest forthwith upon default.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "NCLT",
+            "Default in Debentures",
+            "Section 71"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-4_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-4_05",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-4",
+          "subject": "Law",
+          "prompt": "Can Sigma Technologies Limited issue debentures carrying voting rights in a general meeting of the company?",
+          "options": [
+            "Yes, if approved by a special resolution.",
+            "Yes, if the debentures are fully secured.",
+            "No, Section 71(1) explicitly prohibits the issuance of debentures with voting rights.",
+            "Yes, but only in matters concerning debenture trustee appointments."
+          ],
+          "answerIndex": 2,
+          "explanation": "Section 71(1) of the Companies Act, 2013 explicitly mandates that no company shall issue any debentures carrying voting rights.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Debentures Voting Rights",
+            "Section 71",
+            "Prohibition"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

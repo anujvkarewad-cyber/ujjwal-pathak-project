@@ -1,0 +1,1390 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "advanced-accounting-8",
+  "subject": "Accounts",
+  "paper": "Paper 1: Advanced Accounting",
+  "module": "Module 2",
+  "chapterNumber": 8,
+  "chapterTitle": "Revenue Based Accounting Standards",
+  "generatedAt": "2026-08-16T13:55:17.619Z",
+  "model": "gemini-3.6-flash",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_advanced-accounting-8_001",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "According to AS 7 'Construction Contracts', when a contract covers a number of assets, the construction of each asset should be treated as a separate construction contract if:",
+      "options": [
+        "Separate proposals have been submitted for each asset, and each asset has been subject to separate negotiation.",
+        "The total contract costs and revenues can be identified, regardless of separate proposals.",
+        "The customer accepts a single bundled price for all assets combined.",
+        "The assets are constructed simultaneously at the same geographical location."
+      ],
+      "answerIndex": 0,
+      "explanation": "Under AS 7, the construction of each asset should be treated as a separate construction contract when separate proposals have been submitted, each asset has been subject to separate negotiation (where contractor and customer can accept or reject that part), and costs and revenues of each asset can be identified.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 7",
+        "Segmenting Construction Contracts"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_002",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "Under AS 9 'Revenue Recognition', revenue from service transactions rendered over time should be recognized using:",
+      "options": [
+        "Completed contract method only.",
+        "Proportionate completion method or completed service contract method depending on the nature of transaction.",
+        "Cash basis upon receipt of full service fees.",
+        "Straight-line basis over a mandatory 12-month period."
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 9 provides that performance should be measured under either the proportionate completion method or the completed service contract method, depending on whether the service consists of the execution of a series of acts or a single/specific act.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 9",
+        "Rendering of Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_003",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "Which of the following items should be EXCLUDED from contract costs under AS 7?",
+      "options": [
+        "Costs of materials consumed in construction.",
+        "Depreciation of plant and equipment used on the contract.",
+        "General administration costs for which reimbursement is not specified in the contract.",
+        "Direct site supervision costs."
+      ],
+      "answerIndex": 2,
+      "explanation": "General administration costs for which reimbursement is not specified in the contract are excluded from contract costs under AS 7 and charged directly to the Statement of Profit and Loss.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 7",
+        "Contract Costs"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_004",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "Under AS 9, interest revenue should be recognized on which of the following bases?",
+      "options": [
+        "Cash basis when payment is actually received.",
+        "Time proportion basis taking into account the amount outstanding and the rate applicable.",
+        "Equal installments over the contract period irrespective of outstanding balance.",
+        "When the underlying principal amount is fully recovered."
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 9 mandates that interest revenue shall be recognized on a time proportion basis taking into account the amount outstanding and the applicable interest rate.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 9",
+        "Interest Income"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_005",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "Under AS 7, incentive payments are included in contract revenue when:",
+      "options": [
+        "The contract is at least 90% complete.",
+        "The contractor decides to bill the customer for early completion.",
+        "The contract is sufficiently advanced that it is probable that the specified performance standards will be met or exceeded, and the amount can be measured reliably.",
+        "The customer gives written approval after the contract completion."
+      ],
+      "answerIndex": 2,
+      "explanation": "AS 7 states that incentive payments are included in contract revenue when the contract is sufficiently advanced that it is probable that the specified performance standards will be met or exceeded, and the incentive amount can be measured reliably.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 7",
+        "Contract Revenue",
+        "Incentive Payments"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_006",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "When goods are sold on a 'Consignment' basis, when should the consignor recognize revenue under AS 9?",
+      "options": [
+        "When goods are dispatched to the consignee.",
+        "When the consignee receives the goods at their warehouse.",
+        "When the consignee sells the goods to a third party.",
+        "When the consignee remits the cash to the consignor."
+      ],
+      "answerIndex": 2,
+      "explanation": "Under AS 9, revenue from consignment sales is recognized by the consignor only when the goods are sold by the consignee to a third party, as risk and rewards are transferred at that point.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 9",
+        "Consignment Sales"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_007",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "Build Tech Ltd. entered into a fixed price contract of ₹500 lakhs. Total estimated cost was ₹400 lakhs. At year-end, costs incurred were ₹100 lakhs. Percentage of completion and contract revenue to be recognized are:",
+      "options": [
+        "25% and ₹125 lakhs",
+        "20% and ₹100 lakhs",
+        "25% and ₹100 lakhs",
+        "20% and ₹125 lakhs"
+      ],
+      "answerIndex": 0,
+      "explanation": "Percentage of completion = Costs incurred / Total estimated cost = ₹100 lakhs / ₹400 lakhs = 25%. Contract revenue to be recognized = 25% of ₹500 lakhs = ₹125 lakhs.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 7",
+        "Percentage of Completion Method"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_008",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "How should dividends from investments in shares be recognized under AS 9?",
+      "options": [
+        "On a time proportion basis over the financial year.",
+        "When the declaree company publishes its audited accounts.",
+        "When the owner's right to receive payment is established.",
+        "When cash dividend is credited to the bank account."
+      ],
+      "answerIndex": 2,
+      "explanation": "AS 9 states that revenue from dividend on investments in shares is recognized when the owner's right to receive payment is established (typically when dividends are declared by shareholders in an AGM).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 9",
+        "Dividend Income"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_009",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "Under AS 7, when it is probable that total contract costs will exceed total contract revenue, the expected loss should be:",
+      "options": [
+        "Recognized as an expense immediately, regardless of the stage of completion.",
+        "Recognized proportionately over the remaining period of the contract.",
+        "Deferred and amortized after contract completion.",
+        "Ignored until the contract is completely finished."
+      ],
+      "answerIndex": 0,
+      "explanation": "According to AS 7 paragraph 35, when it is probable that total contract costs will exceed total contract revenue, the expected loss should be recognized as an expense immediately regardless of the stage of completion or work performed.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 7",
+        "Expected Loss Recognition"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_010",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "Under AS 9, revenue from tuition fees received for a course spanning 6 months across two financial years should be recognized:",
+      "options": [
+        "100% in the financial year in which fees are collected.",
+        "100% in the financial year in which the course ends.",
+        "Pro-rata over the period of the course as services are rendered.",
+        "At the option of the management based on tax preference."
+      ],
+      "answerIndex": 2,
+      "explanation": "Tuition fees represent rendering of service over time; hence revenue should be recognized pro-rata over the period of the course as the services are provided across the financial accounting periods.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 9",
+        "Rendering of Services",
+        "Tuition Fees"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_011",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "A contractor undertakes a construction contract for ₹800 lakhs. Costs incurred to date are ₹300 lakhs and estimated costs to complete are ₹500 lakhs. Work certified is ₹250 lakhs. Using the cost proportion method under AS 7, what is the degree of completion?",
+      "options": [
+        "31.25%",
+        "37.50%",
+        "60.00%",
+        "50.00%"
+      ],
+      "answerIndex": 1,
+      "explanation": "Total estimated contract cost = Costs incurred (₹300) + Costs to complete (₹500) = ₹800 lakhs. Degree of completion = Cost incurred / Total estimated cost = ₹300 / ₹800 = 37.5%.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 7",
+        "Degree of Completion"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_012",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "Under AS 9, if at the time of sale of goods there is significant uncertainty regarding ultimate collection of the consideration, revenue recognition should be:",
+      "options": [
+        "Recognized fully and provision for bad debts created.",
+        "Postponed until the uncertainty is resolved.",
+        "Recognized to the extent of cost of goods sold only.",
+        "Recognized at 50% of the invoice value."
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 9 paragraph 9 specifies that where the ability to assess the ultimate collection with reasonable certainty is lacking at the time of raising any claim, revenue recognition should be postponed until such uncertainty is removed.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 9",
+        "Uncertainty of Collection"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_013",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "In a Cost Plus Contract under AS 7, the contractor is reimbursed for:",
+      "options": [
+        "Only direct material costs plus a fixed percentage of total revenue.",
+        "Allowable or otherwise defined costs plus a percentage of these costs or a fixed fee.",
+        "A fixed agreed sum irrespective of actual costs incurred.",
+        "Costs incurred plus an escalation clause for inflation only."
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 7 defines a cost plus contract as a construction contract in which the contractor is reimbursed for allowable or otherwise defined costs, plus a percentage of these costs or a fixed fee.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 7",
+        "Cost Plus Contract"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_014",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "Under AS 9, royalties should be recognized on which accounting basis?",
+      "options": [
+        "Cash basis as and when received.",
+        "Accrual basis in accordance with the terms of the relevant agreement.",
+        "At the end of the patent/licensing term in lump sum.",
+        "Equal monthly installments over 5 years."
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 9 requires royalties (for use of assets like patents, trademarks, copyrights) to be recognized on an accrual basis in accordance with the terms of the relevant agreement.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 9",
+        "Royalty Income"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_015",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "Apex Contractors had an initial contract value of ₹1,000 lakhs. During Year 2, customer approved a variation increasing contract value by ₹100 lakhs. Costs incurred till Year 2 are ₹660 lakhs and total estimated costs are ₹880 lakhs. Revenue recognized in Year 1 was ₹250 lakhs. Revenue to be recognized in Year 2 is:",
+      "options": [
+        "₹575 lakhs",
+        "₹825 lakhs",
+        "₹500 lakhs",
+        "₹570 lakhs"
+      ],
+      "answerIndex": 0,
+      "explanation": "Updated Contract Value = ₹1,000 + ₹100 = ₹1,100 lakhs. Stage of completion = ₹660 / ₹880 = 75%. Cumulative revenue to end of Year 2 = 75% of ₹1,100 = ₹825 lakhs. Revenue for Year 2 = Cumulative revenue (₹825) - Year 1 revenue (₹250) = ₹575 lakhs.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 7",
+        "Variations",
+        "Multi-period Revenue"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_016",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "Under AS 9, when goods are sold on 'Bill and Hold' terms (delivery delayed at buyer's request), revenue can be recognized if:",
+      "options": [
+        "The buyer makes full advance payment.",
+        "It is probable that delivery will be made, item is identified, ready for delivery, and usual payment terms apply.",
+        "The seller transfers physical possession to a public warehouse.",
+        "The buyer signs a non-cancellable indemnity bond."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 9, in 'bill and hold' sales, revenue is recognized before physical delivery if the buyer takes title and accepts billing, provided it is probable delivery will be made, the goods are identified and ready, and buyer acknowledges delay instructions.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 9",
+        "Bill and Hold Sales"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_017",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "Under AS 7, claims are included in contract revenue only when:",
+      "options": [
+        "The contractor has submitted the claim to an arbitration panel.",
+        "Negotiations have reached an advanced stage such that it is probable the customer will accept the claim, and the amount can be measured reliably.",
+        "The court issues an order enforcing payment.",
+        "The customer pays 50% advance against the claim."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 7, a claim is an amount that contractor seeks to collect from customer as reimbursement for costs not included in contract price. It is included in revenue only when negotiations have reached an advanced stage, customer acceptance is probable, and amount is reliably measurable.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 7",
+        "Claims"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_018",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "An agency company sells goods on behalf of a principal for ₹10,000. The agent is entitled to a 10% commission. How should the agent recognize revenue under AS 9?",
+      "options": [
+        "Gross revenue of ₹10,000 and expense of ₹9,000.",
+        "Net revenue of ₹1,000 commission.",
+        "Gross revenue of ₹9,000.",
+        "Revenue recognition deferred until principal receives money."
+      ],
+      "answerIndex": 1,
+      "explanation": "In an agency relationship, gross inflows include amounts collected on behalf of the principal which do not result in increase in equity for the agent. Revenue of the agent is only the amount of commission ( net ₹1,000).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 9",
+        "Agency Relationship",
+        "Gross vs Net"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_019",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "Under AS 7, costs that relate directly to a specific contract include:",
+      "options": [
+        "Insurance of general corporate office.",
+        "Site labor costs, including site supervision.",
+        "Depreciation of idle equipment not used on any contract.",
+        "Research and development costs not specified in contract."
+      ],
+      "answerIndex": 1,
+      "explanation": "Site labor costs, including site supervision, are directly attributable costs related to a specific contract under AS 7.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 7",
+        "Direct Contract Costs"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_020",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "A publisher receives ₹12,000 as annual subscription fees for a monthly magazine in advance on 1st October. The financial year ends on 31st March. Under AS 9, how much revenue should be recognized in the financial year of receipt?",
+      "options": [
+        "₹12,000",
+        "₹6,000",
+        "₹3,000",
+        "Nil"
+      ],
+      "answerIndex": 1,
+      "explanation": "Subscription revenue for publications issued on a regular time basis should be recognized on a straight-line basis over the subscription period. October to March represents 6 months out of 12; hence ₹12,000 * 6/12 = ₹6,000.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 9",
+        "Subscription Income"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_021",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "When costs incurred on a construction contract are not recoverable (e.g., contract validity subject to pending litigation), how should they be treated under AS 7?",
+      "options": [
+        "Capitalized under Work-in-Progress asset.",
+        "Recognized immediately as an expense.",
+        "Disclosed as a contingent liability only.",
+        "Deferred until litigation is settled."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 7, when the outcome of a construction contract cannot be estimated reliably or costs incurred are not recoverable, costs should be recognized as an expense in the period in which they are incurred.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 7",
+        "Unrecoverable Costs"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_022",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "Under AS 9, revenue from advertising agency commission for media space/time booked should be recognized when:",
+      "options": [
+        "The advertisement contract is signed.",
+        "The related advertisement or commercial appears before the public.",
+        "The client pays the agency bill.",
+        "The media house sends the bill to the agency."
+      ],
+      "answerIndex": 1,
+      "explanation": "According to AS 9 appendix, media commissions received by advertising agencies are recognized when the related advertisement or commercial appears before the public.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 9",
+        "Advertising Income"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_023",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "In a construction contract, total contract price is ₹1,200 lakhs. Cumulative costs incurred till end of Year 1 are ₹300 lakhs, and estimated further costs to complete are ₹900 lakhs. During Year 2, costs incurred are ₹500 lakhs and estimated further costs to complete are ₹400 lakhs. What is the contract profit or loss to be recognized in Year 2 P&L?",
+      "options": [
+        "Zero profit/loss",
+        "₹50 lakhs loss",
+        "₹100 lakhs loss",
+        "Zero profit in Year 1 and Zero profit in Year 2"
+      ],
+      "answerIndex": 3,
+      "explanation": "Year 1: Total estimated costs = 300 + 900 = 1200 lakhs. Total profit expected = 1200 - 1200 = 0. Revenue Y1 = (300/1200)*1200 = 300. Y1 Profit = 300 - 300 = 0.\nYear 2: Cumulative costs = 300 + 500 = 800 lakhs. Total estimated costs = 800 + 400 = 1200 lakhs. Expected profit = 1200 - 1200 = 0. Cumulative revenue = (800/1200)*1200 = 800 lakhs. Y2 Revenue = 800 - 300 = 500 lakhs. Y2 Profit = 500 - 500 = 0.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 7",
+        "Contract Profit Calculation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_024",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "Under AS 9, revenue from sale of goods on 'Layaway Sales' (where buyer makes a series of installments and seller delivers only after final payment) is recognized when:",
+      "options": [
+        "The first installment is received.",
+        "50% of installments are received.",
+        "Goods are delivered, provided a significant deposit has been received and goods are on hand.",
+        "The agreement is signed."
+      ],
+      "answerIndex": 2,
+      "explanation": "Under layaway sales, revenue is recognized when the goods are delivered. However, if experience indicates that most such sales are completed, revenue may be recognized when a significant deposit is received, provided goods are on hand and identified.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 9",
+        "Layaway Sales"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_025",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "Contractor X enters into a single contract for constructing three structures for a single client. Under AS 7, the contractor must combine the construction of the three structures and treat it as a single contract if:",
+      "options": [
+        "The group of contracts is negotiated as a single package with a single overall profit margin.",
+        "The structures are located in different cities.",
+        "Each structure has separate design blueprints.",
+        "The customer pays in three separate bank transfers."
+      ],
+      "answerIndex": 0,
+      "explanation": "AS 7 requires a group of contracts/assets to be treated as a single construction contract when the group is negotiated as a single package, contracts are closely interrelated with an overall profit margin, and performed concurrently or sequentially.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 7",
+        "Combining Contracts"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_026",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "Under AS 9, trade discounts and volume rebates should be:",
+      "options": [
+        "Deducted from gross turnover to determine recognized revenue.",
+        "Shown as an operating expense in P&L.",
+        "Ignored while recognizing revenue.",
+        "Credited to capital reserve account."
+      ],
+      "answerIndex": 0,
+      "explanation": "AS 9 defines revenue as the gross inflow of cash or consideration. Trade discounts and volume rebates given to customers are deducted from gross turnover to determine net revenue recognized.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 9",
+        "Trade Discounts",
+        "Turnover Calculation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_027",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "Under AS 7, how should plant and machinery specially purchased for a specific construction contract be treated?",
+      "options": [
+        "Full purchase cost charged to contract costs in the first year.",
+        "Depreciation over its useful life allocated as contract cost for the duration used on the contract.",
+        "Excluded from contract costs entirely.",
+        "Capitalized in client's books directly."
+      ],
+      "answerIndex": 1,
+      "explanation": "Depreciation of plant and equipment used on the contract is an attributable contract cost under AS 7 over the duration of its use on that contract.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 7",
+        "Plant Depreciation",
+        "Contract Cost"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_028",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "Under AS 9, when an installation fee is charged for installing software/equipment, when should this fee be recognized as revenue?",
+      "options": [
+        "Immediately upon receipt of money.",
+        "By reference to the stage of completion of installation, unless incidental to the sale of goods.",
+        "At the end of warranty period.",
+        "Over 5 years evenly."
+      ],
+      "answerIndex": 1,
+      "explanation": "Installation fees are recognized as revenue by reference to the stage of completion of installation, unless they are incidental to the sale of a product, in which case they are recognized when the goods are sold.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 9",
+        "Installation Fees"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_029",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "Under AS 7, what is the amount of 'Gross amount due from customers for contract work' to be disclosed as an asset?",
+      "options": [
+        "Contract costs incurred plus recognized profits less recognized losses and progress billings (when this sum is positive).",
+        "Total progress billings received minus contract costs incurred.",
+        "Contract price minus total progress billings received.",
+        "Contract costs incurred minus retention money."
+      ],
+      "answerIndex": 0,
+      "explanation": "AS 7 paragraph 39 defines 'Gross amount due from customers' as (Costs Incurred + Recognized Profits - Recognized Losses) minus Progress Billings, where this net amount is positive (an asset). If negative, it is 'Gross amount due to customers' (a liability).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 7",
+        "Gross Amount Due From/To Customers",
+        "Disclosures"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-8_030",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "prompt": "Company A sells goods to Company B for ₹500,000 on 'sale or return' (approval basis). Company B has 30 days to return. At the balance sheet date, 10 days have elapsed and B has neither accepted nor returned the goods. How should Company A recognize this under AS 9?",
+      "options": [
+        "Recognize revenue of ₹500,000 completely.",
+        "Do not recognize revenue; retain goods in inventory at cost.",
+        "Recognize 50% revenue.",
+        "Recognize full revenue but make 100% provision for bad debts."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 9, for goods delivered on approval/sale or return terms, revenue is recognized only when the buyer has formally accepted the goods or the time limit for rejection has expired. Since approval is pending and time hasn't expired, no revenue is recognized.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 9",
+        "Sale on Approval"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_advanced-accounting-8_01",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "passage": "Infra Developers Ltd. was awarded a construction contract on 1st April 2024 to build a commercial bridge complex for an agreed fixed price of ₹2,000 lakhs.\n\nThe initial financial details and actual estimates were as follows:\n- Year 1 (2024-25): Costs incurred = ₹500 lakhs; Estimated additional costs to complete = ₹1,000 lakhs; Progress billings during Year 1 = ₹450 lakhs; Amount collected against billings = ₹400 lakhs.\n- Year 2 (2025-26): Costs incurred during Year 2 = ₹900 lakhs (Cumulative costs incurred = ₹1,400 lakhs); Estimated additional costs to complete = ₹700 lakhs (Total estimated costs increased to ₹2,100 lakhs); Progress billings raised during Year 2 = ₹950 lakhs (Cumulative billings = ₹1,400 lakhs); Amount collected during Year 2 = ₹900 lakhs.\n\nThe company measures stage of completion using the cost proportion method as per AS 7 'Construction Contracts'.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-8_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-8_01",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-8",
+          "subject": "Accounts",
+          "prompt": "For Year 1 (2024-25), what is the percentage of completion and the revenue to be recognized in the Statement of Profit and Loss?",
+          "options": [
+            "25% completion; Revenue = ₹500 lakhs",
+            "33.33% completion; Revenue = ₹666.67 lakhs",
+            "33.33% completion; Revenue = ₹500 lakhs",
+            "25% completion; Revenue = ₹450 lakhs"
+          ],
+          "answerIndex": 1,
+          "explanation": "Total estimated cost Y1 = 500 + 1000 = ₹1,500 lakhs. Stage of completion = 500 / 1500 = 33.33%. Revenue to be recognized = 33.33% of ₹2,000 lakhs = ₹666.67 lakhs.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 7",
+            "Percentage of Completion Method",
+            "Contract Revenue"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-8_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-8_01",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-8",
+          "subject": "Accounts",
+          "prompt": "At the end of Year 2 (2025-26), what is the total expected contract loss and how should it be treated under AS 7?",
+          "options": [
+            "Expected loss is ₹100 lakhs, recognized proportionately over Year 2 and Year 3.",
+            "Expected loss is ₹100 lakhs, recognized as an expense immediately in Year 2.",
+            "Expected loss is ₹700 lakhs, deferred until completion.",
+            "Expected loss is ₹100 lakhs, adjusted against progress billings liability."
+          ],
+          "answerIndex": 1,
+          "explanation": "Total estimated contract cost at end of Y2 = ₹1,400 + ₹700 = ₹2,100 lakhs. Contract price = ₹2,000 lakhs. Total expected loss = 2100 - 2000 = ₹100 lakhs. Under AS 7 para 35, total expected loss of ₹100 lakhs must be recognized as an expense immediately.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 7",
+            "Expected Contract Loss"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-8_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-8_01",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-8",
+          "subject": "Accounts",
+          "prompt": "What is the net profit or loss to be recognized in the Statement of Profit and Loss for Year 2 (2025-26) alone?",
+          "options": [
+            "Loss of ₹100.00 lakhs",
+            "Loss of ₹266.67 lakhs",
+            "Loss of ₹166.67 lakhs",
+            "Profit of ₹66.67 lakhs"
+          ],
+          "answerIndex": 1,
+          "explanation": "In Y1, profit recognized = Revenue (666.67) - Costs (500) = ₹166.67 lakhs profit.\nBy end of Y2, total expected contract loss is ₹100 lakhs (cumulative position must show cumulative loss of ₹100 lakhs).\nTo reflect a cumulative loss of ₹100 lakhs when Y1 showed +166.67 lakhs profit, Y2 P&L charge must be: Expected Cumulative Loss (-100) - Y1 Profit (+166.67) = Loss of ₹266.67 lakhs in Y2.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 7",
+            "Yearly Profit Loss Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-8_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-8_01",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-8",
+          "subject": "Accounts",
+          "prompt": "At the end of Year 2 (2025-26), what is the 'Gross amount due to/from customers' to be disclosed in the balance sheet under AS 7?",
+          "options": [
+            "Gross amount due from customers of ₹100 lakhs",
+            "Gross amount due to customers of ₹100 lakhs",
+            "Gross amount due to customers of ₹200 lakhs",
+            "Gross amount due from customers of ₹50 lakhs"
+          ],
+          "answerIndex": 1,
+          "explanation": "Formula: Costs Incurred (1400) + Recognized Profits/Losses (-100) - Progress Billings (1400) = 1300 - 1400 = -₹100 lakhs.\nSince it is negative, it represents a 'Gross amount due to customers' of ₹100 lakhs (a liability).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 7",
+            "Gross Amount Due To/From Customers"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-8_02",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "passage": "TechVision Solutions Ltd. provides enterprise software solutions and hardware equipment. During FY 2024-25, the company engaged in the following transactions:\n\n1. On 1st October 2024, sold specialized hardware worth ₹50 lakhs to Client A. The hardware installation was complex and completed on 15th December 2024. Payment was received in full on 31st January 2025.\n2. On 1st July 2024, entered into a 3-year Annual Maintenance Contract (AMC) for ₹36 lakhs with Client B, received fully in advance. Service is rendered evenly over 3 years (36 months).\n3. On 1st January 2025, granted a software user license key to Client C for ₹12 lakhs. The software is delivered and functional immediately, with no further performance required by TechVision.\n4. Sold goods to Client D for ₹20 lakhs with delayed payment terms (credit period 1 year). The normal cash sale price of goods is ₹18 lakhs.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-8_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-8_02",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-8",
+          "subject": "Accounts",
+          "prompt": "Regarding Transaction 1 (Hardware sale to Client A), when and how much revenue should TechVision recognize in FY 2024-25 under AS 9?",
+          "options": [
+            "₹50 lakhs on 1st October 2024 upon contract signing.",
+            "₹50 lakhs on 15th December 2024 when installation is completed.",
+            "₹50 lakhs on 31st January 2025 upon cash receipt.",
+            "₹25 lakhs on 15th December 2024 and ₹25 lakhs on cash receipt."
+          ],
+          "answerIndex": 1,
+          "explanation": "Where installation is significant and complex, performance is not complete until installation is finished. Therefore, revenue of ₹50 lakhs is recognized on 15th December 2024 upon completion of installation.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 9",
+            "Installation Services",
+            "Sale of Goods"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-8_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-8_02",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-8",
+          "subject": "Accounts",
+          "prompt": "For Transaction 2 (3-year AMC with Client B), how much revenue should be recognized in the P&L for FY 2024-25 (ended 31st March 2025)?",
+          "options": [
+            "₹36 lakhs",
+            "₹9 lakhs",
+            "₹12 lakhs",
+            "₹18 lakhs"
+          ],
+          "answerIndex": 1,
+          "explanation": "The AMC runs from 1st July 2024 to 30th June 2027 (36 months). In FY 2024-25, 9 months (July 2024 to March 2025) have elapsed. Revenue recognized = ₹36 lakhs * (9/36) = ₹9 lakhs.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 9",
+            "Rendering of Services",
+            "AMC Revenue"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-8_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-8_02",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-8",
+          "subject": "Accounts",
+          "prompt": "For Transaction 3 (Software user license to Client C), how much revenue should be recognized in FY 2024-25?",
+          "options": [
+            "₹3 lakhs (pro-rata for 3 months)",
+            "₹12 lakhs fully in FY 2024-25",
+            "Nil, until the end of 1st year of license",
+            "₹6 lakhs"
+          ],
+          "answerIndex": 1,
+          "explanation": "When an entity grants a license where software is delivered, functional, and no ongoing obligations remain, the entire license fee (₹12 lakhs) is recognized as revenue upon transfer/delivery.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 9",
+            "License Fee Revenue"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-8_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-8_02",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-8",
+          "subject": "Accounts",
+          "prompt": "In Transaction 4 (Sale to Client D for ₹20 lakhs with normal price ₹18 lakhs), how should the ₹20 lakhs consideration be split under AS 9?",
+          "options": [
+            "₹20 lakhs recognized as sale of goods revenue immediately.",
+            "₹18 lakhs recognized as sale of goods revenue immediately, and ₹2 lakhs recognized as interest income over the 1-year credit period.",
+            "₹20 lakhs deferred until payment is collected after 1 year.",
+            "₹18 lakhs sale revenue and ₹2 lakhs capital reserve."
+          ],
+          "answerIndex": 1,
+          "explanation": "When the payment is deferred beyond normal credit terms, the arrangement contains a financing element. Under AS 9, sale of goods is recognized at fair value/cash price (₹18 lakhs) immediately, and the excess (₹2 lakhs) is recognized as interest revenue over the credit period.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 9",
+            "Financing Component",
+            "Interest Income"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-8_03",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "passage": "Urban Structures Ltd. undertakes two construction projects during FY 2024-25 for separate clients:\n\nProject Alpha: A residential complex under a single contract with Client X for ₹1,500 lakhs. During the year, Urban Structures incurred ₹400 lakhs cost. Total estimated cost was ₹1,000 lakhs. Client X approved a variation order increasing contract scope and price by ₹100 lakhs. The variation costs are estimated at ₹60 lakhs.\n\nProject Beta: Construction of a commercial building for Client Y for ₹800 lakhs. Costs incurred during FY 2024-25 were ₹200 lakhs, but due to severe structural instability and legal disputes over land title, Urban Structures cannot reliably estimate the total outcome or total costs to complete. However, costs incurred of ₹200 lakhs are expected to be recoverable from Client Y.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-8_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-8_03",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-8",
+          "subject": "Accounts",
+          "prompt": "For Project Alpha, what is the revised total estimated cost and stage of completion percentage at the end of FY 2024-25?",
+          "options": [
+            "Total estimated cost = ₹1,060 lakhs; Completion = 37.74%",
+            "Total estimated cost = ₹1,000 lakhs; Completion = 40.00%",
+            "Total estimated cost = ₹1,060 lakhs; Completion = 40.00%",
+            "Total estimated cost = ₹1,600 lakhs; Completion = 25.00%"
+          ],
+          "answerIndex": 0,
+          "explanation": "Revised Total Estimated Cost = Original estimated cost (₹1,000) + Variation cost (₹60) = ₹1,060 lakhs. Stage of completion = Cost incurred (₹400) / Revised total cost (₹1,060) = 37.7358% (approx 37.74%).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 7",
+            "Contract Variation",
+            "Stage of Completion"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-8_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-8_03",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-8",
+          "subject": "Accounts",
+          "prompt": "For Project Alpha, what is the total contract revenue to be recognized in FY 2024-25?",
+          "options": [
+            "₹566.10 lakhs",
+            "₹603.84 lakhs",
+            "₹600.00 lakhs",
+            "₹400.00 lakhs"
+          ],
+          "answerIndex": 1,
+          "explanation": "Revised Contract Price = Original Price (₹1,500) + Variation (₹100) = ₹1,600 lakhs. Revenue recognized = Stage of completion (37.7358%) * ₹1,600 lakhs = ₹603.77 ~ ₹603.84 lakhs.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 7",
+            "Contract Revenue Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-8_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-8_03",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-8",
+          "subject": "Accounts",
+          "prompt": "How should contract revenue and profit for Project Beta be recognized in FY 2024-25 under AS 7?",
+          "options": [
+            "Recognize revenue of ₹200 lakhs and zero profit.",
+            "Recognize zero revenue and zero cost in P&L.",
+            "Recognize estimated revenue of ₹800 lakhs and expected loss immediately.",
+            "Recognize revenue of ₹200 lakhs and profit of ₹50 lakhs."
+          ],
+          "answerIndex": 0,
+          "explanation": "Under AS 7 paragraph 31, when the outcome of a construction contract cannot be estimated reliably, revenue should be recognized only to the extent of contract costs incurred that are probable of recovery (₹200 lakhs). Thus, contract costs (₹200 lakhs) are recognized as expense, resulting in zero profit.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 7",
+            "Unreliable Outcome Contract"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-8_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-8_03",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-8",
+          "subject": "Accounts",
+          "prompt": "Suppose for Project Beta, costs incurred were ₹200 lakhs but ONLY ₹120 lakhs were probable of recovery. What amount of loss should be recognized in P&L?",
+          "options": [
+            "₹80 lakhs loss",
+            "Zero loss",
+            "₹200 lakhs loss",
+            "₹120 lakhs loss"
+          ],
+          "answerIndex": 0,
+          "explanation": "Revenue recognized = recoverable amount = ₹120 lakhs. Total costs incurred recognized as expense = ₹200 lakhs. Net loss in P&L = ₹120 - ₹200 = -₹80 lakhs (loss of ₹80 lakhs).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 7",
+            "Unrecoverable Costs",
+            "P&L Impact"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-8_04",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "passage": "Global Goods Ltd., a diversified trading entity, engaged in four distinct sales arrangements during FY 2024-25:\n\n1. Consignment Sales: Dispatched goods costing ₹10 lakhs to Agent X on consignment. Agent X sold 60% of these goods for ₹9 lakhs before 31st March 2025 and deducted 10% commission. The remaining 40% remained unsold in Agent X's godown.\n2. Sale on Approval: Sent goods worth ₹5 lakhs (selling price ₹7 lakhs) to Customer Y on 15th March 2025 with a 30-day return policy. Customer Y accepted 50% of the goods on 25th March 2025 and gave no reply for the rest by 31st March 2025.\n3. Guaranteed Buyback Transaction: Sold specialized machinery to Customer Z for ₹50 lakhs on 1st April 2024 with a concurrent binding clause to buy back the machinery after 2 years at ₹60 lakhs.\n4. Escalation Claim: Incurred extra freight of ₹2 lakhs on a fixed price goods supply contract due to fuel surcharge, which Customer W agreed to reimburse verbally, but written confirmation is pending.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-8_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-8_04",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-8",
+          "subject": "Accounts",
+          "prompt": "For Transaction 1 (Consignment), how much revenue should Global Goods Ltd. recognize in FY 2024-25?",
+          "options": [
+            "₹9.0 lakhs gross revenue",
+            "₹8.1 lakhs net revenue",
+            "₹15.0 lakhs full contract value",
+            "₹6.0 lakhs cost of goods"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under AS 9, consignor recognizes revenue when goods are sold by consignee to third parties. Consignee sold 60% for ₹9 lakhs. Gross revenue recognized by Global Goods is ₹9 lakhs (and commission of ₹0.9 lakh is booked as expense).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 9",
+            "Consignment Revenue"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-8_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-8_04",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-8",
+          "subject": "Accounts",
+          "prompt": "For Transaction 2 (Sale on Approval), what revenue and inventory cost should Global Goods reflect at 31st March 2025?",
+          "options": [
+            "Revenue = ₹7.0 lakhs; Closing Inventory = Nil",
+            "Revenue = ₹3.5 lakhs; Closing Inventory = ₹2.5 lakhs",
+            "Revenue = Nil; Closing Inventory = ₹5.0 lakhs",
+            "Revenue = ₹3.5 lakhs; Closing Inventory = Nil"
+          ],
+          "answerIndex": 1,
+          "explanation": "For 50% accepted goods: Revenue = 50% of ₹7 lakhs = ₹3.5 lakhs. For 50% unaccepted goods where time limit (30 days) has not expired by 31st March: No revenue recognized, goods remain in closing inventory at 50% of cost = ₹2.5 lakhs.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 9",
+            "Sale on Approval",
+            "Inventory Valuation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-8_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-8_04",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-8",
+          "subject": "Accounts",
+          "prompt": "For Transaction 3 (Guaranteed Buyback), how should Global Goods treat the ₹50 lakhs cash received in FY 2024-25 under revenue recognition principles?",
+          "options": [
+            "Recognize ₹50 lakhs as sales revenue immediately.",
+            "Recognize ₹50 lakhs as financing inflow/borrowing, not revenue.",
+            "Recognize ₹10 lakhs profit immediately.",
+            "Recognize ₹25 lakhs sales revenue in Year 1 and ₹25 lakhs in Year 2."
+          ],
+          "answerIndex": 1,
+          "explanation": "A sale with a concurrent agreement to repurchase the asset at a higher price is in substance a financing arrangement (borrowing) rather than a genuine transfer of risks and rewards of ownership. Hence, no revenue is recognized.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 9",
+            "Substance Over Form",
+            "Financing Arrangement"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-8_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-8_04",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-8",
+          "subject": "Accounts",
+          "prompt": "For Transaction 4 (Extra Freight Claim), should the ₹2 lakhs escalation claim be recognized as revenue in FY 2024-25?",
+          "options": [
+            "Yes, because fuel prices increased standard cost.",
+            "No, revenue recognition should be postponed as ultimate collection lacks reasonable certainty without written confirmation.",
+            "Yes, 50% should be recognized on prudence.",
+            "Yes, full ₹2 lakhs credited to general reserve."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under AS 9, when significant uncertainty exists regarding ultimate collection or acceptance of an additional claim, revenue recognition must be postponed until certainty/formal agreement is established.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 9",
+            "Uncertainty in Revenue Recognition"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-8_05",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-8",
+      "subject": "Accounts",
+      "passage": "Pragya Infrastructure & Services Ltd. operates across multiple sectors. Below are details of revenue items for FY 2024-25:\n\n1. Construction Segment (AS 7): A 3-year contract started on 1st April 2024 for ₹3,000 lakhs. Total costs incurred during FY 2024-25 = ₹800 lakhs. Total estimated costs to complete = ₹1,600 lakhs. Progress billings = ₹900 lakhs.\n2. Dividend Income (AS 9): Declared dividend of ₹15 lakhs by Subsidiary A on 28th March 2025 (Pragya holds 70% equity). Money received on 10th April 2025.\n3. Royalty Income (AS 9): Received ₹10 lakhs royalty for patent usage from Licensee B for the 2-year period April 2024 to March 2026 in advance on 1st April 2024.\n4. Interest Income (AS 9): Fixed deposit of ₹100 lakhs @ 10% p.a. placed on 1st October 2024 for 1 year. Interest payable on maturity.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Revenue Based Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-8_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-8_05",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-8",
+          "subject": "Accounts",
+          "prompt": "Under Segment 1 (Construction), what is the contract profit to be recognized in P&L for FY 2024-25?",
+          "options": [
+            "₹200 lakhs",
+            "₹600 lakhs",
+            "₹100 lakhs",
+            "₹1,000 lakhs"
+          ],
+          "answerIndex": 0,
+          "explanation": "Total Estimated Cost = 800 + 1600 = ₹2,400 lakhs. Total Contract Profit expected = 3000 - 2400 = ₹600 lakhs. Completion stage = 800 / 2400 = 33.33%. Revenue recognized = 33.33% * 3000 = ₹1,000 lakhs. Profit recognized = Revenue (1000) - Cost (800) = ₹200 lakhs.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 7",
+            "Contract Profit"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-8_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-8_05",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-8",
+          "subject": "Accounts",
+          "prompt": "Under Segment 2 (Dividend), when and how much dividend income should Pragya recognize in FY 2024-25?",
+          "options": [
+            "₹15 lakhs in FY 2024-25 when declared on 28th March 2025.",
+            "₹15 lakhs in FY 2025-26 when cash is received on 10th April 2025.",
+            "₹10.5 lakhs (70% share) in FY 2024-25.",
+            "Nil, dividend income is exempt from revenue recognition."
+          ],
+          "answerIndex": 0,
+          "explanation": "Under AS 9, dividend income is recognized when the right to receive payment is established (which occurs upon declaration by the company on 28th March 2025). The declared dividend is ₹15 lakhs.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "AS 9",
+            "Dividend Income"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-8_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-8_05",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-8",
+          "subject": "Accounts",
+          "prompt": "Under Segment 3 (Royalty), how much royalty income should be recognized in FY 2024-25?",
+          "options": [
+            "₹10 lakhs",
+            "₹5 lakhs",
+            "Nil",
+            "₹2.5 lakhs"
+          ],
+          "answerIndex": 1,
+          "explanation": "AS 9 mandates royalty recognition on an accrual basis in accordance with agreement terms. ₹10 lakhs covers 2 years (24 months). For FY 2024-25 (12 months), revenue recognized = ₹10 lakhs * (12/24) = ₹5 lakhs.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 9",
+            "Royalty Income",
+            "Accrual Basis"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-8_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-8_05",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-8",
+          "subject": "Accounts",
+          "prompt": "Under Segment 4 (Interest Income), how much interest income should be accrued in FY 2024-25?",
+          "options": [
+            "₹10 lakhs",
+            "₹5 lakhs",
+            "Nil (since interest is received on maturity in next FY)",
+            "₹2.5 lakhs"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under AS 9, interest is recognized on a time proportion basis. FD placed on 1st Oct 2024 to 31st March 2025 = 6 months. Interest accrued = ₹100 lakhs * 10% * (6/12) = ₹5 lakhs.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 9",
+            "Interest Income",
+            "Time Proportion"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "financial-management-2",
+  "subject": "FM",
+  "paper": "Paper 6: Financial Management and Strategic Management",
+  "module": "Module 1",
+  "chapterNumber": 2,
+  "chapterTitle": "Types of Financing",
+  "generatedAt": "2026-08-16T14:54:07.739Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_financial-management-2_001",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "Which of the following represents a source of long-term internal financing for a company?",
+      "options": [
+        "Debentures",
+        "Retained Earnings",
+        "Term Loans",
+        "Public Deposits"
+      ],
+      "answerIndex": 1,
+      "explanation": "Retained earnings are profits ploughed back into the business, serving as an internal source of long-term financing without diluting ownership. Debentures, term loans, and public deposits are external sources of finance. This aligns with ICAI Financial Management study material regarding classification of financial sources.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Internal Financing",
+        "Retained Earnings",
+        "Long-term Finance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_002",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "What is the primary advantage of issuing equity shares from the perspective of a company?",
+      "options": [
+        "Tax deductibility of dividends",
+        "No fixed burden of dividend payment",
+        "Control remains undisturbed",
+        "Lower cost of capital than debt"
+      ],
+      "answerIndex": 1,
+      "explanation": "Equity shares carry no fixed obligation for dividend payments, meaning dividends are paid only when profits are available. This protects the company from fixed financial distress during downturns. ICAI guidelines emphasize that equity is a permanent capital source with discretionary returns.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Equity Shares",
+        "Advantages of Equity",
+        "Financial Risk"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_003",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "Which financial instrument combines features of both equity and debt, offering a fixed return with a priority over common stock during liquidation?",
+      "options": [
+        "Zero Coupon Bonds",
+        "Preference Shares",
+        "Warrants",
+        "Sweat Equity Shares"
+      ],
+      "answerIndex": 1,
+      "explanation": "Preference shares possess hybrid characteristics; they offer a fixed rate of dividend like debt interest and enjoy preferential claims over equity shareholders during winding up. According to ICAI material, they bridge the gap between equity and debt.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Preference Shares",
+        "Hybrid Financing",
+        "Capital Structure"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_004",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "What term is used for unsecured short-term promissory notes issued by highly rated corporate entities to raise working capital?",
+      "options": [
+        "Commercial Paper",
+        "Certificate of Deposit",
+        "Treasury Bills",
+        "Venture Capital"
+      ],
+      "answerIndex": 0,
+      "explanation": "Commercial Paper (CP) is an unsecured money market instrument issued in the form of a promissory note by highly rated corporates to meet short-term liquidity requirements. ICAI study material classifies CP under short-term wholesale borrowings.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Commercial Paper",
+        "Short-term Finance",
+        "Money Market"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_005",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "In the context of leasing, which type of lease is characterized by the transfer of substantially all risks and rewards incidental to ownership to the lessee?",
+      "options": [
+        "Operating Lease",
+        "Financial Lease",
+        "Leveraged Lease",
+        "Sale and Leaseback"
+      ],
+      "answerIndex": 1,
+      "explanation": "A financial (or capital) lease transfers substantially all the risks and rewards of ownership to the lessee, even if title may or may not eventually be transferred. ICAI text highlights that the lessee accounts for the asset on its balance sheet in a financial lease.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Financial Lease",
+        "Leasing",
+        "Asset Financing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_006",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "What is 'Mezzanine Financing' typically composed of?",
+      "options": [
+        "Pure short-term bank overdrafts",
+        "Subordinated debt that can convert into equity",
+        "Strictly secured government bonds",
+        "Trade credit from suppliers"
+      ],
+      "answerIndex": 1,
+      "explanation": "Mezzanine financing is a hybrid of debt and equity financing that gives the lender the right to convert to an equity interest in the company in case of default, usually below senior debt in priority. ICAI material covers mezzanine instruments as flexible financing options for growth.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Mezzanine Financing",
+        "Hybrid Finance",
+        "Subordinated Debt"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_007",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "When a company issues debentures with a detachable warrant, what right does the warrant confer upon the holder?",
+      "options": [
+        "Right to demand immediate redemption of the debenture at par",
+        "Right to purchase a specified number of equity shares at a predetermined price",
+        "Right to receive a higher rate of interest than regular debenture holders",
+        "Right to vote at the annual general meetings"
+      ],
+      "answerIndex": 1,
+      "explanation": "A warrant is an option issued by a company that gives the holder the right, but not the obligation, to buy a specified number of equity shares at a specific price within a certain timeframe. ICAI curriculum notes warrants as sweeteners in debt issues.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Warrants",
+        "Equity-linked Debt",
+        "Financial Instruments"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_008",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "Which of the following is a key feature of 'Venture Capital' financing?",
+      "options": [
+        "Provision of debt exclusively to established blue-chip companies",
+        "Long-term equity or equity-oriented investments in high-risk, high-growth startups",
+        "Short-term lending by commercial banks against inventory",
+        "Government grants for public sector undertakings"
+      ],
+      "answerIndex": 1,
+      "explanation": "Venture capital involves professional, high-risk equity investments in early-stage, innovative enterprises with high growth potential, often accompanied by managerial support. ICAI FM modules detail venture capital as a specialized source for startup financing.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Venture Capital",
+        "Startup Finance",
+        "Equity Financing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_009",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "How does 'Factoring' assist a business in managing its working capital?",
+      "options": [
+        "By providing long-term equity capital for plant expansion",
+        "Through the outright purchase or collection of trade receivables by a financial institution",
+        "By issuing short-term bonds to the general public",
+        "Through deferred payment terms granted by raw material suppliers"
+      ],
+      "answerIndex": 1,
+      "explanation": "Factoring is a financial service where a firm sells its trade debts (accounts receivable) to a financial institution (factor) at a discount for cash, thereby accelerating cash inflows. ICAI study material outlines factoring as a vital tool for receivables management.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Factoring",
+        "Receivables Management",
+        "Working Capital"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_010",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "What is 'Bridge Finance' in corporate finance terminology?",
+      "options": [
+        "Financing arranged for seasonal inventory build-up",
+        "Short-term loan pending the arrangement of long-term funds",
+        "International borrowings for foreign exchange hedging",
+        "Long-term debt used exclusively for bridge construction projects"
+      ],
+      "answerIndex": 1,
+      "explanation": "Bridge finance refers to interim or short-term financing used by a company until a more permanent long-term financing plan is put in place (such as a public issue of shares or term loans). ICAI chapters categorize bridge loans under specialized short-term sources.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Bridge Finance",
+        "Short-term Loans",
+        "Interim Finance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_011",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "Which of the following instruments is issued by Indian companies to raise foreign currency funds directly from international capital markets outside India?",
+      "options": [
+        "Commercial Paper",
+        "Global Depository Receipts (GDRs)",
+        "Treasury Bills",
+        "Non-Convertible Debentures (NCDs)"
+      ],
+      "answerIndex": 1,
+      "explanation": "Global Depository Receipts (GDRs) are negotiable certificates issued abroad by a depository bank representing local equity shares of an Indian company, enabling access to foreign capital. ICAI material includes GDRs and ADRs under international financing sources.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "GDR",
+        "International Finance",
+        "Foreign Capital"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_012",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "What is a 'Zero Coupon Bond' (ZCB)?",
+      "options": [
+        "A bond that pays floating interest linked to LIBOR",
+        "A bond issued at a discount to its face value and redeemed at par without periodic interest",
+        "A bond with a fixed coupon rate paid semi-annually",
+        "A perpetual bond with no maturity date"
+      ],
+      "answerIndex": 1,
+      "explanation": "A Zero Coupon Bond does not make periodic interest payments; instead, it is issued at a deep discount to its face value and redeemed at par, with the investor's return being the difference. ICAI study material highlights ZCBs as unique debt instruments.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Zero Coupon Bonds",
+        "Debt Instruments",
+        "Discounted Securities"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_013",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "Under Indian regulations, what is the maximum maturity period allowed for Commercial Paper?",
+      "options": [
+        "7 days",
+        "15 days",
+        "Up to one year (364 days)",
+        "3 years"
+      ],
+      "answerIndex": 2,
+      "explanation": "Commercial Paper in India can be issued for maturities ranging from a minimum of 7 days up to a maximum of one year (364 days) as per RBI guidelines referenced in ICAI financial management texts.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Commercial Paper",
+        "Regulatory Limits",
+        "Money Market"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_014",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "Why might a company prefer 'Ploughing back of profits' (retained earnings) over issuing new equity shares?",
+      "options": [
+        "It involves heavy floatation costs and brokerage fees",
+        "It avoids floatation costs, control dilution, and is readily available internally",
+        "It provides immediate tax deductions on retained earnings",
+        "It increases the debt-equity ratio significantly"
+      ],
+      "answerIndex": 1,
+      "explanation": "Retained earnings do not incur issue costs (floatation costs) like underwriting or brokerage fees, nor do they dilute existing shareholding control, making them a favored internal source. ICAI emphasizes these advantages in the financing mix chapter.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Retained Earnings",
+        "Floatation Cost",
+        "Control Dilution"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_015",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "In a 'Sale and Leaseback' arrangement, what immediate financial effect does it have on the firm?",
+      "options": [
+        "It permanently increases long-term debt liabilities on the balance sheet",
+        "It generates immediate cash inflow while allowing the firm to continue using the asset",
+        "It reduces the firm's fixed asset turnover ratio to zero",
+        "It eliminates all operating expenses associated with the asset"
+      ],
+      "answerIndex": 1,
+      "explanation": "In sale and leaseback, an owner sells its asset to a lessor and immediately leases it back, converting locked-up fixed asset value into immediate cash while retaining operational use. ICAI financial management modules explain this as a liquidity-unlocking technique.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Sale and Leaseback",
+        "Asset Securitization",
+        "Liquidity"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_016",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "What distinguishes 'Non-Convertible Debentures (NCDs)' from 'Fully Convertible Debentures (FCDs)'?",
+      "options": [
+        "NCDs carry voting rights whereas FCDs do not",
+        "NCDs do not give the holder the option to convert into equity shares, unlike FCDs",
+        "NCDs are unsecured while FCDs are always secured by real estate",
+        "NCDs have a shorter maturity of less than one year"
+      ],
+      "answerIndex": 1,
+      "explanation": "NCDs must be redeemed at maturity and cannot be converted into equity shares, whereas FCDs are mandatorily or optionally convertible into equity shares after a specified period. ICAI classification clearly distinguishes convertibility features.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Debentures",
+        "Convertible Securities",
+        "Debt Classification"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_017",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "Which of the following is considered an explicit cost of debt financing?",
+      "options": [
+        "Opportunity cost of foregone equity returns",
+        "Interest payments and redemption premium",
+        "Reduction in management flexibility",
+        "Potential loss of corporate control"
+      ],
+      "answerIndex": 1,
+      "explanation": "Debt carries explicit cash outflows in the form of periodic interest payments and principal/redemption premiums. ICAI study material differentiates explicit financing costs from implicit costs associated with equity.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Cost of Debt",
+        "Explicit Cost",
+        "Financial Charges"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_018",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "What is 'Securitization' in modern corporate finance?",
+      "options": [
+        "Issuing shares to secure government contracts",
+        "Process of pooling and converting illiquid financial assets into marketable securities",
+        "Converting unsecured debt into secured bank mortgages",
+        "Pledging company trademarks to secure bank credit"
+      ],
+      "answerIndex": 1,
+      "explanation": "Securitization involves pooling heterogeneous illiquid assets (like loans or receivables) and issuing standardized interest-bearing securities backed by these pools. ICAI FM texts feature securitization as an innovative financing and asset-liability management tool.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Securitization",
+        "Asset Pooling",
+        "Innovative Finance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_019",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "Which agency or regulatory body in India governs the issue of Foreign Currency Convertible Bonds (FCCBs)?",
+      "options": [
+        "Securities and Exchange Board of India (SEBI) and Reserve Bank of India (RBI)",
+        "Insurance Regulatory and Development Authority (IRDAI)",
+        "Ministry of Corporate Affairs (MCA) exclusively",
+        "National Bank for Agriculture and Rural Development (NABARD)"
+      ],
+      "answerIndex": 0,
+      "explanation": "FCCB issues by Indian companies are governed by RBI guidelines under FEMA and SEBI regulations for overseas capital raising. ICAI curriculum notes the regulatory framework governing international instruments.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "FCCB",
+        "Regulatory Framework",
+        "International Finance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_020",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "What is the primary risk associated with 'Foreign Currency Denominated Debt' for a domestic company with revenues solely in local currency?",
+      "options": [
+        "Credit rating downgrade by domestic agencies",
+        "Foreign exchange rate fluctuation risk (Currency risk)",
+        "Immediate dilution of voting control",
+        "Mandatory conversion into equity at par"
+      ],
+      "answerIndex": 1,
+      "explanation": "Borrowing in foreign currency exposes the firm to exchange rate risk; if the local currency depreciates, the servicing and repayment cost in local currency terms increases significantly. ICAI financial management highlights foreign exchange risk in international funding.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Foreign Currency Debt",
+        "Exchange Risk",
+        "International Financing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_021",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "How does 'Ploughing back of profits' affect the weighted average cost of capital (WACC) of a firm compared to external equity?",
+      "options": [
+        "It has a higher cost because of explicit dividend taxes",
+        "It is generally considered cheaper than external equity due to the absence of floatation costs",
+        "It has zero cost since no dividends are paid",
+        "It always increases WACC due to high opportunity cost"
+      ],
+      "answerIndex": 1,
+      "explanation": "Retained earnings avoid floatation costs (underwriting, brokerage, legal fees) associated with new equity issues, making their effective cost slightly lower than external equity. ICAI study material covers this cost comparison in detail.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Cost of Retained Earnings",
+        "WACC",
+        "Floatation Cost"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_022",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "Which of the following characteristics best describes 'Term Loans' obtained from commercial banks?",
+      "options": [
+        "Short-term revolving credit lines for daily operations",
+        "Medium to long-term secured loans with a structured repayment schedule",
+        "Unsecured advances repayable on demand",
+        "Equity participation without fixed repayment terms"
+      ],
+      "answerIndex": 1,
+      "explanation": "Term loans are medium-to-long-term borrowings from financial institutions or banks, typically secured by fixed assets and repaid in periodic installments over a set schedule. ICAI text classifies term loans as primary institutional financing sources.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Term Loans",
+        "Bank Finance",
+        "Long-term Debt"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_023",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "In the context of lease financing, what is 'Leveraged Lease'?",
+      "options": [
+        "A lease where the lessee uses high debt leverage to purchase the asset",
+        "A three-party lease involving a lessor, a lessee, and a third-party lender who finances a major portion of the asset",
+        "A lease agreement with zero implicit interest rate",
+        "A short-term operating lease with no financial covenants"
+      ],
+      "answerIndex": 1,
+      "explanation": "A leveraged lease involves a lessor, a lessee, and a long-term creditor (such as a bank or financial institution) that provides non-recourse debt financing for a substantial portion of the leased asset's purchase price. ICAI material explains leveraged leasing as a specialized lease structure.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Leveraged Lease",
+        "Leasing Structure",
+        "Specialized Finance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_024",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "What is the key difference between an 'Operating Lease' and a 'Financial Lease' regarding cancellation?",
+      "options": [
+        "Operating leases are non-cancellable, whereas financial leases can be cancelled at any time",
+        "Operating leases are usually cancellable by the lessee with short notice, whereas financial leases are strictly non-cancellable over the primary period",
+        "Neither type of lease can be cancelled under any circumstances",
+        "Both leases permit cancellation with full refund of past rentals"
+      ],
+      "answerIndex": 1,
+      "explanation": "Operating leases are typically cancelable by the lessee upon giving notice, whereas financial leases are full-payout, non-cancellable agreements where the lessee is obligated to pay the full lease rentals. ICAI distinguishes leases based on cancellation clauses and risk transfer.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Operating Lease",
+        "Financial Lease",
+        "Cancellation Clause"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_025",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "What is 'Seed Capital' assistance typically used for by an entrepreneur?",
+      "options": [
+        "Expanding an established multi-national corporation globally",
+        "Financing initial research, product development, and feasibility studies before commercial production",
+        "Paying off accumulated long-term corporate bonds",
+        "Financing seasonal working capital deficits"
+      ],
+      "answerIndex": 1,
+      "explanation": "Seed capital is the initial funding required to prove a concept, conduct research, develop prototypes, and complete feasibility studies before launching a formal startup. ICAI study material outlines seed capital under early-stage financing sources.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Seed Capital",
+        "Startup Finance",
+        "Early Stage"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_026",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "Which of the following financial instruments gives the investor the option to convert bonds into equity shares at a fixed conversion price?",
+      "options": [
+        "Non-Convertible Debentures",
+        "Convertible Bonds",
+        "Cumulative Preference Shares",
+        "Commercial Paper"
+      ],
+      "answerIndex": 1,
+      "explanation": "Convertible bonds are debt securities that include an option for the holder to convert them into a predetermined number of equity shares of the issuing company. ICAI FM material details convertibles as hybrid instruments offering downside protection with upside potential.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Convertible Bonds",
+        "Hybrid Finance",
+        "Debt-Equity"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_027",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "What is 'Ploughing back of profits' synonymous with?",
+      "options": [
+        "External commercial borrowing",
+        "Internal financing via retained earnings",
+        "Short-term trade credit",
+        "Factoring of receivables"
+      ],
+      "answerIndex": 1,
+      "explanation": "Ploughing back of profits refers to the retention of net earnings within the firm rather than distributing them as dividends, which is synonymous with internal financing through retained earnings. ICAI curriculum uses these terms interchangeably.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Retained Earnings",
+        "Internal Financing",
+        "Ploughing Back"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_028",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "How does 'Trade Credit' function as a source of short-term finance?",
+      "options": [
+        "Suppliers provide goods or services with an agreed credit period before payment is due",
+        "Banks extend long-term loans against trade receivables",
+        "Customers advance funds to the company before delivery of goods",
+        "Government provides subsidies for trade promotion"
+      ],
+      "answerIndex": 0,
+      "explanation": "Trade credit arises naturally when suppliers extend credit terms (e.g., 30 or 60 days) to a business for the purchase of raw materials or merchandise, acting as an spontaneous source of short-term finance. ICAI materials emphasize trade credit as spontaneous financing.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Trade Credit",
+        "Short-term Finance",
+        "Spontaneous Financing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_029",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "Which of the following is a major limitation of issuing Preference Shares from the issuing company's viewpoint?",
+      "options": [
+        "Dividend payments are tax-deductible expenses like debt interest",
+        "Dividends are generally non-tax-deductible, making them a relatively expensive source of fixed-return capital",
+        "Preference shareholders have full voting rights in all board matters",
+        "Preference dividend arrears cannot be carried forward"
+      ],
+      "answerIndex": 1,
+      "explanation": "Unlike debt interest, preference dividends are paid out of post-tax profits and are not tax-deductible, making the effective cost of preference shares relatively high compared to debt. ICAI highlights this tax disadvantage in financing decisions.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Preference Shares",
+        "Tax Deductibility",
+        "Cost of Capital"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-2_030",
+      "kind": "normal",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "prompt": "What does 'Non-Recourse Factoring' imply regarding bad debt losses?",
+      "options": [
+        "The client (firm) bears all losses if customers default",
+        "The factor bears the risk of bad debt losses arising from customer defaults",
+        "The commercial bank reimburses both the client and the factor",
+        "The government covers all credit defaults"
+      ],
+      "answerIndex": 1,
+      "explanation": "In non-recourse factoring, the factor assumes the credit risk of the receivables; if a customer defaults, the factor absorbs the loss without recourse to the client firm. ICAI study material covers the distinction between recourse and non-recourse factoring services.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Factoring",
+        "Non-Recourse",
+        "Credit Risk"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_financial-management-2_01",
+      "kind": "scenario",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "passage": "Zenith Engineering Ltd., an established manufacturing firm in Mumbai, is planning a major capacity expansion project estimated to cost INR 50 crores. The Chief Financial Officer (CFO) is evaluating multiple financing options. The company currently has a moderate debt-equity ratio of 0.8:1. To maintain financial flexibility and avoid excessive fixed interest burdens during cyclical downturns, the board prefers utilizing internal accruals and equity-linked instruments alongside traditional bank term loans.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_financial-management-2_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-2_01",
+          "sequenceInScenario": 1,
+          "chapterId": "financial-management-2",
+          "subject": "FM",
+          "prompt": "If Zenith Engineering Ltd. decides to utilize a portion of its accumulated undistributed profits for the expansion, which source of finance is being tapped?",
+          "options": [
+            "External commercial borrowings",
+            "Retained earnings (Internal financing)",
+            "Preference share capital",
+            "Short-term bank credit"
+          ],
+          "answerIndex": 1,
+          "explanation": "Using accumulated undistributed profits represents retained earnings, which is an internal source of long-term finance. According to ICAI guidelines, this avoids external floatation costs and preserves control.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Retained Earnings",
+            "Internal Financing",
+            "Expansion"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-2_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-2_01",
+          "sequenceInScenario": 2,
+          "chapterId": "financial-management-2",
+          "subject": "FM",
+          "prompt": "The CFO considers issuing debentures with detachable warrants as part of the INR 50 crore plan. What is the primary characteristic of this instrument?",
+          "options": [
+            "It mandates immediate equity conversion on day one",
+            "It combines a debt security with an option to purchase equity shares at a set price",
+            "It carries no maturity date and zero interest",
+            "It restricts the company from taking any future bank loans"
+          ],
+          "answerIndex": 1,
+          "explanation": "A debenture with detachable warrants combines a fixed-income debt instrument with a warrant that gives the holder the right to buy equity shares separately. ICAI FM study material notes that warrants act as sweeteners to attract investors.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Warrants",
+            "Debentures",
+            "Hybrid Financing"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-2_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-2_01",
+          "sequenceInScenario": 3,
+          "chapterId": "financial-management-2",
+          "subject": "FM",
+          "prompt": "If the board decides against issuing new equity to prevent dilution of voting power, which inherent advantage of internal financing are they relying on?",
+          "options": [
+            "Tax deductibility of retained earnings",
+            "Retention of management control and absence of ownership dilution",
+            "Guaranteed government subsidies",
+            "Elimination of all operational risks"
+          ],
+          "answerIndex": 1,
+          "explanation": "Ploughing back profits does not involve issuing new shares to outsiders, thereby ensuring that existing voting power and control remain undisturbed. ICAI highlights control retention as a key driver for using retained earnings.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Control Dilution",
+            "Retained Earnings",
+            "Management Control"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-2_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-2_01",
+          "sequenceInScenario": 4,
+          "chapterId": "financial-management-2",
+          "subject": "FM",
+          "prompt": "Suppose Zenith Engineering Ltd. experiences a temporary cash crunch before the long-term term loans are disbursed by the financial institution. What type of short-term finance should the CFO arrange?",
+          "options": [
+            "Venture Capital",
+            "Bridge Finance",
+            "Global Depository Receipts",
+            "Sweat Equity"
+          ],
+          "answerIndex": 1,
+          "explanation": "Bridge finance is utilized as an interim or short-term loan to bridge the gap until permanent long-term funds (such as term loans or debentures) are secured. ICAI classifies bridge finance specifically for such transitional funding needs.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Bridge Finance",
+            "Short-term Funding",
+            "Interim Finance"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_financial-management-2_02",
+      "kind": "scenario",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "passage": "AeroTech Innovations, a newly incorporated tech startup in Bangalore specializing in artificial intelligence algorithms, requires immediate funding to develop its prototype. The promoters have limited personal wealth and no tangible assets to offer as collateral to commercial banks. They approach a specialized financial entity that agrees to provide high-risk equity capital in exchange for a 35% ownership stake and active managerial guidance.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_financial-management-2_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-2_02",
+          "sequenceInScenario": 1,
+          "chapterId": "financial-management-2",
+          "subject": "FM",
+          "prompt": "Which category of financing has AeroTech Innovations secured?",
+          "options": [
+            "Bridge Financing",
+            "Venture Capital",
+            "Commercial Paper issuance",
+            "Securitization of receivables"
+          ],
+          "answerIndex": 1,
+          "explanation": "Venture capital involves professional equity investment in early-stage, high-risk, technology-driven startups lacking tangible collateral, often coupled with managerial support. This matches ICAI material descriptions of startup financing.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Venture Capital",
+            "Startup Finance",
+            "Equity Investment"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-2_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-2_02",
+          "sequenceInScenario": 2,
+          "chapterId": "financial-management-2",
+          "subject": "FM",
+          "prompt": "Why are commercial bank term loans generally unsuitable for AeroTech at this prototype development stage?",
+          "options": [
+            "Banks charge zero interest for startups",
+            "Banks require tangible collateral and stable cash flows, which early-stage startups lack",
+            "Banks legally cannot lend to technology companies",
+            "Bank loans require immediate equity conversion"
+          ],
+          "answerIndex": 1,
+          "explanation": "Commercial banks rely on asset-backed lending and proven cash flow track records to secure term loans, making them unsuitable for pre-revenue startups like AeroTech. ICAI FM modules emphasize why startups must rely on risk capital rather than traditional bank debt.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Bank Loans",
+            "Collateral",
+            "Startup Constraints"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-2_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-2_02",
+          "sequenceInScenario": 3,
+          "chapterId": "financial-management-2",
+          "subject": "FM",
+          "prompt": "What specific stage of financing did AeroTech likely receive prior to this venture capital round?",
+          "options": [
+            "Debenture redemption fund",
+            "Seed Capital",
+            "Bridge Loan for factory construction",
+            "Leasing arrangement"
+          ],
+          "answerIndex": 1,
+          "explanation": "Seed capital is the earliest form of financing used for initial research, product conceptualization, and prototype development before commercial scale-up. ICAI categorizes seed funding as the precursor to venture capital investments.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Seed Capital",
+            "Early Stage",
+            "Startup Financing"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-2_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-2_02",
+          "sequenceInScenario": 4,
+          "chapterId": "financial-management-2",
+          "subject": "FM",
+          "prompt": "If the venture capitalist provider imposes restrictive covenants on AeroTech regarding future borrowing and asset sales, what is the primary purpose of these clauses?",
+          "options": [
+            "To increase the company's tax liability",
+            "To protect the investor's high-risk investment and mitigate agency conflicts",
+            "To force the company into bankruptcy",
+            "To convert the venture capital into short-term trade credit"
+          ],
+          "answerIndex": 1,
+          "explanation": "Restrictive covenants are contractual clauses designed to protect lenders/investors from managerial actions that could increase financial risk or impair the value of their investment. ICAI study material discusses covenants as essential risk-mitigation tools in institutional financing.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Restrictive Covenants",
+            "Venture Capital",
+            "Risk Mitigation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_financial-management-2_03",
+      "kind": "scenario",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "passage": "Sigma Pharma Ltd. is expanding its production lines and needs specialized heavy machinery costing INR 20 crores. Instead of purchasing the machinery outright via term loans, the CFO evaluates an arrangement with a leasing company. The arrangement is structured as a full-payout agreement where Sigma Pharma will bear all maintenance, insurance, and tax risks associated with the machinery over its 7-year useful life, without any cancellation option during this primary period.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_financial-management-2_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-2_03",
+          "sequenceInScenario": 1,
+          "chapterId": "financial-management-2",
+          "subject": "FM",
+          "prompt": "How should this lease agreement be classified based on the given terms?",
+          "options": [
+            "Operating Lease",
+            "Financial Lease",
+            "Sale and Leaseback",
+            "Leveraged Lease"
+          ],
+          "answerIndex": 1,
+          "explanation": "A financial (capital) lease is a non-cancellable agreement where the lessee bears substantially all risks and rewards of ownership and is obligated to make full-payout rentals over the primary lease period. This matches the scenario facts and ICAI leasing definitions.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Financial Lease",
+            "Leasing",
+            "Risk Transfer"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-2_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-2_03",
+          "sequenceInScenario": 2,
+          "chapterId": "financial-management-2",
+          "subject": "FM",
+          "prompt": "What is a key distinguishing feature of an 'Operating Lease' compared to the financial lease described for Sigma Pharma Ltd.?",
+          "options": [
+            "Operating leases are long-term non-cancellable agreements lasting the entire asset life",
+            "Operating leases are usually short-term, cancellable, and the lessor maintains maintenance responsibility",
+            "Operating leases always transfer asset ownership to the lessee at inception",
+            "Operating leases do not involve lease rental payments"
+          ],
+          "answerIndex": 1,
+          "explanation": "Operating leases are typically short-term, fully cancellable by the lessee with notice, and often include maintenance services provided by the lessor. ICAI contrasts operating and financial leases across these exact parameters.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Operating Lease",
+            "Financial Lease",
+            "Comparison"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-2_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-2_03",
+          "sequenceInScenario": 3,
+          "chapterId": "financial-management-2",
+          "subject": "FM",
+          "prompt": "If Sigma Pharma Ltd. had instead sold its existing fully-paid factory building to a financial institution and immediately leased it back for operational use, what financial objective would be primarily achieved?",
+          "options": [
+            "Permanent increase in long-term debt liabilities",
+            "Release of locked-up capital into immediate liquid cash without losing operational use",
+            "Elimination of all corporate tax obligations",
+            "Conversion of debt into equity shares"
+          ],
+          "answerIndex": 1,
+          "explanation": "A sale and leaseback transaction allows a firm to convert fixed asset value into immediate cash liquidity while continuing to utilize the asset for operations. ICAI FM study material details sale and leaseback as a liquidity enhancement strategy.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Sale and Leaseback",
+            "Liquidity",
+            "Asset Financing"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-2_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-2_03",
+          "sequenceInScenario": 4,
+          "chapterId": "financial-management-2",
+          "subject": "FM",
+          "prompt": "Which party typically bears the risk of obsolescence of the machinery under Sigma Pharma's financial lease arrangement?",
+          "options": [
+            "The lessor",
+            "The lessee (Sigma Pharma Ltd.)",
+            "The equipment manufacturer",
+            "The commercial bank providing secondary finance"
+          ],
+          "answerIndex": 1,
+          "explanation": "In a financial lease, because substantially all risks and rewards of ownership (including technological obsolescence) are transferred to the lessee, Sigma Pharma bears the obsolescence risk. ICAI study material underscores risk allocation in lease types.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Obsolescence Risk",
+            "Financial Lease",
+            "Risk Allocation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_financial-management-2_04",
+      "kind": "scenario",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "passage": "Delta Retail Corp., a nationwide retail chain, faces heavy seasonal fluctuations in working capital requirements. During the festive quarters, inventory requirements surge significantly. To manage its short-term liquidity without resorting to high-cost bank borrowings, Delta Retail utilizes trade credit from its suppliers and issues short-term unsecured promissory notes to institutional investors in the money market.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_financial-management-2_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-2_04",
+          "sequenceInScenario": 1,
+          "chapterId": "financial-management-2",
+          "subject": "FM",
+          "prompt": "The short-term unsecured promissory notes issued by Delta Retail to institutional investors are known as:",
+          "options": [
+            "Commercial Papers (CP)",
+            "Global Depository Receipts",
+            "Convertible Debentures",
+            "Zero Coupon Bonds"
+          ],
+          "answerIndex": 0,
+          "explanation": "Commercial Paper (CP) is an unsecured money market instrument issued as a promissory note by highly rated corporates to meet short-term funding needs. ICAI curriculum classifies CPs under short-term wholesale borrowings.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Commercial Paper",
+            "Short-term Finance",
+            "Money Market"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-2_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-2_04",
+          "sequenceInScenario": 2,
+          "chapterId": "financial-management-2",
+          "subject": "FM",
+          "prompt": "Why is 'Trade Credit' often referred to as a 'spontaneous' source of short-term financing?",
+          "options": [
+            "Because suppliers force companies to buy goods involuntarily",
+            "Because it automatically arises in the ordinary course of business when purchasing goods on credit",
+            "Because it carries a fixed government subsidy",
+            "Because it requires formal approval from the Reserve Bank of India"
+          ],
+          "answerIndex": 1,
+          "explanation": "Trade credit is termed spontaneous because it expands and contracts naturally with the firm's level of operations and inventory purchases without formal negotiations. ICAI study material highlights this spontaneity characteristic.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Trade Credit",
+            "Spontaneous Financing",
+            "Working Capital"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-2_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-2_04",
+          "sequenceInScenario": 3,
+          "chapterId": "financial-management-2",
+          "subject": "FM",
+          "prompt": "What is the maximum permissible maturity period for the Commercial Papers issued by Delta Retail under RBI guidelines?",
+          "options": [
+            "30 days",
+            "90 days",
+            "Up to one year (364 days)",
+            "5 years"
+          ],
+          "answerIndex": 2,
+          "explanation": "As per RBI guidelines covered in ICAI financial management texts, Commercial Papers can be issued for maturities ranging from a minimum of 7 days up to a maximum of one year (364 days).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Commercial Paper",
+            "Maturity",
+            "RBI Guidelines"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-2_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-2_04",
+          "sequenceInScenario": 4,
+          "chapterId": "financial-management-2",
+          "subject": "FM",
+          "prompt": "If Delta Retail fails to settle trade credit within the discount period (e.g., terms 2/10, net 30), what economic cost is the company effectively incurring?",
+          "options": [
+            "Zero cost financing",
+            "High implicit cost of foregone cash discounts",
+            "Mandatory conversion of trade debt into equity",
+            "Immediate seizure of fixed assets by suppliers"
+          ],
+          "answerIndex": 1,
+          "explanation": "Foregoing a cash discount (like 2% for paying within 10 days instead of 30) represents a substantial annualized implicit interest cost of trade credit. ICAI chapters explain the calculation and implications of trade credit costs.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Trade Credit Cost",
+            "Cash Discount",
+            "Implicit Cost"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_financial-management-2_05",
+      "kind": "scenario",
+      "chapterId": "financial-management-2",
+      "subject": "FM",
+      "passage": "Omega Global Ltd., an Indian multinational enterprise, is looking to fund a massive overseas acquisition. The CFO is analyzing international financing avenues. The board wants to raise funds in foreign currency without immediately diluting domestic equity voting control, while also considering instruments that offer foreign investors the option to convert debt into equity at a future date.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Types of Financing"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_financial-management-2_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-2_05",
+          "sequenceInScenario": 1,
+          "chapterId": "financial-management-2",
+          "subject": "FM",
+          "prompt": "Which international financial instrument allows Omega Global Ltd. to raise foreign currency debt with an option for investors to convert into equity shares?",
+          "options": [
+            "Global Depository Receipts (GDRs)",
+            "Foreign Currency Convertible Bonds (FCCBs)",
+            "Commercial Paper",
+            "Domestic Non-Convertible Debentures"
+          ],
+          "answerIndex": 1,
+          "explanation": "Foreign Currency Convertible Bonds (FCCBs) are equity-linked debt instruments issued in a foreign currency that give the holder the option to convert them into equity shares of the issuing company. ICAI covers FCCBs as key international hybrid instruments.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "FCCB",
+            "International Finance",
+            "Convertible Debt"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-2_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-2_05",
+          "sequenceInScenario": 2,
+          "chapterId": "financial-management-2",
+          "subject": "FM",
+          "prompt": "If Omega Global Ltd. issues negotiable certificates abroad through a depository bank representing underlying local equity shares, what are these instruments called?",
+          "options": [
+            "Global Depository Receipts (GDRs)",
+            "Treasury Bills",
+            "Zero Coupon Bonds",
+            "Commercial Papers"
+          ],
+          "answerIndex": 0,
+          "explanation": "Global Depository Receipts (GDRs) are negotiable instruments issued overseas by a depository bank against underlying shares of an Indian issuing company, enabling access to global equity pools. ICAI study material details GDR mechanics.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "GDR",
+            "Depository Receipts",
+            "Global Markets"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-2_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-2_05",
+          "sequenceInScenario": 3,
+          "chapterId": "financial-management-2",
+          "subject": "FM",
+          "prompt": "What is the primary financial risk Omega Global Ltd. faces by issuing foreign currency denominated debt?",
+          "options": [
+            "Domestic inflation risk",
+            "Foreign exchange rate fluctuation risk (Currency risk)",
+            "Immediate loss of domestic trade credit",
+            "Mandatory fixed asset depreciation"
+          ],
+          "answerIndex": 1,
+          "explanation": "Foreign currency debt exposes the issuer to currency risk; if the domestic currency depreciates against the borrowing currency, debt servicing and repayment liabilities increase in local currency terms. ICAI stresses foreign exchange risk management in international financing.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Foreign Currency Debt",
+            "Exchange Risk",
+            "International Financing"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-2_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-2_05",
+          "sequenceInScenario": 4,
+          "chapterId": "financial-management-2",
+          "subject": "FM",
+          "prompt": "Which regulatory framework primarily governs the issuance of FCCBs and GDRs by Indian companies?",
+          "options": [
+            "Local Municipal Corporation bylaws",
+            "FEMA guidelines and SEBI regulations for overseas capital raising",
+            "NABARD agricultural credit norms",
+            "Consumer Protection Act"
+          ],
+          "answerIndex": 1,
+          "explanation": "The issue of FCCBs and GDRs by Indian corporates is regulated by the Reserve Bank of India under FEMA (Foreign Exchange Management Act) and SEBI guidelines. ICAI financial management modules detail these regulatory parameters.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Regulatory Framework",
+            "FEMA",
+            "SEBI"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

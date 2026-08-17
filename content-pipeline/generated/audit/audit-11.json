@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "audit-11",
+  "subject": "Audit",
+  "paper": "Paper 5: Auditing and Ethics",
+  "module": "Module 2",
+  "chapterNumber": 11,
+  "chapterTitle": "Ethics and Terms of Audit Engagements",
+  "generatedAt": "2026-08-16T14:52:54.495Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_audit-11_001",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "Which of the fundamental principles of ethics requires a professional accountant to be straightforward and honest in all professional and business relationships?",
+      "options": [
+        "Objectivity",
+        "Integrity",
+        "Professional Competence and Due Care",
+        "Confidentiality"
+      ],
+      "answerIndex": 1,
+      "explanation": "The fundamental principle of Integrity imposes an obligation on all professional accountants to be straightforward and honest in all professional and business relationships. It also implies fair dealing and truthfulness.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Code of Ethics",
+        "Fundamental Principles",
+        "Integrity"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_002",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "An auditor is offered a gift of high-value electronic gadgets by the managing director of the audit client just before the final audit. Which fundamental principle is most directly threatened by accepting this gift?",
+      "options": [
+        "Professional Competence",
+        "Confidentiality",
+        "Objectivity",
+        "Professional Behavior"
+      ],
+      "answerIndex": 2,
+      "explanation": "Accepting gifts or hospitality from an audit client can create a self-interest or intimidation threat that compromises the auditor's objectivity, which requires not allowing bias, conflict of interest, or undue influence of others to override professional judgments.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Objectivity",
+        "Threats and Safeguards",
+        "Gifts and Hospitality"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_003",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "Under SQC 1 and SA 220, what is the primary objective of establishing policies and procedures regarding the acceptance and continuance of client relationships and specific audit engagements?",
+      "options": [
+        "To guarantee that the audit opinion will be unqualified",
+        "To ensure the firm has considered the integrity of the client and has the competence and resources to perform the engagement",
+        "To maximize the audit fee profitability across all firm clients",
+        "To eliminate all possible audit risks before accepting the appointment"
+      ],
+      "answerIndex": 1,
+      "explanation": "SQC 1 and SA 220 require the firm to obtain information before accepting an engagement to decide whether the integrity of the principal owners is acceptable, whether the engagement team is competent, and whether the firm can comply with ethical requirements.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 220",
+        "SQC 1",
+        "Client Acceptance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_004",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "When is an auditor required to send a new engagement letter to an existing audit client according to SA 210?",
+      "options": [
+        "Annually, prior to the commencement of every interim audit phase",
+        "Whenever there is a change in the management's accounting policies or IT systems",
+        "Whenever there is any indication that the client misunderstands the objective and scope of the audit",
+        "Only when the audit fee is revised upwards by more than 20 percent"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under SA 210, on recurring audits, the auditor shall assess whether circumstances require the terms of the audit engagement to be revised and whether there is a need to remind the client of the existing terms. A new engagement letter is particularly warranted if the client misunderstands the audit scope.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 210",
+        "Engagement Letter",
+        "Recurring Audits"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_005",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "Which of the following is considered a 'Self-Interest Threat' under the ICAI Code of Ethics?",
+      "options": [
+        "An auditor having a direct financial interest in the audit client",
+        "An auditor being pressured to reduce audit scope due to fee reductions",
+        "An auditor defending the client's position in a tax litigation tribunal",
+        "An auditor having a close family member who is the marketing manager of the client"
+      ],
+      "answerIndex": 0,
+      "explanation": "A self-interest threat occurs as a result of the financial or other interests of a professional accountant or of an immediate or close family member, such as holding a direct financial interest in the client.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Code of Ethics",
+        "Threats",
+        "Self-Interest Threat"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_006",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "An audit firm has been providing internal audit services and bookkeeping services to a public company audit client for the past three years. Which threat is most prominently created by this situation?",
+      "options": [
+        "Intimidation Threat",
+        "Self-Review Threat",
+        "Advocacy Threat",
+        "Familiarity Threat"
+      ],
+      "answerIndex": 1,
+      "explanation": "A self-review threat occurs when a professional accountant has to re-evaluate the results of previous judgments made or services performed by the accountant, or another individual within the firm or employing organization, on which the auditor will rely.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Code of Ethics",
+        "Self-Review Threat",
+        "Non-Assurance Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_007",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "Under SA 210, if management or those charged with governance impose a limitation on the scope of the auditor's work in the terms of a proposed audit engagement such that the auditor will disclaim an opinion, what action should the auditor take?",
+      "options": [
+        "Accept the engagement and modify the opinion in the final audit report",
+        "Accept the engagement only if mandated by statutory regulations",
+        "Do not accept the audit engagement, unless required by law or regulation to do so",
+        "Issue an adverse opinion immediately upon signing the engagement letter"
+      ],
+      "answerIndex": 2,
+      "explanation": "SA 210 states that if management or those charged with governance impose a limitation on the scope of the auditor's work in the terms of a proposed audit engagement such that the auditor believes the limitation will result in a disclaimer of opinion, the auditor shall not accept such a limited engagement as an audit engagement, unless required by law or regulation.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 210",
+        "Scope Limitation",
+        "Engagement Acceptance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_008",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "What is the primary purpose of pre-issuance engagement quality control review (EQCR) under SQC 1?",
+      "options": [
+        "To perform the detailed substantive testing on behalf of the engagement partner",
+        "To provide an objective evaluation of the significant judgments made by the engagement team and the conclusions reached in formulating the report",
+        "To negotiate the final audit fee and billing schedule with the client's CFO",
+        "To ensure compliance with local tax filing deadlines and GST returns"
+      ],
+      "answerIndex": 1,
+      "explanation": "An Engagement Quality Control Review (EQCR) provides an objective evaluation, before the report is issued, of the significant judgments the engagement team made and the conclusions they reached in formulating the auditor's report.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SQC 1",
+        "EQCR",
+        "Quality Control"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_009",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "When can a professional accountant in public practice disclose confidential information acquired during a professional relationship without specific client consent?",
+      "options": [
+        "When the accountant wishes to showcase past client accomplishments in marketing brochures",
+        "When disclosure is required by law, such as production of documents in legal proceedings or regulatory investigations",
+        "When the client changes the auditor and the predecessor auditor wants to discuss client gossip with prospective clients",
+        "When another client in the same industry requests financial benchmarking data of competitors"
+      ],
+      "answerIndex": 1,
+      "explanation": "The principle of confidentiality prohibits accountants from disclosing confidential information unless there is a legal or professional duty or right to disclose, such as production of documents in legal proceedings or compliance with statutory regulatory orders.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Code of Ethics",
+        "Confidentiality",
+        "Disclosure"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_010",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "Which of the following represents an 'Advocacy Threat' under the ICAI Code of Ethics?",
+      "options": [
+        "Promoting shares of an audit client when the firm is underwriting or trading in those shares",
+        "Long association of a senior audit partner with the same listed audit client for over ten years",
+        "Accepting nominal promotional items of insignificant value from an auditee",
+        "A partner of the audit firm serving on the board of directors of the audit client"
+      ],
+      "answerIndex": 0,
+      "explanation": "An advocacy threat occurs when a professional accountant promotes a client's position or opinion to the point that objectivity may be compromised, such as acting as an advocate for a client in litigation or promoting its securities.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Code of Ethics",
+        "Advocacy Threat",
+        "Threats and Safeguards"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_011",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "According to SA 210, what should the auditor do if the law or regulation prescribes in sufficient detail the terms of the audit engagement?",
+      "options": [
+        "The auditor need not record them in an engagement letter, except for the fact that such law or regulation applies and that management acknowledges and understands its responsibilities",
+        "The auditor must draft a 50-page customized engagement letter covering every section of the Companies Act",
+        "The auditor can completely dispense with any written documentation or client acknowledgment",
+        "The auditor must obtain a board resolution approving standard auditing standards"
+      ],
+      "answerIndex": 0,
+      "explanation": "SA 210 specifies that if law or regulation prescribes the terms of the audit engagement, the auditor need not record them in an agreement, except for the fact that such law or regulation applies and that management acknowledges and understands its responsibilities.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 210",
+        "Statutory Engagement Terms",
+        "Audit Documentation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_012",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "Which of the following principles requires a professional accountant to maintain professional knowledge and skill at the level required to ensure that a client receives competent professional service?",
+      "options": [
+        "Integrity",
+        "Professional Competence and Due Care",
+        "Objectivity",
+        "Professional Behavior"
+      ],
+      "answerIndex": 1,
+      "explanation": "Professional Competence and Due Care requires accountants to maintain professional knowledge and skill continuously to ensure that clients receive competent service based on current developments in practice, legislation, and techniques.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Code of Ethics",
+        "Professional Competence",
+        "Due Care"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_013",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "An audit engagement partner has been auditing a listed company for seven consecutive years. Which threat is primarily addressed by mandating partner rotation for listed entities?",
+      "options": [
+        "Self-Review Threat",
+        "Intimidation Threat",
+        "Familiarity Threat",
+        "Advocacy Threat"
+      ],
+      "answerIndex": 2,
+      "explanation": "Long association of senior personnel (such as engagement partners) with an assurance client creates a familiarity threat (and self-interest threat), where the auditor becomes too sympathetic to the client's interests or too accepting of their work.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Code of Ethics",
+        "Partner Rotation",
+        "Familiarity Threat"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_014",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "Under SA 210, if prior to finishing the audit, management requests the auditor to change the audit engagement to an engagement that conveys a lower level of assurance, what must the auditor determine first?",
+      "options": [
+        "Whether the client has paid the advance billing for the higher assurance engagement",
+        "Whether there is reasonable justification for changing the engagement",
+        "Whether the local newspaper has reported on the audit transition",
+        "Whether the junior audit assistants agree with the fee reduction"
+      ],
+      "answerIndex": 1,
+      "explanation": "SA 210 requires that if, prior to completing the audit engagement, the auditor is requested to change the audit engagement to one that provides a lower level of assurance, the auditor shall determine whether there is reasonable justification for doing so.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 210",
+        "Change in Engagement",
+        "Assurance Levels"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_015",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "What is the implication if an auditor accepts an audit engagement despite knowing that management has imposed a severe scope limitation that will result in a disclaimer of opinion, and there is no statutory requirement to do so?",
+      "options": [
+        "The auditor violates SA 210 and ethical standards regarding appropriate engagement acceptance",
+        "The auditor successfully secures the audit fee without performing substantive procedures",
+        "The client is automatically granted exemption from statutory tax audits",
+        "The audit report becomes legally binding on minority shareholders"
+      ],
+      "answerIndex": 0,
+      "explanation": "Accepting an engagement with a known severe scope limitation (not mandated by law) violates SA 210, as the auditor knows beforehand that an opinion cannot be expressed, rendering the audit engagement meaningless and misleading.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 210",
+        "Scope Limitation",
+        "Ethical Compliance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_016",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "Which fundamental principle is violated if a chartered accountant makes exaggerated claims for the services they are able to offer, qualifications possessed, or experience gained?",
+      "options": [
+        "Integrity",
+        "Objectivity",
+        "Professional Behavior",
+        "Confidentiality"
+      ],
+      "answerIndex": 2,
+      "explanation": "The principle of Professional Behavior requires professional accountants to comply with relevant laws and regulations and avoid any conduct that the accountant knows or should know might discredit the profession, including making exaggerated claims about services or qualifications.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Code of Ethics",
+        "Professional Behavior",
+        "Marketing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_017",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "According to SQC 1, leadership of the firm and the 'tone at the top' bear ultimate responsibility for what aspect of the audit firm's operations?",
+      "options": [
+        "Achieving a specific annual revenue growth target of 25%",
+        "Establishing and maintaining a system of quality control",
+        "Direct negotiation of retainer fees with large corporate houses",
+        "Selecting software vendors for payroll management"
+      ],
+      "answerIndex": 1,
+      "explanation": "SQC 1 emphasizes that the firm's leadership (managing partners) must assume ultimate responsibility for the firm's system of quality control, ensuring internal policies promote an internal culture recognizing that quality is essential.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SQC 1",
+        "Tone at the Top",
+        "Quality Control"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_018",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "When an auditor takes over an audit from a predecessor auditor, what is one of the professional requirements under the ICAI Code of Ethics before accepting the appointment?",
+      "options": [
+        "To file a complaint against the predecessor auditor with the Institute",
+        "To communicate with the predecessor auditor in writing to ascertain if there are any professional reasons why the appointment should not be accepted",
+        "To offer a commission payment to the predecessor auditor for client handover",
+        "To review all personal tax returns of the predecessor auditor"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under the ICAI Code of Ethics, a member in public practice must communicate with the predecessor auditor in writing before accepting an audit appointment to ascertain if there are any professional reasons (such as unlawful scope limitations or unpaid fees) for not accepting.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Code of Ethics",
+        "Predecessor Auditor",
+        "Professional Communication"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_019",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "What does 'Preconditions for an audit' refer to under SA 210?",
+      "options": [
+        "The submission of advance audit fees and execution of indemnity bonds by the client",
+        "The use of an acceptable financial reporting framework by management and the agreement of management to acknowledge its responsibilities",
+        "The prior clearance of the company's tax assessment by the Income Tax Department",
+        "The availability of fully automated ERP systems within the client entity"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under SA 210, preconditions for an audit are: (1) Use by management of an acceptable financial reporting framework, and (2) Agreement of management to acknowledge and understand its responsibilities (for preparation of financial statements, internal control, and providing access to information).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 210",
+        "Preconditions for an Audit",
+        "Management Responsibilities"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_020",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "Under SA 220, what is the responsibility of the engagement partner regarding the direction, supervision, and performance of the audit engagement?",
+      "options": [
+        "To delegate 100% of the audit work to article assistants without review",
+        "To take responsibility for the overall quality on each audit engagement to which that partner is assigned",
+        "To personally perform every single vouching and verification transaction",
+        "To outsource the audit reporting phase to external consulting firms"
+      ],
+      "answerIndex": 1,
+      "explanation": "SA 220 requires the engagement partner to take responsibility for the overall quality on each audit engagement assigned to them, ensuring direction, supervision, and performance in compliance with professional standards and regulatory requirements.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 220",
+        "Engagement Partner",
+        "Audit Quality"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_021",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "Which type of threat arises when an auditor is deterred from exercising objective judgment because of actual or perceived pressures, including attempts to exercise undue influence over the professional accountant?",
+      "options": [
+        "Self-Review Threat",
+        "Intimidation Threat",
+        "Advocacy Threat",
+        "Self-Interest Threat"
+      ],
+      "answerIndex": 1,
+      "explanation": "An intimidation threat occurs when a professional accountant may be deterred from acting objectively because of actual or perceived pressures, such as being threatened with dismissal or replacement over a disagreement on accounting treatment.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Code of Ethics",
+        "Intimidation Threat",
+        "Threats"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_022",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "If management imposes a restriction on the scope of an audit after the engagement has been accepted, and management refuses to remove the restriction, what should the auditor do?",
+      "options": [
+        "Ignore the restriction and issue a clean opinion based on estimated figures",
+        "Withdraw from the audit where possible under applicable law or regulation, and determine whether there is a professional or legal obligation to report the matter",
+        "Reduce the audit fee proportionally and issue an unmodified report",
+        "Transfer the engagement to another audit firm within the same network"
+      ],
+      "answerIndex": 1,
+      "explanation": "If scope limitation is imposed by management after acceptance, preventing the auditor from obtaining sufficient appropriate audit evidence, the auditor shall request management to remove the limitation. If refusal occurs, the auditor shall withdraw from the audit where possible and evaluate reporting obligations.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 210",
+        "Scope Limitation",
+        "Withdrawal"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_023",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "In the context of SQC 1, what is the role of engagement documentation retention policies?",
+      "options": [
+        "To ensure that all working papers are securely destroyed immediately after signing the audit report",
+        "To establish a time period (typically not shorter than 7 years in India) for retaining engagement documentation to meet legal and professional requirements",
+        "To allow clients to modify working papers before archiving",
+        "To archive working papers on public cloud servers accessible to competitors"
+      ],
+      "answerIndex": 1,
+      "explanation": "SQC 1 requires firms to establish policies and procedures for the timely completion of the assembly of audit files and retention of documentation (for audits, typically 7 years from the date of the auditor's report) to enable the firm to discharge its responsibilities.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SQC 1",
+        "Documentation",
+        "Retention Period"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_024",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "What is the primary significance of the 'Engagement Letter' from a legal standpoint?",
+      "options": [
+        "It serves as a legally binding contract defining the scope, responsibilities, and terms of the audit engagement, mitigating misunderstandings",
+        "It guarantees absolute immunity to the auditor against any third-party lawsuits",
+        "It replaces the statutory appointment letter issued by shareholders at the AGM",
+        "It sets the exact profit-sharing ratio between the audit firm and client"
+      ],
+      "answerIndex": 0,
+      "explanation": "The engagement letter documents and confirms the auditor's acceptance of the appointment, the objective and scope of the audit, the responsibilities of management and the auditor, and the form of any reports, serving as documentary evidence of the agreement.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 210",
+        "Engagement Letter",
+        "Legal Significance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_025",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "When evaluating whether to continue an existing client relationship, which factor is of paramount importance to an audit firm under SQC 1?",
+      "options": [
+        "Whether the client has experienced a 5% drop in quarterly revenue",
+        "Significant events occurring during the current or previous audit engagement, including issues regarding management integrity",
+        "Whether the client's office building is located in a metropolitan city",
+        "Whether the client utilizes cloud-based accounting software"
+      ],
+      "answerIndex": 1,
+      "explanation": "SQC 1 requires firms to evaluate continuance of relationships and engagements, considering integrity of principal owners, key management, and governance, as well as significant events (such as disputes or integrity doubts) arising during past engagements.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SQC 1",
+        "Client Continuance",
+        "Management Integrity"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_026",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "An audit team member owns shares worth Rs. 5,000 in a listed audit client. According to the ICAI Code of Ethics, what is the status of this holding?",
+      "options": [
+        "It is permitted as long as the value does not exceed Rs. 1,00,000",
+        "It creates a severe self-interest threat and is generally prohibited for members of the assurance team",
+        "It is allowed if the shares are held in demat mode",
+        "It is permitted if approved by the client's Chief Executive Officer"
+      ],
+      "answerIndex": 1,
+      "explanation": "The ICAI Code of Ethics prohibits members of the audit team, their immediate family members, and the firm from holding direct financial interests (shares) in an audit client, as it creates an unacceptable self-interest threat.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Code of Ethics",
+        "Financial Interests",
+        "Self-Interest Threat"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_027",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "What action should an auditor take if the financial reporting framework prescribed by law or regulation is unacceptable, but law or regulation requires the audit to be performed?",
+      "options": [
+        "Refuse the audit engagement unconditionally without exception",
+        "Accept the engagement only if management agrees to provide additional disclosures and the audit report includes an Other Matter paragraph or modified opinion as required",
+        "Perform the audit and issue an unmodified opinion without any explanatory notes",
+        "Resign from the chartered accountancy profession immediately"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under SA 210, if financial reporting standards prescribed by law are unacceptable, the auditor shall accept the engagement only if additional disclosures are made or management agrees to supplementary provisions, and the auditor includes an appropriate modification/emphasis in the report.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 210",
+        "Financial Reporting Framework",
+        "Unacceptable Framework"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_028",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "Which safeguard can be implemented by an audit firm to mitigate familiarity and self-interest threats arising from long-standing senior personnel on an audit engagement?",
+      "options": [
+        "Rotating the engagement partner and other senior personnel after a pre-defined period",
+        "Doubling the audit fee for every subsequent year of service",
+        "Allowing the client's internal audit team to supervise the external audit team",
+        "Eliminating all quality control reviews for that client"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rotating senior personnel (such as engagement partners and EQCR reviewers) after a specified period is a recognized professional safeguard to mitigate familiarity and self-interest threats in long-term audit engagements.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Code of Ethics",
+        "Safeguards",
+        "Partner Rotation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_029",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "According to SA 210, if the agreed terms of the audit engagement are changed, what is the responsibility of the auditor regarding the new terms?",
+      "options": [
+        "The auditor must ensure the new terms are documented in an engagement letter or other suitable form of written agreement",
+        "Oral agreement with the client's chief accountant is sufficient",
+        "The auditor must file the amended terms with the Registrar of Companies within 7 days",
+        "No documentation is needed for changed terms if the audit fee remains unchanged"
+      ],
+      "answerIndex": 0,
+      "explanation": "SA 210 explicitly states that if the terms of the audit engagement are changed, the auditor and management shall agree on and record the new terms of the engagement in an engagement letter or other suitable form of written agreement.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 210",
+        "Engagement Terms",
+        "Written Agreement"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-11_030",
+      "kind": "normal",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "prompt": "What does the principle of 'Objectivity' require of a Chartered Accountant in public practice?",
+      "options": [
+        "To maintain impartiality and intellectual honesty, ensuring professional judgment is not compromised by bias or undue influence",
+        "To guarantee 100% error-free financial statements for every client",
+        "To agree with management's accounting estimates in all circumstances to maintain harmonious relationships",
+        "To charge fees that are strictly equal to the industry average"
+      ],
+      "answerIndex": 0,
+      "explanation": "Objectivity is a fundamental principle requiring professional accountants not to compromise professional or business judgment because of bias, conflict of interest, or undue influence of others.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Code of Ethics",
+        "Objectivity",
+        "Fundamental Principles"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_audit-11_01",
+      "kind": "scenario",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "passage": "M/s Varma & Associates, a Chartered Accountant firm, is approached by TechnoCorp Ltd, a listed manufacturing company, for appointment as statutory auditor for the financial year 2026-27. During the client acceptance evaluation, CA Varma discovers that the company's promoter has recently been investigated by regulatory authorities for alleged tax evasion. Furthermore, TechnoCorp Ltd requests that Varma & Associates also design and implement its new IT-based inventory valuation software while performing the statutory audit. CA Varma is evaluating the ethical and professional requirements under SQC 1, SA 210, and the ICAI Code of Ethics.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-11_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-11_01",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-11",
+          "subject": "Audit",
+          "prompt": "Based on SQC 1 and client acceptance guidelines, what should CA Varma evaluate regarding the promoter's investigation?",
+          "options": [
+            "Ignore it, as ongoing investigations have no legal bearing on audit engagements",
+            "Evaluate the integrity of the principal owners and management as a critical precondition for accepting the engagement",
+            "Accept the audit immediately to help the promoter clear their name",
+            "Delegate the client acceptance decision solely to the junior audit assistants"
+          ],
+          "answerIndex": 1,
+          "explanation": "SQC 1 requires the firm to evaluate the integrity of principal owners, key management, and those charged with governance. Regulatory investigations into tax evasion are vital red flags regarding management integrity that must be thoroughly assessed.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SQC 1",
+            "Client Acceptance",
+            "Management Integrity"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-11_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-11_01",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-11",
+          "subject": "Audit",
+          "prompt": "TechnoCorp Ltd's request for Varma & Associates to design and implement its inventory valuation software while conducting the statutory audit creates which primary ethical threat?",
+          "options": [
+            "Advocacy threat",
+            "Intimidation threat",
+            "Self-review threat",
+            "Familiarity threat"
+          ],
+          "answerIndex": 2,
+          "explanation": "Designing and implementing IT systems or valuation models that will be audited as part of the financial statements creates a significant self-review threat, because the auditor would be evaluating the output of a system designed by their own firm.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Code of Ethics",
+            "Self-Review Threat",
+            "Non-Assurance Services"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-11_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-11_01",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-11",
+          "subject": "Audit",
+          "prompt": "If Varma & Associates decides to accept the audit engagement, what is the mandatory requirement under SA 210 regarding the agreement on audit engagement terms?",
+          "options": [
+            "The terms must be recorded in an engagement letter or other suitable written agreement before starting the audit",
+            "An oral agreement over a telephone call with the Chief Financial Officer is sufficient",
+            "The engagement terms must be published in a national financial newspaper",
+            "The audit engagement terms are determined solely by the Registrar of Companies without auditor input"
+          ],
+          "answerIndex": 0,
+          "explanation": "SA 210 requires the auditor to agree the terms of the audit engagement with management or those charged with governance, and these terms must be recorded in an engagement letter or other suitable written agreement.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 210",
+            "Engagement Letter",
+            "Written Agreement"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-11_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-11_01",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-11",
+          "subject": "Audit",
+          "prompt": "Which professional requirement must CA Varma fulfill regarding predecessor auditors before finalizing the acceptance of TechnoCorp Ltd?",
+          "options": [
+            "File a formal appeal in the High Court against the predecessor",
+            "Communicate in writing with the predecessor auditor to check for any professional reasons for non-acceptance",
+            "Demand a copy of the predecessor's personal tax records",
+            "Offer to split the audit fee equally with the predecessor auditor"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the ICAI Code of Ethics, a member in public practice must communicate with the predecessor auditor in writing before accepting an appointment to ascertain if there are professional reasons (such as ethical breaches or scope limitations) why the appointment should not be accepted.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Code of Ethics",
+            "Predecessor Auditor",
+            "Professional Communication"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-11_02",
+      "kind": "scenario",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "passage": "CA Rohit is the engagement partner for the statutory audit of Apex Pharma Ltd. During the course of the audit for the year ended March 31, 2026, management informs CA Rohit that due to a major dispute with a key supplier, certain accounting records for Q3 have been misplaced and cannot be reconstructed. Management insists that CA Rohit proceed with the audit by estimating the missing inventory balances and issuing an unmodified report. Furthermore, Apex Pharma Ltd offers CA Rohit an overseas vacation package as a token of appreciation for completing the audit ahead of schedule.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-11_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-11_02",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-11",
+          "subject": "Audit",
+          "prompt": "How should CA Rohit evaluate management's request to proceed with the audit despite missing records and estimation demands?",
+          "options": [
+            "Accept the request and issue a clean opinion to maintain client relations",
+            "Recognize that this constitutes a scope limitation imposed by management that prevents obtaining sufficient appropriate audit evidence",
+            "Take over the management's responsibility for reconstructing inventory records personally",
+            "Increase the audit fee by 50% and issue an unmodified report"
+          ],
+          "answerIndex": 1,
+          "explanation": "Missing accounting records that cannot be reconstructed and management's insistence on blind estimation constitute a severe scope limitation, preventing the auditor from obtaining sufficient appropriate audit evidence under SA 210 and SA 705.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 210",
+            "Scope Limitation",
+            "Audit Evidence"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-11_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-11_02",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-11",
+          "subject": "Audit",
+          "prompt": "What ethical threat is created by Apex Pharma Ltd offering CA Rohit an overseas vacation package?",
+          "options": [
+            "Advocacy threat",
+            "Self-interest threat",
+            "Self-review threat",
+            "Familiarity threat"
+          ],
+          "answerIndex": 1,
+          "explanation": "Accepting high-value gifts, hospitality, or vacation packages from an audit client creates an unacceptable self-interest threat, as it compromises the auditor's objectivity and independence.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Code of Ethics",
+            "Self-Interest Threat",
+            "Gifts and Hospitality"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-11_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-11_02",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-11",
+          "subject": "Audit",
+          "prompt": "If the scope limitation imposed by management results in the auditor concluding that a disclaimer of opinion is required, what does SA 210 prescribe regarding engagement acceptance or continuation?",
+          "options": [
+            "The auditor shall not accept such a limited engagement, nor continue it if already accepted, unless required by law or regulation",
+            "The auditor must issue an unmodified opinion with an Emphasis of Matter paragraph",
+            "The auditor must delegate the opinion signing to an articled assistant",
+            "The auditor should convert the audit into a management consultancy assignment"
+          ],
+          "answerIndex": 0,
+          "explanation": "SA 210 dictates that if management imposes a scope limitation resulting in a disclaimer of opinion, the auditor shall not accept such a limited engagement (or withdraw if already accepted), unless mandated by law or regulation.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 210",
+            "Scope Limitation",
+            "Disclaimer of Opinion"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-11_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-11_02",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-11",
+          "subject": "Audit",
+          "prompt": "Under the ICAI Code of Ethics, what action should CA Rohit take regarding the overseas vacation package offered by Apex Pharma Ltd?",
+          "options": [
+            "Accept it since it is given after audit completion",
+            "Refuse it unconditionally, as accepting gifts and hospitality that create threats not at an acceptable level violates ethical independence",
+            "Accept it on behalf of the audit staff and distribute it among articled assistants",
+            "Donate the cash equivalent of the vacation to a charity of the client's choice"
+          ],
+          "answerIndex": 1,
+          "explanation": "The Code of Ethics states that gifts and hospitality from an assurance client should be rejected unless the value is trivial and inconsequential. An overseas vacation package far exceeds trivial value and must be refused.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Code of Ethics",
+            "Independence",
+            "Gifts and Hospitality"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-11_03",
+      "kind": "scenario",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "passage": "M/s Gupta & Co., a Chartered Accountancy firm, has been auditing Stellar Ltd for 9 consecutive years. The engagement partner, CA Gupta, has developed close personal friendships with Stellar Ltd's Chief Executive Officer and Chief Financial Officer. During the current year audit, CA Gupta's firm also prepares Stellar Ltd's tax computations and files its corporate tax returns. Furthermore, Stellar Ltd's management informs CA Gupta that if the audit report includes any adverse remarks regarding pending litigations, the company will terminate the audit contract and appoint another firm.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-11_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-11_03",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-11",
+          "subject": "Audit",
+          "prompt": "The long-standing association of CA Gupta with Stellar Ltd for 9 consecutive years primarily gives rise to which ethical threat?",
+          "options": [
+            "Intimidation threat",
+            "Familiarity threat",
+            "Advocacy threat",
+            "Self-review threat"
+          ],
+          "answerIndex": 1,
+          "explanation": "Long association of senior audit personnel with an assurance client creates a familiarity threat, where the auditor becomes too sympathetic to the client's interests or too accepting of their representations.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Code of Ethics",
+            "Familiarity Threat",
+            "Long Association"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-11_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-11_03",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-11",
+          "subject": "Audit",
+          "prompt": "The preparation of Stellar Ltd's tax computations and filing of tax returns by M/s Gupta & Co. while acting as statutory auditor creates which primary ethical threat?",
+          "options": [
+            "Self-review threat",
+            "Intimidation threat",
+            "Familiarity threat",
+            "Advocacy threat"
+          ],
+          "answerIndex": 0,
+          "explanation": "Preparing tax calculations that are subsequently audited as part of the financial statements creates a self-review threat, as the firm is evaluating its own tax accounting work.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Code of Ethics",
+            "Self-Review Threat",
+            "Tax Services"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-11_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-11_03",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-11",
+          "subject": "Audit",
+          "prompt": "Stellar Ltd's threat to terminate the audit contract if adverse remarks are included regarding pending litigations constitutes which ethical threat?",
+          "options": [
+            "Self-interest threat",
+            "Intimidation threat",
+            "Advocacy threat",
+            "Familiarity threat"
+          ],
+          "answerIndex": 1,
+          "explanation": "Threats of dismissal or replacement over a disagreement on accounting treatments or audit reporting constitute an intimidation threat, deterring the auditor from exercising objective professional judgment.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Code of Ethics",
+            "Intimidation Threat",
+            "Client Pressure"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-11_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-11_03",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-11",
+          "subject": "Audit",
+          "prompt": "What safeguard should M/s Gupta & Co. implement to address the threats arising from long-standing association and non-assurance services for a listed/public interest client?",
+          "options": [
+            "Rotate the engagement partner and implement independent internal quality reviews (EQCR)",
+            "Increase the audit fee by 50% to compensate for risks",
+            "Allow the client's internal audit team to sign the statutory report",
+            "Discontinue all working paper documentation requirements"
+          ],
+          "answerIndex": 0,
+          "explanation": "To mitigate familiarity and self-review threats for public interest/listed clients, rotating the engagement partner and applying safeguards such as an Engagement Quality Control Review (EQCR) or independent review of work are required.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SQC 1",
+            "Partner Rotation",
+            "EQCR"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-11_04",
+      "kind": "scenario",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "passage": "CA Meera is appointed as the statutory auditor of Zenith Retail Ltd. During the preliminary meeting, management presents the financial reporting framework adopted by the company. CA Meera notices that the framework omits several mandatory disclosures required by the applicable financial reporting standards, but management argues that these disclosures are commercially sensitive. Simultaneously, CA Meera receives a request from a prospective client who wants to inspect audit working papers of Zenith Retail Ltd from the previous year to evaluate Meera's audit methodology.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-11_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-11_04",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-11",
+          "subject": "Audit",
+          "prompt": "How should CA Meera evaluate management's omission of mandatory disclosures on the grounds of commercial sensitivity?",
+          "options": [
+            "Accept the omission without question as commercial confidentiality overrides accounting standards",
+            "Determine whether the omission results in misleading financial statements and whether the preconditions for an audit under SA 210 are met",
+            "Publish the missing disclosures in her personal blog",
+            "Draft the disclosures herself and bill the client as a consultancy fee"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under SA 210, the auditor must determine whether the financial reporting framework is acceptable. Omission of mandatory disclosures can render financial statements misleading, impacting engagement acceptance and reporting.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 210",
+            "Financial Reporting Framework",
+            "Disclosures"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-11_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-11_04",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-11",
+          "subject": "Audit",
+          "prompt": "Can CA Meera disclose Zenith Retail Ltd's audit working papers to the prospective client who wants to evaluate her methodology?",
+          "options": [
+            "Yes, to showcase her firm's technical competence and secure new business",
+            "No, because working papers are confidential and cannot be disclosed without explicit client consent, subject to legal/professional exceptions",
+            "Yes, if the prospective client pays a browsing fee",
+            "Yes, after redacting the company's name from the working papers"
+          ],
+          "answerIndex": 1,
+          "explanation": "The fundamental principle of Confidentiality prohibits a professional accountant from disclosing client working papers or business information to third parties without specific client authorization, unless a legal duty exists.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Code of Ethics",
+            "Confidentiality",
+            "Working Papers"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-11_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-11_04",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-11",
+          "subject": "Audit",
+          "prompt": "What is CA Meera's responsibility regarding documentation of engagement acceptance under SQC 1 and SA 210?",
+          "options": [
+            "Document the results of client acceptance and continuance evaluations, alongside the signed engagement letter",
+            "Maintain only oral records of discussions with management",
+            "File working papers on public domain websites",
+            "Destroy all acceptance notes after signing the audit report"
+          ],
+          "answerIndex": 0,
+          "explanation": "SQC 1 and SA 210 require firms to document issues identified during client acceptance and continuance evaluations, alongside the finalized engagement letter, to evidence compliance with quality control standards.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SQC 1",
+            "SA 210",
+            "Documentation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-11_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-11_04",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-11",
+          "subject": "Audit",
+          "prompt": "If Zenith Retail Ltd insists on retaining the unacceptable omission of mandatory disclosures and demands a clean audit report, what action must CA Meera take under SA 210?",
+          "options": [
+            "Decline the engagement or withdraw if already accepted, as the preconditions for an audit are not fulfilled",
+            "Sign the clean report to protect the audit fee",
+            "Alter the financial statements herself during the audit",
+            "Issue an unqualified report with oral disclaimers"
+          ],
+          "answerIndex": 0,
+          "explanation": "If preconditions for an audit are not met (e.g., unacceptable financial reporting framework or management refusing responsibilities), SA 210 requires the auditor not to accept the audit engagement unless required by law.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 210",
+            "Preconditions",
+            "Engagement Refusal"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-11_05",
+      "kind": "scenario",
+      "chapterId": "audit-11",
+      "subject": "Audit",
+      "passage": "CA Rajesh, a sole practitioner, accepts the audit of a mid-sized trading firm, BlueStar Enterprises. During the interim audit, Rajesh realizes that the volume of transactions is significantly higher than estimated during client acceptance, and his small team lacks the technical expertise in specialized IT inventory systems used by BlueStar. Rajesh considers outsourcing a part of the inventory verification work to an external IT expert without informing BlueStar management, and simultaneously considers reducing the audit procedures to meet tight deadlines without adequate supervision.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Ethics and Terms of Audit Engagements"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-11_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-11_05",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-11",
+          "subject": "Audit",
+          "prompt": "CA Rajesh's realization that his team lacks technical expertise in specialized IT inventory systems primarily implicates which fundamental ethical principle and standard?",
+          "options": [
+            "Integrity and SA 700",
+            "Professional Competence and Due Care under the Code of Ethics, and SA 220/SQC 1 regarding firm resources",
+            "Confidentiality under SA 240",
+            "Objectivity under SA 505"
+          ],
+          "answerIndex": 1,
+          "explanation": "Lack of competence to perform specific tasks violates the fundamental principle of Professional Competence and Due Care, as well as SQC 1 and SA 220 requirements ensuring the firm has appropriate competence and resources.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Code of Ethics",
+            "Professional Competence",
+            "SQC 1"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-11_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-11_05",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-11",
+          "subject": "Audit",
+          "prompt": "Is CA Rajesh permitted to outsource inventory verification work to an external IT expert without informing BlueStar management?",
+          "options": [
+            "Yes, auditors have absolute autonomy to outsource any task without client awareness",
+            "No, sharing confidential client data with an external party without client consent or appropriate confidentiality agreements violates client confidentiality and ethical standards",
+            "Yes, provided the expert is a relative of the auditor",
+            "Yes, if the outsourcing fee is less than 10% of total audit fees"
+          ],
+          "answerIndex": 1,
+          "explanation": "Disclosing client information to an external expert without client consent or appropriate confidentiality undertakings breaches the principle of Confidentiality and professional ethics.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Code of Ethics",
+            "Confidentiality",
+            "Experts"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-11_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-11_05",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-11",
+          "subject": "Audit",
+          "prompt": "Under SA 220, what is CA Rajesh's responsibility regarding the direction, supervision, and review of audit work in this engagement?",
+          "options": [
+            "He can completely abandon supervision if deadlines are tight",
+            "He must direct, supervise, and review audit work in compliance with professional standards and regulatory requirements, ensuring sufficient appropriate audit evidence is obtained",
+            "He should delegate all review responsibilities to the client's internal accountant",
+            "He is only required to sign the report without reviewing working papers"
+          ],
+          "answerIndex": 1,
+          "explanation": "SA 220 requires the engagement partner to take responsibility for direction, supervision, and performance of the audit engagement in compliance with professional standards.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 220",
+            "Supervision",
+            "Engagement Partner"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-11_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-11_05",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-11",
+          "subject": "Audit",
+          "prompt": "If CA Rajesh concludes that he lacks the competence to perform the audit after acceptance and that safeguards cannot resolve the issue, what is the appropriate professional course of action?",
+          "options": [
+            "Carry out substandard audit procedures and issue a clean report",
+            "Withdraw from the engagement where permitted by law or regulation, and discuss the matter with those charged with governance",
+            "Transfer the audit license to an unqualified friend",
+            "Backdate the audit working papers to conceal the lack of expertise"
+          ],
+          "answerIndex": 1,
+          "explanation": "When an auditor lacks competence and appropriate safeguards (such as using an expert properly) cannot be implemented, the auditor should consider withdrawing from the engagement and fulfilling appropriate professional/legal communication duties.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 210",
+            "Professional Competence",
+            "Withdrawal"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

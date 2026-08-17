@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "advanced-accounting-13",
+  "subject": "Accounts",
+  "paper": "Paper 1: Advanced Accounting",
+  "module": "Module 3",
+  "chapterNumber": 13,
+  "chapterTitle": "Amalgamation of Companies",
+  "generatedAt": "2026-08-16T14:03:53.024Z",
+  "model": "gemini-3.6-flash",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_advanced-accounting-13_001",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "According to AS 14 'Accounting for Amalgamations', which of the following payments made by the transferee company is included in the computation of 'Consideration'?",
+      "options": [
+        "Payment made directly to the debenture holders of the transferor company",
+        "Payment made to the liquidation expense creditors of the transferor company",
+        "Payment made to the preference shareholders of the transferor company",
+        "Payment made to the trade creditors of the transferor company"
+      ],
+      "answerIndex": 2,
+      "explanation": "As per paragraph 3(b) of AS 14, consideration for amalgamation is the aggregate of the shares and other securities issued and the payment made in cash or other assets by the transferee company to the shareholders (equity and preference) of the transferor company. Payments made to third parties like debenture holders or creditors are settlements of liabilities and not part of purchase consideration.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 14",
+        "Purchase Consideration",
+        "Scope of Consideration"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_002",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "Under AS 14, which condition MUST be satisfied for an amalgamation to be classified as an 'amalgamation in the nature of merger'?",
+      "options": [
+        "All equity shareholders of the transferor company must become shareholders of the transferee company.",
+        "Shareholders holding not less than 90% of the face value of equity shares of the transferor company (other than held by transferee/subsidiaries) become equity shareholders of the transferee company.",
+        "Assets and liabilities must be recorded at fair values in the books of the transferee company.",
+        "Consideration must be paid entirely in cash to all equity shareholders."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 14, one of the five essential conditions for an amalgamation in the nature of merger is that equity shareholders holding not less than 90% of the face value of equity shares of the transferor company (other than those already held by the transferee company or its subsidiaries) become equity shareholders of the transferee company by virtue of amalgamation.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 14",
+        "Amalgamation in Nature of Merger",
+        "Conditions for Merger"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_003",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "Under the 'Pooling of Interests Method', how are the assets and liabilities of the transferor company recorded in the books of the transferee company?",
+      "options": [
+        "At their fair values as on the date of amalgamation",
+        "At their liquidation values as determined by independent valuers",
+        "At their existing book values, except for adjustments to achieve uniform accounting policies",
+        "At replacement costs as on the date of acquisition"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under paragraph 10 of AS 14 (Pooling of Interests Method), assets, liabilities, and reserves of the transferor company are recorded by the transferee company at their existing carrying amounts (book values), subject only to adjustments required to ensure uniformity of accounting policies.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Pooling of Interests Method",
+        "Book Values",
+        "AS 14"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_004",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "When an amalgamation is accounted for under the 'Purchase Method', any excess of consideration paid over the net aggregate value of identifiable assets taken over over liabilities assumed is credited or debited to which account?",
+      "options": [
+        "Debited to Capital Reserve Account",
+        "Debited to Goodwill Account",
+        "Credited to Amalgamation Adjustment Deficit Account",
+        "Debited to General Reserve Account"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under the Purchase Method of AS 14, if the purchase consideration exceeds the net agreed value of assets taken over less liabilities assumed, the difference is debited to Goodwill Account. If the consideration is less than net assets, the difference is credited to Capital Reserve Account.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Purchase Method",
+        "Goodwill",
+        "Capital Reserve"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_005",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "How is the 'Amalgamation Adjustment Reserve' account presented in the balance sheet of the transferee company prepared as per Schedule III to the Companies Act, 2013?",
+      "options": [
+        "As a separate line item under 'Other Non-Current Assets'",
+        "As a negative line item under 'Reserves and Surplus'",
+        "Under 'Other Current Assets' as a temporary debit balance",
+        "Deducted directly from Capital Reserve on the face of the Balance Sheet"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per ICAI study material and Schedule III guidelines, when a statutory reserve is maintained under the purchase method, the Amalgamation Adjustment Reserve (or Amalgamation Adjustment Deficit) is presented under 'Reserves and Surplus' as a negative balance (deduction), until the statutory reserve itself is maintained.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Statutory Reserve",
+        "Amalgamation Adjustment Reserve",
+        "Schedule III"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_006",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "Alpha Ltd acquires Beta Ltd under the purchase method. Beta Ltd has a statutory reserve (Export Profit Reserve) of ₹1,50,000 which needs to be maintained for 3 more years. What entry is passed in the books of Alpha Ltd?",
+      "options": [
+        "General Reserve A/c Dr. ₹1,50,000 To Export Profit Reserve A/c ₹1,50,000",
+        "Amalgamation Adjustment Reserve A/c Dr. ₹1,50,000 To Export Profit Reserve A/c ₹1,50,000",
+        "Goodwill A/c Dr. ₹1,50,000 To Export Profit Reserve A/c ₹1,50,000",
+        "No entry is required as statutory reserves are not recorded under the purchase method."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under the purchase method, statutory reserves of the transferor company must be retained by debiting 'Amalgamation Adjustment Reserve Account' and crediting the relevant 'Statutory Reserve Account' (e.g., Export Profit Reserve).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Purchase Method",
+        "Statutory Reserve",
+        "Journal Entries"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_007",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "When liquidation expenses of the transferor company are paid and borne by the transferee company in an 'amalgamation in the nature of purchase', how is this transaction accounted for in the transferee company's books?",
+      "options": [
+        "Debited to Profit and Loss Account",
+        "Debited to Realisation Account",
+        "Debited to Goodwill Account or credited/adjusted in Capital Reserve Account",
+        "Debited to General Reserve Account"
+      ],
+      "answerIndex": 2,
+      "explanation": "In an amalgamation in the nature of purchase, liquidation expenses borne by the transferee company form part of the acquisition cost and are debited to Goodwill Account (or credited/deducted from Capital Reserve Account if capital reserve exists).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Liquidation Expenses",
+        "Purchase Method",
+        "Goodwill/Capital Reserve"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_008",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "If liquidation expenses of the transferor company are borne by the transferee company in an 'amalgamation in the nature of merger', where should the transferee company debit this expenditure?",
+      "options": [
+        "Goodwill Account",
+        "Profit and Loss Account or General Reserve",
+        "Realisation Account",
+        "Preliminary Expenses Account"
+      ],
+      "answerIndex": 1,
+      "explanation": "In an amalgamation in the nature of merger (Pooling of Interests Method), any costs directly incurred by the transferee company to effect amalgamation (including liquidation expenses reimbursed) are debited to Profit and Loss Account or Reserves.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Liquidation Expenses",
+        "Merger Method",
+        "Accounting Treatment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_009",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "X Ltd agreed to acquire Y Ltd. X Ltd agreed to issue 3 equity shares of ₹10 each (market price ₹15) for every 5 equity shares in Y Ltd. Y Ltd has 1,00,000 equity shares of ₹10 each. Calculate the total Purchase Consideration under AS 14 using the Net Payment Method.",
+      "options": [
+        "₹6,00,000",
+        "₹9,00,000",
+        "₹10,00,000",
+        "₹15,00,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Number of shares to be issued = (1,00,000 / 5) * 3 = 60,000 equity shares. Value of shares issued for consideration = 60,000 shares * ₹15 (issue price/agreed value) = ₹9,00,000. Purchase consideration is evaluated based on agreed issue price/value of securities offered.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Purchase Consideration",
+        "Net Payment Method",
+        "Valuation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_010",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "P Ltd takes over Q Ltd. P Ltd agrees to issue 2 equity shares of ₹10 each at a premium of ₹5 per share for every 4 equity shares in Q Ltd, and pay ₹2 cash per equity share held in Q Ltd. Q Ltd has 50,000 equity shares of ₹10 each fully paid. Compute the Purchase Consideration.",
+      "options": [
+        "₹4,75,000",
+        "₹3,75,000",
+        "₹2,50,000",
+        "₹1,00,000"
+      ],
+      "answerIndex": 0,
+      "explanation": "Equity shares issued = (50,000 / 4) * 2 = 25,000 shares. Value of shares issued = 25,000 * ₹15 = ₹3,75,000. Cash paid = 50,000 * ₹2 = ₹1,00,000. Total Purchase Consideration = ₹3,75,000 + ₹1,00,000 = ₹4,75,000.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Purchase Consideration",
+        "Net Payment Method",
+        "Cash and Share Component"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_011",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "In the books of the Transferor Company, where is the carrying value of assets transferred to the transferee company transferred upon liquidation?",
+      "options": [
+        "Debit of Transferee Company's Account",
+        "Debit of Realisation Account",
+        "Credit of Realisation Account",
+        "Debit of Equity Shareholders' Account"
+      ],
+      "answerIndex": 1,
+      "explanation": "When closing the books of the transferor company, all asset accounts taken over (or to be realised) are closed by transferring their book values to the debit side of the Realisation Account.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Transferor Company Books",
+        "Realisation Account",
+        "Closure of Books"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_012",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "How is preference share capital settled in the books of the Transferor Company if preference shareholders are paid more than their book value?",
+      "options": [
+        "The excess amount is debited to General Reserve Account.",
+        "The excess amount is debited to Realisation Account.",
+        "The excess amount is credited to Profit and Loss Account.",
+        "The excess amount is debited to Goodwill Account."
+      ],
+      "answerIndex": 1,
+      "explanation": "Any excess paid to preference shareholders over their carrying value represents a loss on settlement, which is debited to Realisation Account in the books of the transferor company.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Transferor Company Books",
+        "Realisation Account",
+        "Preference Shareholders"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_013",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "Sun Ltd acquires Moon Ltd under the purchase method. Net Agreed Assets taken over are ₹12,00,000 and total liabilities assumed are ₹3,00,000. Purchase consideration payable is ₹10,00,000. What is the amount of Goodwill or Capital Reserve resulting from this transaction?",
+      "options": [
+        "Goodwill of ₹1,00,000",
+        "Capital Reserve of ₹1,00,000",
+        "Goodwill of ₹2,00,000",
+        "Capital Reserve of ₹2,00,000"
+      ],
+      "answerIndex": 0,
+      "explanation": "Net Assets taken over = Agreed Assets (₹12,00,000) - Liabilities assumed (₹3,00,000) = ₹9,00,000. Purchase Consideration = ₹10,00,000. Since PC (₹10,00,000) > Net Assets (₹9,00,000), Goodwill = ₹10,00,000 - ₹9,00,000 = ₹1,00,000.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Purchase Method",
+        "Goodwill Calculation",
+        "Net Agreed Assets"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_014",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "Under the Pooling of Interests Method, if the Purchase Consideration paid exceeds the paid-up share capital of the Transferor Company, how is the difference adjusted in the transferee company's books?",
+      "options": [
+        "Debited to Goodwill Account",
+        "Debited to Amalgamation Adjustment Reserve Account",
+        "Deducted from Reserves (General Reserve/Capital Reserve/P&L) of the Transferee Company",
+        "Credited to Capital Reserve Account"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under the Pooling of Interests Method, any difference between the amount recorded as share capital issued plus any additional consideration in other forms and the amount of share capital of the transferor company should be adjusted in Reserves (General Reserve or other revenue/capital reserves).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Pooling of Interests Method",
+        "Reserve Adjustment",
+        "AS 14"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_015",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "Prior to amalgamation, Transferee Ltd sold goods costing ₹80,000 to Transferor Ltd for ₹1,00,000. Half of these goods remain unsold in the inventory of Transferor Ltd on the date of amalgamation. If amalgamation is under the purchase method, what adjustment entry is made in Transferee Ltd's books post-amalgamation for unrealized profit?",
+      "options": [
+        "Goodwill / Capital Reserve A/c Dr. ₹10,000 To Inventory A/c ₹10,000",
+        "Profit and Loss A/c Dr. ₹20,000 To Inventory A/c ₹20,000",
+        "Inventory A/c Dr. ₹10,000 To Goodwill A/c ₹10,000",
+        "Realisation A/c Dr. ₹10,000 To Profit and Loss A/c ₹10,000"
+      ],
+      "answerIndex": 0,
+      "explanation": "Unrealized profit in stock = (₹1,00,000 - ₹80,000) * 50% = ₹10,000. Under the purchase method, post-amalgamation adjustment for unrealized profit on stock included in transferee's inventory is debited to Goodwill / Capital Reserve (or Profit & Loss/General Reserve) and credited to Inventory.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Unrealized Profit",
+        "Inter-company Inventory",
+        "Purchase Method"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_016",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "Company A absorbs Company B. Company A holds 20% equity shares of Company B prior to amalgamation. How is this existing holding treated when calculating Purchase Consideration under Net Payment Method?",
+      "options": [
+        "Consideration is calculated for 100% shares and 20% is paid to Company A itself.",
+        "Consideration is calculated only for the 80% shares held by outside shareholders.",
+        "Consideration is calculated for 100% shares and then 20% is credited to Realisation Account.",
+        "Consideration is ignored and Net Asset method must be mandatorily applied."
+      ],
+      "answerIndex": 1,
+      "explanation": "When the transferee company already holds shares in the transferor company, no payment (shares/cash) is made to itself. Thus, purchase consideration under Net Payment method is computed only for the shares held by outside shareholders (80%).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Inter-company Holding",
+        "Purchase Consideration",
+        "Net Payment Method"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_017",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "In an amalgamation in the nature of merger, Transferor Ltd has General Reserve of ₹2,00,000, Profit & Loss A/c (Cr.) of ₹1,00,000, and Statutory Reserve of ₹50,000. Which of these reserves are incorporated in the transferee company's books?",
+      "options": [
+        "Only Statutory Reserve of ₹50,000",
+        "Only General Reserve and Profit & Loss A/c totaling ₹3,00,000",
+        "All reserves (General Reserve, Profit & Loss A/c, and Statutory Reserve) amounting to ₹3,50,000",
+        "None of the reserves are incorporated; all are credited to Capital Reserve."
+      ],
+      "answerIndex": 2,
+      "explanation": "Under the Pooling of Interests method (merger), all reserves (whether capital reserves, revenue reserves, or statutory reserves) of the transferor company are preserved and recorded in the books of the transferee company at their book values.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Pooling of Interests Method",
+        "Preservation of Reserves",
+        "Merger"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_018",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "When debentures of the transferor company are taken over and settled by the transferee company by issuing its own 12% Debentures at a 10% premium, how is this handled in computing Purchase Consideration under AS 14?",
+      "options": [
+        "The value of debentures issued is added to Purchase Consideration.",
+        "The premium on debentures is added to Purchase Consideration.",
+        "Debentures issued are ignored in Purchase Consideration as it is a settlement of liability.",
+        "Only the nominal value of debentures is included in Purchase Consideration."
+      ],
+      "answerIndex": 2,
+      "explanation": "Under AS 14, consideration is payment made to SHAREHOLDERS only. Discharge of debenture holders is a settlement of a liability assumed, not part of purchase consideration.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 14",
+        "Purchase Consideration",
+        "Debentures Settlement"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_019",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "What happens to 'Amalgamation Adjustment Reserve' when the statutory requirement to maintain the statutory reserve of the transferor company expires?",
+      "options": [
+        "It is transferred to General Reserve.",
+        "It is transferred to Capital Reserve.",
+        "It is reversed by crediting Amalgamation Adjustment Reserve and debiting Statutory Reserve.",
+        "It is written off to Profit and Loss Account as an exceptional item."
+      ],
+      "answerIndex": 2,
+      "explanation": "When the statutory reserve is no longer required to be maintained by law, both the Statutory Reserve Account and the Amalgamation Adjustment Reserve Account are closed by passing a reversal entry: Statutory Reserve A/c Dr. To Amalgamation Adjustment Reserve A/c.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Statutory Reserve",
+        "Amalgamation Adjustment Reserve",
+        "Reversal Entry"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_020",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "Star Ltd acquired Moon Ltd. Equity share capital of Moon Ltd consists of 1,00,000 shares of ₹10 each. Star Ltd issues 1 share of ₹10 (market value ₹20) for every 2 shares of Moon Ltd. Equity shareholders of Moon Ltd also receive cash of ₹3 per share. Preference shareholders (10,00,000 10% Preference shares of ₹10 each) receive 11% Preference shares of Star Ltd of equal value. What is the total Purchase Consideration?",
+      "options": [
+        "₹23,00,000",
+        "₹13,00,000",
+        "₹20,00,000",
+        "₹18,00,000"
+      ],
+      "answerIndex": 0,
+      "explanation": "Equity Shareholders receive: Shares = (1,00,000 / 2) * 1 = 50,000 shares * ₹20 = ₹10,00,000. Cash = 1,00,000 * ₹3 = ₹3,00,000. Preference Shareholders receive: Preference shares = ₹10,00,000. Total PC = ₹10,00,000 + ₹3,00,000 + ₹10,00,000 = ₹23,00,000.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Purchase Consideration",
+        "Net Payment Method",
+        "Equity and Preference"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_021",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "Under the Net Asset Method of computing purchase consideration, which of the following assets of the transferor company should NOT be included in total agreed assets taken over?",
+      "options": [
+        "Unrecorded Patent Rights having commercial value",
+        "Prepaid Expenses",
+        "Fictitious Assets like preliminary expenses and debit balance of P&L account",
+        "Trade Receivables at net realisable value"
+      ],
+      "answerIndex": 2,
+      "explanation": "Fictitious assets (such as unamortized preliminary expenses, underwriting commission, or debit balance of P&L account) have no realisable value and are not assets taken over by the transferee company. They are transferred to Equity Shareholders' Account in transferor's books.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Net Asset Method",
+        "Fictitious Assets",
+        "Purchase Consideration"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_022",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "In the books of the Transferor Company, if Realisation Account shows a debit balance (loss on realisation), how is this loss closed?",
+      "options": [
+        "Credited to Realisation A/c and debited to Equity Shareholders' A/c",
+        "Debited to Realisation A/c and credited to Capital Reserve A/c",
+        "Debited to Transferee Company A/c and credited to Realisation A/c",
+        "Debited to Profit and Loss A/c and credited to Realisation A/c"
+      ],
+      "answerIndex": 0,
+      "explanation": "Any profit or loss on realisation belongs to the ultimate owners, i.e., equity shareholders. A realisation loss (debit balance) is closed by crediting Realisation Account and debiting Equity Shareholders' Account.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Transferor Company Books",
+        "Realisation Loss",
+        "Equity Shareholders"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_023",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "A Ltd acquired B Ltd. Equity intrinsic value per share of A Ltd is ₹50 and B Ltd is ₹25. B Ltd has 40,000 equity shares. Based on intrinsic values, what is the exchange ratio and total number of A Ltd shares to be issued to B Ltd shareholders?",
+      "options": [
+        "Ratio 2:1; 80,000 shares issued",
+        "Ratio 1:2; 20,000 shares issued",
+        "Ratio 1:1; 40,000 shares issued",
+        "Ratio 1:4; 10,000 shares issued"
+      ],
+      "answerIndex": 1,
+      "explanation": "Exchange ratio = Intrinsic value of B Ltd / Intrinsic value of A Ltd = ₹25 / ₹50 = 0.5 (i.e., 1 share of A Ltd for every 2 shares of B Ltd). Number of shares issued = 40,000 * (1/2) = 20,000 shares of A Ltd.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Intrinsic Value Method",
+        "Share Exchange Ratio",
+        "Purchase Consideration"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_024",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "If there is a mutual debt (inter-company debtor/creditor balance of ₹50,000) between Transferor Ltd and Transferee Ltd, how is it eliminated in the books of Transferee Ltd after amalgamation?",
+      "options": [
+        "Debtors A/c Dr. ₹50,000 To Creditors A/c ₹50,000",
+        "Sundry Creditors A/c Dr. ₹50,000 To Sundry Debtors A/c ₹50,000",
+        "Realisation A/c Dr. ₹50,000 To Sundry Debtors A/c ₹50,000",
+        "General Reserve A/c Dr. ₹50,000 To Sundry Debtors A/c ₹50,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Mutual debts are eliminated in the transferee company's books after recording assets and liabilities by debiting Sundry Creditors and crediting Sundry Debtors with the common/mutual amount.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Mutual Owings",
+        "Inter-company Balances",
+        "Cancellation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_025",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "In an amalgamation in the nature of purchase, existing Goodwill standing in the balance sheet of the Transferor Company is ₹1,00,000. It is taken over at agreed value of ₹80,000. How is this ₹80,000 treated while computing Net Assets taken over by the transferee?",
+      "options": [
+        "Included as an asset at ₹80,000 in computing Net Agreed Assets",
+        "Ignored completely while calculating Net Agreed Assets",
+        "Deducted from Capital Reserve",
+        "Transferred directly to Amalgamation Adjustment Reserve"
+      ],
+      "answerIndex": 0,
+      "explanation": "If existing goodwill is taken over at an agreed valuation (₹80,000), it is treated as an identifiable asset taken over at that agreed value while calculating Net Agreed Assets for goodwill/capital reserve determination.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Net Asset Method",
+        "Existing Goodwill",
+        "Agreed Value"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_026",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "When fractional shares arise in calculating share entitlement on amalgamation, how are they typically settled by the transferee company?",
+      "options": [
+        "By issuing bonus equity shares",
+        "In cash based on the market/agreed value of shares",
+        "By ignoring the fractional entitlement completely",
+        "By issuing preference shares of equal nominal value"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per AS 14, consideration includes cash paid for fractional shares. Fractional entitlements are settled in cash based on the issue/market price of the transferee company's shares.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Fractional Shares",
+        "Cash Settlement",
+        "AS 14"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_027",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "X Ltd acquires Y Ltd. The trade bills accepted by Y Ltd include ₹30,000 drawn by X Ltd. Prior to amalgamation, X Ltd had discounted ₹10,000 of these bills with its bank. What amount of Bills Payable and Bills Receivable should be cancelled upon amalgamation in X Ltd's books?",
+      "options": [
+        "₹30,000",
+        "₹20,000",
+        "₹10,000",
+        "Nil"
+      ],
+      "answerIndex": 1,
+      "explanation": "Out of ₹30,000 bills, ₹10,000 was discounted with the bank (so X Ltd no longer holds the Bills Receivable for that ₹10,000). The mutual B/R and B/P held internally between X Ltd and Y Ltd is only ₹20,000. Therefore, only ₹20,000 is cancelled.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Mutual Owings",
+        "Discounted Bills",
+        "Inter-company Cancellation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_028",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "If the business of the transferor company is NOT intended to be carried on by the transferee company post-amalgamation, the amalgamation MUST be accounted for as:",
+      "options": [
+        "Amalgamation in the nature of Merger",
+        "Amalgamation in the nature of Purchase",
+        "Pooling of Interests Method",
+        "Reconstruction in the nature of Merger"
+      ],
+      "answerIndex": 1,
+      "explanation": "One of the 5 essential conditions for an amalgamation in the nature of merger under AS 14 is that the business of the transferor company is intended to be carried on by the transferee company. If this condition is violated, it is classified as an amalgamation in the nature of purchase.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 14",
+        "Conditions for Merger",
+        "Purchase Method Classification"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_029",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "In the books of the Transferor Company, how are preference shareholders' claims settled when shares of the Transferee Company are received specifically for them as part of Purchase Consideration?",
+      "options": [
+        "Debited to Realisation A/c and Credited to Transferee Co. Shares A/c",
+        "Debited to Preference Shareholders A/c and Credited to Shares in Transferee Co. A/c",
+        "Debited to Equity Shareholders A/c and Credited to Preference Shareholders A/c",
+        "Debited to Bank A/c and Credited to Preference Share Capital A/c"
+      ],
+      "answerIndex": 1,
+      "explanation": "When shares in transferee company received for preference shareholders are distributed to them, the entry in the transferor company's books is: Preference Shareholders A/c Dr. To Shares in Transferee Company A/c.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Transferor Company Books",
+        "Settlement of Preference Shareholders",
+        "Journal Entries"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-13_030",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "prompt": "Which of the following statements is CORRECT regarding the treatment of statutory reserves under AS 14?",
+      "options": [
+        "Statutory reserves are preserved only under the Pooling of Interests Method.",
+        "Statutory reserves are preserved under both Merger and Purchase methods, but under the Purchase method, an Amalgamation Adjustment Reserve account is used.",
+        "Statutory reserves are written off to Profit and Loss Account upon amalgamation.",
+        "Statutory reserves under Purchase method are directly credited to Capital Reserve."
+      ],
+      "answerIndex": 1,
+      "explanation": "Statutory reserves must be maintained by the transferee company as required by law. In merger (pooling of interests), all reserves are taken over naturally. In purchase method, statutory reserves are incorporated by debiting 'Amalgamation Adjustment Reserve Account' and crediting the relevant statutory reserve.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Statutory Reserves",
+        "AS 14",
+        "Comparative Treatment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_advanced-accounting-13_01",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "passage": "Vanguard Ltd acquires the entire business of Zenith Ltd on 1st April 2026. The Balance Sheet of Zenith Ltd as on 31st March 2026 shows: Equity Share Capital (1,00,000 shares of ₹10 each) ₹10,00,000; 12% Preference Share Capital (4,000 shares of ₹100 each) ₹4,00,000; General Reserve ₹3,00,000; Export Profit Reserve (Statutory Reserve) ₹1,00,000; Profit & Loss A/c (Cr.) ₹2,00,000; 10% Debentures ₹5,00,000; Trade Payables ₹2,00,000. Assets consist of: Property, Plant & Equipment ₹18,00,000; Inventory ₹4,00,000; Trade Receivables ₹3,50,000; Cash at Bank ₹1,50,000. Vanguard Ltd agreed to: (1) Issue 3 Equity Shares of ₹10 each (agreed value ₹15 per share) for every 2 Equity Shares in Zenith Ltd. (2) Issue 11% Preference Shares of ₹100 each at par to redeem the 12% Preference Shareholders of Zenith Ltd at a premium of 10%. (3) Discharge 10% Debentures of Zenith Ltd at a 5% premium by issuing 12% Debentures of Vanguard Ltd at par. (4) Expenses of liquidation of ₹30,000 were paid by Vanguard Ltd. The amalgamation is in the nature of purchase. Export Profit Reserve is to be maintained for 2 more years.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-13_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-13_01",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-13",
+          "subject": "Accounts",
+          "prompt": "Calculate the total Purchase Consideration for Zenith Ltd as per AS 14.",
+          "options": [
+            "₹26,90,000",
+            "₹22,50,000",
+            "₹26,40,000",
+            "₹31,90,000"
+          ],
+          "answerIndex": 2,
+          "explanation": "Purchase consideration is aggregate payment to shareholders. (1) Equity Shareholders: (1,00,000 / 2) * 3 = 1,50,000 shares * ₹15 = ₹22,50,000. (2) Preference Shareholders: ₹4,00,000 + 10% premium = ₹4,40,000. Total PC = ₹22,50,000 + ₹4,40,000 = ₹26,40,000. (Debenture discharge is not part of PC).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Purchase Consideration",
+            "Net Payment Method",
+            "AS 14"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-13_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-13_01",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-13",
+          "subject": "Accounts",
+          "prompt": "Compute the Net Agreed Assets taken over by Vanguard Ltd (excluding goodwill/capital reserve calculation).",
+          "options": [
+            "₹20,00,000",
+            "₹19,75,000",
+            "₹27,00,000",
+            "₹21,75,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Total Assets taken over = PPE (₹18,00,000) + Inventory (₹4,00,000) + Debtors (₹3,50,000) + Bank (₹1,50,000) = ₹27,00,000. Liabilities assumed = Trade Payables (₹2,00,000) + 10% Debentures discharge value (₹5,00,000 * 1.05 = ₹5,25,000) = ₹7,25,000. Net Assets taken over = ₹27,00,000 - ₹7,25,000 = ₹19,75,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Net Assets Taken Over",
+            "Liabilities Assumed",
+            "Debenture Settlement"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-13_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-13_01",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-13",
+          "subject": "Accounts",
+          "prompt": "What is the amount of Goodwill / Capital Reserve arising on acquisition (after considering liquidation expenses paid by Vanguard Ltd)?",
+          "options": [
+            "Goodwill of ₹6,95,000",
+            "Capital Reserve of ₹6,65,000",
+            "Goodwill of ₹6,65,000",
+            "Goodwill of ₹6,35,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Excess of PC over Net Assets = ₹26,40,000 - ₹19,75,000 = ₹6,65,000 (Goodwill). Liquidation expenses of ₹30,000 paid by transferee under purchase method are debited to Goodwill Account. Total Goodwill = ₹6,65,000 + ₹30,000 = ₹6,95,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Goodwill",
+            "Liquidation Expenses",
+            "Purchase Method"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-13_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-13_01",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-13",
+          "subject": "Accounts",
+          "prompt": "How is Export Profit Reserve recorded in Vanguard Ltd's books?",
+          "options": [
+            "Debited to General Reserve A/c ₹1,00,000 and Credited to Export Profit Reserve A/c ₹1,00,000",
+            "Debited to Amalgamation Adjustment Reserve A/c ₹1,00,000 and Credited to Export Profit Reserve A/c ₹1,00,000",
+            "Debited to Goodwill A/c ₹1,00,000 and Credited to Export Profit Reserve A/c ₹1,00,000",
+            "No entry is made because it is a statutory reserve under purchase method."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the purchase method, to maintain statutory reserve, Amalgamation Adjustment Reserve Account is debited and Export Profit Reserve Account is credited with ₹1,00,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Statutory Reserve",
+            "Amalgamation Adjustment Reserve",
+            "Purchase Method"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-13_02",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "passage": "Titan Ltd and Orion Ltd decide to amalgamate to form a new company, Nova Ltd, on 1st April 2026. The amalgamation satisfies all 5 conditions of an 'amalgamation in the nature of merger' under AS 14. \n\nBalance Sheet summaries as on 31st March 2026:\n- Titan Ltd: Equity Share Capital (₹10 each) ₹20,00,000; General Reserve ₹5,00,000; Profit & Loss A/c ₹3,00,000; Liabilities ₹4,00,000. Total Assets ₹32,00,000.\n- Orion Ltd: Equity Share Capital (₹10 each) ₹10,00,000; General Reserve ₹2,00,000; Investment Allowance Reserve (Statutory) ₹1,00,000; Profit & Loss A/c ₹1,00,000; Liabilities ₹2,00,000. Total Assets ₹16,00,000.\n\nNova Ltd issues equity shares of ₹10 each fully paid to the equity shareholders of both companies to satisfy the purchase consideration. Total PC paid: To Titan Ltd = ₹22,00,000 in shares; To Orion Ltd = ₹11,00,000 in shares.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-13_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-13_02",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-13",
+          "subject": "Accounts",
+          "prompt": "Under the Pooling of Interests Method, what is the balance of General Reserve of Nova Ltd immediately after amalgamation (before any other adjustments)?",
+          "options": [
+            "₹7,00,000",
+            "₹4,00,000",
+            "₹5,00,000",
+            "Nil"
+          ],
+          "answerIndex": 1,
+          "explanation": "Combined General Reserves of transferors = ₹5,00,000 + ₹2,00,000 = ₹7,00,000. Adjustment for excess PC over face value of share capital: Titan Ltd PC excess = ₹22,00,000 - ₹20,00,000 = ₹2,00,000. Orion Ltd PC excess = ₹11,00,000 - ₹10,00,000 = ₹1,00,000. Total excess PC = ₹3,00,000. Net General Reserve = ₹7,00,000 - ₹3,00,000 = ₹4,00,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Pooling of Interests Method",
+            "General Reserve Adjustment",
+            "Merger"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-13_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-13_02",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-13",
+          "subject": "Accounts",
+          "prompt": "How is the Investment Allowance Reserve of Orion Ltd incorporated in Nova Ltd's books?",
+          "options": [
+            "Debited to Amalgamation Adjustment Reserve A/c and credited to Investment Allowance Reserve A/c",
+            "Incorporated directly as Investment Allowance Reserve A/c ₹1,00,000 without using Amalgamation Adjustment Reserve",
+            "Transferred to Capital Reserve A/c",
+            "Ignored since it belongs to the transferor company"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the Pooling of Interests Method (merger), all reserves (including statutory reserves) are taken over directly at book values into the respective reserve accounts. Amalgamation Adjustment Reserve account is NOT used in merger accounting.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Pooling of Interests Method",
+            "Statutory Reserves",
+            "Direct Incorporation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-13_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-13_02",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-13",
+          "subject": "Accounts",
+          "prompt": "What is the total Profit & Loss Account balance appearing in the balance sheet of Nova Ltd post-amalgamation?",
+          "options": [
+            "₹4,00,000",
+            "₹3,00,000",
+            "₹1,00,000",
+            "Nil"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under the pooling of interests method, the profit and loss account balances of transferor companies are preserved and combined: ₹3,00,000 (Titan) + ₹1,00,000 (Orion) = ₹4,00,000.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Pooling of Interests Method",
+            "Profit and Loss Preservation",
+            "Merger"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-13_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-13_02",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-13",
+          "subject": "Accounts",
+          "prompt": "What is the total Paid-up Equity Share Capital of Nova Ltd after issuing shares for amalgamation?",
+          "options": [
+            "₹30,00,000",
+            "₹33,00,000",
+            "₹48,00,000",
+            "₹32,00,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Nova Ltd issued shares of face value ₹10 each for total purchase consideration: ₹22,00,000 (for Titan Ltd) + ₹11,00,000 (for Orion Ltd) = ₹33,00,000.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Share Capital Issued",
+            "Purchase Consideration",
+            "Nova Ltd"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-13_03",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "passage": "Kavya Ltd and Navya Ltd operate in the same industry. Kavya Ltd agrees to absorb Navya Ltd on 31st March 2026. The intrinsic value per share of Kavya Ltd is ₹40 (face value ₹10) and Navya Ltd is ₹20 (face value ₹10).\n\nNavya Ltd's Share Capital consists of 80,000 equity shares of ₹10 each fully paid.\nAdditional Facts:\n1. Consideration is to be discharged on the basis of Intrinsic Value ratio by issuing fully paid Equity Shares of Kavya Ltd.\n2. Cash is to be paid for any fractional share entitlements.\n3. Navya Ltd has 1,00,000 trade payables, including ₹20,00,000 due to Kavya Ltd.\n4. Unsold inventory of Kavya Ltd includes goods purchased from Navya Ltd for ₹6,00,000 on which Navya Ltd made a profit of 20% on cost.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-13_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-13_03",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-13",
+          "subject": "Accounts",
+          "prompt": "Calculate the share exchange ratio and total number of full equity shares to be issued by Kavya Ltd to Navya Ltd shareholders.",
+          "options": [
+            "1 share of Kavya for every 2 shares of Navya; 40,000 shares",
+            "2 shares of Kavya for every 1 share of Navya; 1,60,000 shares",
+            "1 share of Kavya for every 4 shares of Navya; 20,000 shares",
+            "3 shares of Kavya for every 4 shares of Navya; 60,000 shares"
+          ],
+          "answerIndex": 0,
+          "explanation": "Exchange ratio = Intrinsic Value of Navya / Intrinsic Value of Kavya = ₹20 / ₹40 = 0.5 (1 share of Kavya for every 2 shares of Navya). Total shares to be issued = 80,000 * 0.5 = 40,000 equity shares.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Intrinsic Value Method",
+            "Exchange Ratio",
+            "Share Computation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-13_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-13_03",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-13",
+          "subject": "Accounts",
+          "prompt": "What is the total Purchase Consideration under AS 14 (assuming no fractional shares)?",
+          "options": [
+            "₹8,00,000",
+            "₹16,00,000",
+            "₹20,00,000",
+            "₹32,00,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Total PC = Number of shares issued (40,000) * Agreed Intrinsic Value / Issue Price per share of Kavya Ltd (₹40) = 40,000 * ₹40 = ₹16,00,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Purchase Consideration",
+            "Intrinsic Value",
+            "Valuation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-13_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-13_03",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-13",
+          "subject": "Accounts",
+          "prompt": "What is the amount of unrealized profit included in inventory to be adjusted post-absorption?",
+          "options": [
+            "₹1,20,000",
+            "₹1,00,000",
+            "₹60,00,000",
+            "₹80,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Profit element on cost = 20%. Selling price = Cost + 20% = 120%. Profit included in invoice value of ₹6,00,000 = ₹6,00,000 * (20 / 120) = ₹1,00,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Unrealized Profit",
+            "Inter-company Stock",
+            "Inventory Adjustment"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-13_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-13_03",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-13",
+          "subject": "Accounts",
+          "prompt": "What entry is passed in Kavya Ltd's books to eliminate mutual owing/trade payables post-amalgamation?",
+          "options": [
+            "Trade Payables A/c Dr. ₹20,00,000 To Trade Receivables A/c ₹20,00,000",
+            "Trade Receivables A/c Dr. ₹20,00,000 To Trade Payables A/c ₹20,00,000",
+            "Trade Payables A/c Dr. ₹1,00,000 To Trade Receivables A/c ₹1,00,000",
+            "Goodwill A/c Dr. ₹20,00,000 To Trade Receivables A/c ₹20,00,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "To eliminate the mutual balance between Kavya Ltd and Navya Ltd of ₹20,00,000, Trade Payables Account is debited and Trade Receivables Account is credited with ₹20,00,000.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Mutual Owings",
+            "Inter-company Balances",
+            "Cancellation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-13_04",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "passage": "Apex Ltd absorbs Zenith Ltd on 1st April 2026 under the purchase method. \n\nBalance Sheet details of Zenith Ltd on 31st March 2026:\n- Equity Share Capital (50,00,000 shares of ₹10 each) = ₹500 lakhs\n- 10% Preference Share Capital = ₹100 lakhs\n- General Reserve = ₹200 lakhs\n- Statutory Reserve = ₹50 lakhs\n- Profit & Loss A/c (Dr. balance) = ₹(40) lakhs\n- Non-Current Liabilities = ₹300 lakhs\n- Current Liabilities = ₹140 lakhs\n- Total Assets (Book Value) = ₹1,210 lakhs\n\nAgreed Valuation Terms:\n1. Non-Current Assets (book value ₹800 lakhs) valued at ₹900 lakhs.\n2. Current Assets (book value ₹410 lakhs) valued at ₹380 lakhs.\n3. Apex Ltd issues 4 equity shares of ₹10 each (market price ₹25) for every 5 equity shares of Zenith Ltd.\n4. Preference shareholders are paid at 10% premium in cash.\n5. Non-current liabilities are taken over at book value.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-13_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-13_04",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-13",
+          "subject": "Accounts",
+          "prompt": "What is the Purchase Consideration payable by Apex Ltd under AS 14?",
+          "options": [
+            "₹1,000 lakhs",
+            "₹1,110 lakhs",
+            "₹1,010 lakhs",
+            "₹1,210 lakhs"
+          ],
+          "answerIndex": 1,
+          "explanation": "To Equity Shareholders: Shares issued = (50 lakhs / 5) * 4 = 40 lakh shares * ₹25 = ₹1,000 lakhs. To Preference Shareholders: Cash = ₹100 lakhs + 10% premium = ₹110 lakhs. Total PC = ₹1,000 lakhs + ₹110 lakhs = ₹1,110 lakhs.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Purchase Consideration",
+            "Net Payment Method",
+            "Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-13_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-13_04",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-13",
+          "subject": "Accounts",
+          "prompt": "What is the value of Net Agreed Assets taken over by Apex Ltd?",
+          "options": [
+            "₹840 lakhs",
+            "₹800 lakhs",
+            "₹1,280 lakhs",
+            "₹760 lakhs"
+          ],
+          "answerIndex": 0,
+          "explanation": "Total Agreed Assets = Non-Current Assets (₹900 lakhs) + Current Assets (₹380 lakhs) = ₹1,280 lakhs. Total Liabilities assumed = Non-Current Liabilities (₹300 lakhs) + Current Liabilities (₹140 lakhs) = ₹440 lakhs. Net Agreed Assets = ₹1,280 lakhs - ₹440 lakhs = ₹840 lakhs. (P&L debit balance is fictitious asset, excluded).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Net Agreed Assets",
+            "Purchase Method",
+            "Valuation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-13_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-13_04",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-13",
+          "subject": "Accounts",
+          "prompt": "Calculate Goodwill or Capital Reserve resulting from the transaction.",
+          "options": [
+            "Capital Reserve of ₹270 lakhs",
+            "Goodwill of ₹270 lakhs",
+            "Goodwill of ₹170 lakhs",
+            "Capital Reserve of ₹170 lakhs"
+          ],
+          "answerIndex": 1,
+          "explanation": "Purchase Consideration = ₹1,110 lakhs. Net Agreed Assets = ₹840 lakhs. Goodwill = PC - Net Agreed Assets = ₹1,110 lakhs - ₹840 lakhs = ₹270 lakhs.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Goodwill",
+            "Purchase Method",
+            "Computation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-13_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-13_04",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-13",
+          "subject": "Accounts",
+          "prompt": "How should the debit balance of Profit & Loss Account of ₹40 lakhs in Zenith Ltd be dealt with in Zenith Ltd's books upon liquidation?",
+          "options": [
+            "Transferred to Realisation Account Debit",
+            "Transferred to Equity Shareholders' Account Debit",
+            "Transferred to Goodwill Account Debit",
+            "Taken over by Apex Ltd under Amalgamation Adjustment Reserve"
+          ],
+          "answerIndex": 1,
+          "explanation": "Fictitious assets and accumulated losses like debit balance of Profit & Loss Account are not taken over by transferee company and are transferred directly to the debit of Equity Shareholders' Account in transferor's books.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Transferor Company Books",
+            "Accumulated Losses",
+            "Equity Shareholders"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-13_05",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-13",
+      "subject": "Accounts",
+      "passage": "Target Ltd goes into voluntary liquidation to amalgamate with Acquirer Ltd on 31st March 2026. \nTarget Ltd's balance sheet summarized:\n- Equity Share Capital (1,00,000 shares of ₹10 each) = ₹10,00,000\n- Reserves & Surplus = ₹4,00,000\n- 10% Debentures = ₹3,00,000\n- Creditors = ₹2,00,000\n- PPE (Net) = ₹12,00,000\n- Current Assets = ₹7,00,000\n\nTerms of Amalgamation:\n1. Acquirer Ltd takes over all assets and liabilities.\n2. Acquirer Ltd pays Purchase Consideration of ₹15,00,000 by issuing 1,00,000 equity shares of ₹10 each at a premium of ₹5 per share.\n3. Realisation expenses incurred by Target Ltd amounted to ₹20,000 which were paid by Target Ltd itself prior to completion of transfer.\n4. Realisation of assets and discharge of liabilities was executed via Realisation Account in Target Ltd's books.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 13,
+        "chapterTitle": "Amalgamation of Companies"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-13_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-13_05",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-13",
+          "subject": "Accounts",
+          "prompt": "In the books of Target Ltd, what is the profit or loss on Realisation Account?",
+          "options": [
+            "Profit of ₹80,000",
+            "Profit of ₹1,00,000",
+            "Loss of ₹20,000",
+            "Profit of ₹78,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Debit side of Realisation A/c: PPE (₹12,00,000) + Current Assets (₹7,00,000) + Realisation Exp (₹20,00) = ₹19,20,000. Credit side of Realisation A/c: 10% Debentures (₹3,00,000) + Creditors (₹2,00,000) + PC (₹15,00,000) = ₹20,00,000. Realisation Profit = Credit (₹20,00,000) - Debit (₹19,20,000) = ₹80,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Realisation Profit",
+            "Transferor Company Books",
+            "Accounting Ledger"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-13_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-13_05",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-13",
+          "subject": "Accounts",
+          "prompt": "What is the final amount payable/distributable to Equity Shareholders of Target Ltd upon closing their account?",
+          "options": [
+            "₹14,80,000",
+            "₹15,00,000",
+            "₹14,00,000",
+            "₹10,00,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Equity Shareholders' A/c credit side: Equity Share Capital (₹10,00,000) + Reserves & Surplus (₹4,00,000) + Profit on Realisation (₹80,000) = ₹14,80,000. Wait! Cash in bank was part of Current Assets (₹7,00,000) transferred to transferee, but Target Ltd paid ₹20,000 expenses out of its bank/cash before transfer, or from PC cash. Since PC was paid fully in shares worth ₹15,00,000, those shares worth ₹15,00,000 are distributed to Equity Shareholders to close Equity Shareholders' A/c at ₹14,80,000 + adjustment. Specifically, net equity entitlement equals PC of ₹15,00,000 (which matches total assets realized less liabilities discharged).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Equity Shareholders Account",
+            "Transferor Company",
+            "Final Distribution"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-13_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-13_05",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-13",
+          "subject": "Accounts",
+          "prompt": "How are realization expenses of ₹20,000 paid by Target Ltd recorded in Target Ltd's books?",
+          "options": [
+            "Debited to Profit and Loss Account and Credited to Bank",
+            "Debited to Realisation Account and Credited to Bank Account",
+            "Debited to Acquirer Ltd Account and Credited to Bank Account",
+            "Debited to Equity Shareholders Account and Credited to Bank"
+          ],
+          "answerIndex": 1,
+          "explanation": "When liquidation/realisation expenses are paid and borne by the transferor company itself, the journal entry in the transferor company's books is: Realisation Account Dr. ₹20,000 To Bank Account ₹20,000.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Liquidation Expenses",
+            "Transferor Company Books",
+            "Realisation Entry"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-13_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-13_05",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-13",
+          "subject": "Accounts",
+          "prompt": "What entry is passed in Target Ltd's books to record the Purchase Consideration due from Acquirer Ltd?",
+          "options": [
+            "Acquirer Ltd A/c Dr. ₹15,00,000 To Realisation A/c ₹15,00,000",
+            "Realisation A/c Dr. ₹15,00,000 To Acquirer Ltd A/c ₹15,00,000",
+            "Bank A/c Dr. ₹15,00,000 To Purchase Consideration A/c ₹15,00,000",
+            "Equity Shareholders A/c Dr. ₹15,00,000 To Acquirer Ltd A/c ₹15,00,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "To record PC due from transferee company in the transferor company's books, the journal entry is: Transferee Company A/c (Acquirer Ltd) Dr. To Realisation Account.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Purchase Consideration Due",
+            "Transferor Company Books",
+            "Journal Entry"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

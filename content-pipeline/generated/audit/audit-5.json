@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "audit-5",
+  "subject": "Audit",
+  "paper": "Paper 5: Auditing and Ethics",
+  "module": "Module 1",
+  "chapterNumber": 5,
+  "chapterTitle": "Audit of Items of Financial Statements",
+  "generatedAt": "2026-08-16T14:49:00.050Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_audit-5_001",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "When verifying trade payables, which of the following is considered the most reliable external evidence for confirming account balances at the year-end?",
+      "options": [
+        "Monthly statements received from suppliers",
+        "Direct balance confirmation letters sent to and received from suppliers",
+        "Goods Received Notes (GRNs) matched with purchase invoices",
+        "Entries recorded in the purchase day book"
+      ],
+      "answerIndex": 1,
+      "explanation": "SA 505 emphasizes that external confirmations obtained directly by the auditor from third parties provide higher reliability as audit evidence compared to internally generated records or supplier statements held by the entity.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Trade Payables",
+        "External Confirmation",
+        "SA 505"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_002",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "An auditor is conducting the audit of Property, Plant, and Equipment (PPE) and wishes to test the assertion of 'Completeness'. Which of the following substantive procedures is most effective?",
+      "options": [
+        "Physically inspecting a sample of asset tags listed in the fixed asset register and tracing them to the physical floor.",
+        "Vouching a sample of additions recorded in the fixed asset register to vendor invoices and installation reports.",
+        "Selecting a sample of major physical assets observed during the plant tour and tracing them into the fixed asset register.",
+        "Reviewing depreciation rates and methodology applied to various classes of assets."
+      ],
+      "answerIndex": 2,
+      "explanation": "Tracing physical assets from the floor to the fixed asset register tests the completeness assertion by ensuring that all existing assets are duly recorded in the books.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "PPE",
+        "Completeness",
+        "Substantive Procedures"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_003",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "In the verification of inventories, which method of valuation is mandated by AS 2 (Valuation of Inventories) / Ind AS 2?",
+      "options": [
+        "Lower of historical cost and net realizable value",
+        "Lower of cost and net realizable value",
+        "Higher of cost and net realizable value",
+        "Net realizable value regardless of cost"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per AS 2 / Ind AS 2, inventories are required to be valued at the lower of cost and net realizable value (NRV). Cost includes costs of purchase, costs of conversion, and other costs incurred in bringing the inventories to their present location and condition.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Inventories",
+        "AS 2 Valuation",
+        "Valuation Assertion"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_004",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "While auditing trade receivables, the auditor sends balance confirmation requests. A discrepancy is reported by a customer due to goods in transit that were shipped FOB shipping point before year-end. How should the auditor evaluate this?",
+      "options": [
+        "Treat it as a misstatement requiring adjustment in the client's books.",
+        "Verify whether the client has recorded the sale and corresponding inventory before year-end, making the transit treatment correct.",
+        "Ignore the discrepancy as it relates to the subsequent accounting period.",
+        "Insist that the customer clear the balance immediately without adjustment."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under FOB shipping point terms, title passes when goods are delivered to the common carrier. If shipped before year-end, the sale and inventory transit are properly recognized by the seller, and the customer's failure to record indicates timing differences rather than errors.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Trade Receivables",
+        "Cut-off",
+        "Confirmation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_005",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "Which of the following documents serves as the primary primary internal evidence supporting the verification of cash sales?",
+      "options": [
+        "Bank reconciliation statement",
+        "Cash book entries cross-referenced with daily cash summaries, cash register tapes, and duplicate cash receipts",
+        "Supplier statements",
+        "Board of directors' minutes"
+      ],
+      "answerIndex": 1,
+      "explanation": "Cash sales are primarily verified using internal records such as cash register rolls, carbon copies of cash receipts, and daily collection summaries matched with bank deposit slips.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Cash and Cash Equivalents",
+        "Internal Evidence",
+        "Vouching"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_006",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "An auditor notices that borrowing costs capitalized during the year under PPE include general borrowings used for a qualifying asset. What specific compliance check must the auditor perform under AS 16 / Ind AS 23?",
+      "options": [
+        "Verify that capitalization ceases when substantially all activities necessary to prepare the qualifying asset for its intended use are complete.",
+        "Ensure that capitalization continues indefinitely until the asset is fully depreciated.",
+        "Check whether general borrowing costs are capitalized without applying any capitalization rate.",
+        "Confirm that working capital loans are capitalized by default."
+      ],
+      "answerIndex": 0,
+      "explanation": "As per AS 16 / Ind AS 23, capitalization of borrowing costs shall cease when substantially all the activities necessary to prepare the qualifying asset for its intended use or sale are complete.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Borrowing Costs",
+        "AS 16",
+        "PPE Additions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_007",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "What is the primary audit objective when performing a test of details on year-end accrued expenses?",
+      "options": [
+        "To ensure that all expenses relating to the current period are recorded, and no future period expenses are anticipated improperly.",
+        "To verify the physical existence of accrued items.",
+        "To calculate the exact tax liability of the entity.",
+        "To confirm that all accrued expenses are converted into share capital."
+      ],
+      "answerIndex": 0,
+      "explanation": "The primary objective for accrued expenses is to test the completeness and cut-off assertions, ensuring that liabilities for goods and services received during the period are fully captured.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Accrued Expenses",
+        "Cut-off",
+        "Completeness"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_008",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "When auditing investments, how should unquoted equity shares be valued and verified by the auditor?",
+      "options": [
+        "At face value as stated on the share certificate",
+        "At the market price prevailing on the stock exchange",
+        "At historical cost, and tested for any permanent diminution in value as per relevant accounting standards",
+        "At zero value since they are not liquid"
+      ],
+      "answerIndex": 2,
+      "explanation": "Unquoted investments are normally held at cost. The auditor must verify whether adequate provision has been made for any permanent decline in the value of such investments.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Investments",
+        "Valuation",
+        "Diminution"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_009",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "Which of the following procedures is most appropriate to verify the 'Rights and Obligations' assertion for recorded trade receivables?",
+      "options": [
+        "Checking whether receivables have been factored, assigned, or pledged as security for borrowings",
+        "Recalculating the arithmetic accuracy of the accounts receivable ledger aging report",
+        "Sending confirmation letters to test the existence of balances",
+        "Checking subsequent cash receipts from debtors"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rights and obligations require the auditor to verify that the entity owns or has legal rights to collect the receivables, and whether any encumbrances (such as factoring or discounting) exist.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Trade Receivables",
+        "Rights and Obligations",
+        "Encumbrances"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_010",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "In verifying contingent liabilities, which audit procedure is least likely to be performed?",
+      "options": [
+        "Reviewing minutes of board meetings and audit committee meetings",
+        "Obtaining a management representation letter confirming completeness of litigation disclosures",
+        "Sending inquiry letters to the entity’s external legal counsel",
+        "Physically counting the inventory held in public warehouses"
+      ],
+      "answerIndex": 3,
+      "explanation": "Physically counting inventory relates to inventory verification, whereas contingent liabilities are reviewed through legal letters, board minutes, and management representations.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Contingent Liabilities",
+        "Audit Procedures",
+        "Litigation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_011",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "While verifying share capital of a company limited by shares, the auditor should examine which of the following documents to confirm authorized share capital?",
+      "options": [
+        "Memorandum of Association (MoA)",
+        "Articles of Association (AoA)",
+        "Prospectus filed with SEBI",
+        "Register of Members"
+      ],
+      "answerIndex": 0,
+      "explanation": "The Memorandum of Association (MoA) contains the Capital Clause which specifies the authorized share capital of the company.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Share Capital",
+        "MoA",
+        "Verification"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_012",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "An auditor detects that a material amount of revenue has been recognized prior to the transfer of control of goods to the customer. Which assertion is primarily violated?",
+      "options": [
+        "Completeness",
+        "Cut-off and Occurrence",
+        "Valuation and Allocation",
+        "Rights and Obligations"
+      ],
+      "answerIndex": 1,
+      "explanation": "Recognizing revenue prematurely violates the 'Occurrence' and 'Cut-off' assertions because the transaction either did not occur in the period or was recorded in the wrong accounting period.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Revenue",
+        "Cut-off",
+        "Occurrence"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_013",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "When auditing the 'Bank Balances', the auditor sends a balance confirmation request directly to the bank. What is this procedure primarily designed to test?",
+      "options": [
+        "Bank reconciliation accuracy only",
+        "Existence, completeness, and rights and obligations of bank balances",
+        "Classification of cash flows",
+        "Subsequent realization of receivables"
+      ],
+      "answerIndex": 1,
+      "explanation": "Direct bank confirmation provides reliable evidence regarding existence, accurate balance values, bank charges, and any hidden charges, liens, or guarantees.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Bank Balances",
+        "Confirmation",
+        "Existence"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_014",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "Which of the following substantive procedures is best suited to detect unrecorded liabilities at the year-end?",
+      "options": [
+        "Tracing a sample of purchase invoices recorded in December to the cash book.",
+        "Vouching payments made in the subsequent period (January/February) to supporting invoices to check if they relate to goods received prior to year-end.",
+        "Checking the arithmetic accuracy of the purchase register.",
+        "Sending balance confirmation letters to customers."
+      ],
+      "answerIndex": 1,
+      "explanation": "Searching for unrecorded liabilities involves examining subsequent period disbursements and unbilled invoices to identify goods or services received before the balance sheet date but not yet accrued.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Trade Payables",
+        "Unrecorded Liabilities",
+        "Subsequent Disbursements"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_015",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "How should the auditor verify the valuation of Foreign Currency monetary items (such as foreign currency trade payables) at the balance sheet date under AS 11 / Ind AS 21?",
+      "options": [
+        "At the exchange rate prevailing on the date of the original transaction.",
+        "At the closing rate prevailing on the balance sheet date.",
+        "At the average exchange rate of the financial year.",
+        "At the RBI benchmark rate of the preceding financial year."
+      ],
+      "answerIndex": 1,
+      "explanation": "As per AS 11 / Ind AS 21, foreign currency monetary items at the end of the reporting period must be translated using the closing rate, with exchange differences recognized in the statement of profit and loss.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Foreign Currency",
+        "AS 11",
+        "Valuation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_016",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "While auditing provisions for warranty claims, what primary factor must the auditor assess to verify the valuation of the provision?",
+      "options": [
+        "Historical data regarding warranty claims experience, industry standards, and expected repair costs.",
+        "The tax bracket of the company.",
+        "The market value of equity shares.",
+        "The total number of employees on payroll."
+      ],
+      "answerIndex": 0,
+      "explanation": "Provisions require estimation; warranty provisions are verified by reviewing historical claim patterns, historical ratios of claims to sales, and management's estimation methodology.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Provisions",
+        "Warranties",
+        "Estimation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_017",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "In the audit of intangible assets (such as Goodwill or Patents), what is a key verification step concerning amortization?",
+      "options": [
+        "Ensuring amortization is calculated on a straight-line basis over 100 years regardless of useful life.",
+        "Verifying that amortization method and useful life are reviewed at least at each financial year-end.",
+        "Checking that amortization is credited to accumulated depreciation of PPE.",
+        "Ensuring that internally generated brands are capitalized on the balance sheet."
+      ],
+      "answerIndex": 1,
+      "explanation": "As per accounting standards, the amortization method and useful life of an intangible asset must be reviewed at least at each financial year-end to reflect changes in expected economic benefits.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Intangible Assets",
+        "Amortization",
+        "AS 26 / Ind AS 38"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_018",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "An auditor observes that scrap sales proceeds are credited directly to an employee welfare expense account instead of the revenue or other income account. This represents a risk to which assertion for Income?",
+      "options": [
+        "Completeness and Classification",
+        "Existence only",
+        "Rights and Obligations",
+        "Valuation of Inventory"
+      ],
+      "answerIndex": 0,
+      "explanation": "Crediting income directly to an expense account understates total revenue and misclassifies the financial statement items, violating completeness of revenue and proper classification.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Income",
+        "Classification",
+        "Scrap Sales"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_019",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "Which of the following is an auditor’s primary responsibility when attending physical inventory count?",
+      "options": [
+        "To supervise the client's count staff and direct warehouse operations.",
+        "To evaluate management’s instructions and procedures for recording and controlling physical inventory count, and perform test counts.",
+        "To independently count 100% of the inventory items without relying on client staff.",
+        "To determine the market selling price of every inventory item."
+      ],
+      "answerIndex": 1,
+      "explanation": "The auditor evaluates the effectiveness of management's count procedures, observes count performance, and carries out test counts; the primary responsibility for counting rests with management.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Inventories",
+        "Physical Verification",
+        "Auditor's Role"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_020",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "When verifying loans and advances given by the company, the auditor should examine whether such loans comply with the provisions of:",
+      "options": [
+        "Section 185 and Section 186 of the Companies Act, 2013",
+        "Section 139 of the Companies Act, 2013",
+        "Section 123 of the Companies Act, 2013",
+        "Section 92 of the Companies Act, 2013"
+      ],
+      "answerIndex": 0,
+      "explanation": "Sections 185 and 186 of the Companies Act, 2013 regulate loans to directors, connected entities, and inter-corporate loans, investments, and guarantees, which are critical areas of audit verification.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Loans and Advances",
+        "Companies Act 2013",
+        "Sec 185 & 186"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_021",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "Which of the following documents is the primary audit source to verify the additions to Plant and Machinery during the year?",
+      "options": [
+        "Manufacturer’s catalogue",
+        "Purchase order, vendor invoice, Goods Received Note, and logbook/installation certificate",
+        "Bank statement showing general administrative expenses",
+        "Minutes of the annual general meeting"
+      ],
+      "answerIndex": 1,
+      "explanation": "Additions to PPE are vouched using complete purchase cycles including purchase orders, vendor bills, GRNs, and installation proofs to verify existence and valuation.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "PPE Additions",
+        "Vouching",
+        "Source Documents"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_022",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "What is the primary objective of performing a 'cutoff test' on sales transactions near year-end?",
+      "options": [
+        "To ensure that sales are recorded in the correct accounting period when control is transferred to the customer.",
+        "To verify that credit terms given to customers do not exceed 90 days.",
+        "To check whether sales tax has been deposited with the government on time.",
+        "To confirm that all sales invoices are serially numbered."
+      ],
+      "answerIndex": 0,
+      "explanation": "Sales cut-off testing ensures that revenues and corresponding receivables are recorded in the period in which the earning process is complete and control is transferred.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Sales",
+        "Cut-off",
+        "Revenue Recognition"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_023",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "In auditing payroll and employee benefits, which substantive test is most effective to detect phantom (non-existent) employees?",
+      "options": [
+        "Checking the arithmetic accuracy of the payroll summary sheet.",
+        "Observing a surprise pay distribution or verifying direct bank transfers against active HR personnel files and attendance records.",
+        "Reviewing the statutory provident fund challans in aggregate.",
+        "Confirming salary rates with the human resource policy manual."
+      ],
+      "answerIndex": 1,
+      "explanation": "To detect ghost workers, auditors perform substantive tests like observing wage distribution or matching direct bank payments with physical attendance and HR personnel records.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Payroll",
+        "Substantive Tests",
+        "Ghost Employees"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_024",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "When verifying preliminary expenses or share issue expenses, how should the auditor ensure proper accounting treatment?",
+      "options": [
+        "Ensure they are written off against Securities Premium Account or Statement of Profit and Loss in accordance with law and accounting standards.",
+        "Ensure they are capitalized as an Intangible Asset indefinitely.",
+        "Keep them in current assets as prepayments forever.",
+        "Ignore them as they are immaterial."
+      ],
+      "answerIndex": 0,
+      "explanation": "Preliminary expenses and expenses on issue of shares/debentures are written off against Securities Premium or charged as expenses in the period incurred as per statutory rules.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Preliminary Expenses",
+        "Securities Premium",
+        "Verification"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_025",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "What audit procedure should be performed regarding 'Title Deeds' of immovable properties included under PPE?",
+      "options": [
+        "Inspect the original title deeds and verify that the property is registered in the name of the entity.",
+        "Accept management's verbal assurance regarding ownership.",
+        "Check the property tax receipt for the previous financial year only.",
+        "Review the company’s brochure."
+      ],
+      "answerIndex": 0,
+      "explanation": "Inspection of original title deeds confirms the ownership and rights assertion for immovable properties held as PPE.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "PPE",
+        "Title Deeds",
+        "Rights and Obligations"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_026",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "While examining trade receivables aging, the auditor identifies a large balance that is significantly past due with no subsequent collections. What audit action is required?",
+      "options": [
+        "Assessing the need for an allowance for expected credit losses (ECL) / provision for doubtful debts.",
+        "Writing off the amount immediately without management approval.",
+        "Treating the amount as a contingent liability.",
+        "Reclassifying the amount as inventory."
+      ],
+      "answerIndex": 0,
+      "explanation": "A long-overdue balance indicates impairment risk, requiring the auditor to evaluate management's provision for expected credit losses under Ind AS 109 / AS valuation rules.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Trade Receivables",
+        "Impairment",
+        "ECL"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_027",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "How does an auditor verify 'Directors' Remuneration' paid during the financial year?",
+      "options": [
+        "By checking compliance with Schedule V and relevant sections of the Companies Act, 2013, along with board and shareholder approvals.",
+        "By matching the remuneration with standard industry averages.",
+        "By checking bank statements only.",
+        "By reviewing the internal auditor's report on IT infrastructure."
+      ],
+      "answerIndex": 0,
+      "explanation": "Directors' remuneration must be verified for compliance with statutory limits under the Companies Act, 2013 (such as Schedule V) and proper authorization by the board and shareholders.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Directors' Remuneration",
+        "Companies Act 2013",
+        "Schedule V"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_028",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "Which of the following items is treated as a capital expenditure rather than revenue expenditure?",
+      "options": [
+        "Repainting factory walls annually",
+        "Replacing minor engine parts in a delivery van for regular maintenance",
+        "Major overhaul of machinery that substantially increases its useful life and productivity",
+        "Weekly wages paid to factory workers"
+      ],
+      "answerIndex": 2,
+      "explanation": "Expenditure that results in an extension of the useful life or an increase in the productive capacity of an asset is capitalized as capital expenditure.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Capital vs Revenue",
+        "PPE",
+        "Expenditure"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_029",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "When verifying statutory dues (such as GST or TDS payable) at the year-end, what is the auditor's primary concern?",
+      "options": [
+        "Ensuring timely calculation, deduction/collection, and deposit of dues to government treasuries, and checking for any arrears.",
+        "Verifying that statutory dues are invested in mutual funds.",
+        "Ensuring that tax rates are ignored.",
+        "Confirming that interest is never charged on late payments."
+      ],
+      "answerIndex": 0,
+      "explanation": "Statutory dues verification ensures that all tax obligations are accurately computed, timely deposited, and properly presented as liabilities, avoiding penalties and legal default.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Statutory Dues",
+        "TDS",
+        "GST Verification"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-5_030",
+      "kind": "normal",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "prompt": "In evaluating the adequacy of allowance for inventory obsolescence, which procedure should the auditor execute?",
+      "options": [
+        "Reviewing inventory aging reports, checking for slow-moving or damaged goods, and discussing scrap rates with production management.",
+        "Recalculating inventory valuation using FIFO exclusively.",
+        "Counting cash balances in hand.",
+        "Confirming accounts payable balances with vendors."
+      ],
+      "answerIndex": 0,
+      "explanation": "Inventory obsolescence is evaluated by reviewing inventory aging, analyzing turnover ratios, inspecting physical condition during counts, and discussing slow-moving items with management.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Inventories",
+        "Obsolescence",
+        "Valuation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_audit-5_01",
+      "kind": "scenario",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "passage": "M/s Apex Pharma Ltd. is a mid-sized pharmaceutical company being audited for the year ended March 31, 2026. During the inventory audit, the auditor notes that finished goods worth INR 50 lakhs are lying with third-party job workers. Furthermore, management has capitalized certain research expenditure on a new molecule that is still in the research phase. The trade receivables balance stands at INR 3 crores, and the auditor intends to send external confirmations. Finally, the company purchased a heavy manufacturing machine for INR 2 crores in October 2025, which included borrowing costs from a general loan pool.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-5_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-5_01",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-5",
+          "subject": "Audit",
+          "prompt": "How should the auditor verify the finished goods worth INR 50 lakhs lying with third-party job workers?",
+          "options": [
+            "Perform physical count at the client's main factory only.",
+            "Obtain direct written confirmations from the job workers regarding quantities and condition, and reconcile with stock records.",
+            "Assume the inventory exists since job challans were issued.",
+            "Value the inventory at market selling price without checking location."
+          ],
+          "answerIndex": 1,
+          "explanation": "When inventory is held by third parties, the auditor should obtain direct confirmation from the third party regarding quantities and condition, supplemented by examining dispatch challans and reconciliation.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Inventories",
+            "Third Party",
+            "Confirmation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-5_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-5_01",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-5",
+          "subject": "Audit",
+          "prompt": "How should the auditor evaluate management's decision to capitalize expenditure on the new molecule in the research phase under AS 26 / Ind AS 38?",
+          "options": [
+            "Support capitalization since all pharmaceutical spending leads to future products.",
+            "Insist that research phase expenditure must be recognized as an expense when incurred, as research cannot be capitalized.",
+            "Allow capitalization if management intends to commercialize it within 10 years.",
+            "Defer the decision to the next financial year."
+          ],
+          "answerIndex": 1,
+          "explanation": "As per AS 26 / Ind AS 38, expenditure on research must be recognized as an expense when it is incurred. Only development expenditure meeting strict criteria can be capitalized.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Intangible Assets",
+            "Research Phase",
+            "AS 26"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-5_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-5_01",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-5",
+          "subject": "Audit",
+          "prompt": "In sending external confirmations for trade receivables of INR 3 crores, which approach is most appropriate for the auditor under SA 505?",
+          "options": [
+            "Send positive confirmation requests to all debtors without exception.",
+            "Select a representative sample of accounts using appropriate sampling techniques and send positive confirmation requests.",
+            "Rely entirely on telephonic confirmations from the sales team.",
+            "Send negative confirmation requests for all large balances exceeding INR 10 lakhs."
+          ],
+          "answerIndex": 1,
+          "explanation": "Auditors use audit sampling to select representative samples for positive confirmation requests, especially for significant balances, in accordance with SA 505.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Trade Receivables",
+            "SA 505",
+            "Sampling"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-5_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-5_01",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-5",
+          "subject": "Audit",
+          "prompt": "Regarding the heavy manufacturing machine purchased with general borrowings, what must the auditor verify regarding the capitalized borrowing costs under AS 16 / Ind AS 23?",
+          "options": [
+            "Ensure the capitalization rate applied is based on the weighted average of general borrowings outstanding during the period.",
+            "Check that all company borrowings are capitalized without restriction.",
+            "Confirm that borrowing costs are never capitalized on machinery.",
+            "Verify that capitalization continues even after the machine is ready for commercial production."
+          ],
+          "answerIndex": 0,
+          "explanation": "For general borrowings, the amount of borrowing costs eligible for capitalization is determined by applying a capitalization rate to the expenditures on that asset, where the rate is the weighted average of borrowing costs.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Borrowing Costs",
+            "General Borrowings",
+            "AS 16"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-5_02",
+      "kind": "scenario",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "passage": "M/s Sterling Textiles Ltd. is finalising its financial statements for the year ended March 31, 2026. During the audit of revenue, the auditor discovers a large export sale recorded on March 30, 2026, where goods were shipped under FOB destination terms and reached the customer on April 4, 2026. In trade payables, a major supplier dispute exists regarding price escalation claims of INR 20 lakhs. For PPE, the company revalued its factory land upwards by INR 5 crores based on an independent valuer's report. Finally, cash-in-hand counted on April 2, 2026, showed a discrepancy when back-calculated to March 31, 2026.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-5_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-5_02",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-5",
+          "subject": "Audit",
+          "prompt": "How should the auditor treat the export sale recorded on March 30 under FOB destination terms?",
+          "options": [
+            "Accept the revenue since the invoice was raised in March.",
+            "Propose an adjustment to reverse the sale and related inventory reduction, as control transfers upon delivery under FOB destination.",
+            "Ignore it as a minor timing difference within the same quarter.",
+            "Treat the amount as advance from customer without reversing revenue."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under FOB destination terms, title and control pass when goods reach the destination. Since delivery occurred on April 4, the sale must be reversed from 2025-26 to adhere to cut-off rules.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Revenue",
+            "FOB Destination",
+            "Cut-off"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-5_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-5_02",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-5",
+          "subject": "Audit",
+          "prompt": "What audit procedure should be performed regarding the supplier dispute of INR 20 lakhs included in trade payables?",
+          "options": [
+            "Confirm the disputed amount directly with the supplier, review legal/correspondence files, and assess whether a provision or contingent liability disclosure is required.",
+            "Force the client to pay the supplier immediately before signing the audit report.",
+            "Delete the balance from accounts payable without discussion.",
+            "Treat it as other income."
+          ],
+          "answerIndex": 0,
+          "explanation": "Disputed liabilities require reviewing correspondence, legal advice, and assessing whether an obligation exists (provision) or a possible obligation exists (contingent liability) as per AS 29 / Ind AS 37.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Trade Payables",
+            "Disputed Claims",
+            "Provisions"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-5_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-5_02",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-5",
+          "subject": "Audit",
+          "prompt": "In auditing the upward revaluation of factory land by INR 5 crores, what is the auditor's primary responsibility regarding the independent valuer?",
+          "options": [
+            "Rely entirely on the valuer without assessing their competence or independence, as they are professionals.",
+            "Evaluate the competence, capabilities, and objectivity of the valuer, understand their work, and check if revaluation surplus is properly credited to Other Comprehensive Income (OCI) / Revaluation Reserve.",
+            "Perform an independent engineering valuation of the land themselves.",
+            "Reject the revaluation entirely because land cannot appreciate."
+          ],
+          "answerIndex": 1,
+          "explanation": "When management's expert is used, SA 620 requires the auditor to evaluate the expert's competence, capabilities, and objectivity, and verify proper accounting treatment of revaluation reserves.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "PPE Revaluation",
+            "SA 620",
+            "Expert Evaluation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-5_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-5_02",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-5",
+          "subject": "Audit",
+          "prompt": "If a cash count conducted after year-end (April 2) is reconciled back to March 31, what transactions must the auditor account for during the intervening period?",
+          "options": [
+            "Only cash sales made on April 1 and April 2.",
+            "Cash receipts and cash payments made between March 31 and April 2.",
+            "Bank transactions only.",
+            "No adjustments are necessary."
+          ],
+          "answerIndex": 1,
+          "explanation": "To reconcile a subsequent cash count back to the balance sheet date, the auditor must add back cash payments made during the intervening period and subtract cash receipts collected during that period.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Cash Verification",
+            "Subsequent Count",
+            "Reconciliation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-5_03",
+      "kind": "scenario",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "passage": "M/s Pioneer Engineering Works is undergoing its statutory audit for the year ended March 31, 2026. The company has significant foreign currency transactions, including a long-term loan in USD taken for importing capital equipment. During the year, the company issued debentures at a discount and incurred legal fees for drafting the debenture trust deed. The company also carries a large provision for expected credit losses on its trade receivables. The internal audit report highlighted weak controls over scrap disposal.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-5_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-5_03",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-5",
+          "subject": "Audit",
+          "prompt": "How should the auditor verify the foreign currency long-term loan taken for importing capital equipment at the balance sheet date?",
+          "options": [
+            "Translate the loan at the original historical exchange rate.",
+            "Translate the outstanding loan at the closing exchange rate, and check if exchange differences are appropriately adjusted or capitalized as permitted by relevant accounting standards.",
+            "Ignore exchange fluctuations until the loan is fully repaid.",
+            "Use the average rate of the year."
+          ],
+          "answerIndex": 1,
+          "explanation": "Foreign currency monetary items are translated at the closing rate. For long-term foreign currency monetary items related to depreciable assets, options under AS 11 or Ind AS 21 govern capitalization or P&L recognition of exchange differences.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Foreign Currency",
+            "Long-term Loan",
+            "AS 11 / Ind AS 21"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-5_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-5_03",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-5",
+          "subject": "Audit",
+          "prompt": "How should the legal fees incurred for drafting the debenture trust deed be treated by the company?",
+          "options": [
+            "Treated as an operating expense of the current year immediately.",
+            "Written off against Securities Premium Account or amortized over the tenure of the debentures.",
+            "Capitalized as part of factory land.",
+            "Ignored in the financial statements."
+          ],
+          "answerIndex": 1,
+          "explanation": "Expenses incurred on the issue of debentures (including legal fees for trust deeds) are typically written off against securities premium or amortized over the life of the debentures.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Debenture Issue Expenses",
+            "Securities Premium",
+            "Verification"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-5_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-5_03",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-5",
+          "subject": "Audit",
+          "prompt": "What is the primary audit check regarding the provision for expected credit losses (ECL) on trade receivables?",
+          "options": [
+            "Verifying that the provision is based on a provision matrix considering historical credit loss experience adjusted for forward-looking information.",
+            "Ensuring the provision is exactly 5% of turnover regardless of debtor aging.",
+            "Checking that no debtors are ever provided for.",
+            "Confirming that ECL calculations are done only by tax authorities."
+          ],
+          "answerIndex": 0,
+          "explanation": "Under Ind AS 109, expected credit losses are assessed using practical expedients like a provision matrix that incorporates historical default rates and forward-looking macroeconomic factors.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Trade Receivables",
+            "ECL",
+            "Ind AS 109"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-5_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-5_03",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-5",
+          "subject": "Audit",
+          "prompt": "Given the weak internal controls over scrap disposal highlighted by internal audit, what substantive procedure should the statutory auditor perform?",
+          "options": [
+            "Rely completely on management's verbal report on scrap sales.",
+            "Perform a comprehensive review of scrap generation records, weighment slips, gate passes, and trace cash/bank realizations to verify completeness of scrap income.",
+            "Disregard scrap sales as immaterial.",
+            "Check only the electricity bills of the factory."
+          ],
+          "answerIndex": 1,
+          "explanation": "Weak controls over scrap demand extended substantive testing, including reconciling production output with scrap generated, checking gate inward/outward registers, and verifying realization into bank accounts.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Scrap Sales",
+            "Internal Controls",
+            "Substantive Procedures"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-5_04",
+      "kind": "scenario",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "passage": "M/s Horizon Technologies Ltd. presents its financial statements for the year ended March 31, 2026. The audit team is focusing on several key areas. The company has capitalized software development costs internally. It holds investments in unquoted equity instruments of subsidiary companies. Employee benefit expenses include provisions for compensated absences (leave encashment). Finally, the company received a massive government grant towards the acquisition of pollution-control equipment.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-5_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-5_04",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-5",
+          "subject": "Audit",
+          "prompt": "In verifying internally generated software development costs capitalized as intangible assets, what must the auditor specifically substantiate?",
+          "options": [
+            "That all research phase costs were capitalized alongside development costs.",
+            "That technical feasibility, intent, and ability to use or sell the software, and availability of resources to complete it have been demonstrated.",
+            "That software is depreciated over 50 years.",
+            "That management's verbal estimate of future sales is sufficient evidence."
+          ],
+          "answerIndex": 1,
+          "explanation": "AS 26 / Ind AS 38 prescribes strict criteria for capitalizing intangible assets arising from development, requiring proof of technical feasibility, intention to complete, and ability to generate future economic benefits.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Intangible Assets",
+            "Software Development",
+            "AS 26"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-5_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-5_04",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-5",
+          "subject": "Audit",
+          "prompt": "How should the auditor verify investments in unquoted equity instruments of subsidiary companies?",
+          "options": [
+            "Verify share certificates, check valuation against audited financial statements of the subsidiaries, and evaluate for any impairment in value.",
+            "Check the stock exchange daily ticker for quoted prices.",
+            "Assume book value is always equal to market value.",
+            "Accept management certificates without checking subsidiary financials."
+          ],
+          "answerIndex": 0,
+          "explanation": "Unquoted investments are verified through physical inspection of share certificates and assessing whether the subsidiary's net worth indicates impairment requiring provision under accounting standards.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Investments",
+            "Subsidiaries",
+            "Impairment"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-5_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-5_04",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-5",
+          "subject": "Audit",
+          "prompt": "What actuarial or accounting check should the auditor perform on the provision for compensated absences (leave encashment)?",
+          "options": [
+            "Verify that the provision is measured on the basis of an actuarial valuation using the Projected Unit Credit Method as required by AS 15 / Ind AS 19.",
+            "Calculate it as a flat 2% of total gross salaries.",
+            "Ensure no provision is made if employees do not encash leave immediately.",
+            "Verify that leave encashment is treated as a capital asset."
+          ],
+          "answerIndex": 0,
+          "explanation": "AS 15 / Ind AS 19 requires defined benefit obligations, including long-term compensated absences, to be measured using actuarial valuation methods such as the Projected Unit Credit Method.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Employee Benefits",
+            "AS 15",
+            "Actuarial Valuation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-5_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-5_04",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-5",
+          "subject": "Audit",
+          "prompt": "How should the government grant received for acquiring pollution-control equipment be verified and presented in the financial statements?",
+          "options": [
+            "Credited directly to the Statement of Profit and Loss as other income in full immediately.",
+            "Recognized as deferred income or deducted from the carrying amount of the asset, and recognized in P&L over the useful life of the asset.",
+            "Added to share capital.",
+            "Ignored as it is a government subsidy."
+          ],
+          "answerIndex": 1,
+          "explanation": "As per AS 12 / Ind AS 20, grants related to depreciable assets are either set up as deferred income and recognized in P&L on a systematic basis over the useful life, or deducted in calculating the carrying amount of the asset.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Government Grants",
+            "AS 12 / Ind AS 20",
+            "PPE"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-5_05",
+      "kind": "scenario",
+      "chapterId": "audit-5",
+      "subject": "Audit",
+      "passage": "M/s Metro Retail Chain operates multiple stores across the country and is undergoing audit for the financial year ended March 31, 2026. Store inventories are counted on a rotation basis throughout the year. The company has substantial lease liabilities for its retail store locations under Ind AS 116 / AS 19 equivalent standards. Trade payables include balances with several Micro, Enterprises registered under the MSMED Act, 2006. Finally, cash collections from retail outlets are deposited in local bank accounts before being transferred to the central pool account.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Audit of Items of Financial Statements"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-5_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-5_05",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-5",
+          "subject": "Audit",
+          "prompt": "When retail store inventories are counted on a continuous/rotation basis throughout the year instead of a single year-end count, what must the auditor verify?",
+          "options": [
+            "That continuous inventory records (perpetual inventory system) are well maintained, differences are investigated, and proper cut-off controls exist.",
+            "That physical counts at year-end are entirely unnecessary under all circumstances.",
+            "That inventory is valued at selling price.",
+            "That store managers have sole discretion over inventory adjustments."
+          ],
+          "answerIndex": 0,
+          "explanation": "Continuous inventory counts require effective perpetual inventory records, regular reconciliation of physical counts with book balances, and robust controls over inventory movements.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Inventories",
+            "Perpetual Inventory",
+            "Continuous Count"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-5_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-5_05",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-5",
+          "subject": "Audit",
+          "prompt": "In auditing lease liabilities and Right-of-Use (RoU) assets for retail stores, what primary verification procedure should the auditor perform?",
+          "options": [
+            "Check lease agreements for lease terms, discount rates, initial direct costs, and verify lease liability amortization schedule.",
+            "Treat lease payments purely as rental expenses without recognizing RoU assets.",
+            "Ignore lease agreements if they are operational leases.",
+            "Verify physical existence of leased store buildings only."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Ind AS 116, lessees recognize a Right-of-Use asset and a lease liability for almost all leases, requiring auditors to verify lease terms, discount rates, and amortization schedules.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Leases",
+            "RoU Assets",
+            "Ind AS 116"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-5_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-5_05",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-5",
+          "subject": "Audit",
+          "prompt": "What specific statutory disclosure and verification requirement applies to trade payables due to Micro and Small Enterprises under the MSMED Act, 2006?",
+          "options": [
+            "Identifying overdue amounts due to MSMEs and calculating interest payable thereon as per statutory provisions for separate disclosure in financial statements.",
+            "Ignoring MSMED Act compliance since it is a tax matter.",
+            "Confirming that MSME suppliers receive no interest on delayed payments.",
+            "Classifying all MSME payables as long-term borrowings."
+          ],
+          "answerIndex": 0,
+          "explanation": "Schedule III of the Companies Act, 2013 mandates separate disclosure of dues to Micro and Small Enterprises, including principal amounts remaining unpaid, interest due thereon, and delayed payment analysis under the MSMED Act.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "MSMED Act",
+            "Trade Payables",
+            "Schedule III Disclosures"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-5_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-5_05",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-5",
+          "subject": "Audit",
+          "prompt": "How should the auditor verify cash-in-transit between local store bank accounts and the central pool account at year-end?",
+          "options": [
+            "Trace the subsequent credit in the central pool bank statement in the subsequent period and verify bank transfer advices.",
+            "Assume the cash is lost if not credited on March 31.",
+            "Send confirmation requests to store cashiers only.",
+            "Review the petty cash voucher book."
+          ],
+          "answerIndex": 1,
+          "explanation": "Cash-in-transit between bank accounts at year-end is verified by checking bank transfer advices and tracing the corresponding credit entries in the receiving bank statement in the early days of the subsequent period.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Cash and Bank",
+            "Cash-in-Transit",
+            "Subsequent Verification"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "gst-14",
+  "subject": "Taxation",
+  "paper": "Paper 3: Taxation",
+  "module": "Module 2",
+  "chapterNumber": 14,
+  "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source",
+  "generatedAt": "2026-08-16T14:34:45.218Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_gst-14_001",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "Under Section 51 of the CGST Act, 2017, who among the following is NOT required to deduct Tax at Source (TDS)?",
+      "options": [
+        "A department or establishment of the Central Government",
+        "A local authority whose total annual turnover in the preceding financial year was Rs. 25 Lakhs",
+        "An authority or a board set up by Parliament with 51% or more participation by Government",
+        "A society established by the Central Government or a State Government with 100% control"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 51 mandates TDS for departments of Central/State Government, local authorities, governmental agencies, and societies owned/controlled by the Government. The turnover threshold of the local authority does not exempt them from TDS liability if they fall under the specified categories of deductors, making local authorities universally subject to TDS regardless of turnover.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 51",
+        "TDS Deductors",
+        "CGST Act"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_002",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "What is the rate of Tax Deduction at Source (TDS) under the CGST Act, 2017?",
+      "options": [
+        "1% CGST and 1% SGST/UTGST",
+        "2% CGST and 2% SGST/UTGST",
+        "0.5% CGST and 0.5% SGST/UTGST",
+        "2.5% CGST and 2.5% SGST/UTGST"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per Section 51(1) of the CGST Act, 2017 read with relevant notifications, TDS is required to be deducted at the rate of 1% under CGST and 1% under SGST/UTGST (or 2% under IGST) of the payment made or credited to the supplier.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "TDS Rate",
+        "Section 51",
+        "CGST Act"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_003",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "TDS under Section 51 of the CGST Act is applicable when the total value of supply under a contract exceeds which of the following limits?",
+      "options": [
+        "Rs. 1,00,000",
+        "Rs. 2,50,000",
+        "Rs. 5,00,000",
+        "No limit is prescribed"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per the proviso to Section 51(1) of the CGST Act, 2017, TDS is to be deducted only if the total value of supply under a single contract, excluding the tax components, exceeds Rs. 2,50,000.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "TDS Threshold",
+        "Section 51",
+        "Contract Value"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_004",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "In computing the contract value of Rs. 2,50,000 for the purpose of TDS deduction under Section 51, which of the following elements must be excluded?",
+      "options": [
+        "Basic contract price",
+        "Central Tax, State Tax, Integrated Tax, and Cess",
+        "Packing charges",
+        "Incidental expenses charged by the supplier"
+      ],
+      "answerIndex": 1,
+      "explanation": "The threshold of Rs. 2,50,000 for TDS under Section 51 is evaluated based on the contract value excluding the taxes leviable under CGST, SGST, UTGST, IGST, and GST Compensation Cess.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Threshold Calculation",
+        "Exclusions",
+        "Section 51"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_005",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "Within how many days from the end of the month in which TDS is deducted must the deductor deposit the amount to the government account?",
+      "options": [
+        "Within 7 days",
+        "Within 10 days",
+        "Within 14 days",
+        "Within 20 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 51(3) of the CGST Act, 2017, the amount deducted as TDS must be paid to the government by the deductor within 10 days after the end of the month in which the deduction was made.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "TDS Deposit",
+        "Due Date",
+        "Section 51"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_006",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "Which form is required to be issued by the deductor to the deductee detailing the TDS deducted and deposited?",
+      "options": [
+        "GSTR-7",
+        "GSTR-7A",
+        "GSTR-9",
+        "GSTR-8"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Rule 66(3) of the CGST Rules, 2017, the certificate of TDS deduction in Form GSTR-7A must be issued by the deductor to the deductee within 5 days of crediting the amount to the Government.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "GSTR-7A",
+        "TDS Certificate",
+        "Rule 66"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_007",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "What is the consequence if a deductor fails to furnish the TDS certificate (Form GSTR-7A) within the stipulated time of 5 days of crediting the amount to the government?",
+      "options": [
+        "Late fee of Rs. 100 per day up to a maximum of Rs. 5,000",
+        "Late fee of Rs. 50 per day up to a maximum of Rs. 2,000",
+        "Penal interest of 18% per annum only",
+        "No late fee is prescribed under GST law for GSTR-7A delay"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 51(4) read with Section 47 prescribes a late fee of Rs. 100 per day for each day during which the failure continues, subject to a maximum of Rs. 5,000, for failure to furnish the TDS certificate in Form GSTR-7A.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Late Fee",
+        "GSTR-7A",
+        "Section 51"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_008",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "If a deductor fails to deposit the deducted TDS to the Government account within the due date, what interest rate is payable by the deductor?",
+      "options": [
+        "12% per annum",
+        "18% per annum",
+        "24% per annum",
+        "36% per annum"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 51(6) read with Section 50, if any deductor fails to pay to the Government the amount deducted as TDS, they shall pay interest at the rate of 18% per annum for the period for which the failure continues.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Interest on TDS",
+        "Section 50",
+        "Section 51"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_009",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "Which return must be filed by a registered person who is required to deduct Tax at Source under Section 51?",
+      "options": [
+        "GSTR-3B",
+        "GSTR-7",
+        "GSTR-8",
+        "GSTR-1"
+      ],
+      "answerIndex": 1,
+      "explanation": "Form GSTR-7 is the monthly return required to be filed by persons who are required to deduct Tax at Source under Section 51 of the CGST Act, 2017, on or before the 10th day of the month succeeding the calendar month.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "GSTR-7",
+        "Return Filing",
+        "Section 51"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_010",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "Under Section 52 of the CGST Act, 2017, 'Tax Collection at Source' (TCS) is applicable to which of the following entities?",
+      "options": [
+        "Any registered supplier selling goods online",
+        "Every e-commerce operator",
+        "Only foreign e-commerce operators operating in India",
+        "Every supplier who has a turnover exceeding Rs. 20 Lakhs"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 52 of the CGST Act, 2017 mandates every electronic commerce operator (ECO) to collect an amount known as Tax Collection at Source (TCS) out of the net value of taxable supplies made through it by other suppliers where the consideration is to be collected by the ECO.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 52",
+        "TCS",
+        "E-Commerce Operator"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_011",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "What is the standard total rate of Tax Collection at Source (TCS) required to be collected by an e-commerce operator under Section 52?",
+      "options": [
+        "1%",
+        "2%",
+        "1% CGST and 1% SGST/UTGST",
+        "2% CGST and 2% SGST/UTGST"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per Section 52(1) of the CGST Act, 2017, an ECO is required to collect TCS at such rate not exceeding 1% (0.5% CGST and 0.5% SGST/UTGST) of the net value of taxable supplies made through it.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "TCS Rate",
+        "Section 52",
+        "ECO"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_012",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "What is the definition of 'net value of taxable supplies' for the purpose of calculating TCS under Section 52?",
+      "options": [
+        "Total gross sales of goods and services through the ECO",
+        "Aggregate value of taxable supplies of goods or services made during any month less the value of supplies returned",
+        "Total invoice value including all taxes",
+        "Gross collections made by the ECO minus its own commission"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 52(1) defines 'net value of taxable supplies' as the aggregate value of taxable supplies of goods or services, other than services notified under Section 9(5), made during any month by all registered persons through the operator reduced by the aggregate value of taxable supplies returned to the suppliers during the said month.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Net Value of Taxable Supplies",
+        "Section 52",
+        "TCS Calculation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_013",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "Within what period must an e-commerce operator deposit the collected TCS into the Government account?",
+      "options": [
+        "Within 7 days after the end of the month",
+        "Within 10 days after the end of the month",
+        "Within 14 days after the end of the month",
+        "Within 20 days after the end of the month"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 52(3) of the CGST Act, 2017, the amount collected as TCS must be paid to the government by the operator within 10 days after the end of the calendar month in which collection was made.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "TCS Deposit Due Date",
+        "Section 52",
+        "ECO"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_014",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "Which monthly return must be filed by an e-commerce operator containing details of outward supplies, returns, and TCS collected?",
+      "options": [
+        "GSTR-7",
+        "GSTR-8",
+        "GSTR-9",
+        "GSTR-3B"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 52(4), every electronic commerce operator is required to furnish a statement in Form GSTR-8 electronically on or before the 10th day of the month succeeding the calendar month in which TCS was collected.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "GSTR-8",
+        "TCS Return",
+        "Section 52"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_015",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "What annual statement must an e-commerce operator file detailing supplies effected and TCS collected during the financial year?",
+      "options": [
+        "Annual Return in GSTR-9",
+        "Annual Statement in GSTR-9B",
+        "Annual Return in GSTR-7",
+        "Annual Statement in GSTR-8A"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 52(5) of the CGST Act, 2017, every ECO must furnish an annual statement in Form GSTR-9B electronically on or before the 31st day of December following the end of the financial year to which such statement relates.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "GSTR-9B",
+        "Annual Statement",
+        "Section 52"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_016",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "If a notice is issued by a proper officer to an e-commerce operator requiring information regarding supplies made through it, within how many days must the operator furnish such information?",
+      "options": [
+        "5 working days",
+        "10 working days",
+        "15 working days",
+        "30 working days"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 52(12) states that any person to whom a notice is issued under Section 52(11) to furnish information shall furnish such information within 15 working days from the date of service of such notice.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Notice",
+        "Section 52(12)",
+        "Information Furnishing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_017",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "Where does the amount of TCS deducted/collected by an e-commerce operator reflect for the supplier of goods or services?",
+      "options": [
+        "Electronic Cash Ledger",
+        "Electronic Credit Ledger",
+        "Electronic Liability Register",
+        "Bank Account directly"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per Section 52(7) of the CGST Act, 2017, the details of TCS furnished by an operator in GSTR-8 shall be made available to each of the suppliers in Part C of Form GSTR-2A/electronic cash ledger upon validation, and the amount collected is credited to the electronic cash ledger of the respective supplier.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Electronic Cash Ledger",
+        "TCS Credit",
+        "Section 52"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_018",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "Who is exempted from the requirement of compulsory registration even if they make supplies through an electronic commerce operator, as per recent GST council relaxations/provisions?",
+      "options": [
+        "Suppliers of all types of goods",
+        "Persons making intra-state supplies through ECO having aggregate turnover below threshold",
+        "Suppliers of services making supplies through ECO",
+        "No supplier is exempted from registration if supplying through ECO"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per specific notifications issued under Section 24(ix) read with Section 9(5), certain categories of persons making supplies of goods or services through an ECO can be exempt from compulsory registration provided their aggregate turnover does not exceed the threshold limit, subject to specific conditions.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Compulsory Registration",
+        "ECO",
+        "Section 24"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_019",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "Can a deductor under Section 51 claim refund of TDS deducted and deposited by him in excess of the actual tax liability?",
+      "options": [
+        "Yes, the deductor can claim refund directly.",
+        "No, refund can only be claimed by the deductee if the amount has been credited to their electronic cash ledger.",
+        "Yes, after getting a no-objection certificate from the supplier.",
+        "No refund is ever allowed for TDS under GST."
+      ],
+      "answerIndex": 1,
+      "explanation": "As per the statutory provisions, any excess TDS deducted and deposited can generally be claimed as a refund by the deductee once it is credited to their electronic cash ledger, subject to the conditions specified under Section 54.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "TDS Refund",
+        "Section 54",
+        "Deductee Rights"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_020",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "In case supplies are made through an ECO where tax is payable by the ECO under Section 9(5) (e.g., passenger transport services through aggregator), is TCS required to be collected under Section 52?",
+      "options": [
+        "Yes, TCS must be collected in all cases.",
+        "No, TCS is not required to be collected on supplies where ECO is liable to pay tax under Section 9(5).",
+        "TCS is collected at a reduced rate of 0.1%.",
+        "TCS is optional for supplies under Section 9(5)."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 52(1) explicitly excludes services notified under Section 9(5) from the net value of taxable supplies for the purpose of TCS calculation, as the ECO is directly liable to pay tax on such supplies under Section 9(5).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 9(5)",
+        "Section 52",
+        "TCS Exclusion"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_021",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "What happens if a deductor under Section 51 deducts TDS but fails to deposit it along with applicable interest? Can the deductee take credit of such un-deposited TDS?",
+      "options": [
+        "Yes, credit is automatically given.",
+        "No, credit in the electronic cash ledger reflects only when the deducted amount is actually credited to the Government account by the deductor.",
+        "Yes, if the deductee produces an indemnity bond.",
+        "Credit is given conditionally for 30 days."
+      ],
+      "answerIndex": 1,
+      "explanation": "The credit of TDS deducted is reflected in the electronic cash ledger of the deductee only after the deductor files GSTR-7 and deposits the amount into the Government treasury.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "TDS Credit",
+        "GSTR-7",
+        "Electronic Cash Ledger"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_022",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "Which of the following persons is mandatorily required to obtain registration under Section 24 of the CGST Act solely due to e-commerce participation?",
+      "options": [
+        "Every person supplying goods through an electronic commerce operator who is required to collect tax under section 52",
+        "Every person supplying services through any website",
+        "Every person having a turnover of Rs. 10 Lakhs",
+        "Every supplier of exempted goods via e-commerce"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per Section 24(ix) of the CGST Act, 2017, persons who supply goods or services through an electronic commerce operator who is required to collect tax under section 52 are required to obtain compulsory registration, subject to threshold exemptions provided via notifications.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Compulsory Registration",
+        "Section 24",
+        "ECO"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_023",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "What is the penalty for failure to furnish the annual statement in GSTR-9B by an e-commerce operator within the due date?",
+      "options": [
+        "Rs. 100 per day under CGST and Rs. 100 per day under SGST, subject to a maximum of 0.25% of turnover in the State/UT",
+        "Fixed penalty of Rs. 10,000",
+        "No penalty is specified for GSTR-9B",
+        "Cancellation of registration immediately without notice"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 47(2) provides that any registered person who fails to furnish the annual return/statement under Section 44 (which includes GSTR-9B) by the due date shall pay a late fee of Rs. 100 for every day during which such failure continues, subject to a maximum of an amount calculated at 0.25% of turnover in the State/UT.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Late Fee",
+        "GSTR-9B",
+        "Section 47"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_024",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "If a contract has a total value of Rs. 3,00,000 inclusive of CGST and SGST of Rs. 36,000 (i.e. basic value Rs. 2,64,000), will TDS be deducted under Section 51?",
+      "options": [
+        "No, because the total invoice value is considered.",
+        "Yes, because the contract value excluding taxes (Rs. 2,64,000) exceeds Rs. 2,50,000.",
+        "No, because the basic value must exceed Rs. 3,00,000.",
+        "Yes, because any contract above Rs. 2,00,000 is subject to TDS."
+      ],
+      "answerIndex": 1,
+      "explanation": "The threshold for TDS under Section 51 is Rs. 2,50,000 of the contract value excluding Central tax, State tax, Integrated tax, and Cess. Here, the basic contract value is Rs. 2,64,000, which exceeds Rs. 2,50,000, hence TDS is applicable.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Threshold Application",
+        "Section 51",
+        "Contract Value Calculation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_025",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "Can a government department acting as a deductor under Section 51 obtain a separate registration for TDS without holding a regular GSTIN as a supplier?",
+      "options": [
+        "No, they must obtain regular registration as a normal taxpayer.",
+        "Yes, deductors can obtain a distinct registration dedicated solely to TDS/TCS collection.",
+        "Registration is not required at all for government departments.",
+        "They must use the PAN of the state treasury."
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 24(vi) read with the registration rules, persons required to deduct tax under Section 51 or collect tax under Section 52 must obtain a separate registration (TAN-like GST registration) specifically for TDS/TCS operations.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "TDS Registration",
+        "Section 24",
+        "Deductor Registration"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_026",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "What is the due date for filing the monthly return in Form GSTR-7 by a TDS deductor?",
+      "options": [
+        "10th day of the succeeding month",
+        "20th day of the succeeding month",
+        "18th day of the succeeding month",
+        "End of the succeeding month"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 66 of the CGST Rules, 2017 prescribes that every registered person required to deduct TDS shall furnish a return in Form GSTR-7 electronically for the month in which deduction was made, on or before the 10th day of the succeeding month.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "GSTR-7 Due Date",
+        "Rule 66",
+        "Section 51"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_027",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "Which of the following transactions is exempt from TDS under Section 51 of the CGST Act?",
+      "options": [
+        "Supply of taxable goods made by a supplier to a Central Government department under a contract worth Rs. 3,00,000.",
+        "Supply of goods or services where both the supplier and the recipient deductor are located in the same State.",
+        "Supply of goods or services where the location of the supplier and the place of supply is in a State/UT different from the registration of the recipient deductor.",
+        "Supply of taxable services worth Rs. 5,00,000 to a local authority."
+      ],
+      "answerIndex": 2,
+      "explanation": "As per the proviso to Section 51(1), no TDS is required to be deducted where the location of the supplier and the place of supply is in a State/UT different from the State/UT of registration of the recipient.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "TDS Exemption",
+        "Place of Supply",
+        "Section 51"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_028",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "An electronic commerce operator fails to submit matching corrections for discrepancies pointed out in GSTR-8 within the specified time. What is the statutory implication?",
+      "options": [
+        "The ECO faces criminal imprisonment.",
+        "The discrepancy is added to the output tax liability of the ECO.",
+        "The supply value in discrepancy is added to the output tax liability of the supplier along with interest.",
+        "Nothing happens."
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 52(9) and (10) provide that details of supplies furnished by the operator and those furnished by the supplier in their returns are matched, and any discrepancy not communicated/rectified results in the amount being added to the output tax liability of the supplier.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Matching",
+        "Section 52",
+        "Discrepancy"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_029",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "If a deductor fails to deduct TDS under Section 51, is the deductor liable to pay interest and penalty even if the supplier has paid the full tax on the transaction?",
+      "options": [
+        "Yes, the statutory obligation to deduct and deposit TDS is independent, and failure attracts interest under Section 50 and penalties.",
+        "No, if the supplier pays tax, the deductor is fully absolved.",
+        "Only a warning is issued.",
+        "Penalty is levied only on the supplier."
+      ],
+      "answerIndex": 0,
+      "explanation": "The obligation to deduct TDS under Section 51 is a statutory duty cast upon the deductor. Failure to deduct or deposit attracts interest and penalties irrespective of whether the supplier has discharged their tax liability.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Failure to Deduct",
+        "Section 51",
+        "Liability"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-14_030",
+      "kind": "normal",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "prompt": "Under Section 52(11), an officer not below the rank of which of the following may empower any officer to audit or inspect an e-commerce operator?",
+      "options": [
+        "Superintendent",
+        "Assistant Commissioner",
+        "Commissioner",
+        "Chief Commissioner"
+      ],
+      "answerIndex": 2,
+      "explanation": "As per Section 52(11) of the CGST Act, 2017, any authority not below the rank of Commissioner may serve notice on an e-commerce operator to furnish details relating to volume of goods/services supplied, stock turnover, etc.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Commissioner Power",
+        "Section 52(11)",
+        "Audit/Inspection"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_gst-14_01",
+      "kind": "scenario",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "passage": "M/s Alpha Builders, a registered partnership firm in Maharashtra, enters into a works contract with the Public Works Department (PWD) of the Government of Maharashtra, located in Mumbai. The total contract value is fixed at Rs. 4,00,000 (excluding CGST and SGST at 9% each). Both the supplier and the PWD are in Maharashtra, and the place of supply is also Maharashtra. PWD credits the running bill of Rs. 3,00,000 (excluding taxes) to Alpha Builders on 15th October 2026.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-14_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-14_01",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-14",
+          "subject": "Taxation",
+          "prompt": "Is PWD Maharashtra required to deduct Tax at Source (TDS) on the payment made to M/s Alpha Builders?",
+          "options": [
+            "No, because PWD is a government body and exempt from TDS.",
+            "Yes, because PWD is a Government department, the contract value exceeds Rs. 2,50,000, and both parties are in the same State.",
+            "No, because works contracts are completely excluded from TDS.",
+            "Yes, but only if Alpha Builders turnover exceeds Rs. 40 Lakhs."
+          ],
+          "answerIndex": 1,
+          "explanation": "PWD is a department of the State Government, making it a mandatory deductor under Section 51. The basic contract value (Rs. 4,00,000) exceeds the threshold of Rs. 2,50,000, and the location of supplier, place of supply, and recipient are in the same State (Maharashtra), satisfying all conditions for TDS.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 51",
+            "Government Department",
+            "Works Contract"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-14_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-14_01",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-14",
+          "subject": "Taxation",
+          "prompt": "What is the exact amount of TDS that PWD Maharashtra must deduct from the running bill of Rs. 3,00,000?",
+          "options": [
+            "Rs. 3,000 CGST and Rs. 3,000 SGST",
+            "Rs. 6,000 CGST and Rs. 6,000 SGST",
+            "Rs. 3,000 IGST",
+            "Rs. 1,500 CGST and Rs. 1,500 SGST"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under Section 51, TDS is deducted at 1% CGST and 1% SGST of the payment made. For a payment of Rs. 3,00,000, 1% CGST equals Rs. 3,000 and 1% SGST equals Rs. 3,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "TDS Calculation",
+            "Section 51",
+            "Intra-State Supply"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-14_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-14_01",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-14",
+          "subject": "Taxation",
+          "prompt": "By what date must PWD Maharashtra deposit the deducted TDS amount to the Government account?",
+          "options": [
+            "10th November 2026",
+            "20th November 2026",
+            "31st October 2026",
+            "10th December 2026"
+          ],
+          "answerIndex": 0,
+          "explanation": "As per Section 51(3), the TDS deducted during October 2026 must be paid to the government by the deductor within 10 days after the end of the month, i.e., on or before 10th November 2026.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "TDS Deposit Due Date",
+            "Section 51"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-14_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-14_01",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-14",
+          "subject": "Taxation",
+          "prompt": "Which return must PWD Maharashtra file to report this TDS deduction?",
+          "options": [
+            "GSTR-3B",
+            "GSTR-7",
+            "GSTR-8",
+            "GSTR-1"
+          ],
+          "answerIndex": 1,
+          "explanation": "Form GSTR-7 is the prescribed monthly return under Rule 66 to be filed by deductors registered under Section 51 for reporting tax deducted at source.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "GSTR-7",
+            "Return Filing",
+            "Section 51"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-14_02",
+      "kind": "scenario",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "passage": "M/s QuickShop, an electronic commerce operator (ECO) based in Delhi, operates an online marketplace. During the month of August 2026, various registered suppliers sell goods through QuickShop. The gross value of taxable supplies made through QuickShop is Rs. 50,00,000. During the same month, goods amounting to Rs. 5,00,000 are returned by customers. QuickShop collects the consideration on behalf of the suppliers.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-14_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-14_02",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-14",
+          "subject": "Taxation",
+          "prompt": "What is the net value of taxable supplies for QuickShop for the month of August 2026 for the purpose of TCS?",
+          "options": [
+            "Rs. 50,00,000",
+            "Rs. 45,00,000",
+            "Rs. 55,00,000",
+            "Rs. 40,00,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Net value of taxable supplies under Section 52(1) is the aggregate value of taxable supplies made through the operator reduced by the aggregate value of taxable supplies returned during the month (Rs. 50,00,000 - Rs. 5,00,000 = Rs. 45,00,000).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Net Value",
+            "Section 52",
+            "TCS"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-14_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-14_02",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-14",
+          "subject": "Taxation",
+          "prompt": "What is the total TCS amount that QuickShop is required to collect for August 2026?",
+          "options": [
+            "Rs. 45,000 (0.5% CGST + 0.5% SGST or 1% IGST)",
+            "Rs. 50,000",
+            "Rs. 90,000",
+            "Rs. 22,500"
+          ],
+          "answerIndex": 0,
+          "explanation": "TCS is collected at 1% of the net value of taxable supplies (0.5% CGST + 0.5% SGST, or 1% IGST). 1% of Rs. 45,00,000 equals Rs. 45,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "TCS Rate",
+            "Section 52",
+            "Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-14_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-14_02",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-14",
+          "subject": "Taxation",
+          "prompt": "By what date must QuickShop file its monthly statement in Form GSTR-8 for August 2026?",
+          "options": [
+            "10th September 2026",
+            "20th September 2026",
+            "10th October 2026",
+            "31st August 2026"
+          ],
+          "answerIndex": 0,
+          "explanation": "As per Section 52(4), Form GSTR-8 must be filed electronically by the e-commerce operator on or before the 10th day of the month succeeding the calendar month in which TCS was collected, i.e., 10th September 2026.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "GSTR-8",
+            "Due Date",
+            "Section 52"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-14_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-14_02",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-14",
+          "subject": "Taxation",
+          "prompt": "Where will the TCS collected by QuickShop reflect for the registered suppliers selling through QuickShop?",
+          "options": [
+            "Electronic Credit Ledger",
+            "Electronic Cash Ledger",
+            "Bank Account directly",
+            "Electronic Liability Register"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per Section 52(7), the TCS amount collected by the ECO is credited to the electronic cash ledger of the respective supplier upon validation of details furnished in GSTR-8.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Electronic Cash Ledger",
+            "TCS Credit",
+            "Section 52"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-14_03",
+      "kind": "scenario",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "passage": "M/s Apex Infotech, a registered software supplier in Karnataka, enters into a contract worth Rs. 5,00,000 with a Central Government PSU located in Chennai, Tamil Nadu, to supply customized software. The place of supply of software is determined to be Chennai, Tamil Nadu (location of the recipient PSU). Apex Infotech fulfills the order and the PSU makes a payment of Rs. 4,00,000 on 1st November 2026.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-14_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-14_03",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-14",
+          "subject": "Taxation",
+          "prompt": "Is the Central Government PSU required to deduct TDS under Section 51 in this transaction?",
+          "options": [
+            "Yes, because the PSU is a government-controlled entity and contract value exceeds Rs. 2,50,000.",
+            "No, because the location of the supplier (Karnataka) and the place of supply / recipient registration state (Tamil Nadu) are different.",
+            "No, because software supplies are exempt from TDS.",
+            "Yes, at the rate of 2% CGST and 2% SGST."
+          ],
+          "answerIndex": 1,
+          "explanation": "The proviso to Section 51(1) clearly specifies that no TDS shall be deducted if the location of the supplier and the place of supply is in a State/UT different from the State/UT of registration of the recipient. Here, supplier is in Karnataka and place of supply is Tamil Nadu.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 51",
+            "Place of Supply",
+            "TDS Exemption"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-14_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-14_03",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-14",
+          "subject": "Taxation",
+          "prompt": "What would be the outcome if both Apex Infotech and the PSU were located in Chennai, Tamil Nadu, with the place of supply also in Tamil Nadu?",
+          "options": [
+            "TDS would still not be applicable.",
+            "TDS would be mandatory as all conditions under Section 51 would be met.",
+            "TDS would be deducted at 5%.",
+            "TCS would apply instead of TDS."
+          ],
+          "answerIndex": 1,
+          "explanation": "If the supplier, place of supply, and recipient deductor are all in the same State (Tamil Nadu), and the contract value exceeds Rs. 2,50,000, TDS deduction under Section 51 is mandatory.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 51",
+            "Intra-State Supply",
+            "TDS Applicability"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-14_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-14_03",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-14",
+          "subject": "Taxation",
+          "prompt": "If TDS was applicable in this transaction, what would be the IGST rate of TDS to be deducted?",
+          "options": [
+            "1%",
+            "2%",
+            "0.5%",
+            "5%"
+          ],
+          "answerIndex": 1,
+          "explanation": "For an inter-state supply where TDS is applicable, the rate of TDS under IGST is 2% (1% CGST + 1% SGST equivalent).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "IGST TDS Rate",
+            "Section 51"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-14_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-14_03",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-14",
+          "subject": "Taxation",
+          "prompt": "Who is responsible for verifying the contract value threshold for TDS under Section 51?",
+          "options": [
+            "The supplier",
+            "The deductor (PSU)",
+            "The jurisdictional GST Commissioner",
+            "The bank executing the payment"
+          ],
+          "answerIndex": 1,
+          "explanation": "The statutory responsibility to check whether the contract value exceeds Rs. 2,50,000 and to deduct TDS lies with the deductor at the time of making payment or credit.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Deductor Responsibility",
+            "Section 51"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-14_04",
+      "kind": "scenario",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "passage": "M/s ZoomCab Services, an aggregator operating in West Bengal, provides passenger transport services through its mobile application. During September 2026, individual cab drivers registered on ZoomCab provided transport services through the app, generating a gross collection of Rs. 20,00,000. Under GST law, passenger transport services provided through an electronic commerce aggregator are notified under Section 9(5).",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-14_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-14_04",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-14",
+          "subject": "Taxation",
+          "prompt": "Is M/s ZoomCab Services required to collect Tax Collection at Source (TCS) under Section 52 on these passenger transport services?",
+          "options": [
+            "Yes, at 1% TCS.",
+            "No, because services notified under Section 9(5) are explicitly excluded from the net value of taxable supplies for TCS under Section 52.",
+            "Yes, at 2% TCS.",
+            "No, because transport services are exempt."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 52(1) excludes supplies notified under Section 9(5) from the net value of taxable supplies for TCS calculation because the ECO itself is liable to pay tax under Section 9(5) as if it were the supplier.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 9(5)",
+            "Section 52",
+            "TCS Exclusion"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-14_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-14_04",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-14",
+          "subject": "Taxation",
+          "prompt": "Who is liable to pay GST on the passenger transport services provided through ZoomCab aggregator?",
+          "options": [
+            "The individual cab drivers",
+            "The electronic commerce operator (ZoomCab Services)",
+            "The passengers",
+            "Exempt from GST"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 9(5) of the CGST Act, 2017, the electronic commerce operator is liable to pay tax on supply of services notified thereunder, such as passenger transport services provided through an aggregator.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 9(5)",
+            "ECO Liability",
+            "Passenger Transport"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-14_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-14_04",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-14",
+          "subject": "Taxation",
+          "prompt": "Does ZoomCab need to file GSTR-8 in respect of supplies covered under Section 9(5)?",
+          "options": [
+            "GSTR-8 is for TCS supplies; since Section 9(5) supplies are excluded from TCS, they are not reported as TCS supplies in GSTR-8.",
+            "Yes, GSTR-8 must include Section 9(5) supplies as TCS.",
+            "GSTR-8 is replaced by GSTR-3B entirely.",
+            "No GST return is required for ZoomCab."
+          ],
+          "answerIndex": 0,
+          "explanation": "Since Section 9(5) supplies are not subject to TCS under Section 52, they do not form part of the TCS calculations reported in GSTR-8, though the ECO pays tax on them via GSTR-3B.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "GSTR-8",
+            "Section 9(5)",
+            "TCS Reporting"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-14_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-14_04",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-14",
+          "subject": "Taxation",
+          "prompt": "If ZoomCab also sold miscellaneous car accessories (goods) through its platform in the same month worth Rs. 2,00,000, would TCS apply to those goods?",
+          "options": [
+            "No, because the transport service is exempt.",
+            "Yes, TCS under Section 52 applies to the supply of goods made through the ECO, provided they are not under Section 9(5).",
+            "TCS applies only if goods exceed Rs. 50,00,000.",
+            "Car accessories are notified under Section 9(5) as well."
+          ],
+          "answerIndex": 1,
+          "explanation": "TCS under Section 52 applies to taxable supplies of goods or services made through an ECO, except those covered under Section 9(5). Since car accessories are goods and not under Section 9(5), TCS applies to them.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "TCS on Goods",
+            "Section 52",
+            "ECO"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-14_05",
+      "kind": "scenario",
+      "chapterId": "gst-14",
+      "subject": "Taxation",
+      "passage": "M/s Delta Supplies, a registered trader in Gujarat, made supplies of office stationery to a State Government educational institution in Ahmedabad, Gujarat, under a contract amounting to Rs. 3,50,000 (excluding taxes) in July 2026. The educational institution deducted TDS of 2% (1% CGST + 1% SGST) amounting to Rs. 7,000 on 10th August 2026. However, due to administrative oversight, the institution failed to deposit the deducted Rs. 7,000 into the Government account until 15th October 2026.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Tax Deduction at Source and Collection of Tax at Source"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-14_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-14_05",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-14",
+          "subject": "Taxation",
+          "prompt": "What interest liability is attracted by the educational institution for the delayed deposit of TDS?",
+          "options": [
+            "12% per annum",
+            "18% per annum",
+            "24% per annum",
+            "No interest if it is an educational institution"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 51(6) read with Section 50, if any deductor fails to pay to the Government the amount deducted as TDS, they shall pay interest at the rate of 18% per annum for the period of delay.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Interest on TDS",
+            "Section 50",
+            "Section 51"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-14_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-14_05",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-14",
+          "subject": "Taxation",
+          "prompt": "When will the TDS amount of Rs. 7,000 reflect in the electronic cash ledger of M/s Delta Supplies?",
+          "options": [
+            "Immediately when TDS is deducted by the institution",
+            "Only after the institution files GSTR-7 and deposits the amount into the Government treasury",
+            "On the last day of the financial year",
+            "Never, because it is an educational institution"
+          ],
+          "answerIndex": 1,
+          "explanation": "The credit of TDS deducted is reflected in the electronic cash ledger of the deductee only after the deductor deposits the amount and files the GSTR-7 return matching the deduction.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "TDS Credit",
+            "Electronic Cash Ledger",
+            "GSTR-7"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-14_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-14_05",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-14",
+          "subject": "Taxation",
+          "prompt": "What is the due date by which the educational institution should have originally deposited the TDS deducted on 10th August 2026?",
+          "options": [
+            "20th August 2026",
+            "10th September 2026",
+            "25th August 2026",
+            "30th September 2026"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per Section 51(3), TDS deducted during a month must be paid to the Government within 10 days after the end of that month. For August 2026, the due date is 10th September 2026.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "TDS Deposit Due Date",
+            "Section 51"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-14_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-14_05",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-14",
+          "subject": "Taxation",
+          "prompt": "What is the consequence if the educational institution fails to issue Form GSTR-7A to M/s Delta Supplies within 5 days of crediting the amount to the Government?",
+          "options": [
+            "Late fee of Rs. 100 per day subject to a maximum of Rs. 5,000",
+            "Imprisonment for 6 months",
+            "Cancellation of Delta Supplies registration",
+            "No consequence"
+          ],
+          "answerIndex": 0,
+          "explanation": "As per Section 51(4) read with Section 47, failure to furnish the TDS certificate in Form GSTR-7A within 5 days attracts a late fee of Rs. 100 per day up to a maximum of Rs. 5,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Late Fee",
+            "GSTR-7A",
+            "Section 51"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

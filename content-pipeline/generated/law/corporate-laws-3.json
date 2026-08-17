@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "corporate-laws-3",
+  "subject": "Law",
+  "paper": "Paper 2: Corporate and Other Laws",
+  "module": "Module 1",
+  "chapterNumber": 3,
+  "chapterTitle": "Prospectus and Allotment of Securities",
+  "generatedAt": "2026-08-16T14:10:02.048Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_corporate-laws-3_001",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "Which of the following documents is specifically defined under Section 2(70) of the Companies Act, 2013 as including any notice, circular, advertisement, or other document inviting offers from the public for the subscription or purchase of any securities of a body corporate?",
+      "options": [
+        "Abridged Prospectus",
+        "Prospectus",
+        "Shelf Prospectus",
+        "Red Herring Prospectus"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 2(70) of the Companies Act, 2013 defines a prospectus as any document described or issued as a prospectus including a red herring prospectus or shelf prospectus or any notice, circular, advertisement or other document inviting offers from the public for the subscription or purchase of any securities of a body corporate.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Prospectus",
+        "Definitions",
+        "Section 2(70)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_002",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "When a company issues an Abridged Prospectus along with a form of application for purchase of any of its securities, what is the legal position regarding the inclusion of the abridged prospectus?",
+      "options": [
+        "It is optional for private companies but mandatory for public companies.",
+        "Every application form for securities must be accompanied by an abridged prospectus.",
+        "It is required only if the applicant specifically requests it in writing.",
+        "It is required only for rights issues and bonus issues."
+      ],
+      "answerIndex": 1,
+      "explanation": "According to Section 33(1) of the Companies Act, 2013, no form of application for the purchase of any of the securities of a company shall be issued unless such form is accompanied by an abridged prospectus containing all necessary disclosures.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Abridged Prospectus",
+        "Section 33",
+        "Application Form"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_003",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "What is the maximum period for which a Shelf Prospectus can be stated to be valid by a company issuing a class or classes of securities under Section 31 of the Companies Act, 2013?",
+      "options": [
+        "Six months",
+        "One year",
+        "Two years",
+        "Three years"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 31 of the Companies Act, 2013, a shelf prospectus issued by any class or classes of companies shall be valid for a period not exceeding one year from the date of opening of the first issue of securities under that prospectus.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Shelf Prospectus",
+        "Section 31",
+        "Validity Period"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_004",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "A company issues a Red Herring Prospectus (RHP) prior to the issue of securities. Which of the following details is typically *not* included in an RHP?",
+      "options": [
+        "Quantum of securities",
+        "Price of the securities",
+        "General nature of business",
+        "Financial background of promoters"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 32 defines a red herring prospectus as one which lacks complete particulars about the quantum or price of the securities being offered, as these are determined after the book-building process concludes.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Red Herring Prospectus",
+        "Section 32",
+        "Book Building"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_005",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "When does a Red Herring Prospectus need to be filed with the Registrar of Companies (RoC)?",
+      "options": [
+        "At least 3 days prior to the opening of the issue",
+        "At least 7 days prior to the opening of the issue",
+        "At least 15 days prior to the opening of the issue",
+        "At least 30 days prior to the opening of the issue"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 32(1) of the Companies Act, 2013, a company proposing to make an offer of securities may issue a red herring prospectus prior to the issue of securities and must file it with the Registrar at least 3 days prior to the opening of the subscription list and the issue.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Red Herring Prospectus",
+        "Filing",
+        "RoC"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_006",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "What must a company do upon the closing of the offer under a Red Herring Prospectus regarding the final details of the issue?",
+      "options": [
+        "File a fresh prospectus with SEBI only",
+        "State the final price and quantum of securities and file it with the Registrar and SEBI",
+        "Obtain a court order confirming the price",
+        "Issue a notice in a local newspaper without filing with RoC"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 32(4) specifies that upon the closing of the offer, the red herring prospectus shall be filed with the Registrar and SEBI, stating the total capital raised, closing price of securities, and other details not included earlier.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Red Herring Prospectus",
+        "Filing",
+        "Section 32"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_007",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "Which section of the Companies Act, 2013 deals with criminal liability for misstatements in a prospectus?",
+      "options": [
+        "Section 34",
+        "Section 35",
+        "Section 38",
+        "Section 40"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 34 of the Companies Act, 2013 imposes criminal liability on any person who authorizes the issue of a prospectus containing untrue or misleading statements, attracting punishment under Section 447.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Misstatement",
+        "Criminal Liability",
+        "Section 34"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_008",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "Under Section 35 of the Companies Act, 2013, who among the following is *not* typically held liable to pay compensation for loss or damage sustained by any person who subscribed for securities acting on a misleading prospectus?",
+      "options": [
+        "Every person who is a director of the company at the time of the issue",
+        "Every person who has authorized themselves to be named as a director in the prospectus",
+        "An ordinary employee of the company who had no role in drafting the prospectus",
+        "Every promoter of the company"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 35 specifies civil liability for directors, promoters, and persons named as directors with their consent. Ordinary employees without management/drafting responsibilities are not categorized among those strictly liable under Section 35.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Civil Liability",
+        "Section 35",
+        "Directors and Promoters"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_009",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "What is the penalty range for fraud under Section 447, which is triggered when Section 34 (criminal liability for misstatement in prospectus) is invoked?",
+      "options": [
+        "Imprisonment from 6 months up to 3 years",
+        "Imprisonment from 6 months up to 10 years and fine up to the amount involved",
+        "Only monetary fine without imprisonment",
+        "Imprisonment for a fixed term of 5 years"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 34 attracts punishment under Section 447, which mandates imprisonment for a term not less than 6 months extending up to 10 years, and a fine not less than the amount involved in the fraud, extending up to 3 times the amount involved.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Criminal Liability",
+        "Section 447",
+        "Penalty"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_010",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "Under Section 38 of the Companies Act, 2013, what penalty is prescribed for any person who makes or abets making of an application in a fictitious name for acquiring securities in a company?",
+      "options": [
+        "Imprisonment up to 1 year or fine up to Rs. 50,000",
+        "Imprisonment for a term of 1 to 5 years and fine",
+        "Strictly a civil penalty equal to twice the application money",
+        "No criminal penalty, only cancellation of application"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 38 prescribes punishment for personation in acquisitions, stating that any person who makes an application in a fictitious name shall be punishable with imprisonment for a term of 1 to 5 years.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Fictitious Name",
+        "Section 38",
+        "Personation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_011",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "When a company makes a public offer, every company must make an application to one or more recognized stock exchange(s) for permission for the securities to be dealt with on such stock exchange, as mandated by which section?",
+      "options": [
+        "Section 39",
+        "Section 40",
+        "Section 26",
+        "Section 42"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 40 of the Companies Act, 2013 requires every company making a public offer to make an application before issuing prospectus to one or more recognized stock exchange or exchanges and obtain permission thereof.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Stock Exchange",
+        "Section 40",
+        "Public Offer"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_012",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "Under Section 39(3) of the Companies Act, 2013, if a company fails to repay application money within the prescribed time after the minimum subscription is not received, what is the rate of interest payable by the company and its officers in default?",
+      "options": [
+        "6% per annum",
+        "12% per annum",
+        "15% per annum",
+        "18% per annum"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 39(3) dictates that if the stated minimum subscription is not received and application money is not repaid within 15 days from the closure of the issue, the company and every officer in default shall be liable to repay application money with interest at the rate of 15% per annum.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Minimum Subscription",
+        "Section 39",
+        "Interest on Refund"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_013",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "What is the maximum number of persons to whom a private placement of securities can be made in a financial year, as per the rules prescribed under Section 42 of the Companies Act, 2013, excluding qualified institutional buyers and employees under ESOP?",
+      "options": [
+        "50 persons",
+        "100 persons",
+        "200 persons",
+        "499 persons"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 42 read with relevant rules specifies that an offer or invitation through private placement can be made to not more than 200 persons in the aggregate in a financial year, excluding QIBs and employees given securities under ESOP.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Private Placement",
+        "Section 42",
+        "Maximum Persons"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_014",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "Moneys received under a private placement offer must be paid through which of the following modes?",
+      "options": [
+        "Cash only",
+        "Cheque or demand draft or other banking channels only, but not cash",
+        "Either cash up to Rs. 10,000 or cheque",
+        "Cryptocurrency or bank transfer"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 14 of the Companies (Prospectus and Allotment of Securities) Rules, 2014 mandates that monies payable on subscription to private placement shall be paid through cheque or demand draft or other banking channels, and not by cash.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Private Placement",
+        "Banking Channels",
+        "Rule 14"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_015",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "Within how many days from the date of allotment of securities under a private placement must a company file a return of allotment with the Registrar in Form PAS-3?",
+      "options": [
+        "15 days",
+        "30 days",
+        "60 days",
+        "90 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 42(9) and Rule 14 require a company making any allotment of securities under private placement to file with the Registrar a return of allotment in Form PAS-3 within 30 days from the date of the allotment.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Return of Allotment",
+        "Form PAS-3",
+        "Private Placement"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_016",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "Which of the following is an exception where a civil liability defense under Section 35 is available to a director who otherwise consented to be named in the prospectus?",
+      "options": [
+        "The director did not read the prospectus before signing.",
+        "The director withdrew consent publicly before the issue of the prospectus and gave reasonable public notice.",
+        "The director relied entirely on the company secretary's advice.",
+        "The prospectus was approved by the Board of Directors unanimously."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 35(2) provides a defense from civil liability if a director proves that, having consented to become a director of the company, they withdrew their consent before the issue of the prospectus, and that it was issued without their authority or consent.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Civil Liability",
+        "Defenses",
+        "Section 35"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_017",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "Can a company utilize any monies raised through private placement before making the relevant allotment of securities and filing the return of allotment?",
+      "options": [
+        "Yes, immediately upon receiving the application money.",
+        "Yes, up to 50% of the money received.",
+        "No, monies received must be kept in a separate bank account and cannot be utilized until allotment is made.",
+        "Yes, if approved by an ordinary resolution."
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 42(6) states that monies received on application under private placement shall be kept in a separate bank account in a scheduled bank and shall not be utilized for any purpose other than for adjustment against allotment or repayment for failure to allot.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Private Placement",
+        "Separate Bank Account",
+        "Section 42"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_018",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "What constitutes a 'Global Depository Receipt' (GDR) under Section 2(44) of the Companies Act, 2013?",
+      "options": [
+        "Any instrument issued outside India by a company, foreign or domestic, for local deposits.",
+        "Any instrument in the form of a depository receipt, created by a foreign depository outside India, authorizing acquisition of securities issued by an Indian company.",
+        "A receipt issued by the Reserve Bank of India for holding foreign exchange.",
+        "A bond issued by the Central Government in global markets."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 2(44) defines Global Depository Receipt as any instrument in the form of a depository receipt, created by a foreign depository outside India and authorized by a company, making an issue of depository receipts.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "GDR",
+        "Definitions",
+        "Section 2(44)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_019",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "If a company defaults in filing the return of allotment in Form PAS-3 within the prescribed 30 days under private placement provisions, what is the penalty structure for the company and officers in default?",
+      "options": [
+        "Rs. 1,000 per day up to a maximum of Rs. 1,00,000",
+        "A penalty of one thousand rupees for each day during which such default continues but not exceeding twenty-five lakh rupees for the company and officer in default",
+        "Immediate winding up of the company",
+        "Strict criminal imprisonment without fine options"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 42(10) prescribes that if a company defaults in filing the return of allotment within the specified period, the company, promoters and directors shall be liable to a penalty of Rs. 1,000 for each day during which default continues, up to a maximum of Rs. 25 lakhs.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Penalty",
+        "Form PAS-3",
+        "Section 42"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_020",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "Under Section 26 of the Companies Act, 2013, every prospectus issued by or on behalf of a public company must be dated and signed by whom?",
+      "options": [
+        "The Chief Executive Officer alone",
+        "All the directors or proposed directors of the company or their duly authorized attorneys",
+        "The Registrar of Companies",
+        "The statutory auditor of the company"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 26(4) states that every prospectus shall be dated and signed by every director or proposed director named in the prospectus or by his duly authorized attorney.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Prospectus",
+        "Section 26",
+        "Signing of Prospectus"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_021",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "Which of the following matters must be explicitly reported upon by the statutory auditors in a prospectus as required under Section 26?",
+      "options": [
+        "Profits and losses of the company for each of the 5 financial years immediately preceding the issue of prospectus",
+        "Projected future market share for the next 10 years",
+        "Personal tax returns of all individual promoters",
+        "Daily attendance records of employees"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 26(1) requires the prospectus to set out reports by the auditors of the company with respect to profits and losses of the company for each of the 5 financial years immediately preceding the financial year of the issue.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Prospectus",
+        "Auditor Reports",
+        "Section 26"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_022",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "What is the primary objective of requiring a company to issue a 'Shelf Prospectus'?",
+      "options": [
+        "To bypass SEBI approvals entirely for equity shares",
+        "To allow a company to issue one or more issues of securities over a certain period without the need of issuing a fresh prospectus for each offer",
+        "To permanently avoid publishing annual financial statements",
+        "To raise funds exclusively from foreign institutional investors"
+      ],
+      "answerIndex": 1,
+      "explanation": "A shelf prospectus allows a class or classes of companies (like public financial institutions or banks) to issue securities in one or more tranches over a period of up to one year without issuing a full prospectus every single time.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Shelf Prospectus",
+        "Objective",
+        "Section 31"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_023",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "Which of the following entities is permitted to issue a 'Shelf Prospectus' under the rules and provisions of the Companies Act, 2013?",
+      "options": [
+        "Any newly incorporated private company",
+        "Any company engaged in retail trade",
+        "Public Financial Institutions, Banks or Public Sector Companies as specified by SEBI",
+        "Foreign companies operating without an Indian branch"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 31 restricts the issuance of a shelf prospectus to such classes of companies as the Securities and Exchange Board of India (SEBI) may specify in this behalf, primarily Public Financial Institutions, banks, and large public sector issuers.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Shelf Prospectus",
+        "Eligible Companies",
+        "Section 31"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_024",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "What is the consequence if an invitation to subscribe for securities is made to 250 persons without complying with the private placement provisions under Section 42?",
+      "options": [
+        "It is treated as a valid private placement.",
+        "It is deemed to be a public offer, attracting all public offer regulations and severe penalties.",
+        "It is automatically converted into a bonus issue.",
+        "The company is dissolved without judicial intervention."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 42(2) stipulates that if an offer or invitation is made to more than the prescribed number of persons (200), it shall be deemed to be a public offer and shall require compliance with all provisions of public offers, besides attracting monetary penalties.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Private Placement",
+        "Deemed Public Offer",
+        "Section 42"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_025",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "What is the maximum time limit within which a company making a public offer must allot securities after the closure of the subscription list?",
+      "options": [
+        "30 days",
+        "60 days",
+        "90 days",
+        "120 days"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 39(1) of the Companies Act, 2013, no allotment of any securities of a company shall be made unless the amount stated in the prospectus as the minimum amount has been subscribed, and within 30 days of the closure of the issue (or such other period as SEBI may specify).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Allotment of Securities",
+        "Time Limit",
+        "Section 39"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_026",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "If a prospectus includes any statement which is misleading, fraudulent, or untrue, which section provides for civil liability for misstatement?",
+      "options": [
+        "Section 34",
+        "Section 35",
+        "Section 36",
+        "Section 37"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 35 of the Companies Act, 2013 provides for civil liability for misstatements in a prospectus, rendering persons responsible liable to pay compensation to every person who subscribed for securities acting on such prospectus.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Civil Liability",
+        "Misstatement",
+        "Section 35"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_027",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "What does Section 36 of the Companies Act, 2013 specifically penalize?",
+      "options": [
+        "Failure to issue a shelf prospectus",
+        "Fraudulently inducing persons to invest money through misleading statements, promises, or forecasts",
+        "Delay in listing shares on a foreign stock exchange",
+        "Non-payment of interim dividends"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 36 punishes any person who either knowingly or recklessly makes any statement, promise or forecast which is false, deceptive or misleading, or deliberately conceals any material facts, to induce another person to enter into an agreement for acquiring securities.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Fraudulently Inducing Persons",
+        "Section 36",
+        "Punishment for Fraud"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_028",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "When a company issues a Red Herring Prospectus, what information must accompany it when filing with the Registrar before the opening of the issue?",
+      "options": [
+        "Information memorandum containing updates on financial position and changes since the shelf prospectus",
+        "Board resolution approving exact allotment prices",
+        "Details of every individual retail investor",
+        "Foreign exchange reserve clearance"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 31(2), a company filing a shelf prospectus is required to file an Information Memorandum containing material facts such as financial position changes and charges created, prior to the issue of a second or subsequent tranche of securities.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Information Memorandum",
+        "Shelf Prospectus",
+        "Section 31"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_029",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "Can a public company allot securities before the beginning of the subscription list?",
+      "options": [
+        "Yes, if the board approves it.",
+        "No allotment can be made until the beginning of the 5th day after the prospectus is issued or such time specified in the prospectus (the minimum waiting period).",
+        "Yes, through private placement rules.",
+        "No, public companies cannot allot securities at all."
+      ],
+      "answerIndex": 1,
+      "explanation": "As per general regulations and SEBI ICDR guidelines, no allotment can be made until the time specified in the prospectus, ensuring investors get adequate time to study the prospectus.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Allotment",
+        "Minimum Waiting Period",
+        "Public Offer"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-3_030",
+      "kind": "normal",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "prompt": "What is the effect if a company fails to obtain permission from a recognized stock exchange under Section 40?",
+      "options": [
+        "The allotment becomes void.",
+        "The company is given a 1-year extension to comply.",
+        "The securities are automatically converted into debt instruments.",
+        "The penalty applies only to the auditors."
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 40(5) provides that if permission from stock exchanges has not been applied for or granted, any allotment made shall be void, and the application money must be refunded.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Stock Exchange",
+        "Void Allotment",
+        "Section 40"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_corporate-laws-3_01",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "passage": "Zenith Pharma Limited, an unlisted public company, decided to raise capital by issuing equity shares to the public. The company drafted a prospectus, but due to an oversight by the finance team, certain material financial disclosures regarding contingent liabilities were omitted. Mr. A, a retail investor, relied on this prospectus and subscribed for 5,000 shares. Shortly after listing, the omitted contingent liabilities materialized, causing the share price to crash, resulting in substantial financial loss to Mr. A.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-3_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-3_01",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-3",
+          "subject": "Law",
+          "prompt": "Which section of the Companies Act, 2013 governs the criminal liability of Zenith Pharma Limited and persons authorizing the issue of this defective prospectus?",
+          "options": [
+            "Section 33",
+            "Section 34",
+            "Section 38",
+            "Section 42"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 34 of the Companies Act, 2013 deals with criminal liability for misstatements in a prospectus, making every person who authorized the issue liable under Section 447.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Criminal Liability",
+            "Section 34",
+            "Misstatement"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-3_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-3_01",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-3",
+          "subject": "Law",
+          "prompt": "What kind of civil liability can Mr. A invoke against the directors and promoters under Section 35 of the Act?",
+          "options": [
+            "Liability to pay compensation for the loss or damage sustained by him due to the misleading statement.",
+            "Mandatory imprisonment of directors for 7 years without trial.",
+            "Automatic transfer of promoter shares to Mr. A.",
+            "No civil liability exists if the omission was unintentional."
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 35 establishes civil liability, making directors, promoters, and experts liable to pay compensation to every person who sustained loss or damage by subscribing to securities on the faith of a misleading prospectus.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Civil Liability",
+            "Section 35",
+            "Compensation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-3_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-3_01",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-3",
+          "subject": "Law",
+          "prompt": "If a director of Zenith Pharma Limited wishes to claim a defense against civil liability under Section 35, which of the following grounds would be valid?",
+          "options": [
+            "The director proves that they never attended board meetings.",
+            "The director proves that the prospectus was issued without their knowledge or consent, and that they gave reasonable public notice of such fact upon becoming aware of it.",
+            "The director relies on the excuse that they relied entirely on the chief financial officer.",
+            "The director resigned two years after the issue."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 35(2) provides specific statutory defenses, including proving that the prospectus was issued without the director's knowledge or consent, and that reasonable public notice was given upon becoming aware of it.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Defenses",
+            "Civil Liability",
+            "Section 35"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-3_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-3_01",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-3",
+          "subject": "Law",
+          "prompt": "If the omission in the prospectus is proved to be an act of fraud with an intent to deceive investors, which penal provision is attracted for criminal liability?",
+          "options": [
+            "Section 447",
+            "Section 149",
+            "Section 92",
+            "Section 134"
+          ],
+          "answerIndex": 0,
+          "explanation": "When criminal liability is invoked under Section 34 for a fraudulent misstatement or omission in a prospectus, the punishment is governed by Section 447 for fraud.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Fraud",
+            "Section 447",
+            "Criminal Penalty"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-3_02",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "passage": "Omega Infrastructure Bank Limited decided to issue non-convertible debentures to the public. Because it intended to make multiple tranches of issues over the financial year without drafting a fresh prospectus each time, it chose to issue a Shelf Prospectus under Section 31 of the Companies Act, 2013, valid for a period of one year. Before issuing the second tranche of debentures, a significant change in the financial position of the bank occurred due to a major asset acquisition.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-3_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-3_02",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-3",
+          "subject": "Law",
+          "prompt": "What document must Omega Infrastructure Bank Limited file prior to the issue of the second tranche of debentures under the shelf prospectus?",
+          "options": [
+            "A completely new prospectus approved by the court",
+            "An Information Memorandum containing material facts and changes in financial position",
+            "A winding-up petition",
+            "A memorandum of association amendment"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 31(2) mandates that a company filing a shelf prospectus shall file an Information Memorandum containing details of material facts, financial position changes, and other prescribed particulars prior to the second or subsequent offer.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Shelf Prospectus",
+            "Information Memorandum",
+            "Section 31"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-3_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-3_02",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-3",
+          "subject": "Law",
+          "prompt": "What is the maximum validity period allowed for the Shelf Prospectus issued by Omega Infrastructure Bank Limited?",
+          "options": [
+            "3 months",
+            "6 months",
+            "1 year",
+            "3 years"
+          ],
+          "answerIndex": 2,
+          "explanation": "Under Section 31(1), a shelf prospectus is valid for a period not exceeding one year from the date of opening of the first issue of securities under that prospectus.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Shelf Prospectus",
+            "Validity",
+            "Section 31"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-3_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-3_02",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-3",
+          "subject": "Law",
+          "prompt": "If an investor who subscribed to the first tranche wishes to review the abridged information regarding the debenture issue, what must accompany the application form?",
+          "options": [
+            "An abridged prospectus",
+            "The full incorporation certificate only",
+            "A copy of the annual tax audit report",
+            "No document is required if the investor is institutional"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 33 mandates that no form of application for the purchase of securities shall be issued unless accompanied by an abridged prospectus containing key disclosures.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Abridged Prospectus",
+            "Section 33",
+            "Application"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-3_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-3_02",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-3",
+          "subject": "Law",
+          "prompt": "Which regulatory authority specifies the classes of companies eligible to issue a Shelf Prospectus?",
+          "options": [
+            "Reserve Bank of India alone",
+            "Securities and Exchange Board of India (SEBI)",
+            "Registrar of Companies directly without SEBI",
+            "National Company Law Tribunal"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 31 explicitly states that a shelf prospectus may be issued by such class or classes of companies as the Securities and Exchange Board of India (SEBI) may specify.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Shelf Prospectus",
+            "SEBI",
+            "Section 31"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-3_03",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "passage": "Solaris Tech Solutions Private Limited wanted to raise funds urgently. The Board of Directors resolved to make a private placement of equity shares to 220 identified persons, including retail friends and family, without restricting it to Qualified Institutional Buyers or employees under ESOP. The application money collected was deposited directly into the company's operational current account and utilized immediately to pay off a short-term bank loan before filing the return of allotment.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-3_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-3_03",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-3",
+          "subject": "Law",
+          "prompt": "What is the legal consequence of Solaris Tech Solutions Private Limited making a private placement offer to 220 persons in a financial year?",
+          "options": [
+            "It is completely valid since private companies have no investor limits.",
+            "It is deemed to be a public offer because it exceeds the limit of 200 persons, violating Section 42.",
+            "It converts the company into a partnership firm automatically.",
+            "It is permitted if approved by an ordinary resolution."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 42(2) provides that any offer or invitation made to more than 200 persons in the aggregate in a financial year is deemed to be a public offer, attracting all public offer regulations and penalties.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Private Placement",
+            "Deemed Public Offer",
+            "Section 42"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-3_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-3_03",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-3",
+          "subject": "Law",
+          "prompt": "Was it legally permissible for Solaris Tech Solutions Private Limited to utilize the application money before making the allotment?",
+          "options": [
+            "Yes, private companies can use application money immediately.",
+            "No, application monies received under private placement must be kept in a separate bank account and cannot be utilized until allotment is made.",
+            "Yes, if utilized for debt repayment.",
+            "Yes, with 75% shareholder approval."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 42(6) mandates that monies received on application under private placement shall be kept in a separate bank account in a scheduled bank and shall not be utilized for any purpose other than for adjustment against allotment or repayment.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Private Placement",
+            "Separate Bank Account",
+            "Section 42"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-3_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-3_03",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-3",
+          "subject": "Law",
+          "prompt": "Within what timeframe must Solaris Tech Solutions Private Limited file the return of allotment in Form PAS-3 with the Registrar after making an allotment?",
+          "options": [
+            "15 days",
+            "30 days",
+            "60 days",
+            "90 days"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 14 and Section 42(9) require the company to file a return of allotment with the Registrar in Form PAS-3 within 30 days from the date of the allotment.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Return of Allotment",
+            "Form PAS-3",
+            "Rule 14"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-3_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-3_03",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-3",
+          "subject": "Law",
+          "prompt": "Through which mode must the subscription money for private placement be paid by the investors?",
+          "options": [
+            "Cash up to Rs. 2,00,000",
+            "Cheque, demand draft, or other banking channels only, but never by cash",
+            "Barter or exchange of physical assets",
+            "Promissory notes"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 14 of the Companies (Prospectus and Allotment of Securities) Rules, 2014 expressly mandates that subscription monies payable on private placement must be paid through banking channels (cheque/DD/bank transfer) and not in cash.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Private Placement",
+            "Banking Channels",
+            "Rule 14"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-3_04",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "passage": "Beta Power Corporation opened a public issue of equity shares worth Rs. 50 crores, specifying a minimum subscription of 90% of the issue size in its prospectus. When the subscription list closed, the company received valid applications amounting to only 75% of the issue size. Failing to secure the minimum subscription, the company delayed refunding the application money beyond the statutory timeline of 15 days from the closure of the issue.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-3_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-3_04",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-3",
+          "subject": "Law",
+          "prompt": "Within how many days from the closure of the issue must Beta Power Corporation refund the application money when minimum subscription is not received?",
+          "options": [
+            "10 days",
+            "15 days",
+            "30 days",
+            "60 days"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 39(3) stipulates that if the stated minimum subscription is not received, the application money shall be repaid within 15 days from the closure of the issue.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Minimum Subscription",
+            "Refund",
+            "Section 39"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-3_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-3_04",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-3",
+          "subject": "Law",
+          "prompt": "What is the rate of interest payable by Beta Power Corporation and its officers in default for failing to refund application money within the statutory period?",
+          "options": [
+            "6% per annum",
+            "10% per annum",
+            "12% per annum",
+            "15% per annum"
+          ],
+          "answerIndex": 3,
+          "explanation": "Section 39(3) prescribes that failure to repay application money within 15 days makes the company and officers in default liable to repay it with interest at the rate of 15% per annum.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Interest on Refund",
+            "Section 39",
+            "Penalty"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-3_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-3_04",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-3",
+          "subject": "Law",
+          "prompt": "Can Beta Power Corporation legally proceed with the allotment of shares when only 75% subscription is received?",
+          "options": [
+            "Yes, if approved by the Board of Directors.",
+            "No allotment can be made unless minimum subscription is received.",
+            "Yes, if the shortfall is less than 20%.",
+            "Yes, with NCLT permission."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 39(1) expressly prohibits any allotment of securities unless the amount stated in the prospectus as the minimum amount has been subscribed.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Minimum Subscription",
+            "Allotment Prohibition",
+            "Section 39"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-3_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-3_04",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-3",
+          "subject": "Law",
+          "prompt": "What is the maximum time limit prescribed under Section 39(1) for making allotment of securities in a normal successful public issue from the closure of the subscription list?",
+          "options": [
+            "30 days",
+            "60 days",
+            "90 days",
+            "120 days"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 39(1) states that no allotment shall be made unless minimum subscription is received and within 30 days of the closure of the issue (or such other period as specified by SEBI).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Allotment Time Limit",
+            "Section 39",
+            "Public Issue"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-3_05",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-3",
+      "subject": "Law",
+      "passage": "Delta Dynamics Limited proposed to make a public offer of equity shares. Prior to launching the issue, the company failed to make an application to any recognized stock exchange for permission for the shares to be dealt with on the exchange. Furthermore, during the marketing campaign, an individual named Mr. X deliberately made false and deceptive promises and forecasts about future dividend payouts to induce several retail investors to apply for shares.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Prospectus and Allotment of Securities"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-3_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-3_05",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-3",
+          "subject": "Law",
+          "prompt": "Which section of the Companies Act, 2013 mandates that a company making a public offer must apply to one or more recognized stock exchanges for listing permission?",
+          "options": [
+            "Section 38",
+            "Section 40",
+            "Section 42",
+            "Section 26"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 40(1) of the Companies Act, 2013 requires every company making a public offer to make an application before issuing a prospectus to one or more recognized stock exchanges and obtain permission.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Stock Exchange",
+            "Section 40",
+            "Listing Permission"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-3_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-3_05",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-3",
+          "subject": "Law",
+          "prompt": "What is the legal status of any allotment made by Delta Dynamics Limited if it fails to comply with the stock exchange permission requirement under Section 40?",
+          "options": [
+            "The allotment is fully valid.",
+            "The allotment is void.",
+            "The allotment is subject to regularizing by the Board.",
+            "The allotment converts into debentures."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 40(5) provides that if permission from stock exchanges has not been applied for or granted, any allotment made pursuant to the prospectus shall be void.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Void Allotment",
+            "Section 40",
+            "Stock Exchange"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-3_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-3_05",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-3",
+          "subject": "Law",
+          "prompt": "Which section of the Act specifically penalizes Mr. X for fraudulently inducing persons to invest money through deceptive promises and forecasts?",
+          "options": [
+            "Section 34",
+            "Section 35",
+            "Section 36",
+            "Section 39"
+          ],
+          "answerIndex": 2,
+          "explanation": "Section 36 of the Companies Act, 2013 penalizes any person who knowingly or recklessly makes false, deceptive, or misleading statements, promises, or forecasts to induce another person to enter into an agreement for acquiring securities.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Fraudulently Inducing Persons",
+            "Section 36",
+            "Deceptive Statements"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-3_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-3_05",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-3",
+          "subject": "Law",
+          "prompt": "If application monies are required to be refunded due to void allotment resulting from lack of stock exchange permission, where must such monies be kept pending refund?",
+          "options": [
+            "In a separate bank account in a scheduled bank",
+            "In the company's general operational ledger",
+            "With the Registrar of Companies directly",
+            "With the stock exchange clearing house"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 40(3) requires that all monies received on application from the public be kept in a separate bank account in a scheduled bank, to be repaid if permission is not granted or allotment becomes void.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Separate Bank Account",
+            "Refund",
+            "Section 40"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

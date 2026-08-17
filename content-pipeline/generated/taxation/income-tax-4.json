@@ -1,0 +1,1426 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "income-tax-4",
+  "subject": "Taxation",
+  "paper": "Paper 3: Taxation",
+  "module": "Module 2",
+  "chapterNumber": 4,
+  "chapterTitle": "Income of Other Persons included in Assessee’s Total Income",
+  "generatedAt": "2026-08-16T14:21:37.113Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_income-tax-4_001",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "Under section 60 of the Income-tax Act, 1961, if a person transfers the income from any asset without transferring the asset itself, such income shall be included in the total income of:",
+      "options": [
+        "The transferee",
+        "The transferor",
+        "Both jointly in the ratio of their taxable income",
+        "Neither; it is exempt from tax"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 60 deals with transfer of income without transfer of asset. It explicitly mandates that where a person transfers income from any asset without transferring the ownership of the asset, such income shall be included in the total income of the transferor.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Transfer of Income",
+        "Section 60",
+        "Clubbing of Income"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_002",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "Mr. A revokes a revocable transfer of a house property after 4 years in favor of his son. The income from the property before revocation will be taxed in the hands of:",
+      "options": [
+        "Mr. A",
+        "The son",
+        "Equally between Mr. A and the son",
+        "The HUF of Mr. A"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under section 61, all income arising to any person by virtue of a revocable transfer of assets is taxable in the hands of the transferor (Mr. A).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Revocable Transfer",
+        "Section 61",
+        "House Property"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_003",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "Which of the following transfers is considered an 'irrevocable transfer' for the purposes of income inclusion under sections 61 to 63?",
+      "options": [
+        "A transfer which contains any provision for the re-transfer of the asset to the transferor at any time.",
+        "A transfer which gives the transferor a right to reassume power over the asset.",
+        "A transfer which is not revocable during the lifetime of the transferee.",
+        "A transfer where the transferor can claim any income or asset back."
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 63 defines a revocable transfer as one containing any provision for re-transfer or right to reassume power. Conversely, a transfer not revocable during the lifetime of the beneficiary/transferee is treated as irrevocable (provided certain conditions are met).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Revocable Transfer",
+        "Section 63",
+        "Definitions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_004",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "As per section 64(1)(iv), when an individual transfers an asset (other than house property) to their spouse for inadequate consideration, the income from such asset is included in the total income of:",
+      "options": [
+        "The spouse",
+        "The individual transferor",
+        "Both equally",
+        "The person who utilizes the asset"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 64(1)(iv) provides that income from assets transferred directly or indirectly to the spouse otherwise than for adequate consideration or in connection with an agreement to live apart is clubbed in the total income of the individual transferor.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Transfer to Spouse",
+        "Section 64(1)(iv)",
+        "Inadequate Consideration"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_005",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "Mr. X transfers 10,000 shares of a company to his wife Mrs. X as a gift. Mrs. X receives a dividend of Rs. 50,000. Mrs. X invests this dividend and earns interest of Rs. 5,000. How much amount will be clubbed in the income of Mr. X?",
+      "options": [
+        "Rs. 55,000",
+        "Rs. 50,000",
+        "Rs. 45,000",
+        "Nil"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under section 64(1)(iv), only the direct income from the transferred asset (dividend of Rs. 50,000) is clubbed. Income from accretion or reinvestment of such income (interest of Rs. 5,000) is not clubbed in the hands of the transferor.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Accretion of Income",
+        "Section 64(1)(iv)",
+        "Clubbing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_006",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "If an individual transfers a house property to their spouse for inadequate consideration, who is deemed to be the owner of the house property for tax purposes under section 27, and how is the income taxed?",
+      "options": [
+        "Spouse is owner; income is taxed in hands of spouse.",
+        "Transferor is deemed owner; income is taxed in hands of transferor under clubbing provisions.",
+        "Both are co-owners in 50:50 ratio.",
+        "The income is exempt under section 10."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 27(i) deems the transferor to be the owner of house property transferred to a spouse for inadequate consideration. Consequently, the income is computed in the hands of the transferor and clubbed under section 64.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Deemed Owner",
+        "House Property",
+        "Section 27",
+        "Section 64"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_007",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "Mr. B transfers cash to his son’s wife (daughter-in-law) for inadequate consideration. The income earned by the daughter-in-law from such cash will be clubbed in the total income of:",
+      "options": [
+        "Mr. B",
+        "Mr. B’s son",
+        "The daughter-in-law herself",
+        "Mr. B’s HUF"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 64(1)(vi) states that income from assets transferred directly or indirectly to a daughter-in-law otherwise than for adequate consideration is included in the total income of the transferor (Mr. B).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Daughter-in-law",
+        "Section 64(1)(vi)",
+        "Clubbing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_008",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "Mr. C transfers securities to a trust, and the income from the trust is applied for the immediate benefit of his son’s wife for inadequate consideration. Such income shall be clubbed with the income of:",
+      "options": [
+        "The trust",
+        "Mr. C",
+        "The son",
+        "The son's wife"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under section 64(1)(viii), income arising directly or indirectly from assets transferred directly or indirectly to any person or association of persons for the immediate or deferred benefit of the transferor's son's wife, otherwise than for adequate consideration, is clubbed in the hands of the transferor.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Trust Benefit",
+        "Section 64(1)(viii)",
+        "Daughter-in-law"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_009",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "Which of the following incomes of a minor child is NOT included in the total income of the parent under section 64(1A)?",
+      "options": [
+        "Income earned from manual work.",
+        "Income earned from fixed deposits made out of gift from grandfather.",
+        "Interest income from a savings bank account opened with gift money from mother.",
+        "Capital gains arising from sale of shares gifted by father."
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 64(1A) excludes income earned by a minor child from any manual work or from any activity involving application of their specialized skill, talent, or specialized knowledge and experience.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Minor Child Income",
+        "Section 64(1A)",
+        "Exceptions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_010",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "If both parents are alive, in whose total income shall the income of a minor child be included under section 64(1A)?",
+      "options": [
+        "Always the mother",
+        "Always the father",
+        "The parent whose total income (excluding the minor's income) is higher",
+        "Equally divided between both parents"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 64(1A) prescribes that the income of a minor child shall be included in the total income of the parent whose total income (excluding the minor's income) is higher.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Minor Child",
+        "Higher Income Parent",
+        "Section 64(1A)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_011",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "Once the income of a minor child is clubbed in the total income of a parent, what exemption is available to the parent under section 10(32)?",
+      "options": [
+        "Full exemption of the minor's income",
+        "Exemption up to Rs. 1,500 per minor child",
+        "Exemption up to Rs. 5,000 per minor child",
+        "No exemption is available"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 10(32) provides an exemption of up to Rs. 1,500 per minor child whose income is clubbed under section 64(1A), or the actual income clubbed, whichever is less.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 10(32)",
+        "Minor Exemption",
+        "Clubbing Limit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_012",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "How is the income of a minor child who suffers from any disability specified under section 80U treated for clubbing purposes?",
+      "options": [
+        "It is clubbed in the parent's income as normal.",
+        "It is completely exempt from tax under section 10.",
+        "It is assessed directly in the hands of the minor child and is not clubbed in the parent's income.",
+        "It is taxed at a flat rate of 10% in the hands of the guardian."
+      ],
+      "answerIndex": 2,
+      "explanation": "As per the proviso to section 64(1A), the income of a minor child suffering from any disability of the nature specified in section 80U shall not be clubbed in the income of the parent, but shall be taxable in the hands of the minor child.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Disability",
+        "Section 80U",
+        "Minor Child Exception"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_013",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "Mr. D is a partner in a firm. His wife is employed in the same firm without any professional qualifications, and she draws a salary of Rs. 6,00,000. How will this salary be taxed?",
+      "options": [
+        "Taxed entirely in the hands of the wife.",
+        "Included in the total income of Mr. D because he has a substantial interest in the firm.",
+        "Divided equally between Mr. D and his wife.",
+        "Disallowed as an expense to the firm and tax-free for the wife."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under section 64(1)(ii), if a spouse of an individual having a substantial interest in a concern receives salary, commission, etc., from that concern without possessing technical or professional qualifications, such income is clubbed in the total income of the individual.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Substantial Interest",
+        "Section 64(1)(ii)",
+        "Spouse Salary"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_014",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "For the purpose of section 64(1)(ii) relating to remuneration of a spouse, what constitutes a 'substantial interest' in a company?",
+      "options": [
+        "Beneficial ownership of shares carrying at least 10% of the voting power at any time during the previous year.",
+        "Beneficial ownership of shares carrying at least 20% of the voting power at any time during the previous year.",
+        "Ownership of at least 50% of the equity shares.",
+        "Holding a managerial position with 5% voting power."
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 64(2) Explanation defines 'substantial interest' as holding (beneficially) shares carrying not less than 10% voting power at any time during the previous year.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Substantial Interest",
+        "Definition",
+        "Section 64"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_015",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "Both Mr. X and his wife Mrs. X have substantial interest in M/s ABC Enterprises. Mrs. X is employed in the firm without professional qualifications and receives salary. In whose hands will this salary be clubbed?",
+      "options": [
+        "In the hands of Mrs. X herself.",
+        "In the hands of Mr. X.",
+        "In the hands of the parent whose total income is higher.",
+        "Equally in the hands of both Mr. X and Mrs. X."
+      ],
+      "answerIndex": 2,
+      "explanation": "Where both husband and wife have substantial interest in a concern and receive remuneration without technical/professional qualifications, the income is included in the total income of the spouse whose total income (excluding such remuneration) is higher.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Both Spouses Substantial Interest",
+        "Section 64(1)(ii)",
+        "Higher Income"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_016",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "If an individual converts their self-acquired property into property of a Hindu Undivided Family (HUF) without adequate consideration, how is the income from such property treated?",
+      "options": [
+        "Taxed solely in the hands of the individual.",
+        "Taxed in the hands of the HUF.",
+        "Deemed to be income of the individual and clubbed in their total income under section 64(2).",
+        "Exempt from tax."
+      ],
+      "answerIndex": 2,
+      "explanation": "Under section 64(2), if a member of an HUF converts or transfers their separate property into HUF property without adequate consideration, the income derived from such property is deemed to be the income of the individual member, not the HUF.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "HUF Conversion",
+        "Section 64(2)",
+        "Individual Property"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_017",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "Subsequent to the partition of an HUF where property converted under section 64(2) was distributed, how is the income derived by the spouse of the individual from such distributed property taxed?",
+      "options": [
+        "Taxed in the hands of the spouse.",
+        "Deemed to be the income of the individual member and clubbed under section 64(2).",
+        "Exempt from taxation.",
+        "Taxed in the hands of the HUF."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 64(2) specifies that where the converted property is partitioned (total or partial), the income derived by the spouse of the individual from the portion received on partition is deemed to arise to the individual and is clubbed in their total income.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "HUF Partition",
+        "Section 64(2)",
+        "Spouse Income"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_018",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "Can cross-transfers of assets (e.g., Mr. A gifts to Mrs. B and Mr. B gifts to Mrs. A) be arranged to avoid clubbing provisions under section 64?",
+      "options": [
+        "Yes, clubbing provisions apply only to direct transfers.",
+        "No, the Supreme Court held that in case of cross-transfers, the transferors will be treated as indirect transferors and income will be clubbed.",
+        "Yes, provided the gifts are of equal value.",
+        "No, but only if the gifts are made in different financial years."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under the doctrine of cross-transfers (established by judicial precedents like CIT v. Keshavji Morarji), if transfers are interconnected and form part of a single transaction, the indirect transferor concept applies, and income is clubbed in the respective spouse's hands.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Cross-Transfers",
+        "Indirect Transfer",
+        "Judicial Precedents"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_019",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "Mr. P gifted Rs. 5,00,000 to his minor daughter. The daughter deposited the amount in a bank earning 8% interest per annum. The interest is clubbed with Mr. P’s income. Next year, the daughter becomes a major. Will the interest earned post-majority be clubbed?",
+      "options": [
+        "Yes, because the initial asset was gifted by the father.",
+        "No, clubbing of minor's income ceases once the child attains majority.",
+        "Yes, until the daughter withdraws the principal.",
+        "No, but only if the daughter files a separate return."
+      ],
+      "answerIndex": 1,
+      "explanation": "Clubbing under section 64(1A) applies strictly during minority. Once the child attains majority, any income earned thereafter is assessed directly in the hands of the child and is not clubbed with the parent's income.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Minor to Major",
+        "Section 64(1A)",
+        "Cessation of Clubbing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_020",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "Which of the following is correct regarding the computation of total income when clubbing provisions apply?",
+      "options": [
+        "The income to be clubbed is computed after allowing all deductions and losses pertaining to that income.",
+        "Gross income is clubbed without deducting any expenses.",
+        "Only net profit without any deductions is clubbed.",
+        "Clubbing applies only to capital gains and not to other heads of income."
+      ],
+      "answerIndex": 0,
+      "explanation": "When income is clubbed under sections 60 to 64, it is computed in accordance with the provisions of the Act, meaning all permissible deductions, expenses, and losses relating to that specific income are accounted for before clubbing the net amount.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Computation",
+        "Clubbing Rules",
+        "Net Income"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_021",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "Mr. E transfers his house property to his minor son for inadequate consideration. The property is let out. Under whose income tax return will the rental income be computed and clubbed?",
+      "options": [
+        "The minor son",
+        "The father (Mr. E) as deemed owner under section 27 and clubbing under section 64(1A)",
+        "The mother",
+        "Exempt under section 10"
+      ],
+      "answerIndex": 1,
+      "explanation": "Mr. E is the deemed owner under section 27(i) due to transfer to a minor child for inadequate consideration. Further, minor's income is clubbed with the parent under section 64(1A). Thus, the rental income (computed under House Property) is included in the father's total income.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Deemed Owner",
+        "Minor",
+        "House Property",
+        "Clubbing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_022",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "Can a loss under a particular head of income earned by a minor child be clubbed with the income of the parent?",
+      "options": [
+        "No, losses of a minor can never be clubbed.",
+        "Yes, losses can be clubbed and set off against the parent's income subject to normal set-off rules.",
+        "Only capital losses can be clubbed, not business losses.",
+        "Losses are carried forward only by the minor upon attaining majority."
+      ],
+      "answerIndex": 1,
+      "explanation": "Just as income of a minor is clubbed, any loss incurred by the minor (e.g., under capital gains or business) is also clubbed with the parent's income and can be set off against the parent's income as per normal provisions of the Act.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Minor Losses",
+        "Set-off",
+        "Clubbing Provisions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_023",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "An individual transfers shares to his spouse pursuant to an agreement to live apart (divorce/separation agreement). Is the dividend income from such shares clubbed in the hands of the individual?",
+      "options": [
+        "Yes, because the transfer was to the spouse.",
+        "No, transfers in connection with an agreement to live apart are specifically excluded from clubbing under section 64(1)(iv).",
+        "Yes, unless judicial separation is finalized.",
+        "No, but only if the transfer is for adequate consideration."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 64(1)(iv) contains an explicit exception: income from assets transferred to a spouse in connection with an agreement to live apart is not clubbed in the transferor's hands.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Agreement to Live Apart",
+        "Section 64(1)(iv)",
+        "Exception"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_024",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "Mr. F gifted Rs. 2,00,000 to his sister-in-law (wife's sister). The sister-in-law invested in shares and earned dividend income. How is this dividend income taxed?",
+      "options": [
+        "Clubbed in the income of Mr. F.",
+        "Clubbed in the income of Mr. F's wife.",
+        "Taxed in the hands of the sister-in-law; no clubbing applies.",
+        "Exempt from tax."
+      ],
+      "answerIndex": 2,
+      "explanation": "Clubbing provisions under section 64 apply only to transfers to spouse, minor child, son's wife, or specified trust beneficiaries. A sister-in-law is not covered under section 64, so the income is taxed in her own hands.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Sister-in-law",
+        "Scope of Clubbing",
+        "Section 64"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_025",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "If an asset is transferred for adequate consideration, do the clubbing provisions under section 64 apply?",
+      "options": [
+        "Yes, always.",
+        "No, clubbing provisions apply strictly to transfers made otherwise than for adequate consideration (except in specific cases like section 60).",
+        "Yes, if the transfer is between relatives.",
+        "No, unless approved by the Assessing Officer."
+      ],
+      "answerIndex": 1,
+      "explanation": "Most clauses of section 64 (such as transfers to spouse, daughter-in-law) apply only when the transfer is made 'otherwise than for adequate consideration'. If adequate consideration is paid, clubbing does not apply.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Adequate Consideration",
+        "Section 64",
+        "Exclusion"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_026",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "Which of the following describes the nature of tax liability when income is clubbed under section 64?",
+      "options": [
+        "The recipient of income pays the tax.",
+        "The assessee in whose total income the income is clubbed is liable to pay tax on such clubbed income.",
+        "Tax is paid jointly by the transferor and transferee.",
+        "The income is taxed at a flat rate of 30%."
+      ],
+      "answerIndex": 1,
+      "explanation": "When income is clubbed, it is included in the total income of the assessee (parent/transferor) and forms part of their total taxable income, making them liable to pay tax thereon according to their applicable slab rates.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Tax Liability",
+        "Clubbed Income",
+        "Assessment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_027",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "Mr. G gifted a commercial building to his major son. The rental income from the building is received by the son. How is this income assessed?",
+      "options": [
+        "Clubbed in the total income of Mr. G.",
+        "Assessed directly in the hands of the major son.",
+        "Divided equally between father and son.",
+        "Taxed in the hands of Mr. G's HUF."
+      ],
+      "answerIndex": 1,
+      "explanation": "Clubbing provisions for gifts to children apply exclusively to minor children under section 64(1A). Gifts to major children are not clubbed; the major son is taxed directly on the rental income.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Major Child",
+        "Gift",
+        "Exclusion from Clubbing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_028",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "Under section 64(1)(iv), if an asset is transferred to a spouse for inadequate consideration, and the spouse subsequently sells the asset at a capital gain, how is the capital gain treated?",
+      "options": [
+        "The capital gain is taxable in the hands of the spouse.",
+        "The capital gain is clubbed in the total income of the transferor spouse.",
+        "Exempt from capital gains tax.",
+        "Shared equally between husband and wife."
+      ],
+      "answerIndex": 1,
+      "explanation": "Capital gains arising from the sale of an asset transferred to a spouse for inadequate consideration are also clubbed in the total income of the transferor spouse under section 64(1)(iv).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Capital Gains",
+        "Section 64(1)(iv)",
+        "Transfer to Spouse"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_029",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "What is the primary objective of enacting the clubbing of income provisions (Sections 60 to 64) under the Income-tax Act, 1961?",
+      "options": [
+        "To increase government revenue through double taxation.",
+        "To prevent tax avoidance and tax evasion through splitting of income among family members.",
+        "To simplify the filing of tax returns for HUFs.",
+        "To encourage gifts within families."
+      ],
+      "answerIndex": 1,
+      "explanation": "Clubbing provisions are anti-tax-avoidance measures designed to curb the practice of taxpayers reducing their tax burden by transferring income or assets to family members (spouse, minor children) in lower tax brackets.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Objective",
+        "Anti-Tax-Avoidance",
+        "Clubbing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-4_030",
+      "kind": "normal",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "prompt": "Mr. H settles an irrevocable trust where the income is accumulated for the benefit of his minor daughter, to be handed over to her when she turns 25. When is this accumulated income taxed?",
+      "options": [
+        "Taxed in the hands of the trust when accumulated.",
+        "Clubbed in the total income of Mr. H in the year it arises.",
+        "Taxed when the daughter turns 25.",
+        "Exempt until distribution."
+      ],
+      "answerIndex": 1,
+      "explanation": "Even if income is accumulated or deferred for the minor child's future benefit under a trust or otherwise, section 64(1A) requires it to be clubbed in the income of the parent in the year the income arises.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Deferred Income",
+        "Trust",
+        "Minor Child",
+        "Section 64(1A)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_income-tax-4_01",
+      "kind": "scenario",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "passage": "Mr. Rajesh, a resident individual, owns a bungalow and 5,000 shares in X Ltd. On 1st May 2025, he transfers the bungalow to his wife, Mrs. Priya, without adequate consideration. Priya lets out the bungalow for a monthly rent of Rs. 40,000. On 1st June 2025, Rajesh gifts 2,000 shares of X Ltd. to his minor daughter, Riya. Riya receives a dividend of Rs. 20,000 from X Ltd. during the previous year 2025-26. Riya also earns Rs. 15,000 from participating in a national-level dance reality show based on her specialized dancing skills. Rajesh's total income before clubbing is Rs. 12,00,000, while Priya's total income before clubbing is Rs. 5,00,000.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-4_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-4_01",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-4",
+          "subject": "Taxation",
+          "prompt": "Who is deemed to be the owner of the bungalow transferred by Mr. Rajesh to Mrs. Priya under the Income-tax Act, 1961?",
+          "options": [
+            "Mrs. Priya",
+            "Mr. Rajesh",
+            "Both Rajesh and Priya as co-owners",
+            "The tenant occupying the bungalow"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per section 27(i), an individual who transfers a house property to their spouse otherwise than for adequate consideration is deemed to be the owner of the house property.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Deemed Owner",
+            "House Property",
+            "Section 27"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-4_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-4_01",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-4",
+          "subject": "Taxation",
+          "prompt": "How will the rental income from the bungalow be computed and taxed for the previous year 2025-26?",
+          "options": [
+            "Taxed in the hands of Mrs. Priya after standard deduction.",
+            "Computed in the hands of Mr. Rajesh as deemed owner and clubbed under section 64.",
+            "Divided equally between Rajesh and Priya.",
+            "Exempt from tax under section 10."
+          ],
+          "answerIndex": 1,
+          "explanation": "Since Mr. Rajesh is the deemed owner under section 27, the income from house property is computed in his hands and included in his total income.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "House Property Computation",
+            "Clubbing",
+            "Deemed Owner"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-4_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-4_01",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-4",
+          "subject": "Taxation",
+          "prompt": "How will the dividend income of Rs. 20,000 received by minor daughter Riya be treated for tax purposes?",
+          "options": [
+            "Taxed directly in Riya's hands.",
+            "Clubbed in the total income of Mrs. Priya since Priya's income is lower.",
+            "Clubbed in the total income of Mr. Rajesh since Rajesh's total income is higher.",
+            "Exempt up to Rs. 20,000."
+          ],
+          "answerIndex": 2,
+          "explanation": "Minor child's income is clubbed in the income of the parent whose total income is higher. Rajesh's income (Rs. 12L) is higher than Priya's (Rs. 5L), so the dividend is clubbed with Rajesh's income, eligible for section 10(32) exemption.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Minor Income",
+            "Higher Income Parent",
+            "Section 10(32)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-4_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-4_01",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-4",
+          "subject": "Taxation",
+          "prompt": "How will the income of Rs. 15,000 earned by Riya from the dance reality show be taxed?",
+          "options": [
+            "Clubbed in Mr. Rajesh's total income.",
+            "Clubbed in Mrs. Priya's total income.",
+            "Taxed directly in the hands of minor Riya and not clubbed.",
+            "Exempt from income tax entirely."
+          ],
+          "answerIndex": 2,
+          "explanation": "Income earned by a minor child from an activity involving the application of specialized skills or talent (like dance reality show) is exempt from clubbing under section 64(1A) and is taxed directly in the minor's hands.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Specialized Talent",
+            "Minor Exception",
+            "Section 64(1A)"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-4_02",
+      "kind": "scenario",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "passage": "Mr. Vikram holds a 15% equity stake (substantial interest) in Apex Ltd. His wife, Mrs. Sunita, is appointed as a receptionist in Apex Ltd. with a monthly salary of Rs. 50,000. Sunita does not possess any professional or technical qualifications relevant to the job. Additionally, Vikram gifts Rs. 3,00,000 in cash to his son’s wife, Anita, on 10th August 2025. Anita invests this cash in fixed deposits earning an interest of Rs. 24,000 during the financial year 2025-26. Vikram’s total income before clubbing is Rs. 15,00,000 and Sunita's total income before salary is Rs. 4,00,000.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-4_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-4_02",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-4",
+          "subject": "Taxation",
+          "prompt": "How will the salary received by Mrs. Sunita from Apex Ltd. be taxed for the previous year 2025-26?",
+          "options": [
+            "Taxed in the hands of Mrs. Sunita under salaries.",
+            "Clubbed in the total income of Mr. Vikram under section 64(1)(ii).",
+            "Disallowed as company expenditure and tax-free for Sunita.",
+            "Divided equally between Vikram and Sunita."
+          ],
+          "answerIndex": 1,
+          "explanation": "Since Mr. Vikram has a substantial interest in Apex Ltd. (15% voting power) and Sunita receives remuneration without possessing technical or professional qualifications, the salary is clubbed in Vikram's total income under section 64(1)(ii).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Spouse Remuneration",
+            "Substantial Interest",
+            "Section 64(1)(ii)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-4_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-4_02",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-4",
+          "subject": "Taxation",
+          "prompt": "How will the interest income of Rs. 24,000 earned by daughter-in-law Anita be treated under the Income-tax Act?",
+          "options": [
+            "Taxed in the hands of Anita.",
+            "Clubbed in the total income of Mr. Vikram.",
+            "Clubbed in the total income of Vikram's son.",
+            "Exempt under section 10(15)."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 64(1)(vi) mandates that income from assets transferred to a daughter-in-law otherwise than for adequate consideration is clubbed in the total income of the transferor (Mr. Vikram).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Daughter-in-law",
+            "Section 64(1)(vi)",
+            "Clubbing"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-4_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-4_02",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-4",
+          "subject": "Taxation",
+          "prompt": "What would be the tax treatment of Sunita's salary if she possessed a recognized professional degree and was employed based on her professional qualifications?",
+          "options": [
+            "It would still be clubbed in Mr. Vikram's income.",
+            "It would be taxable directly in the hands of Mrs. Sunita and NOT clubbed.",
+            "It would be taxed in the hands of Apex Ltd.",
+            "It would be exempt from income tax."
+          ],
+          "answerIndex": 1,
+          "explanation": "The clubbing provision under section 64(1)(ii) does not apply if the spouse possesses technical or professional qualifications and the income is solely attributable to the application of such qualifications.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Professional Qualification",
+            "Exception",
+            "Spouse Salary"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-4_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-4_02",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-4",
+          "subject": "Taxation",
+          "prompt": "Suppose Anita reinvests the interest of Rs. 24,000 earned from the fixed deposit into mutual funds and earns a further return of Rs. 3,000. What amount is clubbed in Mr. Vikram's hands with respect to Anita?",
+          "options": [
+            "Rs. 27,000",
+            "Rs. 24,000",
+            "Rs. 3,000",
+            "Nil"
+          ],
+          "answerIndex": 1,
+          "explanation": "Only the direct income from the transferred asset (interest of Rs. 24,000) is clubbed. Income from the accretion or reinvestment of such income (Rs. 3,000) is not clubbed.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Accretion of Income",
+            "Daughter-in-law",
+            "Clubbing Limit"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-4_03",
+      "kind": "scenario",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "passage": "Mr. Kuber, an individual, converts his self-acquired commercial property worth Rs. 50,00,000 into the property of his Hindu Undivided Family (HUF) on 1st July 2025 without receiving any consideration. The HUF lets out this property and earns a rental income of Rs. 3,00,000 during the financial year 2025-26. On 1st January 2026, a total partition of the HUF takes place, and the commercial property is distributed equally among Kuber, his wife, and his major son.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-4_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-4_03",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-4",
+          "subject": "Taxation",
+          "prompt": "How is the rental income of Rs. 3,00,000 earned by the HUF up to the date of partition taxed?",
+          "options": [
+            "Taxed in the hands of the HUF.",
+            "Deemed to be the income of Mr. Kuber and clubbed in his total income under section 64(2).",
+            "Divided among all family members equally.",
+            "Exempt from tax."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under section 64(2), when an individual converts their separate property into HUF property without adequate consideration, the income derived from such property is deemed to be the income of the individual member (Mr. Kuber), not the HUF.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "HUF Conversion",
+            "Section 64(2)",
+            "Clubbing"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-4_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-4_03",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-4",
+          "subject": "Taxation",
+          "prompt": "Following the total partition on 1st January 2026, how will the rental income attributable to the share received by Mr. Kuber's wife be taxed?",
+          "options": [
+            "Taxed in the hands of the wife.",
+            "Deemed to be the income of Mr. Kuber and included in his total income.",
+            "Taxed in the hands of the HUF post-partition.",
+            "Exempt from tax."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 64(2) specifically provides that upon partition of an HUF, income derived by the spouse of the individual from the converted property received on partition is deemed to arise to the individual and is clubbed in their total income.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "HUF Partition",
+            "Spouse Share",
+            "Section 64(2)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-4_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-4_03",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-4",
+          "subject": "Taxation",
+          "prompt": "How will the rental income attributable to the share received by the major son upon partition be taxed?",
+          "options": [
+            "Clubbed in Mr. Kuber's total income.",
+            "Taxed directly in the hands of the major son.",
+            "Taxed in the hands of the HUF.",
+            "Exempt from tax."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 64(2) clubbing on partition applies to the portion received by the spouse of the individual, not to the portion received by children (especially major children). Thus, the major son is taxed directly on his share.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Major Son",
+            "HUF Partition",
+            "Tax Assessment"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-4_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-4_03",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-4",
+          "subject": "Taxation",
+          "prompt": "What is the legal fiction created under section 64(2) when a member converts separate property into HUF property?",
+          "options": [
+            "The property is treated as sold, attracting capital gains.",
+            "The property is treated as remaining the individual property of the member for income-tax assessment of its yield.",
+            "The HUF is treated as a corporate entity.",
+            "The income is treated as agricultural income."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 64(2) creates a statutory fiction whereby income from property converted by a member to HUF property without adequate consideration is treated as income of the individual member rather than the HUF.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Legal Fiction",
+            "Section 64(2)",
+            "HUF Property"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-4_04",
+      "kind": "scenario",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "passage": "Mr. and Mrs. Sharma have a minor son, Master Kunal, aged 10 years. Mr. Sharma's total income before any clubbing is Rs. 18,00,000, and Mrs. Sharma's total income before any clubbing is Rs. 22,00,000. Mr. Sharma gifts Rs. 10,00,000 to Kunal out of his personal savings. Kunal deposits this money in a corporate fixed deposit on 1st April 2025 at an interest rate of 10% per annum, earning Rs. 1,00,000 as interest during the financial year 2025-26. Additionally, Kunal wins a prize of Rs. 50,000 in a state-level chess championship.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-4_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-4_04",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-4",
+          "subject": "Taxation",
+          "prompt": "In whose total income shall the interest income of Rs. 1,00,000 earned by minor Kunal be included?",
+          "options": [
+            "Mr. Sharma, being the donor of the asset.",
+            "Mrs. Sharma, because her total income is higher than Mr. Sharma's.",
+            "Master Kunal, in his individual return.",
+            "Divided equally between Mr. and Mrs. Sharma."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 64(1A) mandates that the income of a minor child is included in the total income of the parent whose total income (excluding the minor's income) is higher. Since Mrs. Sharma's income (Rs. 22L) exceeds Mr. Sharma's (Rs. 18L), it is clubbed with Mrs. Sharma.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Minor Income",
+            "Higher Income Parent",
+            "Section 64(1A)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-4_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-4_04",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-4",
+          "subject": "Taxation",
+          "prompt": "What amount of exemption under section 10(32) is available against the clubbed interest income of Rs. 1,00,000?",
+          "options": [
+            "Rs. 1,00,000",
+            "Rs. 5,000",
+            "Rs. 1,500",
+            "Nil"
+          ],
+          "answerIndex": 2,
+          "explanation": "Section 10(32) grants an exemption of up to Rs. 1,500 per minor child whose income is clubbed under section 64(1A), or the actual income clubbed, whichever is less.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Section 10(32)",
+            "Minor Exemption",
+            "Limit"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-4_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-4_04",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-4",
+          "subject": "Taxation",
+          "prompt": "How will the prize of Rs. 50,000 won by Kunal in the chess championship be taxed?",
+          "options": [
+            "Clubbed in Mrs. Sharma's total income.",
+            "Clubbed in Mr. Sharma's total income.",
+            "Assessed directly in the hands of minor Kunal and not clubbed.",
+            "Exempt from tax under section 10."
+          ],
+          "answerIndex": 2,
+          "explanation": "Income earned by a minor child from any activity involving application of specialized skill, talent, or specialized knowledge (such as competitive chess) is excluded from clubbing under section 64(1A) and taxed in the minor's hands.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Talent Exception",
+            "Minor Child",
+            "Chess Prize"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-4_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-4_04",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-4",
+          "subject": "Taxation",
+          "prompt": "If Master Kunal had a physical disability of the nature specified under section 80U, how would his total income be treated?",
+          "options": [
+            "Clubbed with the higher-earning parent after 80U deduction.",
+            "Assessed entirely in the hands of Master Kunal without clubbing.",
+            "Split between the parents equally.",
+            "Exempt from all income taxes."
+          ],
+          "answerIndex": 1,
+          "explanation": "The proviso to section 64(1A) explicitly states that the income of a minor child suffering from any disability specified under section 80U shall not be clubbed in the parent's income and is taxed directly in the hands of the minor.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Disability Exception",
+            "Section 80U",
+            "Minor Income"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-4_05",
+      "kind": "scenario",
+      "chapterId": "income-tax-4",
+      "subject": "Taxation",
+      "passage": "Mr. Rohan and Mr. Sohan are brothers-in-law. On 1st June 2025, Mr. Rohan gifts Rs. 5,00,000 to Mr. Sohan’s wife, Mrs. Meena. Simultaneously, on the same date, Mr. Sohan gifts Rs. 5,00,000 to Mr. Rohan’s wife, Mrs. Shweta. Mrs. Meena invests the gifted amount in debentures earning interest of Rs. 60,000 during the previous year 2025-26. Mrs. Shweta also invests her gifted amount in shares earning dividend income of Rs. 60,000 during the same period.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 4,
+        "chapterTitle": "Income of Other Persons included in Assessee’s Total Income"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-4_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-4_05",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-4",
+          "subject": "Taxation",
+          "prompt": "What legal principle governs the taxability of income earned by Mrs. Meena and Mrs. Shweta in this scenario?",
+          "options": [
+            "The doctrine of independent gifts.",
+            "The doctrine of cross-transfers (indirect transfers).",
+            "The principle of mutual benefit trusts.",
+            "The rule of corporate tax avoidance."
+          ],
+          "answerIndex": 1,
+          "explanation": "This is a classic case of cross-transfers where interconnected gifts are made to each other's spouses to bypass direct clubbing provisions. The courts treat the transferors as indirect transferors.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Cross-Transfers",
+            "Indirect Transfer",
+            "Tax Avoidance"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-4_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-4_05",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-4",
+          "subject": "Taxation",
+          "prompt": "In whose total income will the interest income of Rs. 60,000 earned by Mrs. Meena be clubbed?",
+          "options": [
+            "Mr. Sohan, her husband.",
+            "Mr. Rohan, the actual indirect transferor.",
+            "Mrs. Meena herself.",
+            "Equally between Rohan and Sohan."
+          ],
+          "answerIndex": 1,
+          "explanation": "Due to the cross-transfer arrangement, Mr. Rohan is considered the indirect transferor of the assets held by Mrs. Meena. Hence, the income is clubbed in Mr. Rohan's total income under section 64(1)(iv).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Cross-Transfer Clubbing",
+            "Mr. Rohan",
+            "Section 64(1)(iv)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-4_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-4_05",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-4",
+          "subject": "Taxation",
+          "prompt": "In whose total income will the dividend income of Rs. 60,000 earned by Mrs. Shweta be clubbed?",
+          "options": [
+            "Mr. Rohan, her husband.",
+            "Mr. Sohan, the indirect transferor.",
+            "Mrs. Shweta herself.",
+            "Exempt from tax."
+          ],
+          "answerIndex": 1,
+          "explanation": "Applying the cross-transfer rule, Mr. Sohan is treated as the indirect transferor of the assets held by Mrs. Shweta, and consequently, the dividend income is clubbed in Mr. Sohan's total income.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Cross-Transfer Clubbing",
+            "Mr. Sohan",
+            "Section 64(1)(iv)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-4_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-4_05",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-4",
+          "subject": "Taxation",
+          "prompt": "Would the clubbing apply if the gifts made by Rohan and Sohan were made in different financial years with no connection or prior agreement between them?",
+          "options": [
+            "Yes, cross-transfer applies regardless of timing.",
+            "No, if the transfers are independent, genuine, and not part of an interconnected arrangement or quid pro quo, cross-transfers do not apply.",
+            "Yes, because both are related parties.",
+            "No, gifts between brothers-in-law are always exempt."
+          ],
+          "answerIndex": 1,
+          "explanation": "Judicial rulings establish that cross-transfers apply only when the transfers are inter-dependent and form part of a synchronized arrangement. If they are independent and lack a quid pro quo, direct clubbing rules apply only to direct spouse transfers.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Independent Transfers",
+            "Cross-Transfer Limits",
+            "Case Law"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

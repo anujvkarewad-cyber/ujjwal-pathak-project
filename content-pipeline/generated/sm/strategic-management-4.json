@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "strategic-management-4",
+  "subject": "SM",
+  "paper": "Paper 6: Financial Management and Strategic Management",
+  "module": "Paper 6B",
+  "chapterNumber": 4,
+  "chapterTitle": "Strategic Choices",
+  "generatedAt": "2026-08-16T15:01:05.103Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_strategic-management-4_001",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "Which of the following strategic alternatives represents a strategy followed by an enterprise when it aims at high market share, high quality, and premium pricing?",
+      "options": [
+        "Cost Leadership",
+        "Differentiation",
+        "Focus",
+        "Retrenchment"
+      ],
+      "answerIndex": 1,
+      "explanation": "Differentiation strategy involves creating products or services that are perceived industry-wide as unique, allowing the firm to charge premium prices. It focuses on quality, brand loyalty, and distinct features rather than lowest cost. This is a core component of Michael Porter's Generic Strategies.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Porter Generic Strategies",
+        "Differentiation",
+        "Strategic Choices"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_002",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "Ansoff's Product-Market Growth Matrix suggests four strategic alternatives. Which strategy involves introducing new products into existing markets?",
+      "options": [
+        "Market Penetration",
+        "Product Development",
+        "Market Development",
+        "Diversification"
+      ],
+      "answerIndex": 1,
+      "explanation": "Product Development involves developing new products and aiming them at existing markets. Ansoff's Matrix uses existing vs. new grids for products and markets to chart growth directions. It helps organizations assess risks associated with different growth paths.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Ansoff Matrix",
+        "Product Development",
+        "Strategic Alternatives"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_003",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "When a firm decides to sell off a division or part of its business unit to a strategic buyer or spin it off as an independent company, it is executing which type of retrenchment strategy?",
+      "options": [
+        "Turnaround Strategy",
+        "Divestment Strategy",
+        "Liquidation Strategy",
+        "Combination Strategy"
+      ],
+      "answerIndex": 1,
+      "explanation": "Divestment strategy involves selling or liquidating a portion of a business, or a major division, usually as part of a rehabilitation plan or to exit unprofitable segments. Turnaround focuses on operational recovery, while liquidation involves closing down the entire enterprise.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Retrenchment",
+        "Divestment",
+        "Strategic Choices"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_004",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "Which strategic choice matrix evaluates business portfolios based on industry growth rate and relative market share?",
+      "options": [
+        "Ansoff Matrix",
+        "BCG Growth-Share Matrix",
+        "ADL Matrix",
+        "GE Nine-Cell Matrix"
+      ],
+      "answerIndex": 1,
+      "explanation": "The Boston Consulting Group (BCG) Growth-Share Matrix classifies a firm's SBU portfolio using two dimensions: relative market share (horizontal axis) and industry growth rate (vertical axis). It categorizes them into Stars, Cash Cows, Question Marks, and Dogs.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "BCG Matrix",
+        "Portfolio Analysis",
+        "Strategic Choices"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_005",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "In the BCG Growth-Share Matrix, SBUs that generate high cash flows but operate in low-growth industries are classified as:",
+      "options": [
+        "Stars",
+        "Question Marks",
+        "Cash Cows",
+        "Dogs"
+      ],
+      "answerIndex": 2,
+      "explanation": "Cash Cows are low-growth, high-share businesses that generate heavy cash flows. Because growth is low, investments required are minimal, making them sources of cash for other units. Stars have high growth and high share, requiring high investment.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "BCG Matrix",
+        "Cash Cows",
+        "Portfolio Management"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_006",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "Which of Porter's Generic Strategies involves targeting a narrow buyer segment or niche and tailoring the product strategy to the specific tastes and requirements of that niche?",
+      "options": [
+        "Cost Leadership Strategy",
+        "Broad Differentiation Strategy",
+        "Focus Strategy",
+        "Integration Strategy"
+      ],
+      "answerIndex": 2,
+      "explanation": "Focus strategy concentrates on a narrow segment (buyer group, product line, or geographic market) and aims to achieve either cost advantage or differentiation within that specific niche. It can be cost-focus or differentiation-focus.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Porter Generic Strategies",
+        "Focus Strategy",
+        "Strategic Choices"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_007",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "Which of the following is NOT one of the strategies identified under Ansoff's Product-Market Growth Matrix?",
+      "options": [
+        "Market Penetration",
+        "Market Development",
+        "Cost Rationalization",
+        "Diversification"
+      ],
+      "answerIndex": 2,
+      "explanation": "Cost Rationalization is not part of Ansoff's Matrix. The four strategies in Ansoff's matrix are Market Penetration, Market Development, Product Development, and Diversification, focusing entirely on growth directions.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Ansoff Matrix",
+        "Growth Strategies",
+        "Strategic Choices"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_008",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "A strategy where a firm seeks to achieve lowest overall costs on industry-wide basis through large-scale operations and tight cost controls is called:",
+      "options": [
+        "Cost Leadership",
+        "Differentiation",
+        "Focus",
+        "Alliance"
+      ],
+      "answerIndex": 0,
+      "explanation": "Cost Leadership is a generic strategy aimed at establishing a competitive advantage by having the lowest cost of operation in the industry. It relies on economies of scale, learning curve effects, and stringent cost minimization.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Cost Leadership",
+        "Porter Generic Strategies",
+        "Competitive Advantage"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_009",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "When a firm enters into a completely new business that has no relation to its existing technology, products, or markets, it is practicing:",
+      "options": [
+        "Concentric Diversification",
+        "Horizontal Diversification",
+        "Conglomerate Diversification",
+        "Vertical Integration"
+      ],
+      "answerIndex": 2,
+      "explanation": "Conglomerate diversification involves moving into entirely new areas that are unrelated to the current business in terms of customer base, technology, or products. Concentric and horizontal diversifications involve varying degrees of relatedness.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Diversification",
+        "Conglomerate",
+        "Strategic Choices"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_010",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "Which portfolio analysis matrix utilizes industry attractiveness and business strength as its two composite dimensions?",
+      "options": [
+        "BCG Matrix",
+        "Ansoff Matrix",
+        "GE Nine-Cell Matrix",
+        "ADL Matrix"
+      ],
+      "answerIndex": 2,
+      "explanation": "The General Electric (GE) Nine-Cell Matrix evaluates business portfolios using 'Industry Attractiveness' and 'Business Strength' as its two composite dimensions, offering a more nuanced multi-factor analysis than the BCG matrix.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "GE Nine-Cell Matrix",
+        "Portfolio Analysis",
+        "Strategic Choices"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_011",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "An established electronics company enters the overseas market by selling its existing product line to new geographic segments. According to Ansoff's Matrix, this is:",
+      "options": [
+        "Market Penetration",
+        "Market Development",
+        "Product Development",
+        "Diversification"
+      ],
+      "answerIndex": 1,
+      "explanation": "Market Development involves taking existing products into new markets, such as geographical expansion or targeting new customer segments. This expands the firm's customer base without altering the core product offering significantly.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Ansoff Matrix",
+        "Market Development",
+        "Strategic Choices"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_012",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "Which of the following correctly describes 'Backward Integration' in the context of vertical integration strategies?",
+      "options": [
+        "Acquiring or merging with competitors in the same industry.",
+        "Grasping control over suppliers of raw materials or components.",
+        "Setting up distribution channels closer to the final consumer.",
+        "Diversifying into completely unrelated industries."
+      ],
+      "answerIndex": 1,
+      "explanation": "Backward integration involves moving upstream in the supply chain by taking over the supply sources or manufacturing of raw materials. Forward integration involves moving downstream toward the end consumer.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Vertical Integration",
+        "Backward Integration",
+        "Corporate Strategy"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_013",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "Turnaround strategy is typically deployed when an organization experiences persistent losses and declining performance. Which step is generally initiated first in a turnaround situation?",
+      "options": [
+        "Aggressive market expansion",
+        "Massive capital expenditure in new plants",
+        "Cost cutting and asset reduction",
+        "Diversification into new segments"
+      ],
+      "answerIndex": 2,
+      "explanation": "The initial stage of a turnaround strategy involves retrenchment measures, such as cost cutting, shedding unprofitable assets, freezing hiring, and stopping cash bleed to stabilize the firm before embarking on recovery and growth.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Turnaround Strategy",
+        "Retrenchment",
+        "Strategic Choices"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_014",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "In the context of the GE Nine-Cell Matrix, if an SBU falls into a cell representing medium industry attractiveness and medium business strength, what is the standard strategic prescription?",
+      "options": [
+        "Invest/Grow aggressively",
+        "Harvest/Divest",
+        "Hold/Selectivity/Earnings preservation",
+        "Liquidate immediately"
+      ],
+      "answerIndex": 2,
+      "explanation": "Cells in the middle of the GE matrix typically warrant a 'Hold' or 'Wait and See' strategy, focusing on selectivity and maintaining earnings rather than pouring massive new capital or liquidating.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "GE Nine-Cell Matrix",
+        "Hold Strategy",
+        "Portfolio Matrix"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_015",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "A company manufacturing biscuits decides to acquire a packaging material manufacturing unit that previously supplied boxes to them. This is an example of:",
+      "options": [
+        "Forward Integration",
+        "Backward Integration",
+        "Horizontal Integration",
+        "Conglomerate Diversification"
+      ],
+      "answerIndex": 1,
+      "explanation": "Acquiring a supplier of inputs (packaging material) is backward integration as it moves the firm backward along the industry value chain toward raw material/component production.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Backward Integration",
+        "Integration Strategies",
+        "Strategic Choices"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_016",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "Why might a firm choose a 'Stuck in the Middle' position according to Michael Porter, and what is its consequence?",
+      "options": [
+        "It deliberately combines low cost and high differentiation for superior profitability.",
+        "It fails to commit to either cost leadership or differentiation, resulting in below-average performance.",
+        "It dominates both niche and broad markets simultaneously.",
+        "It achieves monopoly status through price fixing."
+      ],
+      "answerIndex": 1,
+      "explanation": "Porter warns that being 'stuck in the middle'—failing to establish a clear cost or differentiation advantage—is a recipe for strategic failure, as the firm lacks the low cost to compete with cost leaders or the uniqueness to command premium prices.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Porter Generic Strategies",
+        "Stuck in the Middle",
+        "Competitive Strategy"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_017",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "Which matrix classifies industries based on their stage of development (embryonic, growth, mature, aging) and the firm's competitive position (dominant, strong, favorable, tenable, weak)?",
+      "options": [
+        "BCG Matrix",
+        "ADL Matrix",
+        "Ansoff Matrix",
+        "GE Nine-Cell Matrix"
+      ],
+      "answerIndex": 1,
+      "explanation": "The Arthur D. Little (ADL) Matrix uses the industry life cycle stage and the firm's competitive position as its two axes, leading to 24 distinct cells to guide strategic choice.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "ADL Matrix",
+        "Industry Life Cycle",
+        "Strategic Choices"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_018",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "Under what condition is a 'Liquidation Strategy' considered the most appropriate choice for a firm?",
+      "options": [
+        "When the firm wants to expand into international markets.",
+        "When all turnaround and divestment efforts have failed and continuing operations will only accumulate more losses.",
+        "When the firm is a Cash Cow generating excessive surplus funds.",
+        "When the firm wants to achieve cost leadership through economies of scale."
+      ],
+      "answerIndex": 1,
+      "explanation": "Liquidation is the most extreme and final retrenchment strategy, chosen when all other restructuring, turnaround, or divestment options have proven unsuccessful and bankruptcy or closure is inevitable.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Liquidation Strategy",
+        "Retrenchment",
+        "Strategic Choices"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_019",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "What distinguishes 'Concentric Diversification' from 'Conglomerate Diversification'?",
+      "options": [
+        "Concentric involves related technology or markets, whereas conglomerate involves completely unrelated businesses.",
+        "Concentric involves selling assets, whereas conglomerate involves asset acquisition.",
+        "Concentric is a retrenchment strategy, whereas conglomerate is an expansion strategy.",
+        "Concentric is done only domestically, while conglomerate is international."
+      ],
+      "answerIndex": 0,
+      "explanation": "Concentric diversification happens when a company expands into businesses that are related to its existing operations through technology, marketing, or products. Conglomerate diversification involves entering completely unrelated fields.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Diversification",
+        "Concentric",
+        "Conglomerate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_020",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "A firm adopts a strategy to increase market share for its present products in existing markets through greater marketing efforts and aggressive pricing. This is known as:",
+      "options": [
+        "Market Development",
+        "Market Penetration",
+        "Product Development",
+        "Horizontal Integration"
+      ],
+      "answerIndex": 1,
+      "explanation": "Market Penetration is focused on increasing sales of existing products in existing markets through intensive marketing, promotional campaigns, and pricing adjustments, without changing product or market definitions.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Ansoff Matrix",
+        "Market Penetration",
+        "Strategic Choices"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_021",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "In the context of Porter's Generic Strategies, a firm pursuing a Cost Leadership strategy must guard against which of the following primary risks?",
+      "options": [
+        "Loss of customer loyalty due to extreme focus on uniqueness",
+        "Technological breakthroughs by rivals that render cost-saving methods obsolete",
+        "Inability to achieve high enough margins to cover high R&D costs",
+        "Fragmented customer base requiring tailored products"
+      ],
+      "answerIndex": 1,
+      "explanation": "A major risk of cost leadership is that technological innovations or changes in manufacturing processes by competitors can overnight neutralize the cost advantage built on older capital investments or scale.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Cost Leadership",
+        "Risks",
+        "Porter Generic Strategies"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_022",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "When two companies operating in the same industry at the same stage of the value chain decide to combine their operations, the strategy is called:",
+      "options": [
+        "Vertical Integration",
+        "Horizontal Integration",
+        "Backward Integration",
+        "Conglomerate Diversification"
+      ],
+      "answerIndex": 1,
+      "explanation": "Horizontal integration involves a firm acquiring or merging with competitors operating at the same stage of the industry value chain, typically to increase market share, achieve economies of scale, or reduce competition.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Horizontal Integration",
+        "Expansion Strategy",
+        "Strategic Choices"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_023",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "Which portfolio framework categorizes business units as 'Stars', 'Cash Cows', 'Question Marks', and 'Dogs', but has been criticized for oversimplifying complex market dynamics into a two-dimensional grid?",
+      "options": [
+        "GE Nine-Cell Matrix",
+        "BCG Growth-Share Matrix",
+        "ADL Matrix",
+        "Ansoff Matrix"
+      ],
+      "answerIndex": 1,
+      "explanation": "The BCG Growth-Share Matrix uses two simple metrics (relative market share and industry growth rate) and categorizes SBUs into four quadrants, which critics argue is overly simplistic compared to multi-factor matrices like GE or ADL.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "BCG Matrix",
+        "Criticisms",
+        "Portfolio Management"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_024",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "A commercial airline company acquires a chain of hotels and tour operating agencies. This corporate growth strategy represents:",
+      "options": [
+        "Backward Integration",
+        "Horizontal Integration",
+        "Concentric Diversification",
+        "Forward Vertical Integration"
+      ],
+      "answerIndex": 3,
+      "explanation": "By acquiring tour operators and hotels, the airline moves downstream closer to the end customer's travel experience and service delivery, which constitutes forward vertical integration.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Forward Integration",
+        "Vertical Integration",
+        "Strategic Choices"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_025",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "Which of the following best characterizes the strategic intent of a 'Question Mark' in the BCG Matrix?",
+      "options": [
+        "Milk for cash to fund other businesses.",
+        "Invest heavily to turn them into stars or divest if they consume resources without gaining share.",
+        "Hold position and protect market share with minimal expenditure.",
+        "Liquidate immediately upon discovery."
+      ],
+      "answerIndex": 1,
+      "explanation": "Question Marks (Problem Children) are high-growth, low-share businesses. They require high cash inputs to maintain or grow share, but their future is uncertain; management must decide whether to invest heavily to make them Stars or divest them.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "BCG Matrix",
+        "Question Marks",
+        "Portfolio Analysis"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_026",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "How does the GE Nine-Cell Matrix differ fundamentally from the BCG Growth-Share Matrix in terms of its axes?",
+      "options": [
+        "GE uses subjective single-factor metrics, while BCG uses objective multi-factor metrics.",
+        "GE uses multi-factor composite dimensions (Industry Attractiveness and Business Strength), whereas BCG uses single-factor dimensions (Market Growth and Market Share).",
+        "GE focuses only on international markets, while BCG focuses on domestic markets.",
+        "GE evaluates non-profit organizations, whereas BCG evaluates for-profit corporations."
+      ],
+      "answerIndex": 1,
+      "explanation": "The key distinction is that BCG uses single-factor axes (relative market share and industry growth rate), whereas the GE matrix uses comprehensive, multi-factor composite indices for industry attractiveness and business strength.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "GE Nine-Cell Matrix",
+        "BCG Matrix",
+        "Portfolio Comparison"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_027",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "In the ADL Matrix, what strategic posture is generally prescribed when an industry is in its mature or aging stage and the firm occupies a 'Weak' competitive position?",
+      "options": [
+        "Fast growth and aggressive investment",
+        "Selective investment in niche areas",
+        "Harvesting or divestment / withdrawal",
+        "Maintaining status quo"
+      ],
+      "answerIndex": 2,
+      "explanation": "In the ADL matrix, a firm with a weak competitive position in a mature or aging industry faces low future prospects and high vulnerability, making harvesting, turnaround, or divestment/withdrawal the appropriate strategic choice.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "ADL Matrix",
+        "Divestment",
+        "Strategic Posture"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_028",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "A large pharmaceutical conglomerate spins off its agrochemical division into a completely separate legal entity with its own shares traded on the stock exchange. This is an example of:",
+      "options": [
+        "Turnaround",
+        "Divestment via spin-off",
+        "Liquidation",
+        "Backward Integration"
+      ],
+      "answerIndex": 1,
+      "explanation": "A spin-off is a form of divestment where a subsidiary or division is separated from the parent company to operate as an independent entity, allowing shareholders to hold shares in both firms directly.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Divestment",
+        "Spin-off",
+        "Retrenchment Strategies"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_029",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "When a firm pursues a differentiation strategy, which of the following isolating mechanisms or barriers protects its competitive advantage against imitators?",
+      "options": [
+        "Pure reliance on low wages and low material costs",
+        "Patents, unique brand image, superior customer service, and complex product design",
+        "Elimination of all R&D and marketing expenditures",
+        "Standardized mass production with zero customization"
+      ],
+      "answerIndex": 1,
+      "explanation": "Differentiation is protected by barriers such as brand loyalty, proprietary technology, patents, unique design features, and superior service quality, making it difficult and costly for competitors to duplicate.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Differentiation",
+        "Competitive Advantage",
+        "Barriers to Imitation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-4_030",
+      "kind": "normal",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "prompt": "Which of the following scenarios best exemplifies a 'Combination Strategy' in corporate strategic management?",
+      "options": [
+        "A firm adopts cost leadership in domestic markets and differentiation in international markets simultaneously or sequentially.",
+        "A firm closes down all operations due to bankruptcy.",
+        "A firm merges with a direct competitor in the same market.",
+        "A firm focuses exclusively on a single product line in a single market."
+      ],
+      "answerIndex": 0,
+      "explanation": "A combination strategy is adopted when an enterprise employs a mix of different grand strategies (such as stability for one division, expansion for another, and retrenchment for a third) simultaneously or sequentially across its business units.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Combination Strategy",
+        "Grand Strategies",
+        "Strategic Choices"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_strategic-management-4_01",
+      "kind": "scenario",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "passage": "Zenith Motors Ltd., an established automobile manufacturer in India, is reviewing its portfolio of business units and long-term growth options. The company operates four distinct units: Unit A (an electric scooter line in a high-growth emerging market with a dominant market share); Unit B (a legacy diesel hatchback model in a stagnant market with high market share); Unit C (an experimental flying-car prototype in a high-growth market with negligible market share); and Unit D (an outdated agricultural tractor division in a declining market with low market share). Zenith's board is evaluating how to allocate capital across these units using the BCG Growth-Share Matrix.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_strategic-management-4_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-4_01",
+          "sequenceInScenario": 1,
+          "chapterId": "strategic-management-4",
+          "subject": "SM",
+          "prompt": "Based on the BCG Growth-Share Matrix, how should Unit A (electric scooter line with dominant share in a high-growth market) be classified?",
+          "options": [
+            "Cash Cow",
+            "Star",
+            "Question Mark",
+            "Dog"
+          ],
+          "answerIndex": 1,
+          "explanation": "Unit A operates in a high-growth market and holds a dominant market share, which places it squarely in the 'Star' category. Stars generate high incomes and require substantial investment to sustain their market leadership.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "BCG Matrix",
+            "Stars",
+            "Portfolio Analysis"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-4_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-4_01",
+          "sequenceInScenario": 2,
+          "chapterId": "strategic-management-4",
+          "subject": "SM",
+          "prompt": "According to portfolio theory, what is the appropriate strategic treatment for Unit B (legacy diesel hatchback in a stagnant market with high market share)?",
+          "options": [
+            "Inject massive fresh capital for aggressive expansion",
+            "Harvest and milk the unit for cash to fund other growing units",
+            "Liquidate immediately without extracting any value",
+            "Classify as a Question Mark and increase marketing spend"
+          ],
+          "answerIndex": 1,
+          "explanation": "Unit B is a 'Cash Cow' (high share, low growth). The standard prescription is to milk it for cash with minimal reinvestment, using the surplus funds to support Stars and Question Marks.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "BCG Matrix",
+            "Cash Cows",
+            "Strategic Prescription"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-4_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-4_01",
+          "sequenceInScenario": 3,
+          "chapterId": "strategic-management-4",
+          "subject": "SM",
+          "prompt": "How should Zenith categorize and manage Unit C (experimental flying-car in a high-growth market with negligible share)?",
+          "options": [
+            "As a Dog; divest immediately",
+            "As a Cash Cow; use for dividend distribution",
+            "As a Question Mark; evaluate whether to invest heavily or divest",
+            "As a Star; reduce prices to gain immediate share"
+          ],
+          "answerIndex": 2,
+          "explanation": "Unit C has low market share in a high-growth market, defining it as a Question Mark (or Problem Child). It requires careful analysis to decide if additional investment can turn it into a Star or if it should be abandoned.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "BCG Matrix",
+            "Question Marks",
+            "Strategic Choice"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-4_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-4_01",
+          "sequenceInScenario": 4,
+          "chapterId": "strategic-management-4",
+          "subject": "SM",
+          "prompt": "What strategic decision does the BCG matrix typically recommend for Unit D (outdated tractor division in a declining market with low share)?",
+          "options": [
+            "Divestment or liquidation",
+            "Heavy investment to convert into a Star",
+            "Expansion into international markets",
+            "Conversion into a Cash Cow"
+          ],
+          "answerIndex": 0,
+          "explanation": "Unit D is a 'Dog' (low growth, low share). Dogs typically drain resources and offer poor profitability; the recommended strategy is divestment or liquidation.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "BCG Matrix",
+            "Dogs",
+            "Divestment"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_strategic-management-4_02",
+      "kind": "scenario",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "passage": "Aura Cosmetics, a premium skincare brand known for its organic and chemical-free ingredients, is planning its growth trajectory for the next five years. The company currently sells its products exclusively through high-end specialty retail stores in major metropolitan cities in India. To achieve aggressive expansion, the management team is considering four distinct proposals: Proposal 1: Launching lower-priced herbal soaps in existing urban stores; Proposal 2: Entering the European and Southeast Asian retail markets with its existing product lineup; Proposal 3: Developing a new range of anti-aging serums containing patented botanical extracts for current urban customers; Proposal 4: Acquiring a chemical testing laboratory that previously served as Aura's key vendor.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_strategic-management-4_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-4_02",
+          "sequenceInScenario": 1,
+          "chapterId": "strategic-management-4",
+          "subject": "SM",
+          "prompt": "Proposal 1 (launching lower-priced herbal soaps in existing urban stores) represents which strategy under Ansoff's Product-Market Growth Matrix?",
+          "options": [
+            "Market Development",
+            "Market Penetration",
+            "Product Development",
+            "Diversification"
+          ],
+          "answerIndex": 1,
+          "explanation": "Launching new variations of products aimed at existing customer segments and stores falls under Market Penetration or Product Development depending on novelty, but introducing variations/extensions to capture more share in existing markets is primarily market penetration/expansion.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Ansoff Matrix",
+            "Market Penetration",
+            "Growth Strategy"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-4_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-4_02",
+          "sequenceInScenario": 2,
+          "chapterId": "strategic-management-4",
+          "subject": "SM",
+          "prompt": "Proposal 2 (entering European and Southeast Asian retail markets with existing products) is an example of:",
+          "options": [
+            "Market Development",
+            "Product Development",
+            "Horizontal Integration",
+            "Backward Integration"
+          ],
+          "answerIndex": 0,
+          "explanation": "Taking existing products into new geographical markets is the classic definition of Market Development in Ansoff's Matrix.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Ansoff Matrix",
+            "Market Development",
+            "Geographic Expansion"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-4_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-4_02",
+          "sequenceInScenario": 3,
+          "chapterId": "strategic-management-4",
+          "subject": "SM",
+          "prompt": "Proposal 3 (developing new anti-aging serums for current customers) corresponds to:",
+          "options": [
+            "Market Penetration",
+            "Market Development",
+            "Product Development",
+            "Conglomerate Diversification"
+          ],
+          "answerIndex": 2,
+          "explanation": "Product Development involves introducing new products to existing markets or customer segments, which matches developing anti-aging serums for current urban buyers.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Ansoff Matrix",
+            "Product Development",
+            "Strategic Choice"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-4_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-4_02",
+          "sequenceInScenario": 4,
+          "chapterId": "strategic-management-4",
+          "subject": "SM",
+          "prompt": "Proposal 4 (acquiring the chemical testing laboratory that previously acted as a vendor) is an application of which corporate strategy?",
+          "options": [
+            "Forward Integration",
+            "Backward Integration",
+            "Horizontal Integration",
+            "Conglomerate Diversification"
+          ],
+          "answerIndex": 1,
+          "explanation": "Acquiring a supplier or vendor (testing lab) moves the firm upstream in the supply chain, which is Backward Integration.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Backward Integration",
+            "Vertical Integration",
+            "Corporate Strategy"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_strategic-management-4_03",
+      "kind": "scenario",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "passage": "Titanium Tech Solutions, a mid-sized IT hardware manufacturer, has been suffering from three consecutive years of heavy financial losses due to intense price wars initiated by low-cost Asian competitors, rising debt servicing costs, and bloated overheads. The board appoints a new CEO, seasoned in corporate turnarounds, to rescue the firm. The CEO's restructuring blueprint involves the following phases: Phase 1: Imposing an immediate hiring freeze, slashing administrative expenses by 35%, and selling off an idle manufacturing plant in Pune to clear immediate bank dues; Phase 2: Refocusing engineering efforts exclusively on high-margin enterprise servers rather than commoditized desktop PCs; Phase 3: Rebuilding customer trust through targeted quality guarantees and launching a revamped product line.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_strategic-management-4_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-4_03",
+          "sequenceInScenario": 1,
+          "chapterId": "strategic-management-4",
+          "subject": "SM",
+          "prompt": "Phase 1 of the restructuring blueprint (cost cutting, freezing hiring, and selling an idle plant) is characteristic of which stage in a Turnaround Strategy?",
+          "options": [
+            "Recovery stage",
+            "Retrenchment/Stabilization stage",
+            "Expansion stage",
+            "Liquidation stage"
+          ],
+          "answerIndex": 1,
+          "explanation": "The initial stage of a turnaround strategy is retrenchment/stabilization, which focuses on cutting costs, shedding non-performing assets, stopping cash bleed, and stabilizing the financial position.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Turnaround Strategy",
+            "Retrenchment",
+            "Stabilization"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-4_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-4_03",
+          "sequenceInScenario": 2,
+          "chapterId": "strategic-management-4",
+          "subject": "SM",
+          "prompt": "What is the primary objective of Phase 1 in a turnaround situation?",
+          "options": [
+            "To achieve global market leadership immediately",
+            "To stop the financial hemorrhage and stabilize operations",
+            "To diversify into unrelated retail businesses",
+            "To merge with the lowest-cost competitor"
+          ],
+          "answerIndex": 1,
+          "explanation": "The primary objective of the retrenchment phase in a turnaround is to halt the financial losses and stabilize the firm's cash flows before embarking on recovery and growth.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Turnaround Strategy",
+            "Objectives",
+            "Retrenchment"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-4_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-4_03",
+          "sequenceInScenario": 3,
+          "chapterId": "strategic-management-4",
+          "subject": "SM",
+          "prompt": "Phase 2 (refocusing on high-margin enterprise servers and abandoning commoditized PCs) represents which strategic action during a turnaround?",
+          "options": [
+            "Asset reduction and downsizing",
+            "Core business refocusing and operational restructuring",
+            "Total enterprise liquidation",
+            "Forward vertical integration"
+          ],
+          "answerIndex": 1,
+          "explanation": "After stabilization, the turnaround strategy moves to the recovery phase, which involves restructuring operations, focusing on core profitable segments (like enterprise servers), and shedding unprofitable product lines.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Turnaround Strategy",
+            "Recovery Phase",
+            "Operational Restructuring"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-4_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-4_03",
+          "sequenceInScenario": 4,
+          "chapterId": "strategic-management-4",
+          "subject": "SM",
+          "prompt": "If Titanium Tech Solutions fails to implement Phase 1 and Phase 2 successfully, and losses continue to mount with zero cash reserves, what is the ultimate recourse for the enterprise?",
+          "options": [
+            "Market Development",
+            "Liquidation Strategy",
+            "Diversification Strategy",
+            "Backward Integration"
+          ],
+          "answerIndex": 1,
+          "explanation": "When all turnaround and restructuring efforts fail to revive a loss-making enterprise, the final retrenchment alternative is Liquidation, involving the sale of all assets and closure of the business.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Liquidation Strategy",
+            "Retrenchment",
+            "Strategic Choices"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_strategic-management-4_04",
+      "kind": "scenario",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "passage": "Nexus Pharma Corp. is evaluating its diverse portfolio of pharmaceutical and healthcare operations using the GE Nine-Cell Matrix. The board has analyzed two key SBU portfolios: SBU Alpha (specialized oncology drugs) and SBU Beta (over-the-counter standard pain relief tablets). SBU Alpha operates in an industry characterized by very high market growth, technological advancements, and strong profit margins, while Nexus Pharma holds a dominant market position and robust proprietary R&D capabilities in this segment. SBU Beta operates in a mature, highly competitive industry with slow growth, where Nexus Pharma faces moderate market share and intense price pressure from numerous generic manufacturers.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_strategic-management-4_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-4_04",
+          "sequenceInScenario": 1,
+          "chapterId": "strategic-management-4",
+          "subject": "SM",
+          "prompt": "Based on the description of SBU Alpha (high industry attractiveness due to growth/margins and strong business strength due to R&D and market position), where would it fall on the GE Nine-Cell Matrix?",
+          "options": [
+            "Low Attractiveness / Weak Strength",
+            "High Attractiveness / Strong Strength",
+            "Medium Attractiveness / Average Strength",
+            "Low Attractiveness / Strong Strength"
+          ],
+          "answerIndex": 1,
+          "explanation": "SBU Alpha combines high industry attractiveness and strong business strength, placing it in the top-left cells of the GE matrix, which prescribes a strategy of investment and growth.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "GE Nine-Cell Matrix",
+            "Industry Attractiveness",
+            "Business Strength"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-4_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-4_04",
+          "sequenceInScenario": 2,
+          "chapterId": "strategic-management-4",
+          "subject": "SM",
+          "prompt": "What is the strategic recommendation prescribed by the GE Matrix for an SBU located in the 'High Attractiveness / Strong Strength' zone?",
+          "options": [
+            "Harvest or divest immediately",
+            "Invest / Grow aggressively",
+            "Hold and preserve earnings without further investment",
+            "Liquidate assets"
+          ],
+          "answerIndex": 1,
+          "explanation": "For businesses in the strong/high quadrants of the GE Matrix, the recommended strategy is to invest and grow, capitalizing on market opportunities and building competitive advantage.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "GE Nine-Cell Matrix",
+            "Investment Strategy",
+            "Growth"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-4_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-4_04",
+          "sequenceInScenario": 3,
+          "chapterId": "strategic-management-4",
+          "subject": "SM",
+          "prompt": "Where would SBU Beta (mature slow-growth industry, moderate share, intense generic price pressure) likely be positioned on the GE Nine-Cell Matrix?",
+          "options": [
+            "High Industry Attractiveness / Strong Business Strength",
+            "Medium-to-Low Industry Attractiveness / Average-to-Weak Business Strength",
+            "High Industry Attractiveness / Weak Business Strength",
+            "Rapid Growth / Dominant Strength"
+          ],
+          "answerIndex": 1,
+          "explanation": "SBU Beta suffers from a mature slow-growth market (medium/low attractiveness) and moderate share under pressure (average/weak strength), placing it in the middle-to-lower cells requiring selective or hold/harvest strategies.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "GE Nine-Cell Matrix",
+            "Positioning",
+            "Portfolio Analysis"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-4_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-4_04",
+          "sequenceInScenario": 4,
+          "chapterId": "strategic-management-4",
+          "subject": "SM",
+          "prompt": "How does the GE Nine-Cell Matrix improve upon the BCG Matrix in evaluating multi-business corporations like Nexus Pharma?",
+          "options": [
+            "By using single-factor metrics that are easier to calculate.",
+            "By replacing market share and growth rate with multi-factor composite dimensions like industry attractiveness and business strength.",
+            "By restricting analysis strictly to non-profit entities.",
+            "By eliminating the need for any subjective managerial judgment."
+          ],
+          "answerIndex": 1,
+          "explanation": "The GE Nine-Cell Matrix is an enhancement over the BCG matrix because it replaces simplistic single-factor axes with rich, multi-factor composite dimensions (Industry Attractiveness and Business Strength), accommodating a wider range of strategic variables.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "GE Nine-Cell Matrix",
+            "BCG Matrix Comparison",
+            "Portfolio Evaluation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_strategic-management-4_05",
+      "kind": "scenario",
+      "chapterId": "strategic-management-4",
+      "subject": "SM",
+      "passage": "Omega Retail Corp., a nationwide supermarket chain, wants to solidify its market position against aggressive online e-commerce giants. The management is debating three distinct competitive approaches inspired by Michael Porter's Generic Strategies. Approach 1: Reengineering internal logistics, automating warehouses, and bulk-sourcing to achieve the absolute lowest operating cost in the retail sector, passing minor savings to price-sensitive masses. Approach 2: Establishing high-end gourmet experience stores with in-house artisanal bakeries, personal shopping assistants, and exclusive imported organic produce, charging premium prices. Approach 3: Ignoring nationwide operations and exclusively opening hyper-localized, ultra-convenient mini-stores in gated residential townships, stocking items precisely tailored to the dietary preferences of that specific community.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 4,
+        "chapterTitle": "Strategic Choices"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_strategic-management-4_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-4_05",
+          "sequenceInScenario": 1,
+          "chapterId": "strategic-management-4",
+          "subject": "SM",
+          "prompt": "Approach 1 (lowest operating cost, bulk-sourcing, serving price-sensitive masses) exemplifies which of Porter's Generic Strategies?",
+          "options": [
+            "Differentiation",
+            "Cost Leadership",
+            "Focus Strategy",
+            "Stuck in the Middle"
+          ],
+          "answerIndex": 1,
+          "explanation": "Achieving the lowest operating cost through scale, efficiency, and tight cost control to serve mass markets is the hallmark of the Cost Leadership strategy.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Porter Generic Strategies",
+            "Cost Leadership",
+            "Strategic Choices"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-4_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-4_05",
+          "sequenceInScenario": 2,
+          "chapterId": "strategic-management-4",
+          "subject": "SM",
+          "prompt": "Approach 2 (gourmet experience stores, personal shoppers, premium pricing) represents which strategy?",
+          "options": [
+            "Cost Leadership",
+            "Differentiation",
+            "Cost Focus",
+            "Liquidation"
+          ],
+          "answerIndex": 1,
+          "explanation": "Offering unique store experiences, artisanal goods, and premium pricing is a classic implementation of a Differentiation strategy.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Porter Generic Strategies",
+            "Differentiation",
+            "Competitive Advantage"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-4_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-4_05",
+          "sequenceInScenario": 3,
+          "chapterId": "strategic-management-4",
+          "subject": "SM",
+          "prompt": "Approach 3 (ultra-convenient mini-stores in gated communities with tailored stock) describes which generic strategy?",
+          "options": [
+            "Broad Cost Leadership",
+            "Broad Differentiation",
+            "Focus Strategy",
+            "Horizontal Integration"
+          ],
+          "answerIndex": 2,
+          "explanation": "Targeting a narrow, specific buyer segment (gated community residents) with tailored product offerings is a Focus strategy.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Porter Generic Strategies",
+            "Focus Strategy",
+            "Niche Marketing"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-4_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-4_05",
+          "sequenceInScenario": 4,
+          "chapterId": "strategic-management-4",
+          "subject": "SM",
+          "prompt": "According to Michael Porter, what would happen to Omega Retail Corp. if it attempts to simultaneously provide the lowest prices in the country while offering expensive gourmet experiences and personal shoppers without committing to either?",
+          "options": [
+            "It will achieve maximum profitability across all segments.",
+            "It will become 'Stuck in the Middle', resulting in inferior performance and eroded profitability.",
+            "It will automatically attain monopoly status.",
+            "It will successfully execute a combination generic strategy."
+          ],
+          "answerIndex": 1,
+          "explanation": "Porter explicitly warns that firms failing to make a clear choice between cost leadership and differentiation become 'Stuck in the Middle', which typically leads to poor strategic performance because the firm lacks the low cost for mass volume or the uniqueness for premium margins.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Porter Generic Strategies",
+            "Stuck in the Middle",
+            "Strategic Pitfalls"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

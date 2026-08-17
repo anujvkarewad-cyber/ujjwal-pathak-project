@@ -1,0 +1,1376 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "advanced-accounting-3",
+  "subject": "Accounts",
+  "paper": "Paper 1: Advanced Accounting",
+  "module": "Module 1",
+  "chapterNumber": 3,
+  "chapterTitle": "Applicability of Accounting Standards",
+  "generatedAt": "2026-08-16T13:40:13.650Z",
+  "model": "gemini-3.6-flash",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_advanced-accounting-3_001",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "What is the turnover threshold (excluding other income) for a non-corporate entity to be classified as a Level I entity as per ICAI guidelines?",
+      "options": [
+        "Exceeds ₹50 crore",
+        "Exceeds ₹100 crore",
+        "Exceeds ₹250 crore",
+        "Exceeds ₹500 crore"
+      ],
+      "answerIndex": 2,
+      "explanation": "As per ICAI guidelines for applicability of Accounting Standards to non-corporate entities, Level I entities are large-sized entities. One of the criteria is that turnover (excluding other income) exceeds ₹250 crore in the immediately preceding accounting year.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Non-Corporate Entities",
+        "Level I Thresholds"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_002",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "Under the Companies (Accounting Standards) Rules, a company is NOT classified as a Small and Medium-Sized Company (SMC) if its borrowings (including public deposits) at any time during the immediately preceding accounting year exceed:",
+      "options": [
+        "₹10 crore",
+        "₹25 crore",
+        "₹50 crore",
+        "₹100 crore"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under the Companies (Accounting Standards) Rules, one of the essential conditions for an unlisted company to be an SMC is that its borrowings (including public deposits) do not exceed ₹50 crore at any time during the immediately preceding accounting year. If borrowings exceed ₹50 crore, the company is classified as a Non-SMC.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SMC Criteria",
+        "Corporate Entities"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_003",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "Which standard-setting body was constituted by the ICAI in 1977 to formulate Accounting Standards in India?",
+      "options": [
+        "National Financial Reporting Authority (NFRA)",
+        "Accounting Standards Board (ASB)",
+        "Ministry of Corporate Affairs (MCA)",
+        "Auditing and Assurance Standards Board (AASB)"
+      ],
+      "answerIndex": 1,
+      "explanation": "The Institute of Chartered Accountants of India (ICAI) constituted the Accounting Standards Board (ASB) in 1977. ASB is responsible for formulating Accounting Standards to establish uniform accounting policies and practices in India.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Standard Setting Process",
+        "ASB"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_004",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "Under Section 2(40) of the Companies Act, 2013, which of the following corporate entities is explicitly exempted from preparing a Cash Flow Statement (AS 3)?",
+      "options": [
+        "Any unlisted public company",
+        "One Person Company (OPC)",
+        "Listed company with turnover below ₹250 crore",
+        "Non-Banking Financial Company (NBFC)"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 2(40) of the Companies Act, 2013 provides that the financial statements of a One Person Company (OPC), Small Company, Dormant Company, and recognized Startup private company need not include a Cash Flow Statement. Thus, OPC is statutorily exempted from preparing AS 3 Cash Flow Statement.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 3 Exemption",
+        "Companies Act 2013"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_005",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "Non-corporate entities are categorized into how many levels by the ICAI for the purpose of applicability of Accounting Standards?",
+      "options": [
+        "Two levels",
+        "Three levels",
+        "Four levels",
+        "Five levels"
+      ],
+      "answerIndex": 2,
+      "explanation": "ICAI revised the scheme for classification of non-corporate entities into four distinct levels: Level I (Large size), Level II (Medium size), Level III (Small size), and Level IV (Micro size). Differential relaxations and exemptions are prescribed based on these levels.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Non-Corporate Entities",
+        "Level Classification"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_006",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "Under which section of the Companies Act, 2013 does the Central Government prescribe Accounting Standards as recommended by ICAI and NFRA?",
+      "options": [
+        "Section 129",
+        "Section 133",
+        "Section 134",
+        "Section 143"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 133 of the Companies Act, 2013 empowers the Central Government to prescribe the standards of accounting or any addendum thereto, as recommended by ICAI and examined/recommended by NFRA.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Companies Act 2013",
+        "Section 133"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_007",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "What is the net worth threshold at or above which unlisted Indian companies are required to mandatorily comply with Indian Accounting Standards (Ind AS)?",
+      "options": [
+        "₹100 crore",
+        "₹250 crore",
+        "₹500 crore",
+        "₹1,000 crore"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under the Ind AS roadmap issued by the MCA, all unlisted companies having a net worth of ₹250 crore or more are required to apply Ind AS. Unlisted companies below ₹250 crore net worth continue to apply Accounting Standards (AS).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Ind AS Applicability",
+        "Net Worth Threshold"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_008",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "Which of the following is NOT one of the three fundamental accounting assumptions specified in AS 1 'Disclosure of Accounting Policies'?",
+      "options": [
+        "Going Concern",
+        "Consistency",
+        "Accrual",
+        "Prudence"
+      ],
+      "answerIndex": 3,
+      "explanation": "AS 1 specifies three fundamental accounting assumptions: Going Concern, Consistency, and Accrual. Prudence is a major consideration in selecting accounting policies, not a fundamental accounting assumption.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 1",
+        "Fundamental Assumptions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_009",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "When a non-corporate entity moves from a higher level (Level I) to a lower level (Level II), for how many consecutive years must it satisfy the lower level criteria before it can claim relaxations of that lower level?",
+      "options": [
+        "1 year",
+        "2 consecutive years",
+        "3 consecutive years",
+        "No waiting period required"
+      ],
+      "answerIndex": 1,
+      "explanation": "An entity that drops from a higher level to a lower level must remain in the lower level for two consecutive years before it can avail the exemptions or relaxations available to that lower level. This prevents frequent status switching due to temporary operational fluctuations.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Transition Rules",
+        "Non-Corporate Entities"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_010",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "When a Level IV non-corporate entity migrates to Level I during a financial year because its borrowings cross ₹50 crore, when do its exemptions cease to apply?",
+      "options": [
+        "Immediately in the current accounting year",
+        "After 2 consecutive years",
+        "From the next financial year only",
+        "At the discretion of management"
+      ],
+      "answerIndex": 0,
+      "explanation": "If an entity moves from a lower level to a higher level, exemptions and relaxations previously enjoyed cease to apply immediately from the current accounting period in which the event causing reclassification occurs.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Transition Rules",
+        "Loss of Exemptions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_011",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "M/s Alpha Traders is a partnership firm. To be classified as a Level III non-corporate entity, its borrowings (including public deposits) during the immediately preceding accounting year must be:",
+      "options": [
+        "Up to ₹2 crore",
+        "Exceeding ₹2 crore but not exceeding ₹10 crore",
+        "Exceeding ₹10 crore but not exceeding ₹50 crore",
+        "Exceeding ₹50 crore"
+      ],
+      "answerIndex": 1,
+      "explanation": "Level III (Small size) non-corporate entities are those whose borrowings (including public deposits) exceed ₹2 crore but do not exceed ₹10 crore at any time during the immediately preceding accounting year (and turnover is > ₹10 crore up to ₹50 crore).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Level III Criteria",
+        "Non-Corporate Borrowings"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_012",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "What is the turnover limit range (excluding other income) for a non-corporate entity to be categorized as a Level II (Medium size) entity?",
+      "options": [
+        "Exceeds ₹10 crore but does not exceed ₹50 crore",
+        "Exceeds ₹50 crore but does not exceed ₹250 crore",
+        "Exceeds ₹250 crore",
+        "Up to ₹10 crore"
+      ],
+      "answerIndex": 1,
+      "explanation": "For Level II (Medium size) non-corporate entities, turnover (excluding other income) must exceed ₹50 crore but not exceed ₹250 crore in the immediately preceding accounting year.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Level II Criteria",
+        "Turnover Thresholds"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_013",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "How does AS 17 'Segment Reporting' apply to Level II non-corporate entities under ICAI guidelines?",
+      "options": [
+        "Fully applicable without any exemption or relaxation",
+        "Completely exempted",
+        "Applicable only if listed on stock exchanges",
+        "Applicable with disclosure relaxations"
+      ],
+      "answerIndex": 0,
+      "explanation": "AS 17 Segment Reporting is fully applicable to Level I and Level II non-corporate entities without exemptions. Complete exemption from AS 17 is available only to Level III and Level IV non-corporate entities.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 17 Applicability",
+        "Non-Corporate Exemptions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_014",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "If a Small and Medium-Sized Company (SMC) opts to avail exemptions/relaxations available to it under Companies (Accounting Standards) Rules, what specific disclosure must it make in its financial statements?",
+      "options": [
+        "No special disclosure is needed",
+        "It must disclose by way of a note that it is an SMC and has complied with AS applicable to SMCs",
+        "It must present full reconciliations as if exemptions were not taken",
+        "It must obtain prior written approval from MCA and disclose the approval number"
+      ],
+      "answerIndex": 1,
+      "explanation": "An SMC that avails exemptions/relaxations must explicitly state in the notes to financial statements that it is an SMC and has complied with Accounting Standards applicable to Small and Medium-Sized Companies.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SMC Disclosure",
+        "Accounting Policy"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_015",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "Zeta Ltd is an unlisted company with turnover of ₹15 crore and zero borrowings. However, it is a subsidiary of Omega Ltd, which is a Non-SMC. Can Zeta Ltd qualify as an SMC?",
+      "options": [
+        "Yes, because its individual turnover is well within SMC limits",
+        "Yes, provided its shareholders pass a special resolution",
+        "No, because a subsidiary of a Non-SMC cannot be classified as an SMC",
+        "No, unless MCA grants a specific exemption"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under the Companies (Accounting Standards) Rules, a company that is a holding or subsidiary company of a Non-SMC entity cannot be classified as an SMC, regardless of its individual size or turnover.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SMC Criteria",
+        "Holding-Subsidiary Rule"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_016",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "According to the Framework for Preparation and Presentation of Financial Statements, under which measurement basis are assets recorded at the discounted present value of future net cash inflows?",
+      "options": [
+        "Historical Cost",
+        "Current Cost",
+        "Realizable Value",
+        "Present Value"
+      ],
+      "answerIndex": 3,
+      "explanation": "Under the Present Value measurement basis, assets are carried at the discounted present value of the future net cash inflows that the item is expected to generate in the normal course of business.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Framework",
+        "Measurement Bases"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_017",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "With respect to AS 28 'Impairment of Assets', which specific relaxation is available to Level IV non-corporate entities?",
+      "options": [
+        "Fully exempt from the entire standard AS 28",
+        "Exempt from calculating Value in Use using discounted cash flow models if reasonable estimate of net selling price is available",
+        "Allowed to ignore impairment losses completely",
+        "Exempt from recording impairment loss in profit or loss"
+      ],
+      "answerIndex": 1,
+      "explanation": "Level IV non-corporate entities are granted relaxation in AS 28 whereby Value in Use can be estimated based on reasonable indications rather than complex discounted cash flow calculations if net selling price cannot be determined.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 28 Relaxations",
+        "Level IV Entities"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_018",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "What is the maximum borrowing limit (including public deposits) at any time during the immediately preceding accounting year for an entity to qualify as a Level IV non-corporate entity?",
+      "options": [
+        "Does not exceed ₹2 crore",
+        "Does not exceed ₹5 crore",
+        "Does not exceed ₹10 crore",
+        "Does not exceed ₹50 crore"
+      ],
+      "answerIndex": 0,
+      "explanation": "Level IV (Micro size) non-corporate entities are entities whose turnover does not exceed ₹10 crore and borrowings (including public deposits) do not exceed ₹2 crore at any time during the immediately preceding accounting year.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Level IV Criteria",
+        "Borrowing Limit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_019",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "When an SMC loses its SMC status and becomes a Non-SMC in the current year, how should it handle the financial figures of the comparative previous accounting period?",
+      "options": [
+        "It must restate previous year figures fully as if it was a Non-SMC",
+        "Comparative figures need not be revised for exemptions enjoyed in previous year unless required by specific AS",
+        "It must re-audit previous year financial statements under Non-SMC rules",
+        "Comparative figures must be completely omitted from financial statements"
+      ],
+      "answerIndex": 1,
+      "explanation": "When an SMC becomes a Non-SMC, comparative figures for the previous year need not be revised for exemptions enjoyed in the previous year, unless specific transitional provisions of individual Accounting Standards state otherwise.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SMC Transition",
+        "Comparative Figures"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_020",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "Can a small private sector bank with turnover of ₹100 crore and borrowings of ₹20 crore qualify as an SMC under the Companies (Accounting Standards) Rules?",
+      "options": [
+        "Yes, because turnover is below ₹250 crore",
+        "Yes, because borrowings are below ₹50 crore",
+        "No, because banks, financial institutions, and insurance companies are excluded from SMC definition regardless of size",
+        "Yes, if approved by the Reserve Bank of India"
+      ],
+      "answerIndex": 2,
+      "explanation": "The definition of SMC explicitly excludes banks, financial institutions, and insurance companies regardless of their turnover or borrowing limits. Therefore, a bank can never qualify as an SMC.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SMC Criteria",
+        "Banks and Financial Institutions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_021",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "According to the Framework, to be reliable, information in financial statements must be neutral, free from material error, complete, and:",
+      "options": [
+        "Prepared strictly under historical cost",
+        "Represent faithfully the transactions and events it purports to represent",
+        "Audited by an independent chartered accountant",
+        "Approved by the Board of Directors"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under the Framework, information possesses the quality of reliability when it is free from material error and bias, and can be depended upon by users to represent faithfully that which it either purports to represent or could reasonably be expected to represent.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Framework",
+        "Qualitative Characteristics"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_022",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "Level IV non-corporate entities enjoy which relaxation regarding defined benefit plans under AS 15 'Employee Benefits'?",
+      "options": [
+        "Full exemption from recognizing liability for short-term benefits",
+        "Exemption from actuarial valuation for defined benefit plan liability using projected unit credit method, allowing simplified methods",
+        "Allowed to classify all employee costs as deferred revenue expenditure",
+        "Exempt from paying statutory provident fund"
+      ],
+      "answerIndex": 1,
+      "explanation": "For defined benefit plans, Level IV non-corporate entities are exempt from using the Projected Unit Credit Method and actuarial valuation; they are allowed to measure liabilities using simplified methods (e.g., accrued liability without discounting).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 15 Relaxation",
+        "Level IV Entities"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_023",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "Firm X (a partnership firm) has turnover of ₹5 crore and borrowings of ₹50 lakh. However, 80% of its equity interest is held by ABC Ltd, a listed corporate entity. What is the non-corporate entity level classification of Firm X?",
+      "options": [
+        "Level IV",
+        "Level III",
+        "Level II",
+        "Level I"
+      ],
+      "answerIndex": 3,
+      "explanation": "If a non-corporate entity is a holding or subsidiary entity of a Level I / Non-SMC entity (such as a listed company), it automatically gets classified as a Level I non-corporate entity, irrespective of its individual turnover and borrowing numbers.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Holding-Subsidiary",
+        "Non-Corporate Entities",
+        "Level I"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_024",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "For determining Level classification for FY 2025-26, an entity checks its figures of FY 2024-25. Turnover was ₹40 crore throughout. Borrowings were zero except for 2 days in Nov 2024 when a temporary bank overdraft reached ₹52 crore. The entity's classification for FY 2025-26 is:",
+      "options": [
+        "Level IV, because overdraft was temporary",
+        "Level III, because average borrowings were below ₹10 crore",
+        "Level II, based on turnover criteria",
+        "Level I, because borrowings exceeded ₹50 crore 'at any time' during the preceding year"
+      ],
+      "answerIndex": 3,
+      "explanation": "The borrowing criterion test for entity classification requires checking if borrowings exceed the threshold (₹50 crore for Level I) 'at any time during the immediately preceding accounting year'. Since borrowings hit ₹52 crore for 2 days, it qualifies as Level I.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Borrowing Limit Test",
+        "Level I Criteria"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_025",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "A non-corporate entity was Level I in FY 2022-23. In FY 2023-24, its turnover dropped to ₹30 crore and borrowings to ₹1 crore (qualifying for Level III). In FY 2024-25, figures remained in Level III. Can it claim Level III relaxations for FY 2025-26?",
+      "options": [
+        "No, it must wait 3 consecutive years",
+        "Yes, because it maintained Level III criteria for 2 consecutive years (FY 2023-24 & 2024-25)",
+        "No, because once Level I, exemptions are lost permanently",
+        "Yes, instantly from FY 2023-24 without waiting"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under ICAI guidelines, when an entity drops from Level I to a lower level (Level III), it must maintain the criteria of the lower level for 2 consecutive accounting years (FY 23-24 and FY 24-25). Once satisfied, it can avail Level III relaxations in FY 2025-26.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Transition Rules",
+        "2-Year Rule"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_026",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "M/s Green Enterprises is a Level IV non-corporate entity holding a 30% investment in an associate partnership firm. Is M/s Green Enterprises required to mandatorily prepare Consolidated Financial Statements under AS 23?",
+      "options": [
+        "Yes, AS 23 is mandatory for all entities having associates",
+        "No, AS 23 applies only if the entity is required or elects to prepare Consolidated Financial Statements",
+        "Yes, but with disclosure relaxations",
+        "No, Level IV entities are banned from investing in associates"
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 23 (Accounting for Investments in Associates in Consolidated Financial Statements) does not mandate preparation of Consolidated Financial Statements by itself. It applies only if the entity is required by statute/contract or voluntarily elects to prepare Consolidated Financial Statements.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 23 Applicability",
+        "Consolidated Financial Statements"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_027",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "An item that meets the definition of an 'Asset' under the Framework should be recognized in the financial statements if and only if:",
+      "options": [
+        "It is owned legally by the enterprise and has historical cost",
+        "It is probable that future economic benefits will flow to the entity and the item has a cost or value that can be measured with reliability",
+        "Its fair value is greater than its book value",
+        "Management intends to hold it for more than 12 months"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under the Framework, an item meeting the definition of an element (asset) should be recognized if: (a) it is probable that any future economic benefit associated with the item will flow to or from the entity; and (b) the item has a cost or value that can be measured with reliability.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Framework",
+        "Asset Recognition Criteria"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_028",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "An enterprise holds machinery. The amount of cash or cash equivalents that could currently be obtained by selling the asset in an orderly disposal is known as its:",
+      "options": [
+        "Historical Cost",
+        "Current Cost",
+        "Realizable (Settlement) Value",
+        "Present Value"
+      ],
+      "answerIndex": 2,
+      "explanation": "Realizable value is defined in the Framework as the amount of cash or cash equivalents that could currently be obtained by selling an asset in an orderly disposal.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Framework",
+        "Measurement Bases"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_029",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "M/s Apex Traders is a Level II non-corporate sole proprietorship firm. Does AS 20 'Earnings Per Share' apply to it?",
+      "options": [
+        "Yes, fully applicable including diluted EPS",
+        "Applicable with disclosure relaxations for Diluted EPS",
+        "Exempted entirely, as AS 20 applies only to corporate entities having share capital",
+        "Mandatory only if turnover exceeds ₹100 crore"
+      ],
+      "answerIndex": 2,
+      "explanation": "AS 20 Earnings Per Share applies only to entities whose equity shares or potential equity shares are listed or in process of listing, and to corporate entities. Non-corporate entities do not have share capital, so AS 20 is completely non-applicable to them.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 20 Applicability",
+        "Non-Corporate Entities"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-3_030",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "prompt": "Under Section 2(40) of the Companies Act, 2013, a private company recognized as a 'startup' by DPIIT is exempt from preparing which component of financial statements?",
+      "options": [
+        "Balance Sheet",
+        "Profit and Loss Account",
+        "Cash Flow Statement",
+        "Notes to Accounts"
+      ],
+      "answerIndex": 2,
+      "explanation": "The proviso to Section 2(40) of Companies Act, 2013 explicitly grants exemption from preparing Cash Flow Statement to One Person Companies, Small Companies, Dormant Companies, and recognized Private Startup companies.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 2(40)",
+        "Startup Exemption",
+        "AS 3"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_advanced-accounting-3_01",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "passage": "Vidyut Tech Ltd is an unlisted public company incorporated in India. For FY 2024-25, its turnover was ₹220 crore, and it maintained a short-term working capital loan from a bank of ₹42 crore throughout the year. On 15th March 2025, it temporarily took a bridge loan of ₹10 crore, taking total borrowings to ₹52 crore for 5 days before repaying it on 20th March 2025. Vidyut Tech Ltd holds a 100% subsidiary company, Spark Cables Pvt Ltd, which has a turnover of ₹12 crore and borrowings of ₹1 crore. Neither company is in the process of listing. Management is evaluating SMC status for both companies for FY 2025-26 and assessing compliance requirements under AS 3 and AS 17.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-3_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-3_01",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-3",
+          "subject": "Accounts",
+          "prompt": "What is the classification status of Vidyut Tech Ltd for FY 2025-26 under the Companies (Accounting Standards) Rules?",
+          "options": [
+            "SMC, because average borrowings were below ₹50 crore",
+            "Non-SMC, because total borrowings exceeded ₹50 crore at a point in FY 2024-25",
+            "SMC, because turnover was below ₹250 crore",
+            "Non-SMC, solely because it is a public company"
+          ],
+          "answerIndex": 1,
+          "explanation": "Borrowings crossed ₹50 crore (reaching ₹52 crore) during FY 2024-25 'at any time'. Therefore, Vidyut Tech Ltd fails the borrowing limit criterion of SMC (<= ₹50 crore) and is classified as a Non-SMC for FY 2025-26.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SMC Borrowing Limit",
+            "Corporate Classification"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-3_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-3_01",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-3",
+          "subject": "Accounts",
+          "prompt": "Can Spark Cables Pvt Ltd be classified as an SMC for FY 2025-26?",
+          "options": [
+            "Yes, because its individual turnover and borrowings are within SMC limits",
+            "No, because its holding company (Vidyut Tech Ltd) is a Non-SMC",
+            "Yes, if its Board passes a resolution",
+            "No, because all subsidiaries of public companies are Non-SMCs"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Companies (Accounting Standards) Rules, an entity cannot be classified as an SMC if it is a holding or subsidiary company of a Non-SMC entity. Since holding company Vidyut Tech Ltd is a Non-SMC, Spark Cables Pvt Ltd becomes a Non-SMC.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Subsidiary Status",
+            "Non-SMC Propagation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-3_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-3_01",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-3",
+          "subject": "Accounts",
+          "prompt": "Is Vidyut Tech Ltd required to present Segment Reporting under AS 17 for FY 2025-26?",
+          "options": [
+            "No, AS 17 applies only to listed companies",
+            "Yes, AS 17 is fully applicable to Non-SMCs",
+            "No, because turnover is less than ₹250 crore",
+            "Yes, but with disclosure relaxations"
+          ],
+          "answerIndex": 1,
+          "explanation": "AS 17 Segment Reporting is fully applicable to all Non-SMC companies (both listed and unlisted) without any exemption.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 17 Applicability",
+            "Non-SMC"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-3_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-3_01",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-3",
+          "subject": "Accounts",
+          "prompt": "If Spark Cables Pvt Ltd qualifies as a 'Small Company' under Section 2(85) of Companies Act 2013, is it required to prepare a Cash Flow Statement for statutory compliance under the Act?",
+          "options": [
+            "Yes, because it is a Non-SMC under AS Rules",
+            "No, Small Companies are exempted from Cash Flow Statement under Section 2(40) of Companies Act 2013",
+            "Yes, because AS 3 overrides Companies Act provisions",
+            "No, only if turnover is below ₹2 crore"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 2(40) of the Companies Act, 2013, financial statements of a 'Small Company' need not include a Cash Flow Statement. The statutory exemption under the Act prevails for filing requirements.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Cash Flow Statement Exemption",
+            "Section 2(40)"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-3_02",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "passage": "M/s Apex & Co. is a partnership firm engaged in wholesale trading. Its financial indicators over recent years are as follows:\n- FY 2022-23: Turnover ₹260 crore, Borrowings ₹60 crore (Classified as Level I for FY 2023-24).\n- FY 2023-24: Turnover ₹180 crore, Borrowings ₹35 crore (Meets Level II criteria).\n- FY 2024-25: Turnover ₹160 crore, Borrowings ₹30 crore (Meets Level II criteria).\n- FY 2025-26: Turnover ₹40 crore, Borrowings ₹8 crore (Meets Level III criteria).\nThe firm wants to determine its Level classification for FY 2024-25, FY 2025-26, and FY 2026-27, and understand when it can avail relaxations/exemptions available to lower levels.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-3_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-3_02",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-3",
+          "subject": "Accounts",
+          "prompt": "For FY 2024-25, can M/s Apex & Co. avail exemptions/relaxations available to Level II non-corporate entities?",
+          "options": [
+            "Yes, immediately in FY 2024-25",
+            "No, because FY 2023-24 was the 1st year of meeting Level II criteria, and 2 consecutive years are required",
+            "Yes, because turnover fell below ₹250 crore",
+            "No, partnership firms cannot claim Level II exemptions"
+          ],
+          "answerIndex": 1,
+          "explanation": "When an entity drops from a higher level (Level I) to a lower level (Level II), it must satisfy the lower level criteria for two consecutive accounting years before claiming lower level relaxations. FY 2024-25 is only the 1st year after dropping, so relaxations cannot be availed in FY 2024-25.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Transition Rules",
+            "2-Year Waiting Period"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-3_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-3_02",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-3",
+          "subject": "Accounts",
+          "prompt": "For FY 2025-26, which Level status relaxations can M/s Apex & Co. claim, given it met Level II criteria in both FY 2023-24 and FY 2024-25?",
+          "options": [
+            "Level I rules apply with no relaxations",
+            "Level II relaxations, as it completed 2 consecutive years meeting Level II criteria",
+            "Level III relaxations, instantly",
+            "Level IV relaxations"
+          ],
+          "answerIndex": 1,
+          "explanation": "Having satisfied Level II criteria for two consecutive years (FY 2023-24 and FY 2024-25), M/s Apex & Co. can claim Level II exemptions/relaxations in FY 2025-26.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Level II Relaxations",
+            "Transition Rules"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-3_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-3_02",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-3",
+          "subject": "Accounts",
+          "prompt": "In FY 2026-27, what is the level criteria evaluation of M/s Apex & Co. based on FY 2025-26 figures (Turnover ₹40 cr, Borrowings ₹8 cr)?",
+          "options": [
+            "It meets Level III criteria",
+            "It meets Level I criteria",
+            "It meets Level IV criteria",
+            "It meets Level II criteria"
+          ],
+          "answerIndex": 0,
+          "explanation": "For Level III classification, turnover is between ₹10 cr and ₹50 cr, and borrowings are between ₹2 cr and ₹10 cr. FY 2025-26 figures (Turnover ₹40 cr, Borrowings ₹8 cr) meet Level III criteria.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Level III Criteria",
+            "Non-Corporate Entities"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-3_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-3_02",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-3",
+          "subject": "Accounts",
+          "prompt": "If M/s Apex & Co. takes fresh bank loans in October 2026 raising total borrowings to ₹55 crore during FY 2026-27, how does its status change for FY 2026-27?",
+          "options": [
+            "It becomes Level I immediately for FY 2026-27 and loses all exemptions",
+            "It remains Level II till the end of the year",
+            "It must wait 2 years before becoming Level I",
+            "No effect until next financial year"
+          ],
+          "answerIndex": 0,
+          "explanation": "When an entity migrates from a lower level to a higher level (Level I), exemptions and relaxations cease to apply immediately from the current financial year in which the threshold is exceeded.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Loss of Exemption",
+            "Immediate Reclassification"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-3_03",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "passage": "Reliable Goods Ltd is evaluating several accounting treatments under the ICAI 'Framework for the Preparation and Presentation of Financial Statements':\n1. Item A: Machinery purchased 3 years ago for ₹50 lakh. Current replacement cost is ₹70 lakh; cash realizable on immediate sale is ₹40 lakh; present value of net future cash flows is ₹45 lakh.\n2. Item B: Internal R&D expenditure of ₹15 lakh incurred in developing a new software process. Ultimate economic benefits are uncertain.\n3. Item C: A legal claim against the company of ₹20 lakh where loss is probable and can be measured reliably.\nThe CFO wants to know the appropriate measurement bases and recognition criteria applicable under the Framework.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-3_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-3_03",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-3",
+          "subject": "Accounts",
+          "prompt": "Under the Framework, if Item A (Machinery) is measured at ₹70 lakh (the amount of cash required to purchase the same asset currently), which measurement basis is being applied?",
+          "options": [
+            "Historical Cost",
+            "Current Cost",
+            "Realizable Value",
+            "Present Value"
+          ],
+          "answerIndex": 1,
+          "explanation": "Current Cost is defined as the amount of cash or cash equivalents that would have to be paid if the same or an equivalent asset were acquired currently.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Framework",
+            "Current Cost"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-3_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-3_03",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-3",
+          "subject": "Accounts",
+          "prompt": "Under the Framework, why should Item B (Internal R&D expenditure with uncertain benefits) NOT be recognized as an asset in the Balance Sheet?",
+          "options": [
+            "Because it has no historical cost",
+            "Because it fails the recognition criterion of probable future economic benefits",
+            "Because intangible assets are strictly banned under Framework",
+            "Because cash has already been paid"
+          ],
+          "answerIndex": 1,
+          "explanation": "An asset is recognized in the balance sheet when it is probable that future economic benefits will flow to the entity and the asset has a cost or value that can be measured reliably. Uncertainty of benefits fails the probability test.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Asset Recognition",
+            "Framework"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-3_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-3_03",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-3",
+          "subject": "Accounts",
+          "prompt": "Under the Framework, Item C (probable legal claim of ₹20 lakh) satisfies the definition of a liability. Which qualitative characteristic ensures liabilities are recognized without understating them?",
+          "options": [
+            "Prudence as part of Reliability",
+            "Timeliness",
+            "Materiality",
+            "Understandability"
+          ],
+          "answerIndex": 0,
+          "explanation": "Prudence is the inclusion of a degree of caution in the exercise of judgments, ensuring assets/income are not overstated and liabilities/expenses are not understated, maintaining reliability.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Qualitative Characteristics",
+            "Prudence"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-3_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-3_03",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-3",
+          "subject": "Accounts",
+          "prompt": "If Item A (Machinery) is shown at ₹40 lakh (cash obtainable by selling in an orderly disposal), which measurement basis is being used?",
+          "options": [
+            "Historical Cost",
+            "Present Value",
+            "Realizable (Settlement) Value",
+            "Current Cost"
+          ],
+          "answerIndex": 2,
+          "explanation": "Realizable value is the amount of cash or cash equivalents that could currently be obtained by selling an asset in an orderly disposal.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Measurement Bases",
+            "Realizable Value"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-3_04",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "passage": "M/s Precision Engineering is a sole proprietorship non-corporate entity engaged in small-scale machining. For FY 2024-25, its turnover was ₹4 crore and bank borrowings were ₹50 lakh. It has zero listed securities and no group entities. The proprietor is reviewing compliance for Accounting Standards and seeks advice on exemptions available for Level IV entities regarding AS 3 (Cash Flow Statement), AS 17 (Segment Reporting), AS 18 (Related Party Disclosures), and AS 28 (Impairment of Assets).",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-3_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-3_04",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-3",
+          "subject": "Accounts",
+          "prompt": "What is the classification level of M/s Precision Engineering for FY 2025-26 under ICAI non-corporate entity guidelines?",
+          "options": [
+            "Level I",
+            "Level II",
+            "Level III",
+            "Level IV"
+          ],
+          "answerIndex": 3,
+          "explanation": "Turnover <= ₹10 crore (actual ₹4 cr) and Borrowings <= ₹2 crore (actual ₹50 lakh) classify M/s Precision Engineering as a Level IV (Micro size) non-corporate entity.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Level IV Criteria",
+            "Non-Corporate Entities"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-3_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-3_04",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-3",
+          "subject": "Accounts",
+          "prompt": "Is M/s Precision Engineering required to comply with AS 3 (Cash Flow Statement) and AS 17 (Segment Reporting)?",
+          "options": [
+            "Fully required for both AS 3 and AS 17",
+            "Exempt from AS 17, but mandatory for AS 3",
+            "Exempt from AS 3, but mandatory for AS 17",
+            "Exempt from both AS 3 and AS 17"
+          ],
+          "answerIndex": 3,
+          "explanation": "Level IV non-corporate entities are completely exempt from both AS 3 (Cash Flow Statement) and AS 17 (Segment Reporting).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Level IV Exemptions",
+            "AS 3",
+            "AS 17"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-3_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-3_04",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-3",
+          "subject": "Accounts",
+          "prompt": "Regarding AS 18 'Related Party Disclosures', what exemption is available to Level IV non-corporate entities?",
+          "options": [
+            "Fully exempt from AS 18",
+            "Must comply with full disclosures without relaxation",
+            "Exempt from AS 18 only if turnover is below ₹1 crore",
+            "Exempt from disclosing key management personnel remuneration only"
+          ],
+          "answerIndex": 0,
+          "explanation": "Level IV non-corporate entities are fully exempt from AS 18 (Related Party Disclosures).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 18 Exemption",
+            "Level IV Entities"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-3_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-3_04",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-3",
+          "subject": "Accounts",
+          "prompt": "Regarding AS 28 'Impairment of Assets', what relaxation is granted to Level IV non-corporate entities regarding 'Value in Use'?",
+          "options": [
+            "They are completely exempt from AS 28",
+            "They can estimate Value in Use based on reasonable indication without using present value discount techniques",
+            "They are not allowed to recognize impairment losses",
+            "They must use a mandatory 15% discount rate"
+          ],
+          "answerIndex": 1,
+          "explanation": "Level IV non-corporate entities are granted relaxation in AS 28 whereby Value in Use can be estimated based on reasonable indications rather than complex discounted cash flow calculations.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 28 Relaxation",
+            "Level IV Entities"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-3_05",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-3",
+      "subject": "Accounts",
+      "passage": "Global Spectrum Group consists of multiple corporate and non-corporate entities in India:\n1. Spectrum India Ltd: Unlisted public company with Net Worth of ₹320 crore as on 31st March 2025.\n2. Spectrum Infra Pvt Ltd: Unlisted subsidiary of Spectrum India Ltd, Net Worth ₹40 crore.\n3. Spectrum Retail LLP: Non-corporate partnership entity with turnover ₹600 crore, borrowings ₹80 crore.\n4. Spectrum Finance Ltd: Non-Banking Financial Company (NBFC), unlisted, Net Worth ₹180 crore.\nThe board is determining whether Accounting Standards (AS) or Ind AS applies to each group entity for FY 2025-26.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Applicability of Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-3_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-3_05",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-3",
+          "subject": "Accounts",
+          "prompt": "Which accounting standard framework applies to Spectrum India Ltd for FY 2025-26?",
+          "options": [
+            "Accounting Standards (AS)",
+            "Indian Accounting Standards (Ind AS)",
+            "IFRS directly",
+            "US GAAP"
+          ],
+          "answerIndex": 1,
+          "explanation": "Unlisted companies having a Net Worth of ₹250 crore or more are mandatorily required to follow Ind AS. Since Spectrum India Ltd has a Net Worth of ₹320 crore, Ind AS applies.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Ind AS Roadmap",
+            "Net Worth Criteria"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-3_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-3_05",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-3",
+          "subject": "Accounts",
+          "prompt": "Which accounting framework applies to Spectrum Infra Pvt Ltd (unlisted subsidiary of Spectrum India Ltd)?",
+          "options": [
+            "Accounting Standards (AS) because its individual Net Worth is below ₹250 crore",
+            "Ind AS, because holding company Spectrum India Ltd is covered under Ind AS",
+            "SMC Accounting Standards",
+            "Level II Non-corporate standards"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the Ind AS roadmap, holding, subsidiary, joint venture, or associate companies of an entity covered under Ind AS must also adopt Ind AS, regardless of their individual net worth.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Ind AS Subsidiary Propagation",
+            "Ind AS Roadmap"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-3_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-3_05",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-3",
+          "subject": "Accounts",
+          "prompt": "Which accounting standards framework applies to Spectrum Retail LLP (non-corporate LLP)?",
+          "options": [
+            "Ind AS, because turnover exceeds ₹500 crore",
+            "Accounting Standards (AS) issued by ICAI (as a Level I non-corporate entity)",
+            "Ind AS, because it belongs to a group following Ind AS",
+            "No accounting standards apply to LLPs"
+          ],
+          "answerIndex": 1,
+          "explanation": "Ind AS roadmap applies exclusively to corporate entities (companies, NBFCs, Banks, Insurance). Non-corporate entities (LLPs/firms) follow Accounting Standards (AS) issued by ICAI, categorized here as Level I due to turnover > ₹250 crore.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Non-Corporate AS",
+            "Ind AS Scope"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-3_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-3_05",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-3",
+          "subject": "Accounts",
+          "prompt": "Which framework applies to Spectrum Finance Ltd (unlisted NBFC with Net Worth ₹180 crore)?",
+          "options": [
+            "Ind AS",
+            "Accounting Standards (AS) prescribed under Companies (AS) Rules",
+            "Ind AS mandatorily regardless of net worth",
+            "Direct IFRS compliance"
+          ],
+          "answerIndex": 1,
+          "explanation": "Unlisted NBFCs with Net Worth below ₹250 crore are not covered under mandatory Ind AS phase and must follow Accounting Standards (AS) prescribed under Companies (Accounting Standards) Rules.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "NBFC Ind AS Roadmap",
+            "Accounting Standards"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

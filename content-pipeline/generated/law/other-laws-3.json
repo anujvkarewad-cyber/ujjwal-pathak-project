@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "other-laws-3",
+  "subject": "Law",
+  "paper": "Paper 2: Corporate and Other Laws",
+  "module": "Module 3",
+  "chapterNumber": 3,
+  "chapterTitle": "The Foreign Exchange Management Act, 1999",
+  "generatedAt": "2026-08-16T14:17:28.676Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_other-laws-3_001",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "What is the primary objective of the Foreign Exchange Management Act (FEMA), 1999 as stated in its preamble?",
+      "options": [
+        "To conserve foreign exchange reserves of India and promote external trade and payments",
+        "To criminalize all unauthorized foreign exchange transactions and penalize offenders with imprisonment",
+        "To regulate the stock exchange and protect the interests of investors in securities",
+        "To control the import of goods and services through absolute licensing"
+      ],
+      "answerIndex": 0,
+      "explanation": "FEMA, 1999 was enacted to consolidate and amend the law relating to foreign exchange with the objective of facilitating external trade and payments and for promoting the orderly development and maintenance of foreign exchange market in India. Unlike FERA, FEMA treats offenses as civil rather than criminal. Therefore, the correct option highlights facilitating external trade and payments and conserving reserves.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "FEMA Objectives",
+        "Preamble",
+        "Introduction"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_002",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "Under FEMA, 1999, who holds the primary authority for making rules relating to foreign exchange transactions in consultation with the Central Government?",
+      "options": [
+        "Securities and Exchange Board of India (SEBI)",
+        "Reserve Bank of India (RBI)",
+        "Ministry of Corporate Affairs (MCA)",
+        "Directorate General of Foreign Trade (DGFT)"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under the provisions of FEMA, 1999, the Reserve Bank of India (RBI) plays the central role in framing regulations and rules regarding foreign exchange transactions, capital account transactions, and current account transactions in consultation with the Central Government.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "RBI Powers",
+        "Administration",
+        "Regulatory Authority"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_003",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "Which of the following is defined as a 'Capital Account Transaction' under Section 2(e) of FEMA, 1999?",
+      "options": [
+        "Payment due in connection with foreign trade, current business, and short-term banking facilities",
+        "Remittance for living expenses of parents residing abroad",
+        "A transaction which alters the assets or liabilities, including contingent liabilities, outside India of persons resident in India",
+        "Normal short-term banking and credit facilities in the ordinary course of business"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 2(e) of FEMA defines a capital account transaction as a transaction which alters the assets or liabilities, including contingent liabilities, outside India of persons resident in India or assets or liabilities in India of persons resident outside India. Options A, B, and D describe current account transactions.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Capital Account Transaction",
+        "Definitions",
+        "Section 2"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_004",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "An Indian citizen who leaves India for employment outside India in September 2024 and intends to stay there indefinitely will be classified for the financial year 2024-25 as:",
+      "options": [
+        "Person Resident in India",
+        "Person Resident Outside India",
+        "Non-Resident Indian (NRI) but Resident in India under tax laws only",
+        "Foreign National"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 2(v) of FEMA, an individual who leaves India for employment, business, or any other purpose indicating an intention to stay outside India for an uncertain period ceases to be a person resident in India from the date of departure.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Person Resident in India",
+        "Residence Status",
+        "Section 2(v)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_005",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "Which of the following entities is explicitly EXCLUDED from the definition of 'Person Resident in India' under FEMA, 1999, even if it is incorporated or registered in India?",
+      "options": [
+        "A branch of a foreign company operating in Mumbai",
+        "A wholly-owned subsidiary of a US company incorporated in Delhi",
+        "A public sector undertaking owned by the Government of India",
+        "A cooperative society registered under the Multi-State Cooperative Societies Act"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 2(u), a person resident in India includes any person or body corporate registered or incorporated in India, EXCEPT a branch, office, or agency outside India of such person, and conversely, a branch, office, or agency in India of a person resident outside India is considered a person resident in India for certain purposes, but a foreign company's branch in India is treated as controlled by a person resident outside India depending on the context. However, strictly by definition, offices/branches of foreign entities in India are treated as resident in India if they are situated in India, but under Section 2(u)(iv), an office, branch or agency in India owned or controlled by a person resident outside India is a person resident in India.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Person Resident in India",
+        "Body Corporate",
+        "Branches"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_006",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "What is the general rule regarding 'Current Account Transactions' under Section 5 of FEMA, 1999?",
+      "options": [
+        "All current account transactions are strictly prohibited unless prior approval of the Central Government is obtained.",
+        "Any person may sell or draw foreign exchange to or from an authorised person for a current account transaction, subject to reasonable restrictions imposed by the Central Government.",
+        "Current account transactions are completely unregulated and require no reporting to the RBI.",
+        "Current account transactions can only be undertaken by authorized dealers after obtaining a license from SEBI."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 5 of FEMA states that any person may sell or draw foreign exchange to or from an authorised person if such sale or drawal is a current account transaction, provided the Central Government may, in public interest and in consultation with the RBI, impose such reasonable restrictions as may be prescribed.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Current Account Transactions",
+        "Section 5",
+        "Drawal of Foreign Exchange"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_007",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "Which of the following schedules under the Foreign Exchange Management (Current Account Transactions) Rules, 2000 lists transactions for which withdrawal of foreign exchange is PROHIBITED?",
+      "options": [
+        "Schedule I",
+        "Schedule II",
+        "Schedule III",
+        "Schedule IV"
+      ],
+      "answerIndex": 0,
+      "explanation": "Schedule I of the Foreign Exchange Management (Current Account Transactions) Rules, 2000 specifies transactions for which the drawal of foreign exchange is prohibited (e.g., remittance out of lottery winnings, remittance of income from racing/riding, etc.). Schedule II requires Central Government approval, and Schedule III requires RBI approval.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Current Account Rules",
+        "Schedule I",
+        "Prohibited Transactions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_008",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "Under the FEMA Current Account Transactions Rules, remittance of foreign exchange for which of the following requires prior approval of the Central Government (Schedule II)?",
+      "options": [
+        "Travel to Pakistan",
+        "Cultural tours sponsored by the Government of India",
+        "Remittance out of lottery winnings",
+        "Commission due to equity agents for overseas issue"
+      ],
+      "answerIndex": 1,
+      "explanation": "Schedule II of the Current Account Transactions Rules lists transactions that require prior approval of the Central Government, which includes cultural tours. Remittance of lottery winnings is prohibited (Schedule I). Commission on equity issues is under Schedule III (RBI approval).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Schedule II",
+        "Central Government Approval",
+        "Current Account"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_009",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "An individual wishes to remit USD 300,000 abroad for maintenance of close relatives under the Liberalised Remittance Scheme (LRS). Which authority's prior approval is required?",
+      "options": [
+        "Prior approval of the Reserve Bank of India is required since it exceeds USD 250,000 per financial year.",
+        "Prior approval of the Ministry of Finance is required.",
+        "No prior approval is needed as LRS limit is unlimited for individuals.",
+        "Prior approval of SEBI is required."
+      ],
+      "answerIndex": 0,
+      "explanation": "Under the Liberalised Remittance Scheme (LRS), resident individuals are permitted to freely remit up to USD 250,000 per financial year for permitted current or capital account transactions. Since USD 300,000 exceeds this threshold, prior approval of the RBI is required.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "LRS",
+        "Liberalised Remittance Scheme",
+        "RBI Approval"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_010",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "Who is empowered to appoint Adjudicating Authorities for holding inquiries under Section 16 of FEMA, 1999?",
+      "options": [
+        "The Supreme Court of India",
+        "The Central Government",
+        "The Reserve Bank of India",
+        "The National Company Law Tribunal"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 16 of FEMA, 1999, the Central Government may, by notification, appoint as many officers of the Central Government as it thinks fit as Adjudicating Authorities for holding an inquiry for any contravention of FEMA provisions.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Adjudicating Authority",
+        "Section 16",
+        "Contravention"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_011",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "What is the appellate tribunal established under FEMA, 1999 to hear appeals against the orders of the Adjudicating Authority?",
+      "options": [
+        "Appellate Tribunal for Foreign Exchange (ATFE)",
+        "National Company Law Appellate Tribunal (NCLAT)",
+        "Income Tax Appellate Tribunal (ITAT)",
+        "Customs, Excise and Service Tax Appellate Tribunal (CESTAT)"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 18 of FEMA provides for the establishment of an Appellate Tribunal known as the Appellate Tribunal for Foreign Exchange (ATFE) to hear appeals against orders passed by the Adjudicating Authority under Section 16.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Appellate Tribunal",
+        "ATFE",
+        "Section 18"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_012",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "Within what period must an appeal be filed before the Appellate Tribunal against an order of the Adjudicating Authority under FEMA, 1999?",
+      "options": [
+        "Within 30 days from the date on which a copy of the order is delivered",
+        "Within 45 days from the date on which a copy of the order is delivered",
+        "Within 60 days from the date on which a copy of the order is delivered",
+        "Within 90 days from the date on which a copy of the order is delivered"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 19(2) of FEMA, any person aggrieved by an order made by the Adjudicating Authority may prefer an appeal to the Appellate Tribunal within a period of 45 days from the date on which a copy of the order is delivered to him.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Appeals",
+        "Section 19",
+        "Limitation Period"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_013",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "An appeal against the order of the Appellate Tribunal (ATFE) under FEMA lies to which court?",
+      "options": [
+        "Supreme Court of India directly on any matter",
+        "High Court, on any question of law arising out of such order",
+        "National Company Law Appellate Tribunal",
+        "District Court having jurisdiction"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 35 of FEMA provides that any person aggrieved by any decision or order of the Appellate Tribunal may file an appeal to the High Court within 60 days from the date of communication of the decision or order, on any question of law arising out of such order.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "High Court Appeal",
+        "Section 35",
+        "Appellate Mechanism"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_014",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "What is the maximum penalty that can be imposed under Section 13 of FEMA, 1999 for contravention of any provision of the Act?",
+      "options": [
+        "Fixed penalty of INR 10,00,000 only",
+        "Up to thrice the sum involved in such contravention where quantifiable, or up to INR 2 Lakhs where not quantifiable, and where it is a continuing contravention, further penalty up to INR 5,000 for every day",
+        "Imprisonment for a term up to 7 years without any fine",
+        "Confiscation of all domestic and foreign properties of the offender automatically"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 13 of FEMA prescribes penalties for contravention: up to thrice the sum involved in such contravention where quantifiable, or up to two lakh rupees where not quantifiable, and where it is a continuing contravention, further penalty which may extend to five thousand rupees for every day after the first day during which the contravention continues.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Penalties",
+        "Section 13",
+        "Contravention"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_015",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "If a person fails to pay the penalty imposed under Section 13 of FEMA within 90 days from the date on which the notice for payment is served, what action can the Adjudicating Authority take?",
+      "options": [
+        "Order immediate arrest and detention in civil prison for up to 3 years",
+        "Direct recovery of the penalty amount by attachment and sale of the movable or immovable property of the defaulter",
+        "Liquidate the corporate entity within 7 days through the NCLT",
+        "Forfeit all passports held by the person"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 14 of FEMA, if any person fails to full pay the penalty within 90 days, the Adjudicating Authority may recover the amount through various modes, including attachment and sale of movable or immovable properties of the person in default as prescribed.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 14",
+        "Recovery of Penalty",
+        "Default"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_016",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "Who is classified as an 'Authorised Person' under Section 2(c) of FEMA, 1999?",
+      "options": [
+        "Any chartered accountant registered with ICAI",
+        "An authorised dealer, money changer, off-shore banking unit or any other person authorised by the RBI to deal in foreign exchange or foreign securities",
+        "Any scheduled commercial bank holding a banking license from SEBI",
+        "Any citizen of India residing in foreign countries with dual citizenship"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 2(c) defines an 'authorised person' as an authorised dealer, money changer, offshore banking unit or any other person who is authorised for the time being by the Reserve Bank of India under Section 10(1) to deal in foreign exchange or foreign securities.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Authorised Person",
+        "Section 2(c)",
+        "Definitions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_017",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "Can the Reserve Bank of India inspect the books of accounts and other documents of an 'Authorised Person' under FEMA?",
+      "options": [
+        "No, RBI has no inspection powers over authorised persons; only SEBI can inspect them.",
+        "Yes, RBI may at any time cause an inspection to be made of any authorised person and its offices under Section 12 of FEMA.",
+        "Yes, but only after obtaining a warrant from a criminal court.",
+        "No, inspection is restricted only to scheduled commercial banks."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 12 of FEMA empowers the Reserve Bank of India to cause an inspection to be made, by an officer of the RBI authorised in this behalf, of any authorised person and its books, accounts, and other documents to ensure compliance with FEMA provisions.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 12",
+        "Inspection",
+        "Authorised Person"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_018",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "Which of the following transactions constitutes a 'Capital Account Transaction' as per the RBI regulations under FEMA?",
+      "options": [
+        "Payment of school fees for a child studying in London",
+        "Acquisition of immovable property outside India by an Indian resident",
+        "Remittance of consultancy fees for legal advice received from a US lawyer",
+        "Export of software services to a client in Germany"
+      ],
+      "answerIndex": 1,
+      "explanation": "Acquisition or transfer of immovable property outside India alters the assets outside India of a person resident in India, making it a capital account transaction. The other options are classic examples of current account transactions.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Capital Account Transaction",
+        "Immovable Property",
+        "Examples"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_019",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "Under FEMA, 'Foreign Currency' means:",
+      "options": [
+        "Any currency other than Indian currency",
+        "Only United States Dollar (USD) and Euro",
+        "Any currency that is legally convertible in the international market",
+        "Gold and silver bullion held abroad"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 2(m) of FEMA defines 'foreign currency' to mean any currency other than Indian currency. This is a broad definition encompassing all foreign legal tenders.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Foreign Currency",
+        "Section 2(m)",
+        "Definitions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_020",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "What is the status under FEMA of a foreign citizen who comes to India on an employment contract for a fixed period of 2 years?",
+      "options": [
+        "Person Resident Outside India",
+        "Person Resident in India",
+        "Non-Resident Indian (NRI)",
+        "Foreign Institutional Investor"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 2(v), an individual coming to or staying in India in employment, business, or for any other purpose indicating an intention to stay in India for an uncertain period is considered a person resident in India. Coming for a fixed employment contract of 2 years generally satisfies the resident criteria under FEMA (unlike the Income Tax Act which has 182 days rule, FEMA focuses on purpose and period of stay, and a stay exceeding 182 days during the preceding financial year for taking up employment makes someone resident in India).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Person Resident in India",
+        "Foreign Citizen",
+        "Employment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_021",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "Which section of FEMA, 1999 empowers the Central Government to exempt certain classes of persons or foreign exchange transactions from the application of the Act in public interest?",
+      "options": [
+        "Section 38",
+        "Section 45",
+        "Section 46",
+        "Section 47"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 46 of FEMA empowers the Central Government, by notification, to exempt any person or class of persons from the application of all or any of the provisions of this Act or rules or regulations made thereunder, in public interest.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 46",
+        "Power to Exempt",
+        "Central Government"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_022",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "In the case of a compounding application under FEMA, who is the competent authority to compound contraventions up to INR 10 Lakhs?",
+      "options": [
+        "The Reserve Bank of India (specifically designated officers)",
+        "The Director of Enforcement",
+        "The Appellate Tribunal for Foreign Exchange",
+        "The Special Director (Appeals)"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under the Foreign Exchange (Compounding Proceedings) Rules, 2000, compounding powers are vested in the Reserve Bank of India and the Directorate of Enforcement depending on the sum involved. RBI handles compounding for specified contraventions up to certain monetary limits (e.g., up to INR 10 lakhs and above under delegated thresholds).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Compounding of Contraventions",
+        "Compounding Rules",
+        "RBI Authority"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_023",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "Can a contravention under FEMA, 1999 be compounded once proceedings have already been initiated by the Adjudicating Authority?",
+      "options": [
+        "No, once Adjudicating Authority starts inquiry, compounding is barred permanently.",
+        "Yes, contraventions can be compounded before or after the initiation of adjudication proceedings, except for specific offenses within a stipulated timeframe or repeat violations as per rules.",
+        "Only the Supreme Court can permit compounding during adjudication.",
+        "Compounding is exclusively handled by SEBI."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 15 of FEMA, any contravention may, on an application made by the person committing such contravention, be compounded by the authority specified, whether before or after the institution of adjudication proceedings.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 15",
+        "Compounding",
+        "Adjudication"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_024",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "What does 'Transfer' mean under the definitions of FEMA, 1999 with respect to foreign exchange or foreign securities?",
+      "options": [
+        "Only physical transportation of cash across international borders",
+        "Sale, purchase, exchange, mortgage, pledge, gift, loan or any other form of transfer of right, title, possession or lien",
+        "Merely opening a bank account in a foreign country",
+        "Conversion of rupees into gold"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 2(zb) defines 'transfer' in a comprehensive manner to include sale, purchase, exchange, mortgage, pledge, gift, loan or any other form of transfer of right, title, possession or lien.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Transfer",
+        "Section 2(zb)",
+        "Definitions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_025",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "Which of the following transactions is classified under 'Capital Account Transactions' involving debt instruments?",
+      "options": [
+        "Investment by way of Foreign Direct Investment (FDI) in equity shares",
+        "Borrowing or lending in rupees and in foreign currency between residents and non-residents",
+        "Payment of insurance premium to an overseas insurer",
+        "Remittance for service charges on technical know-how"
+      ],
+      "answerIndex": 1,
+      "explanation": "Borrowing and lending in rupees or foreign currency between residents and non-residents directly alter liabilities/assets, making them capital account transactions involving debt. Equity investment is also capital account, but borrowing/lending specifically constitutes debt transactions.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Capital Account",
+        "Borrowing and Lending",
+        "Debt"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_026",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "Under FEMA, what is the status of an office of an Indian company incorporated in London?",
+      "options": [
+        "Person Resident in India",
+        "Person Resident Outside India",
+        "Resident in both jurisdictions simultaneously",
+        "Foreign Institutional Investor"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per the proviso to Section 2(u), a branch, office, or agency outside India of a person resident in India is NOT a person resident in India; it is treated as a person resident outside India.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 2(u)",
+        "Branch Outside India",
+        "Residence Status"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_027",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "If a person is aggrieved by an order of the Special Director (Appeals), where can an appeal be filed under FEMA?",
+      "options": [
+        "Appellate Tribunal for Foreign Exchange (ATFE)",
+        "Directly to the Supreme Court of India",
+        "National Company Law Tribunal",
+        "Income Tax Appellate Tribunal"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 17 of FEMA provides for appeals against orders of the Adjudicating Authority to the Special Director (Appeals), and Section 19 provides that any person aggrieved by an order of the Special Director (Appeals) or Adjudicating Authority may prefer an appeal to the Appellate Tribunal (ATFE).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Special Director Appeals",
+        "Appellate Tribunal",
+        "Section 17 & 19"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_028",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "Which of the following is TRUE regarding the powers of the Directorate of Enforcement under FEMA?",
+      "options": [
+        "It has the power to issue currency notes and mint coins.",
+        "It investigates suspected contraventions of FEMA provisions and initiates adjudication proceedings.",
+        "It sets the benchmark interest rates for foreign currency loans.",
+        "It regulates the listing of foreign companies on Indian stock exchanges."
+      ],
+      "answerIndex": 1,
+      "explanation": "The Directorate of Enforcement is the specialized agency responsible for enforcement of FEMA provisions, investigating contraventions, and initiating adjudication proceedings through Adjudicating Authorities.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Directorate of Enforcement",
+        "Investigation",
+        "Enforcement"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_029",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "Under FEMA, the term 'Security' includes:",
+      "options": [
+        "Shares, stocks, bonds and debentures, promissory notes, and other instruments of capital nature",
+        "Only physical security guards protecting bank lockers",
+        "Government-issued identity cards and passports",
+        "Insurance policies against fire and theft"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 2(za) defines 'security' to mean shares, stocks, bonds and debentures, government securities, savings certificates, and any other instruments of capital nature as specified by the RBI.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Security",
+        "Section 2(za)",
+        "Definitions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-3_030",
+      "kind": "normal",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "prompt": "Can a person resident in India hold, own, transfer or invest in foreign currency, foreign security or immovable property situated outside India?",
+      "options": [
+        "Yes, absolutely without any restrictions under any circumstances.",
+        "No, it is totally banned for all Indian residents.",
+        "Yes, only to the extent permitted under FEMA, its rules or regulations, or with the general or special permission of the RBI.",
+        "Only if the person is a Member of Parliament."
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 4 of FEMA explicitly states that no person resident in India shall acquire, hold, own, transfer or invest in any foreign currency, foreign security or immovable property situated outside India except as otherwise provided in the Act or rules/regulations made thereunder.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 4",
+        "Holding Foreign Assets",
+        "General Permission"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_other-laws-3_01",
+      "kind": "scenario",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "passage": "Mr. Rajesh, an Indian citizen and a software engineer, went to Germany on May 10, 2023, under an employment contract with a German technology firm for an expected duration of 4 years. His wife and children accompanied him, and they closed their residential apartment in Pune, leasing it out to a tenant. During the financial year 2024-25, Rajesh visited India for 3 weeks on a vacation and also earned consulting income from a US-based client which was credited to his German bank account. He wishes to undertake various financial transactions involving Indian and foreign currency.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_other-laws-3_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-3_01",
+          "sequenceInScenario": 1,
+          "chapterId": "other-laws-3",
+          "subject": "Law",
+          "prompt": "What is the residential status of Mr. Rajesh under FEMA, 1999 during the financial year 2024-25?",
+          "options": [
+            "Person Resident in India, because he is an Indian citizen holding an Indian passport",
+            "Person Resident Outside India, because he left India for employment outside India with an intention to stay for an uncertain/extended period exceeding one year",
+            "Resident but only for tax purposes under the Income Tax Act",
+            "Non-Resident Indian (NRI) with dual citizenship status"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 2(v) of FEMA, an individual who leaves India for employment outside India ceases to be a person resident in India from the date of his departure, regardless of his citizenship, because his purpose indicates a stay outside India for an uncertain period.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Residence Status",
+            "Employment Abroad",
+            "Section 2(v)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-3_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-3_01",
+          "sequenceInScenario": 2,
+          "chapterId": "other-laws-3",
+          "subject": "Law",
+          "prompt": "Can Mr. Rajesh maintain and operate his NRE (Non-Resident External) bank account in India while being classified as a person resident outside India?",
+          "options": [
+            "No, NRE accounts are exclusively for Indian residents.",
+            "Yes, as a person resident outside India (NRI/PIO), he is eligible to open, hold, and maintain NRE, NRO, and FCNR accounts with authorized dealers in India.",
+            "Yes, but only after obtaining prior written permission from the Prime Minister's Office.",
+            "No, he must convert all Indian bank accounts into resident savings accounts immediately."
+          ],
+          "answerIndex": 1,
+          "explanation": "Non-residents (persons resident outside India) are legally permitted to maintain NRE, NRO, and FCNR accounts with authorised banks in India for depositing foreign earnings or Indian source incomes in accordance with FEMA regulations.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Bank Accounts",
+            "NRE/NRO",
+            "Authorised Persons"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-3_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-3_01",
+          "sequenceInScenario": 3,
+          "chapterId": "other-laws-3",
+          "subject": "Law",
+          "prompt": "If Mr. Rajesh wishes to acquire an immovable property in Germany out of his foreign earnings, does Section 4 of FEMA restrict him from doing so?",
+          "options": [
+            "Yes, Section 4 bans all acquisitions of property outside India by persons of Indian origin.",
+            "No, Section 4 prohibits acquisition of foreign property only by persons resident in India. Since Rajesh is a person resident outside India, Section 4 restrictions do not apply to his foreign acquisitions.",
+            "Yes, prior approval of SEBI is mandatory.",
+            "No, but he must pay 100% tax penalty in India."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 4 of FEMA restricts persons resident in India from holding or acquiring immovable property outside India without permission. Since Mr. Rajesh is a person resident outside India, Section 4 is not applicable to assets acquired abroad out of his foreign funds.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 4",
+            "Immovable Property Abroad",
+            "Resident Outside India"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-3_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-3_01",
+          "sequenceInScenario": 4,
+          "chapterId": "other-laws-3",
+          "subject": "Law",
+          "prompt": "Suppose Mr. Rajesh wants to remit USD 50,000 from his German earnings to his friend residing in India as a gift. How is this transaction characterized under FEMA?",
+          "options": [
+            "It is a prohibited capital account transaction under Schedule I.",
+            "It is a current account transaction for the recipient, but requires RBI approval under Schedule III.",
+            "Inflow of funds into India as a gift from a non-resident is a permitted current account transaction and does not require prior RBI or Central Government approval.",
+            "It is classified as foreign direct investment in retail trade."
+          ],
+          "answerIndex": 2,
+          "explanation": "Inflows of funds from a person resident outside India to a person resident in India (such as gifts or maintenance remittances) are generally permitted current account transactions and do not require prior approval under FEMA rules.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Inflows",
+            "Current Account",
+            "Gifts from Non-Residents"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_other-laws-3_02",
+      "kind": "scenario",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "passage": "M/s. Zenith Exports Ltd., an Indian company incorporated in New Delhi, engaged in exporting leather goods, received a major advance payment of USD 500,000 from an overseas buyer in New York in January 2024. Due to a sudden change in global market conditions, the export order was canceled in March 2024. The company delayed refunding the advance to the US buyer beyond the timeframe stipulated by the RBI regulations, without obtaining formal approval for the extension. The Directorate of Enforcement initiated an investigation for contravention of FEMA provisions.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_other-laws-3_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-3_02",
+          "sequenceInScenario": 1,
+          "chapterId": "other-laws-3",
+          "subject": "Law",
+          "prompt": "What category of transaction under FEMA does the receipt of export advance and its subsequent refund fall under?",
+          "options": [
+            "Capital Account Transaction because it involves foreign currency debt liability",
+            "Current Account Transaction because it relates to foreign trade in goods and services",
+            "Prohibited Transaction under Schedule I",
+            "Securities transaction regulated exclusively by SEBI"
+          ],
+          "answerIndex": 1,
+          "explanation": "Transactions relating to export of goods, import of goods, and associated payments/refunds in connection with foreign trade fall under current account transactions.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Current Account",
+            "Foreign Trade",
+            "Export Advance"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-3_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-3_02",
+          "sequenceInScenario": 2,
+          "chapterId": "other-laws-3",
+          "subject": "Law",
+          "prompt": "Which authority is empowered to hold an inquiry and adjudge the contravention committed by M/s. Zenith Exports Ltd. under Section 16 of FEMA?",
+          "options": [
+            "The Adjudicating Authority appointed by the Central Government",
+            "The High Court of Delhi",
+            "The Company Law Board",
+            "The Reserve Bank of India Governor directly"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under Section 16 of FEMA, the Central Government appoints Adjudicating Authorities to hold inquiries and impose penalties for contraventions of the Act, rules, or regulations.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Adjudicating Authority",
+            "Section 16",
+            "Enforcement"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-3_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-3_02",
+          "sequenceInScenario": 3,
+          "chapterId": "other-laws-3",
+          "subject": "Law",
+          "prompt": "If the Adjudicating Authority imposes a monetary penalty on M/s. Zenith Exports Ltd. under Section 13, what is the maximum penalty that can be levied if the sum involved is quantifiable as USD 500,000?",
+          "options": [
+            "Fixed penalty of INR 50,000 regardless of the amount",
+            "Up to thrice the sum involved in such contravention where quantifiable",
+            "Exactly USD 500,000 matching the advance",
+            "Imprisonment of the Managing Director for 10 years"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 13 of FEMA provides that upon adjudication, a person is liable to a penalty up to thrice the sum involved in such contravention where the amount is quantifiable, or up to two lakh rupees where not quantifiable.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 13",
+            "Penalties",
+            "Quantifiable Sum"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-3_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-3_02",
+          "sequenceInScenario": 4,
+          "chapterId": "other-laws-3",
+          "subject": "Law",
+          "prompt": "M/s. Zenith Exports Ltd. wishes to settle the matter without going through protracted adjudication proceedings. Which legal remedy is available under FEMA?",
+          "options": [
+            "Winding up of the company voluntarily",
+            "Compounding of contravention under Section 15 of FEMA",
+            "Filing a writ petition directly in the International Court of Justice",
+            "Seeking amnesty from the Reserve Bank's Governor through an informal email"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 15 of FEMA permits the compounding of contraventions upon an application made by the person committing the contravention, before or after the institution of adjudication proceedings, upon payment of compounding fees.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Compounding",
+            "Section 15",
+            "Settlement"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_other-laws-3_03",
+      "kind": "scenario",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "passage": "Mr. Vikram, a wealthy resident individual, desired to purchase a luxury villa in Switzerland valued at USD 1.5 million in July 2024. Without seeking any permission from the Reserve Bank of India or utilizing authorized channels under permissible limits, he transferred funds through an unauthorized hawala channel and acquired the property in his own name. The Directorate of Enforcement received an anonymous tip-off regarding this undisclosed foreign asset acquisition and launched formal search and seizure operations.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_other-laws-3_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-3_03",
+          "sequenceInScenario": 1,
+          "chapterId": "other-laws-3",
+          "subject": "Law",
+          "prompt": "Which provision of FEMA, 1999 has Mr. Vikram primarily contravened by acquiring immovable property outside India through unauthorized channels?",
+          "options": [
+            "Section 3, prohibiting unauthorized dealing in foreign exchange, and Section 4, prohibiting holding of foreign property without general or special permission",
+            "Section 5, relating to current account transactions",
+            "Section 10, relating to duties of authorized persons",
+            "Section 18, relating to establishment of ATFE"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 3 prohibits dealing in foreign exchange except through an authorised person, and Section 4 prohibits holding immovable property outside India except as provided under the Act. Vikram violated both by using unauthorized channels and acquiring foreign property without RBI permission.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 3",
+            "Section 4",
+            "Unauthorized Transactions"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-3_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-3_03",
+          "sequenceInScenario": 2,
+          "chapterId": "other-laws-3",
+          "subject": "Law",
+          "prompt": "What is the nature of offenses under FEMA, 1999 such as the one committed by Mr. Vikram?",
+          "options": [
+            "They are criminal offenses punishable with rigorous imprisonment under all circumstances.",
+            "They are civil contraventions inviting monetary penalties and adjudicatory proceedings, distinguishing FEMA from the erstwhile FERA.",
+            "They are compoundable only by the Supreme Court.",
+            "They are classified as cognizable corporate frauds under Section 447 of the Companies Act."
+          ],
+          "answerIndex": 1,
+          "explanation": "A key hallmark of FEMA, 1999 is that contraventions are treated as civil contraventions attracting monetary penalties rather than criminal offenses with mandatory imprisonment (unlike FERA).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Civil Contravention",
+            "FEMA vs FERA",
+            "Nature of Offense"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-3_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-3_03",
+          "sequenceInScenario": 3,
+          "chapterId": "other-laws-3",
+          "subject": "Law",
+          "prompt": "If Mr. Vikram is aggrieved by the order passed by the Adjudicating Authority confirming the penalty for contravention, where should he file his first appeal?",
+          "options": [
+            "Special Director (Appeals) or directly to the Appellate Tribunal for Foreign Exchange (ATFE) depending on the adjudicating officer's rank",
+            "Securities Appellate Tribunal (SAT)",
+            "National Company Law Tribunal (NCLT)",
+            "High Court of competent jurisdiction as an original suit"
+          ],
+          "answerIndex": 0,
+          "explanation": "As per Sections 17 and 19 of FEMA, an appeal against the order of an Adjudicating Authority lies either before the Special Director (Appeals) or directly to the Appellate Tribunal for Foreign Exchange (ATFE).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Appeals",
+            "Section 17 & 19",
+            "ATFE"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-3_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-3_03",
+          "sequenceInScenario": 4,
+          "chapterId": "other-laws-3",
+          "subject": "Law",
+          "prompt": "If Mr. Vikram fails to deposit the penalty imposed by the Adjudicating Authority within 90 days, what coercive recovery measure is permissible under Section 14?",
+          "options": [
+            "Attachment and sale of his movable or immovable properties in India",
+            "Confiscation of his Indian passport by the local police station",
+            "Immediate conversion of his equity shares into government bonds",
+            "Mandatory community service for 500 hours"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 14 of FEMA empowers the Adjudicating Authority to recover unpaid penalties after 90 days through modes such as attachment and sale of movable or immovable properties belonging to the defaulter.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 14",
+            "Recovery of Penalty",
+            "Attachment"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_other-laws-3_04",
+      "kind": "scenario",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "passage": "Global Forex Bank Ltd., an authorized dealer licensed by the RBI under Section 10 of FEMA, handled several large-scale foreign currency remittances. During a routine inspection conducted by RBI officers under Section 12 of FEMA in August 2024, it was discovered that the bank processed current account transactions listed under Schedule II (requiring Central Government approval) and Schedule III (requiring RBI approval) without ensuring that the requisite statutory approvals were attached to the application forms.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_other-laws-3_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-3_04",
+          "sequenceInScenario": 1,
+          "chapterId": "other-laws-3",
+          "subject": "Law",
+          "prompt": "Under Section 10(2) of FEMA, what is the primary obligation of Global Forex Bank Ltd. as an authorized person when dealing in foreign exchange?",
+          "options": [
+            "To ensure that the transaction does not involve any contravention of FEMA or any rule/regulation made thereunder",
+            "To guarantee a fixed exchange rate to all retail customers for 5 years",
+            "To invest 50% of its profits in foreign sovereign bonds",
+            "To obtain prior permission from SEBI for every foreign exchange draft issued"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 10(2) mandates that an authorised person shall, in all dealings in foreign exchange or foreign securities, comply with the requirements of the Act and any rules, regulations, or directions issued by the RBI, ensuring no contravention occurs.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 10",
+            "Authorised Person Obligations",
+            "Compliance"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-3_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-3_04",
+          "sequenceInScenario": 2,
+          "chapterId": "other-laws-3",
+          "subject": "Law",
+          "prompt": "Which statutory provision empowers the RBI to inspect the books of accounts and records of Global Forex Bank Ltd.?",
+          "options": [
+            "Section 12 of FEMA",
+            "Section 16 of FEMA",
+            "Section 35 of FEMA",
+            "Section 46 of FEMA"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 12 of FEMA specifically empowers the Reserve Bank of India to inspect the books of accounts and other documents of any authorised person at any time to verify compliance with the Act.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Section 12",
+            "Inspection",
+            "Authorised Person"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-3_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-3_04",
+          "sequenceInScenario": 3,
+          "chapterId": "other-laws-3",
+          "subject": "Law",
+          "prompt": "If Global Forex Bank Ltd. failed to comply with RBI directions during the transactions, what penalty can the RBI impose on the authorized person under FEMA?",
+          "options": [
+            "RBI can cancel its banking license under the Banking Regulation Act, but under FEMA Section 11(3), RBI may also impose a monetary penalty for contravention of its directions.",
+            "RBI cannot impose any monetary penalty; it can only issue a warning letter.",
+            "RBI must hand over the bank to the Ministry of Corporate Affairs for liquidation.",
+            "RBI can penalize the bank up to INR 1,000 only."
+          ],
+          "answerIndex": 0,
+          "explanation": "Under Section 11(3) of FEMA, if any authorised person fails to comply with any direction given by the RBI or fails to comply with FEMA provisions, the RBI may impose a monetary penalty.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 11",
+            "RBI Penalties",
+            "Authorised Person"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-3_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-3_04",
+          "sequenceInScenario": 4,
+          "chapterId": "other-laws-3",
+          "subject": "Law",
+          "prompt": "Which schedules of the Current Account Transactions Rules contain transactions requiring Central Government approval (Schedule II) and RBI approval (Schedule III) respectively?",
+          "options": [
+            "Schedule I for Central Government and Schedule II for RBI",
+            "Schedule II for Central Government approval and Schedule III for RBI approval",
+            "Schedule III for Central Government and Schedule IV for RBI",
+            "Schedule IV for both Central Government and RBI"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the FEMA (Current Account Transactions) Rules, Schedule II lists transactions requiring Central Government approval, and Schedule III lists transactions requiring RBI approval (Schedule I contains prohibited transactions).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Current Account Rules",
+            "Schedule II & III",
+            "Approvals"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_other-laws-3_05",
+      "kind": "scenario",
+      "chapterId": "other-laws-3",
+      "subject": "Law",
+      "passage": "Mr. Anand, an Indian resident, inherited a commercial building in Singapore from his uncle in 2022. In 2024, he decided to sell this building and bring the sale proceeds into India. He approached an authorized dealer to repatriate the funds. Meanwhile, the Enforcement Directorate suspected that Mr. Anand had also acquired another undisclosed residential apartment in London in 2023 using funds remitted beyond the Liberalised Remittance Scheme (LRS) limit without RBI approval, triggering parallel scrutiny.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 3,
+        "chapterTitle": "The Foreign Exchange Management Act, 1999"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_other-laws-3_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-3_05",
+          "sequenceInScenario": 1,
+          "chapterId": "other-laws-3",
+          "subject": "Law",
+          "prompt": "Is Mr. Anand permitted to repatriate and receive the sale proceeds of the inherited Singapore property into India?",
+          "options": [
+            "No, repatriation of inheritance from abroad is totally prohibited under FEMA.",
+            "Yes, acquisition by way of inheritance from a person resident outside India is generally permitted, and repatriation of such proceeds into India is allowed under FEMA regulations.",
+            "Yes, but only after paying a 50% export-import duty to the Customs Department.",
+            "No, inherited properties must be surrendered to the Government of Singapore."
+          ],
+          "answerIndex": 1,
+          "explanation": "FEMA regulations permit a resident to hold immovable property acquired by way of inheritance from a person resident outside India, and repatriation of sale proceeds of such property into India is permissible subject to compliance.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Inheritance",
+            "Immovable Property",
+            "Repatriation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-3_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-3_05",
+          "sequenceInScenario": 2,
+          "chapterId": "other-laws-3",
+          "subject": "Law",
+          "prompt": "What is the maximum limit per financial year for outward remittance by a resident individual under the Liberalised Remittance Scheme (LRS) without requiring prior RBI approval?",
+          "options": [
+            "USD 50,000",
+            "USD 100,000",
+            "USD 250,000",
+            "USD 1,000,000"
+          ],
+          "answerIndex": 2,
+          "explanation": "Under the current Liberalised Remittance Scheme (LRS), resident individuals are freely allowed to remit up to USD 250,000 per financial year for any permitted current or capital account transaction.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "LRS",
+            "Liberalised Remittance Scheme",
+            "Limit"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-3_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-3_05",
+          "sequenceInScenario": 3,
+          "chapterId": "other-laws-3",
+          "subject": "Law",
+          "prompt": "If Mr. Anand acquired the London apartment exceeding the LRS limit without RBI approval, which FEMA provision was violated?",
+          "options": [
+            "Section 5 only",
+            "Section 3 and Section 4 read with applicable Capital Account Transaction regulations and LRS ceilings",
+            "Section 10 only",
+            "Section 18 only"
+          ],
+          "answerIndex": 1,
+          "explanation": "Acquiring property abroad exceeding LRS limits without RBI approval violates Section 4 (holding property outside India without permission/regulation) and Section 3 (unauthorized foreign exchange dealings).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 3 & 4",
+            "Violation",
+            "London Property"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-3_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-3_05",
+          "sequenceInScenario": 4,
+          "chapterId": "other-laws-3",
+          "subject": "Law",
+          "prompt": "If the Appellate Tribunal for Foreign Exchange (ATFE) passes an order against Mr. Anand, within how many days and to which court can an appeal be filed on a question of law?",
+          "options": [
+            "Within 30 days to the Supreme Court",
+            "Within 60 days to the High Court",
+            "Within 90 days to the NCLAT",
+            "Within 45 days to the District Court"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 35 of FEMA provides that any person aggrieved by any decision or order of the Appellate Tribunal may file an appeal to the High Court within 60 days on any question of law arising out of such order.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 35",
+            "High Court Appeal",
+            "Question of Law"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

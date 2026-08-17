@@ -1,0 +1,1411 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "gst-6",
+  "subject": "Taxation",
+  "paper": "Paper 3: Taxation",
+  "module": "Module 1",
+  "chapterNumber": 6,
+  "chapterTitle": "Time of Supply",
+  "generatedAt": "2026-08-16T14:29:11.555Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_gst-6_001",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "What is the primary date for determining the time of supply of goods under forward charge where the invoice is issued within the due date specified under Section 31?",
+      "options": [
+        "Date of issue of invoice",
+        "Date of receipt of payment",
+        "Earlier of date of issue of invoice or date of receipt of payment",
+        "Later of date of issue of invoice or date of receipt of payment"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under Section 12(2)(a) of the CGST Act, the time of supply of goods under forward charge is the date of issue of invoice or the last date on which the invoice is required to be issued under Section 31, or the date of receipt of payment, whichever is earlier. When the invoice is issued within the due date, it is the earlier of the date of invoice or date of payment.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Time of Supply",
+        "Goods",
+        "Forward Charge"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_002",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "According to the Notification issued under Section 12(2) of the CGST Act, is the tax on advances received for the supply of GOODS required to be paid at the time of receipt of advance?",
+      "options": [
+        "Yes, tax is payable on all advances received for goods.",
+        "No, tax on advances received for goods is not required to be paid at the time of receipt; time of supply is governed solely by the invoice date or due date of invoice.",
+        "Yes, if the advance exceeds Rs. 1,00,000.",
+        "No, unless the goods are capital goods."
+      ],
+      "answerIndex": 1,
+      "explanation": "Vide Notification No. 66/2017-Central Tax, the Government has specified that registered persons supplying goods (except specified notified cases) do not need to pay GST on advances received. The time of supply for such goods is determined solely based on the invoice issuance date or the last date for issuing the invoice under Section 31.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Time of Supply",
+        "Goods",
+        "Advances"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_003",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "What is the time of supply of services under forward charge, if the invoice is NOT issued within the period prescribed under Section 31?",
+      "options": [
+        "Date of issue of invoice",
+        "Date of provision of service",
+        "Earlier of date of provision of service or date of receipt of payment",
+        "Date of receipt of payment"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under Section 13(2)(b) of the CGST Act, if the invoice is not issued within the prescribed period under Section 31, the time of supply of services is the earlier of the date of provision of service or the date of receipt of payment.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Time of Supply",
+        "Services",
+        "Forward Charge"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_004",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "In case of continuous supply of goods where successive statements of accounts or successive payments are involved, when is the invoice required to be issued?",
+      "options": [
+        "Every month end",
+        "On or before each time each successive statement is issued or each successive payment is received",
+        "At the end of the financial year",
+        "Within 30 days of delivery"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 31(4), in case of continuous supply of goods, where successive statements of accounts or successive payments are involved, the invoice shall be issued on or before each time each such statement is issued or, as the case may be, each such payment is received.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Continuous Supply",
+        "Goods",
+        "Invoice Date"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_005",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "Under the reverse charge mechanism (RCM) for supply of goods, what is the time of supply?",
+      "options": [
+        "Date of receipt of goods",
+        "Date of payment entered in the books of account or debit in bank account, whichever is earlier",
+        "Date on which the invoice is issued by the supplier",
+        "Earliest of: date of receipt of goods, date of payment, or date immediately following 30 days from the date of issue of invoice by the supplier"
+      ],
+      "answerIndex": 3,
+      "explanation": "Under Section 12(3) for goods under RCM, the time of supply is the earliest of: (a) the date of receipt of goods; or (b) the date of payment; or (c) the date immediately following 30 days from the date of issue of invoice by the supplier.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Time of Supply",
+        "Goods",
+        "Reverse Charge"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_006",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "What is the time of supply of services under the reverse charge mechanism (RCM)?",
+      "options": [
+        "Date of receipt of service",
+        "Earlier of the date of payment or the date immediately following 60 days from the date of issue of invoice by the supplier",
+        "Date of issue of invoice by the recipient",
+        "Date of debit in the bank account of the recipient"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 13(3) for services under RCM, the time of supply is the earlier of: (a) the date of payment; or (b) the date immediately following 60 days from the date of issue of invoice by the supplier (or other document in lieu thereof).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Time of Supply",
+        "Services",
+        "Reverse Charge"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_007",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "For associated enterprises where the supplier of service is located outside India, what is the time of supply under reverse charge?",
+      "options": [
+        "Date of payment",
+        "Date of entry in the books of account of the recipient of service or date of payment, whichever is earlier",
+        "Date of entry in the books of account of the recipient",
+        "Date of invoice issued by the overseas supplier"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per the proviso to Section 13(3), in case of supply of services by an associated enterprise located outside India, the time of supply is the date of entry in the books of account of the recipient of service or the date of payment, whichever is earlier.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Time of Supply",
+        "Associated Enterprise",
+        "Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_008",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "How is the date of receipt of payment determined when there is a change in the rate of tax and the payment is credited to the bank account after 4 working days from the date of change in rate of tax?",
+      "options": [
+        "Date of credit in the bank account",
+        "Date of entry in the books of account",
+        "Date of receipt is the date of credit in the bank account",
+        "Date of receipt is the date of debit in the buyer's account"
+      ],
+      "answerIndex": 2,
+      "explanation": "As per Section 14, if there is a change in the rate of tax and the payment is credited in the bank account after 4 working days from the date of change in rate of tax, the date of receipt of payment shall be the date of credit in the bank account.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Change in Rate of Tax",
+        "Payment Date",
+        "Section 14"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_009",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "Under Section 14 (Change in rate of tax), if services are provided BEFORE the change in rate of tax, and the invoice is issued AND payment is received AFTER the change in rate of tax, what is the time of supply?",
+      "options": [
+        "Date of issue of invoice",
+        "Date of receipt of payment",
+        "Earlier of date of invoice or date of payment",
+        "Date of provision of service"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under Section 14(b)(i), when services are provided before the change in rate of tax, and both invoice and payment are received after the change in rate of tax, the time of supply is the earlier of the date of invoice and the date of payment.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Change in Rate of Tax",
+        "Services",
+        "Section 14"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_010",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "Under Section 14, if services are provided AFTER the change in rate of tax, but the invoice is issued AND payment is received BEFORE the change in rate of tax, what is the time of supply?",
+      "options": [
+        "Date of issue of invoice",
+        "Date of receipt of payment",
+        "Earlier of date of invoice or date of payment",
+        "Date of provision of service"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 14(a)(ii), when services are provided after the change in rate of tax, but invoice and payment are both prior to the change, the time of supply is the date of receipt of payment.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Change in Rate of Tax",
+        "Services",
+        "Section 14"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_011",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "What is the time of supply in case of supply of vouchers exchangeable for goods?",
+      "options": [
+        "Date of issue of voucher, if the supply is identifiable at that point; otherwise, the date of redemption of voucher",
+        "Always the date of redemption",
+        "Always the date of issue of voucher",
+        "Date of receipt of payment for the voucher"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 12(4) and 13(4), the time of supply of a voucher is the date of issue of the voucher if the supply is identifiable at that point, and the date of redemption of the voucher in all other cases.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Vouchers",
+        "Time of Supply"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_012",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "When it is not possible to determine the time of supply under the regular provisions, how is it determined under Section 12(5) / 13(5)?",
+      "options": [
+        "Date on which periodic return is required to be filed",
+        "Date on which CGST/SGST is actually paid",
+        "Date of receipt of periodical return or date of assessment",
+        "Date on which central tax/state tax/integrated tax is paid"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per Section 12(5) and 13(5), where it is not possible to determine the time of supply, it shall be the date on which the periodic return is required to be filed, or in any other case, the date on which the tax is paid.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Residual Cases",
+        "Time of Supply"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_013",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "What is the time of supply of addition to value in terms of interest, late fee or penalty for delayed payment of consideration?",
+      "options": [
+        "Date when the delay occurs",
+        "Date when the supplier receives such addition in value",
+        "Date when the original invoice was issued",
+        "Date of end of the financial year"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 12(6) and 13(6), the time of supply in respect of an addition to value by way of interest, late fee or penalty for delayed payment of consideration is the date on which the supplier receives such addition in value.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Addition to Value",
+        "Interest",
+        "Late Fee"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_014",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "For a continuous supply of services, where the due date of payment is ascertainable from the contract, when must the invoice be issued?",
+      "options": [
+        "Every month end",
+        "On or before the due date of payment",
+        "Within 30 days of completion of service",
+        "Whenever payment is received"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 31(5), in case of continuous supply of services, where the due date of payment is ascertainable from the contract, the invoice shall be issued on or before each such due date.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Continuous Supply",
+        "Services",
+        "Invoice Date"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_015",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "For a continuous supply of services, where the due date of payment is NOT ascertainable from the contract, when must the invoice be issued?",
+      "options": [
+        "On or before the time when the supplier of service receives the payment",
+        "Within 30 days of completion of each month",
+        "At the end of the financial year",
+        "On or before completion of the service"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per Section 31(5)(b), where the due date of payment is not ascertainable from the contract for continuous supply of services, the invoice shall be issued on or before the time when the supplier of service receives the payment.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Continuous Supply",
+        "Services",
+        "Invoice"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_016",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "In case of supply of services where the invoice is required to be issued within 30 days of supply of service, what is the maximum time limit for a normal taxable person (other than insurance/banking companies)?",
+      "options": [
+        "15 days",
+        "30 days",
+        "45 days",
+        "60 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 31(2), a registered person supplying taxable services shall, before or after the provision of service but within a period of 30 days from the date of supply of service, issue a tax invoice.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Invoice",
+        "Time Limit",
+        "Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_017",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "What is the time limit for issuing an invoice in case of banking companies, financial institutions, or NBFCs supplying taxable services?",
+      "options": [
+        "30 days from the date of supply",
+        "45 days from the date of supply",
+        "60 days from the date of supply",
+        "90 days from the date of supply"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Rule 47 of CGST Rules, insurers, banking companies, financial institutions, and NBFCs are allowed 45 days from the date of supply of service to issue an invoice.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Invoice",
+        "Banking",
+        "Time Limit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_018",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "When goods are sent on approval or sale or return basis, before or at the time of supply or within 6 months from the date of removal, whichever is earlier, when should the invoice be issued?",
+      "options": [
+        "At the time of supply / when it becomes known that supply has taken place, or 6 months from removal, whichever is earlier",
+        "At the end of every month",
+        "Within 30 days of removal",
+        "Only when payment is received"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per Section 31(7), where goods are sent on approval for sale or return, the invoice shall be issued before or at the time when it becomes known that the supply has taken place, or six months from the date of removal, whichever is earlier.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Approval Basis",
+        "Goods",
+        "Invoice"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_019",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "What is the time of supply of goods in case of excess payment of up to Rs. 1,000 where the supplier chooses to take the date of communication of invoice / receipt of excess amount?",
+      "options": [
+        "Date of issue of invoice for such excess amount",
+        "Date of original invoice",
+        "Date of receipt of payment",
+        "Date of entry in books"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per the second proviso to Section 12(2) / Rule 50, where the payment is received in excess of the invoice amount up to Rs. 1,000, the time of supply for such excess amount shall, at the option of the supplier, be the date of issue of invoice for such excess amount.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Excess Payment",
+        "Time of Supply"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_020",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "Which section of the CGST Act governs the time of supply of goods under forward charge?",
+      "options": [
+        "Section 12(1)",
+        "Section 12(2)",
+        "Section 13(2)",
+        "Section 14"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 12(2) of the CGST Act, 2017 governs the time of supply of goods under forward charge.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 12(2)",
+        "Goods",
+        "Forward Charge"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_021",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "Which section of the CGST Act governs the time of supply of services under forward charge?",
+      "options": [
+        "Section 12(2)",
+        "Section 13(1)",
+        "Section 13(2)",
+        "Section 14"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 13(2) of the CGST Act, 2017 governs the time of supply of services under forward charge.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 13(2)",
+        "Services",
+        "Forward Charge"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_022",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "If a supplier of goods issues an invoice on 10th May for goods removed on 5th May, and payment is received on 1st June, what is the time of supply under forward charge?",
+      "options": [
+        "5th May",
+        "10th May",
+        "1st June",
+        "15th May"
+      ],
+      "answerIndex": 1,
+      "explanation": "For goods under forward charge, time of supply is earlier of invoice date (10th May) or last date for issuing invoice (5th May). Since invoice is issued on 10th May, which is within the due date, the time of supply is 10th May. (Note: As per Notification No. 66/2017-CT, payment date is irrelevant for goods under forward charge).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Time of Supply",
+        "Goods",
+        "Practical"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_023",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "In the case of supply of services, if the invoice is issued on 10th October for services completed on 1st October, and payment is credited to the bank account on 5th October, what is the time of supply?",
+      "options": [
+        "1st October",
+        "5th October",
+        "10th October",
+        "12th October"
+      ],
+      "answerIndex": 1,
+      "explanation": "For services under forward charge, time of supply is earlier of invoice date (10th Oct) or payment date (5th Oct), assuming invoice is issued within the due date (30 days). Comparing 10th Oct and 5th Oct, the earlier is 5th October.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Time of Supply",
+        "Services",
+        "Practical"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_024",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "When does the liability to pay GST on goods arise under forward charge?",
+      "options": [
+        "At the time of registration",
+        "At the time of supply of goods determined under Section 12",
+        "At the time of filing annual return",
+        "At the time of physical delivery of goods"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 12(1) states that the liability to pay central/state tax on goods shall arise at the time of supply as determined in accordance with the provisions of Section 12.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Liability",
+        "Section 12(1)",
+        "Goods"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_025",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "When does the liability to pay GST on services arise under forward charge?",
+      "options": [
+        "At the time of raising a purchase order",
+        "At the time of supply of services determined under Section 13",
+        "At the time of receipt of payment",
+        "At the time of entering into a contract"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 13(1) states that the liability to pay central/state tax on services shall arise at the time of supply as determined in accordance with the provisions of Section 13.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Liability",
+        "Section 13(1)",
+        "Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_026",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "In a case where goods are supplied through e-commerce operator where TCS is required to be collected, does this alter the basic provisions of time of supply of goods?",
+      "options": [
+        "Yes, time of supply is postponed to TCS deposit date",
+        "No, time of supply is determined as per normal provisions of Section 12",
+        "Yes, time of supply is the date of order placement",
+        "Yes, time of supply is the date of delivery by ECO"
+      ],
+      "answerIndex": 1,
+      "explanation": "E-commerce provisions (TCS under Section 52) do not alter the fundamental time of supply rules under Section 12, which continue to apply based on invoice and payment rules.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "E-Commerce",
+        "Time of Supply"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_027",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "What is the relevant date for determining the time of supply when a person is newly registered and liability arises under Section 18 / continuous transition?",
+      "options": [
+        "Date of grant of registration",
+        "Date of supply of goods or services",
+        "Date of application for registration",
+        "Date of physical verification"
+      ],
+      "answerIndex": 1,
+      "explanation": "The time of supply is governed by Section 12 and 13 respectively based on the underlying transaction dates (invoice, payment, provision of service), irrespective of the registration status at the exact micro-moment, subject to specific transitional provisions if any.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Registration",
+        "Time of Supply"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_028",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "Under Section 14, if services are provided AFTER the change in rate of tax, and the invoice is issued AFTER the change in rate of tax, but payment is received BEFORE the change in rate of tax, what is the time of supply?",
+      "options": [
+        "Date of receipt of payment",
+        "Date of issue of invoice",
+        "Date of provision of service",
+        "Earlier of invoice or payment"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 14(a)(i), when services are provided after the change in rate of tax and invoice is issued after the change, but payment is received before the change in rate of tax, the time of supply is the date of receipt of payment.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Change in Rate of Tax",
+        "Section 14"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_029",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "Can the date of receipt of payment be the date when the payment is entered in the books of account even if it is credited to the bank account later, outside the 4-day window for rate change scenarios?",
+      "options": [
+        "Yes, always",
+        "No, for change in rate of tax, specific rules under Section 14 regarding bank credit apply if credit is after 4 working days",
+        "Only for goods",
+        "Only for services under RCM"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 14, when there is a change in the rate of tax, the date of receipt of payment is specifically deemed to be the date of credit in the bank account if such credit happens after 4 working days from the date of change in rate of tax, overriding book entry date.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Change in Rate of Tax",
+        "Bank Credit",
+        "Section 14"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-6_030",
+      "kind": "normal",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "prompt": "Which of the following dates is NOT a component in determining time of supply of goods under forward charge?",
+      "options": [
+        "Date of issue of invoice",
+        "Last date on which invoice is required to be issued under Section 31",
+        "Date of receipt of payment",
+        "Date of removal of goods"
+      ],
+      "answerIndex": 2,
+      "explanation": "Vide Notification No. 66/2017-CT, the date of receipt of payment is excluded from determining the time of supply of goods under forward charge. The components are invoice date, last date for invoice, and removal date (indirectly via Section 31 due date).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Time of Supply",
+        "Goods",
+        "Exclusion of Payment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_gst-6_01",
+      "kind": "scenario",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "passage": "M/s Alpha Enterprises, a registered supplier of machinery, sold a specialized industrial machine to M/s Beta Ltd. The machine was removed from the factory of Alpha Enterprises on 10th August. The tax invoice was issued on 15th August. M/s Beta Ltd. made the full payment by a cheque which was handed over on 18th August and credited to Alpha's bank account on 22nd August. The due date for issuing the invoice under Section 31 was 10th August.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-6_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-6_01",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-6",
+          "subject": "Taxation",
+          "prompt": "What is the last date for issuing the tax invoice for the supply of machinery under Section 31?",
+          "options": [
+            "10th August",
+            "15th August",
+            "18th August",
+            "22nd August"
+          ],
+          "answerIndex": 0,
+          "explanation": "As per Section 31(1) of the CGST Act, in case of supply of goods, the invoice must be issued on or before the time of removal of goods for supply or delivery. Since goods were removed on 10th August, the last date for issuing the invoice is 10th August.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Invoice Date",
+            "Goods",
+            "Section 31"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-6_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-6_01",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-6",
+          "subject": "Taxation",
+          "prompt": "Was the invoice issued within the due date prescribed under Section 31 in this case?",
+          "options": [
+            "Yes",
+            "No",
+            "Yes, because it was issued within 30 days",
+            "Not applicable"
+          ],
+          "answerIndex": 1,
+          "explanation": "The goods were removed on 10th August, making 10th August the due date for the invoice. However, the invoice was issued on 15th August, which is after the due date.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Invoice Date",
+            "Due Date",
+            "Goods"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-6_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-6_01",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-6",
+          "subject": "Taxation",
+          "prompt": "What is the time of supply of the machinery under forward charge for M/s Alpha Enterprises?",
+          "options": [
+            "10th August",
+            "15th August",
+            "18th August",
+            "22nd August"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under Section 12(2)(b), if the invoice is NOT issued within the due date under Section 31, the time of supply is the earlier of the date of removal of goods (which precedes or equals the due date of invoice) or date of payment. Here, removal / last date of invoice was 10th August, and payment date was 18th/22nd August. Thus, the time of supply is 10th August.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Time of Supply",
+            "Goods",
+            "Section 12(2)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-6_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-6_01",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-6",
+          "subject": "Taxation",
+          "prompt": "If the invoice had been issued on 8th August instead of 15th August, what would be the time of supply?",
+          "options": [
+            "8th August",
+            "10th August",
+            "18th August",
+            "22nd August"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under Section 12(2)(a), when the invoice is issued within the due date (8th August is on or before 10th August), the time of supply is the date of issue of the invoice, which is 8th August. (Payment date is ignored for goods under forward charge per Notification No. 66/2017-CT).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Time of Supply",
+            "Goods",
+            "Forward Charge"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-6_02",
+      "kind": "scenario",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "passage": "M/s Delta Consultants, a registered firm of management consultants, provided advisory services to M/s Omega Corp. The services were completed on 12th September. M/s Delta Consultants issued the tax invoice on 5th October. M/s Omega Corp made an advance payment of Rs. 50,000 on 1st September and the balance payment on 10th October.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-6_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-6_02",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-6",
+          "subject": "Taxation",
+          "prompt": "What is the last date for issuing the tax invoice for the advisory services under Section 31?",
+          "options": [
+            "12th September",
+            "1st October",
+            "12th October",
+            "5th October"
+          ],
+          "answerIndex": 2,
+          "explanation": "As per Section 31(2) read with Rule 47, a tax invoice for services must be issued within 30 days from the date of supply of service. Services were completed on 12th September; hence, 30 days expire on 12th October.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Invoice Date",
+            "Services",
+            "Section 31"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-6_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-6_02",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-6",
+          "subject": "Taxation",
+          "prompt": "Was the invoice issued within the prescribed time limit under Section 31?",
+          "options": [
+            "Yes, it was issued on 5th October, which is within 30 days of 12th September.",
+            "No, it was delayed.",
+            "Yes, because it was issued before final payment.",
+            "No, invoices for services must be issued on the same day."
+          ],
+          "answerIndex": 0,
+          "explanation": "Since the services were completed on 12th September, the due date for the invoice was 12th October. The invoice issued on 5th October is well within the 30-day limit.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Invoice Date",
+            "Time Limit",
+            "Services"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-6_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-6_02",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-6",
+          "subject": "Taxation",
+          "prompt": "What is the time of supply for the advance payment of Rs. 50,000 received on 1st September?",
+          "options": [
+            "1st September",
+            "12th September",
+            "5th October",
+            "12th October"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under Section 13(2)(a), for services, if the invoice is issued within the prescribed period, the time of supply is the earlier of invoice date or payment date. For the advance received on 1st September, the payment date (1st September) precedes the invoice date (5th October). Thus, time of supply for the advance is 1st September.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Time of Supply",
+            "Services",
+            "Advances"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-6_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-6_02",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-6",
+          "subject": "Taxation",
+          "prompt": "What is the time of supply for the balance payment received on 10th October?",
+          "options": [
+            "12th September",
+            "5th October",
+            "10th October",
+            "12th October"
+          ],
+          "answerIndex": 1,
+          "explanation": "For the balance payment, the payment date is 10th October, while the invoice date is 5th October. Since the invoice was issued within the due date, the time of supply is the earlier of invoice date (5th October) or payment date (10th October), which is 5th October.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Time of Supply",
+            "Services",
+            "Forward Charge"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-6_03",
+      "kind": "scenario",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "passage": "M/s Gamma Logistics (a GTA) provided goods transport agency services to M/s Paramount Ltd. (a registered body corporate liable to pay tax under RCM). The date of provision of service was 10th November. M/s Gamma Logistics issued the invoice on 15th November. M/s Paramount Ltd. made the payment on 20th December, and the goods transport receipt was entered in its books on 18th November.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-6_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-6_03",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-6",
+          "subject": "Taxation",
+          "prompt": "Under which mechanism is the GST payable on the GTA service provided by M/s Gamma Logistics to M/s Paramount Ltd.?",
+          "options": [
+            "Forward Charge",
+            "Reverse Charge Mechanism (RCM)",
+            "E-commerce Operator mechanism",
+            "Exempted supply"
+          ],
+          "answerIndex": 1,
+          "explanation": "GTA services provided to a registered body corporate like M/s Paramount Ltd. are taxable under Reverse Charge Mechanism (RCM) under Section 9(3) / 9(4) of the CGST Act.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "RCM",
+            "GTA",
+            "Services"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-6_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-6_03",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-6",
+          "subject": "Taxation",
+          "prompt": "What is the date of issue of invoice by the supplier in this scenario?",
+          "options": [
+            "10th November",
+            "15th November",
+            "18th November",
+            "20th December"
+          ],
+          "answerIndex": 1,
+          "explanation": "The question explicitly states that M/s Gamma Logistics issued the invoice on 15th November.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Invoice Date",
+            "GTA"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-6_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-6_03",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-6",
+          "subject": "Taxation",
+          "prompt": "What is the date immediately following 60 days from the date of issue of invoice by the supplier?",
+          "options": [
+            "14th January",
+            "15th January",
+            "16th January",
+            "18th January"
+          ],
+          "answerIndex": 1,
+          "explanation": "Invoice date is 15th November. November has 30 days (remaining days = 15). December has 31 days. January has 14 days (15 + 31 + 14 = 60 days). The date immediately following 60 days is 15th January.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Time of Supply",
+            "RCM",
+            "Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-6_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-6_03",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-6",
+          "subject": "Taxation",
+          "prompt": "What is the time of supply of service for M/s Paramount Ltd. under RCM?",
+          "options": [
+            "10th November",
+            "15th November",
+            "18th November",
+            "20th December"
+          ],
+          "answerIndex": 2,
+          "explanation": "Under Section 13(3) for RCM on services, time of supply is earlier of payment date (20th December) or the date immediately following 60 days from invoice (15th January). Wait! Let's re-check the options. Payment is 20th December, 60 days + 1 = 15th January. Earlier is 20th December. But wait, is there an earlier date? Let's check entry in books: 18th November. For RCM services, is books entry a trigger? No, Section 13(3) triggers are payment or 61st day from invoice. Wait, payment is 20th December. 61st day is 15th January. Between 20th December and 15th January, earlier is 20th December. Let's re-evaluate the options provided: (A) 10th Nov, (B) 15th Nov, (C) 18th Nov, (D) 20th Dec. Thus, 20th December is correct.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Time of Supply",
+            "RCM",
+            "Services"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-6_04",
+      "kind": "scenario",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "passage": "A notification was issued changing the rate of tax on a particular category of taxable services from 12% to 18% with effect from 1st October. M/s Zenith Ltd. provided these services and completed them on 20th September. Zenith Ltd. issued the invoice on 5th October. The payment for the services was credited to Zenith's bank account on 28th September.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-6_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-6_04",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-6",
+          "subject": "Taxation",
+          "prompt": "When was the service provided in relation to the date of change in rate of tax?",
+          "options": [
+            "Before the change in rate of tax",
+            "After the change in rate of tax",
+            "Simultaneous with the change in rate of tax",
+            "Not determinable"
+          ],
+          "answerIndex": 0,
+          "explanation": "The service was completed on 20th September, while the rate change occurred on 1st October. Hence, the service was provided before the change in rate of tax.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Change in Rate of Tax",
+            "Services"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-6_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-6_04",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-6",
+          "subject": "Taxation",
+          "prompt": "When was the invoice issued in relation to the date of change in rate of tax?",
+          "options": [
+            "Before the change in rate of tax",
+            "After the change in rate of tax",
+            "On the date of change",
+            "None of the above"
+          ],
+          "answerIndex": 1,
+          "explanation": "The invoice was issued on 5th October, which is after the rate change date of 1st October.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Change in Rate of Tax",
+            "Invoice Date"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-6_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-6_04",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-6",
+          "subject": "Taxation",
+          "prompt": "When was the payment received in relation to the date of change in rate of tax?",
+          "options": [
+            "Before the change in rate of tax",
+            "After the change in rate of tax",
+            "On the date of change",
+            "Not applicable"
+          ],
+          "answerIndex": 0,
+          "explanation": "The payment was credited to the bank account on 28th September, which is before the rate change date of 1st October.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Change in Rate of Tax",
+            "Payment Date"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-6_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-6_04",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-6",
+          "subject": "Taxation",
+          "prompt": "What is the time of supply of service and consequently the applicable tax rate under Section 14?",
+          "options": [
+            "28th September; rate is 12%",
+            "5th October; rate is 18%",
+            "20th September; rate is 12%",
+            "1st October; rate is 18%"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under Section 14(b)(ii), when services are provided before the change in rate of tax, and payment is received before the change but invoice is issued after the change, the time of supply is the date of receipt of payment (28th September). Therefore, the applicable tax rate is the pre-revision rate of 12%.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 14",
+            "Change in Rate of Tax",
+            "Time of Supply"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-6_05",
+      "kind": "scenario",
+      "chapterId": "gst-6",
+      "subject": "Taxation",
+      "passage": "M/s Apex Traders sells gift vouchers of various denominations to customers. On 15th June, Apex Traders sold a specific voucher worth Rs. 5,000 redeemable against purchase of specific electronic appliances (specifically, washing machines). The customer redeemed this voucher on 10th August to purchase a washing machine. Separately, on 20th June, Apex sold a generic gift voucher worth Rs. 2,000 redeemable against any store merchandise, which was redeemed on 5th September.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Time of Supply"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-6_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-6_05",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-6",
+          "subject": "Taxation",
+          "prompt": "Is the supply identifiable at the time of issuance of the specific voucher sold on 15th June?",
+          "options": [
+            "Yes, because it is redeemable against specific electronic appliances (washing machines).",
+            "No, it is a generic voucher.",
+            "Only upon redemption.",
+            "Never identifiable."
+          ],
+          "answerIndex": 0,
+          "explanation": "Since the voucher is redeemable against a specific category of goods (washing machines), the supply is identifiable at the point of issuance of the voucher.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Vouchers",
+            "Identifiable Supply"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-6_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-6_05",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-6",
+          "subject": "Taxation",
+          "prompt": "What is the time of supply for the specific voucher sold on 15th June?",
+          "options": [
+            "15th June (Date of issue)",
+            "10th August (Date of redemption)",
+            "20th June",
+            "5th September"
+          ],
+          "answerIndex": 0,
+          "explanation": "As per Section 12(4)(a) / 13(4)(a), if the supply is identifiable at the point of issuance, the time of supply of the voucher is the date of issue of the voucher, which is 15th June.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Vouchers",
+            "Time of Supply",
+            "Section 12(4)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-6_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-6_05",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-6",
+          "subject": "Taxation",
+          "prompt": "Is the supply identifiable at the time of issuance of the generic voucher sold on 20th June?",
+          "options": [
+            "Yes, it is identifiable.",
+            "No, because it can be redeemed against any store merchandise (non-identifiable at issuance).",
+            "Yes, because the value is fixed at Rs. 2,000.",
+            "Not applicable."
+          ],
+          "answerIndex": 1,
+          "explanation": "A generic voucher that can be applied to any store merchandise does not point to a specific supply at the time of its issuance; hence, the supply is not identifiable at issuance.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Vouchers",
+            "Generic Vouchers"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-6_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-6_05",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-6",
+          "subject": "Taxation",
+          "prompt": "What is the time of supply for the generic voucher sold on 20th June?",
+          "options": [
+            "20th June (Date of issue)",
+            "5th September (Date of redemption)",
+            "15th June",
+            "10th August"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per Section 12(4)(b) / 13(4)(b), where the supply is not identifiable at the point of issuance, the time of supply of the voucher is the date of redemption of the voucher, which is 5th September.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Vouchers",
+            "Redemption",
+            "Time of Supply"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

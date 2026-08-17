@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "advanced-accounting-11",
+  "subject": "Accounts",
+  "paper": "Paper 1: Advanced Accounting",
+  "module": "Module 3",
+  "chapterNumber": 11,
+  "chapterTitle": "Financial Statements of Companies",
+  "generatedAt": "2026-08-16T14:01:25.053Z",
+  "model": "gemini-3.6-flash",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_advanced-accounting-11_001",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "According to the amendments to Schedule III (Division I) of the Companies Act, 2013, if a company's total revenue is ₹85 Crores, how should figures in the financial statements be rounded off?",
+      "options": [
+        "Rounding off is optional regardless of turnover.",
+        "Must be rounded off to the nearest Hundreds, Thousands, Lakhs, or Millions, or decimals thereof.",
+        "Must be rounded off to the nearest Lakhs, Millions, or Crores, or decimals thereof.",
+        "Must be rounded off to the nearest Crores only."
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Schedule III instructions, for companies having total revenue of less than ₹100 Crores, rounding off can be done to the nearest Hundreds, Thousands, Lakhs, or Millions, or decimals thereof. When total revenue is ₹100 Crores or more, rounding off is done to the nearest Lakhs, Millions, or Crores. Here, turnover is ₹85 Crores (< ₹100 Crores).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Schedule III",
+        "Rounding Off",
+        "Financial Statements"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_002",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "When a company's normal operating cycle cannot be clearly identified, what is its assumed duration for the classification of assets and liabilities as current or non-current under Schedule III?",
+      "options": [
+        "6 months",
+        "12 months",
+        "18 months",
+        "24 months"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Schedule III of the Companies Act, 2013, where the normal operating cycle cannot be identified, its duration is assumed to be 12 months. Assets and liabilities are evaluated against this 12-month baseline for current/non-current classification.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Schedule III",
+        "Operating Cycle",
+        "Balance Sheet"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_003",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "How is 'Proposed Dividend' for the current financial year treated in the financial statements as per AS 4 (Revised) and Schedule III?",
+      "options": [
+        "Recognized as a Current Liability in the Balance Sheet.",
+        "Recognized as a Non-Current Liability in the Balance Sheet.",
+        "Disclosed in the Notes to Accounts as a contingent liability/event after reporting date without recognizing a liability on the face of the Balance Sheet.",
+        "Deducted directly from Reserves & Surplus on the face of the Balance Sheet."
+      ],
+      "answerIndex": 2,
+      "explanation": "Under AS 4 (Revised), dividends proposed by the Board of Directors after the balance sheet date but before approval of financial statements do not constitute an obligation at the balance sheet date. Therefore, proposed dividend is disclosed in the Notes to Accounts and not recognized as a liability in the Balance Sheet.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 4",
+        "Proposed Dividend",
+        "Notes to Accounts"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_004",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "Under Section 135 of the Companies Act, 2013, what is the Net Profit threshold in the immediately preceding financial year that triggers the mandatory Corporate Social Responsibility (CSR) provisions for a company?",
+      "options": [
+        "Net Profit of ₹1 Crore or more",
+        "Net Profit of ₹5 Crores or more",
+        "Net Profit of ₹10 Crores or more",
+        "Net Profit of ₹100 Crores or more"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 135(1) applies to every company having a Net Worth of ₹500 Crores or more, OR Turnover of ₹1000 Crores or more, OR Net Profit of ₹5 Crores or more during the immediately preceding financial year. Hence, ₹5 Crores is the net profit threshold.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "CSR",
+        "Section 135",
+        "Net Profit Threshold"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_005",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "What is the maximum overall limit prescribed under Section 197 of the Companies Act, 2013 for total managerial remuneration payable by a public company to its directors (including managing director and whole-time directors) out of net profits for a financial year?",
+      "options": [
+        "5% of Net Profits",
+        "10% of Net Profits",
+        "11% of Net Profits",
+        "15% of Net Profits"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 197(1) provides that total managerial remuneration payable by a public company to its directors, including managing director and whole-time director and manager, in respect of any financial year shall not exceed 11% of the net profits of that financial year calculated u/s 198.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Managerial Remuneration",
+        "Section 197",
+        "Companies Act 2013"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_006",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "Under Schedule III, a company must disclose the details of shareholders holding more than what percentage of shares in the company?",
+      "options": [
+        "1%",
+        "2%",
+        "5%",
+        "10%"
+      ],
+      "answerIndex": 2,
+      "explanation": "Schedule III requires disclosure of shareholding details for shareholders holding more than 5% shares in the company, specifying the number of shares held and the percentage of holding.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Schedule III",
+        "Share Capital",
+        "Disclosures"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_007",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "Where should a negative balance in the Statement of Profit and Loss be presented on the Balance Sheet prepared under Schedule III?",
+      "options": [
+        "As an Asset under 'Other Non-Current Assets'",
+        "As an Asset under 'Other Current Assets'",
+        "As a negative figure under the head 'Surplus' in 'Reserves and Surplus'",
+        "As a deduction from 'Share Capital'"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under Schedule III, a debit balance in the Statement of Profit and Loss is shown as a negative figure under the head 'Surplus' under 'Reserves and Surplus'. The total of 'Reserves and Surplus' is shown net of such debit balance.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Schedule III",
+        "Reserves and Surplus",
+        "Balance Sheet"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_008",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "Under Schedule III (Division I) as amended, 'Current maturities of long-term borrowings' should be presented under which head in the Balance Sheet?",
+      "options": [
+        "Short-term Borrowings",
+        "Other Current Liabilities",
+        "Long-term Borrowings",
+        "Other Non-Current Liabilities"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per amended Schedule III (Division I), 'Current maturities of long-term borrowings' are required to be disclosed under 'Other Current Liabilities' and not under Short-term Borrowings.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Schedule III",
+        "Current Liabilities",
+        "Borrowings"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_009",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "Which of the following items is EXCLUDED from 'Cash and Cash Equivalents' in the Balance Sheet as per Schedule III / AS 3?",
+      "options": [
+        "Balances with banks",
+        "Cheques, drafts on hand",
+        "Bank deposits with more than 12 months maturity",
+        "Cash on hand"
+      ],
+      "answerIndex": 2,
+      "explanation": "Bank deposits with maturity of more than 12 months are disclosed under 'Other Financial Assets' or 'Other Non-Current/Current Assets' and excluded from Cash and Cash Equivalents. Cash and cash equivalents include cash on hand, bank balances, and short-term highly liquid deposits (usually maturity <= 3 months).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Schedule III",
+        "Cash and Cash Equivalents",
+        "AS 3"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_010",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "According to Schedule III disclosure requirements for analytical ratios, an explanation for variance must be provided if the ratio changes by more than what percentage compared to the preceding financial year?",
+      "options": [
+        "10%",
+        "15%",
+        "20%",
+        "25%"
+      ],
+      "answerIndex": 3,
+      "explanation": "Schedule III requires companies to disclose key financial ratios and state reasons for variance if any ratio changes by more than 25% as compared to the preceding financial year.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Schedule III",
+        "Ratio Analysis",
+        "Disclosures"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_011",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "For computing 'Effective Capital' under Schedule V of the Companies Act, 2013 for managerial remuneration limits, which of the following is DEDUCTED from the sum of Paid-up Capital, Reserves, and Long-term Loans?",
+      "options": [
+        "Securities Premium",
+        "Investments, Accumulated Losses, and Preliminary Expenses not written off",
+        "Bank Overdraft payable on demand",
+        "Trade Payables"
+      ],
+      "answerIndex": 1,
+      "explanation": "Effective Capital under Schedule V is calculated as: (Paid-up Share Capital + Share Premium + Reserves & Surplus + Long-term Borrowings) MINUS (Investments + Accumulated Losses + Preliminary Expenses not written off).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Schedule V",
+        "Effective Capital",
+        "Managerial Remuneration"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_012",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "Under Rule 3 of the Companies (Declaration and Payment of Dividend) Rules, 2014, when dividend is declared out of past free reserves due to inadequacy of profits, what is the maximum permissible rate of dividend?",
+      "options": [
+        "Average of the dividend rates declared by the company in the immediately preceding 5 financial years.",
+        "Average of the dividend rates declared by the company in the immediately preceding 3 financial years.",
+        "10% of the paid-up share capital.",
+        "15% of the paid-up share capital."
+      ],
+      "answerIndex": 1,
+      "explanation": "Condition 1 of Rule 3 states that the rate of dividend declared shall not exceed the average of the rates at which dividend was declared by the company in the three financial years immediately preceding that year. (This rule does not apply if company has not declared dividend in each of 3 preceding years).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Declaration of Dividend",
+        "Rule 3",
+        "Free Reserves"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_013",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "Under Rule 3 of Companies (Declaration and Payment of Dividend) Rules, 2014, what is the maximum total amount that can be drawn from past free reserves?",
+      "options": [
+        "10% of the sum of Paid-Up Share Capital and Free Reserves as per latest audited financial statement.",
+        "15% of Paid-Up Share Capital.",
+        "20% of Free Reserves.",
+        "25% of Net Profits of preceding 3 years."
+      ],
+      "answerIndex": 0,
+      "explanation": "Condition 2 of Rule 3 specifies that the total amount to be drawn from past reserves shall not exceed 10% of the sum of paid-up share capital and free reserves as appearing in the latest audited financial statement.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Declaration of Dividend",
+        "Rule 3",
+        "Limits"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_014",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "When calculating Net Profit under Section 198 of the Companies Act, 2013 for managerial remuneration, which of the following items MUST be added back to reported profit before tax if already deducted?",
+      "options": [
+        "Debenture Interest",
+        "Managerial Remuneration and Provision for Income Tax",
+        "Interest on Bank Loans",
+        "Depreciation calculated as per Section 123"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 198(4), no credit/deduction is given for income tax or managerial remuneration. Hence, managerial remuneration paid/payable and provision for income tax must be added back to profit before arriving at net profit u/s 198.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 198",
+        "Net Profit Computation",
+        "Managerial Remuneration"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_015",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "A public company has 2 Whole-Time Directors and 1 Managing Director. The company has adequate profits. What is the maximum percentage of net profits payable as remuneration to all executive directors combined without Central Government approval?",
+      "options": [
+        "5%",
+        "10%",
+        "11%",
+        "3%"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 197(1) limits remuneration to 5% of net profit for any single MD/WTD, but if there is more than one such director, overall remuneration for all MDs/WTDs combined shall not exceed 10% of net profits.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 197",
+        "Managerial Remuneration",
+        "Limits"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_016",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "If an unspent CSR amount relates to an ONGOING project, within how many days from the end of the financial year must the company transfer such amount to a special account called 'Unspent CSR Account'?",
+      "options": [
+        "30 days",
+        "60 days",
+        "6 months",
+        "30 days from the date of AGM"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 135(6), any unspent CSR amount pursuant to an ongoing project must be transferred by the company within 30 days from the end of the financial year to a special bank account called the 'Unspent CSR Account'.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "CSR",
+        "Section 135",
+        "Unspent CSR Account"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_017",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "What is the maximum remuneration allowed under Section 197 for Non-Executive Directors (part-time directors) of a public company if the company HAS a Managing Director or Whole-Time Director?",
+      "options": [
+        "1% of Net Profits",
+        "3% of Net Profits",
+        "5% of Net Profits",
+        "11% of Net Profits"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 197(1) specifies that remuneration payable to directors who are neither managing directors nor whole-time directors shall not exceed 1% of net profits if the company has a managing director or whole-time director or manager, and 3% in any other case.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 197",
+        "Non-Executive Director",
+        "Managerial Remuneration"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_018",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "A company has Effective Capital of ₹20 Crores and incurs a loss in the current year. Under Schedule V Part II, what is the maximum annual remuneration payable to a managerial person without passing a Special Resolution?",
+      "options": [
+        "₹60 Lakhs",
+        "₹84 Lakhs",
+        "₹120 Lakhs",
+        "₹200 Lakhs"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Schedule V Part II Section II, for Effective Capital of ₹5 Crores and above but less than ₹100 Crores, the limit of yearly remuneration payable by ordinary resolution is ₹84 Lakhs. (If special resolution is passed, limit doubles to ₹168 Lakhs).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Schedule V",
+        "Inadequate Profits",
+        "Managerial Remuneration"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_019",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "A company has a normal operating cycle of 15 months. A trade receivable is expected to be realized in 14 months from the reporting date. How should this trade receivable be classified under Schedule III?",
+      "options": [
+        "Current Asset",
+        "Non-Current Asset",
+        "Other Non-Current Financial Asset",
+        "Trade Investment"
+      ],
+      "answerIndex": 0,
+      "explanation": "An asset is classified as current if it is expected to be realized within the company's normal operating cycle (here, 15 months). Since 14 months is within the 15-month operating cycle, it is classified as a Current Asset.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Operating Cycle",
+        "Current Asset",
+        "Schedule III"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_020",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "Under Section 198 of the Companies Act, 2013, how is capital profit on sale of a fixed asset treated when computing net profits?",
+      "options": [
+        "Entire sale consideration is credited.",
+        "Entire profit on sale is credited.",
+        "Credit is given only for the profit up to the amount of historical cost minus WDV (i.e., scrap/depreciation recovered), while excess over original cost (capital profit) is excluded.",
+        "Capital profit is completely added back without excluding anything."
+      ],
+      "answerIndex": 2,
+      "explanation": "Under Section 198(3)(a), credit is given for profits on sale of immovable property/assets of capital nature to the extent the sale price exceeds written down value but does not exceed original cost. Capital gain in excess of original cost is EXCLUDED from Net Profits.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 198",
+        "Capital Profit",
+        "Net Profit Calculation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_021",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "If an unspent CSR amount relates to a project OTHER THAN an ongoing project, within what period must the company transfer it to a Fund specified in Schedule VII?",
+      "options": [
+        "Within 30 days from end of FY",
+        "Within 60 days from end of FY",
+        "Within 6 months from the end of the financial year",
+        "Within 12 months from end of FY"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under Section 135(5), unspent CSR amounts not relating to ongoing projects must be transferred to a Fund specified in Schedule VII (e.g. PM National Relief Fund) within 6 months of the expiry of the financial year.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "CSR",
+        "Section 135",
+        "Schedule VII Fund"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_022",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "In the Statement of Profit and Loss under Schedule III, 'Changes in Inventories of Finished Goods, Work-in-Progress and Stock-in-Trade' is calculated as:",
+      "options": [
+        "Closing Inventory minus Opening Inventory",
+        "Opening Inventory minus Closing Inventory",
+        "Closing Inventory plus Purchases minus Opening Inventory",
+        "Purchases minus Closing Inventory"
+      ],
+      "answerIndex": 1,
+      "explanation": "In Schedule III Statement of Profit and Loss, 'Changes in Inventories' is computed as Opening Inventory MINUS Closing Inventory. A positive figure represents a reduction in inventory (expense), while a negative figure represents an inventory increase.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Schedule III",
+        "Statement of Profit and Loss",
+        "Changes in Inventories"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_023",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "XYZ Ltd. sells a machine during the year for ₹14 Lakhs. Original cost of machine was ₹10 Lakhs and accumulated depreciation was ₹4 Lakhs (WDV ₹6 Lakhs). How much of the profit on sale of this machine will be INCLUDED in Net Profit u/s 198?",
+      "options": [
+        "₹8 Lakhs",
+        "₹4 Lakhs",
+        "₹14 Lakhs",
+        "Nil"
+      ],
+      "answerIndex": 1,
+      "explanation": "Total gain = Sale price (14) - WDV (6) = ₹8 Lakhs. Out of ₹8 Lakhs gain, profit up to original cost = Original Cost (10) - WDV (6) = ₹4 Lakhs (recovery of past depreciation). Capital profit excess over original cost = 14 - 10 = ₹4 Lakhs. Section 198 allows inclusion of profit only up to original cost minus WDV, i.e., ₹4 Lakhs.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 198",
+        "Capital Profit",
+        "Depreciation Recovery"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_024",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "A company has Paid-up Capital of ₹200 Lakhs and Free Reserves of ₹100 Lakhs. It suffers a current year loss of ₹20 Lakhs. The average rate of dividend for the past 3 years is 12%. Under Rule 3, after drawing dividend from reserves, the reserve balance must not fall below 15% of paid-up capital. What is the maximum amount of dividend the company can declare?",
+      "options": [
+        "₹24 Lakhs",
+        "₹10 Lakhs",
+        "₹80 Lakhs",
+        "₹70 Lakhs"
+      ],
+      "answerIndex": 1,
+      "explanation": "Let's check the 3 conditions under Rule 3:\n1. Rate limit = 12% of Paid-up Capital = 12% of 200 = ₹24 Lakhs.\n2. Max withdrawal = 10% of (PUC + Free Reserves) = 10% of (200 + 100) = ₹30 Lakhs. Amount available for dividend after setting off loss = 30 - 20 (loss) = ₹10 Lakhs.\n3. Balance of reserves after withdrawal >= 15% of PUC = 15% of 200 = ₹30 Lakhs. Max withdrawal allowed = Reserves (100) - 30 = ₹70 Lakhs. Available for dividend = 70 - 20 = ₹50 Lakhs.\nTaking minimum of net amounts available: Min(₹24 L, ₹10 L, ₹50 L) = ₹10 Lakhs.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rule 3 Dividend",
+        "Declaration of Dividend",
+        "Calculation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_025",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "A long-term loan of ₹50 Lakhs is due for repayment within 8 months from the Balance Sheet date. The company entered into an agreement to refinance this loan on a long-term basis AFTER the balance sheet date but BEFORE the financial statements were approved by the Board. How should this loan be classified on the Balance Sheet date?",
+      "options": [
+        "Non-Current Liability because refinancing occurred before approval of financial statements.",
+        "Current Liability because the unconditional right to defer settlement did not exist AT the balance sheet date.",
+        "Disclosed only as a non-adjusting event in Notes to Accounts without listing in Balance Sheet.",
+        "Other Non-Current Financial Liability."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Schedule III and AS 1 criteria, classification as current vs non-current depends on rights existing AT the reporting date. If the company does not have an unconditional right to defer settlement for at least 12 months AT the balance sheet date, the liability is classified as Current Liability, even if refinanced after the balance sheet date.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Schedule III",
+        "Current vs Non-Current",
+        "Refinancing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_026",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "PQR Ltd. has a negative Effective Capital of ₹(-20) Lakhs due to accumulated losses. Under Schedule V Part II Section II, what is the maximum annual managerial remuneration payable if a SPECIAL RESOLUTION is passed by the shareholders?",
+      "options": [
+        "₹60 Lakhs",
+        "₹120 Lakhs",
+        "₹84 Lakhs",
+        "₹168 Lakhs"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Schedule V, for Effective Capital less than ₹60 Lakhs (including negative capital), the limit of managerial remuneration by ordinary resolution is ₹60 Lakhs per annum. If a Special Resolution is passed by the shareholders, this limit is doubled to ₹120 Lakhs per annum.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Schedule V",
+        "Negative Effective Capital",
+        "Special Resolution"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_027",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "A public company has Net Profit u/s 198 of ₹200 Lakhs. The company has NO Managing Director or Whole-Time Director. What is the maximum total remuneration payable to all Part-time (Non-Executive) Directors combined without Central Government approval?",
+      "options": [
+        "₹2 Lakhs",
+        "₹6 Lakhs",
+        "₹10 Lakhs",
+        "₹22 Lakhs"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 197(1), if the company does NOT have a Managing Director or Whole-Time Director or Manager, the limit for remuneration to non-executive directors is 3% of net profits. 3% of ₹200 Lakhs = ₹6 Lakhs.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 197",
+        "Non-Executive Directors",
+        "No MD/WTD"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_028",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "Under Schedule III disclosure requirements for Trade Payables Ageing Schedule, which of the following is NOT a mandatory category/column for due period buckets?",
+      "options": [
+        "Unbilled dues",
+        "Not due",
+        "Less than 1 year, 1-2 years, 2-3 years, More than 3 years",
+        "More than 5 years"
+      ],
+      "answerIndex": 3,
+      "explanation": "The Trade Payables Ageing Schedule in Schedule III requires classification into: Unbilled dues, Not due, Less than 1 year, 1-2 years, 2-3 years, and More than 3 years. 'More than 5 years' is not a separate mandatory column bucket specified in Schedule III.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Schedule III",
+        "Trade Payables",
+        "Ageing Schedule"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_029",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "A company has Opening WIP of ₹15 Lakhs, Closing WIP of ₹20 Lakhs, Opening Finished Goods of ₹50 Lakhs, Closing Finished Goods of ₹40 Lakhs. During the year, Finished Goods costing ₹5 Lakhs were damaged and written off to zero value. What is the amount of 'Changes in Inventories of Finished Goods & WIP' in the P&L?",
+      "options": [
+        "₹5 Lakhs (Expense)",
+        "₹(5) Lakhs (Income)",
+        "₹10 Lakhs (Expense)",
+        "₹0"
+      ],
+      "answerIndex": 0,
+      "explanation": "Opening Inventories (WIP + FG) = 15 + 50 = ₹65 Lakhs.\nClosing Inventories (WIP + FG after write off) = 20 + 40 = ₹60 Lakhs.\nChanges in Inventories = Opening Inventory - Closing Inventory = 65 - 60 = ₹5 Lakhs (Expense/Positive balance in P&L). Note: The write-off is reflected in closing inventory valuation.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Statement of Profit and Loss",
+        "Changes in Inventories",
+        "Calculation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-11_030",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "prompt": "If the statutory CSR obligation of a company u/s 135 for a financial year is ₹35 Lakhs, which of the following statements is TRUE regarding the CSR Committee?",
+      "options": [
+        "The company must forcibly constitute a 3-member CSR Committee with at least 1 independent director.",
+        "The company is exempt from constituting a CSR Committee; the functions of such committee can be discharged by its Board of Directors.",
+        "The unspent amount of ₹35 Lakhs can be retained in General Reserve permanently.",
+        "CSR obligation is waived completely if profit is below ₹10 Crores."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 135(9), where the amount to be spent by a company on CSR does not exceed ₹50 Lakhs, the requirement for constitution of the CSR Committee is not mandatory, and the functions of such committee shall be discharged by the Board of Directors.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 135",
+        "CSR Committee Exemption",
+        "Board Powers"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_advanced-accounting-11_01",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "passage": "Zenith Motors Ltd., a public company, presents the following financial information for the year ended 31st March 2026:\n- Net Profit before Tax as per Statement of P&L: ₹500 Lakhs\n- Managerial Remuneration paid during the year: ₹40 Lakhs (debited to P&L)\n- Provision for Income Tax: ₹120 Lakhs (debited to P&L)\n- Capital profit on sale of land (Original cost ₹50 Lakhs, Sale proceeds ₹90 Lakhs): ₹40 Lakhs (credited to P&L)\n- Government subsidy received for establishing a factory in a backward area: ₹30 Lakhs (credited to P&L)\n- Capital expenditure on scientific research allowed u/s 35 of IT Act: ₹10 Lakhs (debited to P&L)\n\nThe Board consists of 1 Managing Director, 1 Whole-Time Director, and 3 Non-Executive Directors.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-11_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-11_01",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-11",
+          "subject": "Accounts",
+          "prompt": "What is the Net Profit of Zenith Motors Ltd. calculated under Section 198 of the Companies Act, 2013 for the FY 2025-26?",
+          "options": [
+            "₹620 Lakhs",
+            "₹580 Lakhs",
+            "₹660 Lakhs",
+            "₹500 Lakhs"
+          ],
+          "answerIndex": 0,
+          "explanation": "Net profit u/s 198 computation:\nReported PBT: ₹500 L\n+ Managerial Remuneration paid: ₹40 L (u/s 198(4) add back)\n+ Provision for Tax: ₹120 L (u/s 198(4) add back)\n- Capital profit on sale of land: ₹40 L (u/s 198(3) capital profit in excess of original cost excluded)\nNote: Govt subsidy is allowed credit u/s 198(3)(a); Scientific research capital spend is allowed deduction u/s 198(4)(d).\nNet Profit u/s 198 = 500 + 40 + 120 - 40 = ₹620 Lakhs.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 198",
+            "Net Profit Calculation",
+            "Managerial Remuneration"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-11_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-11_01",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-11",
+          "subject": "Accounts",
+          "prompt": "What is the maximum total remuneration permissible under Section 197 for BOTH executive directors (1 MD and 1 WTD) combined, without Central Government approval?",
+          "options": [
+            "₹31 Lakhs",
+            "₹62 Lakhs",
+            "₹68.2 Lakhs",
+            "₹34 Lakhs"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 197(1), where there is more than 1 MD/WTD, the total remuneration for all of them combined shall not exceed 10% of net profits u/s 198. 10% of ₹620 Lakhs = ₹62 Lakhs.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 197",
+            "Executive Remuneration",
+            "Limits"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-11_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-11_01",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-11",
+          "subject": "Accounts",
+          "prompt": "What is the maximum total remuneration permissible under Section 197 for ALL 3 Non-Executive Directors combined for FY 2025-26?",
+          "options": [
+            "₹6.2 Lakhs",
+            "₹18.6 Lakhs",
+            "₹31 Lakhs",
+            "₹62 Lakhs"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under Section 197(1), if the company has managing director or whole-time director, the limit for non-executive directors is 1% of net profits u/s 198. 1% of ₹620 Lakhs = ₹6.2 Lakhs.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 197",
+            "Non-Executive Remuneration",
+            "Limits"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-11_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-11_01",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-11",
+          "subject": "Accounts",
+          "prompt": "If Zenith Motors Ltd. paid ₹80 Lakhs total remuneration to its directors during the year (in excess of permissible limits), what is the remedy under Section 197?",
+          "options": [
+            "The excess remuneration must be refunded by the director within 2 years, and cannot be waived without a Special Resolution within 2 years.",
+            "The excess amount is automatically converted into a long-term loan at 12% interest.",
+            "The Central Government must sanction approval within 30 days, otherwise directors go to jail.",
+            "The excess remuneration is adjusted against future dividend payout automatically."
+          ],
+          "answerIndex": 0,
+          "explanation": "Under Section 197(9) & (10), if any director receives excess remuneration without required approval, he holds it in trust for the company and shall refund it within 2 years (or lesser period allowed). The company cannot waive recovery unless permitted by a Special Resolution within 2 years.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 197",
+            "Excess Remuneration",
+            "Recovery Provisions"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-11_02",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "passage": "Vibrant Retails Ltd. faces severe economic headwind during FY 2025-26 and suffers a net loss of ₹15 Lakhs. The Board of Directors wants to declare dividend to shareholders out of accumulated past free reserves. \nExtracts from latest audited financial statement as on 31st March 2026:\n- Paid-up Equity Share Capital (₹10 face value): ₹300 Lakhs\n- Free Reserves: ₹150 Lakhs\n- Capital Reserve: ₹50 Lakhs\n- Dividend rates declared in immediately preceding 3 financial years: 12%, 16%, and 20% respectively.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-11_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-11_02",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-11",
+          "subject": "Accounts",
+          "prompt": "Under Condition 1 of Rule 3 of Companies (Declaration and Payment of Dividend) Rules, 2014, what is the maximum rate of dividend that Vibrant Retails Ltd. can declare?",
+          "options": [
+            "12%",
+            "16%",
+            "20%",
+            "15%"
+          ],
+          "answerIndex": 1,
+          "explanation": "Condition 1 states that the rate of dividend shall not exceed the average of the rates at which dividend was declared in the 3 preceding financial years. Average rate = (12% + 16% + 20%) / 3 = 16%.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Rule 3 Dividend",
+            "Average Rate Limit",
+            "Declaration of Dividend"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-11_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-11_02",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-11",
+          "subject": "Accounts",
+          "prompt": "Under Condition 2 of Rule 3, what is the maximum gross withdrawal allowed from past reserves?",
+          "options": [
+            "₹30 Lakhs",
+            "₹45 Lakhs",
+            "₹50 Lakhs",
+            "₹15 Lakhs"
+          ],
+          "answerIndex": 1,
+          "explanation": "Condition 2 states that total amount drawn from past reserves shall not exceed 10% of sum of Paid-up Capital and Free Reserves. Sum = ₹300 L (PUC) + ₹150 L (Free Reserves) = ₹450 Lakhs. 10% of ₹450 Lakhs = ₹45 Lakhs.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Rule 3 Dividend",
+            "Max Withdrawal Limit",
+            "Declaration of Dividend"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-11_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-11_02",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-11",
+          "subject": "Accounts",
+          "prompt": "Under Condition 3 of Rule 3, what is the minimum balance that MUST remain in Free Reserves after the withdrawal?",
+          "options": [
+            "₹30 Lakhs",
+            "₹45 Lakhs",
+            "₹60 Lakhs",
+            "₹75 Lakhs"
+          ],
+          "answerIndex": 1,
+          "explanation": "Condition 3 states that the balance of reserves after withdrawal shall not fall below 15% of its paid-up share capital. Paid-up Share Capital = ₹300 Lakhs. 15% of ₹300 Lakhs = ₹45 Lakhs.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Rule 3 Dividend",
+            "Minimum Reserve Balance",
+            "Declaration of Dividend"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-11_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-11_02",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-11",
+          "subject": "Accounts",
+          "prompt": "Taking into account all statutory conditions under Rule 3 (including set-off of current year loss), what is the maximum total dividend amount Vibrant Retails Ltd. can declare for FY 2025-26?",
+          "options": [
+            "₹48 Lakhs",
+            "₹30 Lakhs",
+            "₹45 Lakhs",
+            "₹90 Lakhs"
+          ],
+          "answerIndex": 1,
+          "explanation": "Let's evaluate all conditions:\n- Rate limit (Cond 1): 16% on ₹300 L PUC = ₹48 Lakhs dividend.\n- Cond 2 withdrawal limit: ₹45 Lakhs. Net available after setting off ₹15 L loss = 45 - 15 = ₹30 Lakhs.\n- Cond 3 withdrawal limit: Free Reserves (150) - Minimum balance (45) = ₹105 Lakhs. Net available after setting off ₹15 L loss = 105 - 15 = ₹90 Lakhs.\nMaximum dividend permissible = Min(₹48 L, ₹30 L, ₹90 L) = ₹30 Lakhs.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Rule 3 Dividend",
+            "Comprehensive Calculation",
+            "Free Reserves"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-11_03",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "passage": "Aura Biotech Ltd. reports the following financial figures for the year ended 31st March 2026:\n- Revenue from Operations: ₹1,200 Lakhs\n- Cost of Goods Sold: ₹720 Lakhs\n- Current Assets: ₹400 Lakhs (including Inventory ₹160 Lakhs)\n- Current Liabilities: ₹200 Lakhs\n- Long-Term Debt: ₹300 Lakhs\n- Share Capital & Free Reserves: ₹500 Lakhs\nIn the preceding FY 2024-25, the Current Ratio was 1.50 and Inventory Turnover Ratio was 6.00 times.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-11_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-11_03",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-11",
+          "subject": "Accounts",
+          "prompt": "What is the Current Ratio for FY 2025-26, and is variance explanation required under Schedule III?",
+          "options": [
+            "Current Ratio is 2.00; Variance is +33.33%, so explanation IS required.",
+            "Current Ratio is 2.00; Variance is +33.33%, but explanation is NOT required.",
+            "Current Ratio is 1.20; Variance is -20%, so explanation is NOT required.",
+            "Current Ratio is 2.50; Variance is +66.67%, so explanation IS required."
+          ],
+          "answerIndex": 0,
+          "explanation": "Current Ratio = Current Assets / Current Liabilities = 400 / 200 = 2.00.\nPreceding year Current Ratio = 1.50.\nVariance = (2.00 - 1.50) / 1.50 = +33.33%.\nSince variance is > 25%, Schedule III mandates disclosing the reason for variance.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Schedule III Ratios",
+            "Current Ratio",
+            "Variance Analysis"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-11_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-11_03",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-11",
+          "subject": "Accounts",
+          "prompt": "What is the Inventory Turnover Ratio for FY 2025-26, and is variance explanation required under Schedule III?",
+          "options": [
+            "4.50 times; Variance is -25%, so explanation is NOT required.",
+            "4.50 times; Variance is -25%, so explanation IS required.",
+            "7.50 times; Variance is +25%, so explanation is NOT required.",
+            "3.00 times; Variance is -50%, so explanation IS required."
+          ],
+          "answerIndex": 0,
+          "explanation": "Inventory Turnover Ratio = Cost of Goods Sold / Average or Closing Inventory = 720 / 160 = 4.50 times.\nPreceding year = 6.00 times.\nVariance = (4.50 - 6.00) / 6.00 = -25.00%.\nSince variance is exactly 25% (not more than 25%), explanation is strictly required when variance exceeds 25%. Hence, not required if standard strictly specifies > 25%.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Inventory Turnover Ratio",
+            "Schedule III Ratios",
+            "Variance Threshold"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-11_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-11_03",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-11",
+          "subject": "Accounts",
+          "prompt": "How should 10% Redeemable Preference Shares of ₹50 Lakhs maturing in October 2026 (7 months from reporting date) be classified on the Balance Sheet date (31st March 2026)?",
+          "options": [
+            "Current Liabilities",
+            "Share Capital under Non-Current Shareholders' Funds",
+            "Other Non-Current Liabilities",
+            "Short-term Borrowings"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Schedule III (Division I), Preference Share Capital is part of 'Share Capital' under 'Shareholders' Funds' irrespective of redemption period, because company law treats preference shares as share capital (not financial liability like in Ind AS).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Schedule III",
+            "Preference Shares",
+            "Classification"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-11_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-11_03",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-11",
+          "subject": "Accounts",
+          "prompt": "How should a deposit of ₹20 Lakhs with Electricity Board (refundable on termination of agreement after 5 years) be presented in Aura Biotech Ltd.'s Balance Sheet?",
+          "options": [
+            "Other Current Assets",
+            "Long-Term Loans and Advances",
+            "Other Non-Current Assets",
+            "Trade Receivables"
+          ],
+          "answerIndex": 1,
+          "explanation": "Security deposits with utilities/government departments refundable beyond 12 months are classified under 'Long-Term Loans and Advances' on the face of the Balance Sheet as per Schedule III.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Schedule III",
+            "Long-Term Loans and Advances",
+            "Balance Sheet"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-11_04",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "passage": "Global Infra Tech Ltd. reports the following Net Profits computed u/s 198 for Corporate Social Responsibility (CSR) purposes:\n- FY 2022-23: ₹1,000 Lakhs\n- FY 2023-24: ₹1,200 Lakhs\n- FY 2024-25: ₹1,400 Lakhs\n\nFor FY 2025-26, the company spent ₹16 Lakhs on an ONGOING CSR Project against its total statutory CSR obligation. The remaining unspent balance for the ongoing project was ₹8 Lakhs as of 31st March 2026.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-11_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-11_04",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-11",
+          "subject": "Accounts",
+          "prompt": "What is the total mandatory CSR expenditure obligation for Global Infra Tech Ltd. for FY 2025-26?",
+          "options": [
+            "₹24 Lakhs",
+            "₹20 Lakhs",
+            "₹28 Lakhs",
+            "₹36 Lakhs"
+          ],
+          "answerIndex": 0,
+          "explanation": "Average Net Profit of preceding 3 FYs = (1,000 + 1,200 + 1,400) / 3 = ₹1,200 Lakhs.\nStatutory CSR obligation = 2% of ₹1,200 Lakhs = ₹24 Lakhs.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "CSR Obligation",
+            "Section 135",
+            "Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-11_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-11_04",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-11",
+          "subject": "Accounts",
+          "prompt": "By what date must Global Infra Tech Ltd. transfer the unspent CSR amount of ₹8 Lakhs for the ongoing project into the 'Unspent CSR Account'?",
+          "options": [
+            "30th April 2026",
+            "30th September 2026",
+            "31st March 2027",
+            "31st October 2026"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under Section 135(6), unspent CSR amount for an ongoing project must be transferred to the 'Unspent CSR Account' within 30 days from the end of the financial year (i.e. within 30 days from 31st March 2026 = 30th April 2026).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "CSR",
+            "Unspent CSR Account",
+            "Ongoing Project"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-11_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-11_04",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-11",
+          "subject": "Accounts",
+          "prompt": "Within what maximum timeframe must the amount transferred to the 'Unspent CSR Account' for an ongoing project be actually spent by the company on that project?",
+          "options": [
+            "1 Financial Year from the transfer",
+            "3 Financial Years from the date of transfer",
+            "5 Financial Years from the date of transfer",
+            "Indefinitely without limit"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 135(6) mandates that the unspent CSR amount transferred to the special account must be spent by the company in pursuance of its obligation towards the ongoing project within a period of 3 financial years from the date of such transfer.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "CSR",
+            "Section 135",
+            "Ongoing Project Timeframe"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-11_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-11_04",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-11",
+          "subject": "Accounts",
+          "prompt": "If Global Infra Tech Ltd. fails to spend the ₹8 Lakhs within the 3 financial years, what must it do with the remaining unspent amount?",
+          "options": [
+            "Transfer it to a Fund specified in Schedule VII within 30 days from the end of the third financial year.",
+            "Forfeit the amount to the Income Tax Department.",
+            "Distribute it as dividend to shareholders.",
+            "Transfer it back to General Reserve."
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 135(6) specifies that failing to spend the amount within 3 financial years requires the company to transfer the unspent amount to a Fund specified in Schedule VII within 30 days from the date of completion of the third financial year.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "CSR",
+            "Section 135",
+            "Schedule VII Fund"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-11_05",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-11",
+      "subject": "Accounts",
+      "passage": "Nova Engineering Ltd. suffered a fire accident resulting in a net loss during FY 2025-26. The Board proposes to pay managerial remuneration to its Managing Director, Mr. Vivek. \nExtract of capital structure as on 31st March 2026:\n- Paid-up Equity Share Capital: ₹200 Lakhs\n- Paid-up Preference Share Capital: ₹50 Lakhs\n- Securities Premium: ₹30 Lakhs\n- General Reserve: ₹70 Lakhs\n- Long-Term Bank Loans: ₹150 Lakhs\n- Cash Credit / Bank Overdraft (repayable on demand): ₹40 Lakhs\n- Investments in shares of other companies: ₹80 Lakhs\n- Accumulated Losses (Debit balance of P&L): ₹40 Lakhs\n- Preliminary Expenses not written off: ₹10 Lakhs",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 11,
+        "chapterTitle": "Financial Statements of Companies"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-11_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-11_05",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-11",
+          "subject": "Accounts",
+          "prompt": "What is the 'Effective Capital' of Nova Engineering Ltd. for FY 2025-26 under Schedule V Part II?",
+          "options": [
+            "₹370 Lakhs",
+            "₹410 Lakhs",
+            "₹320 Lakhs",
+            "₹500 Lakhs"
+          ],
+          "answerIndex": 0,
+          "explanation": "Effective Capital Computation:\n+ Paid up Equity Share Capital (200)\n+ Paid up Preference Share Capital (50)\n+ Securities Premium (30)\n+ General Reserve (70)\n+ Long-Term Loans (150)\n[Bank Overdraft is short-term, so excluded]\nSubtotal = ₹500 Lakhs\nMINUS:\n- Investments (80)\n- Accumulated Losses (40)\n- Preliminary Expenses (10)\nTotal Deductions = ₹130 Lakhs\nEffective Capital = 500 - 130 = ₹370 Lakhs (₹3.70 Crores).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Schedule V",
+            "Effective Capital",
+            "Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-11_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-11_05",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-11",
+          "subject": "Accounts",
+          "prompt": "Based on the Effective Capital calculated, what is the maximum annual remuneration payable to Mr. Vivek under Schedule V if approved by an ORDINARY RESOLUTION?",
+          "options": [
+            "₹60 Lakhs",
+            "₹84 Lakhs",
+            "₹120 Lakhs",
+            "₹168 Lakhs"
+          ],
+          "answerIndex": 1,
+          "explanation": "Effective Capital = ₹370 Lakhs (₹3.7 Crores), which falls in the slab '₹60 Lakhs and above but less than ₹5 Crores'. For this slab, maximum annual remuneration by Ordinary Resolution is ₹84 Lakhs.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Schedule V",
+            "Managerial Remuneration",
+            "Limits"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-11_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-11_05",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-11",
+          "subject": "Accounts",
+          "prompt": "What is the maximum annual remuneration payable to Mr. Vivek if the shareholders pass a SPECIAL RESOLUTION?",
+          "options": [
+            "₹84 Lakhs",
+            "₹120 Lakhs",
+            "₹168 Lakhs",
+            "₹200 Lakhs"
+          ],
+          "answerIndex": 2,
+          "explanation": "Under Schedule V Part II Section II, the limits specified can be doubled if the company passes a Special Resolution in general meeting. Double of ₹84 Lakhs = ₹168 Lakhs.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Schedule V",
+            "Special Resolution",
+            "Doubled Limit"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-11_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-11_05",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-11",
+          "subject": "Accounts",
+          "prompt": "If Nova Engineering Ltd. wants to pay Mr. Vivek ₹200 Lakhs per annum (which exceeds the doubled Schedule V limit of ₹168 Lakhs), what approval is required?",
+          "options": [
+            "No further approval needed, Board resolution is final.",
+            "Central Government approval is not required, but approval of shareholders by Special Resolution along with NOC from creditors/banks (if default exists) is required.",
+            "Compulsory prior approval from the National Company Law Tribunal (NCLT).",
+            "Approval from the Reserve Bank of India (RBI)."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the amended Companies Act provisions (Schedule V), Central Government approval for excess managerial remuneration has been eliminated. Excess payment requires Special Resolution of shareholders and prior NOC from banks/financial institutions/secured creditors if the company has defaulted in payment of dues.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Schedule V",
+            "Excess Remuneration",
+            "Approval Requirements"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

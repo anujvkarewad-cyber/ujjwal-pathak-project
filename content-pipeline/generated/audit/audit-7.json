@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "audit-7",
+  "subject": "Audit",
+  "paper": "Paper 5: Auditing and Ethics",
+  "module": "Module 2",
+  "chapterNumber": 7,
+  "chapterTitle": "Completion and Review",
+  "generatedAt": "2026-08-16T14:50:13.086Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_audit-7_001",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "According to SA 560, what is the auditor's responsibility regarding subsequent events during the period from the date of the financial statements to the date of the auditor's report?",
+      "options": [
+        "The auditor has no responsibility to perform audit procedures during this period.",
+        "The auditor shall perform audit procedures designed to identify all events that may require adjustment of, or disclosure in, the financial statements.",
+        "The auditor shall perform audit procedures specifically designed to obtain sufficient appropriate audit evidence that all events occurring up to the date of the report that require adjustment or disclosure have been identified.",
+        "The auditor shall only rely on management representation letters regarding events after the balance sheet date."
+      ],
+      "answerIndex": 2,
+      "explanation": "Under SA 560 (Subsequent Events), the auditor must perform audit procedures specifically designed to obtain sufficient appropriate audit evidence that all events up to the date of the auditor's report requiring adjustment or disclosure are identified.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 560",
+        "Subsequent Events",
+        "Auditor Responsibility"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_002",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "When an auditor becomes aware of a fact that, had it been known to the auditor at the date of the auditor's report, may have caused the auditor to amend the report, and the financial statements have already been issued, what is the first step the auditor should take according to SA 560?",
+      "options": [
+        "Immediately notify regulatory authorities without discussing with management.",
+        "Discuss the matter with management and, where appropriate, those charged with governance.",
+        "Issue a revised auditor's report immediately without management input.",
+        "Take no action since the financial statements are already issued."
+      ],
+      "answerIndex": 1,
+      "explanation": "As per SA 560, when facts come to light after issuance that would have affected the report, the auditor must first discuss the matter with management and those charged with governance to determine if the financial statements need revision.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 560",
+        "Facts Known After Issuance",
+        "Management Discussion"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_003",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "In the context of SA 570 (Going Concern), which of the following is considered a financial indicator that may cast significant doubt on an entity's ability to continue as a going concern?",
+      "options": [
+        "Loss of key management personnel without replacement.",
+        "Net liability or net current liability position.",
+        "Proceedings against the entity that may result in claims the entity is unlikely to satisfy.",
+        "Changes in law or regulation expected to adversely affect the entity."
+      ],
+      "answerIndex": 1,
+      "explanation": "SA 570 classifies indicators into financial, operating, and other categories. A net liability or net current liability position is a prime financial indicator casting doubt on going concern.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 570",
+        "Going Concern",
+        "Financial Indicators"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_004",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "Under SA 570, if management is unwilling to make or extend its assessment of the entity's going concern ability when requested by the auditor, what implication does this have for the audit opinion?",
+      "options": [
+        "The auditor shall express an unmodified opinion with an Emphasis of Matter paragraph.",
+        "The auditor may issue an unmodified opinion if other evidence is sufficient.",
+        "The auditor shall consider the implications for the audit report, which may include modifying the opinion.",
+        "The auditor must immediately withdraw from the engagement regardless of legal constraints."
+      ],
+      "answerIndex": 2,
+      "explanation": "If management is unwilling to make or extend its assessment when requested, the auditor needs to consider the implications, as this inability or unwillingness can lead to a modified opinion under SA 570.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 570",
+        "Management Assessment",
+        "Modified Opinion"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_005",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "What is the primary purpose of obtaining a Written Representation letter from management under SA 580?",
+      "options": [
+        "To replace other audit procedures that the auditor is too lazy to perform.",
+        "To confirm that management has fulfilled its responsibility for the preparation of the financial statements and for the completeness of information provided.",
+        "To legally bind management for any future audit failures or fraud discovered later.",
+        "To serve as the sole audit evidence for material financial statement assertions."
+      ],
+      "answerIndex": 1,
+      "explanation": "SA 580 states that written representations are necessary to confirm that management has fulfilled its responsibilities for preparing financial statements and providing complete information, though they do not provide sufficient appropriate audit evidence on their own.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 580",
+        "Written Representations",
+        "Management Responsibilities"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_006",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "If management modifies or refuses to provide requested written representations considered necessary by the auditor, how should the auditor respond under SA 580?",
+      "options": [
+        "Issue an unmodified opinion with an Other Matter paragraph.",
+        "Disclaim an opinion or withdraw from the engagement, where withdrawal is legally permitted.",
+        "Assume management is honest and proceed to sign the report without restrictions.",
+        "Issue a qualified opinion based solely on lack of internal controls."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under SA 580, if management does not provide requested written representations, it constitutes a limitation on scope, requiring the auditor to disclaim an opinion or withdraw from the engagement.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 580",
+        "Refusal of Representations",
+        "Scope Limitation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_007",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "According to SA 260 (Communication with Those Charged with Governance), which of the following matters should the auditor communicate?",
+      "options": [
+        "Every single routine transaction tested during the interim audit.",
+        "The auditor's views about significant qualitative aspects of the entity's accounting practices, including accounting policies and estimates.",
+        "The exact personal compensation details of all staff members in the finance department.",
+        "The internal audit schedule for the next three financial years."
+      ],
+      "answerIndex": 1,
+      "explanation": "SA 260 requires the auditor to communicate significant findings from the audit, including the auditor's views about significant qualitative aspects of the entity's accounting practices.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 260",
+        "TCWG",
+        "Communication Requirements"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_008",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "What is the objective of the engagement quality review (EQR) performed under SQ 1 and SA 220?",
+      "options": [
+        "To perform the audit procedures on behalf of the engagement partner to save time.",
+        "To provide an objective evaluation, before the auditor's report is dated, of the significant judgments the engagement team made and the conclusions they reached.",
+        "To rewrite the financial statements to ensure compliance with tax laws.",
+        "To negotiate the audit fee with the entity's audit committee."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under SA 220 and SQ 1, an Engagement Quality Review provides an objective evaluation of significant judgments made by the team and conclusions reached before the report is issued.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 220",
+        "SQ 1",
+        "Engagement Quality Review"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_009",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "In evaluating misstatements identified during the audit, how should the auditor treat uncorrected misstatements under SA 450?",
+      "options": [
+        "Ignore them if individually they are below overall materiality.",
+        "Communicate uncorrected misstatements to those charged with governance and request that they be corrected.",
+        "Automatically issue an adverse opinion without further communication.",
+        "Accumulate them only if they relate to inventory valuations."
+      ],
+      "answerIndex": 1,
+      "explanation": "SA 450 requires the auditor to communicate uncorrected misstatements to those charged with governance and request that they be corrected, and determine the effect of uncorrected misstatements individually or in aggregate.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 450",
+        "Uncorrected Misstatements",
+        "Evaluation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_010",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "What does the 'Finalization Stage' or completion phase of an audit primarily involve?",
+      "options": [
+        "Planning the audit strategy and allocating resources to junior staff members.",
+        "Reviewing subsequent events, evaluating going concern, obtaining written representations, and forming the audit opinion.",
+        "Conducting physical verification of inventory at the very beginning of the financial year.",
+        "Signing the contract of appointment with the board of directors."
+      ],
+      "answerIndex": 1,
+      "explanation": "The completion phase of an audit involves reviewing subsequent events, evaluating going concern assumptions, obtaining written management representations, and finalizing the overall audit opinion.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Audit Completion",
+        "Review Phase",
+        "Audit Process"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_011",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "Under SA 560, what is the auditor's obligation regarding events occurring between the date of the auditor's report and the date the financial statements are issued?",
+      "options": [
+        "The auditor has no active obligation to perform audit procedures during this period.",
+        "The auditor must conduct a full re-audit of all financial statement balances.",
+        "The auditor must issue a daily update report to the stock exchange.",
+        "The auditor must resign immediately to avoid subsequent liability."
+      ],
+      "answerIndex": 0,
+      "explanation": "Under SA 560, after the date of the auditor's report, the auditor has no active obligation to perform audit procedures regarding the financial statements; however, if a fact becomes known that would have affected the report, action must be taken.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 560",
+        "Post-Report Period",
+        "Auditor Obligations"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_012",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "Which of the following is an example of an operating indicator of going concern problems under SA 570?",
+      "options": [
+        "Arrears or discontinuance of dividends.",
+        "Loss of major markets, key customer, or key supplier.",
+        "Inability to comply with terms of loan agreements.",
+        "Negative operating cash flows indicated by historical or prospective financial statements."
+      ],
+      "answerIndex": 1,
+      "explanation": "Loss of major markets, key customers, or key suppliers represents operating difficulties (operating indicators), whereas dividend arrears and loan covenant breaches are financial indicators.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 570",
+        "Operating Indicators",
+        "Going Concern"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_013",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "When management's assessment of going concern covers a period of less than 12 months from the date of financial statements, what must the auditor do under SA 570?",
+      "options": [
+        "Accept the assessment without question as management knows best.",
+        "Request management to extend its assessment period to at least 12 months from that date.",
+        "Issue an adverse opinion immediately.",
+        "Disclaim an opinion without any further discussion."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under SA 570, if management's assessment covers less than 12 months, the auditor must request management to extend the assessment period to at least 12 months from the date of the financial statements.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 570",
+        "Assessment Period",
+        "Going Concern"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_014",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "If going concern is a material uncertainty and it is adequately disclosed in the financial statements, how should the auditor's report be modified under SA 570?",
+      "options": [
+        "Issue an adverse opinion due to fundamental accounting failure.",
+        "Issue an unmodified opinion and include a separate section under the heading 'Material Uncertainty Related to Going Concern'.",
+        "Issue a qualified opinion due to scope limitation.",
+        "Omit any mention of going concern in the auditor's report to prevent panic."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under SA 570, when a material uncertainty exists and is adequately disclosed, the auditor expresses an unmodified opinion and includes a separate section in the auditor's report titled 'Material Uncertainty Related to Going Concern'.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 570",
+        "Material Uncertainty",
+        "Reporting"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_015",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "What should the auditor do if management refuses to provide a written representation on a matter that the auditor considers essential for the audit?",
+      "options": [
+        "Treat it as a scope limitation and modify the opinion or withdraw.",
+        "Sign the report with an unmodified opinion anyway.",
+        "Ask the shareholders to provide the written representation instead.",
+        "Issue a disclaimer of opinion without communicating with TCWG."
+      ],
+      "answerIndex": 0,
+      "explanation": "Refusal by management to provide a written representation considered necessary by the auditor constitutes a limitation on scope, leading to a modified opinion (qualified or disclaimer) or resignation.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 580",
+        "Written Representations",
+        "Scope Limitation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_016",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "Which date should the written representation letter bear?",
+      "options": [
+        "The date the audit engagement was initially accepted.",
+        "The exact date of the financial year-end balance sheet.",
+        "As near as practicable to, but not after, the date of the auditor's report.",
+        "Any date chosen arbitrarily by management after the report is issued."
+      ],
+      "answerIndex": 2,
+      "explanation": "Under SA 580, written representations must be dated as near as practicable to, but not after, the date of the auditor's report, to ensure they cover the relevant period up to the report date.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 580",
+        "Date of Representation",
+        "Audit Report"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_017",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "Under SA 450, what must the auditor communicate to those charged with governance regarding uncorrected misstatements?",
+      "options": [
+        "Only misstatements exceeding overall materiality.",
+        "The aggregate effect of uncorrected misstatements and whether they consider it material, individually or in aggregate.",
+        "Only misstatements identified during the interim audit phase.",
+        "That management is prohibited from correcting any misstatements."
+      ],
+      "answerIndex": 1,
+      "explanation": "SA 450 requires the auditor to communicate uncorrected misstatements and their potential effect on the audit opinion, detailing whether individual or aggregate uncorrected misstatements are material.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 450",
+        "Uncorrected Misstatements",
+        "Communication"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_018",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "When is an Engagement Quality Control Review (EQCR) mandatory for listed entities under SQ 1 and SA 220?",
+      "options": [
+        "Only when the audit fee exceeds one crore rupees.",
+        "For audits of financial statements of all listed entities and other engagements as determined by firm policy or law.",
+        "Only when requested by the Reserve Bank of India.",
+        "EQCR is never mandatory for listed entities."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under SQ 1 and SA 220, an engagement quality control review is mandatory for all audits of financial statements of listed entities and other high-risk engagements determined by the firm's quality control policies.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 220",
+        "SQ 1",
+        "EQCR Mandate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_019",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "What is the primary objective of performing analytical procedures near the end of the audit during the overall review stage (SA 520)?",
+      "options": [
+        "To test internal control operating effectiveness.",
+        "To assist the auditor in forming an overall conclusion as to whether the financial statements are consistent with the auditor's understanding of the entity.",
+        "To replace substantive testing of inventory balances.",
+        "To calculate the exact tax liability of the entity."
+      ],
+      "answerIndex": 1,
+      "explanation": "As per SA 520, analytical procedures performed near the end of the audit assist the auditor in forming an overall conclusion on whether the financial statements are consistent with the auditor's understanding of the entity.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 520",
+        "Analytical Procedures",
+        "Overall Review"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_020",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "Which of the following documents forms part of the final audit documentation (audit file) that must be assembled within the completion time limit?",
+      "options": [
+        "Superseded drafts of working papers and financial statements that were corrected.",
+        "Notes on contradictory matters that were resolved during the audit.",
+        "Personal diaries of audit staff members unrelated to the audit.",
+        "Unrelated correspondence with potential clients."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under SA 230, the audit file must include documentation of how contradictory or inconsistent information regarding significant matters was addressed and resolved.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 230",
+        "Audit Documentation",
+        "Working Papers"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_021",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "According to SQ 1 / SA 230, what is the standard time limit for assembling the final audit file after the date of the auditor's report?",
+      "options": [
+        "Not more than 30 days.",
+        "Not more than 60 days.",
+        "Not more than 90 days.",
+        "Not more than 120 days."
+      ],
+      "answerIndex": 1,
+      "explanation": "SQ 1 and SA 230 specify that the assembly of the final audit file should typically be completed not more than 60 days after the date of the auditor's report.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 230",
+        "SQ 1",
+        "File Assembly Time Limit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_022",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "What action should the auditor take if, after the financial statements have been issued, a subsequent event is discovered that requires amendment and management agrees to revise the financial statements?",
+      "options": [
+        "Issue a new auditor's report on the revised financial statements containing an emphasis of matter regarding the revision.",
+        "Verbally inform shareholders without issuing a new report.",
+        "Resign from the audit immediately.",
+        "Take no further action since the report was already issued."
+      ],
+      "answerIndex": 0,
+      "explanation": "Under SA 560, if management revises financial statements after issuance, the auditor shall carry out necessary procedures and issue a new auditor's report on the revised financial statements.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 560",
+        "Revised Financial Statements",
+        "New Report"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_023",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "When evaluating the going concern assumption, if events or conditions indicate a material uncertainty but management refuses to prepare the financial statements on a going concern basis, what type of opinion should the auditor issue?",
+      "options": [
+        "Unmodified opinion.",
+        "Adverse opinion.",
+        "Disclaimer of opinion.",
+        "Qualified opinion due to scope limitation."
+      ],
+      "answerIndex": 1,
+      "explanation": "If financial statements are prepared inappropriately on a going concern basis (or management refuses when required), the financial statements are materially misstated, leading to an Adverse opinion under SA 570.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 570",
+        "Inappropriate Going Concern",
+        "Adverse Opinion"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_024",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "Which of the following is NOT a required content of written representations under SA 580?",
+      "options": [
+        "Management has fulfilled its responsibility for preparing the financial statements.",
+        "Management has provided all relevant information and access as agreed.",
+        "Management guarantees that the company will remain profitable for the next five years.",
+        "All uncorrected misstatements are immaterial, individually and in aggregate."
+      ],
+      "answerIndex": 2,
+      "explanation": "Written representations do not require management to provide guarantees of future profitability; they cover responsibilities for financial statement preparation, completeness of information, and uncorrected misstatements.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 580",
+        "Written Representations",
+        "Content"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_025",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "What is the primary purpose of an 'Emphasis of Matter' paragraph in the auditor's report?",
+      "options": [
+        "To highlight a matter appropriately presented or disclosed in the financial statements that, in the auditor's judgment, is of such importance that it is fundamental to users' understanding.",
+        "To qualify the audit opinion because of a material misstatement.",
+        "To report on illegal acts committed by the entity's competitors.",
+        "To excuse the auditor from liability regarding subsequent events."
+      ],
+      "answerIndex": 0,
+      "explanation": "An Emphasis of Matter paragraph draws users' attention to a properly disclosed matter in the financial statements that is fundamental to their understanding, without modifying the audit opinion (SA 706).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 706",
+        "Emphasis of Matter",
+        "Audit Report"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_026",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "Under SA 260, what should the auditor communicate regarding the independence of the audit firm to those charged with governance?",
+      "options": [
+        "A statement that the audit firm and network firms have complied with relevant ethical requirements regarding independence.",
+        "A detailed breakdown of the personal salaries of all audit partners.",
+        "Nothing, unless specifically requested by regulatory authorities.",
+        "An agreement that the audit firm will not charge any fees if the company suffers a loss."
+      ],
+      "answerIndex": 0,
+      "explanation": "SA 260 requires the auditor to communicate a statement that the engagement team and others in the firm have complied with relevant ethical requirements regarding independence.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 260",
+        "Independence",
+        "TCWG"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_027",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "If an auditor identifies a misstatement during the audit, when is it considered 'clearly trivial' under SA 450?",
+      "options": [
+        "When it is of a magnitude that will not need to be accumulated because it is clearly immaterial, whether taken individually or in aggregate.",
+        "When management refuses to correct it under any circumstances.",
+        "When it exceeds overall materiality by at least 10%.",
+        "When it relates strictly to payroll deductions."
+      ],
+      "answerIndex": 0,
+      "explanation": "Under SA 450, 'clearly trivial' misstatements are those of a completely different (smaller) order of magnitude than materiality, and do not need to be accumulated because they are clearly inconsequential.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 450",
+        "Clearly Trivial",
+        "Misstatements"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_028",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "What is the impact on the audit file if working papers are modified or added after the 60-day assembly period under SA 230?",
+      "options": [
+        "Modifications are strictly prohibited under all circumstances.",
+        "The auditor must document the specific reasons for the modification, when and by whom they were made and reviewed.",
+        "Working papers can be altered freely without any documentation requirement.",
+        "The audit report automatically becomes void."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under SA 230, if circumstances require amendments to audit documentation after the assembly period, the auditor must document the specific reasons, date, and person making and reviewing the changes.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 230",
+        "Documentation Modification",
+        "Audit File"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_029",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "Which of the following is considered a 'Type 1' subsequent event under financial reporting frameworks (AS / Ind AS)?",
+      "options": [
+        "An event indicating conditions that arose after the reporting period (e.g., major factory fire after year-end).",
+        "An event providing evidence of conditions that existed at the end of the reporting period (e.g., settlement of a court case after year-end).",
+        "A routine change in the top management team six months after the balance sheet date.",
+        "A significant merger announcement taking place in the next financial year."
+      ],
+      "answerIndex": 1,
+      "explanation": "Type 1 subsequent events provide evidence of conditions that existed at the end of the reporting period, requiring financial statement adjustments, whereas Type 2 events indicate conditions arising after year-end.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Subsequent Events",
+        "Type 1 Events",
+        "Adjusting Events"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-7_030",
+      "kind": "normal",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "prompt": "In the final review stage, who holds the ultimate responsibility for the audit opinion expressed on the entity's financial statements?",
+      "options": [
+        "The engagement quality control reviewer.",
+        "The engagement partner.",
+        "The audit senior in charge of fieldwork.",
+        "The Chief Financial Officer of the entity."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under SA 220, the engagement partner takes ultimate responsibility for the overall audit engagement and the resulting audit opinion, notwithstanding any reviews or consultations.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 220",
+        "Engagement Partner",
+        "Ultimate Responsibility"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_audit-7_01",
+      "kind": "scenario",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "passage": "Zenith Ltd is finalising its financial statements for the year ended 31 March 2026. The audit team led by CA Raman is in the final review stage. On 10 May 2026, a major debtor owing ₹85 lakhs went into liquidation. The audit report is scheduled to be signed on 25 May 2026. Furthermore, management has provided a draft assessment of going concern covering only the next 8 months, citing long-term business uncertainty. CA Raman also noted several uncorrected misstatements amounting to ₹12 lakhs in aggregate, while overall materiality was set at ₹10 lakhs.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-7_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-7_01",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-7",
+          "subject": "Audit",
+          "prompt": "How should CA Raman treat the liquidation of the major debtor on 10 May 2026 under SA 560?",
+          "options": [
+            "Ignore it because the liquidation occurred after the balance sheet date.",
+            "Treat it as an adjusting subsequent event providing evidence of conditions existing at year-end, requiring financial statement adjustment.",
+            "Disclose it only in the Board of Directors' report without touching financial statements.",
+            "Issue a disclaimer of opinion due to bad debts."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under SA 560 and accounting standards, events providing evidence of conditions existing at the balance sheet date (such as debtor insolvency arising from financial distress present at year-end) are adjusting events requiring financial statement modification.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 560",
+            "Subsequent Events",
+            "Debtor Liquidation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-7_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-7_01",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-7",
+          "subject": "Audit",
+          "prompt": "Regarding management's going concern assessment covering only 8 months, what action should CA Raman take under SA 570?",
+          "options": [
+            "Accept the 8-month period since management knows the business best.",
+            "Request management to extend its assessment period to at least 12 months from the date of the financial statements.",
+            "Issue an adverse opinion immediately without requesting any extension.",
+            "Resign from the audit engagement on the spot."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under SA 570, if management's assessment of going concern covers less than 12 months from the date of financial statements, the auditor must request management to extend the assessment period to at least 12 months.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 570",
+            "Going Concern Assessment",
+            "12-Month Period"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-7_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-7_01",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-7",
+          "subject": "Audit",
+          "prompt": "Given that uncorrected misstatements amount to ₹12 lakhs against an overall materiality of ₹10 lakhs, what is CA Raman's evaluation requirement under SA 450?",
+          "options": [
+            "Ignore the misstatements since the difference is only ₹2 lakhs.",
+            "Evaluate whether uncorrected misstatements are material, individually or in aggregate, and communicate them to management and TCWG requesting correction.",
+            "Automatically issue an adverse opinion without communicating with management.",
+            "Record the misstatements in the engagement letter for the next year."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under SA 450, when uncorrected misstatements exceed materiality in aggregate, the auditor must evaluate their materiality and communicate them to management and those charged with governance, requesting correction.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 450",
+            "Uncorrected Misstatements",
+            "Materiality Exceeded"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-7_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-7_01",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-7",
+          "subject": "Audit",
+          "prompt": "If management refuses to adjust the financial statements for the debtor's liquidation and refuses to correct the uncorrected misstatements exceeding materiality, what audit opinion is CA Raman most likely required to issue?",
+          "options": [
+            "Unmodified opinion.",
+            "Qualified or Adverse opinion depending on the pervasiveness of the misstatements.",
+            "Disclaimer of opinion due to lack of written representations.",
+            "Clean report with an Emphasis of Matter paragraph."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under SA 450 and SA 705, if management refuses to correct misstatements that exceed materiality, the auditor must express a qualified or adverse opinion, depending on whether the effect is pervasive.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 450",
+            "SA 705",
+            "Modified Opinion"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-7_02",
+      "kind": "scenario",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "passage": "During the final review of Apex Pharma Ltd for the year ended 31 March 2026, engagement partner CA Priya reviews the audit documentation. The audit report date is 15 June 2026. The audit team obtained written representations from management dated 15 June 2026. However, CA Priya notices that documentation regarding a complex related-party transaction has contradictory evidence which was resolved orally but not documented in the working papers. Furthermore, an EQCR was conducted for this engagement because Apex Pharma Ltd is a listed entity.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-7_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-7_02",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-7",
+          "subject": "Audit",
+          "prompt": "What does SA 230 require regarding the contradictory evidence on related-party transactions resolved orally?",
+          "options": [
+            "Oral explanations are sufficient; no documentation is needed if the partner is satisfied.",
+            "The auditor must document how the contradictory or inconsistent information was addressed and resolved.",
+            "The audit file should be destroyed and restarted from scratch.",
+            "The matter should be reported directly to the stock exchange without documentation."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under SA 230, if the auditor identifies information that is inconsistent with the auditor's final conclusion regarding a significant matter, the audit documentation must include how the inconsistency was addressed.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 230",
+            "Contradictory Evidence",
+            "Documentation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-7_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-7_02",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-7",
+          "subject": "Audit",
+          "prompt": "What is the correct date for the written representation letter obtained by CA Priya's team?",
+          "options": [
+            "1 April 2025 (beginning of the financial year).",
+            "15 June 2026 (as near as practicable to, but not after, the date of the auditor's report).",
+            "30 July 2026 (after the audit report is published).",
+            "Any arbitrary date chosen by the chief accountant."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under SA 580, written representations must be dated as near as practicable to, but not after, the date of the auditor's report.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 580",
+            "Written Representations",
+            "Report Date"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-7_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-7_02",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-7",
+          "subject": "Audit",
+          "prompt": "What is the mandatory timeline for assembling the final audit file for Apex Pharma Ltd after 15 June 2026 under SQ 1 and SA 230?",
+          "options": [
+            "Within 15 days.",
+            "Within 30 days.",
+            "Within 60 days.",
+            "Within 180 days."
+          ],
+          "answerIndex": 2,
+          "explanation": "Under SQ 1 and SA 230, the final assembly of the audit file should be completed within a time limit of not more than 60 days after the date of the auditor's report.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 230",
+            "SQ 1",
+            "File Assembly Timeline"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-7_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-7_02",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-7",
+          "subject": "Audit",
+          "prompt": "What is the primary role of the Engagement Quality Control Reviewer (EQCR) in the audit of Apex Pharma Ltd?",
+          "options": [
+            "To perform all substantive testing of cash balances.",
+            "To provide an objective evaluation of the significant judgments made by the engagement team and conclusions reached before the report is dated.",
+            "To negotiate audit fees with the board of directors.",
+            "To sign the financial statements on behalf of management."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under SA 220 and SQ 1, the EQCR provides an objective evaluation of significant judgments and conclusions of the engagement team before the auditor's report is dated.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 220",
+            "EQCR",
+            "Quality Review"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-7_03",
+      "kind": "scenario",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "passage": "Star Industries Ltd is facing severe financial difficulties. The company defaulted on bank loan repayments due on 28 February 2026, and its key supplier has cut off credit lines. CA Mehta is the statutory auditor for the year ended 31 March 2026. Management has prepared the financial statements on a going concern basis and included comprehensive disclosures regarding the financial difficulties and the bank restructuring negotiations currently underway.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-7_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-7_03",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-7",
+          "subject": "Audit",
+          "prompt": "Based on the facts, how should CA Mehta evaluate the going concern status under SA 570?",
+          "options": [
+            "No going concern issue exists because management is negotiating.",
+            "Events indicate a material uncertainty that may cast significant doubt on the entity's ability to continue as a going concern.",
+            "Star Industries Ltd must immediately be liquidated without audit reporting.",
+            "The auditor must issue an adverse opinion automatically."
+          ],
+          "answerIndex": 1,
+          "explanation": "Loan defaults and loss of credit lines are major financial and operating indicators representing a material uncertainty regarding going concern under SA 570.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 570",
+            "Material Uncertainty",
+            "Indicators"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-7_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-7_03",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-7",
+          "subject": "Audit",
+          "prompt": "Given that the material uncertainty is adequately disclosed in Star Industries Ltd's financial statements, what reporting requirement applies under SA 570?",
+          "options": [
+            "Issue an adverse opinion because of the loan defaults.",
+            "Issue an unmodified opinion and include a separate section in the auditor's report titled 'Material Uncertainty Related to Going Concern'.",
+            "Issue a disclaimer of opinion due to bank defaults.",
+            "Omit all references to going concern to avoid alarming shareholders."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under SA 570, if adequate disclosure of a material uncertainty is made in the financial statements, the auditor shall express an unmodified opinion and include a separate section under 'Material Uncertainty Related to Going Concern'.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 570",
+            "Adequate Disclosure",
+            "Reporting"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-7_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-7_03",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-7",
+          "subject": "Audit",
+          "prompt": "What would be the reporting consequence under SA 570 if Star Industries Ltd refused to disclose the material uncertainty regarding its going concern?",
+          "options": [
+            "The auditor shall express a qualified opinion or an adverse opinion.",
+            "The auditor shall issue an unmodified opinion with an emphasis of matter.",
+            "The auditor shall ignore the lack of disclosure if management is cooperative.",
+            "The auditor shall issue a clean report."
+          ],
+          "answerIndex": 0,
+          "explanation": "If adequate disclosure about a material uncertainty is not made in the financial statements, SA 570 requires the auditor to express a qualified opinion or an adverse opinion, as appropriate.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 570",
+            "Inadequate Disclosure",
+            "Modified Opinion"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-7_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-7_03",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-7",
+          "subject": "Audit",
+          "prompt": "Which of the following is considered a financial indicator of going concern problems present in Star Industries Ltd?",
+          "options": [
+            "Loss of key management personnel.",
+            "Default on loan repayments and loss of supplier credit lines.",
+            "Changes in government environmental regulations.",
+            "Shortage of skilled technical workforce."
+          ],
+          "answerIndex": 1,
+          "explanation": "Default on loan repayments and loss of supplier credit lines are prime financial indicators under SA 570.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "SA 570",
+            "Financial Indicators",
+            "Loan Default"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-7_04",
+      "kind": "scenario",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "passage": "During the final completion phase of Delta Engineering Ltd for the year ended 31 March 2026, statutory auditor CA Kumar reviews various communications and representation requirements. Management provides the signed written representation letter on 10 June 2026. CA Kumar communicates significant audit findings with Those Charged with Governance (TCWG) on 12 June 2026, and signs the audit report on 14 June 2026. An uncorrected misstatement of ₹5 lakhs was identified, which management refused to adjust, while overall materiality was set at ₹15 lakhs.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-7_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-7_04",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-7",
+          "subject": "Audit",
+          "prompt": "How should CA Kumar evaluate the uncorrected misstatement of ₹5 lakhs against the overall materiality of ₹15 lakhs under SA 450?",
+          "options": [
+            "It must be forced as an adjustment since any error is material.",
+            "Since it is below overall materiality, CA Kumar should evaluate if it is material in aggregate or qualitatively, and communicate it to TCWG.",
+            "It should be ignored entirely without documentation or communication.",
+            "It requires an immediate adverse opinion."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under SA 450, uncorrected misstatements below materiality must still be communicated to TCWG and evaluated for aggregate or qualitative materiality.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 450",
+            "Uncorrected Misstatements",
+            "Evaluation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-7_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-7_04",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-7",
+          "subject": "Audit",
+          "prompt": "What is the requirement regarding communication with TCWG under SA 260 during this final review phase?",
+          "options": [
+            "The auditor must communicate significant findings from the audit, including accounting practices and uncorrected misstatements.",
+            "Communication with TCWG is optional if the audit report is unmodified.",
+            "The auditor only communicates with the internal audit team, not TCWG.",
+            "TCWG must approve the audit report wording before signature."
+          ],
+          "answerIndex": 0,
+          "explanation": "SA 260 requires the auditor to communicate significant findings from the audit, auditor's views on qualitative aspects of accounting, and uncorrected misstatements to those charged with governance.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 260",
+            "TCWG Communication",
+            "Significant Findings"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-7_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-7_04",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-7",
+          "subject": "Audit",
+          "prompt": "Was the written representation letter dated correctly under SA 580, given it was signed on 10 June 2026 and the report was signed on 14 June 2026?",
+          "options": [
+            "No, it should have been dated 31 March 2026.",
+            "Yes, because it is dated as near as practicable to, but not after, the date of the auditor's report.",
+            "No, it must be dated exactly 30 days after the report date.",
+            "No, written representations are not required to be dated."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under SA 580, the written representation letter must be dated as near as practicable to, but not after, the date of the auditor's report (10 June vs 14 June is appropriate).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 580",
+            "Representation Date",
+            "Compliance"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-7_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-7_04",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-7",
+          "subject": "Audit",
+          "prompt": "What is the implication if management refused to sign the written representation letter required by SA 580?",
+          "options": [
+            "CA Kumar can issue an unmodified opinion without representation.",
+            "CA Kumar shall disclaim an opinion or withdraw from the engagement.",
+            "CA Kumar should sign the report and blame management in a footnote.",
+            "CA Kumar must take over management responsibilities."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under SA 580, refusal by management to provide written representations constitutes a limitation on scope, requiring a disclaimer of opinion or withdrawal.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 580",
+            "Refusal",
+            "Scope Limitation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-7_05",
+      "kind": "scenario",
+      "chapterId": "audit-7",
+      "subject": "Audit",
+      "passage": "Global Tech Ltd published its audited financial statements on 1 July 2026. On 15 August 2026, auditor CA Sunil discovered a serious fraud perpetrated by the CFO that existed prior to 31 March 2026 (the balance sheet date) but was concealed effectively. Had CA Sunil known this during the audit, the audit report dated 20 June 2026 would have been significantly modified.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Completion and Review"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-7_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-7_05",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-7",
+          "subject": "Audit",
+          "prompt": "Under SA 560, what is CA Sunil's responsibility regarding facts discovered after the financial statements have been issued?",
+          "options": [
+            "CA Sunil has no responsibility since the report was already issued and published.",
+            "CA Sunil shall discuss the matter with management, determine if the statements need revision, and inquire how management intends to address the matter.",
+            "CA Sunil must immediately liquidate the company's assets.",
+            "CA Sunil should personally rewrite the financial statements."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under SA 560, when facts discovered after issuance would have affected the report, the auditor must discuss with management and determine if revision is necessary and how management intends to address it.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 560",
+            "Facts After Issuance",
+            "Auditor Duty"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-7_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-7_05",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-7",
+          "subject": "Audit",
+          "prompt": "If management of Global Tech Ltd revises the financial statements, what subsequent action must CA Sunil take under SA 560?",
+          "options": [
+            "Perform necessary audit procedures on the revision and issue a new auditor's report.",
+            "Do nothing further as management handled the revision.",
+            "Issue a verbal apology to the shareholders.",
+            "Resign from the audit firm immediately."
+          ],
+          "answerIndex": 0,
+          "explanation": "Under SA 560, if management revises financial statements after issuance, the auditor shall carry out necessary procedures and provide a new auditor's report on the revised financial statements.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 560",
+            "Revised Statements",
+            "New Audit Report"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-7_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-7_05",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-7",
+          "subject": "Audit",
+          "prompt": "What should CA Sunil do if management refuses to take necessary steps to revise the financial statements despite the discovered fraud?",
+          "options": [
+            "Keep silent to protect the audit firm's reputation.",
+            "Notify management and those charged with governance that the auditor will seek to prevent future reliance on the auditor's report.",
+            "Approve the financial statements personally.",
+            "File a criminal lawsuit against the shareholders."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under SA 560, if management refuses to revise the financial statements when the auditor believes they need revision, the auditor shall notify management and TCWG that action will be taken to prevent reliance on the auditor's report.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 560",
+            "Management Refusal",
+            "Preventing Reliance"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-7_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-7_05",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-7",
+          "subject": "Audit",
+          "prompt": "During the active audit period (before the report was issued), what was CA Sunil's obligation regarding subsequent events under SA 560?",
+          "options": [
+            "To perform audit procedures designed to identify all events up to the date of the report that may require adjustment or disclosure.",
+            "To audit all transactions occurring in the next five financial years.",
+            "To rely solely on management's verbal assurances.",
+            "To refrain from performing any tests after the balance sheet date."
+          ],
+          "answerIndex": 0,
+          "explanation": "Under SA 560, between the balance sheet date and the date of the auditor's report, the auditor must perform audit procedures designed to identify events requiring adjustment or disclosure.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 560",
+            "Active Period",
+            "Audit Procedures"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

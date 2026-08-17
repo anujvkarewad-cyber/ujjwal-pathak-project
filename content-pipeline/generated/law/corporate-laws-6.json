@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "corporate-laws-6",
+  "subject": "Law",
+  "paper": "Paper 2: Corporate and Other Laws",
+  "module": "Module 1",
+  "chapterNumber": 6,
+  "chapterTitle": "Registration of Charges",
+  "generatedAt": "2026-08-16T14:12:00.251Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_corporate-laws-6_001",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "According to the Companies Act, 2013, what does the term 'charge' include for the purpose of registration under Chapter VI?",
+      "options": [
+        "Only a mortgage created on the immovable property of a company",
+        "A lien on the assets of the company",
+        "A pledge of movable goods held in the ordinary course of business",
+        "An assignment of actionable claims without security"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 2(16) of the Companies Act, 2013, 'charge' means an interest or lien created on the property or assets of a company or any of its undertakings or both as security and includes a mortgage. A lien is expressly included, whereas a mere pledge of movable goods is generally excluded from registration under Chapter VI.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Definition of Charge",
+        "Section 2(16)",
+        "Scope of Registration"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_002",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "Within how many days from the date of creation of a charge must particulars of the charge be filed with the Registrar under Section 77 by a company incorporated in India?",
+      "options": [
+        "15 days",
+        "30 days",
+        "60 days",
+        "90 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 77(1) mandates that every company creating a charge within or outside India, on its property or assets or any of its undertakings, shall register the particulars of the charge signed by the company and the charge-holder within 30 days of its creation.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Creation of Charge",
+        "Section 77",
+        "Time Limit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_003",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "If a company fails to register a charge within the initial 30 days of its creation, up to what maximum total period (from the date of creation) can the Registrar allow registration upon payment of additional fee, for a charge created after the commencement of the Companies (Amendment) Ordinance, 2019?",
+      "options": [
+        "30 days",
+        "60 days",
+        "90 days",
+        "300 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per the proviso to Section 77(1), if the registration is not made within 30 days, the Registrar may allow it to be filed within a further period of 60 days (total 60 days from creation) on payment of prescribed additional fee.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 77 Proviso",
+        "Condonation of Delay",
+        "Additional Fee"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_004",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "If a charge created by a company is not registered within the extended period of 60 days under Section 77(1), who has the power to grant an extension of time under Section 87?",
+      "options": [
+        "The Regional Director (RD)",
+        "The National Company Law Tribunal (NCLT)",
+        "The Registrar of Companies (ROC)",
+        "The Securities and Exchange Board of India (SEBI)"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 87 read with the relevant rules, the Central Government (powers delegated to the Regional Director) is empowered to condone delay and allow rectification or late filing of charges if it is satisfied that the omission was accidental or inadvertent or of such nature as not to prejudice the interest of creditors/shareholders.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 87",
+        "Regional Director Powers",
+        "Rectification of Charges"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_005",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "What is the consequence of non-registration of a charge created by a company, as specified under Section 77 read with Section 84, against the liquidator and any creditor of the company?",
+      "options": [
+        "The charge becomes completely void ab initio for all purposes.",
+        "The charge is void against the liquidator and any creditor of the company.",
+        "The underlying debt becomes immediately irrecoverable.",
+        "The directors are personally imprisoned for 6 months."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 78/84 and established jurisprudence dictate that if a charge required to be registered is not registered, it is void against the liquidator and any creditor of the company, meaning the secured creditor ranks merely as an unsecured creditor upon winding up.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 77",
+        "Effect of Non-Registration",
+        "Liquidator and Creditors"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_006",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "Can a charge-holder apply for the registration of a charge if the company itself fails to do so within the initial 30 days under Section 78?",
+      "options": [
+        "No, only the company can apply for registration under any circumstances.",
+        "Yes, the person in whose favour the charge is created may apply to the Registrar and recover expenses from the company.",
+        "Yes, but only after obtaining prior written permission from the NCLT.",
+        "No, the charge-holder must file a civil suit for specific performance."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 78 provides that where a company fails to register a charge within the 30-day period, the person in whose favour the charge is created may apply to the Registrar for registration, and upon registration, recover the expenses from the company.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 78",
+        "Right of Charge-holder",
+        "Default by Company"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_007",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "When a charge is registered with the Registrar, what certificate does the Registrar issue to the company under Section 77(2)?",
+      "options": [
+        "Certificate of Incorporation",
+        "Certificate of Registration of Charge",
+        "Certificate of Commencement of Business",
+        "Certificate of Satisfaction of Charge"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 77(2) requires the Registrar to issue a certificate of registration of charge in the prescribed form (Form CHG-2) upon the registration of the particulars of a charge.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 77(2)",
+        "Certificate of Registration",
+        "Form CHG-2"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_008",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "What is the evidentiary value of the Certificate of Registration issued by the Registrar under Section 77?",
+      "options": [
+        "It is rebuttable evidence that all requirements of Chapter VI have been complied with.",
+        "It is conclusive evidence that the requirements of Chapter VI as to registration have been complied with.",
+        "It is merely an administrative acknowledgement with no legal evidentiary value.",
+        "It serves as conclusive evidence regarding the validity of the underlying contract."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 77(2) explicitly states that the certificate issued by the Registrar shall be conclusive evidence that the requirements of Chapter VI as to registration have been complied with.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 77(2)",
+        "Conclusive Evidence",
+        "Evidentiary Value"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_009",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "Within how many days must a company give intimation to the Registrar regarding the payment or satisfaction in full of any charge registered under Chapter VI, pursuant to Section 82?",
+      "options": [
+        "15 days",
+        "30 days",
+        "60 days",
+        "90 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 82(1) stipulates that a company shall inform the Registrar within a period of 30 days of the payment or satisfaction in full of any charge registered under this chapter.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 82",
+        "Satisfaction of Charge",
+        "Time Limit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_010",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "What form is prescribed under the Companies (Registration of Charges) Rules, 2014, for filing the notice of satisfaction of a charge with the Registrar?",
+      "options": [
+        "Form CHG-1",
+        "Form CHG-4",
+        "Form CHG-7",
+        "Form CHG-9"
+      ],
+      "answerIndex": 1,
+      "explanation": "Form CHG-4 is the prescribed form under the rules for giving notice of satisfaction in full of a charge to the Registrar.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Form CHG-4",
+        "Satisfaction of Charge",
+        "Rules 2014"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_011",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "What action does the Registrar take upon receipt of intimation of satisfaction of a charge under Section 82?",
+      "options": [
+        "Issues a notice to show cause to the company why it paid off the debt.",
+        "Sends a notice to the holder of the charge calling for objections, if any, within a specified time.",
+        "Immediately destroys the historical charge records without informing anyone.",
+        "Directs the company to liquidate its assets."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 82(2), upon receipt of intimation under Section 82(1), the Registrar issues a show-cause notice to the charge-holder calling for objections, if any, within such time not exceeding 14 days, as may be specified, as to why payment or satisfaction should not be recorded.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 82(2)",
+        "Notice to Charge-holder",
+        "ROC Procedure"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_012",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "Under Section 85, every company is required to keep a register of charges at its registered office. Which of the following details must be entered in this register?",
+      "options": [
+        "Only the name of the company's bankers",
+        "Particulars of all charges created or modified, affecting properties of the company",
+        "The personal income tax returns of the directors",
+        "The minutes of general meetings related to dividend declaration"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 85 mandates that every company shall keep at its registered office a register of charges and enter therein particulars of all charges explicitly created or modified, affecting any property or assets of the company.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 85",
+        "Register of Charges",
+        "Registered Office"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_013",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "Who is entitled to inspect the register of charges and instrument of charges maintained by a company under Section 85?",
+      "options": [
+        "Only the equity shareholders of the company",
+        "Any creditor or member of the company free of cost, and any other person on payment of a prescribed fee",
+        "Only the Central Government and statutory auditors",
+        "Any member of the general public without any conditions"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 85(2) provides that the register of charges and instrument of charges shall be open for inspection during business hours by any member or creditor without fee, and by any other person on payment of prescribed fee.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 85(2)",
+        "Inspection of Register",
+        "Members and Creditors"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_014",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "What is the penalty under Section 86 if a company defaults in complying with any of the provisions of Chapter VI relating to the registration of charges, and no specific penalty is provided elsewhere?",
+      "options": [
+        "Only a warning letter from the ROC",
+        "Punishment with fine for the company and imprisonment/fine for defaulting officers",
+        "Immediate compulsory winding up of the company by the Supreme Court",
+        "Forfeiture of all shares held by the promoters"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 86 specifies penalties for non-compliance, making the company liable to a substantial monetary fine, and every officer in default punishable with imprisonment and/or fine.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 86",
+        "Punishment for Default",
+        "Offences and Penalties"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_015",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "Does the requirement of registration of charges under Section 77 apply to a charge created on property situated outside India by a company incorporated in India?",
+      "options": [
+        "No, charges on foreign property are completely exempt.",
+        "Yes, it applies whether the property or undertaking is situated within or outside India.",
+        "Yes, but only if the property is situated in a Commonwealth country.",
+        "No, only foreign companies are required to register foreign properties."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 77(1) explicitly states that the duty to register applies to every company creating a charge 'on its property or assets or any of its undertakings, whether within or outside India'.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 77",
+        "Property Outside India",
+        "Jurisdiction"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_016",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "Which form is used for registering the creation or modification of a charge (other than those related to debentures) under the Companies (Registration of Charges) Rules, 2014?",
+      "options": [
+        "Form CHG-1",
+        "Form CHG-4",
+        "Form CHG-8",
+        "Form INC-22"
+      ],
+      "answerIndex": 0,
+      "explanation": "Form CHG-1 is the prescribed form for registration of creation or modification of charges other than debentures. Form CHG-9 is used for debentures including rectification.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Form CHG-1",
+        "Creation and Modification",
+        "Rules 2014"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_017",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "What is the legal implication when a company modifies a charge (e.g., change in terms of repayment or increased limit), but fails to register such modification?",
+      "options": [
+        "Modification does not require registration under any circumstances.",
+        "The provisions relating to registration of charges apply to modification of charges in the same manner as a charge.",
+        "Only the original creation becomes void, while the modification remains valid.",
+        "The company is exempt from filing Form CHG-1 for modifications."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 79 explicitly enacts that the provisions of Chapter VI relating to registration of charges shall apply to a modification of any charge in the same manner as they apply to a charge created ab initio.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 79",
+        "Modification of Charge",
+        "Applicability"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_018",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "Under Section 81, when a receiver of the property of a company is appointed, within how many days must notice of such appointment be given to the company and the Registrar?",
+      "options": [
+        "7 days",
+        "15 days",
+        "30 days",
+        "45 days"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 81 requires any person who obtains an order for the appointment of a receiver of the property of a company, or appoints such receiver under any powers contained in any instrument, to give notice of the same to the company and the Registrar within 30 days of the order/appointment.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 81",
+        "Receiver Appointment",
+        "Notice to ROC"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_019",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "What form is utilized by a receiver to file notice of their appointment or cessation with the Registrar under Section 81?",
+      "options": [
+        "Form CHG-1",
+        "Form CHG-2",
+        "Form CHG-6",
+        "Form CHG-8"
+      ],
+      "answerIndex": 2,
+      "explanation": "Form CHG-6 is the prescribed form under the Companies (Registration of Charges) Rules, 2014 for filing notice of appointment or cessation of a receiver or liquidator.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Form CHG-6",
+        "Receiver/Cessation",
+        "ROC Filings"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_020",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "Can the Central Government direct a company to rectify any omission or misstatement in filing particulars of a charge or its satisfaction under Section 87?",
+      "options": [
+        "No, once filed, corrections can only be made by order of the Supreme Court.",
+        "Yes, on an application by the company or any interested person, if it is satisfied that the omission/misstatement was accidental or inadvertent.",
+        "No, rectifications are strictly prohibited under the Companies Act, 2013.",
+        "Yes, but only suo motu without any application."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 87 empowers the Central Government (Regional Director) to direct rectification of omission or misstatement in the registration, modification, or satisfaction of charges if satisfied that it was accidental, inadvertent, or did not prejudice interests.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 87",
+        "Central Government / RD",
+        "Rectification of Omissions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_021",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "Does the registration of a charge operate as constructive notice to any person who subsequently acquires the property on which the charge is created?",
+      "options": [
+        "No, registration is only for internal government records and confers no notice.",
+        "Yes, registration of a charge constitutes constructive notice to the public/subsequent acquirers under Section 80.",
+        "Only if the subsequent acquirer personally inspects the company's factory.",
+        "No, constructive notice applies only to the Memorandum and Articles of Association, not charges."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 80 provides that any person acquiring any property, assets or part thereof on which a charge is subsisting shall be deemed to have notice of the charge from the date of its registration under Section 77 (constructive notice).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 80",
+        "Constructive Notice",
+        "Subsequent Acquirer"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_022",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "Which of the following charges requires mandatory registration under Section 77 of the Companies Act, 2013?",
+      "options": [
+        "A charge on uncalled share capital of the company",
+        "A pledge of goods stored in a public warehouse",
+        "A floating charge on stock-in-trade created in the ordinary course of business (where exempted by specific rules)",
+        "A statutory charge arising by operation of law (e.g., tax lien) without any act of parties"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 77(3) lists specific types of charges that require registration, including a charge on uncalled share capital, a charge on call made but not paid, a floating charge, etc. A pledge of goods and general statutory liens arising without agreement are generally distinct.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 77(3)",
+        "Types of Charges",
+        "Mandatory Registration"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_023",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "If a company acquires any property which is subject to a charge, is the company under an obligation to register the particulars of such charge?",
+      "options": [
+        "No, because the charge was created by the previous owner, not the company.",
+        "Yes, the provisions of Section 77 apply mutatis mutandis to a company acquiring property subject to a charge.",
+        "Only if the property is located outside India.",
+        "No, the seller alone is responsible for registering the charge transfer."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 78/77 rules state that when a company acquires any property which is subject to a charge, the provisions of registering charges apply mutatis mutandis to such property acquired by the company as if it had created the charge itself.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Acquisition of Property",
+        "Mutatis Mutandis",
+        "Section 77"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_024",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "What is the penalty prescribed under Section 86(1) for a company that defaults in registering a charge under Section 77?",
+      "options": [
+        "A penalty of one lakh rupees",
+        "A penalty of five lakh rupees",
+        "A penalty of not less than one lakh rupees which may extend to ten lakh rupees",
+        "Strict imprisonment of all directors for 2 years"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 86(1) prescribes that if any company defaults in complying with Section 77, the company shall be liable to a penalty of five lakh rupees and every officer in default shall be liable to a penalty of fifty thousand rupees which may extend to one lakh rupees (note: exact statutory penal amounts under current Act/Amendments).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 86(1)",
+        "Penalties for Non-Registration",
+        "Officer in Default"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_025",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "Can a company file particulars of satisfaction of a charge beyond the period of 30 days specified under Section 82(1)?",
+      "options": [
+        "No, satisfaction can never be registered after 30 days.",
+        "Yes, the ROC may allow satisfaction to be filed within a further period of 300 days on payment of prescribed additional fees.",
+        "Only with the special leave of the Supreme Court.",
+        "Yes, without any additional fees or time limit whatsoever."
+      ],
+      "answerIndex": 1,
+      "explanation": "Provisos to Section 82/83 allow the ROC to accept delayed intimation of satisfaction of charges up to a extended period (often up to 300 days total under general filing rules) upon payment of prescribed additional or higher fees.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 82 Proviso",
+        "Delayed Satisfaction",
+        "Additional Fee"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_026",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "In case a charge is registered by the charge-holder under Section 78 because of the company's default, what remedy does the charge-holder have to recover registration expenses?",
+      "options": [
+        "File a winding-up petition directly without notice",
+        "Recover the amount of fees and expenses paid from the company as debt",
+        "Confiscate the company's registered office building",
+        "Deduct the amount from the principal loan amount without company consent"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 78 explicitly entitles the charge-holder who incurs expenses in getting the charge registered to recover such amount from the company.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 78",
+        "Recovery of Expenses",
+        "Charge-holder Rights"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_027",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "Which of the following instruments must be kept by the company along with the register of charges at its registered office under Section 85?",
+      "options": [
+        "Only the board resolution approving the loan",
+        "A copy of every instrument creating or modifying any charge requiring registration",
+        "The personal guarantees signed by independent directors",
+        "Tax audit reports for the last 5 years"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 85(1) specifies that a copy of every instrument creating or modifying any charge requiring registration under Chapter VI shall be kept at the registered office of the company along with the register of charges.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 85(1)",
+        "Instrument of Charge",
+        "Registered Office Records"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_028",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "If an officer of a company willfully furnishes any false or incorrect information or knowingly suppresses any material information required under Section 77 or Section 79, what penal consequence do they face?",
+      "options": [
+        "They shall be liable for fraud under Section 447 of the Companies Act, 2013.",
+        "They receive a simple verbal reprimand from the ROC.",
+        "They are disqualified from holding bank accounts only.",
+        "They are exempt from liability if the company pays a fine."
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 86(2) provides that if any person willfully furnishes any false or incorrect information or knowingly suppresses any material information, they shall be liable for action under Section 447 (Fraud).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 86(2)",
+        "Willful Suppression",
+        "Section 447 Fraud"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_029",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "Is a negative lien clause (an undertaking by a company not to create further charges on its property) required to be registered under Section 77 of the Companies Act, 2013?",
+      "options": [
+        "Yes, all negative covenants must be registered as charges.",
+        "No, a negative lien does not create a security interest or charge on the property and hence does not require registration.",
+        "Yes, but only if approved by the stock exchange.",
+        "No, unless the debt exceeds 100 crores."
+      ],
+      "answerIndex": 1,
+      "explanation": "A negative lien is merely a negative covenant or promise not to encumber assets further and does not create any beneficial interest, lien, or security on the property itself. Therefore, it does not fall within the definition of a charge under Section 2(16) and does not require registration under Section 77.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Negative Lien",
+        "Scope of Charge",
+        "Section 2(16) vs Covenants"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-6_030",
+      "kind": "normal",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "prompt": "What is the primary objective of registering charges created by a company under Chapter VI of the Companies Act, 2013?",
+      "options": [
+        "To generate tax revenue for the Ministry of Corporate Affairs",
+        "To protect prospective creditors and members by giving them public notice of existing encumbrances on company assets",
+        "To enable the Central Government to manage the day-to-day operations of the company",
+        "To fix executive salaries in the company"
+      ],
+      "answerIndex": 1,
+      "explanation": "The fundamental purpose of charge registration is to ensure transparency and provide public/constructive notice to any person dealing with the company so they are aware of existing encumbrances on the company's assets.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Objective of Registration",
+        "Transparency",
+        "Public Notice"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_corporate-laws-6_01",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "passage": "Zenith Engineering Limited created a mortgage on its factory land and building in favour of Apex Bank Ltd. on 10th May 2026 to secure a term loan of Rs. 5 crores. Due to an administrative oversight by the company secretary, the particulars of the charge were not filed with the Registrar within 30 days. On 5th July 2026, Apex Bank (the charge-holder) discovered this omission and decided to take matters into its own hands under the provisions of the Companies Act, 2013.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-6_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-6_01",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-6",
+          "subject": "Law",
+          "prompt": "What was the last date by which Zenith Engineering Limited should have originally filed the particulars of the charge under Section 77(1)?",
+          "options": [
+            "25th May 2026",
+            "9th June 2026",
+            "10th June 2026",
+            "9th July 2026"
+          ],
+          "answerIndex": 1,
+          "explanation": "The charge was created on 10th May 2026. Counting 30 days from 10th May (excluding the date of creation: 20 days in May + 9 days in June), the initial 30-day period expires on 9th June 2026.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 77",
+            "Calculation of 30 Days",
+            "Case Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-6_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-6_01",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-6",
+          "subject": "Law",
+          "prompt": "Can Apex Bank Ltd. (the charge-holder) apply to the Registrar for registration of this charge since Zenith Engineering Limited failed to do so within 30 days?",
+          "options": [
+            "No, only the company can apply for charge registration.",
+            "Yes, Apex Bank can apply under Section 78 and subsequently recover registration expenses from Zenith Engineering Limited.",
+            "Yes, but only after filing a criminal complaint against the company secretary.",
+            "No, Apex Bank must wait for NCLT permission."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 78, if a company fails to register a charge within 30 days, the person in whose favour the charge is created (Apex Bank) may apply to the Registrar for registration and recover the expenses from the company.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 78",
+            "Charge-holder Application",
+            "Expenses Recovery"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-6_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-6_01",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-6",
+          "subject": "Law",
+          "prompt": "Assuming Zenith Engineering Limited itself applies for registration on 1st July 2026 (within the extended window allowed by the ROC), what is required for the ROC to accept such filing?",
+          "options": [
+            "Payment of standard fee only",
+            "Payment of prescribed additional fee as the filing is made beyond 30 days but within 60 days of creation",
+            "Prior approval of the Supreme Court",
+            "Passing of an ordinary resolution in a general meeting"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the proviso to Section 77(1), for charges created after the amendment, if filing is done beyond 30 days but within a total of 60 days from creation, the Registrar may allow it upon payment of prescribed additional fee.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 77 Proviso",
+            "Extended Window",
+            "Additional Fee"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-6_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-6_01",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-6",
+          "subject": "Law",
+          "prompt": "If neither the company nor Apex Bank registers the charge and Zenith Engineering Limited goes into liquidation, what is the legal status of Apex Bank's charge?",
+          "options": [
+            "Apex Bank retains absolute priority as a secured creditor.",
+            "The charge is void against the liquidator and any creditor of the company, making Apex Bank an unsecured creditor.",
+            "The term loan is automatically written off by the government.",
+            "Apex Bank becomes a shareholder of Zenith Engineering Limited."
+          ],
+          "answerIndex": 1,
+          "explanation": "As per Section 77 read with Section 84, an unregistered charge is void against the liquidator and any creditor of the company, meaning the creditor loses its secured status and ranks as an unsecured creditor.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Effect of Non-Registration",
+            "Liquidation",
+            "Secured vs Unsecured"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-6_02",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "passage": "Vanguard Technologies Ltd. had registered a charge over its plant and machinery in favour of Global Finance Corp on 1st January 2025. On 15th March 2026, Vanguard Technologies Ltd. fully repaid the loan and satisfied the charge. However, the company omitted to inform the Registrar within the stipulated time. Meanwhile, Global Finance Corp received notice from the ROC regarding this satisfaction and raised no objections within the specified timeline. The company later maintained all statutory registers properly at its registered office.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-6_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-6_02",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-6",
+          "subject": "Law",
+          "prompt": "Within how many days from 15th March 2026 was Vanguard Technologies Ltd. required to intimate the Registrar regarding the full satisfaction of the charge under Section 82(1)?",
+          "options": [
+            "15 days",
+            "30 days",
+            "60 days",
+            "90 days"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 82(1) requires the company to give intimation of payment or satisfaction in full of a registered charge to the Registrar within 30 days of such satisfaction.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 82(1)",
+            "Satisfaction Intimation",
+            "Timeline"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-6_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-6_02",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-6",
+          "subject": "Law",
+          "prompt": "What form must Vanguard Technologies Ltd. use to file the notice of satisfaction of the charge with the Registrar?",
+          "options": [
+            "Form CHG-1",
+            "Form CHG-4",
+            "Form CHG-6",
+            "Form CHG-9"
+          ],
+          "answerIndex": 1,
+          "explanation": "Form CHG-4 is the specific prescribed form under the Companies (Registration of Charges) Rules, 2014 for intimating the payment or satisfaction in full of a charge.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Form CHG-4",
+            "Satisfaction of Charge",
+            "Rules"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-6_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-6_02",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-6",
+          "subject": "Law",
+          "prompt": "When the Registrar receives the intimation of satisfaction, what maximum time limit is typically given to the charge-holder (Global Finance Corp) to show cause why satisfaction should not be recorded, under Section 82(2)?",
+          "options": [
+            "7 days",
+            "14 days",
+            "30 days",
+            "60 days"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 82(2) specifies that the Registrar shall issue a notice to the holder of the charge calling for objections, if any, within such time not exceeding 14 days as may be specified.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 82(2)",
+            "Show Cause Notice",
+            "Charge-holder"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-6_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-6_02",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-6",
+          "subject": "Law",
+          "prompt": "Where must Vanguard Technologies Ltd. keep its register of charges and instrument of charges for inspection by members and creditors under Section 85?",
+          "options": [
+            "At the corporate office of Global Finance Corp",
+            "At the registered office of the company",
+            "At the nearest stock exchange building",
+            "Only at the residence of the Managing Director"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 85 explicitly mandates that every company shall keep at its registered office a register of charges and a copy of every instrument creating or modifying any charge.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 85",
+            "Registered Office",
+            "Register of Charges"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-6_03",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "passage": "Dynamic Logistics Ltd. created a floating charge on its entire fleet of delivery trucks in favour of Express Credit Bank on 1st February 2026. Due to an internal dispute among directors, the filing was delayed beyond the 60-day maximum period allowed by the Registrar under Section 77. The management now wishes to rectify this omission and approaches competent authorities. Additionally, a receiver was appointed over certain assets of the company on 1st April 2026 by an order of the court.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-6_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-6_03",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-6",
+          "subject": "Law",
+          "prompt": "Since the delay exceeded the maximum period of 60 days from creation that the ROC can condone under Section 77, which authority must Dynamic Logistics Ltd. approach for condonation and extension of time?",
+          "options": [
+            "The Securities and Exchange Board of India (SEBI)",
+            "The Central Government (Regional Director) under Section 87",
+            "The Reserve Bank of India (RBI)",
+            "The Registrar of Companies (suo motu)"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 87, where the filing is delayed beyond the powers of the ROC under Section 77, the Central Government (Regional Director) is empowered to condone the delay and direct rectification upon application.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 87",
+            "Central Government / RD",
+            "Condonation of Delay"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-6_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-6_03",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-6",
+          "subject": "Law",
+          "prompt": "Within how many days must notice of the appointment of the receiver of Dynamic Logistics Ltd.'s property be given to the company and the Registrar under Section 81?",
+          "options": [
+            "15 days",
+            "30 days",
+            "60 days",
+            "90 days"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 81 requires notice of the appointment of a receiver to be given to the company and the Registrar within 30 days of the order or appointment.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 81",
+            "Receiver Appointment",
+            "Notice Period"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-6_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-6_03",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-6",
+          "subject": "Law",
+          "prompt": "Which form is prescribed for filing notice of the appointment of the receiver with the Registrar under Section 81?",
+          "options": [
+            "Form CHG-1",
+            "Form CHG-4",
+            "Form CHG-6",
+            "Form CHG-8"
+          ],
+          "answerIndex": 2,
+          "explanation": "Form CHG-6 is the prescribed form for registering the appointment or cessation of a receiver or liquidator under the Companies (Registration of Charges) Rules, 2014.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Form CHG-6",
+            "Receiver Notice",
+            "ROC Filing"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-6_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-6_03",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-6",
+          "subject": "Law",
+          "prompt": "What is the legal nature of a 'floating charge' created on the fleet of delivery trucks of Dynamic Logistics Ltd. before it crystallizes?",
+          "options": [
+            "It is an immediate fixed security on specific trucks currently owned.",
+            "It is an equitable charge on present and future assets of a circulating character which remains dormant until crystallization.",
+            "It is legally invalid under Indian company law.",
+            "It is treated as an unsecured loan for all statutory purposes."
+          ],
+          "answerIndex": 1,
+          "explanation": "A floating charge is a security on property of a circulating or fluctuating nature (like stock-in-trade or vehicles in fleet) which allows the company to deal with the assets in the ordinary course of business until it crystallizes upon an event such as default or winding up.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Floating Charge",
+            "Crystallization",
+            "Legal Nature"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-6_04",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "passage": "Pioneer Agro Industries Ltd. acquired a warehouse on 10th February 2026. The warehouse was already subject to an existing mortgage charge created by the previous owner in favour of Metro Bank. Pioneer Agro Industries Ltd. failed to register particulars of this acquired charge within the standard statutory time frame. Later, an outsider, Mr. X, acquired a portion of the company's property and claimed ignorance of Metro Bank's charge, arguing he had no personal knowledge of it.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-6_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-6_04",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-6",
+          "subject": "Law",
+          "prompt": "Are the provisions relating to registration of charges applicable to Pioneer Agro Industries Ltd. with respect to the warehouse acquired with an existing charge?",
+          "options": [
+            "No, registration applies only to charges created directly by the company.",
+            "Yes, the provisions apply mutatis mutandis to property acquired subject to a charge.",
+            "Only if approved by the Regional Director.",
+            "No, the previous owner alone remains responsible."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the Companies Act, when a company acquires any property subject to a charge, the registration provisions apply mutatis mutandis as if the company had created the charge itself.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Acquisition of Property",
+            "Mutatis Mutandis",
+            "Section 77"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-6_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-6_04",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-6",
+          "subject": "Law",
+          "prompt": "Assuming Metro Bank's charge was duly registered under Section 77, what is the legal position regarding Mr. X's claim of ignorance?",
+          "options": [
+            "Mr. X's claim is valid because he had no actual knowledge of the charge.",
+            "By virtue of Section 80, registration operates as constructive notice, so Mr. X is deemed to have notice of the charge.",
+            "Metro Bank must compensate Mr. X for his loss.",
+            "The charge becomes void against Mr. X automatically."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 80 provides that registration of a charge constitutes constructive notice to any person who subsequently acquires the property, regardless of whether they had actual notice.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 80",
+            "Constructive Notice",
+            "Subsequent Acquirer"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-6_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-6_04",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-6",
+          "subject": "Law",
+          "prompt": "Who is primarily responsible for filing the particulars of the charge when a company acquires property subject to a charge?",
+          "options": [
+            "The previous owner of the property",
+            "The acquiring company (Pioneer Agro Industries Ltd.)",
+            "Metro Bank exclusively",
+            "The local municipal corporation"
+          ],
+          "answerIndex": 1,
+          "explanation": "The acquiring company bears the primary statutory obligation to register the particulars of the charge within the prescribed time under Section 77/78 rules.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Acquiring Company",
+            "Duty to Register",
+            "Section 77"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-6_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-6_04",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-6",
+          "subject": "Law",
+          "prompt": "If Pioneer Agro Industries Ltd. willfully suppresses material information regarding this charge during registration filings, what penal consequence may the officers face under Section 86(2)?",
+          "options": [
+            "Liability for fraud under Section 447",
+            "A minor warning letter with zero penalty",
+            "Mandatory community service",
+            "Revocation of the company's trademark only"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 86(2) provides that any person who willfully furnishes false/incorrect information or knowingly suppresses material information shall be liable for action under Section 447 (Fraud).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 86(2)",
+            "Suppression of Information",
+            "Section 447"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-6_05",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-6",
+      "subject": "Law",
+      "passage": "Alpha Consumer Goods Ltd. issued debentures secured by a charge on its fixed assets. The company created the charge on 1st March 2026. Due to a clerical error in the company's secretarial department, Form CHG-9 for the debenture charge was not filed within 30 days. The debenture-holders are concerned about their security and priority. The company secretary now seeks to regularize the default using the appropriate legal provisions and forms.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 6,
+        "chapterTitle": "Registration of Charges"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-6_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-6_05",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-6",
+          "subject": "Law",
+          "prompt": "Which specific form is prescribed under the Companies (Registration of Charges) Rules, 2014 for registration of creation or modification of charges relating to debentures?",
+          "options": [
+            "Form CHG-1",
+            "Form CHG-4",
+            "Form CHG-6",
+            "Form CHG-9"
+          ],
+          "answerIndex": 3,
+          "explanation": "Form CHG-9 is specifically prescribed for registration of creation or modification of charges for debentures or rectification thereof.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Form CHG-9",
+            "Debentures",
+            "Rules 2014"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-6_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-6_05",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-6",
+          "subject": "Law",
+          "prompt": "What evidentiary value does the Certificate of Registration of Charge issued by the ROC for this debenture charge hold?",
+          "options": [
+            "It is conclusive evidence that all requirements of Chapter VI as to registration have been complied with.",
+            "It is prima facie evidence which can be easily challenged in any court without proof.",
+            "It has no legal standing unless endorsed by the debenture trustees.",
+            "It is valid only for tax assessment purposes."
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 77(2) explicitly provides that the certificate of registration issued by the Registrar is conclusive evidence that all requirements of Chapter VI with respect to registration have been complied with.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 77(2)",
+            "Certificate of Registration",
+            "Conclusive Evidence"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-6_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-6_05",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-6",
+          "subject": "Law",
+          "prompt": "If Alpha Consumer Goods Ltd. fails to register the debenture charge within the maximum extended period permitted by the ROC, what is the impact on the debenture-holders during company winding up?",
+          "options": [
+            "They retain priority over all other unsecured creditors.",
+            "The charge is void against the liquidator and creditors, ranking them as ordinary unsecured creditors.",
+            "The debentures are converted into equity shares automatically.",
+            "The directors become personally liable to pay the full debenture amount immediately."
+          ],
+          "answerIndex": 1,
+          "explanation": "Non-registration renders the charge void against the liquidator and creditors of the company, meaning the secured debenture-holders lose their priority and rank as unsecured creditors.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Debentures",
+            "Non-Registration Effect",
+            "Winding Up"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-6_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-6_05",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-6",
+          "subject": "Law",
+          "prompt": "Who is entitled to inspect the register of charges and instrument of charges maintained by Alpha Consumer Goods Ltd. under Section 85?",
+          "options": [
+            "Only the debenture trustees",
+            "Any member or creditor free of cost, and any other person on payment of a prescribed fee",
+            "Only the statutory auditors of the company",
+            "The general public without paying any fee under any circumstances"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 85(2) allows inspection of the register of charges and instrument of charges by any member or creditor without fee, and by any other person on payment of the prescribed fee during business hours.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 85(2)",
+            "Inspection",
+            "Members and Creditors"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

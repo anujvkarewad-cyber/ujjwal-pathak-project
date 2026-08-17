@@ -1,0 +1,1373 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "costing-9",
+  "subject": "Costing",
+  "paper": "Paper 4: Cost and Management Accounting",
+  "module": "Module 2",
+  "chapterNumber": 9,
+  "chapterTitle": "Job Costing",
+  "generatedAt": "2026-08-16T14:42:14.430Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_costing-9_001",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "Which of the following industries is most suitable for the application of Job Costing?",
+      "options": [
+        "Cement manufacturing",
+        "Chemical processing",
+        "Interior decorating and furnishing",
+        "Sugar refining"
+      ],
+      "answerIndex": 2,
+      "explanation": "Job costing is used where goods are manufactured or services are rendered against specific customer orders. Interior decorating and furnishing is a job-specific service, whereas cement, chemicals, and sugar are produced by continuous process costing.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Job Costing",
+        "Industry Applicability"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_002",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "What is the primary objective of maintaining a Job Cost Sheet?",
+      "options": [
+        "To determine the total cost and profit or loss for each individual job",
+        "To ascertain the cost per equivalent unit for process valuation",
+        "To calculate the standard variance for material usage",
+        "To determine the process loss during continuous production"
+      ],
+      "answerIndex": 0,
+      "explanation": "A Job Cost Sheet is a document used to accumulate all direct and indirect costs associated with a specific job to determine its total cost and profitability. It is the fundamental record in a job costing system.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Job Cost Sheet",
+        "Cost Accumulation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_003",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "In a job costing system, how are direct materials specifically issued to a particular job accounted for?",
+      "options": [
+        "Charged to Factory Overhead Control Account",
+        "Debited directly to the specific Job Account (WIP)",
+        "Credited to Cost of Sales Account",
+        "Ignored until the job is fully completed and delivered"
+      ],
+      "answerIndex": 1,
+      "explanation": "Direct materials issued for a specific job are traceable directly to that job and are debited to the Work-in-Progress (WIP) Control Account or the specific Job Account.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Direct Material",
+        "Job Costing Entries"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_004",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "When materials are returned from a job to the stores because they were in excess, what is the correct accounting treatment?",
+      "options": [
+        "Debit Job Account and Credit Stores Ledger Control Account",
+        "Debit Stores Ledger Control Account and Credit Job Account",
+        "Debit Factory Overhead Account and Credit Job Account",
+        "Debit Cost of Goods Sold Account and Credit Job Account"
+      ],
+      "answerIndex": 1,
+      "explanation": "When excess material is returned from a job to the stores, the specific Job Account must be credited (to reduce its cost) and the Stores Ledger Control Account is debited.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Material Return",
+        "Accounting Treatment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_005",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "How are indirect expenses incurred for a specific job generally treated in job costing?",
+      "options": [
+        "Debited directly to the Job Account as direct expenses",
+        "Accumulated in overhead pools and absorbed into jobs using a predetermined recovery rate",
+        "Ignored as they do not relate to production",
+        "Debited directly to the customer's personal account"
+      ],
+      "answerIndex": 1,
+      "explanation": "Indirect expenses cannot be conveniently traced to a single job. Therefore, they are accumulated in overhead pools and allocated or absorbed into jobs using a suitable predetermined overhead recovery rate.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Indirect Expenses",
+        "Overhead Absorption"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_006",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "What does a debit balance in the 'Manufacturing Overhead Control Account' at the end of the accounting period indicate?",
+      "options": [
+        "Over-absorption of overheads",
+        "Under-absorption of overheads",
+        "Equal absorption of overheads",
+        "Zero overhead costs incurred"
+      ],
+      "answerIndex": 1,
+      "explanation": "A debit balance in the Manufacturing Overhead Control Account means that the actual overheads incurred (debited) exceed the overheads absorbed into production (credited), representing under-absorption.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Overhead Control",
+        "Under-absorption"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_007",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "If manufacturing overheads are under-absorbed due to normal reasons, what is the recommended treatment under ICAI guidelines?",
+      "options": [
+        "Carried forward to the next accounting period",
+        "Written off entirely to the Costing Profit and Loss Account",
+        "Adjusted through a supplementary overhead rate or written off to Cost of Sales and WIP",
+        "Credited to the Balance Sheet as a current asset"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under- or over-absorption of overheads due to normal reasons should be adjusted by using supplementary rates or written off to Cost of Sales and closing inventories of WIP and Finished Goods proportionately.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Overhead Treatment",
+        "Supplementary Rate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_008",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "Which of the following source documents is primarily used to record the issue of direct materials from stores to a specific job?",
+      "options": [
+        "Goods Received Note",
+        "Material Requisition Note",
+        "Time Ticket",
+        "Job Ticket"
+      ],
+      "answerIndex": 1,
+      "explanation": "A Material Requisition Note is the primary source document authorized by the production planner to issue materials from the storehouse to a specific job or department.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Source Documents",
+        "Material Requisition"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_009",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "In a job costing environment, labor time spent by workers that cannot be identified with any specific job is classified as:",
+      "options": [
+        "Direct labor cost",
+        "Prime cost",
+        "Indirect labor cost",
+        "Abnormal idle time cost"
+      ],
+      "answerIndex": 2,
+      "explanation": "Labor time that cannot be traced directly to a specific job is treated as indirect labor and is charged to manufacturing overhead rather than directly to a job account.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Indirect Labor",
+        "Labor Costing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_010",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "Job Costing is considered a form of:",
+      "options": [
+        "Process costing",
+        "Specific order costing",
+        "Operation costing",
+        "Unit costing"
+      ],
+      "answerIndex": 1,
+      "explanation": "Job costing is a method of specific order costing where costs are ascertained for each specific order, contract, or job that is kept separate.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Costing Methods",
+        "Specific Order Costing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_011",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "A job has been completed, and the total cost accumulated in the Job Cost Sheet is ₹1,25,000. The quoted price includes a profit of 20% on the selling price. What is the selling price of the job?",
+      "options": [
+        "₹1,50,000",
+        "₹1,56,250",
+        "₹1,60,000",
+        "₹1,43,750"
+      ],
+      "answerIndex": 1,
+      "explanation": "If profit is 20% on selling price, it is 25% (20/80) on cost. Cost = ₹1,25,000. Profit = 25% of ₹1,25,000 = ₹31,250. Selling Price = ₹1,25,000 + ₹31,250 = ₹1,56,250.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Job Pricing",
+        "Profit Markup"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_012",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "What is the key distinguishing feature between Job Costing and Batch Costing?",
+      "options": [
+        "Job costing deals with a single batch of identical units, whereas batch costing deals with unique customer orders.",
+        "Job costing relates to unique jobs executed against specific orders, whereas batch costing relates to a lot of identical units treated as a cost unit.",
+        "Batch costing does not use overhead absorption rates, unlike job costing.",
+        "Job costing is used only in continuous flow production."
+      ],
+      "answerIndex": 1,
+      "explanation": "Job costing accumulates costs for a unique job executed to customer specifications, whereas batch costing accumulates costs for a batch or lot of identical items treated as a single cost unit.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Job Costing",
+        "Batch Costing Distinction"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_013",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "If a specialized tool is purchased specifically for a single job and its useful life expires entirely on that job, how should its cost be treated?",
+      "options": [
+        "Capitalized in the machinery account and depreciated over 10 years",
+        "Charged fully as a direct expense of that specific job",
+        "Treated as a general factory overhead",
+        "Ignored for job costing purposes"
+      ],
+      "answerIndex": 1,
+      "explanation": "When a special tool or equipment is purchased solely for a specific job and has no further use after completion, its entire cost is treated as a direct expense of that job.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Direct Expenses",
+        "Special Tools"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_014",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "In job costing, how is the 'Work-in-Progress (WIP) Control Account' verified or reconciled?",
+      "options": [
+        "By comparing it with the sum of balances of all open uncompleted job cost sheets",
+        "By matching it with total cash sales for the period",
+        "By verifying it against total raw material purchases",
+        "By checking factory utility bills"
+      ],
+      "answerIndex": 0,
+      "explanation": "The balance of the Control Account for Work-in-Progress must reconcile with the total of the individual uncompleted job cost sheets at the end of the period.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "WIP Reconciliation",
+        "Control Accounts"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_015",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "Which of the following documents is used to record employee time spent on various jobs?",
+      "options": [
+        "Material Issue Slip",
+        "Time Ticket / Job Card",
+        "Bill of Materials",
+        "Production Schedule"
+      ],
+      "answerIndex": 1,
+      "explanation": "A Time Ticket or Job Card is utilized to record the exact time spent by a worker on different jobs, enabling direct labor costs to be allocated accurately.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Time Ticket",
+        "Labor Costing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_016",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "If overhead is absorbed as a percentage of direct wages, and direct wages for Job A amount to ₹40,000 with an overhead recovery rate of 75% of direct wages, the overhead absorbed is:",
+      "options": [
+        "₹30,000",
+        "₹40,000",
+        "₹53,333",
+        "₹25,000"
+      ],
+      "answerIndex": 0,
+      "explanation": "Overhead absorbed = Direct Wages * Recovery Rate = ₹40,000 * 75% = ₹30,000.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Overhead Absorption",
+        "Wage Percentage Rate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_017",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "When a job is completed, what is the journal entry passed to transfer the cost from Work-in-Progress to Finished Goods?",
+      "options": [
+        "Debit WIP Control A/c, Credit Finished Goods Control A/c",
+        "Debit Finished Goods Control A/c, Credit WIP Control A/c",
+        "Debit Cost of Sales A/c, Credit Finished Goods Control A/c",
+        "Debit Finished Goods Control A/c, Credit Cost of Sales A/c"
+      ],
+      "answerIndex": 1,
+      "explanation": "Upon completion, completed goods are transferred out of WIP into Finished Goods. The entry is: Debit Finished Goods Control Account and Credit Work-in-Progress Control Account.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Journal Entries",
+        "Finished Goods Transfer"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_018",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "Under the job costing system, scrap generated during the execution of a job that has a nominal realizable value should ideally be treated as:",
+      "options": [
+        "An addition to the cost of the job",
+        "A credit to the specific Job Account to reduce its net cost",
+        "Income to be credited to the general Profit and Loss Account only",
+        "An abnormal loss to be absorbed by the management"
+      ],
+      "answerIndex": 1,
+      "explanation": "If scrap arises directly from a specific job and can be identified with it, the realizable value of the scrap should be credited to that job account to reduce its net cost.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Scrap Accounting",
+        "Job Cost Reduction"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_019",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "A company applies manufacturing overheads on the basis of machine hours. Total budgeted overheads are ₹5,00,000 and total budgeted machine hours are 25,000 hours. If Job X utilized 1,200 machine hours, the overhead absorbed by Job X is:",
+      "options": [
+        "₹20,000",
+        "₹24,000",
+        "₹2,40,000",
+        "₹60,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Machine hour rate = ₹5,00,000 / 25,000 hours = ₹20 per hour. Overhead absorbed for Job X = 1,200 hours * ₹20 = ₹24,000.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Machine Hour Rate",
+        "Overhead Absorption"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_020",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "Which of the following costing methods is a specialized extension of job costing used specifically for construction and long-term engineering projects?",
+      "options": [
+        "Batch Costing",
+        "Contract Costing",
+        "Operation Costing",
+        "Process Costing"
+      ],
+      "answerIndex": 1,
+      "explanation": "Contract costing is a form of specific order costing (job costing) applied to large, long-term construction or engineering projects lasting over more than one accounting period.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Contract Costing",
+        "Job Costing Extension"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_021",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "In job costing, if an abnormal loss occurs during the processing of a particular job due to machine breakdown negligence, how should this loss be treated?",
+      "options": [
+        "Added to the cost of the job to maintain profitability",
+        "Charged directly to the Costing Profit and Loss Account",
+        "Absorbed through standard overhead recovery rates",
+        "Capitalized as part of machinery cost"
+      ],
+      "answerIndex": 1,
+      "explanation": "Abnormal losses are controllable and should not be charged to production or job accounts. They are charged directly to the Costing Profit and Loss Account so as not to distort job costs.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Abnormal Loss",
+        "Cost Treatment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_022",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "What does a 'Bill of Materials' specify in a manufacturing environment using job costing?",
+      "options": [
+        "The hourly wage rate of workers assigned to a job",
+        "A complete list of raw materials, parts, and quantities required to manufacture a specific job",
+        "The total overhead expenses incurred in a department",
+        "The invoice sent to the customer upon job completion"
+      ],
+      "answerIndex": 1,
+      "explanation": "A Bill of Materials is a comprehensive schedule or document prepared by the engineering department listing all materials and components needed for a specific job or product.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Bill of Materials",
+        "Source Documents"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_023",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "If a company has multiple production departments, what is the best practice for absorbing overheads into jobs?",
+      "options": [
+        "Using a single factory-wide overhead recovery rate for all jobs",
+        "Using separate departmental overhead recovery rates reflecting departmental resource usage",
+        "Ignoring departmental boundaries and charging overheads equally",
+        "Charging overheads purely based on sales value"
+      ],
+      "answerIndex": 1,
+      "explanation": "Using separate departmental overhead recovery rates ensures accuracy, as different jobs may spend varying amounts of time in departments with different cost structures.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Departmental Rates",
+        "Overhead Absorption"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_024",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "Job No. 707 incurred direct materials of ₹60,000 and direct wages of ₹40,000. Overheads are absorbed at 50% of prime cost. What is the total cost of Job No. 707?",
+      "options": [
+        "₹1,00,000",
+        "₹1,50,000",
+        "₹1,20,000",
+        "₹1,30,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Prime Cost = Direct Materials (₹60,000) + Direct Wages (₹40,000) = ₹1,00,000. Overheads = 50% of Prime Cost = ₹50,000. Total Cost = ₹1,00,000 + ₹50,000 = ₹1,50,000.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Prime Cost",
+        "Job Cost Sheet Calculation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_025",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "When estimating the price of a new job, why must estimated overheads be used instead of actual overheads?",
+      "options": [
+        "Actual overheads are illegal to use in job pricing",
+        "Actual overheads are only known at the end of the accounting period, whereas quotes are required before job execution",
+        "Estimated overheads are always lower than actual overheads",
+        "Clients mandate the use of estimated figures by law"
+      ],
+      "answerIndex": 1,
+      "explanation": "Quotations for jobs must be provided in advance. Since actual overheads can only be determined after the period ends, predetermined estimated overhead rates must be used.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Job Quotation",
+        "Predetermined Overheads"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_026",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "In an automated factory setting where job costing is applied, which base is most appropriate for absorbing manufacturing overheads?",
+      "options": [
+        "Direct labor hours",
+        "Machine hours",
+        "Direct material cost",
+        "Prime cost percentage"
+      ],
+      "answerIndex": 1,
+      "explanation": "In highly automated environments, overhead costs are driven by machine operations rather than labor. Therefore, machine hours provide a more equitable basis for overhead absorption.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Automation",
+        "Machine Hour Rate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_027",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "How are administrative overheads related to general corporate management typically treated in job costing?",
+      "options": [
+        "Added directly as prime cost to every job",
+        "Charged to production overhead control account",
+        "Excluded from job cost sheets unless they relate specifically to production administration or customer orders",
+        "Added directly to WIP control account"
+      ],
+      "answerIndex": 2,
+      "explanation": "General administrative overheads relate to overall corporate management and are generally excluded from job cost sheets or treated as period costs, unless specific policy requires absorbing production-related administrative overheads.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Administrative Overheads",
+        "Period Costs"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_028",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "A job cost card shows direct material of ₹12,000, direct wages of ₹8,000, and direct expenses of ₹2,000. If administrative overhead is recovered at 10% of factory cost and factory cost is prime cost plus factory overhead (factory overhead being 50% of direct wages), what is the factory cost?",
+      "options": [
+        "₹22,000",
+        "₹26,000",
+        "₹24,000",
+        "₹28,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Prime Cost = ₹12,000 + ₹8,000 + ₹2,000 = ₹22,000. Factory Overhead = 50% of Direct Wages (₹8,000) = ₹4,000. Factory Cost = Prime Cost + Factory Overhead = ₹22,000 + ₹4,000 = ₹26,000.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Factory Cost",
+        "Cost Sheet Sequence"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_029",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "What is the primary risk of using an outdated predetermined overhead recovery rate in job costing?",
+      "options": [
+        "Excessive generation of direct material scrap",
+        "Gross under-absorption or over-absorption of overheads leading to distorted job costs and incorrect pricing",
+        "Violation of income tax filing deadlines",
+        "Immediate failure of the company's computer network"
+      ],
+      "answerIndex": 1,
+      "explanation": "If overhead rates are outdated, they fail to reflect current cost structures, resulting in significant under- or over-absorption, which distorts job profitability and pricing decisions.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Overhead Rates",
+        "Distortion Risk"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-9_030",
+      "kind": "normal",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "prompt": "Under a standard job costing system, what is the key difference from a historical job costing system?",
+      "options": [
+        "Standard job costing uses predetermined standard costs for materials, labor, and overheads, whereas historical job costing uses actual costs incurred.",
+        "Historical job costing does not record direct materials.",
+        "Standard job costing cannot be applied to custom orders.",
+        "Historical job costing eliminates the need for a job cost sheet."
+      ],
+      "answerIndex": 0,
+      "explanation": "Standard job costing incorporates predetermined standard costs for evaluation and variance analysis, whereas historical job costing relies entirely on actual costs recorded as they occur.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Standard Job Costing",
+        "Historical Costing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_costing-9_01",
+      "kind": "scenario",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "passage": "Precision Engineering Works operates a job costing system. For Job Alpha, the company issued direct materials worth ₹80,000 from stores and returned ₹5,000 worth of surplus materials back to stores. Direct labor hours worked on the job were 1,500 hours at an hourly rate of ₹40 per hour. Direct expenses specifically incurred for Job Alpha amounted to ₹12,000. Manufacturing overheads are absorbed at the rate of ₹25 per direct labor hour. Administrative overheads are recovered at 10% of factory cost.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-9_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-9_01",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-9",
+          "subject": "Costing",
+          "prompt": "What is the net direct material cost charged to Job Alpha?",
+          "options": [
+            "₹80,000",
+            "₹75,000",
+            "₹85,000",
+            "₹70,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Net direct material cost is calculated as materials issued (₹80,000) minus materials returned (₹5,000), which equals ₹75,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Net Direct Material",
+            "Job Costing Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-9_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-9_01",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-9",
+          "subject": "Costing",
+          "prompt": "What is the Prime Cost of Job Alpha?",
+          "options": [
+            "₹1,35,000",
+            "₹1,47,000",
+            "₹1,27,000",
+            "₹1,52,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Direct Materials (₹75,000) + Direct Labor (1,500 hrs * ₹40 = ₹60,000) + Direct Expenses (₹12,000) = Prime Cost of ₹1,47,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Prime Cost",
+            "Job Cost Sheet"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-9_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-9_01",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-9",
+          "subject": "Costing",
+          "prompt": "What is the Factory Cost of Job Alpha?",
+          "options": [
+            "₹1,47,000",
+            "₹1,62,000",
+            "₹1,84,500",
+            "₹1,74,500"
+          ],
+          "answerIndex": 2,
+          "explanation": "Prime Cost (₹1,47,000) + Manufacturing Overhead (1,500 hrs * ₹25 = ₹37,500) = Factory Cost of ₹1,84,500.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Factory Cost",
+            "Overhead Absorption"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-9_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-9_01",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-9",
+          "subject": "Costing",
+          "prompt": "If the company adds a profit margin of 20% on the total cost (including administrative overhead), what is the quoted selling price of Job Alpha?",
+          "options": [
+            "₹2,12,085",
+            "₹2,43,540",
+            "₹2,22,825",
+            "₹2,02,950"
+          ],
+          "answerIndex": 1,
+          "explanation": "Factory Cost = ₹1,84,500. Admin Overhead = 10% of ₹1,84,500 = ₹18,450. Total Cost = ₹1,84,500 + ₹18,450 = ₹2,02,950. Profit = 20% of ₹2,02,950 = ₹40,590. Selling Price = ₹2,02,950 + ₹40,590 = ₹2,43,540.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Total Cost",
+            "Selling Price Quotation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-9_02",
+      "kind": "scenario",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "passage": "Beta Fabricators undertakes custom metal fabrication jobs. During the month of August, Job Beta-5 was initiated. Direct materials requisitioned amounted to ₹1,50,000. Workers spent 2,000 hours on the job, paid at ₹50 per hour. Machine hours utilized for the job totaled 800 hours. The company absorbs manufacturing overheads using a machine hour rate of ₹150 per machine hour. Selling and distribution overheads are recovered at 15% of factory cost.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-9_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-9_02",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-9",
+          "subject": "Costing",
+          "prompt": "What is the direct labor cost for Job Beta-5?",
+          "options": [
+            "₹80,000",
+            "₹1,00,000",
+            "₹1,20,000",
+            "₹1,50,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Direct labor cost = Labor hours (2,000 hrs) * Wage rate (₹50/hr) = ₹1,00,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Direct Labor",
+            "Cost Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-9_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-9_02",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-9",
+          "subject": "Costing",
+          "prompt": "What is the manufacturing overhead absorbed by Job Beta-5?",
+          "options": [
+            "₹1,20,000",
+            "₹3,00,000",
+            "₹1,00,000",
+            "₹1,50,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Manufacturing overhead absorbed = Machine hours (800 hrs) * Machine hour rate (₹150/hr) = ₹1,20,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Manufacturing Overhead",
+            "Machine Hour Rate"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-9_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-9_02",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-9",
+          "subject": "Costing",
+          "prompt": "What is the total Factory Cost for Job Beta-5?",
+          "options": [
+            "₹2,50,000",
+            "₹3,70,000",
+            "₹3,50,000",
+            "₹4,00,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Prime Cost = Materials (₹1,50,000) + Labor (₹1,00,000) = ₹2,50,000. Factory Cost = Prime Cost (₹2,50,000) + Manufacturing Overhead (₹1,20,000) = ₹3,70,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Factory Cost",
+            "Job Cost Sheet"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-9_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-9_02",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-9",
+          "subject": "Costing",
+          "prompt": "What is the Cost of Sales for Job Beta-5 after including selling and distribution overheads?",
+          "options": [
+            "₹4,25,500",
+            "₹3,95,500",
+            "₹4,05,500",
+            "₹5,00,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Factory Cost = ₹3,70,000. Selling and distribution overhead = 15% of ₹3,70,000 = ₹55,500. Total Cost / Cost of Sales = ₹3,70,000 + ₹55,500 = ₹4,25,500.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Cost of Sales",
+            "Selling Overheads"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-9_03",
+      "kind": "scenario",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "passage": "Gamma Printers executes specialized printing jobs. For Job Delta, the material cost was ₹45,000 and direct wages amounted to ₹30,000. Variable overheads are absorbed at 40% of direct wages, and fixed overheads are absorbed at ₹20 per direct labor hour. Total direct labor hours worked were 600 hours. The company desires a 25% profit margin on the total cost.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-9_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-9_03",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-9",
+          "subject": "Costing",
+          "prompt": "What is the variable overhead amount absorbed by Job Delta?",
+          "options": [
+            "₹10,000",
+            "₹12,000",
+            "₹15,000",
+            "₹18,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Variable overhead = 40% of Direct Wages (₹30,000) = ₹12,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Variable Overhead",
+            "Job Costing"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-9_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-9_03",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-9",
+          "subject": "Costing",
+          "prompt": "What is the fixed overhead amount absorbed by Job Delta?",
+          "options": [
+            "₹10,000",
+            "₹15,000",
+            "₹12,000",
+            "₹20,000"
+          ],
+          "answerIndex": 2,
+          "explanation": "Fixed overhead = Direct labor hours (600 hrs) * Fixed rate per hour (₹20) = ₹12,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Fixed Overhead",
+            "Labor Hours"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-9_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-9_03",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-9",
+          "subject": "Costing",
+          "prompt": "What is the total cost of Job Delta?",
+          "options": [
+            "₹99,000",
+            "₹90,000",
+            "₹1,05,000",
+            "₹95,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Direct Materials (₹45,000) + Direct Wages (₹30,000) + Variable Overhead (₹12,000) + Fixed Overhead (₹12,000) = ₹99,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Total Cost",
+            "Cost Sheet"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-9_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-9_03",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-9",
+          "subject": "Costing",
+          "prompt": "What is the selling price of Job Delta based on the desired profit margin?",
+          "options": [
+            "₹1,15,000",
+            "₹1,23,750",
+            "₹1,20,000",
+            "₹1,28,500"
+          ],
+          "answerIndex": 1,
+          "explanation": "Total Cost = ₹99,000. Profit = 25% of ₹99,000 = ₹24,750. Selling Price = ₹99,000 + ₹24,750 = ₹1,23,750.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Selling Price",
+            "Profit Margin"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-9_04",
+      "kind": "scenario",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "passage": "Delta Constructions & Engineering undertakes bespoke fabrication contracts. Job Omega incurred direct materials of ₹2,00,000 and direct wages of ₹1,20,000. A special jig was purchased specifically for Job Omega at ₹25,000 and had no residual value post-completion. Production overheads are absorbed at 50% of direct wages. Office and administrative overheads are charged at 10% of factory cost.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-9_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-9_04",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-9",
+          "subject": "Costing",
+          "prompt": "How should the cost of the special jig be treated in Job Omega's cost sheet?",
+          "options": [
+            "Capitalized in office equipment account",
+            "Treated as a direct expense and added to prime cost",
+            "Treated as part of general office overheads",
+            "Ignored in job cost calculation"
+          ],
+          "answerIndex": 1,
+          "explanation": "A special jig purchased solely for a specific job and exhausted during its execution is treated as a direct expense and added directly to prime cost.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Direct Expenses",
+            "Special Jig"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-9_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-9_04",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-9",
+          "subject": "Costing",
+          "prompt": "What is the Prime Cost of Job Omega?",
+          "options": [
+            "₹3,20,000",
+            "₹3,45,000",
+            "₹3,25,000",
+            "₹3,50,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Prime Cost = Direct Materials (₹2,00,000) + Direct Wages (₹1,20,000) + Direct Expenses / Special Jig (₹25,000) = ₹3,45,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Prime Cost",
+            "Job Cost Sheet"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-9_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-9_04",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-9",
+          "subject": "Costing",
+          "prompt": "What is the Factory Cost of Job Omega?",
+          "options": [
+            "₹3,85,000",
+            "₹4,05,000",
+            "₹4,15,000",
+            "₹3,95,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Prime Cost (₹3,45,000) + Production Overhead (50% of ₹1,20,000 = ₹60,000) = Factory Cost of ₹4,05,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Factory Cost",
+            "Production Overhead"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-9_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-9_04",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-9",
+          "subject": "Costing",
+          "prompt": "What is the Total Cost of Job Omega after factoring in office and administrative overheads?",
+          "options": [
+            "₹4,45,500",
+            "₹4,55,500",
+            "₹4,35,000",
+            "₹4,60,500"
+          ],
+          "answerIndex": 0,
+          "explanation": "Factory Cost = ₹4,05,000. Administrative overhead = 10% of ₹4,05,000 = ₹40,500. Total Cost = ₹4,05,000 + ₹40,500 = ₹4,45,500.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Total Cost",
+            "Administrative Overheads"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-9_05",
+      "kind": "scenario",
+      "chapterId": "costing-9",
+      "subject": "Costing",
+      "passage": "Omega Industrial units maintains a job order costing system. For Job Sigma, the direct material cost is ₹3,00,000 and direct labor cost is ₹1,80,000. Overheads are applied based on direct labor cost at a rate of 60%. Actual overheads incurred by the factory during the period totaled ₹1,20,000, whereas total overheads absorbed across all jobs amounted to ₹1,10,000.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Job Costing"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-9_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-9_05",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-9",
+          "subject": "Costing",
+          "prompt": "What is the total absorbed overhead for Job Sigma?",
+          "options": [
+            "₹90,000",
+            "₹1,08,000",
+            "₹1,20,000",
+            "₹72,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Overhead absorbed for Job Sigma = 60% of Direct Labor Cost (₹1,80,000) = ₹1,08,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Overhead Absorption",
+            "Job Sigma"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-9_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-9_05",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-9",
+          "subject": "Costing",
+          "prompt": "What is the total cost recorded for Job Sigma?",
+          "options": [
+            "₹5,70,000",
+            "₹5,88,000",
+            "₹6,00,000",
+            "₹5,50,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Total Cost = Direct Materials (₹3,00,000) + Direct Labor (₹1,80,000) + Absorbed Overheads (₹1,08,000) = ₹5,88,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Total Cost",
+            "Job Cost Sheet"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-9_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-9_05",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-9",
+          "subject": "Costing",
+          "prompt": "What is the status of overhead absorption for the factory as a whole based on the given data?",
+          "options": [
+            "Over-absorbed by ₹10,000",
+            "Under-absorbed by ₹10,000",
+            "Fully absorbed with zero variance",
+            "Under-absorbed by ₹20,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Actual Overhead (₹1,20,000) minus Absorbed Overhead (₹1,10,000) results in an under-absorption of ₹10,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Under-absorption",
+            "Overhead Variance"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-9_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-9_05",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-9",
+          "subject": "Costing",
+          "prompt": "If the under-absorbed overhead is considered normal, how is it treated at the end of the accounting period?",
+          "options": [
+            "Carried forward indefinitely as an intangible asset",
+            "Adjusted through supplementary rate or written off to Cost of Sales and inventories",
+            "Credited directly to the owners' equity account",
+            "Ignored as an immaterial variance"
+          ],
+          "answerIndex": 1,
+          "explanation": "Normal under-absorption of overhead is disposed of by writing off to Cost of Sales and closing inventories proportionately or by using a supplementary overhead recovery rate.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Under-absorption Treatment",
+            "Accounting Standard"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

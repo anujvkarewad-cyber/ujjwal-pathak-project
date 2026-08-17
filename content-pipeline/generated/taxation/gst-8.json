@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "gst-8",
+  "subject": "Taxation",
+  "paper": "Paper 3: Taxation",
+  "module": "Module 2",
+  "chapterNumber": 8,
+  "chapterTitle": "Input Tax Credit",
+  "generatedAt": "2026-08-16T14:30:32.490Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_gst-8_001",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "Which of the following conditions is NOT mandatory for a registered person to avail Input Tax Credit (ITC) under Section 16(2) of the CGST Act, 2017?",
+      "options": [
+        "Possession of a tax invoice or debit note issued by a registered supplier",
+        "Receipt of goods or services or both",
+        "Filing of the annual return by the recipient for the relevant financial year",
+        "Furnishing of the return under Section 39 by the registered person"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 16(2) prescribes four primary conditions for claiming ITC: possession of tax invoice/debit note, receipt of goods/services, tax charged has been paid to the government, and furnishing of the return under Section 39. Filing of the annual return is not a pre-condition for availing ITC during the financial year.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 16(2)",
+        "Conditions for ITC",
+        "Eligibility"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_002",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "M/s. ABC Ltd. purchased machinery worth Rs. 10,00,000 (exclusive of GST at 18%) for factory use. The company capitalized the full invoice value including the GST component of Rs. 1,80,000 in its books of accounts and claimed depreciation on the total capitalized amount under the Income-tax Act, 1961. What is the correct position regarding ITC on this machinery?",
+      "options": [
+        "ITC can be claimed fully along with depreciation on the GST component",
+        "ITC cannot be claimed on the GST component since depreciation has been claimed on it under the Income-tax Act",
+        "ITC can be claimed up to 50% of the GST amount and depreciation on the remaining 50%",
+        "ITC can be claimed by reversing the depreciation subsequently within 30 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per the proviso to Section 16(3) of the CGST Act, 2017, if the registered person has claimed depreciation on the tax component of the cost of capital goods and plant and machinery under the Income-tax Act, 1961, the input tax on the said component shall not be allowed as ITC.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 16(3)",
+        "Capital Goods",
+        "Depreciation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_003",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "What is the time limit for availing Input Tax Credit under Section 16(4) of the CGST Act, 2017 for any invoice or debit note relating to a financial year?",
+      "options": [
+        "Due date of filing return for the month of September of the subsequent financial year",
+        "Actual date of filing of the annual return for the relevant financial year or 30th November of the subsequent financial year, whichever is earlier",
+        "31st December of the subsequent financial year",
+        "Actual date of filing of the annual return for the relevant financial year or 30th November of the subsequent financial year, whichever is later"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 16(4) mandates that ITC pertaining to any invoice or debit note can be availed up to the earlier of: (i) the thirtieth day of November following the end of financial year to which such invoice/debit note relates, or (ii) the date of furnishing of the relevant annual return.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 16(4)",
+        "Time Limit",
+        "ITC Availment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_004",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "An invoice was issued by a supplier on 15th October 2024 for FY 2024-25. Due to an oversight, the recipient did not claim the ITC in time. What is the maximum date up to which the recipient can avail ITC on this invoice, assuming the annual return for FY 2024-25 is filed on 31st December 2025?",
+      "options": [
+        "30th November 2025",
+        "31st December 2025",
+        "15th October 2025",
+        "30th September 2025"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per Section 16(4), the time limit is the earlier of 30th November of the subsequent financial year (30th November 2025) or the date of filing the annual return (31st December 2025). Thus, 30th November 2025 is the correct date.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 16(4)",
+        "Time Limit",
+        "Invoice Date"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_005",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "When goods are received in lots or installments by a registered person, when can the Input Tax Credit be claimed against the tax invoice?",
+      "options": [
+        "When the first installment of goods is received",
+        "When the last lot or installment of the goods is received",
+        "Proportionately as and when each lot or installment is received",
+        "Only after the invoice is fully paid within 180 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per the second proviso to Section 16(2), where the goods against an invoice are received in lots or installments, the registered person shall be entitled to take input tax credit upon the receipt of the last lot or installment.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 16(2)",
+        "Goods in Lots",
+        "Proviso"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_006",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "If a recipient fails to pay to the supplier the value of goods or services along with the tax payable thereon within what period from the date of issue of invoice, an amount equal to the ITC availed is required to be added to output tax liability along with interest?",
+      "options": [
+        "90 days",
+        "180 days",
+        "270 days",
+        "365 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per the second proviso to Section 16(2), if the recipient fails to pay the value of supply plus tax within 180 days from the date of issue of invoice, an amount equal to the ITC availed shall be added to their output tax liability, along with applicable interest.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 16(2)",
+        "Non-payment",
+        "180 Days Rule"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_007",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "Which of the following inward supplies is NOT blocked under Section 17(5) of the CGST Act, 2017?",
+      "options": [
+        "Motor vehicles for transportation of persons having approved seating capacity of not more than 13 persons (including driver), used for general business travel",
+        "Food and beverages, outdoor catering, beauty treatment, health services, except where outward taxable supply is of the same category",
+        "Goods or services used for personal consumption",
+        "Motor vehicles used for transportation of goods"
+      ],
+      "answerIndex": 3,
+      "explanation": "Under Section 17(5), motor vehicles for transportation of goods are explicitly excluded from the blocked credit category, meaning ITC is available on them. The other three options represent blocked credits under Section 17(5).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 17(5)",
+        "Blocked Credit",
+        "Motor Vehicles"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_008",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "Under Section 17(5), ITC is available on motor vehicles having a seating capacity of not more than 13 persons (including driver) when they are used for which of the following specified purposes?",
+      "options": [
+        "Transportation of employees to and from workplace as a statutory obligation",
+        "Further supply of such vehicles, or transportation of passengers, or imparting training on driving such vehicles",
+        "General conveyance of the Managing Director for business meetings",
+        "Leasing or renting of vehicles for employee recreation trips"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 17(5)(a) blocks ITC on motor vehicles for transportation of persons <= 13 capacity, except when they are used for making taxable supplies of: (i) further supply of such vehicles; (ii) transportation of passengers; or (iii) imparting training on driving such vehicles.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 17(5)",
+        "Blocked Credit",
+        "Exceptions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_009",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "Rule 42 of the CGST Rules, 2017 deals with the reversal of Input Tax Credit in respect of inputs and input services used for which type of supplies?",
+      "options": [
+        "Exclusively taxable supplies",
+        "Exclusively exempt supplies",
+        "Both effected for business purposes and non-business/personal purposes, or partly for taxable and partly for exempt supplies",
+        "Capital goods used for both taxable and exempt supplies"
+      ],
+      "answerIndex": 2,
+      "explanation": "Rule 42 of the CGST Rules, 2017 prescribes the manner of determination of eligible input tax credit in respect of inputs or input services and reversal thereof when used partly for business/non-business or partly for taxable/exempt supplies. Rule 43 deals with capital goods.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Rule 42",
+        "Reversal",
+        "Common ITC"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_010",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "What is the useful life in quarters considered for calculation of reversal of ITC on capital goods used commonly for taxable and exempt supplies under Rule 43 of the CGST Rules, 2017?",
+      "options": [
+        "20 quarters (5 years)",
+        "60 quarters (15 years)",
+        "10 quarters (2.5 years)",
+        "36 quarters (9 years)"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Rule 43 of the CGST Rules, 2017, the useful life of any capital goods is taken as 5 years from the date of invoice, which equates to 20 quarters. The common ITC attributable to exempt supplies is calculated on a quarterly pro-rata basis over this period.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rule 43",
+        "Capital Goods",
+        "Useful Life"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_011",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "When a registered person switches from the regular scheme to the Composition Scheme under Section 10, how must they treat the ITC lying in their electronic credit ledger on the day immediately preceding the date of switch?",
+      "options": [
+        "They can carry forward and utilize the credit against future composition tax liability",
+        "They must pay an amount equivalent to the credit of input tax in respect of inputs held in stock and inputs contained in semi-finished or finished goods held in stock, and capital goods, by debiting electronic credit or cash ledger",
+        "The credit automatically lapses and cannot be adjusted",
+        "They can claim a full cash refund of the balance from the department"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 18(4) read with Rule 44, a registered person opting for composition levy must pay an amount equal to the ITC in respect of inputs in stock, semi-finished/finished goods in stock, and capital goods, computed as prescribed, which results in reversal/payment.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 18(4)",
+        "Composition Scheme",
+        "Stock Reversal"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_012",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "Mr. X, an unregistered person, gets registered voluntarily under Section 25(3) on 15th August. What is his entitlement regarding ITC on inputs held in stock on the day immediately preceding the date of grant of registration?",
+      "options": [
+        "He is eligible to claim ITC on inputs held in stock and inputs contained in semi-finished or finished goods held in stock on the day preceding registration",
+        "He is eligible to claim ITC on all capital goods and inputs held in stock for the past 2 years",
+        "He is not eligible for any ITC on prior stock since registration is voluntary",
+        "He can claim ITC only if the stock was purchased within 30 days prior to registration"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 18(1)(a), a person who applies for registration within 30 days of becoming liable to register, or voluntarily under Section 25(3), is entitled to take credit of input tax in respect of inputs held in stock and inputs contained in semi-finished or finished goods held in stock on the day immediately preceding the date of grant of registration.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 18(1)(a)",
+        "Voluntary Registration",
+        "Stock ITC"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_013",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "What is the time limit for issuing the declaration in Form GST ITC-01 by a person who has become liable to register and seeks to claim ITC on inputs held in stock under Section 18(1)?",
+      "options": [
+        "Within 30 days from the date of becoming liable to register",
+        "Within 30 days from the date of grant of registration",
+        "Within 90 days from the date of filing the registration application",
+        "Within the due date of filing the annual return"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 40(1)(a) requires any person who takes ITC under Section 18(1)(a) or (b) to make a declaration in FORM GST ITC-01 within 30 days from the date of becoming registered (i.e., grant of registration).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 18(1)",
+        "Form GST ITC-01",
+        "Rule 40"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_014",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "If a registered person transfers their business consequent to change in ownership (like amalgamation or merger), how is the unutilized ITC in the electronic credit ledger transferred to the new entity?",
+      "options": [
+        "It lapses completely and cannot be transferred",
+        "It is transferred using Form GST ITC-02, provided the scheme of merger/amalgamation has specific provisions for transfer of liabilities",
+        "It can be transferred only with the written permission of the jurisdictional Commissioner",
+        "It is transferred via Form GST ITC-01"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 18(3) read with Rule 41, in case of amalgamation, merger, demerger, or change in ownership, the unutilized ITC can be transferred to the transferee entity using Form GST ITC-02, provided the restructuring specifics include liabilities.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 18(3)",
+        "Form GST ITC-02",
+        "Business Reorganization"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_015",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "Which of the following is treated as 'exempt supply' for the purpose of reversal of ITC under Rule 42 and Rule 43?",
+      "options": [
+        "Supply of goods or services or both which attracts zero rate of tax",
+        "Supply of goods or services or both which are chargeable to nil rate of tax and non-taxable supplies, including transactions of private securities or sale of land/building (where specified)",
+        "Only supplies made to SEZ units",
+        "Export of goods under bond without payment of IGST"
+      ],
+      "answerIndex": 1,
+      "explanation": "Explanation to Chapter V (Rules 42 and 43) clarifies that 'exempt supply' includes supply of any goods or services or both which attracts nil rate of tax or which may be wholly exempt from tax, and includes non-taxable supply. However, export of goods/services and supplies to SEZ are not treated as exempt supplies for this reversal.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rule 42",
+        "Exempt Supply Definition",
+        "Reversal"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_016",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "Can a registered person claim Input Tax Credit on goods or services used for constructing an immovable property (other than plant and machinery) on their own account, even if such property is used in the course or furtherance of business?",
+      "options": [
+        "Yes, full ITC is available since it is used for business",
+        "No, ITC is blocked under Section 17(5)(c) and (d) except in the case of plant and machinery",
+        "Yes, ITC is available up to 50%",
+        "No, ITC is blocked unless capitalization is avoided"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 17(5)(c) and (d), ITC is blocked on works contract services and goods/services received by a taxable person for construction of an immovable property on their own account, other than plant and machinery, even if used in the course or furtherance of business.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 17(5)",
+        "Construction",
+        "Immovable Property"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_017",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "What happens to the ITC availed on inputs that are subsequently written off or disposed of by way of gift or free samples?",
+      "options": [
+        "It can be retained without any reversal",
+        "It must be reversed under Section 17(5)(h)",
+        "It must be claimed as an additional business expense under Income-tax Act",
+        "It is treated as outward taxable supply and tax is paid at market value"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 17(5)(h) explicitly blocks ITC in respect of goods lost, stolen, destroyed, written off or disposed of by way of gift or free samples. Therefore, any ITC availed on such goods must be reversed.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 17(5)",
+        "Gifts and Samples",
+        "Write-off"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_018",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "According to Rule 36(4) of the CGST Rules, 2017, Input Tax Credit to be availed by a registered person in respect of invoices/debit notes not reported by suppliers in their GSTR-1/IFF can be availed up to what limit?",
+      "options": [
+        "Up to 5% of the eligible credit available in respect of reported invoices",
+        "Up to 10% of the eligible credit available",
+        "Zero percent (ITC can be availed only to the extent details are communicated in GSTR-2B/GSTR-1)",
+        "Up to 20% of the eligible credit available"
+      ],
+      "answerIndex": 2,
+      "explanation": "Rule 36(4) was amended to state that no ITC can be availed by a registered person in respect of invoices/debit notes unless the details of such invoices/debit notes have been furnished by the supplier in GSTR-1/IFF and communicated to the recipient in GSTR-2B. The earlier 20% and 5% conditional buffers are no longer applicable.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rule 36(4)",
+        "GSTR-2B",
+        "Matching"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_019",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "Which of the following persons is eligible to claim ITC under GST?",
+      "options": [
+        "A person paying tax under the Composition Levy under Section 10",
+        "A non-resident taxable person for all inward supplies",
+        "A registered person making taxable supplies including zero-rated supplies",
+        "A person exclusively engaged in supplying goods/services that are wholly exempt from tax"
+      ],
+      "answerIndex": 2,
+      "explanation": "Only registered persons making taxable supplies (including zero-rated supplies) are eligible to claim ITC under Section 16(1). Composition dealers, exempt suppliers, and non-resident taxable persons (except on imported goods) cannot claim regular ITC.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 16(1)",
+        "Eligibility",
+        "Registered Person"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_020",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "When capital goods on which ITC has been availed are subsequently sold or supplied by a registered person, how is the tax payable on such disposal calculated?",
+      "options": [
+        "GST is payable on the full transaction value",
+        "GST is payable on the higher of: (a) tax on the transaction value, or (b) tax on the ITC availed on such capital goods reduced by prescribed percentage points per quarter, whichever is higher",
+        "GST is exempted on second-hand capital goods",
+        "GST is payable only on the book value as per balance sheet"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per the proviso to Rule 40(2) / Section 18(6), where capital goods on which ITC has been taken are supplied, the registered person shall pay an amount equal to the ITC taken reduced by 5 percentage points per quarter from the date of invoice, or the tax on transaction value, whichever is higher.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 18(6)",
+        "Capital Goods Sale",
+        "Rule 40"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_021",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "Can a principal claim ITC on inputs sent directly to a job worker's premises without the goods first coming to the principal's business premises?",
+      "options": [
+        "No, goods must first be received at the principal's factory before being sent to a job worker",
+        "Yes, provided the principal receives the goods back within 1 year for inputs and 3 years for capital goods",
+        "Yes, the principal can take ITC upon receipt of goods by the job worker, provided other conditions are met",
+        "No, ITC is blocked when goods are delivered to third party locations"
+      ],
+      "answerIndex": 2,
+      "explanation": "As per the first proviso to Section 16(2)(b), for the purpose of claiming ITC, goods delivered by the supplier to a recipient's job worker on the direction of the registered person shall be deemed to have been received by the registered person.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 16(2)",
+        "Job Work",
+        "Direct Delivery"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_022",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "What is the maximum time period within which inputs sent to a job worker must be brought back to the principal's place of business to avoid being treated as a deemed supply?",
+      "options": [
+        "1 year from the date of receipt by the job worker",
+        "3 years from the date of receipt by the job worker",
+        "180 days from the date of dispatch",
+        "6 months from the end of the financial year"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 143 of the CGST Act, inputs sent to a job worker must be brought back within 1 year of being sent (or received by the job worker) failing which it shall be deemed to have been supplied by the principal to the job worker on the day the inputs were sent.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 143",
+        "Job Work",
+        "Time Limit for Inputs"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_023",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "What is the time limit for bringing back capital goods (other than moulds and dies, jigs and fixtures, and tools) sent to a job worker, to avoid deemed supply treatment under Section 143?",
+      "options": [
+        "1 year",
+        "2 years",
+        "3 years",
+        "5 years"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under Section 143(1)(b), capital goods sent to a job worker must be returned to the principal's place of business within 3 years of being sent, otherwise it is treated as a supply from the date of original dispatch.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 143",
+        "Capital Goods",
+        "Job Work"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_024",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "In cases where a tax demand is confirmed against a taxpayer involving fraud, willful misstatement, or suppression of facts, can the taxpayer pay such tax demand utilizing the balance available in their electronic credit ledger?",
+      "options": [
+        "Yes, electronic credit ledger can be used for any tax demand under the Act",
+        "No, Section 49(3) / Rule 86B restrict the use of electronic credit ledger for payment of self-assessed tax only, and Section 49(10) restricts payment of demands arising out of fraud",
+        "Yes, up to 50% of the demand can be paid from the credit ledger",
+        "No, tax demands can only be paid via cash ledger, but interest and penalty can be paid from credit ledger"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Rule 86(2) and Section 49, the electronic credit ledger cannot be used for payment of any tax demand that has been raised under Section 74 (fraud, willful misstatement, suppression of facts). Such amounts must be paid through the electronic cash ledger.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 49",
+        "Electronic Credit Ledger",
+        "Tax Dues"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_025",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "Which of the following expenditure incurred by an employer towards employees is NOT blocked for ITC under Section 17(5)?",
+      "options": [
+        "Club membership, health and fitness centre membership",
+        "Travel benefits extended to employees on vacation such as Leave Travel Concession (LTC) or home travel concession",
+        "Food and beverages / outdoor catering when supplied under a statutory obligation imposed by any law for the time being in force",
+        "Life insurance and health insurance taken for employees voluntarily"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 17(5)(b)(i) blocks ITC on food, beverages, and outdoor catering, but contains an explicit exception: where the government notifies services which are obligatory for an employer to provide to its employees under any law for the time being in force, ITC is allowed.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 17(5)",
+        "Employee Welfare",
+        "Exceptions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_026",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "When a registered person dies, and their legal representative continues the business, can the unutilized ITC lying in the electronic credit ledger of the deceased person be transferred to the legal representative?",
+      "options": [
+        "No, ITC lapses upon the death of a proprietor",
+        "Yes, via Form GST ITC-02, unutilized ITC can be transferred to the legal representative in case of death of sole proprietor",
+        "Yes, automatically without filing any specific form",
+        "No, only cash balance can be transferred, not credit balance"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 18(3) read with Rule 41, in case of death of a sole proprietor, transfer of business to a legal heir allows the transfer of unutilized ITC using Form GST ITC-02, provided the transferee is registered.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 18(3)",
+        "Death of Proprietor",
+        "Transfer of ITC"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_027",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "If an outward supply made by a registered person is treated as an exempt supply due to a retroactive notification, and the person has already claimed ITC on inputs used for such supply, what is the consequence?",
+      "options": [
+        "The ITC already claimed remains fully valid and untouched",
+        "The person is required to reverse the ITC attributable to such exempt supply as per prescribed rules",
+        "The person must surrender their registration certificate",
+        "The person can claim a refund of the tax paid earlier"
+      ],
+      "answerIndex": 1,
+      "explanation": "If a supply becomes exempt subsequently or retrospectively, any ITC claimed earlier on inputs/input services used exclusively or commonly for such supply must be reversed in accordance with the relevant provisions (Rule 42/43).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Exempt Supply",
+        "Reversal",
+        "Rule 42"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_028",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "Can Input Tax Credit be claimed on goods purchased for personal use or consumption of the proprietor or directors, even if paid through the business bank account?",
+      "options": [
+        "Yes, because business bank account was used",
+        "No, Section 17(5)(g) blocks ITC on goods or services used for personal consumption",
+        "Yes, provided it is shown as staff welfare in financial statements",
+        "No, unless fringe benefit tax is paid"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 17(5)(g) specifically blocks ITC in respect of goods or services used for personal consumption. Any purchase for personal use of proprietor, partners, or directors is ineligible for ITC.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 17(5)",
+        "Personal Consumption",
+        "Blocked Credit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_029",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "Under Section 18(2), no ITC can be claimed by a person in respect of any stock of inputs after the expiry of how many months from the date of issue of invoice relating to such inputs?",
+      "options": [
+        "12 months",
+        "18 months",
+        "24 months",
+        "36 months"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per the proviso to Section 18(2), no ITC under sub-sections (1) (a) and (1) (b) shall be granted in respect of inputs held in stock or inputs contained in semi-finished or finished goods held in stock after the expiry of 1 year (12 months) from the date of issue of invoice relating to such inputs.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 18(2)",
+        "Stock ITC Time Limit",
+        "Registration"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-8_030",
+      "kind": "normal",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "prompt": "Which of the following statements is correct regarding the restriction on the use of the electronic credit ledger under Rule 86B?",
+      "options": [
+        "Rule 86B restricts a registered person from using the electronic credit ledger to discharge more than 99% of their output tax liability in cases where taxable supplies exceed Rs. 50 lakhs in a month, subject to specified exceptions.",
+        "Rule 86B completely prohibits the use of electronic credit ledger for all taxpayers with turnover above Rs. 5 crores.",
+        "Rule 86B restricts ITC utilization for exempt supplies only.",
+        "Rule 86B is applicable to all taxpayers irrespective of their tax liability."
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 86B of the CGST Rules, 2017 restricts the use of the electronic credit ledger for discharging output tax liability to 99% in cases where the monthly taxable supply exceeds Rs. 50 lakhs, leaving at least 1% to be paid in cash, subject to certain exceptions like income tax paid in previous years.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rule 86B",
+        "Electronic Credit Ledger",
+        "Restriction"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_gst-8_01",
+      "kind": "scenario",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "passage": "M/s. Zenith Enterprises, a registered GST taxpayer in Maharashtra, purchased a machine for Rs. 20,00,000 plus GST @ 18% on 10th July 2024 for use in its manufacturing unit. The machine was received in two lots: first lot on 1st August 2024 and second lot on 10th August 2024. Zenith Enterprises capitalized the machine in its books including the GST component and claimed depreciation under the Income-tax Act, 1961. The supplier filed GSTR-1 reflecting the invoice on time, and Zenith filed its annual return for FY 2024-25 on 30th September 2025.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-8_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-8_01",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-8",
+          "subject": "Taxation",
+          "prompt": "What is the correct date on which Zenith Enterprises is entitled to avail Input Tax Credit on the machinery, assuming all conditions are met otherwise?",
+          "options": [
+            "1st August 2024",
+            "10th August 2024",
+            "10th July 2024",
+            "30th September 2025"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per the second proviso to Section 16(2), when goods are received in lots or installments, ITC can be availed only upon the receipt of the last lot or installment. Since the second lot was received on 10th August 2024, ITC entitlement arises on that date.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 16(2)",
+            "Goods in Lots",
+            "Capital Goods"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-8_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-8_01",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-8",
+          "subject": "Taxation",
+          "prompt": "Can Zenith Enterprises claim ITC on the GST component of Rs. 3,60,000 paid on the machinery?",
+          "options": [
+            "Yes, full ITC can be claimed alongside depreciation",
+            "No, because depreciation has been claimed on the GST component under the Income-tax Act",
+            "Yes, 50% ITC and 50% depreciation can be claimed simultaneously",
+            "No, because machinery is blocked under Section 17(5)"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the proviso to Section 16(3), if a registered person claims depreciation on the tax component of the cost of capital goods under the Income-tax Act, 1961, the input tax credit on such tax component is not allowed.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 16(3)",
+            "Depreciation",
+            "Capital Goods"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-8_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-8_01",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-8",
+          "subject": "Taxation",
+          "prompt": "What would have been the last date for availing ITC on this machinery under Section 16(4), had they not claimed depreciation?",
+          "options": [
+            "30th November 2025",
+            "31st December 2025",
+            "30th September 2025",
+            "31st March 2025"
+          ],
+          "answerIndex": 0,
+          "explanation": "As per Section 16(4), the time limit for availing ITC for FY 2024-25 is the earlier of 30th November 2025 or the date of filing the annual return (30th September 2025). Wait, since 30th September 2025 is earlier than 30th November 2025, let's check: the annual return was filed on 30th September 2025. Therefore, the earlier of 30th November 2025 and 30th September 2025 is 30th September 2025.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 16(4)",
+            "Time Limit",
+            "Annual Return Date"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-8_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-8_01",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-8",
+          "subject": "Taxation",
+          "prompt": "If Zenith Enterprises had used this machinery exclusively for manufacturing goods that are wholly exempt from GST, would they have been eligible for ITC?",
+          "options": [
+            "Yes, full ITC is available on machinery used for exempt supplies",
+            "No, ITC is not available on inputs or capital goods used exclusively for making exempt supplies",
+            "Yes, up to 50% ITC is allowed",
+            "No, but a cash refund of the tax paid can be claimed"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 17(2), where the goods or services are used by the registered person partly for effecting taxable supplies and partly for exempt supplies, the ITC is restricted to the quantum attributable to taxable supplies. If used exclusively for exempt supplies, no ITC is available.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 17(2)",
+            "Exempt Supplies",
+            "Restriction"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-8_02",
+      "kind": "scenario",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "passage": "Mr. Sharma commenced a trading business in Delhi and obtained registration under GST on 1st October 2024. Prior to obtaining registration, he had purchased inputs in stock worth Rs. 5,00,000 (exclusive of GST @ 12%) on 15th August 2024. He also purchased a car for business use on 10th September 2024 for Rs. 10,00,000 plus GST @ 28% (seating capacity 5 persons) and capitalized it. On 1st December 2024, he sent inputs worth Rs. 2,00,000 to a job worker for processing.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-8_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-8_02",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-8",
+          "subject": "Taxation",
+          "prompt": "Is Mr. Sharma eligible to claim ITC on the inputs held in stock on 30th September 2024 (the day preceding registration)?",
+          "options": [
+            "No, because he was unregistered at the time of purchase",
+            "Yes, under Section 18(1)(a) for inputs held in stock on the day preceding registration, provided invoices are within 1 year",
+            "Yes, for all purchases made in the last 3 years",
+            "No, unless he pays a special composition fee"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 18(1)(a), a person who registers within 30 days of becoming liable is entitled to ITC on inputs held in stock on the day preceding registration, provided the invoice date is not older than 1 year.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 18(1)(a)",
+            "Stock ITC",
+            "New Registration"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-8_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-8_02",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-8",
+          "subject": "Taxation",
+          "prompt": "What is the correct treatment of GST paid on the car purchased on 10th September 2024 for business use (seating capacity 5 persons)?",
+          "options": [
+            "Full ITC can be claimed since it is used for business",
+            "ITC is blocked under Section 17(5)(a) as it is a motor vehicle for transportation of persons <= 13 capacity and not used for specified exceptions",
+            "ITC can be claimed up to 50%",
+            "ITC can be claimed if depreciation is foregone"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 17(5)(a), ITC is blocked on motor vehicles for transportation of persons with seating capacity <= 13 persons, unless used for specified exempt purposes like further supply, passenger transport, or driving school. General business travel does not qualify.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 17(5)",
+            "Blocked Credit",
+            "Motor Car"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-8_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-8_02",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-8",
+          "subject": "Taxation",
+          "prompt": "What is the maximum time limit within which the inputs sent to the job worker on 1st December 2024 must be brought back to Mr. Sharma's premises to avoid deemed supply?",
+          "options": [
+            "6 months",
+            "1 year",
+            "3 years",
+            "180 days"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per Section 143(1)(a), inputs sent to a job worker must be brought back within 1 year of being sent, failing which the transaction is deemed to be a supply from the date of dispatch.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 143",
+            "Job Work",
+            "Time Limit"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-8_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-8_02",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-8",
+          "subject": "Taxation",
+          "prompt": "Which form is required to be filed by Mr. Sharma to claim ITC on inputs held in stock prior to registration?",
+          "options": [
+            "FORM GST ITC-01",
+            "FORM GST ITC-02",
+            "FORM GST ITC-03",
+            "FORM GST REG-01"
+          ],
+          "answerIndex": 0,
+          "explanation": "Rule 40(1)(a) requires a registered person claiming ITC under Section 18(1) on inputs in stock to file a declaration in FORM GST ITC-01 within 30 days of becoming registered.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Rule 40",
+            "FORM GST ITC-01",
+            "Stock ITC"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-8_03",
+      "kind": "scenario",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "passage": "M/s. Apex Technologies Ltd., a registered software company in Bengaluru, undertook construction of an office building on its own account during FY 2024-25. It incurred expenses on works contract services of Rs. 50,00,000 (plus GST 18%) and purchased cement and iron bars locally worth Rs. 30,00,000 (plus GST 18%) used in the construction. Simultaneously, Apex Technologies Ltd. purchased computers worth Rs. 20,00,000 (plus GST 18%) for office use. The company also provided outdoor catering for its employees during an annual corporate event, incurring Rs. 5,00,000 plus GST 18%.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-8_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-8_03",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-8",
+          "subject": "Taxation",
+          "prompt": "Is Apex Technologies Ltd. eligible to claim ITC on works contract services used for the construction of its office building?",
+          "options": [
+            "Yes, because the office building is used for business",
+            "No, ITC is blocked under Section 17(5)(c) on works contract services for construction of immovable property, other than plant and machinery",
+            "Yes, up to 50%",
+            "No, unless capitalization is avoided"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 17(5)(c), ITC is blocked in respect of works contract services when supplied for construction of immovable property, other than plant and machinery, even if used for business.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 17(5)",
+            "Works Contract",
+            "Immovable Property"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-8_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-8_03",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-8",
+          "subject": "Taxation",
+          "prompt": "What is the eligibility of ITC on cement and iron bars purchased for the construction of the office building?",
+          "options": [
+            "Full ITC is available",
+            "ITC is blocked under Section 17(5)(d) for goods received for construction of immovable property on own account",
+            "ITC is available subject to 180 days payment condition",
+            "ITC is available since they are inputs"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 17(5)(d) blocks ITC on goods or services received by a taxable person for construction of an immovable property on their own account (including building), other than plant and machinery.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 17(5)",
+            "Construction",
+            "Blocked Credit"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-8_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-8_03",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-8",
+          "subject": "Taxation",
+          "prompt": "Can Apex Technologies Ltd. claim ITC on the computers purchased for office use?",
+          "options": [
+            "No, computers are treated as capital goods and ineligible for ITC",
+            "Yes, computers are not blocked under Section 17(5) and qualify as capital goods/inputs used in business",
+            "Yes, but only if depreciation is not claimed",
+            "No, electronics are blocked"
+          ],
+          "answerIndex": 1,
+          "explanation": "Computers used in business are eligible capital goods/inputs for ITC. They are not covered under any blocked credit category in Section 17(5), provided depreciation is not claimed on the tax component.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Capital Goods",
+            "Computers",
+            "Eligibility"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-8_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-8_03",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-8",
+          "subject": "Taxation",
+          "prompt": "What is the tax treatment of GST paid on outdoor catering services for the corporate event?",
+          "options": [
+            "ITC can be claimed fully",
+            "ITC is blocked under Section 17(5)(b)(ii) unless outward supply is of the same category or provided under statutory obligation",
+            "ITC can be claimed up to 50%",
+            "ITC is allowed as staff welfare expense"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 17(5)(b)(ii) blocks ITC on outdoor catering, food, and beverages, except where an outward taxable supply of the same category is made or where it is obligatory for an employer to provide under any law.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 17(5)",
+            "Outdoor Catering",
+            "Blocked Credit"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-8_04",
+      "kind": "scenario",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "passage": "M/s. Beta Industries operates a factory making both taxable goods and exempt goods. During the month of October 2024, it received common inputs worth Rs. 10,00,000 on which total GST paid was Rs. 1,80,000. Total turnover of Beta Industries for the month was Rs. 50,00,000, out of which taxable supplies amounted to Rs. 30,00,000, exempt supplies amounted to Rs. 15,00,000, and zero-rated supplies (exports) amounted to Rs. 5,00,000. Additionally, Beta Industries had availed ITC of Rs. 25,000 on inputs that were destroyed by fire during the month.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-8_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-8_04",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-8",
+          "subject": "Taxation",
+          "prompt": "Which rule governs the reversal of common Input Tax Credit on inputs and input services used for both taxable and exempt supplies?",
+          "options": [
+            "Rule 36",
+            "Rule 42",
+            "Rule 43",
+            "Rule 44"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 42 of the CGST Rules, 2017 prescribes the formula and procedure for determination of common ITC attributable to exempt supplies and its subsequent reversal.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Rule 42",
+            "Common ITC",
+            "Reversal Formula"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-8_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-8_04",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-8",
+          "subject": "Taxation",
+          "prompt": "What is the treatment of ITC amounting to Rs. 25,000 on inputs destroyed by fire?",
+          "options": [
+            "It can be retained in full",
+            "It must be reversed under Section 17(5)(h) since goods were destroyed",
+            "It can be carried forward as loss",
+            "It is adjusted against export benefits"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 17(5)(h), ITC in respect of goods lost, stolen, destroyed, written off or disposed of by way of gift or free samples is blocked and must be reversed.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Section 17(5)",
+            "Destroyed Goods",
+            "Reversal"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-8_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-8_04",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-8",
+          "subject": "Taxation",
+          "prompt": "In computing the proportion of exempt supplies for Rule 42, how are zero-rated supplies (exports) treated?",
+          "options": [
+            "Treated as exempt supplies",
+            "Treated as taxable supplies (not included in exempt turnover for reversal computation)",
+            "Ignored entirely from total turnover",
+            "Treated separately as non-business supplies"
+          ],
+          "answerIndex": 1,
+          "explanation": "For the purpose of Rule 42, zero-rated supplies (exports and supplies to SEZ) are treated as taxable supplies and are not counted as exempt supplies while calculating the reversal ratio.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Rule 42",
+            "Zero-Rated Supplies",
+            "Exempt Turnover"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-8_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-8_04",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-8",
+          "subject": "Taxation",
+          "prompt": "If Beta Industries fails to pay the supplier for the common inputs within 180 days from the invoice date, what action is required?",
+          "options": [
+            "Nothing, since goods were received",
+            "An amount equal to ITC availed plus applicable interest must be added to output tax liability",
+            "Registration is liable to cancellation",
+            "Supplier must refund the tax"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per the second proviso to Section 16(2), if payment is not made within 180 days, an amount equal to ITC availed must be added to output tax liability along with interest.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 16(2)",
+            "Non-payment",
+            "180 Days"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-8_05",
+      "kind": "scenario",
+      "chapterId": "gst-8",
+      "subject": "Taxation",
+      "passage": "M/s. Delta Logistics, a registered transport operator, was previously registered under the regular GST scheme. On 1st November 2024, Delta Logistics opted to switch to the Composition Scheme under Section 10. On 31st October 2024, the electronic credit ledger of Delta Logistics showed a balance of Rs. 1,50,000. On the same date, they held inputs in stock valued at Rs. 10,00,000 (GST paid @ 18%, total Rs. 1,80,000) and capital goods on which ITC of Rs. 3,00,000 had been claimed earlier (purchased 1 year ago).",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Input Tax Credit"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-8_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-8_05",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-8",
+          "subject": "Taxation",
+          "prompt": "What are the statutory obligations of Delta Logistics regarding the unutilized ITC and ITC on stock upon opting for the Composition Scheme?",
+          "options": [
+            "They can continue to carry forward the credit balance",
+            "They must pay an amount equivalent to the ITC in respect of inputs in stock and capital goods by debiting electronic credit or cash ledger, and remaining credit lapses",
+            "They can claim a cash refund of Rs. 1,50,000",
+            "The credit ledger balance is transferred to the Government revenue without any calculation"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 18(4) read with Rule 44, when shifting to the composition scheme, the registered person must pay an amount equivalent to the ITC on inputs in stock and capital goods (reduced by percentage points), and the remaining balance in the electronic credit ledger lapses.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 18(4)",
+            "Composition Scheme",
+            "Rule 44"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-8_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-8_05",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-8",
+          "subject": "Taxation",
+          "prompt": "How is the ITC reversal on capital goods calculated when shifting to the composition scheme under Rule 44?",
+          "options": [
+            "Full ITC originally claimed must be paid back",
+            "ITC is calculated on the remaining useful life in months/quarters on a pro-rata basis",
+            "No reversal is required for capital goods",
+            "50% of the original ITC is reversed flat"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Rule 44(6), for capital goods held in stock, the ITC taken is computed on the basis of remaining useful life in quarters (taking useful life as 5 years / 20 quarters), and the proportionate amount is added to liability.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Rule 44",
+            "Capital Goods Reversal",
+            "Composition"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-8_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-8_05",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-8",
+          "subject": "Taxation",
+          "prompt": "What is the time limit for filing the stock declaration in FORM GST ITC-03 when opting for the composition scheme?",
+          "options": [
+            "Within 30 days from the date of switch",
+            "Within 60 days from the commencement of the relevant financial year or within 30 days of opting for composition",
+            "Within 180 days",
+            "Along with the annual return"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 44(4) mandates that the details of stock and capital goods for payment/reversal under Section 18(4) must be furnished in FORM GST ITC-03 within 60 days of the commencement of the relevant financial year or within 30 days of opting for composition levy.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Rule 44",
+            "FORM GST ITC-03",
+            "Time Limit"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-8_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-8_05",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-8",
+          "subject": "Taxation",
+          "prompt": "Can a composition taxpayer under Section 10 issue a tax invoice to their customers to pass on Input Tax Credit?",
+          "options": [
+            "Yes, exactly like a regular taxpayer",
+            "No, a composition taxpayer cannot collect tax from recipients nor issue a tax invoice; they must issue a bill of supply",
+            "Yes, but only for inter-state supplies",
+            "No, but they can issue a delivery challan"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per Section 10(4) read with Section 31(2), a composition taxpayer cannot collect any tax from the recipient on supplies made by them and cannot issue a tax invoice; instead, they must issue a Bill of Supply and cannot pass on any ITC.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Section 10",
+            "Composition Scheme",
+            "Bill of Supply"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

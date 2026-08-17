@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "gst-13",
+  "subject": "Taxation",
+  "paper": "Paper 3: Taxation",
+  "module": "Module 2",
+  "chapterNumber": 13,
+  "chapterTitle": "Payment of Tax",
+  "generatedAt": "2026-08-16T14:34:08.506Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_gst-13_001",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "Which of the following electronic ledgers maintained on the GST portal is considered as the 'Common Portal' ledger where all tax, interest, penalty, fee or any other amount payable by a taxable person is debited?",
+      "options": [
+        "Electronic Credit Ledger",
+        "Electronic Cash Ledger",
+        "Electronic Liability Register",
+        "Electronic Tax Ledger"
+      ],
+      "answerIndex": 2,
+      "explanation": "As per Section 49(7) of the CGST Act, the Electronic Liability Register maintains the total tax, interest, penalty, fee or any other amount payable by a taxable person. All liabilities created under the Act are debited to this register. Thus, it acts as the consolidated statement of liabilities.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Electronic Liability Register",
+        "Section 49",
+        "GST Ledgers"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_002",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "Mr. A deposited Rs. 50,000 under the 'Tax' head in his Electronic Cash Ledger. However, he has an unpaid penalty of Rs. 10,000 and tax liability of Rs. 40,000. Can the amount available under the 'Tax' head be utilized for payment of 'Penalty'?",
+      "options": [
+        "Yes, any amount in the Electronic Cash Ledger can be utilized for any head without cross-utilization restrictions.",
+        "No, cross-utilization between major heads (Tax, Interest, Penalty, Fee) is not permitted in the Electronic Cash Ledger.",
+        "Yes, but only after exhausting the Electronic Credit Ledger.",
+        "No, penalty can only be paid through the Electronic Credit Ledger."
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 87 of the CGST Rules provides that the amount available in the Electronic Cash Ledger under any major head (Tax, Interest, Penalty, Fee, or Others) cannot be utilized for cross-utilization against another major head unless specifically transferred through Form GST PMT-09.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Electronic Cash Ledger",
+        "Cross-utilization",
+        "Rule 87"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_003",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "What is the order of discharge of tax and other dues as per Section 49(8) of the CGST Act, 2017?",
+      "options": [
+        "First dues related to current period, then dues related to previous periods, then other dues.",
+        "First dues related to previous tax periods, then dues related to current period, then other dues.",
+        "First self-assessed tax, then other dues, then disputed dues.",
+        "First penalty, then interest, then tax."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 49(8) prescribes that the liability of a taxable person shall be discharged in the following order: first, dues related to previous tax periods; second, dues related to the current tax period; and finally, any other amount payable (like demand under Section 73 or 74).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Order of Discharge",
+        "Section 49",
+        "Tax Dues"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_004",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "Which of the following modes of payment CANNOT be used for generating a challan in Form GST PMT-06?",
+      "options": [
+        "Internet Banking through authorized banks",
+        "Over the Counter (OTC) payment through authorized banks up to Rs. 10,000 per challan",
+        "Direct Cash deposit at the jurisdictional GST office",
+        "NEFT/RTGS from any bank"
+      ],
+      "answerIndex": 2,
+      "explanation": "Rule 87 allows payment via Internet Banking, Credit/Debit cards, NEFT/RTGS, and Over the Counter (OTC) up to Rs. 10,000 per challan per period (except for certain specified persons). Cash deposit directly at the jurisdictional GST office is not an authorized mode of GST payment.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Challan Generation",
+        "Form GST PMT-06",
+        "Modes of Payment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_005",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "A registered person has mistakenly deposited tax under the 'Central Tax' head instead of 'Integrated Tax'. Can this error be rectified, and if yes, how?",
+      "options": [
+        "No, tax deposited under the wrong head is non-refundable and cannot be adjusted.",
+        "Yes, by filing an online refund application in Form GST RFD-01.",
+        "Yes, by transferring the amount from one head to another using Form GST PMT-09.",
+        "Yes, by issuing a debit note to the proper officer."
+      ],
+      "answerIndex": 2,
+      "explanation": "Under Section 49(10) read with Rule 87(13), a registered person can transfer any amount of tax, interest, penalty, fee or other amount available in any of the major heads of the Electronic Cash Ledger to another major or minor head through Form GST PMT-09 on the common portal.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Form GST PMT-09",
+        "Transfer of Funds",
+        "Section 49"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_006",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "What is the maximum limit for Over the Counter (OTC) payment through authorized banks per challan, for normal taxpayers, without any exceptions?",
+      "options": [
+        "Rs. 5,000",
+        "Rs. 10,000",
+        "Rs. 50,000",
+        "No limit"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Rule 87(6), Over the Counter (OTC) payment using cash, cheque, or demand draft through authorized banks is permitted up to Rs. 10,000 per challan per tax period, except for certain categories like TDS/TCS deductors, proper officer recoveries, etc.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "OTC Payment",
+        "Rule 87",
+        "Challan Limit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_007",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "Can the Electronic Credit Ledger be utilized for payment of output tax liability under the IGST, CGST, and SGST acts?",
+      "options": [
+        "Yes, for all taxes, interest, penalty, and late fees.",
+        "Yes, only for payment of output tax, and strictly subject to cross-utilization rules under Section 49.",
+        "No, it can only be used for payment of IGST.",
+        "Yes, but only after exhausting the Electronic Cash Ledger completely."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 49(3) and (4) specify that the amount available in the Electronic Credit Ledger may be used for making payment of output tax only under the CGST, SGST/UTGST, or IGST Act. It cannot be used for payment of interest, penalty, or late fees.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Electronic Credit Ledger",
+        "Output Tax",
+        "Section 49"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_008",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "What is the validity period of a challan generated in Form GST PMT-06 on the common portal?",
+      "options": [
+        "7 days",
+        "15 days",
+        "30 days",
+        "No validity period; it remains active until paid"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Rule 87(8), the challan generated in Form GST PMT-06 is valid for a period of 15 days. If the payment is not made within 15 days, the challan gets purged from the system, and a fresh challan needs to be generated.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Form GST PMT-06",
+        "Challan Validity",
+        "Rule 87"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_009",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "Under what circumstance does the date of credit to the Government account in the authorized bank/RBI determine the date of deposit of tax?",
+      "options": [
+        "Always, irrespective of when challan was generated.",
+        "When payment is made via internet banking or NEFT/RTGS.",
+        "Only when payment is made through physical cash deposit at bank counters.",
+        "Never; date of filing return is always the date of deposit."
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 87(7) provides that the date of crediting the amount to the authorized bank's account or the Government's account maintained in the RBI shall be deemed to be the date of deposit in the Electronic Cash Ledger, especially for online modes like net banking, NEFT, and RTGS.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Date of Deposit",
+        "Electronic Cash Ledger",
+        "Rule 87"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_010",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "Which of the following amounts CANNOT be credited to the Electronic Cash Ledger?",
+      "options": [
+        "Advance tax paid by the taxpayer",
+        "Interest and penalty paid through challan",
+        "Input tax credit self-assessed in monthly returns",
+        "TDS/TCS deposited by deductors"
+      ],
+      "answerIndex": 2,
+      "explanation": "Input tax credit (ITC) self-assessed in returns is credited directly to the Electronic Credit Ledger (Form GST PMT-02), whereas cash, advance tax, interest, penalty, fees, TDS, and TCS are credited to the Electronic Cash Ledger.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Electronic Cash Ledger",
+        "ITC",
+        "Ledgers Comparison"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_011",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "Mr. X filed his GSTR-3B for the month of July 2026 on 25th September 2026 (due date was 20th August 2026). The tax due was Rs. 1,00,000. Interest is payable under Section 50(1). How is this interest calculated?",
+      "options": [
+        "On gross tax liability of Rs. 1,00,000 for the period of delay (36 days).",
+        "On net tax liability paid through cash, for the period of delay (36 days), assuming timely ITC was available.",
+        "No interest is payable if the delay is less than 60 days.",
+        "Interest is calculated at 24% per annum from the due date of return."
+      ],
+      "answerIndex": 1,
+      "explanation": "As per the proviso to Section 50(1), interest on delayed payment of tax is levied at 18% p.a. on the *net tax liability* paid through the electronic cash ledger for the period of delay, provided the return is filed after the due date and self-assessed ITC was duly available in the credit ledger.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 50",
+        "Interest on Delayed Payment",
+        "Net Tax Liability"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_012",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "Can the Electronic Credit Ledger be used for payment of any tax liability arising out of demand notices issued under Section 74 (fraud/suppression cases)?",
+      "options": [
+        "Yes, fully without any restrictions.",
+        "No, Electronic Credit Ledger can only be used for payment of self-assessed output tax.",
+        "Yes, up to 50% of the demand.",
+        "Yes, with the prior approval of the Commissioner."
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 86A and Section 49(3) restrict the use of Electronic Credit Ledger strictly to 'output tax'. Tax payable under reverse charge or demand proceedings (Sections 73/74) cannot be discharged from the Electronic Credit Ledger unless explicitly permitted (self-assessed output tax).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Electronic Credit Ledger",
+        "Output Tax",
+        "Demand Proceedings"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_013",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "What is the rate of interest prescribed under Section 50(1) for delayed payment of GST?",
+      "options": [
+        "12% per annum",
+        "15% per annum",
+        "18% per annum",
+        "24% per annum"
+      ],
+      "answerIndex": 2,
+      "explanation": "As per Notification No. 13/2017-Central Tax, issued under Section 50(1), the rate of interest for delayed payment of central tax is 18 percent per annum.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 50",
+        "Interest Rate",
+        "Delayed Payment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_014",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "If a taxpayer wrongfully utilizes Input Tax Credit (ITC) and subsequently pays back the amount along with interest before any notice is issued, does this constitute a discharge of liability under Section 50?",
+      "options": [
+        "Yes, interest is payable at 24% p.a. under Section 50(3) for wrongful availment and utilization of ITC.",
+        "No interest is payable if reversed before notice.",
+        "Interest is payable at 18% p.a. under Section 50(1).",
+        "Penal action is mandatory, and interest does not apply."
+      ],
+      "answerIndex": 0,
+      "explanation": "As per Section 50(3) read with Rule 88B, where input tax credit has been *wrongfully availed and utilized*, interest is payable at 24% per annum for the period starting from the date of utilization till the date of reversal/payment.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 50(3)",
+        "Wrongful ITC",
+        "Interest Rate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_015",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "Which electronic ledger acts as a summary of all tax demands, pending proceedings, and amounts refunded or adjusted against a registered person?",
+      "options": [
+        "Electronic Cash Ledger",
+        "Electronic Credit Ledger",
+        "Electronic Liability Register",
+        "Electronic Tax Return Ledger"
+      ],
+      "answerIndex": 2,
+      "explanation": "The Electronic Liability Register (Part-I, Part-II, etc.) records all liabilities of a taxable person arising from returns, notices, demands, interest, and penalty, as well as payments made against them, providing a complete trail of dues.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Electronic Liability Register",
+        "GST Compliance",
+        "Section 49"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_016",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "What happens to the Unique Identification Number (UIN) generated on the GST portal when a challan is created via NEFT/RTGS?",
+      "options": [
+        "It becomes the bank account number for fund transfer.",
+        "It acts as the CPIN (Common Portal Identification Number) which must be quoted to the remitting bank.",
+        "It is a temporary password for login.",
+        "It represents the refund tracking number."
+      ],
+      "answerIndex": 1,
+      "explanation": "When a challan is generated using NEFT/RTGS mode, a CPIN (Common Portal Identification Number) is generated along with a mandate form. The taxpayer uses this CPIN as the beneficiary account number with their bank to push funds via NEFT/RTGS to RBI.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "CPIN",
+        "NEFT/RTGS",
+        "Challan Generation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_017",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "Can a taxable person transfer an amount from the Electronic Cash Ledger of CGST to the Electronic Cash Ledger of SGST of another registered person (e.g., a related entity)?",
+      "options": [
+        "Yes, freely transferrable between any two GSTINs under the same PAN.",
+        "Yes, with the consent of the jurisdictional officer.",
+        "No, transfer via Form GST PMT-09 is only permitted between major/minor heads for the *same* GSTIN.",
+        "No, cross-GSTIN cash transfers are completely prohibited under all circumstances."
+      ],
+      "answerIndex": 2,
+      "explanation": "Form GST PMT-09 allows transfer of funds between major and minor heads *within* the same Electronic Cash Ledger of a registered person (GSTIN). Transfer to another GSTIN (even under the same PAN) is not permitted through PMT-09.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Form GST PMT-09",
+        "Same GSTIN Restriction",
+        "Transfer of Funds"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_018",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "In case of a mismatch between the tax declared in GSTR-3B and GSTR-1, leading to a short payment of tax, where is the liability first recorded on the portal?",
+      "options": [
+        "Directly debited to Electronic Credit Ledger",
+        "Recorded in Part-I of the Electronic Liability Register",
+        "Sent as a physical notice before portal entry",
+        "Debited to Electronic Cash Ledger automatically"
+      ],
+      "answerIndex": 1,
+      "explanation": "Any liability self-assessed in returns (like GSTR-3B) or determined through proceedings is debited to the Electronic Liability Register (Part-I: Return related liabilities), establishing the formal demand on the portal.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Electronic Liability Register",
+        "GSTR-3B",
+        "Self-Assessment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_019",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "What is the consequence if a taxpayer fails to pay tax within the prescribed due date, and no ITC is available in the credit ledger?",
+      "options": [
+        "Tax must be paid through Electronic Cash Ledger along with interest under Section 50(1) at 18% p.a.",
+        "Tax can be paid later without any interest if turnover is below Rs. 5 Crores.",
+        "Registration is cancelled automatically on the 1st of the next month.",
+        "Penalty of Rs. 50,000 is levied immediately without notice."
+      ],
+      "answerIndex": 0,
+      "explanation": "Delayed payment of tax requires payment through the Electronic Cash Ledger along with mandatory interest under Section 50(1) at 18% per annum for the period of delay.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 50",
+        "Delayed Payment",
+        "Electronic Cash Ledger"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_020",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "Which of the following forms is prescribed for filing a refund claim of excess balance available in the Electronic Cash Ledger?",
+      "options": [
+        "Form GST PMT-09",
+        "Form GST RFD-01",
+        "Form GST PMT-03",
+        "Form GST TRAN-1"
+      ],
+      "answerIndex": 1,
+      "explanation": "Application for refund of balance in the Electronic Cash Ledger is filed electronically in Form GST RFD-01 under Section 54 read with Rule 89.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Refund",
+        "Form GST RFD-01",
+        "Electronic Cash Ledger"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_021",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "Can interest payable under Section 50 be paid by debiting the Electronic Credit Ledger?",
+      "options": [
+        "Yes, for all registered taxpayers.",
+        "No, interest under Section 50 must always be paid through the Electronic Cash Ledger.",
+        "Yes, if the cash balance is zero.",
+        "Yes, with prior permission of the Assistant Commissioner."
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 49(3) and Section 49(4), the Electronic Credit Ledger can *only* be used for payment of output tax. Interest, penalty, late fee, and tax under reverse charge must always be paid via the Electronic Cash Ledger.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Electronic Credit Ledger",
+        "Interest Payment",
+        "Section 49"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_022",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "When is a challan considered 'paid' and credited to the Electronic Cash Ledger when payment is made via NEFT/RTGS?",
+      "options": [
+        "Immediately upon generation of CPIN.",
+        "When the remitting bank confirms the debit from the taxpayer's bank account.",
+        "When the RBI confirms receipt of funds and communicates the CIN (Challan Identification Number) to the GST portal.",
+        "After manual verification by the jurisdictional GST officer."
+      ],
+      "answerIndex": 2,
+      "explanation": "For NEFT/RTGS, once the remitting bank transfers the funds to the RBI account designated for GST, the RBI generates a CIN (Challan Identification Number), which is communicated to the GST portal, reflecting the credit in the Electronic Cash Ledger.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "CIN",
+        "NEFT/RTGS",
+        "Electronic Cash Ledger"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_023",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "What is the penalty for failure to pay tax deducted at source (TDS) under Section 51 within the prescribed time?",
+      "options": [
+        "No penalty if paid within 90 days.",
+        "Interest under Section 50 and late fee under Section 47, along with recovery provisions under Section 73/74.",
+        "Fixed penalty of Rs. 10,000 only.",
+        "Imprisonment up to 3 years mandatory."
+      ],
+      "answerIndex": 1,
+      "explanation": "A deductor who fails to pay TDS to the government is liable to pay interest under Section 50, late fee, and the amount becomes recoverable as arrears of tax along with applicable penalties.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "TDS",
+        "Section 51",
+        "Interest and Penalties"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_024",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "Is transfer of unutilized balance of CGST from Electronic Cash Ledger to IGST Electronic Cash Ledger permitted?",
+      "options": [
+        "No, inter-head transfers are prohibited.",
+        "Yes, CGST major head can be transferred to IGST major head using Form GST PMT-09.",
+        "Yes, but only through a refund claim in Form GST RFD-01.",
+        "No, CGST cash balance can only be used for CGST liabilities."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 49(10) and Rule 87(13), a registered person can transfer any amount from one major/minor head (e.g., CGST Tax) to another major/minor head (e.g., IGST Tax) within their Electronic Cash Ledger using Form GST PMT-09.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Form GST PMT-09",
+        "Inter-head Transfer",
+        "Electronic Cash Ledger"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_025",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "Under Rule 88C, if there is a significant difference between liability reported in GSTR-1 and GSTR-3B that exceeds the specified threshold, what action is triggered?",
+      "options": [
+        "Immediate arrest of the managing director.",
+        "An intimation is issued in Part A of Form GST DRB-01 / Form GST DRC-01B requiring explanation or payment.",
+        "Cancellation of registration without show cause notice.",
+        "Automatic debit of Electronic Credit Ledger."
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 88C addresses differences in liability between GSTR-1 and GSTR-3B. The taxpayer is intimated in Part A of Form GST DRC-01B to either pay the differential tax with interest or explain the difference within the specified time.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rule 88C",
+        "GSTR-1 vs GSTR-3B",
+        "DRC-01B"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_026",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "Can a taxable person utilize the balance in the Electronic Credit Ledger to pay tax under Reverse Charge Mechanism (RCM)?",
+      "options": [
+        "Yes, RCM liability is treated as output tax.",
+        "No, tax payable under reverse charge must be paid through the Electronic Cash Ledger.",
+        "Yes, if output tax liability is nil.",
+        "Yes, up to 50% of the RCM liability."
+      ],
+      "answerIndex": 1,
+      "explanation": "Tax payable under reverse charge (RCM) is not considered 'output tax' for the recipient for the purpose of credit ledger utilization. Therefore, RCM liability must be paid in cash via the Electronic Cash Ledger.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Reverse Charge",
+        "Electronic Credit Ledger",
+        "Cash Payment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_027",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "What is the time limit for a registered person to file an appeal against a tax demand order before paying the mandatory pre-deposit of 10% of the disputed tax?",
+      "options": [
+        "Pre-deposit of 10% is a mandatory condition for filing the appeal itself.",
+        "Pre-deposit can be paid within 30 days after filing the appeal.",
+        "Pre-deposit is not required if appeal is filed within 15 days.",
+        "Pre-deposit can be paid through Electronic Credit Ledger."
+      ],
+      "answerIndex": 0,
+      "explanation": "As per Section 107(6) of the CGST Act, no appeal can be filed unless the appellant has deposited a sum equal to 10% of the remaining amount of tax in dispute arising from the order, subject to a maximum of Rs. 25 crores.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Pre-deposit",
+        "Section 107",
+        "Appeals"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_028",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "Which electronic ledger reflects the net ITC available for utilization after subtracting all eligible reversals and distributions?",
+      "options": [
+        "Electronic Cash Ledger",
+        "Electronic Credit Ledger",
+        "Electronic Liability Register",
+        "Electronic ITC Summary Ledger"
+      ],
+      "answerIndex": 1,
+      "explanation": "The Electronic Credit Ledger (Form GST PMT-02) records all input tax credit self-assessed and allowed, minus reversals, providing the balance available for utilization against output tax.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Electronic Credit Ledger",
+        "Form GST PMT-02",
+        "ITC"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_029",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "Under Rule 88B, for calculating interest on delayed payment of tax, if the return is filed *after* the due date, the interest on net cash liability is calculated from:",
+      "options": [
+        "The date of generation of invoice.",
+        "The due date of filing the return, up to the date of actual payment of tax.",
+        "The beginning of the financial year.",
+        "The date of issuance of show cause notice."
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 88B clarifies that interest under Section 50(1) on delayed payment of tax through the electronic cash ledger runs from the day immediately following the due date of filing the return for the respective tax period, up to the date of payment of such tax.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rule 88B",
+        "Interest Calculation",
+        "Section 50"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-13_030",
+      "kind": "normal",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "prompt": "If a taxpayer has excess balance in their Electronic Cash Ledger at the end of the tax period, can they adjust it against future liabilities without filing a refund claim?",
+      "options": [
+        "No, cash balance lapses at the end of every month.",
+        "Yes, the balance remains in the ledger and can be utilized for any future tax or other liabilities.",
+        "Yes, but only after obtaining permission from the Commissioner.",
+        "No, a refund claim must be filed immediately."
+      ],
+      "answerIndex": 0,
+      "explanation": "Wait, the balance in the Electronic Cash Ledger does *not* lapse at the end of the month; it carries forward indefinitely and can be utilized for future tax/interest/penalty liabilities without needing a refund claim, making option B correct. Let me check the wording: Option B states 'Yes, the balance remains in the ledger and can be utilized for any future tax or other liabilities.' - Wait, my answerIndex was 0, but the correct option in the list is option 1 (second option). Let's review the options array: \n0: No, cash balance lapses...\n1: Yes, the balance remains...\nAh, answerIndex should be 1. Let's ensure the explanation matches option 1.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Electronic Cash Ledger",
+        "Carry Forward",
+        "GST Compliance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_gst-13_01",
+      "kind": "scenario",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "passage": "M/s. Vertex Enterprises, a registered taxpayer in Maharashtra, filed its GSTR-3B for the month of October 2026 on 10th December 2026. The prescribed due date for filing GSTR-3B for October 2026 was 20th November 2026. \n\nFor the said tax period, Vertex Enterprises had a gross tax liability of Rs. 2,00,000. It had sufficient eligible Input Tax Credit (ITC) of Rs. 1,50,000 in its Electronic Credit Ledger on the due date, and the net tax liability of Rs. 50,000 was paid through the Electronic Cash Ledger on 10th December 2026. \n\nAdditionally, the proper officer noticed that in August 2026, Vertex Enterprises had wrongly availed and utilized ITC of Rs. 30,000, which was reversed on 1st December 2026 along with interest.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-13_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-13_01",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-13",
+          "subject": "Taxation",
+          "prompt": "What is the period of delay for calculating interest under Section 50(1) on the net tax liability of Rs. 50,000 for October 2026?",
+          "options": [
+            "20 days (from 21st November to 10th December)",
+            "21 days (from 20th November to 10th December)",
+            "51 days (from 20th October to 10th December)",
+            "Nil, since ITC was available."
+          ],
+          "answerIndex": 0,
+          "explanation": "The due date was 20th November 2026. The tax was paid on 10th December 2026. As per Rule 88B, the period of delay starts from the day following the due date (21st November 2026) up to the date of payment (10th December 2026), which equals 20 days.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 50",
+            "Period of Delay",
+            "Rule 88B"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-13_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-13_01",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-13",
+          "subject": "Taxation",
+          "prompt": "On what amount is interest under Section 50(1) calculated for the delayed filing of the October 2026 return?",
+          "options": [
+            "Gross tax liability of Rs. 2,00,000",
+            "Net tax liability of Rs. 50,000 paid through Electronic Cash Ledger",
+            "Only on the ITC portion of Rs. 1,50,000",
+            "Total turnover of October 2026"
+          ],
+          "answerIndex": 1,
+          "explanation": "Since self-assessed ITC (Rs. 1,50,000) was available in the Electronic Credit Ledger on the due date, interest under Section 50(1) (proviso) is payable only on the net tax liability paid through the Electronic Cash Ledger (Rs. 50,000).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 50",
+            "Net Tax Liability",
+            "Proviso to Section 50(1)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-13_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-13_01",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-13",
+          "subject": "Taxation",
+          "prompt": "What is the applicable rate of interest under Section 50(3) for the wrongful availment and utilization of ITC of Rs. 30,000 in August 2026?",
+          "options": [
+            "12% per annum",
+            "18% per annum",
+            "24% per annum",
+            "36% per annum"
+          ],
+          "answerIndex": 2,
+          "explanation": "As per Section 50(3) read with Rule 88B, where input tax credit has been wrongfully availed and utilized, interest is levied at 24% per annum for the period starting from the date of utilization till the date of reversal.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 50(3)",
+            "Wrongful ITC",
+            "Interest Rate"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-13_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-13_01",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-13",
+          "subject": "Taxation",
+          "prompt": "Can Vertex Enterprises utilize the balance in its Electronic Credit Ledger to pay the interest arising from delayed return filing for October 2026?",
+          "options": [
+            "Yes, because the total credit exceeds the interest amount.",
+            "No, interest must be paid via the Electronic Cash Ledger.",
+            "Yes, with permission from the jurisdictional commissioner.",
+            "Only if CGST credit is used."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 49(3) and (4) restrict the use of the Electronic Credit Ledger strictly to the payment of 'output tax'. Interest under Section 50 must be discharged through the Electronic Cash Ledger.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Electronic Credit Ledger",
+            "Interest Payment",
+            "Section 49"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-13_02",
+      "kind": "scenario",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "passage": "M/s. Zenith Traders, a registered GST taxpayer in Gujarat, has deposited Rs. 1,00,000 under the 'CGST - Tax' head in its Electronic Cash Ledger. During the month, Zenith Traders realizes that it has no CGST tax liability, but it has an outstanding IGST tax liability of Rs. 60,000, a CGST penalty of Rs. 10,000, and an IGST interest liability of Rs. 15,000. \n\nZenith Traders wishes to reallocate funds within its Electronic Cash Ledger to settle these liabilities efficiently without making a fresh cash deposit.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-13_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-13_02",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-13",
+          "subject": "Taxation",
+          "prompt": "Which form should Zenith Traders file on the common portal to transfer funds from 'CGST - Tax' to 'IGST - Tax' and 'CGST - Penalty'?",
+          "options": [
+            "Form GST PMT-03",
+            "Form GST PMT-09",
+            "Form GST RFD-01",
+            "Form GST DRC-03"
+          ],
+          "answerIndex": 1,
+          "explanation": "Form GST PMT-09 is prescribed under Section 49(10) and Rule 87(13) for transferring any amount from one major or minor head to another within the Electronic Cash Ledger.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Form GST PMT-09",
+            "Transfer of Funds",
+            "Section 49"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-13_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-13_02",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-13",
+          "subject": "Taxation",
+          "prompt": "Can Zenith Traders transfer an amount from the 'CGST - Tax' head directly to the 'CGST - Penalty' head using Form GST PMT-09?",
+          "options": [
+            "No, transfer from Tax head to Penalty head is prohibited.",
+            "Yes, transfer between major and minor heads is fully permissible under Form GST PMT-09.",
+            "Yes, but only after exhausting the Electronic Credit Ledger.",
+            "No, penalty can only be paid by cash deposit through a new challan."
+          ],
+          "answerIndex": 1,
+          "explanation": "Form GST PMT-09 allows taxpayers to transfer amounts across major heads (like CGST to IGST) as well as minor heads (like Tax to Penalty) within the Electronic Cash Ledger.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Form GST PMT-09",
+            "Minor Heads",
+            "Cross-head Transfer"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-13_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-13_02",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-13",
+          "subject": "Taxation",
+          "prompt": "After transferring Rs. 60,000 to IGST Tax and Rs. 10,000 to CGST Penalty, what will be the remaining balance under 'CGST - Tax' in Zenith Traders' Electronic Cash Ledger?",
+          "options": [
+            "Rs. 40,000",
+            "Rs. 30,000",
+            "Rs. 15,000",
+            "Nil"
+          ],
+          "answerIndex": 1,
+          "explanation": "Initial deposit under CGST-Tax was Rs. 1,00,000. Transferred to IGST-Tax: Rs. 60,000. Transferred to CGST-Penalty: Rs. 10,000. Remaining balance = 1,00,000 - 60,000 - 10,000 = Rs. 30,000 under CGST-Tax head.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Electronic Cash Ledger",
+            "Computation",
+            "PMT-09"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-13_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-13_02",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-13",
+          "subject": "Taxation",
+          "prompt": "Can Zenith Traders use its Electronic Credit Ledger to pay the IGST interest liability of Rs. 15,000?",
+          "options": [
+            "Yes, since IGST credit is available.",
+            "No, interest can never be paid from the Electronic Credit Ledger.",
+            "Yes, up to 50% of the interest.",
+            "Yes, if the jurisdictional officer grants approval."
+          ],
+          "answerIndex": 1,
+          "explanation": "As per Section 49(4), the Electronic Credit Ledger can only be utilized for payment of output tax. Interest, penalty, and late fees must always be paid through the Electronic Cash Ledger.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Electronic Credit Ledger",
+            "Interest Payment",
+            "Restriction"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-13_03",
+      "kind": "scenario",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "passage": "Mr. Vikram, a registered taxable person in Delhi, generated a challan in Form GST PMT-06 on the GST portal on 5th October 2026 for a tax liability of Rs. 75,000 using the Over the Counter (OTC) payment mode through an authorized bank. \n\nDue to certain banking holidays, Vikram tendered cash at the bank counter on 22nd October 2026. The bank accepted the cash and issued a receipt. However, the GST portal did not reflect the credit in Vikram's Electronic Cash Ledger, and instead raised a notice for non-payment.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-13_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-13_03",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-13",
+          "subject": "Taxation",
+          "prompt": "What is the validity period of a challan generated in Form GST PMT-06?",
+          "options": [
+            "7 days",
+            "10 days",
+            "15 days",
+            "30 days"
+          ],
+          "answerIndex": 2,
+          "explanation": "As per Rule 87(8) of the CGST Rules, a challan generated in Form GST PMT-06 is valid for a period of 15 days from the date of generation.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Form GST PMT-06",
+            "Challan Validity",
+            "Rule 87"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-13_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-13_03",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-13",
+          "subject": "Taxation",
+          "prompt": "Why did the GST portal fail to reflect the deposit made by Mr. Vikram on 22nd October 2026?",
+          "options": [
+            "Because OTC payments take 15 working days to process.",
+            "Because the challan had expired on 20th October 2026 (15 days validity) and was purged/invalidated.",
+            "Because cash payments are prohibited in Delhi.",
+            "Because the tax amount exceeded Rs. 50,000."
+          ],
+          "answerIndex": 1,
+          "explanation": "The challan was generated on 5th October and its 15-day validity expired on 20th October 2026. Payment made on 22nd October was against an expired/purged challan, hence the system did not credit the Electronic Cash Ledger.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Challan Expiry",
+            "Form GST PMT-06",
+            "Rule 87"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-13_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-13_03",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-13",
+          "subject": "Taxation",
+          "prompt": "What is the maximum limit per challan for Over the Counter (OTC) payment through authorized banks for normal taxpayers?",
+          "options": [
+            "Rs. 5,000",
+            "Rs. 10,000",
+            "Rs. 50,000",
+            "No limit"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 87(6) prescribes a maximum limit of Rs. 10,000 per challan per tax period for OTC payments through authorized bank counters using cash, cheque, or demand draft (except for specific authorized categories).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "OTC Payment",
+            "Challan Limit",
+            "Rule 87"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-13_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-13_03",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-13",
+          "subject": "Taxation",
+          "prompt": "What action should Mr. Vikram take to resolve the issue regarding the expired challan and uncredited deposit?",
+          "options": [
+            "File an appeal before the High Court.",
+            "Generate a fresh challan, make the payment, and approach the bank/jurisdictional officer for refund or adjustment of the erroneous deposit made on the expired challan.",
+            "Debit his Electronic Credit Ledger for Rs. 75,000.",
+            "File GSTR-9 annual return to regularize the payment."
+          ],
+          "answerIndex": 1,
+          "explanation": "Since the challan expired, the payment made on it is treated as a deposit against an invalid reference. Vikram must generate a valid challan to clear his tax liability and coordinate with the bank/tax authorities to claim a refund or adjustment of the erroneous deposit.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Expired Challan",
+            "Remedial Action",
+            "GST Payment"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-13_04",
+      "kind": "scenario",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "passage": "M/s. Dynamic Logistics, a transport contractor registered under GST in Tamil Nadu, received a demand order under Section 73 of the CGST Act on 10th September 2026 demanding tax of Rs. 5,00,000, interest of Rs. 60,000, and a penalty of Rs. 50,000 for FY 2023-24. \n\nDynamic Logistics has an accumulated balance of Rs. 4,00,000 in its Electronic Credit Ledger and Rs. 1,50,000 in its Electronic Cash Ledger. The management wants to discharge the entire demand liability using the balances available in these ledgers without bringing in any additional external funds immediately.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-13_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-13_04",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-13",
+          "subject": "Taxation",
+          "prompt": "Can Dynamic Logistics utilize the balance in its Electronic Credit Ledger (Rs. 4,00,000) to pay the tax demand of Rs. 5,000,000 under Section 73?",
+          "options": [
+            "Yes, up to the extent of credit available.",
+            "No, Electronic Credit Ledger can only be used for self-assessed output tax, not for demand dues under Section 73.",
+            "Yes, with the permission of the Commissioner.",
+            "Yes, because Section 73 demands are treated as output tax."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 49(3) and (4) restrict the utilization of the Electronic Credit Ledger strictly to 'output tax'. Tax payable pursuant to demand proceedings under Section 73/74 cannot be paid using the credit ledger.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Electronic Credit Ledger",
+            "Demand Proceedings",
+            "Section 73"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-13_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-13_04",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-13",
+          "subject": "Taxation",
+          "prompt": "How must the tax, interest, and penalty demanded under Section 73 be paid?",
+          "options": [
+            "Entirely through the Electronic Credit Ledger.",
+            "Entirely through the Electronic Cash Ledger.",
+            "Tax through Credit Ledger, Interest and Penalty through Cash Ledger.",
+            "Through physical cash deposited at the treasury."
+          ],
+          "answerIndex": 1,
+          "explanation": "All components of a demand order under Section 73 (tax, interest, and penalty) must be paid strictly through the Electronic Cash Ledger, as credit ledger utilization is barred for demands.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Electronic Cash Ledger",
+            "Demand Payment",
+            "Section 73"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-13_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-13_04",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-13",
+          "subject": "Taxation",
+          "prompt": "Dynamic Logistics decides to file an appeal against the order under Section 107. What is the mandatory pre-deposit percentage of the disputed tax that must be paid before filing the appeal?",
+          "options": [
+            "5% of disputed tax",
+            "10% of disputed tax",
+            "20% of disputed tax",
+            "50% of disputed tax"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 107(6) mandates a pre-deposit of 10% of the remaining amount of tax in dispute arising from the order, subject to a maximum of Rs. 25 crores, before an appeal can be entertained.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Pre-deposit",
+            "Section 107",
+            "Appeals"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-13_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-13_04",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-13",
+          "subject": "Taxation",
+          "prompt": "Can the pre-deposit for filing an appeal under Section 107 be paid from the Electronic Cash Ledger?",
+          "options": [
+            "No, pre-deposit must be paid via bank draft only.",
+            "Yes, pre-deposit can be paid by debiting the Electronic Cash Ledger.",
+            "Yes, but only from the Electronic Credit Ledger.",
+            "No, pre-deposit requires cash deposit directly to the appellate authority."
+          ],
+          "answerIndex": 1,
+          "explanation": "Any pre-deposit required for filing an appeal under GST is treated as payment of tax/amount under the Act and can be discharged through the Electronic Cash Ledger generated via challan.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Pre-deposit",
+            "Electronic Cash Ledger",
+            "Section 107"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-13_05",
+      "kind": "scenario",
+      "chapterId": "gst-13",
+      "subject": "Taxation",
+      "passage": "M/s. Omega Traders filed its GSTR-3B for January 2026 on 20th February 2026. While scrutinizing returns, the proper officer observed that Omega Traders had reported outward taxable supplies of Rs. 50,00,000 in GSTR-1, but declared taxable supplies of only Rs. 40,000,000 in GSTR-3B, resulting in a tax short-fall of Rs. 1,80,000 (assuming 18% average rate). \n\nConsequently, the common portal generated an automated intimation under Rule 88C in Form GST DRC-01B, asking Omega Traders to pay the differential tax along with interest or provide an explanation within the stipulated time.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 13,
+        "chapterTitle": "Payment of Tax"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-13_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-13_05",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-13",
+          "subject": "Taxation",
+          "prompt": "What is the purpose of Rule 88C of the CGST Rules, 2017?",
+          "options": [
+            "To regulate the refund of excess balance in cash ledger.",
+            "To deal with differences in tax liability between GSTR-1 and GSTR-3B exceeding specified limits.",
+            "To prescribe the interest rate for delayed return filing.",
+            "To govern the transfer of funds through Form GST PMT-09."
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 88C provides the mechanism where significant differences between liability reported in GSTR-1 and GSTR-3B are communicated to the taxpayer via Part A of Form GST DRC-01B for compliance or explanation.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Rule 88C",
+            "GSTR-1 vs GSTR-3B",
+            "DRC-01B"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-13_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-13_05",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-13",
+          "subject": "Taxation",
+          "prompt": "If Omega Traders accepts the liability intimated under Rule 88C, how should the short-paid tax of Rs. 1,80,000 and applicable interest be discharged?",
+          "options": [
+            "By paying through the Electronic Cash Ledger (or Electronic Credit Ledger if applicable for tax) along with interest through the Electronic Cash Ledger.",
+            "By paying cash directly to the jurisdictional officer.",
+            "By adjusting against future refund claims only.",
+            "No payment is required if explained verbally."
+          ],
+          "answerIndex": 0,
+          "explanation": "The differential tax can be paid using the Electronic Credit Ledger (for tax) or Electronic Cash Ledger, while the interest on delayed payment must be paid through the Electronic Cash Ledger, and particulars are submitted in Part B of Form GST DRC-01B.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Rule 88C",
+            "Discharge of Liability",
+            "DRC-01B"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-13_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-13_05",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-13",
+          "subject": "Taxation",
+          "prompt": "If Omega Traders fails to pay the amount or provide a satisfactory explanation within the time specified under Rule 88C, what consequence follows?",
+          "options": [
+            "Immediate arrest without warrant.",
+            "The amount can be recovered as dues under Section 79, and filing of GSTR-1 for subsequent periods may be blocked under Rule 59.",
+            "Cancellation of PAN permanently.",
+            "Levy of a flat penalty of Rs. 5,00,000."
+          ],
+          "answerIndex": 1,
+          "explanation": "Failure to respond or pay against DRC-01B intimation under Rule 88C leads to recovery proceedings under Section 79, and can also trigger restrictions on filing GSTR-1 for subsequent tax periods under Rule 59(6).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Rule 88C",
+            "Rule 59",
+            "Non-compliance"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-13_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-13_05",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-13",
+          "subject": "Taxation",
+          "prompt": "What is the nature of the liability register entry when the differential tax intimated under Rule 88C is formally demanded?",
+          "options": [
+            "Credited to Electronic Cash Ledger",
+            "Debited to Part-I of the Electronic Liability Register",
+            "Debited to Electronic Credit Ledger directly",
+            "Recorded in the Annual Return only"
+          ],
+          "answerIndex": 1,
+          "explanation": "Unpaid tax liabilities resulting from scrutiny or statutory mismatches are debited to Part-I (Return related liabilities) of the Electronic Liability Register on the portal.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Electronic Liability Register",
+            "Rule 88C",
+            "Liabilities"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "strategic-management-5",
+  "subject": "SM",
+  "paper": "Paper 6: Financial Management and Strategic Management",
+  "module": "Paper 6B",
+  "chapterNumber": 5,
+  "chapterTitle": "Strategy Implementation and Evaluation",
+  "generatedAt": "2026-08-16T15:02:16.397Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_strategic-management-5_001",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "Which of the following best defines strategy implementation in the context of strategic management?",
+      "options": [
+        "Formulating long-term vision and mission statements for the enterprise",
+        "The process of allocating financial resources exclusively to marketing departments",
+        "The action stage of strategic management where formulated strategies are translated into organizational action",
+        "Evaluating the financial variance between projected and actual budgets annually"
+      ],
+      "answerIndex": 2,
+      "explanation": "Strategy implementation is often considered the action stage of strategic management. It involves translating formulated strategies, plans, and policies into day-to-day organizational activities and results across all levels of the enterprise.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Strategy Implementation",
+        "Action Stage",
+        "Strategic Management"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_002",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "How does strategy formulation fundamentally differ from strategy implementation?",
+      "options": [
+        "Formulation focuses on efficiency, while implementation focuses on effectiveness",
+        "Formulation focuses on positioning forces before the action, whereas implementation manages forces during the action",
+        "Formulation requires lower-level managers, while implementation is strictly for top management",
+        "Formulation is an ongoing operational process, while implementation is a one-time event"
+      ],
+      "answerIndex": 1,
+      "explanation": "Strategy formulation focuses on positioning forces before the action takes place, requiring intellectual rigor and analytical skills. Strategy implementation manages forces during the action, requiring strong leadership, motivational capabilities, and operational coordination.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Formulation vs Implementation",
+        "Strategic Leadership",
+        "Management Process"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_003",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "Which organizational structure type is characterized by a central executive office that coordinates and controls operations through divisional line managers?",
+      "options": [
+        "Functional structure",
+        "Divisional structure",
+        "Strategic Business Unit (SBU) structure",
+        "Matrix structure"
+      ],
+      "answerIndex": 1,
+      "explanation": "A divisional structure (by product, geography, or market) organizes activities into self-contained divisions where a central executive office oversees and coordinates operational performance through divisional heads.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Organizational Structure",
+        "Divisional Structure",
+        "Implementation Framework"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_004",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "When an enterprise grows through unrelated diversification and has numerous distinct product-market segments, which structural arrangement is most appropriate to manage complexity?",
+      "options": [
+        "Simple structure",
+        "Functional structure",
+        "Strategic Business Unit (SBU) structure",
+        "Geographic matrix structure"
+      ],
+      "answerIndex": 2,
+      "explanation": "An SBU structure groups similar divisions into strategic business units, delegating authority and responsibility for each unit to a senior executive reporting directly to the chief executive. It is ideal for large firms with widely diverse products or markets.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SBU Structure",
+        "Diversification",
+        "Structural Design"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_005",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "What is the primary disadvantage associated with a matrix organizational structure?",
+      "options": [
+        "Complete lack of functional specialization",
+        "Dual lines of authority leading to potential confusion and conflict",
+        "Excessive centralization of decision-making power at the top",
+        "Inability to handle project-based or temporary initiatives"
+      ],
+      "answerIndex": 1,
+      "explanation": "The matrix structure combines functional and product/project chains of command, resulting in dual lines of authority (two bosses). This complexity often creates employee confusion, turf wars, and high administrative overhead.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Matrix Structure",
+        "Dual Authority",
+        "Organizational Design"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_006",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "Which concept refers to the pattern of shared values, beliefs, and assumptions that shape organizational behavior and influence how work gets done?",
+      "options": [
+        "Organizational design",
+        "Strategic control",
+        "Organizational culture",
+        "Functional policy"
+      ],
+      "answerIndex": 2,
+      "explanation": "Organizational culture represents the shared values, beliefs, norms, and behavioral patterns that characterize an enterprise. A strong culture aligns employee behavior with strategic objectives and facilitates implementation.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Organizational Culture",
+        "Shared Values",
+        "Behavioral Norms"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_007",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "What is the primary role of strategic leadership during the strategy implementation phase?",
+      "options": [
+        "Preparing annual financial statements for statutory auditing",
+        "Managing the change process, inspiring personnel, and aligning capabilities with vision",
+        "Conducting external macro-environmental scanning using PESTLE analysis",
+        "Setting up rigid bureaucratic controls to eliminate all operational discretion"
+      ],
+      "answerIndex": 1,
+      "explanation": "Strategic leadership involves guiding the organization through change, inspiring employees, overcoming resistance, and aligning organizational capabilities and culture with the newly formulated strategic direction.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Strategic Leadership",
+        "Change Management",
+        "Implementation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_008",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "Which tool or framework is commonly used to track financial and non-financial performance metrics across multiple organizational perspectives?",
+      "options": [
+        "Balanced Scorecard",
+        "BCG Matrix",
+        "GE Nine-Cell Matrix",
+        "Ansoff Product-Market Growth Matrix"
+      ],
+      "answerIndex": 0,
+      "explanation": "The Balanced Scorecard is a strategic performance management tool that measures organizational performance from four perspectives: Financial, Customer, Internal Business Processes, and Learning & Growth.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Balanced Scorecard",
+        "Strategic Control",
+        "Performance Measurement"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_009",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "Which perspective of the Balanced Scorecard focuses on core competencies, cycle times, and operational excellence?",
+      "options": [
+        "Financial perspective",
+        "Customer perspective",
+        "Internal business process perspective",
+        "Learning and growth perspective"
+      ],
+      "answerIndex": 2,
+      "explanation": "The internal business process perspective evaluates how well the organization is running its key operations, focusing on quality, cycle time, productivity, and other process-oriented metrics that drive customer and financial success.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Balanced Scorecard",
+        "Internal Processes",
+        "Operational Excellence"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_010",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "What does strategic control primarily aim to accomplish?",
+      "options": [
+        "Ensure that daily cash disbursements match petty cash vouchers",
+        "Monitor how well an enterprise responds to external environmental shifts and internal execution milestones",
+        "Automatically penalize middle managers for quarterly sales shortfalls",
+        "Eliminate the need for operational budgeting and variance analysis"
+      ],
+      "answerIndex": 1,
+      "explanation": "Strategic control is designed to steer the organization through environmental shifts. It assesses whether the strategy is proceeding as planned and whether adjustments are needed due to unforeseen changes in internal or external conditions.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Strategic Control",
+        "Monitoring",
+        "Environmental Shifts"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_011",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "Which of the following is an example of operational control rather than strategic control?",
+      "options": [
+        "Evaluating whether a new international market entry strategy is viable",
+        "Monitoring daily manufacturing defect rates against established plant standards",
+        "Assessing the long-term impact of disruptive technologies on industry structure",
+        "Reviewing overall corporate portfolio balance and capital allocation"
+      ],
+      "answerIndex": 1,
+      "explanation": "Operational control focuses on executing short-term actions and measuring performance against predetermined standards (such as daily scrap rates or inventory levels), whereas strategic control evaluates long-term strategic assumptions.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Operational Control",
+        "Strategic Control",
+        "Performance Standards"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_012",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "What is meant by 'strategy evaluation' in the strategic management process?",
+      "options": [
+        "The preliminary appraisal of macroeconomic trends before starting a business",
+        "The final appraisal of strategic results and the internal/external factors underlying them to take corrective action",
+        "The statutory audit of annual accounts by an independent firm of chartered accountants",
+        "The psychological assessment of senior executives during succession planning"
+      ],
+      "answerIndex": 1,
+      "explanation": "Strategy evaluation involves appraising the effectiveness of executed strategies, examining the underlying assumptions, measuring organizational performance, and initiating corrective actions when deviations occur.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Strategy Evaluation",
+        "Corrective Action",
+        "Performance Appraisal"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_013",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "According to Richard Rumelt, which criterion for evaluating strategies examines whether the strategy represents an adaptive response to the external environment and critical changes?",
+      "options": [
+        "Consonance",
+        "Advantage",
+        "Feasibility",
+        "Consistency"
+      ],
+      "answerIndex": 0,
+      "explanation": "Consonance refers to the need for strategies to represent an adaptive response to external environments and to the critical trends occurring within them. A strategy must match environmental threats and opportunities.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rumelt Evaluation Criteria",
+        "Consonance",
+        "Strategy Evaluation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_014",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "Under Rumelt's criteria, what does 'Consistency' mean in strategy evaluation?",
+      "options": [
+        "The strategy must provide a sustainable competitive advantage over rivals",
+        "The strategy must not present mutually inconsistent goals and policies",
+        "The strategy must be feasible within the physical and financial resource limits of the firm",
+        "The strategy must maintain continuous compliance with international labor laws"
+      ],
+      "answerIndex": 1,
+      "explanation": "Consistency requires that a strategy must not present mutually inconsistent goals and policies. Organizational sub-units and functional areas must pull in the same direction without conflicting mandates.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rumelt Criteria",
+        "Consistency",
+        "Goal Alignment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_015",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "Which of Rumelt's criteria assesses whether a strategy can be executed with the available financial, human, and physical resources of the organization?",
+      "options": [
+        "Advantage",
+        "Consonance",
+        "Feasibility",
+        "Consistency"
+      ],
+      "answerIndex": 2,
+      "explanation": "Feasibility tests whether a strategy can be attempted within the physical, human, and financial resources available to the enterprise. Overestimating resource capability leads to strategic failure.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rumelt Criteria",
+        "Feasibility",
+        "Resource Allocation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_016",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "What is the primary purpose of establishing 'Milestones' during strategy implementation?",
+      "options": [
+        "To delay decision-making until the final fiscal quarter ends",
+        "To provide intermediate checkpoints for assessing progress and maintaining momentum",
+        "To serve as legal evidence in case of shareholder litigation",
+        "To calculate employee bonuses without relying on performance appraisals"
+      ],
+      "answerIndex": 0,
+      "explanation": "Milestones serve as intermediate targets or checkpoints during implementation, allowing management to track progress, ensure schedules are met, and take early corrective actions if slippage occurs.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Milestones",
+        "Implementation Control",
+        "Progress Tracking"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_017",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "Which structural form groups employees primarily by specialized skills and tasks, such as engineering, finance, marketing, and human resources?",
+      "options": [
+        "Functional structure",
+        "Divisional structure",
+        "Matrix structure",
+        "Network structure"
+      ],
+      "answerIndex": 0,
+      "explanation": "A functional structure organizes an enterprise around basic business functions like marketing, finance, production, and R&D, promoting operational specialization and centralized control.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Functional Structure",
+        "Specialization",
+        "Organizational Design"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_018",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "What is a major risk when an organizational culture is rigidly entrenched and resistant to change during strategy implementation?",
+      "options": [
+        "It speeds up execution by enforcing uniform obedience",
+        "It creates a barrier that blocks strategic realignment and adaptation",
+        "It eliminates all agency costs within middle management",
+        "It guarantees high employee retention regardless of compensation"
+      ],
+      "answerIndex": 1,
+      "explanation": "While a strong culture aids implementation when aligned with strategy, a rigid or incompatible culture acts as a powerful barrier to change, often sabotaging new strategies that require different behaviors and values.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Organizational Culture",
+        "Resistance to Change",
+        "Cultural Barrier"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_019",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "Which of the following best describes 'BPR' (Business Process Reengineering) in relation to strategy implementation?",
+      "options": [
+        "Incremental cost-cutting on office supplies and travel budgets",
+        "Radical redesign of core business processes to achieve dramatic improvements in performance",
+        "Outsourcing all accounting functions to a third-party service provider",
+        "Merging two distinct corporate cultures through mandatory workshops"
+      ],
+      "answerIndex": 1,
+      "explanation": "Business Process Reengineering (BPR) involves the fundamental rethinking and radical redesign of business processes to achieve dramatic improvements in critical measures of performance such as cost, quality, service, and speed.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Business Process Reengineering",
+        "Radical Redesign",
+        "Process Improvement"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_020",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "In the context of strategic change, what is 'unfreezing' according to Kurt Lewin's change model?",
+      "options": [
+        "Freezing asset depreciation schedules during economic downturns",
+        "Breaking down the existing mindset and status quo to make the organization receptive to change",
+        "Locking in new operational routines permanently",
+        "Restricting capital expenditures until strategy implementation is complete"
+      ],
+      "answerIndex": 1,
+      "explanation": "Unfreezing involves overcoming inertia and dismantling the existing mindset, habits, and status quo, thereby creating a psychological readiness and motivation in employees to accept new ways of operating.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Change Management",
+        "Lewin Model",
+        "Unfreezing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_021",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "What is the final stage in Kurt Lewin's change process model?",
+      "options": [
+        "Transitioning",
+        "Refreezing",
+        "Evaluating",
+        "Reengineering"
+      ],
+      "answerIndex": 1,
+      "explanation": "KurtLewin's change model consists of three stages: Unfreezing, Changing (moving), and Refreezing. Refreezing institutionalizes the new behaviors, making them the standard operating procedure.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Change Management",
+        "Refreezing",
+        "Lewin Model"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_022",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "How does benchmarking contribute to effective strategy implementation?",
+      "options": [
+        "It establishes arbitrary quotas that employees must meet under threat of termination",
+        "It compares an organization's processes and performance metrics against industry best practices to identify gaps",
+        "It replaces the need for financial auditing by focusing exclusively on stock price",
+        "It automates routine manufacturing processes using artificial intelligence"
+      ],
+      "answerIndex": 1,
+      "explanation": "Benchmarking is the process of measuring an organization's internal processes and performance against best-in-class companies, helping management identify performance gaps and adopt superior practices.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Benchmarking",
+        "Best Practices",
+        "Performance Gaps"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_023",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "What is the primary function of a holding company or conglomerate structure?",
+      "options": [
+        "Directly managing day-to-day manufacturing operations across all subsidiaries",
+        "Holding equity in various autonomous companies while exercising financial and portfolio control",
+        "Eliminating all functional departments at the corporate headquarters level",
+        "Standardizing product design across entirely unrelated industries"
+      ],
+      "answerIndex": 1,
+      "explanation": "A holding company structure involves a parent corporation that owns the voting stock of other companies (subsidiaries) but generally exercises broad financial and portfolio oversight rather than managing daily operations.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Holding Company Structure",
+        "Portfolio Control",
+        "Corporate Governance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_024",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "Why is 'Advantage' considered a critical criterion in Richard Rumelt's strategy evaluation framework?",
+      "options": [
+        "It checks if the firm can maintain a competitive advantage in resources, skills, or position",
+        "It ensures that top executives receive maximum performance bonuses",
+        "It verifies that all marketing expenditures comply with statutory advertising codes",
+        "It guarantees zero financial leverage in the capital structure"
+      ],
+      "answerIndex": 0,
+      "explanation": "Advantage refers to the creation and maintenance of a superior competitive position. A strategy must provide either positional superiority, resource superiority, or skill superiority over competitors.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rumelt Criteria",
+        "Advantage",
+        "Competitive Position"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_025",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "Which strategic control mechanism involves continuous monitoring of broad trends in the general environment that might invalidate strategic assumptions?",
+      "options": [
+        "Special alert control",
+        "Premise control",
+        "Implementation control",
+        "Strategic surveillance"
+      ],
+      "answerIndex": 3,
+      "explanation": "Strategic surveillance is a broad-based, generalized monitoring tool that tracks a wide range of events inside and outside the organization that might threaten the current strategy.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Strategic Control",
+        "Strategic Surveillance",
+        "Environmental Monitoring"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_026",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "What is the purpose of 'Premise Control' as a strategic control technique?",
+      "options": [
+        "Checking whether physical security premises and warehouses are guarded against theft",
+        "Verifying and monitoring the key assumptions and premises upon which a strategy was built",
+        "Inspecting manufacturing factory premises before granting operating licenses",
+        "Auditing preliminary project feasibility reports prepared by consultants"
+      ],
+      "answerIndex": 1,
+      "explanation": "Premise control is designed to check regularly whether the key assumptions and planning premises (such as economic growth rates, regulatory changes, inflation) underlying the strategy remain valid.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Premise Control",
+        "Strategic Assumptions",
+        "Control Techniques"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_027",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "When is a 'Special Alert Control' triggered in strategic management?",
+      "options": [
+        "At the end of every fiscal quarter during routine board meetings",
+        "When an unexpected, high-impact event (such as a natural disaster or sudden regulatory ban) occurs",
+        "Whenever employee attendance drops below ninety percent",
+        "During annual performance appraisals of entry-level staff"
+      ],
+      "answerIndex": 1,
+      "explanation": "Special alert control is triggered by sudden, unexpected events—such as major geopolitical crises, natural disasters, or competitor breakthroughs—that demand immediate reassessment of the strategy.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Special Alert Control",
+        "Crisis Management",
+        "Trigger Events"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_028",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "What does the 'Learning and Growth' perspective in the Balanced Scorecard primarily measure?",
+      "options": [
+        "Return on capital employed and net profit margins",
+        "Employee training, corporate culture, technological capabilities, and organizational climate",
+        "Customer satisfaction scores and market share percentage",
+        "Speed of order delivery and manufacturing defect rates"
+      ],
+      "answerIndex": 1,
+      "explanation": "The learning and growth perspective focuses on the organization's intangible assets, particularly its people, culture, training, and technology infrastructure, which form the foundation for long-term success.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Balanced Scorecard",
+        "Learning and Growth",
+        "Intangible Assets"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_029",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "How does a functional structure typically react as an enterprise grows and diversifies its product lines?",
+      "options": [
+        "It becomes increasingly efficient and requires no structural modifications",
+        "It suffers from coordination bottlenecks, functional silos, and overloaded top management",
+        "It automatically transforms into a matrix structure without executive intervention",
+        "It eliminates the need for middle management entirely"
+      ],
+      "answerIndex": 1,
+      "explanation": "As a firm grows and diversifies, the functional structure leads to coordination problems, communication barriers between departments (silos), and excessive burdens on top management, necessitating a shift to divisional or SBU structures.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Functional Structure",
+        "Growth Limitations",
+        "Organizational Evolution"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-5_030",
+      "kind": "normal",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "prompt": "What is the primary focus of corporate culture audit during strategy implementation?",
+      "options": [
+        "Auditing petty cash receipts and employee travel expenses",
+        "Assessing whether existing cultural values and norms support or hinder the new strategic direction",
+        "Counting the number of cultural events hosted by the HR department",
+        "Measuring physical office space allocation among senior executives"
+      ],
+      "answerIndex": 1,
+      "explanation": "A cultural audit examines the prevailing values, beliefs, and behavioral norms of the organization to determine compatibility with the new strategy, enabling management to address cultural resistance proactively.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Cultural Audit",
+        "Strategy Implementation",
+        "Organizational Culture"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_strategic-management-5_01",
+      "kind": "scenario",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "passage": "Zenith Motors Ltd., an established automobile manufacturer in India, formulated a bold new strategy to transition entirely from internal combustion engine (ICE) vehicles to electric vehicles (EVs) over a three-year period. The top management, led by CEO Rajesh Sharma, recognized that the existing functional organizational structure, which created rigid silos between R&D, manufacturing, and marketing, was hindering cross-functional collaboration. Furthermore, middle managers resisted the shift, citing unfamiliarity with EV technology and clinging to legacy manufacturing processes. To monitor this complex transformation, Rajesh decided to implement a Balanced Scorecard alongside continuous milestone tracking.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_strategic-management-5_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-5_01",
+          "sequenceInScenario": 1,
+          "chapterId": "strategic-management-5",
+          "subject": "SM",
+          "prompt": "Which structural transformation is most appropriate for Zenith Motors Ltd. to overcome functional silos and successfully execute its EV transition?",
+          "options": [
+            "Reverting to a simple owner-managed structure",
+            "Transitioning from a functional structure to a divisional or project-matrix structure supporting cross-functional EV development",
+            "Adopting a holding company structure with zero operational oversight",
+            "Downsizing all R&D departments to reduce overhead costs"
+          ],
+          "answerIndex": 1,
+          "explanation": "Transitioning from a rigid functional structure to a divisional or matrix structure facilitates cross-functional collaboration between R&D, engineering, and marketing, which is vital for new product development like EVs.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Organizational Structure",
+            "EV Transition",
+            "Cross-Functional Collaboration"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-5_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-5_01",
+          "sequenceInScenario": 2,
+          "chapterId": "strategic-management-5",
+          "subject": "SM",
+          "prompt": "Applying Kurt Lewin's change model, what should CEO Rajesh Sharma prioritize first to address middle management resistance?",
+          "options": [
+            "Refreezing legacy manufacturing habits immediately",
+            "Unfreezing existing mindsets by communicating the strategic necessity of EVs and overcoming status quo inertia",
+            "Punishing managers who fail quarterly ICE production quotas",
+            "Outsourcing the entire change management process to external auditors"
+          ],
+          "answerIndex": 1,
+          "explanation": "According to Lewin's model, the unfreezing stage must come first to dismantle inertia, challenge old habits, and create psychological readiness for the shift to EV technology.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Change Management",
+            "Lewin Model",
+            "Unfreezing"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-5_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-5_01",
+          "sequenceInScenario": 3,
+          "chapterId": "strategic-management-5",
+          "subject": "SM",
+          "prompt": "If Zenith Motors uses the Balanced Scorecard, which perspective would specifically track employee training hours on EV battery technology and internal skill enhancement?",
+          "options": [
+            "Financial perspective",
+            "Customer perspective",
+            "Internal business process perspective",
+            "Learning and growth perspective"
+          ],
+          "answerIndex": 3,
+          "explanation": "The learning and growth perspective focuses on organizational capital, including employee training, skill development, corporate culture, and technology readiness.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Balanced Scorecard",
+            "Learning and Growth",
+            "Skill Enhancement"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-5_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-5_01",
+          "sequenceInScenario": 4,
+          "chapterId": "strategic-management-5",
+          "subject": "SM",
+          "prompt": "When Rajesh Sharma tracks intermediate targets such as prototype completion dates and pilot testing schedules, what implementation tool is he utilizing?",
+          "options": [
+            "Milestones",
+            "Statutory audit checklists",
+            "BCG portfolio matrices",
+            "Liquidity ratios"
+          ],
+          "answerIndex": 0,
+          "explanation": "Milestones are intermediate checkpoints or targets established during implementation to track progress, ensure schedules are met, and maintain momentum.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Milestones",
+            "Implementation Control",
+            "Progress Tracking"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_strategic-management-5_02",
+      "kind": "scenario",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "passage": "Aura Pharmaceuticals, a mid-sized drug manufacturer, recently acquired two smaller biotech firms specializing in generic oncology drugs. Aura's corporate leadership formulated a growth strategy to consolidate operations and expand pan-India market presence. However, during implementation, senior management noticed significant friction. The newly acquired biotech firms operated with informal, entrepreneurial cultures, whereas Aura had a highly bureaucratic, rule-bound hierarchy. Moreover, financial performance fell short of projections because the cost structures of the acquired units were incompatible with Aura's corporate pricing policies. The Board initiated a comprehensive evaluation using Rumelt's criteria.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_strategic-management-5_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-5_02",
+          "sequenceInScenario": 1,
+          "chapterId": "strategic-management-5",
+          "subject": "SM",
+          "prompt": "Which of Rumelt's criteria would evaluate whether Aura Pharmaceuticals' new growth strategy presents conflicting goals between its bureaucratic corporate hierarchy and the entrepreneurial culture of the acquired biotech firms?",
+          "options": [
+            "Advantage",
+            "Consistency",
+            "Consonance",
+            "Feasibility"
+          ],
+          "answerIndex": 1,
+          "explanation": "Consistency evaluates whether a strategy contains mutually inconsistent goals and policies. Conflicting cultural expectations and operational rules between parent and acquired units point to a consistency issue.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Rumelt Criteria",
+            "Consistency",
+            "Cultural Conflict"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-5_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-5_02",
+          "sequenceInScenario": 2,
+          "chapterId": "strategic-management-5",
+          "subject": "SM",
+          "prompt": "What type of control mechanism should Aura Pharmaceuticals employ to monitor whether the key macroeconomic and regulatory assumptions (such as government drug price controls) underlying their acquisition strategy remain valid?",
+          "options": [
+            "Premise control",
+            "Operational scrap control",
+            "Petty cash auditing",
+            "Plant security control"
+          ],
+          "answerIndex": 0,
+          "explanation": "Premise control monitors key assumptions and planning premises (like government pricing regulations) to verify if they still hold true during strategy execution.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Premise Control",
+            "Strategic Assumptions",
+            "Regulatory Monitoring"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-5_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-5_02",
+          "sequenceInScenario": 3,
+          "chapterId": "strategic-management-5",
+          "subject": "SM",
+          "prompt": "If Aura decides to redesign its core procurement and drug-approval workflows to eliminate bureaucratic delays inherited from the merger, which management technique is best suited?",
+          "options": [
+            "Business Process Reengineering (BPR)",
+            "Routine annual budgeting",
+            "Statistical quality sampling",
+            "Inventory turnover ratio analysis"
+          ],
+          "answerIndex": 0,
+          "explanation": "Business Process Reengineering (BPR) involves the radical redesign of core business processes to achieve dramatic performance improvements in speed, cost, and service.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Business Process Reengineering",
+            "Workflow Redesign",
+            "Merger Integration"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-5_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-5_02",
+          "sequenceInScenario": 4,
+          "chapterId": "strategic-management-5",
+          "subject": "SM",
+          "prompt": "Which of Rumelt's criteria would assess whether the merged entity has the financial capital and human talent resources required to sustain the expanded oncology product portfolio?",
+          "options": [
+            "Consonance",
+            "Feasibility",
+            "Advantage",
+            "Consistency"
+          ],
+          "answerIndex": 1,
+          "explanation": "Feasibility tests whether a strategy can be executed within the physical, human, and financial resources available to the enterprise.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Rumelt Criteria",
+            "Feasibility",
+            "Resource Availability"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_strategic-management-5_03",
+      "kind": "scenario",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "passage": "Nova Retail Corp operates a massive chain of hypermarkets across India. To cope with rapid regional expansion and shifting consumer preferences towards online shopping, Nova adopted a divisional structure organized by geographic regions (North, South, East, West). Each regional division has its own functional departments (marketing, HR, supply chain). However, the Chief Strategy Officer, Meera Nair, observed that regional divisions were operating as isolated fiefdoms, failing to share best practices in supply chain logistics. To address this, Meera decided to introduce benchmarking across divisions and establish rigorous strategic controls.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_strategic-management-5_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-5_03",
+          "sequenceInScenario": 1,
+          "chapterId": "strategic-management-5",
+          "subject": "SM",
+          "prompt": "What organizational structure is Nova Retail Corp currently utilizing to manage its geographic expansion?",
+          "options": [
+            "Functional structure",
+            "Divisional structure (geographic basis)",
+            "Simple owner-managed structure",
+            "Matrix structure with dual product lines"
+          ],
+          "answerIndex": 1,
+          "explanation": "Organizing activities into self-contained units based on geographic territories (North, South, East, West) represents a geographic divisional structure.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Divisional Structure",
+            "Geographic Structure",
+            "Organizational Design"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-5_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-5_03",
+          "sequenceInScenario": 2,
+          "chapterId": "strategic-management-5",
+          "subject": "SM",
+          "prompt": "How does the application of benchmarking help Nova Retail Corp overcome the problem of regional divisions operating as isolated fiefdoms?",
+          "options": [
+            "By penalizing low-performing regional managers financially",
+            "By comparing internal supply chain metrics across regions and adopting best practices from the highest-performing division",
+            "By centralizing all purchasing decisions back to the head office permanently",
+            "By eliminating the regional division heads altogether"
+          ],
+          "answerIndex": 1,
+          "explanation": "Benchmarking allows the organization to compare processes and performance metrics across divisions (or against external best-in-class peers) to identify performance gaps and adopt superior practices.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Benchmarking",
+            "Best Practices",
+            "Performance Gaps"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-5_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-5_03",
+          "sequenceInScenario": 3,
+          "chapterId": "strategic-management-5",
+          "subject": "SM",
+          "prompt": "If Nova Retail experiences an unexpected, catastrophic supply chain disruption due to sudden national transport strikes, which strategic control tool should be instantly activated?",
+          "options": [
+            "Strategic surveillance",
+            "Special alert control",
+            "Routine budget variance analysis",
+            "Annual employee performance appraisal"
+          ],
+          "answerIndex": 1,
+          "explanation": "Special alert control is triggered by sudden, unexpected, high-impact events like transport strikes or natural disasters that require immediate executive crisis response.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Special Alert Control",
+            "Crisis Management",
+            "Strategic Control"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-5_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-5_03",
+          "sequenceInScenario": 4,
+          "chapterId": "strategic-management-5",
+          "subject": "SM",
+          "prompt": "Which perspective of the Balanced Scorecard would Nova Retail primarily use to track customer retention rates, net promoter scores, and store checkout waiting times?",
+          "options": [
+            "Financial perspective",
+            "Customer perspective",
+            "Internal business process perspective",
+            "Learning and growth perspective"
+          ],
+          "answerIndex": 1,
+          "explanation": "The customer perspective of the Balanced Scorecard evaluates customer satisfaction, retention, market share, and service delivery metrics like waiting times.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Balanced Scorecard",
+            "Customer Perspective",
+            "Performance Metrics"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_strategic-management-5_04",
+      "kind": "scenario",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "passage": "Titanium Tech Solutions, a fast-growing IT and software services enterprise, recently expanded into artificial intelligence consulting and cloud architecture. The company uses a matrix structure to manage complex client projects, combining functional software engineering departments with project-based client teams. However, software engineers frequently complain about receiving conflicting instructions from their functional engineering heads and their project managers. Furthermore, the CEO, Vikramaditya Rao, noticed that strategic reviews were overly focused on short-term billable hours rather than long-term market positioning against emerging global tech titans.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_strategic-management-5_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-5_04",
+          "sequenceInScenario": 1,
+          "chapterId": "strategic-management-5",
+          "subject": "SM",
+          "prompt": "What is the root cause of the operational friction experienced by software engineers at Titanium Tech Solutions?",
+          "options": [
+            "Lack of functional specialization in engineering",
+            "Dual lines of authority inherent in a matrix structure",
+            "Excessive centralization of authority in a simple structure",
+            "Complete absence of project management frameworks"
+          ],
+          "answerIndex": 1,
+          "explanation": "The matrix structure involves dual lines of authority (functional boss and project boss), which frequently leads to conflicting instructions, employee confusion, and organizational friction.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Matrix Structure",
+            "Dual Authority",
+            "Operational Friction"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-5_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-5_04",
+          "sequenceInScenario": 2,
+          "chapterId": "strategic-management-5",
+          "subject": "SM",
+          "prompt": "According to Richard Rumelt's criteria, which evaluative test examines whether Titanium Tech Solutions' AI strategy provides a sustainable edge over global tech rivals?",
+          "options": [
+            "Consonance",
+            "Advantage",
+            "Feasibility",
+            "Consistency"
+          ],
+          "answerIndex": 1,
+          "explanation": "Advantage examines whether a strategy enables the firm to create and maintain a competitive advantage in resources, skills, or positional superiority over rivals.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Rumelt Criteria",
+            "Advantage",
+            "Competitive Edge"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-5_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-5_04",
+          "sequenceInScenario": 3,
+          "chapterId": "strategic-management-5",
+          "subject": "SM",
+          "prompt": "What type of control is Vikramaditya Rao primarily exercising when he evaluates long-term market positioning against global tech titans rather than just short-term billable hours?",
+          "options": [
+            "Operational control",
+            "Strategic control",
+            "Petty cash control",
+            "Inventory control"
+          ],
+          "answerIndex": 1,
+          "explanation": "Strategic control focuses on monitoring long-term environmental trends and strategic positioning, whereas operational control measures short-term task execution.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Strategic Control",
+            "Market Positioning",
+            "Long-term Focus"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-5_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-5_04",
+          "sequenceInScenario": 4,
+          "chapterId": "strategic-management-5",
+          "subject": "SM",
+          "prompt": "Which Balanced Scorecard perspective would Titanium Tech Solutions use to measure return on capital employed, profit margins on AI contracts, and revenue growth?",
+          "options": [
+            "Financial perspective",
+            "Customer perspective",
+            "Internal business process perspective",
+            "Learning and growth perspective"
+          ],
+          "answerIndex": 0,
+          "explanation": "The financial perspective of the Balanced Scorecard evaluates traditional financial performance indicators such as profitability, ROI, cash flow, and revenue growth.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Balanced Scorecard",
+            "Financial Perspective",
+            "Performance Indicators"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_strategic-management-5_05",
+      "kind": "scenario",
+      "chapterId": "strategic-management-5",
+      "subject": "SM",
+      "passage": "AgroCorp Ltd., a diversified agricultural conglomerate, operates across three distinct business sectors: seeds and fertilizers, farm mechanization equipment, and processed organic foods. Because each sector operates in a vastly different market environment with unique competitors, AgroCorp's corporate board decided to reorganize the enterprise into Strategic Business Units (SBUs). Each SBU was granted independent operational authority under a designated SBU head reporting to the CEO. However, during the post-reorganization strategy evaluation, the board questioned whether the farm mechanization SBU's aggressive expansion strategy was aligned with the corporate mandate for cash conservation.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 5,
+        "chapterTitle": "Strategy Implementation and Evaluation"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_strategic-management-5_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-5_05",
+          "sequenceInScenario": 1,
+          "chapterId": "strategic-management-5",
+          "subject": "SM",
+          "prompt": "Why is an SBU organizational structure particularly suitable for a diversified enterprise like AgroCorp Ltd.?",
+          "options": [
+            "It forces all three diverse sectors to share a single centralized manufacturing plant",
+            "It groups similar divisions into distinct strategic business units, enabling focused management of diverse product-market segments",
+            "It eliminates the need for any corporate headquarters oversight",
+            "It replaces divisional managers with functional supervisors"
+          ],
+          "answerIndex": 1,
+          "explanation": "An SBU structure groups similar divisions into strategic business units, allowing large firms with diverse operations to manage distinct product-market segments effectively under senior executive leadership.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SBU Structure",
+            "Diversification",
+            "Organizational Design"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-5_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-5_05",
+          "sequenceInScenario": 2,
+          "chapterId": "strategic-management-5",
+          "subject": "SM",
+          "prompt": "Which of Rumelt's evaluation criteria addresses the board's concern regarding whether the farm mechanization SBU's expansion strategy conflicts with the corporate cash conservation mandate?",
+          "options": [
+            "Consistency",
+            "Advantage",
+            "Consonance",
+            "Feasibility"
+          ],
+          "answerIndex": 0,
+          "explanation": "Consistency evaluates whether organizational goals and functional policies are mutually compatible, ensuring that an SBU's strategy does not contradict corporate-level financial mandates.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Rumelt Criteria",
+            "Consistency",
+            "Goal Alignment"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-5_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-5_05",
+          "sequenceInScenario": 3,
+          "chapterId": "strategic-management-5",
+          "subject": "SM",
+          "prompt": "Which control mechanism would AgroCorp's board use to continuously scan broad macroeconomic and agricultural policy trends (such as changes in government fertilizer subsidies) that could impact all SBUs?",
+          "options": [
+            "Strategic surveillance",
+            "Special alert control",
+            "Plant scrap control",
+            "Invoice verification control"
+          ],
+          "answerIndex": 0,
+          "explanation": "Strategic surveillance is a generalized, broad-based monitoring mechanism designed to track macroeconomic, regulatory, and industry trends across the general environment.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Strategic Surveillance",
+            "Environmental Scanning",
+            "Control Techniques"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-5_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-5_05",
+          "sequenceInScenario": 4,
+          "chapterId": "strategic-management-5",
+          "subject": "SM",
+          "prompt": "When evaluating strategy, what does 'Consonance' specifically require AgroCorp to assess?",
+          "options": [
+            "Whether the corporate office has enough petty cash for office supplies",
+            "Whether each SBU's strategy represents an adaptive response to external environmental changes and industry trends",
+            "Whether all employees have identical job titles across divisions",
+            "Whether software licenses are renewed annually"
+          ],
+          "answerIndex": 1,
+          "explanation": "Consonance requires that a strategy represent an adaptive response to the external environment and the critical trends occurring within it.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Rumelt Criteria",
+            "Consonance",
+            "Environmental Adaptation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "corporate-laws-10",
+  "subject": "Law",
+  "paper": "Paper 2: Corporate and Other Laws",
+  "module": "Module 2",
+  "chapterNumber": 10,
+  "chapterTitle": "Audit and Auditors",
+  "generatedAt": "2026-08-16T14:14:23.726Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_corporate-laws-10_001",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "Who holds the primary responsibility for appointing the first auditor of a company other than a Government company under Section 139(6) of the Companies Act, 2013?",
+      "options": [
+        "The Board of Directors",
+        "The members in a general meeting",
+        "The Comptroller and Auditor-General of India",
+        "The Regional Director"
+      ],
+      "answerIndex": 0,
+      "explanation": "According to Section 139(6) of the Companies Act, 2013, the first auditor of a company, other than a Government company, shall be appointed by the Board of Directors within 30 days of the date of registration of the company. If the Board fails, it informs the members to appoint the auditor.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "First Auditor",
+        "Board Appointment",
+        "Section 139(6)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_002",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "Within what period from the date of registration must the Board of Directors appoint the first auditor of a non-Government company?",
+      "options": [
+        "15 days",
+        "30 days",
+        "60 days",
+        "90 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 139(6) mandates that the Board of Directors of a non-Government company must appoint the first auditor within 30 days from the date of registration of the company.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "First Auditor",
+        "Time Limit",
+        "Section 139(6)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_003",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "What happens if the Board of Directors of a non-Government company fails to appoint the first auditor within the stipulated 30-day period?",
+      "options": [
+        "The office of the auditor remains vacant permanently for that year.",
+        "The Central Government directly makes the appointment.",
+        "The company shall inform the members, who shall appoint the auditor within 90 days at an extraordinary general meeting.",
+        "The Registrar of Companies automatically assumes the role of the auditor."
+      ],
+      "answerIndex": 2,
+      "explanation": "Under Section 139(6), if the Board fails to appoint the first auditor within 30 days, it shall inform the members of the company, who shall within 90 days at an extraordinary general meeting (EGM) appoint such auditor.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "First Auditor",
+        "Default by Board",
+        "Member Appointment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_004",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "For a Government company or any other company owned or controlled, directly or indirectly, by the Central Government, who appoints the first auditor under Section 139(7)?",
+      "options": [
+        "The Board of Directors within 30 days",
+        "The Comptroller and Auditor-General of India (CAG) within 60 days from registration",
+        "The members in the first Annual General Meeting",
+        "The National Company Law Tribunal (NCLT)"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 139(7) states that in the case of a Government company, the first auditor shall be appointed by the Comptroller and Auditor-General of India within 60 days from the date of registration of the company.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Government Company",
+        "CAG Appointment",
+        "First Auditor"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_005",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "What is the maximum tenure for which an individual can be appointed as an auditor in a listed company before mandatory rotation applies under Section 139(2)?",
+      "options": [
+        "One term of 3 consecutive years",
+        "One term of 5 consecutive years",
+        "Two terms of 5 consecutive years each",
+        "Maximum of 10 consecutive years without limit"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 139(2) provides that an individual can be appointed as an auditor for not more than one term of 5 consecutive years. However, they can be re-appointed for another term of 5 consecutive years after a cooling period, making a maximum of two terms of 5 years each.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Auditor Rotation",
+        "Tenure",
+        "Section 139(2)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_006",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "What is the mandatory cooling period required for an individual auditor after completing their maximum tenure in a company where rotation of auditors applies?",
+      "options": [
+        "2 consecutive years",
+        "3 consecutive years",
+        "5 consecutive years",
+        "10 consecutive years"
+      ],
+      "answerIndex": 2,
+      "explanation": "According to Section 139(2), an individual who has completed their term of 5 consecutive years (or two terms totaling 10 years, depending on the rule applicability) cannot be re-appointed as auditor of the same company for a period of 5 years from the completion of their term.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Cooling Period",
+        "Auditor Rotation",
+        "Section 139(2)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_007",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "Under Section 139(2), what is the maximum continuous tenure permitted for an audit firm in a listed company?",
+      "options": [
+        "One term of 5 years",
+        "Two terms of 5 consecutive years each",
+        "Three terms of 5 consecutive years each",
+        "Five consecutive years with no renewal"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 139(2) specifies that an audit firm can be appointed for not more than two terms of 5 consecutive years each, followed by a mandatory cooling period of 5 years.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Audit Firm Rotation",
+        "Tenure",
+        "Section 139(2)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_008",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "Which of the following classes of companies, other than listed companies, are specifically required to comply with the mandatory rotation of auditors provisions under Rule 5 of the Companies (Audit and Auditors) Rules, 2014?",
+      "options": [
+        "All private limited companies regardless of paid-up share capital",
+        "Unlisted public companies having paid-up share capital of rupees 10 crore or more",
+        "All dormant companies",
+        "All Nidhi companies with any deposit size"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 5 of the Companies (Audit and Auditors) Rules, 2014 requires unlisted public companies having paid-up share capital of Rs. 10 crore or more, and private limited companies having paid-up share capital of Rs. 50 crore or more, to rotate their auditors.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rule 5",
+        "Rotation Thresholds",
+        "Unlisted Companies"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_009",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "Can a retiring auditor be re-appointed at an Annual General Meeting (AGM) if they have become disqualified under Section 141(3)?",
+      "options": [
+        "Yes, if the Board unanimously recommends them.",
+        "Yes, with the prior approval of the Registrar of Companies.",
+        "No, a disqualified person cannot be appointed or re-appointed as an auditor.",
+        "Yes, provided 75% of members vote in favor."
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 141(3) outlines disqualifications for appointment as an auditor. A person who incurs a disqualification cannot be appointed or re-appointed, and any ongoing appointment ceases immediately upon disqualification.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Disqualifications",
+        "Section 141(3)",
+        "Re-appointment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_010",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "Which of the following persons is NOT disqualified from being appointed as an auditor of a company under Section 141(3)?",
+      "options": [
+        "A body corporate other than a Limited Liability Partnership",
+        "An officer or employee of the company",
+        "A person who, or whose relative or partner, holds any security of or interest in the company of face value rupees 500",
+        "A chartered accountant in practice who is holding a valid Certificate of Practice"
+      ],
+      "answerIndex": 3,
+      "explanation": "A practicing Chartered Accountant with a valid COP is eligible for appointment, provided they do not suffer from any specific disqualifications listed in Section 141(3) such as being an officer/employee, holding securities above the permitted limit, or being a corporate body.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Eligibility",
+        "Section 141(3)",
+        "Disqualifications"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_011",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "What is the maximum face value limit of securities that a relative of an auditor can hold in the company, subsidiary, holding, or associate company without disqualifying the auditor under Section 141(3)(d)(i)?",
+      "options": [
+        "Rupees 1,000",
+        "Rupees 50,000",
+        "Rupees 1,00,000",
+        "Rupees 5,00,000"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under Section 141(3)(d)(i), a person is disqualified if they, their relative, or partner holds any security of or interest in the company, its subsidiary, holding, or associate company of face value exceeding Rs. 1,00,000 (as amended by the Companies (Amendment) Act, 2017).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Holding Securities",
+        "Disqualification Limit",
+        "Section 141(3)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_012",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "If a relative of an auditor acquires securities exceeding the permitted threshold of rupees 1,00,000 post-appointment, what corrective action must be taken and within what timeframe?",
+      "options": [
+        "The auditor must resign within 60 days.",
+        "The corrective action to divest or rectify must be taken within 60 days.",
+        "The company must redeem the shares within 30 days.",
+        "No action is required if the holding was unintentional."
+      ],
+      "answerIndex": 1,
+      "explanation": "As per the proviso to Section 141(3)(d), where a person acquires securities or interest exceeding the threshold after appointment, the corrective action to maintain the limits must be taken by the person concerned within 60 days of such acquisition.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Corrective Action",
+        "Timeframe",
+        "Section 141(3)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_013",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "What is the maximum indebtedness limit to the company, its holding, subsidiary, or associate company that will disqualify a person from being appointed as an auditor under Section 141(3)(d)(ii)?",
+      "options": [
+        "Rupees 1,00,000",
+        "Rupees 5,00,000",
+        "Rupees 10,00,000",
+        "Any amount exceeding rupees 5,00,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 141(3)(d)(ii), a person is disqualified if they or their relative or partner is indebted to the company, its subsidiary, holding, or associate company, or a subsidiary of such holding company, in excess of Rs. 5,00,000.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Indebtedness",
+        "Disqualification",
+        "Section 141(3)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_014",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "What is the maximum guarantee or security limit provided by a person in connection with any third party to the company, its holding, subsidiary, or associate company that disqualifies an auditor under Section 141(3)(d)(iii)?",
+      "options": [
+        "Rupees 50,000",
+        "Rupees 1,00,000",
+        "Rupees 5,00,000",
+        "Rupees 10,00,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 141(3)(d)(iii) states that a person is disqualified if they or their relative or partner has given a guarantee or provided any security in connection with the indebtedness of any third person to the company, its subsidiary, holding, or associate company, in excess of Rs. 1,00,000.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Guarantee",
+        "Disqualification",
+        "Section 141(3)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_015",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "Under Section 141(3)(f), what is the maximum number of companies (excluding dormant companies, one person companies, small companies, and private companies having paid-up share capital of less than Rs. 100 crore) in respect of which an auditor can hold office at a given time?",
+      "options": [
+        "10 companies",
+        "20 companies",
+        "30 companies",
+        "50 companies"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 141(3)(f) specifies the ceiling limit on audit assignments. A person cannot hold office as an auditor in more than 20 companies at the same time, subject to exclusions for certain categories of companies.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Ceiling Limit",
+        "Audit Assignments",
+        "Section 141(3)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_016",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "How is a casual vacancy in the office of an auditor filled in the case of a company other than a Government company under Section 139(8)?",
+      "options": [
+        "Filled by the Comptroller and Auditor-General within 30 days.",
+        "Filled by the Board of Directors within 30 days, but if due to resignation, it must also be approved by the company at a general meeting within 3 months.",
+        "Filled exclusively by the members at an extraordinary general meeting called within 7 days.",
+        "Filled by the Registrar of Companies directly."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 139(8)(i) provides that casual vacancies other than due to resignation are filled by the Board within 30 days. If the vacancy is due to resignation, the Board must fill it within 30 days, and the appointment must also be approved by the company in a general meeting within 3 months of the Board's recommendation.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Casual Vacancy",
+        "Resignation",
+        "Section 139(8)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_017",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "Within what period must a casual vacancy arising due to the resignation of an auditor be approved by the company in a general meeting after the Board makes the appointment?",
+      "options": [
+        "1 month",
+        "2 months",
+        "3 months",
+        "6 months"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under the proviso to Section 139(8)(i), where a casual vacancy is caused by the resignation of an auditor, the appointment by the Board must be approved by the company in a general meeting convened within 3 months of the recommendation of the Board.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Casual Vacancy",
+        "Resignation Approval",
+        "Section 139(8)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_018",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "Who fills a casual vacancy in the office of an auditor of a Government company under Section 139(8)(ii)?",
+      "options": [
+        "The Board of Directors within 30 days",
+        "The Comptroller and Auditor-General of India within 30 days",
+        "The members of the company in an AGM",
+        "The Central Government directly"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 139(8)(ii) dictates that in the case of a Government company, a casual vacancy in the office of an auditor shall be filled by the Comptroller and Auditor-General of India within 30 days. If CAG fails, the Board fills it within the next 30 days.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Government Company",
+        "Casual Vacancy",
+        "CAG"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_019",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "Under Section 140(1), what is the requisite procedural step required for the removal of an auditor before the expiry of their term?",
+      "options": [
+        "Ordinary resolution passed at any general meeting with 7 days notice",
+        "Special resolution passed by the Board of Directors",
+        "Prior approval of the Central Government and passing a special resolution after giving a reasonable opportunity of being heard",
+        "Simple written notice to the Registrar of Companies"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 140(1) prescribes that an auditor may be removed from office before the expiry of their term only after obtaining the prior approval of the Central Government and passing a special resolution in a general meeting, after giving the auditor a reasonable opportunity of being heard.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Removal of Auditor",
+        "Central Government Approval",
+        "Section 140(1)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_020",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "What form must an auditor file with the company and the Registrar upon resigning from their office, as mandated by Section 140(2) and Rule 8?",
+      "options": [
+        "Form ADT-1",
+        "Form ADT-3",
+        "Form ADT-4",
+        "Form INC-22"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 140(2) and Rule 8 of the Companies (Audit and Auditors) Rules, 2014, an auditor who resigns from the company must file a statement in Form ADT-3 with the company and the Registrar (and also with the CAG in case of Government companies) within 30 days of resignation.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Resignation",
+        "Form ADT-3",
+        "Section 140(2)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_021",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "What specific information must an auditor include in Form ADT-3 upon resignation before their term expires?",
+      "options": [
+        "Only the resignation letter addressed to the managing director.",
+        "A detailed statement of reasons for resignation and any other facts relevant to the resignation.",
+        "The bank account details for final settlement of audit fees.",
+        "A copy of the audit report already submitted for previous years."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 140(2) requires the resigning auditor to indicate the detailed reasons and facts relevant to their resignation in the statement filed with the company and the Registrar.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Resignation Statement",
+        "Form ADT-3",
+        "Reasons"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_022",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "What penalty can be imposed on the auditor under Section 140(3) if they fail to comply with the statutory requirements of filing the resignation statement under Section 140(2)?",
+      "options": [
+        "Fine of Rs. 10,000 only",
+        "Fine ranging from Rs. 50,000 to Rs. 5,00,000 or remuneration of the auditor, whichever is less",
+        "Imprisonment up to 1 year mandatory",
+        "Cancellation of Certificate of Practice for 5 years"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 140(3) provides that if the auditor does not comply with Section 140(2), they shall be punishable with a fine which shall not be less than Rs. 50,000 or the remuneration of the auditor, whichever is less, and which may extend to Rs. 5,00,000.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Penalty",
+        "Resignation Default",
+        "Section 140(3)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_023",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "Under Section 140(5), if the National Company Law Tribunal (NCLT) is satisfied that an auditor has acted in a fraudulent manner or abetted or colluded in any fraud, what order can it pass?",
+      "options": [
+        "Direct the auditor to pay a fine to the shareholders directly.",
+        "Direct the company to change its auditor, and such auditor shall not be eligible to be appointed as an auditor of any company for 5 years.",
+        "Suspend the auditor's practicing membership for life without tribunal hearing.",
+        "Order liquidation of the company immediately."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 140(5) empowers NCLT (suo motu or upon application) to direct the company to change its auditor if the auditor acted fraudulently. Additionally, such auditor is barred from being appointed as an auditor of any company for a period of 5 years.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "NCLT Powers",
+        "Fraud by Auditor",
+        "Section 140(5)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_024",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "Which section of the Companies Act, 2013 deals with the remuneration of auditors?",
+      "options": [
+        "Section 139",
+        "Section 140",
+        "Section 142",
+        "Section 143"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 142 of the Companies Act, 2013 governs the remuneration of auditors, specifying that it shall be fixed in a general meeting or in such manner as the company in general meeting may determine.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Remuneration",
+        "Section 142",
+        "General Meeting"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_025",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "According to Section 143(1), what right of access does an auditor have during the performance of their duties?",
+      "options": [
+        "Access at all times to any books of account and vouchers of the company, whether kept at the registered office or elsewhere.",
+        "Access only to the physical books of account located at the principal factory during working hours.",
+        "Access to books of account solely upon giving 14 days advance written notice to the directors.",
+        "Access to personal bank accounts of all shareholders and directors."
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 143(1) gives every auditor of a company a right of access at all times to the books of account and vouchers of the company, whether kept at the registered office or elsewhere, and requires them to be entitled to require from officers of the company such information and explanation as they may think necessary.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Auditor Rights",
+        "Access to Books",
+        "Section 143(1)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_026",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "In carrying out their duties regarding fraud reporting under Section 143(12), if an auditor has reason to believe that an offense involving fraud is being or has been committed against the company by officers or employees, what is the first step they must take if the fraud amount is below rupees 1 crore?",
+      "options": [
+        "Report directly to the Serious Fraud Investigation Office (SFIO) within 2 days.",
+        "Report the matter to the Board or Audit Committee within 2 days of knowledge.",
+        "Publish a notice in a national daily newspaper.",
+        "Immediately resign and file Form ADT-3."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Rule 13 of the Companies (Audit and Auditors) Rules, 2014 pursuant to Section 143(12), if the fraud involves an amount below Rs. 1 crore, the auditor must report the matter to the Board or the Audit Committee within 2 days of becoming aware of the fraud.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Fraud Reporting",
+        "Section 143(12)",
+        "Rule 13"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_027",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "Under Section 143(12) and Rule 13, if a fraud involves an amount of rupees 1 crore or above, within how many days must the auditor report the matter to the Central Government (Ministry of Corporate Affairs)?",
+      "options": [
+        "2 days",
+        "15 days",
+        "60 days",
+        "Within 60 days, after first reporting to the Board/Audit Committee within 2 days to seek their reply or observations"
+      ],
+      "answerIndex": 3,
+      "explanation": "For frauds involving Rs. 1 crore or more, the auditor must report to the Board/Audit Committee within 2 days seeking their comments within 45 days. Upon receiving comments or expiry of 45 days, the auditor must forward the report to the Central Government within 15 days (making total timeline structured around the 60-day reporting framework).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Fraud Reporting",
+        "Central Government",
+        "Section 143(12)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_028",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "Which of the following services are explicitly prohibited to be rendered by an auditor to a company, its holding, or subsidiary company under Section 144?",
+      "options": [
+        "Tax audit under the Income Tax Act, 1961",
+        "Design and implementation of any financial information system",
+        "Issuing comfort letters required for public issue of shares",
+        "Performing statutory audit of subsidiary companies"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 144 lists non-audit services that an auditor cannot provide, which include design and implementation of any financial information system, internal audit, bookkeeping, actuarial services, investment advisory services, etc.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Prohibited Services",
+        "Section 144",
+        "Non-Audit Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_029",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "Who is required to sign the auditor's report under Section 145 of the Companies Act, 2013?",
+      "options": [
+        "Only the managing director of the company",
+        "The person appointed as auditor, or where a firm is appointed, only the partners practicing in India can sign",
+        "Any senior articled assistant authorized by the audit firm",
+        "The Company Secretary along with the internal auditor"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 145 mandates that the person appointed as auditor of the company, or where a firm is appointed, only the partners practicing in India can sign the auditor's report or sign or authenticate any other document of the company required by law.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Signing Audit Report",
+        "Section 145",
+        "Auditor Signature"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-10_030",
+      "kind": "normal",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "prompt": "Under Section 146, is the auditor required to attend general meetings of the company?",
+      "options": [
+        "No, attendance at general meetings is entirely voluntary for auditors.",
+        "Yes, the auditor must attend every general meeting unless exempted by the Board.",
+        "Yes, unless specifically exempted by the company, the auditor or their authorized representative must attend all general meetings where financial statements are discussed.",
+        "Only when summoned by the National Company Law Tribunal."
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 146 stipulates that all notices of and other communications relating to any general meeting shall be forwarded to the auditor, and the auditor shall attend either by themselves or through their authorized representative (who is also qualified to be an auditor) any general meeting and shall have right to be heard.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "General Meetings",
+        "Auditor Attendance",
+        "Section 146"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_corporate-laws-10_01",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "passage": "Aura Cosmetics Limited is a listed public company registered on 1st April 2025. The Board of Directors met on 20th April 2025 to appoint 'M/s Sharma & Associates', a Chartered Accountant firm, as the first auditor of the company. Mr. Sharma, a partner in the firm, has a relative who owns equity shares in Aura Cosmetics Limited of the face value of Rs. 80,000. Additionally, the firm was also asked to design and implement a new enterprise financial information system for the company.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-10_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-10_01",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-10",
+          "subject": "Law",
+          "prompt": "Was the appointment of M/s Sharma & Associates as the first auditor by the Board of Directors within the legally prescribed time limit under Section 139(6)?",
+          "options": [
+            "No, because first auditors of listed companies must be appointed by the CAG.",
+            "Yes, because the Board appointed them within 30 days from the date of registration.",
+            "No, because the Board can only appoint auditors after approval of the Registrar.",
+            "Yes, but only if approved by members within 15 days."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 139(6), the Board of Directors of a non-Government company must appoint the first auditor within 30 days of registration. Aura Cosmetics Limited was registered on 1st April 2025, and the appointment on 20th April 2025 falls within the 30-day window.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "First Auditor",
+            "Board Appointment",
+            "Section 139(6)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-10_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-10_01",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-10",
+          "subject": "Law",
+          "prompt": "Does the shareholding of Rs. 80,000 by Mr. Sharma's relative in Aura Cosmetics Limited disqualify M/s Sharma & Associates from being appointed as the auditor?",
+          "options": [
+            "Yes, any shareholding by a relative creates immediate absolute disqualification.",
+            "No, because the face value of the shares held by the relative does not exceed the statutory limit of Rs. 1,00,000.",
+            "Yes, because relatives of partners cannot hold shares in listed companies under any circumstances.",
+            "No, provided the shares are sold within 7 days of appointment."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 141(3)(d)(i), holding securities of face value up to Rs. 1,00,000 by a relative is permitted. Since the relative holds shares worth Rs. 80,000, it is within the permissible limit and does not trigger disqualification.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Holding Securities",
+            "Disqualification",
+            "Section 141(3)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-10_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-10_01",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-10",
+          "subject": "Law",
+          "prompt": "Is it permissible for M/s Sharma & Associates to design and implement the financial information system for Aura Cosmetics Limited?",
+          "options": [
+            "Yes, if approved by a special resolution of shareholders.",
+            "No, because designing and implementing financial information systems is a prohibited non-audit service under Section 144.",
+            "Yes, because design of IT systems is part of normal statutory audit duties.",
+            "No, unless the fee for this service does not exceed 10% of total audit fees."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 144 explicitly prohibits an auditor appointed under the Act from providing design and implementation of any financial information system to the company, its holding, or subsidiary companies.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Prohibited Services",
+            "Section 144",
+            "IT Systems"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-10_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-10_01",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-10",
+          "subject": "Law",
+          "prompt": "If M/s Sharma & Associates completes its first term of 5 years as auditor of Aura Cosmetics Limited, what is the maximum continuous tenure they can hold before a mandatory cooling period applies?",
+          "options": [
+            "Only 1 term of 5 years with no renewal",
+            "Two terms of 5 consecutive years each (total 10 years)",
+            "Three terms of 5 consecutive years each (total 15 years)",
+            "Unlimited tenure for listed companies"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 139(2) allows an audit firm to be appointed for a maximum of two terms of 5 consecutive years each in a listed company, after which a mandatory cooling period of 5 years applies.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Tenure",
+            "Auditor Rotation",
+            "Section 139(2)"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-10_02",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "passage": "Vanguard Engineering Ltd. is an unlisted public company with a paid-up share capital of Rs. 15 crore and turnover of Rs. 120 crore. During the annual audit for the financial year ended 31st March 2026, the statutory auditor, CA. Raman, discovers that the Chief Financial Officer (CFO) has manipulated accounts to siphon off Rs. 75,00,000. CA. Raman wishes to understand his statutory obligations regarding reporting this fraud.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-10_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-10_02",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-10",
+          "subject": "Law",
+          "prompt": "Does Vanguard Engineering Ltd. fall under the mandatory rotation of auditor provisions under Rule 5 of the Companies (Audit and Auditors) Rules, 2014?",
+          "options": [
+            "No, because it is an unlisted company.",
+            "Yes, because it is an unlisted public company having paid-up share capital of Rs. 10 crore or more.",
+            "No, because its turnover is below Rs. 200 crore.",
+            "Yes, but only if the Central Government issues a special notification."
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 5 mandates rotation for unlisted public companies having a paid-up share capital of Rs. 10 crore or more. Since Vanguard Engineering Ltd. has a paid-up share capital of Rs. 15 crore, rotation rules apply to it.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Rotation Thresholds",
+            "Rule 5",
+            "Unlisted Public Company"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-10_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-10_02",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-10",
+          "subject": "Law",
+          "prompt": "Since the fraud discovered involves an amount of Rs. 75,00,000 (which is below Rs. 1 crore), what is CA. Raman's immediate reporting obligation under Rule 13 of Companies (Audit and Auditors) Rules, 2014?",
+          "options": [
+            "Report directly to the Central Government within 15 days.",
+            "Report the matter to the Board or Audit Committee within 2 days of his knowledge.",
+            "Report to the Comptroller and Auditor-General of India.",
+            "File a criminal complaint with the local police station within 24 hours."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Rule 13(1) pursuant to Section 143(12), if the fraud involves an amount less than Rs. 1 crore, the auditor must report the matter to the Board or the Audit Committee within 2 days of becoming aware of it.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Fraud Reporting",
+            "Below 1 Crore",
+            "Rule 13"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-10_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-10_02",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-10",
+          "subject": "Law",
+          "prompt": "What must CA. Raman do after reporting the fraud below Rs. 1 crore to the Audit Committee/Board?",
+          "options": [
+            "Wait for the Board's reply and include the same in the Board's report as specified in the rules.",
+            "Immediately resign and file Form ADT-3 with ROC.",
+            "Publish the details in local newspapers for public awareness.",
+            "File an appeal before the National Company Law Tribunal."
+          ],
+          "answerIndex": 0,
+          "explanation": "When reporting fraud below Rs. 1 crore, the auditor must report to the Board/Audit Committee within 2 days, seeking their receipt and comments, which must be disclosed in the Board's report in the prescribed manner.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Fraud Disclosure",
+            "Board Report",
+            "Rule 13"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-10_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-10_02",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-10",
+          "subject": "Law",
+          "prompt": "If CA. Raman fails to report the fraud as required under Section 143(12), what penalty is he liable to pay?",
+          "options": [
+            "A fixed fine of rupees 10,000",
+            "A fine not less than rupees 1,00,000 which may extend to rupees 25,00,000",
+            "Mandatory imprisonment of 5 years",
+            "Fine equal to the entire audit fee of the company"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 143(15) specifies that if any auditor does not comply with the provisions of sub-section (12), they shall be punishable with a fine of not less than Rs. 1,00,000 which may extend to Rs. 25,00,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Penalty",
+            "Section 143(15)",
+            "Non-compliance"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-10_03",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "passage": "Zenith Pharma Ltd., a listed company, appointed 'M/s Apex & Co.', a Chartered Accountant firm, as its statutory auditor at the 5th Annual General Meeting held in September 2024 for a term of 5 years. In July 2025, due to professional pre-occupation, the audit firm decided to resign before completing its term. The firm submitted its resignation letter directly to the company.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-10_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-10_03",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-10",
+          "subject": "Law",
+          "prompt": "What procedural filing requirement must 'M/s Apex & Co.' fulfill upon resignation under Section 140(2) and Rule 8?",
+          "options": [
+            "File Form ADT-1 with the Board of Directors within 15 days.",
+            "File a statement in Form ADT-3 with the company and the Registrar within 30 days of resignation, indicating reasons.",
+            "File Form ADT-4 directly with the NCLT without notifying the company.",
+            "No filing is required if resignation is due to professional pre-occupation."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 140(2) and Rule 8 mandate that an auditor who resigns must file Form ADT-3 with the company and the Registrar within 30 days, detailing the reasons for resignation.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Resignation",
+            "Form ADT-3",
+            "Section 140(2)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-10_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-10_03",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-10",
+          "subject": "Law",
+          "prompt": "How shall the casual vacancy caused by the resignation of M/s Apex & Co. be filled under Section 139(8)?",
+          "options": [
+            "Filled exclusively by the Comptroller and Auditor-General within 30 days.",
+            "Filled by the Board of Directors within 30 days, and such appointment must also be approved by the company in a general meeting within 3 months.",
+            "Filled by the Registrar of Companies automatically.",
+            "The office must remain vacant until the next Annual General Meeting."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 139(8)(i), a casual vacancy caused by resignation must be filled by the Board within 30 days, and the appointment must be approved by the company in a general meeting convened within 3 months of the Board's recommendation.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Casual Vacancy",
+            "Resignation Approval",
+            "Section 139(8)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-10_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-10_03",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-10",
+          "subject": "Law",
+          "prompt": "What is the consequence if M/s Apex & Co. fails to file Form ADT-3 within the prescribed 30 days?",
+          "options": [
+            "Penalty under Section 140(3) ranging from Rs. 50,000 or the remuneration of the auditor, whichever is less, up to Rs. 5,00,000.",
+            "Automatic extension of audit term by 1 year.",
+            "Only a warning letter from the Institute of Chartered Accountants of India.",
+            "Fine of a flat Rs. 10,000 with no other penal consequences."
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 140(3) prescribes a penalty for non-compliance with Section 140(2) ranging from Rs. 50,000 or the auditor's remuneration (whichever is less) up to Rs. 5,00,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Penalty",
+            "Section 140(3)",
+            "Default"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-10_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-10_03",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-10",
+          "subject": "Law",
+          "prompt": "Who is authorized to sign the audit report on behalf of 'M/s Apex & Co.'?",
+          "options": [
+            "Any paid assistant employed by the firm who holds a valid membership.",
+            "Only the partner practicing in India as appointed and authorized by the firm.",
+            "The managing partner residing outside India.",
+            "Any Company Secretary employed by the audit firm."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 145 specifies that when an audit firm is appointed, only the partner practicing in India can sign the audit report or authenticate documents on behalf of the firm.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Signing Audit Report",
+            "Section 145",
+            "Audit Firm"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-10_04",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "passage": "Bharat Power Corporation Ltd. is a Government company in which the Central Government holds 65% of the paid-up share capital. The company was incorporated on 10th May 2025. The Board of Directors assumed that they had 30 days to appoint the first auditor. Meanwhile, the Comptroller and Auditor-General of India (CAG) also initiated steps for appointing the first auditor.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-10_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-10_04",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-10",
+          "subject": "Law",
+          "prompt": "Who holds the legal authority to appoint the first auditor of Bharat Power Corporation Ltd. under Section 139(7)?",
+          "options": [
+            "The Board of Directors within 30 days",
+            "The Comptroller and Auditor-General of India (CAG) within 60 days from registration",
+            "The members in the first Annual General Meeting",
+            "The National Company Law Tribunal"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 139(7) explicitly states that in the case of a Government company, the first auditor shall be appointed by the Comptroller and Auditor-General of India within 60 days from the date of registration.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Government Company",
+            "CAG Appointment",
+            "Section 139(7)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-10_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-10_04",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-10",
+          "subject": "Law",
+          "prompt": "What happens if the Comptroller and Auditor-General of India fails to appoint the first auditor within the stipulated 60 days in Bharat Power Corporation Ltd.?",
+          "options": [
+            "The company remains without an auditor for the entire financial year.",
+            "The Board of Directors shall appoint the auditor within the next 30 days.",
+            "The Registrar of Companies automatically becomes the auditor.",
+            "The shareholders elect the auditor at an extraordinary general meeting within 7 days."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 139(7), if the CAG fails to appoint the first auditor within 60 days, the Board of Directors of the Government company shall appoint the auditor within the next 30 days.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Government Company",
+            "CAG Default",
+            "Board Appointment"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-10_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-10_04",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-10",
+          "subject": "Law",
+          "prompt": "How is a subsequent auditor appointed in Bharat Power Corporation Ltd. under Section 139(5)?",
+          "options": [
+            "Appointed by the shareholders at each Annual General Meeting.",
+            "Appointed by the CAG within 180 days before the commencement of the financial year.",
+            "Appointed by the Central Government directly.",
+            "Appointed by the Board of Directors every year."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 139(5) specifies that in the case of a Government company or any other company owned/controlled by the Central/State Government, the sub-sequent auditor shall be appointed by the CAG within 180 days from the commencement of the financial year.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Government Company",
+            "Subsequent Auditor",
+            "Section 139(5)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-10_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-10_04",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-10",
+          "subject": "Law",
+          "prompt": "If a casual vacancy arises in the office of the auditor of Bharat Power Corporation Ltd., who is empowered to fill such vacancy under Section 139(8)(ii)?",
+          "options": [
+            "The Board of Directors within 7 days",
+            "The Comptroller and Auditor-General of India within 30 days",
+            "The members in an extraordinary general meeting",
+            "The Central Government immediately"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 139(8)(ii) dictates that a casual vacancy in the case of a Government company shall be filled by the Comptroller and Auditor-General of India within 30 days. If CAG fails, the Board fills it within the next 30 days.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Government Company",
+            "Casual Vacancy",
+            "CAG"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-10_05",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-10",
+      "subject": "Law",
+      "passage": "CA. Manoj is a practicing Chartered Accountant and sole proprietor of 'Manoj & Co.'. He is offered the statutory audit of 22 companies. Out of these 22 companies, 2 are dormant companies, 3 are One Person Companies (OPCs), 2 are small companies, and the remaining 15 are active public and private limited companies. CA. Manoj is evaluating whether accepting all these audits complies with the statutory ceiling limits.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit and Auditors"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-10_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-10_05",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-10",
+          "subject": "Law",
+          "prompt": "What is the statutory ceiling limit on the number of audit assignments an auditor can hold under Section 141(3)(f)?",
+          "options": [
+            "10 companies",
+            "20 companies",
+            "30 companies",
+            "50 companies"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 141(3)(f) specifies that a person cannot hold office as an auditor in more than 20 companies at the same time.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Ceiling Limit",
+            "Section 141(3)(f)",
+            "Audit Assignments"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-10_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-10_05",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-10",
+          "subject": "Law",
+          "prompt": "Which of the following categories of companies are excluded while calculating the ceiling limit of 20 companies under Section 141(3)(f)?",
+          "options": [
+            "All listed companies and private companies",
+            "Dormant companies, One Person Companies, small companies, and private companies having paid-up share capital of less than Rs. 100 crore",
+            "Government companies only",
+            "Foreign subsidiary companies"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 141(3)(f) excludes dormant companies, OPCs, small companies, and private companies having paid-up share capital of less than Rs. 100 crore from the computation of the 20-company ceiling limit.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Exclusions",
+            "Ceiling Limit",
+            "Section 141(3)(f)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-10_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-10_05",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-10",
+          "subject": "Law",
+          "prompt": "Based on the exclusions, how many companies out of CA. Manoj's offered 22 companies will be counted towards his 20-company ceiling limit?",
+          "options": [
+            "All 22 companies",
+            "15 companies (active public and private companies)",
+            "17 companies",
+            "20 companies"
+          ],
+          "answerIndex": 1,
+          "explanation": "Out of 22 companies, 2 dormant, 3 OPCs, and 2 small companies (total 7) are excluded. Thus, only 15 companies count toward the ceiling limit.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Calculation",
+            "Ceiling Limit",
+            "Exclusions"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-10_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-10_05",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-10",
+          "subject": "Law",
+          "prompt": "Can CA. Manoj accept the audit of all 22 companies offered to him without violating the Companies Act, 2013?",
+          "options": [
+            "No, because total offers exceed 20.",
+            "Yes, because his countable audits (15) are well within the ceiling limit of 20 companies.",
+            "No, because individual auditors cannot audit more than 10 companies.",
+            "Yes, if he obtains prior permission from the ICAI president."
+          ],
+          "answerIndex": 1,
+          "explanation": "Since only 15 companies count towards the ceiling limit (which is below the maximum limit of 20), CA. Manoj can legally accept all 22 companies offered to him.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Acceptance",
+            "Ceiling Limit",
+            "Compliance"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "corporate-laws-11",
+  "subject": "Law",
+  "paper": "Paper 2: Corporate and Other Laws",
+  "module": "Module 2",
+  "chapterNumber": 11,
+  "chapterTitle": "Companies Incorporated Outside India",
+  "generatedAt": "2026-08-16T14:14:58.392Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_corporate-laws-11_001",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "Under the Companies Act, 2013, what is the timeline within which a foreign company must deliver documents to the Registrar of Companies (RoC) upon establishing a place of business in India?",
+      "options": [
+        "15 days",
+        "30 days",
+        "60 days",
+        "90 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 380 of the Companies Act, 2013 mandates that every foreign company shall, within 30 days of the establishment of place of business in India, deliver specified documents to the Registrar. This is a crucial procedural requirement for foreign entities operating in India.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Registration",
+        "Foreign Company",
+        "Timeline"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_002",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "Which of the following documents is NOT statutorily required to be delivered by a foreign company to the RoC under Section 380 upon establishing a place of business in India?",
+      "options": [
+        "Certified copy of the charter, statutes or memorandum and articles of the company",
+        "Full address of the registered or principal office of the company",
+        "List of all past and present directors and secretary of the company",
+        "Audited balance sheet and profit and loss account for the preceding three financial years"
+      ],
+      "answerIndex": 3,
+      "explanation": "Section 380 requires filing of the charter, full address, list of directors, and details of principal place of business in India, among others. Audited financial statements of the Indian business are required to be filed annually under Section 381, but initial incorporation filings under Section 380 do not require three years of audited accounts.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 380",
+        "Documents",
+        "RoC Filing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_003",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "If any alteration is made or occurs in any of the documents delivered to the RoC by a foreign company under Section 380, within what period must the foreign company file a return containing particulars of such alteration?",
+      "options": [
+        "15 days",
+        "30 days",
+        "60 days",
+        "90 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "According to Section 380(3), if any alteration is made or occurs in the documents delivered to the Registrar, the foreign company must file a return containing the particulars of the alteration within 30 days of such alteration.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Alteration",
+        "Filing Return",
+        "Section 380"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_004",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "Every foreign company is required to prepare and file financial statements relating to its Indian business operations with the RoC in Form:",
+      "options": [
+        "FC-1",
+        "FC-3",
+        "AOC-4",
+        "MGT-7"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Rule 4 of the Companies (Registration of Foreign Companies) Rules, 2014, every foreign company must file balance sheet and profit and loss account in Form FC-3 along with a list of all places of business established by the company in India.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Financial Statements",
+        "Form FC-3",
+        "Foreign Company"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_005",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "Within what period from the close of the financial year must a foreign company file its financial statements and list of places of business in India with the RoC?",
+      "options": [
+        "30 days",
+        "6 months",
+        "180 days",
+        "90 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Rule 4(1) of the Companies (Registration of Foreign Companies) Rules, 2014, every foreign company shall file with the Registrar, along with the financial statements, a list of all places of business established by the company in India within 6 months of the close of the financial year.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Financial Filing",
+        "Timeline",
+        "Foreign Company"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_006",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "Who is empowered by the Central Government to direct that any foreign company or class of foreign companies shall comply with specific provisions regarding accounts and audit?",
+      "options": [
+        "Securities and Exchange Board of India (SEBI)",
+        "Reserve Bank of India (RBI)",
+        "Central Government by notification",
+        "National Company Law Tribunal (NCLT)"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 381(3) states that the Central Government may, by notification, direct that the provisions of Chapter IX (Accounts of Companies) or any specified provisions thereof shall apply to any foreign company or class of foreign companies with such exceptions or modifications as may be specified.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 381",
+        "Central Government",
+        "Audit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_007",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "Where a foreign company keeps its books of account outside India, what is the statutory requirement regarding copies of such books of account to be kept at its principal place of business in India?",
+      "options": [
+        "No books need to be kept in India",
+        "Periodic returns reflecting the financial position of business in India must be kept at the principal place of business",
+        "Complete original ledger books must be shipped to India monthly",
+        "Certified translated copies of all global accounts must be maintained in India"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 381(1) proviso requires that a foreign company must keep at its principal place of business in India books of account containing sufficient particulars to show the true and fair view of the transactions of the company and explain its receipts and payments, as well as periodic returns reflecting the financial position of the business in India.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Books of Account",
+        "Principal Place",
+        "Section 381"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_008",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "Under Section 382, every foreign company must paint or affix its name and the name of the country in which it is incorporated outside every office or place of business in India in:",
+      "options": [
+        "English language only",
+        "Official language of the state where the office is located",
+        "English and local language of the place where its office is situated",
+        "Hindi only"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 382 requires every foreign company to exhibit its name and the country of incorporation in English and in the local language of the place where its office or place of business is situated, outside every office or place of business in India.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Name Display",
+        "Section 382",
+        "Foreign Company"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_009",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "What is the penalty under Section 392 for a foreign company that fails to comply with any of the provisions of Chapter XXII (Companies Incorporated Outside India)?",
+      "options": [
+        "Fine ranging from ₹10,000 to ₹1,00,000 only",
+        "Fine not less than ₹1,00,000 which may extend to ₹3,00,000, and in case of continuing offence with a further fine up to ₹50,000 per day",
+        "Imprisonment of directors only",
+        "Automatic winding up of the foreign company"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 392 prescribes a fine for the company not less than ₹1,00,000 extending up to ₹3,00,000, and in case of continuing offence, an additional fine up to ₹50,000 per day for every officer in default or the company. This ensures strict compliance.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 392",
+        "Penalty",
+        "Default"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_010",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "Which of the following defines a 'foreign company' under Section 2(42) of the Companies Act, 2013?",
+      "options": [
+        "Any company incorporated outside India which has a share capital",
+        "Any company or body corporate incorporated outside India which has a place of business in India whether by itself or through an agent, physically or through electronic mode",
+        "Any company owned by non-resident Indians operating outside India",
+        "Any multinational corporation trading with Indian entities without any physical office"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 2(42) defines a foreign company as any company or body corporate incorporated outside India which has a place of business in India whether by itself or through an agent, physically or through electronic mode, and conducts any business activity in India in any other manner.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Definition",
+        "Section 2(42)",
+        "Foreign Company"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_011",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "Can a foreign company issue prospectus in India without complying with Chapter XXII provisions?",
+      "options": [
+        "Yes, if it is listed on a recognized foreign stock exchange",
+        "No, it must comply with all statutory prospectus provisions under Sections 389 to 393",
+        "Yes, if approved by SEBI independently",
+        "No, foreign companies are completely barred from issuing prospectuses in India"
+      ],
+      "answerIndex": 1,
+      "explanation": "Sections 389 to 393 govern the issue of prospectus by foreign companies. No prospectus can be issued by or on behalf of a foreign company unless it complies with the stringent disclosure and delivery requirements specified in the Act.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Prospectus",
+        "Foreign Company",
+        "Securities"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_012",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "When a prospectus is issued by a foreign company in India, a copy thereof must be delivered to:",
+      "options": [
+        "Securities and Exchange Board of India",
+        "Registrar of Companies at Delhi",
+        "Reserve Bank of India",
+        "Ministry of Corporate Affairs directly"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 389 stipulates that no person shall issue, circulate or distribute in India any prospectus offering for subscription shares or debentures of a company incorporated outside India, unless a copy has been delivered to the Registrar of Companies (specifically designated RoC, typically Delhi).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Prospectus Filing",
+        "Section 389",
+        "RoC Delhi"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_013",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "Which rule defines 'electronic mode' for the purpose of a foreign company conducting business in India?",
+      "options": [
+        "Rule 2 of Companies (Specification of Definitions Details) Rules, 2014",
+        "Rule 3 of Companies (Registration of Foreign Companies) Rules, 2014",
+        "Rule 5 of Companies (Prospectus and Allotment of Securities) Rules, 2014",
+        "Rule 10 of Companies (Accounts) Rules, 2014"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 3 of the Companies (Registration of Foreign Companies) Rules, 2014 defines 'electronic mode' encompassing business-to-business and business-to-consumer transactions, data interchange, online services, digital supply chains, etc., conducted via electronic media.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Electronic Mode",
+        "Rules 2014",
+        "Definition"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_014",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "What must be stated prominently on the outside of every office and in all business letters, bill heads, and notices of a foreign company in India?",
+      "options": [
+        "The PAN and GSTIN of the Indian branch",
+        "Whether the company is limited or not, along with its name and country of incorporation",
+        "The name of the Chief Executive Officer of the Indian operations",
+        "The authorized share capital in Indian Rupees"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 382, foreign companies must state the name of the company, the country of incorporation, and if the liability of members is limited, state that fact clearly on bill heads, notices, letter papers, and outside every office.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 382",
+        "Business Letters",
+        "Name Display"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_015",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "If a foreign company fails to deliver documents under Section 380, what liability do the officers in default face?",
+      "options": [
+        "Only civil damages",
+        "Punishable under Section 392 with fine and imprisonment",
+        "Only administrative warning by RoC",
+        "Immediate deportation of directors"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 392 provides that any failure by a foreign company to comply with Chapter XXII makes the company and every officer in default punishable with fine and imprisonment or both as specified under the penal provisions.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Officer in Default",
+        "Section 392",
+        "Penalty"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_016",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "Are the provisions of Chapter VI (Registration of Charges) applicable to a foreign company in relation to charges on property situated in India?",
+      "options": [
+        "No, charges of foreign companies are governed entirely by foreign laws",
+        "Yes, Section 384 applies the provisions relating to registration of charges to charges created by a foreign company on property in India",
+        "Only if approved by the Reserve Bank of India",
+        "Yes, but only for floating charges"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 384 specifically applies the provisions of Chapter VI (Registration of Charges) to a foreign company as if it were a company incorporated in India, in respect of property situated in India.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 384",
+        "Registration of Charges",
+        "Foreign Company"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_017",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "What is the requirement regarding the audit of accounts of a foreign company's Indian business operations?",
+      "options": [
+        "Accounts must be audited by a chartered accountant in practice in India",
+        "Accounts can be audited by any auditor qualified in the home country",
+        "No audit is required if audited globally",
+        "Audit must be conducted exclusively by the Comptroller and Auditor General of India"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 381(2) requires that the balance sheet and profit and loss account of a foreign company shall be audited by a practicing Chartered Accountant in India, or a firm of chartered accountants.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Audit",
+        "Section 381",
+        "Chartered Accountant"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_018",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "Which form is filed by a foreign company to register its particulars upon establishing a place of business in India under Section 380?",
+      "options": [
+        "Form INC-1",
+        "Form FC-1",
+        "Form FC-2",
+        "Form FC-4"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 3 of the Companies (Registration of Foreign Companies) Rules, 2014 specifies that an application for registration by a foreign company must be made in Form FC-1 along with necessary attachments.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Form FC-1",
+        "Registration",
+        "Rules 2014"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_019",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "Does the definition of foreign company under Section 2(42) include an entity operating exclusively through electronic mode?",
+      "options": [
+        "No, electronic mode business is exempt from company law regulations",
+        "Yes, provided it conducts business activity in India through electronic mode",
+        "Only if it maintains a physical warehouse in India",
+        "Only if turnover exceeds 100 crores INR"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 2(42) explicitly includes companies incorporated outside India that have a place of business in India 'whether by itself or through an agent, physically or through electronic mode', expanding the scope to e-commerce and digital platforms.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Electronic Mode",
+        "Section 2(42)",
+        "Scope"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_020",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "Within what period must a foreign company file particulars of any alteration in its directors or secretary with the RoC?",
+      "options": [
+        "15 days",
+        "30 days",
+        "60 days",
+        "90 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 380(3), any alteration in the documents filed initially, including changes in directors or secretary, must be filed with the RoC within 30 days of the alteration.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Alteration",
+        "Directors",
+        "Section 380"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_021",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "If a foreign company ceases to have a place of business in India, what is its obligation regarding notice to the RoC?",
+      "options": [
+        "It can simply abandon operations without notice",
+        "It must forthwith give notice to the Registrar, and from the date of such notice, its obligation to file ceases",
+        "It must wait for 5 years before giving notice",
+        "Notice must be published in international newspapers only"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under the Companies (Registration of Foreign Companies) Rules, 2014, when a foreign company ceases to have a place of business in India, it shall forthwith give notice to the Registrar, and thereafter the obligation of the company to deliver any document to the Registrar ceases.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Cessation",
+        "Notice to RoC",
+        "Foreign Company"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_022",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "Which of the following is considered part of 'electronic mode' under Rule 3?",
+      "options": [
+        "B2B and B2C web-based transactions",
+        "Offline telephonic conversations",
+        "Physical courier shipments",
+        "Postal mail correspondence"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 3 of the Companies (Registration of Foreign Companies) Rules, 2014 defines electronic mode to include business-to-business and business-to-consumer transactions, data interchange, and other digital business services.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Electronic Mode",
+        "Rule 3",
+        "Scope"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_023",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "Who must sign the annual financial statement and return filed by a foreign company in India?",
+      "options": [
+        "Only the home country auditor",
+        "Authorized representative of the foreign company in India",
+        "The Prime Minister of the home country",
+        "Any random employee in India"
+      ],
+      "answerIndex": 1,
+      "explanation": "The financial statements and annual returns filed by a foreign company under Section 381 must be authenticated by the authorized representative of the foreign company in India.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Authentication",
+        "Financial Statements",
+        "Authorized Representative"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_024",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "Can a foreign company accept deposits in India under the provisions of Chapter XXII read with RBI guidelines?",
+      "options": [
+        "Yes, freely from the general public",
+        "No foreign company can accept or renew deposits in India unless in compliance with RBI regulations and applicable company law deposit rules",
+        "Yes, without any restriction",
+        "Only if incorporated in Mauritius"
+      ],
+      "answerIndex": 1,
+      "explanation": "Acceptance of deposits by foreign companies in India is strictly regulated and restricted, requiring compliance with RBI regulations and provisions applicable to deposit acceptance.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Deposits",
+        "RBI",
+        "Restrictions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_025",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "What documents must be attached when a foreign company files Form FC-1 for establishing a place of business?",
+      "options": [
+        "Charter, statutes, or memorandum and articles translated into English",
+        "Personal tax returns of all shareholders",
+        "Land title deeds of properties in home country",
+        "Passports of all global customers"
+      ],
+      "answerIndex": 0,
+      "explanation": "Form FC-1 must be accompanied by certified translated copies of the charter, statutes, or memorandum and articles of association of the foreign company if they are not in English.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Form FC-1",
+        "Attachments",
+        "Translation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_026",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "Which section of the Companies Act, 2013 deals specifically with the accounts of foreign companies?",
+      "options": [
+        "Section 128",
+        "Section 381",
+        "Section 390",
+        "Section 379"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 381 of the Companies Act, 2013 contains specific provisions regarding the accounts of a foreign company, requiring maintenance of books of account in India and annual financial statement filing.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 381",
+        "Accounts",
+        "Foreign Company"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_027",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "If a foreign company fails to pay the fine imposed under Section 392, who can be held liable among its officers?",
+      "options": [
+        "Only the external auditors",
+        "Every officer in default who is in default of compliance",
+        "No one, the liability is extinguished",
+        "Only shareholders holding more than 50% shares"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 392 penalizes 'every officer of the foreign company who is in default', subjecting them to fines and imprisonment as stipulated under the Act.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Officer in Default",
+        "Section 392",
+        "Liability"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_028",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "Under Section 386, what is the meaning of 'certified copy' when required for documents delivered to the RoC by a foreign company?",
+      "options": [
+        "Certified in the manner prescribed for documents originating in the home country as a true copy",
+        "Certified by any Indian citizen living abroad",
+        "Self-attested by a company clerk",
+        "Certified by local police"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 386 defines 'certified copy' as a copy certified in the manner prescribed by rules, typically certified as a true copy in the country of incorporation in accordance with local laws and notarized/apostilled.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Certified Copy",
+        "Section 386",
+        "Definition"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_029",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "Are Indian companies laws regarding corporate social responsibility (CSR) automatically applicable to foreign companies having a branch in India?",
+      "options": [
+        "Yes, all foreign branches must spend 2% of global profits on CSR",
+        "Applicability is determined based on the net worth, turnover, or net profit thresholds of the Indian business operations of the foreign company as per Section 135",
+        "No, CSR does not apply to foreign companies at all",
+        "Only if explicitly ordered by the Supreme Court"
+      ],
+      "answerIndex": 1,
+      "explanation": "CSR provisions under Section 135 apply to foreign companies having a branch office or project office in India, based on the financial thresholds computed for their Indian business operations.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "CSR",
+        "Section 135",
+        "Foreign Company"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-11_030",
+      "kind": "normal",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "prompt": "Which office of the Registrar of Companies has jurisdiction over all foreign companies registered in India?",
+      "options": [
+        "RoC Mumbai",
+        "RoC Delhi",
+        "RoC Chennai",
+        "RoC Kolkata"
+      ],
+      "answerIndex": 1,
+      "explanation": "By notification and administrative allocation under the Companies Act, the Registrar of Companies at Delhi (RoC Delhi) has centralized jurisdiction for registration and filing of documents by all foreign companies in India.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "RoC Delhi",
+        "Jurisdiction",
+        "Foreign Company"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_corporate-laws-11_01",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "passage": "Global Tech Inc., a corporation incorporated in Delaware, USA, establishes a branch office in Bengaluru, India, on 1st April 2026 to provide software consulting services. The company commences its physical operations immediately. Mr. Smith is appointed as the authorized representative in India. The company delivers its charter, list of directors, and address details to RoC Delhi on 25th May 2026.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-11_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-11_01",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-11",
+          "subject": "Law",
+          "prompt": "Did Global Tech Inc. comply with the initial document delivery timeline under Section 380?",
+          "options": [
+            "Yes, because documents were delivered within 60 days",
+            "No, because documents must be delivered within 30 days of establishing a place of business",
+            "Yes, because foreign companies get 90 days grace period",
+            "No, because filing must be done before commencing business"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 380 requires a foreign company to deliver documents within 30 days of establishing a place of business. Global Tech Inc. established its place on 1st April and filed on 25th May (54 days later), thereby missing the 30-day statutory timeline.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 380",
+            "Timeline",
+            "Default"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-11_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-11_01",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-11",
+          "subject": "Law",
+          "prompt": "To which Registrar of Companies should Global Tech Inc. have delivered its registration documents?",
+          "options": [
+            "RoC Bengaluru",
+            "RoC Mumbai",
+            "RoC Delhi",
+            "RoC Delaware"
+          ],
+          "answerIndex": 2,
+          "explanation": "As per administrative jurisdiction under the Companies Act, 2013, all foreign companies register and file their initial incorporation documents with the Registrar of Companies, Delhi, regardless of where their Indian branch is physically located.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "RoC Delhi",
+            "Jurisdiction",
+            "Filing"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-11_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-11_01",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-11",
+          "subject": "Law",
+          "prompt": "If Global Tech Inc. later appoints a new director in Delaware on 1st July 2026, within what timeframe must it file the return of alteration with the RoC?",
+          "options": [
+            "15 days",
+            "30 days",
+            "60 days",
+            "90 days"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 380(3) stipulates that any alteration in the documents delivered to the Registrar (including change in directors) must be filed by submitting a return within 30 days of such alteration.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Alteration",
+            "Directors",
+            "Section 380"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-11_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-11_01",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-11",
+          "subject": "Law",
+          "prompt": "What is the consequence of Global Tech Inc. failing to file its initial documents within the prescribed 30-day window?",
+          "options": [
+            "Automatic confiscation of Bengaluru office property",
+            "Penalty under Section 392 on the company and every officer in default",
+            "Revocation of Delaware incorporation",
+            "Mandatory imprisonment of all US shareholders"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 392 prescribes penal consequences including fines ranging from ₹1,00,000 to ₹3,00,000 and continuing daily fines for non-compliance with Section 380 by the company and officers in default.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 392",
+            "Penalty",
+            "Non-compliance"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-11_02",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "passage": "Nippon Auto Ltd., a company incorporated in Japan, operates an online e-commerce platform targeting Indian consumers without having any physical warehouses or offices in India. All transactions, digital contracts, and product deliveries are handled through electronic mode. Nippon Auto Ltd. generates significant revenue from Indian territory during the financial year 2025-26.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-11_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-11_02",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-11",
+          "subject": "Law",
+          "prompt": "Is Nippon Auto Ltd. classified as a 'foreign company' under the Companies Act, 2013?",
+          "options": [
+            "No, because it lacks a physical office or brick-and-mortar store in India",
+            "Yes, because Section 2(42) includes companies incorporated outside India conducting business in India through electronic mode",
+            "No, foreign e-commerce is regulated exclusively by IT Act",
+            "Yes, but only if it registers a subsidiary in India"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 2(42) explicitly includes companies incorporated outside India that conduct business in India through electronic mode, even without a physical office, within the definition of a foreign company.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 2(42)",
+            "Electronic Mode",
+            "Foreign Company"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-11_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-11_02",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-11",
+          "subject": "Law",
+          "prompt": "Which rules define the scope of 'electronic mode' applicable to Nippon Auto Ltd.?",
+          "options": [
+            "Companies (Registration of Foreign Companies) Rules, 2014",
+            "Information Technology Rules, 2021",
+            "Foreign Exchange Management Rules, 2016",
+            "SEBI Listing Regulations, 2015"
+          ],
+          "answerIndex": 0,
+          "explanation": "Rule 3 of the Companies (Registration of Foreign Companies) Rules, 2014 defines electronic mode for foreign companies operating in India.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Rules 2014",
+            "Electronic Mode",
+            "Compliance"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-11_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-11_02",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-11",
+          "subject": "Law",
+          "prompt": "Does Nippon Auto Ltd. need to comply with annual financial statement filing requirements under Section 381?",
+          "options": [
+            "No, electronic mode businesses are exempt from accounting filings",
+            "Yes, every foreign company must prepare and file financial statements relating to Indian business operations",
+            "Only if turnover exceeds USD 10 million in Japan",
+            "Only if directed by the Supreme Court"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 381 applies to all foreign companies, which includes those operating via electronic mode, requiring them to file financial statements and a list of places of business with the RoC annually.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 381",
+            "Financial Statements",
+            "Electronic Mode"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-11_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-11_02",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-11",
+          "subject": "Law",
+          "prompt": "Who must audit the financial statements prepared for Nippon Auto Ltd.'s Indian business operations?",
+          "options": [
+            "Any auditor in Japan",
+            "A Chartered Accountant in practice in India",
+            "Comptroller and Auditor General of India",
+            "Internal auditor of the parent company"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 381(2) mandates that the financial statements of a foreign company's Indian business must be audited by a practicing Chartered Accountant in India or a firm of chartered accountants.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Audit",
+            "Section 381",
+            "Chartered Accountant"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-11_03",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "passage": "EuroRetail AG, incorporated in Germany, sets up a retail liaison office in Mumbai. The company creates a charge over its machinery situated in Mumbai in favor of an Indian bank. EuroRetail AG fails to register this charge with the RoC within the stipulated time under the Companies Act, 2013.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-11_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-11_03",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-11",
+          "subject": "Law",
+          "prompt": "Are the provisions regarding registration of charges applicable to EuroRetail AG?",
+          "options": [
+            "No, foreign companies are exempt from charge registration",
+            "Yes, Section 384 applies Chapter VI provisions to charges created by foreign companies on property situated in India",
+            "Only if the charge exceeds ₹100 crores",
+            "Yes, but registration must be done in Germany only"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 384 explicitly applies Chapter VI (Registration of Charges) to foreign companies in respect of property situated in India as if they were Indian companies.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 384",
+            "Registration of Charges",
+            "Foreign Company"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-11_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-11_03",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-11",
+          "subject": "Law",
+          "prompt": "Within what period must a charge on property in India be registered by EuroRetail AG?",
+          "options": [
+            "10 days",
+            "30 days",
+            "60 days",
+            "90 days"
+          ],
+          "answerIndex": 1,
+          "explanation": "Charges created by a company (including a foreign company under Section 384) on property in India must be registered within 30 days of creation, extendable with approval.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Timeline",
+            "Charges",
+            "Section 384"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-11_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-11_03",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-11",
+          "subject": "Law",
+          "prompt": "What is the legal consequence of failing to register the charge created by EuroRetail AG?",
+          "options": [
+            "The charge becomes void against the liquidator and any creditor of the company",
+            "The German directors are imprisoned immediately",
+            "The machinery is auctioned by RBI",
+            "The loan agreement becomes illegal"
+          ],
+          "answerIndex": 0,
+          "explanation": "Non-registration of a charge under Chapter VI (applied via Section 384) renders the charge void against the liquidator and any creditor of the company.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Void Charge",
+            "Consequences",
+            "Section 384"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-11_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-11_03",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-11",
+          "subject": "Law",
+          "prompt": "Where must EuroRetail AG maintain its books of account regarding its Indian operations?",
+          "options": [
+            "Exclusively in Frankfurt, Germany",
+            "At its principal place of business in India",
+            "At the Reserve Bank of India headquarters",
+            "At the Ministry of Corporate Affairs office in Delhi"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 381(1) requires a foreign company to keep at its principal place of business in India proper books of account with respect to monies received/expended, sales/purchases, and assets/liabilities of the Indian business.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Books of Account",
+            "Principal Place",
+            "Section 381"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-11_04",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "passage": "Pacific Holdings Ltd., incorporated in Singapore, establishes a place of business in Chennai. The company displays its name outside its Chennai office only in English. It omits mentioning its country of incorporation and whether its members' liability is limited on its business letterheads used in India.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-11_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-11_04",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-11",
+          "subject": "Law",
+          "prompt": "Did Pacific Holdings Ltd. comply with Section 382 regarding name display outside its office?",
+          "options": [
+            "Yes, English is sufficient",
+            "No, it must exhibit its name and country of incorporation in English and in the local language of the place where its office is situated",
+            "Yes, if approved by RoC Delhi",
+            "No, it must display only in Tamil"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 382 mandates that every foreign company shall paint or affix its name and the country of incorporation outside every office in English and in the local language of the place.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 382",
+            "Name Display",
+            "Local Language"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-11_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-11_04",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-11",
+          "subject": "Law",
+          "prompt": "What is the requirement regarding business letterheads under Section 382 for Pacific Holdings Ltd.?",
+          "options": [
+            "It must state the company name, country of incorporation, and whether liability of members is limited",
+            "It must state the PAN and GSTIN only",
+            "It must state the home country stock exchange ticker",
+            "No particulars are required on letterheads"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 382 requires that business letter heads, bill heads, and notices must state the name of the foreign company, country of incorporation, and whether the liability of members is limited.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Letterheads",
+            "Section 382",
+            "Disclosures"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-11_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-11_04",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-11",
+          "subject": "Law",
+          "prompt": "If Pacific Holdings Ltd. decides to close down its Chennai place of business, what procedure must it follow?",
+          "options": [
+            "Abandon premises without informing anyone",
+            "Give notice forthwith to the Registrar of Companies, after which filing obligations cease",
+            "Wait 3 years before notifying RoC",
+            "File a winding-up petition in Singapore High Court"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the rules framed for foreign companies, when a foreign company ceases to have a place of business in India, it must forthwith give notice to the Registrar, upon which its obligation to deliver documents ceases.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Cessation",
+            "Notice",
+            "RoC"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-11_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-11_04",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-11",
+          "subject": "Law",
+          "prompt": "What penalty can be imposed for non-compliance with the name display and letterhead requirements under Section 382?",
+          "options": [
+            "Fine under Section 392 ranging between ₹1,00,000 and ₹3,00,000 with continuing daily fine",
+            "Warning letter only",
+            "Immediate forfeiture of office furniture",
+            "Deportation of local employees"
+          ],
+          "answerIndex": 0,
+          "explanation": "General penalty provision under Section 392 applies to any contravention of Chapter XXII, which includes failure to comply with Section 382 name display and letterhead rules.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 392",
+            "Penalty",
+            "Contravention"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-11_05",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-11",
+      "subject": "Law",
+      "passage": "Alpha Corp, a company incorporated in the UK, decides to issue a prospectus in India offering shares to the Indian public. Alpha Corp delivers a copy of the prospectus to RoC Delhi. However, the prospectus fails to state the specific details of the instruments and material contracts required under Section 390 read with Section 389.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Companies Incorporated Outside India"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-11_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-11_05",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-11",
+          "subject": "Law",
+          "prompt": "To which RoC must Alpha Corp deliver its prospectus prior to issue in India?",
+          "options": [
+            "RoC London",
+            "RoC Mumbai",
+            "RoC Delhi",
+            "RoC Kolkata"
+          ],
+          "answerIndex": 2,
+          "explanation": "Section 389 specifies that a copy of the prospectus must be delivered to the Registrar of Companies (specifically RoC Delhi) before it is issued, circulated, or distributed in India.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Prospectus",
+            "RoC Delhi",
+            "Section 389"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-11_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-11_05",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-11",
+          "subject": "Law",
+          "prompt": "What is a mandatory prerequisite for issuing a prospectus by a foreign company in India?",
+          "options": [
+            "Consent of SEBI alone",
+            "Delivery of a copy of the prospectus to the RoC signed by all directors or their authorized agents",
+            "Approval from British High Commission",
+            "Listing on London Stock Exchange"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 389 requires that no prospectus shall be issued unless a copy thereof has been delivered to the Registrar, signed by every director or his agent authorized in writing.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Prospectus",
+            "Signature",
+            "Section 389"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-11_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-11_05",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-11",
+          "subject": "Law",
+          "prompt": "If Alpha Corp issues a defective prospectus in India, what liability do persons authorizing the issue face?",
+          "options": [
+            "Only contractual liability in the UK",
+            "Criminal liability for misstatement in prospectus under Section 447 and general penal provisions",
+            "No liability in India",
+            "Civil damages limited to ₹10,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 390 makes provisions relating to prospectus applicable to foreign companies, and misstatements or omissions attract penal consequences including criminal liability under Section 447 and general penalty provisions.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Misstatement",
+            "Prospectus Liability",
+            "Section 390"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-11_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-11_05",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-11",
+          "subject": "Law",
+          "prompt": "Must the prospectus issued by Alpha Corp specify the date and incorporate details of material contracts?",
+          "options": [
+            "No, foreign prospectuses are exempt from material contract disclosures",
+            "Yes, Section 390/391 mandates disclosures similar to domestic prospectuses including material contracts and consents",
+            "Only if shares exceed 50% of capital",
+            "Only at the discretion of the UK directors"
+          ],
+          "answerIndex": 1,
+          "explanation": "Sections 390 and 391 prescribe detailed disclosures to be contained in a foreign company's prospectus, including particulars of contracts, time and place of inspection, and expert consents.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Disclosures",
+            "Prospectus",
+            "Section 390"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

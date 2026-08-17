@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "other-laws-2",
+  "subject": "Law",
+  "paper": "Paper 2: Corporate and Other Laws",
+  "module": "Module 3",
+  "chapterNumber": 2,
+  "chapterTitle": "Interpretation of Statutes",
+  "generatedAt": "2026-08-16T14:16:49.801Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_other-laws-2_001",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "What is the primary objective of interpreting a statute when the language of the legislative enactment is plain, clear, and unambiguous?",
+      "options": [
+        "To ascertain the intention of the legislature exclusively from the words used",
+        "To modify the meaning to achieve a perceived social justice outcome",
+        "To consult parliamentary debates and committee reports to find hidden intents",
+        "To read words into the statute to cure any perceived legislative oversight"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under the primary rule of literal construction, when words are clear and unambiguous, the intention of the legislature must be gathered from the language itself. No external aids or modifications are permitted unless the plain meaning leads to an absurdity.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Literal Rule",
+        "Primary Rule",
+        "Plain Meaning"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_002",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "Which rule of interpretation is applied when the literal meaning of a statutory provision leads to a manifest absurdity, repugnancy, or inconsistency with the rest of the Act?",
+      "options": [
+        "The Mischief Rule",
+        "The Golden Rule",
+        "The Rule of Ejusdem Generis",
+        "The Rule of Contemporanea Expositio"
+      ],
+      "answerIndex": 1,
+      "explanation": "The Golden Rule serves as a modification of the literal rule. It permits the court to modify the ordinary grammatical meaning of words just to the extent necessary to avoid absurdity, repugnancy, or inconsistency.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Golden Rule",
+        "Absurdity",
+        "Statutory Modification"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_003",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "In which landmark English case was the 'Mischief Rule' (or Heydon's Rule) first laid down?",
+      "options": [
+        "Salomon v. Salomon & Co. Ltd.",
+        "Heydon's Case",
+        "Eastman Photographic Materials Co. v. Comptroller General",
+        "R v. Judge of the City of London Court"
+      ],
+      "answerIndex": 1,
+      "explanation": "Heydon's Case (1584) established the Mischief Rule, which directs courts to consider the common law before the Act, the mischief and defect for which the common law did not provide, and the true reason of the remedy.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Mischief Rule",
+        "Heydon's Case",
+        "Historical Background"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_004",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "When applying the rule of 'Ejusdem Generis', what is the fundamental prerequisite regarding the specific words listed in the statute?",
+      "options": [
+        "They must be exhaustive and cover all conceivable objects.",
+        "They must constitute a distinct category or genus without any common feature.",
+        "They must constitute an ascertainable category or genus to which the general words can be related.",
+        "They must be followed by a non-obstante clause."
+      ],
+      "answerIndex": 2,
+      "explanation": "Ejusdem Generis ('of the same kind or species') requires that the preceding specific words form a distinct genus or category. General words following them are then construed as applying only to things of the same kind.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Ejusdem Generis",
+        "Genus",
+        "Specific and General Words"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_005",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "How is a penal statute traditionally construed by the courts in case of an ambiguity regarding the coverage of an offense or penalty?",
+      "options": [
+        "Strictly in favor of the State to ensure public safety",
+        "Liberally to fulfill the broad socio-economic objectives of the legislature",
+        "Strictly in favor of the subject or accused person",
+        "Dynamically based on contemporary social mores"
+      ],
+      "answerIndex": 2,
+      "explanation": "Penal statutes and taxing statutes must be construed strictly. If two reasonable meanings are possible, the construction which favors the subject (the accused or taxpayer) must be adopted.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Strict Construction",
+        "Penal Statute",
+        "Ambiguity"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_006",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "What is the legal effect of a 'Non-Obstante Clause' (typically beginning with 'Notwithstanding anything contained in...') in a statutory provision?",
+      "options": [
+        "It subjects the provision to all other prevailing laws.",
+        "It overrides any contrary provisions contained in other parts of the same Act or other statutes.",
+        "It acts merely as a descriptive preamble without operational force.",
+        "It requires mandatory prior presidential assent before enforcement."
+      ],
+      "answerIndex": 1,
+      "explanation": "A non-obstante clause is a legislative device used to give the enacting part of a section an overriding effect over any contrary provision in the same or another statute.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Non-Obstante Clause",
+        "Overriding Effect",
+        "Statutory Provisions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_007",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "Which internal aid to interpretation explains the immediate objectives and reasons for introducing a Bill in the legislature, though it cannot control the clear meaning of the enactment?",
+      "options": [
+        "Marginal Note",
+        "Proviso",
+        "Preamble",
+        "Statement of Objects and Reasons"
+      ],
+      "answerIndex": 3,
+      "explanation": "The Statement of Objects and Reasons accompanies a Bill to explain the background and purpose of the proposed legislation. While useful for understanding the historical setting, it is not part of the enacted statute and cannot override clear statutory text.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Internal Aids",
+        "Statement of Objects and Reasons",
+        "Bill Background"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_008",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "What is the primary function of a 'Proviso' in a statute?",
+      "options": [
+        "To repeal existing inconsistent enactments automatically",
+        "To carve out an exception or qualify the main enacting portion of the section",
+        "To provide long titles for judicial reference",
+        "To replace the substantive penal clauses with civil remedies"
+      ],
+      "answerIndex": 1,
+      "explanation": "A proviso is normally inserted to qualify or except something out of the main enactment, or to provide something which would otherwise be outside the enacting clause. It must not be construed as a general independent enactment.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Proviso",
+        "Exception",
+        "Internal Aids"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_009",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "Are marginal notes (side notes) appended to sections of an Act considered a safe and conclusive guide for interpreting the scope of that section?",
+      "options": [
+        "Yes, because they are inserted by the legislature during the final vote.",
+        "No, because they are not part of the statute as passed by the legislature and are merely inserted for convenience.",
+        "Yes, provided they are supported by contemporary exposition.",
+        "No, unless the section is completely silent on its title."
+      ],
+      "answerIndex": 1,
+      "explanation": "Marginal notes are not framed by the legislature nor voted upon; they are inserted by editors or draftsmen for convenience. Hence, they cannot control the plain meaning of the section, though they may offer some guidance if ambiguity exists.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Marginal Notes",
+        "Internal Aids",
+        "Legislative Process"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_010",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "What does the maxim 'Noscitur a Sociis' signify in statutory interpretation?",
+      "options": [
+        "A word is known by the company it keeps",
+        "Express mention of one thing implies the exclusion of another",
+        "General words must be restricted to things of the same genus",
+        "The contemporaneous exposition is the best and strongest in law"
+      ],
+      "answerIndex": 0,
+      "explanation": "Noscitur a Sociis means that the meaning of an ambiguous word or phrase is ascertained by examining the words associated with it in the context ('a word is known by the company it keeps').",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Noscitur a Sociis",
+        "Contextual Meaning",
+        "Associated Words"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_011",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "What is the implication of the maxim 'Expressio Unius Est Exclusio Alterius'?",
+      "options": [
+        "To express one thing is to exclude another",
+        "No person can be punished twice for the same offense",
+        "The language must be read in its ordinary grammatical sense",
+        "An exception proves the rule in cases not excepted"
+      ],
+      "answerIndex": 0,
+      "explanation": "Expressio Unius Est Exclusio Alterius means that the express mention of one thing implies the exclusion of another. If a statute specifies certain items, unmentioned items of the same class are presumed to be excluded.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Expressio Unius",
+        "Exclusion",
+        "Statutory Maxims"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_012",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "When can an external aid such as 'legislative debates' (Hansard) be referred to by a court for interpreting a modern statute under Indian law?",
+      "options": [
+        "Whenever the literal interpretation is contested by either party",
+        "To discover the subjective intent of individual members who voted",
+        "To ascertain the historical background and the mischief sought to be remedied when the text is ambiguous",
+        "Under no circumstances, as parliamentary history is completely barred in India"
+      ],
+      "answerIndex": 2,
+      "explanation": "While earlier courts strictly barred legislative debates, modern jurisprudence permits reference to parliamentary history, speeches, and committee reports (external aids) to understand the surrounding circumstances and mischief when ambiguity exists.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "External Aids",
+        "Legislative Debates",
+        "Hansard"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_013",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "How are taxing statutes generally interpreted by Indian courts?",
+      "options": [
+        "Strictly; there is no equity in taxation, and a taxpayer cannot be taxed unless the language unambiguously imposes it",
+        "Liberally; to ensure maximum revenue collection for public welfare programs",
+        "Purposively; ignoring literal words to capture economic substance",
+        "Dynamically; adjusting tax rates based on inflation indices"
+      ],
+      "answerIndex": 0,
+      "explanation": "Taxing statutes must be interpreted strictly. There is no room for intendment or equity; if a person is not plainly brought within the letter of the law, they cannot be taxed.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Taxing Statute",
+        "Strict Construction",
+        "No Equity"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_014",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "What is the role of a 'Preamble' in an Act of Parliament?",
+      "options": [
+        "It contains the operative penal provisions for violation of the Act.",
+        "It acts as a key to open the minds of the makers and sets out the main scope and purpose of the Act.",
+        "It provides procedural rules for subordinate legislation.",
+        "It overrides explicit substantive sections in case of a direct conflict."
+      ],
+      "answerIndex": 1,
+      "explanation": "The preamble expresses the scope, object, and purpose of the Act. It is often described as a 'key to the understanding of the Act', though it cannot restrict or extend the clear and unambiguous enacting provisions.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Preamble",
+        "Internal Aids",
+        "Statute Purpose"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_015",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "What does the maxim 'Contemporanea Expositio Est Optima Et Fortissima In Lege' mean?",
+      "options": [
+        "The best and strongest interpretation of a statute is that which is made by contemporary authorities over a long period",
+        "Statutes enacted contemporaneously must be read together as a code",
+        "Later laws repeal earlier inconsistent laws",
+        "General provisions do not derogate from special provisions"
+      ],
+      "answerIndex": 0,
+      "explanation": "Contemporanea Expositio means that a statute is best interpreted according to the construction put upon it by contemporary authority and long usage, especially in respect of older or ancient statutes.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Contemporanea Expositio",
+        "Historical Interpretation",
+        "Long Usage"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_016",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "What is the effect of a repeal of a validating Act or a statute on rights and liabilities already acquired or accrued under it, as per general General Clauses Act principles?",
+      "options": [
+        "All past transactions become null and void automatically.",
+        "Accrued rights and incurred liabilities are generally protected unless a contrary intention appears.",
+        "The repeal has retrospective criminal liability for past acts.",
+        "The repealed Act continues in force indefinitely without notification."
+      ],
+      "answerIndex": 1,
+      "explanation": "Unless a different intention appears, the repeal of an enactment does not affect any right, privilege, obligation, or liability previously acquired, accrued, or incurred under the repealed enactment (Section 6 of the General Clauses Act principles incorporated in interpretation).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Repeal",
+        "Accrued Rights",
+        "General Clauses Act"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_017",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "When two provisions in the same statute appear to be repugnant to each other, what is the primary duty of the court in interpretation?",
+      "options": [
+        "To strike down both provisions for uncertainty",
+        "To harmonize them so that full effect can be given to both, if possible (Ut Res Magis Valeat Quam Pereat)",
+        "To automatically apply the latter provision as it was enacted last in the text",
+        "To refer the matter back to the executive for clarification"
+      ],
+      "answerIndex": 1,
+      "explanation": "Courts must attempt to harmonize conflicting provisions so that effect is given to both (Ut Res Magis Valeat Quam Pereat — it is better that a thing should have effect than that it should perish), rather than rendering one nugatory.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Harmonious Construction",
+        "Ut Res Magis Valeat Quam Pereat",
+        "Conflicting Provisions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_018",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "What is the primary function of 'Subordinate Legislation' (such as rules, regulations, and bylaws) framed under an enabling Act?",
+      "options": [
+        "To amend or repeal the parent enabling Act at will",
+        "To carry out the purposes of the parent Act without exceeding the powers conferred (ultra vires)",
+        "To levy retrospective taxes without parliamentary approval",
+        "To override fundamental constitutional rights"
+      ],
+      "answerIndex": 1,
+      "explanation": "Subordinate legislation must remain within the four corners of the parent (enabling) Act. Any rule or regulation that goes beyond the authority conferred by the parent Act is ultra vires and void.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Subordinate Legislation",
+        "Ultra Vires",
+        "Enabling Act"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_019",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "What does the legal maxim 'Generalia Specialibus Non Derogant' imply?",
+      "options": [
+        "General things do not derogate from special things",
+        "Special things must always yield to general enactments",
+        "General laws automatically repeal special laws",
+        "Special provisions apply only when general provisions are silent"
+      ],
+      "answerIndex": 0,
+      "explanation": "Generalia specialibus non derogant means that if a special provision is made on a specific subject matter, that subject matter is excluded from the general provision.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Generalia Specialibus Non Derogant",
+        "Special vs General",
+        "Statutory Conflict"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_020",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "Which of the following is classified as an 'External Aid' to statutory interpretation?",
+      "options": [
+        "Marginal notes",
+        "Schedules",
+        "Dictionaries",
+        "Headings of chapters"
+      ],
+      "answerIndex": 2,
+      "explanation": "Dictionaries are external aids to interpretation because they exist outside the statutory text. Marginal notes, schedules, and chapter headings are internal aids found within the statute itself.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "External Aids",
+        "Dictionaries",
+        "Internal vs External"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_021",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "Under what circumstance may a court read words into an Act of Parliament (filling a 'casus omissus')?",
+      "options": [
+        "Whenever the court believes the legislature forgot to mention a desirable policy",
+        "Never, as courts cannot supply a casus omissus unless clear and unmistakable context demands it to avoid total absurdity",
+        "Whenever the executive ministry issues a circular requesting expansion",
+        "In all cases of beneficial social legislation"
+      ],
+      "answerIndex": 1,
+      "explanation": "A casus omissus (an omission in a statute) cannot be supplied by a court of law, except in the case of clear and gross necessity where the literal interpretation leaves the statute totally unworkable or absurd.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Casus Omissus",
+        "Judicial Restraint",
+        "Filling Gaps"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_022",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "What is the significance of 'Schedules' appended to an Act?",
+      "options": [
+        "They are merely decorative annexures with no legal binding force.",
+        "They form an integral part of the statute and contain operational details, forms, or lists subsidiary to the main sections.",
+        "They override the main body of the Act if there is any inconsistency.",
+        "They are treated as external aids created by administrative committees."
+      ],
+      "answerIndex": 1,
+      "explanation": "Schedules are an integral part of the statute, often containing transitional provisions, forms, or lists of repealed enactments. However, if there is an irreconcilable conflict between the body of the Act and a schedule, the body prevails.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Schedules",
+        "Internal Aids",
+        "Statute Structure"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_023",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "How should a 'Beneficial Construction' (liberal interpretation) be applied to social welfare or labor legislations?",
+      "options": [
+        "Strictly against the worker to protect employer capital",
+        "So as to suppress the mischief and advance the remedy intended by the legislature",
+        "By ignoring the statutory language entirely in favor of equity",
+        "By restricting benefits exclusively to unionized members"
+      ],
+      "answerIndex": 1,
+      "explanation": "Beneficial construction requires that where a statute is enacted for the benefit of a particular class (e.g., labor or consumers), it should be interpreted liberally to advance the remedy and suppress the mischief, rather than adopting a narrow literal constriction.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Beneficial Construction",
+        "Social Welfare",
+        "Liberal Interpretation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_024",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "What is the legal effect of a 'Proviso' when it is repugnant to the substantive enacting part of a section?",
+      "options": [
+        "The proviso is completely void and ignored.",
+        "The proviso prevails as it is the later clause in the section text.",
+        "The court must harmonize them; if impossible, the proviso operates as an exception to the main enactment pro tanto.",
+        "The entire section is struck down for internal contradiction."
+      ],
+      "answerIndex": 2,
+      "explanation": "A proviso is meant to qualify the main enactment. If there is a direct repugnancy between the proviso and the main body, the proviso operates as an exception to the extent of the inconsistency, though harmonizing is always the first attempt.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Proviso",
+        "Repugnancy",
+        "Harmonious Construction"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_025",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "Which of the following describes the rule of 'Ejusdem Generis'?",
+      "options": [
+        "Where specific words are followed by general words, the general words are construed as applying to things of the same class as the specific words.",
+        "Where general words precede specific words, the specific words restrict the general words retroactively.",
+        "Words in a statute must be given their dictionary meaning regardless of context.",
+        "Earlier statutes govern later statutes on the same subject."
+      ],
+      "answerIndex": 0,
+      "explanation": "Ejusdem Generis dictates that when specific words of the same family or genus are followed by general terms (e.g., 'dogs, cats, and other animals'), the general term ('other animals') is restricted to domestic quadrupeds of a similar nature.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Ejusdem Generis",
+        "Specific and General",
+        "Class of Words"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_026",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "What role do 'Dictionary meanings' play when a technical term is used in a commercial or trade statute?",
+      "options": [
+        "Dictionary meanings override trade usage in every instance.",
+        "Trade or commercial usage and understanding take precedence over general dictionary meanings if the term has acquired a specific trade sense.",
+        "Dictionaries are strictly prohibited in commercial law interpretation.",
+        "Judges must rely exclusively on foreign legal dictionaries."
+      ],
+      "answerIndex": 1,
+      "explanation": "In commercial and trade statutes, words are understood in the sense in which they are used in commerce and trade, even if it differs from the general or literal dictionary meaning.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Dictionary Meanings",
+        "Trade Usage",
+        "Commercial Statutes"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_027",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "What is the purpose of a 'Heading' prefixed to a group of sections in an Act?",
+      "options": [
+        "To serve as a preamble for the entire enactment",
+        "To act as a key to interpret the meaning of ambiguous sections within that group",
+        "To replace the marginal notes completely",
+        "To act as an absolute binding enactment overriding section texts"
+      ],
+      "answerIndex": 1,
+      "explanation": "Headings prefixed to sections or groups of sections operate as internal aids and can be referred to as a key to resolve ambiguity or to determine the scope of the sections falling under them.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Headings",
+        "Internal Aids",
+        "Statutory Grouping"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_028",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "What is meant by the rule 'Ut Res Magis Valeat Quam Pereat'?",
+      "options": [
+        "It is better for a statute to be declared void than to cause ambiguity.",
+        "An interpretation which validates and gives effect to a provision should be chosen over one that renders it meaningless or dead.",
+        "Penal statutes must be strictly construed against the State.",
+        "Specific words override general words."
+      ],
+      "answerIndex": 1,
+      "explanation": "Ut Res Magis Valeat Quam Pereat means 'it is better that a thing should have effect than that it should perish'. Courts must lean towards an interpretation that makes the statute workable and valid rather than redundant.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Ut Res Magis Valeat Quam Pereat",
+        "Workable Interpretation",
+        "Validation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_029",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "When is an Act of Parliament deemed to come into operation if no specific commencement date is stated within the Act itself (under general statutory rules in India)?",
+      "options": [
+        "On the date the Bill was first introduced in Parliament",
+        "On the date it receives the assent of the President",
+        "Six months after presidential assent",
+        "On the date published in the official gazette by executive notification"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 5 of the General Clauses Act, where an Act is not expressed to come into operation on a particular day, it shall come into operation on the day on which it receives the assent of the President (or Governor in case of State Acts).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Commencement",
+        "Presidential Assent",
+        "General Clauses Act"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_other-laws-2_030",
+      "kind": "normal",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "prompt": "Can an internal aid such as 'Explanation' attached to a section expand the plain meaning of the main provision?",
+      "options": [
+        "No, an explanation can only clarify obscurity and cannot enlarge the main section's scope.",
+        "Yes, an explanation is designed to clarify the meaning and can sometimes broaden or explain the true intent of the section.",
+        "Explanations have no legal standing whatsoever.",
+        "Explanations automatically repeal the main section if there is friction."
+      ],
+      "answerIndex": 1,
+      "explanation": "An explanation is inserted to clarify any obscurity or ambiguity in the main provision. While its primary purpose is explanation, it often broadens or explains the true scope of the provision to ensure the legislative intent is fulfilled.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Explanation",
+        "Internal Aids",
+        "Scope Clarification"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_other-laws-2_01",
+      "kind": "scenario",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "passage": "Zenith Corp, a manufacturing company registered in Mumbai, faced a regulatory inquiry regarding a waste disposal provision under the National Environmental Safety Act, 2010. Section 45 of the Act prohibited factories from discharging 'acids, alkalis, oils, or other deleterious liquids' into municipal drains. Zenith Corp discharged biodegradable liquid detergent waste, arguing it was neither an acid, alkali, nor oil. The pollution control board contended that detergent waste fell under 'other deleterious liquids'. The Act also contained a marginal note to Section 45 titled 'Disposal of industrial effluents', and a proviso permitting treated organic waste under specific licenses.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_other-laws-2_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-2_01",
+          "sequenceInScenario": 1,
+          "chapterId": "other-laws-2",
+          "subject": "Law",
+          "prompt": "Which rule of statutory interpretation is most appropriate for the court to determine whether 'liquid detergent waste' falls under 'other deleterious liquids' following 'acids, alkalis, oils'?",
+          "options": [
+            "Heydon's Mischief Rule",
+            "Rule of Ejusdem Generis",
+            "Golden Rule of Absurdity",
+            "Contemporanea Expositio"
+          ],
+          "answerIndex": 1,
+          "explanation": "The rule of Ejusdem Generis applies here because specific words ('acids, alkalis, oils') form a genus, followed by general words ('other deleterious liquids'). The general words must be interpreted in light of the specific polluting characteristics of the preceding items.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Ejusdem Generis",
+            "Scenario",
+            "Statutory Construction"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-2_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-2_01",
+          "sequenceInScenario": 2,
+          "chapterId": "other-laws-2",
+          "subject": "Law",
+          "prompt": "What is the legal standing of the marginal note 'Disposal of industrial effluents' attached to Section 45?",
+          "options": [
+            "It is a conclusive indicator that only heavy industrial effluents are prohibited.",
+            "It is an internal aid that may offer slight guidance but cannot control the clear enacting words of Section 45.",
+            "It overrides the specific categories listed in the text of the section.",
+            "It constitutes an external aid framed by administrative tribunals."
+          ],
+          "answerIndex": 1,
+          "explanation": "Marginal notes are internal aids to interpretation. While they can provide general context or guidance if ambiguity exists, they cannot restrict or override the clear operational language of the statutory section.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Marginal Notes",
+            "Internal Aids",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-2_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-2_01",
+          "sequenceInScenario": 3,
+          "chapterId": "other-laws-2",
+          "subject": "Law",
+          "prompt": "How should the proviso permitting treated organic waste under specific licenses be interpreted in relation to the main enacting provision of Section 45?",
+          "options": [
+            "As an independent charging section creating new offenses",
+            "As an exception carved out from the main prohibition to qualify its operation",
+            "As a non-obstante clause overriding all environmental safety norms",
+            "As a preamble describing legislative history"
+          ],
+          "answerIndex": 1,
+          "explanation": "A proviso is designed to qualify or carve out an exception from the main enacting provision. Here, it creates a specific exception for treated organic waste under license, leaving the general prohibition intact otherwise.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Proviso",
+            "Exception",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-2_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-2_01",
+          "sequenceInScenario": 4,
+          "chapterId": "other-laws-2",
+          "subject": "Law",
+          "prompt": "If Section 45 imposed criminal penalties for violation, how should the court construe the ambiguous phrase 'other deleterious liquids'?",
+          "options": [
+            "Liberally in favor of the pollution board to protect public health",
+            "Strictly in favor of Zenith Corp, resolving any reasonable doubt in favor of the accused",
+            "Dynamically based on contemporary environmental lobbying",
+            "By consulting cabinet committee minutes without restriction"
+          ],
+          "answerIndex": 1,
+          "explanation": "Penal statutes carrying criminal sanctions must be construed strictly. If an ambiguity exists regarding whether detergent waste is covered, the interpretation favoring the subject (Zenith Corp) must be adopted.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Penal Statute",
+            "Strict Construction",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_other-laws-2_02",
+      "kind": "scenario",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "passage": "The State Legislature of Maharashtra passed the Urban Commercial Tenancy Act, 2024. Section 12 stated that 'no landlord shall evict a tenant except on grounds of non-payment of rent.' However, Section 18 of the same Act contained a non-obstante clause: 'Notwithstanding anything contained in Section 12, a landlord running a registered educational trust may evict commercial tenants for bona fide institutional expansion.' A dispute arose between landlord Apex Trust and tenant Metro Bookstores, where Apex Trust sought eviction for institutional expansion under Section 18, while Metro Bookstores relied on Section 12.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_other-laws-2_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-2_02",
+          "sequenceInScenario": 1,
+          "chapterId": "other-laws-2",
+          "subject": "Law",
+          "prompt": "What is the legal effect of the non-obstante clause in Section 18 ('Notwithstanding anything contained in Section 12...')?",
+          "options": [
+            "It renders Section 12 entirely unconstitutional and nullified.",
+            "It gives Section 18 an overriding effect over Section 12 to the extent of institutional expansion by registered educational trusts.",
+            "It subordinates Section 18 to Section 12 in all commercial tenancy matters.",
+            "It serves merely as a preamble without operational impact."
+          ],
+          "answerIndex": 1,
+          "explanation": "A non-obstante clause is a legislative tool intended to give the enacting part in which it is used an overriding effect over contrary provisions in the same or other acts, specifically here permitting Apex Trust to evoke eviction under Section 18.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Non-Obstante Clause",
+            "Overriding Effect",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-2_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-2_02",
+          "sequenceInScenario": 2,
+          "chapterId": "other-laws-2",
+          "subject": "Law",
+          "prompt": "If Sections 12 and 18 appeared to directly clash without a non-obstante clause, which rule of interpretation would the court first employ?",
+          "options": [
+            "The rule of harmonious construction (Ut Res Magis Valeat Quam Pereat)",
+            "The rule of literal destruction of both clauses",
+            "The rule of strict penal construction",
+            "Reference to foreign judicial precedents"
+          ],
+          "answerIndex": 0,
+          "explanation": "When two provisions in an Act appear repugnant, the court's primary duty is to harmonize them so that effect is given to both, fulfilling the principle of Ut Res Magis Valeat Quam Pereat.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Harmonious Construction",
+            "Ut Res Magis Valeat Quam Pereat",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-2_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-2_02",
+          "sequenceInScenario": 3,
+          "chapterId": "other-laws-2",
+          "subject": "Law",
+          "prompt": "How should the term 'landlord' appearing in the Act be interpreted if the statute is silent on whether it includes sub-lessors?",
+          "options": [
+            "By applying the principle of Noscitur a Sociis and examining associated tenancy terms in the context of the Act",
+            "By arbitrarily substituting the definition from the Rent Control Act of 1948 without context",
+            "By assuming the legislature forgot sub-lessors and ignoring the omission",
+            "By applying the strict taxing statute rule"
+          ],
+          "answerIndex": 0,
+          "explanation": "When a term's scope is ambiguous, Noscitur a Sociis ('a word is known by the company it keeps') guides the court to ascertain its meaning from the surrounding statutory context and associated provisions.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Noscitur a Sociis",
+            "Statutory Context",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-2_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-2_02",
+          "sequenceInScenario": 4,
+          "chapterId": "other-laws-2",
+          "subject": "Law",
+          "prompt": "Are the headings prefixed to the chapters of the Urban Commercial Tenancy Act, 2024 considered binding operational law?",
+          "options": [
+            "Yes, they carry equal weight to the substantive sections.",
+            "No, headings are internal aids used only as a key to interpret ambiguous sections and cannot override clear section text.",
+            "Yes, provided they were debated on the floor of the assembly.",
+            "No, headings are classified as external aids."
+          ],
+          "answerIndex": 1,
+          "explanation": "Headings are internal aids. While useful for resolving ambiguities or understanding the structural grouping, they cannot control or override the plain and clear text of the operative sections.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Headings",
+            "Internal Aids",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_other-laws-2_03",
+      "kind": "scenario",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "passage": "In 2025, the Parliament enacted the Digital Assets Taxation Act. Section 8 imposed a levy of 30% on 'transfer of any virtual digital asset, cryptocurrency, or token'. Taxpayer Rohan transferred a non-fungible digital token representing ownership of digital art and claimed exemption under a broad welfare notification issued by the Finance Ministry under a general rule-making power in Section 25. The tax department argued that Section 8 was a specific charging provision, and general rules could not exempt asset transfers not expressly provided for in the parent Act.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_other-laws-2_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-2_03",
+          "sequenceInScenario": 1,
+          "chapterId": "other-laws-2",
+          "subject": "Law",
+          "prompt": "How must Section 8 of the Digital Assets Taxation Act be interpreted as a taxing statute?",
+          "options": [
+            "Strictly; there is no equity in taxation, and tax liability must be explicitly and unambiguously imposed by the letter of the law",
+            "Liberally; to maximize government revenue for digital infrastructure",
+            "Purposively; disregarding statutory text to capture economic reality",
+            "Dynamically; adjusting rates based on cryptocurrency market fluctuations"
+          ],
+          "answerIndex": 0,
+          "explanation": "Taxing statutes are construed strictly. If a taxpayer does not fall squarely within the letter of the charging provision, no tax can be imposed by intendment or equity.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Taxing Statute",
+            "Strict Construction",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-2_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-2_03",
+          "sequenceInScenario": 2,
+          "chapterId": "other-laws-2",
+          "subject": "Law",
+          "prompt": "Which maxim governs the relationship between the parent Act's specific charging provision (Section 8) and subordinate rule-making power (Section 25)?",
+          "options": [
+            "Generalia specialibus non derogant",
+            "Subordinate legislation cannot override or contradict the parent Act's substantive provisions (Ultra Vires)",
+            "Contemporanea expositio est optima et fortissima in lege",
+            "Expressio unius est exclusio alterius"
+          ],
+          "answerIndex": 1,
+          "explanation": "Subordinate legislation (rules, notifications) must remain within the scope of the parent Act. Any rule that grants an exemption contrary to or exceeding the parent Act's charging provisions is ultra vires and void.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Subordinate Legislation",
+            "Ultra Vires",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-2_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-2_03",
+          "sequenceInScenario": 3,
+          "chapterId": "other-laws-2",
+          "subject": "Law",
+          "prompt": "What role does the 'Preamble' of the Digital Assets Taxation Act play if Rohan claims an ambiguity in the definition of 'virtual digital asset'?",
+          "options": [
+            "The preamble acts as a key to open the minds of the makers and clarify the scope, though it cannot override clear text.",
+            "The preamble serves as the operational charging section.",
+            "The preamble is an external aid created by the judiciary.",
+            "The preamble automatically grants tax exemptions to all artists."
+          ],
+          "answerIndex": 0,
+          "explanation": "The preamble states the purpose and scope of the legislation and acts as a key to understanding ambiguous provisions, though it cannot restrict or extend clear statutory text.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Preamble",
+            "Internal Aids",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-2_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-2_03",
+          "sequenceInScenario": 4,
+          "chapterId": "other-laws-2",
+          "subject": "Law",
+          "prompt": "If the term 'token' appears alongside 'virtual digital asset' and 'cryptocurrency', what principle of interpretation helps determine whether Rohan's NFT is covered?",
+          "options": [
+            "Noscitur a Sociis",
+            "Heydon's Rule",
+            "Casus Omissus",
+            "Golden Rule"
+          ],
+          "answerIndex": 0,
+          "explanation": "Noscitur a Sociis ('a word is known by the company it keeps') assists in interpreting 'token' by looking at its association with 'virtual digital asset' and 'cryptocurrency' within the digital finance context.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Noscitur a Sociis",
+            "Associated Words",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_other-laws-2_04",
+      "kind": "scenario",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "passage": "The Central Labour Welfare Act enacted in 1990 mandated that factories employing 'more than one hundred workers' must provide crèche facilities. Apex Manufacturing plant at Pune employed 95 permanent workers and 15 regular daily-wage contract workers on factory premises. The labor inspector slapped a penalty for non-compliance. Apex Manufacturing contested the penalty, arguing that 'workers' under Section 3 referred strictly to permanent direct payroll employees, excluding contract workers.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_other-laws-2_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-2_04",
+          "sequenceInScenario": 1,
+          "chapterId": "other-laws-2",
+          "subject": "Law",
+          "prompt": "Which rule of interpretation is primarily applied when construing a social welfare and labor legislation like the Central Labour Welfare Act?",
+          "options": [
+            "Strict Construction in favor of the employer",
+            "Beneficial Construction (Ut Res Magis Valeat / Liberal interpretation to advance the remedy)",
+            "Literal Construction without regard to worker safety",
+            "Literal rule favoring strict penal liability"
+          ],
+          "answerIndex": 1,
+          "explanation": "Beneficial legislation enacted for the welfare of workers is interpreted liberally to suppress the mischief and advance the remedy intended by the legislature, favoring the protected class.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Beneficial Construction",
+            "Social Welfare",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-2_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-2_04",
+          "sequenceInScenario": 2,
+          "chapterId": "other-laws-2",
+          "subject": "Law",
+          "prompt": "How should the term 'workers' be interpreted in light of modern industrial jurisprudence and the context of labor welfare?",
+          "options": [
+            "Restricted strictly to permanent employees on the muster roll",
+            "Inclusive of contract workers engaged in regular factory operations to prevent statutory evasion",
+            "Limited exclusively to supervisory management staff",
+            "Excluded entirely if paid on a daily wage basis"
+          ],
+          "answerIndex": 1,
+          "explanation": "In labor statutes, welfare provisions are interpreted purposively to include contract workers who work on premises, preventing employers from evading obligations through outsourcing.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Purposive Interpretation",
+            "Labor Law",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-2_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-2_04",
+          "sequenceInScenario": 3,
+          "chapterId": "other-laws-2",
+          "subject": "Law",
+          "prompt": "If the employer invokes a literal interpretation claiming an omission (casus omissus) of contract workers from the definition section, can the court supply the omission?",
+          "options": [
+            "Yes, whenever it seems fair to the executive branch.",
+            "No, a casus omissus cannot be supplied by courts unless clear statutory context and necessity demand it to avoid absurdity.",
+            "Yes, in all labor disputes automatically.",
+            "No, courts must strike down the entire Act if an omission exists."
+          ],
+          "answerIndex": 1,
+          "explanation": "Courts cannot supply a casus omissus (an omission) unless the clear and unmistakable context of the statute compels it. However, interpreting 'workers' broadly to include contract workers is a matter of statutory definition scope rather than supplying an omission.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Casus Omissus",
+            "Judicial Interpretation",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-2_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-2_04",
+          "sequenceInScenario": 4,
+          "chapterId": "other-laws-2",
+          "subject": "Law",
+          "prompt": "What is the status of the 'Statement of Objects and Reasons' attached to the Labour Welfare Bill when interpreting the scope of 'workers'?",
+          "options": [
+            "It is binding law that overrides section definitions.",
+            "It is an internal aid showing the historical background and intent of the Bill, but cannot control the plain statutory text.",
+            "It is an external aid that replaces the preamble.",
+            "It has no legal relevance whatsoever under Indian jurisprudence."
+          ],
+          "answerIndex": 1,
+          "explanation": "The Statement of Objects and Reasons explains the background and purpose of introducing the Bill. While helpful for understanding historical setting, it is not part of the enacted statute and cannot override statutory wording.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Statement of Objects and Reasons",
+            "Internal Aids",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_other-laws-2_05",
+      "kind": "scenario",
+      "chapterId": "other-laws-2",
+      "subject": "Law",
+      "passage": "A colonial-era enactment, the Ancient Transport Corridors Act, 1890, used the term 'carriages' in Section 14 to regulate tolls on roads. In 2024, the local municipality sought to levy tolls on modern electric autonomous delivery pods operating on those same corridors. TransLogistics Inc. challenged the toll, arguing that 'carriages' in an 1890 statute could not possibly encompass modern robotic delivery pods driven by artificial intelligence.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 3",
+        "chapterNumber": 2,
+        "chapterTitle": "Interpretation of Statutes"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_other-laws-2_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-2_05",
+          "sequenceInScenario": 1,
+          "chapterId": "other-laws-2",
+          "subject": "Law",
+          "prompt": "Which interpretive approach addresses whether statutory terms drafted in the past ('carriages') can apply to modern technological innovations ('autonomous delivery pods')?",
+          "options": [
+            "The doctrine of original intent (freezing meaning to 1890)",
+            "The 'always speaking' statute doctrine (updating construction)",
+            "The doctrine of Contemporanea Expositio exclusively",
+            "The strict penal rule"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the 'always speaking' doctrine, statutes are generally treated as always speaking. Words can accommodate modern technological developments falling within the statutory genus or purpose.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Always Speaking Doctrine",
+            "Dynamic Interpretation",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-2_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-2_05",
+          "sequenceInScenario": 2,
+          "chapterId": "other-laws-2",
+          "subject": "Law",
+          "prompt": "How does the doctrine of 'Contemporanea Expositio' apply to an 1890 statute interpreted in modern times?",
+          "options": [
+            "It requires courts to ignore all modern precedents.",
+            "It emphasizes how contemporary authorities interpreted the Act in 1890, though it must be balanced against modern statutory dynamics.",
+            "It automatically repeals statutes older than 50 years.",
+            "It permits executive officers to rewrite definitions without notification."
+          ],
+          "answerIndex": 1,
+          "explanation": "Contemporanea Expositio looks at how ancient statutes were understood by contemporary authorities. However, for evolving terms, courts balance historical usage with the 'always speaking' doctrine.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Contemporanea Expositio",
+            "Ancient Statutes",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-2_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-2_05",
+          "sequenceInScenario": 3,
+          "chapterId": "other-laws-2",
+          "subject": "Law",
+          "prompt": "If the term 'carriages' is followed by general words like 'and other wheeled conveyances', which interpretative rule assists in classification?",
+          "options": [
+            "Ejusdem Generis",
+            "Heydon's Mischief Rule",
+            "Strict Penal Construction",
+            "Non-Obstante application"
+          ],
+          "answerIndex": 0,
+          "explanation": "Ejusdem Generis applies where specific terms ('carriages') are followed by general words ('other wheeled conveyances'), restricting the general words to conveyances of a similar wheeled nature.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Ejusdem Generis",
+            "Statutory Maxims",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_other-laws-2_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_other-laws-2_05",
+          "sequenceInScenario": 4,
+          "chapterId": "other-laws-2",
+          "subject": "Law",
+          "prompt": "What is the primary objective of the court when interpreting ambiguous terminology in a regulatory statute of this nature?",
+          "options": [
+            "To ascertain and give effect to the true legislative intent and statutory purpose",
+            "To invalidate the statute for vagueness",
+            "To substitute executive administrative circulars for judicial reasoning",
+            "To strictly favor commercial enterprises over public municipalities"
+          ],
+          "answerIndex": 0,
+          "explanation": "The overarching goal of all statutory interpretation is to ascertain the intention of the legislature and give effect to the true purpose and object of the enactment.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Legislative Intent",
+            "Statutory Purpose",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "gst-4",
+  "subject": "Taxation",
+  "paper": "Paper 3: Taxation",
+  "module": "Module 1",
+  "chapterNumber": 4,
+  "chapterTitle": "Place of Supply",
+  "generatedAt": "2026-08-16T14:28:06.255Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_gst-4_001",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "What is the primary statutory significance of determining the 'Place of Supply' under the GST law in India?",
+      "options": [
+        "It determines whether a transaction is an intra-State or inter-State supply.",
+        "It determines the applicable rate of income tax on corporate profits.",
+        "It decides the date of issuance of the tax invoice.",
+        "It fixes the threshold limit for mandatory GST registration."
+      ],
+      "answerIndex": 0,
+      "explanation": "Place of supply determines whether a transaction is treated as intra-State (attracting CGST and SGST/UTGST) or inter-State (attracting IGST). It is the foundational pillar for destination-based taxation under GST. This is governed by the IGST Act, 2017.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Basics of POS",
+        "Inter vs Intra State",
+        "IGST Act"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_002",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "Under Section 10(1)(a) of the IGST Act, 2017, where the supply involves movement of goods, the place of supply of goods shall be:",
+      "options": [
+        "the location of the supplier at the time of invoicing.",
+        "the location where goods are delivered for the purpose of transport to the recipient.",
+        "the location where the movement of goods terminates for delivery to the recipient.",
+        "the place where the contract of sale is signed."
+      ],
+      "answerIndex": 2,
+      "explanation": "According to Section 10(1)(a), when a supply involves movement of goods (whether by the supplier or the recipient or any other person), the place of supply is the location where the movement of goods terminates for delivery to the recipient.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 10(1)(a)",
+        "Movement of Goods",
+        "Place of Supply"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_003",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "Mr. A in Mumbai sells machinery to Mr. B in Delhi. Mr. B directs Mr. A to deliver the machinery directly to Mr. C in Pune, who is a job worker of Mr. B. What is the place of supply under Section 10(1)(b)?",
+      "options": [
+        "Mumbai (Supplier's location)",
+        "Delhi (Principal recipient's principal place of business)",
+        "Pune (Third party/job worker's location where goods are delivered)",
+        "Nagpur (Midpoint of transport)"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 10(1)(b), commonly known as the 'Bill-to-Ship-to' model, where the goods are delivered by the supplier to a recipient or any other person on the direction of a third person, it is deemed that the third person has received the goods. The place of supply is the principal place of business of such third person (Delhi).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 10(1)(b)",
+        "Bill to Ship to",
+        "Goods"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_004",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "When goods are supplied without any movement (neither by supplier nor recipient), what is the place of supply as per Section 10(1)(c) of the IGST Act, 2017?",
+      "options": [
+        "Location of the supplier at the time of contract",
+        "Location of such goods at the time of the delivery to the recipient",
+        "Principal place of business of the recipient",
+        "Location where the payment is processed"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 10(1)(c) states that where the supply does not involve movement of goods, whether by the supplier or the recipient, the place of supply shall be the location of such goods at the time of the delivery to the recipient.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 10(1)(c)",
+        "No Movement",
+        "Goods"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_005",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "If goods are assembled or installed at site, what shall be the place of supply of such goods under Section 10(1)(d)?",
+      "options": [
+        "The place of installation or assembly",
+        "The location of the supplier's factory",
+        "The registered office of the buyer",
+        "The port of import"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 10(1)(d), where the goods are assembled or installed at site, the place of supply of such goods is the place of such installation or assembly.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 10(1)(d)",
+        "Installation",
+        "Goods"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_006",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "What is the place of supply of goods supplied on board a conveyance, such as a vessel, aircraft, train, or motor vehicle, under Section 10(1)(e)?",
+      "options": [
+        "The location where the conveyance takes off or departs.",
+        "The location where the goods are originally loaded on board.",
+        "The location where the conveyance reaches its final destination.",
+        "The location at which such goods are taken on board."
+      ],
+      "answerIndex": 3,
+      "explanation": "As per Section 10(1)(e) of the IGST Act, 2017, the place of supply of goods supplied on board a conveyance shall be the location at which such goods are taken on board.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 10(1)(e)",
+        "Conveyance",
+        "Goods"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_007",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "M/s FastFreight Ltd. imports goods from London, UK, which arrive at Chennai Port and are subsequently cleared for home consumption. What is the place of supply of imported goods under Section 11 of the IGST Act, 2017?",
+      "options": [
+        "London, UK",
+        "Chennai, Tamil Nadu",
+        "New Delhi (Head Office of importer)",
+        "The territorial waters limit"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 11 of the IGST Act specifies that the place of supply of goods imported into India shall be the location of the importer. However, since the importer receives it at Chennai Port, the place of supply is Chennai, Tamil Nadu.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 11",
+        "Import of Goods",
+        "Place of Supply"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_008",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "What is the place of supply of goods exported from India, as governed by Section 11 of the IGST Act, 2017?",
+      "options": [
+        "The port of exit in India",
+        "The location outside India where the goods are destined",
+        "The factory gate of the exporter",
+        "The custom station of clearance"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 11 of the IGST Act, the place of supply of goods exported from India is the location outside India where the goods are destined.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 11",
+        "Export of Goods",
+        "Place of Supply"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_009",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "For services directly in relation to immovable property (e.g., architectural design for a farmhouse in Jaipur), provided to a registered person, what is the general default rule for place of supply under Section 12(3) of the IGST Act?",
+      "options": [
+        "Location of the recipient",
+        "Location of the supplier",
+        "Place where the immovable property is located or intended to be located",
+        "Place where the contract is executed"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under Section 12(3)(a) of the IGST Act, the place of supply of services directly in relation to an immovable property (including services provided by architects, interior decorators, surveyors, engineers, etc.) is the location at which the immovable property is located or intended to be located.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 12(3)",
+        "Immovable Property",
+        "Domestic Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_010",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "Mr. X (registered in Haryana) stays in a luxury hotel in Udaipur, Rajasthan, and holds a corporate seminar in the hotel's conference hall. What is the place of supply of the lodging and conference facility service under Section 12(3)?",
+      "options": [
+        "Haryana (Recipient's location)",
+        "Rajasthan (Location where the immovable property/hotel is located)",
+        "New Delhi (Registered office of hotel chain)",
+        "Depends on who pays the bill"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 12(3)(c), services provided by way of accommodation in a hotel, inn, guest house, etc., or for organizing a marriage or reception, have the place of supply where the immovable property is located (Udaipur, Rajasthan), regardless of whether the recipient is registered.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 12(3)(c)",
+        "Hotel Accommodation",
+        "Immovable Property"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_011",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "Restaurant and catering services are provided to an unregistered individual customer in a restaurant located in Bangalore. What is the place of supply under Section 12(4)?",
+      "options": [
+        "Customer's home address",
+        "Bangalore (Location where the restaurant services are actually performed)",
+        "Supplier's billing center",
+        "Any place chosen by the customer"
+      ],
+      "answerIndex": 0,
+      "explanation": "Correction note: Under Section 12(4), the place of supply of restaurant and catering services, personal grooming, fitness, beauty treatment, health service, etc., is the location where the services are actually performed. Thus, Bangalore is correct.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 12(4)",
+        "Restaurant Services",
+        "Performance Based"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_012",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "What is the place of supply for admission to a cultural event held in Kolkata, where the ticket is purchased by a registered corporate entity based in Mumbai?",
+      "options": [
+        "Mumbai (Recipient's location)",
+        "Kolkata (Where the event is actually held)",
+        "Delhi (If ticket portal is registered there)",
+        "The place where the payment gateway is located"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 12(6) of the IGST Act, the place of supply of services provided by way of admission to a cultural, artistic, sporting, scientific, educational, or entertainment event or amusement park or other places, and services ancillary thereto, is the place where the event is actually held (Kolkata).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 12(6)",
+        "Admission to Events",
+        "Domestic Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_013",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "An organization organizes an international trade exhibition in Chennai. The stall space is rented out to various business entities from across India. What is the place of supply for organizing the exhibition under Section 12(7)(a)(i) when provided to a registered person?",
+      "options": [
+        "Chennai, Tamil Nadu",
+        "Location of each respective registered recipient",
+        "Head office of the organizer",
+        "Place where the agreement was signed"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 12(7)(a)(i), where the service of organization of an event is provided to a registered person, the place of supply is the location of the recipient. (Note: Distinguish between 'admission to an event' under Section 12(6) and 'organization of an event' under Section 12(7)).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 12(7)",
+        "Organization of Events",
+        "B2B Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_014",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "Transportation of goods, including by mail or courier, is provided to an unregistered person (B2C). Where is the place of supply under Section 12(8) of the IGST Act?",
+      "options": [
+        "Location where the recipient resides",
+        "Location where the goods are handed over for their transportation",
+        "Location where goods are actually delivered",
+        "Supplier's principal place of business"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under proviso to Section 12(8), where the transportation of goods is provided to an unregistered person, the place of supply is the location at which such goods are handed over for their transportation.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 12(8)",
+        "Transportation of Goods",
+        "B2C Provisions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_015",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "What is the place of supply of passenger transportation service provided to a registered person (B2B) under Section 12(9) of the IGST Act?",
+      "options": [
+        "Location where the passenger embarks on the conveyance",
+        "Location of the registered recipient",
+        "Location where the journey terminates",
+        "Location of the transport operator's headquarters"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 12(9)(a), the place of supply of passenger transportation service to a registered person is the location of such person (B2B rule). For unregistered persons, it is the place where the passenger embarks on the conveyance for a continuous journey.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 12(9)",
+        "Passenger Transportation",
+        "B2B"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_016",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "Services are provided on board a passenger vessel traveling from Kochi to Mumbai. What is the place of supply of such services on board the conveyance under Section 12(10)?",
+      "options": [
+        "Kochi",
+        "Mumbai",
+        "The location where the passenger first embarks on the conveyance",
+        "The place where the journey terminates"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under Section 12(10), the place of supply of services on board a conveyance (such as vessel, aircraft, train, or motor vehicle) shall be the location where the passenger is taken on board (first embarks) at the beginning of the journey.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 12(10)",
+        "Services on Conveyance",
+        "Domestic Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_017",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "Telecommunication services, including data transfer, broadcasting, cable and DTH services, provided through a fixed telecommunication line, leased circuit, or cable dish, have their place of supply under Section 12(11) at:",
+      "options": [
+        "Location of the supplier's billing office",
+        "Location where the telecommunication line, leased circuit, or cable connection is installed",
+        "Location of the recipient's permanent address",
+        "Location where the payment is cleared"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 12(11)(a), where such telecom services are provided through a fixed line, leased circuit, cable, or dish, the place of supply is the location where the telecommunication line, leased circuit, or cable connection or dish is installed for receipt of services.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 12(11)",
+        "Telecom Services",
+        "Fixed Line"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_018",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "In the case of postpaid mobile connection services provided to an individual customer, if the address of the customer is not available in the supplier's records, what is the default place of supply under Section 12(11)?",
+      "options": [
+        "Location of the supplier",
+        "Billing address of the supplier's circle",
+        "Location of the principal place of business of the telecom operator",
+        "Location where the SIM card was manufactured"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under the proviso to Section 12(11)(b), if the address of the customer is not available in the records of the supplier, the place of supply shall be the location of the supplier of services.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 12(11)",
+        "Mobile Connection",
+        "Default Rule"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_019",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "Banking and other financial services, including stock broking services, provided to any person, have their place of supply under Section 12(12) as:",
+      "options": [
+        "Location of the recipient of services on the records of the supplier",
+        "Location of the branch of the bank where the account is maintained",
+        "Location of the supplier of services",
+        "Location where the ATM is installed"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 12(12), the place of supply of banking and other financial services, including stock broking services, to any person shall be the location of the recipient of services on the records of the supplier of services. If the location is not on record, it shall be the location of the supplier of services.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 12(12)",
+        "Banking Services",
+        "Financial Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_020",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "Insurance services provided to a registered person (B2B) under Section 12(13) of the IGST Act have their place of supply at:",
+      "options": [
+        "Location of the insured person's assets",
+        "Location of the registered person",
+        "Location of the insurance company's head office",
+        "Place where the policy document is signed"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 12(13)(a), the place of supply of insurance services to a registered person is the location of such person. For an unregistered person (B2C), it is the location of the recipient on the records of the supplier.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 12(13)",
+        "Insurance Services",
+        "B2B vs B2C"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_021",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "Advertisement services to the Central Government, a State Government, a statutory body, or a local authority meant for identifying media are governed by special provisions under Section 12(14). How is the place of supply determined?",
+      "options": [
+        "In proportion to the amount attributable to the service provided by way of dissemination in each such State/Union Territory.",
+        "Entirely in the State where the advertising agency's head office is situated.",
+        "Solely in New Delhi where the Central Government is located.",
+        "Based on where the advertisement is printed or produced."
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 12(14), advertisement services to the Government/statutory bodies spread across multiple States shall be taken as being supplied in each of such States in proportion to the amount attributable to the dissemination in each such State, in accordance with the rules made in this behalf (Rule 3 of IGST Rules).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 12(14)",
+        "Advertisement Services",
+        "Government"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_022",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "What is the default rule for determining the place of supply of services where both the supplier and the recipient are located in India, if the specific provisions of subsections (3) to (14) of Section 12 do not apply?",
+      "options": [
+        "Location of the supplier",
+        "Location of the recipient if registered; else location of recipient on records if available, otherwise location of supplier.",
+        "Always the location of the supplier",
+        "Always the location of the recipient"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 12(2) (the residuary provision for domestic services), the place of supply of services made to a registered person is the location of such person. To an unregistered person, it is the location of the recipient where the address is on record, and the location of the supplier in other cases.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 12(2)",
+        "Residuary Provision",
+        "Domestic Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_023",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "Under Section 13(3) of the IGST Act (cross-border B2B/B2C services), what is the place of supply for services supplied in respect of goods which are required to be made physically available by the recipient to the supplier for rendering the service?",
+      "options": [
+        "Location of the recipient",
+        "Location where the services are actually performed",
+        "Location of the supplier",
+        "Location where the goods are exported"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 13(3)(a), the place of supply of services supplied in respect of goods which are required to be made physically available by the recipient to the supplier in order to provide the service is the location where the services are actually performed (with specific exceptions for goods moved outside India).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 13(3)",
+        "Cross Border Services",
+        "Performance Based"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_024",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "What is the place of supply for professional, consultancy, or legal services provided by an Indian firm to an overseas client (where the location of the supplier and recipient are outside India's specific exceptions), under the general rule of Section 13(2)?",
+      "options": [
+        "Location of the supplier of services",
+        "Location of the recipient of services",
+        "Place where the advice is implemented",
+        "Location where the foreign exchange is received"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 13(2) of the IGST Act, the place of supply of services except the services specified in sub-sections (3) to (13) shall be the location of the recipient of services. If the recipient's location is not available in the ordinary course of business, it is the location of the supplier of services.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 13(2)",
+        "International Services",
+        "General Rule"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_025",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "Under Section 13(4) of the IGST Act, what is the place of supply of services supplied directly in relation to an immovable property, including services acting as experts/estate agents or for preparation of architectural plans, located outside India?",
+      "options": [
+        "Location of the recipient",
+        "Location of the supplier",
+        "Place where the immovable property is located",
+        "Location of the Indian Embassy in that country"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 13(4) stipulates that the place of supply of services supplied directly in relation to an immovable property, including services supplied in this regard by experts and estate agents, shall be the place where the immovable property is located.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 13(4)",
+        "Immovable Property",
+        "International"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_026",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "Under Section 13(5) of the IGST Act, what is the place of supply of services supplied by way of admission to, or organization of, a cultural, artistic, sporting, scientific, educational, or entertainment event abroad?",
+      "options": [
+        "Location of the recipient",
+        "Place where the event is actually held",
+        "Location of the supplier",
+        "Location of the ticketing agency"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 13(5) provides that the place of supply of services supplied by way of admission to, or organization of, a cultural, artistic, sporting, scientific, educational or entertainment event, or a celebration, exhibition, etc., shall be the place where the event is actually held.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 13(5)",
+        "Events Abroad",
+        "International POS"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_027",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "What is the place of supply of online information and database access or retrieval (OIDAR) services provided by a person located outside India to an unregistered person residing in India, under Section 13(12)?",
+      "options": [
+        "Location of the overseas supplier",
+        "Location of the recipient of services in India",
+        "Location of the payment gateway",
+        "New Delhi, India"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 13(12) read with relevant provisions, the place of supply of OIDAR services received by a non-taxable online recipient in India from a supplier located outside India is the location of the recipient of services in India.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 13(12)",
+        "OIDAR Services",
+        "Cross Border"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_028",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "Under Section 13(9) of the IGST Act, what is the place of supply of transportation of goods, other than by way of mail or courier, where the destination of goods is outside India?",
+      "options": [
+        "Location of the goods before loading",
+        "Place of destination of such goods",
+        "Location of the supplier of transport service",
+        "Port of export in India"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 13(9), the place of supply of transportation of goods, other than by way of mail or courier, shall be the place of destination of such goods. (Note: Specific export-related exemptions under IGST also link to this).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 13(9)",
+        "Transportation of Goods",
+        "International"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_029",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "Can the place of supply rule override the charging provisions of CGST/SGST and IGST?",
+      "options": [
+        "No, charging sections operate independently of place of supply rules.",
+        "Yes, the correct identification of place of supply determines whether the tax levied is intra-State (CGST+SGST/UTGST) or inter-State (IGST).",
+        "Only when the turnover exceeds Rs. 40 crores.",
+        "Only for export transactions."
+      ],
+      "answerIndex": 1,
+      "explanation": "Place of supply rules are integral to the levy mechanism under GST; they dictate the destination-based principle by classifying transactions into inter-State or intra-State, thus determining the precise head under which tax is collected.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Core Concepts",
+        "Destination Principle",
+        "Levy of Tax"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-4_030",
+      "kind": "normal",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "prompt": "When goods are supplied on a vessel leased or chartered for a voyage, who is considered the recipient under Section 10 provisions if movement is involved?",
+      "options": [
+        "The captain of the vessel",
+        "The person to whom the goods are handed over for delivery as per instructions",
+        "The port authority",
+        "The owner of the shipping line"
+      ],
+      "answerIndex": 1,
+      "explanation": "In standard transit and delivery scenarios under Section 10, the recipient is determined by the delivery instructions, where movement terminates for delivery to the recipient or any person designated by them.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 10",
+        "Delivery",
+        "Goods Supply"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_gst-4_01",
+      "kind": "scenario",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "passage": "M/s TechNova Solutions Pvt. Ltd., registered in Bengaluru, Karnataka, enters into a contract with M/s Apex Heavy Industries, registered in Mumbai, Maharashtra, for the supply of heavy industrial turbines. Apex Heavy Industries directs TechNova Solutions to manufacture the turbines through their contract manufacturer in Vadodara, Gujarat, and have them delivered directly to M/s Premier Refineries Ltd. at their plant in Jamnagar, Gujarat. No movement originates from Bengaluru.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-4_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-4_01",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-4",
+          "subject": "Taxation",
+          "prompt": "What type of transaction model is represented by the movement of turbines from Vadodara to Jamnagar under the direction of Apex Heavy Industries?",
+          "options": [
+            "C2C direct supply model",
+            "Bill-to-Ship-to model under Section 10(1)(b)",
+            "Export-Import bonded transaction",
+            "Exempt job work transfer under Section 143"
+          ],
+          "answerIndex": 1,
+          "explanation": "This is a classic 'Bill-to-Ship-to' transaction governed by Section 10(1)(b) of the IGST Act, where goods are delivered to a third party on the direction of the principal buyer.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Bill to Ship to",
+            "Section 10(1)(b)",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-4_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-4_01",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-4",
+          "subject": "Taxation",
+          "prompt": "What is the place of supply for the transaction between TechNova Solutions (Bengaluru) and Apex Heavy Industries (Mumbai)?",
+          "options": [
+            "Bengaluru, Karnataka",
+            "Vadodara, Gujarat",
+            "Mumbai, Maharashtra",
+            "Jamnagar, Gujarat"
+          ],
+          "answerIndex": 2,
+          "explanation": "Under Section 10(1)(b), the place of supply between the supplier (TechNova) and the third person who gives the direction (Apex) is deemed to be the principal place of business of such third person, which is Mumbai, Maharashtra.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Place of Supply",
+            "Section 10(1)(b)",
+            "Mumbai"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-4_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-4_01",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-4",
+          "subject": "Taxation",
+          "prompt": "Based on the place of supply determined for the first leg (TechNova to Apex), which tax type will be charged by TechNova Solutions on its invoice to Apex Heavy Industries?",
+          "options": [
+            "CGST and SGST of Karnataka",
+            "CGST and SGST of Gujarat",
+            "IGST (Inter-State supply)",
+            "CGST and UTGST"
+          ],
+          "answerIndex": 2,
+          "explanation": "Since the supplier is in Bengaluru (Karnataka) and the place of supply is Mumbai (Maharashtra), it is an inter-State supply, attracting IGST.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "IGST",
+            "Inter-State",
+            "Taxability"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-4_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-4_01",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-4",
+          "subject": "Taxation",
+          "prompt": "What is the deemed delivery implication for Apex Heavy Industries towards Premier Refineries Ltd. at Jamnagar?",
+          "options": [
+            "Apex is deemed to have received the goods when they are delivered to Premier Refineries at Jamnagar.",
+            "Premier Refineries is treated as the original supplier.",
+            "No supply is deemed to take place between Apex and Premier.",
+            "The supply is treated as an export out of India."
+          ],
+          "answerIndex": 0,
+          "explanation": "Under Section 10(1)(b), the third person (Apex) is deemed to have received the goods when the goods are delivered by the actual manufacturer/supplier to the third recipient (Premier Refineries at Jamnagar).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Deemed Receipt",
+            "Section 10(1)(b)",
+            "Jamnagar"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-4_02",
+      "kind": "scenario",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "passage": "Mr. Vikram, an individual residing in New Delhi and registered under GST in Delhi, travels to Hyderabad, Telangana, to attend a corporate board meeting. He stays at the Grand Palace Hotel in Hyderabad and organizes a dinner banquet for business associates in the hotel's banquet hall. During his stay, he also utilizes the hotel spa services and hires a local car rental agency for local transit within Hyderabad.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-4_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-4_02",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-4",
+          "subject": "Taxation",
+          "prompt": "What is the place of supply for the hotel accommodation and banquet hall service provided by Grand Palace Hotel to Mr. Vikram?",
+          "options": [
+            "New Delhi (Mr. Vikram's registration location)",
+            "Hyderabad, Telangana (Location of the immovable property)",
+            "Secunderabad (Hotel's corporate headquarters)",
+            "Any location chosen by Mr. Vikram"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 12(3)(c) of the IGST Act, accommodation in a hotel or premises for organizing any function has its place of supply where the immovable property is located, which is Hyderabad, Telangana.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 12(3)(c)",
+            "Hotel Accommodation",
+            "Telangana"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-4_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-4_02",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-4",
+          "subject": "Taxation",
+          "prompt": "What is the place of supply for the spa and personal grooming services availed by Mr. Vikram at the hotel in Hyderabad?",
+          "options": [
+            "New Delhi",
+            "Hyderabad, Telangana",
+            "The home branch of the spa chain",
+            "Indifferent to location"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 12(4) of the IGST Act, the place of supply of restaurant and catering services, personal grooming, fitness, beauty treatment, health service, etc., is the location where the services are actually performed (Hyderabad).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 12(4)",
+            "Personal Grooming",
+            "Performance"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-4_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-4_02",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-4",
+          "subject": "Taxation",
+          "prompt": "Assuming Mr. Vikram hires the car rental agency on a B2B basis using his Delhi GSTIN, what is the place of supply for renting of motor vehicle service under Section 12(2)?",
+          "options": [
+            "Hyderabad, Telangana",
+            "New Delhi (Location of the registered recipient)",
+            "The garage location of the car rental agency",
+            "Nagpur"
+          ],
+          "answerIndex": 1,
+          "explanation": "Renting of motor vehicles does not fall under specific exclusions like Section 12(3) or 12(4) for B2B; therefore, the residuary rule under Section 12(2)(a) applies, making the place of supply the location of the registered recipient (New Delhi).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 12(2)",
+            "Residuary Rule",
+            "B2B Rental"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-4_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-4_02",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-4",
+          "subject": "Taxation",
+          "prompt": "What tax type will Grand Palace Hotel charge on its invoice issued to Mr. Vikram for the stay and banquet services?",
+          "options": [
+            "CGST and SGST of Telangana",
+            "IGST",
+            "CGST and UTGST of Delhi",
+            "Only IGST because Mr. Vikram is from Delhi"
+          ],
+          "answerIndex": 0,
+          "explanation": "Since both the supplier (Grand Palace Hotel) and the place of supply (Hyderabad) are in the State of Telangana, it is an intra-State supply, attracting CGST and SGST of Telangana.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Intra-State",
+            "CGST and SGST",
+            "Telangana"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-4_03",
+      "kind": "scenario",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "passage": "M/s Global Corp, a US-based multinational company having no fixed establishment in India, hires an Indian IT company, M/s CyberMind Ltd. (registered in Pune, Maharashtra), to write specialized software codes and test them. The software is delivered electronically over the internet to Global Corp in the US. Separately, Global Corp also hires M/s DesignPro (registered in Jaipur, Rajasthan) to create architectural interior blueprints for its upcoming branch office located in Kolkata, West Bengal.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-4_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-4_03",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-4",
+          "subject": "Taxation",
+          "prompt": "What is the place of supply for the software development and testing service provided by CyberMind Ltd. to Global Corp (US)?",
+          "options": [
+            "Pune, Maharashtra",
+            "Location of the recipient (US)",
+            "New Delhi",
+            "Mumbai Port"
+          ],
+          "answerIndex": 1,
+          "explanation": "For cross-border supplies of services governed by Section 13(2), the general rule states that the place of supply is the location of the recipient of services, which is the US in this case (subject to export conditions).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 13(2)",
+            "Export of Services",
+            "Cross Border"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-4_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-4_03",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-4",
+          "subject": "Taxation",
+          "prompt": "What is the place of supply for the architectural interior blueprints provided by DesignPro (Jaipur) for Global Corp's office in Kolkata?",
+          "options": [
+            "Jaipur, Rajasthan",
+            "United States (Global Corp's location)",
+            "Kolkata, West Bengal",
+            "New Delhi"
+          ],
+          "answerIndex": 2,
+          "explanation": "Under Section 13(4) of the IGST Act, services supplied directly in relation to an immovable property, including services by architects and interior decorators, have their place of supply at the place where the immovable property is located (Kolkata).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 13(4)",
+            "Immovable Property",
+            "Architectural Services"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-4_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-4_03",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-4",
+          "subject": "Taxation",
+          "prompt": "Does the service provided by CyberMind Ltd. to Global Corp qualify as an 'export of services' under Section 2(6) of the IGST Act, assuming other conditions (like receipt in convertible foreign exchange) are met?",
+          "options": [
+            "No, because software development is always local.",
+            "Yes, because the supplier is in India, recipient is outside India, and the place of supply is outside India.",
+            "No, because the software was written in Pune.",
+            "Yes, but only if approved by the Reserve Bank of India."
+          ],
+          "answerIndex": 1,
+          "explanation": "Export of services requires supplier in India, recipient outside India, place of supply outside India, payment in foreign exchange, and no establishment nexus. Here, place of supply is the US under Section 13(2), satisfying the condition.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Export of Services",
+            "Section 2(6)",
+            "IGST"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-4_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-4_03",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-4",
+          "subject": "Taxation",
+          "prompt": "What tax will DesignPro charge on its invoice for the Kolkata architectural assignment?",
+          "options": [
+            "CGST and SGST of Rajasthan",
+            "CGST and SGST of West Bengal",
+            "IGST (as supplier is in Rajasthan and place of supply is in West Bengal)",
+            "Exempt from all taxes"
+          ],
+          "answerIndex": 2,
+          "explanation": "Since the supplier (DesignPro) is in Jaipur (Rajasthan) and the place of supply is Kolkata (West Bengal) under Section 13(4), it is an inter-State supply, attracting IGST.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "IGST",
+            "Inter-State Supply",
+            "Section 13(4)"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-4_04",
+      "kind": "scenario",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "passage": "M/s Alpha Logistics Ltd. (registered in Ahmedabad, Gujarat) is hired by M/s Beta Retailers (registered in Chennai, Tamil Nadu) to transport a consignment of household appliances from a warehouse in Surat, Gujarat, to a retail store in Madurai, Tamil Nadu. The transport is done via a dedicated truck. Beta Retailers is registered under GST, but Alpha Logistics is responsible for the complete transit.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-4_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-4_04",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-4",
+          "subject": "Taxation",
+          "prompt": "What is the nature of the recipient (Beta Retailers) for the transportation service provided by Alpha Logistics?",
+          "options": [
+            "Unregistered person (B2C)",
+            "Registered person (B2B)",
+            "Government entity",
+            "Casual taxable person"
+          ],
+          "answerIndex": 1,
+          "explanation": "Beta Retailers is stated to be registered under GST, making the transaction a Business-to-Business (B2B) supply of transportation of goods.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "B2B Transaction",
+            "Transportation",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-4_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-4_04",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-4",
+          "subject": "Taxation",
+          "prompt": "What is the place of supply for the transportation of goods service provided by Alpha Logistics to Beta Retailers under Section 12(8)?",
+          "options": [
+            "Surat, Gujarat",
+            "Chennai, Tamil Nadu (Location of the registered recipient)",
+            "Madurai, Tamil Nadu",
+            "Ahmedabad, Gujarat"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 12(8)(a) of the IGST Act, where transportation of goods is provided to a registered person (B2B), the place of supply is the location of such registered person, which is Chennai, Tamil Nadu.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 12(8)",
+            "Goods Transport",
+            "B2B Rule"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-4_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-4_04",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-4",
+          "subject": "Taxation",
+          "prompt": "Which IGST/GST tax component will be charged on the tax invoice raised by Alpha Logistics (Ahmedabad) on Beta Retailers (Chennai)?",
+          "options": [
+            "CGST and SGST of Gujarat",
+            "CGST and SGST of Tamil Nadu",
+            "IGST (Inter-State supply)",
+            "UTGST"
+          ],
+          "answerIndex": 2,
+          "explanation": "Since the supplier is in Ahmedabad (Gujarat) and the place of supply is Chennai (Tamil Nadu), it is an inter-State supply, attracting IGST.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "IGST",
+            "Inter-State",
+            "Tax Head"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-4_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-4_04",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-4",
+          "subject": "Taxation",
+          "prompt": "If Beta Retailers had been an unregistered person, what would have been the place of supply for the transportation of goods under Section 12(8)?",
+          "options": [
+            "Chennai, Tamil Nadu",
+            "Surat, Gujarat (Location where goods are handed over for transportation)",
+            "Ahmedabad, Gujarat",
+            "Madurai, Tamil Nadu"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the proviso to Section 12(8), if transportation of goods is provided to an unregistered person, the place of supply is the location at which such goods are handed over for their transportation (Surat, Gujarat).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 12(8) Proviso",
+            "B2C Goods Transport",
+            "Surat"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-4_05",
+      "kind": "scenario",
+      "chapterId": "gst-4",
+      "subject": "Taxation",
+      "passage": "M/s StreamWave Media Ltd., a Mumbai-based company, provides direct-to-home (DTH) television broadcasting services and high-speed fiber broadband internet connections to various households across India. Mr. Sharma, residing in Lucknow, Uttar Pradesh, has a fixed fiber broadband connection installed at his residential address in Lucknow. He also purchases a pay-per-view live cricket tournament pass online through his registered account on StreamWave's streaming portal while sitting in his office in Patna, Bihar.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Place of Supply"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-4_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-4_05",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-4",
+          "subject": "Taxation",
+          "prompt": "What is the place of supply for the fiber broadband internet connection installed at Mr. Sharma's residential address in Lucknow under Section 12(11)?",
+          "options": [
+            "Mumbai, Maharashtra (Supplier's location)",
+            "Lucknow, Uttar Pradesh (Location where the cable/broadband line is installed)",
+            "Patna, Bihar",
+            "New Delhi"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 12(11)(a) of the IGST Act, where telecom services are provided through a fixed line or leased circuit, the place of supply is the location where the telecommunication line or connection is installed (Lucknow, Uttar Pradesh).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 12(11)",
+            "Broadband",
+            "Fixed Line"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-4_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-4_05",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-4",
+          "subject": "Taxation",
+          "prompt": "What is the place of supply for the online pay-per-view live cricket tournament pass purchased by Mr. Sharma while in Patna, Bihar, assuming his billing address on record with StreamWave is Lucknow?",
+          "options": [
+            "Patna, Bihar",
+            "Mumbai, Maharashtra",
+            "Lucknow, Uttar Pradesh (Address of the recipient on record)",
+            "Kolkata"
+          ],
+          "answerIndex": 2,
+          "explanation": "Under Section 12(11)(c), for services like internet/broadcasting where address of the customer is available in the records, the place of supply is the address of the recipient on the records of the supplier (Lucknow, Uttar Pradesh).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 12(11)(c)",
+            "Broadcasting Services",
+            "Records"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-4_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-4_05",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-4",
+          "subject": "Taxation",
+          "prompt": "What tax levy will apply to the fiber broadband service provided by StreamWave (Mumbai) to Mr. Sharma (Lucknow)?",
+          "options": [
+            "CGST and SGST of Maharashtra",
+            "IGST (Inter-State supply between Maharashtra and Uttar Pradesh)",
+            "CGST and SGST of Uttar Pradesh",
+            "Exempt under GST"
+          ],
+          "answerIndex": 1,
+          "explanation": "Supplier is in Mumbai (Maharashtra) and place of supply is Lucknow (Uttar Pradesh). Hence, it is an inter-State supply subject to IGST.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "IGST",
+            "Telecom",
+            "Inter-State"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-4_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-4_05",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-4",
+          "subject": "Taxation",
+          "prompt": "If StreamWave Media Ltd. did not have the customer's address in its records for a prepaid recharge service, what would be the default place of supply under Section 12(11)?",
+          "options": [
+            "Location of the supplier (Mumbai, Maharashtra)",
+            "New Delhi",
+            "The location where the cash payment was deposited",
+            "The location of the telecom tower nearest to the customer"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under the proviso to Section 12(11)(b), if the address of the customer is not available in the records of the supplier, the place of supply shall be the location of the supplier of services (Mumbai, Maharashtra).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 12(11)",
+            "Default Rule",
+            "Telecom"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

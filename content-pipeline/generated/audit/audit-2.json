@@ -1,0 +1,1436 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "audit-2",
+  "subject": "Audit",
+  "paper": "Paper 5: Auditing and Ethics",
+  "module": "Module 1",
+  "chapterNumber": 2,
+  "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme",
+  "generatedAt": "2026-08-16T14:47:06.034Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_audit-2_001",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "According to SA 300, which of the following best describes the primary objective of establishing an overall audit strategy?",
+      "options": [
+        "To detail the exact nature, timing, and extent of specific audit procedures to be performed.",
+        "To set the scope, timing, and direction of the audit, and to guide the development of the audit plan.",
+        "To ensure absolute detection of all material misstatements caused by fraud or error.",
+        "To determine the final audit fee and billing schedule with the management."
+      ],
+      "answerIndex": 1,
+      "explanation": "As per SA 300 'Planning an Audit of Financial Statements', the overall audit strategy sets the scope, timing, and direction of the audit, and guides the development of the more detailed audit plan. Option A describes the audit plan/programme, while C and D are incorrect objectives.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 300",
+        "Audit Strategy",
+        "Scope and Direction"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_002",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "When is it appropriate for the auditor to revise the overall audit strategy and the audit plan during the course of an audit?",
+      "options": [
+        "Only after the completion of the final audit report and before its issuance.",
+        "Never, because the strategy established at the beginning must remain static to maintain consistency.",
+        "As necessary in the circumstances, due to unexpected events, changes in conditions, or audit evidence obtained.",
+        "Only when requested formally in writing by the Those Charged With Governance (TCWG)."
+      ],
+      "answerIndex": 2,
+      "explanation": "SA 300 mandates that the auditor shall update and change the overall audit strategy and audit plan as necessary during the course of the audit, responding to unexpected events, changes in conditions, or audit evidence obtained from procedures.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 300",
+        "Revision of Strategy",
+        "Audit Planning"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_003",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "Which of the following activities is typically undertaken during the preliminary engagement activities required by SA 300?",
+      "options": [
+        "Evaluating compliance with relevant ethical requirements, including independence.",
+        "Performing substantive analytical procedures on the complete general ledger.",
+        "Drafting the final Independent Auditor's Report and forming the audit opinion.",
+        "Directly testing internal controls over financial reporting across all business cycles."
+      ],
+      "answerIndex": 0,
+      "explanation": "Per SA 300, preliminary engagement activities include performing procedures regarding the continuance of the client relationship and specific audit engagement, evaluating compliance with ethical requirements (like independence), and establishing an understanding of the terms of the engagement.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 300",
+        "Preliminary Engagement",
+        "Ethics and Independence"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_004",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "What is the primary distinction between an overall audit strategy and an audit plan?",
+      "options": [
+        "The strategy is more detailed than the plan, specifying individual testing steps.",
+        "The strategy sets the broad scope and direction, whereas the plan is more detailed and outlines nature, timing, and extent of audit procedures.",
+        "The plan is established before accepting the engagement, whereas the strategy is established after field work.",
+        "The strategy is optional under SA 300, while the audit plan is mandatory for all engagements."
+      ],
+      "answerIndex": 1,
+      "explanation": "An audit strategy sets the scope, timing, and direction of the audit and guides the audit plan. The audit plan is more detailed than the strategy, setting out the nature, timing, and extent of specific audit procedures to be performed by engagement team members.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 300",
+        "Audit Strategy vs Plan",
+        "Planning Process"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_005",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "Which of the following factors would most likely influence the auditor's determination of materiality for the financial statements as a whole during the planning phase?",
+      "options": [
+        "The personal travel preferences of the audit senior assigned to the engagement.",
+        "Elements of the financial statements, such as relevant items on which the attention of users tends to be focused.",
+        "The exact number of operational employees in the client's human resources department.",
+        "The color scheme used by the entity in publishing its annual report."
+      ],
+      "answerIndex": 1,
+      "explanation": "Per SA 320 'Materiality in Planning and Performing an Audit', determining materiality involves exercising professional judgment, which is heavily influenced by elements of the financial statements on which users focus, such as profit before tax, revenue, or net assets.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 320",
+        "Materiality",
+        "Planning Judgment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_006",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "Which of the following best defines an 'audit programme'?",
+      "options": [
+        "A rigid software application used to automate financial accounting entries.",
+        "A series of verification procedures to be applied to the financial statements and accounts for a given engagement.",
+        "The formal contract signed between the auditor and the management regarding fee structures.",
+        "The annual general meeting agenda of the corporate entity being audited."
+      ],
+      "answerIndex": 2,
+      "explanation": "Wait, option 2 says 'A series of verification procedures to be applied to the financial statements and accounts for a given engagement.' Let's check the options index. Option 1 is index 1. An audit programme is a detailed plan of the work to be performed, containing a series of verification procedures to be applied to the financial statements.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Audit Programme",
+        "Verification Procedures",
+        "Audit Documentation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_007",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "Why should an auditor document the overall audit strategy, the audit plan, and any significant changes made during the audit engagement?",
+      "options": [
+        "To satisfy the statutory requirement for tax assessment purposes by the local revenue authority.",
+        "To provide a record of the proper planning and performance of audit procedures that can be reviewed for quality control.",
+        "To enable the client's internal audit department to take over the statutory audit next year.",
+        "To publicize the firm's proprietary auditing methodologies to competing audit firms."
+      ],
+      "answerIndex": 1,
+      "explanation": "Documentation of the audit strategy and plan is required under SA 300 and SA 230 to demonstrate proper planning, facilitate reviews by senior team members or quality reviewers, and provide evidence that the audit was conducted in accordance with SAs.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 300",
+        "SA 230",
+        "Audit Documentation",
+        "Quality Control"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_008",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "In the context of audit planning, what is meant by 'performance materiality'?",
+      "options": [
+        "The amount set by the auditor at less than materiality for the financial statements as a whole to reduce to an appropriately low level the probability that the aggregate of uncorrected and undetected misstatements exceeds materiality.",
+        "The maximum threshold above which all errors must be reported directly to criminal investigation agencies.",
+        "The exact net profit earned by the entity divided by its total operating expenses.",
+        "The audit fee charged expressed as a percentage of total client revenue."
+      ],
+      "answerIndex": 0,
+      "explanation": "Performance materiality is defined in SA 320 as the amount or amounts set by the auditor at less than materiality for the financial statements as a whole to reduce to an appropriately low level the probability that the aggregate of uncorrected and undetected misstatements exceeds materiality.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 320",
+        "Performance Materiality",
+        "Audit Risk"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_009",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "Which of the following is an advantage of preparing a formal audit programme?",
+      "options": [
+        "It eliminates the need for the auditor to exercise professional skepticism or judgment.",
+        "It provides an instruction to assistants involved in the audit and helps control the execution of work.",
+        "It ensures that the audit will uncover 100% of all frauds, regardless of management override.",
+        "It prevents the client from changing its accounting policies during the financial year."
+      ],
+      "answerIndex": 1,
+      "explanation": "An audit programme serves as a useful instruction manual for assistant staff and helps the engagement partner direct and supervise the work, ensuring accountability and adherence to the plan.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Audit Programme",
+        "Supervision",
+        "Instruction Manual"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_010",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "Who has the ultimate responsibility for directing, supervising, and performing the audit in compliance with professional standards and regulatory requirements?",
+      "options": [
+        "The junior audit assistant who performs initial vouching of vouchers.",
+        "The engagement partner.",
+        "The Chief Financial Officer of the audited entity.",
+        "The independent peer reviewer appointed by the regulatory body."
+      ],
+      "answerIndex": 1,
+      "explanation": "The engagement partner takes overall responsibility for the management and conduct of the audit engagement, including its direction, supervision, and performance in compliance with professional standards.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Engagement Partner",
+        "Responsibility",
+        "SA 220"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_011",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "When developing an overall audit strategy for a first-time audit engagement (initial audit), which specific matter must the auditor consider during the planning phase?",
+      "options": [
+        "The prior year's closing balances must be accepted blindly without any opening balance verification.",
+        "Arrangements to be made with the predecessor auditor, such as reviewing their working papers as permitted by ethical codes.",
+        "Ensuring that the engagement fee is exactly double the fee charged by the predecessor auditor.",
+        "Eliminating the need to perform risk assessment procedures since prior audits were performed."
+      ],
+      "answerIndex": 1,
+      "explanation": "Per SA 300 and SA 510, for initial audit engagements, the auditor must consider matters such as communication with the predecessor auditor and review of their working papers (subject to client permission and ethical requirements) to evaluate opening balances.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 300",
+        "Initial Audit",
+        "Predecessor Auditor"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_012",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "An auditor is planning an audit of a manufacturing company that has experienced significant expansion into international markets with foreign currency transactions. How should this impact the overall audit strategy?",
+      "options": [
+        "It has no impact since foreign currency transactions are automatically translated by standard ERP systems.",
+        "The auditor should allocate more experienced staff with specialized knowledge in foreign exchange accounting and increase testing of translation rates.",
+        "The auditor should immediately issue a disclaimer of opinion due to increased business risk.",
+        "The auditor should rely entirely on management's representation letter without performing independent testing."
+      ],
+      "answerIndex": 1,
+      "explanation": "Significant expansion into foreign markets increases complexity and risk. Per SA 300, the overall audit strategy must address the selection of the engagement team members with appropriate capabilities and competence, and the allocation of resources to high-risk areas.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 300",
+        "Resource Allocation",
+        "Foreign Currency Risk"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_013",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "While establishing the nature, timing, and extent of direction and supervision of engagement team members and review of their work, what factors should the engagement partner consider?",
+      "options": [
+        "The size and complexity of the audit, the area of audit, the assessed risks of material misstatement, and the capabilities of individual team members.",
+        "Only the personal friendship between the audit partner and the client's board directors.",
+        "The total number of audit firms operating within the same geographical municipal zone.",
+        "The specific type of office furniture utilized by the junior audit assistants."
+      ],
+      "answerIndex": 0,
+      "explanation": "SA 300 and quality management standards require the nature, timing, and extent of direction, supervision, and review to be tailored based on factors such as the size and complexity of the engagement, the assessed risks, and the competence of team members.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 300",
+        "Supervision and Review",
+        "Engagement Partner"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_014",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "In designing an audit programme for inventory verification, an auditor includes a procedure to observe the physical inventory count. Which assertion is this procedure primarily designed to test?",
+      "options": [
+        "Completeness and Valuation only.",
+        "Existence and Completeness.",
+        "Classification and Understandability.",
+        "Occurrence and Rights & Obligations."
+      ],
+      "answerIndex": 1,
+      "explanation": "Observing physical inventory counts is a primary substantive procedure directed largely at verifying the 'Existence' of inventory and ensuring 'Completeness' (that all inventory present is counted and recorded).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Audit Programme",
+        "Inventory",
+        "Management Assertions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_015",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "An audit plan is more detailed than the overall audit strategy. Which of the following items would typically be found in the audit plan rather than the overall audit strategy?",
+      "options": [
+        "The timeline of reporting deadlines and key interim audit dates.",
+        "The allocation of specific audit procedures (tests of controls and substantive tests) for the accounts receivable cycle.",
+        "The identification of significant financial statement components and material reporting units.",
+        "The general budgetary guidelines regarding total audit hours and staff billing rates."
+      ],
+      "answerIndex": 1,
+      "explanation": "The audit plan includes the nature, timing, and extent of audit procedures to be performed by engagement team members, such as specific tests of controls and substantive procedures for individual account cycles like accounts receivable.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Audit Plan",
+        "Audit Strategy",
+        "Nature Timing Extent"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_016",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "Which of the following best exemplifies an inherent limitation of an audit programme that an auditor must keep in mind during execution?",
+      "options": [
+        "An audit programme guarantees the absolute elimination of all business risks.",
+        "An audit programme can become rigid or mechanical, potentially causing the auditor to miss unexpected anomalies if applied without professional skepticism.",
+        "An audit programme cannot be modified under any circumstances once drafted.",
+        "An audit programme automatically updates client financial statements in real time."
+      ],
+      "answerIndex": 1,
+      "explanation": "A potential disadvantage or limitation of a standardized audit programme is that it can become rigid or mechanical, discouraging staff from exercising continuous professional skepticism and judgment when unusual circumstances arise.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Audit Programme",
+        "Limitations",
+        "Professional Skepticism"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_017",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "How does the auditor determine the level of materiality for classes of transactions, account balances, or disclosures where misstatements of lesser amounts than materiality for the financial statements as a whole could reasonably be expected to influence economic decisions?",
+      "options": [
+        "By setting materiality at zero for all accounts without exception.",
+        "By applying lower materiality thresholds to those specific items based on professional judgment and relevant statutory or user expectations.",
+        "By multiplying total assets by a fixed regulatory factor of 10%.",
+        "By ignoring individual account balances and focusing solely on consolidated net income."
+      ],
+      "answerIndex": 1,
+      "explanation": "Per SA 320, if, in the specific circumstances of the entity, there are particular classes of transactions, account balances, or disclosures for which misstatements of lesser amounts could influence economic decisions, the auditor shall determine a lower materiality level for those items.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 320",
+        "Specific Materiality",
+        "Professional Judgment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_018",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "Which of the following statements regarding the timing of audit planning is accurate according to SA 300?",
+      "options": [
+        "Planning is a discrete, single-phase event that occurs only at the exact start of the financial year and is never revisited.",
+        "Planning is not a discrete phase of an audit, but rather a continual and iterative process that often begins shortly after (or in connection with) the completion of the previous audit and continues until the completion of the current audit engagement.",
+        "Planning must be completed entirely by the client's internal audit department before the external auditor is appointed.",
+        "Planning is conducted exclusively after the auditor has issued the final audit report."
+      ],
+      "answerIndex": 1,
+      "explanation": "SA 300 explicitly states that planning is not a discrete phase of an audit, but rather a continual and iterative process that begins shortly after the completion of the previous audit and continues throughout the current engagement.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 300",
+        "Timing of Planning",
+        "Iterative Process"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_019",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "In setting the overall audit strategy, the auditor considers the reporting objectives, timing of the audit, and communications required. Which of the following is a key factor influencing these considerations?",
+      "options": [
+        "The entity's timetable for reporting, such as interim and final stages.",
+        "The exact brand of computing hardware used by the audit team.",
+        "The personal vacation schedules of the client's warehouse staff.",
+        "The interior design layout of the audit firm's conference rooms."
+      ],
+      "answerIndex": 0,
+      "explanation": "SA 300 requires the auditor to ascertain the reporting objectives of the engagement to plan the timing of the audit and the nature of communications required, such as deadlines for interim and final financial reporting.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 300",
+        "Reporting Objectives",
+        "Audit Timing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_020",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "An audit engagement partner is reviewing the audit programme prepared by the audit senior for a cash and bank balances cycle. Which procedure should the partner question if it is missing from a standard cash verification programme?",
+      "options": [
+        "Sending direct bank confirmation requests to all banks where the entity holds accounts.",
+        "Performing a physical inspection of all corporate real estate deeds.",
+        "Verifying the depreciation rates applied to heavy manufacturing machinery.",
+        "Inspecting customer credit ratings for long-term receivables."
+      ],
+      "answerIndex": 0,
+      "explanation": "Direct bank confirmations are a fundamental substantive procedure for verifying cash and bank balances under SA 505. Real estate deeds, depreciation, and customer credit ratings belong to different audit cycles.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Audit Programme",
+        "Cash and Bank",
+        "SA 505"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_021",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "During the planning stage, the auditor discusses the overall audit strategy and audit plan with those charged with governance (TCWG) and management. What is a key restriction regarding these discussions?",
+      "options": [
+        "The auditor must share all confidential internal audit testing tricks with management prior to execution.",
+        "Discussions may include discussing key elements of the audit strategy, but care must be taken not to compromise the effectiveness of the audit by making audit procedures too predictable.",
+        "The management must approve and co-sign every individual step in the audit programme.",
+        "The auditor is legally prohibited from communicating anything about the audit plan to anyone outside the audit firm."
+      ],
+      "answerIndex": 1,
+      "explanation": "While discussing planning matters with management and TCWG is encouraged to facilitate conduct of the audit, SA 300 notes that overall strategy and audit plan remain the auditor's responsibility, and care must be taken not to make audit procedures predictable, thereby compromising audit effectiveness.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 300",
+        "TCWG",
+        "Management Communication",
+        "Predictability"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_022",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "Which of the following best describes the relationship between 'Audit Risk', 'Inherent Risk', 'Control Risk', and 'Detection Risk' as considered during audit planning?",
+      "options": [
+        "Audit Risk = Inherent Risk + Control Risk + Detection Risk",
+        "Audit Risk = Inherent Risk × Control Risk × Detection Risk",
+        "Detection Risk = Inherent Risk × Control Risk × Audit Risk",
+        "Inherent Risk = Audit Risk × Control Risk × Detection Risk"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under the audit risk model (referenced in SA 200 and planning standards), Audit Risk is a function of the risks of material misstatement (Inherent Risk multiplied by Control Risk) and Detection Risk: AR = IR × CR × DR.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Audit Risk Model",
+        "Inherent Risk",
+        "Control Risk",
+        "Detection Risk"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_023",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "An auditor decides to use a 'combined approach' (testing controls and substantive procedures) rather than a 'substantive approach' (primarily substantive procedures) when planning the audit of a large retail enterprise. What must the auditor establish during planning?",
+      "options": [
+        "That internal controls are operating effectively and it is efficient to test them.",
+        "That internal controls are completely absent and unreliable.",
+        "That substantive procedures are legally prohibited by corporate law.",
+        "That management has waived all requirements for internal financial controls."
+      ],
+      "answerIndex": 0,
+      "explanation": "A combined approach involves tests of operating effectiveness of controls and substantive procedures. To rely on controls, the auditor must plan to test that those controls are operating effectively and that such testing is efficient.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Audit Strategy",
+        "Combined Approach",
+        "Tests of Controls"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_024",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "How does the identification of a significant risk during risk assessment affect the overall audit strategy and audit plan?",
+      "options": [
+        "It requires the auditor to withdraw from the audit engagement immediately.",
+        "It requires the auditor to design and perform substantive procedures (or tests of controls) that are specifically responsive to that significant risk.",
+        "It allows the auditor to reduce substantive testing to zero across all financial statement captions.",
+        "It transfers the responsibility for detecting misstatements from the auditor to the internal legal counsel."
+      ],
+      "answerIndex": 1,
+      "explanation": "Per SA 315 and SA 330, when the auditor has identified a significant risk, the audit plan must include specific audit procedures whose nature, timing, and extent are specifically responsive to that risk.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 315",
+        "Significant Risk",
+        "Audit Plan"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_025",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "In the context of multi-location audits, what specific consideration must be factored into the overall audit strategy regarding component auditors?",
+      "options": [
+        "Component auditors must be treated as independent external entities with no oversight from the group engagement partner.",
+        "The overall strategy must determine whether to visit components, the scope of work to be performed by component auditors, and the nature of communications between group and component auditors.",
+        "Component auditors are forbidden from performing any testing on foreign subsidiaries.",
+        "The group engagement partner must perform 100% of the testing at all components personally."
+      ],
+      "answerIndex": 1,
+      "explanation": "When auditing group financial statements involving multiple locations or components, SA 600 and SA 300 require the overall audit strategy to address the direction, supervision, and review of component auditors and the determination of which components to visit or test.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 300",
+        "SA 600",
+        "Multi-location Audit",
+        "Component Auditor"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_026",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "An entity operates in a highly volatile technological industry where obsolescence is rapid. During the development of the audit strategy, how should the auditor adjust materiality and testing for inventory valuation?",
+      "options": [
+        "Increase materiality thresholds to ignore obsolete stock items.",
+        "Lower performance materiality for inventory and focus testing on net realizable value (NRV) and obsolescence reserves.",
+        "Treat inventory as a low-risk area requiring no physical observation.",
+        "Rely solely on management's historical cost records without testing market prices."
+      ],
+      "answerIndex": 1,
+      "explanation": "Rapid technological obsolescence increases valuation and NRV risk for inventory. The auditor must adjust planning by lowering performance materiality for inventory and designing specific procedures to test valuation and provisioning.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 320",
+        "Inventory Valuation",
+        "NRV",
+        "High Risk"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_027",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "When an auditor decides to rely on an internal audit function's work to modify the nature, timing, or extent of external audit procedures, what must the auditor evaluate during the planning phase in accordance with SA 610?",
+      "options": [
+        "The internal auditors' compensation packages and stock option plans.",
+        "The internal audit function's organizational status, competence, and systematic and disciplined approach.",
+        "Whether the internal audit staff are members of the same social clubs as the external audit partner.",
+        "The exact brand of auditing software licensed by the internal audit department."
+      ],
+      "answerIndex": 1,
+      "explanation": "Per SA 610 'Using the Work of Internal Auditors', before relying on internal audit work, the external auditor must evaluate the function's organizational status and relevance, competence, and whether it applies a systematic and disciplined approach.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 610",
+        "Internal Audit",
+        "Planning Evaluation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_028",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "An auditor is planning an audit for a client that has engaged an external valuation expert to value complex financial derivatives. What must be considered in the audit strategy regarding this expert?",
+      "options": [
+        "The auditor must accept the valuation expert's report as infallible without evaluating their competence or independence.",
+        "The audit strategy must factor in evaluating the competence, capabilities, and objectivity of the management's expert, and determining the nature, timing, and extent of procedures to evaluate the expert's work under SA 500/SA 620.",
+        "The auditor is legally required to become a certified derivatives trader before auditing the client.",
+        "The valuation expert replaces the statutory auditor in signing the audit opinion."
+      ],
+      "answerIndex": 1,
+      "explanation": "Per SA 620 'Using the Work of an Auditor's Expert' (and related considerations for management's expert under SA 500), the auditor's strategy and plan must account for evaluating the expert's competence, capabilities, and objectivity, and understanding their work.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 620",
+        "SA 500",
+        "Auditor's Expert",
+        "Valuation Risk"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_029",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "How does the consideration of 'Going Concern' affect the overall audit strategy and planning phase at the very beginning of an audit engagement?",
+      "options": [
+        "Going concern is only evaluated after the audit report has been published.",
+        "The auditor must consider whether events or conditions exist that may cast significant doubt on the entity's ability to continue as a going concern, which influences staffing, analytical procedures, and risk assessment.",
+        "Going concern assessment is solely the responsibility of the corporate tax authorities.",
+        "The auditor can assume going concern is always valid and skip all financial ratio analysis during planning."
+      ],
+      "answerIndex": 1,
+      "explanation": "Per SA 570 'Going Concern' and SA 300, the auditor must consider going concern during planning to identify early indicators of financial distress, which dictates the need for specialized risk assessment procedures and heightened skepticism.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 570",
+        "Going Concern",
+        "Planning Phase"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-2_030",
+      "kind": "normal",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "prompt": "An auditor notes that the entity under audit has numerous related party transactions throughout the year. How must this be integrated into the audit strategy and planning?",
+      "options": [
+        "Related party transactions must be ignored because they are routine internal transfers.",
+        "The audit strategy must include specific procedures to identify, assess, and address risks associated with the authorization, accounting, and disclosure of related party transactions in compliance with SA 550.",
+        "The auditor must delegate the audit of related parties entirely to the client's legal counsel.",
+        "Related party transactions automatically invalidate the entity's financial statements, requiring an adverse opinion."
+      ],
+      "answerIndex": 1,
+      "explanation": "SA 550 'Related Parties' requires specific attention during planning. The audit strategy and plan must incorporate procedures to identify related parties, evaluate related party transactions, and ensure proper financial statement disclosure.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 550",
+        "Related Parties",
+        "Audit Strategy"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_audit-2_01",
+      "kind": "scenario",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "passage": "Zenith Pharma Ltd., a mid-sized pharmaceutical company listed on the stock exchange, has appointed M/s Sharma & Associates as its statutory auditor for the financial year 2026-27. This is the first year M/s Sharma & Associates is auditing Zenith Pharma, having replaced the predecessor auditor, M/s Gupta & Co. During the preliminary engagement activities, CA Sharma, the engagement partner, evaluates ethical requirements and independence. He notes that Zenith Pharma recently acquired a manufacturing plant in a neighboring country and entered into complex international research collaborations involving milestone payments. CA Sharma is now structuring the overall audit strategy and audit plan.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-2_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-2_01",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-2",
+          "subject": "Audit",
+          "prompt": "Considering that M/s Sharma & Associates is conducting an initial audit of Zenith Pharma Ltd., which of the following preliminary actions is mandatory for CA Sharma regarding the predecessor auditor?",
+          "options": [
+            "Force the predecessor auditor to pay compensation for losing the audit client.",
+            "Communicate with the predecessor auditor in compliance with the Code of Ethics to check if there are any professional reasons why the appointment should not be accepted.",
+            "Ignore the predecessor auditor entirely to maintain strict competitive secrecy.",
+            "Adopt the predecessor auditor's working papers as final without performing any independent verification of opening balances."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the ICAI Code of Ethics and relevant auditing standards (SA 300/SA 510), when a new auditor is appointed, professional courtesy and ethical guidelines require communicating with the predecessor auditor to ascertain if any professional reasons exist preventing acceptance.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Code of Ethics",
+            "Initial Audit",
+            "Predecessor Auditor"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-2_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-2_01",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-2",
+          "subject": "Audit",
+          "prompt": "Given Zenith Pharma's recent acquisition of an overseas manufacturing plant and cross-border research collaborations, how should CA Sharma reflect this in the overall audit strategy?",
+          "options": [
+            "Assign junior audit staff with no prior international experience to maximize cost savings.",
+            "Address the composition of the engagement team by assigning members with appropriate international tax and foreign regulatory competence, and determine the nature and extent of component oversight.",
+            "Issue a disclaimer of opinion immediately due to foreign currency exchange fluctuations.",
+            "Exclude the overseas plant from the scope of the audit because it is located in another country."
+          ],
+          "answerIndex": 1,
+          "explanation": "Per SA 300, when an entity has international operations or complex foreign collaborations, the overall audit strategy must address the allocation of appropriate resources and assignment of team members with necessary specialized competencies.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 300",
+            "Resource Allocation",
+            "International Operations"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-2_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-2_01",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-2",
+          "subject": "Audit",
+          "prompt": "CA Sharma needs to establish overall materiality and performance materiality for Zenith Pharma Ltd. Which benchmark is most appropriate for a pharmaceutical company listed on the stock exchange?",
+          "options": [
+            "Total number of clinical research patents owned.",
+            "Profit before tax (or normalized earnings), as profit is typically a primary focus of financial statement users for listed entities.",
+            "Total physical square footage of administrative office buildings.",
+            "Total postage and courier expenses incurred during the year."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under SA 320, for listed commercial enterprises like Zenith Pharma, profit before tax is generally the most stable and appropriate benchmark used to determine financial statement materiality, as investors primarily focus on profitability.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 320",
+            "Materiality Benchmark",
+            "Profit Before Tax"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-2_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-2_01",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-2",
+          "subject": "Audit",
+          "prompt": "As CA Sharma develops the detailed audit plan for Zenith Pharma's inventory and research and development (R&D) expenditure, what must the plan encompass?",
+          "options": [
+            "A rigid script that forbids staff from modifying testing procedures even if fraud indicators are discovered.",
+            "The nature, timing, and extent of audit procedures (tests of controls and substantive tests) specifically designed to address valuation of R&D capitalization and physical inventory existence.",
+            "A guarantee that all R&D projects will successfully commercialize within twelve months.",
+            "The exact calculation of executive bonuses and stock options."
+          ],
+          "answerIndex": 1,
+          "explanation": "The audit plan must detail the nature, timing, and extent of specific audit procedures (such as testing R&D capitalization criteria under AS 26 / Ind AS 38 and physical inventory observation) to address assessed risks.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Audit Plan",
+            "R&D Expenditure",
+            "Inventory Verification"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-2_02",
+      "kind": "scenario",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "passage": "Apex Infrastructure Ltd. is executing several large-scale highway construction projects across multiple states. M/s Verma & Co. has been appointed as the statutory auditor. The company utilizes a centralized ERP system for financial accounting, but project-site accounting is managed locally by various site managers. During the planning stage, the audit senior notes that internal controls over site-level material purchases and subcontractor billings vary significantly across project locations. Furthermore, there is a pending major litigation claim filed by a sub-contractor against Apex Infrastructure Ltd. for contract termination.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-2_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-2_02",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-2",
+          "subject": "Audit",
+          "prompt": "How should M/s Verma & Co. address the varying internal controls across different project sites when designing the overall audit strategy?",
+          "options": [
+            "Treat all project sites as having identical, highly effective internal controls without testing.",
+            "Determine whether to adopt a combined approach (testing controls where effective) or a purely substantive approach for project-site transactions based on control reliability.",
+            "Eliminate all substantive testing entirely and rely 100% on site manager representations.",
+            "Refuse to audit project sites located outside the home municipal district."
+          ],
+          "answerIndex": 1,
+          "explanation": "When controls vary across locations, the auditor's strategy must assess where controls are reliable enough to test (combined approach) versus where a fully substantive approach is required due to weak or non-existent controls.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Audit Strategy",
+            "Combined Approach",
+            "Substantive Approach"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-2_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-2_02",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-2",
+          "subject": "Audit",
+          "prompt": "Regarding the major litigation claim filed by the sub-contractor, what specific procedure must be integrated into the audit plan during the planning phase?",
+          "options": [
+            "Sending inquiry letters to the company's external legal counsel and reviewing board minutes in accordance with SA 501.",
+            "Immediately paying the sub-contractor's claim out of audit fee reserves.",
+            "Ignoring the litigation until the audit report is signed and published.",
+            "Assuming the claim will be dismissed by courts without consulting legal experts."
+          ],
+          "answerIndex": 0,
+          "explanation": "Per SA 501 'Audit Evidence—Specific Considerations for Selected Items', litigation and claims involving the entity must be planned for by reviewing minutes, corresponding with management, and communicating directly with external legal counsel.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 501",
+            "Litigation and Claims",
+            "Legal Inquiry"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-2_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-2_02",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-2",
+          "subject": "Audit",
+          "prompt": "Apex Infrastructure Ltd. has numerous related-party transactions involving subsidiary transport entities supplying equipment to construction sites. What does SA 550 require the auditor to incorporate into the planning process?",
+          "options": [
+            "Procedures to identify, assess, and address risks regarding related party relationships and transactions, ensuring proper disclosure.",
+            "A blanket waiver exempting all related-party transactions from audit scrutiny.",
+            "Instructing the client to hide related-party transactions from public financial statements.",
+            "Treating related-party transactions as fraudulent criminal acts per se."
+          ],
+          "answerIndex": 0,
+          "explanation": "SA 550 requires auditors to plan specific procedures to identify related parties, understand their business rationale, and verify proper accounting and disclosure in the financial statements.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 550",
+            "Related Parties",
+            "Planning Risk Assessment"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-2_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-2_02",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-2",
+          "subject": "Audit",
+          "prompt": "Given that construction projects span multiple locations and involve complex percentage-of-completion revenue recognition, what should the engagement partner ensure regarding supervision and review in the audit plan?",
+          "options": [
+            "That junior assistants work entirely unsupervised across all remote project sites.",
+            "That the nature, timing, and extent of direction, supervision, and review of team members are tailored to the complexity of percentage-of-completion accounting and multi-location risks.",
+            "That the audit partner delegates 100% of signing authority to intern trainees.",
+            "That reviews of working papers are conducted strictly after the AGM takes place."
+          ],
+          "answerIndex": 1,
+          "explanation": "Complex revenue recognition (percentage of completion) and multi-location operations require robust supervision and review by senior team members and the engagement partner, as mandated by SA 300 and quality control standards.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 300",
+            "Supervision and Review",
+            "Percentage of Completion"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-2_03",
+      "kind": "scenario",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "passage": "Aura Tech Solutions Ltd. develops proprietary software and sells software licenses globally. The company capitalizes internal software development costs. M/s Kapoor & Associates is planning the audit for the year ended March 31, 2027. Aura Tech recently transitioned its core billing and subscription tracking to a cloud-based ERP system managed by a third-party service organization. Management has provided financial statements showing robust profit growth, but the audit team notes aggressive capitalization policies for routine maintenance expenses as software development costs.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-2_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-2_03",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-2",
+          "subject": "Audit",
+          "prompt": "Because Aura Tech uses a cloud-based service organization for core billing, what must M/s Kapoor & Associates consider in the audit strategy regarding third-party systems under SA 402?",
+          "options": [
+            "Cloud-based systems are exempt from audit scrutiny under international data protection laws.",
+            "The auditor must evaluate whether to obtain a Service Organization Control (SOC) report (such as SSAE 18 / ISAE 3402 report) to understand and test controls at the service organization.",
+            "The auditor must physically inspect the cloud server hardware racks housed in overseas data centers.",
+            "The auditor must rely entirely on verbal assurances from the cloud vendor's customer support desk."
+          ],
+          "answerIndex": 1,
+          "explanation": "Per SA 402 'Audit Considerations Relating to an Entity Using a Service Organization', when an entity uses a service organization, the auditor shall evaluate the effect on internal controls and obtain understanding, often through SOC/ISAE reports.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 402",
+            "Service Organization",
+            "Cloud ERP",
+            "Controls"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-2_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-2_03",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-2",
+          "subject": "Audit",
+          "prompt": "In response to management's aggressive capitalization of routine maintenance expenses, how should the audit plan be adjusted?",
+          "options": [
+            "Decrease substantive testing of intangible assets to save time.",
+            "Design specific substantive audit procedures to test the capitalization criteria of intangible assets against AS 26 / Ind AS 38, focusing on technical feasibility and commercial viability.",
+            "Accept management's capitalization policy without question.",
+            "Reclassify all intangible assets as cash and cash equivalents."
+          ],
+          "answerIndex": 1,
+          "explanation": "Aggressive capitalization represents a risk of material misstatement due to error or fraud in expense classification. The audit plan must include rigorous testing against accounting standard criteria for intangible asset capitalization.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Intangible Assets",
+            "Capitalization Risk",
+            "Audit Plan"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-2_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-2_03",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-2",
+          "subject": "Audit",
+          "prompt": "How should the auditor determine 'performance materiality' for Aura Tech Solutions Ltd. during the planning phase?",
+          "options": [
+            "Set performance materiality equal to 150% of overall financial statement materiality.",
+            "Set performance materiality at an amount less than overall materiality to reduce the probability that uncorrected and undetected misstatements exceed overall materiality.",
+            "Set performance materiality to zero so that every single rupee error is investigated.",
+            "Ignore performance materiality and test 100% of all journal entries."
+          ],
+          "answerIndex": 1,
+          "explanation": "Per SA 320, performance materiality is set at an amount less than overall materiality to mitigate the risk that aggregate uncorrected and undetected misstatements exceed overall financial statement materiality.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 320",
+            "Performance Materiality",
+            "Planning"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-2_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-2_03",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-2",
+          "subject": "Audit",
+          "prompt": "What role does professional skepticism play when the audit senior reviews the software development capitalization schedules provided by Aura Tech's management?",
+          "options": [
+            "Professional skepticism requires the auditor to assume management is dishonest and commit to issuing an adverse opinion.",
+            "Professional skepticism involves a questioning mind, being alert to conditions indicating possible misstatement, and critically assessing audit evidence regarding capitalization feasibility.",
+            "Professional skepticism is only required when auditing cash balances, not intangible assets.",
+            "Professional skepticism means accepting all management estimates without corroboration."
+          ],
+          "answerIndex": 1,
+          "explanation": "SA 200 defines professional skepticism as an attitude that includes a questioning mind, being alert to conditions which may indicate possible misstatement due to error or fraud, and a critical assessment of audit evidence.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 200",
+            "Professional Skepticism",
+            "Intangible Assets"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-2_04",
+      "kind": "scenario",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "passage": "GreenFields Agro Products Ltd. processes and exports organic agricultural commodities. The company maintains large warehouses across agricultural belts where bulk grains and fertilizers are stored. M/s Rao & Co. has been appointed as auditors for 2026-27. During the planning meeting, the audit partner notes that inventory constitutes 65% of the total assets of GreenFields Agro. Furthermore, inventory is subject to weight shrinkage, moisture loss, and spoilage risks. The audit partner also observes that inventory counts at remote warehouses are scheduled on the same single day at year-end, posing severe logistical challenges for the audit team staffing.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-2_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-2_04",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-2",
+          "subject": "Audit",
+          "prompt": "Because inventory represents 65% of total assets and carries significant valuation and existence risks, how should this be factored into the overall audit strategy?",
+          "options": [
+            "Allocate sufficient experienced audit staff to attend physical inventory counts across multiple remote warehouses and allocate lower performance materiality for inventory.",
+            "Waive inventory observation entirely because agricultural commodities are difficult to count.",
+            "Rely solely on management's perpetual inventory register without physical verification.",
+            "Increase testing of administrative stationery expenses instead."
+          ],
+          "answerIndex": 0,
+          "explanation": "Per SA 300 and SA 501, when inventory is material and subject to specific risks, the overall audit strategy must allocate appropriate resources (staffing) and establish lower performance materiality for inventory.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 300",
+            "SA 501",
+            "Inventory",
+            "Resource Allocation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-2_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-2_04",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-2",
+          "subject": "Audit",
+          "prompt": "Due to the logistical challenge of attending all remote warehouse physical counts simultaneously on March 31, what alternative or supplementary planning procedure should M/s Rao & Co. consider?",
+          "options": [
+            "Skip physical verification entirely for warehouses where staff cannot be present.",
+            "Plan to attend physical counts at selected material locations on a sample basis, and perform roll-back or roll-forward procedures for counts conducted at dates other than year-end, per SA 501.",
+            "Ask the warehouse managers to sign an affidavit stating no inventory losses occurred.",
+            "Estimate inventory value by multiplying total warehouse floor area by a fixed constant."
+          ],
+          "answerIndex": 1,
+          "explanation": "When attending inventory counts at all locations is impracticable due to logistical constraints, SA 501 allows the auditor to attend counts at selected locations on a sample basis and perform appropriate corroborative audit procedures.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 501",
+            "Physical Inventory",
+            "Logistical Constraints"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-2_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-2_04",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-2",
+          "subject": "Audit",
+          "prompt": "Given the risk of weight shrinkage, moisture loss, and spoilage in agricultural commodities, what specific testing must be included in the inventory audit programme?",
+          "options": [
+            "Testing the net realizable value (NRV) and inspecting for damaged, expired, or spoiled stock to ensure proper valuation provisions.",
+            "Verifying the personal home loan accounts of the warehouse security guards.",
+            "Testing the depreciation rates of computer servers in the head office.",
+            "Confirming share capital balances with the Registrar of Companies."
+          ],
+          "answerIndex": 0,
+          "explanation": "Commodities prone to shrinkage, moisture loss, and spoilage carry high valuation risk. The audit programme must include procedures to test NRV, inspect for spoilage, and evaluate management's provision for damaged inventory.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Audit Programme",
+            "Inventory Valuation",
+            "NRV",
+            "Spoilage"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-2_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-2_04",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-2",
+          "subject": "Audit",
+          "prompt": "How does the identification of high inventory risks impact the setting of 'Detection Risk' during the audit planning phase?",
+          "options": [
+            "Detection risk must be set to the maximum possible level, requiring zero substantive testing.",
+            "Detection risk must be set to a lower level, requiring the auditor to design more persuasive and extensive substantive audit procedures.",
+            "Detection risk has no relationship with inherent and control risks.",
+            "Detection risk is determined solely by the client's internal marketing department."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the audit risk model, as risks of material misstatement (Inherent Risk × Control Risk) increase, the auditor must set detection risk at a lower level to keep overall audit risk acceptably low, which necessitates more extensive or effective substantive procedures.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Audit Risk Model",
+            "Detection Risk",
+            "Substantive Procedures"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-2_05",
+      "kind": "scenario",
+      "chapterId": "audit-2",
+      "subject": "Audit",
+      "passage": "Metro Retail Corporation operates a chain of department stores across metropolitan cities. The company experiences high volumes of low-value cash and credit card transactions daily. M/s Sen & Gupta has been appointed as statutory auditors for the year 2026-27. During preliminary planning, the engagement partner notes that Metro Retail has recently implemented an automated Point-of-Sale (POS) system integrated directly with the financial ledger. The internal audit team evaluated IT general controls (ITGCs) and found them to be robust. Management requests the external auditors to rely extensively on automated controls to minimize disruption to store operations.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Audit Strategy, Audit Planning and Audit Programme"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-2_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-2_05",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-2",
+          "subject": "Audit",
+          "prompt": "Since management requests reliance on automated POS controls, what strategy must M/s Sen & Gupta formulate during the planning stage?",
+          "options": [
+            "A purely substantive approach with zero testing of IT controls.",
+            "A combined audit approach involving tests of operating effectiveness of automated controls and IT General Controls (ITGCs), supplemented by substantive analytical procedures.",
+            "An operational audit strategy focused entirely on employee payroll efficiency.",
+            "A disclaimer of opinion due to reliance on computer software."
+          ],
+          "answerIndex": 1,
+          "explanation": "When an entity relies heavily on automated systems and IT controls, and those controls are robust, the auditor can adopt a combined approach by testing ITGCs and automated application controls, supplemented by substantive testing.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Audit Strategy",
+            "Combined Approach",
+            "IT Controls",
+            "POS System"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-2_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-2_05",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-2",
+          "subject": "Audit",
+          "prompt": "What specific aspect of IT General Controls (ITGCs) must the audit plan evaluate before placing reliance on automated POS application controls?",
+          "options": [
+            "The physical color of the computer monitors in the retail checkout lanes.",
+            "Access security, program change management, data center operations, and computer hardware/software acquisition controls.",
+            "The personal credit scores of the IT department system administrators.",
+            "The catering expenses of the software vendor conferences."
+          ],
+          "answerIndex": 1,
+          "explanation": "Per SA 315 and related guidance on IT risks, reliance on automated application controls requires testing ITGCs covering access security, program changes, operations, and system development.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "ITGC",
+            "SA 315",
+            "Automated Controls",
+            "Audit Plan"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-2_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-2_05",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-2",
+          "subject": "Audit",
+          "prompt": "Given the high volume of low-value retail transactions, what sampling method is most appropriate when designing substantive testing procedures in the audit plan?",
+          "options": [
+            "Monetary Unit Sampling (MUS) or stratified random sampling to ensure high-value and representative transactions are adequately tested.",
+            "Selecting exactly two random transactions from the entire financial year and ignoring the rest.",
+            "Testing 100% of all 50 million individual retail cash receipts manually without computer assistance.",
+            "Selecting only transactions occurring on major public holidays."
+          ],
+          "answerIndex": 0,
+          "explanation": "For high-volume transaction populations like retail sales, Monetary Unit Sampling (MUS) or stratification is highly effective for substantive testing, ensuring larger items have a proportionate chance of selection.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Audit Sampling",
+            "MUS",
+            "Substantive Testing",
+            "Retail"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-2_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-2_05",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-2",
+          "subject": "Audit",
+          "prompt": "If during the execution of tests of controls, the auditor discovers that automated POS discount controls were overridden by store managers due to a software glitch in October, how should the audit plan be revised?",
+          "options": [
+            "Ignore the override since it only affected one month out of twelve.",
+            "Revise the audit plan to increase substantive testing of sales revenue and discounts for the remainder of the year, acknowledging that reliance on controls cannot be maintained for that period.",
+            "Withdraw immediately from the audit engagement without informing anyone.",
+            "Ask management to back-date the software patch to hide the glitch."
+          ],
+          "answerIndex": 1,
+          "explanation": "Per SA 300 and SA 330, when control deviations or overrides are identified, the auditor must revise the audit strategy and plan as necessary, scaling back reliance on controls and increasing substantive procedures for the affected period.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 300",
+            "SA 330",
+            "Control Override",
+            "Revision of Plan"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

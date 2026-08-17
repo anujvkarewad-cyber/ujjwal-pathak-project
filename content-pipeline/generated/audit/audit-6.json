@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "audit-6",
+  "subject": "Audit",
+  "paper": "Paper 5: Auditing and Ethics",
+  "module": "Module 2",
+  "chapterNumber": 6,
+  "chapterTitle": "Audit Documentation",
+  "generatedAt": "2026-08-16T14:49:37.999Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_audit-6_001",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "Which standard on auditing primarily establishes the auditor's responsibility to prepare audit documentation for an audit of financial statements?",
+      "options": [
+        "SA 200",
+        "SA 230",
+        "SA 240",
+        "SA 500"
+      ],
+      "answerIndex": 1,
+      "explanation": "SA 230, 'Audit Documentation', deals with the auditor's responsibility to prepare audit documentation for an audit of financial statements. It sets out the core requirements for recording procedures performed, evidence obtained, and conclusions reached.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 230",
+        "Audit Documentation",
+        "Auditor Responsibility"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_002",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "What is the primary purpose of maintaining adequate audit documentation according to SA 230?",
+      "options": [
+        "To provide a detailed billing record for professional fees",
+        "To provide sufficient and appropriate record of the basis for the auditor's report and evidence that the audit was planned and performed in accordance with SAs",
+        "To replace the client's accounting books and financial records in case of loss",
+        "To serve as a permanent marketing brochure for the auditing firm"
+      ],
+      "answerIndex": 1,
+      "explanation": "According to SA 230, audit documentation provides evidence of the auditor's basis for a conclusion about the achievement of the overall objectives and evidence that the audit was planned and performed in accordance with SAs and applicable legal requirements.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Purpose of Documentation",
+        "SA 230",
+        "Audit Evidence"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_003",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "Which of the following is NOT typically considered an administrative purpose or secondary benefit of audit documentation?",
+      "options": [
+        "Enabling the audit team to plan and perform the audit",
+        "Enabling quality control reviews and inspections in accordance with SQC 1 / Standard on Quality Management (SQM)",
+        "Enabling the conduct of statutory tax assessments for the client's customers",
+        "Enabling the auditor to be accountable for their work"
+      ],
+      "answerIndex": 2,
+      "explanation": "Assisting tax assessments of the client's customers has no relation to audit documentation. Secondary benefits include quality control reviews, enabling the team to plan/perform, and accountability.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Secondary Benefits",
+        "Audit Documentation",
+        "SQC 1"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_004",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "In the context of audit documentation, what does the term 'Audit File' refer to?",
+      "options": [
+        "The client's general ledger and trial balance",
+        "One or more folders or other storage media, in physical or electronic form, containing the records that comprise the audit documentation for a specific engagement",
+        "The complete permanent file maintained by the client's internal audit department",
+        "The statutory minute books of the company under audit"
+      ],
+      "answerIndex": 1,
+      "explanation": "SA 230 defines an audit file as one or more folders or other storage media, in physical or electronic form, containing the records that comprise the audit documentation for a specific engagement.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Audit File",
+        "Definitions",
+        "SA 230"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_005",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "When should the assembly of the final audit file be completed after the date of the auditor's report, as per the guidelines under SA 230?",
+      "options": [
+        "Within 30 days",
+        "Within 60 days",
+        "Within 90 days",
+        "Within 180 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "SQC 1 and SA 230 require that the assembly of the final audit file is typically completed on a timely basis after the date of the auditor's report, not exceeding 60 days.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "File Assembly",
+        "Time Limit",
+        "SA 230"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_006",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "What is the minimum recommended retention period for audit documentation for companies under standard professional practice guidelines and SQC 1 / SQM (unless laws require otherwise)?",
+      "options": [
+        "Not less than 3 years",
+        "Not less than 5 years",
+        "Not less than 7 years",
+        "Not less than 10 years"
+      ],
+      "answerIndex": 2,
+      "explanation": "SQC 1 / SQM 1 requires firms to establish policies and procedures for the timely completion of the assembly of audit files, usually providing a retention period of not less than 7 years from the date of the auditor's report.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Retention Period",
+        "SQC 1",
+        "Audit File"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_007",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "Which of the following describes the nature of 'Permanent Audit File' (PAF)?",
+      "options": [
+        "Contains documents of continuing importance and relevance to audits of subsequent years",
+        "Contains working papers applicable solely to the current year's audit engagement",
+        "Contains the confidential tax records of the engagement partner",
+        "Contains permanent permanent-loan agreements between the directors and the bank"
+      ],
+      "answerIndex": 0,
+      "explanation": "A Permanent Audit File (PAF) contains information of continuing importance to subsequent audits, such as memorandum of association, major legal contracts, and organization structure charts.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Permanent Audit File",
+        "Audit Files",
+        "Documentation Structure"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_008",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "Which of the following documents would typically be filed in the Current Audit File (CAF) rather than the Permanent Audit File (PAF)?",
+      "options": [
+        "Articles of Association of the company",
+        "Copy of the borrowing powers memorandum",
+        "Substantive test working papers for trade receivables confirmation for the current year",
+        "Long-term lease agreements signed 10 years ago with indefinite renewal"
+      ],
+      "answerIndex": 2,
+      "explanation": "Substantive test working papers for current year transactions (like receivables confirmation) pertain strictly to the current period and are filed in the Current Audit File.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Current Audit File",
+        "Audit Working Papers",
+        "PAF vs CAF"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_009",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "An experienced auditor, with no previous connection to the audit, reviews the audit documentation. What standard of sufficiency must this documentation meet?",
+      "options": [
+        "It must allow the experienced auditor to replicate the entire client business model",
+        "It must enable an experienced auditor, having no previous connection with the audit, to understand the significant professional judgments made",
+        "It must permit the experienced auditor to manage the client's tax audits directly",
+        "It must provide word-for-word audio transcripts of all management interviews"
+      ],
+      "answerIndex": 1,
+      "explanation": "SA 230 requires that audit documentation be sufficient to enable an experienced auditor, having no previous connection with the audit, to understand the significant professional judgments made, nature/timing/extent of procedures, and results.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Experienced Auditor",
+        "SA 230",
+        "Judgment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_010",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "In preparing audit documentation, the auditor should record who performed the audit work and the date such work was completed. What else must be documented regarding the review?",
+      "options": [
+        "Who reviewed the audit work performed and the date and extent of such review",
+        "The personal background and academic qualifications of the reviewer",
+        "The exact salary grade of the review assistant",
+        "The software license key used by the reviewer"
+      ],
+      "answerIndex": 0,
+      "explanation": "SA 230 mandates documenting who performed the audit work and the date of completion, as well as who reviewed the audit work performed and the date and extent of such review.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Reviewers",
+        "Sign-offs",
+        "SA 230 Requirements"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_011",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "If, in exceptional circumstances, the auditor performs new or additional audit procedures or draws new conclusions after the date of the auditor's report, what must the auditor document?",
+      "options": [
+        "Only the revised final balance sheet",
+        "The exceptional circumstances encountered, new procedures performed, evidence obtained, conclusions reached, and when and by whom the changes were made",
+        "An apology letter to the board of directors explaining the delay",
+        "The internal performance review score of the audit junior"
+      ],
+      "answerIndex": 1,
+      "explanation": "When exceptional circumstances arise after the date of the auditor's report, SA 230 requires the auditor to document the circumstances, the new procedures performed, evidence obtained, conclusions reached, and who made and reviewed the changes.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Exceptional Circumstances",
+        "Post-Report Documentation",
+        "SA 230"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_012",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "When is the assembly process of an audit file legally or professionally considered to be finalized?",
+      "options": [
+        "When the draft report is sent to the client via email",
+        "Once the final audit file has been fully assembled within the 60-day limit following the auditor's report date",
+        "When the audit fee is fully collected and receipted",
+        "When the Annual General Meeting (AGM) is concluded"
+      ],
+      "answerIndex": 1,
+      "explanation": "Audit file assembly is the administrative process of aggregating working papers into the final audit file, completed typically within 60 days after the date of the auditor's report, marking finalization of the file.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "File Assembly",
+        "Completion",
+        "SQC 1"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_013",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "Can an auditor delete or discard audit documentation after the audit report has been issued?",
+      "options": [
+        "Yes, any working paper older than 30 days can be deleted at the partner's discretion",
+        "No, after the assembly of the final audit file has been completed, the auditor shall not delete or discard audit documentation of any nature before the end of its retention period",
+        "Yes, all digital working papers can be deleted once the client pays the final bill",
+        "Yes, working papers that contain negative findings can be destroyed to protect client relations"
+      ],
+      "answerIndex": 1,
+      "explanation": "Once the final audit file assembly is completed, the auditor must not delete or discard audit documentation before the end of the retention period, as per SQC 1 / SQM 1 and SA 230 principles.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Retention",
+        "Prohibition of Deletion",
+        "SQC 1"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_014",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "Which of the following factors affects the form, content, and extent of audit documentation?",
+      "options": [
+        "The size and complexity of the entity",
+        "The personal political affiliations of the audit team members",
+        "The color scheme used in the client's corporate office",
+        "The auditor's personal preference for paper-based vs electronic media"
+      ],
+      "answerIndex": 0,
+      "explanation": "SA 230 states that the form, content, and extent of audit documentation depend on factors such as the size and complexity of the entity, the nature of the audit procedures to be performed, and identified risks of material misstatement.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Form and Content",
+        "SA 230 Factors",
+        "Complexity"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_015",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "What does an 'Audit Working Paper' property principle dictate regarding ownership?",
+      "options": [
+        "Working papers belong jointly to the client and the auditor",
+        "Working papers belong exclusively to the auditor",
+        "Working papers belong to the Ministry of Corporate Affairs upon completion",
+        "Working papers belong to the client because the client paid the audit fee"
+      ],
+      "answerIndex": 1,
+      "explanation": "Audit working papers are the property of the auditor. They contain the auditor's confidential records, professional judgments, and working notes, and are not public or client property.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Working Papers",
+        "Ownership",
+        "Confidentiality"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_016",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "In documenting the nature, timing, and extent of audit procedures performed, what specific details must the auditor record according to SA 230?",
+      "options": [
+        "The identifying characteristics of the specific items or matters tested",
+        "The astrological sign of the client's chief accountant during the test period",
+        "The brand and model number of the client's office printers",
+        "The exact weather conditions on the day physical inventory count was observed"
+      ],
+      "answerIndex": 0,
+      "explanation": "SA 230 explicitly requires recording the identifying characteristics of the specific items or matters tested (e.g., specific invoice numbers or sample IDs) to ensure traceability and reproducibility.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Identifying Characteristics",
+        "Traceability",
+        "SA 230"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_017",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "If an auditor identifies information that contradicts or is inconsistent with the auditor's final conclusion regarding a significant matter, how should it be handled in documentation?",
+      "options": [
+        "It must be immediately shredded to avoid confusing the audit reviewer",
+        "The auditor shall document how the inconsistency was addressed in reaching the final conclusion",
+        "It should be ignored if the audit partner decides to issue an unmodified opinion",
+        "It should be handed over to the client's legal counsel without noting it in the file"
+      ],
+      "answerIndex": 1,
+      "explanation": "SA 230 requires that if the auditor identifies information that is inconsistent with the auditor's final conclusion regarding a significant matter, the auditor shall document how the inconsistency was addressed.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Inconsistent Information",
+        "Significant Matters",
+        "SA 230"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_018",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "Which of the following is considered a 'significant matter' in audit documentation?",
+      "options": [
+        "Minor rounding errors of Rs. 10 in miscellaneous expense ledger",
+        "Matters that give rise to significant risks, results of audit procedures indicating potential material misstatement, and circumstances causing significant difficulty in applying necessary audit procedures",
+        "The choice of lunch restaurant by the audit assistants during fieldwork",
+        "Routine verification of 5 petty cash vouchers"
+      ],
+      "answerIndex": 1,
+      "explanation": "Significant matters include those giving rise to significant risks, results indicating material misstatements, revised risk assessments, and circumstances causing significant difficulty in applying procedures.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Significant Matters",
+        "Risk Assessment",
+        "SA 230"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_019",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "What is the primary implication if an auditor fails to document a crucial audit procedure performed to verify revenue?",
+      "options": [
+        "It is legally presumed that the procedure was never performed, shifting the burden of proof onto the auditor in regulatory/legal proceedings",
+        "The client will receive an automatic tax refund from the Income Tax Department",
+        "The audit report automatically converts from unmodified to adverse",
+        "The ICAI will increase the firm's annual membership fee"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under auditing standards and legal precedents, 'what is not documented is not done'. Failure to document creates a rebuttable presumption that the work was not performed, leaving the auditor vulnerable in legal or disciplinary reviews.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Legal Implications",
+        "Burden of Proof",
+        "Documentation Failure"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_020",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "Which of the following describes 'Tick Marks' used in audit working papers?",
+      "options": [
+        "Symbols or abbreviations used to denote specific audit work done, accompanied by a legend explaining their meaning",
+        "Electronic notifications sent to the client when an invoice is paid",
+        "Time sheets filled out by audit interns at the end of every week",
+        "Checkmarks used by the tax authorities to verify GST returns"
+      ],
+      "answerIndex": 0,
+      "explanation": "Tick marks are standardized symbols or shorthand annotations (e.g., footed, agreed to invoice) used in working papers to indicate specific checking steps, accompanied by an explanatory legend.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Tick Marks",
+        "Working Paper Conventions",
+        "Auditing Techniques"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_021",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "Under SQC 1 / SQM 1, what policy must an audit firm establish regarding the confidentiality, safe custody, integrity, accessibility, and retrievability of engagement documentation?",
+      "options": [
+        "Policies and procedures designed to maintain them throughout the retention period",
+        "Policies permitting open access to all audit documentation by general public investors",
+        "Policies requiring all physical working papers to be burned after 1 year",
+        "Policies allowing client executives to edit working papers at their convenience"
+      ],
+      "answerIndex": 0,
+      "explanation": "SQC 1 / SQM requires firms to establish policies and procedures to maintain confidentiality, safe custody, integrity, accessibility, and retrievability of engagement documentation.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Custody and Integrity",
+        "SQC 1",
+        "Confidentiality"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_022",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "Can working papers be prepared after the date of the auditor's report during the file assembly period?",
+      "options": [
+        "No, absolutely no documentation can be added or sorted after the report date",
+        "Yes, sorting, collating, and cross-referencing working papers or signing off on completion checklists are administrative changes permitted during file assembly",
+        "Yes, substantive audit procedures not performed before the report date can be completed and backdated",
+        "Yes, new substantive sample testing can be conducted and inserted as if done prior to the report"
+      ],
+      "answerIndex": 1,
+      "explanation": "During the final file assembly period, the auditor may make administrative changes (sorting, collating, signing off checklists) but cannot perform new audit procedures or draw new conclusions unless exceptional circumstances exist.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "File Assembly",
+        "Administrative Changes",
+        "SA 230"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_023",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "How should an auditor document oral discussions with management regarding significant matters arising during the audit?",
+      "options": [
+        "Oral discussions need never be documented under any circumstances",
+        "By recording the significant matters discussed, when and with whom the discussions took place, and the resultant summaries of management responses",
+        "By video-recording every conversation and uploading it to social media",
+        "By asking management to sign a blank sheet of paper"
+      ],
+      "answerIndex": 1,
+      "explanation": "When the auditor has discussions of significant matters with management, those discussions must be documented, including when and with whom they took place and the summary of responses.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Oral Discussions",
+        "Significant Matters",
+        "SA 230"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_024",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "What is the primary risk associated with over-reliance on standardized or pre-printed audit documentation templates?",
+      "options": [
+        "It saves too much time for the engagement team",
+        "It may lead to mechanical check-box auditing without exercising adequate professional skepticism and tailoring procedures to specific entity risks",
+        "It reduces the paper cost for the audit firm",
+        "It automatically violates Company Law provisions"
+      ],
+      "answerIndex": 2,
+      "explanation": "Option 2 is correct: over-reliance on standardized templates can lead to rote check-box auditing without exercising proper professional skepticism or tailoring working papers to entity-specific risks.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Standardized Templates",
+        "Professional Skepticism",
+        "Audit Risk"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_025",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "Which of the following best defines 'Cross-Referencing' in audit working papers?",
+      "options": [
+        "Linking figures and schedules in the working papers to ensure consistency between the trial balance, lead schedules, and detailed substantiation sheets",
+        "Comparing the client's financial statements with competitor companies in the same industry",
+        "Checking whether the client's bank statements cross-match with customer invoices",
+        "Sharing working papers with rival audit firms for peer comparison"
+      ],
+      "answerIndex": 0,
+      "explanation": "Cross-referencing connects related audit schedules and working papers (e.g., tying a lead schedule balance to a detailed testing schedule), facilitating review and verification.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Cross-Referencing",
+        "Working Papers",
+        "Audit Technique"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_026",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "If an auditor uses automated electronic audit tools and software, are these outputs considered part of audit documentation?",
+      "options": [
+        "No, only handwritten notes on paper qualify as audit documentation",
+        "Yes, electronic working papers, automated data analytics outputs, and system logs form an integral part of audit documentation",
+        "Only if printed out and signed in wet ink by the CEO",
+        "Only if stored on a physical floppy disk"
+      ],
+      "answerIndex": 1,
+      "explanation": "Audit documentation can be recorded on paper or on electronic or other media. Electronic workpapers, screenshots, and analytics outputs are fully valid and form part of the documentation.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Electronic Documentation",
+        "Audit Tools",
+        "SA 230"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_027",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "When an engagement partner modifies an audit plan during the course of an audit due to unexpected risks, what must be documented regarding the change?",
+      "options": [
+        "The reasons for the modification and the resulting amended audit procedures",
+        "Only the budget overrun caused by the change",
+        "A formal apology to the audit senior",
+        "Nothing, as internal planning changes do not need documentation"
+      ],
+      "answerIndex": 0,
+      "explanation": "Significant changes to the overall audit strategy and audit plan, and the reasons therefor, must be documented to show how the auditor responded to assessed risks.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Audit Plan Modification",
+        "Risk Response",
+        "Documentation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_028",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "Why is it important to include the date on each individual working paper?",
+      "options": [
+        "To establish when the specific procedure was performed and facilitate chronological review by supervisors",
+        "To calculate employee monthly payroll and overtime hours",
+        "To determine the exact expiry date of the client's tax registration",
+        "To fulfill standard office stationery branding rules"
+      ],
+      "answerIndex": 0,
+      "explanation": "Dating individual working papers establishes the timeline of execution and helps the reviewer verify that work was completed timely and before the auditor's report date.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Dating Working Papers",
+        "Review Process",
+        "SA 230"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_029",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "In the context of statutory audit documentation, what is a 'Lead Schedule'?",
+      "options": [
+        "A summary working paper that groups related sub-accounts (e.g., various bank accounts) and ties the total to the financial statement line item",
+        "The schedule of audit partner meetings with the CEO",
+        "The timeline of tax deadlines set by the government",
+        "The checklist used to onboard new audit trainees"
+      ],
+      "answerIndex": 0,
+      "explanation": "A lead schedule summarizes individual account balances (sub-schedules) and ties them directly into the primary financial statement figures, acting as a bridge in working papers.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Lead Schedule",
+        "Working Paper Structure",
+        "Audit Schedules"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-6_030",
+      "kind": "normal",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "prompt": "If a regulatory authority (such as NFRA or ICAI Quality Review Board) requests audit working papers, does releasing them violate client confidentiality?",
+      "options": [
+        "Yes, releasing working papers to anyone under any circumstances violates confidentiality",
+        "No, disclosure required by law or professional regulatory mandates (e.g., QRB inspections or statutory investigations) is an established exception to confidentiality",
+        "Yes, unless the client's shareholders pass a unanimous special resolution",
+        "No, provided the auditor charges a review fee to the regulator"
+      ],
+      "answerIndex": 1,
+      "explanation": "Client confidentiality is subject to legal and professional exceptions, such as quality reviews by ICAI's QRB, regulatory investigations, or court orders, where the auditor is required to produce working papers.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Confidentiality Exception",
+        "Regulatory Inspection",
+        "Ethics"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_audit-6_01",
+      "kind": "scenario",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "passage": "M/s Sharma & Associates, Chartered Accountants, are conducting the statutory audit of Apex Pharmaceuticals Ltd. for the financial year 2025-26. During the audit, the engagement senior, CA Rahul, tests trade receivables and notes a significant divergence between customer confirmations and ledger balances. Furthermore, management provides verbal explanations that directly contradict an internal audit memo found in the client's file. CA Rahul prepares working papers on electronic media, signs off on them, and submits them to the engagement partner, CA Sharma, for review. The audit report is signed on May 30, 2026.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-6_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-6_01",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-6",
+          "subject": "Audit",
+          "prompt": "How should CA Rahul and CA Sharma document the contradictory evidence between management's oral explanation and the internal audit memo?",
+          "options": [
+            "Ignore the internal audit memo as it is an internal document",
+            "Document the inconsistency and how it was addressed in reaching the final conclusion",
+            "Discard the customer confirmations to maintain harmony with management",
+            "Request management to rewrite the internal audit memo with matching dates"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per SA 230, if the auditor identifies information that is inconsistent with the final conclusion regarding a significant matter, the auditor must document how the inconsistency was addressed.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Inconsistent Information",
+            "SA 230",
+            "Significant Matters"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-6_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-6_01",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-6",
+          "subject": "Audit",
+          "prompt": "What is the final deadline for M/s Sharma & Associates to complete the assembly of the final audit file for Apex Pharmaceuticals Ltd.?",
+          "options": [
+            "June 30, 2026",
+            "July 29, 2026",
+            "August 28, 2026",
+            "November 26, 2026"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under SQC 1 / SQM 1 and SA 230, the assembly of the final audit file should be completed typically not more than 60 days after the date of the auditor's report (May 30, 2026 + 60 days lands in late July 2026).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "File Assembly",
+            "Time Limit",
+            "SQC 1"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-6_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-6_01",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-6",
+          "subject": "Audit",
+          "prompt": "Can CA Rahul include electronic working papers and digital analytics output as part of the audit documentation?",
+          "options": [
+            "No, audit documentation must be strictly handwritten in bound books",
+            "Yes, electronic forms of working papers are fully acceptable provided they meet SA 230 requirements",
+            "Only if converted into notarized physical paper within 24 hours",
+            "Only if approved in writing by the company's Board of Directors"
+          ],
+          "answerIndex": 1,
+          "explanation": "SA 230 explicitly permits audit documentation to be recorded on electronic or other media, provided the integrity and accessibility of the files are maintained.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Electronic Working Papers",
+            "SA 230",
+            "Media"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-6_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-6_01",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-6",
+          "subject": "Audit",
+          "prompt": "Who holds the legal ownership of the audit working papers prepared by CA Rahul during the audit of Apex Pharmaceuticals Ltd.?",
+          "options": [
+            "Apex Pharmaceuticals Ltd. because they paid the audit fees",
+            "M/s Sharma & Associates, the audit firm",
+            "The Institute of Chartered Accountants of India (ICAI)",
+            "Jointly owned by the audit partner and the company's CFO"
+          ],
+          "answerIndex": 1,
+          "explanation": "Audit working papers are the exclusive property of the auditor (M/s Sharma & Associates), subject to professional confidentiality and regulatory retention rules.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Ownership",
+            "Working Papers",
+            "Professional Ethics"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-6_02",
+      "kind": "scenario",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "passage": "In August 2026, during a peer review of M/s Verma & Co., the reviewer examines the audit documentation for a manufacturing client audited for the year ended March 31, 2026. The reviewer notices that for a major property, plant, and equipment (PPE) addition, the working paper lacks identifying characteristics of the specific invoice tested. Furthermore, the engagement partner wishes to add a few explanatory notes to the current file after the assembly period has lapsed, citing a minor clarification received from a plant engineer.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-6_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-6_02",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-6",
+          "subject": "Audit",
+          "prompt": "What is the implication of the working paper lacking identifying characteristics for the PPE invoice tested?",
+          "options": [
+            "It violates SA 230 requirements, making it impossible for an external reviewer to identify and re-test the exact item",
+            "It is completely acceptable as long as the PPE total matches the trial balance",
+            "It triggers an automatic tax penalty for the client",
+            "It invalidates the client's depreciation policy permanently"
+          ],
+          "answerIndex": 0,
+          "explanation": "SA 230 requires recording identifying characteristics of items tested so that the work is reproducible and verifiable by reviewers. Lacking this violates documentation standards.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Identifying Characteristics",
+            "SA 230",
+            "Peer Review"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-6_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-6_02",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-6",
+          "subject": "Audit",
+          "prompt": "Can the engagement partner add new explanatory notes to the audit file after the final file assembly has been completed?",
+          "options": [
+            "Yes, partners can alter files anytime before the next annual general meeting",
+            "No, after assembly completion, the auditor shall not delete or discard documentation, and additions are restricted unless exceptional circumstances apply (and must be documented as such)",
+            "Yes, administrative clarifications can be freely added without restriction at any point",
+            "Yes, provided the client signs a consent form"
+          ],
+          "answerIndex": 1,
+          "explanation": "Once final file assembly is completed, modification of audit documentation is generally prohibited except for administrative changes during assembly or under exceptional post-report circumstances with proper documentation.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "File Modification",
+            "Post-Assembly",
+            "SQC 1"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-6_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-6_02",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-6",
+          "subject": "Audit",
+          "prompt": "What is the minimum retention period M/s Verma & Co. must maintain for this audit file under SQC 1 / SQM standards?",
+          "options": [
+            "At least 3 years from the date of the auditor's report",
+            "At least 5 years from the date of the auditor's report",
+            "At least 7 years from the date of the auditor's report",
+            "Indefinitely until the company is wound up"
+          ],
+          "answerIndex": 2,
+          "explanation": "The standard retention period for engagement documentation under SQC 1 / SQM 1 is not less than 7 years from the date of the auditor's report.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Retention Period",
+            "SQC 1",
+            "Audit File"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-6_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-6_02",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-6",
+          "subject": "Audit",
+          "prompt": "During the peer review, the reviewer requests access to the working papers. Does granting this access breach client confidentiality?",
+          "options": [
+            "Yes, showing files to a peer reviewer is a direct violation of professional ethics",
+            "No, professional bodies' quality review / peer review programs are recognized exceptions where confidentiality obligations are superseded by regulatory requirements",
+            "Yes, unless the client's managing director is present during the review",
+            "No, because peer reviewers are employees of the client company"
+          ],
+          "answerIndex": 1,
+          "explanation": "Disclosing working papers to authorized peer reviewers or quality review boards does not breach confidentiality as it is conducted under statutory or professional regulatory authority.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Confidentiality",
+            "Peer Review",
+            "Ethics Exception"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-6_03",
+      "kind": "scenario",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "passage": "CA Kapoor is reviewing the audit working files prepared by the audit team for a major retail client, HyperMart Retail Ltd. During the review, CA Kapoor finds that several working papers lack sign-offs indicating who performed the work and when it was completed. Additionally, a complex leasing transaction was evaluated, but the team omitted documentation regarding the professional judgment applied in determining lease classification under Ind AS 116.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-6_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-6_03",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-6",
+          "subject": "Audit",
+          "prompt": "What does the omission of sign-offs (who performed the work and date of completion) violate under SA 230?",
+          "options": [
+            "It violates the requirement to document who performed the work and the date of completion, as well as who reviewed it",
+            "It violates the client's corporate governance code",
+            "It violates the Income Tax Act audit filing deadline",
+            "It violates the banking covenant agreements"
+          ],
+          "answerIndex": 0,
+          "explanation": "SA 230 explicitly requires the auditor to record who performed the audit work and the date of completion, as well as who reviewed the work and the date/extent of review.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Sign-offs",
+            "SA 230 Requirements",
+            "Review"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-6_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-6_03",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-6",
+          "subject": "Audit",
+          "prompt": "Why is the omission of documentation regarding professional judgments on the lease classification under Ind AS 116 critical?",
+          "options": [
+            "Because lease accounting has no impact on financial statements",
+            "Because significant professional judgments must be documented to enable an experienced auditor to understand the basis for conclusions on significant matters",
+            "Because leasing is solely an internal management decision",
+            "Because all lease files must be sent directly to the Registrar of Companies"
+          ],
+          "answerIndex": 1,
+          "explanation": "SA 230 requires documenting significant professional judgments to demonstrate that the auditor evaluated complex accounting treatments and reached appropriate conclusions.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Professional Judgment",
+            "Significant Matters",
+            "SA 230"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-6_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-6_03",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-6",
+          "subject": "Audit",
+          "prompt": "If an experienced auditor with no prior connection to HyperMart Retail Ltd. reviews this file, what standard must the documentation meet?",
+          "options": [
+            "It must enable them to understand the significant professional judgments, nature, timing, extent of procedures, and results",
+            "It must allow them to audit the client's tax returns for the next 5 years without assistance",
+            "It must provide a complete video record of all stock-taking counts",
+            "It must replicate the client's ERP database structure"
+          ],
+          "answerIndex": 0,
+          "explanation": "The benchmark under SA 230 is that documentation must enable an experienced auditor having no previous connection with the audit to understand the work, evidence, and judgments.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Experienced Auditor",
+            "Standard of Review",
+            "SA 230"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-6_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-6_03",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-6",
+          "subject": "Audit",
+          "prompt": "How should CA Kapoor rectify the missing sign-offs and documentation deficiencies before the audit report is issued?",
+          "options": [
+            "Instruct the team members to complete and sign off their respective working papers with actual completion dates prior to report finalization",
+            "Sign off all working papers personally as the partner without verifying the work",
+            "Ignore the omissions since the financial numbers are correct",
+            "Issue a qualified audit report solely due to missing working paper signatures"
+          ],
+          "answerIndex": 0,
+          "explanation": "Before the audit report is finalized and issued, the engagement team should ensure all working papers are properly completed, reviewed, and signed off.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Working Paper Completion",
+            "Partner Review",
+            "Pre-Issuance"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-6_04",
+      "kind": "scenario",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "passage": "M/s Gupta & Co. completed the audit of Stellar Tech Ltd. and issued the audit report on June 15, 2026. On July 10, 2026, while the final file assembly was still underway, the audit senior discovered a major unrecorded liability that existed at the balance sheet date. The engagement partner decided to perform additional audit procedures, modify the risk assessment, and ultimately revise the audit report on July 25, 2026.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-6_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-6_04",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-6",
+          "subject": "Audit",
+          "prompt": "Can the audit team perform additional audit procedures and modify the audit report during the file assembly period?",
+          "options": [
+            "No, once the original report date of June 15 has passed, no further procedures can ever be performed",
+            "Yes, exceptional circumstances (such as discovering a major unrecorded liability before assembly completion) permit performing new procedures and modifying conclusions, with mandatory documentation",
+            "Yes, provided the client pays an extra fee",
+            "Yes, but the revision must be backdated to June 15"
+          ],
+          "answerIndex": 1,
+          "explanation": "When exceptional circumstances arise after the date of the auditor's report (such as discovering a significant misstatement during assembly), the auditor may perform additional procedures and document the circumstances.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Exceptional Circumstances",
+            "Post-Report Procedures",
+            "SA 230"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-6_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-6_04",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-6",
+          "subject": "Audit",
+          "prompt": "What specific details must M/s Gupta & Co. document regarding these post-report procedures?",
+          "options": [
+            "Only the new revised net profit figure",
+            "The exceptional circumstances, new procedures performed, evidence obtained, conclusions reached, and when and by whom changes were made and reviewed",
+            "A letter of resignation from the audit senior",
+            "The updated software license agreement"
+          ],
+          "answerIndex": 1,
+          "explanation": "SA 230 explicitly prescribes documenting the exceptional circumstances, new procedures, evidence, conclusions, and the personnel involved in making and reviewing the changes.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Documentation Requirements",
+            "Exceptional Circumstances",
+            "SA 230"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-6_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-6_04",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-6",
+          "subject": "Audit",
+          "prompt": "When does the 60-day period for final file assembly begin in this scenario where a revised audit report was issued on July 25, 2026?",
+          "options": [
+            "June 15, 2026 (the date of the original report)",
+            "July 25, 2026 (the date of the revised auditor's report)",
+            "March 31, 2026 (the balance sheet date)",
+            "August 15, 2026"
+          ],
+          "answerIndex": 1,
+          "explanation": "When reports are reissued or revised due to exceptional circumstances, the final assembly time limit runs from the date of the final/revised auditor's report (July 25, 2026).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "File Assembly",
+            "Time Limit",
+            "Revised Report"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-6_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-6_04",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-6",
+          "subject": "Audit",
+          "prompt": "Is the original working paper file for Stellar Tech Ltd. discarded when the new procedures are performed?",
+          "options": [
+            "Yes, old working papers must be destroyed immediately",
+            "No, audit documentation must retain both the original records and the documentation of the changes and subsequent procedures",
+            "Yes, to save electronic storage space",
+            "Only if approved by the client's internal audit committee"
+          ],
+          "answerIndex": 1,
+          "explanation": "The audit file must maintain a complete and accurate historical record, including the original documentation, the exceptional circumstances, and the subsequent modifications.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Audit File Integrity",
+            "Retention",
+            "SA 230"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-6_05",
+      "kind": "scenario",
+      "chapterId": "audit-6",
+      "subject": "Audit",
+      "passage": "CA Meera is appointed as the statutory auditor of a newly incorporated manufacturing company, Nova Steel Works Pvt. Ltd. During the planning phase, CA Meera establishes the overall audit strategy and creates both a Permanent Audit File (PAF) and a Current Audit File (CAF). She instructs her team on how to cross-reference schedules, use standardized tick marks, and document every discussion held with the plant managers regarding production capacity.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Audit Documentation"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-6_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-6_05",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-6",
+          "subject": "Audit",
+          "prompt": "Which of the following documents should CA Meera place in the Permanent Audit File (PAF) for Nova Steel Works Pvt. Ltd.?",
+          "options": [
+            "The Memorandum of Association and Articles of Association",
+            "Bank confirmation letters for the current financial year ending March 31",
+            "Substantive sample testing sheets for trade payables",
+            "The current year physical inventory observation count sheets"
+          ],
+          "answerIndex": 0,
+          "explanation": "Permanent Audit Files contain documents of continuing relevance across multiple years, such as the Memorandum and Articles of Association, major long-term contracts, and corporate history.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Permanent Audit File",
+            "Audit Files",
+            "PAF vs CAF"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-6_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-6_05",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-6",
+          "subject": "Audit",
+          "prompt": "What is the primary function of cross-referencing working papers in CA Meera's audit engagement?",
+          "options": [
+            "To link lead schedules with detailed sub-schedules and financial statement line items for easy verification and review",
+            "To connect the auditor's personal bank account with the client's payroll",
+            "To match the client's invoices with competitor pricing data",
+            "To comply with GST filing invoice matching rules"
+          ],
+          "answerIndex": 0,
+          "explanation": "Cross-referencing creates an audit trail within working papers, linking summary lead schedules to underlying detail schedules, ensuring mathematical and logical consistency.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Cross-Referencing",
+            "Working Papers",
+            "Audit Technique"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-6_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-6_05",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-6",
+          "subject": "Audit",
+          "prompt": "How should the audit team document their discussions with plant managers regarding production capacity?",
+          "options": [
+            "By recording the date, participants, significant matters discussed, and summary of management responses",
+            "By recording only the names of the managers without any notes",
+            "By asking the managers to record an audio file and keeping it on a personal phone",
+            "Oral discussions do not require any documentation whatsoever"
+          ],
+          "answerIndex": 0,
+          "explanation": "SA 230 requires documenting oral discussions of significant matters, including when and with whom they took place and the summary of responses.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Oral Discussions",
+            "Documentation",
+            "SA 230"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-6_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-6_05",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-6",
+          "subject": "Audit",
+          "prompt": "What is the purpose of using standardized tick marks in the working papers of Nova Steel Works Pvt. Ltd.?",
+          "options": [
+            "To provide a shorthand notation explaining specific verification procedures performed, accompanied by an explanatory legend",
+            "To decorate the working papers for the annual report",
+            "To calculate employee bonuses automatically",
+            "To indicate which documents should be shredded"
+          ],
+          "answerIndex": 0,
+          "explanation": "Tick marks are standardized symbols used to denote specific audit procedures performed (e.g., footing checked, vouched to invoice), with an explanatory legend defining each symbol.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Tick Marks",
+            "Working Paper Conventions",
+            "Audit Techniques"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

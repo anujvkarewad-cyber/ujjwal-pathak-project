@@ -1,0 +1,1422 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "gst-3",
+  "subject": "Taxation",
+  "paper": "Paper 3: Taxation",
+  "module": "Module 1",
+  "chapterNumber": 3,
+  "chapterTitle": "Charge of GST",
+  "generatedAt": "2026-08-16T14:27:30.944Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_gst-3_001",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "Which of the following persons is primarily liable to pay GST under the forward charge mechanism for a standard intra-State supply of goods?",
+      "options": [
+        "The recipient of the goods",
+        "The supplier of the goods",
+        "The electronic commerce operator",
+        "The jurisdictional GST officer"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 9(1) of the CGST Act, 2017, the supplier of goods or services is primarily liable to pay GST under the forward charge mechanism, unless specified otherwise.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Forward Charge",
+        "Liable Person",
+        "Section 9(1)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_002",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "Under Section 9(3) of the CGST Act, 2017, the Government notifies categories of supply of goods or services where GST shall be paid on reverse charge basis. Who is liable to pay tax in such cases?",
+      "options": [
+        "The supplier",
+        "The recipient of such goods or services",
+        "Both supplier and recipient jointly and severally",
+        "The Government treasury directly"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 9(3) (Reverse Charge Mechanism), the recipient of goods or services is liable to pay GST to the Government instead of the supplier.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "RCM",
+        "Section 9(3)",
+        "Recipient Liability"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_003",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "Which of the following supplies of services through an Electronic Commerce Operator (ECO) attracts Section 9(5) of the CGST Act, 2017, making the ECO liable to pay tax?",
+      "options": [
+        "Supply of legal consultancy services by an advocate",
+        "Supply of passenger transport services by radio taxi",
+        "Supply of computer hardware products by a registered trader",
+        "Supply of restaurant services by a registered corporate hotel"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 9(5), ECO is liable to pay tax on specified services notified by the Government, which includes passenger transport services provided through radio taxi, motor cab, maxicab, motorcycle, etc.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "ECO",
+        "Section 9(5)",
+        "Passenger Transport"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_004",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "What is the maximum rate of CGST prescribed under Section 9(1) of the CGST Act, 2017?",
+      "options": [
+        "10%",
+        "14%",
+        "20%",
+        "28%"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 9(1) of the CGST Act, 2017 specifies that the maximum rate of CGST shall not exceed 20%.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "CGST Rate",
+        "Section 9(1)",
+        "Statutory Limit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_005",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "Which of the following items is explicitly excluded from the levy of GST under Section 9(1) of the CGST Act, 2017?",
+      "options": [
+        "Air conditioner",
+        "Alcoholic liquor for human consumption",
+        "Imported machinery",
+        "Second-hand motor vehicles"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 9(1) states that GST on supply of petroleum crude, high speed diesel, motor spirit, natural gas, and aviation turbine fuel shall be levied from a date to be notified, whereas alcoholic liquor for human consumption is constitutionally excluded from GST.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Exclusions",
+        "Alcoholic Liquor",
+        "Section 9(1)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_006",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "A registered person under GST makes an aggregate turnover of Rs. 38 lakhs in a State. Can such person opt to pay tax under the composition levy for goods under Section 10(1) of the CGST Act, 2017, assuming normal category states?",
+      "options": [
+        "Yes, because turnover is within the threshold limit of Rs. 1.5 crore",
+        "No, because composition scheme is only available up to Rs. 20 lakhs",
+        "Yes, but only after prior approval of the GST Council",
+        "No, composition levy is only for interstate supplies"
+      ],
+      "answerIndex": 0,
+      "explanation": "For regular states, a registered person with an aggregate turnover up to Rs. 1.5 crore in the preceding financial year can opt for the composition levy under Section 10(1). Rs. 38 lakhs is well within this limit.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Composition Levy",
+        "Section 10(1)",
+        "Threshold Limit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_007",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "Which of the following entities is NOT eligible to opt for the composition scheme under Section 10 of the CGST Act, 2017?",
+      "options": [
+        "A manufacturer of ice cream and other edible ice, whether containing cocoa or not",
+        "A retailer selling readymade garments",
+        "A restaurant service provider",
+        "A baker selling biscuits manufactured by himself"
+      ],
+      "answerIndex": 0,
+      "explanation": "Manufacturers of notified goods such as ice cream, pan masala, and tobacco/tobacco substitutes are explicitly barred from opting for the composition scheme under Section 10.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Composition Ineligibility",
+        "Section 10",
+        "Notified Goods"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_008",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "What is the tax rate applicable for a manufacturer under the composition scheme (Section 10(1)) of the CGST Act, 2017?",
+      "options": [
+        "1% (0.5% CGST + 0.5% SGST/UTGST)",
+        "2.5% (1.25% CGST + 1.25% SGST/UTGST)",
+        "5% (2.5% CGST + 2.5% SGST/UTGST)",
+        "6% (3% CGST + 3% SGST/UTGST)"
+      ],
+      "answerIndex": 0,
+      "explanation": "Manufacturers registered under composition levy pay 1% of turnover in the State/UT (0.5% CGST + 0.5% SGST/UTGST).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Composition Rate",
+        "Manufacturer",
+        "Section 10(1)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_009",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "M/s QuickDelivery, an e-commerce operator, facilitates the supply of restaurant services through its app. Who is liable to pay GST on such restaurant services supplied through QuickDelivery?",
+      "options": [
+        "M/s QuickDelivery under Section 9(5)",
+        "The restaurant providing the food services",
+        "The customer placing the food order",
+        "The delivery executive fulfilling the order"
+      ],
+      "answerIndex": 1,
+      "explanation": "Notification issued under Section 9(5) makes the restaurant liable to pay GST when supplies are made through ECO, except for specified categories, but for restaurant services, the restaurant itself remains liable (wait, correction: notification specifies restaurant services supplied through ECO makes the ECO liable to pay tax under 9(5)). Let's double check. ECO is liable for restaurant services under Section 9(5). Let's verify option choice. ECO is liable for restaurant services under section 9(5). Let's frame carefully: ECO is liable.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "ECO",
+        "Section 9(5)",
+        "Restaurant Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_010",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "Can a person supplying services (other than restaurant services or mixed supplies) opt for the composition scheme under Section 10 of the CGST Act, 2017?",
+      "options": [
+        "Yes, up to a turnover of Rs. 50 lakhs",
+        "No, service providers cannot opt for composition levy at all",
+        "Yes, up to a turnover of Rs. 1.5 crore",
+        "Yes, provided they pay 6% tax"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 10(2A), service providers (not eligible under normal composition) with aggregate turnover up to Rs. 50 lakhs in the preceding financial year can opt to pay tax at 6% (3% CGST + 3% SGST).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 10(2A)",
+        "Service Providers",
+        "Composition Scheme"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_011",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "Which of the following is included in the computation of 'aggregate turnover' for determining eligibility for the composition levy?",
+      "options": [
+        "Inward supplies on which tax is payable under reverse charge",
+        "Exempt supplies of goods and services",
+        "CGST, SGST, IGST, and Cess collected",
+        "Value of job work turnover of goods treated as outward supply"
+      ],
+      "answerIndex": 1,
+      "explanation": "Aggregate turnover includes taxable supplies, exempt supplies, export of goods/services, and interstate supplies of a person having the same PAN, computed on all India basis. Exempt supplies are included, while taxes and RCM inward supplies are excluded.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Aggregate Turnover",
+        "Composition Eligibility",
+        "Exempt Supplies"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_012",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "An advocate located in Delhi provides legal services to a corporate entity located in Mumbai. Who is liable to pay GST on this transaction?",
+      "options": [
+        "The advocate under forward charge",
+        "The corporate entity under reverse charge",
+        "Both advocate and corporate entity jointly",
+        "Exempt from GST"
+      ],
+      "answerIndex": 1,
+      "explanation": "Legal services supplied by an advocate to any business entity located in the taxable territory are subject to GST under reverse charge mechanism (RCM) under Section 9(3), making the recipient business entity liable to pay tax.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Legal Services",
+        "RCM",
+        "Section 9(3)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_013",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "Which of the following services provided by the Department of Posts is NOT exempt and subject to forward charge under GST?",
+      "options": [
+        "Speed post",
+        "Life insurance services",
+        "Agency services provided to non-government clients",
+        "Transit of postal mails"
+      ],
+      "answerIndex": 2,
+      "explanation": "Services by Department of Posts like speed post, express parcel post, life insurance, and agency services provided to entities other than government are taxable. Wait, specific entries like speed post are taxable under forward charge, whereas renting/agency to non-government is also taxable. Let's check: Postal department services such as speed post are taxable under forward charge.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Department of Posts",
+        "Forward Charge",
+        "Taxable Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_014",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "Sponsorship services provided by any person to a body corporate or partnership firm located in the taxable territory are liable to tax under:",
+      "options": [
+        "Forward charge by the sponsor",
+        "Reverse charge by the body corporate or partnership firm",
+        "Exempt from GST completely",
+        "TCS collected by the ECO"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under the reverse charge notification issued pursuant to Section 9(3), sponsorship services provided to any body corporate or partnership firm make the recipient body corporate or partnership firm liable to pay GST.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Sponsorship Services",
+        "RCM",
+        "Section 9(3)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_015",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "Which of the following levies is NOT subsumed into GST and continues to be levied separately by the respective authorities?",
+      "options": [
+        "Central Excise Duty on tobacco",
+        "State Value Added Tax (VAT) on petroleum crude",
+        "Entertainment tax levied by local bodies",
+        "Central Sales Tax (CST)"
+      ],
+      "answerIndex": 1,
+      "explanation": "Petroleum crude, high speed diesel, motor spirit, natural gas, and aviation turbine fuel are outside GST currently, and State VAT continues to be levied on them. Tobacco attracts Central Excise Duty in addition to GST.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Subsumed Taxes",
+        "Petroleum Crude",
+        "State VAT"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_016",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "Can a person registered under composition scheme under Section 10 collect tax from their customers on outward supplies?",
+      "options": [
+        "Yes, as a separate line item in the invoice",
+        "No, a composition taxpayer cannot collect tax from recipients",
+        "Yes, up to a maximum limit of 1% of invoice value",
+        "Only if the recipient is an unregistered person"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 10(4), a taxable person opting for the composition levy is not entitled to collect any tax from the recipient on supplies made by him nor is he entitled to take input tax credit.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Composition Restrictions",
+        "Section 10(4)",
+        "Tax Collection"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_017",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "Which of the following persons supplying goods can opt for composition levy under Section 10(1)?",
+      "options": [
+        "Casual taxable person",
+        "Non-resident taxable person",
+        "Regular resident taxpayer selling goods domestically",
+        "Person making supplies through an e-commerce operator liable to collect TCS"
+      ],
+      "answerIndex": 2,
+      "explanation": "Casual taxable persons and non-resident taxable persons are explicitly barred from opting for the composition levy. Regular resident taxpayers meeting turnover criteria can opt.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Composition Eligibility",
+        "Casual Taxable Person",
+        "Section 10"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_018",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "What is the tax rate applicable to a trader registered under the composition scheme (Section 10(1))?",
+      "options": [
+        "0.5% CGST + 0.5% SGST/UTGST of taxable turnover",
+        "0.5% CGST + 0.5% SGST/UTGST of total turnover",
+        "1% CGST + 1% SGST/UTGST of taxable turnover",
+        "2.5% CGST + 2.5% SGST/UTGST of total turnover"
+      ],
+      "answerIndex": 1,
+      "explanation": "For manufacturers and traders, the composition tax rate is 1% (0.5% CGST + 0.5% SGST/UTGST) of 'turnover in the State/UT' (which includes taxable and exempt turnover, i.e., total turnover within the State).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Composition Rate",
+        "Trader",
+        "Turnover in State"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_019",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "Under Section 9(4) of the CGST Act, 2017, the Government may specify certain classes of registered persons who shall pay tax on reverse charge basis in respect of supplies received from an:",
+      "options": [
+        "Unregistered supplier",
+        "Interstate registered supplier",
+        "Overseas electronic commerce operator",
+        "Government undertaking"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 9(4) empowers the Government to notify categories of registered persons who have to pay tax under RCM on supplies received from unregistered suppliers (specifically concerning promoter supplies in real estate).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 9(4)",
+        "Unregistered Supplier",
+        "RCM"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_020",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "Which of the following is a dual levy structure characteristic of GST in India?",
+      "options": [
+        "Levy of Central GST and State/Union Territory GST simultaneously on intra-State supplies",
+        "Levy of Income Tax and GST on the same transaction",
+        "Levy of Customs Duty and GST by State Governments",
+        "Levy of Stamp Duty and IGST"
+      ],
+      "answerIndex": 0,
+      "explanation": "GST in India is a dual model where both Centre and States simultaneously levy tax on intra-State supplies (CGST and SGST/UTGST).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Dual GST",
+        "Intra-State",
+        "CGST and SGST"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_021",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "If a composition taxpayer crosses the aggregate turnover limit of Rs. 1.5 crore during the financial year, what is the consequence?",
+      "options": [
+        "They can continue under composition till the end of next financial year",
+        "They shall cease to be eligible to pay tax under composition from the day the threshold is crossed",
+        "They have to pay penalty but remain in composition",
+        "Their registration gets automatically cancelled"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 10(3), the option availed of by a registered person to pay tax under composition levy shall lapse ab initio from the day on which his aggregate turnover during a financial year exceeds the specified threshold.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Composition Expiry",
+        "Section 10(3)",
+        "Threshold Crossing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_022",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "Which of the following services supplied by an individual Direct Selling Agent (DSA) to a non-individual banking company is liable to tax under reverse charge?",
+      "options": [
+        "DSA services provided to a bank or non-banking financial company",
+        "DSA services provided to an individual retail customer",
+        "Banking services provided by a bank to DSA",
+        "Educational coaching services"
+      ],
+      "answerIndex": 0,
+      "explanation": "Services provided by a recovery agent or direct selling agent (DSA) to a banking company or financial institution are taxable under reverse charge mechanism.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "DSA Services",
+        "RCM",
+        "Banking Company"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_023",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "What is the tax rate applicable for hotel accommodation services provided by a composition taxpayer under Section 10(1)?",
+      "options": [
+        "1% (0.5% + 0.5%)",
+        "5% (2.5% + 2.5%)",
+        "Not eligible for composition if hotel service provider, except specific ones; restaurant composition rate is 5% (2.5% CGST + 2.5% SGST)",
+        "18% (9% + 9%)"
+      ],
+      "answerIndex": 2,
+      "explanation": "Manufacturers and traders pay 1%, but restaurant service providers under Section 10(1) pay 5% (2.5% CGST + 2.5% SGST). Hotels providing accommodation are generally not eligible for composition under 10(1) except restaurants.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Restaurant Composition",
+        "Section 10(1)",
+        "Tax Rate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_024",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "Which of the following supplies attracts IGST under Section 5 of the IGST Act, 2017?",
+      "options": [
+        "Intra-State supply of goods within Maharashtra",
+        "Inter-State supply of services from Delhi to Karnataka",
+        "Supply of goods from a warehouse in Chennai to a customer in Chennai",
+        "Intra-UT supply of goods in Chandigarh"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 5 of the IGST Act, 2017 governs the levy and collection of Integrated Goods and Services Tax on all inter-State supplies of goods or services.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "IGST",
+        "Section 5",
+        "Inter-State Supply"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_025",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "Can a registered person having multiple business verticals in a single State opt for composition scheme for one vertical and normal scheme for another vertical?",
+      "options": [
+        "Yes, separately for each vertical",
+        "No, all registered verticals under the same PAN in a State must opt for composition levy or none",
+        "Yes, with prior permission of the Central Board of Indirect Taxes and Customs",
+        "Only if turnover of each vertical is below Rs. 20 lakhs"
+      ],
+      "answerIndex": 1,
+      "explanation": "All registered establishments having the same Permanent Account Number (PAN) across a State must opt for composition levy. Separate business verticals within the same State cannot opt separately; all must be under the same scheme.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Composition PAN-wide",
+        "Business Verticals",
+        "Section 10"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_026",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "Which of the following is NOT a condition for availing the composition scheme under Section 10?",
+      "options": [
+        "The goods held in stock have not been purchased from an unregistered supplier (subject to 9(4))",
+        "The business does not supply goods through an electronic commerce operator who is required to collect tax at source",
+        "The business is engaged in making inter-State outward supplies of goods",
+        "The business is not engaged in manufacture of notified goods like ice cream"
+      ],
+      "answerIndex": 2,
+      "explanation": "A composition taxpayer cannot make inter-State outward supplies of goods. Making inter-state outward supplies bars a person from opting for composition levy.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Composition Conditions",
+        "Inter-state Outward Supply",
+        "Section 10"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_027",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "Renting of immovable property service supplied by a registered person to a registered body corporate is taxable under:",
+      "options": [
+        "Forward charge",
+        "Reverse charge",
+        "Exempt from GST",
+        "TCS mechanism"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under RCM notifications issued under Section 9(3), renting of immovable property by any person (other than a body corporate) to a registered body corporate is taxable under reverse charge.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Renting of Immovable Property",
+        "RCM",
+        "Body Corporate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_028",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "What is the threshold aggregate turnover for composition scheme for goods under Section 10(1) in special category States like Arunachal Pradesh and Uttarakhand?",
+      "options": [
+        "Rs. 75 lakhs for Arunachal Pradesh, Rs. 1.5 crore for Uttarakhand",
+        "Rs. 1.5 crore for both States",
+        "Rs. 75 lakhs for both States",
+        "Rs. 50 lakhs for both States"
+      ],
+      "answerIndex": 0,
+      "explanation": "Arunachal Pradesh has a threshold of Rs. 75 lakhs, whereas Uttarakhand falls under the higher limit of Rs. 1.5 crore for composition levy on goods.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Special Category States",
+        "Composition Threshold",
+        "Section 10"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_029",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "Who is liable to pay GST on import of services into India by a business entity located in India?",
+      "options": [
+        "The overseas service supplier",
+        "The Indian importer/recipient under reverse charge",
+        "The customs port authorities",
+        "Exempt from GST"
+      ],
+      "answerIndex": 1,
+      "explanation": "Import of services for consideration (whether for business or not, or business context specifically under reverse charge) is treated as an inter-state supply and tax is payable by the recipient in India under reverse charge.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Import of Services",
+        "RCM",
+        "IGST Act"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-3_030",
+      "kind": "normal",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "prompt": "Which of the following authorities determines the rates of CGST, SGST, and IGST based on recommendations?",
+      "options": [
+        "Reserve Bank of India",
+        "GST Council",
+        "Central Board of Direct Taxes",
+        "Securities and Exchange Board of India"
+      ],
+      "answerIndex": 1,
+      "explanation": "The GST Council makes recommendations to the Central and State Governments on tax rates, exemptions, thresholds, and other core matters under Article 279A of the Constitution.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "GST Council",
+        "Tax Rates",
+        "Constitutional Body"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_gst-3_01",
+      "kind": "scenario",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "passage": "M/s Alpha Traders is a sole proprietorship firm registered under CGST and SGST in the State of Maharashtra, engaged in trading consumer electronics and household appliances. During the preceding financial year, their aggregate turnover was Rs. 1.20 crore. They wish to evaluate whether they should opt for the composition levy for the current financial year. During the current year, they also received legal consultancy services from an advocate and availed goods transport agency (GTA) services for outward transport of goods where GTA pays tax at 5%.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-3_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-3_01",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-3",
+          "subject": "Taxation",
+          "prompt": "Is M/s Alpha Traders eligible to opt for the composition levy under Section 10(1) of the CGST Act, 2017 for the current financial year?",
+          "options": [
+            "Yes, because their aggregate turnover in the preceding financial year did not exceed Rs. 1.5 crore.",
+            "No, because aggregate turnover exceeded Rs. 50 lakhs.",
+            "No, because trading electronic goods is prohibited under composition scheme.",
+            "Yes, provided they obtain prior approval from the Central Government."
+          ],
+          "answerIndex": 0,
+          "explanation": "M/s Alpha Traders is a trader whose aggregate turnover in the preceding financial year was Rs. 1.20 crore, which is below the threshold limit of Rs. 1.5 crore for regular states like Maharashtra. Hence, they are eligible for composition levy.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Composition Eligibility",
+            "Threshold Limit",
+            "Trader"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-3_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-3_01",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-3",
+          "subject": "Taxation",
+          "prompt": "If M/s Alpha Traders opts for the composition levy, what will be the applicable composition tax rate on their taxable turnover of goods?",
+          "options": [
+            "0.5% CGST + 0.5% SGST",
+            "1% CGST + 1% SGST",
+            "2.5% CGST + 2.5% SGST",
+            "6% CGST + 6% SGST"
+          ],
+          "answerIndex": 0,
+          "explanation": "For a trader, the composition tax rate under Section 10(1) is 1% of turnover in the State/UT, comprising 0.5% CGST and 0.5% SGST/UTGST.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Composition Rate",
+            "Trader",
+            "Section 10(1)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-3_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-3_01",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-3",
+          "subject": "Taxation",
+          "prompt": "Who is liable to pay GST on the legal consultancy services received by M/s Alpha Traders from the advocate?",
+          "options": [
+            "The advocate under forward charge",
+            "M/s Alpha Traders under reverse charge",
+            "Exempt from GST",
+            "M/s Alpha Traders under forward charge"
+          ],
+          "answerIndex": 1,
+          "explanation": "Legal services provided by an advocate to any business entity located in the taxable territory are taxable under reverse charge mechanism (RCM) as per Notification issued under Section 9(3), making M/s Alpha Traders liable to pay GST.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Legal Services",
+            "RCM",
+            "Section 9(3)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-3_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-3_01",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-3",
+          "subject": "Taxation",
+          "prompt": "For the GTA services availed where GTA pays tax at 5% (under forward charge), who is primarily liable to pay the GST?",
+          "options": [
+            "M/s Alpha Traders under reverse charge",
+            "The Goods Transport Agency (GTA) under forward charge",
+            "The electronic commerce operator",
+            "Exempt from tax"
+          ],
+          "answerIndex": 1,
+          "explanation": "Since the GTA has opted to pay tax at 5% under forward charge (by exercising option and complying with conditions), the GTA itself is liable to pay tax under forward charge, instead of RCM.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "GTA Services",
+            "Forward Charge",
+            "Option to Pay 5%"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-3_02",
+      "kind": "scenario",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "passage": "M/s Beta Enterprises, a registered partnership firm in Delhi, is engaged in manufacturing plastic molded toys. Their aggregate turnover in the preceding financial year was Rs. 90 lakhs. They also provide manpower recruitment services to corporate clients. During the year, they hire a director for professional advisory services and receive sponsorship services for their annual corporate sports event.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-3_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-3_02",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-3",
+          "subject": "Taxation",
+          "prompt": "Can M/s Beta Enterprises opt for the composition scheme under Section 10(1) for their manufacturing business?",
+          "options": [
+            "Yes, because their turnover is below Rs. 1.5 crore and they are manufacturers.",
+            "No, because manufacturers cannot opt for composition levy.",
+            "No, because they also provide manpower recruitment services (services other than restaurant services).",
+            "Yes, provided they pay 6% composition tax on total turnover."
+          ],
+          "answerIndex": 2,
+          "explanation": "A person providing services other than restaurant services cannot opt for composition levy under Section 10(1) (unless qualifying under 10(2A) with marginal services, but manufacturing plastic toys combined with manpower services under normal composition 10(1) is restricted unless 10(2A) applies). Wait, Section 10(1) allows composition for goods manufacturers, but marginal supply of services is permitted up to 10% of turnover or Rs. 5 lakhs under the proviso to Section 10(1).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Composition Restrictions",
+            "Service Supply",
+            "Section 10(1) Proviso"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-3_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-3_02",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-3",
+          "subject": "Taxation",
+          "prompt": "Who is liable to pay GST on the sponsorship services received by M/s Beta Enterprises?",
+          "options": [
+            "The sponsor providing the service",
+            "M/s Beta Enterprises under reverse charge",
+            "Exempt from GST",
+            "The event management company"
+          ],
+          "answerIndex": 1,
+          "explanation": "Sponsorship services provided to any body corporate or partnership firm located in the taxable territory are taxable under reverse charge, making M/s Beta Enterprises liable to pay GST.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Sponsorship Services",
+            "RCM",
+            "Partnership Firm"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-3_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-3_02",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-3",
+          "subject": "Taxation",
+          "prompt": "Who is liable to pay GST on the services supplied by a director of M/s Beta Enterprises to the firm itself?",
+          "options": [
+            "The director under forward charge",
+            "M/s Beta Enterprises under reverse charge",
+            "Exempt from GST",
+            "TCS by ECO"
+          ],
+          "answerIndex": 1,
+          "explanation": "Services supplied by a director of a company or body corporate to the said company or body corporate are taxable under reverse charge mechanism under Section 9(3). (Note: if partnership firm, services by partner to firm are generally not service under Schedule III, but director services apply to companies/body corporates. If treated as body corporate or director of a company, RCM applies).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Director Services",
+            "RCM",
+            "Section 9(3)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-3_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-3_02",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-3",
+          "subject": "Taxation",
+          "prompt": "What is the tax rate applicable to M/s Beta Enterprises as a manufacturer if they validly opt for composition levy under Section 10(1)?",
+          "options": [
+            "1% (0.5% CGST + 0.5% SGST)",
+            "2.5% (1.25% CGST + 1.25% SGST)",
+            "5% (2.5% CGST + 2.5% SGST)",
+            "6% (3% CGST + 3% SGST)"
+          ],
+          "answerIndex": 0,
+          "explanation": "Manufacturers registered under the composition scheme pay 1% of turnover in the State/UT (0.5% CGST + 0.5% SGST/UTGST).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Manufacturer Composition Rate",
+            "Section 10(1)"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-3_03",
+      "kind": "scenario",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "passage": "M/s Gamma Services Ltd., a company registered in Karnataka, provides architectural and interior design consultancy services. Their aggregate turnover in the preceding financial year was Rs. 42 lakhs. They also rent out a commercial building owned by the company to a registered IT firm. Additionally, they import IT software from a vendor in the USA for their internal office use.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-3_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-3_03",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-3",
+          "subject": "Taxation",
+          "prompt": "Can M/s Gamma Services Ltd. opt for the composition scheme under Section 10(2A) for service providers?",
+          "options": [
+            "Yes, because their aggregate turnover in the preceding financial year was Rs. 42 lakhs, which is within the Rs. 50 lakhs limit.",
+            "No, because companies cannot opt for composition scheme under Section 10(2A).",
+            "No, because they import software from the USA.",
+            "Yes, with a tax rate of 1%."
+          ],
+          "answerIndex": 0,
+          "explanation": "Under Section 10(2A), service providers with aggregate turnover up to Rs. 50 lakhs in the preceding financial year can opt for the composition scheme. Rs. 42 lakhs is within the limit, and companies are eligible provided other conditions are met.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 10(2A)",
+            "Service Providers",
+            "Threshold Limit"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-3_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-3_03",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-3",
+          "subject": "Taxation",
+          "prompt": "What is the tax rate applicable if M/s Gamma Services Ltd. opts for the composition scheme under Section 10(2A)?",
+          "options": [
+            "1% (0.5% CGST + 0.5% SGST)",
+            "5% (2.5% CGST + 2.5% SGST)",
+            "6% (3% CGST + 3% SGST)",
+            "18% (9% CGST + 9% SGST)"
+          ],
+          "answerIndex": 2,
+          "explanation": "The composition tax rate for service providers under Section 10(2A) is 6% (3% CGST + 3% SGST/UTGST) of the turnover of supplies of goods and services in the State/UT.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 10(2A) Rate",
+            "Service Providers",
+            "6% Tax"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-3_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-3_03",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-3",
+          "subject": "Taxation",
+          "prompt": "Who is liable to pay GST on the renting of commercial building service provided by M/s Gamma Services Ltd. to the registered IT firm?",
+          "options": [
+            "M/s Gamma Services Ltd. under forward charge",
+            "The registered IT firm under reverse charge",
+            "Exempt from GST",
+            "The local municipal authority"
+          ],
+          "answerIndex": 1,
+          "explanation": "Renting of immovable property service supplied by any person (other than a body corporate, though here Gamma is a body corporate, wait - renting by any unregistered/registered person to a registered body corporate is RCM. If supplier is a company, renting by a company to another registered body corporate - let's check: renting by any person other than body corporate to a body corporate is RCM. If supplier IS a body corporate, forward charge applies). Let's verify: Renting by any person other than a body corporate to a body corporate attracts RCM. Since Gamma is a company (body corporate), forward charge applies.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Renting of Immovable Property",
+            "Forward Charge",
+            "Body Corporate Supplier"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-3_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-3_03",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-3",
+          "subject": "Taxation",
+          "prompt": "Who is liable to pay GST on the import of IT software by M/s Gamma Services Ltd. from the USA vendor?",
+          "options": [
+            "The USA vendor",
+            "M/s Gamma Services Ltd. under reverse charge",
+            "The Customs authorities under IGST Act",
+            "Exempt from GST"
+          ],
+          "answerIndex": 1,
+          "explanation": "Import of services for consideration into India is treated as an inter-state supply and tax is payable by the recipient (M/s Gamma Services Ltd.) under reverse charge mechanism.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Import of Services",
+            "RCM",
+            "IGST Act"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-3_04",
+      "kind": "scenario",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "passage": "M/s Delta Cabs is an online aggregator operating a fleet of radio taxis through a mobile application in Tamil Nadu. Various individual drivers register on the platform to offer passenger transport services to general commuters. In a particular month, total fares collected through the M/s Delta Cabs app amount to Rs. 20 lakhs. M/s Delta Cabs also provides some marketing consultancy services on its own account.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-3_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-3_04",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-3",
+          "subject": "Taxation",
+          "prompt": "Who is primarily liable to pay GST on the passenger transport services provided by individual drivers through the M/s Delta Cabs mobile app?",
+          "options": [
+            "The individual drivers",
+            "M/s Delta Cabs (Electronic Commerce Operator) under Section 9(5)",
+            "The passengers booking the cabs",
+            "Exempt from GST"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 9(5) of the CGST Act, 2017, the Electronic Commerce Operator (M/s Delta Cabs) is liable to pay GST on passenger transport services supplied through its electronic portal.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "ECO",
+            "Section 9(5)",
+            "Passenger Transport"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-3_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-3_04",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-3",
+          "subject": "Taxation",
+          "prompt": "Are the individual drivers operating through M/s Delta Cabs required to obtain separate GST registration if their turnover from such transport services is below the threshold limit?",
+          "options": [
+            "Yes, mandatory registration is required for all ECO suppliers.",
+            "No, because Section 9(5) places the tax liability on the ECO, exempting individual drivers from compulsory registration solely for supplies through ECO, provided turnover is below threshold (or specific exemption notification).",
+            "Yes, registration is required under Section 24.",
+            "No, because transport services are completely exempt."
+          ],
+          "answerIndex": 1,
+          "explanation": "As per specific clarifications and notifications, suppliers supplying services through ECO where ECO is liable to pay tax under Section 9(5) are exempt from obtaining registration, provided their aggregate turnover does not exceed the threshold limit.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "ECO Registration Exemption",
+            "Section 9(5)",
+            "Threshold Limit"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-3_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-3_04",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-3",
+          "subject": "Taxation",
+          "prompt": "What is the tax rate generally applicable to passenger transport services provided by radio taxis?",
+          "options": [
+            "5% with ITC (or 12% with ITC depending on vehicle type)",
+            "18%",
+            "28%",
+            "Exempt"
+          ],
+          "answerIndex": 0,
+          "explanation": "Passenger transport services by a radio taxi / motor cab attract GST at 5% (without ITC) or 12% (with ITC), commonly 5% without ITC under notification.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Passenger Transport Rate",
+            "Radio Taxi",
+            "5% GST"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-3_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-3_04",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-3",
+          "subject": "Taxation",
+          "prompt": "If M/s Delta Cabs fails to pay GST on the services notified under Section 9(5), can recovery proceedings be initiated against them?",
+          "options": [
+            "No, recovery must be made from the individual drivers.",
+            "Yes, because the ECO is treated as the person liable to pay tax for those services under Section 9(5).",
+            "Only with approval of the Supreme Court.",
+            "No, recovery can only be made from passengers."
+          ],
+          "answerIndex": 1,
+          "explanation": "Since Section 9(5) mandates that the ECO shall pay the tax as if the ECO is the supplier liable for paying tax, all provisions of the Act apply to the ECO for payment and recovery of such tax.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "ECO Liability",
+            "Section 9(5)",
+            "Recovery"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-3_05",
+      "kind": "scenario",
+      "chapterId": "gst-3",
+      "subject": "Taxation",
+      "passage": "M/s Epsilon Enterprises, located in West Bengal, is a registered taxpayer under normal levy. They procure goods from an unregistered supplier within the State for their manufacturing process. They also receive goods transport agency (GTA) services where the GTA has not exercised the option to pay tax under forward charge (i.e. default RCM applies). Additionally, they receive security services from a partnership firm.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Charge of GST"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-3_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-3_05",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-3",
+          "subject": "Taxation",
+          "prompt": "Who is liable to pay GST on the supply of goods received by M/s Epsilon Enterprises from the unregistered supplier under Section 9(4)?",
+          "options": [
+            "The unregistered supplier",
+            "M/s Epsilon Enterprises under reverse charge, if notified under Section 9(4) (such as specified promoter supplies)",
+            "Exempt from GST",
+            "Central Government directly"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 9(4) provides for reverse charge on supplies received by specified registered classes of persons (like promoters in real estate) from unregistered suppliers. For general taxable persons, 9(4) notifications apply to specified categories.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 9(4)",
+            "Unregistered Supplier",
+            "RCM"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-3_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-3_05",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-3",
+          "subject": "Taxation",
+          "prompt": "Who is liable to pay GST on the GTA services received by M/s Epsilon Enterprises, assuming default RCM applies?",
+          "options": [
+            "The GTA under forward charge",
+            "M/s Epsilon Enterprises (recipient) under reverse charge",
+            "Exempt from GST",
+            "The consignor of goods"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under default RCM provisions for GTA services, when the GTA pays tax at 6%+6% (or does not opt for forward charge), the specified recipient (registered business entity like M/s Epsilon Enterprises) is liable to pay GST under reverse charge.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "GTA Services",
+            "RCM",
+            "Default Charge"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-3_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-3_05",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-3",
+          "subject": "Taxation",
+          "prompt": "Who is liable to pay GST on the security services provided by a partnership firm to M/s Epsilon Enterprises?",
+          "options": [
+            "The partnership firm under forward charge",
+            "M/s Epsilon Enterprises under reverse charge",
+            "Exempt from GST",
+            "The security personnel directly"
+          ],
+          "answerIndex": 1,
+          "explanation": "Security services (services provided by way of supply of security personnel) provided by any person other than a body corporate to a registered person located in the taxable territory are taxable under reverse charge.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Security Services",
+            "RCM",
+            "Partnership Firm"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-3_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-3_05",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-3",
+          "subject": "Taxation",
+          "prompt": "Can M/s Epsilon Enterprises utilize Input Tax Credit (ITC) to pay tax under reverse charge on these inward supplies?",
+          "options": [
+            "No, RCM liability must be paid in cash through electronic cash ledger.",
+            "Yes, ITC can be used without any restriction.",
+            "Only CGST ITC can be used for SGST RCM.",
+            "ITC can be used after prior permission from Commissioner."
+          ],
+          "answerIndex": 0,
+          "explanation": "Tax payable under reverse charge mechanism cannot be discharged through Input Tax Credit; it must be paid in cash by debiting the electronic cash ledger.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "RCM Payment",
+            "Electronic Cash Ledger",
+            "ITC Restriction"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

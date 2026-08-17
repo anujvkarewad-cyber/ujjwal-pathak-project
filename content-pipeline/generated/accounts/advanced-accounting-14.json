@@ -1,0 +1,1426 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "advanced-accounting-14",
+  "subject": "Accounts",
+  "paper": "Paper 1: Advanced Accounting",
+  "module": "Module 3",
+  "chapterNumber": 14,
+  "chapterTitle": "Internal Reconstruction",
+  "generatedAt": "2026-08-16T14:07:31.245Z",
+  "model": "gemini-3.6-flash",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_advanced-accounting-14_001",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "Which of the following internal reconstruction schemes under the Companies Act, 2013 does NOT require confirmation or sanction from the National Company Law Tribunal (NCLT)?",
+      "options": [
+        "Reduction of paid-up share capital under Section 66",
+        "Sub-division of fully paid equity shares into shares of smaller face value under Section 61",
+        "Extinguishing the liability on unpaid share capital under Section 66",
+        "Paying off any paid-up share capital which is in excess of the wants of the company under Section 66"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 61 of the Companies Act, 2013, alteration of share capital such as sub-division or consolidation of shares requires only an ordinary resolution in the general meeting if authorized by articles. Confirmation from the NCLT is compulsory for reduction of share capital governed under Section 66. Hence, sub-division does not require NCLT sanction.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 61",
+        "Section 66",
+        "NCLT Approval",
+        "Alteration of Capital"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_002",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "Under Section 66 of the Companies Act, 2013, a company can reduce its share capital only after obtaining approval from which authority?",
+      "options": [
+        "Reserve Bank of India (RBI)",
+        "Ministry of Corporate Affairs (MCA)",
+        "National Company Law Tribunal (NCLT)",
+        "Securities and Exchange Board of India (SEBI)"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 66 of the Companies Act, 2013 mandates that a company may reduce its share capital by passing a special resolution subject to confirmation by the NCLT. The NCLT satisfies itself that interests of creditors and stakeholders are protected before issuing an order confirming the reduction. Other regulatory bodies do not issue the formal confirmation order under Section 66.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 66",
+        "NCLT",
+        "Capital Reduction",
+        "Legal Framework"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_003",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "What is the underlying financial nature of the Reconstruction Account or Capital Reduction Account prepared during an internal reconstruction scheme?",
+      "options": [
+        "Real Account",
+        "Personal Account",
+        "Nominal Account",
+        "Representative Personal Account"
+      ],
+      "answerIndex": 2,
+      "explanation": "The Capital Reduction Account or Reconstruction Account is a temporary Nominal Account created to accumulate sacrifices made by shareholders, creditors, and debenture holders. All gains and sacrifices are credited to this account, while losses written off and asset reductions are debited to it. Once the reconstruction scheme is fully executed, the balance in this account is closed by transferring it to Capital Reserve.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Capital Reduction Account",
+        "Account Nature",
+        "Accounting Entries"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_004",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "When a company sub-divides its 10,000 equity shares of Rs. 100 each into 1,00,000 equity shares of Rs. 10 each, what is the net accounting entry required in the main ledger?",
+      "options": [
+        "Debit Equity Share Capital A/c (Rs. 100) and Credit Equity Share Capital A/c (Rs. 10) for Rs. 10,00,000",
+        "Debit Capital Reduction A/c and Credit Equity Share Capital A/c for Rs. 10,00,000",
+        "Debit Equity Share Capital A/c and Credit Capital Reduction A/c for Rs. 9,00,000",
+        "No entry is required in the general ledger as total capital remains unchanged"
+      ],
+      "answerIndex": 0,
+      "explanation": "Sub-division of shares under Section 61 changes the denomination and total number of shares, but total paid-up share capital remains unchanged at Rs. 10,00,000. An entry is passed debiting the old Equity Share Capital Account (Rs. 100 face value) and crediting the new Equity Share Capital Account (Rs. 10 face value) for Rs. 10,00,000. This maintains correct capital representation in the ledger.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Sub-division",
+        "Section 61",
+        "Share Capital Entry"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_005",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "After meeting all specified write-offs of accumulated losses and asset overvaluations, any surplus remaining in the Capital Reduction Account is transferred to which head?",
+      "options": [
+        "General Reserve Account",
+        "Capital Reserve Account",
+        "Securities Premium Account",
+        "Profit & Loss Account"
+      ],
+      "answerIndex": 1,
+      "explanation": "Any credit balance remaining in the Capital Reduction Account after absorbing all accumulated P&L losses, fictitious assets, and overvalued fixed assets represents a capital profit. In accordance with standard accounting procedures for internal reconstruction, this credit balance is transferred to the Capital Reserve Account. It cannot be distributed as dividend or credited to General Reserve.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Capital Reserve",
+        "Capital Reduction Account",
+        "Final Transfer"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_006",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "As per Schedule III to the Companies Act, 2013, under which head should the Capital Reserve created through internal reconstruction be presented in the Balance Sheet?",
+      "options": [
+        "Share Capital",
+        "Reserves and Surplus under Other Equity",
+        "Long-term Provisions",
+        "Other Current Liabilities"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Schedule III of the Companies Act, 2013, Capital Reserve is categorized under 'Reserves and Surplus', which forms part of 'Other Equity' in the Statement of Assets and Liabilities. It represents non-distributable capital profits generated through internal financial reorganisation. Thus, it is presented under Other Equity.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Schedule III",
+        "Capital Reserve",
+        "Financial Statements"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_007",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "What journal entry is passed in the financial books of account when a company cancels its unissued share capital under Section 61 of the Companies Act, 2013?",
+      "options": [
+        "Debit Unissued Share Capital A/c and Credit Capital Reduction A/c",
+        "Debit Share Capital A/c and Credit Capital Reduction A/c",
+        "Debit Capital Reduction A/c and Credit Unissued Share Capital A/c",
+        "No journal entry is required in the financial books"
+      ],
+      "answerIndex": 3,
+      "explanation": "Unissued share capital is not part of the paid-up or issued share capital brought into financial books of account. Section 61(1)(e) permits cancellation of unissued capital, which merely reduces authorized capital. Since authorized capital is shown by way of a note and not as a ledger balance, no formal financial journal entry is recorded.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Unissued Capital",
+        "Section 61",
+        "Accounting Entries"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_008",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "How should the payment of professional expenses directly incurred for executing an internal reconstruction scheme be treated in the books?",
+      "options": [
+        "Debited to Profit & Loss Account",
+        "Debited to Capital Reduction Account",
+        "Debited to Miscellaneous Expenditure Account",
+        "Debited to General Reserve Account"
+      ],
+      "answerIndex": 1,
+      "explanation": "Expenses incurred in carrying out an internal reconstruction scheme (such as court fees, legal charges, and professional fees) are part of the reconstruction process itself. They are debited directly to the Capital Reduction / Reconstruction Account and credited to Bank Account. This ensures all costs associated with capital reduction are absorbed by the capital reduction scheme balance.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Reconstruction Expenses",
+        "Capital Reduction Account",
+        "Journal Entry"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_009",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "What resolution is required to be passed by a company in its General Meeting to convert fully paid equity shares into stock under Section 61?",
+      "options": [
+        "Special Resolution",
+        "Ordinary Resolution",
+        "Board Resolution only",
+        "Unanimous Consent of Creditors"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 61(1)(c) of the Companies Act, 2013, conversion of all or any fully paid-up shares into stock (and reconversion of stock into fully paid-up shares) requires an Ordinary Resolution passed in a general meeting, provided such alteration is authorized by the Articles of Association. A Special Resolution is required for capital reduction under Section 66, not Section 61.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Conversion into Stock",
+        "Section 61",
+        "Company Law"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_010",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "Under which financial accounting standard framework is the internal reconstruction balance sheet prepared after capital reduction?",
+      "options": [
+        "AS 14 / Ind AS 103 on Business Combinations",
+        "Schedule III to the Companies Act, 2013 along with applicable Accounting Standards",
+        "AS 24 on Discontinuing Operations",
+        "AS 13 on Accounting for Investments"
+      ],
+      "answerIndex": 1,
+      "explanation": "Internal reconstruction does not involve an acquisition or amalgamation of legal entities, so AS 14 / Ind AS 103 does not govern its financial statement presentation. The balance sheet post-reconstruction is prepared in accordance with Schedule III to the Companies Act, 2013 and applicable Accounting Standards. If instructed by the NCLT order, the words 'And Reduced' are appended to the company name for a specified period.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Balance Sheet Presentation",
+        "Schedule III",
+        "Accounting Framework"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_011",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "If preference shareholders agree to waive Rs. 1,20,000 of preference dividend arrears that were never recognized in the financial statements, what is the journal entry?",
+      "options": [
+        "Debit Capital Reduction A/c Rs. 1,20,000 and Credit Cash A/c Rs. 1,20,000",
+        "Debit Preference Dividend Arrears A/c Rs. 1,20,000 and Credit Capital Reduction A/c Rs. 1,20,000",
+        "Debit Capital Reduction A/c Rs. 1,20,000 and Credit Preference Share Capital A/c Rs. 1,20,000",
+        "No journal entry is required in the books of account"
+      ],
+      "answerIndex": 3,
+      "explanation": "Unrecorded arrears of cumulative preference dividend are contingent liabilities not shown as actual liabilities in the balance sheet. When preference shareholders agree to forego/waive such unrecorded arrears, no claim or liability is extinguished from the books. Therefore, no formal journal entry is passed for the waived portion.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Dividend Arrears",
+        "Unrecorded Liability",
+        "Waiver Entry"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_012",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "A company pays 30% of unrecorded preference dividend arrears of Rs. 2,00,000 in cash as part of an NCLT approved scheme. What is the journal entry impact on Capital Reduction Account?",
+      "options": [
+        "Debited by Rs. 60,000",
+        "Credited by Rs. 1,40,000",
+        "Debited by Rs. 2,00,000",
+        "Credited by Rs. 60,000"
+      ],
+      "answerIndex": 0,
+      "explanation": "Since the dividend arrears were unrecorded, any actual cash outlay to settle a portion of these arrears creates a financial obligation not previously debited to accounts. The cash payment of 30% on Rs. 2,00,000 equals Rs. 60,000, which is debited to the Capital Reduction Account and credited to Bank Account. The remaining waived 70% requires no accounting entry.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Dividend Settlement",
+        "Capital Reduction Account",
+        "Cash Payment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_013",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "Unsecured creditors of Rs. 8,00,000 agree to accept 75% of their claims in Equity Shares of Rs. 10 each at par and waive the rest. What amount is credited to Capital Reduction Account?",
+      "options": [
+        "Rs. 6,00,000",
+        "Rs. 2,00,000",
+        "Rs. 8,00,000",
+        "Nil"
+      ],
+      "answerIndex": 1,
+      "explanation": "Total unsecured creditors liability eliminated is Rs. 8,00,000. In exchange, equity share capital of Rs. 6,00,000 (75% of Rs. 8,00,000) is issued. The sacrifice made by creditors is 25% of Rs. 8,00,000 = Rs. 2,00,000, which represents a gain to the company and is credited to the Capital Reduction Account.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Creditors Compromise",
+        "Capital Reduction Account",
+        "Sacrifice Calculation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_014",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "A company has 20,000 Equity Shares of Rs. 100 each, Rs. 70 paid up. It reduces the paid-up value to Rs. 40 per share fully paid up. What amount is credited to Capital Reduction A/c?",
+      "options": [
+        "Rs. 12,00,000",
+        "Rs. 6,00,000",
+        "Rs. 8,00,000",
+        "Rs. 14,00,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "The existing paid-up capital per share is Rs. 70. The new paid-up capital per share is Rs. 40 fully paid up. The reduction per share is Rs. 70 - Rs. 40 = Rs. 30 per share. Total amount credited to Capital Reduction Account = 20,000 shares × Rs. 30 = Rs. 6,00,000.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Paid-up Reduction",
+        "Capital Reduction Account",
+        "Share Reduction Entry"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_015",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "An unrecorded contingent liability of Rs. 60,000 crystallizes during reconstruction and is settled at Rs. 45,000 in cash. What is the entry in Capital Reduction Account?",
+      "options": [
+        "Debited by Rs. 45,000",
+        "Credited by Rs. 15,00,000",
+        "Debited by Rs. 60,000",
+        "Credited by Rs. 45,000"
+      ],
+      "answerIndex": 0,
+      "explanation": "When an unrecorded contingent liability crystallizes and is paid under a reconstruction scheme, the actual payment made to settle the liability (Rs. 45,000) is a loss/cost to the scheme. Hence, Capital Reduction Account is debited by Rs. 45,000 and Bank Account is credited by Rs. 45,000.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Contingent Liability",
+        "Capital Reduction Account",
+        "Settlement Entry"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_016",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "10% Debentures of Rs. 6,00,000 are replaced by 12% Debentures of Rs. 5,00,000 in full and final settlement. What amount is credited to Capital Reduction Account?",
+      "options": [
+        "Rs. 1,00,000",
+        "Rs. 5,00,000",
+        "Rs. 6,00,000",
+        "Nil"
+      ],
+      "answerIndex": 0,
+      "explanation": "Old 10% Debentures Account is debited by Rs. 6,00,000. New 12% Debentures Account is credited by Rs. 5,00,000. The gain arising from debenture holders surrendering Rs. 1,00,000 of principal claim is credited to Capital Reduction Account (Rs. 6,00,000 - Rs. 5,00,000 = Rs. 1,00,000).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Debenture Sacrifice",
+        "Capital Reduction Account",
+        "Debenture Conversion"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_017",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "When equity shareholders surrender their shares under an internal reconstruction scheme, which account is credited initially?",
+      "options": [
+        "Capital Reduction Account",
+        "Share Surrender Account",
+        "Capital Reserve Account",
+        "Profit & Loss Account"
+      ],
+      "answerIndex": 1,
+      "explanation": "When shares are surrendered by shareholders, Equity Share Capital Account is debited and 'Share Surrender Account' is credited as a temporary holding account. The surrendered shares are subsequently either re-issued to creditors/debenture holders or cancelled. Upon cancellation, the balance in Share Surrender Account is transferred to Capital Reduction Account.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Share Surrender",
+        "Temporary Account",
+        "Accounting Procedure"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_018",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "Shares surrendered by equity shareholders are reissued to trade creditors to discharge claims of Rs. 1,50,000. What entry is passed on reissue?",
+      "options": [
+        "Debit Trade Creditors A/c Rs. 1,50,000 and Credit Share Surrender A/c Rs. 1,50,000",
+        "Debit Trade Creditors A/c Rs. 1,50,000 and Credit Capital Reduction A/c Rs. 1,50,000",
+        "Debit Share Surrender A/c Rs. 1,50,000 and Credit Capital Reduction A/c Rs. 1,50,000",
+        "Debit Capital Reduction A/c Rs. 1,50,000 and Credit Equity Share Capital A/c Rs. 1,50,000"
+      ],
+      "answerIndex": 0,
+      "explanation": "When surrendered shares are reissued to discharge liability of creditors, Trade Creditors Account is debited by Rs. 1,50,000 and Share Surrender Account is credited by Rs. 1,50,000. This cancels out the creditor liability against the surrendered shares held in trust without affecting Capital Reduction Account at this intermediate stage.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Share Surrender Reissue",
+        "Creditor Settlement",
+        "Journal Entry"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_019",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "Which of the following transactions is classified under Section 61 (Alteration of Share Capital) rather than Section 66 (Reduction of Share Capital)?",
+      "options": [
+        "Extinguishing unpaid liability on existing equity shares",
+        "Consolidation of shares of smaller denomination into shares of larger denomination",
+        "Writing off lost paid-up capital not represented by available assets",
+        "Refunding excess paid-up share capital to equity shareholders"
+      ],
+      "answerIndex": 1,
+      "explanation": "Consolidation of shares into larger face value without altering total paid-up capital or voting rights proportion is an alteration of share capital governed by Section 61. In contrast, extinguishing unpaid liability, writing off lost capital, and returning excess capital involve reduction of capital governed by Section 66.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 61",
+        "Section 66",
+        "Consolidation",
+        "Legal Distinction"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_020",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "Plant and Machinery with a book value of Rs. 20,00,000 is written down to its recoverable value of Rs. 14,00,000 under a scheme. What amount is debited to Capital Reduction A/c?",
+      "options": [
+        "Rs. 20,00,000",
+        "Rs. 14,00,000",
+        "Rs. 6,00,000",
+        "Rs. 34,00,000"
+      ],
+      "answerIndex": 2,
+      "explanation": "The overvaluation/write-down required for Plant and Machinery is Rs. 20,00,000 - Rs. 14,00,000 = Rs. 6,00,000. Capital Reduction Account is debited by Rs. 6,00,000 and Plant and Machinery Account is credited by Rs. 6,00,000 to bring the asset to its true recoverable value of Rs. 14,00,000.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Asset Revaluation",
+        "Write-down",
+        "Capital Reduction Account"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_021",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "Creditors amounting to Rs. 4,00,000 agree to a 20% haircut provided the balance is paid immediately in cash. What is the credit to Capital Reduction Account?",
+      "options": [
+        "Rs. 3,20,000",
+        "Rs. 80,000",
+        "Rs. 4,00,000",
+        "Nil"
+      ],
+      "answerIndex": 1,
+      "explanation": "A haircut of 20% on Rs. 4,00,000 equals Rs. 80,000 (0.20 × 4,00,000). The creditors surrender Rs. 80,000 of their claims, which is a sacrifice and gain to the company credited to Capital Reduction Account. The balance Rs. 3,20,000 paid in cash reduces Bank Account.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Creditors Haircut",
+        "Sacrifice",
+        "Capital Reduction Account"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_022",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "While executing an internal reconstruction scheme, which of the following accounts MUST be completely written off first before transferring any surplus to Capital Reserve?",
+      "options": [
+        "General Reserve",
+        "Profit & Loss Debit Balance and Fictitious Assets",
+        "Capital Redemption Reserve",
+        "Securities Premium Account"
+      ],
+      "answerIndex": 1,
+      "explanation": "The primary goal of internal reconstruction is to clean the balance sheet by writing off accumulated losses (Profit & Loss debit balance), intangible assets (Goodwill, Patents), and fictitious assets (preliminary expenses, discount on issue of debentures). Surplus in Capital Reduction Account can only be transferred to Capital Reserve after all losses and fictitious assets are fully eliminated.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Write-off Order",
+        "Accumulated Losses",
+        "Capital Reduction Rules"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_023",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "A company reduces 40,000 equity shares of Rs. 10 each fully paid to Rs. 2 each fully paid, and then consolidates every 5 reduced shares into 1 new share of Rs. 10 each. What is the final number of equity shares?",
+      "options": [
+        "40,000 shares",
+        "8,000 shares",
+        "20,000 shares",
+        "16,000 shares"
+      ],
+      "answerIndex": 1,
+      "explanation": "First, 40,000 shares are reduced to face value of Rs. 2 each ( total paid-up capital = Rs. 80,000). Next, 5 shares of Rs. 2 each are consolidated into 1 share of Rs. 10 each. Total number of new shares = 40,000 ÷ 5 = 8,000 shares of Rs. 10 each fully paid ( total capital = 8,000 × 10 = Rs. 80,000).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Consolidation",
+        "Capital Reduction",
+        "Share Calculation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_024",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "Capital Reduction Account has a credit balance of Rs. 5,00,000. Accumulated P&L loss is Rs. 3,20,000 and Patents are overstated by Rs. 2,00,000. To what extent can Patents be written down?",
+      "options": [
+        "Rs. 2,00,000",
+        "Rs. 1,80,000",
+        "Rs. 5,00,000",
+        "Rs. 3,20,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Total credit available in Capital Reduction Account = Rs. 5,00,000. P&L debit balance of Rs. 3,20,000 must be written off completely first. Remaining balance in Capital Reduction Account = Rs. 5,00,000 - Rs. 3,20,000 = Rs. 1,80,000. Therefore, Patents can only be written down to the extent of the available balance, which is Rs. 1,80,000.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Write-off Priority",
+        "Partial Write-down",
+        "Capital Reduction Account"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_025",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "An unrecorded claim for damages of Rs. 1,00,000 is settled during reconstruction by issuing 6,000 Equity Shares of Rs. 10 each as fully paid. What amount is debited to Capital Reduction Account?",
+      "options": [
+        "Rs. 1,00,000",
+        "Rs. 60,000",
+        "Rs. 40,000",
+        "Nil"
+      ],
+      "answerIndex": 1,
+      "explanation": "The claim was unrecorded in the financial books. Settling this unrecorded liability by issuing equity shares of face value Rs. 60,000 (6,000 shares × Rs. 10) creates a new equity liability. Capital Reduction Account is debited by the fair value of consideration given (Rs. 60,000) and Equity Share Capital Account is credited by Rs. 60,000. The claim sacrifice of Rs. 40,000 requires no entry as original claim was unrecorded.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Unrecorded Claim Settlement",
+        "Capital Reduction Account",
+        "Share Issue"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_026",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "Shareholders surrender 30% of 2,00,000 equity shares of Rs. 10 each. Out of these, 40,000 surrendered shares are reissued to debenture holders and remaining are cancelled. What amount is credited to Capital Reduction Account upon cancellation?",
+      "options": [
+        "Rs. 6,00,000",
+        "Rs. 2,00,000",
+        "Rs. 4,00,000",
+        "Rs. 10,00,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Total shares surrendered = 30% of 2,00,000 = 60,000 shares of Rs. 10 each (total face value Rs. 6,00,000) credited to Share Surrender A/c. Reissued shares = 40,000 shares (face value Rs. 4,00,000). Remaining surrendered shares to be cancelled = 60,000 - 40,000 = 20,000 shares. Value of cancelled shares transferred from Share Surrender A/c to Capital Reduction A/c = 20,000 shares × Rs. 10 = Rs. 2,00,000.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Share Surrender Cancellation",
+        "Capital Reduction Account",
+        "Surrender Computation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_027",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "10% Preference Shares of Rs. 1,00,000 (face value Rs. 100) are converted into 600 12% Preference Shares of Rs. 100 each and 4,000 Equity Shares of Rs. 10 each. What is the credit to Capital Reduction Account?",
+      "options": [
+        "Rs. 40,000",
+        "Rs. 60,000",
+        "Nil",
+        "Rs. 1,00,000"
+      ],
+      "answerIndex": 2,
+      "explanation": "Old 10% Preference Share Capital debited = Rs. 1,00,000. Consideration given: New 12% Preference Share Capital = 600 × Rs. 100 = Rs. 60,000, plus Equity Share Capital = 4,00,000 (4,000 × Rs. 10) = Rs. 40,000. Total value of new securities issued = Rs. 60,000 + Rs. 40,000 = Rs. 1,00,000. Since total value issued equals total face value surrendered, there is no sacrifice or gain, so credit to Capital Reduction Account is Nil.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Preference Capital Conversion",
+        "No Sacrifice",
+        "Capital Reduction Account"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_028",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "A company has a P&L debit balance of Rs. 10,00,000 and Securities Premium Account balance of Rs. 3,00,000. Under NCLT scheme, Securities Premium is fully utilized. How much reduction from share capital is needed to eliminate the loss?",
+      "options": [
+        "Rs. 10,00,000",
+        "Rs. 7,00,000",
+        "Rs. 3,00,000",
+        "Rs. 13,00,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Securities Premium can be utilized under Section 52 read with Section 66 for capital reduction schemes approved by court/NCLT. Total accumulated loss to write off = Rs. 10,00,000. Less: Securities Premium utilized = Rs. 3,00,000. Net loss remaining to be absorbed by Capital Reduction Account (via share capital reduction) = Rs. 7,00,000.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Securities Premium Utilization",
+        "Section 52",
+        "Net Capital Reduction"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_029",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "Bank Loan of Rs. 3,00,000 is secured against Land of book value Rs. 2,50,000. Bank takes over the Land at Rs. 3,20,000 in full settlement and pays Rs. 20,00,00 cash back to the company. What is the net credit to Capital Reduction Account?",
+      "options": [
+        "Rs. 70,000",
+        "Rs. 50,000",
+        "Rs. 20,00,00",
+        "Rs. 3,20,000"
+      ],
+      "answerIndex": 0,
+      "explanation": "Land (Book value Rs. 2,50,000) was taken over at agreed value of Rs. 3,20,000. Profit on revaluation/transfer of Land = Rs. 3,20,000 - Rs. 2,50,000 = Rs. 70,00,00 credited to Capital Reduction Account. Bank Loan of Rs. 3,00,000 is settled against Rs. 3,00,000 of asset value, and Bank refunds remaining Rs. 20,000 cash to the company. The net credit to Capital Reduction Account is the profit on asset revaluation, which is Rs. 70,000.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Asset Takeover",
+        "Loan Settlement",
+        "Capital Reduction Credit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-14_030",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "prompt": "15,00,000 Equity Shares of Rs. 10 each (Rs. 8 paid up) are reduced to equity shares of Rs. 5 each fully paid up. What is the total reduction in share capital credited to Capital Reduction Account?",
+      "options": [
+        "Rs. 75,00,000",
+        "Rs. 45,00,000",
+        "Rs. 30,00,000",
+        "Rs. 1,20,00,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Existing paid-up capital = 15,00,000 shares × Rs. 8 = Rs. 1,20,00,000. New paid-up capital = 15,00,000 shares × Rs. 5 = Rs. 75,00,000. Reduction in paid-up share capital = Rs. 1,20,00,000 - Rs. 75,00,000 = Rs. 45,00,000 (which is 15,00,000 shares × Rs. 3 reduction per share). This amount is credited to Capital Reduction Account.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Partly Paid Shares",
+        "Paid-up Reduction",
+        "Capital Reduction Calculation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_advanced-accounting-14_01",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "passage": "Delta Ltd. has an existing capital structure of 50,000 Equity Shares of Rs. 100 each, Rs. 70 paid up. The balance sheet shows a Profit & Loss debit balance of Rs. 22,00,000, Plant & Machinery book value of Rs. 18,00,000, and Trade Creditors of Rs. 6,00,000.\nAn NCLT approved internal reconstruction scheme is implemented as under:\n1. A final call of Rs. 30 per share is made and fully collected in cash from shareholders.\n2. Paid-up share capital is then reduced from Rs. 100 per share to Rs. 40 per share fully paid up.\n3. Trade Creditors agree to forego 25% of their total claim. The balance claim is settled by issuing 9% Debentures for Rs. 3,00,000 and paying the remaining amount in cash.\n4. Capital Reduction Account is utilized to completely write off the Profit & Loss debit balance, and the remaining credit balance in Capital Reduction Account is used to write down Plant & Machinery.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-14_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-14_01",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-14",
+          "subject": "Accounts",
+          "prompt": "Under Delta Ltd.'s scheme, what is the net total credit generated in the Capital Reduction Account from capital reduction and creditors' sacrifice?",
+          "options": [
+            "Rs. 30,00,000",
+            "Rs. 31,50,000",
+            "Rs. 15,00,000",
+            "Rs. 36,00,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Call money creates paid-up capital of Rs. 100 per share (50,000 × Rs. 100 = Rs. 50,00,000). Reduction to Rs. 40 fully paid generates capital reduction credit = 50,000 × Rs. 60 = Rs. 30,00,000. Creditors' sacrifice = 25% of Rs. 6,00,000 = Rs. 1,50,000. Total credit generated in Capital Reduction Account = Rs. 30,00,000 + Rs. 1,50,000 = Rs. 31,50,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Capital Reduction Credit",
+            "Creditors Sacrifice",
+            "Call Money"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-14_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-14_01",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-14",
+          "subject": "Accounts",
+          "prompt": "What is the net cash balance available with Delta Ltd. after receiving call money and paying the cash portion to creditors?",
+          "options": [
+            "Rs. 15,00,000",
+            "Rs. 13,50,000",
+            "Rs. 12,00,000",
+            "Rs. 10,50,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Cash received from final call = 50,000 × Rs. 30 = Rs. 15,00,000. Creditors remaining after 25% waiver = Rs. 6,00,000 - Rs. 1,50,000 = Rs. 4,50,000. Out of Rs. 4,50,000, Rs. 3,00,000 is settled in debentures and balance Rs. 1,50,000 is paid in cash. Net cash remaining = Rs. 15,00,000 - Rs. 1,50,000 = Rs. 13,50,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Cash Balance",
+            "Creditors Settlement",
+            "Call Proceeds"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-14_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-14_01",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-14",
+          "subject": "Accounts",
+          "prompt": "What is the revised book value of Plant & Machinery in Delta Ltd.'s balance sheet after fully utilizing the remaining Capital Reduction Account?",
+          "options": [
+            "Rs. 8,50,000",
+            "Rs. 9,50,000",
+            "Rs. 18,00,000",
+            "Rs. 6,00,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Total credit in Capital Reduction Account = Rs. 31,50,000. Less P&L debit balance written off = Rs. 22,00,000. Remaining balance available in Capital Reduction Account = Rs. 31,50,000 - Rs. 22,00,000 = Rs. 9,50,000. Plant & Machinery is written down by Rs. 9,50,000. Revised book value = Rs. 18,00,000 - Rs. 9,50,000 = Rs. 8,50,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Asset Write-down",
+            "Revised Book Value",
+            "Capital Reduction Application"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-14_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-14_01",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-14",
+          "subject": "Accounts",
+          "prompt": "What is the balance transferred to Capital Reserve Account upon completing Delta Ltd.'s internal reconstruction?",
+          "options": [
+            "Rs. 1,50,000",
+            "Rs. 9,50,000",
+            "Nil (Rs. 0)",
+            "Rs. 3,00,000"
+          ],
+          "answerIndex": 2,
+          "explanation": "The entire remaining balance of Rs. 9,50,000 in Capital Reduction Account after writing off P&L loss was fully absorbed to reduce Plant & Machinery. Since no credit balance remains in the Capital Reduction Account, the amount transferred to Capital Reserve is Nil (Rs. 0).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Capital Reserve",
+            "Zero Balance",
+            "Final Transfer"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-14_02",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "passage": "Zenith Ltd. underwent internal reconstruction. Its pre-reconstruction books show:\n- 10,000 10% Cumulative Preference Shares of Rs. 100 each fully paid: Rs. 10,00,000\n- 50,000 Equity Shares of Rs. 10 each fully paid: Rs. 5,00,000\n- 12% Debentures: Rs. 4,00,000\n- Arrears of preference dividend for 2 years (unrecorded): Rs. 2,00,000\n- Land & Building (Book Value): Rs. 3,00,000\n\nScheme of Reconstruction:\n1. 10% Preference shares are reduced to Rs. 60 per share fully paid up. Preference shareholders waive 50% of dividend arrears. For the remaining 50% arrears, Equity Shares of Rs. 10 each fully paid are issued to them.\n2. Equity shares are reduced to Rs. 3 per share fully paid up.\n3. 12% Debenture holders accept Land & Building (Book value Rs. 3,00,000) at an agreed valuation of Rs. 3,50,000 in part satisfaction of Rs. 3,50,000 of their claims, and the balance debentures of Rs. 50,00,00 are paid off in cash.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-14_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-14_02",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-14",
+          "subject": "Accounts",
+          "prompt": "What is the total amount debited to Capital Reduction Account on account of issuing equity shares for preference dividend arrears settlement in Zenith Ltd.?",
+          "options": [
+            "Rs. 2,00,000",
+            "Rs. 1,00,000",
+            "Rs. 50,000",
+            "Nil"
+          ],
+          "answerIndex": 1,
+          "explanation": "Total unrecorded arrears = Rs. 2,00,000. 50% is waived (no entry). 50% (Rs. 1,00,000) is paid by issuing Equity Shares of Rs. 10 each. Since this was an unrecorded obligation, issuing equity shares of Rs. 1,00,000 requires debiting Capital Reduction Account by Rs. 1,00,000 and crediting Equity Share Capital Account by Rs. 1,00,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Preference Dividend Arrears",
+            "Equity Share Issue",
+            "Capital Reduction Debit"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-14_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-14_02",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-14",
+          "subject": "Accounts",
+          "prompt": "What is the total credit balance in Capital Reduction Account of Zenith Ltd. before writing off any losses or asset overvaluations?",
+          "options": [
+            "Rs. 7,50,000",
+            "Rs. 8,00,000",
+            "Rs. 7,00,000",
+            "Rs. 8,50,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Credits generated: Preference capital reduction = 10,000 × Rs. 40 = Rs. 4,00,000. Equity capital reduction = 50,000 × Rs. 7 = Rs. 3,50,000. Profit on transfer of Land & Building = Agreed value Rs. 3,50,000 - Book value Rs. 3,00,000 = Rs. 50,000. Total gross credit generated = Rs. 4,00,000 + Rs. 3,50,000 + Rs. 50,000 = Rs. 8,00,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Gross Capital Reduction",
+            "Revaluation Gain",
+            "Capital Reduction Credit"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-14_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-14_02",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-14",
+          "subject": "Accounts",
+          "prompt": "What is the total number of Equity Shares of Zenith Ltd. after executing all steps of the reconstruction scheme?",
+          "options": [
+            "50,000 shares",
+            "60,000 shares",
+            "10,000 shares",
+            "1,00,000 shares"
+          ],
+          "answerIndex": 1,
+          "explanation": "Existing equity shares reduced in value = 50,00,00 shares (now Rs. 3 each). New equity shares issued to preference shareholders for dividend arrears = Rs. 1,00,000 ÷ Rs. 10 per share = 10,000 shares of Rs. 10 each. Total equity shares post reconstruction = 50,000 + 10,000 = 60,000 shares.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Total Equity Shares",
+            "Share Count",
+            "Post-reconstruction"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-14_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-14_02",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-14",
+          "subject": "Accounts",
+          "prompt": "What is the net financial impact (gain/loss) credited or debited to Zenith Ltd.'s Capital Reduction Account on the takeover of Land & Building by debenture holders?",
+          "options": [
+            "Gain of Rs. 50,000 credited",
+            "Loss of Rs. 50,000 debited",
+            "No gain or loss",
+            "Gain of Rs. 3,50,000 credited"
+          ],
+          "answerIndex": 0,
+          "explanation": "Land & Building having a book value of Rs. 3,00,000 was accepted at Rs. 3,50,000 to settle Rs. 3,50,000 of debentures. Transferring an asset at Rs. 50,000 above book value generates a revaluation gain of Rs. 50,000, which is credited to the Capital Reduction Account.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Asset Takeover Gain",
+            "Debenture Settlement",
+            "Capital Reduction Credit"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-14_03",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "passage": "Apex Manufacturing Ltd. has an existing capital of 1,00,000 Equity Shares of Rs. 10 each fully paid. The financial statements show a Profit & Loss debit balance of Rs. 4,50,000, Patents of Rs. 1,50,000, and 14% Debentures of Rs. 3,00,000.\nUnder an approved scheme of internal reconstruction:\n1. Shareholders agree to surrender 80% of their equity shares.\n2. Out of the surrendered shares, 20,000 shares are reissued to 14% Debenture holders of Rs. 3,00,000 in full and final settlement of their claims.\n3. The remaining surrendered shares are cancelled.\n4. Capital Reduction Account is utilized to completely write off the Profit & Loss debit balance and Patents, and any surplus is transferred to Capital Reserve.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-14_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-14_03",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-14",
+          "subject": "Accounts",
+          "prompt": "What amount is initially credited to the Share Surrender Account of Apex Manufacturing Ltd. upon surrender of 80% shares?",
+          "options": [
+            "Rs. 10,00,000",
+            "Rs. 8,00,000",
+            "Rs. 2,00,000",
+            "Rs. 6,00,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Total equity shares = 1,00,000 of Rs. 10 each = Rs. 10,00,000. 80% surrendered = 80,000 shares of Rs. 10 each = Rs. 8,00,000. The entry is Equity Share Capital A/c Dr. Rs. 8,00,000 to Share Surrender A/c Rs. 8,00,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Share Surrender",
+            "Surrender Amount",
+            "Initial Entry"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-14_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-14_03",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-14",
+          "subject": "Accounts",
+          "prompt": "What is the amount transferred from Share Surrender Account to Capital Reduction Account upon cancellation of unutilized surrendered shares in Apex Manufacturing Ltd.?",
+          "options": [
+            "Rs. 8,00,000",
+            "Rs. 6,00,000",
+            "Rs. 2,00,000",
+            "Rs. 4,00,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Total surrendered shares = 80,000 shares (Rs. 8,00,000). Shares reissued to debenture holders = 20,000 shares (Rs. 2,00,000). Remaining surrendered shares cancelled = 80,000 - 20,000 = 60,000 shares of Rs. 10 each = Rs. 6,00,000. Upon cancellation, Share Surrender Account is debited and Capital Reduction Account is credited by Rs. 6,00,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Surrender Cancellation",
+            "Capital Reduction Credit",
+            "Surrender Account"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-14_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-14_03",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-14",
+          "subject": "Accounts",
+          "prompt": "What amount is credited to Capital Reduction Account directly from the settlement of 14% Debenture holders in Apex Manufacturing Ltd.?",
+          "options": [
+            "Rs. 1,00,000",
+            "Rs. 3,00,000",
+            "Rs. 2,00,000",
+            "Nil"
+          ],
+          "answerIndex": 0,
+          "explanation": "Debenture holders had a claim of Rs. 3,00,000. They accepted 20,000 surrendered shares of face value Rs. 2,00,000 in full settlement. The entry is 14% Debentures A/c Dr. Rs. 3,00,000 to Share Surrender A/c Rs. 2,00,000 and to Capital Reduction A/c Rs. 1,00,000. The sacrifice of Rs. 1,00,000 made by debenture holders is credited to Capital Reduction Account.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Debenture Sacrifice",
+            "Capital Reduction Credit",
+            "Surrender Reissue"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-14_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-14_03",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-14",
+          "subject": "Accounts",
+          "prompt": "What is the final balance remaining in Capital Reserve Account of Apex Manufacturing Ltd. after writing off P&L debit balance and Patents?",
+          "options": [
+            "Rs. 1,00,000",
+            "Rs. 2,00,000",
+            "Nil",
+            "Rs. 50,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Total credit accumulated in Capital Reduction Account = Rs. 6,00,000 (cancelled shares) + Rs. 1,00,000 (debenture sacrifice) = Rs. 7,00,000. Write-offs: P&L debit balance Rs. 4,50,000 + Patents Rs. 1,50,000 = Rs. 6,00,000. Surplus balance transferred to Capital Reserve = Rs. 7,00,000 - Rs. 6,00,000 = Rs. 1,00,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Capital Reserve Calculation",
+            "Final Balance",
+            "Scheme Surplus"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-14_04",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "passage": "Orion Ltd. has the following balance sheet items prior to reconstruction:\n- Equity Shares of Rs. 100 each: Rs. 15,00,000 (15,000 shares)\n- 10% Debentures: Rs. 5,00,000\n- Trade Payables: Rs. 7,00,000\n- Land & Building: Rs. 8,00,000\n- Machinery: Rs. 12,00,000\n- Inventory: Rs. 5,00,000\n- Trade Receivables: Rs. 4,00,000\n- Profit & Loss Debit Balance: Rs. 6,00,000\n\nNCLT Approved Scheme:\n1. Equity shares are reduced to Rs. 40 per share fully paid up.\n2. Trade payables agree to forego 20% of their claims. Out of the balance, 30% of original claim is paid by issuing 12% Debentures and remaining in cash.\n3. Land & Building is revalued upwards by 25%.\n4. Inventory is written down by 20% and a Provision for Doubtful Debts is created at 10% on Trade Receivables.\n5. Capital Reduction Account is used to write off Profit & Loss debit balance, and any balance left is used to write down Machinery.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-14_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-14_04",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-14",
+          "subject": "Accounts",
+          "prompt": "What is the total credit generated in the Capital Reduction Account of Orion Ltd. from equity capital reduction, trade payables' sacrifice, and land revaluation combined?",
+          "options": [
+            "Rs. 12,40,000",
+            "Rs. 11,00,000",
+            "Rs. 10,40,000",
+            "Rs. 14,00,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Equity reduction = 15,000 × Rs. 60 = Rs. 9,00,000. Trade payables sacrifice = 20% of Rs. 7,00,000 = Rs. 1,40,000. Land upward revaluation = 25% of Rs. 8,00,000 = Rs. 2,00,000. Total credit generated in Capital Reduction Account = Rs. 9,00,000 + Rs. 1,40,000 + Rs. 2,00,000 = Rs. 12,40,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Capital Reduction Credits",
+            "Revaluation Gain",
+            "Payables Haircut"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-14_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-14_04",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-14",
+          "subject": "Accounts",
+          "prompt": "What is the total amount debited to Capital Reduction Account of Orion Ltd. for Inventory write-down, Provision for Doubtful Debts, and P&L debit balance?",
+          "options": [
+            "Rs. 7,40,000",
+            "Rs. 6,00,000",
+            "Rs. 7,00,000",
+            "Rs. 8,00,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Debits: Inventory write-down = 20% of Rs. 5,00,000 = Rs. 1,00,000. Provision for Doubtful Debts = 10% of Rs. 4,00,000 = Rs. 40,000. P&L debit balance = Rs. 6,00,000. Total debits for these items = Rs. 1,00,000 + Rs. 40,000 + Rs. 6,00,000 = Rs. 7,40,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Capital Reduction Debits",
+            "Asset Provision",
+            "P&L Write-off"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-14_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-14_04",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-14",
+          "subject": "Accounts",
+          "prompt": "What is the revised book value of Machinery in Orion Ltd.'s post-reconstruction Balance Sheet?",
+          "options": [
+            "Rs. 7,00,000",
+            "Rs. 5,00,000",
+            "Rs. 12,00,000",
+            "Rs. 8,00,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Total Capital Reduction credit = Rs. 12,40,000. Total debits before Machinery = Rs. 7,40,000. Remaining balance available in Capital Reduction Account to write down Machinery = Rs. 12,40,000 - Rs. 7,40,000 = Rs. 5,00,000. Revised Machinery book value = Original Rs. 12,00,000 - Rs. 5,00,000 write-down = Rs. 7,00,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Machinery Book Value",
+            "Write-down Calculation",
+            "Balance Sheet"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-14_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-14_04",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-14",
+          "subject": "Accounts",
+          "prompt": "What is the total cash payment required by Orion Ltd. to discharge its liability towards trade payables under the scheme?",
+          "options": [
+            "Rs. 3,50,000",
+            "Rs. 2,10,000",
+            "Rs. 5,60,000",
+            "Rs. 1,40,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Original trade payables = Rs. 7,00,000. Less 20% waived = Rs. 1,40,000. Balance remaining = Rs. 5,60,000. Issued 12% Debentures = 30% of original Rs. 7,00,000 = Rs. 2,10,000. Balance cash required to be paid = Rs. 5,60,000 - Rs. 2,10,000 = Rs. 3,50,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Cash Requirement",
+            "Payables Settlement",
+            "Internal Reconstruction"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-14_05",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-14",
+      "subject": "Accounts",
+      "passage": "Nova Cables Ltd. was restructured as per an NCLT approved scheme.\nExisting financial status:\n- 20,000 8% Cumulative Preference Shares of Rs. 100 each fully paid: Rs. 20,00,000\n- 1,00,000 Equity Shares of Rs. 10 each fully paid: Rs. 10,00,000\n- Arrears of Preference Dividend for 3 years: Rs. 4,80,000 (unrecorded)\n- Goodwill: Rs. 2,00,000\n- Profit & Loss Debit balance: Rs. 11,00,000\n\nReconstruction Terms:\n1. 8% Preference shares reduced to Rs. 70 per share fully paid up.\n2. Preference dividend arrears waived by 2/3rd. Balance 1/3rd paid by issuing Equity Shares of Rs. 10 each fully paid.\n3. Equity shares reduced to Rs. 2 per share fully paid up.\n4. Reconstruction expenses of Rs. 30,000 paid in cash.\n5. An unrecorded investment was discovered and sold for Rs. 1,20,000 cash.\n6. Goodwill and Profit & Loss debit balance are written off completely, and remaining balance in Capital Reduction Account is transferred to Capital Reserve.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 14,
+        "chapterTitle": "Internal Reconstruction"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-14_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-14_05",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-14",
+          "subject": "Accounts",
+          "prompt": "What is the total credit accumulated in the Capital Reduction Account of Nova Cables Ltd. before deducting expenses and loss write-offs?",
+          "options": [
+            "Rs. 15,20,000",
+            "Rs. 14,00,000",
+            "Rs. 15,00,000",
+            "Rs. 18,00,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Credits generated: Preference capital reduction = 20,000 × Rs. 30 = Rs. 6,00,000. Equity capital reduction = 1,00,000 × Rs. 8 = Rs. 8,00,000. Realization of unrecorded investment = Rs. 1,20,000. Total accumulated credits = Rs. 6,00,000 + Rs. 8,00,000 + Rs. 1,20,000 = Rs. 15,20,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Gross Credits",
+            "Unrecorded Asset Realization",
+            "Capital Reduction"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-14_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-14_05",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-14",
+          "subject": "Accounts",
+          "prompt": "How many new Equity Shares of Rs. 10 each are issued by Nova Cables Ltd. to Preference Shareholders in settlement of preference dividend arrears?",
+          "options": [
+            "16,000 shares",
+            "48,000 shares",
+            "32,000 shares",
+            "160,000 shares"
+          ],
+          "answerIndex": 0,
+          "explanation": "Total dividend arrears = Rs. 4,80,000. Waived 2/3rd = Rs. 3,20,000. Payable 1/3rd = Rs. 1,60,000. Paid by issuing Equity Shares of Rs. 10 each. Number of new equity shares issued = Rs. 1,60,000 ÷ Rs. 10 = 16,000 shares.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Dividend Settlement",
+            "New Share Issue",
+            "Share Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-14_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-14_05",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-14",
+          "subject": "Accounts",
+          "prompt": "What is the net amount transferred to Capital Reserve Account upon completion of Nova Cables Ltd.'s internal reconstruction?",
+          "options": [
+            "Rs. 30,000",
+            "Rs. 1,90,000",
+            "Nil",
+            "Rs. 60,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Total Credits = Rs. 15,20,000. Total Debits: Dividend settlement Rs. 1,60,000 + Reconstruction expenses Rs. 30,000 + Goodwill written off Rs. 2,00,000 + P&L loss written off Rs. 11,00,000 = Rs. 14,90,000. Surplus balance transferred to Capital Reserve = Rs. 15,20,000 - Rs. 14,90,000 = Rs. 30,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Capital Reserve",
+            "Surplus Calculation",
+            "Reconstruction Scheme"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-14_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-14_05",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-14",
+          "subject": "Accounts",
+          "prompt": "What is the total Equity Share Capital reported in the Balance Sheet of Nova Cables Ltd. after completing the reconstruction scheme?",
+          "options": [
+            "Rs. 3,60,000",
+            "Rs. 2,00,000",
+            "Rs. 1,60,000",
+            "Rs. 10,00,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Existing equity share capital reduced to Rs. 2 per share = 1,00,000 shares × Rs. 2 = Rs. 2,00,000. New equity shares issued for dividend arrears = 16,000 shares × Rs. 10 = Rs. 1,60,000. Total post-reconstruction Equity Share Capital = Rs. 2,00,000 + Rs. 1,60,000 = Rs. 3,60,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Post-reconstruction Capital",
+            "Balance Sheet Presentation",
+            "Share Capital Total"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

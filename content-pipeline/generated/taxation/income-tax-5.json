@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "income-tax-5",
+  "subject": "Taxation",
+  "paper": "Paper 3: Taxation",
+  "module": "Module 2",
+  "chapterNumber": 5,
+  "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses",
+  "generatedAt": "2026-08-16T14:22:45.958Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_income-tax-5_001",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "Which of the following losses cannot be set off against any other head of income in the same assessment year under the Income-tax Act, 1961?",
+      "options": [
+        "Business loss of a specified business referred to in section 35AD",
+        "Loss from house property",
+        "Loss from a speculative business",
+        "Loss from an ordinary non-speculative business"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per section 73A, any loss computed in respect of any specified business referred to in section 35AD can be set off only against profits and gains, if any, of any other specified business. It cannot be set off against income under any other head.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Set-off of losses",
+        "Specified business",
+        "Section 35AD"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_002",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "Under section 70, inter-source adjustment is generally permissible. Which of the following inter-source adjustments is NOT allowed?",
+      "options": [
+        "Loss from house property A set off against income from house property B",
+        "Loss from a speculative business set off against profit from an ordinary business",
+        "Loss from an ordinary business set off against income from a speculative business",
+        "Loss from a non-speculative business set off against income from house property"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under section 73(1), any loss computed in respect of a speculative business carried on by the assessee cannot be set off except against profits and gains of another speculative business. Thus, it cannot be set off against ordinary business profits.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Inter-source adjustment",
+        "Speculative business",
+        "Section 73"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_003",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "What is the maximum period for which business loss (other than speculation loss and specified business loss) can be carried forward and set off under section 72?",
+      "options": [
+        "4 assessment years",
+        "8 assessment years",
+        "Indefinitely",
+        "10 assessment years"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under section 72(3), business loss can be carried forward for a maximum of 8 assessment years immediately succeeding the assessment year for which the loss was first computed.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Carry forward",
+        "Business loss",
+        "Section 72"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_004",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "Can a loss from an activity of owning and maintaining race horses be set off against income from salary in the same assessment year?",
+      "options": [
+        "Yes, without any restriction",
+        "No, it cannot be set off against income under any other head, nor can it be set off against any other source under the head Income from Other Sources",
+        "Yes, subject to a limit of Rs. 2,00,000",
+        "Yes, if the assessee maintains regular books of accounts"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under section 74A(3), the loss incurred in the activity of owning and maintaining race horses can be set off only against income from the same activity i.e., owning and maintaining race horses. It cannot be set off against any other head or source.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Race horses",
+        "Section 74A",
+        "Other sources"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_005",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "In the case of a company (other than a company in which public are substantially interested), unabsorbed depreciation can be carried forward:",
+      "options": [
+        "For 8 assessment years only",
+        "For 4 assessment years only",
+        "Indefinitely, even if there is a change in shareholding",
+        "Indefinitely, subject to the provisions of section 79"
+      ],
+      "answerIndex": 2,
+      "explanation": "As per section 32(2), unabsorbed depreciation can be carried forward indefinitely and has no time limit. Unlike business losses, unabsorbed depreciation is not subject to the change in shareholding restrictions under section 79.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Unabsorbed depreciation",
+        "Section 32",
+        "Companies"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_006",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "For carrying forward and setting off of accumulated business losses in case of closely held companies, what percentage of voting power must remain continuously beneficially held under section 79?",
+      "options": [
+        "Not less than 51%",
+        "Not less than 49%",
+        "Not less than 75%",
+        "Not less than 26%"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 79 provides that in case of a company in which public are not substantially interested, loss incurred in any year prior to the previous year can be carried forward only if not less than 51% of the voting power is beneficially held by the same persons on the last day of the previous year.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 79",
+        "Change in shareholding",
+        "Business loss"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_007",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "Which of the following losses can be carried forward even if the return of income is filed after the due date specified under section 139(1)?",
+      "options": [
+        "Business loss",
+        "Speculation loss",
+        "Loss from house property",
+        "Capital loss"
+      ],
+      "answerIndex": 2,
+      "explanation": "As per section 80 read with section 139(3), filing the return of income within the due date under section 139(1) is mandatory for carrying forward business loss, speculation loss, specified business loss, and capital loss. However, loss under the head 'Income from house property' and unabsorbed depreciation can be carried forward even if the return is filed late.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 80",
+        "Due date of return",
+        "House property loss"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_008",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "What is the maximum period for carrying forward capital losses (both short-term and long-term) under section 74?",
+      "options": [
+        "4 assessment years",
+        "8 assessment years",
+        "Indefinitely",
+        "12 assessment years"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under section 74(1) and 74(2), both short-term capital losses and long-term capital losses can be carried forward for a maximum of 8 assessment years immediately succeeding the assessment year in which the loss was first computed.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Capital losses",
+        "Section 74",
+        "Carry forward"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_009",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "Can a long-term capital loss be set off against short-term capital gains in the same assessment year?",
+      "options": [
+        "No, long-term capital loss can only be set off against long-term capital gains",
+        "Yes, long-term capital loss can be set off against both short-term and long-term capital gains",
+        "No, capital losses cannot be set off against capital gains at all",
+        "Yes, but only up to Rs. 1,00,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under section 70(3), a long-term capital loss can be set off against any capital gain, whether short-term or long-term. However, a short-term capital loss can be set off against both short-term and long-term capital gains as well.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Capital gains",
+        "Inter-source adjustment",
+        "Section 70"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_010",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "What is the order of priority for setting off unabsorbed depreciation, current year business loss, and brought forward business loss?",
+      "options": [
+        "Current year business loss -> Brought forward business loss -> Unabsorbed depreciation",
+        "Current year business loss -> Unabsorbed depreciation -> Brought forward business loss",
+        "Unabsorbed depreciation -> Current year business loss -> Brought forward business loss",
+        "Brought forward business loss -> Current year business loss -> Unabsorbed depreciation"
+      ],
+      "answerIndex": 0,
+      "explanation": "The order of set-off under the Act is: (1) Current year deductions like depreciation, capital expenditure on scientific research, etc.; (2) Current year business loss; (3) Brought forward business loss under section 72; (4) Unabsorbed depreciation under section 32(2).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Order of set-off",
+        "Unabsorbed depreciation",
+        "Business loss"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_011",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "Under section 71(3A), loss from house property can be set off against any other head of income in any assessment year up to a maximum of:",
+      "options": [
+        "Rs. 50,000",
+        "Rs. 1,00,000",
+        "Rs. 2,00,000",
+        "No limit"
+      ],
+      "answerIndex": 2,
+      "explanation": "As per section 71(3A), where the net result of computation under the head 'Income from house property' is a loss, the assessee can set off such loss against income under any other head to the extent of Rs. 2,00,000 in any assessment year.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "House property loss",
+        "Section 71",
+        "Inter-head adjustment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_012",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "Can a loss under the head 'Income from Salaries' be set off against income under any other head of income?",
+      "options": [
+        "Yes, up to Rs. 2,00,000",
+        "Yes, without any limit",
+        "No, loss under the head 'Salaries' cannot be set off against income under any other head",
+        "Yes, only against income from house property"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under the Income-tax Act, 1961, there cannot be a negative income from salary under normal circumstances, but even if a computational loss arises under the head 'Salaries' (e.g., allowances exceeding income), it cannot be set off against income under any other head under section 71.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Salary head",
+        "Inter-head adjustment",
+        "Section 71"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_013",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "For how many assessment years can a speculation loss be carried forward under section 73?",
+      "options": [
+        "4 assessment years",
+        "8 assessment years",
+        "Indefinitely",
+        "6 assessment years"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under section 73(4), speculation loss can be carried forward for a maximum of 4 assessment years immediately succeeding the assessment year for which the loss was first computed.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Speculation loss",
+        "Section 73",
+        "Carry forward"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_014",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "Which of the following incomes can be reduced by setting off brought forward business loss under section 72?",
+      "options": [
+        "Income from salary",
+        "Profits and gains of business or profession",
+        "Capital gains",
+        "Winning from lotteries"
+      ],
+      "answerIndex": 1,
+      "explanation": "Brought forward business loss under section 72 can be set off only against profits and gains of business or profession.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 72",
+        "Business loss",
+        "Set-off"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_015",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "Can a registered firm (partnership firm) carry forward and set off its business losses?",
+      "options": [
+        "No, partnership firms cannot carry forward losses",
+        "Yes, the firm itself carries forward and sets off the loss against its own future business income",
+        "No, the loss must be allocated to partners for carry forward",
+        "Yes, but only unabsorbed depreciation can be carried forward by the firm"
+      ],
+      "answerIndex": 1,
+      "explanation": "A partnership firm (whether registered or not) is a separate assessable entity. Business losses are carried forward by the firm itself to be set off against its future business profits, and not by the partners (except in case of dissolution/discontinuation where specific rules apply).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Partnership firm",
+        "Business loss",
+        "Assessment entity"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_016",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "What happens to the unabsorbed depreciation when there is no business income in the current year, but the assessee has income from capital gains and other sources?",
+      "options": [
+        "It lapses permanently",
+        "It can be set off against capital gains and other sources",
+        "It can be set off against salary income only",
+        "It can be carried forward indefinitely, but first must be set off against any other head of income in the current year"
+      ],
+      "answerIndex": 3,
+      "explanation": "Under section 32(2), if unabsorbed depreciation cannot be fully set off against business income in the current year, it is added to the depreciation of the next year. However, in the current year, it can be set off against any other head of income (except salary) after inter-head adjustments are exhausted.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Unabsorbed depreciation",
+        "Section 32",
+        "Priority of set-off"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_017",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "Can a loss from an exempt source of income be set off against taxable income?",
+      "options": [
+        "Yes, up to Rs. 2,00,000",
+        "No, since the income itself is exempt, any related loss cannot be set off against taxable income",
+        "Yes, under section 71",
+        "Yes, provided books of accounts are audited"
+      ],
+      "answerIndex": 1,
+      "explanation": "Since the income from an exempt source does not form part of total income, any loss incurred from such exempt source cannot be set off against taxable income.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Exempt income",
+        "Losses",
+        "General principles"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_018",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "In the event of the death of an assessee, can the legal representative carry forward and set off the business losses of the deceased assessee?",
+      "options": [
+        "Yes, the legal representative can carry forward and set off the deceased's business losses",
+        "No, business losses lapse upon the death of the assessee",
+        "Yes, but only for a maximum of 1 year",
+        "No, only unabsorbed depreciation can be carried forward by the legal representative"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under the Income-tax Act, business losses of the deceased assessee cannot be carried forward and set off by the legal representative, because the legal representative is not the same assessee who incurred the loss. (Note: This is an exception compared to inheritance of businesses where succession rules apply differently, but personal business loss under Sec 72 lapses upon death).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Death of assessee",
+        "Legal representative",
+        "Business loss"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_019",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "Which section of the Income-tax Act, 1961 deals with the carry forward and set-off of losses from house property?",
+      "options": [
+        "Section 71",
+        "Section 71B",
+        "Section 72",
+        "Section 74"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 71B specifically deals with the carry forward and set-off of loss from house property for up to 8 assessment years against income from house property.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 71B",
+        "House property loss",
+        "Carry forward"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_020",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "Can a loss from an ordinary business be set off against salary income in the same assessment year?",
+      "options": [
+        "Yes, without any restrictions",
+        "Yes, up to Rs. 2,00,000",
+        "No, business loss cannot be set off against salary income under section 71",
+        "Yes, if the business is a proprietary concern"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under section 71(2), business loss cannot be set off against income under the head 'Salaries'.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Inter-head adjustment",
+        "Business loss",
+        "Salary"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_021",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "Can a short-term capital loss be carried forward if the return of income is filed after the due date under section 139(1)?",
+      "options": [
+        "Yes, always",
+        "No, section 80 bars the carry forward if the return is filed belatedly",
+        "Yes, up to 4 years",
+        "Yes, with the permission of the Principal Commissioner"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 80 mandates that returns for losses under section 72(1) (business loss), section 73(2) (speculation loss), section 73A(2) (specified business loss), section 74(1) (capital loss), and section 74A(3) (race horse loss) must be filed within the due date specified under section 139(1) in order to carry them forward.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 80",
+        "Capital loss",
+        "Belated return"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_022",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "What is the treatment of losses under the head 'Income from Other Sources' (other than race horses and lotteries)?",
+      "options": [
+        "They cannot be set off against any income",
+        "They can be set off against any other income under the same head or any other head under inter-source and inter-head rules",
+        "They can only be carried forward for 8 years",
+        "They lapse immediately and cannot be set off even within the same head"
+      ],
+      "answerIndex": 1,
+      "explanation": "Losses under the head 'Income from Other Sources' (general sources, e.g., loss on maintenance of machinery let out) can be set off against any other income under the same head (inter-source) and against any other head of income (inter-head) under sections 70 and 71, and cannot be carried forward.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Other sources",
+        "Set-off",
+        "General loss"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_023",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "Can a loss from an activity of owning and maintaining race horses be carried forward?",
+      "options": [
+        "No, it lapses in the same year",
+        "Yes, for a maximum of 4 assessment years",
+        "Yes, for a maximum of 8 assessment years",
+        "Yes, indefinitely"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under section 74A(3), loss from the activity of owning and maintaining race horses can be carried forward for a maximum of 4 assessment years immediately succeeding the assessment year for which the loss was first computed.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Race horses",
+        "Section 74A",
+        "Carry forward"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_024",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "Which of the following losses can be set off against winning from lotteries, crossword puzzles, or game shows?",
+      "options": [
+        "Business loss",
+        "Capital loss",
+        "Loss from house property",
+        "None of the above"
+      ],
+      "answerIndex": 3,
+      "explanation": "As per section 58(4), no deduction in respect of any expenditure or allowance or set-off of any loss can be allowed against winnings from lotteries, crossword puzzles, card games, races, gambling, betting, etc.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Lottery winnings",
+        "Section 58",
+        "Restrictions on set-off"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_025",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "In case of amalgamation of companies, can the accumulated loss and unabsorbed depreciation of the amalgamating company be carried forward by the amalgamated company?",
+      "options": [
+        "Never",
+        "Yes, under section 72A, subject to fulfillment of specified conditions",
+        "Yes, automatically without any conditions",
+        "Only unabsorbed depreciation can be carried forward, not business loss"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 72A allows the accumulated loss and unabsorbed depreciation of an amalgamating company to be carried forward and set off by the amalgamated company, provided prescribed conditions relating to industrial undertakings, continuity of business, and level of production are met.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 72A",
+        "Amalgamation",
+        "Business loss"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_026",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "Can a speculation business loss be set off against the income of an ordinary non-speculative business in the same assessment year?",
+      "options": [
+        "Yes, under inter-source adjustment",
+        "Yes, up to Rs. 2,00,000",
+        "No, speculation loss can only be set off against speculation profits",
+        "Yes, if both businesses are carried on by the same company"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 73(1) explicitly prohibits setting off speculation loss against any income other than profits and gains of another speculation business.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Speculation loss",
+        "Section 73",
+        "Inter-source adjustment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_027",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "If an assessee incurs a loss in a business that was discontinued in an earlier year, can such business loss be carried forward and set off against current business income?",
+      "options": [
+        "No, discontinued business losses cannot be carried forward",
+        "Yes, provided the loss was computed and returned when the business was active, and the 8-year time limit has not expired",
+        "Yes, indefinitely",
+        "No, unless the business is restarted in the current year"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under section 72, the discontinuation of a business does not prevent the carry forward and set-off of its business loss, provided the loss was duly determined in earlier years and the 8-year time limit has not expired.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Discontinued business",
+        "Section 72",
+        "Carry forward"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_028",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "What is the maximum period for carrying forward and setting off loss from house property under section 71B?",
+      "options": [
+        "4 assessment years",
+        "8 assessment years",
+        "10 assessment years",
+        "Indefinitely"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under section 71B, loss under the head 'Income from house property' can be carried forward for a maximum of 8 assessment years immediately succeeding the assessment year in which the loss was first computed.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 71B",
+        "House property",
+        "Carry forward limit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_029",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "Can an individual set off business loss against capital gains in the same assessment year under inter-head adjustment?",
+      "options": [
+        "Yes, business loss can be set off against capital gains",
+        "No, business loss cannot be set off against capital gains under section 71",
+        "Yes, up to Rs. 2,00,000",
+        "Yes, if capital gains are short-term only"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under section 71, business loss can be set off against income under any other head EXCEPT 'Salaries'. However, capital gains are not restricted; wait, let's check section 71: business loss CAN be set off against capital gains. Let's verify: section 71 permits business loss to be set off against capital gains (both STCG and LTCG) and other heads except salary. Ah, let's look at the options. Option 1 says 'No, business loss cannot be set off against capital gains'. That is incorrect because business loss CAN be set off against capital gains. Thus, Option 1 ('Yes, business loss can be set off against capital gains') is correct.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Inter-head adjustment",
+        "Business loss",
+        "Section 71"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-5_030",
+      "kind": "normal",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "prompt": "In which of the following scenarios does the restriction under section 79 (change in shareholding) NOT apply regarding carry forward of business losses?",
+      "options": [
+        "A closely held company where there is a change in shareholding due to death or gift by a shareholder to relative",
+        "A public company where shares are traded on a recognized stock exchange",
+        "A closely held company where 60% shares change hands due to a public offer",
+        "Both (a) and (b)"
+      ],
+      "answerIndex": 3,
+      "explanation": "Section 79 specifically states that its restrictions regarding change in shareholding do not apply to a company in which public are substantially interested (public companies). Furthermore, specific exemptions are provided for closely held companies in cases of death, gifts, start-ups, etc.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 79",
+        "Exceptions",
+        "Shareholding"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_income-tax-5_01",
+      "kind": "scenario",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "passage": "Mr. Raghav, an individual resident in India, furnishes the following details of his income and losses for the Financial Year 2025-26 (A.Y. 2026-27): \n1. Loss from speculative business A: Rs. 60,000\n2. Profit from speculative business B: Rs. 90,000\n3. Loss from non-speculative textile business: Rs. 1,50,000\n4. Profit from non-speculative readymade garments business: Rs. 80,000\n5. Loss from self-occupied house property: Rs. 2,50,000\n6. Income from other sources (interest on fixed deposits): Rs. 3,00,000\nHe files his return of income on 28th July 2026.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-5_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-5_01",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-5",
+          "subject": "Taxation",
+          "prompt": "What is the net taxable income or loss from speculative businesses after inter-source adjustment for Mr. Raghav for A.Y. 2026-27?",
+          "options": [
+            "Loss of Rs. 60,000",
+            "Profit of Rs. 30,000",
+            "Profit of Rs. 90,000",
+            "Nil, as they cancel out"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under section 70(1), loss from speculative business A (Rs. 60,000) can be set off against profit from speculative business B (Rs. 90,000). The net result is a profit of Rs. 30,000 from speculative businesses.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Speculative business",
+            "Inter-source adjustment",
+            "Section 70"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-5_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-5_01",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-5",
+          "subject": "Taxation",
+          "prompt": "What is the treatment of the loss from the non-speculative textile business (Rs. 1,50,000) after inter-source adjustment with readymade garments business?",
+          "options": [
+            "Entire loss of Rs. 1,50,000 is set off against garments profit, leaving a net business loss of Rs. 70,000",
+            "Textile business loss of Rs. 1,50,000 is set off against garments business profit of Rs. 80,000, leaving a business loss of Rs. 70,000 to be carried forward or set off against other heads",
+            "Textile business loss cannot be set off against garments business profit",
+            "Textile business loss lapses entirely"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under section 70, loss from non-speculative textile business (Rs. 1,50,000) can be set off against profit from readymade garments business (Rs. 80,000), leaving a net business loss of Rs. 70,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Non-speculative business",
+            "Inter-source adjustment",
+            "Section 70"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-5_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-5_01",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-5",
+          "subject": "Taxation",
+          "prompt": "What is the maximum amount of loss from house property that Mr. Raghav can set off against his interest income under other heads in A.Y. 2026-27?",
+          "options": [
+            "Rs. 2,50,000",
+            "Rs. 3,00,000",
+            "Rs. 2,00,000",
+            "Nil"
+          ],
+          "answerIndex": 2,
+          "explanation": "Under section 71(3A), the loss from house property that can be set off against income under any other head in any assessment year is restricted to a maximum of Rs. 2,00,000. The remaining Rs. 50,000 must be carried forward under section 71B.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "House property loss",
+            "Section 71(3A)",
+            "Inter-head adjustment"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-5_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-5_01",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-5",
+          "subject": "Taxation",
+          "prompt": "Considering that Mr. Raghav filed his return on 28th July 2026, can he carry forward the unabsorbed house property loss of Rs. 50,000?",
+          "options": [
+            "No, because the return was filed after 31st July",
+            "Yes, because filing return within due date is not mandatory for carrying forward house property loss",
+            "No, house property loss cannot be carried forward under any circumstance",
+            "Yes, but only for 1 year"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 80 mandates timely filing under section 139(1) for carrying forward business losses, capital losses, etc., but house property loss under section 71B and unabsorbed depreciation can be carried forward even if the return of income is filed belatedly.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 80",
+            "House property loss",
+            "Due date"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-5_02",
+      "kind": "scenario",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "passage": "M/s. Apex Enterprises (a partnership firm) has two manufacturing units (Unit 1 and Unit 2) and a speculative trading division. For the P.Y. 2025-26, the financial results are as under:\n- Profit from Unit 1 (manufacturing): Rs. 4,00,000\n- Loss from Unit 2 (manufacturing): Rs. 6,50,000\n- Loss from speculative trading division: Rs. 1,20,000\n- Brought forward business loss of Unit 1 from P.Y. 2022-23: Rs. 1,00,000\n- Unabsorbed depreciation pertaining to Unit 2 from P.Y. 2024-25: Rs. 80,000.\nThe firm filed its return of income on time.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-5_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-5_02",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-5",
+          "subject": "Taxation",
+          "prompt": "What is the business income of M/s. Apex Enterprises after inter-source set-off of current year manufacturing losses and profits?",
+          "options": [
+            "Profit of Rs. 4,00,000",
+            "Loss of Rs. 2,50,000",
+            "Loss of Rs. 6,50,000",
+            "Nil"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under section 70, current year loss from Unit 2 (Rs. 6,50,000) is set off against current year profit of Unit 1 (Rs. 4,00,000), resulting in a net current business loss of Rs. 2,50,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Inter-source adjustment",
+            "Business loss",
+            "Section 70"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-5_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-5_02",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-5",
+          "subject": "Taxation",
+          "prompt": "How should the brought forward business loss of Rs. 1,00,000 from P.Y. 2022-23 be treated in P.Y. 2025-26?",
+          "options": [
+            "It can be set off against current year business profits, but since there is a net current business loss, it is carried forward further",
+            "It lapses because current year has a loss",
+            "It can be set off against speculative trading profit",
+            "It can be set off against partner's salary"
+          ],
+          "answerIndex": 0,
+          "explanation": "Brought forward business loss under section 72 can only be set off against business profits. Since the current year results in a net business loss, brought forward business loss cannot be set off and must be carried forward for the remaining years.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 72",
+            "Brought forward loss",
+            "Partnership firm"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-5_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-5_02",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-5",
+          "subject": "Taxation",
+          "prompt": "What is the treatment of the speculative trading loss of Rs. 1,20,000 incurred by the firm?",
+          "options": [
+            "It can be set off against Unit 1's manufacturing profit",
+            "It can be set off against the net business loss",
+            "It cannot be set off against manufacturing profits and must be carried forward for up to 4 assessment years",
+            "It lapses immediately"
+          ],
+          "answerIndex": 2,
+          "explanation": "Under section 73, speculation loss cannot be set off against non-speculation business income (manufacturing profit). It must be carried forward to be set off against speculation profits in subsequent years for a maximum of 4 assessment years.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Speculation loss",
+            "Section 73",
+            "Carry forward"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-5_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-5_02",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-5",
+          "subject": "Taxation",
+          "prompt": "How is the unabsorbed depreciation of Rs. 80,000 treated?",
+          "options": [
+            "It lapses due to lack of business profit",
+            "It can be added to current year unabsorbed depreciation and carried forward indefinitely, or set off against any other head of income (except salary) if available",
+            "It can only be carried forward for 8 years",
+            "It must be allocated to partners"
+          ],
+          "answerIndex": 1,
+          "explanation": "Unabsorbed depreciation under section 32(2) can be carried forward indefinitely. In the current year, after inter-source and inter-head adjustments, it can be absorbed against other heads of income (except salary) or carried forward.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Unabsorbed depreciation",
+            "Section 32",
+            "Partnership firm"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-5_03",
+      "kind": "scenario",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "passage": "Mr. Karan furnishes the following particulars of capital gains and losses for the Assessment Year 2026-27:\n- Short-term capital gain (STCG) on sale of shares: Rs. 1,50,000\n- Short-term capital loss (STCL) on sale of land: Rs. 2,40,000\n- Long-term capital gain (LTCG) on sale of building: Rs. 90,000\n- Long-term capital loss (LTCL) on sale of gold: Rs. 60,000\n- Brought forward short-term capital loss from A.Y. 2023-24: Rs. 50,000.\nHe has no income under any other head and filed his return within the due date under section 139(1).",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-5_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-5_03",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-5",
+          "subject": "Taxation",
+          "prompt": "What is the net short-term capital loss/gain after inter-source set-off for A.Y. 2026-27 (excluding brought forward losses)?",
+          "options": [
+            "STCG of Rs. 1,50,000",
+            "STCL of Rs. 90,000",
+            "STCL of Rs. 2,40,000",
+            "Nil"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under section 70(2), short-term capital loss on sale of land (Rs. 2,40,000) can be set off against short-term capital gain on sale of shares (Rs. 1,50,000), resulting in a net short-term capital loss of Rs. 90,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Short-term capital loss",
+            "Inter-source adjustment",
+            "Section 70"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-5_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-5_03",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-5",
+          "subject": "Taxation",
+          "prompt": "What is the net long-term capital gain/loss after inter-source set-off for A.Y. 2026-27?",
+          "options": [
+            "LTCG of Rs. 90,000",
+            "LTCL of Rs. 60,000",
+            "LTCG of Rs. 30,000",
+            "Nil"
+          ],
+          "answerIndex": 2,
+          "explanation": "Under section 70(3), long-term capital loss on sale of gold (Rs. 60,000) can be set off against long-term capital gain on sale of building (Rs. 90,000), resulting in a net long-term capital gain of Rs. 30,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Long-term capital gain",
+            "Inter-source adjustment",
+            "Section 70"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-5_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-5_03",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-5",
+          "subject": "Taxation",
+          "prompt": "Can the net short-term capital loss of Rs. 90,000 be set off against the net long-term capital gain of Rs. 30,000 in the same assessment year?",
+          "options": [
+            "No, short-term capital loss cannot be set off against long-term capital gain",
+            "Yes, short-term capital loss can be set off against both short-term and long-term capital gains",
+            "Yes, but only up to Rs. 10,000",
+            "No, capital losses cannot be set off against capital gains at all"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under section 70, a short-term capital loss can be set off against any capital gain, whether short-term or long-term. Thus, STCL of Rs. 90,000 can be set off against LTCG of Rs. 30,000, leaving a net short-term capital loss of Rs. 60,000 for the year.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Capital gains",
+            "Set-off",
+            "Section 70"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-5_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-5_03",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-5",
+          "subject": "Taxation",
+          "prompt": "What is the total capital loss to be carried forward by Mr. Karan to A.Y. 2027-28 (including brought forward STCL)?",
+          "options": [
+            "Rs. 60,000 current STCL only",
+            "Rs. 50,000 brought forward STCL only",
+            "Rs. 1,10,000 (Current net STCL of Rs. 60,000 + Brought forward STCL of Rs. 50,000)",
+            "Nil, as capital losses cannot be carried forward"
+          ],
+          "answerIndex": 2,
+          "explanation": "Current year net STCL is Rs. 60,000. Brought forward STCL from A.Y. 2023-24 is Rs. 50,000 (which can be carried forward for 8 years under section 74). Both are carried forward under section 74, totaling Rs. 1,10,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 74",
+            "Carry forward",
+            "Capital loss"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-5_04",
+      "kind": "scenario",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "passage": "XYZ Ltd., a closely held domestic company, has the following income/loss details for A.Y. 2026-27:\n- Business loss (computed) for P.Y. 2025-26: Rs. 8,00,000\n- Brought forward business loss from P.Y. 2021-22: Rs. 3,00,000\n- Brought forward unabsorbed depreciation from P.Y. 2023-24: Rs. 2,50,000\n- Income from house property: Rs. 5,00,000\n- Dividend income: Rs. 1,00,000\nDuring P.Y. 2025-26, there was a change in shareholding, and shareholders holding 60% of voting power on 31-3-2021 were not the same persons holding 60% of voting power on 31-3-2026 (none of the statutory exemptions apply).",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-5_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-5_04",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-5",
+          "subject": "Taxation",
+          "prompt": "Is the brought forward business loss of Rs. 3,00,000 from P.Y. 2021-22 allowed to be carried forward and set off in view of the change in shareholding?",
+          "options": [
+            "Yes, because business losses are never restricted by shareholding changes",
+            "No, because more than 51% of voting power has changed hands, violating section 79",
+            "Yes, up to 50%",
+            "Yes, because unabsorbed depreciation and business losses follow identical rules"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 79 provides that loss incurred in any year prior to the previous year cannot be carried forward and set off if there is a change in shareholding exceeding 49% (i.e., less than 51% voting power held by same persons). Hence, the brought forward business loss of Rs. 3,00,000 lapses.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 79",
+            "Change in shareholding",
+            "Company taxation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-5_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-5_04",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-5",
+          "subject": "Taxation",
+          "prompt": "What is the status of the brought forward unabsorbed depreciation of Rs. 2,50,000 in light of the change in shareholding under section 79?",
+          "options": [
+            "It lapses entirely along with the business loss",
+            "It is not affected by section 79 and can be carried forward / set off",
+            "It can only be set off against house property income",
+            "It can be carried forward for only 8 years"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 79 restricts the carry forward and set off of business losses due to changes in shareholding, but it does NOT apply to unabsorbed depreciation under section 32(2). Unabsorbed depreciation remains fully eligible.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Unabsorbed depreciation",
+            "Section 79",
+            "Exemption"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-5_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-5_04",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-5",
+          "subject": "Taxation",
+          "prompt": "Can XYZ Ltd. set off its current year business loss of Rs. 8,00,000 against its house property income of Rs. 5,00,000 under inter-head adjustment?",
+          "options": [
+            "Yes, business loss can be set off against house property income",
+            "No, business loss cannot be set off against house property income under section 71",
+            "Yes, up to Rs. 2,00,000 only",
+            "No, because business losses cannot be set off against any other head"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under section 71(2), business loss can be set off against income under any other head except 'Salaries'. Therefore, current year business loss of Rs. 8,00,000 can be set off against house property income of Rs. 5,00,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Inter-head adjustment",
+            "Business loss",
+            "Section 71"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-5_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-5_04",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-5",
+          "subject": "Taxation",
+          "prompt": "What is the remaining business loss of XYZ Ltd. to be carried forward to A.Y. 2027-28 after setting off against house property income?",
+          "options": [
+            "Rs. 8,00,000",
+            "Rs. 3,00,000",
+            "Rs. 5,00,000",
+            "Nil"
+          ],
+          "answerIndex": 1,
+          "explanation": "Current year business loss is Rs. 8,00,000. It is set off against house property income of Rs. 5,00,000. The remaining unabsorbed current year business loss is Rs. 3,00,000, which can be carried forward under section 72 (since section 79 applies only to losses of *prior* previous years, not current year business loss).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 72",
+            "Carry forward",
+            "Current year loss"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-5_05",
+      "kind": "scenario",
+      "chapterId": "income-tax-5",
+      "subject": "Taxation",
+      "passage": "Mr. Subhash provides the following details of his income and losses for the P.Y. 2025-26:\n- Income from salary (computed): Rs. 7,00,000\n- Loss from House Property A: Rs. 1,50,000\n- Loss from House Property B: Rs. 1,80,000\n- Business loss from sole proprietorship: Rs. 3,00,000\n- Income from other sources (interest on bank deposits): Rs. 50,000\n- Loss from card games (gambling): Rs. 40,000",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Aggregation of Income, Set-Off and Carry Forward of Losses"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-5_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-5_05",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-5",
+          "subject": "Taxation",
+          "prompt": "What is the aggregate loss from house property for Mr. Subhash for P.Y. 2025-26?",
+          "options": [
+            "Rs. 1,50,000",
+            "Rs. 1,80,000",
+            "Rs. 3,30,000",
+            "Rs. 2,00,000"
+          ],
+          "answerIndex": 2,
+          "explanation": "Loss from House Property A (Rs. 1,50,000) and Loss from House Property B (Rs. 1,80,000) are first aggregated under inter-source adjustment (section 70), resulting in a total house property loss of Rs. 3,30,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "House property",
+            "Inter-source adjustment",
+            "Section 70"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-5_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-5_05",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-5",
+          "subject": "Taxation",
+          "prompt": "What is the maximum amount of house property loss that can be set off against salary and other sources in A.Y. 2026-27?",
+          "options": [
+            "Rs. 3,30,000",
+            "Rs. 2,00,000",
+            "Rs. 1,50,000",
+            "Nil"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under section 71(3A), house property loss can be set off against other heads of income up to a maximum limit of Rs. 2,00,000 in any assessment year. The remaining Rs. 1,30,000 must be carried forward under section 71B.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "House property loss",
+            "Section 71(3A)",
+            "Limit"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-5_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-5_05",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-5",
+          "subject": "Taxation",
+          "prompt": "Can Mr. Subhash set off his business loss of Rs. 3,00,000 against his salary income of Rs. 7,00,000?",
+          "options": [
+            "Yes, business loss can be set off against salary income without limit",
+            "No, business loss cannot be set off against salary income under section 71(2)",
+            "Yes, up to Rs. 2,00,000",
+            "Yes, if the business was closed down"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 71(2) explicitly prohibits setting off business loss against income under the head 'Salaries'. Therefore, business loss cannot be set off against salary and must be carried forward under section 72.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Salary head",
+            "Business loss",
+            "Section 71(2)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-5_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-5_05",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-5",
+          "subject": "Taxation",
+          "prompt": "How should the loss from card games of Rs. 40,000 be treated?",
+          "options": [
+            "It can be set off against interest on bank deposits",
+            "It can be set off against salary income up to Rs. 2,00,000",
+            "It cannot be set off against any income nor can it be carried forward",
+            "It can be carried forward for 4 years"
+          ],
+          "answerIndex": 2,
+          "explanation": "Losses from card games, lotteries, races, or any other form of gambling cannot be set off against any income (not even against lottery winnings), nor can they be carried forward.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Card games",
+            "Gambling losses",
+            "Section 58(4)"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "gst-2",
+  "subject": "Taxation",
+  "paper": "Paper 3: Taxation",
+  "module": "Module 1",
+  "chapterNumber": 2,
+  "chapterTitle": "Supply under GST",
+  "generatedAt": "2026-08-16T14:26:57.150Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_gst-2_001",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "Which of the following activities does NOT constitute a 'supply' under section 7 of the CGST Act, 2017, even if made for a consideration?",
+      "options": [
+        "Import of services for a business purpose without consideration",
+        "Services by an employee to the employer in the course of or in relation to employment",
+        "Supply of goods by an unincorporated association of persons to a member for consideration",
+        "Disposal of business assets on which input tax credit has been availed"
+      ],
+      "answerIndex": 1,
+      "explanation": "According to Section 7(2)(a) read with Schedule III of the CGST Act, 2017, services by an employee to the employer in the course of or in relation to employment are treated neither as a supply of goods nor as a supply of services. Therefore, it is outside the scope of GST.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Schedule III",
+        "Employer-Employee",
+        "Scope of Supply"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_002",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "Mr. A, a registered taxpayer in Delhi, transfers stock of goods from his principal place of business in Delhi to his registered branch in Mumbai without any consideration. What will be the tax treatment of this transaction under GST?",
+      "options": [
+        "It is not a supply since there is no consideration.",
+        "It is a supply of goods because it is made between distinct persons even without consideration.",
+        "It is an exempt supply under Schedule III.",
+        "It is a supply of services since no ownership is transferred."
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Schedule I of the CGST Act, 2017, permanent transfer or disposal of business assets where input tax credit has been availed is treated as supply even if made without consideration. Further, supplies made between distinct persons (same PAN, different state registrations) even without consideration are treated as supply.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Schedule I",
+        "Distinct Persons",
+        "No Consideration"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_003",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "Which of the following activities is specifically included in Schedule III as 'neither supply of goods nor supply of services'?",
+      "options": [
+        "Actionable claims, other than lottery, betting and gambling",
+        "Supply of goods from a bonded warehouse before clearance for home consumption",
+        "Works contract services supplied to the Central Government",
+        "Temporary transfer of intellectual property right"
+      ],
+      "answerIndex": 0,
+      "explanation": "Schedule III of the CGST Act, 2017 lists activities or transactions which shall be treated neither as a supply of goods nor a supply of services. Actionable claims, other than lottery, betting and gambling, form part of this negative list.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Schedule III",
+        "Actionable Claims",
+        "Negative List"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_004",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "A restaurant provides a package consisting of food, soft drinks, and live musical entertainment for a single consolidated price. How is this transaction classified under GST?",
+      "options": [
+        "As separate supplies of goods and services attracting individual rates",
+        "As a composite supply where the principal supply is restaurant service",
+        "As a mixed supply where the highest rate of tax applies",
+        "As an exempt supply of entertainment services"
+      ],
+      "answerIndex": 1,
+      "explanation": "Provision of food along with other services like live music in a restaurant naturally bundles the services in the ordinary course of business. As per Section 2(30), this constitutes a composite supply, and the tax rate applicable to the principal supply (restaurant service) applies.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Composite Supply",
+        "Restaurant Services",
+        "Section 2(30)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_005",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "A gift pack containing a branded watch, a leather wallet, and imported chocolates is sold for a single lump sum price of Rs. 5,000. These items are not naturally bundled in the ordinary course of business. How will this transaction be treated under GST?",
+      "options": [
+        "Composite supply taxable at the rate of the watch",
+        "Mixed supply taxable at the highest rate applicable to any of the items in the pack",
+        "Multiple independent supplies attracting respective individual tax rates",
+        "Exempt supply since it is sold as a gift pack"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 2(74) of the CGST Act, 2017, a mixed supply means two or more individual supplies of goods or services made in conjunction with each other for a single price, where such supply does not constitute a composite supply. Each of these items can be supplied independently. Therefore, it is treated as a mixed supply and taxed at the rate applicable to the item attracting the highest rate of tax.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Mixed Supply",
+        "Section 2(74)",
+        "Tax Rate Determination"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_006",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "Which of the following transactions undertaken by a central government department will be treated as a supply of goods or services under GST?",
+      "options": [
+        "Services by way of any activity in relation to a function entrusted to a Panchayat under Article 243G of the Constitution",
+        "Services by way of public health, sanitation, and water supply",
+        "Services by way of renting of immovable property to a registered business entity",
+        "Services by way of issuing passports and visa"
+      ],
+      "answerIndex": 2,
+      "explanation": "While most sovereign functions of government are excluded, renting of immovable property by the government to a registered business entity is a taxable supply of service under forward charge / reverse charge as applicable, unlike sovereign regulatory functions which are not supplies.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Government Services",
+        "Taxable Supply",
+        "Renting"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_007",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "M/s Alpha Ltd. imports architectural design services from an unrelated designer located in London for its upcoming factory building in Pune, without paying any consideration. Does this qualify as a supply?",
+      "options": [
+        "No, because there is no consideration involved.",
+        "Yes, import of services by a taxable person from a related person or from any of his other establishments outside India, even without consideration, is a supply.",
+        "Yes, import of services for any purpose, even without consideration and from an unrelated person, is always a supply under Section 7(1)(b).",
+        "No, since factory buildings are capital goods."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 7(1)(b) read with paragraph 4 of Schedule I, import of services by a taxable person from a related person or from any of his other establishments outside India, in the course or furtherance of business, shall be treated as a supply even if made without consideration. Since the designer is unrelated, import without consideration does not constitute supply.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Import of Services",
+        "Schedule I",
+        "Related Person"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_008",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "Which of the following is considered a 'supply of goods' as per Schedule II of the CGST Act, 2017?",
+      "options": [
+        "Transfer of right in goods or of undivided share in goods without the transfer of title thereof",
+        "Transfer of title in goods under an agreement that property shall pass at a future date upon payment",
+        "Transfer of un-divided share in goods without transfer of title",
+        "Supply of services by way of a works contract"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Para 1(b) of Schedule II, any transfer of title in goods under an agreement which stipulates that property in goods shall pass at a future date upon payment of full consideration is a supply of goods.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Schedule II",
+        "Transfer of Title",
+        "Supply of Goods"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_009",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "Under Schedule II, transfer of business assets where goods forming part of the assets of a business are transferred or disposed of by or under the directions of the person carrying on the business so as no longer to form part of those assets, whether or not for a consideration, is treated as:",
+      "options": [
+        "Supply of services",
+        "Supply of goods",
+        "Neither supply of goods nor supply of services",
+        "Exempt supply"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Para 4(a) of Schedule II of the CGST Act, 2017, such transfer or disposal of business assets is explicitly treated as a supply of goods.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Schedule II",
+        "Business Assets",
+        "Supply of Goods"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_010",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "Actionable claims specified under GST law that are subject to GST include:",
+      "options": [
+        "Lottery, betting, and gambling",
+        "Unsecured loans and promissory notes",
+        "Book debts and bills of exchange",
+        "Fixed deposit receipts"
+      ],
+      "answerIndex": 0,
+      "explanation": "Schedule III provides that actionable claims, other than lottery, betting, and gambling, shall be treated neither as supply of goods nor supply of services. Thus, lottery, betting, and gambling are taxable actionable claims treated as supply of goods.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Actionable Claims",
+        "Lottery",
+        "Schedule III"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_011",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "An individual acts as a Director of a private limited company and receives remuneration. How is this remuneration treated under GST?",
+      "options": [
+        "Always treated as supply of services taxable under forward charge",
+        "Treated as supply of services taxable under reverse charge when paid to an independent director, but employer-employee relationship applies for executive whole-time directors",
+        "Exempt under all circumstances as employment",
+        "Treated as supply of goods"
+      ],
+      "answerIndex": 1,
+      "explanation": "Remuneration paid to independent directors (not being employees of the company) is taxable under reverse charge mechanism as supply of services. However, services rendered by an employee-director (who is an employee) in the course of employment are covered under Schedule III (neither supply of goods nor services).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Director Remuneration",
+        "Reverse Charge",
+        "Schedule III"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_012",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "What is the taxability of 'services by way of burial, cremation, mortuary or funeral services including transportation of the deceased' under the CGST Act, 2017?",
+      "options": [
+        "Taxable at 18% under forward charge",
+        "Taxable at 5% under composite supply",
+        "Neither supply of goods nor supply of services (Schedule III)",
+        "Exempt by way of specific notification entry, though falling within the definition of supply"
+      ],
+      "answerIndex": 3,
+      "explanation": "Funeral, burial, cremation or mortuary services are supplies of service, but they are specifically exempt under the exemption notifications issued under GST, unlike Schedule III items which are outside the definition of supply entirely.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Exemptions",
+        "Funeral Services",
+        "Scope vs Exemption"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_013",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "Which of the following activities performed by a constitutional functionary is outside the scope of supply?",
+      "options": [
+        "Services by a Member of Parliament or Member of State Legislature",
+        "Services provided by a practicing Chartered Accountant",
+        "Services provided by a high-court advocate",
+        "Services provided by a registered real estate agent"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per Schedule III, services by any person holding an office in pursuance of the provisions of the Constitution in that capacity (such as MPs, MLAs, members of local authorities) are treated neither as supply of goods nor supply of services.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Schedule III",
+        "Constitutional Functionaries",
+        "MPs and MLAs"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_014",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "When goods are supplied on hire purchase, the transfer of goods is treated as:",
+      "options": [
+        "Supply of services only",
+        "Supply of goods",
+        "Neither supply of goods nor services",
+        "Purely a financial transaction"
+      ],
+      "answerIndex": 1,
+      "explanation": "Hire purchase agreements involve transfer of title in goods at a future date upon payment of final installment. As per Schedule II, this is classified as a supply of goods.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Hire Purchase",
+        "Schedule II",
+        "Supply of Goods"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_015",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "If a person carrying on a business permanently puts business assets to private use or makes them available to any person for use for any purpose other than business, whether or not for a consideration, it is treated as:",
+      "options": [
+        "Supply of services",
+        "Supply of goods",
+        "Exempt supply",
+        "Not a supply"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per Schedule II, where goods forming part of business assets are transferred or disposed of for non-business use, it is treated as a supply of services.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Schedule II",
+        "Private Use",
+        "Supply of Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_016",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "Which of the following is an essential element of 'supply' under Section 7(1)(a) of the CGST Act?",
+      "options": [
+        "Supply must be made for a profit motive.",
+        "Supply must be made by a taxable person in the course or furtherance of business.",
+        "Supply must be made only between registered persons.",
+        "Supply must involve physical movement of goods."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 7(1)(a) requires that all forms of supply of goods or services such as sale, transfer, barter, exchange, licence, rental, lease or disposal made or agreed to be made for a consideration by a person in the course or furtherance of business must be present.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 7(1)(a)",
+        "Course of Business",
+        "Elements of Supply"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_017",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "Under Section 7(1)(aa), the activities or transactions by a person, other than an individual, to its members or constituents or vice-versa, for cash, deferred payment or other valuable consideration shall be:",
+      "options": [
+        "Treated as supply based on the principle of mutuality",
+        "Treated as not a supply due to the doctrine of incorporation",
+        "Deemed to be a supply, overcoming the principle of mutuality",
+        "Exempted entirely from GST"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 7(1)(aa), inserted retrospectively, explicitly treats activities by clubs, associations, or societies to their members (or vice-versa) as supply, thereby abrogating the common law principle of mutuality.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 7(1)(aa)",
+        "Clubs and Associations",
+        "Mutuality"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_018",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "Can a transaction be subjected to GST if there is no 'consideration' and it does not fall under Schedule I?",
+      "options": [
+        "Yes, if the value exceeds Rs. 50,000.",
+        "Yes, if it is done by a company.",
+        "No, consideration is an essential prerequisite for supply under Section 7(1)(a), unless covered under Schedule I.",
+        "Yes, at the discretion of the proper officer."
+      ],
+      "answerIndex": 2,
+      "explanation": "Generally, consideration is essential for a transaction to be a supply under Section 7(1)(a). The only exceptions where transactions without consideration are treated as supplies are those specified in Schedule I.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Consideration",
+        "Schedule I",
+        "General Principle"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_019",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "What is the tax implication when a building is rented out for commercial purposes?",
+      "options": [
+        "It is treated as a supply of goods.",
+        "It is treated as a supply of services.",
+        "It is neither supply of goods nor supply of services.",
+        "It is an exempt supply."
+      ],
+      "answerIndex": 1,
+      "explanation": "Renting of immovable property is explicitly specified as a supply of services under Schedule II, Para 2(a).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Renting",
+        "Immovable Property",
+        "Supply of Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_020",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "Which of the following is NOT covered under the definition of 'consideration' under Section 2(31) of the CGST Act, 2017?",
+      "options": [
+        "Any payment made in money or otherwise in respect of the inducement of a supply",
+        "Monetary value of any act or forbearance in respect of a supply",
+        "A subsidy given by the Central Government or a State Government",
+        "Deposits given in respect of the supply, unless applied as consideration for the supply"
+      ],
+      "answerIndex": 2,
+      "explanation": "As per Section 2(31), subsidies provided by the Central Government or a State Government are explicitly excluded from the definition of consideration.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Consideration",
+        "Section 2(31)",
+        "Subsidies"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_021",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "Which of the following activities amounts to a 'supply of goods' under Schedule II?",
+      "options": [
+        "Transfer of right in goods without transfer of title",
+        "Treatment or processing applied to another person's goods",
+        "Transfer of title in goods under an installment scheme where property passes at a future date",
+        "Renting of hotel accommodation"
+      ],
+      "answerIndex": 2,
+      "explanation": "Transfer of title in goods under an agreement that property will pass at a future date upon payment is a supply of goods. Treatment/processing of another person's goods and renting of accommodation are supplies of services.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Schedule II",
+        "Installment",
+        "Supply of Goods"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_022",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "Services by way of public utilities such as transport of passengers by public transport without any special amenities are generally:",
+      "options": [
+        "Taxable at 18%",
+        "Exempt from GST",
+        "Treated as mixed supply",
+        "Outside the scope of business"
+      ],
+      "answerIndex": 1,
+      "explanation": "Transportation of passengers by public transport (like metro, ordinary buses) is generally exempt from GST, although it is a supply of service.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Passenger Transport",
+        "Exemptions",
+        "Public Utilities"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_023",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "An architect in Delhi provides architectural drawings to a client in New York via email. This transaction is classified as:",
+      "options": [
+        "Export of goods",
+        "Export of services",
+        "Import of services",
+        "Inter-state supply of goods"
+      ],
+      "answerIndex": 1,
+      "explanation": "Provision of architectural services by a supplier in India to a recipient outside India meeting export conditions qualifies as an export of services under IGST Act, which is a form of inter-state supply.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Export of Services",
+        "IGST",
+        "Cross Border"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_024",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "If a registered person sells his personal car used exclusively for family outings, does it constitute a supply under GST?",
+      "options": [
+        "Yes, because the seller is a registered person.",
+        "No, because the sale is not made in the course or furtherance of business.",
+        "Yes, under Schedule I as disposal of assets.",
+        "No, because cars are capital goods."
+      ],
+      "answerIndex": 1,
+      "explanation": "To qualify as a supply under Section 7(1)(a), the transaction must be made in the course or furtherance of business. Sale of personal assets not used in business does not meet this requirement.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Course of Business",
+        "Personal Assets",
+        "Scope of Supply"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_025",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "What is the tax treatment of 'sale of land' under GST?",
+      "options": [
+        "Taxable at 18%",
+        "Taxable at 1% without ITC",
+        "Neither supply of goods nor supply of services",
+        "Exempt supply of goods"
+      ],
+      "answerIndex": 2,
+      "explanation": "As per Schedule III, sale of land and sale of completed building (where no part of consideration is received before issuance of completion certificate) are treated neither as supply of goods nor supply of services.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Schedule III",
+        "Sale of Land",
+        "Real Estate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_026",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "Which of the following is treated as a supply of services under Schedule II?",
+      "options": [
+        "Transfer of business assets to private use",
+        "Transfer of title in goods under a hire purchase agreement",
+        "Transfer of property in goods pursuant to a works contract where goods are also involved",
+        "Supply of goods by unincorporated association to members"
+      ],
+      "answerIndex": 0,
+      "explanation": "Transfer of business assets for private use is classified as a supply of services under Schedule II. Works contracts are explicitly treated as supply of services by statute, while hire purchase is supply of goods.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Schedule II",
+        "Private Use",
+        "Works Contract"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_027",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "A person gives his residential flat on lease to a software company for use as a guest house. How is this transaction treated?",
+      "options": [
+        "Exempt residential dwelling service",
+        "Taxable supply of service under renting of immovable property",
+        "Supply of goods",
+        "Neither supply of goods nor services"
+      ],
+      "answerIndex": 1,
+      "explanation": "Renting of residential dwelling to a registered corporate entity for business or guest house use does not qualify for residential dwelling exemption and is a taxable supply of service.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Residential Dwelling",
+        "Renting",
+        "Commercial Use"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_028",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "Which of the following activities by the Central Government, State Government or local authority is treated as a supply?",
+      "options": [
+        "Services by way of tolerating non-performance of a contract for which statutory penalty is levied",
+        "Services covered under a statutory notification where the government acts as a public authority charging fee for statutory certifications",
+        "Renting of commercial shops owned by a municipal corporation to a private merchant",
+        "Services of a coroner"
+      ],
+      "answerIndex": 2,
+      "explanation": "Renting of commercial properties owned by local authorities to business entities is a taxable supply of service, whereas pure regulatory/sovereign functions are not supplies.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Government Authorities",
+        "Commercial Renting",
+        "Taxable Supply"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_029",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "Under Section 7(1)(b), import of services for _________ is a supply even if made without consideration.",
+      "options": [
+        "Personal purposes from a relative abroad",
+        "Business purposes from a related person or establishment outside India",
+        "Any purpose from any person anywhere in the world",
+        "Charitable purposes from an unrelated person"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 7(1)(b) read with Schedule I specifies that import of services by a taxable person from a related person or from any of his other establishments outside India, in the course or furtherance of business, is treated as a supply even without consideration.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Import of Services",
+        "Section 7(1)(b)",
+        "Schedule I"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-2_030",
+      "kind": "normal",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "prompt": "Which of the following constitutes a 'barter' transaction under GST?",
+      "options": [
+        "Goods are exchanged for goods, and no money is involved at all.",
+        "Goods are sold for cash.",
+        "Services are provided on credit.",
+        "Free samples are distributed to doctors."
+      ],
+      "answerIndex": 0,
+      "explanation": "Barter is a transaction where goods or services are exchanged for other goods or services without any money consideration. Under GST, barter is considered a form of supply as long as it is in the course or furtherance of business.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Barter",
+        "Forms of Supply",
+        "Consideration"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_gst-2_01",
+      "kind": "scenario",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "passage": "M/s TechNova Solutions Pvt. Ltd., a registered software development firm in Bengaluru, enters into various business and promotional transactions during the financial year. \n1. It transfers 5 laptops from its Bengaluru office to its newly opened branch office in Hyderabad without charging any consideration. \n2. It distributes free promotional corporate diaries embossed with its company logo to its clients during Diwali, each diary costing Rs. 200 (not a related party transaction, no ITC claimed on diaries). \n3. It permits its director to use a company-owned sedan for personal family vacations for a week. \n4. It imports legal consulting services from an unrelated law firm in New York for drafting a commercial contract, without paying any professional fee.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-2_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-2_01",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-2",
+          "subject": "Taxation",
+          "prompt": "What is the GST implication on the transfer of laptops by TechNova Solutions from Bengaluru to its Hyderabad branch without consideration?",
+          "options": [
+            "Not a supply since there is no consideration.",
+            "Treated as a supply of goods because supplies between distinct persons (different state registrations) are deemed to be supplies even without consideration.",
+            "Treated as a supply of services.",
+            "Exempt supply under Schedule III."
+          ],
+          "answerIndex": 1,
+          "explanation": "As per Schedule I, supply of goods between distinct persons (having same PAN but registered in different states) made in the course or furtherance of business is treated as a supply even without consideration.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Distinct Persons",
+            "Schedule I",
+            "Branch Transfer"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-2_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-2_01",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-2",
+          "subject": "Taxation",
+          "prompt": "What is the taxability of the free distribution of promotional corporate diaries to clients by TechNova Solutions?",
+          "options": [
+            "Taxable as a supply of goods under Schedule I.",
+            "Not a supply because there is no consideration and the recipient is not a related person, plus no ITC was availed.",
+            "Taxable as a mixed supply.",
+            "Treated as a supply of services."
+          ],
+          "answerIndex": 1,
+          "explanation": "Gifts given without consideration to unrelated persons where input tax credit has not been availed do not constitute a supply under Schedule I or Section 7(1)(a).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Gifts",
+            "Free Samples",
+            "Schedule I"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-2_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-2_01",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-2",
+          "subject": "Taxation",
+          "prompt": "How is the permission granted to the director to use the company-owned sedan for personal family vacations classified under GST?",
+          "options": [
+            "Supply of goods",
+            "Supply of services under Schedule II (business assets put to private use)",
+            "Neither supply of goods nor services",
+            "Exempt supply of transport"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per Schedule II, where goods forming part of business assets are put to private use or made available for non-business use, whether or not for consideration, it is treated as a supply of services.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Schedule II",
+            "Private Use",
+            "Supply of Services"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-2_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-2_01",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-2",
+          "subject": "Taxation",
+          "prompt": "What is the GST treatment for the import of legal consulting services from the unrelated law firm in New York without paying any fee?",
+          "options": [
+            "It is a taxable import of service under Section 7(1)(b).",
+            "It is not a supply because the New York law firm is unrelated and no consideration is paid.",
+            "It is an exempt service.",
+            "It is a composite supply."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 7(1)(b) read with Schedule I, import of services without consideration is a supply ONLY if imported from a related person or from any of his establishments outside India. Since the New York firm is unrelated, import without consideration is not a supply.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Import of Services",
+            "Related Person",
+            "No Consideration"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-2_02",
+      "kind": "scenario",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "passage": "M/s Apex Retails, a registered departmental store in Chennai, engages in the following transactions in March: \n1. It sells a festive combo pack containing a silk saree, a box of dry fruits, and a silver coin for a single consolidated price of Rs. 10,000. These items are not naturally bundled in the ordinary course of business. \n2. It provides free lodging and boarding to its permanent factory workers at the factory premises as part of their employment terms. \n3. It disposes of old computer systems on which input tax credit was previously claimed, without consideration, to a local charitable trust. \n4. It enters into a contract with a transport operator for the delivery of goods sold to customers, charging customers a consolidated amount for goods and delivery.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-2_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-2_02",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-2",
+          "subject": "Taxation",
+          "prompt": "How should the festive combo pack sold by Apex Retails for a single price be classified and taxed under GST?",
+          "options": [
+            "As a composite supply taxable at the rate of silk saree",
+            "As a mixed supply taxable at the highest rate applicable to any of the items in the combo pack",
+            "As independent supplies attracting individual rates",
+            "As an exempt supply of gift hampers"
+          ],
+          "answerIndex": 1,
+          "explanation": "A combo pack of dissimilar items sold for a single price not naturally bundled constitutes a mixed supply under Section 2(74) and is taxed at the rate applicable to the item that attracts the highest tax rate.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Mixed Supply",
+            "Combo Pack",
+            "Section 2(74)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-2_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-2_02",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-2",
+          "subject": "Taxation",
+          "prompt": "What is the taxability of the free lodging and boarding provided by Apex Retails to its permanent factory workers?",
+          "options": [
+            "Taxable as a supply of hotel accommodation services",
+            "Taxable as a supply of goods",
+            "Treated as neither supply of goods nor services under Schedule III",
+            "Exempt supply under composite supply rules"
+          ],
+          "answerIndex": 2,
+          "explanation": "Services by an employee to the employer in the course of or in relation to employment are covered under Schedule III (neither supply of goods nor services). Conversely, employer providing facilities to employees as per employment contract does not constitute an independent outward taxable supply by the employee, and employer-employee provisions apply.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Employer-Employee",
+            "Schedule III",
+            "Staff Facilities"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-2_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-2_02",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-2",
+          "subject": "Taxation",
+          "prompt": "What is the GST implication on the disposal of old computer systems on which ITC was availed, given to a charitable trust without consideration?",
+          "options": [
+            "Not a supply because it is given to a charitable trust without consideration.",
+            "Deemed to be a supply of goods under Schedule I since ITC was availed on them.",
+            "Treated as a supply of services.",
+            "Exempt supply of capital assets."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Schedule I of the CGST Act, permanent transfer or disposal of business assets where input tax credit has been availed on such assets is treated as a supply even if made without consideration.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Schedule I",
+            "Business Assets",
+            "ITC Availed"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-2_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-2_02",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-2",
+          "subject": "Taxation",
+          "prompt": "How is the delivery of goods bundled with the sale of goods by Apex Retails classified?",
+          "options": [
+            "Mixed supply",
+            "Composite supply where principal supply is the sale of goods",
+            "Independent supply of transport services",
+            "Exempt supply of logistics"
+          ],
+          "answerIndex": 1,
+          "explanation": "Supply of goods along with transportation/delivery in the ordinary course of business constitutes a composite supply under Section 2(30), where the principal supply is the sale of goods.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Composite Supply",
+            "Delivery",
+            "Principal Supply"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-2_03",
+      "kind": "scenario",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "passage": "Mr. Vikram, a registered taxpayer in Kolkata, undertakes the following commercial and legal transactions: \n1. He owns a commercial building and rents out the ground floor to a branch of a nationalized bank for office use. \n2. He assigns his copyright of a literary book to a publishing house for a lump sum royalty. \n3. He acts as an arbitrator in a commercial dispute between two corporate entities and receives arbitration fees. \n4. He surrenders his right to carry on a specific competing trade within a 5-kilometer radius for 3 years in favor of a rival firm, in consideration of a non-compete fee.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-2_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-2_03",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-2",
+          "subject": "Taxation",
+          "prompt": "How is the renting of the ground floor of the commercial building to a nationalized bank classified under GST?",
+          "options": [
+            "Supply of goods",
+            "Supply of services under Schedule II",
+            "Neither supply of goods nor services",
+            "Exempt supply of immovable property"
+          ],
+          "answerIndex": 1,
+          "explanation": "Renting of immovable property is explicitly classified as a supply of services under Schedule II, Para 2(a) of the CGST Act, 2017.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Renting",
+            "Schedule II",
+            "Supply of Services"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-2_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-2_03",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-2",
+          "subject": "Taxation",
+          "prompt": "What is the classification of the assignment of copyright of a literary book by Mr. Vikram to the publishing house?",
+          "options": [
+            "Supply of goods",
+            "Supply of services (temporary transfer/permitting use of intellectual property)",
+            "Exempt supply of books",
+            "Not a supply"
+          ],
+          "answerIndex": 1,
+          "explanation": "Temporary transfer or permitting the use or enjoyment of any intellectual property right is treated as a supply of services under Schedule II.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Intellectual Property",
+            "Schedule II",
+            "Supply of Services"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-2_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-2_03",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-2",
+          "subject": "Taxation",
+          "prompt": "How are the arbitration services provided by Mr. Vikram to corporate entities classified under GST?",
+          "options": [
+            "Supply of services taxable under reverse charge mechanism",
+            "Supply of services taxable under forward charge",
+            "Exempt supply of legal services",
+            "Neither supply of goods nor services"
+          ],
+          "answerIndex": 0,
+          "explanation": "Services provided by an arbitral tribunal to a business entity located in the taxable territory are classified as a supply of services taxable under the reverse charge mechanism (RCM).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Arbitration",
+            "Reverse Charge",
+            "Supply of Services"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-2_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-2_03",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-2",
+          "subject": "Taxation",
+          "prompt": "What is the taxability of the non-compete fee received by Mr. Vikram for surrendering his right to carry on a competing trade?",
+          "options": [
+            "Not a supply as no goods or services are transferred.",
+            "Treated as a supply of services by way of tolerating an act or refraining from an act.",
+            "Exempt capital receipt.",
+            "Supply of goods."
+          ],
+          "answerIndex": 1,
+          "explanation": "Agreeing to the obligation to refrain from an act, or to tolerate an act or a situation, is treated as a supply of services under Schedule II, Para 5(e).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Non-Compete Fee",
+            "Tolerating an Act",
+            "Schedule II"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-2_04",
+      "kind": "scenario",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "passage": "M/s Zenith Enterprises, a registered manufacturing firm in Ahmedabad, engages in various transactions: \n1. It enters into a works contract for the construction of a pipeline for an industrial client. \n2. It provides a restaurant meal service in its factory guest house, offering a thali containing various food items for a single consolidated price. \n3. It transfers machinery from its Ahmedabad unit to its Pune unit (both registered under the same PAN in different states) without consideration. \n4. It sells scrap generated in the manufacturing process to a local scrap dealer for monetary consideration.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-2_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-2_04",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-2",
+          "subject": "Taxation",
+          "prompt": "How is the works contract for constructing an industrial pipeline classified under the CGST Act, 2017?",
+          "options": [
+            "Supply of goods",
+            "Supply of services",
+            "Composite supply of goods and services treated entirely as supply of goods",
+            "Neither supply of goods nor services"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per Schedule II, Para 6(a), works contracts involving composite supply of goods and services are explicitly treated as a supply of services under GST.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Works Contract",
+            "Schedule II",
+            "Supply of Services"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-2_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-2_04",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-2",
+          "subject": "Taxation",
+          "prompt": "How is the factory guest house thali meal containing multiple food items sold for a single price classified?",
+          "options": [
+            "Mixed supply",
+            "Composite supply of restaurant/catering service",
+            "Independent supply of respective food items",
+            "Exempt supply"
+          ],
+          "answerIndex": 1,
+          "explanation": "Provision of food or catering services where various items are naturally bundled in the ordinary course of business constitutes a composite supply, with restaurant/catering service being the principal supply.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Composite Supply",
+            "Catering",
+            "Restaurant"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-2_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-2_04",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-2",
+          "subject": "Taxation",
+          "prompt": "What is the status of the machinery transfer from Ahmedabad to Pune without consideration?",
+          "options": [
+            "Not a supply due to absence of consideration.",
+            "Deemed to be a supply under Schedule I between distinct persons.",
+            "Exempt supply of capital goods.",
+            "Supply of services."
+          ],
+          "answerIndex": 1,
+          "explanation": "Supply of goods or services between distinct persons (establishments of same person in different states) in the course or furtherance of business is treated as a supply even without consideration as per Schedule I.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Distinct Persons",
+            "Schedule I",
+            "Machinery Transfer"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-2_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-2_04",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-2",
+          "subject": "Taxation",
+          "prompt": "How is the sale of manufacturing scrap by Zenith Enterprises treated under GST?",
+          "options": [
+            "Not a supply since scrap is a waste product.",
+            "Taxable supply of goods made in the course or furtherance of business.",
+            "Exempt supply.",
+            "Supply of services."
+          ],
+          "answerIndex": 1,
+          "explanation": "Sale of scrap generated in the course of manufacturing business for consideration is a supply of goods under Section 7(1)(a) since it is in the course or furtherance of business.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Scrap Sale",
+            "Course of Business",
+            "Supply of Goods"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-2_05",
+      "kind": "scenario",
+      "chapterId": "gst-2",
+      "subject": "Taxation",
+      "passage": "M/s Global Logistics Ltd., a registered goods transport agency (GTA) in Jaipur, engages in the following transactions: \n1. It transports agricultural produce and milk from rural collection centers to processing units. \n2. It rents a truck owned by it to a transport contractor under a charter hire agreement without operator. \n3. It issues a commercial vehicle on a hire-purchase basis to an independent driver, where the title of the vehicle will transfer upon payment of the last installment. \n4. It permits an advertising agency to display advertisements on the exterior panels of its delivery vans for a quarterly fee.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Supply under GST"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-2_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-2_05",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-2",
+          "subject": "Taxation",
+          "prompt": "What is the taxability of the transport of agricultural produce and milk by Global Logistics Ltd.?",
+          "options": [
+            "Taxable at 5% under reverse charge",
+            "Taxable at 18% under forward charge",
+            "Exempt from GST under specific exemption notifications",
+            "Neither supply of goods nor services"
+          ],
+          "answerIndex": 2,
+          "explanation": "Transportation of agricultural produce, milk, salt, and food grains by GTA is exempt from GST under specific exemption entries, though it is a supply of service.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "GTA",
+            "Exemptions",
+            "Agricultural Produce"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-2_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-2_05",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-2",
+          "subject": "Taxation",
+          "prompt": "How is the renting of the truck without operator classified under GST?",
+          "options": [
+            "Supply of goods",
+            "Supply of services (renting of transport vehicle)",
+            "Neither supply nor service",
+            "Exempt supply"
+          ],
+          "answerIndex": 1,
+          "explanation": "Renting of motor vehicles or transport equipment without operator is classified as a supply of services under Schedule II.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Renting",
+            "Vehicles",
+            "Supply of Services"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-2_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-2_05",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-2",
+          "subject": "Taxation",
+          "prompt": "How is the hire-purchase transaction of the commercial vehicle classified under GST?",
+          "options": [
+            "Supply of services",
+            "Supply of goods",
+            "Exempt supply",
+            "Financial transaction outside GST"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per Schedule II, transfer of title in goods under an agreement where property passes at a future date upon payment of installments (hire-purchase) is a supply of goods.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Hire Purchase",
+            "Schedule II",
+            "Supply of Goods"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-2_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-2_05",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-2",
+          "subject": "Taxation",
+          "prompt": "What is the taxability of permitting the advertising agency to display advertisements on the delivery vans?",
+          "options": [
+            "Exempt as ancillary transport activity",
+            "Taxable supply of advertising services",
+            "Supply of goods",
+            "Not a supply"
+          ],
+          "answerIndex": 1,
+          "explanation": "Permitting the display of advertisements on vehicles is a taxable supply of advertising services under forward charge.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Advertising Services",
+            "Vehicles",
+            "Taxable Supply"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

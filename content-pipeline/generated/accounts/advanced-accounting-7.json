@@ -1,0 +1,1427 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "advanced-accounting-7",
+  "subject": "Accounts",
+  "paper": "Paper 1: Advanced Accounting",
+  "module": "Module 2",
+  "chapterNumber": 7,
+  "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement",
+  "generatedAt": "2026-08-16T13:54:01.693Z",
+  "model": "gemini-3.6-flash",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_advanced-accounting-7_001",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "Under AS 4 'Contingencies and Events Occurring After the Balance Sheet Date', which of the following events occurring after the balance sheet date but before approval of financial statements requires an adjustment to assets and liabilities?",
+      "options": [
+        "A fire in the warehouse destroying inventory worth ₹50 lakhs on 10th April",
+        "Insolvency of a major trade debtor whose financial position was deteriorating prior to the balance sheet date",
+        "A major decline in market value of investments after the balance sheet date",
+        "Announcement of a scheme of reconstruction after the balance sheet date"
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 4 states that adjustments to assets and liabilities are required for events occurring after the balance sheet date that provide additional information materially affecting the determination of amounts relating to conditions existing at the balance sheet date. Insolvency of a customer confirms the uncollectibility of a debt existing on the balance sheet date, making it an adjusting event.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 4",
+        "Adjusting Events",
+        "Subsequent Events"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_002",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "How should dividends declared/proposed by an enterprise for the financial year after the balance sheet date but before approval of financial statements be treated as per revised AS 4?",
+      "options": [
+        "Recognized as a liability on the balance sheet date",
+        "Recognized as a provision in the Statement of Profit and Loss",
+        "Disclosed in the notes to accounts without recognizing as a liability",
+        "Adjusted directly in the General Reserve account on the balance sheet date"
+      ],
+      "answerIndex": 2,
+      "explanation": "As per revised AS 4, if dividends are declared after the balance sheet date, an enterprise should not recognize those dividends as a liability at the balance sheet date because no obligation exists at that date. Such dividends are disclosed in the notes to the financial statements.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 4",
+        "Proposed Dividend",
+        "Notes to Accounts"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_003",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "According to AS 5 'Net Profit or Loss for the Period, Prior Period Items and Changes in Accounting Policies', how should prior period items be presented in the Statement of Profit and Loss?",
+      "options": [
+        "Adjusted against the opening balance of retained earnings with restatements",
+        "Shown separately in the current period Statement of Profit and Loss after determining net profit/loss",
+        "Included quietly under regular administration expenses without separate line disclosure",
+        "Deducted directly from the Share Capital account"
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 5 requires prior period items to be separately disclosed in the Statement of Profit and Loss in a manner that their impact on the current profit or loss can be perceived. Unlike Ind AS 8, AS 5 does not require retrospective restatement of prior period financial statement figures.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 5",
+        "Prior Period Items",
+        "Financial Presentation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_004",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "An enterprise changes its method of charging depreciation on plant and machinery from Straight Line Method (SLM) to Written Down Value (WDV) method. As per AS 5 and AS 10 (Revised), this change should be treated as:",
+      "options": [
+        "A change in accounting policy requiring retrospective adjustment",
+        "A prior period error requiring retrospective restatement",
+        "A change in accounting estimate accounted for prospectively",
+        "An extraordinary item credited to the capital reserve"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under AS 10 (Revised) and AS 5, a change in depreciation method is treated as a change in an accounting estimate. It is accounted for prospectively by allocating the depreciable amount over the remaining useful life.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 5",
+        "AS 10",
+        "Accounting Estimates",
+        "Depreciation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_005",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "Under AS 11 'The Effects of Changes in Foreign Exchange Rates', foreign currency monetary items outstanding at the balance sheet date should be reported using the:",
+      "options": [
+        "Average rate of the financial year",
+        "Transaction date exchange rate",
+        "Closing exchange rate at the balance sheet date",
+        "Forward exchange contract rate agreed with the bank"
+      ],
+      "answerIndex": 2,
+      "explanation": "AS 11 mandates that at each balance sheet date, foreign currency monetary items (such as cash, receivables, payables, loans) shall be reported using the closing exchange rate.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 11",
+        "Monetary Items",
+        "Closing Rate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_006",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "Which of the following items is classified as a NON-MONETARY item under AS 11?",
+      "options": [
+        "Trade Receivables in foreign currency",
+        "Inventories held in foreign currency location",
+        "Bank balances held in overseas foreign bank accounts",
+        "Foreign currency term loan payable"
+      ],
+      "answerIndex": 1,
+      "explanation": "Monetary items are money held and assets/liabilities to be received/paid in fixed or determinable amounts of money. Inventories, fixed assets, and investments are non-monetary items under AS 11.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 11",
+        "Non-Monetary Items",
+        "Classification"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_007",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "As per AS 22 'Accounting for Taxes on Income', timing differences are defined as:",
+      "options": [
+        "Differences between taxable income and accounting income that originate in one period and are capable of reversal in one or more subsequent periods",
+        "Differences between accounting income and taxable income that originate in one period and do not reverse subsequently",
+        "Differences between total cash inflows and total taxable receipts of the enterprise",
+        "Differences arising purely due to tax rate changes between two financial years"
+      ],
+      "answerIndex": 0,
+      "explanation": "Timing differences originate in one period and reverse in one or more subsequent periods, resulting from differences in timing of recognition of items of income or expense for accounting vs taxation purposes.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 22",
+        "Timing Differences",
+        "Deferred Tax"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_008",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "Under AS 22, Deferred Tax Assets (DTA) in situations of unabsorbed depreciation or carry forward of losses under tax laws should be recognized ONLY to the extent that there is:",
+      "options": [
+        "Reasonable certainty that sufficient future taxable income will be available",
+        "Virtual certainty supported by convincing evidence that sufficient future taxable income will be available",
+        "Absolute guarantee from the tax authorities that losses will be set off",
+        "Management expectation of profit in the next 10 accounting periods"
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 22 lays down a stricter prudence test for entities having unabsorbed depreciation or carried forward tax losses: DTA can be recognized only if there is virtual certainty supported by convincing evidence that sufficient future taxable income will be available.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 22",
+        "Virtual Certainty",
+        "Unabsorbed Loss",
+        "Deferred Tax Asset"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_009",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "A company incurs fine and penalty of ₹5,00,000 for violation of statutory environmental regulations. Under tax laws, penalties for illegal acts are permanently disallowed. Under AS 22, this penalty creates:",
+      "options": [
+        "A Deferred Tax Liability (DTL)",
+        "A Deferred Tax Asset (DTA)",
+        "A Permanent Difference requiring no deferred tax creation",
+        "A timing difference reversing over 5 years"
+      ],
+      "answerIndex": 2,
+      "explanation": "Items disallowed permanently under tax laws (and not allowed in subsequent years either) create permanent differences. Permanent differences do not reverse in subsequent periods and hence no deferred tax asset or liability is recognized on them.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 22",
+        "Permanent Difference",
+        "Tax Accounting"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_010",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "On 28th March 2026, a company suffered a severe fire destroying its major factory unit. The financial statements were approved on 20th May 2026. Management determines that the loss affects the entity's ability to continue as a going concern. How should this event be treated under AS 4?",
+      "options": [
+        "Disclosed only in the report of the Board of Directors without changing accounts",
+        "Disclosed as a non-adjusting event in the notes to accounts",
+        "Financial statements must be prepared on a non-going concern basis ( liquidation/realizable basis), treating it as an adjusting event",
+        "Ignored in the financial statements of 2025-26 and recorded in 2026-27"
+      ],
+      "answerIndex": 2,
+      "explanation": "As per AS 4, if an event after the balance sheet date indicates that the enterprise will not be able to continue as a going concern, the financial statements must be adjusted to reflect the non-going concern status (e.g. assets valued at net realizable value).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 4",
+        "Going Concern",
+        "Adjusting Events"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_011",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "An enterprise omitted to accrue interest income of ₹1,20,000 earned on bank fixed deposits during FY 2024-25. The error was discovered during FY 2025-26. How should this amount be recorded under AS 5 in FY 2025-26?",
+      "options": [
+        "Credited directly to Capital Reserve",
+        "Included in current year's interest income without any separate disclosure",
+        "Shown as a prior period item in the Statement of Profit and Loss of FY 2025-26",
+        "Adjusted by restating the comparative balance sheet of FY 2024-25"
+      ],
+      "answerIndex": 2,
+      "explanation": "Prior period items are income or expenses which arise in the current period as a result of errors or omissions in the preparation of financial statements of one or more prior periods. They are disclosed separately in the Statement of Profit and Loss under AS 5.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 5",
+        "Prior Period Error",
+        "Omission"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_012",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "Under AS 11, exchange differences arising on the translation of financial statements of a Non-Integral Foreign Operation (NIFO) should be:",
+      "options": [
+        "Recognized as income or expense in the Statement of Profit and Loss immediately",
+        "Accumulated in a Foreign Currency Translation Reserve (FCTR) until the disposal of the net investment",
+        "Capitalized into the carrying cost of fixed assets of the foreign operation",
+        "Deducted directly from current liabilities in the consolidated balance sheet"
+      ],
+      "answerIndex": 1,
+      "explanation": "For a Non-Integral Foreign Operation (NIFO), AS 11 requires exchange differences arising on translation to be accumulated in a 'Foreign Currency Translation Reserve' (FCTR) in the balance sheet until the disposal of the net investment.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 11",
+        "Non-Integral Foreign Operation",
+        "FCTR"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_013",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "An enterprise purchases goods in USD on 1st February 2026 for USD 20,000 when USD 1 = ₹82. On 31st March 2026, the rate is USD 1 = ₹85. Payment is made on 30th April 2026 when USD 1 = ₹84. What is the exchange gain/loss recognized in P&L for FY 2025-26 under AS 11?",
+      "options": [
+        "₹60,000 Loss",
+        "₹60,000 Gain",
+        "₹40,000 Loss",
+        "₹20,000 Loss"
+      ],
+      "answerIndex": 0,
+      "explanation": "At initial recognition (1st Feb): USD 20,000 * 82 = ₹16,40,000 liability. At balance sheet date (31st Mar): USD 20,000 * 85 = ₹17,00,000 liability. Exchange Loss for FY 2025-26 = ₹17,00,000 - ₹16,40,000 = ₹60,00,00 Loss recognized in P&L.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 11",
+        "Exchange Difference",
+        "Monetary Liability"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_014",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "Continuing from the previous transaction, what exchange gain or loss will be recognized in the Profit & Loss statement for FY 2026-27 on settlement date (30th April 2026)?",
+      "options": [
+        "Exchange Gain of ₹20,000",
+        "Exchange Loss of ₹20,000",
+        "Exchange Gain of ₹40,000",
+        "No exchange gain/loss"
+      ],
+      "answerIndex": 0,
+      "explanation": "Carrying liability as on 1st April 2026 = USD 20,000 * 85 = ₹17,00,000. Amount paid on 30th April 2026 = USD 20,00,0 * 84 = ₹16,80,000. Settlement results in an Exchange Gain of ₹17,00,000 - ₹16,80,000 = ₹20,000 in FY 2026-27.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 11",
+        "Settlement Gain",
+        "Monetary Items"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_015",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "Under AS 22, if tax laws allow 100% depreciation on certain scientific research equipment in Year 1 (₹10,00,000) while financial accounts depreciate it over 5 years on Straight Line Method (₹2,00,000 p.a.), what is the timing difference in Year 1 and its tax effect (assuming tax rate is 30%)?",
+      "options": [
+        "Deductible timing difference ₹8,00,000 leading to DTA of ₹2,40,000",
+        "Taxable timing difference ₹8,00,000 leading to DTL of ₹2,40,000",
+        "Taxable timing difference ₹10,00,000 leading to DTL of ₹3,00,000",
+        "Permanent difference ₹8,00,000 with no deferred tax impact"
+      ],
+      "answerIndex": 1,
+      "explanation": "Taxable income in Year 1 will be lower than accounting income due to excess tax depreciation of ₹8,00,000 (10L - 2L). This is a taxable timing difference of ₹8,00,000, creating a Deferred Tax Liability (DTL) of ₹8,00,000 * 30% = ₹2,40,000.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 22",
+        "Deferred Tax Liability",
+        "Timing Difference"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_016",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "Which of the following conditions MUST be fulfilled for an enterprise to offset Deferred Tax Assets (DTA) and Deferred Tax Liabilities (DTL) in its balance sheet under AS 22?",
+      "options": [
+        "The enterprise has a legally enforceable right to set off assets against liabilities under income tax laws AND DTAs/DTLs relate to taxes levied by the same governing tax law",
+        "The management decides to show net figures for better ratio presentation",
+        "DTA and DTL amounts are equal in magnitude",
+        "The auditor provides a written approval for offsetting"
+      ],
+      "answerIndex": 0,
+      "explanation": "AS 22 allows offsetting of DTA and DTL if and only if the enterprise has a legally enforceable right to set off current tax assets against current tax liabilities and the deferred tax assets and liabilities relate to taxes on income levied by the same governing tax laws.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 22",
+        "Offsetting Criteria",
+        "Presentation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_017",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "During FY 2025-26, a company incurs preliminary expenses of ₹6,00,000. As per AS 26, the entire amount is written off in P&L in FY 2025-26. However, under Income Tax Act Section 35D, this expenditure is deductible in 5 equal annual installments (₹1,20,000 p.a.). Tax rate is 30%. What deferred tax item is created in FY 2025-26?",
+      "options": [
+        "Deferred Tax Liability of ₹1,44,000",
+        "Deferred Tax Asset of ₹1,44,000",
+        "Deferred Tax Asset of ₹1,80,000",
+        "Permanent difference of ₹4,80,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Accounting profit is lower by ₹4,80,000 (6,00,000 expensed in accounts - 1,20,000 allowed in tax). In future years, tax laws will allow ₹1,20,000 p.a. deduction while accounts will show zero expense. This creates a deductible timing difference of ₹4,80,000 resulting in DTA = ₹4,80,000 * 30% = ₹1,44,000.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 22",
+        "Deferred Tax Asset",
+        "Section 35D"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_018",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "An Integral Foreign Operation (IFO) holds foreign currency non-monetary items carried at fair value. Under AS 11, at what exchange rate should these items be translated at the balance sheet date?",
+      "options": [
+        "Historical rate at the date of acquisition",
+        "Closing exchange rate on the balance sheet date",
+        "Exchange rate existing on the date when fair value was determined",
+        "Average rate of the reporting period"
+      ],
+      "answerIndex": 2,
+      "explanation": "AS 11 mandates that non-monetary items carried at fair value or net realizable value in an integral foreign operation shall be translated using the exchange rates that existed when the values were determined.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 11",
+        "Integral Foreign Operation",
+        "Fair Value Translation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_019",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "Which of the following is an example of an Extraordinary Item under AS 5?",
+      "options": [
+        "Write-down of inventories to net realizable value",
+        "Loss incurred due to an earthquake destroying a manufacturing plant",
+        "Provision for bad debts due to slowdown in economy",
+        "Gain on sale of obsolete office computer equipment"
+      ],
+      "answerIndex": 1,
+      "explanation": "Extraordinary items are income or expenses that arise from events or transactions that are clearly distinct from the ordinary activities of the enterprise and, therefore, are not expected to recur frequently or regularly. Earthquake loss is extraordinary.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 5",
+        "Extraordinary Items",
+        "Non-Ordinary Events"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_020",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "Under AS 11, a forward exchange contract is entered into for hedging foreign exchange exposure on a firm commitment. The premium or discount arising on inception of such a forward contract should be:",
+      "options": [
+        "Charged entirely to Statement of Profit and Loss on inception date",
+        "Capitalized into the cost of related fixed asset",
+        "Amortized as expense or income over the life of the contract",
+        "Carried forward in a reserve until settlement"
+      ],
+      "answerIndex": 2,
+      "explanation": "AS 11 specifies that any premium or discount arising at the inception of a forward exchange contract intended for hedging purposes should be amortized as expense or income over the life of the contract.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 11",
+        "Forward Exchange Contract",
+        "Premium Amortization"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_021",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "Under AS 11, if a forward contract is entered into for TRADING or SPECULATION purposes, how is the gain or loss on the contract determined and recognized at each balance sheet date?",
+      "options": [
+        "Amortized over the life of the contract",
+        "Calculated by computing the difference between forward rate for remaining maturity and contract rate, and recognized in Profit & Loss",
+        "Ignored until the maturity of the contract",
+        "Transferred directly to General Reserve"
+      ],
+      "answerIndex": 1,
+      "explanation": "For trading or speculation forward contracts, AS 11 prohibits premium/discount amortization. Instead, at each balance sheet date, the contract is marked to market by comparing forward rate for remaining term with contract rate, and gains/losses are recognized in P&L.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 11",
+        "Speculation Contract",
+        "Mark to Market"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_022",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "Alpha Ltd. has an unrecorded liability for compensation payable to workers under a court order passed on 20th March 2026. The amount was agreed upon as ₹10 lakhs on 15th April 2026 before balance sheet approval. What is the treatment in accounts for FY 2025-26 under AS 4?",
+      "options": [
+        "Disclose as a contingent liability in notes",
+        "Create a provision/adjust liability of ₹10 lakhs in financial statements for FY 2025-26",
+        "Record expense in FY 2026-27 when paid",
+        "Ignore since court order was passed before financial year end without amount"
+      ],
+      "answerIndex": 1,
+      "explanation": "The condition (court order against company) existed at the balance sheet date (20th March). The event occurring after balance sheet date (negotiation fixing amount on 15th April) provides additional evidence. Thus, it is an adjusting event under AS 4.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 4",
+        "Adjusting Event",
+        "Provision"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_023",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "According to AS 22, at each balance sheet date, an enterprise shall re-assess unrecognized Deferred Tax Assets. What action should be taken if criteria for recognition are now met?",
+      "options": [
+        "Do nothing; once unrecognized, DTA cannot be recognized in future",
+        "Recognize previously unrecognized DTA to the extent it has become reasonably/virtually certain that future taxable income will be available",
+        "Adjust prior period retained earnings retrospectively",
+        "Credit the amount directly to Capital Reserve"
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 22 requires entities to re-assess unrecognized DTAs at each balance sheet date. The entity recognizes a previously unrecognized DTA to the extent that it has become reasonably or virtually certain (as applicable) that future taxable income will be available.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 22",
+        "Re-assessment",
+        "Deferred Tax Asset"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_024",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "Under AS 5, a change in accounting policy should be made ONLY if required by statute, for compliance with an accounting standard, or if:",
+      "options": [
+        "Management wants to minimize income tax liability",
+        "It results in a more appropriate presentation of financial statements",
+        "The company wants to match figures with competitor companies",
+        "The board of directors passes a unanimous resolution for tax saving"
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 5 specifies that a change in accounting policy should be made only if required by statute, for compliance with an accounting standard, or if it is considered that the change would result in a more appropriate presentation of financial statements.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 5",
+        "Change in Policy",
+        "Presentation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_025",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "If a change in accounting policy has a material effect in the current period, what disclosure is mandatory under AS 5?",
+      "options": [
+        "Impact of the change and the financial amount affected (if quantifiable)",
+        "No disclosure required if management approves",
+        "Disclosure only in the directors' report",
+        "Restatement of last 3 years income statement"
+      ],
+      "answerIndex": 0,
+      "explanation": "AS 5 states that any change in accounting policy having material effect should be disclosed. The impact and the financial amount resulting from such change should be disclosed to the extent ascertainable.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 5",
+        "Policy Change Disclosure",
+        "Material Impact"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_026",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "Under AS 11, when a loan in foreign currency is taken to acquire a qualifying fixed asset, how are exchange differences on such loan treated under standard AS 11 rules (excluding Para 46A option)?",
+      "options": [
+        "Capitalized into the cost of the asset",
+        "Recognized as income or expense in Statement of Profit and Loss",
+        "Transferred to Foreign Currency Monitory Item Translation Difference Account",
+        "Adjusted against Share Capital"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under standard provisions of AS 11, exchange differences arising on foreign currency monetary liabilities are recognized as income or expense in the Statement of Profit and Loss in the period in which they arise.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 11",
+        "Exchange Difference",
+        "Borrowings"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_027",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "A company has accounting profit before tax of ₹20,00,000 for FY 2025-26. Income tax computed as per tax law is ₹5,00,000. DTL created during the year is ₹1,00,000 and DTA created is ₹40,000. Total Tax Expense in P&L for FY 2025-26 is:",
+      "options": [
+        "₹5,60,000",
+        "₹4,40,000",
+        "₹5,00,000",
+        "₹6,00,000"
+      ],
+      "answerIndex": 0,
+      "explanation": "Total Tax Expense = Current Tax Expense + Deferred Tax Charge = ₹5,00,000 + (DTL ₹1,00,000 - DTA ₹40,000) = ₹5,00,000 + ₹60,000 = ₹5,60,000.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 22",
+        "Total Tax Expense",
+        "Current Tax",
+        "Deferred Tax"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_028",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "Which of the following indicator suggests that a foreign operation is a NON-INTEGRAL foreign operation (NIFO) under AS 11?",
+      "options": [
+        "Foreign operation activities are carried out as an integral extension of the reporting enterprise's operations",
+        "Transactions with reporting enterprise constitute a high proportion of foreign operation's activities",
+        "Foreign operation's activities are financed mainly from its own operations or local borrowings rather than by reporting enterprise",
+        "Sales prices for foreign operation's products respond directly to day-to-day changes in Indian rupee"
+      ],
+      "answerIndex": 2,
+      "explanation": "AS 11 lists indicators of NIFO: activities financed mainly from local operations/borrowings, sales prices not primarily affected by local currency changes of parent, local operating expenses paid in local currency.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 11",
+        "Non-Integral Indicators",
+        "Classification"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_029",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "In FY 2025-26, Beta Ltd. discovered that depreciation on factory building was under-recorded by ₹3,00,000 in FY 2023-24 due to a mathematical computation error. Under AS 5, how should this ₹3,00,000 be treated in FY 2025-26?",
+      "options": [
+        "Charged as current year depreciation under operating costs",
+        "Disclosed separately as a Prior Period Item in Profit & Loss statement",
+        "Adjusted prospectively by increasing remaining depreciation rate",
+        "Ignored as it pertains to a closed accounting year"
+      ],
+      "answerIndex": 1,
+      "explanation": "Mathematical errors in prior financial statement calculations represent errors/omissions. Correction of such errors is treated as a Prior Period Item under AS 5 and disclosed separately in P&L of the current period.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 5",
+        "Prior Period Item",
+        "Calculation Error"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-7_030",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "prompt": "Under AS 22, enacted or substantively enacted tax rates as of the balance sheet date are used for measuring deferred taxes. If new tax rate was passed by Parliament on 25th March 2026 (applicable for FY 2025-26 onwards), which rate is used to compute deferred tax as on 31st March 2026?",
+      "options": [
+        "Old tax rate existing prior to 25th March",
+        "New tax rate passed on 25th March 2026",
+        "Average of old and new tax rates",
+        "Rate expected to be enacted in 2030"
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 22 mandates that deferred tax assets and liabilities should be measured using the tax rates and tax laws that have been enacted or substantively enacted by the balance sheet date. The new rate passed on 25th March 2026 is enacted by 31st March 2026.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 22",
+        "Substantively Enacted Rate",
+        "Measurement"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_advanced-accounting-7_01",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "passage": "Apex Traders Ltd. is in the process of finalizing its financial statements for the financial year ended 31st March 2026. The Board of Directors is scheduled to approve the accounts on 20th May 2026. The following developments occurred between 31st March 2026 and 20th May 2026:\n1. On 10th April 2026, a major debtor, Mr. Raman, owing ₹8,00,000 as on 31st March 2026, was declared insolvent. His insolvency was triggered by a factory fire at his premises on 5th April 2026.\n2. On 25th April 2026, a fire occurred in Apex Traders Ltd.'s main godown destroying uninsured inventory valued at ₹12,00,000.\n3. On 2nd May 2026, the accountant discovered an error: rent expense of ₹3,00,000 for FY 2024-25 had been completely omitted from the accounts of FY 2024-25.\n4. On 10th May 2026, the company decided to revise the estimated remaining useful life of its delivery trucks from 5 years to 3 years due to heavy wear and tear.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-7_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-7_01",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-7",
+          "subject": "Accounts",
+          "prompt": "How should the insolvency of Mr. Raman (debtor owing ₹8,00,000) be treated in the financial statements for FY 2025-26 under AS 4?",
+          "options": [
+            "Adjusting event requiring provision/write-off of ₹8,00,000 in FY 2025-26 because the debt existed on balance sheet date",
+            "Non-adjusting event because the insolvency trigger (fire at debtor's factory) occurred after 31st March 2026",
+            "Disclosed only as a footnote in Directors' Report",
+            "Prior period item under AS 5"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under AS 4, events occurring after the balance sheet date are non-adjusting if the condition causing the event (fire at debtor's premises on 5th April) did not exist on the balance sheet date (31st March). Thus, insolvency resulting entirely from a post-balance-sheet fire is a non-adjusting event, disclosed in notes if material.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 4",
+            "Non-adjusting Event",
+            "Post Balance Sheet Event"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-7_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-7_01",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-7",
+          "subject": "Accounts",
+          "prompt": "How should the godown fire loss of ₹12,00,000 occurring on 25th April 2026 be treated in financial statements for FY 2025-26 under AS 4?",
+          "options": [
+            "Adjusted in financial statements by writing down inventory on 31st March 2026",
+            "Treated as a non-adjusting event and disclosed in the report of approving authority / notes to accounts",
+            "Ignored completely as it occurred after 31st March 2026",
+            "Treated as an extraordinary prior period loss under AS 5"
+          ],
+          "answerIndex": 1,
+          "explanation": "Fire loss after balance sheet date is a non-adjusting event because the fire condition did not exist at the balance sheet date. Being material, disclosure must be made in the report of the approving authority / notes to accounts.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 4",
+            "Non-adjusting Event",
+            "Fire Loss"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-7_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-7_01",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-7",
+          "subject": "Accounts",
+          "prompt": "How should the omitted rent expense of ₹3,00,000 for FY 2024-25 be accounted for in FY 2025-26 under AS 5?",
+          "options": [
+            "Adjusted directly against opening general reserve without showing in Statement of Profit and Loss",
+            "Disclosed separately as a Prior Period Item in the Statement of Profit and Loss of FY 2025-26",
+            "Included quietly in current period rent expense without separate disclosure",
+            "Restate the prior year financial statements of FY 2024-25"
+          ],
+          "answerIndex": 1,
+          "explanation": "Omission of rent in prior year is an error requiring treatment as a Prior Period Item under AS 5. It is disclosed separately in the current period (FY 2025-26) Statement of Profit and Loss.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 5",
+            "Prior Period Error",
+            "Omission"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-7_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-7_01",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-7",
+          "subject": "Accounts",
+          "prompt": "What is the correct accounting treatment for the revision of estimated remaining useful life of delivery trucks from 5 years to 3 years under AS 5 / AS 10?",
+          "options": [
+            "Accounting policy change requiring retrospective recalculation of depreciation",
+            "Accounting estimate change applied prospectively by allocating remaining depreciable amount over 3 years",
+            "Prior period error requiring separate line item disclosure",
+            "Extraordinary adjustment credited to capital reserve"
+          ],
+          "answerIndex": 1,
+          "explanation": "A revision in useful life of an asset is a change in accounting estimate. Under AS 5 and AS 10 (Revised), changes in accounting estimates are applied prospectively in current and future periods.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 5",
+            "AS 10",
+            "Accounting Estimate",
+            "Prospective Effect"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-7_02",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "passage": "Global Tech Ltd., an Indian entity, reports under Indian GAAP (AS). On 1st December 2025, Global Tech Ltd. imported machinery from a US supplier for USD 200,000 when the exchange rate was USD 1 = ₹80. Payment was agreed to be settled on 30th April 2026. The exchange rate on 31st March 2026 was USD 1 = ₹83. On 30th April 2026, payment was completed when USD 1 = ₹82.50.\nAdditionally, Global Tech Ltd. has a branch office in London, UK, which functions as an Integral Foreign Operation (IFO). The branch had trade receivables of GBP 50,000 on 31st March 2026 (rate on 31st March: GBP 1 = ₹105; exchange rate when sales took place: GBP 1 = ₹100). Global Tech Ltd. also owns a subsidiary in Dubai which functions as a Non-Integral Foreign Operation (NIFO).",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-7_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-7_02",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-7",
+          "subject": "Accounts",
+          "prompt": "What exchange difference should Global Tech Ltd. recognize in Profit & Loss for FY 2025-26 regarding the imported machinery payable under AS 11?",
+          "options": [
+            "₹6,00,000 Loss",
+            "₹6,00,000 Gain",
+            "₹5,00,000 Loss",
+            "Capitalize ₹6,00,000 into machinery cost"
+          ],
+          "answerIndex": 0,
+          "explanation": "Initial recognition: USD 200,000 * 80 = ₹160,00,000. Balance sheet date (31st March 2026): USD 200,000 * 83 = ₹166,00,000. Exchange Loss = ₹166,00,000 - ₹160,00,000 = ₹6,00,000, charged to Profit & Loss.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 11",
+            "Exchange Loss",
+            "Monetary Liability"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-7_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-7_02",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-7",
+          "subject": "Accounts",
+          "prompt": "What exchange gain or loss is recognized in Statement of Profit & Loss for FY 2026-27 upon actual payment on 30th April 2026 under AS 11?",
+          "options": [
+            "Exchange Gain of ₹1,00,000",
+            "Exchange Loss of ₹1,00,000",
+            "Exchange Gain of ₹50,000",
+            "Exchange Loss of ₹50,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Carrying liability as on 1st April 2026 = USD 200,000 * 83 = ₹1,66,00,000. Payment made on 30th April 2026 = USD 200,000 * 82.50 = ₹1,65,00,000. Gain on settlement = ₹1,66,00,000 - ₹1,65,00,000 = ₹1,00,000 credited to P&L in FY 2026-27.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 11",
+            "Settlement Gain",
+            "Foreign Currency"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-7_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-7_02",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-7",
+          "subject": "Accounts",
+          "prompt": "How should London Branch's trade receivables of GBP 50,000 be translated at 31st March 2026, and what is the exchange difference under AS 11?",
+          "options": [
+            "Translated at ₹100; No exchange difference",
+            "Translated at ₹105; Exchange gain of ₹2,50,000 charged to P&L",
+            "Translated at ₹105; Exchange gain of ₹2,50,000 credited to FCTR reserve",
+            "Translated at average rate"
+          ],
+          "answerIndex": 1,
+          "explanation": "London branch is an Integral Foreign Operation (IFO). Monetary items (receivables) are translated at closing rate (GBP 1 = ₹105). Original transaction was recorded at ₹100. Gain = GBP 50,000 * (105 - 100) = ₹2,50,000 recognized in Statement of Profit and Loss.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 11",
+            "Integral Foreign Operation",
+            "Monetary Translation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-7_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-7_02",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-7",
+          "subject": "Accounts",
+          "prompt": "Where should exchange differences arising on translation of Dubai Subsidiary's (NIFO) financial statements be accumulated under AS 11?",
+          "options": [
+            "Charged directly to Statement of Profit and Loss",
+            "Capitalized into cost of subsidiary investment",
+            "Accumulated in Foreign Currency Translation Reserve (FCTR)",
+            "Adjusted against Share Premium account"
+          ],
+          "answerIndex": 2,
+          "explanation": "Translation differences arising on translating financial statements of a Non-Integral Foreign Operation (NIFO) are accumulated in Foreign Currency Translation Reserve (FCTR) in the balance sheet until disposal of net investment.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 11",
+            "NIFO",
+            "FCTR Reserve"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-7_03",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "passage": "Horizon Ltd. reports Accounting Profit before tax of ₹40,00,000 for the financial year ended 31st March 2026. The tax rate applicable is 30%. On analyzing financial records and tax rules, the following items are noted:\n1. Depreciation as per books of account: ₹6,00,000; Depreciation allowable under Income Tax Act: ₹10,00,000.\n2. Ineligible political donation disallowed under Tax Act: ₹1,00,000.\n3. Expenditure on statutory dues disallowed under Section 43B in FY 2025-26 as it was paid after due date: ₹2,00,000.\n4. Opening balances of DTA and DTL as on 1st April 2025 were NIL.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-7_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-7_03",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-7",
+          "subject": "Accounts",
+          "prompt": "What is the total Taxable Income of Horizon Ltd. for FY 2025-26 under the Income Tax laws?",
+          "options": [
+            "₹39,00,000",
+            "₹37,00,000",
+            "₹43,00,000",
+            "₹40,00,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Taxable Income = Accounting Profit (₹40,00,000) - Excess Tax Depreciation (₹10L - ₹6L = ₹4,00,000) + Disallowed political donation (₹1,00,000) + Section 43B disallowance (₹2,00,000) = 40,00,000 - 4,00,000 + 1,00,000 + 2,00,000 = ₹39,00,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 22",
+            "Taxable Income",
+            "Tax Computation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-7_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-7_03",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-7",
+          "subject": "Accounts",
+          "prompt": "What is the Current Tax Expense for FY 2025-26 under AS 22?",
+          "options": [
+            "₹12,00,000",
+            "₹11,70,000",
+            "₹12,30,000",
+            "₹11,10,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Current Tax Expense = Taxable Income * Tax Rate = ₹39,00,000 * 30% = ₹11,70,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 22",
+            "Current Tax",
+            "Tax Expense"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-7_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-7_03",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-7",
+          "subject": "Accounts",
+          "prompt": "What is the Net Deferred Tax position (Asset/Liability) to be recognized in the Balance Sheet as on 31st March 2026?",
+          "options": [
+            "Net Deferred Tax Liability of ₹60,000",
+            "Net Deferred Tax Asset of ₹60,000",
+            "Net Deferred Tax Liability of ₹1,20,000",
+            "Net Deferred Tax Asset of ₹30,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Timing difference 1 (Depreciation): Tax dep > Book dep by ₹4,00,000 -> Taxable timing diff -> DTL = 4,00,000 * 30% = ₹1,20,000. Timing difference 2 (Sec 43B): Book exp > Tax exp by ₹2,00,000 -> Deductible timing diff -> DTA = 2,00,000 * 30% = ₹60,000. Net DTL = ₹1,20,000 - ₹60,000 = ₹60,000 DTL.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 22",
+            "Net Deferred Tax",
+            "DTL Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-7_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-7_03",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-7",
+          "subject": "Accounts",
+          "prompt": "What is the Total Tax Expense (Current Tax + Deferred Tax) charged in the Statement of Profit and Loss for FY 2025-26?",
+          "options": [
+            "₹12,30,000",
+            "₹11,70,000",
+            "₹12,00,000",
+            "₹12,60,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Total Tax Expense = Current Tax (₹11,70,000) + Net Deferred Tax Charge (₹60,000) = ₹12,30,000. Alternatively: Tax on [Accounting Profit ₹40L + Permanent Diff ₹1L] * 30% = ₹41L * 30% = ₹12,30,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 22",
+            "Total Tax Expense",
+            "Profit and Loss Impact"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-7_04",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "passage": "Zenith Exports Ltd. exported goods to a US customer on 1st January 2026 worth USD 100,000 when the spot exchange rate was USD 1 = ₹80. Payment is due on 31st May 2026. To hedge against foreign currency fluctuation risk, Zenith Exports Ltd. entered into a 5-month forward exchange contract on 1st January 2026 to sell USD 100,000 at a forward rate of USD 1 = ₹83.\nOn 31st March 2026 (the balance sheet date), the spot exchange rate was USD 1 = ₹82. Financial year ends on 31st March 2026.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-7_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-7_04",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-7",
+          "subject": "Accounts",
+          "prompt": "What is the total premium on the forward contract and how should it be recognized under AS 11?",
+          "options": [
+            "₹3,00,000 Premium, amortized over the 5-month contract life",
+            "₹3,00,000 Discount, charged immediately to Profit & Loss",
+            "₹2,00,000 Premium, capitalized into export sales",
+            "₹3,00,000 Premium, credited entirely to FY 2025-26 P&L"
+          ],
+          "answerIndex": 0,
+          "explanation": "Total Premium = (Forward Rate ₹83 - Spot Rate ₹80) * USD 100,000 = ₹3,00,000. Under AS 11, forward contract premium for hedging is amortized as income/expense over the contract period (5 months).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 11",
+            "Forward Contract",
+            "Premium Amortization"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-7_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-7_04",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-7",
+          "subject": "Accounts",
+          "prompt": "How much forward contract premium should be credited/amortized in the Statement of Profit and Loss for FY 2025-26 (ending 31st March 2026)?",
+          "options": [
+            "₹3,00,000",
+            "₹1,80,000",
+            "₹1,20,000",
+            "₹1,50,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Period in FY 2025-26: Jan, Feb, Mar = 3 months out of 5 months. Premium amortized for FY 2025-26 = ₹3,00,000 * (3/5) = ₹1,80,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 11",
+            "Premium Proportion",
+            "Financial Year Allocation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-7_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-7_04",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-7",
+          "subject": "Accounts",
+          "prompt": "What exchange difference arises on the revaluation of the foreign currency debtor (USD 100,000) at 31st March 2026 under AS 11?",
+          "options": [
+            "Exchange Gain of ₹2,00,000 credited to P&L",
+            "Exchange Loss of ₹2,00,000 charged to P&L",
+            "Exchange Gain of ₹3,00,000 credited to P&L",
+            "No exchange gain/loss as it is hedged"
+          ],
+          "answerIndex": 0,
+          "explanation": "Debtor recorded initially at USD 100,000 * 80 = ₹80,00,000. On 31st March 2026, rate is ₹82. Revalued debtor = USD 100,000 * 82 = ₹82,00,000. Exchange gain = ₹82,00,000 - ₹80,00,000 = ₹2,00,000 credited to Profit & Loss.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 11",
+            "Debtor Revaluation",
+            "Exchange Gain"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-7_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-7_04",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-7",
+          "subject": "Accounts",
+          "prompt": "What is the NET impact on the Statement of Profit and Loss for FY 2025-26 from both the foreign debtor revaluation and forward contract premium amortization combined?",
+          "options": [
+            "Net Credit (Income) of ₹3,80,000",
+            "Net Credit (Income) of ₹2,00,000",
+            "Net Debit (Expense) of ₹1,20,000",
+            "Net Credit (Income) of ₹1,80,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Exchange Gain on Debtor = ₹2,00,000 (Credit) + Forward Premium amortized = ₹1,80,000 (Credit) = Total Net Credit to Profit & Loss of ₹3,80,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 11",
+            "Net P&L Impact",
+            "Hedging Accounting"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-7_05",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-7",
+      "subject": "Accounts",
+      "passage": "Vayu Infra Ltd. is finalizing its accounts for the year ended 31st March 2026. The following three independent cases are brought to the chief financial officer's attention:\nCase A: On 15th April 2026, before approval of accounts, a major government license was revoked due to regulatory non-compliance, forcing the entity to shut down its primary operating plant. Management concludes that Going Concern assumption is compromised.\nCase B: The company has unabsorbed tax depreciation of ₹30,00,000 carried forward from FY 2024-25. In FY 2025-26, the company turned profitable and secured binding, long-term non-cancellable export contracts ensuring substantial taxable profits for the next 4 years.\nCase C: The Board of Directors in its meeting on 20th May 2026 recommended a dividend of ₹10,00,000 for FY 2025-26.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Accounting Standards Based on Items Impacting Financial Statement"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-7_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-7_05",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-7",
+          "subject": "Accounts",
+          "prompt": "In Case A, how should the financial statements for FY 2025-26 be prepared following the revocation of license under AS 4?",
+          "options": [
+            "Prepared on going concern basis with disclosure in directors' report",
+            "Prepared on non-going concern basis (liquidation / net realizable value basis), adjusting carrying values of assets and liabilities",
+            "Disclosed as a footnote without altering balance sheet numbers",
+            "Accounts for FY 2025-26 postponed to next financial year"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under AS 4, if events after balance sheet date indicate that the going concern assumption is no longer appropriate, the financial statements must be prepared on a non-going concern (liquidation/realizable value) basis.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 4",
+            "Going Concern Compromised",
+            "Financial Statement Preparation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-7_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-7_05",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-7",
+          "subject": "Accounts",
+          "prompt": "In Case B, can Vayu Infra Ltd. recognize Deferred Tax Asset (DTA) on unabsorbed depreciation under AS 22?",
+          "options": [
+            "No, DTA on unabsorbed depreciation can never be recognized under any circumstances",
+            "Yes, provided there is virtual certainty supported by convincing evidence (e.g. binding non-cancellable contracts) that future taxable income will be available",
+            "Yes, based on general management expectation of future profits without evidence",
+            "No, only DTL can be recognized"
+          ],
+          "answerIndex": 1,
+          "explanation": "AS 22 permits recognition of DTA for unabsorbed depreciation/carried forward loss ONLY when there is virtual certainty supported by convincing evidence. Binding, non-cancellable long-term profit contracts constitute convincing evidence.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 22",
+            "DTA Recognition",
+            "Virtual Certainty"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-7_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-7_05",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-7",
+          "subject": "Accounts",
+          "prompt": "In Case C, how should the recommended dividend of ₹10,00,000 be treated in financial statements for FY 2025-26 under revised AS 4?",
+          "options": [
+            "Provided as a liability in the balance sheet as on 31st March 2026",
+            "Debited to Profit and Loss statement as an operating cost",
+            "Not recognized as a liability on balance sheet date, but disclosed in notes to accounts",
+            "Deducted directly from Share Capital"
+          ],
+          "answerIndex": 2,
+          "explanation": "As per revised AS 4, dividends declared after the balance sheet date are not recognized as a liability at the balance sheet date. They are disclosed in the notes to financial statements.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "AS 4",
+            "Proposed Dividend",
+            "Notes Disclosure"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-7_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-7_05",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-7",
+          "subject": "Accounts",
+          "prompt": "If Vayu Infra Ltd. changes its inventory valuation method from FIFO to Weighted Average method in FY 2025-26 for better presentation, how should this be disclosed under AS 5?",
+          "options": [
+            "Disclose reasons for change, change in policy, and financial impact in current year if ascertainable",
+            "No disclosure necessary as both are permitted under AS 2",
+            "Disclose only in the tax audit report",
+            "Restate comparative prior year inventory figures"
+          ],
+          "answerIndex": 0,
+          "explanation": "AS 5 mandates that any change in accounting policy which has a material effect should be disclosed along with the financial impact and reasons for change to enable users to understand the impact.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 5",
+            "Accounting Policy Change",
+            "Disclosure"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

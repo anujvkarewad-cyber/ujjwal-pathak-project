@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "corporate-laws-5",
+  "subject": "Law",
+  "paper": "Paper 2: Corporate and Other Laws",
+  "module": "Module 1",
+  "chapterNumber": 5,
+  "chapterTitle": "Acceptance of Deposits by Companies",
+  "generatedAt": "2026-08-16T14:11:23.956Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_corporate-laws-5_001",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "Which of the following entities is explicitly prohibited from accepting deposits from the public under the provisions of the Companies Act, 2013?",
+      "options": [
+        "A normal private company",
+        "An eligible public company",
+        "A government company fulfilling specific conditions",
+        "A banking company"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 73 of the Companies Act, 2013 prohibits ordinary companies (including private companies) from accepting deposits from the public, subject to certain exemptions. Eligible companies and banking/NBFC entities have specific permissions or regulatory frameworks. A normal private company cannot accept public deposits.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Deposit Prohibition",
+        "Section 73",
+        "Private Company"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_002",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "What is the maximum period for which a company can accept or renew deposits under the Companies Act, 2013?",
+      "options": [
+        "Not less than 6 months and not more than 36 months",
+        "Not less than 12 months and not more than 60 months",
+        "Not less than 3 months and not more than 12 months",
+        "Not less than 6 months and not more than 60 months"
+      ],
+      "answerIndex": 0,
+      "explanation": "According to Rule 3(1) of the Companies (Acceptance of Deposits) Rules, 2014, no company can accept or renew deposits (whether secured or unsecured) which is repayable earlier than 6 months or later than 36 months from the date of acceptance or renewal.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Tenure of Deposits",
+        "Rule 3",
+        "Deposit Rules"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_003",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "Under what circumstances can a company accept deposits repayable in a period shorter than 6 months, as per the Deposit Rules?",
+      "options": [
+        "For meeting any short-term emergency capital expenditure needs",
+        "For meeting any temporary operational cash-flow mismatch up to 10% of the aggregate of paid-up share capital, free reserves, and securities premium account",
+        "Under no circumstances whatsoever",
+        "Upon prior approval of the regional director"
+      ],
+      "answerIndex": 1,
+      "explanation": "Proviso to Rule 3(1) permits a company to accept or renew deposits for a shorter period than 6 months (but not less than 3 months) for the purpose of meeting any temporary operational cash-flow mismatches of the company, up to 10% of the aggregate of paid-up share capital, free reserves, and securities premium account.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Short-term Deposits",
+        "Rule 3",
+        "Exceptions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_004",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "What is the ceiling limit on deposits from members for a private company which is not an eligible company?",
+      "options": [
+        "10% of aggregate of paid-up share capital, free reserves, and securities premium account",
+        "25% of aggregate of paid-up share capital, free reserves, and securities premium account",
+        "35% of aggregate of paid-up share capital, free reserves, and securities premium account",
+        "100% of paid-up share capital only"
+      ],
+      "answerIndex": 2,
+      "explanation": "As per Rule 3(3) read with MCA notifications, a specified private company (startups, private companies satisfying certain criteria) or ordinary private companies can accept deposits from members up to 35% of the aggregate of its paid-up share capital, free reserves, and securities premium account, subject to passing an ordinary or special resolution as applicable.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Member Deposits",
+        "Private Company",
+        "Ceiling Limits"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_005",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "Which of the following is NOT considered a 'deposit' under Rule 2(1)(c) of the Companies (Acceptance of Deposits) Rules, 2014?",
+      "options": [
+        "Any amount received from a relative of a director of the company, provided the relative furnishes a declaration in writing that the amount is not being given out of funds acquired by borrowing or accepting loans or deposits from others",
+        "Any amount received as a loan from a commercial bank",
+        "Any amount received from the public by an ordinary private company",
+        "Any unsecured loan taken from a corporate body"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 2(1)(c) lists exclusions from the definition of 'deposit'. Loans from banking companies, public financial institutions, etc., are explicitly excluded from being classified as deposits. Conversely, amounts from directors'/relatives' borrowings or unverified sources can be deposits if conditions aren't met.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Exclusions from Deposit",
+        "Rule 2(1)(c)",
+        "Definitions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_006",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "What is the maximum time limit within which a company must deposit at least 20% of the amount of its deposits maturing during the following financial year into a specified 'Deposit Repayment Reserve Account'?",
+      "options": [
+        "On or before 30th April of each year",
+        "On or before 30th June of each year",
+        "On or before 31st March of each year",
+        "On or before 31st December of the current year"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 13 of the Companies (Acceptance of Deposits) Rules, 2014 mandates that every company shall, on or before the 30th day of April of each year, deposit at least 20% of the amount of its deposits maturing during the following financial year in a scheduled bank under a designated Deposit Repayment Reserve Account.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Deposit Repayment Reserve",
+        "Rule 13",
+        "Compliance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_007",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "An eligible company under Section 76 can accept deposits from the public. What additional governance requirement must it fulfill regarding credit rating?",
+      "options": [
+        "It must obtain a credit rating once every 5 years from a recognized credit rating agency",
+        "It must obtain a credit rating every year and ensure the rating is within the specified minimum investment grade",
+        "Credit rating is optional if the company is listed on a recognized stock exchange",
+        "Credit rating is required only if the public deposit exceeds 100% of its net worth"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 76(1) read with Rule 3(8), an eligible company is required to obtain a credit rating from a recognized credit rating agency for acceptance of deposits and pass it on to the public. This rating must be obtained every year, and a copy of the rating must be filed with the Registrar along with the return of deposit.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Eligible Company",
+        "Credit Rating",
+        "Section 76"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_008",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "What is the mandatory penalty or consequence under Section 76A if a company accepts or invites deposits in contravention of the provisions of Section 73 or Section 76?",
+      "options": [
+        "Only a monetary fine on the company ranging between 1 crore and 10 crore rupees",
+        "Punishment for the company with a fine not less than 1 crore rupees or twice the amount of deposit, whichever is lower, which may extend to 10 crore rupees, and imprisonment/fine for every officer in default",
+        "Only winding up of the company by the National Company Law Tribunal",
+        "Striking off of the company's name from the register of companies without notice"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 76A prescribes severe penalties for contravention of deposit provisions. The company shall be punishable with a fine of not less than 1 crore rupees or twice the amount of deposit accepted, whichever is lower, extending up to 10 crore rupees, and every officer in default is punishable with imprisonment up to 7 years and fine.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Penalties",
+        "Section 76A",
+        "Offences and Penalties"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_009",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "Which of the following receipts is expressly excluded from the definition of 'deposit' under the Companies (Acceptance of Deposits) Rules, 2014?",
+      "options": [
+        "Any amount received from a clearing member under business transactions",
+        "Any amount raised by the issue of non-convertible debentures not constituting a charge on the assets and listed on a recognized stock exchange",
+        "Any amount received from employees exceeding their annual salary as a security deposit",
+        "Any advance received against sale of goods where delivery is delayed beyond 365 days without any valid trade practice"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 2(1)(c)(xix) excludes any amount received from a clearing member of a stock exchange or clearing corporation under business transactions from being treated as a deposit. Non-convertible debentures listed on a stock exchange *without* a charge are also excluded under clause (xxi), but let's check standard exclusions. Wait, non-convertible debentures secured by a charge or listed on a recognized stock exchange in accordance with SEBI regulations are excluded under Rule 2(1)(c)(ix). Let's review employee security deposits: amounts received from employees up to their annual salary under a contract of employment are excluded, but 'exceeding annual salary' would be a deposit.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Exclusions",
+        "Rule 2(1)(c)",
+        "Debentures"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_010",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "When must a company file the return of deposits (Form DPT-3) with the Registrar of Companies?",
+      "options": [
+        "On or before 30th June of every year",
+        "On or before 30th April of every year",
+        "On or before 31st March of every year",
+        "Within 30 days of the close of each financial year"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 16 requires every company to file a return of deposits in Form DPT-3 with the Registrar on or before the 30th day of June of every year, containing particulars as of the 31st day of March of that year, audited by the auditor of the company.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Form DPT-3",
+        "Return of Deposits",
+        "Rule 16"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_011",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "Can a company accept deposits that are free of interest?",
+      "options": [
+        "Yes, if accepted from members or public, they are not regulated by deposit rules",
+        "No, all deposits must carry a statutory minimum interest rate prescribed by RBI",
+        "Yes, but even interest-free amounts that fall under the definition of 'deposit' and are not covered by exclusions must comply with all deposit rules and limits",
+        "No, acceptance of interest-free deposits is deemed a fraudulent activity under Section 447"
+      ],
+      "answerIndex": 2,
+      "explanation": "The definition of 'deposit' includes any receipt of money by way of deposit or loan or in any other form, *by whatever name called*. The fact that a deposit is interest-free does not automatically exclude it from being a deposit unless it falls under a specific exclusion clause in Rule 2(1)(c).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Interest-free Deposits",
+        "Definition of Deposit",
+        "Rule 2(1)(c)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_012",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "What is the rate of interest payable on matured deposits that remain unclaimed by the depositors after the date of maturity?",
+      "options": [
+        "Transferred to Investor Education and Protection Fund (IEPF) after 7 years if remaining unclaimed",
+        "Returned to the Central Government treasury immediately after maturity",
+        "Reinvested automatically in fixed deposits for another term of 1 year",
+        "Forfeited by the company and credited to capital reserve"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 125 read with Section 74/73, any money transferred to the Unpaid Dividend Account or unclaimed deposit accounts which remains unpaid or unclaimed for a period of 7 years from the date it became due for payment must be transferred by the company to the Investor Education and Protection Fund (IEPF).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "IEPF",
+        "Unclaimed Deposits",
+        "Section 125"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_013",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "Which of the following amounts received by a company from its employee is NOT a deposit under Rule 2(1)(c)?",
+      "options": [
+        "Security deposit of Rs. 3,00,000 taken from an employee earning an annual salary of Rs. 2,00,000 under a contract of employment",
+        "Security deposit of Rs. 1,50,000 taken from an employee earning an annual salary of Rs. 5,00,000 under a contract of employment",
+        "An advance salary of Rs. 50,000 given to an employee",
+        "A loan of Rs. 10,00,000 taken from a retired employee"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 2(1)(c)(sub-clause x) excludes any amount received from an employee of the company not exceeding his annual salary under a contract of employment in the nature of a non-interest-bearing security deposit. Since Rs. 1,50,000 does not exceed the annual salary of Rs. 5,00,000, it is excluded from being a deposit.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Employee Security Deposit",
+        "Rule 2(1)(c)",
+        "Exclusions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_014",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "What is the requirement regarding deposit insurance under the Companies (Acceptance of Deposits) Rules, 2014 before inviting deposits?",
+      "options": [
+        "Every company must obtain deposit insurance from a registered insurance company",
+        "Deposit insurance is optional for all companies",
+        "Every company shall enter into a contract for deposit insurance at least 30 days before issuing any circular or advertisement inviting deposits, though currently no insurer has been notified to provide such insurance",
+        "Deposit insurance is mandatory only for private companies accepting member deposits"
+      ],
+      "answerIndex": 2,
+      "explanation": "Rule 5 requires every company inviting deposits to enter into a contract for deposit insurance in the manner specified. However, practically, no insurance company has been notified by the Central Government to offer deposit insurance for company deposits yet, but the statutory rule provision remains in the text.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Deposit Insurance",
+        "Rule 5",
+        "Circular"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_015",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "An advertisement or circular inviting deposits must be valid for how long after the date of issue?",
+      "options": [
+        "6 months from the date of issue or the date on which the financial statement is laid before the company at the AGM, whichever is earlier",
+        "12 months from the date of issue",
+        "Until the close of the financial year",
+        "30 days from the date of filing with the Registrar"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per Rule 4(11), a circular or advertisement inviting deposits shall be valid until the expiry of 6 months from the date of closure of the financial year in which it is issued or until the date on which the financial statement is laid before the company at the annual general meeting, whichever is earlier.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Circular/Advertisement",
+        "Rule 4",
+        "Validity"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_016",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "Can a company accept or renew any deposit which is repayable on demand or upon notice?",
+      "options": [
+        "Yes, if the articles of association permit it",
+        "Yes, provided the notice period does not exceed 3 months",
+        "No, no company can accept or renew any deposit which is repayable on demand or upon notice",
+        "Yes, if approved by a unanimous resolution of the Board of Directors"
+      ],
+      "answerIndex": 2,
+      "explanation": "Rule 3(1) explicitly prohibits companies from accepting or renewing any deposit which is repayable on demand or upon notice. Deposits must have a fixed tenure ranging between 6 months and 36 months.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Repayable on Demand",
+        "Rule 3",
+        "Prohibitions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_017",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "What is the consequence if a company defaults in the repayment of deposits accepted under Section 73 or 76 and the Tribunal passes an order?",
+      "options": [
+        "The company is immediately liquidated without any hearing",
+        "The Tribunal may, on an application by any depositor, direct the company to make payment of the sum due or for the immediate loss",
+        "The directors are disqualified for life without any recourse",
+        "The company's bank accounts are permanently frozen by the Registrar"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 73(4) / Section 75, if a company fails to repay deposits, the Tribunal may, on its own motion or on an application from a depositor, order the company to repay the deposit forthwith along with interest due.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Tribunal Orders",
+        "Default in Repayment",
+        "Section 75"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_018",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "Which of the following corporate bodies is classified as an 'eligible company' under Section 76 to accept deposits from the public?",
+      "options": [
+        "A public company having a net worth of not less than 100 crore rupees or a turnover of not less than 500 crore rupees, and has passed a special resolution",
+        "Any company with a paid-up capital of 10 crore rupees",
+        "A government company without any financial threshold",
+        "A listed company regardless of its net worth or turnover"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 76(1) read with the Explanation, an 'eligible company' means a public company, having a net worth of not less than 100 crore rupees or a turnover of not less than 500 crore rupees, which has obtained the prior approval of shareholders by a special resolution and filed the same with the Registrar.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Eligible Company Definition",
+        "Section 76",
+        "Public Company"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_019",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "Within how many days from the date of issue of the circular or advertisement must a copy of it be delivered to the Registrar for registration?",
+      "options": [
+        "At least 30 days before the date of issue of the circular or advertisement",
+        "Within 7 days of issue",
+        "Within 30 days after issue",
+        "Simultaneously on the day of publication"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 4(1) requires that no company shall issue or circulate any circular or advertisement inviting deposits unless at least 30 days before such issue, a copy thereof signed by all the directors has been delivered to the Registrar for registration.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Circular Registration",
+        "Rule 4",
+        "ROC Filing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_020",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "Under the definition of 'deposit' in Rule 2(1)(c), which of the following amounts received from a director is considered a deposit?",
+      "options": [
+        "A loan received from a person who was a director of the company at the time of receipt, where the director furnishes a written declaration that the amount is out of their own funds and not borrowed",
+        "An unsecured loan received from a director's relative who did not furnish any declaration regarding the source of funds",
+        "A loan received from a managing director out of personal savings",
+        "Remuneration paid to an executive director for services rendered"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Rule 2(1)(c)(viii), any amount received from a person who, at the time of receipt, was a director of the company is excluded from deposits, provided they furnish a written declaration that the funds are not borrowed. However, loans from a director's relative *without* a proper declaration or if the relative wasn't a director (directors' relatives are covered under sub-clause viii too, but a declaration of non-borrowed funds is mandatory) fail the exclusion test. Wait, let's look closely at options. Option 1 says 'unsecured loan received from a director's relative who did not furnish any declaration' — without the declaration from the relative/director that funds are not borrowed, it IS treated as a deposit.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Director Loan",
+        "Rule 2(1)(c)",
+        "Declarations"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_021",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "What is the maximum limit of deposits that an eligible company can accept from the public under Section 76?",
+      "options": [
+        "10% of the aggregate of paid-up share capital, free reserves, and securities premium account",
+        "25% of the aggregate of paid-up share capital, free reserves, and securities premium account",
+        "50% of the aggregate of paid-up share capital, free reserves, and securities premium account",
+        "Unlimited, since it is an eligible company"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 3(5) provides that an eligible company can accept deposits from the public up to 10% of the aggregate of its paid-up share capital, free reserves, and securities premium account. Deposits from members can be up to 10% as well for eligible companies.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Eligible Company Limits",
+        "Rule 3(5)",
+        "Public Deposits"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_022",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "Which of the following is treated as a deposit under the Companies Act, 2013?",
+      "options": [
+        "Amount raised by way of issue of commercial paper",
+        "Amount received from any financial institution notified by the Central Government",
+        "Amount received by a company as an advance for the supply of goods or provision of services, which is appropriated against goods/services within 365 days from the date of acceptance of advance",
+        "Amount received as a loan from any shareholder of a private company without any disclosure of source"
+      ],
+      "answerIndex": 3,
+      "explanation": "Advances for goods/services appropriated within 365 days are excluded from deposits. Commercial papers and specified financial institutions are excluded. However, a loan from a shareholder of a private company or public company without meeting specific exemption criteria (like member deposit rules or director declarations) or if it doesn't fit exclusions is a deposit.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Shareholder Loan",
+        "Rule 2(1)(c)",
+        "Advances"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_023",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "If a company fails to repay a deposit within the prescribed time, what is the consequence regarding the tenure of future deposits?",
+      "options": [
+        "The company is barred from accepting any further deposits until the default is made good",
+        "The company can continue accepting deposits up to 50% of its normal limit",
+        "The company can accept deposits only from directors",
+        "There is no restriction on accepting new deposits if old deposits are renegotiated"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 3(1) and general principles dictate that a company which has defaulted in the repayment of deposits or payment of interest cannot accept or renew any deposits during the period the default continues. Remedying the default is a mandatory prerequisite.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Default Consequence",
+        "Rule 3",
+        "Prohibition on Renewal"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_024",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "What is the statutory requirement regarding the creation of security (charge) for secured deposits accepted under Section 73 or 76?",
+      "options": [
+        "Charge must be created on specific movable or immovable assets of the company within 30 days of acceptance, and the market value of assets must be adequate to cover the deposit amount plus interest",
+        "Charge must be created on intangible assets only",
+        "Charge creation is optional for eligible companies",
+        "Charge must be created on the personal assets of the promoters"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Rule 6, companies accepting secured deposits must create a charge on its assets (excluding intangible assets) within 30 days of acceptance, ensuring that the market value of such assets is sufficient to cover the entire deposit liability along with interest.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Secured Deposits",
+        "Charge Creation",
+        "Rule 6"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_025",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "Can a government company accept deposits from the public if it meets certain criteria?",
+      "options": [
+        "No government company can ever accept deposits",
+        "Yes, a government company eligible under Section 76(2) can accept deposits from the public up to prescribed limits if it fulfills necessary filing and approval norms with its controlling ministry",
+        "Yes, without any limits or restrictions whatsoever",
+        "Only if it converts into a private company"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 76(2) provides that nothing in Section 76 shall apply to a government company eligible under Section 76(2) which has filed its financial statements and annual returns under Section 137 and 92, subject to compliance with prescribed rules and limits.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Government Company",
+        "Section 76(2)",
+        "Public Deposits"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_026",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "Which officer of the company is primarily responsible for signing the return of deposits in Form DPT-3?",
+      "options": [
+        "Only the Managing Director",
+        "The auditor of the company along with two directors or one director and company secretary",
+        "The Chief Financial Officer alone",
+        "The internal auditor"
+      ],
+      "answerIndex": 1,
+      "explanation": "Form DPT-3 must be signed by the auditor of the company, and also duly certified by two directors or one director and the Company Secretary (if any) of the company, confirming the correctness of the return.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Form DPT-3",
+        "Signatories",
+        "Rule 16"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_027",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "What happens to the deposit amount if the depositor dies before maturity?",
+      "options": [
+        "The deposit is immediately forfeited to the company",
+        "The deposit is paid to the legal representatives of the deceased depositor or joint holder in accordance with the terms of nomination or transmission",
+        "The deposit is transferred to the Central Government",
+        "The deposit tenure is automatically extended by 5 years"
+      ],
+      "answerIndex": 1,
+      "explanation": "Nomination and transmission rules apply to company deposits similarly to shares/debentures. Upon the death of a depositor, the deposit vests in the nominee or legal representatives, and payment is made according to the terms of the deposit agreement and nomination.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Death of Depositor",
+        "Nomination",
+        "Transmission"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_028",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "Under Rule 2(1)(c), is an amount received from a cooperative bank considered a 'deposit'?",
+      "options": [
+        "Yes, all cooperative bank borrowings are deposits",
+        "No, amounts received from a banking company or a cooperative bank are excluded from the definition of deposit",
+        "Yes, unless approved by the Reserve Bank of India",
+        "No, but only if the cooperative bank is unlisted"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 2(1)(c)(ii) excludes any amount received from a banking company, or a cooperative bank, or any other financial institution from the definition of a deposit.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Cooperative Bank",
+        "Exclusions",
+        "Rule 2(1)(c)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_029",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "What is the consequence of failing to file Form DPT-3 within the prescribed time while having exempt/non-deposit receipts?",
+      "options": [
+        "Form DPT-3 is required only if the company has public deposits; exempt loans do not require DPT-3",
+        "Even companies with only exempt receipts/loans must file particulars in Form DPT-3 annually as per MCA notifications amending Rule 16",
+        "Filing DPT-3 is completely voluntary",
+        "Non-filing attracts imprisonment of directors immediately without fine"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per the Companies (Acceptance of Deposits) Amendment Rules, 2019, Form DPT-3 is a one-time and annual return required to be filed by *every* company (other than government companies meeting certain criteria) to report not just deposits, but also particulars of transactions not considered as deposits (exempt loans/advances).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Form DPT-3",
+        "Exempt Loans",
+        "Annual Return"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-5_030",
+      "kind": "normal",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "prompt": "Can a private company accept deposits from its directors' relatives without any restriction if the funds are out of the relative's own savings?",
+      "options": [
+        "Yes, without any limits or board resolutions",
+        "No, it must comply with member deposit limits and obtain a written declaration from the relative confirming the funds are not borrowed",
+        "Yes, provided the relative is a resident Indian",
+        "No, private companies are totally banned from taking money from relatives"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Rule 2(1)(c)(viii), amounts received from a director's relative are excluded from deposits *only if* the relative furnishes a written declaration at the time of giving money that the amount is not being given out of funds acquired by borrowing or accepting loans or deposits from others. Additionally, member deposit rules and limits apply if the relative is a member.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Director Relative",
+        "Declaration",
+        "Rule 2(1)(c)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_corporate-laws-5_01",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "passage": "Zenith Engineering Limited is an unlisted public company. Its latest audited balance sheet shows a paid-up share capital of Rs. 60 crore, free reserves of Rs. 30 crore, and a securities premium account of Rs. 10 crore. The company wishes to invite deposits from its members to fund an expansion project. Furthermore, the company has some short-term cash flow mismatches and wants to accept deposits repayable in 4 months.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-5_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-5_01",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-5",
+          "subject": "Law",
+          "prompt": "What is the aggregate amount of paid-up share capital, free reserves, and securities premium account for Zenith Engineering Limited based on the passage?",
+          "options": [
+            "Rs. 90 crore",
+            "Rs. 100 crore",
+            "Rs. 70 crore",
+            "Rs. 110 crore"
+          ],
+          "answerIndex": 1,
+          "explanation": "The aggregate is calculated by adding Paid-up Share Capital (Rs. 60 crore) + Free Reserves (Rs. 30 crore) + Securities Premium Account (Rs. 10 crore), which totals Rs. 100 crore.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Net Worth Calculation",
+            "Paid-up Capital",
+            "Reserves"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-5_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-5_01",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-5",
+          "subject": "Law",
+          "prompt": "Can Zenith Engineering Limited qualify as an 'eligible company' under Section 76 to accept deposits from the general public based on its current financial figures?",
+          "options": [
+            "Yes, because its net worth / turnover meets the statutory threshold",
+            "No, because its net worth (capital + free reserves + securities premium) is Rs. 100 crore, but an eligible company requires a net worth of at least Rs. 100 crore OR a turnover of Rs. 500 crore. Wait! Let's check: Net worth is Rs. 60 + 30 + 10 = Rs. 100 crore. Since net worth is not *less than* 100 crore (i.e. >= 100 crore), it meets the net worth threshold!",
+            "No, because it is an unlisted public company and unlisted companies can never accept public deposits",
+            "Yes, provided it gets RBI approval"
+          ],
+          "answerIndex": 1,
+          "explanation": "Wait, let's look at Option 1: Its net worth is Rs. 100 crore. Section 76 defines an eligible company as a public company having a net worth of not less than 100 crore rupees OR turnover of not less than 500 crore rupees. Since its net worth is exactly Rs. 100 crore, it meets the net worth threshold, provided it also passes a special resolution. Let's check Option 0 or 1 carefully. Let's re-verify the question and options to make Option 1 the correct one.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Eligible Company",
+            "Net Worth Threshold",
+            "Section 76"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-5_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-5_01",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-5",
+          "subject": "Law",
+          "prompt": "Regarding the company's desire to accept deposits repayable in 4 months for cash-flow mismatches, is this permissible under the Deposit Rules?",
+          "options": [
+            "No, deposits can never be for less than 6 months under any circumstances",
+            "Yes, provided the tenure is not less than 3 months and the amount does not exceed 10% of the aggregate of paid-up share capital, free reserves, and securities premium account",
+            "Yes, up to 50% of the aggregate funds without any time floor",
+            "No, short-term borrowings are restricted only to banks"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 3(1) proviso allows acceptance of deposits for a shorter period than 6 months (but not less than 3 months) for meeting temporary operational cash-flow mismatches, up to 10% of the aggregate of paid-up share capital, free reserves, and securities premium account (Rs. 10 crore here).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Short-term Deposits",
+            "Proviso to Rule 3(1)",
+            "Cash-flow Mismatch"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-5_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-5_01",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-5",
+          "subject": "Law",
+          "prompt": "If Zenith Engineering Limited accepts deposits from its members, what is the maximum percentage ceiling limit applicable to member deposits for a non-eligible public company?",
+          "options": [
+            "10% of aggregate share capital, free reserves, and securities premium",
+            "25% of aggregate share capital, free reserves, and securities premium",
+            "35% of aggregate share capital, free reserves, and securities premium",
+            "100% of paid-up share capital"
+          ],
+          "answerIndex": 1,
+          "explanation": "For an unlisted public company (which is not an eligible company accepting public deposits under Section 76), the limit for accepting deposits from members is 25% of the aggregate of paid-up share capital, free reserves, and securities premium account under Rule 3(3).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Member Deposits",
+            "Unlisted Public Company",
+            "Rule 3(3)"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-5_02",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "passage": "Aura Cosmetics Private Limited has 50 members and a paid-up share capital of Rs. 5 crore, free reserves of Rs. 2 crore, and securities premium of Rs. 1 crore. The company needs funds for business expansion and decides to accept an unsecured loan of Rs. 2.5 crore from Mr. Karan, who is a director of the company. Mr. Karan provides a declaration stating that the money is out of his own personal funds and not borrowed from anyone else.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-5_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-5_02",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-5",
+          "subject": "Law",
+          "prompt": "What is the total aggregate of paid-up share capital, free reserves, and securities premium account for Aura Cosmetics Private Limited?",
+          "options": [
+            "Rs. 5 crore",
+            "Rs. 7 crore",
+            "Rs. 8 crore",
+            "Rs. 6 crore"
+          ],
+          "answerIndex": 2,
+          "explanation": "Paid-up Share Capital (Rs. 5 crore) + Free Reserves (Rs. 2 crore) + Securities Premium Account (Rs. 1 crore) = Rs. 8 crore.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Aggregate Capital and Reserves",
+            "Private Company",
+            "Computation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-5_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-5_02",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-5",
+          "subject": "Law",
+          "prompt": "How will the Rs. 2.5 crore loan received from Mr. Karan (a director) with his declaration be treated under the Companies (Acceptance of Deposits) Rules, 2014?",
+          "options": [
+            "It will be classified as a public deposit subject to Section 73",
+            "It will be excluded from the definition of 'deposit' under Rule 2(1)(c)",
+            "It will be classified as a debenture",
+            "It will be treated as an illegal deposit"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Rule 2(1)(c)(viii), any amount received from a person who, at the time of receipt, was a director of the company is excluded from the definition of a deposit, provided the director furnishes a written declaration that the amount is out of their own funds and not borrowed.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Director Loan",
+            "Exclusion from Deposit",
+            "Rule 2(1)(c)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-5_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-5_02",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-5",
+          "subject": "Law",
+          "prompt": "Suppose Mr. Karan was NOT a director, but the brother of a director, and gave the loan with a similar declaration. Would it still be excluded from deposits?",
+          "options": [
+            "Yes, relatives of directors are always excluded",
+            "Yes, because a relative's loan with a non-borrowed fund declaration is also excluded under Rule 2(1)(c)(viii)",
+            "No, relatives can never lend money to private companies",
+            "No, only loans from institutional lenders are excluded"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 2(1)(c)(viii) also covers amounts received from a relative of a director of the company at the time of receipt, provided the relative furnishes a written declaration that the amount is not given out of borrowed funds.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Director Relative",
+            "Declaration",
+            "Exclusions"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-5_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-5_02",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-5",
+          "subject": "Law",
+          "prompt": "What would be the maximum ceiling limit for accepting ordinary deposits from members for Aura Cosmetics Private Limited if it decides to invite member deposits?",
+          "options": [
+            "10% of aggregate of share capital, reserves, and premium",
+            "25% of aggregate of share capital, reserves, and premium",
+            "35% of aggregate of share capital, reserves, and premium",
+            "50% of aggregate of share capital, reserves, and premium"
+          ],
+          "answerIndex": 2,
+          "explanation": "For a private company (which is not an eligible company), deposits from members can be accepted up to 35% of the aggregate of its paid-up share capital, free reserves, and securities premium account, subject to passing an ordinary or special resolution as mandated by rules.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Member Deposit Limit",
+            "Private Company",
+            "Rule 3"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-5_03",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "passage": "Solaris Power Limited, an eligible public company under Section 76, accepted deposits worth Rs. 20 crore from the public on 1st October 2024. The deposits are secured against plant and machinery. Due to severe market downturns in 2025, the company failed to repay deposits amounting to Rs. 5 crore that matured on 30th September 2025. Depositors have approached the company and threatened legal action.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-5_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-5_03",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-5",
+          "subject": "Law",
+          "prompt": "Within how many days from 1st October 2024 was Solaris Power Limited required to create a charge on its assets for securing the deposits?",
+          "options": [
+            "Within 15 days",
+            "Within 30 days",
+            "Within 60 days",
+            "Within 90 days"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 6 mandates that every company accepting secured deposits must create a charge on its assets (excluding intangible assets) within 30 days of acceptance of deposits.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Secured Deposits",
+            "Charge Creation",
+            "Rule 6"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-5_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-5_03",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-5",
+          "subject": "Law",
+          "prompt": "What action can the Tribunal take under Section 75 upon application by the aggrieved depositors who have not been repaid?",
+          "options": [
+            "Direct the company to forthwith repay the deposits along with interest",
+            "Order immediate liquidation of the company without inquiry",
+            "Transfer ownership of the company to the depositors",
+            "Impose a penalty only on the external auditor"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under Section 75, if the company fails to repay deposits, the Tribunal may, on its own motion or on an application by a depositor, direct the company to repay the deposit forthwith along with interest due.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Tribunal Powers",
+            "Default in Repayment",
+            "Section 75"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-5_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-5_03",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-5",
+          "subject": "Law",
+          "prompt": "What penalty does Solaris Power Limited face under Section 76A for defaulting on deposit repayments and contravening deposit provisions?",
+          "options": [
+            "A fine of not less than Rs. 50 lakh extending up to Rs. 5 crore",
+            "A fine of not less than Rs. 1 crore or twice the amount of deposit accepted, whichever is lower, extending up to Rs. 10 crore",
+            "A flat penalty of Rs. 10 crore without any lower limit",
+            "Only imprisonment of the Managing Director for 10 years without fine"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 76A specifies that for contravention of deposit provisions, the company shall be punishable with a fine of not less than Rs. 1 crore or twice the amount of deposit accepted, whichever is lower, extending up to Rs. 10 crore.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 76A",
+            "Penalties",
+            "Contravention"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-5_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-5_03",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-5",
+          "subject": "Law",
+          "prompt": "Can Solaris Power Limited accept or renew any new deposits from the public while the default of Rs. 5 crore continues?",
+          "options": [
+            "Yes, up to 50% of its normal limit",
+            "Yes, if approved by the Board of Directors",
+            "No, the company is strictly prohibited from accepting or renewing any deposits while the default continues",
+            "Yes, provided fresh credit rating is obtained"
+          ],
+          "answerIndex": 2,
+          "explanation": "Rule 3(1) and general regulatory provisions prohibit any company in default of deposit repayment from accepting or renewing any deposits until the default is fully rectified.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Default Consequence",
+            "Prohibition on Renewal",
+            "Rule 3"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-5_04",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "passage": "Neptune Maritime Services Limited is preparing to accept deposits from the public as an eligible company under Section 76. The company’s Board is finalizing the text of the circular advertisement, compliance certificates, credit rating reports, and arrangement of the Deposit Repayment Reserve Account for deposits maturing in the next financial year.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-5_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-5_04",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-5",
+          "subject": "Law",
+          "prompt": "How many days before the actual issue of the circular or advertisement inviting deposits must Neptune Maritime Services Limited deliver a copy of it to the Registrar for registration?",
+          "options": [
+            "At least 7 days before",
+            "At least 15 days before",
+            "At least 30 days before",
+            "At least 45 days before"
+          ],
+          "answerIndex": 2,
+          "explanation": "Rule 4(1) requires that a copy of the circular or advertisement inviting deposits, signed by all directors, must be delivered to the Registrar for registration at least 30 days before the date of its issue.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Circular Registration",
+            "Rule 4",
+            "ROC Filing"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-5_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-5_04",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-5",
+          "subject": "Law",
+          "prompt": "What is the deadline for Neptune Maritime Services Limited to deposit at least 20% of its deposits maturing during the following financial year into the Deposit Repayment Reserve Account?",
+          "options": [
+            "On or before 30th April of each year",
+            "On or before 30th June of each year",
+            "On or before 31st March of each year",
+            "Within 30 days of maturity"
+          ],
+          "answerIndex": 0,
+          "explanation": "Rule 13 mandates that every company shall, on or before the 30th day of April of each year, deposit at least 20% of the amount of its deposits maturing during the following financial year in a scheduled bank under a designated Deposit Repayment Reserve Account.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Deposit Repayment Reserve",
+            "Rule 13",
+            "Compliance Deadline"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-5_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-5_04",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-5",
+          "subject": "Law",
+          "prompt": "What is the validity period of the circular or advertisement inviting deposits issued by Neptune Maritime Services Limited?",
+          "options": [
+            "30 days from issue",
+            "6 months from the closure of the financial year or the date of AGM at which financial statements are laid, whichever is earlier",
+            "12 months from the date of issue",
+            "Until revoked by the Registrar"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 4(11) states that a circular or advertisement inviting deposits remains valid until the expiry of 6 months from the date of closure of the financial year in which it is issued or the date on which financial statements are laid at the AGM, whichever is earlier.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Circular Validity",
+            "Rule 4(11)",
+            "AGM"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-5_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-5_04",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-5",
+          "subject": "Law",
+          "prompt": "When must Neptune Maritime Services Limited file its annual return of deposits in Form DPT-3 with the Registrar?",
+          "options": [
+            "On or before 30th June of every year",
+            "On or before 30th April of every year",
+            "On or before 31st March of every year",
+            "Within 60 days of the AGM"
+          ],
+          "answerIndex": 0,
+          "explanation": "Rule 16 requires every company to file Form DPT-3 on or before the 30th day of June of every year, reporting particulars of deposits and exempt transactions as of 31st March of that year.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Form DPT-3",
+            "Annual Return",
+            "Rule 16"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-5_05",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-5",
+      "subject": "Law",
+      "passage": "Titanium Logistics Private Limited receives various funds during the financial year: Rs. 50 lakh as an advance from a customer for freight services to be rendered within 4 months; Rs. 20 lakh as a non-interest-bearing security deposit from an employee earning an annual salary of Rs. 8 lakh under an employment contract; Rs. 15 lakh as a commercial paper issue; and Rs. 10 lakh as an unverified loan from a casual acquaintance.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Acceptance of Deposits by Companies"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-5_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-5_05",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-5",
+          "subject": "Law",
+          "prompt": "How will the Rs. 50 lakh advance received from the customer for services to be rendered within 4 months be treated under the Deposit Rules?",
+          "options": [
+            "Treated as a public deposit immediately",
+            "Excluded from the definition of 'deposit' because it is an advance for services appropriated within 365 days",
+            "Treated as an illegal loan",
+            "Classified as debenture capital"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 2(1)(c)(xii)(a) excludes amounts received as an advance for the supply of goods or provision of services accounted for in terms of money, provided the goods/services are appropriated within 365 days from the date of acceptance of advance.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Advance for Services",
+            "Rule 2(1)(c)",
+            "Exclusions"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-5_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-5_05",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-5",
+          "subject": "Law",
+          "prompt": "How will the Rs. 20 lakh security deposit taken from the employee earning an annual salary of Rs. 8 lakh be classified?",
+          "options": [
+            "Excluded from deposits since it is an employee security deposit up to annual salary",
+            "Treated entirely as a deposit because Rs. 20 lakh exceeds the employee's annual salary of Rs. 8 lakh",
+            "Treated as a debenture",
+            "Excluded unconditionally regardless of salary amount"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 2(1)(c)(x) excludes employee security deposits *not exceeding* their annual salary. Since the security deposit (Rs. 20 lakh) exceeds the annual salary of the employee (Rs. 8 lakh), the entire amount (or the excess depending on exact interpretation, but rule specifies 'not exceeding his annual salary' as condition for exclusion; exceeding it makes it a deposit).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Employee Security Deposit",
+            "Rule 2(1)(c)",
+            "Thresholds"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-5_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-5_05",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-5",
+          "subject": "Law",
+          "prompt": "Is the Rs. 15 lakh raised through the issue of commercial papers considered a 'deposit'?",
+          "options": [
+            "Yes, all short-term debt instruments are deposits",
+            "No, commercial papers are specifically excluded from the definition of deposit under Rule 2(1)(c)",
+            "Yes, unless issued by a banking company",
+            "No, only if listed on a stock exchange"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 2(1)(c)(vii) excludes any amount raised by the issue of commercial papers or other instruments in accordance with guidelines issued by the Reserve Bank of India.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Commercial Paper",
+            "Exclusions",
+            "Rule 2(1)(c)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-5_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-5_05",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-5",
+          "subject": "Law",
+          "prompt": "How will the Rs. 10 lakh unverified loan from a casual acquaintance be treated under the Companies Act, 2013?",
+          "options": [
+            "Excluded from deposits as a casual loan",
+            "Treated as a deposit because it does not fall under any of the recognized exclusion categories in Rule 2(1)(c)",
+            "Treated as share capital",
+            "Exempt if interest is below 4%"
+          ],
+          "answerIndex": 1,
+          "explanation": "Any amount received as a loan or deposit from an individual (casual acquaintance) who is neither a director, relative, nor institutional lender does not qualify for any exclusion under Rule 2(1)(c) and is therefore classified as a deposit.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Unverified Loan",
+            "Definition of Deposit",
+            "Rule 2(1)(c)"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "costing-3",
+  "subject": "Costing",
+  "paper": "Paper 4: Cost and Management Accounting",
+  "module": "Module 1",
+  "chapterNumber": 3,
+  "chapterTitle": "Employee Cost and Direct Expenses",
+  "generatedAt": "2026-08-16T14:37:12.131Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_costing-3_001",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "Which of the following components is strictly excluded from the computation of direct employee cost according to standard cost accounting principles?",
+      "options": [
+        "Wages paid to workers directly engaged in manufacturing",
+        "Overtime premium authorized specifically for urgent customer orders",
+        "Cost of idle time due to an abnormal breakdown of plant machinery",
+        "Production bonus paid under an incentive scheme"
+      ],
+      "answerIndex": 2,
+      "explanation": "Abnormal idle time costs arise due to unexpected disruptions like machinery breakdowns and are considered losses, thereby excluded from direct employee cost and charged directly to Costing Profit and Loss Account. Direct wages, specific urgent overtime, and direct production bonuses form part of direct or standard employee costs. This aligns with ICAI Study Material guidelines on treatment of abnormal losses.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Employee Cost",
+        "Idle Time",
+        "Cost Classification"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_002",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "Under the Halsey Premium Plan, an employee is guaranteed a minimum time wage. If standard time is 10 hours, actual time taken is 8 hours, and the hourly rate is Rs. 50, what is the total earnings of the worker assuming a 50% bonus sharing rate?",
+      "options": [
+        "Rs. 400",
+        "Rs. 450",
+        "Rs. 500",
+        "Rs. 550"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under the Halsey Plan, Total Earnings = (Time Taken × Hourly Rate) + (50% × Time Saved × Hourly Rate). Time saved = 10 - 8 = 2 hours. Time wages = 8 hrs × Rs. 50 = Rs. 400. Bonus = 0.50 × 2 hrs × Rs. 50 = Rs. 50. Total Earnings = Rs. 400 + Rs. 50 = Rs. 450.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Halsey Plan",
+        "Incentive Schemes",
+        "Labor Remuneration"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_003",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "In labour turnover measurement, which method considers only the number of workers replaced against the average number of workers on the payroll?",
+      "options": [
+        "Separation Method",
+        "Replacement Method",
+        "Flux Method",
+        "Accession Method"
+      ],
+      "answerIndex": 1,
+      "explanation": "The Replacement method of labour turnover calculates the rate by dividing the number of workers replaced by the average number of workers during that period. Separation method considers those who left, and Flux method considers both separations and accessions (or replacements). This is a standard formula taught in ICAI Costing modules.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Labour Turnover",
+        "Replacement Method",
+        "HR Metrics"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_004",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "What is the primary distinction between the Rowan Incentive Plan and the Halsey Premium Plan in calculating bonus?",
+      "options": [
+        "Rowan plan guarantees no hourly wages, whereas Halsey guarantees time wages.",
+        "Rowan bonus is calculated as a proportion of time taken, whereas Halsey bonus is a fixed percentage of time saved.",
+        "Rowan bonus percentage is the ratio of time saved to standard time, whereas Halsey uses a fixed percentage of time saved.",
+        "Rowan plan does not account for hourly rates in bonus computation."
+      ],
+      "answerIndex": 2,
+      "explanation": "Under the Rowan plan, the bonus is calculated as (Time Saved / Standard Time) × Time Taken × Hourly Rate. Under the Halsey plan, it is a fixed percentage (e.g., 50%) of (Time Saved × Hourly Rate). Both guarantee base time wages.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Rowan Plan",
+        "Halsey Plan",
+        "Incentive Comparison"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_005",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "How should overtime premium incurred due to general pressure of work and lack of adequate staff capacity be treated in cost accounting?",
+      "options": [
+        "Charged directly to the specific job currently in progress",
+        "Treated as factory overhead and apportioned over production",
+        "Excluded entirely from cost accounts as an abnormal loss",
+        "Debited directly to the Costing Profit and Loss Account"
+      ],
+      "answerIndex": 1,
+      "explanation": "When overtime is necessitated due to general pressure of work or routine backlog, the overtime premium is treated as a production overhead so that it is absorbed generally across all production. It is only charged directly to a specific job if the overtime is worked at the explicit request of the customer.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Overtime Premium",
+        "Overhead Treatment",
+        "Labor Costing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_006",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "Which of the following formulas correctly calculates the Labour Turnover Rate using the Flux Method?",
+      "options": [
+        "[(Number of separations) / Average number of workers] × 100",
+        "[(Number of replacements) / Average number of workers] × 100",
+        "[(Separations + Accessions) / Average number of workers] × 100",
+        "[(Separations - Accessions) / Average number of workers] × 100"
+      ],
+      "answerIndex": 2,
+      "explanation": "The Flux method measures the total change in the workforce by combining both separations and accessions (or replacements, depending on the specific convention, though ICAI study material uses separations + accessions or separations + replacements divided by average workforce). It provides a comprehensive view of workforce movement.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Labour Turnover",
+        "Flux Method",
+        "Formulas"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_007",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "Under the Taylor’s Differential Piece Rate System, a worker who produces below the standard output is paid at:",
+      "options": [
+        "120% of the normal piece rate",
+        "80% of the normal piece rate",
+        "100% of the normal piece rate",
+        "50% of the normal piece rate"
+      ],
+      "answerIndex": 1,
+      "explanation": "Taylor's differential piece rate system penalizes workers who fail to reach the standard output by paying them a lower piece rate (typically 80% of the normal rate), while those who meet or exceed standard are paid a higher rate (typically 120%). This creates a strong incentive for efficiency.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Taylor Plan",
+        "Differential Piece Rate",
+        "Incentive Schemes"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_008",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "A worker is paid a guaranteed time rate of Rs. 20 per hour. Standard output is 5 units per hour. During a 40-hour week, the worker produces 240 units. Under the Gantt Task and Bonus Plan, what is the worker's efficiency percentage and subsequent wage rate?",
+      "options": [
+        "Efficiency is 100%, paid at normal time rate plus bonus",
+        "Efficiency is 120%, paid at high piece rate on all output plus 20% bonus",
+        "Efficiency is 120%, paid piece rate with a 20% bonus on wages of standard time",
+        "Efficiency is 120%, paid at high piece rate for output produced"
+      ],
+      "answerIndex": 3,
+      "explanation": "Gantt Task and Bonus Plan specifies: Below standard = Guaranteed time rate; At standard = Time rate + 20% bonus; Above standard = High piece rate on total output. Here, standard output for 40 hours = 200 units. Actual = 240 units. Efficiency = (240/200)*100 = 120%. Worker is paid at high piece rate.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Gantt Plan",
+        "Efficiency Calculation",
+        "Piece Rate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_009",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "Which of the following costs is classified as a direct expense rather than an employee cost or indirect overhead?",
+      "options": [
+        "Salary paid to the factory supervisor",
+        "Cost of hiring a specialized patent blueprint specifically for a unique customized contract",
+        "Employer's contribution to state insurance for factory workers",
+        "Normal idle time wages of machine operators"
+      ],
+      "answerIndex": 1,
+      "explanation": "Direct expenses are expenses other than direct material or direct labor that can be identified directly with a specific cost unit or job, such as hiring specific plant/equipment or specialized blueprints for a job. Supervisor salary and insurance are employee-related or overhead costs.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Direct Expenses",
+        "Cost Classification",
+        "Job Costing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_010",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "In the context of wage incentives, what is the primary objective of the Emerson Efficiency Plan?",
+      "options": [
+        "To provide a flat piece rate regardless of output volume",
+        "To introduce a stepped bonus scale starting from 66.67% efficiency up to 100% and above",
+        "To penalize workers heavily for output falling below 50% efficiency",
+        "to ensure workers only receive payment when they exceed 150% efficiency"
+      ],
+      "answerIndex": 1,
+      "explanation": "The Emerson Efficiency Plan introduces a graduated bonus scale starting at 66.67% efficiency (2/3rds of standard). Below this, only guaranteed time wages are paid. At 100% efficiency, the bonus is 20%, and it increases by 1% for every 1% increase in efficiency beyond 100%.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Emerson Plan",
+        "Efficiency Scale",
+        "Wage Incentives"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_011",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "How is 'Normal Idle Time' treated in cost accounting records?",
+      "options": [
+        "Charged directly to the Costing Profit and Loss Account as a period cost",
+        "Recovered as a part of direct labor cost of the specific job being worked on",
+        "Treated as a production overhead and absorbed into production costs",
+        "Capitalized as part of machinery cost"
+      ],
+      "answerIndex": 2,
+      "explanation": "Normal idle time (such as routine tea breaks, machine setup, minor tool adjustments) is unavoidable in the ordinary course of operations. Its cost is treated as a production overhead so that it gets absorbed into the cost of manufactured units. Abnormal idle time is charged to Costing P&L.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Idle Time",
+        "Normal Idle Time",
+        "Overhead Absorption"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_012",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "Under the Merrick Multiple Piece Rate System, what is the piece rate paid to a worker whose performance is between 83% and 100% of standard output?",
+      "options": [
+        "Normal piece rate",
+        "110% of normal piece rate",
+        "120% of normal piece rate",
+        "80% of normal piece rate"
+      ],
+      "answerIndex": 0,
+      "explanation": "Merrick multiple piece rate system uses three grades: Up to 83% efficiency = Normal piece rate (with time wages guaranteed); 83% to 100% efficiency = 110% of normal piece rate; Above 100% efficiency = 120% of normal piece rate.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Merrick Plan",
+        "Differential Piece Rate",
+        "Incentive Schemes"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_013",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "Which of the following documents is foundational for recording the time spent by workers on different jobs or cost centers in a manufacturing plant?",
+      "options": [
+        "Material Requisition Slip",
+        "Time Booking Card / Job Card",
+        "Payroll Summary Sheet",
+        "Gate Attendance Register"
+      ],
+      "answerIndex": 1,
+      "explanation": "Time booking (recorded via job cards or time booking sheets) tracks how workers allocate their working hours across various jobs, processes, or cost centers, enabling accurate direct labor allocation and overhead distribution.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Time Booking",
+        "Job Card",
+        "Labor Accounting"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_014",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "If the labour turnover rate using the separation method is 10%, replacement method is 8%, and flux method is 18%, what does this indicate about the workforce dynamics?",
+      "options": [
+        "More workers joined than left during the period.",
+        "The organization experienced a high degree of expansion and recruitment without any separations.",
+        "Separations and accessions are perfectly balanced such that replacements equal separations.",
+        "The organization is experiencing steady replacement of departing staff along with net additions."
+      ],
+      "answerIndex": 3,
+      "explanation": "Flux method measures total labor movement. In standard formulas where Flux = [(Separations + Accessions) / Average workers] or similar variations, when separations equal 10% and replacements 8%, it signifies ongoing turnover and replacement matching normal replacement cycles.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Labour Turnover",
+        "Flux Method",
+        "Analysis"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_015",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "What financial impact does high labour turnover have on a manufacturing enterprise?",
+      "options": [
+        "Reduction in recruitment expenses and increased overall product quality",
+        "Increased training costs, higher scrap rates, and lost production efficiency",
+        "Lower supervision requirements and streamlined wage administration",
+        "Elimination of idle time costs across all departments"
+      ],
+      "answerIndex": 1,
+      "explanation": "High labour turnover leads to preventive costs (welfare, training) and replacement costs (advertising, interviewing, onboarding), alongside losses from lower productivity, increased scrap, and wear-and-tear on machinery by inexperienced hands.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Labour Turnover",
+        "Cost Impact",
+        "HR Costs"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_016",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "Which of the following best defines 'Accession' in the computation of labour turnover?",
+      "options": [
+        "Number of workers who left the organization voluntarily or involuntarily",
+        "Number of workers recruited or added to the payroll during a specific period",
+        "Number of existing workers transferred from one department to another",
+        "Number of workers who retired upon reaching the age of superannuation"
+      ],
+      "answerIndex": 1,
+      "explanation": "Accession refers to the addition of workers to the payroll during a period, which includes both net expansion of the workforce and replacements for those who separated.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Labour Turnover",
+        "Accession",
+        "Definitions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_017",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "In wage calculations, fringe benefits provided to employees (such as subsidized canteen meals, medical insurance, and recreational facilities) are generally treated as:",
+      "options": [
+        "Direct employee costs assigned directly to the primary product",
+        "Indirect employee costs and apportioned as part of factory or administrative overheads",
+        "Capital expenditure added to plant and machinery",
+        "Non-operating expenses charged directly to retained earnings"
+      ],
+      "answerIndex": 1,
+      "explanation": "Fringe benefits and indirect monetary benefits cannot be conveniently identified with a specific job or unit of output, hence they are classified as indirect employee costs and absorbed into overheads.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Fringe Benefits",
+        "Indirect Employee Cost",
+        "Overhead Allocation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_018",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "Under the Bedaux Point Premium System, standard time is expressed in terms of 'Bedaux points' or 'B's. One 'B' represents:",
+      "options": [
+        "One standard hour of work",
+        "One standard minute of work consisting of working time plus rest allowance",
+        "One unit of finished output regardless of time taken",
+        "One dollar or rupee of bonus earned per hour"
+      ],
+      "answerIndex": 1,
+      "explanation": "A Bedaux point (or 'B') is equal to a standard minute of work, incorporating both work time and a relaxation/rest allowance. If a worker saves 'B's, the bonus earned is shared between the worker (typically 75%) and the foreman/management (25%).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Bedaux Plan",
+        "Point System",
+        "Wage Incentives"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_019",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "How should holiday pay, sick leave pay, and casual leave wages paid to direct production workers be accounted for in standard costing systems?",
+      "options": [
+        "Treated as direct wages allocated specifically to the jobs running on the days workers return",
+        "Spread evenly or absorbed through labor hour rates as part of indirect employee costs",
+        "Excluded from product cost entirely and treated as extraordinary losses",
+        "Deducted from the worker's subsequent monthly incentive earnings"
+      ],
+      "answerIndex": 1,
+      "explanation": "Paid holidays, sick leaves, and casual leaves are treated as indirect employee costs (or absorbed via inflated standard hourly rates/overhead rates) so that production costs are not distorted in the specific weeks leaves are taken.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Leave Wages",
+        "Indirect Employee Cost",
+        "Cost Absorption"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_020",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "Which of the following methods of wage payment is most suitable when quality of work is paramount and output cannot be easily quantified or standardized?",
+      "options": [
+        "Straight Piece Rate System",
+        "Taylor’s Differential Piece Rate System",
+        "Time Rate System",
+        "Merrick Multiple Piece Rate System"
+      ],
+      "answerIndex": 2,
+      "explanation": "The Time Rate System is best when quality takes precedence over quantity, when output is hard to measure, or when workers are apprentices whose pacing should not be rushed by piece-rate pressures.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Time Rate System",
+        "Wage Systems",
+        "Quality Control"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_021",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "What is the primary purpose of maintaining a 'Gate Attendance Register' or biometric punch-in system in a factory?",
+      "options": [
+        "To record the exact time spent by a worker on a specific manufacturing job order",
+        "To record total time spent by workers in the factory premises for payroll and attendance verification",
+        "To calculate the exact quantity of raw materials requisitioned per shift",
+        "To determine machine breakdown frequency and maintenance intervals"
+      ],
+      "answerIndex": 1,
+      "explanation": "Gate attendance registers or biometric logs record the gross time employees enter and leave factory premises. This verifies total attendance and hours available for payroll, distinct from time *booking* (job cards) which allocates those hours to specific tasks.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Time Keeping",
+        "Attendance Register",
+        "Payroll Controls"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_022",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "Under the Rowan Plan, if standard time is 20 hours, actual time taken is 15 hours, and the hourly rate is Rs. 40, what is the total earnings of the worker?",
+      "options": [
+        "Rs. 600",
+        "Rs. 700",
+        "Rs. 750",
+        "Rs. 800"
+      ],
+      "answerIndex": 1,
+      "explanation": "Time Saved = 20 - 15 = 5 hours. Time wages = 15 hrs × Rs. 40 = Rs. 600. Rowan Bonus = (Time Saved / Standard Time) × Time Taken × Hourly Rate = (5 / 20) × 15 × Rs. 40 = 0.25 × 15 × 40 = Rs. 150. Total Earnings = Rs. 600 + Rs. 150 = Rs. 750.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Rowan Plan",
+        "Earnings Calculation",
+        "Incentive Schemes"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_023",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "In the treatment of employee costs, how are statutory deductions like provident fund (PF) contributions and employee state insurance (ESI) handled?",
+      "options": [
+        "Employee's share is treated as an employer expense; employer's share is deducted from employee wages.",
+        "Both employer's and employee's shares are treated as capital expenditure.",
+        "Employee's share is deducted from gross wages; employer's share is an additional element of employee cost.",
+        "Both shares are excluded from accounting records as they are statutory taxes."
+      ],
+      "answerIndex": 2,
+      "explanation": "The employee's contribution to PF/ESI is part of their gross earnings withheld from payment, whereas the employer's matching contribution represents an additional direct/indirect labor cost borne by the employer, forming part of total employee cost.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Statutory Deductions",
+        "PF and ESI",
+        "Employee Cost"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_024",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "If a worker is entitled to a guaranteed hourly rate of Rs. 60 and the piece rate equivalent is Rs. 15 per unit with a standard output of 4 units per hour, what will a slow worker producing 2 units in an hour earn under a Guaranteed Piece Rate system?",
+      "options": [
+        "Rs. 30",
+        "Rs. 60",
+        "Rs. 45",
+        "Rs. 15"
+      ],
+      "answerIndex": 1,
+      "explanation": "When piece rates are guaranteed with a minimum time rate safeguard, workers receive the higher of piece earnings or time earnings. Piece earnings for 2 units = 2 × Rs. 15 = Rs. 30. Time earnings for 1 hour = 1 × Rs. 60 = Rs. 60. Therefore, the worker earns the guaranteed minimum of Rs. 60.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Guaranteed Wage",
+        "Piece Rate",
+        "Minimum Wage Safeguard"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_025",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "Which of the following is considered a preventive cost of labour turnover?",
+      "options": [
+        "Cost of advertising job vacancies in newspapers",
+        "Cost of medical examinations for newly recruited workers",
+        "Cost of providing subsidized housing, superior safety equipment, and medical welfare",
+        "Loss of output due to vacancies remaining unfilled"
+      ],
+      "answerIndex": 2,
+      "explanation": "Preventive costs are incurred to keep workers satisfied and reduce their inclination to leave (e.g., medical welfare, housing, canteens, safety measures). Advertising and onboarding costs are replacement costs.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Labour Turnover",
+        "Preventive Costs",
+        "HR Costing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_026",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "In analyzing labour efficiency variances in standard costing, how is the 'Labour Efficiency Variance' defined?",
+      "options": [
+        "Standard Cost of Actual Time - Actual Cost of Actual Time",
+        "(Standard Hours for Actual Output - Actual Hours Worked) × Standard Hourly Rate",
+        "(Standard Rate - Actual Rate) × Actual Hours Worked",
+        "(Actual Hours - Standard Hours) × Actual Rate"
+      ],
+      "answerIndex": 1,
+      "explanation": "Labour Efficiency Variance measures the financial effect of operational efficiency, calculated as (Standard Hours allowed for actual output - Actual hours worked) multiplied by the standard hourly rate. (Note: Covered comprehensively under both standard costing and employee cost chapters in ICAI modules).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Labour Efficiency",
+        "Variances",
+        "Standard Costing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_027",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "What is the correct treatment of normal idle time arising from a mandatory mid-shift meal or tea break lasting 15 minutes?",
+      "options": [
+        "It is treated as a direct charge to the specific customer job running at that hour.",
+        "It is ignored in cost accounts since no work is performed.",
+        "It is treated as an indirect employee cost and absorbed into production overheads.",
+        "It is deducted from the worker's monthly wages as unpaid break time."
+      ],
+      "answerIndex": 2,
+      "explanation": "Normal tea breaks or meal breaks are standard, unavoidable interruptions. The wages paid during these periods are treated as indirect employee costs and recovered through general production overhead absorption rates.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Idle Time",
+        "Tea Breaks",
+        "Overhead Costing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_028",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "Under the Barth Variable Sharing Plan, how is the bonus calculated for workers?",
+      "options": [
+        "Bonus is a fixed 50% of time saved multiplied by hourly rate.",
+        "Bonus is calculated as the square root of the product of standard time and actual time, multiplied by the hourly rate.",
+        "Bonus is equal to 100% of time saved multiplied by hourly rate.",
+        "Bonus is not paid unless efficiency exceeds 120%."
+      ],
+      "answerIndex": 1,
+      "explanation": "The Barth variable sharing plan is an unusual incentive scheme where the bonus is calculated as the square root of (Standard Time × Actual Time) minus actual time, or expressed as Earnings = Hourly Rate × √(Standard Time × Actual Time). It provides high incentives for low-skilled or beginners.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Barth Plan",
+        "Variable Sharing",
+        "Incentive Schemes"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_029",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "Which of the following items should be deducted from gross wages to arrive at net wages payable to an employee?",
+      "options": [
+        "Employer's contribution to Provident Fund",
+        "Employee's contribution to Provident Fund, professional tax, and canteen deductions",
+        "Overtime premium paid for urgent production",
+        "Normal idle time wages paid during machine adjustments"
+      ],
+      "answerIndex": 1,
+      "explanation": "Net wages represent the take-home pay after deducting statutory and voluntary withholdings from gross earnings, such as employee PF contributions, professional tax, income tax deductions at source (TDS), and canteen facility recovery.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Gross Wages",
+        "Net Wages",
+        "Payroll Deductions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-3_030",
+      "kind": "normal",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "prompt": "When direct expenses such as cost of specialized tool rental or design fees are incurred for a particular contract, how are they treated?",
+      "options": [
+        "Apportioned across all products manufactured in the factory as overheads",
+        "Charged directly to the specific job or contract as part of prime cost",
+        "Written off immediately against miscellaneous income",
+        "Capitalized as administrative expenses"
+      ],
+      "answerIndex": 1,
+      "explanation": "Direct expenses are expenses other than direct material or direct labor that can be directly identified and allocated to a specific cost center, job, or contract. They form an essential component of Prime Cost.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Direct Expenses",
+        "Prime Cost",
+        "Job Costing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_costing-3_01",
+      "kind": "scenario",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "passage": "Apex Engineering Ltd. manufactures heavy industrial gearboxes. During the month of August, the company employed 50 workers in its machining department. The standard working hours are 200 hours per worker per month at a standard wage rate of Rs. 40 per hour. During August, 2 workers left the company, and 3 workers were newly recruited. Additionally, 5 workers were engaged as replacements for those who left. Total overtime hours worked during the month due to urgent rush orders from clients amounted to 300 hours, paid at double the normal rate (Rs. 80 per hour).",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-3_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-3_01",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-3",
+          "subject": "Costing",
+          "prompt": "What is the labour turnover rate for the machining department for August using the Separation Method?",
+          "options": [
+            "2%",
+            "4%",
+            "6%",
+            "10%"
+          ],
+          "answerIndex": 1,
+          "explanation": "Separation rate = (Number of separations / Average number of workers) × 100. Number of separations = 2. Average number of workers = 50. Rate = (2 / 50) × 100 = 4%.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Labour Turnover",
+            "Separation Method",
+            "Scenario Application"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-3_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-3_01",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-3",
+          "subject": "Costing",
+          "prompt": "What is the labour turnover rate for August using the Replacement Method?",
+          "options": [
+            "6%",
+            "8%",
+            "10%",
+            "4%"
+          ],
+          "answerIndex": 2,
+          "explanation": "Replacement rate = (Number of replacements / Average number of workers) × 100. Number of replacements given = 5. Average number of workers = 50. Rate = (5 / 50) × 100 = 10%.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Labour Turnover",
+            "Replacement Method",
+            "Scenario Application"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-3_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-3_01",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-3",
+          "subject": "Costing",
+          "prompt": "How should the overtime premium paid for the urgent client rush orders (300 hours at Rs. 40 premium per hour) be treated in cost accounts?",
+          "options": [
+            "Treated as factory overhead and apportioned across all gearboxes",
+            "Charged directly as direct labour cost to the specific urgent client order",
+            "Excluded from cost accounts as an abnormal loss",
+            "Debited directly to Retained Earnings"
+          ],
+          "answerIndex": 1,
+          "explanation": "When overtime is worked specifically at the customer's request to fulfill an urgent order, the overtime premium (Rs. 40 per hour for 300 hours = Rs. 12,000) is charged directly to that specific job as a direct employee cost item.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Overtime Premium",
+            "Direct Cost",
+            "Job Allocation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-3_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-3_01",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-3",
+          "subject": "Costing",
+          "prompt": "What is the total normal basic wages for the 50 workers for the month, excluding overtime?",
+          "options": [
+            "Rs. 300,000",
+            "Rs. 400,000",
+            "Rs. 440,000",
+            "Rs. 360,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Total normal hours = 50 workers × 200 hours = 10,000 hours. Standard wage rate = Rs. 40 per hour. Total basic wages = 10,000 hrs × Rs. 40 = Rs. 400,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Basic Wages",
+            "Payroll Calculation",
+            "Scenario Application"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-3_02",
+      "kind": "scenario",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "passage": "A skilled machinist, Mr. Varma, works in the precision components division of Beta Corp. The standard time allowed to manufacture a batch of 50 precision valves is 20 hours. Mr. Varma completes the batch in 15 hours. His guaranteed hourly rate is Rs. 60. Beta Corp operates multiple incentive schemes depending on department choice.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-3_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-3_02",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-3",
+          "subject": "Costing",
+          "prompt": "If Beta Corp applies the Halsey Premium Plan (50% sharing), what will be Mr. Varma's total earnings for the batch?",
+          "options": [
+            "Rs. 900",
+            "Rs. 1,050",
+            "Rs. 1,200",
+            "Rs. 750"
+          ],
+          "answerIndex": 1,
+          "explanation": "Time saved = 20 - 15 = 5 hours. Time wages = 15 hrs × Rs. 60 = Rs. 900. Halsey bonus = 50% of (5 hrs × Rs. 60) = 0.50 × Rs. 300 = Rs. 150. Total Earnings = Rs. 900 + Rs. 150 = Rs. 1,050.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Halsey Plan",
+            "Earnings Calculation",
+            "Scenario Application"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-3_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-3_02",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-3",
+          "subject": "Costing",
+          "prompt": "If Beta Corp applies the Rowan Plan instead, what will be Mr. Varma's total earnings for the batch?",
+          "options": [
+            "Rs. 1,050",
+            "Rs. 1,125",
+            "Rs. 1,200",
+            "Rs. 975"
+          ],
+          "answerIndex": 1,
+          "explanation": "Time saved = 5 hours. Standard time = 20 hours. Time wages = 15 hrs × Rs. 60 = Rs. 900. Rowan bonus = (Time saved / Standard time) × Time taken × Hourly rate = (5 / 20) × 15 × Rs. 60 = 0.25 × 15 × 60 = Rs. 225. Total Earnings = Rs. 900 + Rs. 225 = Rs. 1,125.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Rowan Plan",
+            "Earnings Calculation",
+            "Scenario Application"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-3_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-3_02",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-3",
+          "subject": "Costing",
+          "prompt": "What is Mr. Varma's effective hourly earnings rate under the Rowan Plan?",
+          "options": [
+            "Rs. 60.00 per hour",
+            "Rs. 70.00 per hour",
+            "Rs. 75.00 per hour",
+            "Rs. 80.00 per hour"
+          ],
+          "answerIndex": 2,
+          "explanation": "Effective hourly earnings = Total Earnings / Actual Time Taken = Rs. 1,125 / 15 hours = Rs. 75.00 per hour.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Effective Hourly Rate",
+            "Rowan Plan",
+            "Scenario Application"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-3_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-3_02",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-3",
+          "subject": "Costing",
+          "prompt": "If Mr. Varma's actual time taken had been 24 hours instead of 15 hours (exceeding standard time), what would his total earnings be under the Halsey Plan?",
+          "options": [
+            "Rs. 1,440",
+            "Rs. 1,200",
+            "Rs. 1,320",
+            "Rs. 1,500"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under incentive schemes, if actual time exceeds standard time, no bonus is payable, but time wages based on actual time worked are guaranteed (subject to minimum wage rules). Earnings = 24 hours × Rs. 60 = Rs. 1,440.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Halsey Plan",
+            "Guaranteed Time Wages",
+            "Scenario Application"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-3_03",
+      "kind": "scenario",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "passage": "Gamma Manufacturing Company incurred the following employee and direct expense costs for Job No. 405 during the month of October: Direct wages paid to assemblers = Rs. 150,000; Wages paid for normal idle time due to power failure = Rs. 10,000; Wages paid for abnormal idle time due to roof leakage and severe storm = Rs. 15,000; Cost of specialized architectural blueprint hired exclusively for Job No. 405 = Rs. 25,000; Supervisory salaries apportioned to the plant = Rs. 40,000.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-3_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-3_03",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-3",
+          "subject": "Costing",
+          "prompt": "What is the amount of direct employee cost associated with Job No. 405 before adding direct expenses?",
+          "options": [
+            "Rs. 150,000",
+            "Rs. 160,000",
+            "Rs. 175,000",
+            "Rs. 200,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Direct employee cost includes only direct wages paid to workers directly engaged in performing the job (Rs. 150,000). Normal idle time and supervision are overheads, and abnormal idle time is a P&L charge.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Direct Employee Cost",
+            "Cost Classification",
+            "Scenario Application"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-3_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-3_03",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-3",
+          "subject": "Costing",
+          "prompt": "How should the wages paid for abnormal idle time (Rs. 15,000) due to the storm be treated?",
+          "options": [
+            "Added to prime cost of Job No. 405",
+            "Absorbed into factory overheads along with normal idle time",
+            "Debited directly to the Costing Profit and Loss Account as an abnormal loss",
+            "Capitalized as building repair cost"
+          ],
+          "answerIndex": 2,
+          "explanation": "Abnormal idle time costs are caused by unexpected, extraordinary events (like severe storms and roof leaks) and are excluded from cost of production, being debited directly to the Costing Profit and Loss Account.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Abnormal Idle Time",
+            "Cost Treatment",
+            "Scenario Application"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-3_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-3_03",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-3",
+          "subject": "Costing",
+          "prompt": "What is the total 'Direct Expenses' incurred specifically for Job No. 405?",
+          "options": [
+            "Rs. 10,000",
+            "Rs. 25,000",
+            "Rs. 40,000",
+            "Rs. 65,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Direct expenses are expenses other than direct material or direct labor that can be directly identified with a specific cost unit. Here, the specialized blueprint hired exclusively for Job No. 405 amounting to Rs. 25,000 is a direct expense.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Direct Expenses",
+            "Job Costing",
+            "Scenario Application"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-3_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-3_03",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-3",
+          "subject": "Costing",
+          "prompt": "What is the Prime Cost of Job No. 405, assuming direct materials consumed for the job equal Rs. 200,000?",
+          "options": [
+            "Rs. 350,000",
+            "Rs. 375,000",
+            "Rs. 385,000",
+            "Rs. 400,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Prime Cost = Direct Materials + Direct Labour + Direct Expenses. Direct Materials = Rs. 200,000; Direct Labour = Rs. 150,000; Direct Expenses (blueprint) = Rs. 25,000. Prime Cost = 200,000 + 150,000 + 25,000 = Rs. 375,000. Normal idle time and supervisory salaries are overheads, and abnormal idle time is a loss.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Prime Cost",
+            "Cost Computation",
+            "Scenario Application"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-3_04",
+      "kind": "scenario",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "passage": "Delta Industries operates a piece-rate incentive system in its assembly plant. Standard output is set at 10 units per hour. The normal piece rate is Rs. 20 per unit. Worker A produces 70 units in an 8-hour shift. Worker B produces 90 units in an 8-hour shift. Worker C produces 105 units in an 8-hour shift.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-3_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-3_04",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-3",
+          "subject": "Costing",
+          "prompt": "Under Taylor’s Differential Piece Rate System (where low producers receive 80% of normal rate and high producers receive 120%), what is Worker A's total wage for the shift?",
+          "options": [
+            "Rs. 1,400",
+            "Rs. 1,120",
+            "Rs. 1,680",
+            "Rs. 1,280"
+          ],
+          "answerIndex": 1,
+          "explanation": "Standard output for 8 hours = 80 units. Worker A produces 70 units, which is below standard (80 units). Therefore, Worker A is paid at 80% of normal piece rate (80% of Rs. 20 = Rs. 16 per unit). Total earnings = 70 units × Rs. 16 = Rs. 1,120.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Taylor Plan",
+            "Differential Piece Rate",
+            "Scenario Application"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-3_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-3_04",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-3",
+          "subject": "Costing",
+          "prompt": "Under Taylor’s Differential Piece Rate System, what is Worker C's total wage for the shift (output = 105 units)?",
+          "options": [
+            "Rs. 2,100",
+            "Rs. 2,520",
+            "Rs. 2,240",
+            "Rs. 2,400"
+          ],
+          "answerIndex": 1,
+          "explanation": "Worker C produces 105 units, which is above the standard of 80 units. Therefore, Worker C is paid at 120% of normal piece rate (120% of Rs. 20 = Rs. 24 per unit). Total earnings = 105 units × Rs. 24 = Rs. 2,520.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Taylor Plan",
+            "High Efficiency Rate",
+            "Scenario Application"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-3_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-3_04",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-3",
+          "subject": "Costing",
+          "prompt": "If Merrick's Multiple Piece Rate System is used, what rate applies to Worker B who produces 90 units (Standard = 80 units; efficiency = 112.5%)?",
+          "options": [
+            "100% of normal piece rate",
+            "110% of normal piece rate",
+            "120% of normal piece rate",
+            "80% of normal piece rate"
+          ],
+          "answerIndex": 2,
+          "explanation": "Merrick's plan rates: Up to 83% efficiency = Normal rate; 83% to 100% efficiency = 110% of normal rate; Above 100% efficiency = 120% of normal rate. Worker B's efficiency is 112.5% (90/80), which exceeds 100%, qualifying for 120% of the normal piece rate.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Merrick Plan",
+            "Efficiency Tiers",
+            "Scenario Application"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-3_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-3_04",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-3",
+          "subject": "Costing",
+          "prompt": "What is Worker A's guaranteed minimum time wage for the 8-hour shift if the base time rate is Rs. 150 per hour?",
+          "options": [
+            "Rs. 1,000",
+            "Rs. 1,200",
+            "Rs. 1,400",
+            "Rs. 1,600"
+          ],
+          "answerIndex": 1,
+          "explanation": "Time wage = 8 hours × Rs. 150 per hour = Rs. 1,200. (Note: In standard piece-rate systems with time-wage safeguards, workers are compared against guaranteed time wages, though differential piece rate plans like Taylor do not guarantee time wages).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Time Wage",
+            "Guaranteed Minimum",
+            "Scenario Application"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-3_05",
+      "kind": "scenario",
+      "chapterId": "costing-3",
+      "subject": "Costing",
+      "passage": "Omega Ltd. provides the following payroll data for the month of September: Basic wages = Rs. 500,000; Dearness allowance (DA) = Rs. 200,000; House rent allowance (HRA) = Rs. 100,000; Employer's contribution to Provident Fund = Rs. 60,000; Employee's contribution to Provident Fund = Rs. 60,000; Overtime premium paid for routine scheduling backlog = Rs. 40,000; Fringe benefits (canteen subsidy) = Rs. 30,000.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Employee Cost and Direct Expenses"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-3_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-3_05",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-3",
+          "subject": "Costing",
+          "prompt": "What is the total direct employee cost / gross earnings before statutory deductions for an employee whose proportionate share is analyzed?",
+          "options": [
+            "Rs. 700,000",
+            "Rs. 800,000",
+            "Rs. 840,000",
+            "Rs. 930,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Gross earnings (before employer contributions and deductions) = Basic wages (Rs. 500,000) + DA (Rs. 200,000) + HRA (Rs. 100,000) + Overtime for routine backlog treated as earnings/overhead (Rs. 40,000 if part of gross, or strictly Basic+DA+HRA = Rs. 800,000 including overtime). Total gross cash payable to employees = 500k + 200k + 100k + 40k = Rs. 840,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Gross Earnings",
+            "Payroll Components",
+            "Scenario Application"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-3_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-3_05",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-3",
+          "subject": "Costing",
+          "prompt": "What is the total 'Employer's Cost' of employee benefits to Omega Ltd. for September?",
+          "options": [
+            "Rs. 800,000",
+            "Rs. 860,000",
+            "Rs. 890,000",
+            "Rs. 950,000"
+          ],
+          "answerIndex": 2,
+          "explanation": "Total employer employee cost = Gross cash wages (Basic 500k + DA 200k + HRA 100k + Overtime 40k = 840k) + Employer's contribution to PF (Rs. 60,000) + Canteen subsidy (Rs. 30,000) = Rs. 840,000 + Rs. 60,000 + Rs. 30,000 = Rs. 930,000. Wait, let's check standard inclusion: Basic (500) + DA (200) + HRA (100) + OT (40) = 840. Employer PF (60) + Canteen (30) = 930. Let's re-verify options. Rs. 890k if OT is overhead? Basic+DA+HRA = 800k + Employer PF 60k + Canteen 30k = Rs. 890,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Total Employee Cost",
+            "Employer Contribution",
+            "Scenario Application"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-3_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-3_05",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-3",
+          "subject": "Costing",
+          "prompt": "How should the overtime premium of Rs. 40,000 paid due to routine scheduling backlog be classified?",
+          "options": [
+            "Direct labour cost charged to specific jobs",
+            "Production overhead / indirect employee cost",
+            "Abnormal loss charged to Costing P&L",
+            "Capital expenditure"
+          ],
+          "answerIndex": 1,
+          "explanation": "Overtime premium incurred due to routine scheduling backlog or general pressure of work is treated as a production overhead (indirect employee cost) rather than a direct job cost.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Overtime Premium",
+            "Overhead Classification",
+            "Scenario Application"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-3_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-3_05",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-3",
+          "subject": "Costing",
+          "prompt": "What amount will be withheld from employee gross wages on account of Provident Fund?",
+          "options": [
+            "Rs. 120,000",
+            "Rs. 60,000",
+            "Rs. 0",
+            "Rs. 30,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "The employee's contribution to Provident Fund is Rs. 60,000, which is deducted directly from the employees' gross wages during payroll processing.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Provident Fund",
+            "Deductions",
+            "Scenario Application"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

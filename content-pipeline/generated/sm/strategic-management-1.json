@@ -1,0 +1,1373 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "strategic-management-1",
+  "subject": "SM",
+  "paper": "Paper 6: Financial Management and Strategic Management",
+  "module": "Paper 6B",
+  "chapterNumber": 1,
+  "chapterTitle": "Introduction to Strategic Management",
+  "generatedAt": "2026-08-16T14:59:26.654Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_strategic-management-1_001",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "Which of the following best defines the term 'Strategy' in the context of business organizations?",
+      "options": [
+        "A short-term tactical plan designed to handle daily operational interruptions",
+        "A game plan that management uses to stake out market position, attract customers, and achieve organizational objectives",
+        "A rigid, unchanging blueprint for maintaining status quo under any external market volatility",
+        "A financial budget allocation schedule for departmental expenses over a fiscal year"
+      ],
+      "answerIndex": 1,
+      "explanation": "Strategy is defined as a game plan that management uses to stake out a market position, conduct operations, attract and satisfy customers, compete successfully, and achieve organizational objectives. It represents a long-term directional framework rather than a rigid short-term budget.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Definition of Strategy",
+        "Strategic Management"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_002",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "Strategic management is often described as a continuous process. Which sequence best represents the core phases of the strategic management model?",
+      "options": [
+        "Strategy implementation, strategic intent formulation, environmental scanning, evaluation",
+        "Strategic analysis, strategy formulation, strategy implementation, and strategy evaluation & control",
+        "Resource allocation, performance appraisal, tactical planning, operational control",
+        "Goal setting, competitor benchmarking, financial auditing, market exit"
+      ],
+      "answerIndex": 1,
+      "explanation": "According to the ICAI study material, strategic management comprises four primary phases: strategic analysis (setting intent and scanning environment), strategy formulation, strategy implementation, and strategy evaluation and control.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Strategic Management Process",
+        "Model Phases"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_003",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "What is the primary role of 'Strategic Intent' within an organization?",
+      "options": [
+        "To outline daily production schedules and shift timings for factory workers",
+        "To provide a clear conceptualization of what an organization would like to achieve in the long run",
+        "To detail the tax compliance and auditing procedures for the accounting department",
+        "To establish strict benchmarks for short-term departmental cost-cutting"
+      ],
+      "answerIndex": 1,
+      "explanation": "Strategic intent refers to the purposes and ultimate goals that an organization strives to achieve. It provides a philosophical and conceptual compass, conveying a sense of direction and purpose (vision, mission, objectives).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Strategic Intent",
+        "Vision and Mission"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_004",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "How does 'Strategic Decision Making' differ fundamentally from 'Operational Decision Making'?",
+      "options": [
+        "Operational decisions deal with long-term survival, while strategic decisions handle daily administrative routines",
+        "Strategic decisions involve major resource commitments and affect the organization's long-term scope, whereas operational decisions are routine and tactical",
+        "Strategic decisions are made exclusively by lower-level supervisors, while operational decisions are made by top management",
+        "Operational decisions require extensive scanning of the external macro-environment"
+      ],
+      "answerIndex": 1,
+      "explanation": "Strategic decisions are characterized by long-term impact, significant resource allocation, and top-management involvement. Operational decisions are routine, short-term, and deal with day-to-day execution.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Strategic Decisions",
+        "Operational Decisions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_005",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "Which level of strategic management is primarily responsible for translating broad corporate goals into specific competitive strategies for individual product markets or business units?",
+      "options": [
+        "Corporate Level",
+        "Functional Level",
+        "Business Level",
+        "Operational Level"
+      ],
+      "answerIndex": 2,
+      "explanation": "The business-level strategy focuses on managing the interests and operations of a specific strategic business unit (SBU) or product market, determining how to compete successfully in that specific domain.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Levels of Strategy",
+        "Business Level Strategy"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_006",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "A multinational firm decides to acquire a completely unrelated retail chain to diversify its revenue streams. At which organizational level is this strategic choice primarily formulated?",
+      "options": [
+        "Functional Level",
+        "Business Level",
+        "Corporate Level",
+        "Divisional Level"
+      ],
+      "answerIndex": 2,
+      "explanation": "Corporate-level strategy is formulated by top management and addresses questions regarding the overall scope of the enterprise, including diversification, acquisition, resource allocation across different businesses, and portfolio management.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Corporate Level Strategy",
+        "Diversification"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_007",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "At the functional level of an organization, what is the primary focus of strategy?",
+      "options": [
+        "Deciding which new industries or foreign countries the entire firm should enter",
+        "Establishing competitive advantage for a single stand-alone product line",
+        "Supporting business-level and corporate-level strategies through effective management of operational activities like HR, finance, and marketing",
+        "Determining the capital structure and dividend payout ratio for shareholders"
+      ],
+      "answerIndex": 2,
+      "explanation": "Functional-level strategies focus on improving the effectiveness of operations within functional areas such as manufacturing, marketing, human resources, and finance, directly supporting higher-level strategies.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Functional Level Strategy",
+        "Operations Support"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_008",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "Why is strategic management considered important for modern business organizations operating in volatile environments?",
+      "options": [
+        "It eliminates all business risks associated with market competition",
+        "It provides an orderly framework for coping with uncertainty, giving the firm a clear sense of direction and proactive posture",
+        "It completely automates administrative compliance and tax filing",
+        "It ensures that a firm never needs to alter its core products or services"
+      ],
+      "answerIndex": 1,
+      "explanation": "Strategic management helps organizations navigate environmental volatility, anticipate changes, minimize surprises, and proactively shape their future rather than merely reacting to external pressures.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Importance of Strategic Management",
+        "Environmental Volatility"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_009",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "Which of the following best captures a major limitation or constraint of strategic management?",
+      "options": [
+        "Strategic management guarantees absolute market leadership and 100% profitability",
+        "Formulating and implementing strategies is time-consuming, costly, and involves dealing with unpredictable future events",
+        "Strategic management prevents organizations from entering international markets",
+        "It restricts employees from exercising any form of operational autonomy"
+      ],
+      "answerIndex": 1,
+      "explanation": "Strategic management is not a magic formula; it involves significant time, cost, and complexity. Because the future is uncertain, strategic plans can become flawed if environmental assumptions fail.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Limitations of Strategic Management",
+        "Uncertainty"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_010",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "An organization sets a broad enduring statement of its purpose that distinguishes it from other similar firms, identifying its scope of operations in product and market terms. What is this statement called?",
+      "options": [
+        "Vision statement",
+        "Mission statement",
+        "Operational budget",
+        "Contingency plan"
+      ],
+      "answerIndex": 1,
+      "explanation": "A mission statement defines the organization's current scope, identity, customer needs served, and distinguishes it from competitors, whereas a vision statement focuses on future aspirations.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Mission Statement",
+        "Strategic Intent"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_011",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "What differentiates a 'Vision' statement from a 'Mission' statement?",
+      "options": [
+        "Vision describes what the organization wants to become in the future, while mission focuses on what it is and what it does presently",
+        "Vision is exclusively financial, while mission is non-financial",
+        "Vision is formulated by lower-level managers, while mission is formulated by the board of directors",
+        "Vision has a short-term horizon of one year, while mission spans ten years"
+      ],
+      "answerIndex": 0,
+      "explanation": "Vision paints a picture of the organization's desired future state (where we are headed), while the mission defines its present purpose, business domain, and core reason for being.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Vision vs Mission",
+        "Strategic Intent"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_012",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "Strategic control differs from operational control in which of the following ways?",
+      "options": [
+        "Strategic control focuses on monitoring whether the underlying strategy is working and adapting to environmental shifts, while operational control tracks day-to-day execution against immediate standards",
+        "Strategic control is handled exclusively by junior clerks, while operational control is handled by the CEO",
+        "Strategic control measures factory scrap rates, whereas operational control measures macro GDP growth",
+        "Strategic control is unnecessary if operational control is effective"
+      ],
+      "answerIndex": 0,
+      "explanation": "Strategic control examines whether the strategic direction remains appropriate in light of environmental changes. Operational control evaluates day-to-day performance and immediate execution.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Strategic Control",
+        "Operational Control"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_013",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "In the evolution of strategic management, which phase typically emphasized 'predicting the future through structured long-range forecasting and resource budgeting'?",
+      "options": [
+        "Ad hoc policy making",
+        "Basic financial planning",
+        "Forecast-based planning",
+        "Externally oriented strategic planning"
+      ],
+      "answerIndex": 2,
+      "explanation": "Forecast-based planning involved looking beyond current year budgets to project growth five years into the future using structured forecasting models, before evolving into more flexible strategic management.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Evolution of Strategic Management",
+        "Forecast-based Planning"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_014",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "Which of the following represents a strategic risk rather than an operational risk?",
+      "options": [
+        "A sudden breakdown of a delivery truck on a routine urban route",
+        "A shift in consumer preferences toward sustainable eco-friendly products rendering the firm's core manufacturing line obsolete",
+        "A clerical error in processing an employee's monthly salary invoice",
+        "A minor electrical short-circuit in the office reception area"
+      ],
+      "answerIndex": 1,
+      "explanation": "Shifting consumer preferences and product obsolescence threaten the firm's long-term competitive viability, making it a strategic risk, whereas truck breakdowns or clerical errors are operational issues.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Strategic Risk",
+        "Operational Risk"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_015",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "Why are 'Objectives' considered a vital component of strategic intent?",
+      "options": [
+        "They replace the need for environmental scanning",
+        "They provide specific, measurable targets that operationalize the mission and vision over a definite timeframe",
+        "They eliminate all competitive rivalry in the industry",
+        "They dictate the exact daily routine of every individual worker"
+      ],
+      "answerIndex": 1,
+      "explanation": "Objectives translate the broad vision and mission into concrete, measurable performance targets, establishing milestones for management to gauge progress.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Objectives",
+        "Strategic Intent"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_016",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "When a firm encounters unexpected, highly disruptive environmental changes during execution, which mechanism does strategic management employ to safeguard its goals?",
+      "options": [
+        "Immediate corporate liquidation",
+        "Contingency planning and strategic control",
+        "Total freezing of all operational activities",
+        "Elimination of all marketing expenditures"
+      ],
+      "answerIndex": 1,
+      "explanation": "Strategic control and contingency planning allow organizations to monitor environmental shifts, detect deviations or emerging threats, and activate backup plans or adjustments.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Contingency Planning",
+        "Strategic Control"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_017",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "Which of the following best describes 'Strategy Formulation'?",
+      "options": [
+        "The administrative process of executing plans through organizational design and reward systems",
+        "The analytical and decision-making process of choosing the best course of action from various alternatives to achieve organizational goals",
+        "The daily auditing of financial ledgers and tax returns",
+        "The hiring and training of entry-level customer service representatives"
+      ],
+      "answerIndex": 1,
+      "explanation": "Strategy formulation involves assessing the environment and organizational capabilities, evaluating alternatives, and choosing the optimal strategy to achieve long-term objectives.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Strategy Formulation",
+        "Strategic Management Process"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_018",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "Strategy implementation is frequently considered more difficult than strategy formulation because:",
+      "options": [
+        "It involves managing human behavior, organizational culture, change management, and coordinating widespread operational adjustments",
+        "It requires zero financial resources",
+        "It is performed entirely by external consultants without employee involvement",
+        "It happens before any environmental analysis is conducted"
+      ],
+      "answerIndex": 0,
+      "explanation": "Implementation requires orchestrating people, processes, structures, and culture across the entire organization, making it a complex and challenging administrative task compared to formulation.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Strategy Implementation",
+        "Change Management"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_019",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "What is the primary danger when an organization treats strategic planning as an inflexible, bureaucratic paperwork exercise rather than a dynamic thinking process?",
+      "options": [
+        "The organization becomes too agile and responsive to market trends",
+        "Strategic blindness occurs, leading to strategic drift and inability to cope with sudden market disruptions",
+        "Employee morale becomes excessively high",
+        "Tax liabilities are automatically reduced to zero"
+      ],
+      "answerIndex": 1,
+      "explanation": "When strategic planning becomes purely bureaucratic, management loses touch with dynamic environmental changes, leading to strategic drift and vulnerability to agile competitors.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Strategic Drift",
+        "Bureaucratic Planning"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_020",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "Which strategic management concept emphasizes that strategy is not merely a deliberate, top-down plan, but can also emerge organically through trial and error in response to changing conditions?",
+      "options": [
+        "Mintzberg's emergent strategy",
+        "Rigid financial budgeting",
+        "Static corporate governance",
+        "Absolute deterministic planning"
+      ],
+      "answerIndex": 0,
+      "explanation": "Henry Mintzberg's perspective highlights that realized strategy is a combination of deliberate strategies (planned) and emergent strategies (adapting organically to unexpected events).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Emergent Strategy",
+        "Mintzberg"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_021",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "Which of the following is a key characteristic of effective strategic objectives?",
+      "options": [
+        "Vague, inspirational, and impossible to measure quantitatively",
+        "Specific, measurable, achievable, relevant, and time-bound (SMART)",
+        "Focused exclusively on past operational errors",
+        "Secretive and concealed from all operational managers"
+      ],
+      "answerIndex": 1,
+      "explanation": "Effective strategic objectives should be specific, measurable, achievable, relevant, and time-bound so that management can track performance accurately.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Strategic Objectives",
+        "SMART Criteria"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_022",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "In multi-business corporations, how does the corporate-level strategy add value to individual business units?",
+      "options": [
+        "By interfering in daily customer service calls",
+        "Through portfolio management, resource allocation, synergistic integration, and governance oversight",
+        "By ensuring every business unit sells identical products",
+        "By eliminating all functional departments"
+      ],
+      "answerIndex": 1,
+      "explanation": "Corporate-level strategy adds value by managing the corporate parent portfolio, allocating capital efficiently, fostering synergies across SBUs, and providing overarching governance.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Corporate Level Strategy",
+        "Synergy"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_023",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "What is meant by 'Strategic Advantage'?",
+      "options": [
+        "An temporary accounting anomaly that inflates quarterly profits",
+        "The distinct competence or positioning that allows a firm to outperform its rivals and attract customers more effectively",
+        "A legal monopoly granted exclusively by government legislation",
+        "The elimination of all production costs"
+      ],
+      "answerIndex": 1,
+      "explanation": "Strategic advantage refers to those characteristics, competencies, or market positions that give a firm an edge over its competitors, enabling superior performance.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Strategic Advantage",
+        "Competitive Edge"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_024",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "Which statement best describes the relationship between strategy and tactics?",
+      "options": [
+        "Strategy and tactics are completely identical terms used interchangeably",
+        "Strategy is the overarching game plan for long-term success, while tactics are specific, short-term actions or maneuvers executed to win particular skirmishes",
+        "Tactics determine the corporate vision, while strategy handles daily cleaning schedules",
+        "Strategy is handled by factory workers, while tactics are handled by the CEO"
+      ],
+      "answerIndex": 1,
+      "explanation": "Strategy represents the long-term comprehensive game plan, whereas tactics are the short-term, specific maneuvers and operational actions undertaken to execute tactical steps toward that grand design.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Strategy vs Tactics",
+        "Strategic Management"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_025",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "Why is environmental scanning an indispensable precursor to strategy formulation?",
+      "options": [
+        "It helps management identify external opportunities and threats as well as internal strengths and weaknesses",
+        "It calculates the exact corporate income tax payable for the year",
+        "It automatically implements the chosen strategic alternatives",
+        "It sets the employee salary increment percentages"
+      ],
+      "answerIndex": 0,
+      "explanation": "Environmental scanning involves gathering and analyzing information about external trends (opportunities/threats) and internal capabilities (strengths/weaknesses), forming the bedrock of sound strategy formulation.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Environmental Scanning",
+        "SWOT Foundation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_026",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "Which organizational level bridges corporate-level goals and functional-level operations by focusing on competitive positioning within a specific industry or market segment?",
+      "options": [
+        "Business-level",
+        "Departmental-level",
+        "Supervisory-level",
+        "International-level"
+      ],
+      "answerIndex": 0,
+      "explanation": "Business-level strategy operates at the SBU level, serving as the bridge between corporate-level grand ambitions and functional-level execution in specific competitive markets.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Business Level Strategy",
+        "Levels of Strategy"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_027",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "What is the primary risk of a company having a 'Vision' statement that is too broad, generic, and disconnected from organizational reality?",
+      "options": [
+        "It becomes a meaningless buzzword that fails to guide managerial choices or inspire employees",
+        "It legally binds the company to immediate bankruptcy",
+        "It forces competitors to copy all products instantly",
+        "It completely eliminates the need for financial auditing"
+      ],
+      "answerIndex": 0,
+      "explanation": "A vision statement must be clear, compelling, and grounded in the firm's realities; otherwise, it becomes empty rhetoric ('motherhood statements') that fails to motivate or direct strategy.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Vision Statement",
+        "Strategic Intent Pitfalls"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_028",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "How does strategic management contribute to organizational longevity and resilience?",
+      "options": [
+        "By enforcing strict resistance to any form of market change",
+        "By fostering continuous anticipation, proactive adaptation, resource optimization, and strategic alignment with market trends",
+        "By depending entirely on government bailouts during downturns",
+        "By freezing all research and development expenses"
+      ],
+      "answerIndex": 1,
+      "explanation": "Strategic management ensures longevity by enabling organizations to anticipate shifts, adapt proactively, allocate resources efficiently, and maintain alignment with their external environment.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Strategic Management Benefits",
+        "Resilience"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_029",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "Which phase of the strategic management model involves reviewing execution results, measuring deviations against performance standards, and initiating corrective actions?",
+      "options": [
+        "Strategy evaluation and control",
+        "Strategic intent formulation",
+        "Environmental scanning",
+        "Resource budgeting"
+      ],
+      "answerIndex": 0,
+      "explanation": "Strategy evaluation and control is the final phase wherein performance is assessed, variances are analyzed, and corrective adjustments are made to keep the organization on track.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Strategy Evaluation and Control",
+        "Strategic Management Process"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-1_030",
+      "kind": "normal",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "prompt": "In the context of strategic management, what is meant by 'Strategic Fit'?",
+      "options": [
+        "The physical dimensions and ergonomic design of executive office furniture",
+        "The congruence between an organization's internal capabilities/resources and the external environmental opportunities and threats",
+        "The dress code mandated for corporate board meetings",
+        "The mathematical balance of corporate debit and credit balances"
+      ],
+      "answerIndex": 1,
+      "explanation": "Strategic fit refers to aligning a firm's internal strengths and resources with the external environment's opportunities and challenges to achieve competitive advantage.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Strategic Fit",
+        "SWOT Alignment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_strategic-management-1_01",
+      "kind": "scenario",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "passage": "Apex Motors Ltd., an established automobile manufacturer, has traditionally focused on producing internal combustion engine (ICE) sedans. Recently, top management noticed shifting regulatory norms favoring electric vehicles (EVs), rising consumer eco-consciousness, and aggressive market entry by pure-play EV startups. The CEO convened a strategic review meeting. The board decided to transition Apex Motors into a sustainable mobility provider. They formulated a new mission: 'To accelerate the global transition to clean mobility.' To execute this, corporate management allocated significant capital to acquire battery technology firms (Corporate Level), instructed each regional vehicle division to redesign their product lineups for local EV preferences (Business Level), and directed the R&D and marketing departments to optimize battery charging speeds and promote eco-friendly brand positioning (Functional Level).",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_strategic-management-1_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-1_01",
+          "sequenceInScenario": 1,
+          "chapterId": "strategic-management-1",
+          "subject": "SM",
+          "prompt": "The decision by Apex Motors' top management to transition into a sustainable mobility provider in response to regulatory shifts and EV startups represents which core aspect of strategic management?",
+          "options": [
+            "Basic operational budgeting and routine inventory control",
+            "Strategic analysis and formulation driven by environmental scanning and changing external forces",
+            "Functional-level administrative scheduling for factory shift workers",
+            "Tactical reduction of employee wages to offset short-term losses"
+          ],
+          "answerIndex": 1,
+          "explanation": "By scanning the external environment (regulatory norms, eco-consciousness, startup threats), Apex Motors engaged in strategic analysis and formulation to adapt its long-term direction.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Environmental Scanning",
+            "Strategy Formulation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-1_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-1_01",
+          "sequenceInScenario": 2,
+          "chapterId": "strategic-management-1",
+          "subject": "SM",
+          "prompt": "The board's statement, 'To accelerate the global transition to clean mobility,' best exemplifies which strategic management concept?",
+          "options": [
+            "An operational production schedule",
+            "A strategic intent component, specifically serving as a mission statement defining the firm's fundamental purpose",
+            "A short-term tactical cost-cutting target",
+            "An internal functional audit report"
+          ],
+          "answerIndex": 1,
+          "explanation": "The statement outlines the organization's overarching purpose and scope in defining its clean mobility domain, characteristic of a mission statement within strategic intent.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Mission Statement",
+            "Strategic Intent"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-1_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-1_01",
+          "sequenceInScenario": 3,
+          "chapterId": "strategic-management-1",
+          "subject": "SM",
+          "prompt": "The directive given to regional vehicle divisions to redesign product lineups for local EV preferences operates at which level of strategy?",
+          "options": [
+            "Corporate Level",
+            "Business Level",
+            "Operational Level",
+            "Tax Compliance Level"
+          ],
+          "answerIndex": 1,
+          "explanation": "Designing product lineups and competitive positioning for specific product-markets or business units falls under business-level strategy.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Business Level Strategy",
+            "Levels of Strategy"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-1_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-1_01",
+          "sequenceInScenario": 4,
+          "chapterId": "strategic-management-1",
+          "subject": "SM",
+          "prompt": "Instructing R&D and marketing departments to optimize battery charging speeds and promote eco-friendly branding corresponds to which organizational strategy level?",
+          "options": [
+            "Corporate Level",
+            "Business Level",
+            "Functional Level",
+            "Macro-environmental Level"
+          ],
+          "answerIndex": 2,
+          "explanation": "Actions taken by specific departments like R&D and marketing to support higher-level strategies represent functional-level strategies.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Functional Level Strategy",
+            "Departmental Execution"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_strategic-management-1_02",
+      "kind": "scenario",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "passage": "Beta Pharma Inc. operates in the highly regulated healthcare sector. For years, Beta Pharma followed a rigid long-range planning model where corporate headquarters projected sales five years ahead with minimal input from regional scientific teams. When a global health crisis erupted, this bureaucratic planning model failed to anticipate sudden supply chain bottlenecks for active pharmaceutical ingredients (APIs) and rapid shifts toward telemedicine. Beta Pharma suffered steep profit drops. The board realized they needed a paradigm shift toward strategic management. They introduced continuous environmental scanning, empowered cross-functional teams to propose emergent product adaptations, established rigorous strategic controls to monitor deviations, and created contingency plans for raw material disruptions.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_strategic-management-1_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-1_02",
+          "sequenceInScenario": 1,
+          "chapterId": "strategic-management-1",
+          "subject": "SM",
+          "prompt": "Beta Pharma's initial planning approach, which relied on rigid five-year projections formulated at headquarters without environmental responsiveness, is characteristic of which evolutionary phase?",
+          "options": [
+            "Strategic management and emergent adaptation",
+            "Forecast-based planning / rigid long-range planning",
+            "Ad hoc tactical firefighting",
+            "Functional operational control"
+          ],
+          "answerIndex": 1,
+          "explanation": "The scenario describes rigid long-range projections characteristic of forecast-based planning that often leads to strategic blindness when unexpected disruptions occur.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Evolution of Strategic Management",
+            "Forecast-based Planning"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-1_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-1_02",
+          "sequenceInScenario": 2,
+          "chapterId": "strategic-management-1",
+          "subject": "SM",
+          "prompt": "The introduction of cross-functional teams proposing product adaptations in response to unexpected healthcare crises illustrates which concept?",
+          "options": [
+            "Mintzberg's emergent strategy and organizational agility",
+            "Static corporate governance",
+            "Strict adherence to pre-planned bureaucratic budgets",
+            "Elimination of strategy formulation"
+          ],
+          "answerIndex": 0,
+          "explanation": "Allowing teams to propose adaptations organically in response to unexpected crises reflects emergent strategy, acknowledging that rigid plans must adapt.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Emergent Strategy",
+            "Agility"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-1_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-1_02",
+          "sequenceInScenario": 3,
+          "chapterId": "strategic-management-1",
+          "subject": "SM",
+          "prompt": "Why were Beta Pharma's supply chain bottlenecks classified as strategic risks rather than minor administrative hurdles?",
+          "options": [
+            "Because they threatened the firm's long-term competitive viability and market survival during a crisis",
+            "Because they only affected office stationery expenses",
+            "Because they were caused by routine employee absenteeism",
+            "Because they had zero financial impact on the company"
+          ],
+          "answerIndex": 0,
+          "explanation": "API supply chain bottlenecks during a health crisis threatened core operations and long-term viability, elevating them to strategic risks.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Strategic Risk",
+            "Environmental Volatility"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-1_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-1_02",
+          "sequenceInScenario": 4,
+          "chapterId": "strategic-management-1",
+          "subject": "SM",
+          "prompt": "The board's implementation of rigorous metrics to monitor plan deviations and the creation of backup raw material protocols represent which phase of strategic management?",
+          "options": [
+            "Strategy evaluation, control, and contingency planning",
+            "Strategic intent formulation",
+            "Basic financial auditing",
+            "Environmental scanning exclusively"
+          ],
+          "answerIndex": 0,
+          "explanation": "Monitoring deviations, evaluating performance, and establishing backup protocols constitute strategy evaluation, control, and contingency planning.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Strategic Control",
+            "Contingency Planning"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_strategic-management-1_03",
+      "kind": "scenario",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "passage": "Omega Retail Corp., a national departmental store chain, experienced stagnant growth due to aggressive e-commerce competitors. The new Managing Director initiated a comprehensive strategic overhaul. First, the team conducted a detailed analysis of internal strengths (loyal customer base, prime real estate) and external threats (online discounting). Second, they formulated a dual-pronged corporate strategy: acquiring a digital logistics startup (Corporate Level) and revamping in-store experiential shopping for individual retail zones (Business Level). Third, to ensure smooth execution, human resources redesigned incentive structures while IT upgraded point-of-sale systems (Functional Level). Finally, monthly review dashboards were instituted to evaluate progress against strategic milestones.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_strategic-management-1_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-1_03",
+          "sequenceInScenario": 1,
+          "chapterId": "strategic-management-1",
+          "subject": "SM",
+          "prompt": "Omega Retail's analysis of internal strengths and external threats prior to choosing new strategies is known as:",
+          "options": [
+            "Tax compliance auditing",
+            "Environmental scanning and internal appraisal (SWOT foundation)",
+            "Routine inventory stocktaking",
+            "Functional shift scheduling"
+          ],
+          "answerIndex": 1,
+          "explanation": "Analyzing internal strengths/weaknesses and external opportunities/threats is the foundation of environmental scanning and internal appraisal during strategic analysis.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Environmental Scanning",
+            "Strategic Analysis"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-1_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-1_03",
+          "sequenceInScenario": 2,
+          "chapterId": "strategic-management-1",
+          "subject": "SM",
+          "prompt": "The decision to acquire a digital logistics startup falls under which category of strategy?",
+          "options": [
+            "Functional Level Strategy",
+            "Corporate Level Strategy",
+            "Operational Level Tactics",
+            "Supervisory Level Scheduling"
+          ],
+          "answerIndex": 1,
+          "explanation": "Diversification and business portfolio expansion through acquisitions are classic responsibilities of corporate-level strategy.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Corporate Level Strategy",
+            "Acquisitions"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-1_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-1_03",
+          "sequenceInScenario": 3,
+          "chapterId": "strategic-management-1",
+          "subject": "SM",
+          "prompt": "Revamping in-store experiential shopping across individual retail zones to compete with e-commerce represents which level of strategy?",
+          "options": [
+            "Corporate Level",
+            "Business Level",
+            "Functional Level",
+            "Macro-economic Level"
+          ],
+          "answerIndex": 1,
+          "explanation": "Focusing on competitive positioning and customer experience within specific business units or market zones is business-level strategy.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Business Level Strategy",
+            "Competitive Positioning"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-1_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-1_03",
+          "sequenceInScenario": 4,
+          "chapterId": "strategic-management-1",
+          "subject": "SM",
+          "prompt": "HR redesigning incentive structures and IT upgrading point-of-sale systems to support the new retail direction illustrates which phase of the strategic management model?",
+          "options": [
+            "Strategy Formulation",
+            "Strategy Implementation",
+            "Environmental Scanning",
+            "Strategic Intent Setting"
+          ],
+          "answerIndex": 1,
+          "explanation": "Translating formulated strategies into operational reality through reward systems, IT infrastructure, and organizational design is strategy implementation.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Strategy Implementation",
+            "Organizational Alignment"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_strategic-management-1_04",
+      "kind": "scenario",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "passage": "Delta Tech Solutions, a software services firm, operated for a decade without a formal strategic plan, relying solely on ad hoc project bidding. As the software market matured and competition intensified, management realized that without clear strategic intent and long-term objectives, the firm was drifting. The CEO organized a strategic retreat. The team established a compelling Vision ('To be the most trusted digital transformation partner globally') and SMART strategic objectives for revenue growth and client retention. They also set up a strategic control mechanism to periodically evaluate whether their software service offerings aligned with emerging cloud computing trends.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_strategic-management-1_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-1_04",
+          "sequenceInScenario": 1,
+          "chapterId": "strategic-management-1",
+          "subject": "SM",
+          "prompt": "Delta Tech's initial reliance on ad hoc project bidding without a formal plan characterizes which early state of organizational strategy development?",
+          "options": [
+            "Ad hoc policy making / absence of formal strategic management",
+            "Advanced global portfolio management",
+            "Rigid forecast-based corporate planning",
+            "Comprehensive functional control"
+          ],
+          "answerIndex": 0,
+          "explanation": "Operating without formal plans and merely reacting on an ad hoc basis represents the initial phase of reactive or ad hoc policy making in organizational evolution.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Evolution of Strategic Management",
+            "Ad hoc Policy Making"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-1_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-1_04",
+          "sequenceInScenario": 2,
+          "chapterId": "strategic-management-1",
+          "subject": "SM",
+          "prompt": "The statement 'To be the most trusted digital transformation partner globally' serves primarily as Delta Tech's:",
+          "options": [
+            "Operational shift roster",
+            "Vision statement outlining future aspirations",
+            "Mission statement detailing present administrative rules",
+            "Tax calculation formula"
+          ],
+          "answerIndex": 1,
+          "explanation": "A statement describing what the organization aspires to become in the future represents its vision.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Vision Statement",
+            "Strategic Intent"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-1_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-1_04",
+          "sequenceInScenario": 3,
+          "chapterId": "strategic-management-1",
+          "subject": "SM",
+          "prompt": "Why did management establish SMART strategic objectives alongside their vision?",
+          "options": [
+            "To replace the need for any environmental scanning",
+            "To provide specific, measurable milestones that operationalize the vision over definite timeframes",
+            "To dictate the exact keystrokes of software coders",
+            "To eliminate all competition in the software industry"
+          ],
+          "answerIndex": 1,
+          "explanation": "SMART objectives translate broad aspirations (vision/mission) into concrete, measurable targets for performance evaluation.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Strategic Objectives",
+            "SMART Criteria"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-1_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-1_04",
+          "sequenceInScenario": 4,
+          "chapterId": "strategic-management-1",
+          "subject": "SM",
+          "prompt": "Periodically evaluating whether service offerings align with emerging cloud computing trends through strategic control helps Delta Tech avoid:",
+          "options": [
+            "Strategic drift and obsolescence",
+            "High employee satisfaction",
+            "Excessive profitability",
+            "Tax compliance penalties"
+          ],
+          "answerIndex": 0,
+          "explanation": "Strategic control ensures alignment with environmental trends, preventing strategic drift and ensuring the firm does not become obsolete.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Strategic Control",
+            "Strategic Drift"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_strategic-management-1_05",
+      "kind": "scenario",
+      "chapterId": "strategic-management-1",
+      "subject": "SM",
+      "passage": "Sigma Agro Industries, a traditional fertilizer manufacturer, faced mounting pressure from environmental activists, tighter government emission regulations, and changing farmer preferences toward organic inputs. The management team initiated a strategic review. They acknowledged that sticking to chemical fertilizers would lead to long-term decline. Consequently, they formulated a strategy to gradually shift 40% of their production capacity to organic bio-fertilizers over three years. The corporate head office established the broad transition goals, regional SBU managers decided how to market bio-fertilizers to local agricultural cooperatives, and the manufacturing plants modified their chemical mixing units into bio-fermentation vats under strict functional control.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Strategic Management"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_strategic-management-1_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-1_05",
+          "sequenceInScenario": 1,
+          "chapterId": "strategic-management-1",
+          "subject": "SM",
+          "prompt": "The mounting pressure from environmental activists and emission regulations constitutes which element of the strategic management context?",
+          "options": [
+            "Internal functional strengths",
+            "External macro-environmental forces creating threats and pressures for change",
+            "Routine internal administrative hurdles",
+            "Short-term tactical budgeting errors"
+          ],
+          "answerIndex": 1,
+          "explanation": "Activists, regulations, and farmer preferences are external macro-environmental factors that present threats and strategic imperatives for the firm.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "External Environment",
+            "Strategic Pressures"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-1_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-1_05",
+          "sequenceInScenario": 2,
+          "chapterId": "strategic-management-1",
+          "subject": "SM",
+          "prompt": "Sigma Agro's decision to shift 40% of production capacity to organic bio-fertilizers over three years is an example of:",
+          "options": [
+            "A strategic decision involving long-term scope, capital commitment, and directional change",
+            "An operational decision regarding daily office cleaning schedules",
+            "A tactical adjustment of employee lunch timings",
+            "A clerical error in bookkeeping"
+          ],
+          "answerIndex": 0,
+          "explanation": "Shifting production capacity and altering product mix over three years involves significant resource commitment and long-term impact, defining strategic decision-making.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Strategic Decision Making",
+            "Resource Commitment"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-1_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-1_05",
+          "sequenceInScenario": 3,
+          "chapterId": "strategic-management-1",
+          "subject": "SM",
+          "prompt": "Regional SBU managers determining how to market bio-fertilizers to local agricultural cooperatives operate at which level of strategy?",
+          "options": [
+            "Corporate Level",
+            "Business Level",
+            "Functional Level",
+            "Operational Level"
+          ],
+          "answerIndex": 1,
+          "explanation": "Managing competitive positioning and marketing approaches for specific SBUs and market segments falls under business-level strategy.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Business Level Strategy",
+            "SBU Management"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-1_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-1_05",
+          "sequenceInScenario": 4,
+          "chapterId": "strategic-management-1",
+          "subject": "SM",
+          "prompt": "Modifying manufacturing plants into bio-fermentation vats under strict functional control represents which phase of the strategic management process?",
+          "options": [
+            "Strategy Formulation",
+            "Strategy Implementation",
+            "Environmental Scanning",
+            "Strategic Intent Setting"
+          ],
+          "answerIndex": 1,
+          "explanation": "Carrying out physical plant modifications and functional execution to realize the chosen strategy represents strategy implementation and control.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Strategy Implementation",
+            "Functional Control"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1426 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "income-tax-2",
+  "subject": "Taxation",
+  "paper": "Paper 3: Taxation",
+  "module": "Module 1",
+  "chapterNumber": 2,
+  "chapterTitle": "Residence and Scope of Total Income",
+  "generatedAt": "2026-08-16T14:18:38.636Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_income-tax-2_001",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "Under section 6(1), an individual is a resident in India during the previous year if he satisfies the basic condition of being in India for a period of ___ days or more in that previous year.",
+      "options": [
+        "182",
+        "60",
+        "365",
+        "90"
+      ],
+      "answerIndex": 0,
+      "explanation": "According to section 6(1)(a), an individual is resident in India if he is in India for a period of 182 days or more during the relevant previous year. This is the primary basic condition applicable to all individuals.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Residential Status",
+        "Individual",
+        "Basic Conditions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_002",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "Which of the following individuals can substitute the 60-day period with a 182-day period under section 6(1)?",
+      "options": [
+        "An Indian citizen who leaves India during the previous year for the purpose of employment outside India",
+        "An Indian citizen engaged in a managerial position in a foreign company",
+        "A foreign citizen of non-Indian origin visiting India on a holiday",
+        "A person of Indian origin residing in the UK visiting India for a short vacation"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 6(1) provides an exception where the 60-day threshold is replaced by 182 days for an Indian citizen who leaves India during the previous year for the purpose of employment outside India, or as a member of the crew of an Indian ship.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Residential Status",
+        "Exceptions to 60 days",
+        "Employment Abroad"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_003",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "For a citizen of India or a person of Indian origin who, being outside India, comes on a visit to India during the previous year, the 60-day period is substituted by ___ days, provided his total income (other than income from foreign sources) does not exceed Rs. 15 lakhs.",
+      "options": [
+        "182",
+        "120",
+        "180",
+        "365"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per the proviso to section 6(1)(c), for an Indian citizen or person of Indian origin visiting India whose total income (other than income from foreign sources) does not exceed Rs. 15 lakhs, the period of 60 days is substituted by 120 days.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "PIO",
+        "Indian Citizen",
+        "Visit to India",
+        "120 days rule"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_004",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "What is the threshold limit of total income (other than income from foreign sources) under Explanation 1(b) to section 6(1) for an Indian citizen or person of Indian origin visiting India, above which the 60-day period is substituted by 182 days instead of 120 days?",
+      "options": [
+        "Rs. 10 lakhs",
+        "Rs. 15 lakhs",
+        "Rs. 50 lakhs",
+        "Rs. 1 crore"
+      ],
+      "answerIndex": 1,
+      "explanation": "If the total income (other than income from foreign sources) of an Indian citizen or person of Indian origin visiting India exceeds Rs. 15 lakhs during the previous year, the 60-day period is substituted by 182 days.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "PIO",
+        "Indian Citizen",
+        "Visit to India",
+        "Income Threshold"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_005",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "An Indian citizen having total income (other than income from foreign sources) of Rs. 18 lakhs comes on a visit to India during the previous year 2025-26 and stays for 150 days. His residential status for AY 2026-27 is:",
+      "options": [
+        "Resident and Ordinarily Resident",
+        "Resident but Not Ordinarily Resident",
+        "Non-Resident",
+        "Deemed Resident"
+      ],
+      "answerIndex": 2,
+      "explanation": "Since his total income (excluding foreign sources) exceeds Rs. 15 lakhs, the exception rule for visiting India does not apply the 120-day threshold; instead, the 182-day rule applies. Since his stay is 150 days (less than 182 days), he fails the basic conditions and is a Non-Resident.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Residential Status",
+        "Indian Citizen",
+        "Non-Resident"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_006",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "What is a 'deemed resident' under section 6(1A)?",
+      "options": [
+        "An individual who is a citizen of India, having total income (other than foreign sources) exceeding Rs. 15 lakhs, and who is not liable to tax in any other country or territory by reason of his domicile or residence.",
+        "Any foreign citizen who stays in India for 182 days or more.",
+        "An Indian citizen who resides abroad for more than 182 days.",
+        "A company incorporated in India with foreign management."
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 6(1A) states that an individual being a citizen of India, having total income (other than income from foreign sources) exceeding Rs. 15 lakhs during the previous year, shall be deemed to be resident in India in that previous year, if he is not liable to tax in any other country or territory by reason of his domicile or residence or any other criteria of similar nature.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Deemed Resident",
+        "Section 6(1A)",
+        "Stateless Persons"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_007",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "An individual who is deemed to be resident in India under section 6(1A) is always classified for that previous year as:",
+      "options": [
+        "Resident and Ordinarily Resident (ROR)",
+        "Resident but Not Ordinarily Resident (RNOR)",
+        "Non-Resident (NR)",
+        "Either ROR or RNOR depending on past history"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per the proviso to section 6(6), an individual who is deemed to be resident in India under section 6(1A) shall be treated as Resident but Not Ordinarily Resident (RNOR) in India.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Deemed Resident",
+        "RNOR",
+        "Section 6(6)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_008",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "To be classified as 'Resident and Ordinarily Resident' (ROR) in India, an individual must satisfy:",
+      "options": [
+        "Only any one of the basic conditions under section 6(1)",
+        "Both the additional conditions under section 6(6) in addition to satisfying at least one basic condition",
+        "Only the additional conditions without satisfying any basic condition",
+        "Both basic conditions and all four additional conditions"
+      ],
+      "answerIndex": 1,
+      "explanation": "An individual is Resident and Ordinarily Resident (ROR) if he is a resident under section 6(1) and also satisfies both the additional conditions specified under section 6(6) (i.e., resident in 2 out of 10 preceding previous years and stay of 730 days or more in 7 preceding previous years).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "ROR",
+        "Additional Conditions",
+        "Section 6(6)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_009",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "Which of the following is NOT an additional condition under section 6(6) for determining whether an individual is Ordinarily Resident?",
+      "options": [
+        "Resident in India in at least 2 out of 10 previous years preceding the relevant previous year",
+        "Present in India for 730 days or more during the 7 previous years preceding the relevant previous year",
+        "Present in India for 365 days or more during the 4 previous years preceding the relevant previous year",
+        "He is not a deemed resident under section 6(1A)"
+      ],
+      "answerIndex": 2,
+      "explanation": "Option C mentions '365 days or more during 4 previous years', whereas the actual requirement under section 6(6)(a) is 730 days or more during the 7 preceding previous years. Thus, option C is incorrect and represents a distractor.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Additional Conditions",
+        "Section 6(6)",
+        "Distractor"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_010",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "An individual is a Hindu Undivided Family (HUF). When is the HUF considered a 'Resident' in India?",
+      "options": [
+        "If the Karta is an Indian citizen",
+        "If the control and management of its affairs is situated wholly or partly in India",
+        "If all the coparceners reside in India for at least 182 days",
+        "If its turnover exceeds Rs. 50 crores in India"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under section 6(2), an HUF is resident in India if the control and management of its affairs is situated wholly or partly in India during the previous year.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "HUF",
+        "Residential Status",
+        "Control and Management"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_011",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "An HUF is considered 'Resident and Ordinarily Resident' (ROR) in India if its Karta or manager satisfies:",
+      "options": [
+        "Both additional conditions under section 6(6)(b) (resident in 2 out of 10 years and 730+ days in 7 years)",
+        "Only the basic conditions under section 6(1)",
+        "The control and management is wholly in India",
+        "The family has been in existence for over 5 years"
+      ],
+      "answerIndex": 0,
+      "explanation": "An HUF is ROR in India if its Karta or manager satisfies both the additional conditions under section 6(6)(b), i.e., he has been resident in India in at least 2 out of 10 preceding previous years and has been present in India for 730 days or more during the 7 preceding previous years.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "HUF",
+        "ROR",
+        "Section 6(6)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_012",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "A company is said to be resident in India in any previous year if:",
+      "options": [
+        "It is an Indian company, OR its Place of Effective Management (POEM) in that year is in India",
+        "It is registered under the Companies Act, 2013 only",
+        "Its entire shareholding is held by Indian residents",
+        "Its registered office is outside India but board meetings are held in India"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under section 6(3), a company is resident in India if it is an Indian company, or if its Place of Effective Management (POEM) in that year is in India.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Company",
+        "POEM",
+        "Section 6(3)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_013",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "What is meant by 'Place of Effective Management' (POEM) for a company?",
+      "options": [
+        "The place where the annual general meeting is held",
+        "The place where key management and commercial decisions that are necessary for the conduct of business of an entity as a whole are, in substance made",
+        "The place where the statutory audit is conducted",
+        "The place where the company's manufacturing plant is located"
+      ],
+      "answerIndex": 1,
+      "explanation": "POEM is defined as a place where key management and commercial decisions that are necessary for the conduct of the business of an entity as a whole are in substance made.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "POEM",
+        "Definition",
+        "Company"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_014",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "A Firm, AOP, or BOI is resident in India if:",
+      "options": [
+        "Control and management of its affairs is situated wholly or partly in India",
+        "Control and management is situated wholly outside India",
+        "All partners/members are resident in India",
+        "At least 50% of the profits arise in India"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under section 6(2), a partnership firm, AOP, or BOI is resident in India if the control and management of its affairs is situated wholly or partly in India during the previous year. It is non-resident only if control and management is wholly outside India.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Firm",
+        "AOP",
+        "BOI",
+        "Control and Management"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_015",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "Which of the following persons is always considered 'Non-Resident' in India, regardless of their management location?",
+      "options": [
+        "Foreign Institutional Investor",
+        "Local Authority",
+        "None of the above (Every person other than an individual/HUF/Company can be resident if control is in India)",
+        "Foreign Company with POEM outside India"
+      ],
+      "answerIndex": 3,
+      "explanation": "A foreign company whose POEM is outside India is always non-resident. For local authorities and artificial juridical persons, residency depends on whether control and management is situated wholly or partly in India.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Residential Status",
+        "Foreign Company",
+        "Non-Resident"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_016",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "For a 'Resident and Ordinarily Resident' (ROR) individual, the scope of total income under section 5(1) includes:",
+      "options": [
+        "Income received or deemed to be received in India + Income accruing or arising or deemed to accrue or arise in India + Income accruing or arising outside India",
+        "Only income received in India",
+        "Only Indian income",
+        "Income received in India and income accruing in India from a business controlled from India"
+      ],
+      "answerIndex": 0,
+      "explanation": "The total income of an ROR includes all incomes from all sources, whether received, accruing, or arising inside or outside India, as per section 5(1).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Scope of Total Income",
+        "ROR",
+        "Section 5(1)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_017",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "For a 'Resident but Not Ordinarily Resident' (RNOR) individual, which of the following incomes is taxable in India?",
+      "options": [
+        "Income accruing or arising outside India from a business controlled from outside India",
+        "Income accruing or arising outside India from a business controlled from or set up in India",
+        "Only foreign income remitted to India",
+        "Income from any source outside India"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under section 5(1), for an RNOR, income accruing or arising outside India is taxable only if it is derived from a business controlled from or set up in India.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Scope of Total Income",
+        "RNOR",
+        "Section 5(1)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_018",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "For a Non-Resident (NR) individual, the scope of total income under section 5(2) includes:",
+      "options": [
+        "Only income received or deemed to be received in India AND income accruing or arising or deemed to accrue or arise in India",
+        "All global incomes",
+        "Income received in India plus foreign business income",
+        "Income remitted to India during the previous year"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per section 5(2), a Non-Resident is taxable in India only for Indian income—meaning income received/deemed received in India and income accruing/arising/deemed to accrue or arise in India.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Scope of Total Income",
+        "Non-Resident",
+        "Section 5(2)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_019",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "Income earned and received outside India from a foreign business controlled from India is taxable in the hands of:",
+      "options": [
+        "ROR only",
+        "ROR and RNOR",
+        "ROR, RNOR, and Non-Resident",
+        "None of the persons"
+      ],
+      "answerIndex": 1,
+      "explanation": "Foreign income from a business controlled from India is taxable for both ROR and RNOR, but NOT for a Non-Resident.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Scope of Total Income",
+        "RNOR",
+        "Business Controlled from India"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_020",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "Which of the following incomes is deemed to accrue or arise in India under section 9?",
+      "options": [
+        "Income from any business connection in India",
+        "Salary earned for service rendered outside India to an Indian citizen by a foreign employer",
+        "Dividend paid by a foreign company outside India to an Indian resident",
+        "Interest paid by a non-resident on a foreign currency loan utilized outside India"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under section 9(1)(i), all income accruing or arising, whether directly or indirectly, through or from any business connection in India, or through or from any property in India, is deemed to accrue or arise in India.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Deemed to Accrue or Arise",
+        "Section 9",
+        "Business Connection"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_021",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "Salary payable by the Government of India to an Indian citizen for services rendered outside India is:",
+      "options": [
+        "Exempt from tax",
+        "Deemed to accrue or arise in India",
+        "Taxable only if remitted to India",
+        "Taxable only if the citizen is ROR"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under section 9(1)(iii), salary payable by the Government to a citizen of India for services rendered outside India is deemed to accrue or arise in India. (Note: Allowances and perquisites are exempt under section 10(7)).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Salary",
+        "Government Employee",
+        "Section 9(1)(iii)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_022",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "Dividend paid by an Indian company outside India is:",
+      "options": [
+        "Deemed to accrue or arise in India under section 9(1)(iv)",
+        "Exempt under section 10(34)",
+        "Taxable only in the hands of Non-Residents",
+        "Exempt in all cases"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under section 9(1)(iv), dividend paid by an Indian company outside India is deemed to accrue or arise in India and is taxable.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Dividend",
+        "Indian Company",
+        "Section 9(1)(iv)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_023",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "Interest paid by a non-resident is deemed to accrue or arise in India if the borrowed moneys are:",
+      "options": [
+        "Used for the purposes of a business or profession carried on by him in India",
+        "Utilized outside India for personal investments",
+        "Deposited in a foreign bank account",
+        "Used to pay taxes in a foreign country"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under section 9(1)(v)(b), interest payable by a non-resident is deemed to accrue or arise in India if the borrowed moneys are used for the purposes of a business or profession carried on by him in India.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Interest",
+        "Non-Resident Borrower",
+        "Section 9(1)(v)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_024",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "Royalty payable by a resident is deemed to accrue or arise in India EXCEPT when the royalty is payable in respect of any right, property, or information used for:",
+      "options": [
+        "A business or profession carried on by the resident outside India or for the purpose of making or earning any income from any source outside India",
+        "A business carried on in India",
+        "Manufacturing goods sold within India",
+        "Providing services to Indian residents"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under section 9(1)(vi), royalty payable by a resident is deemed to accrue or arise in India unless it is payable in respect of a right, property, or information used for a business or profession carried on outside India or to earn income from outside India.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Royalty",
+        "Section 9(1)(vi)",
+        "Exception"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_025",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "Fees for technical services (FTS) payable by the Central Government or State Government is deemed to accrue or arise in India:",
+      "options": [
+        "Always, regardless of where the services are utilized",
+        "Only if services are utilized in India",
+        "Only if the recipient is an Indian citizen",
+        "Never"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under section 9(1)(vii), FTS payable by the Central or State Government is deemed to accrue or arise in India in all cases, even if the services are utilized outside India.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Fees for Technical Services",
+        "Government",
+        "Section 9(1)(vii)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_026",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "Where an income is received in India and also accrues in India, how many times is it included in total income?",
+      "options": [
+        "Twice",
+        "Once",
+        "Three times",
+        "It is ignored"
+      ],
+      "answerIndex": 1,
+      "explanation": "An income is included in total income only once, even if it is both received in India and accrues in India. Double taxation of the same receipt in the same assessment year for the same person is not permitted.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Scope of Total Income",
+        "General Principle",
+        "Single Taxation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_027",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "Remittance of past untaxed foreign income into India in the current previous year is:",
+      "options": [
+        "Taxable as income of the current previous year",
+        "Not taxable in the current previous year because it was already income of a past year",
+        "Taxable only for ROR",
+        "Taxable as capital gains"
+      ],
+      "answerIndex": 1,
+      "explanation": "Remittance of past foreign income to India does not result in taxable income in the year of remittance, as income is taxable on receipt or accrual basis (whichever is earlier). Once accrued outside India in a past year, bringing it to India later is merely a remittance of capital/wealth.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Remittance",
+        "Past Foreign Income",
+        "Receipt Basis"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_028",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "Which of the following provisions deals with the taxability of 'Significant Economic Presence' (SEP) in India for non-residents?",
+      "options": [
+        "Explanation 2A to section 9(1)(i)",
+        "Section 6(3)",
+        "Section 5(2)",
+        "Section 9(1)(vii)"
+      ],
+      "answerIndex": 0,
+      "explanation": "Explanation 2A to section 9(1)(i) introduces the concept of Significant Economic Presence (SEP), which constitutes a business connection in India for non-residents based on transactions or user/download thresholds.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SEP",
+        "Significant Economic Presence",
+        "Section 9(1)(i)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_029",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "If a person is a resident in India in respect of the previous year 2025-26, his status for the assessment year 2026-27 is determined for:",
+      "options": [
+        "The entire financial year 2025-26",
+        "Only the period during which he stayed in India",
+        "The assessment year 2026-27",
+        "The preceding 4 financial years"
+      ],
+      "answerIndex": 0,
+      "explanation": "Residential status is determined for each previous year as a whole. A person is either resident or non-resident for the entire previous year; there is no split-year residency under general Indian tax law.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Residential Status",
+        "Previous Year",
+        "General Rule"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-2_030",
+      "kind": "normal",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "prompt": "An Indian ship's crew member leaves India on a voyage. For computing his period of stay in India under section 6(1), the period beginning on the date entered into the Continuous Discharge Certificate (CDC) and ending on the date entered therein as co-terminating with the voyage shall:",
+      "options": [
+        "Be excluded from his stay in India",
+        "Be included as his stay in India",
+        "Be counted as double stay",
+        "Be ignored unless he is an Indian citizen"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per Explanation 2 to section 6(1), in the case of an individual, being a citizen of India and a member of the crew of an Indian ship, the period beginning on the date entered into the CDC and ending on the date of termination shall not be included in computing his stay in India.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "CDC",
+        "Ship Crew",
+        "Exclusion of Days"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_income-tax-2_01",
+      "kind": "scenario",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "passage": "Mr. Raghav, an Indian citizen, left India for the first time on 15th October 2025 for taking up employment in Germany. During the financial year 2025-26, his total income from Indian sources is Rs. 12 lakhs, and his foreign-source income is Rs. 8 lakhs. He has been residing in India all his life prior to this financial year.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-2_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-2_01",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-2",
+          "subject": "Taxation",
+          "prompt": "What is the number of days Mr. Raghav stayed in India during the previous year 2025-26?",
+          "options": [
+            "197 days",
+            "198 days",
+            "196 days",
+            "182 days"
+          ],
+          "answerIndex": 1,
+          "explanation": "From 1st April 2025 to 15th October 2025: April (30) + May (31) + June (30) + July (31) + August (31) + September (30) + October (15) = 198 days. Both arrival and departure dates are counted as days spent in India.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Calculation of Stay",
+            "Departure Date",
+            "Employment Abroad"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-2_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-2_01",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-2",
+          "subject": "Taxation",
+          "prompt": "Which basic condition is applicable to Mr. Raghav for the previous year 2025-26, considering he left India for employment?",
+          "options": [
+            "He must be in India for 182 days or more, because the 60-day rule is replaced by 182 days for an Indian citizen leaving for employment.",
+            "He must be in India for 60 days or more.",
+            "He must be in India for 120 days or more.",
+            "He is automatically a non-resident because he left India."
+          ],
+          "answerIndex": 0,
+          "explanation": "Under the exception to section 6(1), an Indian citizen who leaves India during the previous year for employment outside India must satisfy the 182-day threshold instead of 60 days.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Employment Abroad",
+            "Basic Condition",
+            "Section 6(1)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-2_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-2_01",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-2",
+          "subject": "Taxation",
+          "prompt": "What is the residential status of Mr. Raghav for the assessment year 2026-27?",
+          "options": [
+            "Resident and Ordinarily Resident (ROR)",
+            "Resident but Not Ordinarily Resident (RNOR)",
+            "Non-Resident (NR)",
+            "Deemed Resident"
+          ],
+          "answerIndex": 0,
+          "explanation": "Mr. Raghav stayed in India for 198 days (exceeding 182 days), making him a resident. Since he resided in India all his life prior to this year, he satisfies both additional conditions under section 6(6), making him ROR.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Residential Status",
+            "ROR",
+            "Employment Exception"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-2_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-2_01",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-2",
+          "subject": "Taxation",
+          "prompt": "How will Mr. Raghav's global income be taxed in India for AY 2026-27?",
+          "options": [
+            "Only Indian income of Rs. 12 lakhs is taxable.",
+            "Both Indian income of Rs. 12 lakhs and foreign income of Rs. 8 lakhs are taxable in India.",
+            "Only foreign income is taxable.",
+            "Neither Indian nor foreign income is taxable."
+          ],
+          "answerIndex": 1,
+          "explanation": "Since Mr. Raghav is a Resident and Ordinarily Resident (ROR) for AY 2026-27, his global income (both Indian and foreign source income) is taxable in India.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Scope of Total Income",
+            "ROR",
+            "Global Income"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-2_02",
+      "kind": "scenario",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "passage": "Mr. John, a foreign citizen of non-Indian origin, comes to India for the first time on 1st June 2025. He stays in India continuously and leaves on 28th September 2025. During the previous year 2025-26, he does not visit India again. His total income from Indian business is Rs. 10 lakhs and foreign business is Rs. 25 lakhs.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-2_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-2_02",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-2",
+          "subject": "Taxation",
+          "prompt": "Calculate the total number of days Mr. John stayed in India during the previous year 2025-26.",
+          "options": [
+            "120 days",
+            "119 days",
+            "121 days",
+            "118 days"
+          ],
+          "answerIndex": 0,
+          "explanation": "June (30) + July (31) + August (31) + September (28) = 120 days. Both the date of arrival (1st June) and date of departure (28th September) are included.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Stay Calculation",
+            "Foreign Citizen",
+            "Days Count"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-2_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-2_02",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-2",
+          "subject": "Taxation",
+          "prompt": "What is the residential status of Mr. John for the assessment year 2026-27?",
+          "options": [
+            "Resident and Ordinarily Resident",
+            "Resident but Not Ordinarily Resident",
+            "Non-Resident",
+            "Deemed Resident"
+          ],
+          "answerIndex": 2,
+          "explanation": "Mr. John stayed in India for 120 days. Since he is a foreign citizen of non-Indian origin, the basic condition of 182 days applies to him (the 120-day or 182-day visit rules for PIO/citizens do not apply to foreign citizens of non-Indian origin). Since 120 < 182, he is a Non-Resident.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Non-Resident",
+            "Foreign Citizen",
+            "182 Days Rule"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-2_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-2_02",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-2",
+          "subject": "Taxation",
+          "prompt": "Which of Mr. John's incomes are taxable in India for the assessment year 2026-27?",
+          "options": [
+            "Only Indian business income of Rs. 10 lakhs",
+            "Both Indian business income of Rs. 10 lakhs and foreign business income of Rs. 25 lakhs",
+            "Only foreign business income of Rs. 25 lakhs",
+            "Neither income is taxable in India"
+          ],
+          "answerIndex": 0,
+          "explanation": "Since Mr. John is a Non-Resident for AY 2026-27, only income received, accruing, or arising (or deemed so) in India is taxable. Thus, only Rs. 10 lakhs from Indian business is taxable.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Scope of Total Income",
+            "Non-Resident",
+            "Section 5(2)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-2_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-2_02",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-2",
+          "subject": "Taxation",
+          "prompt": "Would Mr. John's status change if he was a person of Indian origin (PIO) visiting India under the same facts, assuming his foreign income is from foreign sources?",
+          "options": [
+            "Yes, he would become a Resident since his stay of 120 days meets the relaxed condition for PIO visiting India with income not exceeding Rs. 15 lakhs.",
+            "No, his status would remain Non-Resident.",
+            "He would automatically become a deemed resident.",
+            "He would become ROR immediately."
+          ],
+          "answerIndex": 0,
+          "explanation": "For an Indian citizen or PIO visiting India whose total income (excl. foreign sources) does not exceed Rs. 15 lakhs, a stay of 120 days or more triggers residency under section 6(1)(c). Here his stay is exactly 120 days and Indian income is Rs. 10 lakhs (<= 15 lakhs), so he would be a resident.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "PIO",
+            "120 days rule",
+            "Income Threshold"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-2_03",
+      "kind": "scenario",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "passage": "M/s. Zenith Global Inc., a company incorporated in the United Kingdom, operates a digital platform providing cloud services. During the previous year 2025-26, it has significant transactions with users in India, exceeding the prescribed monetary threshold under Significant Economic Presence (SEP). Its Board of Directors holds all meetings in London, and its day-to-day management is also conducted from the UK.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-2_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-2_03",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-2",
+          "subject": "Taxation",
+          "prompt": "What is the residential status of M/s. Zenith Global Inc. in India for the assessment year 2026-27?",
+          "options": [
+            "Resident in India",
+            "Non-Resident in India",
+            "Resident but Not Ordinarily Resident",
+            "Deemed Indian Company"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under section 6(3), a foreign company is resident in India if its Place of Effective Management (POEM) is in India. However, due to SEP under section 9(1)(i), its income is deemed to accrue or arise in India. Wait, does SEP make a company resident? No, SEP only creates a business connection (taxability of income), not residential status. Since its POEM is in the UK, it is a Non-Resident company.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Foreign Company",
+            "POEM",
+            "SEP vs Residence"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-2_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-2_03",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-2",
+          "subject": "Taxation",
+          "prompt": "How is the UK company taxed on its income derived from Indian users through SEP?",
+          "options": [
+            "Taxable in India because SEP constitutes a business connection under section 9(1)(i).",
+            "Not taxable in India because it is a non-resident company with POEM outside India.",
+            "Taxable only if the company remits the money to an Indian bank account.",
+            "Exempt under double taxation avoidance agreements unconditionally."
+          ],
+          "answerIndex": 0,
+          "explanation": "Under Explanation 2A to section 9(1)(i), Significant Economic Presence (SEP) constitutes a business connection in India. Therefore, income attributable to SEP is deemed to accrue or arise in India and is taxable even for a non-resident.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SEP",
+            "Business Connection",
+            "Section 9(1)(i)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-2_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-2_03",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-2",
+          "subject": "Taxation",
+          "prompt": "If M/s. Zenith Global Inc. had its Place of Effective Management (POEM) located in Mumbai during the previous year 2025-26, what would be its residential status?",
+          "options": [
+            "Resident in India",
+            "Non-Resident in India",
+            "RNOR",
+            "Resident only for UK tax purposes"
+          ],
+          "answerIndex": 0,
+          "explanation": "As per section 6(3)(ii), a company other than an Indian company is resident in India if its Place of Effective Management (POEM) in that year is in India.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "POEM",
+            "Foreign Company",
+            "Resident Company"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-2_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-2_03",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-2",
+          "subject": "Taxation",
+          "prompt": "Can a foreign company be classified as 'Resident and Ordinarily Resident' or 'Resident but Not Ordinarily Resident'?",
+          "options": [
+            "No, companies are classified only as Resident or Non-Resident.",
+            "Yes, foreign companies can be RNOR.",
+            "Yes, if their Karta is resident in India.",
+            "Only if they have branches in India."
+          ],
+          "answerIndex": 0,
+          "explanation": "The categories of ROR and RNOR apply only to individuals and Hindu Undivided Families (HUF). Companies and other persons are classified strictly as either Resident or Non-Resident.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Company",
+            "ROR / RNOR",
+            "Categories of Residence"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-2_04",
+      "kind": "scenario",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "passage": "Mr. Dev, an Indian citizen and a successful consultant, has been living in Dubai for the past 12 years. For the previous year 2025-26, his total income from Indian sources (business and capital gains) is Rs. 22 lakhs, and his income from Dubai sources is Rs. 40 lakhs. In Dubai, Mr. Dev is not liable to pay any personal income tax due to local tax laws. During 2025-26, he visited India for 110 days.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-2_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-2_04",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-2",
+          "subject": "Taxation",
+          "prompt": "What is Mr. Dev's residential status in India for AY 2026-27 under the normal basic conditions?",
+          "options": [
+            "Resident, because his stay is 110 days and income exceeds Rs. 15 lakhs.",
+            "Non-Resident, because his stay of 110 days is less than 182 days and also less than the 120-day threshold for a visiting PIO/Indian citizen.",
+            "Resident and Ordinarily Resident",
+            "Resident because he is an Indian citizen abroad."
+          ],
+          "answerIndex": 1,
+          "explanation": "Mr. Dev is an Indian citizen visiting India with Indian income > Rs. 15 lakhs. For such persons, the threshold is 182 days (since income > 15 lakhs). His stay is 110 days (< 182 days), so he fails the basic condition under section 6(1).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Indian Citizen",
+            "Visit to India",
+            "182 days rule"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-2_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-2_04",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-2",
+          "subject": "Taxation",
+          "prompt": "Is Mr. Dev covered by the 'deemed resident' provision under section 6(1A)?",
+          "options": [
+            "Yes, because he is an Indian citizen, his Indian-source income exceeds Rs. 15 lakhs, and he is not liable to tax in Dubai.",
+            "No, because he is a non-resident under section 6(1).",
+            "No, because he stayed for less than 182 days in India.",
+            "Yes, because he lived in Dubai for 12 years."
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 6(1A) applies to an Indian citizen whose total income (excl. foreign sources) exceeds Rs. 15 lakhs, and who is not liable to tax in any other country by reason of domicile/residence. All these conditions are met by Mr. Dev.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Deemed Resident",
+            "Section 6(1A)",
+            "Stateless Tax Resident"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-2_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-2_04",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-2",
+          "subject": "Taxation",
+          "prompt": "What is the specific residential status assigned to Mr. Dev by virtue of being a 'deemed resident' under section 6(1A)?",
+          "options": [
+            "Resident but Not Ordinarily Resident (RNOR)",
+            "Resident and Ordinarily Resident (ROR)",
+            "Non-Resident (NR)",
+            "Deemed Non-Resident"
+          ],
+          "answerIndex": 0,
+          "explanation": "As per the proviso to section 6(6), an individual who is deemed to be resident in India under section 6(1A) shall be treated as Resident but Not Ordinarily Resident (RNOR) in India for that previous year.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Deemed Resident",
+            "RNOR",
+            "Proviso to Section 6(6)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-2_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-2_04",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-2",
+          "subject": "Taxation",
+          "prompt": "What will be the taxability of Mr. Dev's Dubai income of Rs. 40 lakhs in India for AY 2026-27?",
+          "options": [
+            "Not taxable in India, because an RNOR is not taxable on foreign income unless it is from a business controlled from or set up in India.",
+            "Taxable in India in full because he is a deemed resident.",
+            "Taxable only if remitted to India.",
+            "Taxable at special flat rate of 20%."
+          ],
+          "answerIndex": 0,
+          "explanation": "Since Mr. Dev is an RNOR (due to being a deemed resident under section 6(1A)), his foreign-source income (Dubai income of Rs. 40 lakhs) is not taxable in India unless it is from a business controlled from or set up in India (which is not the case here). Only Indian income of Rs. 22 lakhs is taxable.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "RNOR",
+            "Foreign Income",
+            "Taxability"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-2_05",
+      "kind": "scenario",
+      "chapterId": "income-tax-2",
+      "subject": "Taxation",
+      "passage": "A Hindu Undivided Family (HUF) has its Karta, Mr. Rajesh, residing permanently in Singapore. The control and management of the HUF's affairs is partially exercised from Delhi by a committee of senior members, and partially from Singapore by Mr. Rajesh. Mr. Rajesh has been visiting India for past many years and satisfies both additional conditions of section 6(6).",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Residence and Scope of Total Income"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-2_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-2_05",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-2",
+          "subject": "Taxation",
+          "prompt": "What is the residential status of the HUF in India for the previous year?",
+          "options": [
+            "Resident in India",
+            "Non-Resident in India",
+            "Deemed Resident",
+            "Resident only in Singapore"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under section 6(2), an HUF is resident in India if the control and management of its affairs is situated *wholly or partly* in India. Since part of the control is exercised from Delhi, the HUF is a resident in India.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "HUF",
+            "Control and Management",
+            "Resident HUF"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-2_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-2_05",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-2",
+          "subject": "Taxation",
+          "prompt": "What is the category of residency (ROR or RNOR) for the HUF?",
+          "options": [
+            "Resident and Ordinarily Resident (ROR)",
+            "Resident but Not Ordinarily Resident (RNOR)",
+            "Non-Resident",
+            "Neither ROR nor RNOR"
+          ],
+          "answerIndex": 0,
+          "explanation": "An HUF is ROR in India if its Karta or manager satisfies both additional conditions under section 6(6)(b). Since Mr. Rajesh satisfies both additional conditions, the HUF is Resident and Ordinarily Resident (ROR).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "HUF",
+            "ROR",
+            "Karta"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-2_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-2_05",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-2",
+          "subject": "Taxation",
+          "prompt": "If Mr. Rajesh (the Karta) did NOT satisfy the additional conditions under section 6(6)(b), what would be the residential status category of the HUF?",
+          "options": [
+            "Resident but Not Ordinarily Resident (RNOR)",
+            "Resident and Ordinarily Resident (ROR)",
+            "Non-Resident",
+            "Deemed Resident"
+          ],
+          "answerIndex": 0,
+          "explanation": "If the Karta or manager of a resident HUF does not satisfy both additional conditions, the HUF is classified as Resident but Not Ordinarily Resident (RNOR).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "HUF",
+            "RNOR",
+            "Section 6(6)(b)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-2_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-2_05",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-2",
+          "subject": "Taxation",
+          "prompt": "Which of the following incomes will be included in the total income of the HUF if it is assessed as ROR?",
+          "options": [
+            "Only Indian income",
+            "Global income (both Indian and foreign income from all sources)",
+            "Only income controlled from Delhi",
+            "Only remittances made to India"
+          ],
+          "answerIndex": 1,
+          "explanation": "An HUF that is Resident and Ordinarily Resident (ROR) is taxable on its global income, exactly like an ROR individual.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "HUF",
+            "Global Income",
+            "ROR Scope"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

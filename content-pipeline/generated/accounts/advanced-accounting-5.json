@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "advanced-accounting-5",
+  "subject": "Accounts",
+  "paper": "Paper 1: Advanced Accounting",
+  "module": "Module 2",
+  "chapterNumber": 5,
+  "chapterTitle": "Assets Based Accounting Standards",
+  "generatedAt": "2026-08-16T13:46:35.783Z",
+  "model": "gemini-3.6-flash",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_advanced-accounting-5_001",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "Under AS 2 'Valuation of Inventories', raw materials and other supplies held for use in the production of inventories are NOT written down below cost if:",
+      "options": [
+        "The finished products in which they will be incorporated are expected to be sold at or above cost.",
+        "The net realizable value of raw materials is greater than their replacement cost.",
+        "The fair value of the finished product is less than its cost of production.",
+        "The raw materials have been held in stock for less than six months."
+      ],
+      "answerIndex": 0,
+      "explanation": "As per AS 2, materials and other supplies held for use in the production of inventories are not written down below cost if the finished products in which they will be incorporated are expected to be sold at or above cost. Raw materials are written down to replacement cost only when there has been a decline in the price of materials and it is estimated that the cost of finished products will exceed net realizable value.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 2",
+        "Inventories",
+        "Raw Material Valuation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_002",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "A company holds 1,000 units of raw material purchased at ₹ 200 per unit. The replacement cost of raw material is ₹ 150 per unit. The finished product requires 1 unit of raw material with an additional conversion cost of ₹ 100 per unit. The estimated selling price of the finished product is ₹ 280 per unit, and selling expenses are ₹ 10 per unit. At what total value should the raw material inventory be carried?",
+      "options": [
+        "₹ 1,50,000",
+        "₹ 2,00,000",
+        "₹ 1,70,000",
+        "₹ 1,80,000"
+      ],
+      "answerIndex": 0,
+      "explanation": "The Net Realizable Value (NRV) of the finished product is ₹ 270 (₹ 280 - ₹ 10). The total cost to produce the finished product is ₹ 300 (₹ 200 raw material + ₹ 100 conversion). Since the finished product is expected to be sold below cost (NRV ₹ 270 < Cost ₹ 300), the raw material must be written down to its replacement cost of ₹ 150 per unit. Total raw material valuation = 1,000 units × ₹ 150 = ₹ 1,50,000.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 2",
+        "Inventories",
+        "Replacement Cost"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_003",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "Which of the following cost formulas is explicitly NOT permitted under AS 2 'Valuation of Inventories' for determining the cost of inventories?",
+      "options": [
+        "Last-In, First-Out (LIFO) formula",
+        "First-In, First-Out (FIFO) formula",
+        "Weighted Average Cost formula",
+        "Specific Identification Method"
+      ],
+      "answerIndex": 0,
+      "explanation": "AS 2 explicitly prohibits the use of the LIFO (Last-In, First-Out) formula because it often results in inventories being recognized in the balance sheet at amounts far removed from recent cost levels. Permitted cost formulas under AS 2 include FIFO, Weighted Average, and Specific Identification Method.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 2",
+        "Inventories",
+        "Cost Formulas"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_004",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "Under AS 10 'Property, Plant and Equipment', when an item of PPE is revalued upwards for the first time, how should the increase in carrying amount be recognized?",
+      "options": [
+        "Credited directly to Revaluation Surplus under Reserve and Surplus",
+        "Credited to the Profit and Loss Account as Extraordinary Income",
+        "Credited to General Reserve",
+        "Deducted from the accumulated depreciation account"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under AS 10, when an asset's carrying amount is increased as a result of a revaluation for the first time, the increase should be credited directly to owners' interests under the heading of Revaluation Surplus. If it reverses a revaluation decrease of the same asset previously recognized in profit or loss, it is recognized in profit or loss to that extent.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 10",
+        "PPE",
+        "Revaluation Model"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_005",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "Which of the following costs should be EXCLUDED from the initial cost of an item of Property, Plant and Equipment under AS 10?",
+      "options": [
+        "Initial operating losses incurred before the asset achieves planned performance",
+        "Costs of site preparation",
+        "Initial delivery and handling costs",
+        "Professional fees arising directly from bringing the asset to its working condition"
+      ],
+      "answerIndex": 0,
+      "explanation": "AS 10 specifically requires initial operating losses, such as those incurred while demand for the asset's output builds up, to be excluded from the carrying amount of an item of PPE. Site preparation, initial delivery, and direct professional fees are directly attributable costs and must be capitalized.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 10",
+        "PPE",
+        "Initial Recognition"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_006",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "An entity purchases a chemical plant for ₹ 50,00,000. Under AS 10, the cost includes a major overhauling component required every 3 years costing ₹ 6,00,000. After 3 years, the overhaul is performed at a cost of ₹ 7,50,000. How should this new overhaul cost be accounted for?",
+      "options": [
+        "Capitalized as a replacement component in PPE, derecognizing the remaining carrying amount of the old overhaul component",
+        "Charged entirely as a routine repair and maintenance expense in Profit and Loss",
+        "Adjusted against the Revaluation Surplus balance",
+        "Deferred and amortized over the remaining life of the main chemical plant"
+      ],
+      "answerIndex": 0,
+      "explanation": "AS 10 requires component accounting for major inspections or overhauls. When each major inspection/overhaul is performed, its cost is recognized in the carrying amount of the item of PPE as a replacement if recognition criteria are satisfied, and any remaining carrying amount of the cost of the previous overhaul is derecognized.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 10",
+        "PPE",
+        "Component Accounting"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_007",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "Under AS 10, an entity measures an asset using the Revaluation Model. If a change in the estimated decommissioning liability reduces the liability, how is this reduction treated?",
+      "options": [
+        "Added to/credited to Revaluation Surplus, except that it is recognized in Profit and Loss to the extent it reverses a revaluation deficit previously recognized in P&L.",
+        "Recognized immediately in Profit and Loss as an exceptional gain in all circumstances.",
+        "Credited to a deferred revenue account and recognized over the remaining asset life.",
+        "Deducted directly from the opening Retained Earnings balance."
+      ],
+      "answerIndex": 0,
+      "explanation": "Under AS 10 (Appendix I principles), for assets measured under the revaluation model, a reduction in the decommissioning liability is credited to Revaluation Surplus, except that it shall be recognized in profit or loss to the extent that it reverses a revaluation deficit on the asset that was previously recognized in profit or loss.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 10",
+        "PPE",
+        "Decommissioning Liability"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_008",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "Under AS 13 'Accounting for Investments', a 'Current Investment' is defined as an investment that by its nature is readily realizable and is intended to be held for:",
+      "options": [
+        "Not more than one year from the date on which such investment is made.",
+        "Not more than six months from the date of the balance sheet.",
+        "Not more than two years from the date on which such investment is made.",
+        "Indefinite period depending on market fluctuations."
+      ],
+      "answerIndex": 0,
+      "explanation": "As per AS 13, a current investment is an investment that is by its nature readily realizable and is intended to be held for not more than one year from the date on which such investment is made.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 13",
+        "Investments",
+        "Classification"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_009",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "How are Current Investments valued at the Balance Sheet date as per AS 13?",
+      "options": [
+        "Lower of cost and fair value / net realizable value determined on an individual investment basis or category basis",
+        "At cost less permanent diminution only",
+        "Always at fair value with gains taken to profit and loss",
+        "At lower of cost and net realizable value determined strictly on aggregate portfolio basis only"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under AS 13, current investments are carried in the financial statements at lower of cost and fair value (or net realizable value). The valuation is determined either on an individual investment basis or by category of investment, but not on an overall aggregate basis.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 13",
+        "Investments",
+        "Current Investments Valuation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_010",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "When an investment is reclassified from Long-Term Investments to Current Investments under AS 13, the transfer should be made at:",
+      "options": [
+        "Lower of cost and carrying amount at the date of transfer",
+        "Fair value at the date of transfer with difference credited to capital reserve",
+        "Cost irrespective of market value",
+        "Higher of cost and net realizable value"
+      ],
+      "answerIndex": 0,
+      "explanation": "AS 13 prescribes that where long-term investments are reclassified as current investments, transfers are made at the lower of cost and carrying amount at the date of transfer. If written down previously for permanent decline, that written-down carrying amount is compared with cost.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 13",
+        "Investments",
+        "Reclassification"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_011",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "An investor purchases 1,000 equity shares of X Ltd. cum-right at ₹ 150 per share. Later, the company announces 1 right share for every 2 shares held at ₹ 80 per share. The investor sells all right entitlements in the market for ₹ 30 per right. If the ex-rights market price of the original shares does not fall below the cost, how should the ₹ 15,000 proceeds from sale of rights be treated under AS 13?",
+      "options": [
+        "Credited to the Profit and Loss Statement",
+        "Deducted from the cost of original investment in the Balance Sheet",
+        "Credited to Capital Reserve",
+        "Deferred as Unearned Income until original shares are sold"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per AS 13, rights offer proceeds from the sale of right entitlements are generally credited to the Profit and Loss Statement. They are applied to reduce the carrying amount of investment only when the shares were purchased cum-right and the market value of shares after ex-rights falls below the purchase cost.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 13",
+        "Investments",
+        "Rights Issue"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_012",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "Under AS 16 'Borrowing Costs', what is a 'qualifying asset'?",
+      "options": [
+        "An asset that necessarily takes a substantial period of time to get ready for its intended use or sale",
+        "Any fixed asset purchased on credit terms exceeding 30 days",
+        "An asset that is funded 100% by specific bank loans",
+        "An asset whose useful life exceeds 10 accounting periods"
+      ],
+      "answerIndex": 0,
+      "explanation": "AS 16 defines a qualifying asset as an asset that necessarily takes a substantial period of time to get ready for its intended use or sale. What constitutes a substantial period depends on the facts and circumstances (ordinarily 12 months unless a shorter duration can be justified).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 16",
+        "Borrowing Costs",
+        "Qualifying Asset"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_013",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "Entity A has general borrowings of ₹ 10,00,000 at 10% p.a. and ₹ 20,00,000 at 13% p.a. during the year. It uses ₹ 6,00,000 out of general borrowings for the construction of a qualifying asset. What is the weighted average capitalization rate for borrowing costs?",
+      "options": [
+        "12.00%",
+        "11.50%",
+        "10.00%",
+        "13.00%"
+      ],
+      "answerIndex": 0,
+      "explanation": "Weighted average rate = Total Interest on General Borrowings / Total General Borrowings = [(₹ 10,00,000 × 10%) + (₹ 20,00,000 × 13%)] / (₹ 10,00,000 + ₹ 20,00,000) = (1,00,000 + 2,60,000) / 30,00,000 = ₹ 3,60,000 / ₹ 30,00,000 = 12.00%.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 16",
+        "Borrowing Costs",
+        "Capitalization Rate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_014",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "According to AS 16, capitalization of borrowing costs should be suspended during:",
+      "options": [
+        "Extended periods in which active development of the qualifying asset is interrupted",
+        "Brief periods when substantial technical and administrative work is taking place",
+        "Temporary delays that are a necessary part of the process of getting an asset ready for use",
+        "The entire construction period if general interest rates increase"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under AS 16, capitalization of borrowing costs should be suspended during extended periods in which active development is interrupted. However, capitalization is not suspended during a period when substantial technical and administrative work is being carried out or when a temporary delay is a necessary part of the process.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 16",
+        "Borrowing Costs",
+        "Suspension of Capitalization"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_015",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "Under AS 16, any income earned on the temporary investment of specific borrowings raised for a qualifying asset prior to its expenditure should be:",
+      "options": [
+        "Deducted from the borrowing costs eligible for capitalization",
+        "Recognized as income in the Profit and Loss Statement",
+        "Credited directly to Capital Reserve",
+        "Ignored for accounting purposes"
+      ],
+      "answerIndex": 0,
+      "explanation": "AS 16 states that to the extent funds are borrowed specifically for the purpose of obtaining a qualifying asset, the amount of borrowing costs eligible for capitalization should be determined as actual borrowing costs incurred on that borrowing during the period less any income on temporary investment of those borrowings.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 16",
+        "Borrowing Costs",
+        "Specific Borrowings"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_016",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "Under AS 19 'Leases', which of the following scenarios indicates that a lease is classified as a Finance Lease?",
+      "options": [
+        "At the inception of the lease, the present value of minimum lease payments substantially covers the initial fair value of the leased asset.",
+        "The lease term is for 10% of the economic life of the asset.",
+        "The lessee can cancel the lease at any time without paying any penalty.",
+        "Gains or losses from the fluctuation in the fair value of the residual fall to the lessor."
+      ],
+      "answerIndex": 0,
+      "explanation": "AS 19 provides indicators of a finance lease, one of which is that at the inception of the lease, the present value of the minimum lease payments amounts to at least substantially all of the fair value of the leased asset.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 19",
+        "Leases",
+        "Finance Lease Classification"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_017",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "In a finance lease transaction, the lessor defines 'Unearned Finance Income' as the difference between:",
+      "options": [
+        "Gross investment in the lease and the net investment in the lease",
+        "Present value of minimum lease payments and fair value of the asset",
+        "Minimum lease payments and residual value",
+        "Lease receipts and initial direct costs incurred by lessor"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under AS 19, Unearned Finance Income is defined as the difference between the gross investment in the lease and the net investment in the lease. Gross investment is aggregate of minimum lease payments from lessor perspective plus unguaranteed residual value.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 19",
+        "Leases",
+        "Unearned Finance Income"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_018",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "How should initial direct costs incurred by a lessee in respect of an operating lease be treated under AS 19?",
+      "options": [
+        "Recognized as an expense in the Profit and Loss Statement in the period in which they are incurred",
+        "Capitalized as part of the carrying amount of the leased asset",
+        "Amortized strictly over the economic life of the asset",
+        "Deducted from the liability for lease payments"
+      ],
+      "answerIndex": 0,
+      "explanation": "In an operating lease, initial direct costs incurred by the lessee (such as legal fees, negotiation costs) are recognized as an immediate expense in the Profit and Loss Statement in the period in which they are incurred.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 19",
+        "Leases",
+        "Operating Lease Costs"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_019",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "If a sale and leaseback transaction results in a Finance Lease, any excess of sale proceeds over the carrying amount of the asset should be:",
+      "options": [
+        "Deferred and amortized by the seller-lessee over the lease term in proportion to the depreciation of the leased asset",
+        "Recognized immediately as profit in the Profit and Loss Account in the year of sale",
+        "Credited to General Reserve immediately",
+        "Adjusted against the fair value of the asset in the books of the lessor"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under AS 19, if a sale and leaseback transaction results in a finance lease, any excess or deficiency of sales proceeds over the carrying amount should not be immediately recognized as income or loss. Instead, it should be deferred and amortized over the lease term in proportion to the depreciation of the leased asset.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 19",
+        "Leases",
+        "Sale and Leaseback"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_020",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "Under AS 26 'Intangible Assets', expenditure incurred on the 'Research Phase' of an internal project must be:",
+      "options": [
+        "Recognized as an expense when it is incurred",
+        "Capitalized as an intangible asset if future economic benefits are probable",
+        "Deferred and written off over a period of 5 years",
+        "Included in the cost of inventory as work-in-progress"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under AS 26, no intangible asset arising from research (or from the research phase of an internal project) should be recognized. Expenditure on research should be recognized as an expense when it is incurred because an entity cannot demonstrate that an intangible asset exists that will generate future economic benefits.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 26",
+        "Intangible Assets",
+        "Research Phase"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_021",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "As per AS 26, there is a rebuttable presumption that the useful life of an intangible asset will NOT exceed how many years from the date when the asset is available for use?",
+      "options": [
+        "10 years",
+        "5 years",
+        "20 years",
+        "15 years"
+      ],
+      "answerIndex": 0,
+      "explanation": "AS 26 includes a rebuttable presumption that the useful life of an intangible asset will not exceed 10 years from the date when the asset is available for use.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 26",
+        "Intangible Assets",
+        "Amortization Period"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_022",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "Which of the following internally generated items CANNOT be recognized as an Intangible Asset under AS 26?",
+      "options": [
+        "Internally generated brands, mastheads, publishing titles, and customer lists",
+        "Purchased software licenses for internal accounting system",
+        "Patents acquired through business combinations",
+        "Copyrights acquired from a third party"
+      ],
+      "answerIndex": 0,
+      "explanation": "AS 26 explicitly states that internally generated brands, mastheads, publishing titles, customer lists, and items similar in substance should not be recognized as intangible assets because expenditures on them cannot be distinguished from the cost of developing the business as a whole.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 26",
+        "Intangible Assets",
+        "Internally Generated Assets"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_023",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "Under AS 28 'Impairment of Assets', the 'Recoverable Amount' of an asset is defined as the HIGHER of:",
+      "options": [
+        "Net Selling Price and its Value in Use",
+        "Carrying Amount and Replacement Cost",
+        "Historical Cost and Net Realizable Value",
+        "Fair Value and Salvage Value"
+      ],
+      "answerIndex": 0,
+      "explanation": "AS 28 defines Recoverable Amount as the higher of an asset's net selling price and its value in use. If either of these amounts exceeds the carrying amount, the asset is not impaired.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 28",
+        "Impairment",
+        "Recoverable Amount"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_024",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "'Value in Use' of an asset under AS 28 represents:",
+      "options": [
+        "The present value of estimated future cash flows expected to arise from the continuing use of an asset and from its disposal at the end of its useful life",
+        "The net amount obtainable from the sale of an asset in an arm's length transaction between knowledgeable, willing parties",
+        "The current replacement cost minus cumulative depreciation",
+        "The liquidation value of the asset in an forced transaction"
+      ],
+      "answerIndex": 0,
+      "explanation": "AS 28 defines Value in Use as the present value of estimated future cash flows expected to arise from the continuing use of an asset and from its disposal at the end of its useful life.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 28",
+        "Impairment",
+        "Value in Use"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_025",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "When an impairment loss is recognized for a Cash-Generating Unit (CGU) under AS 28, how is the impairment loss allocated?",
+      "options": [
+        "First, to reduce the carrying amount of any goodwill allocated to the CGU, and then to other assets of the CGU pro-rata based on carrying amount.",
+        "Equally across all assets of the CGU regardless of carrying amount.",
+        "First to non-current tangible assets, then to goodwill, and finally to current assets.",
+        "Pro-rata to all assets based on their original historical cost."
+      ],
+      "answerIndex": 0,
+      "explanation": "AS 28 requires that an impairment loss for a CGU be allocated first to reduce the carrying amount of any goodwill allocated to the CGU, and then to the other assets of the unit pro-rata on the basis of the carrying amount of each asset in the unit.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 28",
+        "Impairment",
+        "CGU Allocation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_026",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "Under AS 28, can an impairment loss recognized for Goodwill be reversed in a subsequent period?",
+      "options": [
+        "No, an impairment loss recognized for Goodwill should NEVER be reversed in a subsequent period.",
+        "Yes, if the economic indicators show a significant recovery in market value.",
+        "Yes, provided the reversal is approved by the Board of Directors.",
+        "Yes, up to the maximum of 50% of the original impairment loss."
+      ],
+      "answerIndex": 0,
+      "explanation": "AS 28 strictly states that an impairment loss recognized for goodwill should not be reversed in a subsequent period unless the impairment loss was caused by a specific external event of an exceptional nature that is not expected to recur and subsequent external events have occurred that reverse the effect of that event (in practice, ICAI syllabus standard rule is strictly prohibited/non-reversible).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 28",
+        "Impairment",
+        "Reversal of Impairment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_027",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "Under AS 10, how should net proceeds from selling items produced while bringing an item of PPE to its location and condition (such as samples produced when testing machinery) be treated?",
+      "options": [
+        "Deducted from the directly attributable costs of PPE before capitalization",
+        "Recognized as revenue in the Profit and Loss Account",
+        "Credited to Revaluation Reserve",
+        "Deducted from administrative overheads"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under AS 10, testing costs are directly attributable costs. Any net proceeds from selling items produced while bringing the asset to its location and condition (such as test samples) are deducted from the cost of the asset.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 10",
+        "PPE",
+        "Trial Run Proceeds"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_028",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "Under AS 16, exchange differences arising from foreign currency borrowings used for acquiring a qualifying asset are treated as borrowing costs to the extent that:",
+      "options": [
+        "They are regarded as an adjustment to interest costs (limit being the difference between foreign interest and domestic interest cost).",
+        "100% of the total exchange loss is always capitalized.",
+        "They exceed the principal amount borrowed.",
+        "They are recognized in the Foreign Currency Monetary Item Translation Difference Account (FCMITDA)."
+      ],
+      "answerIndex": 0,
+      "explanation": "Under AS 16, exchange differences arising from foreign currency borrowings are treated as borrowing costs to the extent that they are regarded as an adjustment to interest costs (calculated as the difference between interest on local borrowings vs foreign borrowings). Any excess exchange loss is expensed in Profit & Loss.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 16",
+        "Borrowing Costs",
+        "Foreign Currency Borrowings"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_029",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "Under AS 19, when a lease includes both land and building elements, how should an entity classify the lease of each element?",
+      "options": [
+        "Land and building elements must be considered separately for lease classification unless title passes to lessee for land.",
+        "The entire lease is always classified as finance lease because land has indefinite economic life.",
+        "The entire lease is always classified as operating lease because land cannot be depreciated.",
+        "The classification depends solely on the value of the building regardless of the land value."
+      ],
+      "answerIndex": 0,
+      "explanation": "Under AS 19, land and building elements of a lease are considered separately for the purpose of lease classification. Since land normally has an indefinite economic life, a land lease is usually an operating lease unless title is expected to pass to the lessee.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 19",
+        "Leases",
+        "Land and Building Split"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-5_030",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "prompt": "An entity spends ₹ 15,00,000 on developing an internal website purely for promoting and advertising its own products. How should this cost be treated as per the principles of AS 26?",
+      "options": [
+        "Expensed immediately in Profit and Loss as advertising expenditure when incurred",
+        "Capitalized as an Intangible Asset and amortized over 5 years",
+        "Capitalized under PPE as office equipment",
+        "Deferred and shown under Other Non-Current Assets"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under AS 26 guidance, expenditure on an internal website developed solely or primarily for promoting and advertising an entity's own products and services cannot demonstrate that future economic benefits will flow directly. Hence, all such costs must be recognized as an expense in Profit & Loss when incurred.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 26",
+        "Intangible Assets",
+        "Website Development Costs"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_advanced-accounting-5_01",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "passage": "Vedic Texfab Ltd. purchased a specialized textile processing plant on 1st April 2024. The invoice price was ₹ 80,00,000 (excluding trade discount of ₹ 2,00,000). Statutory import duties paid were ₹ 5,00,000 (non-refundable). Freight and handling charges amounted to ₹ 3,00,000. Site preparation costs incurred were ₹ 2,00,000. Architect design fees directly related to installation were ₹ 1,00,000. Initial operating losses incurred during the first month before reaching commercial capacity were ₹ 4,00,000. Trial run costs were ₹ 1,50,000 and net proceeds from sale of trial run sample output were ₹ 50,000. Present value of estimated decommissioning cost at the end of its 10-year useful life is ₹ 5,00,000.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-5_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-5_01",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-5",
+          "subject": "Accounts",
+          "prompt": "What is the initial cost at which the plant should be capitalized in the books on 1st April 2024 under AS 10?",
+          "options": [
+            "₹ 95,00,000",
+            "₹ 99,00,000",
+            "₹ 90,00,000",
+            "₹ 94,50,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Cost = Net Invoice (80,00,000 - 2,00,000 = 78,00,000) + Import duties (5,00,000) + Freight (3,00,000) + Site prep (2,00,000) + Architect fees (1,00,000) + Net trial run cost (1,50,000 - 50,000 = 1,00,000) + Decommissioning PV (5,00,000) = ₹ 95,00,000. Initial operating losses (4,00,000) are excluded under AS 10.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 10",
+            "PPE",
+            "Cost Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-5_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-5_01",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-5",
+          "subject": "Accounts",
+          "prompt": "The company uses straight-line depreciation over 10 years with zero residual value. On 31st March 2026 (after 2 years), the revaluation model is adopted and market value is determined as ₹ 88,00,000. What amount should be credited to Revaluation Surplus on 31st March 2026?",
+          "options": [
+            "₹ 12,00,000",
+            "₹ 8,00,000",
+            "₹ 15,00,000",
+            "₹ 10,00,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Carrying Amount on 31st March 2026 = ₹ 95,00,000 - (₹ 9,50,000 × 2) = ₹ 76,00,000. Revalued Amount = ₹ 88,00,000. Revaluation Surplus = ₹ 88,00,000 - ₹ 76,00,000 = ₹ 12,00,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 10",
+            "PPE",
+            "Revaluation Surplus"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-5_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-5_01",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-5",
+          "subject": "Accounts",
+          "prompt": "On 1st April 2026 (beginning of Year 3), due to changes in discount rates, the present value of the estimated decommissioning liability is revised downwards by ₹ 1,60,000. Under AS 10 (Revaluation Model), how should this reduction be accounted for?",
+          "options": [
+            "Credited to Revaluation Surplus, increasing it from ₹ 12,00,000 to ₹ 13,60,000",
+            "Credited to Profit and Loss Account as an exceptional income",
+            "Deducted from the carrying amount of the asset",
+            "Credited to General Reserve"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under the revaluation model, changes in decommissioning liabilities are added to or deducted from the revaluation surplus. A reduction in liability increases the revaluation surplus from ₹ 12,00,000 to ₹ 13,60,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 10",
+            "PPE",
+            "Decommissioning Adjustment"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-5_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-5_01",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-5",
+          "subject": "Accounts",
+          "prompt": "What will be the revised annual depreciation expense for Year 3 (FY 2026-27) after accounting for the revaluation on 31st March 2026?",
+          "options": [
+            "₹ 11,00,000",
+            "₹ 9,50,000",
+            "₹ 10,80,000",
+            "₹ 12,00,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Carrying amount on 31st March 2026 is ₹ 88,00,000. Remaining useful life is 8 years (10 - 2). Revised Depreciation = ₹ 88,00,000 / 8 years = ₹ 11,00,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 10",
+            "PPE",
+            "Revised Depreciation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-5_02",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "passage": "Prism Infra Project Ltd. commenced the construction of a commercial shopping complex (a qualifying asset) on 1st April 2024. The project was completed on 31st March 2025.\nThe details of borrowings during FY 2024-25 are:\n1. Specific Bank Loan: ₹ 20,00,000 at 12% p.a. taken on 1st April 2024. Funds temporarily invested earned interest income of ₹ 30,000.\n2. General Borrowings:\n- Loan A: ₹ 15,00,000 at 10% p.a.\n- Loan B: ₹ 25,00,000 at 14% p.a.\nExpenditures incurred on construction out of general borrowings were:\n- 1st October 2024: ₹ 12,00,000\n- 1st January 2025: ₹ 8,00,000\nActive construction was halted for 2 months (October and November 2024) due to an extended labor strike (non-routine interruption).",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-5_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-5_02",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-5",
+          "subject": "Accounts",
+          "prompt": "What is the net interest cost eligible for capitalization from the Specific Borrowing for FY 2024-25?",
+          "options": [
+            "₹ 2,10,000",
+            "₹ 2,40,000",
+            "₹ 2,70,000",
+            "₹ 1,80,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Gross Interest on specific borrowing = ₹ 20,00,000 × 12% = ₹ 2,40,000. Net interest eligible = ₹ 2,40,000 - ₹ 30,00,000 interest income = ₹ 2,10,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 16",
+            "Borrowing Costs",
+            "Specific Borrowings"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-5_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-5_02",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-5",
+          "subject": "Accounts",
+          "prompt": "What is the weighted average capitalization rate for General Borrowings of Prism Infra Project Ltd. for FY 2024-25?",
+          "options": [
+            "12.50%",
+            "12.00%",
+            "11.50%",
+            "13.00%"
+          ],
+          "answerIndex": 0,
+          "explanation": "Total interest on general borrowings = (15,00,000 × 10%) + (25,00,000 × 14%) = 1,50,000 + 3,50,000 = ₹ 5,00,000. Total general borrowings = ₹ 40,00,000. Weighted Average Rate = 5,00,000 / 40,00,000 = 12.50%.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 16",
+            "Borrowing Costs",
+            "Capitalization Rate"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-5_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-5_02",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-5",
+          "subject": "Accounts",
+          "prompt": "Considering that active construction was suspended for 2 months due to an unexpected labor strike, how should borrowing costs for those 2 months be treated under AS 16?",
+          "options": [
+            "Capitalization of borrowing costs must be suspended during those 2 months and interest expensed to Profit and Loss.",
+            "Capitalization of borrowing costs continues without interruption because strikes are common.",
+            "Capitalization is permanently discontinued for the remaining project.",
+            "Interest for 2 months is added to General Reserve."
+          ],
+          "answerIndex": 0,
+          "explanation": "AS 16 mandates that capitalization of borrowing costs should be suspended during extended periods in which active development is interrupted by non-routine delays such as labor strikes.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 16",
+            "Borrowing Costs",
+            "Suspension Period"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-5_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-5_02",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-5",
+          "subject": "Accounts",
+          "prompt": "What is the total borrowing cost from general borrowings to be capitalized for FY 2024-25 taking into account the suspension period?",
+          "options": [
+            "₹ 75,00,00",
+            "₹ 1,00,000",
+            "₹ 1,25,000",
+            "₹ 50,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "For ₹ 12,00,000 incurred on 1st Oct: Oct & Nov suspended. Active period = Dec to Mar (4 months). Interest = 12,00,000 × 12.5% × 4/12 = ₹ 50,000. For ₹ 8,00,000 incurred on 1st Jan: Active period = Jan to Mar (3 months). Interest = 8,00,000 × 12.5% × 3/12 = ₹ 25,000. Total general borrowing interest capitalized = 50,000 + 25,000 = ₹ 75,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 16",
+            "Borrowing Costs",
+            "General Borrowings Capitalization"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-5_03",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "passage": "Nivaan Investments Ltd. engaged in the following transactions regarding equity shares of Beta Ltd. during FY 2024-25:\n- 15th May 2024: Purchased 5,000 equity shares of Beta Ltd. (face value ₹ 10) cum-dividend at ₹ 120 per share.\n- 20th June 2024: Beta Ltd. declared and paid a dividend of ₹ 4 per share for FY 2023-24 (pre-acquisition period).\n- 10th August 2024: Beta Ltd. issued bonus shares in the ratio of 1:5 (1 bonus share for every 5 shares held).\n- 15th November 2024: Beta Ltd. issued rights shares in the ratio of 1:3 at ₹ 50 per share. Nivaan Ltd. subscribed to 50% of its rights entitlement and sold the remaining 50% rights entitlement in the market at ₹ 15 per right.\n- 31st March 2025: Nivaan Ltd. reclassified these shares from Long-Term Investments to Current Investments. Market price on 31st March 2025 was ₹ 80 per share.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-5_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-5_03",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-5",
+          "subject": "Accounts",
+          "prompt": "What is the total carrying cost of the original 5,000 shares immediately after receiving the pre-acquisition dividend on 20th June 2024?",
+          "options": [
+            "₹ 5,80,000",
+            "₹ 6,00,000",
+            "₹ 6,20,000",
+            "₹ 5,60,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Initial cost = 5,000 × ₹ 120 = ₹ 6,00,000. Pre-acquisition dividend received = 5,000 × ₹ 4 = ₹ 20,000. Under AS 13, pre-acquisition dividend is deducted from the cost of investment. Carrying cost = 6,00,000 - 20,000 = ₹ 5,80,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 13",
+            "Investments",
+            "Pre-acquisition Dividend"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-5_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-5_03",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-5",
+          "subject": "Accounts",
+          "prompt": "How many total shares are held by Nivaan Ltd. after receiving bonus shares and subscribing to 50% of the rights shares?",
+          "options": [
+            "7,000 shares",
+            "6,000 shares",
+            "8,000 shares",
+            "6,500 shares"
+          ],
+          "answerIndex": 0,
+          "explanation": "Original = 5,000. Bonus (1:5) = 1,000. Total before rights = 6,000 shares. Rights entitlement (1:3) = 2,000 rights. Subscribed 50% = 1,000 shares. Total shares held = 6,000 + 1,000 = 7,000 shares.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 13",
+            "Investments",
+            "Bonus and Rights Shares"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-5_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-5_03",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-5",
+          "subject": "Accounts",
+          "prompt": "How should the sale of remaining 1,000 rights entitlements at ₹ 15 per right (total ₹ 15,000) be treated under AS 13?",
+          "options": [
+            "Credited to the Profit and Loss Statement as income",
+            "Deducted from the carrying cost of the investment",
+            "Credited to Capital Reserve Account",
+            "Added to the cost of rights shares subscribed"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under AS 13, proceeds from the sale of right entitlements are credited to the Profit and Loss Statement unless the market value of original shares falls below cost ex-rights.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 13",
+            "Investments",
+            "Sale of Rights Entitlement"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-5_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-5_03",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-5",
+          "subject": "Accounts",
+          "prompt": "What is the carrying amount at which the investment in Beta Ltd. should be reclassified and shown as Current Investment on 31st March 2025?",
+          "options": [
+            "₹ 5,60,000",
+            "₹ 6,30,000",
+            "₹ 5,80,000",
+            "₹ 6,00,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Total Cost of 7,000 shares = ₹ 5,80,000 + (1,000 rights × ₹ 50) = ₹ 6,30,000. Cost per share = 6,30,000 / 7,000 = ₹ 90. Market value = ₹ 80 per share. Reclassification is at lower of cost (₹ 90) and fair value (₹ 80). Valuation = 7,000 × ₹ 80 = ₹ 5,60,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 13",
+            "Investments",
+            "Reclassification Valuation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-5_04",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "passage": "On 1st April 2024, Aksat Leasing Ltd. (Lessor) leased equipment to Starline Services Ltd. (Lessee) for a period of 4 years.\nKey details of the lease agreement:\n- Fair value of equipment at inception: ₹ 20,00,000.\n- Annual lease payment payable at the end of each year: ₹ 6,50,000.\n- Guaranteed Residual Value (GRV) by Lessee: ₹ 1,00,000.\n- Unguaranteed Residual Value (URV): ₹ 50,000.\n- Implicit interest rate (IRR): 12% p.a.\n- PV Factors at 12%: Year 1 = 0.8929, Year 2 = 0.7972, Year 3 = 0.7118, Year 4 = 0.6355.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-5_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-5_04",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-5",
+          "subject": "Accounts",
+          "prompt": "What is the Gross Investment in the lease for Aksat Leasing Ltd. (Lessor)?",
+          "options": [
+            "₹ 27,50,000",
+            "₹ 26,00,000",
+            "₹ 20,00,000",
+            "₹ 21,50,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Gross Investment in Lease = Total Lease Payments (4 × 6,50,000 = 26,00,000) + Guaranteed Residual Value (1,00,000) + Unguaranteed Residual Value (50,000) = ₹ 27,50,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 19",
+            "Leases",
+            "Gross Investment"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-5_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-5_04",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-5",
+          "subject": "Accounts",
+          "prompt": "What is the 'Unearned Finance Income' for Aksat Leasing Ltd. (Lessor) at inception of the lease?",
+          "options": [
+            "₹ 7,50,000",
+            "₹ 6,00,000",
+            "₹ 7,00,000",
+            "₹ 5,50,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Unearned Finance Income = Gross Investment (₹ 27,50,000) - Net Investment (Fair Value ₹ 20,00,000) = ₹ 7,50,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 19",
+            "Leases",
+            "Unearned Finance Income"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-5_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-5_04",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-5",
+          "subject": "Accounts",
+          "prompt": "What is the Finance Income to be recognized by Aksat Leasing Ltd. in its Profit and Loss Account for Year 1 (FY 2024-25)?",
+          "options": [
+            "₹ 2,40,000",
+            "₹ 3,00,000",
+            "₹ 1,80,000",
+            "₹ 2,70,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Finance Income Year 1 = Net Investment at beginning (₹ 20,00,000) × IRR (12%) = ₹ 2,40,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 19",
+            "Leases",
+            "Lessor Finance Income"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-5_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-5_04",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-5",
+          "subject": "Accounts",
+          "prompt": "Starline Services Ltd. (Lessee) depreciates the asset on a straight-line basis over 4 years to its GRV of ₹ 1,00,000. At what initial carrying amount is the leased asset recorded by the lessee, and what is the depreciation for Year 1?",
+          "options": [
+            "Asset recorded at ₹ 20,00,000 and Year 1 depreciation is ₹ 4,75,000",
+            "Asset recorded at ₹ 27,50,000 and Year 1 depreciation is ₹ 6,62,500",
+            "Asset recorded at ₹ 20,00,000 and Year 1 depreciation is ₹ 5,00,000",
+            "Asset recorded at ₹ 20,37,829 and Year 1 depreciation is ₹ 4,84,457"
+          ],
+          "answerIndex": 0,
+          "explanation": "Asset recorded at lower of PV of MLP and Fair Value = ₹ 20,00,000. Annual Depreciation = (₹ 20,00,000 - ₹ 1,00,000 GRV) / 4 years = ₹ 4,75,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 19",
+            "Leases",
+            "Lessee Accounting"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-5_05",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-5",
+      "subject": "Accounts",
+      "passage": "Kuber Chemical Ltd. has a distinct Cash-Generating Unit (CGU) producing industrial solvents. On 31st March 2025, due to adverse regulatory changes, the company tests the CGU for impairment.\nThe carrying amounts of the assets of the CGU before impairment testing are:\n- Goodwill: ₹ 10,00,000\n- Factory Building: ₹ 30,00,000\n- Plant & Machinery: ₹ 40,00,000\n- Intangible Asset (Technical Know-how): ₹ 20,00,000\nTotal Carrying Amount of CGU = ₹ 1,00,00,000 (₹ 100 Lakhs).\n\nAdditional Information:\n- Net Selling Price of the CGU as a whole is estimated at ₹ 65,00,000.\n- Value in Use of the CGU is calculated as ₹ 70,00,000.\n- The Net Selling Price of Technical Know-how individually is known to be ₹ 17,00,000.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 5,
+        "chapterTitle": "Assets Based Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-5_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-5_05",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-5",
+          "subject": "Accounts",
+          "prompt": "What is the Recoverable Amount of the Cash-Generating Unit (CGU) on 31st March 2025?",
+          "options": [
+            "₹ 70,00,000",
+            "₹ 65,00,000",
+            "₹ 1,00,00,000",
+            "₹ 30,00,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Recoverable Amount = Higher of Net Selling Price (₹ 65,00,000) and Value in Use (₹ 70,00,000) = ₹ 70,00,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 28",
+            "Impairment",
+            "Recoverable Amount"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-5_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-5_05",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-5",
+          "subject": "Accounts",
+          "prompt": "What is the total Impairment Loss to be recognized for the CGU on 31st March 2025?",
+          "options": [
+            "₹ 30,00,000",
+            "₹ 35,00,000",
+            "₹ 20,00,000",
+            "₹ 10,00,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Impairment Loss = Carrying Amount (₹ 1,00,00,000) - Recoverable Amount (₹ 70,00,000) = ₹ 30,00,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 28",
+            "Impairment",
+            "Total Impairment Loss"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-5_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-5_05",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-5",
+          "subject": "Accounts",
+          "prompt": "What is the maximum impairment loss that can be allocated to the Intangible Asset (Technical Know-how) under AS 28?",
+          "options": [
+            "₹ 3,00,000",
+            "₹ 4,44,444",
+            "₹ 6,00,000",
+            "₹ 10,00,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under AS 28, the carrying amount of an individual asset shall not be reduced below the highest of its net selling price (₹ 17,00,000), value in use, and zero. Since carrying amount is ₹ 20,00,000 and net selling price is ₹ 17,00,000, maximum impairment loss allocated to Technical Know-how is ₹ 3,00,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 28",
+            "Impairment",
+            "Individual Asset Limit"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-5_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-5_05",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-5",
+          "subject": "Accounts",
+          "prompt": "What is the revised carrying amount of Plant & Machinery after the complete allocation of the CGU impairment loss on 31st March 2025?",
+          "options": [
+            "₹ 30,28,572",
+            "₹ 31,11,111",
+            "₹ 28,00,000",
+            "₹ 32,00,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Total Loss = 30,00,000. Goodwill = 10,00,000. Remaining = 20,00,000. Initial pro-rata share for Plant = 20,00,000 × (40/90) = 8,88,889. Initial share for Technical Know-how = 20,00,000 × (20/90) = 4,44,444 (capped at 3,00,000). Excess loss of 1,44,444 is reallocated to Building and Plant in ratio 30:40. Plant share of excess = 1,44,444 × 4/7 = 82,539. Total Plant impairment = 8,88,889 + 82,539 = 9,71,428. Revised Carrying Amount = 40,00,000 - 9,71,428 = ₹ 30,28,572.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 28",
+            "Impairment",
+            "Asset Carrying Value Allocation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

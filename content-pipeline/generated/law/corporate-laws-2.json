@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "corporate-laws-2",
+  "subject": "Law",
+  "paper": "Paper 2: Corporate and Other Laws",
+  "module": "Module 1",
+  "chapterNumber": 2,
+  "chapterTitle": "Incorporation of Company and Matters Incidental Thereto",
+  "generatedAt": "2026-08-16T14:09:27.574Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_corporate-laws-2_001",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "Under Section 3 of the Companies Act, 2013, what is the minimum number of persons required to form a public company?",
+      "options": [
+        "Two persons",
+        "Seven persons",
+        "Three persons",
+        "Ten persons"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 3 of the Companies Act, 2013 stipulates that a public company may be formed for any lawful purpose by seven or more persons. For a private company, the requirement is two or more persons, and for an OPC, only one person is needed.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Formation of Company",
+        "Public Company",
+        "Section 3"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_002",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "Which of the following documents contains the fundamental conditions upon which a company is allowed to be built under the Companies Act, 2013?",
+      "options": [
+        "Articles of Association",
+        "Memorandum of Association",
+        "Prospectus",
+        "Certificate of Incorporation"
+      ],
+      "answerIndex": 1,
+      "explanation": "The Memorandum of Association (MoA) is the charter of the company and defines its scope of operations, objects, and the limits outside which a company cannot act. It forms the foundation upon which the company is built.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Memorandum of Association",
+        "Company Charter",
+        "Section 4"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_003",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "A One Person Company (OPC) must nominate a nominee in its memorandum. When is the prior written consent of such nominee required to be filed with the Registrar?",
+      "options": [
+        "At the time of incorporation",
+        "Within 30 days of incorporation",
+        "At the time of filing annual return",
+        "Within 60 days of incorporation"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 3 of the Companies (Incorporation) Rules, 2014 mandates that the memorandum of an OPC shall indicate the name of the nominee who shall, in the event of the subscriber's death or incapacity, become the member. The prior written consent of this nominee must be filed with the Registrar at the time of incorporation.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "One Person Company",
+        "Nominee",
+        "Rule 3"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_004",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "What is the maximum permissible period within which a newly incorporated company must maintain its registered office from the date of incorporation under Section 12?",
+      "options": [
+        "15 days",
+        "30 days",
+        "45 days",
+        "60 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 12(1) of the Companies Act, 2013 requires a company to have a registered office capable of receiving and acknowledging all communications and notices within 30 days of its incorporation.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Registered Office",
+        "Section 12",
+        "Incorporation Matters"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_005",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "Under Section 7(4) of the Companies Act, 2013, for how many years must a company preserve all books and papers relating to its incorporation at its registered office?",
+      "options": [
+        "3 years",
+        "5 years",
+        "8 years",
+        "From the date of incorporation till its dissolution"
+      ],
+      "answerIndex": 3,
+      "explanation": "Section 7(4) of the Companies Act, 2013 mandates that the company shall maintain and keep at its registered office copies of all documents and information originally filed with the Registrar until its dissolution.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Incorporation Documents",
+        "Section 7",
+        "Statutory Registers"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_006",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "Which of the following entities is empowered to accord approval for a change of name of a company that involves the substitution of words indicating a change in economic activity?",
+      "options": [
+        "National Company Law Tribunal",
+        "Central Government (Registrar of Companies)",
+        "Securities and Exchange Board of India",
+        "Regional Director"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 13 read with the relevant rules, a change of name of a company requires a special resolution and approval of the Central Government (delegated to the Registrar of Companies).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Change of Name",
+        "Section 13",
+        "Central Government Approval"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_007",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "If a company makes an application for reservation of name using the RUN (Reserve Unique Name) or SPICe+ web service, for how many days is the approved name reserved for a *new* company?",
+      "options": [
+        "10 days",
+        "20 days",
+        "30 days",
+        "60 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Rule 9 of the Companies (Incorporation) Rules, 2014, the Registrar shall reserve a name for a new company for a period of 20 days from the date of approval (or such extended period as may be permitted upon payment of additional fees).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Reservation of Name",
+        "Rule 9",
+        "SPICe+"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_008",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "What is the consequence if a company is found to have been incorporated by furnishing false or incorrect information or by suppressing any material fact under Section 7(7)?",
+      "options": [
+        "Only a compounding fine on the promoters",
+        "The Tribunal may direct winding up, or direct that liability shall be unlimited",
+        "Automatic conversion into a partnership firm",
+        "Mandatory imprisonment of all independent directors"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 7(7) empowers the Tribunal (NCLT), on an application made to it, to pass orders such as directing the regulation of the management, winding up of the company, or declaring that the liability of the members shall be unlimited, when incorporation has been obtained by fraud or false information.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Fraudulent Incorporation",
+        "Section 7(7)",
+        "NCLT Powers"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_009",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "Can a charitable company registered under Section 8 alter the objects clause in its Memorandum of Association?",
+      "options": [
+        "Yes, by ordinary resolution and Central Government approval",
+        "Yes, by special resolution and prior approval of the Central Government",
+        "No, Section 8 companies can never alter their objects",
+        "Yes, simply by filing an e-form with the ROC without any special resolution"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 8(4)(i), a Section 8 company cannot alter the provisions of its memorandum or articles except with the previous approval of the Central Government, and such alteration must also comply with provisions regarding special resolutions.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 8 Company",
+        "Alteration of Memorandum",
+        "Central Government Approval"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_010",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "Which of the following is NOT a permissible form of pre-incorporation contract liability ratification by a company under Indian company law?",
+      "options": [
+        "Express novation of contract",
+        "Adoption of the contract by the company after incorporation",
+        "Automatic statutory ratification upon obtaining the Certificate of Incorporation",
+        "Entering into a new contract on the same terms after incorporation"
+      ],
+      "answerIndex": 2,
+      "explanation": "Pre-incorporation contracts cannot be ratified automatically upon incorporation because a company does not exist prior to its incorporation. Valid legal options include novation, fresh contract, or specific adoption as per Indian Contract Act principles.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Pre-incorporation Contracts",
+        "Ratification",
+        "Contract Act"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_011",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "What is the designated web-based service introduced by the Ministry of Corporate Affairs (MCA) for simplified proforma for incorporating a company electronically?",
+      "options": [
+        "SPICe+",
+        "RUN-MCA",
+        "DIR-3 KYC",
+        "MGT-7A"
+      ],
+      "answerIndex": 0,
+      "explanation": "SPICe+ (Simplified Proforma for Incorporating Company Electronically Plus) is an integrated web form offering multiple services like name reservation, incorporation, DIN allotment, PAN/TAN application, etc.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SPICe+",
+        "MCA Services",
+        "Electronic Incorporation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_012",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "In the case of a One Person Company, if the sole member becomes a member in another OPC due to being a nominee in that other OPC, within how many days must the limit be complied with?",
+      "options": [
+        "30 days",
+        "90 days",
+        "180 days",
+        "365 days"
+      ],
+      "answerIndex": 2,
+      "explanation": "Rule 3(7) of the Companies (Incorporation) Rules specifies that where a person is a member in one OPC and becomes a nominee in another such company, such person shall meet the eligibility criteria within a period of 180 days.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "One Person Company",
+        "Rule 3",
+        "Eligibility Compliance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_013",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "Which of the following particulars is NOT required to be stated in the Memorandum of Association of a limited company?",
+      "options": [
+        "Name clause",
+        "Registered office state clause",
+        "First directors appointment clause",
+        "Liability clause"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 4 lists the mandatory clauses of the Memorandum: Name, State, Objects, Liability, and Capital. The appointment of first directors is typically dealt with in the Articles or separate board resolutions/regulatory filings, not as a mandatory clause of the MoA.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Memorandum of Association",
+        "Mandatory Clauses",
+        "Section 4"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_014",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "Under Section 10 of the Companies Act, 2013, what is the legal effect of the registered Memorandum and Articles of Association once they are bound?",
+      "options": [
+        "They bind the company and its members as if signed by each member",
+        "They are merely recommendatory guidelines",
+        "They are binding only on the promoters",
+        "They have no legal standing until a court order is passed"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 10 states that when the memorandum and articles are registered, they bind the company and the members thereof to the same extent as if they respectively had been signed by each member and contained covenants on the part of each member to observe all provisions.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 10",
+        "Binding Effect",
+        "MoA and AoA"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_015",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "Which type of company is prohibited from accepting any deposits from the public under the provisions of the Companies Act, 2013?",
+      "options": [
+        "Public company with a net worth of over 500 crores",
+        "Private company",
+        "Banking company",
+        "Non-banking financial company registered with RBI"
+      ],
+      "answerIndex": 1,
+      "explanation": "While public companies can accept deposits under strict regulations, private companies are generally restricted from accepting deposits from the general public (though they can accept from members/directors as per exemptions). However, looking strictly at the chapter on incorporation and basic rules, private companies cannot invite deposits from the public.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Private Company",
+        "Deposits",
+        "Incorporation Rules"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_016",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "What is the maximum time limit specified for a company to notify the Registrar of any change in its registered office address from the date of such change?",
+      "options": [
+        "15 days",
+        "30 days",
+        "60 days",
+        "90 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 12(4) of the Companies Act, 2013 provides that notice of every change of the situation of the registered office, verified in the prescribed manner, shall be given to the Registrar within 30 days of the change.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Registered Office",
+        "Section 12",
+        "Change of Address"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_017",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "If an existing company wants to alter its Articles of Association, which resolution must be passed by the shareholders?",
+      "options": [
+        "Ordinary Resolution",
+        "Special Resolution",
+        "Board Resolution only",
+        "Unanimous Resolution"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 14 of the Companies Act, 2013 mandates that subject to the provisions of this Act and the conditions contained in its memorandum, a company may alter its articles by passing a special resolution.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Articles of Association",
+        "Alteration",
+        "Section 14"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_018",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "Which of the following authorities has the power to accord sanction for the conversion of a public company into a private company?",
+      "options": [
+        "Registrar of Companies",
+        "National Company Law Tribunal (Central Government)",
+        "Securities and Exchange Board of India",
+        "High Court"
+      ],
+      "answerIndex": 1,
+      "explanation": "Conversion of a public company into a private company requires approval from the Central Government (powers delegated to the Regional Director / Tribunal as per statutory amendments).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Conversion of Company",
+        "Public to Private",
+        "Section 13/18"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_019",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "Can a minor be a subscriber to the Memorandum of Association of a company under the Companies Act, 2013?",
+      "options": [
+        "Yes, through a natural guardian",
+        "No, a minor's agreement is void ab initio, hence a minor cannot be a subscriber",
+        "Yes, provided the share capital is fully paid up",
+        "Yes, if approved by the Board of Directors"
+      ],
+      "answerIndex": 1,
+      "explanation": "Since a minor lacks the capacity to contract under the Indian Contract Act, 1872, a minor cannot be a subscriber to the memorandum of association. Shares cannot be allotted to a minor except if they are fully paid and acquired by way of transfer/transmission.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Subscriber to Memorandum",
+        "Minor",
+        "Capacity to Contract"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_020",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "What is the status of the doctrine of indoor management in relation to the Memorandum and Articles of Association?",
+      "options": [
+        "It protects the company from outsiders",
+        "It protects outsiders dealing with the company from internal irregularities",
+        "It allows directors to bypass the Articles",
+        "It overrides statutory provisions of the Companies Act"
+      ],
+      "answerIndex": 1,
+      "explanation": "The doctrine of indoor management (Turquand's Rule) protects outsiders who deal with a company in good faith from being affected by internal irregularities or procedural non-compliance within the company.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Doctrine of Indoor Management",
+        "Turquand Rule",
+        "Articles of Association"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_021",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "Under Section 3A of the Companies Act, 2013, if the number of members of a public company falls below seven and it continues to carry on business for more than how many months, every such member shall be severally liable?",
+      "options": [
+        "3 months",
+        "6 months",
+        "9 months",
+        "12 months"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 3A provides that if the number of members is reduced below the statutory minimum (7 for public, 2 for private) and business is carried on for more than 6 months, every person who is a member during that time with knowledge shall be severally liable for the payment of debts contracted during that time.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Reduction of Members",
+        "Section 3A",
+        "Liability of Members"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_022",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "Which of the following cannot be included in the name of a company unless previous approval of the Central Government is obtained?",
+      "options": [
+        "Industrial",
+        "Cooperative",
+        "Federal",
+        "Limited"
+      ],
+      "answerIndex": 2,
+      "explanation": "Rule 8 of the Companies (Incorporation) Rules specifies words which require prior approval of the Central Government, such as 'Federal', 'Republic', 'State', 'Bank', 'Union', etc., as they might imply government patronage.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Company Name",
+        "Rule 8",
+        "Central Government Approval"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_023",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "What does the 'Doctrine of Ultra Vires' signify in company law?",
+      "options": [
+        "Acts done by directors beyond their authority but within company powers",
+        "Acts done beyond the powers of the company as defined in its Memorandum",
+        "Acts done by members without board approval",
+        "Internal management procedures"
+      ],
+      "answerIndex": 1,
+      "explanation": "An act is ultra vires the company if it is beyond the powers conferred upon the company by its Memorandum of Association. Such acts are void and cannot be ratified even by all members.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Doctrine of Ultra Vires",
+        "Memorandum of Association",
+        "Company Powers"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_024",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "Which form is used for filing the application for incorporation of a company electronically under the SPICe+ framework?",
+      "options": [
+        "INC-32",
+        "SPICe+ (INC-32)",
+        "INC-7",
+        "INC-22"
+      ],
+      "answerIndex": 1,
+      "explanation": "SPICe+ has replaced the old INC-32 form as the integrated web form for company incorporation under the Companies Act, 2013.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SPICe+",
+        "Incorporation Form",
+        "MCA Portal"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_025",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "In the case of a Section 8 company, what is the minimum capital requirement prescribed under the Act?",
+      "options": [
+        "1 Lakh rupees",
+        "5 Lakhs rupees",
+        "10 Lakhs rupees",
+        "No minimum capital requirement"
+      ],
+      "answerIndex": 3,
+      "explanation": "Section 8 companies do not have any prescribed minimum paid-up share capital requirement under the Companies Act, 2013, unlike private or public companies which historically had minimum capital thresholds.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 8 Company",
+        "Share Capital",
+        "Incorporation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_026",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "Can a foreign company establish a place of business in India without registering with the Registrar of Companies?",
+      "options": [
+        "Yes, if it operates for less than 90 days",
+        "No, it must deliver required documents to the ROC within 30 days of establishment",
+        "Yes, if it has a local agent",
+        "No, but it has 180 days to register"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 380 of the Companies Act, 2013 requires every foreign company to deliver specified documents and particulars to the Registrar of Companies within 30 days of establishing a place of business in India.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Foreign Company",
+        "Section 380",
+        "Place of Business"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_027",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "What is the effect of registration of a company under Section 9 of the Companies Act, 2013?",
+      "options": [
+        "It creates a partnership between subscribers",
+        "It creates a body corporate with perpetual succession and a common seal (optional)",
+        "It makes directors personally liable for all future debts",
+        "It requires annual renewal of incorporation"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 9 provides that from the date of incorporation, the subscribers to the memorandum and other persons shall be a body corporate capable of exercising all functions, having perpetual succession and a common seal.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 9",
+        "Incorporation Effect",
+        "Corporate Personality"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_028",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "When can a company commence its business or exercise borrowing powers after incorporation?",
+      "options": [
+        "Immediately upon getting the Certificate of Incorporation",
+        "Only after filing a declaration under Section 10A regarding receipt of subscription money",
+        "After holding its first Annual General Meeting",
+        "After obtaining a separate trading license from the High Court"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 10A of the Companies Act, 2013 stipulates that a company having a share capital cannot commence any business or exercise borrowing powers unless a director files a verification declaration within 180 days that every subscriber has paid the value of shares agreed.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 10A",
+        "Commencement of Business",
+        "Subscription Money"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_029",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "If a promoter makes a secret profit from a transaction entered into on behalf of a prospective company, what is the legal remedy available to the company?",
+      "options": [
+        "The company can only reprimand the promoter",
+        "The company can rescind the contract and recover the secret profit",
+        "The company must pay an additional bonus to the promoter",
+        "The contract becomes automatically binding with no remedies"
+      ],
+      "answerIndex": 1,
+      "explanation": "Promoters stand in a fiduciary position towards the company they promote. They cannot make any secret profits, and if they do, the company can compel them to account for such profits or rescind the contract.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Promoters",
+        "Fiduciary Duty",
+        "Secret Profits"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-2_030",
+      "kind": "normal",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "prompt": "Which of the following documents is NOT required to be filed along with SPICe+ for the incorporation of a company?",
+      "options": [
+        "Subscriber sheet / Memorandum and Articles",
+        "Proof of registered office address",
+        "Audited balance sheet of promoters for the last 3 years",
+        "Declaration by professionals and subscribers in INC-9"
+      ],
+      "answerIndex": 2,
+      "explanation": "Promoters' historical audited balance sheets are not required for company incorporation. The required documents include MoA, AoA, registered office proof, declarations (INC-9), and identity proofs of subscribers/directors.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SPICe+",
+        "Incorporation Documents",
+        "Required Filings"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_corporate-laws-2_01",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "passage": "Mr. Rohan, an enthusiastic entrepreneur, decides to start a software development business in Pune. He plans to register a private limited company named 'TechInnovate Solutions Private Limited' with five initial subscribers. He prepares the Memorandum of Association and Articles of Association. During the incorporation process, Rohan acts quickly to secure a commercial property as the registered office, but due to delays in final paperwork, the registered office address is registered 45 days after the date of incorporation.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-2_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-2_01",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-2",
+          "subject": "Law",
+          "prompt": "Is the registration of the registered office address within 45 days compliant with Section 12 of the Companies Act, 2013?",
+          "options": [
+            "Yes, because private companies get a grace period of 60 days",
+            "No, Section 12 requires the company to have a registered office within 30 days of incorporation",
+            "Yes, if approved by the Regional Director",
+            "No, but it attracts only a minor fee without legal consequences"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 12(1) of the Companies Act, 2013 mandates that a company must have a registered office capable of receiving communications within 30 days of its incorporation. Registering it after 45 days is a non-compliance.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Registered Office",
+            "Section 12",
+            "Time Limit"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-2_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-2_01",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-2",
+          "subject": "Law",
+          "prompt": "With five subscribers, does 'TechInnovate Solutions Private Limited' satisfy the minimum subscriber requirement for a private company?",
+          "options": [
+            "No, a private company requires at least seven subscribers",
+            "Yes, a private company requires a minimum of two subscribers, and five is compliant",
+            "No, it must have exactly ten subscribers",
+            "Yes, but only if all subscribers are corporate bodies"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 3 of the Companies Act, 2013, a private company requires a minimum of two persons to form it. Having five subscribers fully satisfies this legal requirement.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Private Company",
+            "Subscribers",
+            "Section 3"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-2_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-2_01",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-2",
+          "subject": "Law",
+          "prompt": "What is the legal nature of the Memorandum and Articles prepared by Rohan once the company is successfully incorporated?",
+          "options": [
+            "They are bilateral agreements between Rohan and the Registrar",
+            "They constitute a contract between the company and its members as per Section 10",
+            "They are internal guidelines that do not bind the members",
+            "They have no legal force until approved by NCLT"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 10, once registered, the MoA and AoA bind the company and its members to the same extent as if they had been signed by each member, establishing a statutory contract.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 10",
+            "Binding Nature",
+            "MoA and AoA"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-2_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-2_01",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-2",
+          "subject": "Law",
+          "prompt": "If Rohan had instead decided to form a One Person Company (OPC) for the same business, what would have been the mandatory requirement regarding a nominee?",
+          "options": [
+            "No nominee is required for software businesses",
+            "A nominee must be appointed whose prior written consent is filed with the Registrar at incorporation",
+            "A nominee must be a public financial institution",
+            "The nominee must hold 51% of the shares"
+          ],
+          "answerIndex": 1,
+          "explanation": "For an OPC, Rule 3 requires the memorandum to indicate the name of a nominee who shall become the member in case of death or incapacity, and their prior written consent must be filed at incorporation.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "One Person Company",
+            "Nominee",
+            "Rule 3"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-2_02",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "passage": "A group of six philanthropic individuals intend to incorporate a company under Section 8 of the Companies Act, 2013, named 'GreenEarth Foundation', with the object of promoting environmental awareness and wildlife conservation. They intend to apply all their profits towards promoting their objects and prohibit the payment of any dividend to their members. They submit their application for a license to the Central Government / Registrar.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-2_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-2_02",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-2",
+          "subject": "Law",
+          "prompt": "Is 'GreenEarth Foundation' eligible for a Section 8 license with six initial subscribers?",
+          "options": [
+            "No, Section 8 requires a minimum of 50 subscribers",
+            "Yes, Section 8 companies can be formed by individuals or associations for charitable objects without any special high subscriber minimums beyond standard private/public rules",
+            "No, charitable companies must be registered as public companies with at least 7 subscribers",
+            "Yes, but they must have a minimum capital of 50 lakhs"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 8 allows persons or associations of persons to form a company for charitable objects with restricted profit distribution. They can be registered as private or public companies complying with basic member requirements.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 8 Company",
+            "Charitable Objects",
+            "Formation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-2_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-2_02",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-2",
+          "subject": "Law",
+          "prompt": "Can 'GreenEarth Foundation' alter the objects clause in its Memorandum of Association after incorporation?",
+          "options": [
+            "No, Section 8 company objects can never be altered",
+            "Yes, but only with the previous approval of the Central Government and via special resolution",
+            "Yes, by passing a simple board resolution",
+            "Yes, by notifying the local municipal authority"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 8(4) stipulates that a Section 8 company cannot alter the provisions of its memorandum or articles except with the previous approval of the Central Government.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 8 Company",
+            "Alteration of Memorandum",
+            "Central Government Approval"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-2_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-2_02",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-2",
+          "subject": "Law",
+          "prompt": "What happens to the restriction on payment of dividends for members of 'GreenEarth Foundation'?",
+          "options": [
+            "Dividends can be paid up to 10% per annum",
+            "Dividends are strictly prohibited, and profits must be applied solely to the promotion of its objects",
+            "Dividends can be distributed if approved by ordinary resolution",
+            "Dividends are permitted only after 5 years of operation"
+          ],
+          "answerIndex": 1,
+          "explanation": "A Section 8 company is prohibited from paying any dividend to its members; its profits and income must be applied solely for the promotion of the objects for which it is established.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 8 Company",
+            "Prohibition of Dividend",
+            "Charitable Purpose"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-2_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-2_02",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-2",
+          "subject": "Law",
+          "prompt": "If at any time the Central Government revokes the Section 8 license of 'GreenEarth Foundation' due to violation of conditions, what action can the Government take?",
+          "options": [
+            "Only impose a monetary penalty on the founders",
+            "Direct the company to wind up or amalgamate with another Section 8 company having similar objects",
+            "Automatically convert the company into an unlimited partnership",
+            "Dissolve the company and forfeit all its assets to the promoters"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 8(6), upon revocation of the license, the Central Government may order the company to be wound up, or amalgamated with another Section 8 company, after giving an opportunity of being heard.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 8 Company",
+            "Revocation of License",
+            "Winding Up / Amalgamation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-2_03",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "passage": "Apex Infrastructure Limited is an existing public company incorporated under the Companies Act, 2013. The Board of Directors wishes to alter the Articles of Association to include restrictive clauses on share transfers and wants to convert the company into Apex Infrastructure Private Limited. The company has 80 members on its register. The management calls an extraordinary general meeting to pass the necessary resolutions.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-2_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-2_03",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-2",
+          "subject": "Law",
+          "prompt": "What type of resolution is required for altering the Articles of Association under Section 14 of the Companies Act, 2013?",
+          "options": [
+            "Ordinary Resolution",
+            "Special Resolution",
+            "Unanimous Board Resolution",
+            "Resolution requiring 100% consent"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 14 of the Companies Act, 2013 explicitly states that a company may alter its articles by passing a special resolution.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Articles of Association",
+            "Alteration",
+            "Section 14"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-2_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-2_03",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-2",
+          "subject": "Law",
+          "prompt": "To convert Apex Infrastructure Limited into a private company, whose approval is mandatory under the Companies Act, 2013?",
+          "options": [
+            "Securities and Exchange Board of India (SEBI)",
+            "Central Government (Regional Director / Tribunal)",
+            "Reserve Bank of India",
+            "Registrar of Companies only via e-form without sanction"
+          ],
+          "answerIndex": 1,
+          "explanation": "Conversion of a public company into a private company requires the sanction/approval of the Central Government (powers delegated to Regional Director/Tribunal) in accordance with Section 13 and 18 read with rules.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Conversion of Company",
+            "Public to Private",
+            "Central Government Approval"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-2_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-2_03",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-2",
+          "subject": "Law",
+          "prompt": "Does the number of members (80 members) comply with the maximum limit prescribed for a private company under the Companies Act, 2013?",
+          "options": [
+            "No, the maximum limit for a private company is 50 members",
+            "Yes, the maximum limit for a private company is 200 members",
+            "No, private companies cannot have more than 20 members",
+            "Yes, because public companies converting to private have no member limits"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 2(68) defines a private company as one which has a minimum of 2 members and restricts the maximum number of its members to 200 (excluding employee-members and past employee-members). 80 members is well within this limit.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Private Company Definition",
+            "Maximum Members",
+            "Section 2(68)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-2_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-2_03",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-2",
+          "subject": "Law",
+          "prompt": "If a dissenting minority shareholder challenges the conversion in court, what is the primary consideration the Tribunal evaluates?",
+          "options": [
+            "Whether the conversion prejudices the interests of shareholders or creditors",
+            "Whether the company has paid dividends for the last 10 years",
+            "Whether the company's registered office is in a metropolitan city",
+            "Whether the promoters are Indian citizens"
+          ],
+          "answerIndex": 0,
+          "explanation": "When evaluating conversion of a public company to a private company, the Tribunal/Central Government ensures that adequate provision is made for safeguarding the interests of creditors and dissenting shareholders.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Conversion Sanction",
+            "Shareholder Interests",
+            "Tribunal Powers"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-2_04",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "passage": "Mr. Vikram starts a trading business and promotes 'Vikram Agro-Products Private Limited'. During the promoter stage, before obtaining the Certificate of Incorporation, Vikram enters into a lease agreement on behalf of the prospective company with a landlord for a warehouse. After the company is incorporated, the board of directors continues to use the warehouse and pays rent, but never formally executes a new contract or novates the old agreement.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-2_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-2_04",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-2",
+          "subject": "Law",
+          "prompt": "What is the legal status of the lease agreement entered into by Vikram prior to incorporation?",
+          "options": [
+            "It is automatically binding on the company from day one",
+            "It is a pre-incorporation contract which is not automatically binding on the company unless adopted/novated",
+            "It is completely illegal and void under criminal law",
+            "It binds the landlord personally with no recourse"
+          ],
+          "answerIndex": 1,
+          "explanation": "Pre-incorporation contracts entered into by promoters on behalf of a yet-to-be-formed company are not automatically binding on the company upon incorporation unless the company adopts the contract or enters into a fresh novation.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Pre-incorporation Contracts",
+            "Promoter Liability",
+            "Adoption"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-2_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-2_04",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-2",
+          "subject": "Law",
+          "prompt": "Can the company adopt or ratify the pre-incorporation contract expressly after its incorporation?",
+          "options": [
+            "Yes, by adopting it or entering into a new contract on the same terms (novation)",
+            "No, a company can never adopt a pre-incorporation contract under any circumstance",
+            "Yes, automatically after 6 months of use",
+            "Only if approved by the National Company Law Tribunal"
+          ],
+          "answerIndex": 0,
+          "explanation": "While ratification in the strict agency sense is not possible because the principal (company) did not exist when the contract was made, the company can become bound by entering into a new contract (novation) or specific adoption.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Pre-incorporation Contracts",
+            "Novation",
+            "Adoption"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-2_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-2_04",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-2",
+          "subject": "Law",
+          "prompt": "What position do Vikram and the other promoters hold in relation to the prospective company during the promotion phase?",
+          "options": [
+            "They are mere employees with no fiduciary duties",
+            "They stand in a fiduciary relationship towards the company",
+            "They are statutory directors automatically",
+            "They act as legal guardians of the company"
+          ],
+          "answerIndex": 1,
+          "explanation": "Promoters stand in a fiduciary (position of trust) relationship with the company they promote, meaning they must not make secret profits and must act in good faith.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Promoters",
+            "Fiduciary Duties",
+            "Incorporation Stage"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-2_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-2_04",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-2",
+          "subject": "Law",
+          "prompt": "If Vikram had made a secret profit from the lease transaction without disclosing it to the subscribers, what remedy is available to the company?",
+          "options": [
+            "The company can recover the secret profit or rescind the transaction",
+            "The company must reward Vikram with additional shares",
+            "The contract becomes voidable only at the option of the landlord",
+            "No remedy, as promoters are immune from profits"
+          ],
+          "answerIndex": 0,
+          "explanation": "If a promoter makes a secret profit in a transaction on behalf of the company, the company can compel the promoter to disgorge the secret profit or rescind the transaction for breach of fiduciary duty.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Secret Profits",
+            "Promoter Liability",
+            "Fiduciary Duty"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-2_05",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-2",
+      "subject": "Law",
+      "passage": "Zenith Global Limited is incorporated with an authorized share capital of 50 lakhs divided into equity shares. The Certificate of Incorporation is issued by the Registrar of Companies on 1st October. The directors are eager to commence business operations and issue a large supply order on 10th October without filing the statutory declaration required under Section 10A of the Companies Act, 2013.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Incorporation of Company and Matters Incidental Thereto"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-2_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-2_05",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-2",
+          "subject": "Law",
+          "prompt": "Is Zenith Global Limited legally permitted to commence business operations or exercise borrowing powers on 10th October?",
+          "options": [
+            "Yes, because incorporation gives immediate commencement rights",
+            "No, a company having share capital cannot commence business without filing the Section 10A declaration regarding subscription money",
+            "Yes, if the board passes an ordinary resolution",
+            "No, unless approved by SEBI"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 10A explicitly prohibits a company having a share capital from commencing business or exercising borrowing powers unless a director files a declaration verifying that every subscriber has paid the value of shares.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 10A",
+            "Commencement of Business",
+            "Subscription Money"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-2_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-2_05",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-2",
+          "subject": "Law",
+          "prompt": "Within what maximum time frame from the date of incorporation must the Section 10A declaration be filed by a director?",
+          "options": [
+            "30 days",
+            "60 days",
+            "180 days",
+            "365 days"
+          ],
+          "answerIndex": 2,
+          "explanation": "Section 10A(1)(a) requires that the declaration by a director must be filed with the Registrar within a period of 180 days of the date of incorporation of the company.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 10A",
+            "Time Limit",
+            "Declaration filing"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-2_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-2_05",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-2",
+          "subject": "Law",
+          "prompt": "What are the penal consequences for the company and defaulting officers if business is commenced in violation of Section 10A?",
+          "options": [
+            "Only a warning letter from the ROC",
+            "Penalty of fifty thousand rupees for the company and one thousand rupees per day for defaulting officers, plus potential removal of name",
+            "Immediate imprisonment of all shareholders for 7 years",
+            "Mandatory dissolution by High Court order only"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 10A prescribes a penalty of fifty thousand rupees for the company and one thousand rupees for each day during which the default continues for every officer in default, along with Registrar action for striking off if no business is commenced.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 10A Penalties",
+            "Default Consequences",
+            "Officer Liability"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-2_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-2_05",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-2",
+          "subject": "Law",
+          "prompt": "From which date does Zenith Global Limited acquire its corporate personality and perpetual succession?",
+          "options": [
+            "From the date of filing the SPICe+ form",
+            "From the date mentioned in the Certificate of Incorporation",
+            "From the date of the first board meeting",
+            "From the date Section 10A declaration is filed"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 9, from the date of incorporation mentioned in the Certificate of Incorporation issued by the Registrar, the subscribers become a body corporate with perpetual succession.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 9",
+            "Certificate of Incorporation",
+            "Corporate Personality"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

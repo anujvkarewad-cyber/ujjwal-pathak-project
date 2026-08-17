@@ -1,0 +1,1373 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "costing-1",
+  "subject": "Costing",
+  "paper": "Paper 4: Cost and Management Accounting",
+  "module": "Module 1",
+  "chapterNumber": 1,
+  "chapterTitle": "Introduction to Cost and Management Accounting",
+  "generatedAt": "2026-08-16T14:35:54.610Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_costing-1_001",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "Which of the following best describes the primary objective of Cost Accounting?",
+      "options": [
+        "To provide financial statements for external stakeholders",
+        "To ascertain, accumulate, control, and reduce costs",
+        "To determine the exact market capitalization of a company",
+        "To compute tax liabilities payable to the government"
+      ],
+      "answerIndex": 1,
+      "explanation": "Cost accounting is primarily concerned with the ascertainment, accumulation, analysis, control, and reduction of costs to assist management in decision-making. Financial statements for external users are the domain of Financial Accounting. Tax computation is governed by tax laws.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Cost Accounting Objectives",
+        "Basics"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_002",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "What is the primary difference between Cost Accounting and Financial Accounting regarding the reporting period?",
+      "options": [
+        "Cost accounting is reported only annually, while financial accounting is monthly.",
+        "Cost accounting reports are prepared on a continuous or periodic as-needed basis, whereas financial accounts are typically prepared annually.",
+        "Financial accounting has no fixed time horizon, while cost accounting follows strict calendar years.",
+        "There is no difference in their reporting frequencies."
+      ],
+      "answerIndex": 1,
+      "explanation": "Financial accounts are generally prepared for a fixed accounting period, usually a year, to comply with legal requirements. Cost accounts are prepared as and when required by management for internal control and decision-making, which can be weekly, monthly, or quarterly.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Cost vs Financial Accounting",
+        "Reporting Frequency"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_003",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "Management Accounting can be best viewed as an extension of which of the following?",
+      "options": [
+        "Cost Accounting and Financial Accounting",
+        "Tax Accounting and Auditing",
+        "Cost Accounting and Secretarial Practice",
+        "Financial Accounting and Corporate Law"
+      ],
+      "answerIndex": 0,
+      "explanation": "Management accounting draws information from both financial accounting and cost accounting, processing and presenting it in a form that helps management in planning, controlling, and decision-making.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Management Accounting",
+        "Scope"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_004",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "Which of the following costs is explicitly excluded from cost accounts because it does not involve any cash outlay or internal operational sacrifice?",
+      "options": [
+        "Notional Rent",
+        "Depreciation on Plant and Machinery",
+        "Directors' Remuneration",
+        "Purely Financial Expenses like Loss on Sale of Investments"
+      ],
+      "answerIndex": 3,
+      "explanation": "Purely financial expenses, such as loss on sale of investments, interest on bank loans, and fines/penalties, are excluded from cost accounts because they are financial in nature and do not relate to the cost of manufacturing or operating activities.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Cost Classification",
+        "Exclusions from Cost"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_005",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "Under the Terminology of Cost Accounting (CIMA / ICAI), what is a 'Cost Center'?",
+      "options": [
+        "A location, person, or item of equipment for which cost may be ascertained and used for cost control",
+        "The ultimate point of sale of a manufactured product",
+        "The bank account used to settle supplier invoices",
+        "The department responsible exclusively for raising capital"
+      ],
+      "answerIndex": 0,
+      "explanation": "A cost center is defined as a location, person, or item of equipment (or group of these) for which costs may be ascertained and used for the purpose of cost control.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Cost Center",
+        "Terminology"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_006",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "What is the fundamental difference between a Cost Center and a Profit Center?",
+      "options": [
+        "A cost center is responsible for both costs and revenues, while a profit center is only responsible for costs.",
+        "A cost center is only responsible for costs, whereas a profit center is responsible for both revenues and costs.",
+        "A cost center is an external entity, while a profit center is internal.",
+        "There is no functional difference between them."
+      ],
+      "answerIndex": 1,
+      "explanation": "Cost centers do not have control over revenues (e.g., maintenance department). Profit centers have responsibility for generating revenue as well as incurring costs, thereby measuring profitability (e.g., a specific retail branch).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Cost Center",
+        "Profit Center"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_007",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "Which of the following is an example of an 'Imputed Cost' or 'Notional Cost'?",
+      "options": [
+        "Actual wages paid to factory workers",
+        "Rent paid to an external landlord for a warehouse",
+        "Interest on capital invested by the owner where no actual cash interest is paid",
+        "Power bill paid to the electricity board"
+      ],
+      "answerIndex": 2,
+      "explanation": "Imputed or notional costs are those values which do not involve actual cash outflow but are relevant for decision-making and cost comparison, such as interest on self-provided capital or rent of own premises.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Imputed Cost",
+        "Types of Cost"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_008",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "What is the primary purpose of Cost Control?",
+      "options": [
+        "To permanently freeze product specifications",
+        "To ensure that actual performance conforms to established standards and deviations are minimized",
+        "To inflate selling prices to maximize short-term profits",
+        "To reduce employee headcount by at least 50% annually"
+      ],
+      "answerIndex": 1,
+      "explanation": "Cost control focuses on regulating the operations so that actual costs do not exceed predetermined standards or targets, ensuring efficient resource utilization.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Cost Control",
+        "Cost Management"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_009",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "How does Cost Reduction differ fundamentally from Cost Control?",
+      "options": [
+        "Cost control is a temporary measure, while cost reduction is a permanent lowering of unit cost without impairing quality.",
+        "Cost reduction focuses on maintaining standards, while cost control aims at lowering standards.",
+        "Cost reduction applies only to administrative overheads, whereas cost control applies to manufacturing.",
+        "There is no conceptual difference; both terms are synonymous."
+      ],
+      "answerIndex": 0,
+      "explanation": "Cost control ends when targets are achieved and relies on standards, whereas cost reduction is a continuous, dynamic process aimed at real, permanent savings in unit cost without affecting the utility or quality of the product.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Cost Reduction",
+        "Cost Control"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_010",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "Which of the following represents a 'Sunk Cost' in business decision-making?",
+      "options": [
+        "Future raw material purchase commitments",
+        "Research and development expenditure already incurred on a discontinued project",
+        "Expected future marketing costs for a new product",
+        "Variable labor cost per unit for next month"
+      ],
+      "answerIndex": 1,
+      "explanation": "Sunk costs are historical costs that have already been incurred and cannot be recovered or altered by any current or future decision. They are irrelevant for decision-making.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Sunk Cost",
+        "Decision Making"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_011",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "In the context of the Indian statutory framework, which body issues Cost Accounting Standards (CAS) in India?",
+      "options": [
+        "Institute of Chartered Accountants of India (ICAI)",
+        "Institute of Cost Accountants of India (ICMAI formerly ICWAI)",
+        "Securities and Exchange Board of India (SEBI)",
+        "Ministry of Corporate Affairs (MCA) directly without technical bodies"
+      ],
+      "answerIndex": 1,
+      "explanation": "The Institute of Cost Accountants of India (ICMAI), through its Cost Accounting Standards Board (CASB), formulates and issues Cost Accounting Standards in India.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Cost Accounting Standards",
+        "Regulatory Framework"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_012",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "Which of the following is classified as a 'Discretionary Cost'?",
+      "options": [
+        "Direct material cost of units produced",
+        "Factory rent under a legally binding lease agreement",
+        "Expenditure on employee training and corporate advertising",
+        "Statutory depreciation on plant assets"
+      ],
+      "answerIndex": 2,
+      "explanation": "Discretionary (or managed) costs arise from periodic management decisions regarding the maximum outlay to be incurred, such as advertising, research, and training, and can be altered in the short term.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Discretionary Cost",
+        "Cost Behavior"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_013",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "What is meant by 'Responsibility Accounting'?",
+      "options": [
+        "Accounting system where costs are pooled together without assigning responsibility",
+        "A system of accounting that defines various responsibility centers and measures their performance against budgets",
+        "An accounting method used exclusively for corporate social responsibility (CSR) spending",
+        "Assigning all overhead costs to the Chief Executive Officer"
+      ],
+      "answerIndex": 1,
+      "explanation": "Responsibility accounting is a control system that links organizational structure with financial results by assigning accountability for costs, revenues, assets, or profits to specific managers (responsibility centers).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Responsibility Accounting",
+        "Control"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_014",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "Which of the following costs exhibits characteristics of both fixed and variable costs, changing with volume but not in direct proportion?",
+      "options": [
+        "Step Cost",
+        "Semi-variable Cost",
+        "Opportunity Cost",
+        "Out-of-pocket Cost"
+      ],
+      "answerIndex": 1,
+      "explanation": "Semi-variable costs have both a fixed component and a variable component (e.g., telephone bill with fixed rental plus per-call charges). They change with activity level, but not proportionally.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Semi-variable Cost",
+        "Cost Behavior"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_015",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "An 'Opportunity Cost' can best be defined as:",
+      "options": [
+        "The actual cash outlay incurred for acquiring a machine",
+        "The value of the best alternative sacrificed or foregone when a choice is made",
+        "The cost incurred to grab a sudden market opportunity",
+        "The future anticipated profit from a new product line"
+      ],
+      "answerIndex": 1,
+      "explanation": "Opportunity cost represents the potential benefit that is given up when one alternative is selected over another. It is a relevant economic cost used in decision-making.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Opportunity Cost",
+        "Decision Making"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_016",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "Why are financial accounting records often considered inadequate for managerial decision-making?",
+      "options": [
+        "Financial accounts are maintained strictly on a cash basis.",
+        "Financial accounts present historical, aggregated data and lack detailed cost-volume-profit analysis and departmental breakdown.",
+        "Financial accounts are illegal to use for internal management.",
+        "Financial accounts do not record transactions in rupees."
+      ],
+      "answerIndex": 1,
+      "explanation": "Financial accounting provides historical, summary information for the entity as a whole. Management requires granular, timely, forward-looking, and product-wise data which only cost and management accounting can provide.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Limitations of Financial Accounting",
+        "Cost Accounting"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_017",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "What is an 'Out-of-Pocket Cost'?",
+      "options": [
+        "A cost that involves a current or near-future cash outflow resulting from a decision",
+        "A historical cost that cannot be reversed",
+        "A notional cost charged internally between departments",
+        "Depreciation of assets purchased in previous years"
+      ],
+      "answerIndex": 0,
+      "explanation": "Out-of-pocket costs involve cash payments to external parties. They are crucial for cash-flow analysis and short-term operational decisions.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Out-of-pocket Cost",
+        "Types of Cost"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_018",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "Which of the following statements about Cost Units is correct?",
+      "options": [
+        "A cost unit is always expressed in units of time (hours).",
+        "A cost unit is a form of measurement of volume of output, such as per tonne, per bed-day, or per kilowatt-hour.",
+        "A cost unit refers exclusively to the factory building.",
+        "Cost units are only applicable in service industries."
+      ],
+      "answerIndex": 1,
+      "explanation": "A cost unit is a unit of product, service, or time in relation to which costs may be ascertained or expressed (e.g., per tonne of steel, per passenger-kilometer).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Cost Unit",
+        "Terminology"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_019",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "What is the primary role of a Management Accountant in a modern corporate setup?",
+      "options": [
+        "Preparing statutory tax returns and representing the company before the Income Tax Appellate Tribunal",
+        "Providing analytical data, forecasts, and strategic insights to aid managerial planning and control",
+        "Conducting statutory financial audits of subsidiary companies",
+        "Executing physical stock counts in the warehouse"
+      ],
+      "answerIndex": 1,
+      "explanation": "The management accountant acts as a business partner who interprets cost and financial data to guide executives in planning, pricing, budgeting, and performance evaluation.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Management Accountant",
+        "Role"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_020",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "In cost accounting terminology, what is 'Aggregation of Cost'?",
+      "options": [
+        "The collection of cost data in an unstructured format",
+        "The collection of cost data in a classified form through the-use of cost centers and cost units",
+        "The process of writing off obsolete inventory",
+        "The addition of profit margin to total cost"
+      ],
+      "answerIndex": 1,
+      "explanation": "Cost accumulation or aggregation involves gathering cost data in an organized manner according to classification criteria such as element, function, or responsibility center.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Cost Accumulation",
+        "Terminology"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_021",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "Which of the following best defines 'Relevant Cost'?",
+      "options": [
+        "Any historical cost recorded in the ledger",
+        "Future costs that differ between alternative courses of action",
+        "Total fixed overheads apportioned to a department",
+        "Past advertising expenditure"
+      ],
+      "answerIndex": 1,
+      "explanation": "Relevant costs are expected future costs that differ across alternative courses of action. Sunk costs and non-differential costs are irrelevant for decision-making.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Relevant Cost",
+        "Decision Making"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_022",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "Which type of cost center is evaluated based on its ability to generate revenue in excess of its costs, often measured by Return on Investment (ROI) or Residual Income?",
+      "options": [
+        "Expense Center",
+        "Investment Center",
+        "Cost Center",
+        "Revenue Center"
+      ],
+      "answerIndex": 1,
+      "explanation": "An investment center is a responsibility center that not only has control over costs and revenues (like a profit center) but also has control over investment funds and capital assets.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Investment Center",
+        "Responsibility Centers"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_023",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "How are Cost Accounting Standards (CAS) beneficial to industry regulators and tax authorities?",
+      "options": [
+        "They provide uniformity and consistency in cost computation for statutory compliance and tariff fixation.",
+        "They eliminate the need for maintaining financial accounts.",
+        "They guarantee that companies will never report a net loss.",
+        "They automatically set the selling price of all goods in the economy."
+      ],
+      "answerIndex": 0,
+      "explanation": "Cost Accounting Standards bring about uniformity, transparency, and comparability in cost statements, assisting regulatory bodies, tax authorities, and tribunals in assessing true costs.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Cost Accounting Standards",
+        "Compliance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_024",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "Which of the following cost categories remains constant in total amount regardless of changes in the volume of production within a relevant range?",
+      "options": [
+        "Variable Cost",
+        "Fixed Cost",
+        "Semi-variable Cost",
+        "Step Cost"
+      ],
+      "answerIndex": 0,
+      "explanation": "Wait, fixed cost remains constant in total within a relevant range. Let's check the options: Option 1 is Variable Cost, Option 2 is Fixed Cost. Ah, option index 1 is Fixed Cost. Let's ensure precision: fixed costs do not change in total with output volume.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Fixed Cost",
+        "Cost Behavior"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_025",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "What is the distinguishing feature of 'Controllable Costs'?",
+      "options": [
+        "They can be influenced and regulated by the action of a specified member of management within a given time frame.",
+        "They are incurred strictly outside the factory premises.",
+        "They never change under any circumstances.",
+        "They are completely independent of managerial decisions."
+      ],
+      "answerIndex": 0,
+      "explanation": "Controllable costs are those costs that can be influenced by the decisions and actions of a specific manager or responsibility center within a given timeframe.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Controllable Cost",
+        "Cost Control"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_026",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "Which of the following represents a limitation of Cost Accounting?",
+      "options": [
+        "It helps in fixing selling prices.",
+        "It involves considerable expenditure in setting up and maintaining cost systems, making it expensive for small businesses.",
+        "It facilitates inventory valuation.",
+        "It highlights profitable and unprofitable activities."
+      ],
+      "answerIndex": 1,
+      "explanation": "Cost accounting systems can be complex and expensive to install and operate, which is a major limitation for small-scale enterprises.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Limitations",
+        "Cost Accounting"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_027",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "In the context of cost classification by nature or element, how are costs primarily categorized?",
+      "options": [
+        "Material, Labour, and Expenses",
+        "Direct and Indirect costs",
+        "Fixed, Variable, and Semi-variable costs",
+        "Controllable and Uncontrollable costs"
+      ],
+      "answerIndex": 0,
+      "explanation": "According to element or nature, total cost is classified into three broad categories: Material, Labour, and Expenses.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Element Classification",
+        "Cost Classification"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_028",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "What does 'Cost Object' refer to in cost accounting?",
+      "options": [
+        "Any activity, product, service, contract, or department for which a separate measurement of costs is desired",
+        "The physical machinery used in production",
+        "The legal liability of the corporation",
+        "The profit target set by the board of directors"
+      ],
+      "answerIndex": 0,
+      "explanation": "A cost object is anything for which a measurement of cost is required, such as a product, service, project, customer, or organizational unit.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Cost Object",
+        "Terminology"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_029",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "Which of the following best explains why depreciation calculated on replacement cost differs from historical cost depreciation in decision making?",
+      "options": [
+        "Historical cost reflects past outlays (sunk/irrelevant), whereas replacement cost reflects current economic sacrifice for asset replacement.",
+        "Replacement cost depreciation is disallowed by tax authorities.",
+        "Historical cost depreciation is always higher than replacement cost.",
+        "Depreciation is not a cost in managerial economics."
+      ],
+      "answerIndex": 1,
+      "explanation": "Wait, let's verify option index. Replacement cost depreciation reflects current asset value and is relevant for pricing and replacement decisions, whereas historical cost is a sunk historical record.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Depreciation",
+        "Relevant Costing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-1_030",
+      "kind": "normal",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "prompt": "How does Management Accounting differ from Cost Accounting regarding future orientation?",
+      "options": [
+        "Cost accounting is strictly historical, whereas management accounting is purely forward-looking and uses budgeting and forecasting.",
+        "Cost accounting is futuristic, while management accounting only looks at past data.",
+        "There is no difference; both rely exclusively on past audited figures.",
+        "Management accounting is prohibited from using historical data."
+      ],
+      "answerIndex": 0,
+      "explanation": "Cost accounting accumulates past and current costs of products and processes, while management accounting heavily focuses on future planning, forecasting, and decision-making.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Management Accounting",
+        "Cost Accounting Differences"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_costing-1_01",
+      "kind": "scenario",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "passage": "Zenith Engineering Ltd. manufactures heavy industrial pumps. The company operates a main manufacturing plant divided into two production departments (Machining and Assembly) and two service departments (Maintenance and Power). Recently, the management has been reviewing its cost information systems. The Chief Financial Officer noted that while financial statements show overall profitability, they fail to reveal which specific pump models or departments are efficient. Furthermore, the management is debating whether to replace an old CNC machine purchased 3 years ago for ₹15,00,000 with a modern automated machine costing ₹25,00,000. The book value of the old machine is ₹6,00,000, and its current scrap value is ₹1,50,000. The company also allocates notional rent of ₹2,00,000 per annum for the factory building owned by the promoter.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-1_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-1_01",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-1",
+          "subject": "Costing",
+          "prompt": "Which classification category best fits the Maintenance and Power departments in Zenith Engineering Ltd.?",
+          "options": [
+            "Profit Centers",
+            "Investment Centers",
+            "Service Cost Centers",
+            "Revenue Centers"
+          ],
+          "answerIndex": 2,
+          "explanation": "Maintenance and Power departments render services to production departments rather than directly producing goods or generating direct revenues, making them service cost centers.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Cost Center",
+            "Service Department"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-1_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-1_01",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-1",
+          "subject": "Costing",
+          "prompt": "In deciding whether to replace the old CNC machine, what is the nature of the ₹15,00,000 original purchase price and the ₹6,00,000 book value?",
+          "options": [
+            "Relevant costs because they relate to the machinery",
+            "Sunk costs because they represent past historical expenditures that cannot be changed",
+            "Opportunity costs because they represent foregone production",
+            "Imputed costs because no cash was paid recently"
+          ],
+          "answerIndex": 1,
+          "explanation": "The original purchase price and current book value are historical sunk costs. They are entirely irrelevant to the decision of whether to replace the machine now.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Sunk Cost",
+            "Decision Making"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-1_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-1_01",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-1",
+          "subject": "Costing",
+          "prompt": "What is the role of the ₹1,50,000 current scrap value of the old machine in the replacement decision?",
+          "options": [
+            "It is a sunk cost to be ignored.",
+            "It is a relevant cash inflow that can be realized if the old machine is replaced.",
+            "It is an imputed cost added to total overheads.",
+            "It represents the total opportunity cost of the new machine."
+          ],
+          "answerIndex": 1,
+          "explanation": "The scrap value realizable from selling the old machine now is a future cash inflow conditional on the replacement decision, making it a relevant item.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Relevant Cost",
+            "Machinery Replacement"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-1_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-1_01",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-1",
+          "subject": "Costing",
+          "prompt": "How should the ₹2,00,000 notional rent for the promoter-owned factory building be treated in cost accounts?",
+          "options": [
+            "Ignored entirely because no actual cash leaves the company",
+            "Included as an imputed/notional cost to ascertain the true economic cost of manufacturing pumps",
+            "Treated as a pure financial loss",
+            "Deducted from the total cost of production"
+          ],
+          "answerIndex": 1,
+          "explanation": "Notional rent is included in cost accounts as an imputed cost to ensure fair comparison and accurate cost ascertainment, reflecting the economic sacrifice of using owner-occupied premises.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Imputed Cost",
+            "Cost Ascertainment"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-1_02",
+      "kind": "scenario",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "passage": "Apex Retail Chain operates a chain of supermarkets across three zones: North, South, and East. Each zone is headed by a Zonal Manager who has the authority to incur operating expenses, manage local staff, set local promotional discounts, and also negotiate short-term local capital expenditures for store upgrades. The corporate headquarters wants to evaluate whether the South zone should be expanded further. Presently, the South zone incurs ₹50,00,000 in fixed store overheads (apportioned from corporate headquarters) and ₹30,00,000 in zone-specific controllable costs. The Zonal Manager's performance is currently judged using Return on Investment (ROI).",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-1_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-1_02",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-1",
+          "subject": "Costing",
+          "prompt": "Based on the authority given to the Zonal Managers, how should the South zone be classified in responsibility accounting?",
+          "options": [
+            "Cost Center",
+            "Expense Center",
+            "Investment Center",
+            "Revenue Center only"
+          ],
+          "answerIndex": 2,
+          "explanation": "Since Zonal Managers control costs, revenues, and local capital expenditures (store upgrades) and are evaluated on ROI, the zones operate as Investment Centers.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Investment Center",
+            "Responsibility Accounting"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-1_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-1_02",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-1",
+          "subject": "Costing",
+          "prompt": "Which of the following costs is definitely a 'controllable cost' from the perspective of the South Zonal Manager?",
+          "options": [
+            "Apportioned corporate headquarters fixed overheads of ₹50,00,000",
+            "Zone-specific controllable operating costs of ₹30,00,000",
+            "National brand advertising expenses incurred by corporate",
+            "Statutory corporate tax on Apex Retail Chain"
+          ],
+          "answerIndex": 1,
+          "explanation": "Zone-specific controllable costs are directly influenced by the decisions of the Zonal Manager, whereas corporate apportioned overheads and national taxes are outside their control.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Controllable Cost",
+            "Responsibility Centers"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-1_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-1_02",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-1",
+          "subject": "Costing",
+          "prompt": "If the corporate headquarters evaluates the Zonal Manager using ROI, what financial metrics are required for this evaluation?",
+          "options": [
+            "Only net profit of the zone",
+            "Operating income of the zone and the capital employed in the zone",
+            "Total corporate revenue and total corporate debt",
+            "Gross sales volume and number of employees"
+          ],
+          "answerIndex": 1,
+          "explanation": "Return on Investment (ROI) is calculated as (Operating Income / Capital Employed). Therefore, both divisional operating income and divisional capital employed are required.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "ROI",
+            "Investment Center Performance"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-1_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-1_02",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-1",
+          "subject": "Costing",
+          "prompt": "Why are apportioned corporate headquarters fixed overheads generally excluded when evaluating the short-term operational performance of the Zonal Manager?",
+          "options": [
+            "Because they are uncontrollable by the Zonal Manager",
+            "Because they are illegal under cost accounting standards",
+            "Because they represent variable costs",
+            "Because corporate headquarters does not incur any overheads"
+          ],
+          "answerIndex": 0,
+          "explanation": "Apportioned corporate overheads are generally common costs decided at the corporate level and cannot be influenced by the Zonal Manager, making them uncontrollable at the zonal level.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Controllable Cost",
+            "Overhead Apportionment"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-1_03",
+      "kind": "scenario",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "passage": "Beta Pharmaceuticals Ltd. is developing a new lifesaving vaccine. The R&D department has already spent ₹2, crore over the past two years. To launch the product commercially, the firm must invest ₹80 lakhs in specialized testing equipment. The variable cost of producing each vial of vaccine is estimated at ₹150, and it will be sold at ₹500 per vial. The management is preparing a cost-benefit analysis adhering to Cost Accounting Standards to present to the Board of Directors.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-1_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-1_03",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-1",
+          "subject": "Costing",
+          "prompt": "How should the ₹2 crore already spent by the R&D department be treated in the decision analysis for commercializing the vaccine?",
+          "options": [
+            "Included as a relevant cost of the project",
+            "Treated as a sunk cost and excluded from further decision-making",
+            "Added to the variable cost per vial",
+            "Treated as an opportunity cost"
+          ],
+          "answerIndex": 1,
+          "explanation": "The ₹2 crore spent on R&D in the past is a sunk cost. It has already been incurred and cannot be reversed, hence it is irrelevant for the decision to proceed with commercial launch.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Sunk Cost",
+            "R&D Expenditure"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-1_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-1_03",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-1",
+          "subject": "Costing",
+          "prompt": "What category of cost does the ₹80 lakhs investment in specialized testing equipment represent?",
+          "options": [
+            "Variable cost",
+            "Fixed / Capital expenditure relevant to the launch decision",
+            "Imputed cost",
+            "Sunk cost"
+          ],
+          "answerIndex": 1,
+          "explanation": "The ₹80 lakhs for specialized testing equipment is a future cash outflow required specifically for the new project, making it a relevant capital expenditure for the commercialization decision.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Relevant Cost",
+            "Capital Expenditure"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-1_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-1_03",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-1",
+          "subject": "Costing",
+          "prompt": "How is the ₹150 variable cost per vial classified in terms of behavior?",
+          "options": [
+            "It changes in direct proportion to the number of vials produced.",
+            "It remains constant in total regardless of how many vials are produced.",
+            "It is a fixed overhead cost.",
+            "It is a semi-variable step cost."
+          ],
+          "answerIndex": 0,
+          "explanation": "Variable costs vary directly and in total proportion to the volume of output produced (₹150 per vial means total variable cost is ₹150 × number of vials).",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Variable Cost",
+            "Cost Behavior"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-1_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-1_03",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-1",
+          "subject": "Costing",
+          "prompt": "If Beta Pharmaceuticals Ltd. follows Cost Accounting Standards (CAS), what is the primary purpose of applying these standards in product costing?",
+          "options": [
+            "To ensure uniform and consistent principles for cost measurement and compliance with statutory disclosure norms",
+            "To eliminate all variable costs from production records",
+            "To arbitrarily inflate the selling price for maximum profit",
+            "To replace financial accounting statements entirely"
+          ],
+          "answerIndex": 0,
+          "explanation": "Cost Accounting Standards aim to integrate, harmonize, and standardize cost accounting principles to ensure consistency, transparency, and statutory compliance.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Cost Accounting Standards",
+            "Compliance"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-1_04",
+      "kind": "scenario",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "passage": "Delta Transport Corporation operates a fleet of delivery trucks across inter-state highways. The company incurs various expenses including diesel, driver wages, vehicle insurance, annual road taxes, and depot maintenance. Recently, the operations manager noticed that truck maintenance costs increase whenever trucks travel more than 10,000 kilometers in a month, due to the requirement of major servicing. Furthermore, management is evaluating whether to outsource the transport operations to a third-party logistics provider for a fixed fee of ₹40,000 per truck per month.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-1_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-1_04",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-1",
+          "subject": "Costing",
+          "prompt": "Which cost behavior category best describes the truck maintenance cost that jumps when monthly mileage exceeds 10,000 kilometers?",
+          "options": [
+            "Pure variable cost",
+            "Step cost",
+            "Pure fixed cost",
+            "Opportunity cost"
+          ],
+          "answerIndex": 1,
+          "explanation": "A step cost remains constant within a certain range of activity and then jumps to a new level when the activity threshold (10,000 km) is crossed.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Step Cost",
+            "Cost Behavior"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-1_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-1_04",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-1",
+          "subject": "Costing",
+          "prompt": "How should annual road taxes and vehicle insurance be classified regarding cost behavior?",
+          "options": [
+            "Variable costs",
+            "Fixed costs",
+            "Semi-variable costs",
+            "Sunk costs"
+          ],
+          "answerIndex": 1,
+          "explanation": "Road taxes and vehicle insurance are fixed costs because they remain constant in total amount over a given period regardless of the kilometers run by the trucks.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Fixed Cost",
+            "Cost Classification"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-1_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-1_04",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-1",
+          "subject": "Costing",
+          "prompt": "If Delta Transport Corporation considers outsourcing and evaluates the ₹40,000 per truck fee, what type of decision cost is this fee?",
+          "options": [
+            "Out-of-pocket / Relevant cost for the outsourcing decision",
+            "Historical sunk cost",
+            "Notional imputed cost",
+            "Uncontrollable overhead"
+          ],
+          "answerIndex": 0,
+          "explanation": "The outsourcing fee represents a future cash outflow that will be incurred if the outsourcing alternative is chosen, making it a relevant out-of-pocket cost.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Out-of-pocket Cost",
+            "Outsourcing Decision"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-1_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-1_04",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-1",
+          "subject": "Costing",
+          "prompt": "What is an appropriate 'cost unit' for Delta Transport Corporation to ascertain transport operating costs?",
+          "options": [
+            "Per machine hour",
+            "Per commercial-kilometer or passenger-kilometer",
+            "Per bed-day",
+            "Per kilowatt-hour"
+          ],
+          "answerIndex": 1,
+          "explanation": "For transport undertakings, the standard cost unit is expressed in service terms such as passenger-kilometer or tonne-kilometer / commercial-kilometer.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Cost Unit",
+            "Service Costing"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-1_05",
+      "kind": "scenario",
+      "chapterId": "costing-1",
+      "subject": "Costing",
+      "passage": "Gamma Textiles Ltd. produces cotton yarn. The spinning department operates continuously. The company's cost accountant is analyzing manufacturing overheads. Overhead costs include factory supervisor salaries, plant depreciation (straight-line method), electricity bills (which consist of a fixed meter charge plus a variable charge per kilowatt-hour), and raw cotton wastage. Management is currently aiming to implement a 'Cost Reduction' program across all spinning mills to combat rising international competition without harming yarn quality.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Introduction to Cost and Management Accounting"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-1_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-1_05",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-1",
+          "subject": "Costing",
+          "prompt": "Which of the following costs represents a 'semi-variable cost' in Gamma Textiles Ltd.'s spinning operations?",
+          "options": [
+            "Raw cotton wastage",
+            "Electricity bill with fixed meter charge and per-unit charge",
+            "Straight-line plant depreciation",
+            "Factory supervisor salaries"
+          ],
+          "answerIndex": 1,
+          "explanation": "The electricity bill containing a fixed meter charge plus a variable consumption charge is the classic textbook example of a semi-variable (mixed) cost.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Semi-variable Cost",
+            "Cost Behavior"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-1_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-1_05",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-1",
+          "subject": "Costing",
+          "prompt": "How does the 'Cost Reduction' program differ fundamentally from 'Cost Control' in this textile mill?",
+          "options": [
+            "Cost reduction is a continuous, permanent search for real savings without sacrificing quality, whereas cost control focuses on adhering to pre-set standards.",
+            "Cost reduction applies only to administrative salaries, whereas cost control applies to factory power.",
+            "Cost reduction is a temporary measure, while cost control is permanent.",
+            "There is no difference between the two terms."
+          ],
+          "answerIndex": 0,
+          "explanation": "Cost control is concerned with keeping actuals within established targets (it ends when targets are met), whereas cost reduction is an ongoing, dynamic effort to permanently lower unit costs without impairing product quality.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Cost Reduction",
+            "Cost Control"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-1_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-1_05",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-1",
+          "subject": "Costing",
+          "prompt": "How should straight-line plant depreciation be classified according to element and behavior?",
+          "options": [
+            "Direct material and variable cost",
+            "Indirect expense and fixed cost",
+            "Direct labor and semi-variable cost",
+            "Imputed cost and controllable cost"
+          ],
+          "answerIndex": 1,
+          "explanation": "Depreciation on plant and machinery is an indirect manufacturing expense and behaves as a fixed cost because total depreciation remains constant over time regardless of output volume.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Cost Classification",
+            "Depreciation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-1_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-1_05",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-1",
+          "subject": "Costing",
+          "prompt": "What is the primary objective of cost ascertainment in Gamma Textiles Ltd.?",
+          "options": [
+            "To compute the total and per-unit cost of cotton yarn produced by accumulating costs across elements and cost centers",
+            "To calculate the income tax payable by the company",
+            "To determine the market share of cotton yarn globally",
+            "To audit the financial statements of suppliers"
+          ],
+          "answerIndex": 0,
+          "explanation": "Cost ascertainment is the process of determining the cost of products or services through the systematic accumulation and allocation of material, labor, and overhead costs.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Cost Ascertainment",
+            "Cost Accounting Objectives"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

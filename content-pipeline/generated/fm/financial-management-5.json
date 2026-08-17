@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "financial-management-5",
+  "subject": "FM",
+  "paper": "Paper 6: Financial Management and Strategic Management",
+  "module": "Module 1",
+  "chapterNumber": 5,
+  "chapterTitle": "Financing Decisions – Capital Structure",
+  "generatedAt": "2026-08-16T14:56:32.254Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_financial-management-5_001",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "Which of the following best defines 'Capital Structure' from a financial management perspective?",
+      "options": [
+        "The mix of current assets and current liabilities maintained by a firm",
+        "The relative proportion of various sources of long-term funds such as equity, preference shares, and debt",
+        "The total capital expenditure budget allocated over a five-year strategic plan",
+        "The ratio of gross profit to net operating income in the income statement"
+      ],
+      "answerIndex": 1,
+      "explanation": "Capital structure refers to the mix or proportion of long-term sources of funds, including equity share capital, preference share capital, debentures, and long-term loans. It contrasts with capitalization, which represents the total long-term funds. Proper capital structure aims to maximize shareholder wealth while minimizing the overall cost of capital.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Capital Structure Basics",
+        "Long-term Funds",
+        "Financial Management"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_002",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "Under the Net Income (NI) approach proposed by David Durand, what happens to the overall cost of capital ($K_o$) as the proportion of debt in the capital structure increases?",
+      "options": [
+        "It increases continuously because debt becomes riskier.",
+        "It remains constant regardless of the debt-equity mix.",
+        "It decreases continuously because cheaper debt replaces expensive equity.",
+        "It first decreases, reaches an optimum point, and then increases."
+      ],
+      "answerIndex": 2,
+      "explanation": "According to the Net Income approach, the cost of debt ($K_d$) and cost of equity ($K_e$) remain constant as leverage increases. Since $K_d$ is typically lower than $K_e$, introducing more debt lowers the weighted average cost of capital ($K_o$), leading to an indefinite decrease in $K_o$ and an increase in total firm value with higher leverage.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Net Income Approach",
+        "Cost of Capital",
+        "Theories of Capital Structure"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_003",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "Which of the following assumptions is fundamental to the Net Operating Income (NOI) approach of capital structure?",
+      "options": [
+        "The market capitalizes the net operating income at an increasing overall capitalization rate.",
+        "The overall capitalization rate ($K_o$) remains constant for all degrees of leverage.",
+        "Investors do not perceive any financial risk regardless of the level of debt.",
+        "Corporate taxes exist and interest is a tax-deductible expense."
+      ],
+      "answerIndex": 1,
+      "explanation": "The NOI approach assumes that the overall cost of capital ($K_o$) remains constant across all levels of debt-equity mix. As cheaper debt is added, the cost of equity ($K_e$) rises exactly enough to offset the advantage of low-cost debt, leaving the overall capitalization rate and total firm value unchanged.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "NOI Approach",
+        "Overall Cost of Capital",
+        "Leverage"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_004",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "In the context of Modigliani-Miller (MM) hypothesis without corporate taxes, what is the impact of financial leverage on the total value of the firm ($V$)?",
+      "options": [
+        "Value increases with an increase in leverage due to tax shields.",
+        "Value decreases with leverage because financial distress costs rise.",
+        "Value remains unaffected by leverage because the overall cost of capital is constant.",
+        "Value first increases and then decreases, creating an optimal capital structure."
+      ],
+      "answerIndex": 2,
+      "explanation": "Under the MM hypothesis without taxes, the total value of a firm is determined by its earning power and business risk, independent of its capital structure. Arbitrage processes ensure that any attempt by firms to alter value through leverage is neutralized by investors adjusting their personal leverage.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Modigliani Miller Hypothesis",
+        "No Taxes",
+        "Firm Value"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_005",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "How does the incorporation of corporate taxes modify the original Modigliani-Miller (MM) proposition regarding firm value?",
+      "options": [
+        "Firm value decreases with debt because of higher borrowing rates.",
+        "Firm value remains independent of debt due to investor arbitrage.",
+        "Firm value increases continuously with debt due to the tax shield benefit of interest.",
+        "Firm value reaches an optimum at exactly 50% debt-equity ratio."
+      ],
+      "answerIndex": 2,
+      "explanation": "When corporate taxes are introduced into the MM framework, interest is tax-deductible, creating a tax shield. This tax shield reduces the effective cost of debt and increases the total cash flows available to investors, causing the value of a leveraged firm to exceed that of an unleveraged firm by the product of debt and the tax rate ($D \\times t$).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "MM Hypothesis with Taxes",
+        "Tax Shield",
+        "Capital Structure"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_006",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "What is meant by 'Trading on Equity'?",
+      "options": [
+        "Trading equity shares in the secondary market to generate capital gains",
+        "Using fixed-cost bearing sources of funds (like debt and preference shares) to amplify the return on equity",
+        "Issuing right shares to existing equity shareholders at a discount",
+        "Converting equity shares into debentures during financial restructuring"
+      ],
+      "answerIndex": 1,
+      "explanation": "Trading on equity refers to the practice of using fixed-cost funds (debt) alongside equity. If the return on total assets exceeds the interest rate on debt, the surplus earnings accrue entirely to equity shareholders, thereby boosting their Return on Equity (ROE).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Trading on Equity",
+        "Financial Leverage",
+        "ROE"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_007",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "Which of the following is a key limitation of the traditional approach to capital structure?",
+      "options": [
+        "It assumes that corporate taxes do not exist under any circumstances.",
+        "It fails to provide a mathematically precise method for determining the exact optimal capital structure point.",
+        "It relies heavily on the assumption that personal leverage can substitute corporate leverage.",
+        "It assumes that the cost of equity remains constant at all levels of leverage."
+      ],
+      "answerIndex": 1,
+      "explanation": "The traditional approach suggests that firm value can be maximized and the overall cost of capital minimized at an optimal range of debt-equity. However, its major limitation is that it does not provide a precise quantitative formula or method to determine the exact optimal point; it only indicates a broad range.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Traditional Approach",
+        "Limitations",
+        "Optimal Capital Structure"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_008",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "In financial analysis, indifference point EBIT refers to the level of EBIT at which:",
+      "options": [
+        "The earnings per share (EPS) is maximized for both alternative financial plans.",
+        "The EPS is identical regardless of the financing plan chosen (e.g., all-equity vs. debt-equity).",
+        "The market price of equity shares equals their book value per share.",
+        "The financial leverage degree equals zero."
+      ],
+      "answerIndex": 1,
+      "explanation": "The indifference point EBIT is the specific level of Earnings Before Interest and Tax where two alternative capital structure plans yield the exact same Earnings Per Share (EPS). Above this level, the plan with higher financial leverage is more beneficial for EPS.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Indifference Point",
+        "EPS Analysis",
+        "EBIT"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_009",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "According to the Pecking Order Theory, in what order do firms typically prefer to raise new capital?",
+      "options": [
+        "New Equity -> Debt -> Retained Earnings",
+        "Debt -> New Equity -> Retained Earnings",
+        "Retained Earnings -> Debt -> New Equity",
+        "New Equity -> Retained Earnings -> Debt"
+      ],
+      "answerIndex": 2,
+      "explanation": "Pecking Order Theory, based on asymmetric information, suggests that managers follow a hierarchical preference: first, internal financing via retained earnings (no flotation costs or asymmetric info issues); second, debt financing; and lastly, external equity as a last resort.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Pecking Order Theory",
+        "Asymmetric Information",
+        "Financing Hierarchy"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_010",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "Which of the following factors represents a 'market-related' consideration when designing a capital structure?",
+      "options": [
+        "Asset structure and tangibility of fixed assets",
+        "Attitude of lenders and institutional investors towards the industry",
+        "Stability of earnings and cash flow predictability",
+        "Control dilution and voting rights preservation"
+      ],
+      "answerIndex": 1,
+      "explanation": "Market-related considerations include conditions in the capital market, investor sentiment, prevailing interest rates, and the attitudes of lenders, rating agencies, and institutional investors toward specific industries. Asset structure and cash flow stability are internal firm-specific determinants.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Capital Structure Determinants",
+        "Market Conditions",
+        "Lender Attitudes"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_011",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "What effect does high operating leverage combined with high financial leverage typically have on a firm?",
+      "options": [
+        "It minimizes overall financial risk and stabilizes dividend payouts.",
+        "It amplifies earnings volatility, creating high combined risk for the firm.",
+        "It eliminates corporate tax liability entirely.",
+        "It guarantees an optimal capital structure under the NOI approach."
+      ],
+      "answerIndex": 1,
+      "explanation": "Operating leverage magnifies the effect of sales changes on EBIT, while financial leverage magnifies the effect of EBIT changes on EPS. Combining high operating leverage with high financial leverage results in extreme volatility in EPS, significantly increasing the overall risk profile of the firm.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Operating Leverage",
+        "Financial Leverage",
+        "Combined Leverage Risk"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_012",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "Under the Traditional Approach, in Stage II of capital structure:",
+      "options": [
+        "Both cost of debt and cost of equity rise rapidly, increasing overall cost.",
+        "The cost of debt remains constant or rises slowly, and the cost of equity rises moderately, causing $K_o$ to decline.",
+        "The cost of equity falls drastically due to increased investor confidence.",
+        "The firm reaches the point of maximum financial distress."
+      ],
+      "answerIndex": 1,
+      "explanation": "In Stage II of the traditional approach, the moderate introduction of debt causes the overall cost of capital ($K_o$) to decrease because the cheaper debt offsets the moderate rise in equity cost. This stage represents the optimal range of capital structure where firm value is maximized.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Traditional Approach",
+        "Stages of Capital Structure",
+        "Overall Cost"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_013",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "Which of the following describes 'Financial Risk'?",
+      "options": [
+        "Risk arising from fluctuations in macroeconomic sales volume and pricing",
+        "Risk associated with the firm's inability to meet fixed financial obligations like interest and principal repayments",
+        "Risk resulting from foreign exchange rate fluctuations on import payments",
+        "Risk of obsolescence of machinery due to technological advancements"
+      ],
+      "answerIndex": 1,
+      "explanation": "Financial risk is directly related to the capital structure (debt content) of a firm. It represents the risk of default on fixed financial charges (interest and principal) due to insufficient operating earnings, unlike operating risk which stems from business operations.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Financial Risk",
+        "Fixed Charges",
+        "Risk Analysis"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_014",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "What is the primary rationale behind the existence of an optimal capital structure according to the trade-off theory?",
+      "options": [
+        "Tax benefits of debt outweigh bankruptcy and agency costs at all levels of debt.",
+        "A balance is struck between the tax shield benefits of debt and the costs associated with financial distress and agency problems.",
+        "Cost of equity remains constant regardless of financial risk.",
+        "Investors prefer all-equity financing under all market conditions."
+      ],
+      "answerIndex": 1,
+      "explanation": "The Trade-off Theory posits that firms determine their capital structure by balancing the tax advantages of debt against the economic costs of financial distress (bankruptcy costs, agency costs, and distress costs). The optimal capital structure is where this trade-off maximizes firm value.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Trade-off Theory",
+        "Optimal Capital Structure",
+        "Financial Distress"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_015",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "When evaluating capital structure, what does 'Flotation Cost' refer to?",
+      "options": [
+        "The annual interest paid on corporate debentures",
+        "The cost incurred by a firm in issuing new securities, such as underwriting fees, brokerage, and legal expenses",
+        "The tax savings realized from debt interest deductions",
+        "The loss incurred when liquidating fixed assets below book value"
+      ],
+      "answerIndex": 0,
+      "explanation": "Flotation costs are the direct expenses incurred by a corporation when issuing new securities to the public or institutional investors. These include underwriting commissions, legal fees, registration fees, and advertising expenses, which effectively increase the cost of raising external capital.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Flotation Costs",
+        "External Financing",
+        "Capital Raising"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_016",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "In an EPS-EBIT analysis, if Plan A has higher fixed interest charges than Plan B, what will be the slope of the EPS-EBIT line for Plan A compared to Plan B?",
+      "options": [
+        "Flatter slope because interest acts as a cushion",
+        "Steeper slope because higher financial leverage magnifies EPS changes per unit change in EBIT",
+        "Parallel to Plan B with an identical slope",
+        "Negative slope due to negative operating income"
+      ],
+      "answerIndex": 1,
+      "explanation": "In an EPS-EBIT chart, the slope of the line represents the sensitivity of EPS to changes in EBIT (which is determined by the financial leverage or the reciprocal of 1 minus tax rate multiplied by number of shares). Higher fixed charges mean fewer shares or higher financial leverage, resulting in a steeper EPS line.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "EPS-EBIT Analysis",
+        "Financial Leverage",
+        "Slope"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_017",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "According to the NOI approach, why does the cost of equity ($K_e$) increase as the debt-equity ratio increases?",
+      "options": [
+        "Because corporate tax rates increase progressively with debt.",
+        "Because equity investors perceive higher financial risk and demand a higher return to compensate for it.",
+        "Because management deliberately dilutes voting rights of existing shareholders.",
+        "Because lenders restrict dividend payments when debt is high."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under the NOI approach, as debt increases, the financial risk borne by equity shareholders increases. To compensate for this higher risk, equity investors demand a higher expected return ($K_e$), which exactly offsets the cheaper debt cost to keep overall $K_o$ constant.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "NOI Approach",
+        "Cost of Equity",
+        "Financial Risk"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_018",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "Which agency cost is associated with conflicts between shareholders (principals) and managers (agents) when a firm has high free cash flow and debt?",
+      "options": [
+        "Cost of monitoring managerial perquisites and overinvestment in suboptimal projects",
+        "Cost of underinvestment where profitable projects are rejected",
+        "Cost of bankruptcy liquidation proceedings",
+        "Cost of flotation expenses on new equity issues"
+      ],
+      "answerIndex": 0,
+      "explanation": "Agency costs of equity arise when managers pursue their own interests rather than shareholder wealth maximization (e.g., wasteful perquisites or empire-building). Debt acts as a disciplinary mechanism because mandatory interest payments force managers to disgorge free cash flow, reducing agency costs.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Agency Costs",
+        "Managerial Conflict",
+        "Free Cash Flow"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_019",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "When calculating the indifference point between an all-equity plan and a debt-equity plan, which of the following variables is NOT required?",
+      "options": [
+        "Interest rate on debt",
+        "Tax rate",
+        "Dividend payout ratio",
+        "Number of equity shares under each plan"
+      ],
+      "answerIndex": 2,
+      "explanation": "The indifference point formula equates EPS under two plans: $[(EBIT - I_1)(1 - t)] / N_1 = [(EBIT - I_2)(1 - t)] / N_2$. Dividend payout ratio is irrelevant to this calculation because EPS is computed on earnings available to equity, regardless of whether they are distributed or retained.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Indifference Point Formula",
+        "EPS Calculation",
+        "Irrelevant Variables"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_020",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "What is the primary assumption of the Net Income (NI) approach regarding the cost of debt ($K_d$) and cost of equity ($K_e$)?",
+      "options": [
+        "Both $K_d$ and $K_e$ increase linearly with leverage.",
+        "Both $K_d$ and $K_e$ remain constant regardless of the degree of financial leverage.",
+        "Both $K_d$ and $K_e$ decrease as leverage increases.",
+        "$K_d$ increases while $K_e$ decreases proportionally."
+      ],
+      "answerIndex": 1,
+      "explanation": "The NI approach assumes that the cost of debt ($K_d$) and the cost of equity ($K_e$) remain completely constant and independent of the capital structure as leverage changes. This unrealistic assumption leads to the conclusion that a firm can achieve infinite value with 100% debt.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Net Income Approach",
+        "Constant Costs",
+        "Assumptions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_021",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "Which of the following financing instruments features 'implicit' costs rather than explicit fixed contractual costs?",
+      "options": [
+        "Long-term bank loan",
+        "Redeemable debentures",
+        "Equity share capital",
+        "Cumulative preference shares"
+      ],
+      "answerIndex": 2,
+      "explanation": "Equity share capital does not have a legally binding, fixed contractual cost (unlike interest on debt or dividends on cumulative preference shares). Instead, it carries an implicit cost representing the minimum rate of return expected by equity investors to compensate for risk.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Equity Capital",
+        "Implicit Cost",
+        "Contractual Obligations"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_022",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "How does the Modigliani-Miller theorem with taxes view the value of a levered firm compared to an unlevered firm?",
+      "options": [
+        "$V_L = V_U + (Debt \\times Tax Rate)$",
+        "$V_L = V_U - (Debt \\times Tax Rate)$",
+        "$V_L = V_U \\times (1 - Tax Rate)$",
+        "$V_L = V_U$"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under MM with corporate taxes, the value of a levered firm ($V_L$) equals the value of an unlevered firm ($V_U$) plus the present value of the tax shield, which is expressed as Debt multiplied by the corporate tax rate ($D \\times t$).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "MM with Taxes",
+        "Valuation Formula",
+        "Tax Shield"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_023",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "Which of the following represents an internal determinant of a firm's capital structure decision?",
+      "options": [
+        "Prevailing benchmark lending rates in the banking sector",
+        "Regulatory guidelines issued by SEBI on public issue pricing",
+        "Nature of business risk and cash flow stability of the enterprise",
+        "General stock market investor sentiment and bull/bear cycles"
+      ],
+      "answerIndex": 2,
+      "explanation": "Internal determinants are firm-specific factors such as the nature of business risk, cash flow stability, asset structure, growth rate, and management attitude towards risk. Benchmark rates, SEBI guidelines, and market sentiment are external factors.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Internal Determinants",
+        "Capital Structure",
+        "Firm Specific"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_024",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "Under the Traditional Approach, what characterizes Stage III of capital structure?",
+      "options": [
+        "Both $K_d$ and $K_e$ rise, and the increase in $K_d$ is so sharp that it outweighs any leverage benefit, causing $K_o$ to rise rapidly.",
+        "The overall cost of capital remains at its absolute minimum indefinitely.",
+        "The cost of equity drops to zero due to excessive leverage.",
+        "Firm value reaches its peak and stays constant."
+      ],
+      "answerIndex": 0,
+      "explanation": "In Stage III of the traditional approach, excessive use of debt creates severe financial distress and bankruptcy risk. Consequently, investors demand sharply higher returns on both equity and debt, causing the overall cost of capital ($K_o$) to rise rapidly and firm value to decline.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Traditional Approach",
+        "Stage III",
+        "Financial Distress"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_025",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "Why might a firm with high growth opportunities and volatile earnings prefer a lower debt-to-equity ratio?",
+      "options": [
+        "To maximize the immediate corporate tax shield benefits",
+        "To avoid the risk of financial distress and inability to service fixed debt obligations during earnings downturns",
+        "To comply with statutory requirements for issuing bonus shares",
+        "To minimize the cost of equity under the Net Income approach"
+      ],
+      "answerIndex": 1,
+      "explanation": "Firms with volatile earnings and high growth face higher business risk. Adding high debt creates substantial fixed financial obligations, increasing the probability of default and financial distress. Hence, such firms maintain conservative capital structures with lower debt ratios.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Business Risk",
+        "Debt Capacity",
+        "Conservative Leverage"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_026",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "What is the core argument of Signaling Theory in the context of capital structure decisions?",
+      "options": [
+        "Managers use capital structure choices to convey private information about firm prospects to outside investors.",
+        "Debt issuance always signals impending bankruptcy to the market.",
+        "Equity issues are always viewed by the market as a positive sign of growth.",
+        "Dividend payout is completely unrelated to capital structure signals."
+      ],
+      "answerIndex": 0,
+      "explanation": "Signaling theory suggests that because managers possess asymmetric information regarding future prospects, their financing choices act as signals. For instance, issuing new debt can signal confidence in future cash flows to service it, whereas issuing equity may signal that shares are currently overvalued.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Signaling Theory",
+        "Asymmetric Information",
+        "Financing Signals"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_027",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "In EPS-EBIT analysis, if a company's expected EBIT is substantially *below* the indifference point, which financing plan should be selected?",
+      "options": [
+        "The plan with higher debt and fixed interest charges",
+        "The plan with lower debt (all-equity or lower financial leverage)",
+        "The plan with maximum combined leverage",
+        "Any plan, as EPS will be identical"
+      ],
+      "answerIndex": 1,
+      "explanation": "When expected EBIT is below the indifference point, the plan with lower financial leverage (less debt) yields a higher EPS because fixed interest charges consume a larger proportion of low EBIT, penalizing leveraged plans.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "EPS-EBIT Analysis",
+        "Indifference Point",
+        "Decision Rule"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_028",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "Which of the following statements is correct regarding EBIT and EPS under varying degrees of financial leverage?",
+      "options": [
+        "Financial leverage has no impact on EPS volatility.",
+        "Higher financial leverage results in magnified changes in EPS for a given percentage change in EBIT.",
+        "Higher financial leverage reduces the absolute level of interest expense.",
+        "EPS is independent of the interest charges associated with debt."
+      ],
+      "answerIndex": 1,
+      "explanation": "Financial leverage measures the use of fixed-cost bearing funds. Because interest is fixed, any percentage change in EBIT is magnified when translated into EPS, leading to higher percentage changes in EPS (both positive and negative).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Financial Leverage",
+        "EPS Magnification",
+        "Risk"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_029",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "According to the Modigliani-Miller theory with corporate taxes, what happens to the optimal capital structure of a firm?",
+      "options": [
+        "The optimal capital structure is achieved at 100% debt.",
+        "The optimal capital structure is achieved at 0% debt (all-equity).",
+        "The capital structure is irrelevant to firm value.",
+        "There is an optimal mix at 50% debt and 50% equity."
+      ],
+      "answerIndex": 0,
+      "explanation": "Under MM with corporate taxes, since the tax shield increases linearly with debt and there are no offsetting bankruptcy costs in their baseline tax model, the firm's value is maximized at 100% debt financing.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "MM with Taxes",
+        "Optimal Capital Structure",
+        "100% Debt"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-5_030",
+      "kind": "normal",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "prompt": "What is meant by 'Window of Opportunity' in capital structure management?",
+      "options": [
+        "The specific hour of the trading day when bonds can be issued",
+        "Issuing equity when market valuations are temporarily high or issuing debt when interest rates are exceptionally low",
+        "The legal notice period required before calling a board meeting",
+        "The time limit for utilizing retained earnings within a financial year"
+      ],
+      "answerIndex": 1,
+      "explanation": "Market timing theory suggests that managers issue equity when they believe market valuations are temporarily inflated ('window of opportunity') and issue debt when interest rates are low, rather than maintaining a strict target capital structure.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Market Timing Theory",
+        "Window of Opportunity",
+        "Capital Structure Dynamics"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_financial-management-5_01",
+      "kind": "scenario",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "passage": "Alpha Ltd. is an established manufacturing enterprise currently financed entirely by equity share capital of ₹1,00,00,000 consisting of 10,00,000 equity shares of ₹10 each. The management is evaluating a modernization plan requiring ₹50,00,000, which can be raised through two alternative plans: Plan A involves raising the entire amount via 10% debentures (debt), while Plan B involves issuing 5,00,000 new equity shares at ₹10 each. The corporate tax rate is 30%.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_financial-management-5_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-5_01",
+          "sequenceInScenario": 1,
+          "chapterId": "financial-management-5",
+          "subject": "FM",
+          "prompt": "What is the exact indifference point EBIT between Plan A (Debt) and Plan B (Equity) for Alpha Ltd.?",
+          "options": [
+            "₹5,00,000",
+            "₹7,50,000",
+            "₹10,00,000",
+            "₹15,00,000"
+          ],
+          "answerIndex": 3,
+          "explanation": "Indifference point is calculated by equating EPS under both plans: [(EBIT - ₹5,00,000)(0.7)] / 10,00,000 = [EBIT(0.7)] / 15,00,000. Solving this yields an EBIT of ₹15,00,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Indifference Point",
+            "EPS Calculation",
+            "Numerical Problem"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-5_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-5_01",
+          "sequenceInScenario": 2,
+          "chapterId": "financial-management-5",
+          "subject": "FM",
+          "prompt": "If Alpha Ltd. achieves an actual EBIT of ₹20,00,000, which plan yields a higher EPS?",
+          "options": [
+            "Plan A (Debt Plan) because EBIT exceeds the indifference point",
+            "Plan B (Equity Plan) because more shares reduce risk",
+            "Both plans yield identical EPS at ₹20,00,000 EBIT",
+            "Neither plan, as EPS becomes negative"
+          ],
+          "answerIndex": 0,
+          "explanation": "Since the actual EBIT of ₹20,00,000 is higher than the indifference point of ₹15,00,000, the plan with financial leverage (Plan A with debt) delivers a higher EPS due to the favorable trading on equity effect.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "EPS-EBIT Analysis",
+            "Decision Rule",
+            "Trading on Equity"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-5_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-5_01",
+          "sequenceInScenario": 3,
+          "chapterId": "financial-management-5",
+          "subject": "FM",
+          "prompt": "What is the EPS under Plan A (Debt Plan) if EBIT is ₹15,00,000 (the indifference point)?",
+          "options": [
+            "₹0.50",
+            "₹0.70",
+            "₹1.05",
+            "₹1.50"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Plan A at EBIT = ₹15,00,000: EBT = ₹15,00,000 - ₹5,00,000 (interest) = ₹10,00,000. EAT after 30% tax = ₹10,00,000 × 0.70 = ₹7,00,000. EPS = ₹7,00,000 / 10,00,000 shares = ₹0.70.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "EPS Calculation",
+            "Indifference Point",
+            "Tax Adjustment"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-5_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-5_01",
+          "sequenceInScenario": 4,
+          "chapterId": "financial-management-5",
+          "subject": "FM",
+          "prompt": "If Alpha Ltd. chooses Plan A, what primary financial risk is introduced that was absent in its pre-expansion all-equity capital structure?",
+          "options": [
+            "Operating risk due to technological obsolescence",
+            "Financial risk due to mandatory interest and principal payment obligations",
+            "Foreign exchange risk on export receivables",
+            "Market liquidity risk of equity shares"
+          ],
+          "answerIndex": 1,
+          "explanation": "Introducing debt creates fixed financial charges (interest and principal repayment). Unlike equity dividends, these are legally binding obligations, introducing financial risk of default if earnings drop.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Financial Risk",
+            "Fixed Obligations",
+            "Capital Structure Impact"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_financial-management-5_02",
+      "kind": "scenario",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "passage": "Beta Ltd. operates in a stable industry with predictable annual Net Operating Income (EBIT) of ₹40,00,000. The firm is currently evaluating its capital structure under different theoretical frameworks. Its existing cost of equity ($K_e$) is 16%, and cost of debt ($K_d$) is 10%. The firm currently has ₹1,00,00,000 of 10% debentures and wants to analyze the implications of the Net Income and Net Operating Income approaches.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_financial-management-5_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-5_02",
+          "sequenceInScenario": 1,
+          "chapterId": "financial-management-5",
+          "subject": "FM",
+          "prompt": "Under the Net Income (NI) approach, if Beta Ltd. increases its debt from ₹1,00,00,000 to ₹2,00,00,000 (assuming $K_e$ and $K_d$ remain constant at 16% and 10% respectively), what happens to the total value of the firm?",
+          "options": [
+            "Total value decreases because debt risk increases.",
+            "Total value remains constant.",
+            "Total value increases because overall cost of capital decreases.",
+            "Total value drops to zero."
+          ],
+          "answerIndex": 2,
+          "explanation": "Under the Net Income approach, $K_e$ and $K_d$ remain constant as leverage increases. Since cheaper debt replaces expensive equity, the overall cost of capital ($K_o$) decreases, which consequently increases the total value of the firm ($V = EBIT / K_o$).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Net Income Approach",
+            "Firm Value",
+            "Overall Cost of Capital"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-5_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-5_02",
+          "sequenceInScenario": 2,
+          "chapterId": "financial-management-5",
+          "subject": "FM",
+          "prompt": "Under the Net Operating Income (NOI) approach, if Beta Ltd. alters its debt-equity mix, what will happen to the overall capitalization rate ($K_o$)?",
+          "options": [
+            "It will decrease continuously.",
+            "It will remain constant regardless of the leverage ratio.",
+            "It will increase sharply with every rupee of debt.",
+            "It will fluctuate randomly based on market sentiment."
+          ],
+          "answerIndex": 1,
+          "explanation": "A core tenet of the NOI approach is that the overall capitalization rate ($K_o$) and the total value of the firm remain constant for all degrees of financial leverage. The benefit of cheaper debt is exactly offset by an increase in the required cost of equity.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "NOI Approach",
+            "Overall Capitalization Rate",
+            "Constant Cost"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-5_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-5_02",
+          "sequenceInScenario": 3,
+          "chapterId": "financial-management-5",
+          "subject": "FM",
+          "prompt": "If Beta Ltd. applies the NOI approach with an overall capitalization rate ($K_o$) of 15% and an existing debt of ₹1,00,00,000 at 10% interest, what is the total market value of the firm?",
+          "options": [
+            "₹2,00,00,000",
+            "₹2,66,66,667",
+            "₹4,00,00,000",
+            "₹6,00,00,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the NOI approach, total firm value $V = EBIT / K_o$. Given EBIT = ₹40,00,000 and $K_o$ = 15% (0.15), $V = 40,00,000 / 0.15 = ₹2,66,66,667$. The value is independent of the debt amount.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "NOI Approach",
+            "Valuation Calculation",
+            "Firm Value"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-5_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-5_02",
+          "sequenceInScenario": 4,
+          "chapterId": "financial-management-5",
+          "subject": "FM",
+          "prompt": "Under the NOI approach, what is the market value of equity ($S$) if total firm value is ₹2,66,66,667 and debt ($D$) is ₹1,00,00,000?",
+          "options": [
+            "₹1,00,00,000",
+            "₹1,66,66,667",
+            "₹2,66,66,667",
+            "₹3,66,66,667"
+          ],
+          "answerIndex": 1,
+          "explanation": "Total firm value ($V$) is the sum of market value of debt ($D$) and market value of equity ($S$). Therefore, $S = V - D = ₹2,66,66,667 - ₹1,00,00,000 = ₹1,66,66,667$.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Market Value of Equity",
+            "NOI Approach",
+            "Balance Sheet Identity"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_financial-management-5_03",
+      "kind": "scenario",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "passage": "Gamma Ltd. is considering its capital structure expansion strategy. The CFO is analyzing the Modigliani-Miller (MM) hypothesis with corporate taxes. Gamma Ltd. currently has an unlevered value ($V_U$) of ₹50,00,000. It plans to introduce ₹20,00,000 of perpetual debt into its capital structure. The corporate tax rate applicable to Gamma Ltd. is 25%.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_financial-management-5_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-5_03",
+          "sequenceInScenario": 1,
+          "chapterId": "financial-management-5",
+          "subject": "FM",
+          "prompt": "According to MM with corporate taxes, what is the present value of the tax shield generated by the new debt?",
+          "options": [
+            "₹3,00,000",
+            "₹5,00,000",
+            "₹6,50,000",
+            "₹8,00,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under MM with taxes, the present value of the tax shield is calculated as Debt multiplied by the tax rate ($D \\times t$). Here, ₹20,00,000 × 25% = ₹5,00,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "MM with Taxes",
+            "Tax Shield Calculation",
+            "Present Value"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-5_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-5_03",
+          "sequenceInScenario": 2,
+          "chapterId": "financial-management-5",
+          "subject": "FM",
+          "prompt": "What will be the total value of the levered firm ($V_L$) after introducing the debt, according to the MM tax model?",
+          "options": [
+            "₹50,00,000",
+            "₹55,00,000",
+            "₹58,00,000",
+            "₹70,00,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "According to MM with taxes, $V_L = V_U + (Debt \\times t)$. Thus, $V_L = ₹50,00,000 + ₹5,00,000 = ₹55,00,000$.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "MM with Taxes",
+            "Levered Firm Value",
+            "Valuation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-5_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-5_03",
+          "sequenceInScenario": 3,
+          "chapterId": "financial-management-5",
+          "subject": "FM",
+          "prompt": "If MM hypothesis *without* taxes were applied to Gamma Ltd. instead, what would be the value of the levered firm ($V_L$)?",
+          "options": [
+            "₹45,00,000",
+            "₹50,00,000",
+            "₹55,00,000",
+            "₹60,00,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the MM hypothesis without taxes, capital structure is irrelevant to firm value. Therefore, the value of the levered firm equals the value of the unlevered firm ($V_L = V_U = ₹50,00,000$).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "MM without Taxes",
+            "Capital Structure Irrelevance",
+            "Firm Value"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-5_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-5_03",
+          "sequenceInScenario": 4,
+          "chapterId": "financial-management-5",
+          "subject": "FM",
+          "prompt": "What is the primary mechanism that prevents arbitrage from maintaining value equivalence when corporate taxes are introduced in the MM framework?",
+          "options": [
+            "Government prohibition on personal leverage",
+            "The corporate tax deductibility of interest creates a net cash flow advantage at the corporate level that personal leverage cannot fully replicate.",
+            "Transaction costs on bond purchases exceeding tax savings",
+            "Infinite cost of equity for unlevered firms"
+          ],
+          "answerIndex": 1,
+          "explanation": "When corporate taxes exist, the tax deductibility of interest creates a corporate tax shield that reduces total taxes paid by the entity. Personal leverage by investors cannot replicate this corporate-level tax subsidy, leading to higher levered firm value.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "MM with Taxes",
+            "Arbitrage Mechanism",
+            "Tax Shield Advantage"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_financial-management-5_04",
+      "kind": "scenario",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "passage": "Delta Ltd. is a fast-growing tech firm with high cash flow volatility. Management is debating between issuing additional equity or raising long-term debt to fund a major acquisition. The company currently has a debt-equity ratio of 0.2:1, low fixed operating costs, and substantial accumulated retained earnings. The finance committee is reviewing the applicability of the Pecking Order Theory and signaling effects.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_financial-management-5_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-5_04",
+          "sequenceInScenario": 1,
+          "chapterId": "financial-management-5",
+          "subject": "FM",
+          "prompt": "According to the Pecking Order Theory, what should be Delta Ltd.'s first choice of financing for the acquisition?",
+          "options": [
+            "New public equity issue",
+            "Retained earnings (Internal financing)",
+            "Long-term bank debt",
+            "Preference share capital"
+          ],
+          "answerIndex": 1,
+          "explanation": "Pecking Order Theory states that firms prefer internal financing first because it avoids flotation costs and asymmetric information problems associated with external securities. Retained earnings are therefore prioritized.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Pecking Order Theory",
+            "Internal Financing",
+            "Hierarchy"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-5_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-5_04",
+          "sequenceInScenario": 2,
+          "chapterId": "financial-management-5",
+          "subject": "FM",
+          "prompt": "If Delta Ltd. exhausts its internal funds and must choose between debt and external equity, which source does the Pecking Order Theory suggest it should prefer next?",
+          "options": [
+            "External equity",
+            "Debt",
+            "Convertible bonds",
+            "Mezzanine financing"
+          ],
+          "answerIndex": 1,
+          "explanation": "Following retained earnings, debt is preferred over external equity in the pecking order because debt carries lower information asymmetry risks and avoids diluting existing ownership control.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Pecking Order Theory",
+            "Debt Preference",
+            "External Capital"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-5_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-5_04",
+          "sequenceInScenario": 3,
+          "chapterId": "financial-management-5",
+          "subject": "FM",
+          "prompt": "How might the market interpret an unexpected announcement by Delta Ltd. to issue a large block of new equity shares, according to Signaling Theory?",
+          "options": [
+            "Extremely positive, signaling aggressive expansion",
+            "Negative, signaling that management believes current equity shares are overvalued",
+            "Neutral, as equity has zero signaling value",
+            "Positive, signaling zero financial risk"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under signaling and asymmetric information theories, managers tend to issue equity when they believe the firm's shares are overvalued in the market. Consequently, the market often interprets a new equity issue as a negative signal.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Signaling Theory",
+            "Equity Issuance",
+            "Asymmetric Information"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-5_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-5_04",
+          "sequenceInScenario": 4,
+          "chapterId": "financial-management-5",
+          "subject": "FM",
+          "prompt": "Given Delta Ltd.'s high cash flow volatility, why might issuing high debt contradict prudent capital structure management despite tax shields?",
+          "options": [
+            "Because tax shields do not apply to tech firms.",
+            "Because high cash flow volatility combined with fixed debt service obligations significantly increases the risk of financial distress and bankruptcy.",
+            "Because debt automatically increases operating leverage.",
+            "Because SEBI prohibits tech firms from issuing debentures."
+          ],
+          "answerIndex": 1,
+          "explanation": "Volatility in cash flows means earnings can drop sharply during downturns. High debt imposes rigid interest and principal obligations, heightening financial distress risk, which can outweigh tax shield benefits.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Financial Distress Risk",
+            "Cash Flow Volatility",
+            "Debt Capacity"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_financial-management-5_05",
+      "kind": "scenario",
+      "chapterId": "financial-management-5",
+      "subject": "FM",
+      "passage": "Theta Ltd. is analyzing its capital structure across the three stages of the Traditional Approach. The firm currently has an overall cost of capital ($K_o$) of 12% with a moderate debt-equity ratio of 0.5:1. The board is examining the consequences of pushing the debt-equity ratio up to 2.0:1.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Financing Decisions – Capital Structure"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_financial-management-5_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-5_05",
+          "sequenceInScenario": 1,
+          "chapterId": "financial-management-5",
+          "subject": "FM",
+          "prompt": "In Stage I of the Traditional Approach, what happens to the overall cost of capital ($K_o$) as debt is initially introduced?",
+          "options": [
+            "It increases steadily because debt adds risk.",
+            "It decreases because low-cost debt pulls down the weighted average cost of capital.",
+            "It remains perfectly constant.",
+            "It drops immediately to zero."
+          ],
+          "answerIndex": 1,
+          "explanation": "In Stage I of the traditional approach, introducing moderate debt lowers the overall cost of capital ($K_o$) because the cost of debt is lower than the cost of equity, and equity cost rises only moderately.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Traditional Approach",
+            "Stage I",
+            "Cost of Capital"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-5_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-5_05",
+          "sequenceInScenario": 2,
+          "chapterId": "financial-management-5",
+          "subject": "FM",
+          "prompt": "What characterizes Stage II (the optimal range) under the Traditional Approach?",
+          "options": [
+            "$K_o$ reaches its minimum point and firm value is maximized across a range of debt-equity mixes.",
+            "$K_e$ drops below $K_d$.",
+            "Financial distress costs become infinite.",
+            "All-equity financing becomes the only viable option."
+          ],
+          "answerIndex": 0,
+          "explanation": "In Stage II, the benefits of leverage balance out the rising cost of equity, resulting in the minimum overall cost of capital ($K_o$) and maximum firm value within an optimal range.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Traditional Approach",
+            "Optimal Range",
+            "Stage II"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-5_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-5_05",
+          "sequenceInScenario": 3,
+          "chapterId": "financial-management-5",
+          "subject": "FM",
+          "prompt": "If Theta Ltd. pushes its debt-equity ratio to 2.0:1 (entering Stage III), what primary phenomenon occurs?",
+          "options": [
+            "Both $K_d$ and $K_e$ rise sharply due to extreme financial risk, causing $K_o$ to increase rapidly and firm value to decline.",
+            "The cost of debt drops to zero due to bulk lending discounts.",
+            "The firm achieves an infinite valuation.",
+            "Operating leverage neutralizes financial leverage."
+          ],
+          "answerIndex": 0,
+          "explanation": "In Stage III, excessive leverage creates severe bankruptcy and financial distress risks. Investors and lenders demand exorbitant returns, causing $K_d$ and $K_e$ to surge, driving $K_o$ up and reducing firm value.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Traditional Approach",
+            "Stage III",
+            "Financial Distress"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-5_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-5_05",
+          "sequenceInScenario": 4,
+          "chapterId": "financial-management-5",
+          "subject": "FM",
+          "prompt": "Why is the Traditional Approach considered a pragmatic reconciliation between the Net Income and Net Operating Income approaches?",
+          "options": [
+            "It adopts the extreme assumptions of both models without modification.",
+            "It recognizes that leverage benefits exist up to a certain point (like NI) but acknowledges financial distress risks at high leverage (like NOI).",
+            "It relies entirely on mathematical calculus rather than market behavior.",
+            "It assumes zero corporate taxes and zero transaction costs."
+          ],
+          "answerIndex": 1,
+          "explanation": "The traditional approach bridges the gap between NI (where debt indefinitely lowers $K_o$) and NOI (where debt has no impact on $K_o$) by suggesting that leverage is beneficial up to an optimal limit, beyond which risk overtakes tax/cost advantages.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Traditional Approach",
+            "Reconciliation",
+            "Capital Structure Theories"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

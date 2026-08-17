@@ -1,0 +1,1450 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "gst-15",
+  "subject": "Taxation",
+  "paper": "Paper 3: Taxation",
+  "module": "Module 2",
+  "chapterNumber": 15,
+  "chapterTitle": "Returns",
+  "generatedAt": "2026-08-16T14:35:22.194Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_gst-15_001",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "Which of the following persons is NOT required to furnish an annual return under Section 44 of the CGST Act, 2017?",
+      "options": [
+        "A regular registered taxpayer having an aggregate turnover exceeding Rs. 5 crore",
+        "A Casual Taxable Person",
+        "A registered person opting for the Composition Scheme",
+        "A normal registered person with aggregate turnover of Rs. 3 crore"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 44 read with relevant rules, Casual Taxable Persons, Non-resident taxable persons, Input Service Distributors, and persons required to deduct/collect tax at source are exempt from filing the annual return in Form GSTR-9. A casual taxable person is specifically excluded from filing GSTR-9.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Annual Return",
+        "Section 44",
+        "Casual Taxable Person",
+        "Exclusions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_002",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "What is the due date for furnishing the final return in Form GSTR-10 by a registered person whose registration has been cancelled?",
+      "options": [
+        "Within 3 months of the date of cancellation or date of order of cancellation, whichever is later",
+        "Within 30 days of the date of cancellation",
+        "Within 3 months of the date of cancellation or date of order of cancellation, whichever is earlier",
+        "Within 20 days of the succeeding month in which cancellation order is passed"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 45 mandates every registered person whose registration has been cancelled to furnish a final return in Form GSTR-10 within three months of the date of cancellation or date of the order of cancellation, whichever is later.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Final Return",
+        "GSTR-10",
+        "Cancellation",
+        "Due Date"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_003",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "What is the late fee payable under Section 47 for delayed filing of GSTR-3B by a registered taxpayer with an aggregate turnover exceeding Rs. 5 crores in the preceding financial year, for delayed return per day (CGST + SGST)?",
+      "options": [
+        "Rs. 50 per day (Rs. 25 CGST + Rs. 25 SGST)",
+        "Rs. 100 per day (Rs. 50 CGST + Rs. 50 SGST)",
+        "Rs. 200 per day (Rs. 100 CGST + Rs. 100 SGST)",
+        "Rs. 500 per day (Rs. 250 CGST + Rs. 250 SGST)"
+      ],
+      "answerIndex": 3,
+      "explanation": "Under Section 47, for taxpayers with aggregate turnover exceeding Rs. 5 crores in the preceding FY, the late fee for delay in filing GSTR-3B is Rs. 250 under CGST and Rs. 250 under SGST per day, totaling Rs. 500 per day (subject to maximum limits).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Late Fee",
+        "Section 47",
+        "GSTR-3B",
+        "Turnover Threshold"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_004",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "What is the maximum late fee payable under Section 47 of the CGST Act, 2017 for a registered person (other than nil return) whose aggregate turnover exceeds Rs. 5 crores, in respect of delayed filing of GSTR-3B?",
+      "options": [
+        "Maximum of Rs. 500",
+        "Maximum of Rs. 2,000",
+        "Maximum of Rs. 10,000",
+        "Maximum of an amount calculated at 0.50% of turnover in the state"
+      ],
+      "answerIndex": 2,
+      "explanation": "As per Section 47, the maximum late fee for delay in filing GSTR-3B for taxpayers with aggregate turnover exceeding Rs. 5 crores is Rs. 10,000 under CGST Act (and matching Rs. 10,000 under SGST Act, total Rs. 20,000).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Late Fee",
+        "Maximum Limit",
+        "Section 47",
+        "GSTR-3B"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_005",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "Which of the following statements is correct regarding the rectification of errors in GSTR-1?",
+      "options": [
+        "Errors can be rectified up to the due date of filing GSTR-3B of the current month.",
+        "Errors can be rectified up to 30th November following the end of the financial year to which such details pertain, or filing of annual return, whichever is earlier.",
+        "Errors can be rectified at any time before the audit is completed.",
+        "No rectification is permitted once GSTR-1 is submitted electronically."
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 37(3), rectification of errors or omissions in the details of outward supplies furnished in GSTR-1 is permitted up to 30th November following the end of the financial year to which such details pertain, or the actual date of filing of the relevant annual return, whichever is earlier.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "GSTR-1",
+        "Rectification",
+        "Time Limit",
+        "Section 37"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_006",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "What is the due date for filing the monthly outward supply return in Form GSTR-1 under Section 37 of the CGST Act, 2017?",
+      "options": [
+        "10th day of the succeeding month",
+        "15th day of the succeeding month",
+        "20th day of the succeeding month",
+        "The last day of the succeeding month"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 37 requires every registered person, other than an Input Service Distributor, a non-resident taxable person and a person paying tax under section 10 or section 51 or section 52, to furnish details of outward supplies in Form GSTR-1 electronically on or before the 10th day of the succeeding month.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "GSTR-1",
+        "Due Date",
+        "Outward Supplies",
+        "Section 37"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_007",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "What is the due date for filing the monthly return in Form GSTR-3B under Section 39 of the CGST Act, 2017?",
+      "options": [
+        "10th day of the succeeding month",
+        "20th day of the succeeding month",
+        "25th day of the succeeding month",
+        "Last day of the succeeding month"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 39(1) of the CGST Act, 2017, every registered person (other than specific categories like ISD, composition taxpayers, etc.) is required to furnish a return in Form GSTR-3B for every month on or before the 20th day of the succeeding month.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "GSTR-3B",
+        "Due Date",
+        "Section 39",
+        "Monthly Return"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_008",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "Can a registered person file GSTR-3B for a tax period without filing GSTR-1 for the same tax period?",
+      "options": [
+        "Yes, GSTR-3B and GSTR-1 are completely independent.",
+        "No, the GST portal enforces sequential filing; GSTR-1 must be filed before filing GSTR-3B.",
+        "Yes, provided the tax liability is paid in cash.",
+        "No, GSTR-3B can only be filed 10 days after GSTR-1 is filed."
+      ],
+      "answerIndex": 1,
+      "explanation": "As per the automated GST portal architecture and rule provisions, the filing of GSTR-3B is locked/restricted unless the outward supplies return in Form GSTR-1 for the respective tax period has been successfully filed.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Sequential Filing",
+        "GSTR-1",
+        "GSTR-3B",
+        "GST Portal"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_009",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "Which form is prescribed for the annual return to be filed by a registered person under Section 44, other than a composition taxpayer?",
+      "options": [
+        "Form GSTR-8",
+        "Form GSTR-9",
+        "Form GSTR-9A",
+        "Form GSTR-9C"
+      ],
+      "answerIndex": 1,
+      "explanation": "Form GSTR-9 is the prescribed annual return for normal registered taxpayers under Section 44. Form GSTR-9A is for composition taxpayers, and Form GSTR-9C is the reconciliation statement.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Annual Return",
+        "Form GSTR-9",
+        "Section 44"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_010",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "What is the threshold aggregate turnover for mandatory furnishing of GSTR-9C (Reconciliation Statement) along with the Annual Return for FY 2023-24 onwards?",
+      "options": [
+        "Exceeding Rs. 2 crores",
+        "Exceeding Rs. 5 crores",
+        "Exceeding Rs. 10 crores",
+        "Exceeding Rs. 20 crores"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 44 read with Rule 80, every registered person whose aggregate turnover exceeds Rs. 5 crores in a financial year is required to get their accounts audited and furnish a self-certified reconciliation statement in Form GSTR-9C.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "GSTR-9C",
+        "Reconciliation Statement",
+        "Turnover Threshold",
+        "Audit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_011",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "What is the due date for filing the annual return in Form GSTR-9 for a financial year?",
+      "options": [
+        "30th September of the subsequent financial year",
+        "31st October of the subsequent financial year",
+        "31st December of the subsequent financial year",
+        "31st March of the subsequent financial year"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 44 mandates that every registered person shall furnish an annual return for every financial year electronically on or before the 31st December following the end of such financial year.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Annual Return",
+        "Due Date",
+        "Section 44",
+        "GSTR-9"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_012",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "An e-commerce operator required to collect tax at source (TCS) under Section 52 must file a monthly statement in which form and by what date?",
+      "options": [
+        "Form GSTR-5 by the 10th of the succeeding month",
+        "Form GSTR-7 by the 10th of the succeeding month",
+        "Form GSTR-8 by the 10th of the succeeding month",
+        "Form GSTR-8 by the 31st of the succeeding month"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under Section 52, every e-commerce operator required to collect TCS must furnish a statement in Form GSTR-8 within 10 days after the end of each calendar month.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "TCS",
+        "E-commerce",
+        "Form GSTR-8",
+        "Section 52"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_013",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "Which return is required to be filed by a non-resident taxable person under Section 39(5)?",
+      "options": [
+        "Form GSTR-3",
+        "Form GSTR-4",
+        "Form GSTR-5",
+        "Form GSTR-6"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 39(5) requires a non-resident taxable person to furnish a return in Form GSTR-5 within 20 days after the end of a calendar month or within 7 days after the last day of validity of registration, whichever is earlier.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Non-Resident Taxable Person",
+        "Form GSTR-5",
+        "Section 39"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_014",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "What is the due date for filing the return by a person required to deduct tax at source (TDS) under Section 51 in Form GSTR-7?",
+      "options": [
+        "10th day of the succeeding month",
+        "15th day of the succeeding month",
+        "20th day of the succeeding month",
+        "Last day of the succeeding month"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per Section 39(3) read with relevant rules, every registered person required to deduct tax at source (TDS) shall furnish a return in Form GSTR-7 within 10 days after the end of the month in which deduction is made.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "TDS",
+        "Form GSTR-7",
+        "Section 51",
+        "Due Date"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_015",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "Can a person filing GSTR-3B revise the return once it has been submitted on the GST portal?",
+      "options": [
+        "Yes, revision is allowed anytime before filing the annual return.",
+        "Yes, revision is allowed within 30 days of filing.",
+        "No, revision of GSTR-3B is not permitted under GST law; rectification is done through subsequent month's return.",
+        "Yes, by paying a revision fee of Rs. 1,000."
+      ],
+      "answerIndex": 2,
+      "explanation": "Under the GST law, there is no provision for revision of a return once filed (such as GSTR-3B). Any errors or omissions discovered can be rectified in the return for the month/period during which such error is noticed, subject to specified time limits.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "GSTR-3B",
+        "Revision",
+        "Rectification",
+        "GST Portal"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_016",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "What is the late fee under Section 47 for a Nil GSTR-3B filed after the due date (CGST + SGST combined)?",
+      "options": [
+        "Rs. 20 per day",
+        "Rs. 50 per day",
+        "Rs. 100 per day",
+        "No late fee is charged for Nil returns"
+      ],
+      "answerIndex": 1,
+      "explanation": "For a 'Nil' GSTR-3B (where tax liability is nil for the month), the late fee under Section 47 is reduced to Rs. 20 per day (Rs. 10 CGST + Rs. 10 SGST).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Late Fee",
+        "Nil Return",
+        "Section 47",
+        "GSTR-3B"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_017",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "If a registered person fails to furnish a return under Section 39, Section 44, Section 45, or Section 52, what action can the proper officer take?",
+      "options": [
+        "Issue a notice in Form GSTR-3A requiring the defaulter to furnish such return within 15 days",
+        "Immediately auction the property of the taxpayer",
+        "Cancel the registration without issuing any show cause notice",
+        "Impose a flat penalty of Rs. 50,000 without notice"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per Section 46 read with Rule 68, a notice in Form GSTR-3A is issued to a registered person who fails to furnish returns under Section 39, 44, 45, or 52, directing them to furnish the return within 15 days.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Default in Filing",
+        "Form GSTR-3A",
+        "Section 46",
+        "Notice"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_018",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "What is the consequence under Section 29 if a regular registered taxpayer (other than composition) continuously fails to furnish returns for a specified period?",
+      "options": [
+        "Registration cannot be cancelled; only late fees are applicable.",
+        "Registration may be cancelled by the proper officer if returns are not furnished for a continuous period of 6 months (or as specified for composition taxpayers).",
+        "Registration is automatically suspended forever with no recourse.",
+        "A penalty of 100% of tax due is levied."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 29(2)(c), the proper officer may cancel the registration of a registered person who has not furnished returns for a continuous period of six months (for normal taxpayers) or three consecutive tax periods (for composition taxpayers).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Cancellation",
+        "Section 29",
+        "Non-filing",
+        "Continuous Period"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_019",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "What is the time limit for claiming Input Tax Credit (ITC) pertaining to a financial year through GSTR-3B?",
+      "options": [
+        "Due date of filing GSTR-3B for the month of September following the end of the financial year, or the actual date of filing the relevant annual return, whichever is earlier.",
+        "31st December of the subsequent financial year.",
+        "30th June of the subsequent financial year.",
+        "At any time before the completion of GST audit."
+      ],
+      "answerIndex": 0,
+      "explanation": "As per Section 16(4) of the CGST Act, ITC with respect to any invoice or debit note can be availed up to 30th November following the end of financial year to which such invoice/debit note pertains, or furnishing of the relevant annual return, whichever is earlier (note: aligned with GSTR-3B filing for November due on 20th December).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "ITC Time Limit",
+        "Section 16(4)",
+        "GSTR-3B",
+        "Annual Return"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_020",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "Which registered persons are required to furnish quarterly returns along with monthly payment of tax (QRMP Scheme)?",
+      "options": [
+        "All registered persons irrespective of turnover",
+        "Registered persons having aggregate turnover up to Rs. 5 crores in the preceding financial year",
+        "Only composition scheme taxpayers",
+        "Only e-commerce operators"
+      ],
+      "answerIndex": 1,
+      "explanation": "The QRMP (Quarterly Return Monthly Payment) scheme is available for registered persons having an aggregate turnover of up to Rs. 5 crores in the preceding financial year who wish to file GSTR-3B quarterly.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "QRMP Scheme",
+        "Turnover Threshold",
+        "Quarterly Returns"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_021",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "Under the QRMP scheme, what is the due date for filing Form GSTR-3B for a quarter?",
+      "options": [
+        "20th day of the month succeeding the quarter",
+        "22nd or 24th day of the month succeeding the quarter (depending on the State/UT)",
+        "Last day of the month succeeding the quarter",
+        "10th day of the second month succeeding the quarter"
+      ],
+      "answerIndex": 1,
+      "explanation": "For taxpayers opting for the QRMP scheme, the due date for furnishing GSTR-3B for a quarter is either the 22nd or 24th day of the month succeeding such quarter, depending on the State/UT in which the principal place of business is located.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "QRMP Scheme",
+        "GSTR-3B Due Date",
+        "Quarterly Filing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_022",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "What is the invoice furnishing facility (IFF) provided under the QRMP scheme?",
+      "options": [
+        "An optional facility for quarterly taxpayers to upload B2B invoices in the first two months of a quarter so that recipients can claim ITC.",
+        "A mandatory facility to upload all retail invoices.",
+        "A facility to file annual returns online.",
+        "A facility to pay tax in advance without filing returns."
+      ],
+      "answerIndex": 0,
+      "explanation": "Invoice Furnishing Facility (IFF) is an optional facility provided to QRMP taxpayers to upload B2B outward supply details in the first two months of the quarter, up to a cumulative value of Rs. 50 crores per month, enabling recipients to claim ITC.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "IFF",
+        "QRMP Scheme",
+        "B2B Invoices",
+        "ITC Pass-through"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_023",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "Can a registered person claim ITC in GSTR-3B if the corresponding invoice details have NOT been uploaded by the supplier in their GSTR-1 / IFF?",
+      "options": [
+        "Yes, 100% ITC can be claimed without restriction.",
+        "No ITC can be claimed at all under any circumstances.",
+        "Yes, subject to the provisional ITC restriction limit prescribed under Rule 36(4) (currently matching rules apply as per Section 38 / Rule 88C).",
+        "ITC can be claimed only if approved by the jurisdictional commissioner."
+      ],
+      "answerIndex": 2,
+      "explanation": "As per Rule 36(4) read with Section 38, ITC can be availed only to the extent the details of invoices/debit notes are communicated by the supplier in GSTR-1/IFF (auto-populated in GSTR-2B). Any excess claim beyond the auto-populated limit is restricted.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rule 36(4)",
+        "GSTR-2B",
+        "ITC Restriction",
+        "Matching"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_024",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "What is Form GSTR-2B?",
+      "options": [
+        "A return filed by the taxpayer for claiming refunds.",
+        "An auto-drafted Input Tax Credit (ITC) statement generated for every registered person based on the details furnished by their suppliers in GSTR-1/IFF.",
+        "A return filed by non-resident taxpayers.",
+        "A quarterly statement of outward supplies."
+      ],
+      "answerIndex": 0,
+      "explanation": "Form GSTR-2B is an auto-generated, read-only Input Tax Credit statement generated for every registered person on the basis of information furnished by their suppliers in their respective GSTR-1, GSTR-5, and GSTR-6.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "GSTR-2B",
+        "Auto-drafted ITC",
+        "Statement"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_025",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "Which of the following persons is required to furnish a return in Form GSTR-4?",
+      "options": [
+        "Normal taxable person",
+        "Casual taxable person",
+        "Taxpayer registered under the Composition Levy Scheme",
+        "Input Service Distributor"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under Section 39(2), registered persons opting to pay tax under the Composition Levy Scheme (Section 10) are required to furnish an annual return/statement in Form GSTR-4.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Form GSTR-4",
+        "Composition Levy",
+        "Section 39(2)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_026",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "What is the due date for furnishing Form GSTR-4 by a composition taxpayer for a financial year?",
+      "options": [
+        "30th April of the succeeding financial year",
+        "30th June of the succeeding financial year",
+        "31st July of the succeeding financial year",
+        "31st December of the succeeding financial year"
+      ],
+      "answerIndex": 0,
+      "explanation": "Composition taxpayers are required to furnish Form GSTR-4 annually for every financial year on or before the 30th day of April following the end of such financial year.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Form GSTR-4",
+        "Composition Taxpayer",
+        "Due Date"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_027",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "An Input Service Distributor (ISD) is required to furnish a return in which form and by what date?",
+      "options": [
+        "Form GSTR-5 by the 20th of the succeeding month",
+        "Form GSTR-6 by the 13th of the succeeding month",
+        "Form GSTR-7 by the 10th of the succeeding month",
+        "Form GSTR-8 by the 31st of the succeeding month"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 39(4) read with Rule 65, an Input Service Distributor (ISD) must furnish a return in Form GSTR-6 electronically on or before the 13th day of the succeeding month.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "ISD",
+        "Form GSTR-6",
+        "Section 39(4)",
+        "Due Date"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_028",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "What happens if a registered person discovers an inadvertent error or omission in their GSTR-3B after filing?",
+      "options": [
+        "The return must be filed afresh after deleting the original.",
+        "The error can be rectified in the return to be filed for the month/period during which such error or omission is noticed, subject to payment of differential tax and interest.",
+        "No correction is ever permitted once filed.",
+        "The jurisdictional officer must personally amend it on written application."
+      ],
+      "answerIndex": 1,
+      "explanation": "GST law permits rectification of errors/omissions in GSTR-3B in the return for the tax period during which the error is noticed, along with payment of any differential tax and applicable interest under Section 50.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "GSTR-3B Rectification",
+        "Error Correction",
+        "Interest"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_029",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "Which of the following is considered a valid return under Section 39(1) for the purpose of initiating statutory compliances and starting interest/late fee liability?",
+      "options": [
+        "A return filed in Form GSTR-3B without payment of self-assessed tax reported in the return.",
+        "A return furnished in Form GSTR-3B accompanied by full payment of tax due as per such return.",
+        "An unsubmitted draft of GSTR-3B saved on the portal.",
+        "GSTR-1 filed without GSTR-3B."
+      ],
+      "answerIndex": 1,
+      "explanation": "As per explanation to Section 39, a return furnished without full payment of tax due as per that return is not considered a valid return for various purposes, including the passing of ITC to recipients.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Valid Return",
+        "Section 39",
+        "Self-assessed Tax",
+        "GSTR-3B"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-15_030",
+      "kind": "normal",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "prompt": "What is the maximum late fee under Section 47 for delayed furnishing of the annual return in Form GSTR-9?",
+      "options": [
+        "Rs. 100 per day",
+        "Rs. 200 per day (Rs. 100 CGST + Rs. 100 SGST) subject to a maximum of 0.25% of the taxpayer's turnover in the State/UT.",
+        "Rs. 500 per day subject to a maximum of Rs. 50,000.",
+        "There is no late fee for annual returns."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 47(2), the late fee for delay in filing the annual return (GSTR-9) is Rs. 100 per day under CGST and Rs. 100 per day under SGST (total Rs. 200 per day), subject to a maximum of 0.25% of the turnover in the State/UT of the registered person.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Annual Return Late Fee",
+        "Section 47",
+        "GSTR-9",
+        "Maximum Limit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_gst-15_01",
+      "kind": "scenario",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "passage": "M/s Apex Enterprises is a registered trader in Maharashtra with an aggregate turnover of Rs. 8 crores in the preceding financial year 2024-25. For the month of August 2025, the firm prepares its outward supply details and GSTR-3B. Due to accounting software glitches, the firm files its GSTR-1 for August 2025 on 15th October 2025 instead of the due date. Subsequently, GSTR-3B for August 2025 is filed on 18th October 2025. The firm also discovers that an outward B2B invoice amounting to Rs. 5,00,000 (tax Rs. 90,000) pertaining to July 2025 was omitted from GSTR-1 of July 2025.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-15_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-15_01",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-15",
+          "subject": "Taxation",
+          "prompt": "What is the due date for filing GSTR-1 for the month of August 2025 for M/s Apex Enterprises?",
+          "options": [
+            "10th September 2025",
+            "20th September 2025",
+            "11th October 2025",
+            "31st December 2025"
+          ],
+          "answerIndex": 0,
+          "explanation": "As per Section 37, the due date for furnishing GSTR-1 is the 10th day of the succeeding month. For August 2025, the due date is 10th September 2025.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "GSTR-1 Due Date",
+            "Section 37",
+            "Monthly Return"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-15_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-15_01",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-15",
+          "subject": "Taxation",
+          "prompt": "Is M/s Apex Enterprises liable to a late fee under Section 47 for the delayed filing of GSTR-3B for August 2025, and if so, what is the rate applicable to them?",
+          "options": [
+            "No late fee as turnover is below Rs. 10 crores.",
+            "Yes, late fee of Rs. 50 per day (Rs. 25 CGST + Rs. 25 SGST).",
+            "Yes, late fee of Rs. 250 per day under CGST and Rs. 250 per day under SGST (total Rs. 500 per day) since turnover exceeds Rs. 5 crores.",
+            "Yes, flat late fee of Rs. 10,000 regardless of days delayed."
+          ],
+          "answerIndex": 2,
+          "explanation": "Since the aggregate turnover of M/s Apex Enterprises exceeds Rs. 5 crores in the preceding FY, the late fee for delayed GSTR-3B under Section 47 is Rs. 250 each under CGST and SGST per day of delay.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Late Fee",
+            "Section 47",
+            "Turnover Threshold"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-15_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-15_01",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-15",
+          "subject": "Taxation",
+          "prompt": "Up to what date can M/s Apex Enterprises rectify the omission of the July 2025 invoice in its GSTR-1?",
+          "options": [
+            "30th November 2026 or the date of filing annual return for FY 2025-26, whichever is earlier",
+            "31st December 2025",
+            "Due date of filing GSTR-3B for August 2025",
+            "30th April 2026"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under Section 37(3), errors or omissions in GSTR-1 can be rectified up to 30th November following the end of the financial year to which the details pertain (i.e., FY 2025-26 -> 30th November 2026) or the actual date of filing the annual return, whichever is earlier.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Rectification",
+            "Section 37(3)",
+            "Time Limit"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-15_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-15_01",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-15",
+          "subject": "Taxation",
+          "prompt": "Can M/s Apex Enterprises file GSTR-3B for August 2025 without first filing GSTR-1 for August 2025?",
+          "options": [
+            "Yes, both returns are completely independent on the GST portal.",
+            "No, the GST portal enforces sequential filing where GSTR-1 must be filed before GSTR-3B.",
+            "Yes, by taking special permission from the Commissioner.",
+            "No, but they can file GSTR-3B up to 5 days before GSTR-1."
+          ],
+          "answerIndex": 1,
+          "explanation": "The GST network architecture enforces sequential filing; a registered person cannot file GSTR-3B for a tax period unless GSTR-1 for that same tax period has been successfully filed.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Sequential Filing",
+            "GST Portal",
+            "GSTR-1",
+            "GSTR-3B"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-15_02",
+      "kind": "scenario",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "passage": "M/s Beta Retails Ltd. is a registered corporate entity in Karnataka with an aggregate turnover of Rs. 4 crores in FY 2024-25. The company opts for the QRMP scheme for the financial year 2025-26. For the quarter ending June 2025, the company utilizes the Invoice Furnishing Facility (IFF) to upload B2B invoices for the months of April 2025 and May 2025. Due to cash flow constraints, the company fails to pay the monthly tax liability via PMT-06 for the month of May 2025 within the stipulated due date.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-15_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-15_02",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-15",
+          "subject": "Taxation",
+          "prompt": "Is M/s Beta Retails Ltd. eligible to opt for the QRMP scheme for FY 2025-26?",
+          "options": [
+            "No, because corporate entities cannot opt for QRMP.",
+            "Yes, because its aggregate turnover in the preceding financial year (Rs. 4 crores) does not exceed Rs. 5 crores.",
+            "No, QRMP is exclusively for composition taxpayers.",
+            "Yes, provided its current turnover does not exceed Rs. 1.5 crores."
+          ],
+          "answerIndex": 1,
+          "explanation": "The QRMP scheme is available to any registered person who has an aggregate turnover of up to Rs. 5 crores in the preceding financial year. Since Beta Retails Ltd. had a turnover of Rs. 4 crores, it is eligible.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "QRMP Scheme",
+            "Eligibility",
+            "Turnover Threshold"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-15_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-15_02",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-15",
+          "subject": "Taxation",
+          "prompt": "What is the maximum value of B2B invoices that can be uploaded using the Invoice Furnishing Facility (IFF) for each month under the QRMP scheme?",
+          "options": [
+            "Rs. 10 crores per month",
+            "Rs. 50 crores per month",
+            "Rs. 1.5 crores per month",
+            "There is no monetary limit for IFF upload."
+          ],
+          "answerIndex": 1,
+          "explanation": "As per the rules governing the QRMP scheme, IFF can be used to upload outward B2B supply details up to a cumulative value of Rs. 50 crores for each of the first two months of the quarter.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "IFF",
+            "QRMP Scheme",
+            "Limit",
+            "B2B Invoices"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-15_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-15_02",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-15",
+          "subject": "Taxation",
+          "prompt": "What is the due date for filing GSTR-3B for the quarter ending June 2025 for M/s Beta Retails Ltd. located in Karnataka?",
+          "options": [
+            "20th July 2025",
+            "22nd July 2025",
+            "24th July 2025",
+            "31st July 2025"
+          ],
+          "answerIndex": 1,
+          "explanation": "For taxpayers opting for the QRMP scheme, the due date for filing quarterly GSTR-3B is either 22nd or 24th of the month succeeding the quarter. Karnataka falls in the category of States where the due date is 22nd of the month succeeding the quarter.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "QRMP Scheme",
+            "GSTR-3B Due Date",
+            "State-wise Due Dates"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-15_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-15_02",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-15",
+          "subject": "Taxation",
+          "prompt": "What is the consequence of failing to deposit the monthly tax payment using PMT-06 for May 2025 under the QRMP scheme?",
+          "options": [
+            "Interest under Section 50 is payable on the delayed payment of tax for the month, along with possible late fee.",
+            "The company's registration is immediately cancelled without notice.",
+            "No consequence if tax is paid while filing quarterly GSTR-3B.",
+            "A mandatory penalty equal to 100% of the tax due."
+          ],
+          "answerIndex": 0,
+          "explanation": "Under the QRMP scheme, monthly tax payments (fixed sum method or self-assessment method via PMT-06) must be paid by the 25th of the succeeding month. Failure to pay attracts interest under Section 50 for the period of delay.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "QRMP Scheme",
+            "PMT-06",
+            "Interest",
+            "Section 50"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-15_03",
+      "kind": "scenario",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "passage": "Mr. Anand is a registered taxable person under GST in West Bengal. He abruptly stops his business operations and applies for cancellation of registration on 15th October 2025. The proper officer issues an order cancelling the registration on 10th December 2025, with the cancellation effective from 20th November 2025. Mr. Anand has pending outward supply details and final return compliances to complete.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-15_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-15_03",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-15",
+          "subject": "Taxation",
+          "prompt": "What is the due date for furnishing the final return in Form GSTR-10 by Mr. Anand?",
+          "options": [
+            "15th January 2026",
+            "10th March 2026",
+            "20th December 2025",
+            "31st December 2025"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 45 states that GSTR-10 must be filed within 3 months of the date of cancellation or date of order of cancellation, whichever is later. Date of cancellation = 20th Nov 2025; Order date = 10th Dec 2025. Later is 10th Dec 2025. 3 months from 10th Dec 2025 is 10th March 2026.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Final Return",
+            "GSTR-10",
+            "Cancellation",
+            "Due Date Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-15_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-15_03",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-15",
+          "subject": "Taxation",
+          "prompt": "Which form is prescribed for furnishing the final return under Section 45?",
+          "options": [
+            "Form GSTR-8",
+            "Form GSTR-9",
+            "Form GSTR-10",
+            "Form GSTR-11"
+          ],
+          "answerIndex": 2,
+          "explanation": "Form GSTR-10 is the statutory form prescribed under Section 45 for filing the final return by a registered person whose registration has been cancelled.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Form GSTR-10",
+            "Final Return",
+            "Section 45"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-15_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-15_03",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-15",
+          "subject": "Taxation",
+          "prompt": "If Mr. Anand fails to file GSTR-10 within the stipulated time, what action can be initiated against him?",
+          "options": [
+            "A notice is served requiring him to furnish the final return, and failure to comply can lead to assessment under Section 62 or prosecution.",
+            "His bank accounts are seized directly without notice.",
+            "No action can be taken since registration is already cancelled.",
+            "He is forced to restart his business."
+          ],
+          "answerIndex": 0,
+          "explanation": "Failure to furnish the final return results in issuance of notices, assessment of non-filers of returns under Section 62, and recovery proceedings for any dues along with late fees and penalties.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Default in Final Return",
+            "Section 62",
+            "Assessment"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-15_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-15_03",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-15",
+          "subject": "Taxation",
+          "prompt": "Is Mr. Anand required to file an annual return in Form GSTR-9 for the financial year in which his registration was cancelled?",
+          "options": [
+            "No, annual return is waived for cancelled registrations.",
+            "Yes, every registered person whose registration is cancelled during a financial year is still required to file Form GSTR-9 for that financial year.",
+            "Only if turnover exceeds Rs. 50 crores.",
+            "Yes, but only in Form GSTR-9A."
+          ],
+          "answerIndex": 1,
+          "explanation": "A registered person whose registration is cancelled during a financial year is nonetheless required to file the annual return in Form GSTR-9 for the period during which they remained registered in that financial year.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Annual Return",
+            "Cancellation",
+            "GSTR-9 Applicability"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-15_04",
+      "kind": "scenario",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "passage": "M/s Delta Logistics, a registered GST taxpayer in Delhi, fails to file its monthly GSTR-3B returns for the tax periods of May 2025, June 2025, and July 2025. On 10th August 2025, the proper officer issues a notice in Form GSTR-3A requiring M/s Delta Logistics to furnish the pending returns within 15 days. The taxpayer ignores the notice and fails to file the returns within the stipulated 15-day period.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-15_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-15_04",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-15",
+          "subject": "Taxation",
+          "prompt": "What is the statutory purpose of issuing Form GSTR-3A under Section 46?",
+          "options": [
+            "To notify the taxpayer about a tax audit.",
+            "To issue a notice to a registered person who has failed to furnish returns, directing them to furnish such returns within 15 days.",
+            "To cancel the GST registration automatically.",
+            "To demand immediate arrest of the directors."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 46 read with Rule 68 prescribes Form GSTR-3A as a notice to defaulters who have not filed returns, giving them a 15-day window to furnish the returns before best judgment assessment is initiated.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Form GSTR-3A",
+            "Section 46",
+            "Default Notice"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-15_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-15_04",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-15",
+          "subject": "Taxation",
+          "prompt": "If M/s Delta Logistics fails to submit the returns within 15 days of service of Form GSTR-3A, what power does the proper officer have under Section 62?",
+          "options": [
+            "Assess the tax liability to the best of his judgment based on available material and issue an assessment order.",
+            "Impose life imprisonment on the proprietor.",
+            "Transfer the business ownership to the government.",
+            "Waive all tax liabilities."
+          ],
+          "answerIndex": 0,
+          "explanation": "Under Section 62, if a registered person fails to furnish a return under Section 39 or Section 45 even after service of notice under Section 46 (GSTR-3A), the proper officer may assess the tax liability to the best of his judgment.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 62",
+            "Best Judgment Assessment",
+            "Non-filers"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-15_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-15_04",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-15",
+          "subject": "Taxation",
+          "prompt": "Within what time period from the issuance of the best judgment assessment order under Section 62 can M/s Delta Logistics get the assessment order withdrawn by filing a valid return?",
+          "options": [
+            "Within 30 days",
+            "Within 60 days of the service of the assessment order",
+            "Within 90 days",
+            "Within 1 year"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per Section 62(2), if the registered person furnishes a valid return within 60 days of the service of the best judgment assessment order, the said assessment order shall be deemed to have been withdrawn (though liability for late fee and interest continues).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 62(2)",
+            "Withdrawal of Assessment",
+            "Valid Return"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-15_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-15_04",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-15",
+          "subject": "Taxation",
+          "prompt": "For how many continuous tax periods of default in filing monthly returns can the proper officer initiate cancellation of registration under Section 29?",
+          "options": [
+            "2 continuous tax periods",
+            "3 continuous tax periods",
+            "6 continuous tax periods",
+            "12 continuous tax periods"
+          ],
+          "answerIndex": 2,
+          "explanation": "Under Section 29(2)(c), the proper officer can cancel registration if a normal registered person does not furnish returns for a continuous period of six months.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Cancellation",
+            "Section 29",
+            "Continuous Default"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-15_05",
+      "kind": "scenario",
+      "chapterId": "gst-15",
+      "subject": "Taxation",
+      "passage": "M/s Zenith Global Pvt. Ltd. is registered under GST in Maharashtra with an aggregate turnover of Rs. 15 crores in FY 2024-25. For the financial year 2024-25, the company is required to file its Annual Return in Form GSTR-9 along with the self-certified Reconciliation Statement in Form GSTR-9C. The accounts team is preparing the reconciliation between the audited financial statements and the annual turnover declared in GSTR-3B.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Returns"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-15_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-15_05",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-15",
+          "subject": "Taxation",
+          "prompt": "What is the due date for furnishing Form GSTR-9 and Form GSTR-9C for M/s Zenith Global Pvt. Ltd. for FY 2024-25?",
+          "options": [
+            "30th September 2025",
+            "31st October 2025",
+            "31st December 2025",
+            "31st March 2026"
+          ],
+          "answerIndex": 2,
+          "explanation": "As per Section 44, the annual return in Form GSTR-9 and the reconciliation statement in Form GSTR-9C must be furnished on or before the 31st December following the end of the financial year (i.e., 31st December 2025 for FY 2024-25).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Annual Return Due Date",
+            "GSTR-9",
+            "GSTR-9C",
+            "Section 44"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-15_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-15_05",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-15",
+          "subject": "Taxation",
+          "prompt": "Why is M/s Zenith Global Pvt. Ltd. mandated to file Form GSTR-9C?",
+          "options": [
+            "Because all GST registered companies must file GSTR-9C.",
+            "Because its aggregate turnover exceeds Rs. 5 crores in the relevant financial year.",
+            "Because it is an e-commerce operator.",
+            "Because it has foreign branch offices."
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 80 mandates that every registered person whose aggregate turnover exceeds Rs. 5 crores in a financial year must furnish a reconciliation statement in Form GSTR-9C certified by them (self-certified).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "GSTR-9C Applicability",
+            "Turnover Threshold",
+            "Rule 80"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-15_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-15_05",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-15",
+          "subject": "Taxation",
+          "prompt": "Can M/s Zenith Global Pvt. Ltd. report new tax liabilities through the annual return in Form GSTR-9 that were not reported in GSTR-3B of the relevant financial year?",
+          "options": [
+            "Yes, GSTR-9 allows declaration of additional tax liabilities, but tax must be paid through electronic cash ledger along with filing.",
+            "No, annual return is strictly for summarizing already reported figures and no new liability can be added.",
+            "Yes, without paying any interest or tax.",
+            "Only if approved by the GST Council in writing."
+          ],
+          "answerIndex": 0,
+          "explanation": "Form GSTR-9 allows taxpayers to report un-disclosed tax liabilities pertaining to the financial year, provided such tax is paid along with filing via electronic cash ledger (though it does not permit claiming unclaimed ITC through GSTR-9).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "GSTR-9",
+            "Additional Liability",
+            "Annual Return Scope"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-15_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-15_05",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-15",
+          "subject": "Taxation",
+          "prompt": "What is the late fee liability under Section 47 for delayed filing of GSTR-9 by M/s Zenith Global Pvt. Ltd.?",
+          "options": [
+            "Rs. 50 per day",
+            "Rs. 200 per day (Rs. 100 CGST + Rs. 100 SGST) subject to a maximum of 0.25% of turnover in the State.",
+            "Rs. 1,000 per day",
+            "Flat Rs. 25,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Late fee for delayed filing of GSTR-9 under Section 47(2) is Rs. 100 CGST and Rs. 100 SGST per day (total Rs. 200 per day), capped at a maximum of 0.25% of the taxpayer's turnover in the State/UT.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Annual Return Late Fee",
+            "Section 47",
+            "GSTR-9 Limit"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "income-tax-1",
+  "subject": "Taxation",
+  "paper": "Paper 3: Taxation",
+  "module": "Module 1",
+  "chapterNumber": 1,
+  "chapterTitle": "Basic Concepts",
+  "generatedAt": "2026-08-16T14:18:03.006Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_income-tax-1_001",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "Which of the following is the charging section for Income-tax in India under the Income-tax Act, 1961?",
+      "options": [
+        "Section 2",
+        "Section 4",
+        "Section 5",
+        "Section 10"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 4 of the Income-tax Act, 1961 is the charging section which provides that income-tax shall be charged for any assessment year at the relevant rates in respect of the total income of the previous year of every person. Section 2 deals with definitions, Section 5 with scope of total income, and Section 10 with incomes not included in total income.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Charging Section",
+        "Income-tax Act 1961",
+        "Basic Concepts"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_002",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "What is the general rule regarding the determination of the previous year for a business newly set up on 15th November of the current financial year?",
+      "options": [
+        "From 1st April of the current financial year to 31st March of the next year",
+        "From 15th November of the current financial year to 31st March of the next year",
+        "From the date of setting up to 31st December of the current financial year",
+        "From 15th November of the current financial year to 30th September of the next year"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 3, for a newly set-up business or profession, the first previous year begins on the date of setting up of the business or profession and ends on 31st March of the financial year. Therefore, it will be from 15th November to 31st March.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Previous Year",
+        "Newly Set-up Business",
+        "Section 3"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_003",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "Under the normal provisions of the Income-tax Act, 1961, income earned in a previous year is assessed to tax in:",
+      "options": [
+        "The same previous year",
+        "The immediately preceding financial year",
+        "The assessment year following the previous year",
+        "Any year chosen by the Assessing Officer"
+      ],
+      "answerIndex": 2,
+      "explanation": "The general rule under the Income-tax Act is that income earned in a previous year is taxed in the immediately following assessment year. Section 4 mandates that income-tax is charged for any assessment year on the total income of the previous year.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Assessment Year",
+        "Previous Year",
+        "Section 4"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_004",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "Which of the following represents an exception to the general rule that income of a previous year is assessed in the immediately following assessment year?",
+      "options": [
+        "Income of a person leaving India permanently",
+        "Income from salary received in advance",
+        "Income of a salaried employee with multiple employers",
+        "Income from house property let out for residential purposes"
+      ],
+      "answerIndex": 0,
+      "explanation": "Sections 174 to 176 provide exceptions to the rule where income of a previous year is assessed in the same previous year itself. One such exception is the income of a person leaving India permanently with no intention of returning.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Exceptions to PY Rule",
+        "Assessment in PY",
+        "Section 174"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_005",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "For the purpose of Income-tax Act, 1961, the term 'Person' under Section 2(31) includes how many distinct categories?",
+      "options": [
+        "5 categories",
+        "6 categories",
+        "7 categories",
+        "8 categories"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 2(31) defines 'person' to include 7 categories: (i) Individual, (ii) Hindu Undivided Family (HUF), (iii) Company, (iv) Firm, (v) Association of Persons (AOP) or Body of Individuals (BOI), (vi) Local authority, and (vii) Artificial juridical person.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Definition of Person",
+        "Section 2(31)",
+        "Basic Concepts"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_006",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "In computing total income, which of the following deductions is allowed from Gross Total Income under Chapter VI-A?",
+      "options": [
+        "Standard deduction under Section 16(ia)",
+        "Deduction under Section 80C for life insurance premium",
+        "Interest on borrowed capital under Section 24(b)",
+        "Entertainment allowance deduction under Section 16(ii)"
+      ],
+      "answerIndex": 1,
+      "explanation": "Deductions under Chapter VI-A (such as Section 80C) are made from the Gross Total Income. Section 16 deductions are from salary income, and Section 24(b) is from house property income, before arriving at Gross Total Income.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Gross Total Income",
+        "Chapter VI-A Deductions",
+        "Computation Flow"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_007",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "Which of the following incomes is completely exempt from income-tax under Section 10 of the Income-tax Act, 1961?",
+      "options": [
+        "Winnings from horse races",
+        "Agricultural income in India",
+        "Capital gains from transfer of listed shares",
+        "Director's sitting fees"
+      ],
+      "answerIndex": 1,
+      "explanation": "Agricultural income in India is exempt under Section 10(1). Winnings from horse races are taxable under Section 56(2)(ib) at special rates. Capital gains and director's fees are also taxable under their respective heads.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Agricultural Income",
+        "Section 10(1)",
+        "Exemptions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_008",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "Under the default tax regime (Section 115BAC) for individuals, which of the following deductions under Chapter VI-A is generally NOT available?",
+      "options": [
+        "Deduction under Section 80CCD(2) for employer's contribution to NPS",
+        "Deduction under Section 80CCD(1B) for employee's contribution to NPS",
+        "Deduction under Section 80C for Provident Fund and life insurance",
+        "Deduction under Section 80JJAA for employment of new workmen"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under the default tax regime of Section 115BAC, most deductions under Chapter VI-A like Section 80C, 80D, 80G, etc., are not available. However, deductions under Section 80CCD(2) and 80JJAA are permitted.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 115BAC",
+        "Default Tax Regime",
+        "Chapter VI-A Restrictions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_009",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "What is the tax status of a co-operative society under the Income-tax Act, 1961?",
+      "options": [
+        "Treated as a Firm",
+        "Treated as an Association of Persons (AOP)",
+        "Treated as a distinct category of 'Person' under Section 2(31)",
+        "Treated as a Local authority"
+      ],
+      "answerIndex": 2,
+      "explanation": "A co-operative society is specifically included as a distinct entity under 'Company' in an expanded definition or rather treated under specific tax rates, but strictly speaking, co-operative societies fall under the category of 'Local authority' or specific corporate definitions? Wait, let's check: Section 2(31) includes local authorities, but co-operative societies are legally treated as a 'Company' for income-tax rate purposes or separate entity? Actually, co-operative societies are treated as a separate category of person or under AOP? Correction: Co-operative society is treated as a separate category under Section 2(31)(vii) or as part of AOP? No, co-operative society is a co-operative society registered under Co-operative Societies Act, taxed as a separate entity (neither company nor firm nor AOP, but a distinct entity mentioned in finance acts and charging provisions). Let's review standard classification: Company, Firm, AOP/BOI, Local Authority, Artificial Juridical Person. Co-operative societies are assessed as a separate category of person.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Definition of Person",
+        "Co-operative Society",
+        "Section 2(31)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_010",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "Can an assessee have different previous years for different sources of income under the Income-tax Act, 1961?",
+      "options": [
+        "Yes, always",
+        "No, all sources of income must have the same previous year which is the financial year",
+        "Yes, if permitted by the Assessing Officer",
+        "Yes, for business income only"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 3, the previous year is uniformly the financial year (1st April to 31st March) for all sources of income. An assessee cannot have different previous years for different sources of income.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Previous Year",
+        "Section 3",
+        "Uniform Financial Year"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_011",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "Which of the following rates are NOT prescribed by the annual Finance Act?",
+      "options": [
+        "Income-tax rates for the current assessment year",
+        "Rates for deduction of tax at source (TDS) on salary",
+        "Advance tax installment rates",
+        "Surcharge rates"
+      ],
+      "answerIndex": 2,
+      "explanation": "Advance tax installment dates and rates are specified directly in the Income-tax Act, 1961 (Section 211), whereas tax rates, TDS rates on certain incomes, and surcharge rates are fixed annually by the Finance Act passed by Parliament.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Finance Act",
+        "Advance Tax",
+        "Rates of Tax"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_012",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "An association of persons (AOP) is formed by two non-corporate entities for a joint venture. How is the AOP taxed if the individual shares of members are indeterminate or unknown?",
+      "options": [
+        "At the maximum marginal rate (MMR)",
+        "At individual slab rates of members",
+        "At flat 20%",
+        "Exempt from tax"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 167B, if the shares of the members of an AOP/BOI in the income are indeterminate or unknown, tax is charged on the total income of the AOP at the maximum marginal rate (MMR).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AOP/BOI",
+        "Section 167B",
+        "Maximum Marginal Rate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_013",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "Surcharge is levied as a percentage of:",
+      "options": [
+        "Total Income",
+        "Gross Total Income",
+        "Income-tax computed on Total Income",
+        "Net Agricultural Income"
+      ],
+      "answerIndex": 2,
+      "explanation": "Surcharge is an additional tax levied as a specified percentage of the income-tax calculated on the total income of an assessee, when the total income exceeds specified threshold limits.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Surcharge",
+        "Computation of Tax",
+        "Basic Concepts"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_014",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "Health and Education Cess is computed at what rate on the income-tax plus surcharge?",
+      "options": [
+        "2%",
+        "3%",
+        "4%",
+        "5%"
+      ],
+      "answerIndex": 2,
+      "explanation": "Health and Education Cess is levied at the rate of 4% on the aggregate of income-tax and applicable surcharge for all assessees under the Income-tax Act.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Health and Education Cess",
+        "Cess Rate",
+        "Tax Computation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_015",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "Under Section 115BAC, for an individual opting for the default/concessional tax regime, what is the basic exemption limit for the AY 2026-27 (assuming new slab rates)?",
+      "options": [
+        "Rs. 2,50,000",
+        "Rs. 3,00,000",
+        "Rs. 5,00,000",
+        "Rs. 2,00,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under the concessional tax regime of Section 115BAC for individuals (as amended in recent Finance Acts), the basic exemption limit is Rs. 3,00,000.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 115BAC",
+        "Exemption Limit",
+        "Tax Slabs"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_016",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "Marginal relief is designed to ensure that:",
+      "options": [
+        "Total tax payable does not exceed the total income earned",
+        "The incremental tax liability due to surcharge does not exceed the incremental income above the threshold limit",
+        "No tax is paid by senior citizens having income below Rs. 5,00,000",
+        "Rebate under Section 87A completely eliminates tax for low-income earners"
+      ],
+      "answerIndex": 1,
+      "explanation": "Marginal relief provides that the additional amount of income-tax payable (including surcharge) on excess income over the surcharge threshold should not be greater than the actual amount of income earned in excess of that threshold.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Marginal Relief",
+        "Surcharge",
+        "Tax Computation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_017",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "Which of the following authorities is NOT part of the income-tax administration hierarchy under Section 116?",
+      "options": [
+        "Central Board of Direct Taxes (CBDT)",
+        "Chief Commissioners of Income-tax",
+        "Goods and Services Tax Council (GST Council)",
+        "Assessing Officers"
+      ],
+      "answerIndex": 2,
+      "explanation": "The GST Council is a constitutional body for GST governance and is not an income-tax authority under Section 116 of the Income-tax Act, 1961. CBDT, Chief Commissioners, and Assessing Officers are statutory income-tax authorities.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Income-tax Authorities",
+        "Section 116",
+        "Administration"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_018",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "What is the legal status of circulars issued by the Central Board of Direct Taxes (CBDT) under Section 119?",
+      "options": [
+        "They are binding on the Income-tax authorities, but not on the assessees",
+        "They are binding on both the income-tax authorities and the assessees",
+        "They are advisory in nature for all parties",
+        "They are binding on assessees if beneficial to them, but not on tax authorities"
+      ],
+      "answerIndex": 0,
+      "explanation": "CBDT circulars issued under Section 119 are binding on all income-tax authorities, but they cannot override the provisions of the Act nor can they impose a burden on assessees (meaning assessees can rely on beneficial circulars, but authorities are strictly bound by them).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "CBDT Circulars",
+        "Section 119",
+        "Binding Nature"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_019",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "In case of conflict between a provision of the Income-tax Act, 1961 and an Income-tax Rule framed thereunder, which one prevails?",
+      "options": [
+        "Income-tax Rules always prevail",
+        "Income-tax Act prevails over the Rules",
+        "Whichever is beneficial to the assessee",
+        "The CBDT decides which one applies"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rules are framed under the rule-making power of the Act (subordinate legislation). Therefore, in case of any conflict or inconsistency, the provisions of the parent statute (Income-tax Act, 1961) will always prevail over the Income-tax Rules.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Income-tax Act",
+        "Rules",
+        "Statutory Interpretation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_020",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "Under Section 87A, what is the maximum rebate available to a resident individual under the default tax regime (Section 115BAC) for AY 2026-27?",
+      "options": [
+        "Rs. 12,500",
+        "Rs. 25,000",
+        "Rs. 10,000",
+        "Rs. 60,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 87A for individuals opting for Section 115BAC, the maximum rebate is Rs. 25,000 (applicable when total income does not exceed Rs. 7,00,000, subject to marginal relief provisions).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Rebate",
+        "Section 87A",
+        "Section 115BAC"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_021",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "Which of the following is considered 'Income' under an inclusive definition given in Section 2(24)?",
+      "options": [
+        "Capital loss incurred on sale of shares",
+        "Voluntary contributions received by a trust created wholly for charitable purposes",
+        "Loan taken from a nationalized bank",
+        "Inherited property from parents"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 2(24) expansively defines income to include voluntary contributions received by a trust created wholly for charitable or religious purposes. Loans, capital losses, and inherited properties are generally not considered income.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Definition of Income",
+        "Section 2(24)",
+        "Charitable Trusts"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_022",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "When a business is discontinued, what is the tax treatment regarding the previous year of discontinuation?",
+      "options": [
+        "Income of the period up to the date of discontinuation may, at the discretion of the Assessing Officer, be assessed in that same financial year",
+        "Income is always assessed in the subsequent assessment year without exception",
+        "Discontinuation has no tax impact until the next financial year ends",
+        "Income of the discontinued business is exempt"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 176, where any business or profession is discontinued in any assessment year, the income of the period from the expiry of the previous year up to the date of discontinuation may, at the discretion of the Assessing Officer, be charged to tax in that assessment year.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Discontinued Business",
+        "Section 176",
+        "Assessment in PY"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_023",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "What does 'Gross Total Income' (GTI) signify under the Income-tax Act?",
+      "options": [
+        "Total income computed after allowing all Chapter VI-A deductions",
+        "Aggregate of income computed under all five heads of income, after giving effect to provisions for clubbing and set-off of losses, but before Chapter VI-A deductions",
+        "Total receipts of an assessee before any deductions or exemptions",
+        "Income-tax liability before adding surcharge and cess"
+      ],
+      "answerIndex": 1,
+      "explanation": "Gross Total Income is the aggregate of income computed under the five heads of income (Salary, House Property, PGBP, Capital Gains, and Other Sources) after making adjustments for clubbing of income and set-off of losses, but before deducting Chapter VI-A deductions.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Gross Total Income",
+        "Heads of Income",
+        "Computation Flow"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_024",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "Which of the following entities is taxed at a flat rate of 30% (plus applicable surcharge and cess) under normal provisions, without slab benefits?",
+      "options": [
+        "Resident Individual",
+        "Hindu Undivided Family (HUF)",
+        "Partnership Firm (including LLP)",
+        "Resident Senior Citizen"
+      ],
+      "answerIndex": 2,
+      "explanation": "Partnership firms and LLPs are taxable at a flat rate of 30% on their total income under normal provisions of the Income-tax Act. Individuals and HUFs enjoy slab-wise tax rates.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Tax Rates",
+        "Partnership Firm",
+        "Flat Rate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_025",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "Can agricultural income be clubbed with non-agricultural income for determining the rate of income-tax applicable to an individual (partial integration)?",
+      "options": [
+        "No, agricultural income is completely separate and never considered",
+        "Yes, if non-agricultural income exceeds the basic exemption limit and agricultural income exceeds Rs. 5,000",
+        "Yes, for all corporate assessees as well",
+        "No, partial integration was abolished"
+      ],
+      "answerIndex": 1,
+      "explanation": "Partial integration of agricultural income with non-agricultural income applies to individuals, HUFs, AOPs, BOIs, and artificial juridical persons if non-agricultural income exceeds the basic exemption limit AND agricultural income exceeds Rs. 5,000.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Agricultural Income",
+        "Partial Integration",
+        "Tax Rate Determination"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_026",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "Which of the following is NOT one of the five heads of income specified under Section 14?",
+      "options": [
+        "Income from Salary",
+        "Income from House Property",
+        "Income from Digital Assets",
+        "Income from Other Sources"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 14 categorizes all income under five heads: (1) Salaries, (2) Income from house property, (3) Profits and gains of business or profession, (4) Capital gains, and (5) Income from other sources. 'Income from Digital Assets' is a category of income, not a head of income.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Heads of Income",
+        "Section 14",
+        "Basic Concepts"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_027",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "For a newly formed company incorporated on 10th February of the financial year, what is the duration of its first previous year?",
+      "options": [
+        "1st April of that financial year to 31st March of the next year",
+        "10th February of that financial year to 31st March of the same financial year",
+        "10th February of that financial year to 31st March of the next year",
+        "1st January to 31st December"
+      ],
+      "answerIndex": 1,
+      "explanation": "Just like any newly set-up business or newly incorporated entity, the first previous year for a company starts from the date of its incorporation (10th February) and ends on 31st March of that same financial year.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Previous Year",
+        "Newly Incorporated Company",
+        "Section 3"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_028",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "What is the primary objective of levying surcharge under the Income-tax Act?",
+      "options": [
+        "To raise additional revenue from high-income earners (progressive taxation)",
+        "To fund local municipal corporations",
+        "To penalize tax evaders",
+        "To replace the corporate tax structure"
+      ],
+      "answerIndex": 0,
+      "explanation": "Surcharge is an additional levy on higher income brackets, embodying the principle of progressive taxation where those with higher financial capacity contribute a higher effective tax percentage.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Surcharge",
+        "Progressive Taxation",
+        "Tax Policy"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_029",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "Under Section 2(7), 'Assassessee' means any person by whom any tax or other sum of money is payable under the Act. Which of the following is ALSO included in the definition of assessee?",
+      "options": [
+        "A person in respect of whom proceedings under the Act have been taken for the assessment of his income",
+        "A salaried employee whose employer deducts TDS correctly with no pending liability",
+        "A foreign tourist visiting India for 5 days with zero Indian income",
+        "A retail buyer purchasing goods subject to GST"
+      ],
+      "answerIndex": 0,
+      "explanation": "An assessee includes any person by whom any tax, interest, or penalty is payable, as well as every person in respect of whom any proceeding under the Act has been taken for the assessment of his income, loss, or refund.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Definition of Assassessee",
+        "Section 2(7)",
+        "Basic Concepts"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-1_030",
+      "kind": "normal",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "prompt": "Which of the following constitutional provisions empowers the Parliament of India to make laws in respect of taxes on income other than agricultural income?",
+      "options": [
+        "Article 246, Seventh Schedule, Union List, Entry 82",
+        "Article 270, State List, Entry 46",
+        "Article 265, Concurrent List, Entry 12",
+        "Article 300A"
+      ],
+      "answerIndex": 0,
+      "explanation": "Entry 82 of the Union List (List I) in the Seventh Schedule of the Constitution of India empowers Parliament to legislate on taxes on income other than agricultural income. Entry 46 of the State List covers agricultural income taxes.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Constitutional Validity",
+        "Union List Entry 82",
+        "Taxing Power"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_income-tax-1_01",
+      "kind": "scenario",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "passage": "Mr. Raghav, a resident Indian aged 42, sets up a new retail garment business on 1st August 2025. During the financial year 2025-26, he earns income under various heads including business income, capital gains, and bank interest. He is evaluating whether to opt out of the default tax regime under Section 115BAC.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-1_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-1_01",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-1",
+          "subject": "Taxation",
+          "prompt": "What will be the duration of the first previous year for Mr. Raghav's newly set-up retail garment business?",
+          "options": [
+            "1st April 2025 to 31st March 2026",
+            "1st August 2025 to 31st March 2026",
+            "1st August 2025 to 31st July 2026",
+            "1st April 2025 to 31st July 2025"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per Section 3, for a newly set-up business, the first previous year commences on the date of setting up of the business (1st August 2025) and ends on the last day of the financial year (31st March 2026).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Previous Year",
+            "Newly Set-up Business",
+            "Section 3"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-1_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-1_01",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-1",
+          "subject": "Taxation",
+          "prompt": "In which assessment year will the income earned by Mr. Raghav during the financial year 2025-26 normally be assessed to tax?",
+          "options": [
+            "AY 2025-26",
+            "AY 2026-27",
+            "AY 2027-28",
+            "At the option of Mr. Raghav"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the general rule of Section 4, income of a previous year (FY 2025-26) is assessed to tax in the immediately following assessment year, which is AY 2026-27.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Assessment Year",
+            "Previous Year",
+            "Charging Section"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-1_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-1_01",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-1",
+          "subject": "Taxation",
+          "prompt": "If Mr. Raghav chooses to remain under the default tax regime of Section 115BAC for AY 2026-27, which of the following deductions will he generally NOT be permitted to claim?",
+          "options": [
+            "Deduction under Section 80CCD(2) for employer's NPS contribution",
+            "Deduction under Section 80C for life insurance premium",
+            "Deduction under Section 80JJAA for new workmen",
+            "Standard deduction from salary (if applicable)"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the default tax regime of Section 115BAC, general Chapter VI-A deductions such as Section 80C are disallowed, whereas Section 80CCD(2), 80JJAA, and standard deduction under Section 16(ia) are available.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 115BAC",
+            "Default Tax Regime",
+            "Deductions"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-1_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-1_01",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-1",
+          "subject": "Taxation",
+          "prompt": "Under which head of income will Mr. Raghav's earnings from the retail garment business be computed?",
+          "options": [
+            "Income from Salary",
+            "Income from House Property",
+            "Profits and gains of business or profession",
+            "Income from Other Sources"
+          ],
+          "answerIndex": 2,
+          "explanation": "Income derived from running a retail garment business falls under the head 'Profits and gains of business or profession' (PGBP) pursuant to Section 28 of the Income-tax Act.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Heads of Income",
+            "PGBP",
+            "Section 28"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-1_02",
+      "kind": "scenario",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "passage": "M/s. Apex Associates, a partnership firm, has total income of Rs. 1,02,00,000 for the financial year 2025-26. The firm comprises three resident partners who share profits equally. The firm is calculating its total tax liability including surcharge and cess.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-1_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-1_02",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-1",
+          "subject": "Taxation",
+          "prompt": "What is the normal income-tax rate applicable to partnership firm M/s. Apex Associates under the Income-tax Act for AY 2026-27?",
+          "options": [
+            "25%",
+            "30%",
+            "22%",
+            "Maximum Marginal Rate"
+          ],
+          "answerIndex": 1,
+          "explanation": "Partnership firms (including LLPs) are taxable at a flat rate of 30% on their total income under the normal provisions of the Income-tax Act.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Partnership Firm",
+            "Tax Rates",
+            "Flat Rate"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-1_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-1_02",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-1",
+          "subject": "Taxation",
+          "prompt": "Since the total income of M/s. Apex Associates exceeds Rs. 1 crore, what is the applicable surcharge rate?",
+          "options": [
+            "7%",
+            "10%",
+            "12%",
+            "15%"
+          ],
+          "answerIndex": 2,
+          "explanation": "For a partnership firm (domestic non-corporate entity), a surcharge of 12% is levied when total income exceeds Rs. 1 crore (and up to Rs. 10 crores).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Surcharge",
+            "Partnership Firm",
+            "Thresholds"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-1_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-1_02",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-1",
+          "subject": "Taxation",
+          "prompt": "How is Health and Education Cess calculated for M/s. Apex Associates?",
+          "options": [
+            "3% of basic tax",
+            "4% of basic tax plus surcharge",
+            "4% of total income",
+            "1% of turnover"
+          ],
+          "answerIndex": 1,
+          "explanation": "Health and Education Cess is levied at 4% on the aggregate of income-tax and applicable surcharge for all categories of assessees.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Health and Education Cess",
+            "Tax Computation",
+            "Cess Rate"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-1_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-1_02",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-1",
+          "subject": "Taxation",
+          "prompt": "Are the shares of profits received by the individual partners from M/s. Apex Associates taxable in the hands of the partners?",
+          "options": [
+            "Yes, fully taxable under PGBP",
+            "No, share of profit received from a firm is exempt under Section 10(2A) in the hands of the partners",
+            "Taxable only if total income of partner exceeds Rs. 10 lakhs",
+            "Taxable as capital gains"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 10(2A), the share of profit received by a partner from a firm is exempt from tax in the partner's hands, because the firm has already paid tax on its profits.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Partnership Firm",
+            "Section 10(2A)",
+            "Exemptions"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-1_03",
+      "kind": "scenario",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "passage": "Dr. Meera, a resident individual aged 61, earns rental income from a commercial property, salary from a university, and agricultural income from her ancestral land in Kerala amounting to Rs. 4,50,000. Her non-agricultural total income for AY 2026-27 is Rs. 9,50,000.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-1_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-1_03",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-1",
+          "subject": "Taxation",
+          "prompt": "Under which head of income is the rental income from Dr. Meera's commercial property taxable?",
+          "options": [
+            "Income from Salary",
+            "Income from House Property",
+            "Profits and gains of business or profession",
+            "Income from Other Sources"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rental income from property (whether residential or commercial) owned by the assessee is taxable under the head 'Income from House Property' under Section 22.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "House Property",
+            "Section 22",
+            "Heads of Income"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-1_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-1_03",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-1",
+          "subject": "Taxation",
+          "prompt": "What is the tax treatment of Dr. Meera's agricultural income of Rs. 4,50,000 under Section 10(1)?",
+          "options": [
+            "Fully taxable under Income from Other Sources",
+            "Exempt under Section 10(1), but subject to partial integration for rate purposes",
+            "Fully taxable at slab rates",
+            "Exempt and completely ignored for all tax computations"
+          ],
+          "answerIndex": 1,
+          "explanation": "Agricultural income in India is exempt under Section 10(1). However, since her non-agricultural income exceeds the basic exemption limit and agricultural income exceeds Rs. 5,000, it is subject to partial integration for determining the tax rate on non-agricultural income.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Agricultural Income",
+            "Section 10(1)",
+            "Partial Integration"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-1_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-1_03",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-1",
+          "subject": "Taxation",
+          "prompt": "What is the basic exemption limit applicable to Dr. Meera (aged 61) under the normal provisions (old tax regime) for AY 2026-27?",
+          "options": [
+            "Rs. 2,50,000",
+            "Rs. 3,00,000",
+            "Rs. 5,00,000",
+            "Rs. 2,00,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the normal provisions (old tax regime), for a resident senior citizen (aged 60 years or more but less than 80 years), the basic exemption limit is Rs. 3,00,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Senior Citizen",
+            "Exemption Limit",
+            "Old Tax Regime"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-1_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-1_03",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-1",
+          "subject": "Taxation",
+          "prompt": "Can Dr. Meera claim standard deduction against her salary income under the old tax regime?",
+          "options": [
+            "No, standard deduction is only for corporate employees",
+            "Yes, standard deduction under Section 16(ia) is available to salaried assessees",
+            "Yes, but only up to Rs. 10,000",
+            "Only if she opts out of Section 115BAC"
+          ],
+          "answerIndex": 1,
+          "explanation": "Standard deduction under Section 16(ia) is available to salaried taxpayers under both the old tax regime and the default tax regime.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Salary",
+            "Standard Deduction",
+            "Section 16(ia)"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-1_04",
+      "kind": "scenario",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "passage": "Mr. Vikram, a resident individual, leaves India on 15th December 2025 for permanent employment abroad with no intention of returning to India in the foreseeable future. He earned substantial capital gains and other income prior to his departure during the financial year 2025-26.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-1_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-1_04",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-1",
+          "subject": "Taxation",
+          "prompt": "Which specific provision empowers the Assessing Officer to assess Mr. Vikram's income for the period up to 15th December 2025 in the same assessment year?",
+          "options": [
+            "Section 174",
+            "Section 175",
+            "Section 176",
+            "Section 4"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 174 deals with assessment of income of a person leaving India, empowering the Assessing Officer to assess the total income of such person up to the date of departure in the same assessment year.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 174",
+            "Leaving India",
+            "Assessment in PY"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-1_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-1_04",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-1",
+          "subject": "Taxation",
+          "prompt": "What is the assessment year for the income assessed under Section 174 in Mr. Vikram's case for the period up to his departure?",
+          "options": [
+            "AY 2025-26",
+            "AY 2026-27",
+            "AY 2027-28",
+            "Assessment year is not applicable"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under Section 174, income of a person leaving India permanently is assessed in the same previous year/assessment year in which they leave (i.e., AY 2025-26, since departure is in FY 2025-26).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Assessment Year",
+            "Section 174",
+            "Exceptions to PY Rule"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-1_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-1_04",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-1",
+          "subject": "Taxation",
+          "prompt": "What is required from Mr. Vikram before he leaves India in terms of tax clearance?",
+          "options": [
+            "He must obtain a tax clearance certificate under Section 230 where applicable",
+            "He must pay advance tax for the next 5 years in advance",
+            "He must surrender his PAN card permanently",
+            "No formalities are required if he is leaving for employment"
+          ],
+          "answerIndex": 0,
+          "explanation": "Persons leaving India in certain circumstances (such as financial liabilities or specific categories) are required to obtain a tax clearance certificate under Section 230 before boarding transport from India.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Tax Clearance Certificate",
+            "Section 230",
+            "Leaving India"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-1_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-1_04",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-1",
+          "subject": "Taxation",
+          "prompt": "Under the definition of 'Person' in Section 2(31), Mr. Vikram is classified as:",
+          "options": [
+            "Artificial juridical person",
+            "Individual",
+            "Association of Persons",
+            "Non-resident entity"
+          ],
+          "answerIndex": 1,
+          "explanation": "Mr. Vikram, being a human being, is classified as an 'Individual' under Section 2(31)(i) of the Income-tax Act.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Definition of Person",
+            "Individual",
+            "Section 2(31)"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-1_05",
+      "kind": "scenario",
+      "chapterId": "income-tax-1",
+      "subject": "Taxation",
+      "passage": "XYZ Ltd., a domestic company, has a total taxable income of Rs. 10,20,00,000 for the financial year 2025-26. The company is evaluating its tax liabilities under the normal provisions and checking the applicability of surcharge thresholds.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Basic Concepts"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-1_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-1_05",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-1",
+          "subject": "Taxation",
+          "prompt": "What is the base corporate tax rate for a domestic company under the normal provisions (assuming turnover conditions do not qualify it for 25%)?",
+          "options": [
+            "22%",
+            "25%",
+            "30%",
+            "35%"
+          ],
+          "answerIndex": 2,
+          "explanation": "Under the normal provisions of the Income-tax Act, domestic companies are generally taxable at 30% (unless specific turnover or concessional rates like Section 115BAA/115BAB apply).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Domestic Company",
+            "Corporate Tax Rate",
+            "Normal Provisions"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-1_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-1_05",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-1",
+          "subject": "Taxation",
+          "prompt": "Since XYZ Ltd.'s total income exceeds Rs. 10 crore, what is the applicable surcharge rate?",
+          "options": [
+            "7%",
+            "10%",
+            "12%",
+            "7% or 12% depending on section opted"
+          ],
+          "answerIndex": 2,
+          "explanation": "For a domestic company, when total income exceeds Rs. 10 crores under normal provisions, the applicable surcharge rate is 12% (if total income is between Rs. 1 crore and Rs. 10 crores, it is 7%; exceeding Rs. 10 crores, it is 12%).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Surcharge",
+            "Domestic Company",
+            "Thresholds"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-1_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-1_05",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-1",
+          "subject": "Taxation",
+          "prompt": "Is marginal relief available to XYZ Ltd. when its total income exceeds Rs. 10 crores?",
+          "options": [
+            "No marginal relief is ever available to companies",
+            "Yes, marginal relief ensures that additional tax due to surcharge does not exceed income above Rs. 10 crores",
+            "Marginal relief is only available to individuals and HUFs",
+            "Marginal relief applies automatically without any computation"
+          ],
+          "answerIndex": 1,
+          "explanation": "Marginal relief is available to companies as well when total income exceeds threshold limits (like Rs. 10 crores), ensuring the incremental tax and surcharge liability does not exceed the incremental income over the threshold.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Marginal Relief",
+            "Company Surcharge",
+            "Tax Computation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-1_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-1_05",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-1",
+          "subject": "Taxation",
+          "prompt": "Which statutory authority enacted the rates of income-tax and surcharge for XYZ Ltd. for AY 2026-27?",
+          "options": [
+            "Central Board of Direct Taxes (CBDT) via notification",
+            "The Finance Act passed by Parliament",
+            "Reserve Bank of India (RBI)",
+            "Ministry of Corporate Affairs (MCA)"
+          ],
+          "answerIndex": 1,
+          "explanation": "The rates of income-tax, surcharge, and cess for any assessment year are enacted annually by the Finance Act passed by Parliament.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Finance Act",
+            "Tax Rates",
+            "Basic Concepts"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

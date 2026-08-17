@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "audit-1",
+  "subject": "Audit",
+  "paper": "Paper 5: Auditing and Ethics",
+  "module": "Module 1",
+  "chapterNumber": 1,
+  "chapterTitle": "Nature, Objective and Scope of Audit",
+  "generatedAt": "2026-08-16T14:46:23.863Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_audit-1_001",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "According to SA 200, what is the overall objective of an independent audit of financial statements?",
+      "options": [
+        "To guarantee the absolute accuracy and correctness of the financial statements",
+        "To obtain reasonable assurance about whether the financial statements as a whole are free from material misstatement",
+        "To detect all instances of fraud, error, and non-compliance committed by management",
+        "To prepare the financial statements on behalf of the management in accordance with accounting standards"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per SA 200, the primary objective of an audit is to obtain reasonable assurance about whether the financial statements as a whole are free from material misstatement, enabling the auditor to express an opinion. An audit does not provide an absolute guarantee due to inherent limitations. Management is solely responsible for preparing financial statements.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 200",
+        "Audit Objectives",
+        "Reasonable Assurance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_002",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "Which of the following best describes 'Professional Skepticism' as required by SA 200?",
+      "options": [
+        "An attitude that assumes management is dishonest and cannot be trusted under any circumstances",
+        "An attitude that accepts all management representations without question if corroborating evidence is costly to obtain",
+        "An attitude that includes a questioning mind, being alert to conditions which may indicate possible misstatement due to error or fraud, and a critical assessment of evidence",
+        "A legal liability standard applied exclusively when statutory financial fraud has occurred"
+      ],
+      "answerIndex": 2,
+      "explanation": "SA 200 defines professional skepticism as an attitude that includes a questioning mind, being alert to conditions which may indicate possible misstatement due to error or fraud, and a critical assessment of audit evidence. It neither assumes management is dishonest nor assumes unquestioned honesty.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Professional Skepticism",
+        "SA 200",
+        "Auditor Mindset"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_003",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "Inherent limitations of an audit arise from various factors. Which of the following is NOT considered an inherent limitation of an audit?",
+      "options": [
+        "The use of testing and other selective means of gathering audit evidence (sampling risk)",
+        "The possibility that management may intentionally conceal fraud through sophisticated collusion",
+        "The statutory restriction preventing the auditor from examining transactions occurring after the balance sheet date",
+        "The fact that financial reporting involves subjective judgments and estimates by management"
+      ],
+      "answerIndex": 2,
+      "explanation": "Statutory restrictions do not inherently limit audits in the context of SA 200; rather, inherent limitations arise from the nature of financial reporting, nature of audit procedures (sampling), and the fact that fraud may involve sophisticated collusion. Auditors are required to consider subsequent events right up to the date of the auditor's report.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Inherent Limitations",
+        "SA 200",
+        "Audit Scope"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_004",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "Which fundamental ethical principle requires a Chartered Accountant to be straightforward and honest in all professional and business relationships?",
+      "options": [
+        "Objectivity",
+        "Integrity",
+        "Professional Competence and Due Care",
+        "Confidentiality"
+      ],
+      "answerIndex": 1,
+      "explanation": "Integrity is the fundamental principle that imposes an obligation on all professional accountants to be straightforward and honest in all professional and business relationships, implying fair dealing and truthfulness.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Code of Ethics",
+        "Integrity",
+        "Fundamental Principles"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_005",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "An auditor discovers a discrepancy in inventory valuation during interim testing. The client explains that the variance is due to an internal clerical error and provides a corrected calculation sheet. Applying professional skepticism, what should the auditor do next?",
+      "options": [
+        "Accept the client's calculation sheet immediately to maintain a smooth working relationship",
+        "Conclude that management is fraudulent and issue a modified audit opinion",
+        "Perform further audit procedures to corroborate the client's explanation and test the underlying source data",
+        "Ignore the discrepancy as interim testing findings are non-binding"
+      ],
+      "answerIndex": 2,
+      "explanation": "Professional skepticism requires the auditor to critically assess audit evidence and not accept management explanations at face value. The auditor must corroborate management's oral or written explanations with additional independent audit procedures.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Professional Skepticism",
+        "Audit Evidence",
+        "SA 200"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_006",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "What is the primary responsibility for the prevention and detection of fraud in an entity subject to statutory audit?",
+      "options": [
+        "The statutory auditor appointed by the shareholders",
+        "The forensic investigator hired by the audit committee",
+        "Those charged with governance and management of the entity",
+        "The regulatory authorities such as the Registrar of Companies (ROC)"
+      ],
+      "answerIndex": 2,
+      "explanation": "As per SA 240 and SA 200, the primary responsibility for the prevention and detection of fraud rests with both those charged with governance and management of the entity. The auditor's role is to obtain reasonable assurance that the financial statements are free from material misstatements, whether caused by fraud or error.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Fraud Responsibility",
+        "Management vs Auditor",
+        "SA 240"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_007",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "Which of the following standards establishes the independent auditor's overall responsibilities when conducting an audit of financial statements in accordance with SAs?",
+      "options": [
+        "SA 210",
+        "SA 220",
+        "SA 200",
+        "SA 230"
+      ],
+      "answerIndex": 2,
+      "explanation": "SA 200 ('Overall Objectives of the Independent Auditor and the Conduct of an Audit in Accordance with Standards on Auditing') establishes the independent auditor's overall responsibilities when conducting an audit.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 200",
+        "Standards on Auditing",
+        "Auditor Responsibilities"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_008",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "What does the term 'Scope of an Audit' refer to in the context of statutory financial statement audits?",
+      "options": [
+        "The fee charged by the auditor for conducting the assignment",
+        "The audit procedures deemed necessary in the circumstances to achieve the objective of the audit",
+        "The total turnover of the company being audited during the financial year",
+        "The legal jurisdiction in which the company is incorporated and operates"
+      ],
+      "answerIndex": 1,
+      "explanation": "The scope of an audit refers to audit procedures deemed necessary in the circumstances to achieve the objective of the audit. It is determined by SAs, laws, regulations, and the terms of the audit engagement.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Audit Scope",
+        "SA 200",
+        "Audit Procedures"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_009",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "Under the Code of Ethics, which principle prohibits a Chartered Accountant from allowing bias, conflict of interest, or undue influence of others to override professional or business judgments?",
+      "options": [
+        "Confidentiality",
+        "Professional Competence and Due Care",
+        "Objectivity",
+        "Professional Behavior"
+      ],
+      "answerIndex": 2,
+      "explanation": "Objectivity is the fundamental principle that requires an accountant not to compromise professional or business judgment because of bias, conflict of interest, or the undue influence of others.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Objectivity",
+        "Code of Ethics",
+        "Threats and Safeguards"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_010",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "Why is 'Professional Judgment' essential throughout the audit process?",
+      "options": [
+        "Because audit fees are determined based on the amount of judgment exercised by the senior partner",
+        "Because interpretation of relevant ethical requirements and informed decisions regarding appropriate courses of action are necessary in complex audit situations",
+        "Because it exempts the auditor from verifying physical inventory balances",
+        "Because statutory laws require the auditor to override accounting standards if management disagrees"
+      ],
+      "answerIndex": 1,
+      "explanation": "Professional judgment is essential because interpretation of relevant ethical requirements and SAs, and informed decisions about necessary courses of action (such as materiality, risk assessment, and sample sizes), cannot be made without the application of relevant training, knowledge, and experience.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Professional Judgment",
+        "SA 200",
+        "Audit Quality"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_011",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "An auditor fails to detect a material misstatement resulting from management fraud. Does this fact alone indicate that the auditor failed to comply with Standards on Auditing?",
+      "options": [
+        "Yes, because an audit must uncover all material misstatements regardless of how skillfully concealed",
+        "No, provided the auditor performed the audit in accordance with SAs, maintained professional skepticism, and exercised professional judgment",
+        "Yes, unless the auditor reported the suspected fraud directly to the police before issuing the report",
+        "No, because statutory auditors have no legal responsibility for fraud detection under company law"
+      ],
+      "answerIndex": 1,
+      "explanation": "The fact that an audit is conducted in accordance with SAs does not guarantee that all material misstatements will be detected, due to inherent limitations. Compliance with SAs is judged based on the sufficiency and appropriateness of procedures performed in light of information available.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Inherent Limitations",
+        "Audit Failure vs Limitations",
+        "SA 200"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_012",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "Which of the following best defines 'Reasonable Assurance' in the context of an audit engagement?",
+      "options": [
+        "A low level of assurance, expressed negatively as a conclusion",
+        "An absolute level of assurance ensuring the financial statements are completely free from error",
+        "A high, but not absolute, level of assurance obtained when the auditor has reduced audit risk to an acceptably low level",
+        "An insurance-backed guarantee provided by the audit firm to compensate shareholders for undetected losses"
+      ],
+      "answerIndex": 2,
+      "explanation": "Reasonable assurance is a high level of assurance. It is obtained when the auditor has obtained sufficient appropriate audit evidence to reduce audit risk (i.e., the risk that the auditor expresses an inappropriate opinion when financial statements are materially misstated) to an acceptably low level.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Reasonable Assurance",
+        "Audit Risk",
+        "SA 200"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_013",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "Can an auditor place reliance on photocopied documents and management representations without obtaining original documents or corroborating evidence?",
+      "options": [
+        "Yes, under the principle of trust, management representations are conclusive audit evidence",
+        "No, auditors must be alert to the reliability of information and obtain original documents or corroborating evidence when records are modified or suspect",
+        "Yes, provided the photocopies are certified by the internal auditor",
+        "No, unless the client pays an additional fee for document verification"
+      ],
+      "answerIndex": 1,
+      "explanation": "SA 200 and SA 500 require the auditor to consider the reliability of information to be used as audit evidence. Photocopies and internal representations alone are less reliable and require corroboration, especially when conditions indicate they may not be authentic.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Audit Evidence",
+        "Reliability",
+        "Professional Skepticism"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_014",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "What is the significance of the phrase 'Present Fairly, in all material respects' in the auditor's report?",
+      "options": [
+        "It indicates that the company has incurred zero expenses during the financial year",
+        "It establishes that the financial statements are prepared in accordance with an applicable financial reporting framework, considering materiality",
+        "It confirms that the share price of the company will rise in the upcoming stock exchange trading sessions",
+        "It absolves the management of any fraudulent acts committed during the audit period"
+      ],
+      "answerIndex": 1,
+      "explanation": "The phrase 'present fairly, in all material respects' or 'give a true and fair view' indicates the auditor's opinion that the financial statements are prepared, in all material respects, in accordance with the applicable financial reporting framework.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "True and Fair View",
+        "Audit Opinion",
+        "Materiality"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_015",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "A Chartered Accountant in practice accepts an audit engagement for a client where the audit fee represents 65% of the total gross fees of the CA firm. Which fundamental ethical threat arises primarily from this situation?",
+      "options": [
+        "Self-review threat",
+        "Advocacy threat",
+        "Self-interest threat",
+        "Intimidation threat"
+      ],
+      "answerIndex": 2,
+      "explanation": "A high dependence on a single client for a significant portion of fee creation creates a clear self-interest threat, as the auditor may be reluctant to qualify the report or challenge management for fear of losing the client and facing financial instability.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Code of Ethics",
+        "Self-Interest Threat",
+        "Independence"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_016",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "Which of the following statements regarding statutory audit and operational (management) audit is correct?",
+      "options": [
+        "Statutory audit is mandatory under law, whereas operational audit is generally voluntary and evaluates efficiency and effectiveness",
+        "Operational audit is conducted exclusively by statutory tax authorities, whereas statutory audit is voluntary",
+        "Both statutory and operational audits focus solely on income tax computation compliance",
+        "Statutory audit reports are addressed to the board of directors, while operational audit reports are submitted to the stock exchange"
+      ],
+      "answerIndex": 1,
+      "explanation": "Statutory audit is required by law (e.g., Companies Act, 2013) with a focus on financial statement truth and fairness. Operational audit is usually voluntary, focusing on the efficiency, effectiveness, and economy of operations.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Types of Audit",
+        "Statutory Audit",
+        "Operational Audit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_017",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "How does the concept of 'Materiality' affect the auditor's work during an audit engagement?",
+      "options": [
+        "Materiality is only relevant at the final reporting stage when signing the audit report",
+        "Materiality helps the auditor determine the nature, timing, and extent of risk assessment and further audit procedures",
+        "Materiality is predetermined by statutory regulators and cannot be calculated by the auditor",
+        "Materiality ensures that every single clerical error of ₹10 is investigated thoroughly"
+      ],
+      "answerIndex": 1,
+      "explanation": "Auditors apply materiality in planning and performing the audit, and in evaluating the effect of identified misstatements on the audit and of uncorrected misstatements, if any, on the financial statements. It guides the nature, timing, and extent of audit procedures.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Materiality",
+        "Audit Planning",
+        "SA 320"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_018",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "What is the primary objective of a 'Limited Review' (as performed for quarterly financial results under SEBI LODR Regulations) compared to a full statutory audit?",
+      "options": [
+        "To provide absolute assurance on future profitability",
+        "To provide high level assurance through comprehensive physical verification of all assets",
+        "To provide moderate assurance primarily through inquiry and analytical procedures rather than extensive testing of controls and substantive details",
+        "To perform forensic investigation of bank accounts"
+      ],
+      "answerIndex": 2,
+      "explanation": "A limited review (attestation engagement providing negative assurance) is substantially less in scope than an audit conducted in accordance with SAs, consisting primarily of inquiries of company personnel and analytical procedures applied to financial data, providing moderate assurance.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Limited Review",
+        "Assurance Engagements",
+        "Review vs Audit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_019",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "In the context of the Code of Ethics, which threat occurs when a professional accountant promotes a client's position or opinion to the point that objectivity may be compromised?",
+      "options": [
+        "Intimidation threat",
+        "Advocacy threat",
+        "Familiarity threat",
+        "Self-review threat"
+      ],
+      "answerIndex": 1,
+      "explanation": "An advocacy threat occurs when a professional accountant promotes a client's position or opinion to the point that objectivity may be compromised, such as representing a client in tax litigation where independence is required.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Advocacy Threat",
+        "Code of Ethics",
+        "Independence"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_020",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "Why is an audit trail important for an independent statutory auditor examining computerized accounting systems?",
+      "options": [
+        "It allows the auditor to bypass testing internal controls completely",
+        "It provides a traceable linkage of transactions from source documents through ledger postings to financial statement summaries",
+        "It eliminates the need for professional skepticism",
+        "It automatically prevents management from committing accounting errors"
+      ],
+      "answerIndex": 1,
+      "explanation": "An audit trail enables the auditor to trace transactions from origin to final financial statement inclusion, ensuring traceability, completeness, and validity of accounting data in automated environments.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Audit Trail",
+        "IT Environment",
+        "Audit Evidence"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_021",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "Which of the following best explains why an auditor's opinion is not a guarantee of the future viability of the entity?",
+      "options": [
+        "Because auditors lack qualifications in business economics",
+        "Because an audit evaluates historical financial statements based on past transactions and conditions, whereas future viability depends on future uncertain events and management decisions",
+        "Because company law explicitly prohibits auditors from commenting on going concern",
+        "Because financial statements are prepared on a cash basis under Indian Accounting Standards"
+      ],
+      "answerIndex": 1,
+      "explanation": "An audit is an evaluation of historical financial data. While auditors evaluate management's going concern assessment (SA 570), the audit opinion is not a guarantee of future economic viability or success.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Going Concern",
+        "SA 570",
+        "Audit Limitations"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_022",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "An auditor notices that the client's chief financial officer is a close personal relative of the audit engagement partner. Which ethical threat is most prominent?",
+      "options": [
+        "Self-review threat",
+        "Familiarity threat",
+        "Advocacy threat",
+        "Intimidation threat"
+      ],
+      "answerIndex": 1,
+      "explanation": "A close relationship between the auditor and a key officer creates a familiarity threat, as the auditor may become too sympathetic to the client's interests or accept insufficient evidence due to personal closeness.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Familiarity Threat",
+        "Code of Ethics",
+        "Independence"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_023",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "What is meant by 'Sufficiency' of audit evidence?",
+      "options": [
+        "The measure of the quality of audit evidence, its relevance and its reliability",
+        "The measure of the quantity of audit evidence, determined by the risk of misstatement and quality of evidence",
+        "The legal enforceability of audit working papers in a court of law",
+        "The total number of hours spent by articled assistants on the audit field"
+      ],
+      "answerIndex": 1,
+      "explanation": "Sufficiency is the measure of the quantity of audit evidence. The quantity needed is affected by the auditor's assessment of risks of misstatement and also by the quality of such audit evidence.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Sufficiency",
+        "Audit Evidence",
+        "SA 500"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_024",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "Which of the following activities is generally considered an 'Attestation Engagement' rather than a non-assurance service?",
+      "options": [
+        "Management consulting on supply chain optimization",
+        "Tax return preparation as an agent for a corporate client",
+        "Issuation of a compliance certificate on corporate governance under SEBI LODR",
+        "Internal bookkeeping and compilation of trial balance"
+      ],
+      "answerIndex": 2,
+      "explanation": "Issuing a compliance certificate on corporate governance involves examining subject matter prepared by another party and expressing a conclusion thereon, which is an attestation (assurance) engagement. Bookkeeping, tax return preparation as an advocate/agent, and consulting are non-assurance services.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Assurance Engagements",
+        "Attestation",
+        "Non-Assurance Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_025",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "When is an auditor permitted to disclose confidential client information acquired during an audit engagement without the client's explicit consent?",
+      "options": [
+        "Whenever the auditor wishes to discuss interesting audit findings with competing firms",
+        "When disclosure is required by law, such as reporting fraud under Section 143(12) of the Companies Act, 2013",
+        "Whenever the client delays the payment of interim audit fees",
+        "When requested informally by a journalist investigating company gossip"
+      ],
+      "answerIndex": 1,
+      "explanation": "The principle of confidentiality requires a professional accountant to maintain secrecy of client information. However, disclosure is permitted or required when mandated by law, such as statutory reporting of fraud under Section 143(12) or regulatory/legal process requirements.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Confidentiality",
+        "Code of Ethics",
+        "Legal Requirement"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_026",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "What is the primary purpose of Audit Working Papers?",
+      "options": [
+        "To serve as marketing material for pitching new audit clients",
+        "To provide sufficient and appropriate record of the basis for the auditor's report and evidence that the audit was planned and performed in accordance with SAs",
+        "To replace the company's official accounting ledgers and registers",
+        "To calculate the personal income tax liability of the audit partner"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per SA 230, audit documentation (working papers) provides evidence of the auditor's basis for a conclusion about the achievement of the overall objectives and evidence that the audit was planned and performed in accordance with SAs and applicable legal requirements.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Audit Documentation",
+        "SA 230",
+        "Working Papers"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_027",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "An audit firm previously prepared the financial statements for a private company and is now appointed as the statutory auditor for the same company for the current financial year. Which ethical threat arises from this sequence of events?",
+      "options": [
+        "Self-review threat",
+        "Intimidation threat",
+        "Advocacy threat",
+        "Familiarity threat"
+      ],
+      "answerIndex": 0,
+      "explanation": "A self-review threat occurs when an audit firm evaluates or audits its own previous work, such as when an auditor audits financial statements that the firm itself prepared or compiled. Safeguards must be evaluated or such services restricted.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Self-Review Threat",
+        "Code of Ethics",
+        "Independence"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_028",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "Which of the following best characterizes the relationship between Standards on Auditing (SAs) and the Companies Act, 2013 in India?",
+      "options": [
+        "Standards on Auditing override the provisions of the Companies Act in all matters",
+        "The Companies Act, 2013 mandates compliance with Standards on Auditing specified by the ICAI",
+        "Standards on Auditing are mere guidelines and compliance is entirely voluntary for statutory auditors",
+        "SAs apply only to listed entities, whereas the Companies Act applies only to unlisted private companies"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 143(10) of the Companies Act, 2013 statutorily empowers the Central Government to prescribe auditing standards in consultation with ICAI, and requires auditors to comply with auditing standards (SAs).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Companies Act 2013",
+        "Standards on Auditing",
+        "Legal Framework"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_029",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "What does 'Appropriateness' of audit evidence refer to?",
+      "options": [
+        "The total volume of invoices examined during substantive testing",
+        "The relevance and reliability of audit evidence in providing support for the conclusions on which the auditor's opinion is based",
+        "The promptness with which the client delivers documents to the audit team",
+        "The ethical standing of the management providing the representation letter"
+      ],
+      "answerIndex": 1,
+      "explanation": "Appropriateness is the measure of the quality of audit evidence; that is, its relevance and its reliability in providing support for the conclusions on which the auditor's opinion is based.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Appropriateness",
+        "Audit Evidence",
+        "SA 500"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-1_030",
+      "kind": "normal",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "prompt": "If an auditor encounters a significant restriction imposed by management that prevents the auditor from obtaining sufficient appropriate audit evidence, and management refuses to remove the restriction, what is the appropriate course of action under SAs?",
+      "options": [
+        "Issue an unmodified clean opinion and add an explanatory paragraph in the notes to accounts",
+        "Resign from the audit engagement (where practicable and possible) or modify the audit opinion (disclaimer of opinion or qualification) as appropriate",
+        "Perform internal bookkeeping to clear the restriction and sign the report",
+        "Ignore the restriction if the client's audit fee is already received in advance"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per SA 705, if a scope limitation is imposed by management before audit acceptance or after, and its effect could be material, the auditor should either disclaim an opinion or withdraw from the audit where withdrawal is legally possible.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Scope Limitation",
+        "SA 705",
+        "Audit Opinion"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_audit-1_01",
+      "kind": "scenario",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "passage": "M/s Sharma & Associates, a Chartered Accountant firm, is appointed as the statutory auditor of Apex Pharma Ltd. for the financial year 2025–26. During the planning phase, CA Sharma (engagement partner) notes that Apex Pharma Ltd. recently introduced a complex automated enterprise resource planning (ERP) system. Furthermore, Apex Pharma's management has capitalized a substantial amount of internal research and development costs as intangible assets under development. The audit senior assigned to the engagement, an articled assistant, suggests that because the ERP system performs automated controls perfectly, substantive testing of sales transactions can be entirely dispensed with. Additionally, the management has offered the audit team free accommodation at the company's luxury guest house in Goa during the interim audit phase.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-1_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-1_01",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-1",
+          "subject": "Audit",
+          "prompt": "Evaluate the audit senior's suggestion to dispense with substantive testing of sales transactions entirely because of automated ERP controls.",
+          "options": [
+            "The suggestion is valid because automated ERP controls never fail or contain logic errors",
+            "The suggestion is incorrect; tests of controls, even when effective, do not eliminate the need for some substantive testing on material account balances",
+            "The suggestion is valid if management provides a written representation stating that sales are error-free",
+            "The suggestion is correct provided the ERP software is imported from a foreign vendor"
+          ],
+          "answerIndex": 1,
+          "explanation": "Regardless of the assessed risks of material misstatement, the auditor shall design and perform substantive procedures for each material class of transactions, account balance, and disclosure. Reliance on automated controls reduces substantive testing but never eliminates it entirely.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Substantive Procedures",
+            "IT Controls",
+            "Audit Risk"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-1_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-1_01",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-1",
+          "subject": "Audit",
+          "prompt": "Regarding the capitalization of internal R&D costs by Apex Pharma Ltd., what key mindset should CA Sharma and the audit team maintain?",
+          "options": [
+            "Accept management's capitalization schedule without review to maintain client rapport",
+            "Apply professional skepticism to critically evaluate whether the capitalization criteria under accounting standards are genuinely met",
+            "Assume management has committed fraudulent misstatement and immediately resign",
+            "Delegate the technical evaluation of R&D capitalization exclusively to the company's internal audit team"
+          ],
+          "answerIndex": 1,
+          "explanation": "Professional skepticism requires a critical assessment of audit evidence. Capitalization of R&D involves significant management judgment and technical criteria, requiring the auditor to scrutinize supporting evidence rather than accepting management assertions blindly.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Professional Skepticism",
+            "Intangible Assets",
+            "Audit Judgment"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-1_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-1_01",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-1",
+          "subject": "Audit",
+          "prompt": "How should CA Sharma address management's offer of free accommodation at the luxury guest house in Goa for the audit team?",
+          "options": [
+            "Accept the offer as a customary business hospitality gesture that improves audit efficiency",
+            "Accept the offer only if the monetary value is below the materiality threshold",
+            "Reject the offer, as accepting hospitality of significant value creates a self-interest and familiarity threat that impairs independence",
+            "Accept the offer but disclose it as a related-party transaction in the audit working papers"
+          ],
+          "answerIndex": 2,
+          "explanation": "Under the ICAI Code of Ethics, accepting gifts or hospitality from an assurance client that are more than trivial or inconsequential creates threats to independence (specifically self-interest and familiarity threats) and must be avoided.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Code of Ethics",
+            "Independence",
+            "Threats and Safeguards"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-1_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-1_01",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-1",
+          "subject": "Audit",
+          "prompt": "If the ERP system lacks an adequate audit trail for journal entries posted directly to the general ledger, what impact does this have on the audit?",
+          "options": [
+            "It has zero impact because computerized systems do not require audit trails",
+            "It restricts the auditor's ability to test transactions, potentially constituting a scope limitation or requiring alternative substantive procedures",
+            "It automatically converts the statutory audit into an operational audit",
+            "It allows the auditor to issue an unmodified report without further testing"
+          ],
+          "answerIndex": 1,
+          "explanation": "An inadequate audit trail in a computerized environment hinders transaction tracing. The auditor must assess whether alternative procedures can compensate; if not, it represents a scope limitation impacting audit opinion and documentation.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Audit Trail",
+            "IT Environment",
+            "Scope Limitation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-1_02",
+      "kind": "scenario",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "passage": "A mid-sized manufacturing company, TechnoMetal Ltd., is audited by M/s Verma & Co. During the year under audit, TechnoMetal Ltd. faced severe liquidity constraints and defaulted on loan installments due to a major bank. The management prepared cash flow projections showing miraculous recovery based on an unverified, speculative contract with an overseas buyer. The managing director of TechnoMetal Ltd. requested CA Verma to assist in drafting the financial statement notes regarding going concern, and also requested that CA Verma not mention the bank loan defaults in the auditor's report to protect the company's credit rating.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-1_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-1_02",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-1",
+          "subject": "Audit",
+          "prompt": "What ethical threat arises if CA Verma drafts the going concern note for TechnoMetal Ltd. and then performs the statutory audit on those same financial statements?",
+          "options": [
+            "Intimidation threat",
+            "Self-review threat",
+            "Advocacy threat",
+            "Familiarity threat"
+          ],
+          "answerIndex": 1,
+          "explanation": "Drafting financial statement notes or preparing financial statements for an audit client and subsequently auditing them creates a direct self-review threat, as the auditor would be evaluating their own preparatory work.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Self-Review Threat",
+            "Code of Ethics",
+            "Independence"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-1_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-1_02",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-1",
+          "subject": "Audit",
+          "prompt": "How should CA Verma respond to the managing director's request to omit mention of the bank loan defaults from the auditor's report?",
+          "options": [
+            "Comply with the request to preserve the client's credit rating and maintain the audit relationship",
+            "Refuse the request and evaluate whether the default requires a modified audit opinion or a Material Uncertainty Related to Going Concern paragraph under SA 570",
+            "Report the bank loan default directly to the overseas buyer instead",
+            "Resign immediately without documenting the reason in working papers"
+          ],
+          "answerIndex": 1,
+          "explanation": "The auditor has a professional and statutory duty to report material defaults and evaluate going concern issues objectively. Omission of material facts requested by management violates fundamental principles of integrity and professional standards.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Going Concern",
+            "SA 570",
+            "Reporting Obligations"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-1_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-1_02",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-1",
+          "subject": "Audit",
+          "prompt": "When evaluating management's cash flow projections based on the speculative overseas contract, what audit principle should guide CA Verma?",
+          "options": [
+            "Accept management's optimistic forecasts as they represent future business intentions",
+            "Exercise professional skepticism and demand corroborative evidence, challenging the underlying assumptions of the cash flow forecast",
+            "Substitute management's forecasts with CA Verma's personal business judgment",
+            "Ignore cash flow projections since audits only look at historical trial balances"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under SA 570, when management's assessment of going concern is based on future plans, the auditor must evaluate the reliability of underlying data and challenge assumptions. Professional skepticism is vital when dealing with optimistic forecasts during liquidity crises.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Professional Skepticism",
+            "Going Concern",
+            "SA 570"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-1_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-1_02",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-1",
+          "subject": "Audit",
+          "prompt": "If TechnoMetal Ltd.'s management refuses to disclose the material uncertainty regarding going concern in the financial statements despite CA Verma's insistence, what type of audit opinion should be issued?",
+          "options": [
+            "Unmodified clean opinion with an emphasis of matter paragraph",
+            "Qualified opinion or adverse opinion due to material misstatement in financial statement disclosure",
+            "Disclaimer of opinion due to management fraud",
+            "No opinion; the auditor should issue an operational audit certificate"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per SA 570, if adequate disclosure of a material uncertainty is not made in the financial statements, the auditor shall express a qualified opinion or an adverse opinion, as appropriate, in accordance with SA 705.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 570",
+            "SA 705",
+            "Audit Opinion"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-1_03",
+      "kind": "scenario",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "passage": "CA Kapoor is approached by GreenFields Agro Ltd. to conduct a tax audit and statutory audit for the financial year ending March 31, 2026. During preliminary discussions, GreenFields' CFO informs CA Kapoor that the previous auditors were removed abruptly because they raised uncomfortable questions regarding unusual cash withdrawals made just before the year-end. Furthermore, the CFO offers a contingent fee arrangement where 50% of the audit fee will be paid only if GreenFields successfully secures a bank credit facility based on the audited financial statements.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-1_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-1_03",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-1",
+          "subject": "Audit",
+          "prompt": "Evaluate the proposed contingent fee arrangement under the ICAI Code of Ethics.",
+          "options": [
+            "Contingent fees for statutory audits are permitted if approved by the company's board of directors",
+            "Contingent fees for assurance engagements (such as statutory and tax audits) are strictly prohibited as they impair independence",
+            "Contingent fees are encouraged for newly incorporated companies to reduce initial cash outflow",
+            "Contingent fees are valid provided they do not exceed 10% of total firm revenue"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the ICAI Code of Ethics, charging contingent fees for assurance engagements (including statutory audits and tax audits) is prohibited because it creates an unacceptable self-interest threat that impairs the auditor's independence.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Code of Ethics",
+            "Contingent Fees",
+            "Independence"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-1_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-1_03",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-1",
+          "subject": "Audit",
+          "prompt": "What professional duty does CA Kapoor have regarding the abrupt removal of the previous auditors over unusual cash withdrawals?",
+          "options": [
+            "Ignore the previous auditors as communication is legally barred under company law",
+            "Communicate with the previous auditor (Professional Enquiry) to ascertain reasons for the change and identify any professional reasons why the appointment should not be accepted",
+            "Report the previous auditors to the ICAI disciplinary committee",
+            "Assume the previous auditors were incompetent and proceed without inquiry"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per the ICAI Code of Ethics and professional standards, a retiring/incoming auditor must communicate with the previous auditor to check for professional reasons (such as unlawful removal or unresolved audit issues) why the appointment should not be accepted.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Professional Enquiry",
+            "Code of Ethics",
+            "Predecessor Auditor"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-1_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-1_03",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-1",
+          "subject": "Audit",
+          "prompt": "How should CA Kapoor approach the unusual year-end cash withdrawals mentioned by the CFO?",
+          "options": [
+            "Treat them as routine cash transactions since cash is a liquid asset",
+            "Design specific substantive audit procedures and exercise heightened professional skepticism to test the business rationale, authorization, and ultimate beneficiary of these withdrawals",
+            "Ask the internal auditor to sign off on the cash withdrawals without verification",
+            "Omit cash testing to avoid conflict with the CFO"
+          ],
+          "answerIndex": 1,
+          "explanation": "Unusual year-end transactions, especially involving cash, are classic indicators of potential fraud or window-dressing. The auditor must apply professional skepticism and perform rigorous substantive testing.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Professional Skepticism",
+            "Fraud Risk",
+            "Substantive Testing"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-1_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-1_03",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-1",
+          "subject": "Audit",
+          "prompt": "If CA Kapoor accepts the audit engagement under the contingent fee arrangement and without communicating with the predecessor auditor, what consequence might follow?",
+          "options": [
+            "No consequence, as ethical guidelines are advisory only",
+            "Disciplinary action by the Institute of Chartered Accountants of India (ICAI) for professional misconduct",
+            "Automatic appointment as a permanent government auditor",
+            "Exemption from complying with Standards on Auditing"
+          ],
+          "answerIndex": 1,
+          "explanation": "Breaching ethical rules regarding contingent fees for assurance engagements and failing to communicate with the predecessor auditor constitutes professional misconduct under the Chartered Accountants Act, 1949, inviting disciplinary action by ICAI.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Professional Misconduct",
+            "ICAI Disciplinary Mechanism",
+            "Code of Ethics"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-1_04",
+      "kind": "scenario",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "passage": "In auditing a listed financial institution, CreditTrust Bank Ltd., engagement partner CA Patel relies heavily on the work performed by the bank's internal inspection department and external valuation experts for specialized real estate collateral. During the audit, CA Patel notices that one major real estate valuation report provided by an independent expert contains an assumption that property prices will rise by 25% annually—an assumption completely contrary to prevailing market downturns. The internal audit team has also given a clean chit to a loan portfolio that CA Patel's own preliminary analytical review indicates has high non-performing asset (NPA) risk.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-1_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-1_04",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-1",
+          "subject": "Audit",
+          "prompt": "Can CA Patel blindly accept the real estate valuation report from the independent expert showing a 25% annual price rise during a market downturn?",
+          "options": [
+            "Yes, because experts are infallible and their assumptions cannot be questioned by statutory auditors",
+            "No, CA Patel must evaluate the competence, capabilities, and objectivity of the expert, and evaluate the appropriateness of the expert's significant assumptions and methods",
+            "Yes, provided the expert is approved by the central bank",
+            "No, statutory auditors are legally prohibited from using external experts"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under SA 620 ('Using the Work of an Auditor's Expert'), the auditor must evaluate the expert's competence, capability, and objectivity, obtain an understanding of their work, and evaluate the appropriateness of their assumptions and methods, especially when assumptions contradict market realities.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 620",
+            "Auditor's Expert",
+            "Audit Evidence"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-1_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-1_04",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-1",
+          "subject": "Audit",
+          "prompt": "How should CA Patel address the contradiction between the internal audit's clean chit on the loan portfolio and the analytical review indicating high NPA risk?",
+          "options": [
+            "Accept the internal audit report because internal auditors are employees of the bank and know best",
+            "Perform additional audit procedures to test the loan portfolio directly, as internal audit findings that contradict analytical reviews must be investigated and cannot be relied upon blindly",
+            "Dismiss the analytical review as an inaccurate mathematical model",
+            "Qualify the internal audit department rather than the bank's financial statements"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under SA 610, when using internal auditors, the statutory auditor must perform sufficient audit procedures on the body of work to evaluate its adequacy. Direct contradictions with analytical procedures necessitate independent substantive testing.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 610",
+            "Internal Audit",
+            "Analytical Procedures"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-1_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-1_04",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-1",
+          "subject": "Audit",
+          "prompt": "What fundamental concept dictates that CA Patel cannot delegate ultimate responsibility for the audit opinion to the internal auditors or external valuation experts?",
+          "options": [
+            "The concept of joint and several liability",
+            "The concept that the auditor's opinion is absolute and unchallengeable",
+            "The concept that the statutory auditor maintains sole responsibility for the audit opinion expressed, which is not reduced by using experts or internal auditors",
+            "The concept of continuous audit delegation"
+          ],
+          "answerIndex": 2,
+          "explanation": "Standards on Auditing (SA 610 and SA 620) explicitly state that the external auditor has sole responsibility for the audit opinion expressed, and that responsibility is not reduced by the use of internal auditors or management/auditor's experts.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Auditor Responsibility",
+            "SA 610",
+            "SA 620"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-1_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-1_04",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-1",
+          "subject": "Audit",
+          "prompt": "If the real estate valuation error results in a material overstatement of asset values and the bank management refuses to adjust it, what is the impact on the audit report?",
+          "options": [
+            "An unmodified opinion with an emphasis of matter",
+            "A modified audit opinion (qualified or adverse opinion) due to material misstatement",
+            "A disclaimer of opinion due to going concern failure",
+            "No modification is required if the bank pays its loan installments on time"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per SA 705, if financial statements are materially misstated due to improper valuation of assets and management refuses adjustment, the auditor must express a qualified opinion or an adverse opinion.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 705",
+            "Audit Opinion",
+            "Material Misstatement"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-1_05",
+      "kind": "scenario",
+      "chapterId": "audit-1",
+      "subject": "Audit",
+      "passage": "A newly established partnership firm of Chartered Accountants, Roy & Sen, is offered the statutory audit of a prominent retail chain, ValueMart India Ltd. Partner CA Roy discovers that his brother-in-law holds a 15% equity stake in ValueMart India Ltd. Furthermore, ValueMart's management requests Roy & Sen to also provide corporate tax planning and payroll processing services along with the statutory audit, offering a combined lucrative fee package. CA Roy is eager to accept the audit and all non-assurance services to establish the firm's market presence.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Nature, Objective and Scope of Audit"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-1_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-1_05",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-1",
+          "subject": "Audit",
+          "prompt": "Does CA Roy's brother-in-law holding a 15% equity stake in ValueMart India Ltd. create an independence issue for Roy & Sen?",
+          "options": [
+            "No, relatives by marriage are excluded from independence rules under ICAI ethical standards",
+            "Yes, holding a direct or substantial financial interest in an audit client by a close relative of an engagement partner creates a severe self-interest threat impairing independence",
+            "No, provided the equity stake is below 50%",
+            "Yes, but it can be resolved by paying a compounding fee to ICAI"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the ICAI Code of Ethics, a financial interest in an audit client by a close family member (such as a brother-in-law, dependent relative, etc.) creates a self-interest threat that generally bars the firm from accepting the statutory audit unless specific strict safeguards or divestment occur.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Code of Ethics",
+            "Financial Interest",
+            "Independence"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-1_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-1_05",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-1",
+          "subject": "Audit",
+          "prompt": "Evaluate the proposal for Roy & Sen to provide payroll processing and corporate tax planning services alongside the statutory audit.",
+          "options": [
+            "Providing payroll processing (an administrative service) and tax planning creates self-review and management participation threats, impairing statutory audit independence",
+            "All non-assurance services are permitted without restriction for listed and unlisted audit clients",
+            "Payroll processing enhances audit independence by giving the auditor direct access to employee salary data",
+            "Tax planning is strictly classified as an assurance engagement"
+          ],
+          "answerIndex": 0,
+          "explanation": "Providing payroll processing and certain tax planning/advocacy services to a statutory audit client creates management participation and self-review threats, compromising auditor independence under ethical guidelines.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Non-Assurance Services",
+            "Self-Review Threat",
+            "Code of Ethics"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-1_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-1_05",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-1",
+          "subject": "Audit",
+          "prompt": "What ethical action should CA Roy take upon realizing his brother-in-law's equity holding and the conflict surrounding non-assurance services?",
+          "options": [
+            "Conceal the relative's shareholding in the audit engagement documentation",
+            "Decline the statutory audit engagement or ensure the relative disposes of the financial interest and decline prohibited non-assurance services",
+            "Accept the statutory audit and resign from ICAI membership",
+            "Outsource the audit field work to an unregistered accountant while signing the report"
+          ],
+          "answerIndex": 1,
+          "explanation": "When threats to independence cannot be eliminated or reduced to an acceptable level through safeguards (such as divestment or refusing non-assurance services), the firm must decline or withdraw from the audit engagement.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Independence Safeguards",
+            "Code of Ethics",
+            "Engagement Acceptance"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-1_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-1_05",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-1",
+          "subject": "Audit",
+          "prompt": "Why does independence of mind and independence in appearance matter crucially for a statutory auditor?",
+          "options": [
+            "It is merely a marketing gimmick to charge higher audit fees",
+            "It ensures that the auditor's opinion is credible, reliable, and trusted by public shareholders, regulators, and financial markets",
+            "It exempts the auditor from complying with Standards on Auditing",
+            "It allows the auditor to manage the client's internal bank accounts directly"
+          ],
+          "answerIndex": 1,
+          "explanation": "Independence of mind and in appearance are foundational to auditing. They ensure that the auditor's professional judgment is uncompromised, maintaining public trust and confidence in financial reporting.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Independence",
+            "Audit Quality",
+            "Public Trust"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

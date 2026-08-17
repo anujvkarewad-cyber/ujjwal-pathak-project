@@ -1,0 +1,1418 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "income-tax-9",
+  "subject": "Taxation",
+  "paper": "Paper 3: Taxation",
+  "module": "Module 2",
+  "chapterNumber": 9,
+  "chapterTitle": "Income Tax Liability - Computation and Optimisation",
+  "generatedAt": "2026-08-16T14:25:47.284Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_income-tax-9_001",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "What is the basic exemption limit for an individual resident in India aged 82 years for the Assessment Year corresponding to the previous year, assuming the individual opts for the default tax regime under section 115BAC?",
+      "options": [
+        "Rs. 2,50,000",
+        "Rs. 3,00,000",
+        "Rs. 5,00,000",
+        "Rs. 7,00,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under the default tax regime of section 115BAC for individuals, the basic exemption limit is universally Rs. 3,00,000 irrespective of the age of the assessee. The higher exemption limits for senior and super senior citizens are not available under section 115BAC.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 115BAC",
+        "Basic Exemption Limit",
+        "Default Tax Regime"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_002",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "Mr. A, a resident individual, has a total income of Rs. 7,05,000 comprising solely of salary income. He exercises the option to shift out of the default tax regime. What is the marginal relief available under section 87A?",
+      "options": [
+        "Rs. 5,000",
+        "Rs. 25,000",
+        "Rs. 20,000",
+        "Nil"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under section 87A for the old regime, rebate is available up to Rs. 12,500 if total income does not exceed Rs. 5,00,000. Here, total income is Rs. 7,05,000, exceeding Rs. 5,00,000, hence no direct rebate. Marginal relief is computed on the excess of total income over Rs. 5,00,000 (i.e., Rs. 2,05,000) compared to the tax on Rs. 5,00,000 (which is zero). Tax on Rs. 7,05,000 at old rates is Rs. 56,000. Excess income over Rs. 5,00,000 is Rs. 2,05,000. Marginal relief = Tax payable (Rs. 56,000) - Excess income (Rs. 2,05,000)? Wait, marginal relief = tax on total income minus tax on Rs. 5,00,000 + (Total Income - 5,00,000). Tax on Rs. 7,05,000 = 56,000. Excess over 5L = 2,05,000. Relief = 56,000 - 0 = 56,000... actually, tax payable cannot exceed income in excess of 5L. Here tax is 56,000, excess is 2,05,000, so no relief. Let's re-verify standard rule: if total income exceeds 5L under old regime, marginal relief is not applicable since rebate under 87A is strictly for income up to 5L. Therefore, marginal relief is Nil.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 87A",
+        "Marginal Relief",
+        "Rebate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_003",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "Under the default tax regime pursuant to section 115BAC, which of the following deductions under Chapter VI-A is allowed to an individual employee?",
+      "options": [
+        "Section 80C",
+        "Section 80CCD(2)",
+        "Section 80D",
+        "Section 80TTA"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 115BAC disallows most deductions under Chapter VI-A, including 80C, 80D, and 80TTA. However, employer's contribution to notified pension scheme under section 80CCD(2) is expressly allowed as a deduction under the default tax regime.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 115BAC",
+        "Chapter VI-A Deductions",
+        "Section 80CCD(2)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_004",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "What is the surcharge rate applicable to an individual having a total income of Rs. 5.5 crores under the default tax regime of section 115BAC?",
+      "options": [
+        "10%",
+        "15%",
+        "25%",
+        "37%"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under section 115BAC, the maximum rate of surcharge is capped at 25% for total income exceeding Rs. 2 crores, unlike the old regime where the maximum surcharge rate can go up to 37% for income exceeding Rs. 5 crores.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 115BAC",
+        "Surcharge",
+        "Tax Rates"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_005",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "Mr. X has a total income of Rs. 51,00,000 (inclusive of capital gains taxable under section 111A and 112A). What is the maximum marginal relief available in respect of surcharge?",
+      "options": [
+        "Rs. 10,000",
+        "Rs. 40,000",
+        "Rs. 1,00,000",
+        "The excess of tax payable including surcharge on total income of Rs. 51,00,000 over the tax payable on Rs. 50,00,000 plus the amount of income exceeding Rs. 50,00,000"
+      ],
+      "answerIndex": 3,
+      "explanation": "Marginal relief ensures that the incremental tax and surcharge liability on income exceeding a threshold (like Rs. 50 lakhs) does not exceed the incremental income itself. The correct formula and conceptual definition is the excess of tax plus surcharge on total income over the tax on the threshold plus the incremental income.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Marginal Relief",
+        "Surcharge",
+        "Total Income"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_006",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "Which of the following incomes is subject to special rate of tax and is NOT eligible for basic exemption limit absorption against it in the case of a resident individual?",
+      "options": [
+        "Long-term capital gains under section 112A exceeding Rs. 1,00,000",
+        "Casual income like winning from lotteries under section 115BB",
+        "Short-term capital gains under section 111A",
+        "Both (A) and (B)"
+      ],
+      "answerIndex": 3,
+      "explanation": "For a resident individual, short-fall in basic exemption can be adjusted against normal income and STCG under 111A (if resident), but casual incomes under section 115BB and LTCG under section 112A/112 do not permit unexhausted basic exemption to be offset against them.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Special Rates",
+        "Basic Exemption",
+        "Capital Gains"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_007",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "Health and Education Cess is computed at what percentage on the income-tax inclusive of surcharge?",
+      "options": [
+        "2%",
+        "3%",
+        "4%",
+        "1%"
+      ],
+      "answerIndex": 2,
+      "explanation": "Health and Education Cess is levied at the rate of 4% on the aggregate of income-tax and applicable surcharge for all assessees.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Health and Education Cess",
+        "Tax Computation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_008",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "Under section 115BAC, can an individual assessee having income from business or profession withdraw from the default regime and opt for the old tax regime?",
+      "options": [
+        "Yes, every year at the time of filing the return of income.",
+        "Yes, once in a lifetime.",
+        "Yes, but once they opt out, they can never opt back into section 115BAC except when they cease to have business income.",
+        "No, once opted out, they cannot choose the default regime ever again under any circumstance."
+      ],
+      "answerIndex": 2,
+      "explanation": "An assessee having business or profession income who opts out of section 115BAC is allowed to enter back into the default regime only once. Once they opt out again, they cannot choose the default regime unless they cease to have income from business or profession.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 115BAC",
+        "Business Income",
+        "Opting out"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_009",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "What is the tax rate on short-term capital gains covered under section 111A?",
+      "options": [
+        "10%",
+        "15%",
+        "20%",
+        "30%"
+      ],
+      "answerIndex": 1,
+      "explanation": "Short-term capital gains on transfer of equity shares or units of equity oriented fund or business trust on a recognized stock exchange where STT is paid is taxable at a special rate of 15% under section 111A.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 111A",
+        "STCG",
+        "Special Rates"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_010",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "In computing total income under the Income-tax Act, 1961, losses from house property can be set off against salary income up to a maximum amount of:",
+      "options": [
+        "Rs. 1,00,000",
+        "Rs. 2,00,000",
+        "Rs. 50,000",
+        "Nil"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under section 71(3A), loss from house property can be set off against any other head of income up to a maximum limit of Rs. 2,00,000 in any assessment year.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Set-off of Losses",
+        "House Property",
+        "Head of Income"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_011",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "Which of the following deductions is NOT disallowed under section 115BAC for an individual/HUF?",
+      "options": [
+        "Standard deduction from salary under section 16(ia)",
+        "Entertainment allowance deduction under section 16(ii)",
+        "Professional tax deduction under section 16(iii)",
+        "Interest on housing loan for self-occupied property under section 24(b)"
+      ],
+      "answerIndex": 0,
+      "explanation": "Standard deduction of Rs. 50,000 (and family pension deduction) is explicitly allowed under section 115BAC(ia) for salaried individuals and pensioners. Entertainment allowance and professional tax under section 16 and housing loan interest for self-occupied property are disallowed.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 115BAC",
+        "Salary Deductions",
+        "Standard Deduction"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_012",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "What is the rebate under section 87A available under the default tax regime of section 115BAC for an individual whose total income does not exceed Rs. 7,00,000?",
+      "options": [
+        "Rs. 12,500",
+        "Rs. 25,000",
+        "Actual tax liability or Rs. 25,000, whichever is lower",
+        "Actual tax liability or Rs. 12,500, whichever is lower"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under section 87A for the default tax regime (section 115BAC), a resident individual with total income up to Rs. 7,00,000 is entitled to a rebate equal to 100% of income-tax or Rs. 25,000, whichever is lower.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 87A",
+        "Rebate",
+        "Section 115BAC"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_013",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "Mr. B has long-term capital gains on land of Rs. 4,00,000 (taxable under section 112) and other normal income of Rs. 1,50,000. His total income is Rs. 5,50,000. Assuming he is a resident individual under the old regime, how is his tax calculated?",
+      "options": [
+        "LTCG taxed at 20% and normal income taxed at slab rates",
+        "LTCG and normal income clubbed and taxed at slab rates after basic exemption",
+        "Basic exemption is first exhausted against normal income, and unexhausted basic exemption is allowed against LTCG under section 112",
+        "LTCG is exempt up to Rs. 5,50,000"
+      ],
+      "answerIndex": 2,
+      "explanation": "For a resident individual, if total income (excluding special rate incomes) is less than the basic exemption limit, the unexhausted basic exemption limit can be set off against long-term capital gains taxable under section 112.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "LTCG",
+        "Basic Exemption",
+        "Resident Individual"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_014",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "Which of the following entities is subject to Alternate Minimum Tax (AMT) under section 115JC?",
+      "options": [
+        "Company",
+        "Co-operative society",
+        "Partnership firm",
+        "Both Partnership firm and Co-operative society (subject to conditions)"
+      ],
+      "answerIndex": 3,
+      "explanation": "AMT under section 115JC applies to non-corporate taxpayers (including partnership firms, LLPs, and co-operative societies) who claim deductions under specific sections like 10AA or Chapter VI-A (C). Companies are subject to MAT under section 115JB.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Alternate Minimum Tax",
+        "Section 115JC",
+        "Non-corporate Assessee"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_015",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "What is the rate of Alternate Minimum Tax (AMT) under section 115JC (excluding co-operative societies opting for specific concessional rates)?",
+      "options": [
+        "9%",
+        "15%",
+        "18.5%",
+        "22%"
+      ],
+      "answerIndex": 1,
+      "explanation": "The AMT rate under section 115JC for non-corporate assessees (other than co-operative societies specified under sections 115BAD/115BAE) is 15% (plus applicable surcharge and cess).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AMT Rate",
+        "Section 115JC"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_016",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "Can tax credit for AMT paid under section 115JD be carried forward? If yes, for how many assessment years?",
+      "options": [
+        "No, AMT credit cannot be carried forward.",
+        "Yes, up to 10 assessment years.",
+        "Yes, up to 15 assessment years.",
+        "Yes, indefinitely."
+      ],
+      "answerIndex": 2,
+      "explanation": "Tax credit under section 115JD for AMT paid can be carried forward for up to 15 successive assessment years to be set off when normal tax exceeds AMT.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AMT Credit",
+        "Section 115JD",
+        "Carry Forward"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_017",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "What is the surcharge rate for an individual with total income of Rs. 3 crores under the old tax regime?",
+      "options": [
+        "10%",
+        "15%",
+        "25%",
+        "37%"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under the old tax regime, the surcharge rate is 25% if the total income exceeds Rs. 2 crores but does not exceed Rs. 5 crores.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Surcharge",
+        "Old Tax Regime",
+        "Individual"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_018",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "Which of the following deductions/exemptions is NOT available under section 115BAC?",
+      "options": [
+        "Leave Travel Concession (LTC) exemption under section 10(5)",
+        "Standard deduction under section 16(ia)",
+        "Conveyance allowance granted to meet official duties",
+        "Transport allowance granted to a blind employee"
+      ],
+      "answerIndex": 0,
+      "explanation": "LTC exemption under section 10(5) is specifically disallowed under section 115BAC. Conveyance allowance for official duties and transport allowance for handicapped employees remain exempt.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 115BAC",
+        "Exemptions",
+        "LTC"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_019",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "In case of a domestic company, what is the Minimum Alternate Tax (MAT) rate under section 115JB?",
+      "options": [
+        "15%",
+        "18.5%",
+        "22%",
+        "9%"
+      ],
+      "answerIndex": 0,
+      "explanation": "The MAT rate under section 115JB for domestic companies is 15% of book profit (plus applicable surcharge and cess).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "MAT",
+        "Section 115JB",
+        "Domestic Company"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_020",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "How is agricultural income treated while computing income tax liability for a resident individual in India when non-agricultural income exceeds the basic exemption limit?",
+      "options": [
+        "Agricultural income is fully taxed at normal slab rates.",
+        "Agricultural income is added to non-agricultural income for rate purposes (partial integration).",
+        "Agricultural income is exempt and ignored for all purposes.",
+        "Agricultural income is taxed at a flat rate of 30%."
+      ],
+      "answerIndex": 1,
+      "explanation": "Agricultural income is exempt under section 10(1), but for tax calculation of resident individuals/HUFs, it is subject to partial integration if non-agricultural income exceeds the basic exemption limit and agricultural income exceeds Rs. 5,000.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Agricultural Income",
+        "Partial Integration",
+        "Tax Computation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_021",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "Under partial integration of agricultural income, what is the first step in tax computation?",
+      "options": [
+        "Tax on agricultural income plus non-agricultural income minus tax on agricultural income alone.",
+        "Tax on agricultural income plus non-agricultural income minus tax on basic exemption limit plus agricultural income.",
+        "Tax on agricultural income alone.",
+        "Tax on non-agricultural income alone."
+      ],
+      "answerIndex": 1,
+      "explanation": "Step 1 of partial integration is computing tax on (Non-agricultural income + Agricultural income). Step 2 is computing tax on (Basic exemption limit + Agricultural income). Step 1 minus Step 2 gives the tax on non-agricultural income.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Partial Integration",
+        "Agricultural Income",
+        "Step-by-step Computation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_022",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "Which of the following incomes is chargeable to tax at special rates under Chapter XII?",
+      "options": [
+        "Winnings from lotteries, crossword puzzles, races (Section 115BB)",
+        "Long-term capital gains on equity shares (Section 112A)",
+        "Short-term capital gains on securities (Section 111A)",
+        "All of the above"
+      ],
+      "answerIndex": 3,
+      "explanation": "All listed incomes are subject to special tax rates under Chapter XII of the Income-tax Act, 1961.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Special Rates",
+        "Chapter XII",
+        "Capital Gains",
+        "Casual Income"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_023",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "Mr. Y has long-term capital gains under section 112 of Rs. 3,50,000 and total income of Rs. 4,50,000 under the old tax regime. What is the tax liability before cess?",
+      "options": [
+        "Nil, because total income is below Rs. 5,00,000 and rebate under 87A applies.",
+        "Tax computed on LTCG at 20% after basic exemption adjustment.",
+        "Tax computed at flat 20% on entire LTCG without basic exemption.",
+        "Nil, because capital gains are exempt."
+      ],
+      "answerIndex": 0,
+      "explanation": "Since total income is Rs. 4,50,000 (which is less than Rs. 5,00,000), resident individual is eligible for rebate under section 87A up to Rs. 12,500. Tax before rebate will be fully rebated, resulting in nil tax liability.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 87A",
+        "LTCG",
+        "Rebate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_024",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "What is the tax rate on dividend income received by a domestic company from another domestic company under section 115BAA, assuming no special deductions are claimed?",
+      "options": [
+        "10%",
+        "15%",
+        "22%",
+        "Normal corporate tax rate of 22%"
+      ],
+      "answerIndex": 3,
+      "explanation": "Under section 115BAA, domestic companies are taxed at a concessional rate of 22% (plus surcharge and cess) on their total income, which includes dividend income.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 115BAA",
+        "Domestic Company",
+        "Concessional Tax Rate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_025",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "Which of the following losses cannot be carried forward if the return of income is filed after the due date specified under section 139(1)?",
+      "options": [
+        "Loss from house property",
+        "Loss from business and profession (speculative or non-speculative) and Capital losses",
+        "Unabsorbed depreciation",
+        "Only speculative business loss"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under section 80 read with section 139(3), business losses (speculative, non-speculative, specified business) and capital losses cannot be carried forward if the return of income is not filed within the due date under section 139(1). House property loss and unabsorbed depreciation are exceptions.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Carry Forward of Losses",
+        "Section 139(3)",
+        "Due Date"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_026",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "Under the optional/old tax regime, what is the surcharge rate for an individual having total income of Rs. 52 lakhs?",
+      "options": [
+        "10%",
+        "15%",
+        "25%",
+        "37%"
+      ],
+      "answerIndex": 0,
+      "explanation": "For total income exceeding Rs. 50 lakhs up to Rs. 1 crore, the surcharge rate is 10% under both the old tax regime and the default tax regime.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Surcharge",
+        "Individual",
+        "Tax Slabs"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_027",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "When is marginal relief calculated for an individual whose total income exceeds Rs. 50 lakhs?",
+      "options": [
+        "When the tax payable on total income exceeds the tax payable on Rs. 50,00,000 by an amount greater than the income earned over Rs. 50,00,000.",
+        "Whenever income exceeds Rs. 50 lakhs.",
+        "Only when capital gains are included in total income.",
+        "When surcharge is 15%."
+      ],
+      "answerIndex": 0,
+      "explanation": "Marginal relief is designed to eliminate the anomaly where the additional tax and surcharge on incremental income exceeding a threshold exceeds the incremental income itself.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Marginal Relief",
+        "Surcharge",
+        "Threshold"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_028",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "Which of the following allowances is fully taxable under both the old and default tax regimes (section 115BAC)?",
+      "options": [
+        "Uniform allowance",
+        "City compensatory allowance",
+        "Hostel allowance for children",
+        "Transport allowance for blind employees"
+      ],
+      "answerIndex": 1,
+      "explanation": "City Compensatory Allowance (CCA) is fully taxable under both tax regimes. Uniform allowance and transport allowance for blind employees have exemptions under section 10(14). Hostel allowance is exempt up to Rs. 300 p.m. per child under old regime but disallowed under 115BAC.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Salary Allowances",
+        "Section 115BAC",
+        "Taxability"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_029",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "What is the maximum deduction allowed under section 80CCD(1) for an employee contributing to the National Pension System (NPS) under the old tax regime?",
+      "options": [
+        "10% of salary",
+        "10% of salary or Rs. 1,50,000, whichever is less",
+        "20% of gross total income",
+        "Rs. 50,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Employee's contribution to NPS under section 80CCD(1) is deductible up to 10% of salary (basic + DA forming part), subject to the overall ceiling of Rs. 1,50,000 under section 80CCE.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 80CCD(1)",
+        "NPS",
+        "Deductions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-9_030",
+      "kind": "normal",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "prompt": "Which section provides for an additional deduction of up to Rs. 50,000 for employee/self-employed person's contribution to NPS, over and above the Rs. 1,50,000 limit under section 80CCE?",
+      "options": [
+        "Section 80CCD(1)",
+        "Section 80CCD(1B)",
+        "Section 80CCD(2)",
+        "Section 80C"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 80CCD(1B) allows an additional deduction up to Rs. 50,000 for contributions to NPS, which is exempt from the overall Rs. 1,50,000 limit of section 80CCE.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 80CCD(1B)",
+        "NPS",
+        "Chapter VI-A"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_income-tax-9_01",
+      "kind": "scenario",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "passage": "Mr. Rajesh (aged 45 years), a resident individual, derives income from salary and capital gains. For the Previous Year 2025-26, his salary (computed) is Rs. 12,00,000 after standard deduction. He also has long-term capital gains on sale of listed equity shares (STT paid) amounting to Rs. 2,50,000 and short-term capital gains under section 111A amounting to Rs. 1,50,000. He makes a donation of Rs. 20,000 to Prime National Relief Fund (eligible for 100% deduction without qualifying limit under section 80G) and pays Rs. 30,000 towards medical insurance premium for his parents (senior citizens) via cheque. He evaluates computing his tax liability under the default tax regime (section 115BAC).",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-9_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-9_01",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-9",
+          "subject": "Taxation",
+          "prompt": "What is Mr. Rajesh's total income for the Assessment Year corresponding to P.Y. 2025-26 under the default tax regime?",
+          "options": [
+            "Rs. 16,00,000",
+            "Rs. 15,50,000",
+            "Rs. 15,80,000",
+            "Rs. 15,70,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Total income is computed by aggregating salary (Rs. 12,00,000), LTCG under 112A (Rs. 2,50,000), and STCG under 111A (Rs. 1,50,000) = Rs. 16,00,000. Deductions under Chapter VI-A (80G and 80D) are not available under section 115BAC.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Total Income",
+            "Section 115BAC",
+            "Capital Gains"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-9_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-9_01",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-9",
+          "subject": "Taxation",
+          "prompt": "Under the default tax regime of section 115BAC, are the deductions under section 80G and section 80D available to Mr. Rajesh?",
+          "options": [
+            "Yes, both are fully available.",
+            "Only section 80G is available.",
+            "Only section 80D is available.",
+            "Neither deduction is available."
+          ],
+          "answerIndex": 3,
+          "explanation": "Section 115BAC explicitly disallows most deductions under Chapter VI-A, including deductions under section 80G (donations) and section 80D (medical insurance).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 115BAC",
+            "Chapter VI-A",
+            "Deductions Disallowance"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-9_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-9_01",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-9",
+          "subject": "Taxation",
+          "prompt": "How is the long-term capital gain under section 112A of Rs. 2,50,000 taxed for Mr. Rajesh under section 115BAC?",
+          "options": [
+            "Fully exempt from tax.",
+            "Exempt up to Rs. 1,00,000 and the balance Rs. 1,50,000 taxable at 10% (plus applicable surcharge and cess).",
+            "Taxable at flat 20% on the entire Rs. 2,50,000.",
+            "Taxable at slab rates."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under section 112A, long-term capital gains on transfer of equity shares are exempt up to Rs. 1,00,000, and the excess is taxable at 10% without indexation, which applies identically under section 115BAC.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 112A",
+            "LTCG",
+            "Tax Rate"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-9_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-9_01",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-9",
+          "subject": "Taxation",
+          "prompt": "What is the tax rate applicable on the short-term capital gains under section 111A of Rs. 1,50,000?",
+          "options": [
+            "10%",
+            "15%",
+            "20%",
+            "At normal slab rates"
+          ],
+          "answerIndex": 1,
+          "explanation": "STCG on equity shares/units on which STT is paid is taxable at a special rate of 15% under section 111A, regardless of whether the assessee opts for section 115BAC.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 111A",
+            "STCG",
+            "Special Rates"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-9_02",
+      "kind": "scenario",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "passage": "M/s. Zenith Associates, a partnership firm, has a net profit of Rs. 40,00,000 as per its Profit and Loss Account for P.Y. 2025-26. During computation of business income under the normal provisions, it claims a weighted deduction of Rs. 5,00,000 under section 35(1)(ii) for scientific research. Consequently, its business income under normal provisions is computed at Rs. 32,00,000. It has no other income. The firm is subject to Alternate Minimum Tax (AMT) under section 115JC.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-9_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-9_02",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-9",
+          "subject": "Taxation",
+          "prompt": "What is the adjusted total income of M/s. Zenith Associates for the purpose of computing Alternate Minimum Tax under section 115JC?",
+          "options": [
+            "Rs. 32,00,000",
+            "Rs. 37,00,000",
+            "Rs. 40,00,000",
+            "Rs. 45,00,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Adjusted total income under section 115JC is computed by taking total income under normal provisions (Rs. 32,00,000) and adding back deductions claimed under Chapter VI-A (C) or section 35AD/35(1)(ii) etc. Here, the deduction under 35(1)(ii) of Rs. 5,00,000 added back makes adjusted total income Rs. 37,00,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Adjusted Total Income",
+            "Section 115JC",
+            "AMT"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-9_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-9_02",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-9",
+          "subject": "Taxation",
+          "prompt": "What is the AMT rate applicable to M/s. Zenith Associates under section 115JC?",
+          "options": [
+            "10%",
+            "15%",
+            "18.5%",
+            "22%"
+          ],
+          "answerIndex": 1,
+          "explanation": "The AMT rate for non-corporate assessees like partnership firms is 15% (plus applicable surcharge and health and education cess) under section 115JC.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AMT Rate",
+            "Section 115JC",
+            "Partnership Firm"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-9_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-9_02",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-9",
+          "subject": "Taxation",
+          "prompt": "If the tax payable under normal provisions is Rs. 9,98,400 (inclusive of surcharge and cess) and AMT payable is Rs. 11,58,300, what is the AMT credit eligible to be carried forward under section 115JD?",
+          "options": [
+            "Nil",
+            "Rs. 1,59,900",
+            "Rs. 5,00,000",
+            "Rs. 11,58,300"
+          ],
+          "answerIndex": 1,
+          "explanation": "AMT credit under section 115JD is the excess of AMT liability over the tax payable under normal provisions (Rs. 11,58,300 - Rs. 9,98,400 = Rs. 1,59,900).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AMT Credit",
+            "Section 115JD",
+            "Tax Liability"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-9_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-9_02",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-9",
+          "subject": "Taxation",
+          "prompt": "For how many assessment years can the excess AMT credit calculated under section 115JD be carried forward by M/s. Zenith Associates?",
+          "options": [
+            "5 assessment years",
+            "10 assessment years",
+            "15 assessment years",
+            "Indefinitely"
+          ],
+          "answerIndex": 2,
+          "explanation": "AMT credit can be carried forward for up to 15 successive assessment years to be set off in the year when normal tax exceeds AMT.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AMT Credit",
+            "Carry Forward",
+            "Section 115JD"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-9_03",
+      "kind": "scenario",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "passage": "Mr. Suresh, aged 58 years, has total non-agricultural income of Rs. 8,50,000 and net agricultural income of Rs. 3,50,000 for P.Y. 2025-26. He evaluates his tax liability under the old tax regime (slab rates: upto Rs. 2.5L nil, 2.5L-5L @ 5%, 5L-10L @ 20%, above 10L @ 30%).",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-9_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-9_03",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-9",
+          "subject": "Taxation",
+          "prompt": "Does the rule of partial integration of agricultural income apply to Mr. Suresh for P.Y. 2025-26 under the old tax regime?",
+          "options": [
+            "No, because his non-agricultural income is less than Rs. 10,00,000.",
+            "Yes, because his non-agricultural income exceeds the basic exemption limit (Rs. 2,50,000) and agricultural income exceeds Rs. 5,000.",
+            "No, because agricultural income is less than non-agricultural income.",
+            "Yes, but only if he opts for section 115BAC."
+          ],
+          "answerIndex": 1,
+          "explanation": "Partial integration applies if two conditions are met: (1) net agricultural income exceeds Rs. 5,000, and (2) non-agricultural income exceeds the basic exemption limit. Here, Rs. 8,50,000 > Rs. 2,50,000 and Rs. 3,50,000 > Rs. 5,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Partial Integration",
+            "Agricultural Income",
+            "Conditions"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-9_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-9_03",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-9",
+          "subject": "Taxation",
+          "prompt": "In Step 1 of the partial integration method, what income is taken to compute income tax?",
+          "options": [
+            "Rs. 8,50,000",
+            "Rs. 3,50,000",
+            "Rs. 12,00,000 (Non-agricultural income + Agricultural income)",
+            "Rs. 6,00,000"
+          ],
+          "answerIndex": 2,
+          "explanation": "Step 1 of partial integration computes tax on the aggregate of non-agricultural income and net agricultural income (Rs. 8,50,000 + Rs. 3,50,000 = Rs. 12,00,000).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Partial Integration",
+            "Step 1",
+            "Tax Computation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-9_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-9_03",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-9",
+          "subject": "Taxation",
+          "prompt": "In Step 2 of the partial integration method for Mr. Suresh, what income amount is used for computing tax?",
+          "options": [
+            "Rs. 2,50,000",
+            "Rs. 6,00,000 (Basic exemption limit Rs. 2,50,000 + Agricultural income Rs. 3,50,000)",
+            "Rs. 3,50,000",
+            "Rs. 8,50,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Step 2 computes tax on the aggregate of the basic exemption limit (Rs. 2,50,000) and net agricultural income (Rs. 3,50,000), totaling Rs. 6,00,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Partial Integration",
+            "Step 2",
+            "Basic Exemption"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-9_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-9_03",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-9",
+          "subject": "Taxation",
+          "prompt": "Is Mr. Suresh eligible for rebate under section 87A under the old tax regime given his total non-agricultural income of Rs. 8,50,000?",
+          "options": [
+            "Yes, rebate of Rs. 12,500 is available.",
+            "Yes, rebate of Rs. 25,000 is available.",
+            "No, because his total non-agricultural income exceeds Rs. 5,00,000.",
+            "No, because he has agricultural income."
+          ],
+          "answerIndex": 2,
+          "explanation": "Under the old tax regime, rebate under section 87A is available only if total non-agricultural income does not exceed Rs. 5,00,000. Since Mr. Suresh's non-agricultural income is Rs. 8,50,000, he is not eligible.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 87A",
+            "Rebate",
+            "Old Regime"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-9_04",
+      "kind": "scenario",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "passage": "XYZ Ltd., a domestic company, reports a total income of Rs. 45,00,000 under the normal provisions of the Income-tax Act, 1961 for P.Y. 2025-26. However, its book profit computed under section 115JB is Rs. 70,00,000. The company does not opt for concessional tax regimes under section 115BAA or 115BAB. The applicable corporate tax rate under normal provisions is 25% (since turnover in P.Y. 2023-24 did not exceed Rs. 400 crores). The MAT rate under section 115JB is 15%.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-9_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-9_04",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-9",
+          "subject": "Taxation",
+          "prompt": "What is the tax liability of XYZ Ltd. under normal provisions (ignoring surcharge and cess)?",
+          "options": [
+            "Rs. 11,25,000",
+            "Rs. 10,50,000",
+            "Rs. 12,95,000",
+            "Rs. 17,50,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Tax under normal provisions is 25% of total income of Rs. 45,00,000, which equals Rs. 11,25,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Corporate Tax",
+            "Normal Provisions",
+            "XYZ Ltd"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-9_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-9_04",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-9",
+          "subject": "Taxation",
+          "prompt": "What is the tax liability under MAT pursuant to section 115JB (ignoring surcharge and cess)?",
+          "options": [
+            "Rs. 11,25,000",
+            "Rs. 10,50,000",
+            "Rs. 12,95,000",
+            "Rs. 15,00,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "MAT liability under section 115JB is 15% of book profit of Rs. 70,00,000, which equals Rs. 10,50,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "MAT",
+            "Section 115JB",
+            "Book Profit"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-9_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-9_04",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-9",
+          "subject": "Taxation",
+          "prompt": "Which tax liability will be applicable to XYZ Ltd. for P.Y. 2025-26?",
+          "options": [
+            "Rs. 10,50,000, being tax under MAT",
+            "Rs. 11,25,000, being tax under normal provisions",
+            "Average of both",
+            "Higher of normal tax and MAT"
+          ],
+          "answerIndex": 1,
+          "explanation": "If the tax payable under normal provisions (Rs. 11,25,000) is higher than the MAT liability (Rs. 10,50,000), the regular tax under normal provisions is payable.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Tax Liability",
+            "MAT vs Normal Tax"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-9_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-9_04",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-9",
+          "subject": "Taxation",
+          "prompt": "Can XYZ Ltd. generate MAT credit under section 115JAA for P.Y. 2025-26?",
+          "options": [
+            "Yes, equal to Rs. 75,000.",
+            "Yes, equal to Rs. 10,50,000.",
+            "No, because normal tax exceeds MAT liability.",
+            "Yes, equal to normal tax minus MAT."
+          ],
+          "answerIndex": 2,
+          "explanation": "MAT credit is generated only when the tax payable under MAT exceeds the tax payable under normal provisions. Here, normal tax exceeds MAT, so no MAT credit is generated.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "MAT Credit",
+            "Section 115JAA"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-9_05",
+      "kind": "scenario",
+      "chapterId": "income-tax-9",
+      "subject": "Taxation",
+      "passage": "Mr. Vikram, a resident individual aged 52 years, has a total income of Rs. 51,50,000 for P.Y. 2025-26 under the default tax regime of section 115BAC, consisting entirely of salary and bank interest. He wishes to compute his income tax liability including surcharge and marginal relief.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Income Tax Liability - Computation and Optimisation"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-9_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-9_05",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-9",
+          "subject": "Taxation",
+          "prompt": "What is the surcharge rate applicable to Mr. Vikram whose total income is Rs. 51,50,000 under section 115BAC?",
+          "options": [
+            "Nil",
+            "10%",
+            "15%",
+            "25%"
+          ],
+          "answerIndex": 1,
+          "explanation": "For an individual with total income exceeding Rs. 50 lakhs up to Rs. 1 crore, the surcharge rate is 10% under section 115BAC (as well as under the old regime).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Surcharge",
+            "Section 115BAC",
+            "Thresholds"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-9_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-9_05",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-9",
+          "subject": "Taxation",
+          "prompt": "What is the primary purpose of computing marginal relief for Mr. Vikram?",
+          "options": [
+            "To reduce his basic tax rate.",
+            "To ensure that the incremental tax and surcharge on income above Rs. 50,00,000 does not exceed the incremental income of Rs. 1,50,000.",
+            "To exempt capital gains from tax.",
+            "To claim deductions under Chapter VI-A."
+          ],
+          "answerIndex": 2,
+          "explanation": "Marginal relief ensures that the additional tax payable due to imposition of surcharge on crossing Rs. 50 lakhs does not exceed the extra income earned over Rs. 50 lakhs.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Marginal Relief",
+            "Purpose",
+            "Surcharge"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-9_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-9_05",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-9",
+          "subject": "Taxation",
+          "prompt": "How is the marginal relief calculated in Mr. Vikram's case?",
+          "options": [
+            "Tax and surcharge on Rs. 51,50,000 minus tax on Rs. 50,00,000 plus excess income over Rs. 50,00,000",
+            "Tax on Rs. 51,50,000 minus tax on Rs. 50,00,000",
+            "Surcharge on Rs. 51,50,000",
+            "10% of Rs. 1,50,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Marginal relief is computed as: (Tax + Surcharge on Total Income) minus [Tax on Rs. 50,00,000 + (Total Income - Rs. 50,00,000)].",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Marginal Relief Formula",
+            "Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-9_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-9_05",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-9",
+          "subject": "Taxation",
+          "prompt": "What is the final step in computing Mr. Vikram's total tax liability after determining tax, surcharge, and marginal relief?",
+          "options": [
+            "Add 2% Health and Education Cess",
+            "Add 4% Health and Education Cess",
+            "Add 3% Education Cess",
+            "No cess is added"
+          ],
+          "answerIndex": 1,
+          "explanation": "Health and Education Cess at the rate of 4% is added to the income tax liability after adjusting for surcharge and marginal relief.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Health and Education Cess",
+            "Final Tax Liability"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

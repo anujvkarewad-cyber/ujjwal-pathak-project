@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "corporate-laws-9",
+  "subject": "Law",
+  "paper": "Paper 2: Corporate and Other Laws",
+  "module": "Module 2",
+  "chapterNumber": 9,
+  "chapterTitle": "Accounts of Companies",
+  "generatedAt": "2026-08-16T14:13:46.899Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_corporate-laws-9_001",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "Which of the following books of account must be kept by every company at its registered office as per Section 128 of the Companies Act, 2013?",
+      "options": [
+        "Books of account showing only cash receipts and disbursements",
+        "Books of account and other relevant books and papers and financial statement giving true and fair view of the state of the company's affairs",
+        "Detailed minutes of all general meetings and board meetings only",
+        "Register of members and debenture holders only"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 128(1) mandates that every company shall prepare and keep at its registered office books of account and other relevant books and papers and financial statements reflecting a true and fair view of the state of the affairs of the company.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Books of Account",
+        "Registered Office",
+        "Section 128"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_002",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "For how many preceding financial years must a company maintain its books of account in good order under Section 128 of the Companies Act, 2013?",
+      "options": [
+        "5 financial years",
+        "7 financial years",
+        "8 financial years",
+        "10 financial years"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 128(1) requires a company to keep proper books of account and other relevant books and papers for a period of not less than eight financial years immediately preceding a financial year, or where the company has been in existence for less than eight years, for all such preceding years.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Preservation of Books",
+        "Section 128",
+        "Financial Years"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_003",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "Where a company maintains its books of account in electronic mode, what is the mandatory requirement regarding the location of the server?",
+      "options": [
+        "The server must be hosted exclusively within the territorial limits of India at all times.",
+        "The server may be located anywhere globally provided the backup is kept in India.",
+        "The server for hosting the backed-up books of account must be physically located in India.",
+        "There is no restriction on server location if the company is an unlisted private entity."
+      ],
+      "answerIndex": 2,
+      "explanation": "Rule 3 of the Companies (Accounts) Rules, 2014 states that where books of account are maintained in electronic mode, the periodic backup of the books of account accessible in India must be kept on servers physically located in India at all times.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Electronic Mode",
+        "Server Location",
+        "Rule 3 Accounts Rules"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_004",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "Who among the following has the statutory right to inspect the books of account of a company kept at its registered office during business hours?",
+      "options": [
+        "Any equity shareholder of the company",
+        "Any unsecured creditor of the company",
+        "Any director of the company",
+        "The statutory registrar of employees"
+      ],
+      "answerIndex": 2,
+      "explanation": "As per Section 128(3), the books of account and other books and papers of the company shall be open for inspection by any director during business hours.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Inspection",
+        "Directors",
+        "Section 128"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_005",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "Within what period must a financial statement be placed before the Annual General Meeting (AGM) of a company under Section 134?",
+      "options": [
+        "At every annual general meeting of the company",
+        "Once in every three calendar years",
+        "Within 6 months from the end of every financial year",
+        "Within 90 days from the close of the financial year"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 134(1) read with Section 96 mandates that financial statements must be laid before every annual general meeting of the company.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Financial Statements",
+        "AGM",
+        "Section 134"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_006",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "Which of the following is NOT a component of 'Financial Statement' for a company under Section 2(40)?",
+      "options": [
+        "Balance sheet as at the end of the financial year",
+        "Profit and loss account or income and expenditure account",
+        "Cash flow statement for the financial year",
+        "Internal auditor's comprehensive report"
+      ],
+      "answerIndex": 3,
+      "explanation": "Section 2(40) defines financial statement as including a balance sheet, profit and loss account (or income and expenditure account), cash flow statement, statement of changes in equity (if applicable), and any explanatory note. Internal auditor's report is not part of the statutory financial statement definition.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Definition",
+        "Financial Statement",
+        "Section 2(40)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_007",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "Which class of companies is specifically exempted from preparing a Cash Flow Statement as part of its financial statements?",
+      "options": [
+        "All listed companies",
+        "One Person Company (OPC), small company, dormant company, and private company (start-up)",
+        "Government companies engaged in defense production",
+        "Foreign companies operating a branch office in India"
+      ],
+      "answerIndex": 1,
+      "explanation": "The proviso to Section 2(40) states that the financial statement may not include the cash flow statement in case of a One Person Company, small company, dormant company, and private company (if it is a start-up as per DPIIT notification).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Cash Flow Statement",
+        "Exemptions",
+        "Section 2(40)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_008",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "Who is required to sign the financial statements of a company under Section 134(1)?",
+      "options": [
+        "Only the Managing Director and the Company Secretary",
+        "The chairperson of the company if authorized by the Board, or two directors out of which one shall be Managing Director and the Chief Executive Officer, CFO, and Company Secretary, wherever they are appointed.",
+        "Any single independent director and the statutory auditor",
+        "All the shareholders present at the AGM"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 134(1) prescribes that financial statements shall be signed by the chairperson of the company where he is authorized by the Board or by two directors out of which one shall be managing director and the Chief Executive Officer, Chief Financial Officer and Company Secretary, wherever they are appointed.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Signing of Financial Statements",
+        "Section 134",
+        "Key Managerial Personnel"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_009",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "What is the penalty for the Managing Director or CFO (or other officer in charge) in case of contravention of provisions relating to books of account under Section 128?",
+      "options": [
+        "Imprisonment for a term up to 1 year only",
+        "A monetary penalty of not less than fifty thousand rupees which may extend to five lakh rupees",
+        "Mandatory disqualification from directorship for 5 years without monetary fine",
+        "Fine of exactly one lakh rupees"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 128(6) states that if the managing director, whole-time director in charge of finance, Chief Financial Officer or any other person of a company charged by the Board fail to take reasonable steps to secure compliance, they shall be punishable with imprisonment for a term which may extend to 1 year or with fine between fifty thousand and five lakh rupees, or both.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Penalty",
+        "Section 128",
+        "Contravention"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_010",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "What is the primary condition for a company to voluntarily revise its financial statements or Board's report under Section 130 and 131?",
+      "options": [
+        "Prior approval of the National Company Law Tribunal (NCLT)",
+        "Approval of the Central Government (MCA)",
+        "Simple majority vote of retail shareholders",
+        "Recommendation of the statutory auditors alone"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 131 permits voluntary revision of financial statements or Board's report with the approval of the Central Government (delegated to Regional Director) if they do not comply with Section 129 or 134.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Voluntary Revision",
+        "Section 131",
+        "Central Government Approval"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_011",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "Under Section 130, who has the authority to order the re-opening and revision of accounts on the grounds of fraud or mismanagement?",
+      "options": [
+        "The Registrar of Companies (ROC)",
+        "The National Company Law Tribunal (NCLT)",
+        "The Securities and Exchange Board of India (SEBI)",
+        "The Comptroller and Auditor General (CAG)"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 130 empowers the NCLT to order a company to re-open its books of account and revise its financial statements if it is of the opinion that the relevant accounts were prepared in a fraudulent manner or the affairs of the company were mismanaged.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Re-opening of Accounts",
+        "Section 130",
+        "NCLT"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_012",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "Which bodies or authorities can apply to the NCLT for re-opening of accounts under Section 130?",
+      "options": [
+        "Central Government, Income Tax authorities, SEBI, or any other statutory body/person concerned",
+        "Only the minority shareholders holding at least 10% voting power",
+        "Only the statutory auditor of the company",
+        "Any trade union operating within the company"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 130(1) allows application to NCLT by the Central Government, Income-tax authorities, SEBI, Reserve Bank of India, Registrar, or any other statutory regulatory body or person.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Re-opening of Accounts",
+        "Section 130",
+        "Applicants"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_013",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "What is the mandatory period up to which a notice of application for re-opening of accounts under Section 130 must be given by NCLT to the concerned authorities?",
+      "options": [
+        "7 days",
+        "15 days",
+        "30 days",
+        "60 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 130(2) requires the NCLT to give notice to the Central Government, Income-tax authorities, and SEBI/regulatory body and take into consideration their representations before passing any order under Section 130.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Notice Period",
+        "Section 130",
+        "NCLT"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_014",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "Can accounts re-opened or revised under Section 130 or 131 be subsequently prepared for a period prior to the preceding how many financial years?",
+      "options": [
+        "3 financial years",
+        "5 financial years",
+        "8 financial years",
+        "10 financial years"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 130(3) and Section 131(1) proviso specify that accounts shall not be re-opened or revised for more than eight financial years immediately preceding the current financial year.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Limit of Years",
+        "Section 130",
+        "Section 131"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_015",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "Which type of companies are required to prepare Consolidated Financial Statements (CFS) in addition to standalone financial statements?",
+      "options": [
+        "Every company without exception",
+        "Companies having one or more subsidiaries, associate companies, or joint ventures",
+        "Only listed public companies",
+        "Only government companies with paid-up capital exceeding 100 crores"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 129(3) mandates that where a company has one or more subsidiaries, it shall, in addition to standalone statements, prepare a consolidated financial statement of the company and of all the subsidiaries in the same form and manner as its own.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Consolidated Financial Statements",
+        "Section 129",
+        "Subsidiaries"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_016",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "What is the penalty prescribed under Section 129(7) for a company officer in default for contravening the provisions relating to financial statements?",
+      "options": [
+        "Imprisonment up to 1 year or fine between Rs. 50,000 and Rs. 5,00,000, or both",
+        "Only a fixed penalty of Rs. 10,000",
+        "Fine of Rs. 5,00,000 without any option of imprisonment",
+        "Cancellation of company registration immediately"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 129(7) prescribes punishment for the officer in default as imprisonment for a term up to 1 year or with fine not less than Rs. 50,000 which may extend to Rs. 5,00,000, or both.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Penalty",
+        "Section 129",
+        "Officer in Default"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_017",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "Corporate Social Responsibility (CSR) reporting forms an integral part of which document under the Companies Act, 2013?",
+      "options": [
+        "Auditor's Report",
+        "Board's Report",
+        "Prospectus",
+        "Annual Return (MGT-7)"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 134(3)(o) requires the Board's report to include details about the policy developed and implemented by the company on Corporate Social Responsibility initiatives.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "CSR",
+        "Board's Report",
+        "Section 134"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_018",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "Which companies are required to constitute a Corporate Social Responsibility (CSR) Committee under Section 135?",
+      "options": [
+        "Every company registered under the Act",
+        "Companies satisfying net worth of Rs. 500 cr+, turnover of Rs. 1000 cr+, or net profit of Rs. 5 cr+ during the immediately preceding financial year",
+        "Only companies listed on recognized stock exchanges",
+        "All banking companies irrespective of their turnover"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 135(1) applies to every company having net worth of Rs. 500 crore or more, turnover of Rs. 1000 crore or more, or a net profit of Rs. 5 crore or more during the immediately preceding financial year.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "CSR Committee",
+        "Section 135",
+        "Applicability Thresholds"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_019",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "What is the minimum percentage of average net profits of the preceding three financial years that a qualifying company must spend on CSR activities?",
+      "options": [
+        "1%",
+        "2%",
+        "3%",
+        "5%"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 135(5) requires the Board of every qualifying company to ensure that the company spends, in every financial year, at least 2% of the average net profits of the company made during the three immediately preceding financial years.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "CSR Spend",
+        "Section 135",
+        "Average Net Profits"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_020",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "If a company fails to spend the mandatory CSR amount in a financial year, and such unspent amount does NOT relate to any ongoing project, what must the company do with the unspent amount?",
+      "options": [
+        "Transfer it to the Prime Minister's National Relief Fund within 30 days",
+        "Transfer it to a Fund specified in Schedule VII within a period of 6 months of the expiry of the financial year",
+        "Retain it in the profit and loss account as general reserve",
+        "Distribute it as special dividend to shareholders"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 135(5) read with rules specifies that any unspent CSR amount, other than relating to an ongoing project, shall be transferred to a Fund specified in Schedule VII within 6 months of the expiry of the financial year.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Unspent CSR",
+        "Schedule VII",
+        "Section 135"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_021",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "Where the unspent CSR amount relates to an 'ongoing project', within what timeframe must the company transfer such amount to a special unspent CSR account?",
+      "options": [
+        "Within 30 days from the end of the financial year",
+        "Within 6 months from the end of the financial year",
+        "Within 3 years from the date of transfer",
+        "Within 90 days from the end of the financial year"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 135(6) requires that any unspent amount pertaining to an ongoing project shall be transferred by the company within a period of 30 days from the end of the financial year to a special account to be opened by the company in any scheduled bank called the 'Unspent Corporate Social Responsibility Account'.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Ongoing Project",
+        "Unspent CSR Account",
+        "Section 135"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_022",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "Within how many years must the amount transferred to the 'Unspent Corporate Social Responsibility Account' for an ongoing project be utilized by the company?",
+      "options": [
+        "1 financial year",
+        "2 financial years from the date of such transfer",
+        "3 financial years from the date of such transfer",
+        "5 financial years"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 135(6) provides that such amount transferred to the Unspent CSR Account must be spent by the company in pursuance of its obligation toward the CSR policy within a period of 3 financial years from the date of such transfer.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Unspent CSR Account",
+        "Time Limit",
+        "Section 135"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_023",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "What is the penalty for default in complying with CSR spend or transfer provisions under Section 135(7)?",
+      "options": [
+        "Company is liable to penalty of twice the amount required to be transferred to the Fund/Unspent CSR Account or Rs. 1 crore, whichever is less, and every officer in default is liable to 1/10th of the amount or Rs. 2 lakh, whichever is less",
+        "Mandatory winding up of the company and imprisonment of directors",
+        "Fixed penalty of Rs. 10 lakh on the company only",
+        "No monetary penalty, only warning notice from ROC"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 135(7) prescribes that the company shall be liable to a penalty of twice the amount required to be transferred to the Fund/Unspent CSR Account, or Rs. 1 crore, whichever is less, and every officer in default shall be liable to 1/10th of the amount or Rs. 2 lakh, whichever is less.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Penalty",
+        "Section 135",
+        "CSR Default"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_024",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "Which committee is responsible for formulating and recommending the CSR policy to the Board in qualifying companies?",
+      "options": [
+        "Audit Committee",
+        "Nomination and Remuneration Committee",
+        "Corporate Social Responsibility Committee",
+        "Stakeholders Relationship Committee"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 135(2) mandates that the CSR Committee shall formulate and recommend to the Board, a Corporate Social Responsibility Policy indicating activities to be undertaken.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "CSR Committee",
+        "Policy Formulation",
+        "Section 135"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_025",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "What is the composition requirement of the CSR Committee for an unlisted public company or private company that has only two directors on its Board?",
+      "options": [
+        "The committee must be formed with minimum three directors including one independent director",
+        "The committee shall consist of two directors",
+        "Exemption from forming CSR committee is granted if there are less than three directors",
+        "The Board itself functions as the CSR Committee without restriction"
+      ],
+      "answerIndex": 1,
+      "explanation": "Proviso to Section 135(1) states that where a company is not required to appoint an independent director under Section 149(4), it shall have its CSR Committee with two or more directors.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "CSR Committee Composition",
+        "Private Company",
+        "Section 135"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_026",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "Who is required to file a copy of the financial statements, along with all required documents, with the Registrar of Companies (ROC) under Section 137?",
+      "options": [
+        "Every company",
+        "Only listed companies",
+        "Only companies having paid-up capital above Rs. 10 crore",
+        "Government companies audited by Comptroller and Auditor General"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 137(1) applies to every company, requiring it to file with the Registrar the financial statements including consolidated financial statements along with all documents required to be attached.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Filing of Financial Statements",
+        "Section 137",
+        "ROC"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_027",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "Within what period from the date of the Annual General Meeting must the financial statements be filed with the ROC under Section 137(1)?",
+      "options": [
+        "30 days",
+        "60 days",
+        "90 days",
+        "6 months"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 137(1) stipulates that a copy of the financial statements, including consolidated financial statement, adopted at the AGM shall be filed with the Registrar within 30 days of the date of AGM.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Filing Timeline",
+        "Section 137",
+        "AGM"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_028",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "If the Annual General Meeting of a company is NOT held or cannot be held, within what period from the close of the financial year must the financial statements still be filed with the ROC?",
+      "options": [
+        "Within 30 days from the last date on which the AGM ought to have been held",
+        "Within 6 months from the close of the financial year",
+        "Within 90 days from the close of the financial year",
+        "No filing is required if AGM is not held"
+      ],
+      "answerIndex": 0,
+      "explanation": "First proviso to Section 137(1) specifies that where the financial statements are not adopted at the AGM or AGM is not held, they shall be filed with the Registrar within 30 days of the last date on which the AGM ought to have been held, along with the reasons.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AGM Not Held",
+        "Filing of Accounts",
+        "Section 137"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_029",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "What is the statutory penalty for a company upon default in filing financial statements under Section 137?",
+      "options": [
+        "Penalty of Rs. 1,000 for every day during which the failure continues subject to a maximum of Rs. 10,00,000",
+        "Fixed penalty of Rs. 50,000 only",
+        "Imprisonment of all shareholders",
+        "Strike off of company name immediately without notice"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 137(3) provides that if a company fails to file financial statements, the company shall be liable to a penalty of Rs. 1,000 for each day during which such failure continues, subject to a maximum of Rs. 10,00,000.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Penalty for Non-Filing",
+        "Section 137",
+        "ROC"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-9_030",
+      "kind": "normal",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "prompt": "Which of the following persons is specifically punishable under Section 137(3) in case of failure to file financial statements?",
+      "options": [
+        "The managing director and the Chief Financial Officer (CFO)",
+        "The company secretary and every director of the company who is in default",
+        "Only the external statutory auditor",
+        "All registered shareholders holding more than 5% shares"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 137(3) prescribes penalty for the managing director and Chief Financial Officer, if any, and, if not, then to every director who is in default, along with the company secretary, with penalty and imprisonment terms specified.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Officer in Default",
+        "Section 137",
+        "Filing Penalty"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_corporate-laws-9_01",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "passage": "Zenith Pharma Limited is a listed public company having a paid-up share capital of Rs. 40 crores and a turnover of Rs. 250 crores during the financial year 2024-25. The company maintains its primary books of account in electronic mode on a cloud server located in Frankfurt, Germany, with a real-time backup server maintained in Mumbai, India. During an internal audit, it is discovered that the financial statements for the year 2022-23 contained erroneous accounting entries due to inadvertent misclassification of capital expenditure as revenue expenditure. The Board wishes to rectify these accounts voluntarily.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-9_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-9_01",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-9",
+          "subject": "Law",
+          "prompt": "Is the maintenance of books of account in electronic mode by Zenith Pharma Limited compliant with the Companies (Accounts) Rules, 2014?",
+          "options": [
+            "No, because the primary books cannot be stored on a cloud server outside India.",
+            "Yes, because the periodic backup of the books of account is kept on a server physically located in India.",
+            "No, because listed companies are strictly prohibited from maintaining electronic books.",
+            "Yes, provided the German server is owned by the Government of India."
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 3 of the Companies (Accounts) Rules, 2014 permits electronic maintenance of books provided that the servers for hosting the backed-up books of account are physically located in India at all times.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Electronic Books",
+            "Rule 3",
+            "Server Backup"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-9_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-9_01",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-9",
+          "subject": "Law",
+          "prompt": "What legal procedure must Zenith Pharma Limited follow if it intends to voluntarily revise its financial statements for the year 2022-23?",
+          "options": [
+            "Pass an ordinary resolution at a general meeting without any government approval",
+            "Apply to the National Company Law Tribunal (NCLT) under Section 130",
+            "Obtain approval from the Central Government (Regional Director) under Section 131",
+            "File revised statements directly with ROC without prior permissions"
+          ],
+          "answerIndex": 2,
+          "explanation": "Section 131 allows a company to voluntarily revise its financial statements by obtaining the prior approval of the Central Government (powers delegated to Regional Director), when they do not comply with Section 129.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Voluntary Revision",
+            "Section 131",
+            "Central Government"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-9_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-9_01",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-9",
+          "subject": "Law",
+          "prompt": "What is the maximum number of preceding financial years for which Zenith Pharma Limited can revise its accounts under Section 131?",
+          "options": [
+            "2 financial years",
+            "3 financial years",
+            "5 financial years",
+            "8 financial years"
+          ],
+          "answerIndex": 3,
+          "explanation": "The proviso to Section 131(1) stipulates that voluntary revision shall not be made in respect of more than eight financial years immediately preceding the current financial year.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Voluntary Revision",
+            "Limit of Years",
+            "Section 131"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-9_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-9_01",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-9",
+          "subject": "Law",
+          "prompt": "If Zenith Pharma Limited fails to keep proper books of account at its registered office as required by Section 128, what penalty is attracted by the Managing Director in charge?",
+          "options": [
+            "Imprisonment up to 1 year or fine between Rs. 50,000 and Rs. 5,00,000, or both",
+            "A fixed penalty of Rs. 10,00,000",
+            "Only disqualification from directorship for 2 years",
+            "Fine equal to 50% of the company's turnover"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 128(6) penalizes the managing director or CFO for failure to take reasonable steps with imprisonment up to 1 year or fine ranging from Rs. 50,000 to Rs. 5,00,000, or both.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 128",
+            "Penalty",
+            "Managing Director"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-9_02",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "passage": "GreenEarth Agro Industries Private Limited is a profitable company. For the financial year 2024-25, its financial parameters are as follows: Net Worth is Rs. 550 crores, Turnover is Rs. 1,100 crores, and Net Profit is Rs. 6 crores. The company constitutes a CSR Committee and resolves to spend its CSR budget. However, at the close of the financial year, out of the total mandatory CSR obligation of Rs. 1.20 crores, the company spent only Rs. 80 lakhs on regular community welfare projects. The remaining Rs. 40 lakhs was unspent, out of which Rs. 25 lakhs relates to an ongoing school building project initiated last year, and Rs. 15 lakhs relates to a completed tree plantation drive.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-9_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-9_02",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-9",
+          "subject": "Law",
+          "prompt": "Is GreenEarth Agro Industries Private Limited statutorily required to constitute a CSR Committee under Section 135?",
+          "options": [
+            "No, because it is a private limited company.",
+            "Yes, because its turnover exceeds Rs. 1,000 crores and net profit exceeds Rs. 5 crores.",
+            "No, because its net worth is below Rs. 1,000 crores.",
+            "Yes, only if ordered by the Registrar of Companies."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 135(1) applies if any of the three thresholds (Net Worth Rs. 500 cr+, Turnover Rs. 1000 cr+, Net Profit Rs. 5 cr+) is met. Here, turnover (Rs. 1,100 cr) and net profit (Rs. 6 cr) exceed the thresholds.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "CSR Applicability",
+            "Section 135",
+            "Thresholds"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-9_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-9_02",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-9",
+          "subject": "Law",
+          "prompt": "What is the legal requirement for GreenEarth Agro Industries Private Limited regarding the unspent CSR amount of Rs. 15 lakhs relating to the completed tree plantation drive?",
+          "options": [
+            "It must be transferred to the Unspent CSR Account within 30 days.",
+            "It must be transferred to a Fund specified in Schedule VII within 6 months of the expiry of the financial year.",
+            "It can be carried forward as a reserve for future tree plantation.",
+            "It is waived off since the company spent majority of its budget."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 135(5) mandates that unspent amount other than relating to an ongoing project must be transferred to a Fund specified in Schedule VII within 6 months of the expiry of the financial year.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Unspent CSR",
+            "Schedule VII",
+            "Section 135"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-9_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-9_02",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-9",
+          "subject": "Law",
+          "prompt": "What is the requirement for the unspent CSR amount of Rs. 25 lakhs relating to the ongoing school building project?",
+          "options": [
+            "Transfer it to an 'Unspent CSR Account' in a scheduled bank within 30 days of the end of the financial year.",
+            "Transfer it to the Prime Minister's National Relief Fund within 7 days.",
+            "Spend it within 30 days from the end of the financial year.",
+            "Surrender it to the Ministry of Corporate Affairs immediately."
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 135(6) requires that unspent amount pertaining to an ongoing project be transferred within 30 days of the end of the financial year to a special account called 'Unspent Corporate Social Responsibility Account'.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Ongoing Project",
+            "Unspent CSR Account",
+            "Section 135"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-9_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-9_02",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-9",
+          "subject": "Law",
+          "prompt": "Within what maximum period must the Rs. 25 lakhs transferred to the Unspent CSR Account be utilized by the company?",
+          "options": [
+            "1 financial year",
+            "2 financial years",
+            "3 financial years from the date of such transfer",
+            "5 financial years"
+          ],
+          "answerIndex": 2,
+          "explanation": "Section 135(6) specifies that the amount transferred to the Unspent CSR Account must be spent by the company within a period of 3 financial years from the date of such transfer.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Unspent CSR Account",
+            "Time Limit",
+            "Section 135"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-9_03",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "passage": "Apex Global Limited, a listed company, held its Annual General Meeting (AGM) for the financial year 2024-25 on September 28, 2025. Due to administrative delays and a change in statutory auditors, the adoption of financial statements was postponed, and consequently, the financial statements were not adopted at the said AGM. The company finally filed its financial statements with the Registrar of Companies (ROC) on November 25, 2025.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-9_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-9_03",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-9",
+          "subject": "Law",
+          "prompt": "By what date ought Apex Global Limited to have held its AGM for the financial year 2024-25 under general provisions?",
+          "options": [
+            "August 31, 2025",
+            "September 30, 2025",
+            "October 31, 2025",
+            "December 31, 2025"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 96 requires an AGM to be held within 6 months from the close of the financial year (i.e., by September 30 for a financial year ending on March 31). Apex held it on September 28, 2025, which was within time.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AGM Timing",
+            "Section 96",
+            "Financial Year Close"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-9_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-9_03",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-9",
+          "subject": "Law",
+          "prompt": "What is the statutory due date for filing financial statements with the ROC under Section 137(1) when financial statements are not adopted at the AGM?",
+          "options": [
+            "Within 30 days from the date of the AGM",
+            "Within 30 days from the last date on which the AGM ought to have been held",
+            "Within 60 days from the close of the financial year",
+            "Within 90 days from the date of the AGM"
+          ],
+          "answerIndex": 1,
+          "explanation": "First proviso to Section 137(1) states that where financial statements are not adopted at the AGM, they shall be filed with the Registrar within 30 days of the last date on which the AGM ought to have been held.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Filing Deadline",
+            "Section 137",
+            "Unadopted Statements"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-9_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-9_03",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-9",
+          "subject": "Law",
+          "prompt": "Considering the facts, what was the last date by which Apex Global Limited should have filed its unadopted financial statements with the ROC?",
+          "options": [
+            "October 28, 2025",
+            "October 30, 2025",
+            "November 28, 2025",
+            "December 30, 2025"
+          ],
+          "answerIndex": 1,
+          "explanation": "Since the AGM ought to have been held by September 30, 2025, filing must be done within 30 days thereof, making the due date October 30, 2025.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Filing Calculation",
+            "Section 137",
+            "Due Date"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-9_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-9_03",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-9",
+          "subject": "Law",
+          "prompt": "Given that Apex Global Limited filed its financial statements on November 25, 2025, which is past the due date, what penalty is the company liable to under Section 137(3)?",
+          "options": [
+            "A penalty of Rs. 1,000 for every day during which failure continues, subject to a maximum of Rs. 10,00,000",
+            "A fixed penalty of Rs. 50,000 without daily accumulation",
+            "Imprisonment of all directors for 6 months",
+            "Fine of Rs. 1 crore flat"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 137(3) prescribes a penalty of Rs. 1,000 for each day during which the failure to file financial statements continues, subject to a maximum ceiling of Rs. 10,00,000 for the company.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Penalty for Non-Filing",
+            "Section 137",
+            "Daily Fine"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-9_04",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "passage": "Vanguard Technologies Private Limited is a wholly owned subsidiary of Vanguard Inc., USA. The company closes its financial year on March 31, 2025. The Board of Directors prepared the financial statements for the year 2024-25. The company's board consists of two directors, Mr. A and Mr. B. The company has appointed a Chief Financial Officer (CFO) and a Company Secretary (CS). When preparing the financial statements, the Board wonders who is legally mandated to sign these financial statements under Section 134(1).",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-9_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-9_04",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-9",
+          "subject": "Law",
+          "prompt": "Who among the following must sign the financial statements of Vanguard Technologies Private Limited as per Section 134(1)?",
+          "options": [
+            "Only Mr. A as the sole authorized director",
+            "The chairperson authorized by the Board or two directors (including Managing Director if any), along with CFO and CS (where appointed)",
+            "Only the Chief Financial Officer and statutory auditor",
+            "The holding company's directors in the USA"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 134(1) mandates that financial statements be signed by the chairperson authorized by the Board or two directors (one being MD if appointed), and the CEO, CFO, and CS, wherever they are appointed.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Signing",
+            "Section 134",
+            "KMP"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-9_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-9_04",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-9",
+          "subject": "Law",
+          "prompt": "Is Vanguard Technologies Private Limited required to include a Cash Flow Statement in its financial statements under Section 2(40)?",
+          "options": [
+            "Yes, all companies without exception must file a cash flow statement.",
+            "No, because it is a private company and a subsidiary of a foreign corporate body.",
+            "No, because OPC, small companies, dormant companies, and private company start-ups are exempted, but being a subsidiary of a foreign corporate body, it does not automatically enjoy the start-up private company exemption unless it qualifies under specific rules.",
+            "Yes, since it is a subsidiary of a foreign company, cash flow is mandatory."
+          ],
+          "answerIndex": 3,
+          "explanation": "The exemption from cash flow statement under Section 2(40) is available to OPC, small companies, dormant companies, and private company start-ups. Since Vanguard is a subsidiary of a foreign body corporate (not an Indian start-up private company), cash flow statement is required.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Cash Flow Statement",
+            "Subsidiary",
+            "Section 2(40) Exemption"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-9_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-9_04",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-9",
+          "subject": "Law",
+          "prompt": "Under Section 129(3), what additional financial statement must Vanguard Technologies Private Limited prepare if it has its own subsidiary company in India?",
+          "options": [
+            "Consolidated Financial Statement (CFS) along with standalone statement",
+            "Only segment reporting statements",
+            "Tax audit report in Form 3CD",
+            "Quarterly un-audited results"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 129(3) mandates that where a company has one or more subsidiaries, it shall prepare a Consolidated Financial Statement of the company and all subsidiaries in the same form and manner as its own.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "CFS",
+            "Section 129",
+            "Subsidiary"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-9_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-9_04",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-9",
+          "subject": "Law",
+          "prompt": "Where must Vanguard Technologies Private Limited keep its books of account as per Section 128?",
+          "options": [
+            "At its registered office in India",
+            "At the holding company's headquarters in USA",
+            "At the statutory auditor's office in India",
+            "At any place in India decided by the CFO"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 128(1) requires every company to prepare and keep books of account and other relevant papers at its registered office in India.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Registered Office",
+            "Books of Account",
+            "Section 128"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-9_05",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-9",
+      "subject": "Law",
+      "passage": "A serious financial scam comes to light in Stellar Infrastructure Limited. The Serious Fraud Investigation Office (SFIO) and Income Tax authorities suspect that the financial statements of the company for the past 5 financial years were manipulated and prepared in a fraudulent manner to inflate profits and secure bank loans. The regulatory authorities decide to approach the National Company Law Tribunal (NCLT) for re-opening the company's books of account.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Accounts of Companies"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-9_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-9_05",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-9",
+          "subject": "Law",
+          "prompt": "Which section of the Companies Act, 2013 governs the re-opening of accounts on Court or Tribunal orders based on fraud or mismanagement?",
+          "options": [
+            "Section 128",
+            "Section 129",
+            "Section 130",
+            "Section 131"
+          ],
+          "answerIndex": 2,
+          "explanation": "Section 130 deals specifically with the re-opening of accounts on Tribunal's or Court's orders where accounts were prepared in a fraudulent manner or due to mismanagement.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Re-opening of Accounts",
+            "Section 130",
+            "NCLT"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-9_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-9_05",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-9",
+          "subject": "Law",
+          "prompt": "Which authorities are specifically empowered under Section 130(1) to apply to the NCLT for re-opening of accounts?",
+          "options": [
+            "Central Government, Income-tax authorities, SEBI, RBI, or any other statutory regulatory body",
+            "Any retail shareholder holding a single share",
+            "Only the statutory auditors of the company",
+            "Any commercial bank that has granted a loan"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 130(1) lists Central Government, Income-tax authorities, SEBI, RBI, Registrar, or any other statutory regulatory body as authorized applicants to NCLT.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 130",
+            "Applicants",
+            "Regulatory Bodies"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-9_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-9_05",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-9",
+          "subject": "Law",
+          "prompt": "Before passing an order under Section 130, what procedural step must the NCLT mandatorily undertake with respect to notices?",
+          "options": [
+            "Give notice to Central Government, Income-tax authorities, and SEBI/regulatory body and consider their representations",
+            "Publish a public advertisement in international newspapers and wait for 90 days",
+            "Obtain unanimous consent of all equity shareholders",
+            "Direct the police commissioner to arrest the Board of Directors"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 130(2) requires the NCLT to give notice to the Central Government, Income-tax authorities, and SEBI or any other statutory body and take into consideration their representations before passing any order.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "NCLT Notice",
+            "Section 130",
+            "Representations"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-9_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-9_05",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-9",
+          "subject": "Law",
+          "prompt": "What is the maximum retrospective timeframe limitation up to which accounts can be re-opened under Section 130?",
+          "options": [
+            "3 financial years",
+            "5 financial years",
+            "8 financial years immediately preceding the current financial year",
+            "No time limit whatsoever"
+          ],
+          "answerIndex": 2,
+          "explanation": "Section 130(3) restricts re-opening of accounts to not more than eight financial years immediately preceding the current financial year.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Time Limit",
+            "Section 130",
+            "Retrospective Accounts"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

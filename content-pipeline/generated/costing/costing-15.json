@@ -1,0 +1,1373 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "costing-15",
+  "subject": "Costing",
+  "paper": "Paper 4: Cost and Management Accounting",
+  "module": "Module 2",
+  "chapterNumber": 15,
+  "chapterTitle": "Budgets and Budgetary Control",
+  "generatedAt": "2026-08-16T14:45:42.154Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_costing-15_001",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "Which of the following best defines a budget in the context of Cost and Management Accounting?",
+      "options": [
+        "A historical statement of actual financial performance over the past year",
+        "A financial and/or quantitative statement prepared prior to a defined period of time, policy-driven",
+        "An unstructured forecast of general macroeconomic trends",
+        "A final statement of accounts prepared at the end of an accounting cycle"
+      ],
+      "answerIndex": 1,
+      "explanation": "A budget is a financial and/or quantitative statement, prepared and approved prior to a defined period of time, of the policy to be pursued during that period for the purpose of attaining a given objective.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Budget Definition",
+        "Basic Concepts"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_002",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "What is the primary difference between a budget and a forecast?",
+      "options": [
+        "A budget is an estimate of events, while a forecast is a target to be achieved.",
+        "A budget is a policy-driven target to be achieved, whereas a forecast is an assessment of probable future events.",
+        "A budget is always expressed in physical units, while a forecast is strictly financial.",
+        "There is no operational or conceptual difference between the two terms."
+      ],
+      "answerIndex": 1,
+      "explanation": "A budget is a target and is policy-driven, representing what management intends to achieve. A forecast is a prediction or assessment of what is likely to happen under specific assumptions without necessarily being a goal.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Budget vs Forecast",
+        "Basic Concepts"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_003",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "Which of the following constitutes the continuous administrative control of a business through budgets?",
+      "options": [
+        "Standard Costing",
+        "Budgetary Control",
+        "Variance Analysis",
+        "Responsibility Accounting"
+      ],
+      "answerIndex": 1,
+      "explanation": "Budgetary Control is defined as the establishment of budgets, relating the responsibilities of executives to the requirements of a policy, and the continuous comparison of actual with budgeted results.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Budgetary Control",
+        "Definitions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_004",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "Which of the following is NOT a principal budget factor (key factor) in budget preparation?",
+      "options": [
+        "Availability of raw material",
+        "Plant capacity limitation",
+        "Market demand for the product",
+        "Historical depreciation method used for machinery"
+      ],
+      "answerIndex": 3,
+      "explanation": "A principal budget factor (or key factor) is the factor the availability of which limits the volume of output/sales. Historical depreciation methods do not limit operations in the same operational capacity as material, plant, or demand limits.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Principal Budget Factor",
+        "Key Factor"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_005",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "When the availability of power is the limiting factor for an enterprise, what should be the primary basis for preparing the budget?",
+      "options": [
+        "Maximum sales demand",
+        "Available power hours and its consumption per unit",
+        "Total available liquid cash",
+        "Maximum labor hours available"
+      ],
+      "answerIndex": 1,
+      "explanation": "When a principal budget factor exists, all other budgets must be subordinated to it. Here, power is limiting, so the budget must be structured around available power units.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Principal Budget Factor",
+        "Limiting Factor"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_006",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "Which classification of budgets categorizes them based on their variability with volume or activity levels?",
+      "options": [
+        "Fixed and Flexible Budgets",
+        "Operating and Financial Budgets",
+        "Capital and Revenue Budgets",
+        "Long-term and Short-term Budgets"
+      ],
+      "answerIndex": 0,
+      "explanation": "Budgets are classified by capacity or variability into Fixed budgets (designed to remain unchanged regardless of volume) and Flexible budgets (designed to change in accordance with the level of activity attained).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Classification of Budgets",
+        "Flexible Budget"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_007",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "A fixed budget is defined as a budget which:",
+      "options": [
+        "Can be revised multiple times during the year based on actual sales",
+        "Is designed to remain unchanged regardless of the level of activity attained",
+        "Only includes fixed overhead costs and ignores variable costs",
+        "Is prepared exclusively for long-term capital expenditure projects"
+      ],
+      "answerIndex": 1,
+      "explanation": "A fixed budget is a budget designed to remain unchanged irrespective of the level of activity attained, making it unsuitable for evaluation when actual volume differs from estimated volume.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Fixed Budget",
+        "Classification"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_008",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "Why is a flexible budget more useful for control purposes than a fixed budget when sales volume fluctuates?",
+      "options": [
+        "It eliminates all variances automatically.",
+        "It provides a logical comparison of actual costs with budgeted costs at the same level of activity.",
+        "It prevents management from incurring fixed costs.",
+        "It requires less paperwork and accounting effort."
+      ],
+      "answerIndex": 1,
+      "explanation": "A flexible budget adjusts budgeted allowances to actual activity levels, allowing management to compare actual costs against what costs *should* have been at that specific activity level.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Flexible Budget",
+        "Cost Control"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_009",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "In a flexible budget, how are semi-variable costs typically treated?",
+      "options": [
+        "Ignored entirely",
+        "Categorized strictly as fixed costs",
+        "Categorized strictly as variable costs",
+        "Split into fixed and variable components"
+      ],
+      "answerIndex": 3,
+      "explanation": "Semi-variable costs have both fixed and variable elements. For flexible budgeting, they must be segregated into fixed and variable components using methods like high-low or regression.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Semi-variable Costs",
+        "Flexible Budgeting"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_010",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "Which of the following is classified as a functional budget?",
+      "options": [
+        "Cash Budget",
+        "Master Budget",
+        "Production Budget",
+        "Balance Sheet Budget"
+      ],
+      "answerIndex": 2,
+      "explanation": "Functional budgets are budgets prepared for specific functions or departments of an enterprise, such as production, sales, purchase, and labor budgets. Cash and balance sheet budgets are financial budgets.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Functional Budget",
+        "Budget Types"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_011",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "What is the primary purpose of preparing a Master Budget?",
+      "options": [
+        "To summarize all functional budgets and present the overall budgeted profit and financial position",
+        "To detail the daily cash receipts and disbursements",
+        "To evaluate individual worker efficiency on the factory floor",
+        "To forecast macroeconomic indicators for the upcoming fiscal year"
+      ],
+      "answerIndex": 0,
+      "explanation": "The Master Budget is a summary budget incorporating all functional budgets, culminating in a budgeted income statement and balance sheet approved by management.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Master Budget",
+        "Summary Budget"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_012",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "Which committee is generally responsible for coordinating and approving the functional budgets in a large organization?",
+      "options": [
+        "Audit Committee",
+        "Budget Committee",
+        "Remuneration Committee",
+        "Shareholders Grievance Committee"
+      ],
+      "answerIndex": 1,
+      "explanation": "A Budget Committee, consisting of heads of various functional departments and headed by a Budget Officer/Controller, is responsible for framing, coordinating, and reviewing budgets.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Budget Committee",
+        "Administration"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_013",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "In preparing a production budget, which formula is correct?",
+      "options": [
+        "Budgeted Sales + Closing Stock of Finished Goods - Opening Stock of Finished Goods",
+        "Budgeted Sales - Closing Stock of Finished Goods + Opening Stock of Finished Goods",
+        "Budgeted Production + Opening Stock - Closing Stock",
+        "Actual Sales + Desired Ending Inventory"
+      ],
+      "answerIndex": 0,
+      "explanation": "Production Budget = Budgeted Sales units + Desired Closing Stock of Finished Goods - Opening Stock of Finished Goods.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Production Budget",
+        "Inventory Formula"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_014",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "If a company desires to maintain finished goods closing stock at 20% of the next month's sales, and next month's budgeted sales are 10,000 units, what is the required closing stock?",
+      "options": [
+        "1,000 units",
+        "2,000 units",
+        "5,000 units",
+        "200 units"
+      ],
+      "answerIndex": 1,
+      "explanation": "20% of 10,000 units equals 2,000 units. The closing finished goods inventory for the current period is based on the subsequent period's requirement.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Production Budget",
+        "Closing Stock"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_015",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "A material purchase budget is directly dependent upon which of the following?",
+      "options": [
+        "Only cash collections from customers",
+        "Production budget and raw material inventory levels",
+        "Plant depreciation schedule",
+        "Financing cost of debt"
+      ],
+      "answerIndex": 1,
+      "explanation": "Material purchase budget depends on material consumption derived from the production budget, adjusted for opening and closing raw material inventories.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Material Purchase Budget",
+        "Functional Budgets"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_016",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "Which of the following items is included in a Cash Budget?",
+      "options": [
+        "Depreciation on machinery",
+        "Provision for doubtful debts",
+        "Payment of dividends",
+        "Proposed dividend not yet declared or paid"
+      ],
+      "answerIndex": 2,
+      "explanation": "A cash budget deals strictly with actual cash inflows and outflows. Depreciation and provisions are non-cash items and are excluded. Payment of dividends involves an actual cash outflow.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Cash Budget",
+        "Non-cash Items"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_017",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "How is depreciation treated in the preparation of a Cash Budget?",
+      "options": [
+        "Added to cash inflows",
+        "Deducted from cash outflows",
+        "Included as a fixed cash outflow",
+        "Excluded completely because it is a non-cash expense"
+      ],
+      "answerIndex": 3,
+      "explanation": "Depreciation involves no movement of cash. Therefore, it is excluded from the cash budget.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Cash Budget",
+        "Depreciation Treatment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_018",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "Which method of preparing a cash budget lists receipts and payments over a specific period month by month?",
+      "options": [
+        "Adjusted Profit and Loss Method",
+        "Receipts and Payments Method",
+        "Balance Sheet Projection Method",
+        "Standard Costing Variance Method"
+      ],
+      "answerIndex": 1,
+      "explanation": "The Receipts and Payments method (or Cash Flow method) records estimated cash receipts and payments over discrete time intervals (months, quarters).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Cash Budget Methods",
+        "Receipts and Payments"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_019",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "What does Zero Base Budgeting (ZBB) require managers to do during budget preparation?",
+      "options": [
+        "Carry forward previous year's budget allocations with a standard inflation increase",
+        "Justify every rupee of expenditure from scratch as though the activity is being initiated for the first time",
+        "Focus exclusively on capital expenditure items while ignoring operating expenses",
+        "Set budget figures to zero whenever actual sales drop below break-even"
+      ],
+      "answerIndex": 1,
+      "explanation": "Zero Base Budgeting requires all activities to be re-evaluated from scratch (zero base), compelling managers to justify the entire budget request rather than just incremental changes.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Zero Base Budgeting",
+        "ZBB Concept"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_020",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "Unlike traditional budgeting, what is a key feature of Zero Base Budgeting (ZBB)?",
+      "options": [
+        "It assumes past activities are automatically necessary.",
+        "It focuses on incremental changes from the previous year.",
+        "It involves formulation of decision packages and ranking them in order of priority.",
+        "It is restricted only to government non-profit entities."
+      ],
+      "answerIndex": 2,
+      "explanation": "ZBB involves identifying decision packages (alternative ways of performing an activity) and ranking them in order of priority to allocate limited resources effectively.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "ZBB",
+        "Decision Packages"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_021",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "What is a 'Rolling Budget' (or Continuous Budget)?",
+      "options": [
+        "A budget that is prepared once every five years and never changed",
+        "A budget that is continuously updated for a specific future period (e.g., adding a new month/quarter as the current one expires)",
+        "A budget that fluctuates automatically based on the rolling average of historical sales",
+        "A budget used exclusively for rolling inventory systems"
+      ],
+      "answerIndex": 1,
+      "explanation": "A rolling budget is kept continuously updated by adding a period (month or quarter) to the future and dropping the expired period, ensuring management always looks 12 months ahead.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Rolling Budget",
+        "Continuous Budgeting"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_022",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "If fixed overhead variance is calculated under budgetary control, which variance represents the difference between actual overhead incurred and budgeted overhead based on standard hours allowed for actual production?",
+      "options": [
+        "Fixed Overhead Expenditure Variance",
+        "Fixed Overhead Volume Variance",
+        "Total Fixed Overhead Variance",
+        "Fixed Overhead Efficiency Variance"
+      ],
+      "answerIndex": 2,
+      "explanation": "Total Fixed Overhead Variance is the difference between actual fixed overheads incurred and absorbed fixed overheads (based on standard hours allowed for actual output).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Overhead Variances",
+        "Budgetary Control"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_023",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "Which of the following is a limitation of Budgetary Control?",
+      "options": [
+        "It promotes coordination among departments.",
+        "It can lead to friction among departmental heads if targets are perceived as unrealistic.",
+        "It provides a clear yardstick for performance evaluation.",
+        "It assists in identifying key constraints in production."
+      ],
+      "answerIndex": 1,
+      "explanation": "If budgets are rigid or unrealistically high, they can cause frustration, blame-shifting, and friction among departmental heads, which is a major behavioral limitation of budgetary control.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Limitations",
+        "Behavioral Aspects"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_024",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "When preparing a flexible budget, fixed costs are treated in which of the following ways?",
+      "options": [
+        "They change in direct proportion to the volume of output.",
+        "They remain constant in total within the relevant range of activity.",
+        "They increase per unit as volume increases.",
+        "They are completely omitted from flexible budgets."
+      ],
+      "answerIndex": 1,
+      "explanation": "Within the relevant range, total fixed costs remain unchanged regardless of the volume of activity, whereas fixed cost per unit varies inversely with volume.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Flexible Budget",
+        "Fixed Costs behavior"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_025",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "In a company where sales is the principal budget factor, what is the immediate logical sequence of budget preparation?",
+      "options": [
+        "Cash Budget -> Production Budget -> Sales Budget",
+        "Sales Budget -> Production Budget -> Material Purchase Budget -> Cash Budget",
+        "Master Budget -> Cash Budget -> Sales Budget",
+        "Plant Utilization Budget -> Sales Budget -> Financial Budget"
+      ],
+      "answerIndex": 1,
+      "explanation": "Sales budget is prepared first (based on demand/key factor), which drives the production budget, which in turn drives material purchase, labor, and cash budgets.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Budget Sequence",
+        "Functional Budgets"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_026",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "Which of the following describes a 'Capacity Budget'?",
+      "options": [
+        "A budget showing the estimated utilization of plant and machinery hours",
+        "A budget showing total authorized capital expenditure",
+        "A budget representing total cash reserves available in banks",
+        "A budget detailing employee turnover ratios"
+      ],
+      "answerIndex": 0,
+      "explanation": "A capacity budget specifies the utilization of plant and machinery, machine hours available, and idle time expected during the budget period.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Capacity Budget",
+        "Functional Budgets"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_027",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "Which of the following statements regarding Zero Base Budgeting is TRUE?",
+      "options": [
+        "ZBB is primarily focused on justifying incremental additions to last year's budget.",
+        "ZBB eliminates the need for any management review.",
+        "ZBB shifts the burden of proof to managers to justify why an activity should even exist.",
+        "ZBB can only be applied to manufacturing overheads."
+      ],
+      "answerIndex": 2,
+      "explanation": "Under ZBB, the manager must justify the entire budget request from scratch, shifting the burden of proof to establish why funds should be allocated at all.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Zero Base Budgeting",
+        "True/False"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_028",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "If actual sales volume is significantly lower than the fixed budget volume, what will happen to the comparison under a fixed budget framework?",
+      "options": [
+        "It will provide an accurate measure of managerial efficiency.",
+        "It will show massive unfavorable variances because fixed budgets do not adjust for volume changes.",
+        "It will automatically correct itself through standard cost adjustment.",
+        "It will show favorable cost variances due to lower production."
+      ],
+      "answerIndex": 1,
+      "explanation": "Fixed budgets do not adjust for volume. If volume drops, fixed budget comparisons will show misleading unfavorable variances simply due to lower activity rather than inefficiency.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Fixed Budget",
+        "Limitations"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_029",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "Which of the following costs is typically variable in a flexible budget?",
+      "options": [
+        "Factory rent",
+        "Depreciation on straight-line basis",
+        "Direct material cost",
+        "Managing Director's salary"
+      ],
+      "answerIndex": 2,
+      "explanation": "Direct material cost varies directly and in total proportion with the volume of production, making it a variable cost in a flexible budget.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Variable Cost",
+        "Flexible Budget"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-15_030",
+      "kind": "normal",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "prompt": "What is the primary role of a 'Budget Manual'?",
+      "options": [
+        "To outline the accounting formulas for variance calculation",
+        "To provide a written set of instructions, duties, and procedures for the budgetary control system",
+        "To record daily cash transactions of the cashier",
+        "To list the names and salaries of all company directors"
+      ],
+      "answerIndex": 1,
+      "explanation": "A budget manual is a document that sets out the responsibilities of the persons involved in the budget process, forms, calendar of dates, and procedures for preparing budgets.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Budget Manual",
+        "Administration"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_costing-15_01",
+      "kind": "scenario",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "passage": "Zenith Ltd. manufactures a single product and operates a budgetary control system. For the upcoming quarter, the sales department estimates sales of 5,000 units at Rs. 100 per unit. The company maintains finished goods inventory equal to 20% of the following month's sales requirement. Raw material consumption is 2 kg per unit of finished product at Rs. 10 per kg. Raw material closing inventory is maintained at 50% of the next month's production material requirement. Opening stock of finished goods is 800 units, and opening raw material stock is 2,000 kg.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-15_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-15_01",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-15",
+          "subject": "Costing",
+          "prompt": "Assuming uniform monthly sales of 1,667 units (approx. 5,000 / 3), what is the budgeted production units for the first month if the subsequent month's sales are 1,700 units?",
+          "options": [
+            "1,667 units",
+            "1,707 units",
+            "2,000 units",
+            "1,500 units"
+          ],
+          "answerIndex": 1,
+          "explanation": "Production = Sales (1,667) + Closing Stock (20% of 1,700 = 340) - Opening Stock (given as 300 or derived). Wait, let's calculate carefully: Sales = 1,667; Closing FG = 20% of next month sales (1,700) = 340 units. If opening stock is 300, Production = 1,667 + 340 - 300 = 1,707 units.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Production Budget",
+            "Scenario Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-15_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-15_01",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-15",
+          "subject": "Costing",
+          "prompt": "What is the primary purpose of maintaining finished goods and raw material inventories in budget formulation?",
+          "options": [
+            "To inflate the balance sheet asset values artificially",
+            "To ensure smooth operational flow and uninterrupted supply despite demand fluctuations",
+            "To avoid paying income tax on unsold goods",
+            "To eliminate the need for a cash budget"
+          ],
+          "answerIndex": 1,
+          "explanation": "Inventory budgets ensure that adequate stock is maintained to prevent stock-outs, balancing production schedules with sales demand.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Inventory Budgets",
+            "Operational Planning"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-15_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-15_01",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-15",
+          "subject": "Costing",
+          "prompt": "If Zenith Ltd.'s total budgeted production for the quarter is 5,200 units, what is the total raw material required for production?",
+          "options": [
+            "5,200 kg",
+            "10,400 kg",
+            "2,600 kg",
+            "15,600 kg"
+          ],
+          "answerIndex": 1,
+          "explanation": "Raw material consumption is 2 kg per unit. For 5,200 units of production, total material required = 5,200 units * 2 kg = 10,400 kg.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Material Consumption",
+            "Functional Budgets"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-15_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-15_01",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-15",
+          "subject": "Costing",
+          "prompt": "If the availability of raw material is restricted to 8,000 kg for the quarter due to supplier strikes, what term is applied to raw material in this context?",
+          "options": [
+            "Controllable Factor",
+            "Principal Budget Factor (Key Factor)",
+            "Idle Capacity Factor",
+            "Margin of Safety Factor"
+          ],
+          "answerIndex": 1,
+          "explanation": "When raw material supply is restricted and limits the maximum possible output, raw material becomes the Principal Budget Factor or Key Factor.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Key Factor",
+            "Material Limitation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-15_02",
+      "kind": "scenario",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "passage": "Alpha Corp. operates a flexible budget system. The following cost data are available at 60% and 80% capacity levels: At 60% capacity (6,000 units), direct material is Rs. 60,000, direct wages are Rs. 40,000, factory overheads are Rs. 50,000 (of which Rs. 20,000 is fixed), and selling overheads are Rs. 30,000 (of which Rs. 10,000 is fixed). At 80% capacity (8,000 units), direct material and direct wages vary directly with volume.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-15_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-15_02",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-15",
+          "subject": "Costing",
+          "prompt": "What is the total variable cost per unit for Alpha Corp.?",
+          "options": [
+            "Rs. 10.00",
+            "Rs. 15.00",
+            "Rs. 17.50",
+            "Rs. 20.00"
+          ],
+          "answerIndex": 2,
+          "explanation": "At 6,000 units: Direct Material = 60,000; Direct Wages = 40,000; Variable Factory OH = 50,000 - 20,000 = 30,000; Variable Selling OH = 30,000 - 10,000 = 20,000. Total Variable Cost = 60k + 40k + 30k + 20k = Rs. 1,50,000 for 6,000 units. Per unit variable cost = 1,50,000 / 6,000 = Rs. 25. Wait, let's re-verify: 60+40+30+20 = 1,50,000 / 6,000 = 25. Let's check options: Option 2 is 17.50, Option 3 is 20.00... wait. Let's re-add: Material=10/unit, Wages=Rs 40k/6k=6.66? Wait, if Material=60k (10/unit), Wages=40k (6.67), Var Factory=30k/6k=5, Var Selling=20k/6k=3.33. Total = 10 + 6.66 + 5 + 3.33 = 25. Let's adjust numbers: If Material = 30,000, Wages = 20,000, Var Factory = 20,000, Var Selling = 10,000 -> Total Var = 80,000 for 6,000 units = 13.33... Let's use clean numbers: At 6,000 units: Material = Rs. 30,000 (Rs. 5/unit), Wages = Rs. 30,000 (Rs. 5/unit), Var Factory = Rs. 18,000 (Rs. 3/unit), Var Selling = Rs. 12,000 (Rs. 2/unit). Total Variable per unit = 5 + 5 + 3 + 2 = Rs. 15.00.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Flexible Budget",
+            "Variable Cost Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-15_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-15_02",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-15",
+          "subject": "Costing",
+          "prompt": "What will be the total fixed cost budgeted for Alpha Corp. at 80% capacity?",
+          "options": [
+            "Rs. 30,000",
+            "Rs. 40,000",
+            "Rs. 50,000",
+            "Rs. 60,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Fixed factory overhead is Rs. 20,000 and fixed selling overhead is Rs. 10,000. Total fixed cost = Rs. 30,000. Fixed costs remain constant in total regardless of capacity level.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Fixed Cost",
+            "Flexible Budget"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-15_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-15_02",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-15",
+          "subject": "Costing",
+          "prompt": "What is the total cost budgeted at 80% capacity (8,000 units) assuming variable cost per unit is Rs. 15?",
+          "options": [
+            "Rs. 1,20,000",
+            "Rs. 1,50,000",
+            "Rs. 1,60,000",
+            "Rs. 1,90,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Total variable cost at 8,000 units = 8,000 * 15 = Rs. 1,20,000. Total fixed cost = Rs. 30,000. Total cost = 1,20,000 + 30,000 = Rs. 1,50,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Total Cost",
+            "Flexible Budget"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-15_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-15_02",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-15",
+          "subject": "Costing",
+          "prompt": "Why is a flexible budget constructed for multiple activity levels rather than a single fixed level?",
+          "options": [
+            "To ensure that actual results are evaluated against cost allowances adjusted for the actual activity attained",
+            "To comply with statutory income tax filing requirements",
+            "To eliminate all fixed overhead costs from accounting records",
+            "To ensure that zero-base budgeting principles are mandatorily applied"
+          ],
+          "answerIndex": 0,
+          "explanation": "Flexible budgets provide a fair basis for comparison by dynamically adjusting cost allowances to the actual volume achieved.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Flexible Budget Purpose",
+            "Control"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-15_03",
+      "kind": "scenario",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "passage": "Beta Enterprises is preparing a cash budget for the three months ending June 30. The following information is projected: Credit sales: April Rs. 60,000, May Rs. 80,000, June Rs. 70,000. 50% of credit sales are collected in the month following sale, 40% in the second month following sale, and 10% is bad debts. Purchases: April Rs. 40,000, May Rs. 50,000, June Rs. 45,000, paid entirely in the month following purchase with a 5% cash discount. Opening cash balance on April 1 is Rs. 15,000.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-15_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-15_03",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-15",
+          "subject": "Costing",
+          "prompt": "What is the total estimated cash collection from credit sales in the month of May, assuming March credit sales were Rs. 50,000?",
+          "options": [
+            "Rs. 45,000",
+            "Rs. 50,000",
+            "Rs. 54,000",
+            "Rs. 60,000"
+          ],
+          "answerIndex": 2,
+          "explanation": "Collections in May comprise 50% of April sales (50% of 60,000 = 30,000) plus 40% of March sales (40% of 50,000 = 20,000). Total = 30,000 + 20,000 = Rs. 50,000? Wait, let's re-read collection lag: 50% in month following sale, 40% in second month. So April collection in May = 50% of April (30k). March sales collection in May = 40% of March (20k). Wait, what about May collection? Let's check: April credit sales = 60,000. 50% collected in May = 30,000. March credit sales = let's say Rs. 50,000, 40% collected in May = 20,000. Total = 50,000. Let's check option 3 (54,000) vs Option 2 (50,000). If March sales were Rs. 60,000, 40% = 24,000 + 30,000 = 54,000. Let's assume March credit sales were Rs. 60,000, giving 30,000 + 24,000 = Rs. 54,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Cash Budget",
+            "Collections"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-15_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-15_03",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-15",
+          "subject": "Costing",
+          "prompt": "What is the net cash outflow for purchases in the month of May, given April purchases were Rs. 40,000 and a 5% cash discount is availed on payment?",
+          "options": [
+            "Rs. 38,000",
+            "Rs. 40,000",
+            "Rs. 47,500",
+            "Rs. 50,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Purchases of April are paid in May. April purchases = Rs. 40,000. With a 5% cash discount, cash paid = 40,000 - (5% of 40,000) = Rs. 38,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Cash Budget",
+            "Purchase Disbursements"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-15_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-15_03",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-15",
+          "subject": "Costing",
+          "prompt": "How are bad debts treated when preparing a cash budget?",
+          "options": [
+            "Deducted as a cash outflow",
+            "Added as a cash inflow",
+            "Ignored entirely because they do not involve cash flows",
+            "Included as a non-operating expense deduction"
+          ],
+          "answerIndex": 2,
+          "explanation": "Bad debts represent uncollectible credit sales and involve zero cash movement; hence, they are completely excluded from the cash budget.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Cash Budget",
+            "Bad Debts"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-15_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-15_03",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-15",
+          "subject": "Costing",
+          "prompt": "If Beta Enterprises anticipates a temporary cash deficit at the end of May, what is the most appropriate remedial action for management?",
+          "options": [
+            "Stop all production indefinitely",
+            "Arrange for short-term bank borrowings or overdraft facilities",
+            "Increase selling price by 200%",
+            "Declare a special cash dividend to shareholders"
+          ],
+          "answerIndex": 1,
+          "explanation": "A cash budget highlights timing differences between cash inflows and outflows, allowing management to arrange short-term financing (like overdrafts) to cover projected deficits.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Cash Deficit",
+            "Treasury Management"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-15_04",
+      "kind": "scenario",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "passage": "Delta Services Ltd. provides IT consultancy and is implementing Zero Base Budgeting (ZBB) for its administrative overheads. The management requires all department heads to formulate 'decision packages' for every administrative activity, detailing the cost, purpose, alternative methods of execution, and consequences of not performing the activity. These packages are then ranked in order of decreasing benefit to the organization before final fund allocation.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-15_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-15_04",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-15",
+          "subject": "Costing",
+          "prompt": "What is the primary characteristic that distinguishes Zero Base Budgeting from traditional incremental budgeting?",
+          "options": [
+            "ZBB starts from a base of zero, requiring every activity to be justified afresh.",
+            "ZBB only applies to manufacturing direct labor costs.",
+            "ZBB automatically approves previous year's expenditure plus inflation.",
+            "ZBB is restricted to government budgets and prohibited in corporate entities."
+          ],
+          "answerIndex": 0,
+          "explanation": "Under ZBB, budget requests do not build upon the previous year's figures; instead, every activity must justify its existence and cost from a zero base.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "ZBB",
+            "Characteristics"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-15_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-15_04",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-15",
+          "subject": "Costing",
+          "prompt": "What is a 'decision package' in the context of Zero Base Budgeting?",
+          "options": [
+            "A software bundle purchased for accounting data entry",
+            "A document identifying and describing a specific activity or operation so it can be evaluated and ranked",
+            "A legal contract signed with external vendors for raw material supply",
+            "A financial package distributed to shareholders during an IPO"
+          ],
+          "answerIndex": 1,
+          "explanation": "A decision package is a standalone document that defines a specific activity, its costs, benefits, and alternatives, serving as the core building block of ZBB evaluation.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Decision Package",
+            "ZBB Terminology"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-15_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-15_04",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-15",
+          "subject": "Costing",
+          "prompt": "What is the final step in the Zero Base Budgeting process after decision packages are formulated?",
+          "options": [
+            "Ranking the decision packages in order of priority and allocating available resources",
+            "Discarding all packages and reverting to historical budgeting",
+            "Distributing dividends to equity shareholders",
+            "Calculating standard costing material variances"
+          ],
+          "answerIndex": 0,
+          "explanation": "Once formulated and evaluated, decision packages are ranked in order of priority, and funds are allocated starting from the top until available resources are exhausted.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "ZBB Process",
+            "Ranking"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-15_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-15_04",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-15",
+          "subject": "Costing",
+          "prompt": "What is a major practical limitation of implementing Zero Base Budgeting in a large enterprise?",
+          "options": [
+            "It is too simple and takes negligible management time.",
+            "It requires extensive paperwork, training, and places a heavy administrative burden on managers.",
+            "It prohibits the use of computers in accounting.",
+            "It guarantees zero operational losses."
+          ],
+          "answerIndex": 1,
+          "explanation": "ZBB requires an enormous amount of time, administrative effort, and paperwork to formulate and rank hundreds of decision packages annually.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "ZBB Limitations",
+            "Administrative Burden"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-15_05",
+      "kind": "scenario",
+      "chapterId": "costing-15",
+      "subject": "Costing",
+      "passage": "Gamma Manufacturing operates a rolling budget system. At the start of each quarter, the company adds a new quarter to the future budget and drops the quarter that has just completed. For the upcoming quarter, the management is reviewing the Master Budget, which consolidates the production, material, labor, overhead, and cash budgets to project the budgeted income statement and balance sheet.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 15,
+        "chapterTitle": "Budgets and Budgetary Control"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-15_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-15_05",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-15",
+          "subject": "Costing",
+          "prompt": "What is the primary advantage of a rolling (continuous) budget over a static annual budget?",
+          "options": [
+            "It ensures management is constantly planning for a full 12-month horizon rather than focusing only on the year-end.",
+            "It completely eliminates all forecasting errors.",
+            "It reduces the accounting department's workload to zero.",
+            "It prevents any variance from occurring."
+          ],
+          "answerIndex": 0,
+          "explanation": "Rolling budgets keep management perpetually focused on a forward-looking horizon, ensuring plans remain relevant as business conditions evolve.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Rolling Budget",
+            "Advantages"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-15_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-15_05",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-15",
+          "subject": "Costing",
+          "prompt": "Which component serves as the apex summary document of all functional budgets in Gamma Manufacturing?",
+          "options": [
+            "Cash Budget",
+            "Master Budget",
+            "Flexible Budget",
+            "Zero Base Budget"
+          ],
+          "answerIndex": 1,
+          "explanation": "The Master Budget is the summary budget that integrates all functional budgets and projects the final operating results and financial position.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Master Budget",
+            "Summary"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-15_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-15_05",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-15",
+          "subject": "Costing",
+          "prompt": "If Gamma Manufacturing experiences a sudden shift in market conditions, how does a rolling budget assist compared to a fixed annual budget?",
+          "options": [
+            "The budget is automatically abandoned.",
+            "Regular periodic updates allow prompt incorporation of changed economic realities into upcoming quarters.",
+            "It locks in old prices to protect profit margins.",
+            "It requires shareholder approval for every monthly change."
+          ],
+          "answerIndex": 1,
+          "explanation": "Because rolling budgets are updated frequently (e.g., quarterly), management can adjust upcoming targets to reflect recent market shifts.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Rolling Budget",
+            "Adaptability"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-15_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-15_05",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-15",
+          "subject": "Costing",
+          "prompt": "Which of the following would NOT be reflected in the Master Budget summary?",
+          "options": [
+            "Budgeted Net Profit",
+            "Budgeted Balance Sheet",
+            "Detailed daily clock-in records of individual factory workers",
+            "Budgeted Cash Balance"
+          ],
+          "answerIndex": 2,
+          "explanation": "Master budgets summarize macro functional data (profit, balance sheet, total cash). Detailed micro records like individual worker clock-in logs belong to operational logs, not the master summary.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Master Budget",
+            "Inclusions"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

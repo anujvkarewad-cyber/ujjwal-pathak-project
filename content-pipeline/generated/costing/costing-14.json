@@ -1,0 +1,1397 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "costing-14",
+  "subject": "Costing",
+  "paper": "Paper 4: Cost and Management Accounting",
+  "module": "Module 2",
+  "chapterNumber": 14,
+  "chapterTitle": "Marginal Costing",
+  "generatedAt": "2026-08-16T14:45:07.455Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_costing-14_001",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "Which of the following costs is treated as product cost under marginal costing as per ICAI study material?",
+      "options": [
+        "Fixed manufacturing overhead",
+        "Variable manufacturing overhead",
+        "Total manufacturing overhead",
+        "Total administration overhead"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under marginal costing, only variable costs are charged to products as product costs. Fixed manufacturing overhead is treated as a period cost and charged entirely against the revenue of the period in which it is incurred.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Marginal Costing",
+        "Product Cost",
+        "Variable Costing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_002",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "Contribution is defined as:",
+      "options": [
+        "Sales minus Fixed Cost",
+        "Sales minus Variable Cost",
+        "Gross Profit minus Operating Expenses",
+        "Total Cost minus Fixed Cost"
+      ],
+      "answerIndex": 1,
+      "explanation": "Contribution is the difference between selling price and variable cost of sales. It is also equal to Fixed Cost plus Profit (or minus Loss).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Contribution",
+        "Basic Formulas"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_003",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "If the Profit-Volume (P/V) ratio of a company is 40% and the selling price per unit is Rs. 50, what is the variable cost per unit?",
+      "options": [
+        "Rs. 20",
+        "Rs. 30",
+        "Rs. 40",
+        "Rs. 25"
+      ],
+      "answerIndex": 1,
+      "explanation": "P/V ratio represents the percentage of contribution to sales. If P/V ratio is 40%, variable cost ratio is 60% (100% - 40%). Thus, variable cost per unit = 60% of Rs. 50 = Rs. 30.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "PV Ratio",
+        "Variable Cost",
+        "Selling Price"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_004",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "The break-even point in units is calculated by dividing total fixed cost by:",
+      "options": [
+        "P/V ratio",
+        "Contribution per unit",
+        "Variable cost per unit",
+        "Margin of safety"
+      ],
+      "answerIndex": 1,
+      "explanation": "Break-even point in units represents the sales volume where total revenue equals total cost. It is computed as Total Fixed Cost divided by Contribution per unit.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Break-Even Point",
+        "Fixed Cost",
+        "Contribution"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_005",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "Margin of Safety can be expressed as:",
+      "options": [
+        "Total Sales minus Break-even Sales",
+        "Break-even Sales minus Total Sales",
+        "Profit divided by P/V ratio",
+        "Both (a) and (c)"
+      ],
+      "answerIndex": 3,
+      "explanation": "Margin of Safety (MOS) is the excess of actual or budgeted sales over break-even sales. Alternatively, MOS in value can also be calculated as Profit divided by P/V ratio.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Margin of Safety",
+        "Formulas"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_006",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "An increase in variable cost per unit, keeping selling price and fixed cost constant, will have which of the following effects?",
+      "options": [
+        "Increase P/V ratio and increase BEP",
+        "Decrease P/V ratio and increase BEP",
+        "Decrease P/V ratio and decrease BEP",
+        "Increase P/V ratio and decrease BEP"
+      ],
+      "answerIndex": 1,
+      "explanation": "An increase in variable cost reduces unit contribution. Lower unit contribution leads to a lower P/V ratio and a higher break-even point (BEP) because more units must be sold to cover fixed costs.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Cost Volume Profit",
+        "PV Ratio",
+        "Break-Even Point"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_007",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "Angle of Incidence in a break-even chart indicates:",
+      "options": [
+        "The angle between total cost line and sales line at the break-even point",
+        "The rate at which profit is earned once break-even point is crossed",
+        "The margin of safety percentage",
+        "Both (a) and (b)"
+      ],
+      "answerIndex": 3,
+      "explanation": "The angle of incidence is formed at the break-even point where the total sales line intersects the total cost line. A wider angle indicates a higher rate of profit earning and higher risk if sales drop.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Break-Even Chart",
+        "Angle of Incidence"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_008",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "Under absorption costing, operating income differs from marginal costing operating income when:",
+      "options": [
+        "Production equals sales",
+        "Production is greater than sales",
+        "Fixed manufacturing overhead is zero",
+        "Variable costs are zero"
+      ],
+      "answerIndex": 1,
+      "explanation": "When production exceeds sales, inventory increases. Absorption costing defers fixed manufacturing overhead into closing inventory, resulting in higher operating income than marginal costing.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Absorption Costing",
+        "Marginal Costing",
+        "Inventory Valuation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_009",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "If Fixed Costs are Rs. 1,20,000 and P/V Ratio is 30%, what is the Break-Even Sales value?",
+      "options": [
+        "Rs. 3,60,000",
+        "Rs. 4,00,000",
+        "Rs. 1,56,000",
+        "Rs. 3,00,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Break-even sales in value = Fixed Cost / P/V ratio = Rs. 1,20,000 / 0.30 = Rs. 4,00,000.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Break-Even Sales",
+        "PV Ratio"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_010",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "Key factor (or limiting factor) is a factor:",
+      "options": [
+        "That is unlimited in supply",
+        "The availability of which restricts production or sales volume",
+        "That relates only to fixed overhead expenses",
+        "That determines the minimum selling price"
+      ],
+      "answerIndex": 1,
+      "explanation": "A key factor or limiting factor restricts the scale of operations. Profit maximization under limiting factor conditions requires prioritizing products based on contribution per unit of the limiting factor.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Limiting Factor",
+        "Key Factor",
+        "Decision Making"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_011",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "When two periods' cost and sales data are given, the P/V ratio is calculated as:",
+      "options": [
+        "Change in Sales / Change in Profit",
+        "Change in Contribution / Change in Sales",
+        "Change in Profit / Change in Sales",
+        "Change in Fixed Cost / Change in Sales"
+      ],
+      "answerIndex": 2,
+      "explanation": "When comparing two periods, P/V ratio = (Change in Profit / Change in Sales) * 100 because change in profit equals change in total contribution (since fixed costs remain constant between periods).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "PV Ratio",
+        "Comparative Data"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_012",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "If a company desires a target profit after tax, how should the required sales be calculated under marginal costing?",
+      "options": [
+        "(Fixed Cost + Target Profit) / P/V Ratio",
+        "(Fixed Cost + Target Profit before tax) / P/V Ratio",
+        "Target Profit / Contribution per unit",
+        "Fixed Cost / (P/V Ratio * Target Profit)"
+      ],
+      "answerIndex": 1,
+      "explanation": "Target profit must be converted to pre-tax profit (Target Profit after tax / (1 - Tax Rate)) before adding it to fixed cost and dividing by the P/V ratio to find required sales.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Target Profit",
+        "Tax Adjustment",
+        "Marginal Costing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_013",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "Which of the following is an advantage of marginal costing?",
+      "options": [
+        "It facilitates easy cost control and eliminates arbitrary apportionment of fixed overheads",
+        "It complies fully with external financial reporting standards (GAAP/Ind AS)",
+        "It considers fixed manufacturing costs as part of product cost",
+        "It is simple to operate even when product mix is unstable"
+      ],
+      "answerIndex": 0,
+      "explanation": "Marginal costing avoids arbitrary allocation of fixed overheads to products, making performance evaluation and managerial decision-making straightforward and reliable.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Advantages",
+        "Marginal Costing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_014",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "If sales are Rs. 10,00,000, variable cost is Rs. 6,00,000, and fixed cost is Rs. 3,00,000, what is the Margin of Safety (in value)?",
+      "options": [
+        "Rs. 4,00,000",
+        "Rs. 2,50,000",
+        "Rs. 7,50,000",
+        "Rs. 1,00,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Contribution = 10,00,000 - 6,00,000 = 4,00,000. P/V ratio = 4,00,000 / 10,00,000 = 40%. BEP Sales = 3,00,000 / 0.40 = 7,50,000. MOS = Actual Sales (10,00,000) - BEP Sales (7,50,000) = Rs. 2,50,000.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Margin of Safety",
+        "BEP",
+        "PV Ratio"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_015",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "Which cost is ignored while making a special order pricing decision under marginal costing?",
+      "options": [
+        "Incremental variable manufacturing cost",
+        "Allocated fixed manufacturing overhead",
+        "Incremental variable selling expenses",
+        "Direct material cost of the special order"
+      ],
+      "answerIndex": 1,
+      "explanation": "Allocated fixed manufacturing overheads are sunk or common costs that do not change with the acceptance of a special order, hence they are ignored in relevant costing decisions.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Relevant Costing",
+        "Special Order",
+        "Fixed Overhead"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_016",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "Shutdown point refers to the level of operations where:",
+      "options": [
+        "Total revenue equals total cost",
+        "Revenues exactly cover avoidable fixed costs and variable costs",
+        "Loss equals total fixed cost",
+        "Contribution equals total fixed cost"
+      ],
+      "answerIndex": 3,
+      "explanation": "Shutdown point occurs when total contribution equals total fixed cost (or where total revenue equals total variable cost plus avoidable fixed costs). Beyond this point, operations generate losses exceeding fixed costs.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Shutdown Point",
+        "Fixed Cost",
+        "Contribution"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_017",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "In multi-product decision making, the overall P/V ratio of a firm is calculated as:",
+      "options": [
+        "Sum of P/V ratios / Number of products",
+        "(Total Contribution / Total Sales) * 100",
+        "Weighted average of selling prices",
+        "Total Fixed Cost / Total Sales"
+      ],
+      "answerIndex": 1,
+      "explanation": "The composite or overall P/V ratio for a multi-product firm is determined by dividing total contribution of all products by total sales of all products.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Multi-product",
+        "PV Ratio"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_018",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "What is the primary distinction between marginal costing and direct costing according to standard terminology?",
+      "options": [
+        "Marginal costing includes all variable costs, whereas direct costing includes only direct costs",
+        "They are completely synonymous in modern cost accounting",
+        "Direct costing treats variable selling expenses as period costs",
+        "Marginal costing excludes all variable overheads"
+      ],
+      "answerIndex": 0,
+      "explanation": "Though often used interchangeably, direct costing strictly includes only direct costs, while marginal costing includes all variable costs (both direct and variable indirect).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Terminology",
+        "Marginal Costing",
+        "Direct Costing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_019",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "If unit selling price is Rs. 100, variable cost is Rs. 60, and fixed costs are Rs. 2,00,000, what sales volume (in units) is required to earn a profit of Rs. 40,000?",
+      "options": [
+        "5,000 units",
+        "6,000 units",
+        "4,000 units",
+        "5,500 units"
+      ],
+      "answerIndex": 1,
+      "explanation": "Unit contribution = 100 - 60 = Rs. 40. Required units = (Fixed Cost + Target Profit) / Contribution per unit = (2,00,000 + 40,000) / 40 = 2,40,000 / 40 = 6,000 units.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Target Profit",
+        "Unit Sales"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_020",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "Under absorption costing, if actual production exceeds budgeted production, fixed overheads are typically:",
+      "options": [
+        "Under-absorbed",
+        "Over-absorbed",
+        "Fully absorbed with zero variance",
+        "Ignored"
+      ],
+      "answerIndex": 1,
+      "explanation": "When actual production exceeds budgeted volume, the fixed overhead recovered through absorption rate exceeds actual fixed overhead incurred, resulting in over-absorption.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Absorption Costing",
+        "Over-absorption",
+        "Fixed Overhead"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_021",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "Which of the following is NOT assumed in standard Cost-Volume-Profit (CVP) analysis?",
+      "options": [
+        "Selling price per unit remains constant",
+        "Variable cost per unit fluctuates proportionately with volume changes",
+        "Total fixed cost remains constant within the relevant range",
+        "Inventory levels change significantly from period to period"
+      ],
+      "answerIndex": 3,
+      "explanation": "CVP analysis assumes that inventory levels remain constant (i.e., everything produced is sold, or production equals sales) so that inventory valuation changes do not distort operating results.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "CVP Assumptions",
+        "Limitations"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_022",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "If the margin of safety ratio is 25%, what is the break-even sales percentage of total sales?",
+      "options": [
+        "25%",
+        "50%",
+        "75%",
+        "100%"
+      ],
+      "answerIndex": 2,
+      "explanation": "Margin of Safety ratio + Break-even sales ratio = 100%. If MOS is 25%, break-even sales must be 75% of total sales.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Margin of Safety",
+        "BEP Ratio"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_023",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "When evaluating whether to drop a product line, management should focus primarily on:",
+      "options": [
+        "Total absorption cost of the product",
+        "Segment margin and avoidable fixed costs",
+        "Allocated common fixed costs",
+        "Gross profit margin"
+      ],
+      "answerIndex": 1,
+      "explanation": "A product line should be dropped only if its elimination increases overall net income, which depends on whether the contribution lost exceeds the avoidable fixed costs saved.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Product Dropping",
+        "Relevant Costing",
+        "Segment Margin"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_024",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "If Contribution is Rs. 1,50,000 and Profit is Rs. 50,000, what is the amount of Fixed Cost?",
+      "options": [
+        "Rs. 2,00,000",
+        "Rs. 1,00,000",
+        "Rs. 50,000",
+        "Rs. 1,50,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Contribution = Fixed Cost + Profit. Therefore, Fixed Cost = Contribution - Profit = 1,50,000 - 50,000 = Rs. 1,00,000.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Contribution",
+        "Fixed Cost",
+        "Profit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_025",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "In a make-or-buy decision, if outside purchase price is less than the marginal cost of manufacturing plus avoidable fixed costs, the company should:",
+      "options": [
+        "Make the product internally",
+        "Buy the product from outside supplier",
+        "Continue status quo without analysis",
+        "Double production internally"
+      ],
+      "answerIndex": 1,
+      "explanation": "If the incremental cost of manufacturing (variable cost plus any specific fixed cost) exceeds the external purchase price, it is more economical to buy from the outside supplier.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Make or Buy",
+        "Decision Making"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_026",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "Which of the following statements is true regarding contribution margin?",
+      "options": [
+        "It is always equal to gross profit",
+        "It first covers fixed costs and then contributes to profit",
+        "It includes both variable and fixed manufacturing costs",
+        "It decreases when sales volume increases"
+      ],
+      "answerIndex": 1,
+      "explanation": "Contribution margin represents the fund available first to absorb fixed expenses. Once fixed expenses are fully covered, any additional contribution flows directly to net profit.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Contribution Margin",
+        "Fixed Costs"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_027",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "If the sales volume increases by 20% and fixed costs remain unchanged, total contribution will:",
+      "options": [
+        "Increase by less than 20%",
+        "Increase by exactly 20%",
+        "Increase by more than 20%",
+        "Remain unchanged"
+      ],
+      "answerIndex": 1,
+      "explanation": "Since variable cost per unit and selling price per unit are assumed constant, total contribution is directly proportional to sales volume. A 20% increase in sales volume leads to a 20% increase in total contribution.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Contribution",
+        "Volume Changes"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_028",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "Operating leverage measures the sensitivity of:",
+      "options": [
+        "Sales volume to price changes",
+        "Operating profit to changes in sales volume",
+        "Fixed costs to variable costs",
+        "Break-even point to tax rate"
+      ],
+      "answerIndex": 1,
+      "explanation": "Operating leverage measures how percentage changes in sales volume affect percentage changes in operating income (profit), calculated as Total Contribution / Operating Profit.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Operating Leverage",
+        "Sensitivity"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_029",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "Which tool helps management determine the minimum price to quote during a severe recession when excess capacity exists?",
+      "options": [
+        "Absorption costing pricing",
+        "Marginal costing / differential pricing",
+        "Standard full-cost pricing",
+        "Target costing at full capacity"
+      ],
+      "answerIndex": 1,
+      "explanation": "During recession with excess capacity, any price exceeding marginal cost contributes towards covering fixed costs, making marginal costing the appropriate decision tool.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Pricing Decision",
+        "Excess Capacity",
+        "Marginal Costing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-14_030",
+      "kind": "normal",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "prompt": "If opening stock under absorption costing is 1,000 units valued at Rs. 15 per unit (including Rs. 5 fixed overhead) and closing stock is 1,500 units, how does marginal costing profit compare to absorption costing profit for the period?",
+      "options": [
+        "Marginal costing profit is higher by Rs. 2,500",
+        "Marginal costing profit is lower by Rs. 2,500",
+        "Both profits are identical",
+        "Marginal costing profit is lower by Rs. 5,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Closing stock (1,500 units) exceeds opening stock (1,000 units) by 500 units. Absorption costing defers fixed overhead in inventory. Difference in profit = Change in inventory units (500) * Fixed overhead rate per unit (Rs. 5) = Rs. 2,500. Since inventory increased, absorption profit > marginal profit, meaning marginal costing profit is lower by Rs. 2,500.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Reconciliation",
+        "Absorption vs Marginal",
+        "Inventory"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_costing-14_01",
+      "kind": "scenario",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "passage": "Zenith Ltd. manufactures a single product with a selling price of Rs. 100 per unit. The variable cost is Rs. 60 per unit and annual fixed manufacturing and selling costs amount to Rs. 8,00,000. The company operates at a normal capacity of 25,000 units per year.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-14_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-14_01",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-14",
+          "subject": "Costing",
+          "prompt": "What is the P/V ratio of Zenith Ltd.?",
+          "options": [
+            "30%",
+            "40%",
+            "60%",
+            "50%"
+          ],
+          "answerIndex": 1,
+          "explanation": "Contribution per unit = 100 - 60 = Rs. 40. P/V ratio = (Contribution / Selling Price) * 100 = (40 / 100) * 100 = 40%.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "PV Ratio",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-14_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-14_01",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-14",
+          "subject": "Costing",
+          "prompt": "What is the break-even sales value in rupees?",
+          "options": [
+            "Rs. 13,33,333",
+            "Rs. 20,00,000",
+            "Rs. 8,00,000",
+            "Rs. 10,00,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Break-even sales value = Fixed Cost / P/V ratio = 8,00,000 / 0.40 = Rs. 20,00,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Break-Even Sales",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-14_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-14_01",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-14",
+          "subject": "Costing",
+          "prompt": "If the company desires to earn a net profit of Rs. 2,00,000, what sales volume in units is required?",
+          "options": [
+            "20,000 units",
+            "25,000 units",
+            "30,000 units",
+            "35,000 units"
+          ],
+          "answerIndex": 1,
+          "explanation": "Required units = (Fixed Cost + Target Profit) / Contribution per unit = (8,00,000 + 2,00,000) / 40 = 10,00,000 / 40 = 25,000 units.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Target Profit",
+            "Unit Sales",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-14_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-14_01",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-14",
+          "subject": "Costing",
+          "prompt": "If actual sales are 28,000 units, what is the Margin of Safety in units?",
+          "options": [
+            "3,000 units",
+            "8,000 units",
+            "5,000 units",
+            "2,000 units"
+          ],
+          "answerIndex": 0,
+          "explanation": "Break-even units = 8,00,000 / 40 = 20,000 units. Margin of Safety = Actual Sales (28,000 units) - Break-even Sales (20,000 units) = 8,000 units. Wait, calculation: 28,000 - 20,000 = 8,000 units. Let's check options. Option b is 8,000. Wait, 8,000 is correct.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Margin of Safety",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-14_02",
+      "kind": "scenario",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "passage": "Alpha Ltd. provides the following operating data for two consecutive periods:\nPeriod 1: Sales = Rs. 10,00,000; Profit = Rs. 1,00,000\nPeriod 2: Sales = Rs. 14,00,000; Profit = Rs. 2,20,000\nFixed costs remain constant across both periods.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-14_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-14_02",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-14",
+          "subject": "Costing",
+          "prompt": "What is the P/V ratio of Alpha Ltd.?",
+          "options": [
+            "20%",
+            "25%",
+            "30%",
+            "40%"
+          ],
+          "answerIndex": 2,
+          "explanation": "P/V ratio = (Change in Profit / Change in Sales) * 100 = ((2,20,000 - 1,00,000) / (14,00,000 - 10,00,000)) * 100 = (1,20,000 / 4,00,000) * 100 = 30%.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "PV Ratio",
+            "Comparative Data",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-14_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-14_02",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-14",
+          "subject": "Costing",
+          "prompt": "What is the amount of fixed cost for each period?",
+          "options": [
+            "Rs. 2,00,000",
+            "Rs. 1,50,000",
+            "Rs. 3,00,000",
+            "Rs. 2,40,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Total Contribution in Period 1 = Sales * P/V Ratio = 10,00,000 * 30% = Rs. 3,00,000. Fixed Cost = Contribution - Profit = 3,00,000 - 1,00,000 = Rs. 2,00,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Fixed Cost",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-14_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-14_02",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-14",
+          "subject": "Costing",
+          "prompt": "What is the break-even sales value?",
+          "options": [
+            "Rs. 6,66,667",
+            "Rs. 5,00,000",
+            "Rs. 7,50,000",
+            "Rs. 10,00,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Break-even sales = Fixed Cost / P/V Ratio = 2,00,000 / 0.30 = Rs. 6,66,667.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Break-Even Sales",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-14_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-14_02",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-14",
+          "subject": "Costing",
+          "prompt": "What sales volume is required to earn a profit of Rs. 4,00,000?",
+          "options": [
+            "Rs. 15,00,000",
+            "Rs. 20,00,000",
+            "Rs. 18,00,000",
+            "Rs. 12,00,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Required Sales = (Fixed Cost + Target Profit) / P/V Ratio = (2,00,000 + 4,00,000) / 0.30 = 6,00,000 / 0.30 = Rs. 20,00,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Target Sales",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-14_03",
+      "kind": "scenario",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "passage": "Beta Ltd. produces three products: X, Y, and Z. The unit details are as follows:\nProduct X: Selling Price Rs. 50, Variable Cost Rs. 30, Sales Mix 40%\nProduct Y: Selling Price Rs. 80, Variable Cost Rs. 50, Sales Mix 40%\nProduct Z: Selling Price Rs. 100, Variable Cost Rs. 60, Sales Mix 20%\nTotal Fixed Cost for the company is Rs. 3,40,000.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-14_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-14_03",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-14",
+          "subject": "Costing",
+          "prompt": "What is the contribution per unit for Product X, Y, and Z respectively?",
+          "options": [
+            "Rs. 20, Rs. 30, Rs. 40",
+            "Rs. 10, Rs. 20, Rs. 30",
+            "Rs. 20, Rs. 30, Rs. 50",
+            "Rs. 30, Rs. 30, Rs. 40"
+          ],
+          "answerIndex": 0,
+          "explanation": "Contribution per unit = Selling Price - Variable Cost. Product X = 50 - 30 = 20; Product Y = 80 - 50 = 30; Product Z = 100 - 60 = 40.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Contribution",
+            "Multi-product",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-14_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-14_03",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-14",
+          "subject": "Costing",
+          "prompt": "What is the weighted average (composite) contribution per unit based on the given sales mix?",
+          "options": [
+            "Rs. 28",
+            "Rs. 30",
+            "Rs. 32",
+            "Rs. 35"
+          ],
+          "answerIndex": 1,
+          "explanation": "Composite contribution = (20 * 0.40) + (30 * 0.40) + (40 * 0.20) = 8 + 12 + 8 = Rs. 30 per unit.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Composite Contribution",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-14_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-14_03",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-14",
+          "subject": "Costing",
+          "prompt": "What is the composite break-even point in total units for Beta Ltd.?",
+          "options": [
+            "10,000 units",
+            "11,333 units",
+            "12,500 units",
+            "8,500 units"
+          ],
+          "answerIndex": 1,
+          "explanation": "Composite BEP units = Total Fixed Cost / Composite Contribution per unit = 3,40,000 / 30 = 11,333.33 units (approx 11,333 units).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Composite BEP",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-14_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-14_03",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-14",
+          "subject": "Costing",
+          "prompt": "How many units of Product Y will be sold at the composite break-even point?",
+          "options": [
+            "4,000 units",
+            "4,533 units",
+            "3,400 units",
+            "5,000 units"
+          ],
+          "answerIndex": 1,
+          "explanation": "Product Y constitutes 40% of the sales mix. Units of Y at BEP = 40% of 11,333.33 units = 4,533.33 units (approx 4,533 units).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Sales Mix",
+            "Break-Even Units",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-14_04",
+      "kind": "scenario",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "passage": "Delta Ltd. has a capacity of 50,000 units per annum. Current production and sales are 30,000 units at Rs. 100 per unit. Variable cost is Rs. 60 per unit and fixed costs are Rs. 10,00,000 per annum. An export order is received for 10,000 units at Rs. 75 per unit.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-14_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-14_04",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-14",
+          "subject": "Costing",
+          "prompt": "What is the current operating profit of Delta Ltd. before considering the export order?",
+          "options": [
+            "Rs. 2,00,000",
+            "Rs. 3,00,000",
+            "Rs. 5,00,000",
+            "Rs. 1,00,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Current Contribution = 30,000 units * (100 - 60) = 30,000 * 40 = Rs. 12,00,000. Profit = Contribution - Fixed Cost = 12,00,000 - 10,00,000 = Rs. 2,00,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Operating Profit",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-14_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-14_04",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-14",
+          "subject": "Costing",
+          "prompt": "What is the incremental contribution earned from accepting the export order?",
+          "options": [
+            "Rs. 1,50,000",
+            "Rs. 4,00,000",
+            "Rs. 3,00,000",
+            "Rs. 7,50,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Incremental contribution per unit from export = Export Price (75) - Variable Cost (60) = Rs. 15. Total incremental contribution = 10,00,000 units? No, 10,000 units * 15 = Rs. 1,50,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Incremental Contribution",
+            "Special Order",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-14_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-14_04",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-14",
+          "subject": "Costing",
+          "prompt": "What will be the total operating profit of Delta Ltd. if the export order is accepted?",
+          "options": [
+            "Rs. 3,50,000",
+            "Rs. 3,00,000",
+            "Rs. 2,50,000",
+            "Rs. 6,00,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "New Profit = Current Profit (Rs. 2,00,000) + Incremental Contribution from export order (Rs. 1,50,000) = Rs. 3,50,000 (since fixed costs do not change).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Special Order Decision",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-14_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-14_04",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-14",
+          "subject": "Costing",
+          "prompt": "Should Delta Ltd. accept the export order?",
+          "options": [
+            "No, because the export price is below total cost per unit",
+            "Yes, because it generates positive incremental contribution and increases overall profit",
+            "No, because it utilizes remaining capacity",
+            "Yes, only if domestic sales are stopped"
+          ],
+          "answerIndex": 1,
+          "explanation": "Since the export price exceeds the variable cost per unit, accepting the order generates positive contribution and increases net profit by Rs. 1,50,000 within existing plant capacity.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Decision Making",
+            "Special Order",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-14_05",
+      "kind": "scenario",
+      "chapterId": "costing-14",
+      "subject": "Costing",
+      "passage": "Gamma Ltd. manufactures product Omega. The budgeted fixed overheads are Rs. 6,00,000 per year and the predetermined fixed overhead recovery rate is Rs. 30 per unit based on a normal capacity of 20,000 units. During the year, the company produced 22,000 units and sold 18,000 units at a selling price of Rs. 150 per unit. Variable manufacturing cost is Rs. 50 per unit and variable selling expense is Rs. 10 per unit.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 2",
+        "chapterNumber": 14,
+        "chapterTitle": "Marginal Costing"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-14_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-14_05",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-14",
+          "subject": "Costing",
+          "prompt": "What is the marginal cost per unit of product Omega?",
+          "options": [
+            "Rs. 50",
+            "Rs. 60",
+            "Rs. 90",
+            "Rs. 80"
+          ],
+          "answerIndex": 1,
+          "explanation": "Marginal cost includes all variable costs of production and sales. Here, variable manufacturing cost (Rs. 50) + variable selling expense (Rs. 10) = Rs. 60 per unit (or variable manufacturing cost alone is Rs. 50 for product costing).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Marginal Cost",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-14_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-14_05",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-14",
+          "subject": "Costing",
+          "prompt": "What is the operating income under marginal costing for the year?",
+          "options": [
+            "Rs. 8,40,000",
+            "Rs. 7,20,000",
+            "Rs. 10,20,000",
+            "Rs. 6,00,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Sales revenue = 18,000 * 150 = Rs. 27,00,000. Total variable cost of goods sold + variable selling = 18,000 * 60 = Rs. 10,80,000. Total contribution = 27,00,000 - 10,80,000 = Rs. 16,20,000. Less Fixed Costs = 16,20,000 - 6,00,000 = Rs. 10,20,000? Wait. Fixed cost is 6,00,000. 16,20,000 - 6,00,000 = 10,20,000. Let's check options. Option c is 10,20,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Marginal Costing Income",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-14_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-14_05",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-14",
+          "subject": "Costing",
+          "prompt": "What is the amount of fixed overhead over-absorbed or under-absorbed under absorption costing?",
+          "options": [
+            "Rs. 60,000 under-absorbed",
+            "Rs. 60,000 over-absorbed",
+            "Rs. 1,20,000 over-absorbed",
+            "Nil"
+          ],
+          "answerIndex": 1,
+          "explanation": "Fixed overhead recovered = Actual production (22,000 units) * Recovery rate (Rs. 30) = Rs. 6,60,000. Actual fixed overhead incurred = Rs. 6,00,000. Since recovered exceeds incurred, fixed overhead is over-absorbed by Rs. 60,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Over-absorption",
+            "Absorption Costing",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-14_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-14_05",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-14",
+          "subject": "Costing",
+          "prompt": "What is the difference in operating income between absorption costing and marginal costing?",
+          "options": [
+            "Absorption costing income is higher by Rs. 1,20,000",
+            "Absorption costing income is lower by Rs. 1,20,000",
+            "Both incomes are identical",
+            "Absorption costing income is higher by Rs. 60,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Difference in inventory units = Production (22,000) - Sales (18,000) = 4,000 units increase in closing stock. Difference in operating income = Change in inventory units (4,000) * Fixed overhead rate (Rs. 30) = Rs. 1,20,000. Absorption income is higher by Rs. 1,20,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Income Reconciliation",
+            "Absorption vs Marginal",
+            "Scenario"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

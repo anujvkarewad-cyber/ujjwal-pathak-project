@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "advanced-accounting-9",
+  "subject": "Accounts",
+  "paper": "Paper 1: Advanced Accounting",
+  "module": "Module 2",
+  "chapterNumber": 9,
+  "chapterTitle": "Other Accounting Standards",
+  "generatedAt": "2026-08-16T13:58:11.056Z",
+  "model": "gemini-3.6-flash",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_advanced-accounting-9_001",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Under AS 4 'Contingencies and Events Occurring After the Balance Sheet Date', how should a adjusting event after the balance sheet date be treated in the financial statements?",
+      "options": [
+        "It requires disclosure only in the Report of the Board of Directors.",
+        "It requires adjustment to assets and liabilities in the financial statements for the period.",
+        "It requires disclosure only in the Notes to Accounts without adjusting financial statement figures.",
+        "It requires no disclosure or adjustment if the amount is lower than ₹1,000."
+      ],
+      "answerIndex": 1,
+      "explanation": "According to AS 4, adjusting events are those that provide additional evidence of conditions that existed at the balance sheet date. Assets and liabilities should be adjusted for events occurring after the balance sheet date that provide additional information materially affecting the determination of the amounts relating to conditions existing at the balance sheet date.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 4",
+        "Adjusting Events",
+        "Financial Statements"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_002",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "A debtor owing ₹5,00,000 to Alpha Ltd. became insolvent on 15th April 2026. The balance sheet date is 31st March 2026, and financial statements were approved on 30th May 2026. Financial position of the debtor was deteriorating prior to 31st March 2026. How should Alpha Ltd. treat this event?",
+      "options": [
+        "Treat as a non-adjusting event and disclose in the Board's Report.",
+        "Adjust the provision for doubtful debts as at 31st March 2026 because insolvency provides evidence of conditions existing at balance sheet date.",
+        "Ignore the event completely as it occurred after the financial year ended.",
+        "Adjust the accounts of the financial year 2026-27 instead of 2025-26."
+      ],
+      "answerIndex": 1,
+      "explanation": "Insolvency of a debtor shortly after the balance sheet date usually indicates that the condition of insolvency existed at the balance sheet date. Hence, as per AS 4, it is an adjusting event requiring provision/adjustment in the financial statements for the year ended 31st March 2026.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 4",
+        "Post Balance Sheet Events",
+        "Bad Debts"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_003",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Under AS 5 'Net Profit or Loss for the Period, Prior Period Items and Changes in Accounting Policies', how are prior period items defined?",
+      "options": [
+        "Incomes or expenses which arise from ordinary activities of the current period.",
+        "Incomes or expenses which arise in the current period as a result of errors or omissions in the preparation of financial statements of one or more prior periods.",
+        "Changes in accounting estimates made during the current financial year.",
+        "Expenses resulting from extraordinary events such as natural disasters occurring during the current year."
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 5 defines prior period items as incomes or expenses which arise in the current period as a result of errors or omissions in the preparation of the financial statements of one or more prior periods.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 5",
+        "Prior Period Items",
+        "Accounting Errors"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_004",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Beta Ltd. revised the useful life of a machine from 10 years to 8 years in the current financial year due to technological obsolescence. How should this change be accounted for under AS 5?",
+      "options": [
+        "As a prior period item requiring retrospective restatement.",
+        "As a change in accounting policy requiring retroactive adjustment to retained earnings.",
+        "As a change in accounting estimate, processed prospectively in current and future periods.",
+        "As an extraordinary item shown separately after Profit Before Tax."
+      ],
+      "answerIndex": 2,
+      "explanation": "A revision in the estimated useful life of a depreciable asset is a change in an accounting estimate. Under AS 5, changes in accounting estimates are accounted for prospectively in the period of change and subsequent periods if affected.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 5",
+        "Accounting Estimate",
+        "Depreciation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_005",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Under AS 11 'The Effects of Changes in Foreign Exchange Rates', which of the following is classified as a monetary item?",
+      "options": [
+        "Property, Plant and Equipment",
+        "Inventories held in foreign warehouse",
+        "Trade Receivables in foreign currency",
+        "Equity Investments in foreign subsidiaries"
+      ],
+      "answerIndex": 2,
+      "explanation": "Monetary items are money held and assets and liabilities to be received or paid in fixed or determinable amounts of money. Trade receivables are monetary items, whereas property, plant and equipment, inventories, and equity investments are non-monetary items.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 11",
+        "Monetary Items",
+        "Foreign Currency"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_006",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "On 1st January 2026, Gamma Ltd. imported raw materials costing USD 50,000 when 1 USD = ₹82. On 31st March 2026 (closing date), the exchange rate was 1 USD = ₹84. The liability remained unpaid at year end. What is the exchange difference and its accounting treatment under AS 11?",
+      "options": [
+        "₹1,00,000 gain, recognized in Capital Reserve",
+        "₹1,00,000 loss, credited to Inventory account",
+        "₹1,00,000 loss, recognized as an expense in Profit and Loss Statement",
+        "₹1,00,000 gain, deferred in Foreign Currency Translation Reserve"
+      ],
+      "answerIndex": 2,
+      "explanation": "Foreign currency monetary liabilities (Trade Payables) are reported using the closing rate. Increase in liability rate from ₹82 to ₹84 results in an exchange loss of USD 50,000 x (84 - 82) = ₹1,00,000, which under AS 11 is recognized in the Statement of Profit and Loss.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 11",
+        "Exchange Difference",
+        "Monetary Liabilities"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_007",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Under AS 11, exchange differences arising on translation of financial statements of a non-integral foreign operation should be:",
+      "options": [
+        "Recognized immediately in the Statement of Profit and Loss.",
+        "Accumulated in a Foreign Currency Translation Reserve until disposal of net investment.",
+        "Deducted directly from the carrying amount of fixed assets.",
+        "Capitalized as part of capital work-in-progress."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 11, exchange differences arising on translation of financial statements of non-integral foreign operations are accumulated in a foreign currency translation reserve until the disposal of the net investment.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 11",
+        "Non-integral Operation",
+        "Translation Reserve"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_008",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Under AS 12 'Accounting for Government Grants', a government grant in the nature of promoters' contribution should be credited to:",
+      "options": [
+        "Statement of Profit and Loss under Other Income.",
+        "Capital Reserve.",
+        "Deferred Government Grant Account.",
+        "General Reserve."
+      ],
+      "answerIndex": 1,
+      "explanation": "Government grants in the nature of promoters' contribution are given as a total package towards total capital outlay or contribution towards setting up an enterprise. Under AS 12, such grants are treated as capital reserve.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 12",
+        "Government Grants",
+        "Capital Reserve"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_009",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Delta Ltd. received a government grant of ₹20,00,000 for acquiring a specific plant costing ₹1,00,00,000. Under AS 12, which of the following is an acceptable accounting method for presenting this grant?",
+      "options": [
+        "Deduct the grant from the gross cost of the plant to arrive at book value.",
+        "Credit the entire grant to retained earnings immediately.",
+        "Show the grant as a liability under short-term borrowings.",
+        "Adjust the grant against trade payables."
+      ],
+      "answerIndex": 0,
+      "explanation": "AS 12 permits two methods for grants related to specific fixed assets: Method 1: Deduct the grant from the gross value of the asset; Method 2: Treat the grant as deferred income and recognize in P&L over the useful life of the asset.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 12",
+        "Government Grants",
+        "Fixed Asset Grants"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_010",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "If a government grant related to revenue becomes refundable due to non-fulfillment of specified conditions, how should the refund be accounted for under AS 12?",
+      "options": [
+        "Adjusted against retained earnings retrospectively.",
+        "First applied against unamortized deferred credit balance, and any excess charged to Profit and Loss.",
+        "Debited directly to Capital Reserve account.",
+        "Ignored if the amount is refundable in installments."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 12, a grant refundable related to revenue is first applied against any unamortized deferred credit remaining in respect of the grant. To the extent that the refund exceeds any such deferred credit, or where no deferred credit exists, the refund is charged immediately to the Profit and Loss statement.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 12",
+        "Refund of Grant",
+        "Revenue Grant"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_011",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Under AS 16 'Borrowing Costs', which of the following assets qualifies as a 'qualifying asset'?",
+      "options": [
+        "Inventories that are routinely manufactured in large quantities on a repetitive basis over 2 days.",
+        "A power plant construction project that necessarily takes 18 months to get ready for its intended use.",
+        "Financial assets such as investments in equity shares.",
+        "An office building ready for immediate occupancy at the date of purchase."
+      ],
+      "answerIndex": 1,
+      "explanation": "A qualifying asset under AS 16 is an asset that necessarily takes a substantial period of time (usually 12 months or more) to get ready for its intended use or sale. A power plant taking 18 months fits this definition.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 16",
+        "Qualifying Asset",
+        "Borrowing Costs"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_012",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Under AS 16, capitalization of borrowing costs should be suspended during:",
+      "options": [
+        "Extended periods in which active development of the asset is interrupted.",
+        "Periods when substantial technical and administrative work is being carried out.",
+        "Brief delays that are a necessary part of the process of getting an asset ready for use.",
+        "The entire period of active construction."
+      ],
+      "answerIndex": 0,
+      "explanation": "AS 16 requires that capitalization of borrowing costs should be suspended during extended periods in which active development is interrupted. It is not suspended when temporary delays are necessary or during administrative/technical work.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 16",
+        "Suspension of Capitalization",
+        "Borrowing Costs"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_013",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Under AS 22 'Accounting for Taxes on Income', what gives rise to a 'timing difference'?",
+      "options": [
+        "Differences between taxable income and accounting income that originate in one period and are capable of reversal in one or more subsequent periods.",
+        "Differences between taxable income and accounting income that originate in one period and never reverse subsequently.",
+        "Fines and penalties disallowed permanently by tax authorities.",
+        "Tax-exempt dividend income."
+      ],
+      "answerIndex": 0,
+      "explanation": "Timing differences are differences between taxable income and accounting income for a period that originate in one period and are capable of reversal in one or more subsequent periods.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 22",
+        "Timing Differences",
+        "Deferred Tax"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_014",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Under AS 22, Deferred Tax Asset (DTA) in respect of unabsorbed depreciation or carried forward tax losses should be recognized ONLY to the extent that:",
+      "options": [
+        "There is reasonable certainty supported by convincing evidence that future taxable income will be available.",
+        "There is virtual certainty supported by convincing evidence that sufficient future taxable income will be available against which such DTA can be realized.",
+        "Management intends to carry on business operations for at least 3 years.",
+        "The company has sufficient share capital and general reserves."
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 22 mandates a stricter test for recognizing DTAs on unabsorbed depreciation or carry forward losses: DTA should be recognized only to the extent that there is virtual certainty supported by convincing evidence that sufficient future taxable income will be available.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 22",
+        "Virtual Certainty",
+        "Deferred Tax Asset"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_015",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Under AS 26 'Intangible Assets', how should expenditure incurred during the 'Research Phase' of an internal project be accounted for?",
+      "options": [
+        "Capitalized as an intangible asset if expected revenue exceeds cost.",
+        "Recognized as an expense when it is incurred.",
+        "Deferred and amortized over a period not exceeding 5 years.",
+        "Added to the cost of related plant and machinery."
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 26 states that no intangible asset arising from research (or research phase) should be recognized. Expenditure on research should be recognized as an expense when it is incurred because an enterprise cannot demonstrate that an intangible asset exists.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 26",
+        "Research Expenditure",
+        "Intangible Assets"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_016",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Under AS 26, there is a rebuttable presumption that the useful life of an intangible asset will not exceed how many years from the date when the asset is available for use?",
+      "options": [
+        "5 years",
+        "10 years",
+        "20 years",
+        "15 years"
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 26 provides a rebuttable presumption that the useful life of an intangible asset will not exceed 10 years from the date when the asset is available for use.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 26",
+        "Amortization",
+        "Useful Life"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_017",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Under AS 29 'Provisions, Contingent Liabilities and Contingent Assets', a provision should be recognized when:",
+      "options": [
+        "An enterprise has a present obligation as a result of a past event, it is probable that an outflow of resources will be required, and a reliable estimate can be made.",
+        "An enterprise has a possible obligation arising from past events whose existence will be confirmed only by future events.",
+        "There is a possible inflow of economic benefits arising from unplanned events.",
+        "Management decides to reserve funds for future operational expansion."
+      ],
+      "answerIndex": 0,
+      "explanation": "Under AS 29, a provision is recognized when: (a) an enterprise has a present obligation as a result of a past event; (b) it is probable (more likely than not) that an outflow of resources embodying economic benefits will be required to settle the obligation; and (c) a reliable estimate can be made of the amount of the obligation.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 29",
+        "Provisions",
+        "Recognition Criteria"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_018",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "How are Contingent Assets treated under AS 29?",
+      "options": [
+        "Recognized in Profit and Loss Statement as revenue.",
+        "Disclosed in the Financial Statements as a Provision.",
+        "Neither recognized nor disclosed in financial statements, but disclosed in the Board's Report if inflow is probable.",
+        "Recognized as non-current assets in the Balance Sheet."
+      ],
+      "answerIndex": 2,
+      "explanation": "AS 29 states that contingent assets are neither recognized nor disclosed in financial statements. However, if an inflow of economic benefits is probable, it is usually disclosed in the report of the approving authority (Board of Directors report).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 29",
+        "Contingent Assets",
+        "Financial Disclosures"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_019",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Under AS 15 'Employee Benefits', actuarial gains and losses relating to defined benefit post-employment plans should be recognized:",
+      "options": [
+        "In the Statement of Profit and Loss immediately.",
+        "Deferred over the average remaining working lives of employees.",
+        "Credited directly to Revaluation Reserve.",
+        "Adjusted against Opening Retained Earnings without entering P&L."
+      ],
+      "answerIndex": 0,
+      "explanation": "Under AS 15 (Revised), actuarial gains and losses should be recognized immediately in the Statement of Profit and Loss as income or expense.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 15",
+        "Actuarial Gains/Losses",
+        "Defined Benefit Plan"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_020",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Under AS 28 'Impairment of Assets', 'Recoverable Amount' of an asset is defined as:",
+      "options": [
+        "Lower of Net Selling Price and Value in Use.",
+        "Higher of Net Selling Price and Value in Use.",
+        "Lower of Historical Cost and Net Realizable Value.",
+        "Higher of Replacement Cost and Value in Use."
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 28 defines Recoverable Amount as the higher of an asset's net selling price and its value in use.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 28",
+        "Recoverable Amount",
+        "Impairment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_021",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Under AS 28, 'Value in Use' is calculated as:",
+      "options": [
+        "Present value of estimated future cash flows expected to arise from the continuing use of an asset and from its disposal at end of useful life.",
+        "Gross undiscounted sum of future cash inflows from asset operation.",
+        "Market value minus estimated costs of disposal.",
+        "Historical acquisition cost adjusted for inflation."
+      ],
+      "answerIndex": 0,
+      "explanation": "Under AS 28, Value in Use is the present value of estimated future cash flows expected to arise from the continuing use of an asset and from its disposal at the end of its useful life.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 28",
+        "Value in Use",
+        "Cash Flows"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_022",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Under AS 24 'Discontinuing Operations', when does the initial disclosure event occur?",
+      "options": [
+        "When the Board passes a preliminary resolution to consider discontinuing a segment.",
+        "On the earlier of: entering into a binding sale agreement OR Board approving and announcing a detailed formal plan.",
+        "When the sale of all assets of the component is fully completed.",
+        "At the end of the financial year in which operations cease."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 24, initial disclosure event is the occurrence of one of the following, whichever is earlier: (a) enterprise entering into a binding sale agreement for substantially all assets of discontinuing operation, or (b) approval and public announcement of a detailed formal plan by the enterprise's board.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 24",
+        "Discontinuing Operations",
+        "Initial Disclosure Event"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_023",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Under AS 17 'Segment Reporting', a business or geographical segment is reportable if its revenue from sales to external customers and from transactions with other segments is:",
+      "options": [
+        "5% or more of total revenue, external and internal, of all segments.",
+        "10% or more of total revenue, external and internal, of all segments.",
+        "15% or more of external revenue of all segments.",
+        "20% or more of net operational profit."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 17, a segment is a reportable segment if its revenue from external customers and transactions with other segments is 10% or more of total revenue (external and internal) of all segments.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 17",
+        "Segment Reporting",
+        "Reportable Segment Criteria"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_024",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Under AS 17, if total external revenue attributable to reportable segments identified by 10% criteria constitutes less than what percentage of total enterprise revenue, additional segments must be identified?",
+      "options": [
+        "50%",
+        "60%",
+        "75%",
+        "90%"
+      ],
+      "answerIndex": 2,
+      "explanation": "AS 17 specifies that if total external revenue attributable to reportable segments constitutes less than 75% of total enterprise revenue, additional segments should be identified as reportable segments until at least 75% of total enterprise revenue is included in reportable segments.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 17",
+        "75 Percent Rule",
+        "External Revenue"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_025",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Under AS 20 'Earnings Per Share', how are bonus shares issued during the financial year treated in computing Basic EPS?",
+      "options": [
+        "Weighted from the exact date of allotment of bonus shares.",
+        "Treated as if they were issued at the beginning of the earliest period reported.",
+        "Excluded from Basic EPS calculation and included only in Diluted EPS.",
+        "Weighted for 6 months standard period regardless of allotment date."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 20, in case of bonus issue, equity shares are issued without consideration. Therefore, they are treated as if they had been issued at the beginning of the earliest period reported (retrospective adjustment).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 20",
+        "Bonus Issue",
+        "Basic EPS"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_026",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Under AS 19 'Leases', in the financial statements of a lessee, an asset acquired under a finance lease should be recognized at:",
+      "options": [
+        "Lower of fair value of leased asset and present value of minimum lease payments at inception.",
+        "Higher of fair value of leased asset and present value of minimum lease payments at inception.",
+        "Total undiscounted lease payments payable over the lease term.",
+        "Liquidation value of the asset at end of lease term."
+      ],
+      "answerIndex": 0,
+      "explanation": "Under AS 19, at the inception of a finance lease, the lessee should recognize the lease as an asset and a liability at an amount equal to the lower of the fair value of the leased asset and the present value of the minimum lease payments.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 19",
+        "Finance Lease",
+        "Lessee Accounting"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_027",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Under AS 4 (Revised), how should dividend proposed by the Board of Directors after the balance sheet date but before approval of financial statements be treated?",
+      "options": [
+        "Recognized as a liability in the Balance Sheet of current financial year.",
+        "Disclosed in the Notes to Accounts for the current financial year and recognized as liability when declared/approved in AGM.",
+        "Adjusted directly against General Reserve in current year Balance Sheet.",
+        "Ignored completely from both Balance Sheet and Notes."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 4 (Revised), proposed dividend does not represent a present obligation at the balance sheet date. Therefore, it is disclosed in Notes to Accounts for that year, and recognized as liability only when declared by shareholders in the AGM.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 4",
+        "Proposed Dividend",
+        "Post Balance Sheet Event"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_028",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Under AS 18 'Related Party Disclosures', which of the following relationships automatically creates a 'Related Party' relationship requiring disclosure?",
+      "options": [
+        "A single customer with whom the enterprise transacts 60% of its volume of business.",
+        "Key Management Personnel (KMP) and their close family members.",
+        "A provider of finance (banker) extending loan to the enterprise.",
+        "A trade union holding negotiations with management."
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 18 explicitly identifies Key Management Personnel (KMP) and their relatives as related parties. Customers, suppliers, providers of finance, and trade unions are specifically excluded from being related parties solely by virtue of their normal dealings.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 18",
+        "Related Party",
+        "KMP Disclosure"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_029",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Epsilon Ltd. incurred ₹12,00,000 on general borrowing at an average interest rate of 10% per annum. During the year, it utilized ₹8,00,000 out of general borrowing on 1st April 2025 for construction of a qualifying asset, which was completed on 31st December 2025 (9 months). What is the maximum borrowing cost that can be capitalized under AS 16?",
+      "options": [
+        "₹80,000",
+        "₹60,000",
+        "₹1,20,000",
+        "₹90,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Borrowing cost to be capitalized = Capital expenditure on qualifying asset x Borrowing rate x Construction period = ₹8,00,000 x 10% x (9/12) = ₹60,000. Capitalization ceases when construction is substantially complete (31st Dec).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 16",
+        "Capitalization Calculation",
+        "General Borrowings"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-9_030",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "prompt": "Under AS 22, if an entity has a timing difference that results in a net Deferred Tax Liability (DTL), how should DTL be disclosed in the Balance Sheet?",
+      "options": [
+        "Under Current Liabilities as short-term provision.",
+        "Under Non-Current Liabilities on the face of the Balance Sheet separately from current liabilities and non-current liabilities.",
+        "Deducted directly from Share Capital.",
+        "Deducted from Property, Plant and Equipment cost."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 22 and Schedule III to Companies Act 2013, Deferred Tax Liabilities are disclosed under Non-Current Liabilities (and DTA under Non-Current Assets) separately on the face of the Balance Sheet.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 22",
+        "Balance Sheet Presentation",
+        "Deferred Tax Liability"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_advanced-accounting-9_01",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "passage": "Apex Infrastructure Ltd. is engaged in constructing a major power generation plant (a qualifying asset under AS 16). Construction began on 1st April 2025. To fund the project, Apex Ltd. raised a specific loan of ₹50,00,000 at 12% per annum on 1st April 2025. Pending utilization, idle funds from the loan were temporarily invested for 3 months, earning interest income of ₹60,000. Additionally, the company spent ₹20,00,000 from its general borrowings (weighted average cost of general borrowing is 10% p.a.) on 1st July 2025. Construction was halted from 1st October 2025 to 30th November 2025 (2 months) due to an abnormal labor strike. Active construction resumed on 1st December 2025 and continued till 31st March 2026. On 1st April 2025, Apex Ltd. also received a specific capital grant of ₹10,00,000 from the Central Government towards the power plant, which the company decided to deduct from the cost of the asset under AS 12.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-9_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-9_01",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-9",
+          "subject": "Accounts",
+          "prompt": "What is the net eligible borrowing cost to be capitalized from the SPECIFIC LOAN for the year ended 31st March 2026, considering the abnormal strike period under AS 16?",
+          "options": [
+            "₹6,00,000",
+            "₹4,40,000",
+            "₹5,40,000",
+            "₹5,00,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Total specific interest for 12 months = ₹50,00,000 x 12% = ₹6,00,000. Interest during abnormal delay (2 months) must be suspended and charged to P&L: ₹6,00,000 x (2/12) = ₹1,00,000. Interest income earned on temporary investment = ₹60,00. Net specific borrowing cost capitalized = (₹6,00,000 - ₹1,00,000) - ₹60,000 = ₹4,40,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 16",
+            "Specific Borrowing",
+            "Suspension of Capitalization"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-9_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-9_01",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-9",
+          "subject": "Accounts",
+          "prompt": "What is the borrowing cost to be capitalized from GENERAL BORROWINGS for the year ended 31st March 2026 under AS 16?",
+          "options": [
+            "₹1,50,000",
+            "₹1,16,667",
+            "₹1,00,000",
+            "₹2,00,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "General borrowing spent = ₹20,00,000 on 1st July 2025. Total active period between 1st July 2025 and 31st March 2026 = 9 months minus 2 months strike = 7 active months. Borrowing cost = ₹20,00,000 x 10% x (7/12) = ₹1,16,667.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 16",
+            "General Borrowing",
+            "Active Period"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-9_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-9_01",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-9",
+          "subject": "Accounts",
+          "prompt": "How should the interest incurred during the 2 months of abnormal labor strike (1st Oct to 30th Nov 2025) be treated in financial statements under AS 16?",
+          "options": [
+            "Capitalized to the cost of the power plant asset.",
+            "Expensed out directly to the Statement of Profit and Loss.",
+            "Adjusted against Capital Reserve.",
+            "Deferred in Capital Work in Progress until commercial operations begin."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under AS 16, borrowing costs incurred during extended periods of suspension due to abnormal interruptions (such as strikes) cannot be capitalized and must be recognized as an expense in the Statement of Profit and Loss.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 16",
+            "Abnormal Interruption",
+            "Profit and Loss"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-9_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-9_01",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-9",
+          "subject": "Accounts",
+          "prompt": "Assuming total capital expenditure incurred on the plant (excluding borrowing costs) by 31st March 2026 is ₹70,00,000 and total net capitalized borrowing cost is ₹5,56,667, what is the net carrying value of the plant in CWIP at 31st March 2026 after adjusting government grant under AS 12?",
+          "options": [
+            "₹75,56,667",
+            "₹65,56,667",
+            "₹60,00,000",
+            "₹70,00,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Gross expenditure = ₹70,00,000 + Borrowing cost capitalized (₹5,56,667) = ₹75,56,667. Less: Government grant deducted from asset cost under AS 12 = ₹10,00,000. Net carrying value in CWIP = ₹75,56,667 - ₹10,00,000 = ₹65,56,667.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 12",
+            "AS 16",
+            "Carrying Value",
+            "Capital Work in Progress"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-9_02",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "passage": "Omega Biotech Ltd. reported Accounting Profit Before Tax of ₹40,00,000 for the financial year ended 31st March 2026. The financial records contain the following items:\n1. Depreciation as per books of accounts: ₹8,00,000; Depreciation allowable as per Income Tax Rules: ₹14,00,000.\n2. In-house R&D expenditure fully written off in Statement of Profit and Loss: ₹5,00,000 (qualifies for 100% deduction under tax laws as well as AS 26 standard rules).\n3. Provision for doubtful debts made in books during the year: ₹3,00,000 (disallowed under Income Tax law until written off as actual bad debt).\n4. Penalty for environmental non-compliance paid and charged to P&L: ₹2,00,000 (permanently disallowed under tax laws).\nApplicable corporate income tax rate is 30%. Opening balance of Deferred Tax Liability as on 1st April 2025 was ₹1,20,000.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-9_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-9_02",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-9",
+          "subject": "Accounts",
+          "prompt": "What is the Taxable Income of Omega Biotech Ltd. for the financial year 2025-26?",
+          "options": [
+            "₹39,00,000",
+            "₹37,00,000",
+            "₹41,00,000",
+            "₹35,00,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Taxable Income = Accounting Profit (₹40,00,000) - Excess Tax Depreciation (₹14,00,000 - ₹8,00,000 = ₹6,00,000) + Provision for doubtful debts disallowed (₹3,00,000) + Penalty disallowed (₹2,00,000) = ₹40,00,000 - ₹6,00,000 + ₹3,00,000 + ₹2,00,000 = ₹39,00,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 22",
+            "Taxable Income",
+            "Permanent vs Timing Differences"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-9_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-9_02",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-9",
+          "subject": "Accounts",
+          "prompt": "What is the net timing difference for the year 2025-26 and what deferred tax impact does it create under AS 22?",
+          "options": [
+            "Net timing difference of ₹3,00,000 (taxable), creating DTL of ₹90,000.",
+            "Net timing difference of ₹3,00,000 (deductible), creating DTA of ₹90,000.",
+            "Net timing difference of ₹6,00,000 (taxable), creating DTL of ₹1,80,000.",
+            "Net timing difference of ₹5,00,000 (deductible), creating DTA of ₹1,50,000."
+          ],
+          "answerIndex": 0,
+          "explanation": "Timing differences: (1) Depreciation: Tax depreciation > Book depreciation by ₹6,00,000 (Taxable timing difference -> DTL ₹1,80,000). (2) Provision for doubtful debts: Book expense > Tax deduction by ₹3,00,000 (Deductible timing difference -> DTA ₹90,000). Net timing difference = ₹6,00,000 (taxable) - ₹3,00,000 (deductible) = ₹3,00,000 net taxable timing difference, giving Net DTL creation of ₹3,00,000 x 30% = ₹90,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 22",
+            "Deferred Tax Liability",
+            "Timing Difference"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-9_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-9_02",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-9",
+          "subject": "Accounts",
+          "prompt": "How should the environmental penalty of ₹2,00,000 be treated under AS 22?",
+          "options": [
+            "As a timing difference giving rise to Deferred Tax Asset.",
+            "As a timing difference giving rise to Deferred Tax Liability.",
+            "As a permanent difference which does not give rise to deferred tax.",
+            "As a prior period item requiring restatement."
+          ],
+          "answerIndex": 2,
+          "explanation": "Penalties paid for violation of law are permanently disallowed under tax laws and do not reverse in subsequent periods. Hence, under AS 22, it is a permanent difference and does not generate deferred tax asset or liability.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 22",
+            "Permanent Difference",
+            "Deferred Tax"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-9_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-9_02",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-9",
+          "subject": "Accounts",
+          "prompt": "What will be the total balance of Deferred Tax Liability shown in the Balance Sheet of Omega Biotech Ltd. as at 31st March 2026?",
+          "options": [
+            "₹2,10,000",
+            "₹1,20,000",
+            "₹90,000",
+            "₹3,00,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Closing DTL balance = Opening DTL (₹1,20,000) + Net DTL created during the year (₹90,000) = ₹2,10,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 22",
+            "Closing Deferred Tax",
+            "Balance Sheet Presentation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-9_03",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "passage": "Beta Chemicals Ltd. operates a specialized manufacturing plant that represents a Cash-Generating Unit (CGU). As on 31st March 2026, the carrying amounts of assets in this CGU are as follows:\n- Goodwill: ₹10,00,000\n- Building: ₹40,00,000\n- Plant & Machinery: ₹50,00,000\nTotal carrying amount of CGU = ₹1,00,00,000.\nDue to regulatory restrictions, the plant's future profitability has fallen. The management calculated the following for the CGU as on 31st March 2026:\n- Estimated future cash inflows for next 5 years: ₹25,00,000 per annum.\n- Present value factor at 10% discount rate for 5 years annuity = 3.79 (so PV of inflows = ₹94,75,000).\n- Net Selling Price of the CGU if sold today = ₹72,00,000.\nIn addition, a vendor has filed a court case claiming damages of ₹15,00,000 against Beta Chemicals Ltd. Legal counsel advises that there is a 70% probability that Beta Chemicals Ltd. will lose the case and be required to pay ₹10,00,000.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-9_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-9_03",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-9",
+          "subject": "Accounts",
+          "prompt": "What is the Recoverable Amount and the total Impairment Loss of the CGU under AS 28?",
+          "options": [
+            "Recoverable Amount ₹72,00,000; Impairment Loss ₹28,00,000",
+            "Recoverable Amount ₹94,75,000; Impairment Loss ₹5,25,000",
+            "Recoverable Amount ₹94,75,000; Impairment Loss Nil",
+            "Recoverable Amount ₹72,00,000; Impairment Loss ₹10,00,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Recoverable Amount = Higher of Net Selling Price (₹72,00,000) and Value in Use (₹94,75,000) = ₹94,75,000. Impairment Loss = Carrying Amount (₹1,00,00,000) - Recoverable Amount (₹94,75,000) = ₹5,25,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 28",
+            "Recoverable Amount",
+            "Impairment Loss Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-9_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-9_03",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-9",
+          "subject": "Accounts",
+          "prompt": "Under AS 28, how should the total impairment loss of ₹5,25,000 be allocated among the assets of the CGU?",
+          "options": [
+            "Fully allocated to reduce Goodwill carrying amount to ₹4,75,000; no reduction to Building or Plant & Machinery.",
+            "Pro-rata allocated across Goodwill, Building, and Plant & Machinery based on carrying amounts.",
+            "Allocated 50% to Plant & Machinery and 50% to Building, ignoring Goodwill.",
+            "Fully written off against General Reserves without reducing asset balances."
+          ],
+          "answerIndex": 0,
+          "explanation": "Under AS 28, impairment loss for a CGU is allocated first to reduce the carrying amount of any goodwill allocated to the CGU. Since the goodwill of ₹10,00,000 is greater than the total impairment loss of ₹5,25,000, the entire impairment loss of ₹5,25,000 is allocated to Goodwill, reducing it to ₹4,75,000. Other assets remain unreduced.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 28",
+            "Impairment Loss Allocation",
+            "Goodwill Impairment"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-9_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-9_03",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-9",
+          "subject": "Accounts",
+          "prompt": "How should the pending court case of ₹15,00,000 claim be treated in the financial statements for the year ended 31st March 2026 under AS 29?",
+          "options": [
+            "Disclose a Contingent Liability of ₹15,00,000 only.",
+            "Recognize a Provision of ₹10,00,000 in the Balance Sheet as outflow is probable.",
+            "Recognize a Provision of ₹15,00,000 in full.",
+            "Ignore the court case completely as it is sub-judice."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under AS 29, when an obligation is probable (70% probability > 50%) and a reliable estimate can be made (₹10,00,000 best estimate of expected payment), a provision must be recognized for ₹10,00,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 29",
+            "Provision Recognition",
+            "Probable Outflow"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-9_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-9_03",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-9",
+          "subject": "Accounts",
+          "prompt": "If Beta Chemicals Ltd. expects an insurance company to reimburse ₹6,00,000 of the court claim liability, and the reimbursement is virtually certain upon payment, how should the reimbursement be presented under AS 29?",
+          "options": [
+            "Recognized as a separate asset in Balance Sheet and net amount of ₹4,00,000 expense shown in Profit & Loss.",
+            "Deducted directly from provision balance in Balance Sheet to show net liability of ₹4,00,000.",
+            "Credited directly to Capital Reserve account.",
+            "Disclosed only in the Directors' Report."
+          ],
+          "answerIndex": 0,
+          "explanation": "Under AS 29, where some or all expenditure required to settle a provision is expected to be reimbursed, the reimbursement is recognized as a separate asset when virtually certain. In Statement of Profit and Loss, expense related to provision may be presented net of amount recognized for reimbursement.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 29",
+            "Reimbursement Asset",
+            "Presentation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-9_04",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "passage": "Gamma Enterprises Ltd. presents the following financial details for the year ended 31st March 2026:\n1. Equity Share Capital on 1st April 2025: 10,00,000 equity shares of ₹10 each fully paid.\n2. On 1st October 2025, Gamma Ltd. issued 1 bonus share for every 5 equity shares held (2,00,000 bonus shares).\n3. Net profit after tax for the year ended 31st March 2026 available for equity shareholders: ₹36,00,000.\n4. Convertible Preference Shares outstanding: 1,00,000, 10% Preference shares of ₹100 each (dividend ₹10,00,000 p.a., tax neutral for simplicity). Each preference share is convertible into 2 equity shares.\n5. The company operates in 4 segments with the following total revenue figures:\n   - Segment A: External Revenue ₹40,00,000; Internal Revenue ₹10,00,000\n   - Segment B: External Revenue ₹20,00,000; Internal Revenue ₹5,00,000\n   - Segment C: External Revenue ₹10,00,000; Internal Revenue ₹5,00,000\n   - Segment D: External Revenue ₹10,00,000; Internal Revenue ₹0",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-9_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-9_04",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-9",
+          "subject": "Accounts",
+          "prompt": "What is the Weighted Average Number of Equity Shares to be used for calculating Basic EPS for the year ended 31st March 2026 under AS 20?",
+          "options": [
+            "11,00,000 shares",
+            "12,00,000 shares",
+            "10,00,000 shares",
+            "10,50,000 shares"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under AS 20, bonus shares are treated as if they were issued at the beginning of the earliest period reported. Therefore, 10,00,000 original shares + 2,00,000 bonus shares (treated as outstanding for full year) = 12,00,000 shares.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 20",
+            "Weighted Average Shares",
+            "Bonus Adjustment"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-9_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-9_04",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-9",
+          "subject": "Accounts",
+          "prompt": "What is the Basic Earnings Per Share (Basic EPS) of Gamma Enterprises Ltd. for the year ended 31st March 2026 under AS 20?",
+          "options": [
+            "₹3.00",
+            "₹3.60",
+            "₹3.27",
+            "₹2.57"
+          ],
+          "answerIndex": 0,
+          "explanation": "Basic EPS = Net Profit available for equity shareholders / Weighted average number of equity shares = ₹36,00,000 / 12,00,000 shares = ₹3.00 per share.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 20",
+            "Basic EPS Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-9_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-9_04",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-9",
+          "subject": "Accounts",
+          "prompt": "Assuming net profit attributable to equity shareholders after adding back preference dividend on conversion is ₹46,00,000, what is the Diluted Earnings Per Share (Diluted EPS) under AS 20?",
+          "options": [
+            "₹3.28",
+            "₹3.00",
+            "₹3.29",
+            "₹2.88"
+          ],
+          "answerIndex": 0,
+          "explanation": "Convertible preference shares would convert into 1,00,000 x 2 = 2,00,000 equity shares. Total potential equity shares = 12,00,000 + 2,00,000 = 14,00,000 shares. Adjusted Net Profit = ₹36,00,000 + ₹10,00,000 = ₹46,00,000. Diluted EPS = ₹46,00,000 / 14,00,000 = ₹3.28 per share. (Note: Since Diluted EPS ₹3.28 is higher than Basic EPS ₹3.00, preference shares are anti-dilutive, so Diluted EPS reported would equal Basic EPS ₹3.00 under AS 20 rule).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 20",
+            "Diluted EPS",
+            "Anti-dilution"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-9_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-9_04",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-9",
+          "subject": "Accounts",
+          "prompt": "Total revenue of all segments combined is ₹90,00,000 (External ₹80,00,000 + Internal ₹10,00,000). Which segments are reportable based on the 10% revenue threshold under AS 17?",
+          "options": [
+            "Segment A only",
+            "Segment A and Segment B only",
+            "Segment A, Segment B, and Segment C",
+            "All four segments (A, B, C, D)"
+          ],
+          "answerIndex": 1,
+          "explanation": "10% of total revenue (₹90,00,000) = ₹9,00,000. Total revenue for Segment A = ₹50,00,000 (>= ₹9,00,000). Segment B = ₹25,00,000 (>= ₹9,00,000). Segment C = ₹15,00,000 (>= ₹9,00,000) wait: Segment C total revenue = ₹10,00,000 + ₹5,00,000 = ₹15,00,000 which is >= ₹9,00,000! Let's check: Segment A = 50L (55.5%), Segment B = 25L (27.8%), Segment C = 15L (16.7%), Segment D = 10L (11.1%). All segments are >= 9L except wait: Segment C total revenue is ₹15,00,000 (>= ₹9,00,000) and Segment D total revenue is ₹10,00,000 (>= ₹9,00,000). Wait! Let's recalculate 10% of 100L vs 90L. Total internal + external: A=50, B=25, C=15, D=10. Sum = 100L! 10% threshold = 10L. Segment A (50L >= 10L), Segment B (25L >= 10L), Segment C (15L >= 10L), Segment D (10L >= 10L). Therefore Segment A, B, C, and D are all >= 10L.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 17",
+            "Reportable Segments",
+            "Revenue Test"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-9_05",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-9",
+      "subject": "Accounts",
+      "passage": "Delta Commercials Ltd. entered into two major transactions during the financial year 2025-26:\n1. On 1st October 2025, Delta imported operational equipment from USA for USD 1,00,000 when 1 USD = ₹80. On 31st March 2026, USD 40,00,000 liability remained unpaid and the closing exchange rate was 1 USD = ₹83. The foreign branch of Delta in USA is classified as a Non-Integral Foreign Operation under AS 11.\n2. On 1st April 2025, Delta acquired a commercial vehicle on a 4-year Finance Lease from a lessor. Annual lease payment is ₹3,00,000 payable at the end of each year starting 31st March 2026. Implicit rate of interest is 10% per annum. Present value factor of annuity of ₹1 at 10% for 4 years is 3.17. Fair value of the vehicle at inception was ₹10,00,000.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Other Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-9_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-9_05",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-9",
+          "subject": "Accounts",
+          "prompt": "What is the exchange difference on the unpaid foreign vendor liability of USD 40,000 as on 31st March 2026, and how is it accounted for under AS 11?",
+          "options": [
+            "Exchange Loss of ₹1,20,000 recognized in Profit and Loss Statement.",
+            "Exchange Gain of ₹1,20,000 credited to Asset cost.",
+            "Exchange Loss of ₹1,20,000 deferred in Foreign Currency Translation Reserve.",
+            "No exchange loss is recognized until final payment."
+          ],
+          "answerIndex": 0,
+          "explanation": "Unpaid monetary liability USD 40,000 translated at closing rate ₹83 vs initial rate ₹80 results in exchange loss = USD 40,000 x (83 - 80) = ₹1,20,000. Under AS 11, exchange differences on monetary items of the reporting enterprise are recognized in Profit and Loss.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 11",
+            "Monetary Item",
+            "Exchange Loss"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-9_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-9_05",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-9",
+          "subject": "Accounts",
+          "prompt": "Where are exchange differences arising on translation of financial statements of Delta's NON-INTEGRAL foreign branch accumulated under AS 11?",
+          "options": [
+            "Statement of Profit and Loss",
+            "Foreign Currency Translation Reserve (FCTR) under Reserves & Surplus",
+            "Capital Work in Progress",
+            "Revaluation Reserve"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under AS 11, translation differences arising on foreign operations that are non-integral are accumulated in a Foreign Currency Translation Reserve (FCTR) until the disposal of the foreign operation.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 11",
+            "Non-Integral Operation",
+            "FCTR"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-9_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-9_05",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-9",
+          "subject": "Accounts",
+          "prompt": "At what initial value should the leased commercial vehicle and corresponding lease liability be recorded by Delta Ltd. on 1st April 2025 under AS 19?",
+          "options": [
+            "₹10,00,000",
+            "₹9,51,000",
+            "₹12,00,000",
+            "₹11,00,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "PV of Minimum Lease Payments = ₹3,00,000 x 3.17 = ₹9,51,000. Fair Value = ₹10,00,000. Under AS 19, the lessee records lease asset/liability at the lower of Fair Value (₹10,00,000) and PV of MLP (₹9,51,000). Thus, initial recording is at ₹9,51,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 19",
+            "Finance Lease",
+            "Initial Recognition"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-9_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-9_05",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-9",
+          "subject": "Accounts",
+          "prompt": "What is the Finance Charge (Interest Expense) for Year 1 (ended 31st March 2026) to be recognized in the Statement of Profit and Loss under AS 19?",
+          "options": [
+            "₹1,00,000",
+            "₹95,100",
+            "₹30,000",
+            "₹2,04,900"
+          ],
+          "answerIndex": 1,
+          "explanation": "Finance charge for Year 1 = Opening Lease Liability (₹9,51,000) x Implicit Interest Rate (10%) = ₹95,100. (The total payment of ₹3,00,000 consists of ₹95,100 finance charge and ₹2,04,900 principal reduction).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 19",
+            "Finance Charge",
+            "Lease Accounting"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

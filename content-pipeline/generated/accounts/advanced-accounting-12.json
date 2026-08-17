@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "advanced-accounting-12",
+  "subject": "Accounts",
+  "paper": "Paper 1: Advanced Accounting",
+  "module": "Module 3",
+  "chapterNumber": 12,
+  "chapterTitle": "Buyback of Securities",
+  "generatedAt": "2026-08-16T14:02:40.677Z",
+  "model": "gemini-3.6-flash",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_advanced-accounting-12_001",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "Under Section 68(2) of the Companies Act, 2013, what is the maximum limit up to which a company's Board of Directors can authorize a buy-back of equity shares via a Board Resolution without requiring a Special Resolution in a general meeting?",
+      "options": [
+        "10% of the total paid-up equity capital and free reserves of the company",
+        "10% of the total paid-up equity share capital only",
+        "25% of the total paid-up equity capital and free reserves of the company",
+        "25% of the total paid-up equity share capital only"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 68(2) specifies that a special resolution is not required if the buy-back is ten per cent or less of the total paid-up equity capital and free reserves of the company, and such buy-back has been authorized by the Board by means of a resolution passed at its meeting.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 68",
+        "Board Resolution Limit",
+        "Buyback Thresholds"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_002",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "What is the maximum limit on the buy-back of equity shares in any financial year as per Section 68(2) of the Companies Act, 2013, in respect of paid-up equity capital?",
+      "options": [
+        "10% of total paid-up equity share capital in that financial year",
+        "20% of total paid-up equity share capital in that financial year",
+        "25% of total paid-up equity share capital in that financial year",
+        "25% of total paid-up equity capital and free reserves combined"
+      ],
+      "answerIndex": 2,
+      "explanation": "In respect of the buy-back of equity shares in any financial year, the buy-back cannot exceed 25% of its total paid-up equity capital in that financial year as per the proviso to Section 68(2).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 68",
+        "Equity Capital Limit",
+        "Statutory Caps"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_003",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "As per Section 68(2)(c) of the Companies Act, 2013, what must be the maximum ratio of the aggregate of secured and unsecured debts owed by the company after the buy-back to the paid-up capital and its free reserves?",
+      "options": [
+        "1:1",
+        "1.5:1",
+        "2:1",
+        "3:1"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 68(2)(c) mandates that the ratio of the aggregate of secured and unsecured debts owed by the company after buy-back is not more than twice the paid-up capital and its free reserves (i.e., Debt-Equity ratio not exceeding 2:1).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Debt-Equity Ratio",
+        "Section 68",
+        "Post-Buyback Ratios"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_004",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "Within what period from the date of passing the Special Resolution (or Board Resolution, as the case may be) must every buy-back of shares be completed?",
+      "options": [
+        "6 months",
+        "12 months",
+        "18 months",
+        "24 months"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 68(4) provides that every buy-back shall be completed within a period of twelve months from the date of passing the special resolution or the resolution passed by the Board.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Time Limit",
+        "Section 68",
+        "Completion Period"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_005",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "According to Section 68(7) of the Companies Act, 2013, within how many days of the completion of the buy-back process must a company extinguish and physically destroy the shares so bought back?",
+      "options": [
+        "7 days",
+        "15 days",
+        "21 days",
+        "30 days"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 68(7) mandates that where a company buys back its own shares or other specified securities, it shall extinguish and physically destroy the shares or securities so bought back within seven days of the last date of completion of buy-back.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Extinction of Shares",
+        "Section 68",
+        "Statutory Timelines"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_006",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "Under Section 68(8) of the Companies Act, 2013, after completing a buy-back of shares, a company cannot make a further issue of the same kind of shares within a cooling-off period of:",
+      "options": [
+        "3 months",
+        "6 months",
+        "12 months",
+        "24 months"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 68(8) prohibits a company from making a further issue of the same kind of shares or other securities including allotment of new shares under Section 62(1)(a) or other specified securities within a period of six months except by way of a bonus issue or discharge of subsisting obligations.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Cooling-off Period",
+        "Section 68",
+        "Further Issue Prohibition"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_007",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "Which of the following reserve balances CANNOT be utilized for the creation of Capital Redemption Reserve (CRR) upon buy-back of equity shares?",
+      "options": [
+        "General Reserve",
+        "Profit and Loss Account (Credit balance)",
+        "Securities Premium Account",
+        "Revaluation Reserve"
+      ],
+      "answerIndex": 3,
+      "explanation": "Revaluation Reserve represents unrealized capital gains and is not a free reserve. Under Section 69, CRR is created out of free reserves or securities premium account.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Free Reserves",
+        "Capital Redemption Reserve",
+        "Revaluation Reserve"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_008",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "According to Section 69(2) of the Companies Act, 2013, the Capital Redemption Reserve (CRR) account created on buy-back of shares may be applied by the company in paying up unissued shares to be issued to members as:",
+      "options": [
+        "Sweat equity shares",
+        "Fully paid bonus shares",
+        "Rights shares",
+        "Employee stock options"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 69(2) provides that the Capital Redemption Reserve account may be applied by the company in paying up unissued shares of the company to be issued to members of the company as fully paid bonus shares.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Capital Redemption Reserve",
+        "Bonus Shares",
+        "Utilization of CRR"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_009",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "A company proposes to buy back 10,000 equity shares of ₹10 each at ₹25 per share. It issues 5,000, 10% Preference Shares of ₹10 each at par for the purpose of buy-back. How much amount must be transferred to the Capital Redemption Reserve (CRR) account?",
+      "options": [
+        "₹50,000",
+        "₹1,000,000",
+        "₹150,000",
+        "₹250,000"
+      ],
+      "answerIndex": 0,
+      "explanation": "Nominal value of shares bought back = 10,000 × ₹10 = ₹100,000. Nominal value of fresh issue of preference shares = 5,000 × ₹10 = ₹50,000. Transfer to CRR = Nominal Value of Buyback - Nominal Value of Fresh Issue = ₹100,000 - ₹50,000 = ₹50,000.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "CRR Calculation",
+        "Fresh Issue",
+        "Accounting Treatment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_010",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "Can a company buy back its equity shares out of the proceeds of an earlier issue of equity shares of the same class?",
+      "options": [
+        "Yes, without any statutory restrictions",
+        "Yes, provided approval is obtained from SEBI",
+        "No, Section 68(1) explicitly prohibits buy-back out of proceeds of an earlier issue of the same kind of shares",
+        "Yes, provided a period of 12 months has elapsed since the earlier issue"
+      ],
+      "answerIndex": 2,
+      "explanation": "The proviso to Section 68(1) explicitly states that no buy-back of any kind of shares or other specified securities shall be made out of the proceeds of an earlier issue of the same kind of shares or same kind of other specified securities.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 68(1)",
+        "Sources of Buyback",
+        "Prohibition of Same Class"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_011",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "Under Section 70(1) of the Companies Act, 2013, a company is prohibited from directly or indirectly purchasing its own shares through which of the following?",
+      "options": [
+        "Any subsidiary company including its own subsidiary company",
+        "Any investment company or group of investment companies",
+        "If a default is subsisting in repayment of deposits or interest payable thereon",
+        "All of the above"
+      ],
+      "answerIndex": 3,
+      "explanation": "Section 70 prohibits buy-back through any subsidiary company (including its own subsidiary), through any investment company/group of investment companies, or if default is subsisting in repayment of deposits, debentures, preference shares, term loans, or interest thereon.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 70",
+        "Prohibition of Buyback",
+        "Statutory Restrictions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_012",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "If a company has defaulted in the repayment of a term loan from a financial institution, but subsequently remedies the default and pays off all dues, after what period from the date the default ceased to exist can the company make a buy-back of its shares under Section 70?",
+      "options": [
+        "Immediately upon full repayment",
+        "1 year",
+        "3 years",
+        "5 years"
+      ],
+      "answerIndex": 2,
+      "explanation": "The proviso to Section 70(1) states that the prohibition shall not apply if the default is remedied and a period of three years has lapsed after such default ceased to exist.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 70",
+        "Curing Defaults",
+        "Three-Year Cooling Period"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_013",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "For the purpose of calculating 'Free Reserves' under Section 68 of the Companies Act, 2013, which of the following is specifically included by definition for buy-back calculations?",
+      "options": [
+        "Revaluation Reserve",
+        "Securities Premium Account",
+        "Capital Redemption Reserve",
+        "Debenture Redemption Reserve"
+      ],
+      "answerIndex": 1,
+      "explanation": "Explanation to Section 68 explicitly defines 'free reserves' for the purpose of buy-back as including the securities premium account (whereas Sec 2(43) general definition excludes it, Sec 68 explicitly includes securities premium as a source/free reserve component).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Free Reserves Definition",
+        "Securities Premium",
+        "Section 68 Explanation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_014",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "Alpha Ltd. has 100,000 equity shares of ₹10 each, ₹8 paid up. The company passes a special resolution to buy back 20% of its equity shares at ₹20 per share. Can Alpha Ltd. proceed with this buy-back directly?",
+      "options": [
+        "Yes, provided it creates adequate CRR",
+        "Yes, as 20% is within the statutory limit of 25%",
+        "No, because shares must be fully paid up prior to buy-back",
+        "No, because buy-back cannot exceed 10% without NCLT approval"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under Section 68(2)(f), no buy-back of shares shall be made unless all the shares or other specified securities for buy-back are fully paid-up. The company must first make the shares fully paid up.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Fully Paid Shares",
+        "Section 68(2)",
+        "Pre-conditions for Buyback"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_015",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "Beta Ltd. buys back 20,000 equity shares of ₹10 each at ₹15 per share. Premium on buy-back is ₹5 per share. The company has a Securities Premium balance of ₹80,000 and General Reserve of ₹200,000. What is the correct accounting treatment for the premium paid on buy-back?",
+      "options": [
+        "Debited to Capital Redemption Reserve Account",
+        "Debited to Profit and Loss Account as an exceptional item",
+        "Debited to Securities Premium / General Reserve Account",
+        "Capitalized by issuing bonus shares"
+      ],
+      "answerIndex": 2,
+      "explanation": "Premium payable on buy-back is a loss/capital outflow that is provided for out of free reserves or securities premium account before the shares are bought back.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Premium on Buyback",
+        "Accounting Entries",
+        "Adjustment of Premium"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_016",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "Which of the following is an EXCEPTION to the 6-month prohibition on making further issue of the same kind of shares post buy-back under Section 68(8)?",
+      "options": [
+        "Issue of shares under Rights Issue to existing shareholders",
+        "Issue of shares under Private Placement",
+        "Issue of fully paid bonus shares",
+        "Issue of shares to public via IPO"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 68(8) states that the 6-month restriction does not apply to a bonus issue or discharge of subsisting obligations such as conversion of warrants, stock option schemes, sweat equity, or conversion of preference shares/debentures into equity.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 68(8)",
+        "Prohibition Exceptions",
+        "Bonus Issue"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_017",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "Gama Ltd. decides to buy back 50,000 equity shares of ₹10 each at ₹30 per share. It issues 30,000 12% Preference shares of ₹10 each at a premium of ₹5 per share to finance the buy-back. What amount must Gama Ltd. transfer to the Capital Redemption Reserve?",
+      "options": [
+        "₹200,000",
+        "₹350,000",
+        "₹500,000",
+        "₹150,000"
+      ],
+      "answerIndex": 0,
+      "explanation": "Nominal value of equity shares bought back = 50,000 × ₹10 = ₹500,000. Nominal value of fresh issue = 30,000 × ₹10 = ₹300,000 (premium on fresh issue is ignored for CRR calculation). Transfer to CRR = ₹500,000 - ₹300,000 = ₹200,000.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "CRR Calculation",
+        "Fresh Issue Premium",
+        "Section 69"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_018",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "Which of the following non-compliance scenarios disables a company from making a buy-back of its securities under Section 70(2) of the Companies Act, 2013?",
+      "options": [
+        "Default in filing Annual Return under Section 92",
+        "Default in distribution of declared dividend under Section 127",
+        "Default in filing Financial Statements under Section 137",
+        "All of the above"
+      ],
+      "answerIndex": 3,
+      "explanation": "Under Section 70(2), no company shall buy back its shares if it has defaulted in complying with Section 92 (Annual Return), Section 123 (Declaration of Dividend), Section 127 (Punishment for failure to distribute dividend), or Section 137 (Filing of financial statements).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 70(2)",
+        "Disqualifications",
+        "Statutory Defaults"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_019",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "Omega Ltd. has Paid-up Share Capital of ₹50 lakhs (Equity share capital of ₹10 each), Free Reserves of ₹30 lakhs, Securities Premium of ₹20 lakhs, and Total Debt of ₹140 lakhs. What is the maximum permitted Debt under the Debt-Equity Test for post-buyback eligibility?",
+      "options": [
+        "Total Debt cannot exceed ₹200 lakhs post buyback",
+        "Post-buyback aggregate Paid-up Capital and Free Reserves must be at least ₹70 lakhs (half of Total Debt)",
+        "Post-buyback aggregate Paid-up Capital and Free Reserves must be at least ₹140 lakhs",
+        "Total Debt must be fully repaid before buyback"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 68(2)(c), post buyback Debt-Equity ratio must not exceed 2:1. Aggregate Debt = ₹140 lakhs. Minimum post-buyback Equity (Capital + Free Reserves + Securities Premium) required = ₹140 lakhs / 2 = ₹70 lakhs.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Debt-Equity Test",
+        "Maximum Buyback Limit",
+        "Financial Testing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_020",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "When shares are bought back out of free reserves or securities premium account, which account is credited for the nominal value of the shares bought back?",
+      "options": [
+        "Equity Share Capital Account",
+        "Capital Redemption Reserve Account",
+        "General Reserve Account",
+        "Buy-back Payable Account"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 69, when shares are bought back out of free reserves or securities premium account, a sum equal to the nominal value of the shares so purchased shall be transferred to the Capital Redemption Reserve Account.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Accounting Entries",
+        "Capital Redemption Reserve",
+        "Journal Entries"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_021",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "What is the primary objective of transferring an amount equal to the face value of shares bought back (out of free reserves) to the Capital Redemption Reserve (CRR)?",
+      "options": [
+        "To reduce income tax liability of the company",
+        "To safeguard creditors' interest by maintaining capital intact",
+        "To enable distribution of cash dividends in future",
+        "To create a reserve for writing off capital losses"
+      ],
+      "answerIndex": 1,
+      "explanation": "The creation of CRR ensures capital maintenance. Since buy-back reduces paid-up share capital, replacing capital with a non-distributable reserve (CRR) protects creditors from capital erosion.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Capital Maintenance Principle",
+        "Rationale of CRR",
+        "Creditor Protection"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_022",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "Zenith Ltd. buys back its shares at a premium. The accounting entry to record the payment to shareholders is:",
+      "options": [
+        "Debit Equity Shares Buy-back Account; Credit Bank Account",
+        "Debit Equity Share Capital Account; Credit Bank Account",
+        "Debit Equity Share Buy-back Holder Account; Credit Bank Account",
+        "Debit Capital Redemption Reserve; Credit Bank Account"
+      ],
+      "answerIndex": 2,
+      "explanation": "The payment entry is: Equity Share Buy-back Holders Account Dr. to Bank Account. (After transferring the buyback liability from Equity Share Capital and Premium on Buyback to Equity Share Buy-back Holders Account).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Journal Entries",
+        "Payment Entry",
+        "Buyback Accounting"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_023",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "Under Section 68(5), buy-back of securities can be made from which of the following modes?",
+      "options": [
+        "From existing shareholders or security holders on a proportionate basis",
+        "From the open market",
+        "By purchasing the securities issued to employees of the company pursuant to a scheme of stock option or sweat equity",
+        "All of the above"
+      ],
+      "answerIndex": 3,
+      "explanation": "Section 68(5) explicitly allows buy-back from existing shareholders on proportionate basis, from open market, or by purchasing securities issued to employees under ESOP or sweat equity.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 68(5)",
+        "Modes of Buyback",
+        "Eligible Sellers"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_024",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "If a company buys back shares out of free reserves and subsequently utilizes the whole Capital Redemption Reserve so created to issue fully paid bonus shares, what is the net effect on the total Shareholders' Funds (Net Worth)?",
+      "options": [
+        "Increases by the amount of bonus shares issued",
+        "Decreases by the total cash outflow spent on buy-back",
+        "Remains unchanged post buy-back",
+        "Decreases by double the nominal value of shares bought back"
+      ],
+      "answerIndex": 1,
+      "explanation": "The cash payout on buy-back reduces Shareholders' Funds by the total payout amount. The subsequent transfer from CRR to Share Capital for bonus shares is merely an internal reclassification within Shareholders' Funds, having zero net impact on total Shareholders' Funds.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Net Worth Effect",
+        "Balance Sheet Impact",
+        "Bonus Issue"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_025",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "A company has a Debenture Redemption Reserve (DRR) of ₹50,000 created out of profits. The debentures have been fully redeemed. Can this DRR balance be treated as a 'Free Reserve' for the purpose of buy-back under Section 68?",
+      "options": [
+        "No, DRR can never be used for buy-back",
+        "Yes, once debentures are fully redeemed, DRR can be transferred to General Reserve and used as a free reserve",
+        "Yes, but only with prior NCLT approval",
+        "No, DRR must be transferred to Capital Reserve which is not a free reserve"
+      ],
+      "answerIndex": 1,
+      "explanation": "Once debentures are redeemed, DRR is no longer restricted and is transferred to General Reserve. General Reserve is a free reserve and hence available for buy-back under Section 68.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Debenture Redemption Reserve",
+        "Free Reserves",
+        "Reserve Reclassification"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_026",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "Which document is required to be filed with the Registrar of Companies (ROC) and SEBI (in case of listed companies) declaring solvency before undertaking a buy-back?",
+      "options": [
+        "Declaration of Solvency (Form SH-9)",
+        "Return of Buy-back (Form SH-11)",
+        "Certificate of Extinction (Form SH-10)",
+        "Prospectus"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 68(6), before making a buy-back, the company must file a Declaration of Solvency in Form SH-9 signed by at least two directors (one of whom shall be the Managing Director, if any) with the ROC and SEBI.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Declaration of Solvency",
+        "Form SH-9",
+        "Procedural Compliance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_027",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "A company buys back 10,000 equity shares of ₹10 each at ₹12 per share. Total cash payout = ₹120,000. It funds the buyback using available General Reserve. What is the net reduction in General Reserve as a result of this transaction (including CRR creation and premium write-off)?",
+      "options": [
+        "₹100,000",
+        "₹120,000",
+        "₹20,000",
+        "₹140,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Reduction in General Reserve = Transfer to CRR for nominal value (₹100,000) + Premium on buyback written off (10,000 × ₹2 = ₹20,000). Total reduction = ₹100,000 + ₹20,000 = ₹120,000.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "General Reserve Utilization",
+        "Accounting Impact",
+        "CRR Creation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_028",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "Under Section 68, which of the following items is EXCLUDED from 'Free Reserves' when calculating the capacity for buy-back?",
+      "options": [
+        "Securities Premium Account",
+        "General Reserve",
+        "Unrealized gains / Capital Reserve arising from revaluation of assets",
+        "Profit and Loss Account Credit Balance"
+      ],
+      "answerIndex": 2,
+      "explanation": "Free reserves as defined in Section 2(43) and Section 68 exclude any amount representing unrealized gains, notional gains or revaluation of assets.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Free Reserves Exclusion",
+        "Revaluation Reserve",
+        "Definitions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_029",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "If a company completes a buy-back on 15th March 2026, what is the mandatory timeline by which Form SH-11 (Return of Buy-back) must be filed with the ROC?",
+      "options": [
+        "Within 7 days (i.e., by 22nd March 2026)",
+        "Within 30 days (i.e., by 14th April 2026)",
+        "Within 60 days",
+        "At the time of filing Annual Return"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Rule 17(10) of Companies (Share Capital and Debentures) Rules, 2014, the company shall file a return of buy-back in Form SH-11 within 30 days of completion of buy-back with the ROC.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Form SH-11",
+        "Return of Buyback",
+        "Procedural Compliance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-12_030",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "prompt": "Can a company issue Sweat Equity Shares during the 6-month cooling-off period following a buy-back under Section 68(8)?",
+      "options": [
+        "No, all fresh share issuances are strictly prohibited",
+        "Yes, sweat equity shares are explicitly exempted from the 6-month cooling-off restriction",
+        "Yes, but only with prior approval of NCLT",
+        "No, unless authorized by a unanimous resolution of shareholders"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 68(8) proviso explicitly exempts discharge of subsisting obligations such as conversion of warrants, stock option schemes, sweat equity, or conversion of preference shares/debentures from the 6-month restriction.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 68(8)",
+        "Sweat Equity",
+        "Exceptions to Cooling-off"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_advanced-accounting-12_01",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "passage": "PQR Limited (a non-listed public company) presents the following balance sheet summary as on 31st March 2026:\n- Authorized Share Capital: 2,000,000 Equity Shares of ₹10 each = ₹200 lakhs.\n- Issued and Paid-up Share Capital: 1,000,000 Equity Shares of ₹10 each fully paid = ₹100 lakhs.\n- Securities Premium Account: ₹40 lakhs.\n- General Reserve: ₹60 lakhs.\n- Profit and Loss Account (Cr.): ₹20 lakhs.\n- Revaluation Reserve: ₹30 lakhs.\n- 12% Secured Debentures: ₹150 lakhs.\n- Unsecured Loans: ₹50 lakhs.\n\nThe company desires to buy back maximum possible equity shares at a offer price of ₹25 per share on 1st April 2026.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-12_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-12_01",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-12",
+          "subject": "Accounts",
+          "prompt": "What is the maximum amount of buy-back permitted if authorized solely by a resolution passed at the Board of Directors meeting without shareholder approval?",
+          "options": [
+            "₹10 lakhs",
+            "₹22 lakhs",
+            "₹25 lakhs",
+            "₹12 lakhs"
+          ],
+          "answerIndex": 1,
+          "explanation": "Board limit = 10% of (Paid-up equity capital + Free Reserves including Securities Premium). Paid-up equity capital = ₹100 lakhs. Free Reserves = Securities Premium (₹40 lakhs) + General Reserve (₹60 lakhs) + P&L Cr. (₹20 lakhs) = ₹120 lakhs. (Revaluation reserve excluded). Total base = ₹100 + ₹120 = ₹220 lakhs. Board limit = 10% of ₹220 lakhs = ₹22 lakhs.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Board Resolution Limit",
+            "Section 68",
+            "Buyback Tests"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-12_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-12_01",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-12",
+          "subject": "Accounts",
+          "prompt": "What is the maximum number of equity shares that can be bought back under the 25% Equity Share Capital test (Section 68(2)(c) proviso) for the financial year?",
+          "options": [
+            "100,000 equity shares",
+            "220,000 equity shares",
+            "250,000 equity shares",
+            "500,000 equity shares"
+          ],
+          "answerIndex": 2,
+          "explanation": "25% of Paid-up Equity Share Capital test = 25% of 1,000,000 shares = 250,000 shares.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "25% Equity Limit",
+            "Section 68",
+            "Number of Shares Test"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-12_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-12_01",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-12",
+          "subject": "Accounts",
+          "prompt": "Under the Debt-Equity Ratio test, what is the maximum permissible buy-back amount that PQR Limited can spend at ₹25 per share?",
+          "options": [
+            "₹120 lakhs",
+            "₹100 lakhs",
+            "₹120 lakhs maximum limit but restricted by equity maintenance of ₹100 lakhs",
+            "₹120 lakhs total equity minus minimum equity required (₹100 lakhs) = ₹120 lakhs capacity"
+          ],
+          "answerIndex": 2,
+          "explanation": "Total Debt = 12% Secured Debentures (₹150 lakhs) + Unsecured Loans (₹50 lakhs) = ₹200 lakhs. Minimum post-buyback Equity (Capital + Free Reserves) required = Total Debt / 2 = ₹200 lakhs / 2 = ₹100 lakhs. Present Equity (Capital + Free Reserves) = ₹100 + ₹120 = ₹220 lakhs. Maximum allowable reduction in Equity under Debt-Equity test = Present Equity - Minimum Equity required = ₹220 lakhs - ₹100 lakhs = ₹120 lakhs.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Debt-Equity Test",
+            "Section 68(2)(c)",
+            "Financial Constraints"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-12_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-12_01",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-12",
+          "subject": "Accounts",
+          "prompt": "Considering the Shareholder Approval overall 25% limit on Paid-up Capital + Free Reserves (25% of ₹220 lakhs = ₹55 lakhs) and the Debt-Equity test (₹120 lakhs) and 25% Equity shares limit (250,000 shares @ ₹25 = ₹62.5 lakhs), what is the MAXIMUM number of equity shares PQR Ltd. can buy back at ₹25 per share after passing a Special Resolution?",
+          "options": [
+            "220,000 shares",
+            "250,000 shares",
+            "200,000 shares",
+            "240,000 shares"
+          ],
+          "answerIndex": 0,
+          "explanation": "Test 1: Shareholder Approval limit (25% of Capital + Free Reserves) = 25% of ₹220 lakhs = ₹55 lakhs. At ₹25 per share, Number of shares = ₹55,000,000 / ₹25 = 220,000 shares. Test 2: 25% Equity share limit = 250,000 shares. Test 3: Debt-Equity Test = ₹120 lakhs / ₹25 = 480,000 shares. The maximum allowed is the lowest of all three tests, which is 220,000 shares.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Comprehensive Buyback Test",
+            "Maximum Buyback Shares",
+            "Section 68"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-12_02",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "passage": "Vanguard Limited decides to buy back 40,000 equity shares of ₹10 each at a price of ₹30 per share on 15th May 2026. The balances in its accounts prior to buy-back are:\n- Securities Premium Account: ₹500,000\n- General Reserve: ₹800,000\n- Profit and Loss Account (Cr.): ₹300,000\n\nTo finance part of the buy-back, Vanguard Ltd. makes a fresh issue of 20,000, 10% Preference Shares of ₹10 each at a premium of 20% ( issue price ₹12 per share) on 10th May 2026, which is fully subscribed and paid.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-12_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-12_02",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-12",
+          "subject": "Accounts",
+          "prompt": "What is the total nominal value of equity shares bought back and the total premium paid on buy-back by Vanguard Ltd.?",
+          "options": [
+            "Nominal Value = ₹400,000; Premium on Buy-back = ₹800,000",
+            "Nominal Value = ₹400,000; Premium on Buy-back = ₹1,200,000",
+            "Nominal Value = ₹200,000; Premium on Buy-back = ₹600,000",
+            "Nominal Value = ₹800,000; Premium on Buy-back = ₹400,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Nominal value = 40,000 shares × ₹10 = ₹400,000. Buyback price = ₹30 per share. Premium on buyback = 40,000 shares × (₹30 - ₹10) = ₹800,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Nominal Value",
+            "Premium on Buyback",
+            "Buyback Calculations"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-12_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-12_02",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-12",
+          "subject": "Accounts",
+          "prompt": "How much amount must Vanguard Ltd. transfer to the Capital Redemption Reserve (CRR) Account upon buy-back?",
+          "options": [
+            "₹400,000",
+            "₹200,000",
+            "₹160,000",
+            "₹240,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Nominal value of equity shares bought back = ₹400,000. Nominal value of fresh issue of preference shares = 20,000 × ₹10 = ₹200,000. (Premium on fresh issue ₹40,000 is ignored for CRR computation). Transfer to CRR = Nominal Value of Buyback - Nominal Value of Fresh Issue = ₹400,000 - ₹200,000 = ₹200,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "CRR Calculation",
+            "Fresh Issue of Shares",
+            "Section 69"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-12_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-12_02",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-12",
+          "subject": "Accounts",
+          "prompt": "What is the balance remaining in the Securities Premium Account after providing for premium on buy-back and receiving premium on fresh issue?",
+          "options": [
+            "₹0",
+            "₹260,000",
+            "₹540,000",
+            "₹100,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Initial Securities Premium = ₹500,000. Add: Premium on fresh issue (20,000 × ₹2) = ₹40,000. Total Securities Premium available = ₹540,000. Total premium on buy-back required = ₹800,000. Entire ₹540,000 of Securities Premium is utilized towards writing off buy-back premium, leaving a balance of ₹0. (The remaining ₹260,000 buyback premium will be written off against General Reserve).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Securities Premium Adjustment",
+            "Premium Write-off",
+            "Accounting Entries"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-12_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-12_02",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-12",
+          "subject": "Accounts",
+          "prompt": "What is the balance remaining in the General Reserve Account after making all required adjustments for buy-back and CRR creation?",
+          "options": [
+            "₹340,000",
+            "₹540,000",
+            "₹600,000",
+            "₹800,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Initial General Reserve = ₹800,000. Amount used for remaining premium on buy-back = ₹260,000 (since total premium was ₹800,000 and Securities Premium covered ₹540,000). Amount used for CRR transfer = ₹200,000. Balance remaining in General Reserve = ₹800,000 - ₹260,000 - ₹200,000 = ₹340,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "General Reserve Balance",
+            "Post-Buyback Reserves",
+            "Comprehensive Accounting"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-12_03",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "passage": "Kriti Ltd. is contemplating a buy-back of equity shares in June 2026. On reviewing its corporate records, the statutory auditor highlights the following issues:\n1. Kriti Ltd. holds 100% equity in S1 Ltd. It is proposed that S1 Ltd. will purchase 5% of Kriti Ltd.'s equity shares from the stock market on behalf of Kriti Ltd.\n2. Kriti Ltd. defaulted in repayment of interest on a bank term loan in 2022. The default was fully cleared with all penalties on 31st March 2023.\n3. Kriti Ltd. has failed to file its Financial Statements under Section 137 for the financial year ended 31st March 2025.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-12_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-12_03",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-12",
+          "subject": "Accounts",
+          "prompt": "Regarding Point 1 (purchase of shares through subsidiary S1 Ltd.), is this mode of buy-back permissible under the Companies Act, 2013?",
+          "options": [
+            "Yes, provided S1 Ltd. passes a special resolution",
+            "Yes, because S1 Ltd. is a wholly owned subsidiary",
+            "No, Section 70(1)(a) strictly prohibits buy-back through any subsidiary company including its own subsidiary",
+            "Yes, provided approval is taken from SEBI"
+          ],
+          "answerIndex": 2,
+          "explanation": "Section 70(1)(a) explicitly states that no company shall directly or indirectly purchase its own shares through any subsidiary company including its own subsidiary company.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Section 70",
+            "Subsidiary Buyback Prohibition",
+            "Statutory Restrictions"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-12_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-12_03",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-12",
+          "subject": "Accounts",
+          "prompt": "Regarding Point 2 (default in bank loan interest cleared on 31st March 2023), is Kriti Ltd. eligible to proceed with a buy-back in June 2026 under Section 70?",
+          "options": [
+            "No, because default once committed permanently debars the company from buy-back",
+            "Yes, because a period of 3 years has lapsed since the default ceased to exist on 31st March 2023",
+            "No, because 5 years must elapse from the date of default remedy",
+            "Yes, because interest defaults are exempted under Section 70"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the proviso to Section 70(1), the prohibition on buy-back does not apply if the default is remedied and a period of 3 years has lapsed after such default ceased to exist. From 31st March 2023 to June 2026, 3 years have completed.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 70 Proviso",
+            "Default Remedy Period",
+            "Three-Year Rule"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-12_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-12_03",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-12",
+          "subject": "Accounts",
+          "prompt": "Regarding Point 3 (failure to file Financial Statements under Section 137 for FY 2024-25), how does this affect Kriti Ltd.'s buy-back proposal in June 2026?",
+          "options": [
+            "It has no impact as long as tax returns are filed",
+            "Section 70(2) prohibits buy-back if default in Section 137 exists; Kriti Ltd. cannot buy back shares until rectified",
+            "Kriti Ltd. can buy back up to 10% under Board resolution despite default",
+            "Kriti Ltd. can proceed if it pays a penalty of ₹10,000 to ROC"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 70(2) specifies that no company shall buy back its shares if default is made in complying with Section 92, 123, 127, or 137. Thus, default under Section 137 debars the company.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 70(2)",
+            "Non-compliance Disqualification",
+            "Section 137 Default"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-12_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-12_03",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-12",
+          "subject": "Accounts",
+          "prompt": "What is the ultimate legal position regarding Kriti Ltd.'s proposal to buy back its equity shares in June 2026 in its present condition?",
+          "options": [
+            "Kriti Ltd. can proceed immediately as 3 years have passed since term loan default",
+            "Kriti Ltd. cannot proceed because of non-compliance with Section 137 and prohibition of buyback through subsidiary",
+            "Kriti Ltd. can proceed if it buys back directly and not through S1 Ltd.",
+            "Kriti Ltd. requires prior approval from NCLT to proceed"
+          ],
+          "answerIndex": 1,
+          "explanation": "Even though the term loan default 3-year cooling period has passed, Kriti Ltd. cannot proceed because (i) buyback through subsidiary S1 Ltd. is prohibited under Sec 70(1)(a), and (ii) default under Sec 137 is subsisting under Sec 70(2). Both must be rectified (buyback directly + file financial statements) before executing buyback.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Comprehensive Disqualification",
+            "Section 70 Compliance",
+            "Legal Conclusion"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-12_04",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "passage": "Apex Ltd. wants to buy back 100,000 equity shares of ₹10 each at par on 1st April 2025 out of its General Reserve ( balance ₹500,000). The buy-back is completed and shares extinguished on 5th April 2025.\nOn 1st October 2025 (6 months after buy-back), Apex Ltd. wants to execute two capital actions:\n1. Issue fully paid bonus shares in the ratio of 1 bonus share for every 2 equity shares using the Capital Redemption Reserve created during the buy-back.\n2. Make a fresh rights issue of equity shares of the same class to existing shareholders.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-12_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-12_04",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-12",
+          "subject": "Accounts",
+          "prompt": "By which date must Apex Ltd. complete the physical destruction/extinction of the 100,000 shares bought back on 1st April 2025?",
+          "options": [
+            "8th April 2025",
+            "12th April 2025",
+            "15th April 2025",
+            "30th April 2025"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 68(7) requires extinction and physical destruction of shares bought back within 7 days of the last date of completion of buy-back. If buy-back completed on 1st April, deadline is 8th April 2025.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Section 68(7)",
+            "Extinction Timeline",
+            "7-Day Rule"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-12_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-12_04",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-12",
+          "subject": "Accounts",
+          "prompt": "How much amount was transferred to the Capital Redemption Reserve (CRR) on 1st April 2025, and can CRR be utilized on 1st October 2025 for issuing fully paid bonus shares?",
+          "options": [
+            "CRR = ₹1,000,000; Yes, Section 69(2) explicitly allows CRR to be used for issuing fully paid bonus shares",
+            "CRR = ₹1,000,000; No, CRR cannot be used within 12 months of buy-back",
+            "CRR = ₹500,000; Yes, but only up to General Reserve balance",
+            "CRR = ₹0; Buy-back at par does not require CRR"
+          ],
+          "answerIndex": 0,
+          "explanation": "Nominal value of buy-back = 100,000 × ₹10 = ₹1,000,000. Transfer to CRR = ₹1,000,000. Under Section 69(2), CRR can be utilized for issuing fully paid bonus shares without any time barrier.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "CRR Creation",
+            "Section 69(2)",
+            "Bonus Share Issuance"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-12_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-12_04",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-12",
+          "subject": "Accounts",
+          "prompt": "Is the proposed fresh Rights Issue of equity shares on 1st October 2025 legally permissible under Section 68(8)?",
+          "options": [
+            "Yes, because 6 months have passed since 1st April 2025",
+            "No, because a 12-month prohibition applies to rights issues",
+            "Yes, because rights issues are exempt from the 6-month restriction under all circumstances",
+            "No, because rights issues require NCLT clearance post buyback"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 68(8) prohibits further issue of the same kind of shares within a period of six months. The buyback was on 1st April 2025; 6 months lapse on 1st October 2025. Hence, the rights issue proposed on 1st October 2025 is legally permissible.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 68(8)",
+            "Cooling-off Expiry",
+            "Rights Issue"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-12_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-12_04",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-12",
+          "subject": "Accounts",
+          "prompt": "What is the accounting entry passed when CRR is utilized to issue fully paid bonus shares?",
+          "options": [
+            "Debit Capital Redemption Reserve A/c; Credit Bonus to Shareholders A/c (and subsequently Debit Bonus to Shareholders A/c; Credit Equity Share Capital A/c)",
+            "Debit Equity Share Capital A/c; Credit Capital Redemption Reserve A/c",
+            "Debit General Reserve A/c; Credit Capital Redemption Reserve A/c",
+            "Debit Profit & Loss A/c; Credit Equity Share Capital A/c"
+          ],
+          "answerIndex": 0,
+          "explanation": "When bonus shares are issued out of CRR, the entries are: (1) Capital Redemption Reserve A/c Dr. To Bonus to Shareholders A/c; (2) Bonus to Shareholders A/c Dr. To Equity Share Capital A/c.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Bonus Share Entries",
+            "CRR Utilization",
+            "Journal Entries"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-12_05",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-12",
+      "subject": "Accounts",
+      "passage": "Titanium Ltd. presents the following Extract of Balance Sheet as on 31st March 2026:\n- Equity Share Capital (Shares of ₹10 each fully paid): ₹500,000\n- General Reserve: ₹200,000\n- Securities Premium: ₹100,000\n- Profit & Loss Account (Cr.): ₹100,000\n- Capital Reserve (realized in cash): ₹50,000\n- Infrastructure Development Reserve (Statutory Reserve): ₹80,000\n- Secured Loan (10% Debentures): ₹600,000\n- Unsecured Trade Payables & Short-term Loans: ₹200,000\n\nThe company plans to buy back 20% of its equity shares at ₹25 per share.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 12,
+        "chapterTitle": "Buyback of Securities"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-12_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-12_05",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-12",
+          "subject": "Accounts",
+          "prompt": "What is the total amount of 'Free Reserves' available for Section 68 buy-back capacity calculation (including Securities Premium)?",
+          "options": [
+            "₹400,000",
+            "₹450,000",
+            "₹530,000",
+            "₹300,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Free reserves under Section 68 include General Reserve (₹200,000) + P&L Cr. (₹100,000) + Securities Premium (₹100,000) = ₹400,000. Statutory reserve (Infrastructure Development Reserve) is not free. Capital reserve is generally excluded unless specifically allowed, but under standard Sec 68 rules, free reserves + securities premium = ₹400,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Free Reserves Computation",
+            "Section 68",
+            "Inclusions and Exclusions"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-12_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-12_05",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-12",
+          "subject": "Accounts",
+          "prompt": "What is the maximum aggregate buy-back expenditure allowed under the Shareholder Approval 25% Total Limit Test (25% of Paid-up Capital + Free Reserves)?",
+          "options": [
+            "₹225,000",
+            "₹125,000",
+            "₹200,000",
+            "₹180,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Paid-up Share Capital = ₹500,000. Free Reserves (including Securities Premium) = ₹400,000. Aggregate = ₹900,000. 25% of ₹900,000 = ₹225,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "25% Total Limit Test",
+            "Section 68",
+            "Maximum Buyback Limit"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-12_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-12_05",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-12",
+          "subject": "Accounts",
+          "prompt": "What is the minimum post-buyback Equity required to satisfy the 2:1 Debt-Equity ratio test?",
+          "options": [
+            "₹400,000",
+            "₹300,000",
+            "₹800,000",
+            "₹500,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Total Debt = Secured Debentures (₹600,000) + Unsecured Payables/Loans (₹200,000) = ₹800,000. Minimum post-buyback Equity required = Total Debt / 2 = ₹800,000 / 2 = ₹400,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Debt-Equity Ratio Test",
+            "Minimum Post-Buyback Equity",
+            "Section 68(2)(c)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-12_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-12_05",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-12",
+          "subject": "Accounts",
+          "prompt": "If Titanium Ltd. buys back 10,000 equity shares (20% of 50,000 shares) at ₹25 per share (Total cost = ₹250,000), does this proposed buy-back pass ALL statutory tests?",
+          "options": [
+            "Yes, it satisfies all tests",
+            "No, it fails the 25% total limit test because ₹250,000 exceeds maximum allowable ₹225,000",
+            "No, it fails the Debt-Equity test",
+            "No, because 20% buy-back cannot be made in a single year"
+          ],
+          "answerIndex": 1,
+          "explanation": "The maximum permitted outflow under 25% of (Capital + Free Reserves) is ₹225,000. Buying back 10,000 shares at ₹25 costs ₹250,000, which exceeds ₹225,000. Thus, it fails the Shareholder Approval 25% overall limit test.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Statutory Test Verification",
+            "Section 68 Compliance",
+            "Buyback Capacity"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

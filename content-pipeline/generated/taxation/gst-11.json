@@ -1,0 +1,1424 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "gst-11",
+  "subject": "Taxation",
+  "paper": "Paper 3: Taxation",
+  "module": "Module 2",
+  "chapterNumber": 11,
+  "chapterTitle": "Accounts and Records",
+  "generatedAt": "2026-08-16T14:32:55.050Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_gst-11_001",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "Where must a registered person maintain the books of accounts and other records under Section 35 of the CGST Act, 2017?",
+      "options": [
+        "At the principal place of business mentioned in the certificate of registration",
+        "At the registered office of the company anywhere outside India",
+        "At the residence of the managing director of the company",
+        "At any branch office, regardless of whether it is registered or not"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 35(1) of the CGST Act, 2017 mandates that every registered person shall keep and maintain all records at his principal place of business as mentioned in the certificate of registration. If more than one place of business is specified in the certificate, the accounts relating to each place of business shall be kept at such places of business.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Place of Maintenance",
+        "Section 35",
+        "Books of Accounts"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_002",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "For how many years must a registered person maintain books of accounts and records under Section 35(1) of the CGST Act, 2017?",
+      "options": [
+        "36 months from the due date of furnishing of annual return",
+        "72 months from the due date of furnishing of annual return",
+        "60 months from the end of the financial year",
+        "84 months from the end of the calendar year"
+      ],
+      "answerIndex": 1,
+      "explanation": "According to Section 35(1), books of accounts and other records must be retained until the expiry of seventy-two months (6 years) from the due date of furnishing of the annual return for the year pertaining to such accounts and records.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Retention Period",
+        "Section 35",
+        "Annual Return"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_003",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "What is the additional retention period for records in a case where an appeal or revision or proceedings are pending before any appellate authority or court?",
+      "options": [
+        "Until one year after final disposal of such appeal or proceedings",
+        "For a period of one year after final disposal of such appeal or proceedings, or until the expiry of the regular 72 months, whichever is later",
+        "For a period of two years after final disposal of such appeal",
+        "No additional period is required if 72 months have passed"
+      ],
+      "answerIndex": 1,
+      "explanation": "Proviso to Section 35(1) states that a registered person who is a party to an appeal or revision or any other proceedings before any appellate authority or court or is under investigation for an offence, shall retain the books of accounts pertaining to the subject matter for a period of one year after final disposal of such appeal/proceedings or until the expiry of seventy-two months, whichever is later.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Retention Period",
+        "Appeals",
+        "Proviso to Section 35"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_004",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "Which of the following specific records must a manufacturer maintain under Rule 56 of the CGST Rules, 2017?",
+      "options": [
+        "Monthly balance sheet and cash flow statements only",
+        "Monthly production accounts showing quantitative details of raw materials or services used and finished goods produced",
+        "Stock details of only imported goods",
+        "Details of all employees and their salaries"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 56(1) of the CGST Rules, 2017 requires every registered person to keep books of accounts. Specifically, manufacturers must maintain monthly production accounts showing quantitative details of raw materials or services used in manufacture and finished goods produced.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Manufacturer Records",
+        "Rule 56",
+        "Quantitative Details"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_005",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "What records must a stockist, broker, or agent dealing in goods maintain under the GST framework?",
+      "options": [
+        "Only bank statements and invoices",
+        "True and complete records of goods received and supplied, along with names and addresses of suppliers and buyers",
+        "Only tax invoices issued to final consumers",
+        "Annual audit reports"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Rule 56(3), every agent, broker, or stockist must maintain true and complete records of the quantity of goods received and supplied by them, along with the particulars of the suppliers and buyers.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Agent Records",
+        "Rule 56",
+        "Stockist"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_006",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "In what format must accounts and records be maintained and preserved under the GST provisions?",
+      "options": [
+        "Only in physical paper files bound with hard covers",
+        "Exclusively on cloud servers hosted within India",
+        "Either electronically or manually, provided that electronic records are backed up and accessible",
+        "Exclusively in handwritten ledgers authenticated by a Chartered Accountant"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 35(1) read with Rule 56 permits the maintenance of books of accounts and other records in electronic form or manually. If maintained electronically, they must be authenticated by way of digital signature and proper backup mechanisms must be in place.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Electronic Records",
+        "Section 35",
+        "Authentication"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_007",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "What responsibility is cast upon a registered person maintaining electronic records if called upon by a proper officer?",
+      "options": [
+        "To courier the entire server to the GST office",
+        "To provide the details of passwords, access codes, and files in hard copy or readable format along with a signed certification",
+        "To allow the officer to change the encryption keys",
+        "To print all records and get them notarized"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 57(2) stipulates that the person maintaining electronic records shall produce, on demand, the relevant files, passwords, access codes and numbers, and hard copies of the records as required by the proper officer.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Electronic Records",
+        "Rule 57",
+        "Production of Records"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_008",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "Who is required to maintain a stock register showing receipts, supplies, losses, and balance of goods under Rule 56(4)?",
+      "options": [
+        "Only government undertakings",
+        "Every registered person",
+        "Only composition taxpayers",
+        "Only persons having turnover exceeding Rs. 100 crores"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 56(4) mandates that every registered person shall keep a true and correct account of stock in respect of goods received and supplied by him, including inventories, receipts, dispatches, wastage, and shortage.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Stock Register",
+        "Rule 56",
+        "Inventory"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_009",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "Under Section 35(2), if a registered person fails to maintain accounts and records as specified, what action can the Commissioner or officer authorized take regarding goods?",
+      "options": [
+        "Impose a penalty of Rs. 10,000 only",
+        "Determine the amount of tax payable on goods unaccounted for as if such goods had been supplied by him",
+        "Cancel the registration without any show-cause notice",
+        "Auction the entire factory immediately"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 35(2) provides that where the registered person fails to account for the goods or services in accordance with the provisions, the proper officer shall determine the amount of tax payable on the goods or services that are not accounted for, as if such goods or services had been supplied by such person.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 35(2)",
+        "Unaccounted Goods",
+        "Tax Determination"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_010",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "What additional records must a godown or warehouse keeper or owner of a transport agency maintain, even if not registered?",
+      "options": [
+        "Only balance sheets of their business",
+        "Records of the consigner, consignee, and other relevant details of goods transported, stored, or delivered",
+        "Income tax returns of all clients",
+        "Audited financial statements for the past 10 years"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 35(2) and Rule 58 mandate that every owner or operator of warehouse or godown or any other place used for storage of goods and every transporter, irrespective of whether he is a registered person or not, shall maintain records of consigner, consignee, and goods stored or transported.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Transporter Records",
+        "Warehouse Keeper",
+        "Section 35"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_011",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "When must transporters and warehouse operators enroll or register on the GST portal if they are not otherwise registered under GST?",
+      "options": [
+        "Within 30 days of starting operations",
+        "They are required to enroll and obtain a unique enrollment number in FORM GST ENR-01",
+        "They must obtain a regular GSTIN in all states",
+        "Enrollment is completely voluntary with no form requirement"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 58 states that persons engaged in transporting goods or operating warehouses, if not registered under GST, shall maintain records and submit an application in FORM GST ENR-01 on the common portal to obtain a unique enrollment number.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "ENR-01",
+        "Transporter Enrollment",
+        "Rule 58"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_012",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "What details regarding Input Tax Credit (ITC) must a registered person maintain in their books of accounts under Rule 56?",
+      "options": [
+        "Only the total ITC claimed in the annual return",
+        "Monthly accounts showing input tax credit availed, utilized, and balance",
+        "Bank certificates of ITC payment",
+        "Only the ITC pertaining to capital goods"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 56(2) requires every registered person to keep books of accounts including records of input tax credit availed, utilized, and the balance of ITC available.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "ITC Records",
+        "Rule 56",
+        "Books of Accounts"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_013",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "Who is required to get their accounts audited by a Chartered Accountant or Cost Accountant under Section 35(5) of the CGST Act?",
+      "options": [
+        "Every registered person with turnover exceeding Rs. 2 crores",
+        "All registered persons",
+        "Section 35(5) requiring mandatory GST audit by a CA/CMA has been omitted, and registered persons now submit an Annual Return along with a self-certified Reconciliation Statement (GSTR-9C)",
+        "Only companies registered under the Companies Act, 2013"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 35(5) which mandated GST audit by a Chartered Accountant or Cost Accountant was omitted by the Finance Act, 2021. Registered persons now furnish an annual return in GSTR-9 along with a self-certified reconciliation statement in GSTR-9C under Section 44.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "GST Audit",
+        "Section 35(5)",
+        "Omission",
+        "GSTR-9C"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_014",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "Under Rule 56(11), if a registered person has multiple places of business, where should the accounts relating to each place be kept?",
+      "options": [
+        "At the head office only",
+        "At the respective place of business mentioned in the certificate of registration",
+        "Anywhere within the home state",
+        "At the office of their principal tax consultant"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 56(11) specifies that books of accounts relating to multiple places of business shall be kept at such respective places of business as mentioned in the certificate of registration.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Multiple Places of Business",
+        "Rule 56",
+        "Maintenance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_015",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "Which of the following records must be maintained regarding tax invoice, debit note, and credit note under Rule 56?",
+      "options": [
+        "Only outward invoices issued",
+        "Full details of tax invoices, bills of supply, delivery challans, credit notes, and debit notes issued and received",
+        "Only copies of invoices exceeding Rs. 50,000",
+        "Invoices received from unregistered persons only"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 56(1) requires maintenance of accounts of all goods and services supplied, including invoices, bills of supply, debit notes, credit notes, and delivery challans issued or received.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Invoices",
+        "Rule 56",
+        "Debit/Credit Notes"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_016",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "If a registered person destroys or misplaces their electronic records, can they plead defense that the computer crashed?",
+      "options": [
+        "Yes, system crashes exempt the person from maintaining records",
+        "No, maintaining backup and ensuring safety and recoverability of electronic records is the statutory responsibility of the registered person",
+        "Yes, if reported to the police within 24 hours",
+        "Only if the server was located outside India"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 57 mandates that the person maintaining electronic records must produce them on demand and ensure proper backups. Failure to maintain or produce records due to system failure without backup does not absolve the taxpayer from statutory penalties.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Electronic Records",
+        "Rule 57",
+        "Backup"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_017",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "What is the consequence if a registered person fails to maintain books of accounts as required under Section 35?",
+      "options": [
+        "Only a warning letter is issued",
+        "General penalty provisions under Section 125 may apply along with tax determination on unaccounted goods under Section 35(2)",
+        "Automatic imprisonment for 5 years",
+        "Suspension of bank accounts by the RBI"
+      ],
+      "answerIndex": 1,
+      "explanation": "Failure to maintain books of accounts attracts general penalties under Section 125 of the CGST Act, and the proper officer can also invoke Section 35(2) to determine tax on unaccounted goods/services.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Penalty",
+        "Section 125",
+        "Non-compliance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_018",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "Are the accounts maintained by a registered person open to inspection by GST officers?",
+      "options": [
+        "No, inspection requires a court warrant",
+        "Yes, upon authorization by an officer not below the rank of Joint Commissioner",
+        "Only during the annual filing period",
+        "Only if the taxpayer consents in writing"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 67 of the CGST Act, proper officers authorized by the Commissioner (not below the rank of Joint Commissioner) can inspect places of business and examine books of accounts and records.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Inspection",
+        "Section 67",
+        "Powers of Officer"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_019",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "What particulars must be maintained regarding 'advance payments' received or made by a registered person?",
+      "options": [
+        "Advance payments are not required to be recorded in GST books",
+        "Full details of advances received, adjustments made against supplies, and advance payments made to suppliers",
+        "Only advances received in foreign currency",
+        "Only advances exceeding Rs. 10 lakhs"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 56(1) explicitly requires maintaining accounts of advances received and paid, along with adjustments made against invoices, as tax liability on advances for services (and earlier goods) requires proper tracking.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Advances",
+        "Rule 56",
+        "Tax Records"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_020",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "Can a registered person maintain records at a place other than the principal place of business?",
+      "options": [
+        "No, never",
+        "Yes, if an additional place of business is declared in the registration certificate or if approved by the Commissioner for specific accounts",
+        "Yes, anywhere in the world without notification",
+        "Only if the turnover is below Rs. 40 lakhs"
+      ],
+      "answerIndex": 1,
+      "explanation": "Records must be kept at the principal place of business and additional place(s) of business mentioned in the registration certificate. If records are maintained at multiple places, they must correspond to those specific registered locations.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Place of Business",
+        "Additional Place",
+        "Section 35"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_021",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "What specific records must a works contract service provider maintain under Rule 56?",
+      "options": [
+        "Names and addresses of all sub-contractors, property owners, and details of payment, materials consumed, and invoices raised",
+        "Only architectural blueprints",
+        "Only municipal corporation approvals",
+        "Balance sheet of the building owner"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 56(13) mandates that a works contract supplier shall keep separate accounts for each works contract showing names and addresses of employers, suppliers, sub-contractors, description, value, and quantity of goods or services used.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Works Contract",
+        "Rule 56(13)",
+        "Specific Records"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_022",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "Is a transporter required to maintain records of goods even if the goods are exempt from GST?",
+      "options": [
+        "No, exempt goods need no documentation",
+        "Yes, transporters and warehouse keepers must maintain records of all goods transported or stored, regardless of taxability",
+        "Only if the value exceeds Rs. 50,000",
+        "Only if requested by the transporter association"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 35(2) and Rule 58 apply to transporters and warehouse operators for all goods handled by them, irrespective of whether the goods are taxable or exempt from GST.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Transporter",
+        "Exempt Goods",
+        "Section 35(2)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_023",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "What is the consequence of failing to produce electronic records in readable format when demanded by a proper officer?",
+      "options": [
+        "The officer will print them free of cost",
+        "It is treated as non-compliance, inviting penal action for failure to maintain/produce records",
+        "The taxpayer gets an automatic 30-day extension",
+        "The records are permanently deleted from the portal"
+      ],
+      "answerIndex": 1,
+      "explanation": "Failure to produce electronic records, access codes, and passwords on demand violates Rule 57 and attracts penalties under the provisions of the CGST Act.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Electronic Records",
+        "Rule 57",
+        "Non-compliance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_024",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "Which of the following persons is NOT specifically mentioned under Section 35(1) to maintain books of accounts?",
+      "options": [
+        "A registered person",
+        "A custodian of goods who is not a registered person",
+        "A clearing and forwarding agent",
+        "An unregistered individual buying goods for personal consumption"
+      ],
+      "answerIndex": 3,
+      "explanation": "Unregistered individuals buying goods for personal consumption are final consumers and do not carry on business; hence, they have no statutory obligation to maintain books of accounts under Section 35.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 35",
+        "Applicability",
+        "Personal Consumption"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_025",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "If records are maintained in electronic form, who must authenticate them?",
+      "options": [
+        "Any employee of the company",
+        "The registered person or an authorized representative using a digital signature",
+        "The jurisdictional GST Inspector",
+        "A statutory auditor"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 57 requires that electronic records must be authenticated by way of digital signature by the registered person or their authorized representative.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Authentication",
+        "Rule 57",
+        "Digital Signature"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_026",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "What details regarding outward supplies must be kept in the accounts under Rule 56?",
+      "options": [
+        "Total sales figure for the year only",
+        "Invoices, debit notes, credit notes, statements of outward supplies, and tax collected and paid",
+        "Only cash sales records",
+        "Only B2B export supplies"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 56(2) requires maintaining accounts of goods and services imported or exported, and supplies foothills/outward supplies along with tax charged.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Outward Supplies",
+        "Rule 56",
+        "Invoices"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_027",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "How should a registered person handle corrections or alterations made in manual books of accounts?",
+      "options": [
+        "Correction fluid must be used to erase the wrong entry",
+        "Incorrect entry should be scored out under signature, and the correct entry recorded, preserving audit trail",
+        "Pages containing errors should be torn out",
+        "No corrections are allowed under any circumstances"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 56(5) mandates that manual accounts, registers, and documents shall be maintained sequentially, and any entry shall not be erased, obliterated, or scraped. Corrections should be made properly with initials.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Manual Records",
+        "Rule 56(5)",
+        "Corrections"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_028",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "Under Rule 56, what records must be maintained by an owner or operator of a hotel regarding accommodation?",
+      "options": [
+        "Names and addresses of guests, arrival and departure dates, and room tariff charged",
+        "Only food and beverage sales",
+        "Only electricity consumption bills",
+        "Only employee attendance registers"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 56(7) requires owners or operators of hotels, inns, guest houses, clubs, or similar places to maintain accounts containing details of guests staying, including names and addresses, duration of stay, and room tariff.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Hotel Records",
+        "Rule 56(7)",
+        "Specific Industry"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_029",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "What is the prescribed retention period for accounts and records if an assessment year is under scrutiny for fraud, suppression, or wilful misstatement?",
+      "options": [
+        "72 months from the due date of annual return",
+        "Up to 72 months, but extended if proceedings/appeals are pending or investigation for an offence is active",
+        "10 years from the end of the calendar year",
+        "Permanent retention"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under the proviso to Section 35(1), when proceedings/appeals or investigations for an offence are active, records must be retained for one year after final disposal or 72 months, whichever is later.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Retention Period",
+        "Investigation",
+        "Fraud"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-11_030",
+      "kind": "normal",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "prompt": "Which authority has the power to notify a class of taxable persons to maintain additional records under Section 35(1)?",
+      "options": [
+        "The State GST Commissioner alone",
+        "The Government on the recommendations of the GST Council",
+        "The jurisdictional Superintendent of Central Tax",
+        "The Comptroller and Auditor General of India (CAG)"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 35(1) empowers the Government, on the recommendations of the GST Council, to notify a class of taxable persons to maintain any additional records or accounts as specified.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 35(1)",
+        "Government Powers",
+        "GST Council"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_gst-11_01",
+      "kind": "scenario",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "passage": "M/s Apex Traders, a registered taxpayer under GST in Mumbai, deals in electronic appliances. They have a principal place of business in Andheri and an additional warehouse in Bhiwandi. Due to expansion, they switch from manual ledgers to an Enterprise Resource Planning (ERP) software for maintaining electronic records. The due date for furnishing the annual return for FY 2023-24 was 31st December 2024.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-11_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-11_01",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-11",
+          "subject": "Taxation",
+          "prompt": "Until what date must M/s Apex Traders mandatorily retain their books of accounts and records for FY 2023-24 under Section 35(1)?",
+          "options": [
+            "31st December 2029",
+            "31st December 2030",
+            "31st March 2030",
+            "31st December 2031"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 35(1) requires records to be retained for 72 months (6 years) from the due date of furnishing the annual return. Since the due date is 31st December 2024, 72 months expire on 31st December 2030.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Retention Period",
+            "Section 35",
+            "Annual Return"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-11_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-11_01",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-11",
+          "subject": "Taxation",
+          "prompt": "Where must M/s Apex Traders keep the accounts pertaining to their Bhiwandi warehouse?",
+          "options": [
+            "Exclusively at their corporate head office in Delhi",
+            "At the Bhiwandi warehouse if specified as an additional place of business in the registration certificate",
+            "At the residence of the accountant in Mumbai",
+            "Anywhere in the State of Maharashtra without registration declaration"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 35(1) and Rule 56(11), accounts relating to each place of business must be kept at such respective place of business mentioned in the certificate of registration.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Place of Business",
+            "Warehouse",
+            "Rule 56"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-11_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-11_01",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-11",
+          "subject": "Taxation",
+          "prompt": "Since M/s Apex Traders maintain electronic records on ERP software, what is their statutory obligation when demanded by a proper officer?",
+          "options": [
+            "To allow the officer to delete unwanted files",
+            "To produce the relevant files, passwords, access codes, and hard copies as required",
+            "To provide physical handwritten copies of all ERP entries",
+            "To purchase a new server for the GST department"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 57(2) stipulates that the person maintaining electronic records shall produce passwords, access codes, and files on demand by the proper officer.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Electronic Records",
+            "Rule 57",
+            "Access Codes"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-11_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-11_01",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-11",
+          "subject": "Taxation",
+          "prompt": "Suppose an investigation for an offence under GST is initiated against M/s Apex Traders for FY 2023-24, and proceedings are pending on 31st December 2030. When does their record retention obligation end?",
+          "options": [
+            "31st December 2030 itself",
+            "One year after the final disposal of such proceedings or 31st December 2030, whichever is later",
+            "Immediately upon the start of investigation",
+            "After 10 years from the financial year end"
+          ],
+          "answerIndex": 1,
+          "explanation": "Proviso to Section 35(1) dictates that if proceedings or investigations are pending, records must be retained for one year after final disposal of such proceedings or until the expiry of 72 months, whichever is later.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Retention Period",
+            "Investigation",
+            "Proviso to Section 35"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-11_02",
+      "kind": "scenario",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "passage": "Shreeji Transport Agency operates a fleet of trucks transporting goods across multiple states, but is not registered as a taxable supplier under GST. They store goods temporarily in transit godowns located in Gujarat. The proper officer during a verification drive requests Shreeji Transport Agency to produce records of consignments handled during the past quarter.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-11_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-11_02",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-11",
+          "subject": "Taxation",
+          "prompt": "Is Shreeji Transport Agency legally required to maintain records of goods despite not being a registered taxable person?",
+          "options": [
+            "No, only registered persons under Section 22/24 must maintain records",
+            "Yes, under Section 35(2) and Rule 58, transporters and godown owners must maintain records of consigner, consignee, and goods",
+            "Only if their annual turnover exceeds Rs. 20 crores",
+            "Only if they cross state borders"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 35(2) and Rule 58 mandate that transporters, warehouse keepers, and godown owners must maintain records of goods transported, stored, or delivered, irrespective of whether they are registered taxpayers.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Transporter Records",
+            "Section 35(2)",
+            "Rule 58"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-11_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-11_02",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-11",
+          "subject": "Taxation",
+          "prompt": "What registration/enrollment requirement applies to Shreeji Transport Agency on the GST portal if they are not registered under GST?",
+          "options": [
+            "They must obtain a regular GSTIN in Gujarat",
+            "They must enroll and obtain a unique enrollment number in FORM GST ENR-01",
+            "They must register under the Shops and Establishment Act only",
+            "No portal interaction is required"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 58 specifies that transporters not registered under GST shall submit an application in FORM GST ENR-01 on the common portal to obtain a unique enrollment number.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "ENR-01",
+            "Transporter Enrollment",
+            "Rule 58"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-11_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-11_02",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-11",
+          "subject": "Taxation",
+          "prompt": "What specific details must Shreeji Transport Agency maintain in their transport records?",
+          "options": [
+            "Only vehicle maintenance bills and diesel receipts",
+            "Full details of goods transported, including consigner, consignee, delivery status, and vehicle numbers",
+            "Income tax PAN of all drivers",
+            "Balance sheet of the transport owner"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Rule 58, transporters must maintain records of goods transported, delivered, or stored in transit, including particulars of consigner and consignee.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Transporter Records",
+            "Rule 58",
+            "Consignee Details"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-11_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-11_02",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-11",
+          "subject": "Taxation",
+          "prompt": "If Shreeji Transport Agency fails to maintain records as required under Section 35(2), what is the implication?",
+          "options": [
+            "They are immune since they are uninvited transporters",
+            "They may face penalties and liability under GST provisions applicable to non-maintenance of records",
+            "Their trucks will be gifted to the government",
+            "They only receive a verbal warning from the inspector"
+          ],
+          "answerIndex": 1,
+          "explanation": "Failure by transporters or godown keepers to maintain prescribed records attracts penal consequences under the CGST Act provisions.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Penalties",
+            "Transporter Non-compliance",
+            "Section 35"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-11_03",
+      "kind": "scenario",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "passage": "M/s BuildWell Engineers, a registered works contractor in Karnataka, undertakes construction of commercial complexes. They engage multiple sub-contractors for electrical, plumbing, and structural works. During an audit by tax authorities, the proper officer asks for contract-wise accounts and details of materials supplied and consumed at various project sites.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-11_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-11_03",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-11",
+          "subject": "Taxation",
+          "prompt": "Under Rule 56(13), what specific accounting obligation is placed on M/s BuildWell Engineers as a works contractor?",
+          "options": [
+            "To maintain a single consolidated bank account statement",
+            "To keep separate accounts for each works contract showing names/addresses of employers, suppliers, sub-contractors, and materials used",
+            "To audit only the profit and loss account of the head office",
+            "To maintain records only for completed contracts"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 56(13) mandates that a works contractor shall keep separate accounts for each works contract showing details of employers, sub-contractors, and quantities/values of goods or services used.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Works Contract",
+            "Rule 56(13)",
+            "Contract-wise Accounts"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-11_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-11_03",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-11",
+          "subject": "Taxation",
+          "prompt": "Must M/s BuildWell Engineers maintain records of goods received from sub-contractors at project sites?",
+          "options": [
+            "No, sub-contractors maintain their own records",
+            "Yes, true and correct records of goods received and supplied, including wastage and shortage at each site, must be maintained",
+            "Only if the value exceeds Rs. 1 crore per site",
+            "Only if requested by the local municipality"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 56 requires every registered person, including contractors, to maintain stock accounts and records of inputs received, issued, and stock balances at each operational site.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Stock Records",
+            "Rule 56",
+            "Site Inventory"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-11_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-11_03",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-11",
+          "subject": "Taxation",
+          "prompt": "If M/s BuildWell Engineers fail to account for certain construction materials found at a project site during inspection, how can the proper officer proceed under Section 35(2)?",
+          "options": [
+            "Ignore the discrepancy if total turnover is high",
+            "Determine the amount of tax payable on such unaccounted goods as if supplied by them",
+            "Order immediate demolition of the building",
+            "Suspend the GST registration of the project land owner"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 35(2) empowers the proper officer to determine tax on unaccounted goods or services as if they had been supplied by the registered person.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 35(2)",
+            "Unaccounted Goods",
+            "Tax Determination"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-11_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-11_03",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-11",
+          "subject": "Taxation",
+          "prompt": "Where should M/s BuildWell Engineers maintain the site-specific accounts for an ongoing project located in Mysore, given their principal place of business is in Bengaluru?",
+          "options": [
+            "Only at the Bengaluru head office",
+            "At the respective project site in Mysore if registered as an additional place of business, or at the principal place of business",
+            "At the residence of the site engineer",
+            "At the bank locker in Mysore"
+          ],
+          "answerIndex": 1,
+          "explanation": "Accounts relating to each place of business (including project sites registered as additional places of business) must be kept at such places as mentioned in the registration certificate.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Place of Business",
+            "Project Sites",
+            "Rule 56(11)"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-11_04",
+      "kind": "scenario",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "passage": "M/s GreenLeaf Hospitality Ltd. operates a luxury hotel and resort in Udaipur, Rajasthan. The hotel provides accommodation, restaurant services, and banqueting facilities. They maintain their guest registers and billing records electronically through a specialized hotel management software, authenticated by digital signature.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-11_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-11_04",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-11",
+          "subject": "Taxation",
+          "prompt": "What specific records must M/s GreenLeaf Hospitality Ltd. maintain under Rule 56(7) regarding hotel operations?",
+          "options": [
+            "Names and addresses of guests, arrival/departure dates, and room tariff charged",
+            "Only kitchen grocery purchase bills",
+            "Only employee salary and tip registers",
+            "Only utility consumption bills"
+          ],
+          "answerIndex": 0,
+          "explanation": "Rule 56(7) requires owners or operators of hotels and inns to maintain accounts containing details of guests staying, including names and addresses, duration of stay, and room tariffs.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Hotel Records",
+            "Rule 56(7)",
+            "Specific Industry"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-11_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-11_04",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-11",
+          "subject": "Taxation",
+          "prompt": "Since M/s GreenLeaf Hospitality Ltd. uses electronic hotel management software, what must they ensure regarding authentication of records under Rule 57?",
+          "options": [
+            "Records must be printed on paper and signed by hand daily",
+            "Electronic records must be authenticated by way of digital signature",
+            "Records must be uploaded to the Prime Minister's portal",
+            "No authentication is required for software data"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 57 mandates that electronic records maintained by a registered person must be authenticated by way of digital signature.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Electronic Records",
+            "Rule 57",
+            "Digital Signature"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-11_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-11_04",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-11",
+          "subject": "Taxation",
+          "prompt": "If a tax officer inspects the hotel and demands the electronic guest logs and access codes, what is the hotel's legal duty?",
+          "options": [
+            "To refuse access citing guest privacy",
+            "To produce the relevant files, passwords, access codes, and hard copies on demand",
+            "To ask the officer to return with a court order",
+            "To encrypt the data permanently"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 57(2) requires the person maintaining electronic records to produce files, passwords, access codes, and hard copies on demand by the proper officer.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Electronic Records",
+            "Rule 57",
+            "Inspection"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-11_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-11_04",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-11",
+          "subject": "Taxation",
+          "prompt": "For how long must M/s GreenLeaf Hospitality Ltd. preserve their hotel guest ledgers and restaurant tax invoices for FY 2024-25, assuming the annual return due date is 31st December 2025?",
+          "options": [
+            "Until 31st December 2028",
+            "Until 31st December 2031",
+            "Permanent preservation",
+            "Until 31st March 2028"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 35(1), records must be retained for 72 months from the due date of filing the annual return. 31st December 2025 plus 72 months (6 years) equals 31st December 2031.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Retention Period",
+            "Section 35",
+            "Hotel Records"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-11_05",
+      "kind": "scenario",
+      "chapterId": "gst-11",
+      "subject": "Taxation",
+      "passage": "M/s Zenith Distributors is a partnership firm acting as a clearing and forwarding (C&F) agent for various manufacturers in Chennai, Tamil Nadu. They receive goods from principals, store them in godowns, and dispatch them to buyers based on delivery orders. They maintain manual stock registers and issue delivery challans for movement of goods.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 11,
+        "chapterTitle": "Accounts and Records"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-11_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-11_05",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-11",
+          "subject": "Taxation",
+          "prompt": "What specific records must M/s Zenith Distributors maintain as an agent/stockist under Rule 56(3)?",
+          "options": [
+            "Only income tax returns of principals",
+            "True and complete records of goods received and supplied on behalf of every principal, including particulars of principals and buyers",
+            "Only bank reconciliation statements",
+            "Only transport lorry receipts"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 56(3) mandates that every agent, broker, or stockist must maintain true and complete records of the quantity of goods received and supplied on behalf of every principal.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Agent Records",
+            "Rule 56(3)",
+            "Principal-Agent"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-11_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-11_05",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-11",
+          "subject": "Taxation",
+          "prompt": "How should M/s Zenith Distributors handle corrections or rectifications in their manual stock registers under Rule 56(5)?",
+          "options": [
+            "Use correction fluid or erase entries completely",
+            "Ensure entries are not erased or overwritten; any correction must be authenticated under signature preserving the audit trail",
+            "Tear out pages containing errors and rewrite the register",
+            "No corrections are ever permitted under GST"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 56(5) specifies that manual accounts and registers shall not be erased, obliterated, or scraped, and corrections must be made properly with initials/signatures.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Manual Records",
+            "Rule 56(5)",
+            "Corrections"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-11_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-11_05",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-11",
+          "subject": "Taxation",
+          "prompt": "If M/s Zenith Distributors store goods in a separate godown in Tiruvallur, where must the accounts of goods stored in that godown be kept?",
+          "options": [
+            "At the principal place of business in Chennai only",
+            "At the Tiruvallur godown if declared as an additional place of business",
+            "At the residence of the managing partner",
+            "Anywhere outside Tamil Nadu"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 56(11) requires that books of accounts relating to each place of business (including additional places like godowns) shall be kept at such respective place of business mentioned in the registration certificate.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Place of Business",
+            "Godown",
+            "Rule 56(11)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-11_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-11_05",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-11",
+          "subject": "Taxation",
+          "prompt": "What action can the proper officer take if M/s Zenith Distributors fail to account for goods received from a principal during a stock audit?",
+          "options": [
+            "Levy a flat fine of Rs. 1,000",
+            "Determine tax payable on the unaccounted goods as if supplied by M/s Zenith Distributors",
+            "Transfer the agency license to another firm",
+            "Imprison the partners without trial"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 35(2) provides that if a registered person fails to account for goods or services, the proper officer shall determine the tax payable on such unaccounted goods as if supplied by the registered person.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 35(2)",
+            "Unaccounted Goods",
+            "Tax Determination"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "corporate-laws-8",
+  "subject": "Law",
+  "paper": "Paper 2: Corporate and Other Laws",
+  "module": "Module 2",
+  "chapterNumber": 8,
+  "chapterTitle": "Declaration and Payment of Dividend",
+  "generatedAt": "2026-08-16T14:13:12.054Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_corporate-laws-8_001",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "According to Section 123 of the Companies Act, 2013, out of which of the following funds can a company declare dividend for any financial year?",
+      "options": [
+        "Free reserves of the company",
+        "Revaluation reserve created out of revaluation of assets",
+        "Unrealized gains arising from fair value accounting of financial instruments",
+        "Capital reserve created by forfeiture of shares"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 123(1) permits dividend to be declared or paid out of the profits of the company for that year arrived at after providing for depreciation, or out of the profits of any previous financial year(s) and remaining undistributed, or out of both, or out of free reserves. Reserves created out of revaluation and unrealized gains are explicitly excluded.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 123",
+        "Sources of Dividend",
+        "Free Reserves"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_002",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "Before declaring any dividend for a financial year, what is the mandatory requirement regarding depreciation under Section 123?",
+      "options": [
+        "Depreciation must be provided in accordance with Schedule II of the Companies Act, 2013",
+        "Depreciation can be ignored if the company has accumulated losses",
+        "Depreciation needs to be provided only if the Board of Directors passes a special resolution",
+        "Depreciation may be calculated as per Income Tax Act rates"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 123(1) explicitly mandates that dividend shall be declared or paid only after providing for depreciation in accordance with the provisions of Schedule II of the Companies Act, 2013.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 123",
+        "Depreciation",
+        "Schedule II"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_003",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "Can a company transfer a higher percentage of its profits to reserves than what is statutorily required before declaring a dividend?",
+      "options": [
+        "Yes, a company may, voluntarily, transfer such percentage of its profits to reserves as it may think fit before the declaration of any dividend.",
+        "No, the Act caps the voluntary transfer at a maximum of 5% of profits.",
+        "No, transfer to reserves is strictly prohibited under the new scheme unless approved by the Central Government.",
+        "Yes, but it requires prior approval of the Securities and Exchange Board of India (SEBI) in all cases."
+      ],
+      "answerIndex": 0,
+      "explanation": "As per the proviso to Section 123(1), a company may, before the declaration of any dividend in any financial year, transfer such percentage of its profits for that financial year as it may consider appropriate to the reserves of the company. Voluntary transfer is not restricted.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 123",
+        "Reserves",
+        "Voluntary Transfer"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_004",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "Within how many days from the date of declaration must the declared dividend be deposited in a scheduled bank in a separate account, as per Section 123?",
+      "options": [
+        "Within 5 days",
+        "Within 7 days",
+        "Within 10 days",
+        "Within 30 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 123(4) requires that the amount of dividend, including interim dividend, shall be deposited in a scheduled bank in a separate account within 5 days from the date of declaration of such dividend. Wait, let me double check: Section 123(4) specifies 'within five days'. Ah, let me verify. Section 123(4) says 'within 5 days'. Let me adjust option B to option A or correct the answer. Section 123(4): 'The amount of the dividend, including interim dividend, shall be deposited in a scheduled bank in a separate account within five days from the date of declaration of such dividend.' So 5 days is correct.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 123",
+        "Separate Bank Account",
+        "Timeline"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_005",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "What is the consequence under Section 127 if a company fails to pay the declared dividend within 30 days of declaration, provided the default is not due to any operation of law?",
+      "options": [
+        "Every director of the company shall be punishable with imprisonment up to 2 years and fine, and the company shall pay simple interest at the rate of 18% per annum during the period such default continues.",
+        "Only a monetary penalty of Rs. 1 lakh is levied on the company with no officer liability.",
+        "The dividend stands automatically cancelled and reverts to the company's profit and loss account.",
+        "The company is wound up compulsorily by the National Company Law Tribunal."
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 127 prescribes penalties for failure to pay dividend within 30 days: every director who is knowingly a party to the default shall be punishable with imprisonment up to 2 years and with fine which shall not be less than Rs. 1,000 for every day during which default continues, and the company shall be liable to pay simple interest at 18% per annum during the period of default.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 127",
+        "Default in Dividend",
+        "Penalties"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_006",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "Under Rule 3 of the Companies (Declaration and Payment of Dividend) Rules, 2014, if adequate profits are not available in any financial year, dividend can be declared out of accumulated profits (reserves), subject to which of the following conditions?",
+      "options": [
+        "The rate of dividend shall not exceed the average of the rates at which dividend was declared by it in the three years immediately preceding that year.",
+        "The rate of dividend shall not exceed 50% of the paid-up share capital.",
+        "Reserves drawn down shall be replenished within the next financial year mandatorily.",
+        "The company must distribute 100% of its accumulated reserves."
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 3 of the Dividend Rules specifies that when profits are inadequate, the total amount to be drawn from accumulated profits shall not exceed 10% of the sum of its paid-up share capital and free reserves, and the rate of dividend declared shall not exceed the average of the rates at which dividend was declared in the 3 immediately preceding years.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rule 3",
+        "Inadequate Profits",
+        "Accumulated Reserves"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_007",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "As per Rule 3 of the Companies (Declaration and Payment of Dividend) Rules, 2014, what is the maximum percentage of paid-up capital and free reserves that can be drawn from accumulated profits when current profits are inadequate?",
+      "options": [
+        "5%",
+        "10%",
+        "15%",
+        "20%"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 3(1)(iv) states that the total amount to be drawn from the accumulated profits earned in previous years and transferred to the reserves shall not exceed an amount equal to 10% of the sum of its paid-up share capital and free reserves as appearing in the latest audited financial statement.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Rule 3",
+        "Drawal from Reserves",
+        "Percentage Limit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_008",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "According to Rule 3, what is the mandatory pre-condition regarding past losses before drawing from accumulated reserves to declare a dividend in a year of inadequate profits?",
+      "options": [
+        "The balance of reserves after such drawal shall first be utilized to set off any remaining past losses.",
+        "The current year's loss, if any, shall first be set off against the profit of the previous years before drawing from reserves.",
+        "Past losses must be carried forward and cannot be adjusted against accumulated reserves.",
+        "The company must write off all intangible assets before drawing from reserves."
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 3(1) specifies that the company shall first utilize the profit of the current financial year for setting off against the loss, if any, incurred in the financial year before drawing from accumulated profits to declare a dividend.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rule 3",
+        "Set-off of Losses",
+        "Inadequate Profits"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_009",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "Where must an unpain or unclaimed dividend be transferred by a company after the expiry of 30 days from the date of declaration?",
+      "options": [
+        "To a special unpaid dividend account opened in any scheduled bank within 7 days from the expiry of the 30 days.",
+        "Back to the general profit and loss account of the company.",
+        "To the Investor Education and Protection Fund (IEPF) immediately on the 31st day.",
+        "To the Central Government treasury within 15 days."
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 124(1) mandates that if a dividend has been declared by a company but has not been paid or claimed within 30 days from the date of the declaration, the company shall, within 7 days from the date of expiry of the said 30 days, transfer the total amount of unpaid or unclaimed dividend to a special account to be opened in that behalf in any scheduled bank called the 'Unpaid Dividend Account'.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 124",
+        "Unpaid Dividend Account",
+        "Timeline"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_010",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "Within how many days of transferring an amount to the Unpaid Dividend Account must the company prepare a statement on its website containing details of such unpaid dividend, pursuant to Section 124?",
+      "options": [
+        "Within 30 days",
+        "Within 60 days",
+        "Within 90 days",
+        "Within 120 days"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 124(2) states that the company shall, within a period of 90 days of making any transfer of an unpaid dividend amount to the Unpaid Dividend Account, prepare a statement containing the names, last known addresses, and the unpaid dividend to be paid to each person and place it on the website of the company.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 124",
+        "Unpaid Dividend Statement",
+        "Website Disclosure"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_011",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "After a period of how many years from the date of transfer to the Unpaid Dividend Account must an unclaimed dividend be transferred to the Investor Education and Protection Fund (IEPF)?",
+      "options": [
+        "3 years",
+        "5 years",
+        "7 years",
+        "10 years"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 124(5) provides that any money transferred to the Unpaid Dividend Account of a company which remains unpaid or unclaimed for a period of 7 years from the date of such transfer shall be transferred by the company along with interest accrued thereon to the Investor Education and Protection Fund (IEPF).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 124",
+        "IEPF",
+        "7 Years Rule"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_012",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "Which of the following shares along with their unpaid or unclaimed dividend are also required to be transferred to the IEPF authority under Section 124(6)?",
+      "options": [
+        "Shares in respect of which dividend has not been paid or claimed for 7 consecutive years or more.",
+        "Shares held by promoters who have defaulted on statutory dues.",
+        "Shares on which calls are in arrears for more than 6 months.",
+        "All shares held by non-resident shareholders."
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 124(6) mandates that all shares in respect of which dividend has not been paid or claimed for 7 consecutive years or more shall be transferred by the company in the name of the Investor Education and Protection Fund (IEPF) authority.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 124",
+        "Transfer of Shares",
+        "IEPF Authority"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_013",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "Can a person whose shares and unclaimed dividends have been transferred to the IEPF claim back their shares and amounts subsequently?",
+      "options": [
+        "No, the transfer to IEPF is absolute and final with no right of refund.",
+        "Yes, any person claiming to be entitled to any amount or shares transferred to the IEPF may apply to the IEPF Authority for claiming the same.",
+        "Yes, but only after obtaining a decree from a civil court.",
+        "No, only corporate bodies can claim refund from IEPF."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 124(6) proviso states that any person whose shares or unclaimed amounts are transferred to the IEPF may claim the same from the IEPF Authority by submitting an application in accordance with the prescribed rules.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 124",
+        "Claim from IEPF",
+        "Refund Procedure"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_014",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "Under Section 123(3), who has the authority to declare an interim dividend during any financial year?",
+      "options": [
+        "The Board of Directors of the company",
+        "The shareholders in the Annual General Meeting only",
+        "The Managing Director acting independently",
+        "The Audit Committee of the company"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 123(3) empowers the Board of Directors of a company to declare interim dividend during any financial year out of the surplus in the profit and loss account or out of profits of the financial year for which such interim dividend is sought to be declared.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 123",
+        "Interim Dividend",
+        "Board of Directors"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_015",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "If a company has incurred a loss in the current financial year up to the end of the quarter preceding the date of declaration of an interim dividend, at what rate can the Board declare such interim dividend?",
+      "options": [
+        "At a rate not exceeding the average dividend declared during the immediately preceding 3 financial years.",
+        "At a rate higher than the previous year to boost investor confidence.",
+        "At any rate decided by the Board provided free reserves cover the loss.",
+        "Interim dividend cannot be declared in any circumstance if there is a loss in the current financial year."
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 123(3) proviso dictates that if the company has incurred loss up to the quarter preceding the date of interim dividend, the Board shall not declare interim dividend at a rate higher than the average dividends declared by the company during the immediately preceding three financial years.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 123",
+        "Interim Dividend in Loss",
+        "Average Rate Limit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_016",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "What is the statutory requirement regarding the separate bank account for interim dividend under Section 123(4)?",
+      "options": [
+        "Interim dividend must also be deposited in a scheduled bank in a separate account within 5 days from the date of declaration.",
+        "Interim dividend can be disbursed directly from the working capital current account without a separate bank account.",
+        "A separate bank account is required only for final dividends, not for interim dividends.",
+        "Interim dividend must be deposited with the RBI within 24 hours."
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 123(4) explicitly includes interim dividend: 'The amount of the dividend, including interim dividend, shall be deposited in a scheduled bank in a separate account within five days from the date of declaration of such dividend.'",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 123",
+        "Interim Dividend",
+        "Separate Account"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_017",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "Under Section 123(5), how must any dividend (final or interim) be paid to the registered shareholders?",
+      "options": [
+        "In cash or by cheque or warrant or in any electronic mode",
+        "Exclusively in cash against physical presentation of dividend coupons",
+        "Exclusively through bonus shares",
+        "By issuing promissory notes maturing in 90 days"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 123(5) provides that no dividend shall be paid by a company in respect of any share therein except to the registered shareholder of such share or to his order or to his banker and shall be paid in cash or by cheque or warrant or in any electronic mode.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 123",
+        "Mode of Payment",
+        "Registered Shareholder"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_018",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "Which section of the Companies Act, 2013 prohibits the declaration of dividend if a company has failed to redeem its debentures or repay public deposits?",
+      "options": [
+        "Section 123 read with general disqualifications, or specific financial defaults mentioned in public deposit rules",
+        "Section 127",
+        "Section 92",
+        "Section 134"
+      ],
+      "answerIndex": 0,
+      "explanation": "While Section 123 deals with declaration, default in repayment of deposits or redemption of debentures restricts companies under specific rules (such as Rule 3 of Acceptance of Deposits Rules) from declaring dividends until the default is made good.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 123",
+        "Defaults in Repayment",
+        "Public Deposits"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_019",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "Can a company revoke a declared dividend once it has been announced at a general meeting?",
+      "options": [
+        "No, once declared, a dividend becomes a debt enforceable by shareholders and cannot be revoked without their consent.",
+        "Yes, the Board can revoke it anytime before payment if cash flow tightens.",
+        "Yes, with the permission of the Registrar of Companies (ROC).",
+        "Yes, by passing a board resolution within 7 days."
+      ],
+      "answerIndex": 0,
+      "explanation": "Declaration of dividend creates a debt obligation towards shareholders. Once declared, it cannot be revoked unilaterally by the company or Board without the consent of the shareholders.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Declaration of Dividend",
+        "Revocation",
+        "Legal Debt"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_020",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "Under Section 127, if a dividend is declared but cannot be paid within 30 days because a dispute exists regarding the right to receive the dividend, what is the legal position?",
+      "options": [
+        "It is not considered an offense under Section 127 if the failure is due to a dispute regarding the right to receive the dividend.",
+        "The company must still pay 18% interest while the dispute is pending.",
+        "The company must deposit the disputed amount with the NCLT immediately.",
+        "The directors are liable to imprisonment regardless of any dispute."
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 127 provides exceptions where failure to pay dividend within 30 days is not an offense, which includes cases where the dividend has been lawfully adjusted against sums due from the shareholder, or where the dispute regarding the right to receive the dividend has not been resolved.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 127",
+        "Exceptions to Offense",
+        "Disputed Dividend"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_021",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "Which authority administers the Investor Education and Protection Fund (IEPF) established under Section 125?",
+      "options": [
+        "The IEPF Authority constituted by the Central Government",
+        "The Reserve Bank of India (RBI)",
+        "The Securities and Exchange Board of India (SEBI)",
+        "The Comptroller and Auditor General (CAG)"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 125(1) states that the Central Government shall establish a Fund to be called the Investor Education and Protection Fund (IEPF), which shall be administered by an authority specified by the Central Government.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 125",
+        "IEPF Authority",
+        "Administration"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_022",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "Which of the following amounts shall NOT be credited to the Investor Education and Protection Fund (IEPF) under Section 125(2)?",
+      "options": [
+        "The general reserves created voluntarily by the company out of current profits",
+        "The amount given by the Central Government by way of grants for being credited to the Fund",
+        "The unpaid dividend amount remaining in the Unpaid Dividend Account for 7 years",
+        "Interest or other income received out of investments made from the Fund"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 125(2) lists items credited to IEPF (grants, unpaid dividends after 7 years, matured deposits, application money due for refund, interest, etc.). Voluntary general reserves of a company belong to shareholders/company and are not credited to IEPF.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 125",
+        "Credits to IEPF",
+        "Exclusions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_023",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "What purpose is the Investor Education and Protection Fund (IEPF) primarily utilized for under Section 125(3)?",
+      "options": [
+        "Promotion of investor education, awareness and protection, and refund of unclaimed amounts",
+        "Providing bailout packages to sick industrial companies",
+        "Financing government infrastructure projects and highways",
+        "Paying salaries to the corporate staff of listed companies"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 125(3) specifies that the Fund shall be utilized for promotion of investor education, awareness and protection; distribution of any disgorged amount; reimbursement of legal expenses incurred in pursuing class action suits; and refund of unclaimed dividends, matured deposits, etc.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 125",
+        "Utilization of IEPF",
+        "Investor Awareness"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_024",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "Can a company declare a dividend out of free reserves if it has incurred a net loss in the current financial year, without drawing from accumulated past profits?",
+      "options": [
+        "Yes, provided it complies with the conditions specified in Rule 3 regarding drawal from reserves (such as rate limits and capital-reserve percentage caps).",
+        "No, free reserves can never be touched if current year has a loss.",
+        "Yes, with a unanimous board resolution and no other conditions.",
+        "No, only capital reserves can be used during current year losses."
+      ],
+      "answerIndex": 0,
+      "explanation": "When current profits are nil or inadequate, Rule 3 permits drawal from accumulated profits/free reserves subject to statutory limits (10% cap on paid-up capital + free reserves and 3-year average rate restriction).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rule 3",
+        "Free Reserves",
+        "Current Year Loss"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_025",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "In computing depreciation for the purpose of Section 123, which document's instructions must be adhered to by the company?",
+      "options": [
+        "Schedule II of the Companies Act, 2013",
+        "Accounting Standard 10 (Property, Plant and Equipment)",
+        "The Memorandum of Association of the company",
+        "Guidelines issued by the stock exchanges"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 123(1) explicitly states that depreciation shall be provided in accordance with the provisions of Schedule II of the Companies Act, 2013.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 123",
+        "Schedule II",
+        "Depreciation Computation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_026",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "Who is liable for the punishment of imprisonment under Section 127 in case of default in paying declared dividends?",
+      "options": [
+        "Every director of the company who is knowingly a party to the default",
+        "All shareholders who voted in favor of the dividend resolution",
+        "The Chief Financial Officer (CFO) and Company Secretary only",
+        "Independent directors regardless of their knowledge"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 127 clearly specifies that every director of the company who is knowingly a party to the default shall be punishable with imprisonment and fine.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 127",
+        "Officer in Default",
+        "Imprisonment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_027",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "If a company suffers a loss in the first quarter of the financial year, can the Board declare an interim dividend for the second quarter?",
+      "options": [
+        "Yes, but the rate shall not exceed the average dividends declared during the immediately preceding 3 financial years.",
+        "No, interim dividend can never be declared if any quarter shows a loss.",
+        "Yes, at any rate the Board desires without restrictions.",
+        "Yes, but only if approved by shareholders via a special resolution."
+      ],
+      "answerIndex": 0,
+      "explanation": "Under the proviso to Section 123(3), if the company has incurred loss up to the quarter preceding the date of declaration of interim dividend, the interim dividend rate cannot exceed the average of the rates of dividend declared in the immediately preceding 3 financial years.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 123",
+        "Interim Dividend",
+        "Quarterly Loss"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_028",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "What is the status of a dividend declared by a company when the company's net worth is negative due to accumulated losses, but it has free reserves?",
+      "options": [
+        "Dividend cannot be declared if free reserves are non-existent or inadequate as per statutory rules, and net worth considerations under specific financial guidelines apply.",
+        "Free reserves can be freely distributed regardless of accumulated losses.",
+        "Negative net worth has no bearing on dividend declaration under Section 123.",
+        "The company must double its share capital before declaring any dividend."
+      ],
+      "answerIndex": 0,
+      "explanation": "Dividend declaration is strictly governed by available profits and free reserves after providing for depreciation and setting off losses. If accumulated losses wipe out free reserves, no dividend can be declared except under strict Rule 3 parameters if applicable.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 123",
+        "Net Worth",
+        "Accumulated Losses"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_029",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "Which of the following is NOT an exception where failure to pay dividend within 30 days does not attract the penal consequences of Section 127?",
+      "options": [
+        "The company is facing temporary liquidity crunch due to slow sales realization.",
+        "The dividend could not be paid by reason of the operation of law.",
+        "A shareholder has given valid directions regarding payment which cannot be complied with.",
+        "There is a dispute regarding the right to receive the dividend."
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 127 lists specific lawful excuses/exceptions: operation of law, shareholder's directions not being compliant, dispute regarding right to receive, lawful adjustment against sums due, or where director has not agreed to the default. A general liquidity crunch is not an exception and attracts full penalties.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 127",
+        "Exceptions",
+        "Liquidity Crunch"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-8_030",
+      "kind": "normal",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "prompt": "In the context of the Companies Act, 2013, what constitutes 'Free Reserves' for the purpose of declaring dividend?",
+      "options": [
+        "Reserves which, as per the latest audited balance sheet, are available for distribution as dividend.",
+        "All reserves including revaluation reserve and securities premium account.",
+        "Only capital redemption reserve and debenture redemption reserve.",
+        "Reserves created solely by writing up the value of fixed assets."
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 2(43), 'free reserves' means such reserves which, as per the latest audited balance sheet of a company, are available for distribution as dividend, excluding any amount representing unrealized gains, notional gains, revaluation reserves, etc.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 2(43)",
+        "Free Reserves Definition",
+        "Dividend Eligibility"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_corporate-laws-8_01",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "passage": "Aura Pharmaceuticals Limited earned a net profit of Rs. 50 Lakhs for the financial year 2025-26 after providing for depreciation as per Schedule II. The Board of Directors wishes to declare a final dividend of 12% on its paid-up equity share capital of Rs. 3 Crores. The company has free reserves amounting to Rs. 80 Lakhs. The Board also decides to transfer 15% of its current profits to general reserves voluntarily before recommending the dividend. On the 32nd day after the declaration of dividend at the Annual General Meeting, an amount of Rs. 4 Lakhs meant for certain shareholders remains unpaid due to incorrect bank account details provided by those shareholders.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-8_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-8_01",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-8",
+          "subject": "Law",
+          "prompt": "Is the voluntary transfer of 15% of profits to general reserves by Aura Pharmaceuticals Limited legally valid under Section 123?",
+          "options": [
+            "Yes, a company may voluntarily transfer such percentage of its profits to reserves as it thinks fit before declaring a dividend.",
+            "No, voluntary transfer to reserves has been abolished under the Companies Act, 2013.",
+            "No, the maximum voluntary transfer allowed is 10%.",
+            "Yes, but it requires prior approval of the Central Government."
+          ],
+          "answerIndex": 0,
+          "explanation": "The proviso to Section 123(1) allows a company to voluntarily transfer any percentage of its profits to reserves before the declaration of any dividend.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 123",
+            "Voluntary Transfer",
+            "Reserves"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-8_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-8_01",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-8",
+          "subject": "Law",
+          "prompt": "What action must Aura Pharmaceuticals Limited take regarding the unpaid dividend of Rs. 4 Lakhs after the expiry of 30 days from the date of declaration?",
+          "options": [
+            "Transfer the unpaid amount to an Unpaid Dividend Account in a scheduled bank within 7 days from the expiry of the 30 days.",
+            "Retain the amount in the company's regular operational bank account until shareholders correct their details.",
+            "Transfer the amount immediately to the Investor Education and Protection Fund (IEPF).",
+            "Write off the amount as miscellaneous company income."
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 124(1) mandates that unpaid or unclaimed dividend must be transferred to an Unpaid Dividend Account in a scheduled bank within 7 days from the expiry of the 30 days of declaration.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 124",
+            "Unpaid Dividend Account",
+            "Timeline"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-8_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-8_01",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-8",
+          "subject": "Law",
+          "prompt": "Will the company or its directors attract penal consequences under Section 127 for the unpaid dividend of Rs. 4 Lakhs on the 32nd day?",
+          "options": [
+            "No, because the failure to pay was due to incorrect bank details provided by shareholders, which falls under statutory exceptions.",
+            "Yes, penalties under Section 127 apply automatically if any amount remains unpaid past 30 days.",
+            "Yes, directors are liable for imprisonment up to 6 months.",
+            "No, because dividends under 5% of total turnover are exempt from Section 127."
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 127 explicitly provides that failure to pay dividend within 30 days is not an offense if the dividend could not be paid due to valid reasons such as incorrect details or directions given by the shareholder which could not be complied with.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 127",
+            "Exceptions",
+            "Unpaid Dividend Defense"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-8_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-8_01",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-8",
+          "subject": "Law",
+          "prompt": "Within what period must Aura Pharmaceuticals Limited prepare a statement containing details of the unpaid dividend and place it on its website?",
+          "options": [
+            "Within 90 days of making transfer to the Unpaid Dividend Account",
+            "Within 30 days of declaration",
+            "Within 7 days of declaration",
+            "Within 1 year of transfer"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 124(2) requires the company to prepare a statement of unpaid dividend and place it on its website within a period of 90 days of making any transfer to the Unpaid Dividend Account.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 124",
+            "Website Statement",
+            "Unpaid Dividend"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-8_02",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "passage": "Zenith Retail Limited incurred a net loss during the financial year 2025-26. However, the company has accumulated profits (free reserves) from past years. The Board of Directors intends to declare a dividend out of these accumulated profits to maintain investor sentiment. The company's paid-up share capital is Rs. 5 Crores and its free reserves stand at Rs. 3 Crores. The average dividend declared by Zenith Retail Limited for the immediately preceding three financial years is 10%. The Board is considering declaring a dividend of 14% for the current year by drawing from accumulated reserves.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-8_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-8_02",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-8",
+          "subject": "Law",
+          "prompt": "What is the maximum rate of dividend that Zenith Retail Limited can declare out of accumulated reserves when current profits are inadequate, as per Rule 3?",
+          "options": [
+            "10%",
+            "14%",
+            "12%",
+            "15%"
+          ],
+          "answerIndex": 0,
+          "explanation": "Rule 3 of the Dividend Rules prescribes that the rate of dividend declared out of accumulated profits shall not exceed the average of the rates at which dividend was declared in the 3 immediately preceding years, which is 10% in this case.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Rule 3",
+            "Inadequate Profits",
+            "Average Rate Limit"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-8_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-8_02",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-8",
+          "subject": "Law",
+          "prompt": "What is the maximum amount that can be drawn from the accumulated profits by Zenith Retail Limited under Rule 3?",
+          "options": [
+            "10% of the sum of its paid-up share capital and free reserves",
+            "14% of the paid-up share capital",
+            "50% of the accumulated reserves",
+            "Rs. 50 Lakhs fixed ceiling"
+          ],
+          "answerIndex": 0,
+          "explanation": "Rule 3(1)(iv) restricts the total amount to be drawn from accumulated profits to a maximum of 10% of the sum of its paid-up share capital and free reserves as appearing in the latest audited financial statement.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Rule 3",
+            "Drawal Limit",
+            "Paid-up Capital and Reserves"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-8_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-8_02",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-8",
+          "subject": "Law",
+          "prompt": "Before drawing from accumulated reserves for declaring the dividend, what must Zenith Retail Limited do with regard to any loss incurred in the current financial year?",
+          "options": [
+            "First utilize the profit or set off the loss of the current financial year against past profits/losses before drawing from reserves.",
+            "Write off all intangible assets first.",
+            "Obtain approval from the stock exchange.",
+            "Transfer 50% of reserves to capital redemption reserve."
+          ],
+          "answerIndex": 0,
+          "explanation": "Rule 3 requires that the company shall first utilize the profit/set off the loss of the current financial year before drawing from accumulated profits to declare a dividend.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Rule 3",
+            "Set-off of Current Loss",
+            "Accumulated Reserves"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-8_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-8_02",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-8",
+          "subject": "Law",
+          "prompt": "Can Zenith Retail Limited declare the dividend at 14% by passing a special resolution at the general meeting?",
+          "options": [
+            "No, the 3-year average rate restriction under Rule 3 is mandatory and cannot be overridden by shareholder resolution.",
+            "Yes, a special resolution overrides all rules under the Companies Act, 2013.",
+            "Yes, provided 75% of institutional shareholders agree.",
+            "No, but an ordinary resolution would suffice."
+          ],
+          "answerIndex": 0,
+          "explanation": "The conditions specified in Rule 3 regarding the maximum rate (3-year average) are statutory prescriptions for drawing from reserves when profits are inadequate and cannot be breached by shareholder resolution.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Rule 3",
+            "Statutory Compliance",
+            "Resolution Override"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-8_03",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "passage": "Beta Engineering Works declared an interim dividend of Rs. 2 per share on 10th August 2026. The total interim dividend amounted to Rs. 60 Lakhs. Due to an administrative oversight by the finance team, the amount was not deposited in a scheduled bank in a separate account within the stipulated statutory timeline. Instead, the company disbursed the dividend directly from its regular operational cash flow account on the 28th day following the declaration. A shareholder holding 10,000 shares filed a complaint regarding the delay and procedural lapse.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-8_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-8_03",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-8",
+          "subject": "Law",
+          "prompt": "Within how many days from the date of declaration was Beta Engineering Works required to deposit the interim dividend in a separate bank account under Section 123(4)?",
+          "options": [
+            "Within 5 days",
+            "Within 7 days",
+            "Within 15 days",
+            "Within 30 days"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 123(4) mandates that the amount of dividend, including interim dividend, shall be deposited in a scheduled bank in a separate account within 5 days from the date of declaration.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 123",
+            "Interim Dividend",
+            "Separate Account Timeline"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-8_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-8_03",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-8",
+          "subject": "Law",
+          "prompt": "Did Beta Engineering Works violate Section 127 by disbursing the dividend on the 28th day?",
+          "options": [
+            "No, because the dividend was paid within 30 days of declaration, which is within the permitted payment window.",
+            "Yes, because interim dividends must be paid within 10 days of declaration.",
+            "Yes, because failing to deposit in a separate bank account makes payment illegal even if done within 30 days.",
+            "No, but the company is liable for compounding."
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 127 penalizes failure to pay dividend within 30 days from the date of declaration. Since payment was made on the 28th day, the payment window of 30 days was met, though there was a separate violation under Section 123(4) for not depositing in a separate bank account within 5 days.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 127",
+            "Payment Timeline",
+            "30 Days Window"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-8_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-8_03",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-8",
+          "subject": "Law",
+          "prompt": "What penalty or consequence does Beta Engineering Works face for failing to deposit the interim dividend in a separate bank account within 5 days under Section 123(4)?",
+          "options": [
+            "Penalties as applicable under general provisions of the Act for non-compliance where no specific penalty is provided.",
+            "Automatic winding up of the company.",
+            "Imprisonment of all employees for 1 year.",
+            "Forfeiture of all company assets to the Central Government."
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 123(4) non-compliance attracts general penalties under Section 450 since a specific penalty is not detailed directly under Section 123(4) apart from the separate account mandate.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 123",
+            "Non-compliance",
+            "General Penalty"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-8_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-8_03",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-8",
+          "subject": "Law",
+          "prompt": "Who authorized the declaration of the interim dividend in Beta Engineering Works?",
+          "options": [
+            "The Board of Directors of the company",
+            "The shareholders in the Annual General Meeting",
+            "The Managing Director solely",
+            "The Debenture Trustees"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 123(3) empowers the Board of Directors of a company to declare interim dividend during any financial year.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Section 123",
+            "Interim Dividend Authority",
+            "Board of Directors"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-8_04",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "passage": "Gamma Technologies Limited had declared dividends in past years, but certain dividends declared in 2018 remained unclaimed by several shareholders. The total unclaimed dividend amount transferred to the Unpaid Dividend Account in 2018 was Rs. 15 Lakhs. As of October 2025, this amount has remained completely unclaimed in the Unpaid Dividend Account for a period of 7 years. Additionally, 25,000 equity shares of the company on which dividends had not been claimed for 7 consecutive years or more are identified by the company secretary.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-8_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-8_04",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-8",
+          "subject": "Law",
+          "prompt": "Where must Gamma Technologies Limited transfer the Rs. 15 Lakhs unclaimed dividend after the completion of 7 years from the date of transfer to the Unpaid Dividend Account?",
+          "options": [
+            "To the Investor Education and Protection Fund (IEPF)",
+            "To the company's general reserve account as retained earnings",
+            "To the Central Government's Consolidated Fund directly",
+            "To the corporate social responsibility (CSR) corpus"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 124(5) mandates transferring any money remaining unpaid or unclaimed in the Unpaid Dividend Account for 7 years to the IEPF along with interest accrued.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 124",
+            "IEPF Transfer",
+            "7 Years Rule"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-8_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-8_04",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-8",
+          "subject": "Law",
+          "prompt": "What action must Gamma Technologies Limited take regarding the 25,000 equity shares whose dividends were unclaimed for 7 consecutive years or more under Section 124(6)?",
+          "options": [
+            "Transfer the shares in the name of the Investor Education and Protection Fund (IEPF) Authority.",
+            "Cancel the shares and reduce the paid-up share capital of the company.",
+            "Auction the shares in the open market and credit proceeds to the company's P&L.",
+            "Transfer the shares to the promoters of the company."
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 124(6) requires all shares in respect of which dividend has not been paid or claimed for 7 consecutive years or more to be transferred in the name of the IEPF Authority.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 124",
+            "Transfer of Shares",
+            "IEPF Authority"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-8_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-8_04",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-8",
+          "subject": "Law",
+          "prompt": "Can a shareholder whose shares were transferred to the IEPF Authority subsequently claim them back?",
+          "options": [
+            "Yes, by making an application to the IEPF Authority in the prescribed manner.",
+            "No, the transfer is permanent and irreversible under all circumstances.",
+            "Yes, but only after filing a suit in the High Court.",
+            "No, equity rights extinguish permanently upon transfer to IEPF."
+          ],
+          "answerIndex": 0,
+          "explanation": "Under the proviso to Section 124(6), any person claiming to be entitled to any shares transferred to the IEPF may apply to the IEPF Authority for claiming the same.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Section 124",
+            "Claiming Shares",
+            "IEPF Refund"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-8_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-8_04",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-8",
+          "subject": "Law",
+          "prompt": "Who administers the fund to which the unclaimed dividend and shares are transferred under Section 125?",
+          "options": [
+            "The IEPF Authority constituted by the Central Government",
+            "The Reserve Bank of India",
+            "The National Company Law Tribunal (NCLT)",
+            "The Ministry of Corporate Affairs Secretariat directly without an authority"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 125(1) specifies that the IEPF shall be administered by an authority specified by the Central Government.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Section 125",
+            "IEPF Administration",
+            "Authority"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-8_05",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-8",
+      "subject": "Law",
+      "passage": "Delta Agro Industries Limited declared a dividend of Rs. 1.50 per share at its Annual General Meeting held on 15th September 2026. Mr. Roy, a registered shareholder holding 50,000 shares, did not receive his dividend warrant even after 35 days from the date of declaration. Upon inquiry, Mr. Roy discovered that the company willfully withheld his dividend because the company alleged Mr. Roy owed them a minor contractual debt arising from a separate commercial supply contract. There was no court injunction or dispute regarding the ownership of the shares themselves.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Declaration and Payment of Dividend"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-8_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-8_05",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-8",
+          "subject": "Law",
+          "prompt": "Has Delta Agro Industries Limited committed an offense under Section 127 for failing to pay Mr. Roy's dividend within 30 days?",
+          "options": [
+            "Yes, because withholding dividend against a separate commercial trade debt without lawful adjustment provisions under the Act violates Section 127.",
+            "No, companies can adjust any pending dues of any nature against dividends.",
+            "No, because trade debts automatically act as legal stay on dividends.",
+            "Yes, but only the company is penalized; directors have absolute immunity."
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 127 permits lawful adjustment against sums due from the shareholder to the company in relation to shares (such as calls in arrears). Withholding dividend for a separate commercial trade debt outside share-related sums is illegal and attracts Section 127 penalties.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 127",
+            "Unlawful Withholding",
+            "Trade Debt"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-8_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-8_05",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-8",
+          "subject": "Law",
+          "prompt": "What rate of interest is the company liable to pay to Mr. Roy under Section 127 during the period the default continues?",
+          "options": [
+            "Simple interest at the rate of 18% per annum",
+            "Compound interest at 12% per annum",
+            "Bank rate plus 2%",
+            "Fixed statutory interest of 6% per annum"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 127 explicitly mandates that in case of default in paying declared dividend within 30 days, the company shall be liable to pay simple interest at the rate of 18% per annum during the period such default continues.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 127",
+            "Interest Rate",
+            "18 Percent"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-8_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-8_05",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-8",
+          "subject": "Law",
+          "prompt": "What is the penal liability of the directors of Delta Agro Industries Limited who knowingly were party to this default under Section 127?",
+          "options": [
+            "Punishable with imprisonment up to 2 years and with fine not less than Rs. 1,000 for every day during which default continues.",
+            "Punishable with community service only.",
+            "Fine of flat Rs. 5,000 with no imprisonment risk.",
+            "Disqualification from directorship for life without court review."
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 127 prescribes imprisonment up to 2 years and a fine of not less than Rs. 1,000 per day of default for every director knowingly a party to the default.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 127",
+            "Director Penalties",
+            "Imprisonment and Fine"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-8_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-8_05",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-8",
+          "subject": "Law",
+          "prompt": "Can Delta Agro Industries Limited legally adjust the dividend against calls in arrears due on shares held by a shareholder?",
+          "options": [
+            "Yes, lawful adjustment against sums due from the shareholder in respect of shares is an explicit exception under Section 127.",
+            "No, dividend must be paid in cash regardless of calls in arrears.",
+            "Yes, but only with prior written permission of SEBI.",
+            "No, calls in arrears can only be recovered through liquidation."
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 127 provides an exception where failure to pay is not an offense if the dividend has been lawfully adjusted by the company against any sum due from the shareholder in respect of shares.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 127",
+            "Calls in Arrears",
+            "Lawful Adjustment"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

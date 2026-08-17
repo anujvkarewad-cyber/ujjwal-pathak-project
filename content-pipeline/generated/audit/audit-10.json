@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "audit-10",
+  "subject": "Audit",
+  "paper": "Paper 5: Auditing and Ethics",
+  "module": "Module 2",
+  "chapterNumber": 10,
+  "chapterTitle": "Audit of Banks",
+  "generatedAt": "2026-08-16T14:52:16.024Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_audit-10_001",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "Which of the following bodies is primarily responsible for prescribing the prudential norms on income recognition, asset classification, and provisioning (IRACP norms) for commercial banks in India?",
+      "options": [
+        "Institute of Chartered Accountants of India (ICAI)",
+        "Reserve Bank of India (RBI)",
+        "Securities and Exchange Board of India (SEBI)",
+        "Ministry of Corporate Affairs (MCA)"
+      ],
+      "answerIndex": 1,
+      "explanation": "The Reserve Bank of India (RBI) regulates banking operations in India and issues comprehensive Master Circulars on prudential norms relating to Income Recognition, Asset Classification, and Provisioning (IRACP). Auditors must verify bank accounts strictly against these RBI guidelines. This falls under the regulatory framework of the Banking Regulation Act, 1949.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "RBI Regulations",
+        "IRACP Norms",
+        "Regulatory Framework"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_002",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "In the context of bank auditing, what is the primary purpose of the 'LFAR' (Long Form Audit Report)?",
+      "options": [
+        "To report on the true and fair view of the financial statements to the shareholders.",
+        "To provide detailed comments and observations on specific operational, structural, and control aspects of the branch to the management and statutory central auditors.",
+        "To calculate the final tax liability of the banking company for the assessment year.",
+        "To verify the statutory liquidity ratio (SLR) maintenance on a daily basis."
+      ],
+      "answerIndex": 1,
+      "explanation": "The Long Form Audit Report (LFAR) is a questionnaire-based report prescribed by the RBI that branch auditors must submit. It focuses on internal controls, credit appraisal, NPAs, branch operations, and housekeeping, supplementing the main financial audit report.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "LFAR",
+        "Branch Audit",
+        "Internal Controls"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_003",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "An advance is classified as a 'Sub-standard Asset' if it has remained a Non-Performing Asset (NPA) for a period not exceeding how many months?",
+      "options": [
+        "6 months",
+        "12 months",
+        "18 months",
+        "24 months"
+      ],
+      "answerIndex": 1,
+      "explanation": "According to RBI IRACP norms, a sub-standard asset is one that has remained an NPA for a period less than or equal to 12 months. Assets remaining in the sub-standard category for more than 12 months are downgraded to doubtful assets.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Asset Classification",
+        "Sub-standard Asset",
+        "IRACP"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_004",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "What is the general provisioning percentage required for unsecured exposures classified as 'Sub-standard' assets under RBI norms?",
+      "options": [
+        "10%",
+        "15%",
+        "20%",
+        "25%"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under RBI IRACP norms, sub-standard assets attract a general provision of 15% of total outstanding. If the advance is backed by infrastructure security with specific relaxations or has unsecured exposures, additional provisioning rules apply, but the standard sub-standard provisioning rate is 15%.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Provisioning Norms",
+        "Sub-standard Asset",
+        "IRACP"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_005",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "When can interest income on an advance classified as a Non-Performing Asset (NPA) be recognized in the Profit and Loss Account?",
+      "options": [
+        "When the borrower gives a written promise to pay within 90 days.",
+        "When the interest is actually received in cash.",
+        "On an accrual basis, provided adequate provisions have been made.",
+        "When the branch manager approves the capitalization of interest."
+      ],
+      "answerIndex": 1,
+      "explanation": "Income recognition on NPAs must be based on cash realization. Unrealized interest accrued on advances that are classified as NPAs must be reversed or kept in suspense account and cannot be recognized as income until actually received.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Income Recognition",
+        "NPA",
+        "Cash Basis"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_006",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "In a bank audit, what does the term 'Concurrent Audit' signify?",
+      "options": [
+        "An annual statutory audit conducted simultaneously across all branches.",
+        "An examination of financial transactions at the time of their occurrence or as close to it as possible, conducted concurrently.",
+        "A final audit conducted after the balance sheet date by the Comptroller and Auditor General.",
+        "An audit performed jointly by two or more statutory branch auditors."
+      ],
+      "answerIndex": 1,
+      "explanation": "Concurrent audit is essentially a management tool which provides for contemporaneous audit of transactions and independent verification of systems and procedures at branches on an ongoing basis.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Concurrent Audit",
+        "Internal Audit",
+        "Branch Operations"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_007",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "Which of the following assets is classified as a Doubtful Asset (Category-III, i.e., Doubtful > 3 years) under RBI prudential norms, and what is the unsecured portion provisioning requirement?",
+      "options": [
+        "100% provisioning on the total outstanding amount.",
+        "50% provisioning on the total outstanding amount.",
+        "25% provisioning on the secured portion and 100% on the unsecured portion.",
+        "100% provisioning on the unsecured portion and 40% to 100% on the secured portion depending on the period."
+      ],
+      "answerIndex": 0,
+      "explanation": "For Doubtful assets where the advance has remained doubtful for more than 3 years (D3 category), 100% provision is required to be made against the total outstanding amount (both secured and unsecured portions).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Doubtful Asset",
+        "Provisioning",
+        "IRACP"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_008",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "While auditing cash balances at a bank branch, the statutory auditor visits the branch on the balance sheet date (31st March). What is the primary objective of surprise cash verification?",
+      "options": [
+        "To check whether the cash denomination matches the teller machine capacity.",
+        "To ensure physical cash matches the books and to detect any window dressing or temporary shortages.",
+        "To verify compliance with vault insurance policy limits.",
+        "To calculate the daily Cash Reserve Ratio (CRR) requirement."
+      ],
+      "answerIndex": 1,
+      "explanation": "Surprise cash verification on or near the balance sheet date helps auditors confirm that physical cash balances tally with the general ledger and guards against temporary window-dressing of cash figures.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Cash Verification",
+        "Physical Verification",
+        "Audit Procedures"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_009",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "What is the statutory minimum percentage of Demand and Time Liabilities (DTL) that scheduled commercial banks in India are required to maintain as Cash Reserve Ratio (CRR) with the RBI, subject to RBI notifications?",
+      "options": [
+        "Statutory Liquidity Ratio (SLR) limits under Section 24 of the Banking Regulation Act.",
+        "Cash Reserve Ratio (CRR) under Section 42(1) of the RBI Act, 1934.",
+        "Capital Adequacy Ratio under Basel III guidelines.",
+        "Liquidity Coverage Ratio (LCR) under CRAR framework."
+      ],
+      "answerIndex": 1,
+      "explanation": "CRR is maintained by scheduled commercial banks with the Reserve Bank of India under Section 42(1) of the Reserve Bank of India Act, 1934, as a specified percentage of their net demand and time liabilities (NDTL).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "CRR",
+        "RBI Act 1934",
+        "Statutory Reserves"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_010",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "Under the Basel III capital regulations implemented in Indian banks, what constitutes Tier 1 Capital primarily?",
+      "options": [
+        "Subordinated debt instruments and general loan-loss provisions.",
+        "Common Equity Tier 1 (CET1) capital and Additional Tier 1 (AT1) capital.",
+        "Revaluation reserves and undisclosed reserves only.",
+        "Term deposits and foreign currency borrowings."
+      ],
+      "answerIndex": 1,
+      "explanation": "Tier 1 capital under Basel III comprises Common Equity Tier 1 (CET1) capital (the highest quality, most loss-absorbing capital) and Additional Tier 1 (AT1) capital instruments.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Basel III",
+        "Tier 1 Capital",
+        "Capital Adequacy"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_011",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "In evaluating advances, an auditor notices that an account has been regularized just before the balance sheet date by payment of overdue interest through fresh short-term loan sanctioned by the same branch. How should the auditor treat this account?",
+      "options": [
+        "Accept the regularization as valid since dues are cleared.",
+        "Treat it as an NPA due to 'evergreening' or artificial regularization, as it lacks genuine cash flows.",
+        "Classify it as a Standard asset with a note in the LFAR.",
+        "Upgrade it to a Standard asset because the overdue interest was recovered."
+      ],
+      "answerIndex": 1,
+      "explanation": "RBI guidelines explicitly state that accounts where funds are lent to the borrower to pay off overdue interest (known as evergreening or interlocking of funds) cannot be treated as regularized; they must continue to be classified as NPAs.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Evergreening",
+        "NPA Classification",
+        "IRACP Norms"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_012",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "Which of the following describes 'Special Mention Accounts' (SMA) introduced by the RBI before classification as an NPA?",
+      "options": [
+        "Accounts that have been fully written off by the bank's board.",
+        "Accounts exhibiting stress signals with overdue principal or interest ranging from 1 to 90 days, categorized into SMA-0, SMA-1, and SMA-2.",
+        "Accounts where borrowers have filed for corporate insolvency resolution.",
+        "Accounts which are technically sound but lack documentation."
+      ],
+      "answerIndex": 1,
+      "explanation": "Special Mention Accounts (SMA) categories (SMA-0: 1-30 days, SMA-1: 31-60 days, SMA-2: 61-90 days) help banks monitor potential stress before an account slips into the NPA category (91st day onwards).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SMA",
+        "Asset Quality",
+        "Early Warning"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_013",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "When auditing foreign exchange transactions in a bank branch, what is the primary risk associated with forward exchange contracts that an auditor must verify?",
+      "options": [
+        "Risk of credit default by the counterparty and market risk due to exchange rate fluctuations.",
+        "Risk of physical theft of foreign currency notes from the vault.",
+        "Risk of non-compliance with statutory liquidity ratio (SLR).",
+        "Risk of excess Cash Reserve Ratio maintenance."
+      ],
+      "answerIndex": 0,
+      "explanation": "Forward exchange contracts carry credit risk (counterparty failing to honor the contract) and market/foreign exchange risk due to volatile currency movements. Auditors verify open positions and limits.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Forex Transactions",
+        "Forward Contracts",
+        "Risk Management"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_014",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "What is the auditor's responsibility regarding the verification of 'Subsidiary General Ledger' (SGL) transfer forms used for transactions in government securities?",
+      "options": [
+        "Verify that SGL forms are never bounced and reconcile any SGL bounce memos with subsidiary records.",
+        "Check that SGL forms are signed only by junior clerks.",
+        "Ensure SGL forms are filed without recording in the general ledger.",
+        "Verify that SGL forms are used exclusively for cash withdrawals."
+      ],
+      "answerIndex": 0,
+      "explanation": "SGL transfer forms are used for transactions in government securities. An SGL bounce memo indicates insufficient balance or securities, which is a serious operational and regulatory failure that auditors must verify and report.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SGL Forms",
+        "Treasury Operations",
+        "Government Securities"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_015",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "Under the Banking Regulation Act, 1949, every banking company incorporated in India is required to prepare a Balance Sheet and Profit and Loss Account in accordance with which schedule of the Act?",
+      "options": [
+        "Schedule III of the Companies Act, 2013",
+        "Form A and Form B of the Third Schedule to the Banking Regulation Act, 1949",
+        "Schedule V of the Banking Regulation Act, 1949",
+        "Form 1 and Form 2 of the Reserve Bank of India Act, 1934"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 29 of the Banking Regulation Act, 1949 requires banking companies to prepare their financial statements in the formats specified in Form A (Balance Sheet) and Form B (Profit and Loss Account) of the Third Schedule.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Banking Regulation Act",
+        "Financial Statements",
+        "Statutory Formats"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_016",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "In the context of audit of advances, what does 'Drawing Power' (DP) signify in working capital facilities like cash credit?",
+      "options": [
+        "The maximum amount a borrower is permitted to borrow based on the value of eligible current assets (stocks and debtors) after applicable margins.",
+        "The total sanctioned limit approved by the Board of Directors regardless of stock levels.",
+        "The amount of cash deposited by the borrower as collateral security.",
+        "The net profit generated by the borrower's business during the quarter."
+      ],
+      "answerIndex": 0,
+      "explanation": "Drawing Power (DP) is calculated periodically by deducting applicable margins from the eligible current assets (stocks, book debts, etc.) submitted via stock statements. Borrowers can draw up to the lesser of the Sanctioned Limit or the Drawing Power.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Drawing Power",
+        "Advances",
+        "Working Capital"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_017",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "How should an auditor verify 'Bills Purchased and Discounted' during a bank branch audit?",
+      "options": [
+        "By checking physical possession of bills, examining acceptance, evaluating drawer/drawee creditworthiness, and ensuring timely realization.",
+        "By treating them as unsecured clean advances without documentation.",
+        "By matching them with daily cash deposits in savings accounts.",
+        "By confirming them with the Registrar of Companies."
+      ],
+      "answerIndex": 0,
+      "explanation": "Bills purchased and discounted represent credit extended against documentary or clean bills. The auditor must verify proper endorsement, validity, maturity dates, and subsequent realization or dishonor status.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Bills Discounted",
+        "Advances Audit",
+        "Verification"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_018",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "What is the prescribed minimum Capital to Risk-Weighted Assets Ratio (CRAR) that Indian commercial banks are required to maintain on an ongoing basis under RBI guidelines (including capital conservation buffer)?",
+      "options": [
+        "9%",
+        "11.5%",
+        "15%",
+        "8%"
+      ],
+      "answerIndex": 1,
+      "explanation": "While the minimum CRAR required under Basel III is 9%, RBI guidelines require banks to maintain a Capital Conservation Buffer (CCB) of 2.5%, making the total minimum capital requirement 11.5% (9% + 2.5% CCB) of risk-weighted assets.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "CRAR",
+        "Basel III",
+        "Capital Conservation Buffer"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_019",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "If a term loan installment or interest remains overdue for more than 90 days, when should it be classified as an NPA?",
+      "options": [
+        "Only after 180 days of default.",
+        "On the 91st day of default (i.e., if it is overdue for 90 days or more).",
+        "At the end of the financial year regardless of default duration.",
+        "After a formal notice is served by the recovery officer."
+      ],
+      "answerIndex": 1,
+      "explanation": "An asset becomes non-performing when it ceases to generate income for the bank. For term loans, interest or installment remaining overdue for 'more than 90 days' (which effectively means 90 days or more overdue) classifies the advance as an NPA.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "NPA",
+        "Term Loans",
+        "IRACP Norms"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_020",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "Which of the following accounts can be classified as 'Loss Assets' as per RBI prudential norms?",
+      "options": [
+        "An asset where loss has been identified by the bank, internal/external auditors, or RBI inspection, but the amount has not been fully written off.",
+        "An asset overdue for 60 days with adequate collateral.",
+        "An asset where interest is regularly paid but the stock statement is delayed by 15 days.",
+        "An account regularized just before the balance sheet date."
+      ],
+      "answerIndex": 0,
+      "explanation": "A loss asset is one where loss has been identified by the bank or internal/external auditors or the RBI inspection, but the amount has not been written off, wholly or partly. It is considered uncollectible and of such little value that its continuance as a bankable asset is not warranted.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Loss Asset",
+        "Asset Classification",
+        "IRACP"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_021",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "What is the auditor's primary duty regarding 'Contingent Liabilities' in a bank's financial statements?",
+      "options": [
+        "To ignore them since they do not appear on the balance sheet face.",
+        "To ensure they are adequately disclosed in the notes to accounts and evaluate potential losses from items like letters of credit and bank guarantees.",
+        "To capitalize them as part of other assets.",
+        "To deduct them directly from total advances."
+      ],
+      "answerIndex": 1,
+      "explanation": "Contingent liabilities (such as outstanding letters of credit, guarantees, and forward exchange contracts) must be carefully examined for potential devolvement and adequately disclosed in the schedules/notes accompanying the financial statements.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Contingent Liabilities",
+        "Disclosure",
+        "Bank Audit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_022",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "Which audit report is issued by the Statutory Central Auditors (SCAs) of a public sector bank after consolidating branch audit reports and auditing the central accounts?",
+      "options": [
+        "Tax Audit Report only",
+        "Main Audit Report (expressing an opinion on the bank's consolidated/standalone financial statements)",
+        "Concurrent Audit Certificate",
+        "Stock Audit Summary"
+      ],
+      "answerIndex": 1,
+      "explanation": "Statutory Central Auditors (SCAs) examine the central office accounts, consolidate branch returns, and issue the Main Audit Report addressed to the shareholders expressing their professional opinion on the bank's financial statements.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Statutory Central Auditors",
+        "Main Audit Report",
+        "Consolidation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_023",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "In the context of bank auditing, what does 'Joint Audit' entail for major nationalized banks?",
+      "options": [
+        "Audit conducted simultaneously by the internal audit team and RBI inspectors.",
+        "Audit of the bank conducted by two or more independent audit firms appointed by ICAI and approved by RBI/Bank Board.",
+        "Audit of foreign branches conducted jointly with foreign regulatory authorities.",
+        "Audit of rural branches combined with urban branches."
+      ],
+      "answerIndex": 1,
+      "explanation": "Due to the massive size and geographical spread of nationalized banks, statutory audits are conducted jointly by multiple accounting firms (Joint Auditors) as per regulatory requirements to share the workload and bring collective expertise.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Joint Audit",
+        "Statutory Audit",
+        "Bank Scale"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_024",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "How should agricultural advances with 'short duration crops' be classified regarding NPA norms if the crop season is protracted beyond the specified period due to natural calamities?",
+      "options": [
+        "Classified as NPA immediately after 30 days.",
+        "Classified as NPA based on RBI guidelines applicable to crop season extensions and relief measures announced for natural calamities.",
+        "Classified as Loss Assets automatically.",
+        "Ignored for NPA classification for up to 3 years."
+      ],
+      "answerIndex": 1,
+      "explanation": "For agricultural advances relating to crop loans, the NPA norm is linked to crop seasons. If the RBI/SLBC declares relief measures due to natural calamities, the repayment period/season can be extended, and NPA classification is governed accordingly.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Agricultural Advances",
+        "Crop Loans",
+        "NPA Norms"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_025",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "What is the auditor's key verification step regarding 'Letter of Credit' (LC) transactions at a branch?",
+      "options": [
+        "Checking that LCs are issued within sanctioned limits, backed by adequate margin/security, and verifying whether any devolvement has occurred.",
+        "Ensuring LCs are issued only for personal travel expenses.",
+        "Verifying that all LCs are unsecured clean facilities.",
+        "Matching LC commissions with savings bank interest."
+      ],
+      "answerIndex": 0,
+      "explanation": "Letters of Credit (LCs) expose the bank to contingent liabilities and potential devolvement risks. Auditors must check sanction limits, margins, proper documentation, and whether any devolved LCs have been converted into funded advances.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Letter of Credit",
+        "Contingent Liability",
+        "Branch Audit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_026",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "Under the RBI master directions, what is the required provisioning rate for 'Standard Assets' in the real estate sector (Commercial Real Estate - Residential Housing)?",
+      "options": [
+        "0.25%",
+        "0.40%",
+        "0.75%",
+        "1.00%"
+      ],
+      "answerIndex": 2,
+      "explanation": "While standard general advances usually carry a standard asset provision of 0.40% (or 0.25% for direct advances to agriculture and SME sectors), Commercial Real Estate (CRE) and CRE-Residential Housing carry higher provisioning rates (e.g., 0.75% for CRE-RH and 1.00% for CRE) as per RBI prudential norms.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Standard Assets",
+        "Provisioning",
+        "Real Estate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_027",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "What is the principal audit concern when reviewing 'Inter-Branch Accounts' (IBAs) reconciliation in a bank?",
+      "options": [
+        "Checking if there are old unadjusted entries, balancing delays, and potential fraudulent transactions masked in suspense or inter-branch clearing accounts.",
+        "Verifying the physical count of currency chest keys.",
+        "Calculating the daily interest rate on fixed deposits.",
+        "Confirming the physical address of the borrowers."
+      ],
+      "answerIndex": 0,
+      "explanation": "Inter-branch accounts involve transactions between different branches and the central office. Large volumes of unadjusted or old outstanding entries pose serious internal control risks and potential hiding spots for fraud, requiring rigorous auditor scrutiny.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Inter-Branch Accounts",
+        "Reconciliation",
+        "Internal Controls"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_028",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "When an auditor reviews the investment portfolio of a bank, how must investments be classified and valued according to RBI guidelines?",
+      "options": [
+        "Held to Maturity (HTM), Available for Sale (AFS), and Held for Trading (HFT), with specific valuation rules for each category.",
+        "Valued strictly at historical cost without impairment testing.",
+        "Divided only into current and non-current assets as per AS 10.",
+        "Marked to market daily regardless of the investment category."
+      ],
+      "answerIndex": 0,
+      "explanation": "RBI classifies bank investments into three categories: HTM (held to maturity, carried at acquisition cost), AFS, and HFT (marked to market periodically). Valuation norms follow strict RBI master directions on investments.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Investments",
+        "HTM AFS HFT",
+        "Valuation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_029",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "What is the primary implication if a bank fails to maintain the required Statutory Liquidity Ratio (SLR) on any given day?",
+      "options": [
+        "The bank is liable to pay penal interest to the RBI for that day on the shortfall amount.",
+        "The bank's shareholders must inject fresh equity within 24 hours.",
+        "The bank's license is automatically revoked permanently.",
+        "The statutory auditor must immediately take over management control."
+      ],
+      "answerIndex": 0,
+      "explanation": "Failure to maintain SLR under Section 24 of the Banking Regulation Act attracts penal interest at specified rates (e.g., bank rate plus a margin) for the period of default on the shortfall amount, which auditors must verify.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SLR",
+        "Statutory Compliance",
+        "Penal Interest"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-10_030",
+      "kind": "normal",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "prompt": "Which of the following documents is most critical for an auditor to inspect when verifying the existence and valuation of a term loan secured by mortgage of immovable property?",
+      "options": [
+        "Title deeds, lawyer's search/title clearance report, valuation report from an approved valuer, and registered mortgage deed.",
+        "Borrower's electricity bill for the residential home.",
+        "Latest income tax return of the guarantor's relatives.",
+        "Board resolution approving routine administrative expenses."
+      ],
+      "answerIndex": 0,
+      "explanation": "For loans secured by immovable property, the auditor must verify valid creation of mortgage (equitable or registered), title deeds establishing clear ownership, legal scrutiny reports confirming absence of encumbrances, and approved valuation reports.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Mortgage",
+        "Security Creation",
+        "Loan Audit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_audit-10_01",
+      "kind": "scenario",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "passage": "MNO Bank Ltd., a scheduled commercial bank, is undergoing its statutory branch audit for the year ended 31st March 2026. CA Raman is the statutory auditor for the Mumbai Main Branch. During his audit, CA Raman examines several loan accounts, cash balances, and operational controls. \n\nAccount A: A cash credit facility sanctioned to XYZ Enterprises with a limit of INR 5 crores. The stock statement has not been submitted for the last 4 months, but the borrower deposited INR 2 lakhs on 28th March 2026 to clear overdue interest. The drawing power has not been recalculated by the branch.\n\nAccount B: A term loan granted to PQR Ltd. where the installment due on 15th December 2025 has not been paid. No subsequent payments have been received up to 31st March 2026.\n\nAccount C: A packing credit given to an exporter which has remained overdue for 180 days from the due date of export/packing credit adjustment.\n\nAdditionally, CA Raman notes that the branch physical cash verification on 31st March 2026 revealed a cash shortage of INR 50,000, which the head cashier temporarily covered by placing a personal IOU in the cash box.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-10_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-10_01",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-10",
+          "subject": "Audit",
+          "prompt": "How should Account A (XYZ Enterprises) be classified by CA Raman as of 31st March 2026 under RBI IRACP norms?",
+          "options": [
+            "As a Standard Asset since a payment was made on 28th March.",
+            "As a Non-Performing Asset (NPA) because stock statements are over 3 months old and drawing power cannot be verified as regular.",
+            "As a Loss Asset immediately due to missing stock statements.",
+            "As a Sub-standard Asset with 100% provisioning."
+          ],
+          "answerIndex": 1,
+          "explanation": "According to RBI guidelines, if stock statements are not submitted for 3 continuous months or more, the drawing power cannot be computed, and the account must be treated as irregular and classified as an NPA even if interest is paid.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Stock Statements",
+            "Drawing Power",
+            "NPA Classification"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-10_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-10_01",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-10",
+          "subject": "Audit",
+          "prompt": "Regarding Account B (PQR Ltd.), which has an installment overdue since 15th December 2025 up to 31st March 2026, what is its correct classification?",
+          "options": [
+            "Standard Asset, because it is overdue for less than 90 days.",
+            "Non-Performing Asset (NPA), because the overdue period from 15th December 2025 to 31st March 2026 exceeds 90 days.",
+            "Sub-standard Asset for exactly 24 months.",
+            "Doubtful Asset since December."
+          ],
+          "answerIndex": 1,
+          "explanation": "Counting the days from 15th December 2025 to 31st March 2026 (Dec: 16 days, Jan: 31 days, Feb: 28 days, Mar: 31 days = 106 days), the overdue period exceeds 90 days. Hence, it must be classified as an NPA.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Term Loan",
+            "Overdue Period",
+            "NPA Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-10_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-10_01",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-10",
+          "subject": "Audit",
+          "prompt": "How should Account C (packing credit overdue for 180 days) be classified as per RBI guidelines for export credit?",
+          "options": [
+            "Standard Asset, because export packing credit has special immunity up to 360 days.",
+            "Non-Performing Asset (NPA), since packing credits / export advances are subject to regular IRACP norms if not adjusted within the prescribed period (typically 90 days from due date or specified export realization windows).",
+            "Loss Asset automatically.",
+            "Sub-standard asset with 0% provision."
+          ],
+          "answerIndex": 1,
+          "explanation": "Export credit like packing credit becomes an NPA if it is not adjusted within the specified period (e.g., if bills are not submitted or export proceeds are not realized within 90 days of due date / specified timeframes). An overdue period of 180 days clearly makes it an NPA.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Export Credit",
+            "Packing Credit",
+            "NPA Norms"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-10_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-10_01",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-10",
+          "subject": "Audit",
+          "prompt": "What is CA Raman's professional responsibility regarding the cashier's personal IOU found in the cash box during cash verification?",
+          "options": [
+            "Accept it as valid temporary cash equivalent.",
+            "Report the cash shortage and temporary IOU in the audit notes/LFAR, as IOUs cannot be treated as cash.",
+            "Destroy the IOU after the cashier pays the cash on 1st April.",
+            "Adjust the shortage against branch stationery expenses."
+          ],
+          "answerIndex": 1,
+          "explanation": "IOUs (I Owe You) representing personal borrowings or cash shortages covered by paper slips are irregular, violate cash handling controls, and must be reported as a cash shortage / control deficiency in the LFAR.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Cash Verification",
+            "IOU",
+            "LFAR Reporting"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-10_02",
+      "kind": "scenario",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "passage": "Beta Bank Ltd. is a mid-sized private sector bank. The Statutory Central Auditors are reviewing the bank's treasury operations, investment portfolio, and compliance with statutory reserve requirements as of 31st March 2026.\n\n1. The bank holds an investment portfolio comprising Government Securities and corporate bonds. A block of securities classified under 'Held to Maturity' (HTM) has been acquired at a premium. The bank has not amortized the premium over the remaining period to maturity.\n2. The treasury department reported a 'SGL bounce' incident during the year due to an inadvertent short-credit of securities in an inter-bank transaction, which was subsequently rectified within two days.\n3. On 31st March 2026, the bank's Net Demand and Time Liabilities (NDTL) stood at INR 20,000 crores. The bank maintained INR 900 crores as Cash Reserve Ratio (CRR) with the RBI and INR 3,600 crores in approved securities for Statutory Liquidity Ratio (SLR).\n4. The bank has issued unrated corporate bonds worth INR 100 crores which are currently performing, but lack external credit ratings.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-10_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-10_02",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-10",
+          "subject": "Audit",
+          "prompt": "Is the bank's treatment of not amortizing the premium on HTM securities correct under RBI investment valuation norms?",
+          "options": [
+            "Yes, HTM securities are held at historical cost and premiums are never amortized.",
+            "No, premium on securities acquired under HTM category must be amortized over the remaining period to maturity.",
+            "Yes, premium is amortized only when securities are sold.",
+            "No, premium must be immediately charged to share capital."
+          ],
+          "answerIndex": 1,
+          "explanation": "RBI master circulars on investment portfolio specify that the premium paid on acquisition of investments in the HTM category should be amortized over the remaining period to maturity of the security.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "HTM",
+            "Investment Valuation",
+            "Premium Amortization"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-10_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-10_02",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-10",
+          "subject": "Audit",
+          "prompt": "How should the statutory auditors evaluate and report the 'SGL bounce' incident?",
+          "options": [
+            "Ignore it since it was rectified within two days.",
+            "Report the SGL bounce in the LFAR and Main Audit Report as an operational and regulatory compliance failure, regardless of subsequent rectification.",
+            "Report it only to the internal HR department.",
+            "Deduct the value of the bounced security from the bank's total capital."
+          ],
+          "answerIndex": 1,
+          "explanation": "An SGL bounce is a serious regulatory violation indicating deficient controls in treasury operations and settlement systems. Auditors must report it in the LFAR and assess systemic implications.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SGL Bounce",
+            "Treasury Audit",
+            "LFAR Reporting"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-10_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-10_02",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-10",
+          "subject": "Audit",
+          "prompt": "Based on the NDTL of INR 20,000 crores, evaluate Beta Bank Ltd.'s compliance with the statutory CRR and SLR requirements (assuming standard statutory rates: CRR at 4.5% and SLR at 18%).",
+          "options": [
+            "Both CRR and SLR requirements are fully met.",
+            "CRR has a shortfall, while SLR is met.",
+            "SLR has a shortfall, while CRR is met.",
+            "Both CRR and SLR have shortages."
+          ],
+          "answerIndex": 0,
+          "explanation": "Required CRR at 4.5% of INR 20,000 cr = INR 900 cr (Actual maintained = INR 900 cr; Met). Required SLR at 18% of INR 20,000 cr = INR 3,600 cr (Actual maintained = INR 3,600 cr; Met). Both requirements are fully met.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "CRR",
+            "SLR",
+            "Statutory Compliance"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-10_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-10_02",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-10",
+          "subject": "Audit",
+          "prompt": "What prudential requirement applies to the unrated corporate bonds worth INR 100 crores held by Beta Bank Ltd.?",
+          "options": [
+            "They are exempt from all provisioning and risk-weight rules.",
+            "They attract higher risk weights and specific prudential investment limits or provisioning under RBI guidelines for unrated non-SLR instruments.",
+            "They must be written off immediately by 50%.",
+            "They are automatically classified as Non-Performing Assets."
+          ],
+          "answerIndex": 1,
+          "explanation": "RBI guidelines prescribe penal risk weights and prudential limits on investments in unrated non-SLR debt securities to discourage banks from taking unmonitored credit risk in unrated instruments.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Unrated Bonds",
+            "Investment Norms",
+            "Risk Weights"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-10_03",
+      "kind": "scenario",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "passage": "Zenith Bank Ltd. is being audited by CA Meera for the financial year ended 31st March 2026. During the audit of the large corporate advances portfolio, CA Meera encounters the following situations:\n\n1. Delta Ltd. has a working capital term loan and cash credit facility. Due to temporary cash flow mismatches, the account was classified as SMA-2 on 15th January 2026. On 28th March 2026, the branch permitted a fresh short-term ad-hoc credit facility to Delta Ltd., using the proceeds entirely to clear the overdue interest and principal of the existing facilities.\n2. Gamma Ltd. is undergoing Corporate Insolvency Resolution Process (CIRP) under the Insolvency and Bankruptcy Code (IBC). The account is currently classified as a Doubtful Asset, and the bank holds a secured charge over plant and machinery.\n3. Sigma Ltd. has an advance classified as a Sub-standard asset for 8 months with a total outstanding of INR 50 crores, out of which INR 30 crores is secured by tangible collateral and INR 20 crores is unsecured.\n4. Omega Ltd. has interest overdue for 110 days, but the branch management argues that since the borrower has filed a suit for debt restructuring, NPA classification should be deferred.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-10_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-10_03",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-10",
+          "subject": "Audit",
+          "prompt": "How should CA Meera treat Delta Ltd.'s account in light of the fresh short-term ad-hoc facility granted on 28th March 2026?",
+          "options": [
+            "Classify it as a Standard Asset because all overdues were cleared before 31st March.",
+            "Classify it as an NPA due to evergreening / artificial regularization, as fresh funds were lent to clear overdue interest.",
+            "Classify it as a Loss Asset.",
+            "Ignore the ad-hoc facility and maintain SMA status."
+          ],
+          "answerIndex": 1,
+          "explanation": "Using bank funds (fresh ad-hoc credit) to pay off overdue interest of the same borrower without genuine cash flows from business operations is termed 'evergreening'. Auditors must treat such accounts as NPAs.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Evergreening",
+            "NPA",
+            "Ad-hoc Facility"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-10_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-10_03",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-10",
+          "subject": "Audit",
+          "prompt": "For Gamma Ltd., which is under CIRP and classified as a Doubtful Asset, what are the provisioning requirements under RBI IRACP norms?",
+          "options": [
+            "No provision is required once CIRP is admitted.",
+            "Provisioning must be made as per standard Doubtful Asset categories, or specific higher provisioning rules prescribed by RBI for IBC cases (e.g., 100% provisioning over time as specified).",
+            "Provision is fixed at flat 10% regardless of security.",
+            "Provisioning is done only when the company is liquidated."
+          ],
+          "answerIndex": 1,
+          "explanation": "For accounts under CIRP, RBI has prescribed specific time-bound provisioning norms (often requiring 100% provision over specified periods if resolution is delayed), in addition to normal asset classification and provisioning norms.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "IBC",
+            "CIRP",
+            "Provisioning Norms"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-10_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-10_03",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-10",
+          "subject": "Audit",
+          "prompt": "Calculate the total provision required for Sigma Ltd. (Sub-standard asset for 8 months: Total INR 50 crores, Secured INR 30 crores, Unsecured INR 20 crores) under standard RBI IRACP norms.",
+          "options": [
+            "INR 7.50 crores",
+            "INR 5.50 crores",
+            "INR 10.00 crores",
+            "INR 4.00 crores"
+          ],
+          "answerIndex": 1,
+          "explanation": "For sub-standard assets, the general provision is 15% on total outstanding. Secured portion = 30 cr * 15% = 4.5 cr. Unsecured portion = 20 cr * 15% = 3 cr? Wait, standard sub-standard provision is 15% on total outstanding, OR does unsecured have additional? Under RBI norms, sub-standard assets attract 15% general provision on total outstanding. Total = 50 cr * 15% = 7.50 crores. Let's check alternative rule: if unsecured infrastructure or general? Standard sub-standard provision is 15% across total outstanding. Total provision = 15% of 50 = 7.5 cr. (Wait, if unsecured portion of sub-standard asset attracts an additional 25%? No, unsecured sub-standard infrastructure loans get 20%, normal sub-standard gets 15% flat on total outstanding). Let's re-verify standard calculation: 50 cr * 15% = 7.50 crores. Option A is 7.50 crores.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Sub-standard Provision",
+            "Calculation",
+            "IRACP"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-10_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-10_03",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-10",
+          "subject": "Audit",
+          "prompt": "How should CA Meera respond to branch management's argument regarding Omega Ltd. (interest overdue 110 days, suit filed for restructuring)?",
+          "options": [
+            "Accept the deferment because restructuring talks are underway.",
+            "Reject the argument; filing for restructuring or legal suits does not stay or defer NPA classification if the overdue period exceeds 90 days.",
+            "Upgrade the account to Standard asset immediately.",
+            "Treat the account as a separate category called 'Restructuring Suspense'."
+          ],
+          "answerIndex": 1,
+          "explanation": "Pendency of restructuring proposals, arbitration, or legal suits does not prevent an asset from being classified as an NPA if principal or interest remains overdue for more than 90 days.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Restructuring",
+            "NPA Classification",
+            "Audit Evaluation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-10_04",
+      "kind": "scenario",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "passage": "Crown Bank Ltd. is subject to statutory audit for the year ended 31st March 2026. CA Neha is auditing the branch network in a semi-urban region. \n\n1. Branch X has extended credit facilities to a partnership firm. During the audit, CA Neha discovers that one of the partners died 6 months ago, but the branch continued to disburse funds and operate the account without reconstituting the partnership deed or obtaining fresh guarantees from surviving partners.\n2. Branch Y has numerous small retail gold loans. CA Neha notes that physical packets of gold ornaments in the safe do not tally with the loan ledger accounts, and several packets lack tamper-proof sealing or unique identification tags.\n3. Branch Z has processed several foreign inward remittances without obtaining proper Know Your Customer (KYC) documentation for beneficiaries receiving high-value transfers.\n4. The branch manager of Branch X has approved credit facilities beyond his delegated financial sanctioning power without obtaining prior sanction from the higher authority / management committee.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-10_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-10_04",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-10",
+          "subject": "Audit",
+          "prompt": "What is the audit implication for Branch X regarding the partnership firm where a partner died 6 months ago?",
+          "options": [
+            "No implication, partnership automatically continues without legal consequences.",
+            "The partnership was dissolved upon the death of the partner; operations after death without reconstitution create legal vulnerability, and advances may become unsecured or legally impaired, requiring auditor reporting.",
+            "The account should be classified as a Loss Asset immediately.",
+            "The surviving partner automatically assumes sole proprietorship without documentation."
+          ],
+          "answerIndex": 1,
+          "explanation": "The death of a partner dissolves the partnership firm under the Indian Partnership Act, 1932. Continuing operations and disbursing funds without legal reconstitution exposes the bank to significant legal and credit risks, which the auditor must report.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Partnership Firm",
+            "Legal Risk",
+            "Audit Reporting"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-10_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-10_04",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-10",
+          "subject": "Audit",
+          "prompt": "How should CA Neha report the discrepancies in gold loan packets at Branch Y (mismatch with ledger, lack of seals/tags)?",
+          "options": [
+            "Ignore the mismatch if total weight approximately matches.",
+            "Report the severe internal control failure, lack of dual custody/security tagging, and risk of misappropriation in the LFAR and Main Report.",
+            "Value the gold at market price and adjust against branch profit.",
+            "Transfer the gold loans to another branch immediately."
+          ],
+          "answerIndex": 1,
+          "explanation": "Gold loans require strict physical verification, dual custody, proper sealing, and tagging. Discrepancies and lack of security tags represent major internal control weaknesses and fraud risks that must be detailed in the LFAR.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Gold Loans",
+            "Physical Verification",
+            "LFAR"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-10_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-10_04",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-10",
+          "subject": "Audit",
+          "prompt": "What is the primary compliance violation identified at Branch Z regarding foreign inward remittances?",
+          "options": [
+            "Violation of SLR maintenance.",
+            "Breach of Prevention of Money Laundering Act (PMLA) and RBI KYC guidelines regarding high-value foreign remittances.",
+            "Non-compliance with company law filing of annual returns.",
+            "Excess CRR maintenance."
+          ],
+          "answerIndex": 1,
+          "explanation": "Failure to obtain proper KYC and due diligence documents for high-value foreign remittances violates PMLA guidelines and RBI's Know Your Customer directions, exposing the bank to money laundering risks.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "KYC",
+            "PMLA",
+            "Foreign Remittances"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-10_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-10_04",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-10",
+          "subject": "Audit",
+          "prompt": "How must CA Neha address the branch manager exceeding delegated sanctioning powers at Branch X?",
+          "options": [
+            "Ratify the excess sanction herself since she is the auditor.",
+            "Report the unauthorized excess sanction in the LFAR under 'Credit Appraisal / Sanctioning Powers' as an internal control violation.",
+            "Write off the excess amount from bank profits.",
+            "Instruct the borrower to refund the excess amount within 24 hours."
+          ],
+          "answerIndex": 1,
+          "explanation": "Exceeding delegated financial powers without higher authority approval is a serious breach of internal governance and credit policy controls, which must be specifically reported in the LFAR questionnaire.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Delegated Powers",
+            "Sanction Limits",
+            "LFAR"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-10_05",
+      "kind": "scenario",
+      "chapterId": "audit-10",
+      "subject": "Audit",
+      "passage": "Apex Bank Ltd. is a large public sector bank undergoing its annual statutory audit for the year ended 31st March 2026. CA Vikram is reviewing the audit working papers and reporting requirements across various specialised areas.\n\n1. The bank's consolidated financial statements include accounts of several domestic and overseas branches. A foreign branch in a jurisdiction with strict currency controls has reported profit, but repatriation of the dividend is restricted.\n2. The tax audit team working alongside the statutory auditors identifies significant disallowances under the Income Tax Act, 1961, including provisions for standard and non-performing assets which are non-deductible under specific tax sections.\n3. The bank has outsourced its ATM maintenance, IT infrastructure management, and loan recovery collection services to third-party vendors without periodic independent security audits of these vendors.\n4. The bank's internal inspection reports highlighted several rogue transactions in suspense accounts that remained unadjusted for over a year.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Audit of Banks"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-10_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-10_05",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-10",
+          "subject": "Audit",
+          "prompt": "How should the profit of the foreign branch with restricted dividend repatriation be treated in the consolidated financial statements?",
+          "options": [
+            "Ignored completely because funds cannot be brought to India.",
+            "Recognized as income in financial statements if earned, while complying with applicable accounting standards and disclosure of restrictions on remittance.",
+            "Treated as a capital reserve directly.",
+            "Deducted from Tier 1 Capital."
+          ],
+          "answerIndex": 1,
+          "explanation": "Profits of foreign branches are recognized in the period earned on an accrual basis, but restrictions on repatriation must be properly disclosed in the notes to accounts as per AS / Ind AS and banking regulations.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Foreign Branches",
+            "Consolidation",
+            "Income Recognition"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-10_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-10_05",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-10",
+          "subject": "Audit",
+          "prompt": "What is the tax audit implication regarding provisions for standard and non-performing assets made by Apex Bank Ltd.?",
+          "options": [
+            "All provisions made as per RBI norms are fully deductible for income tax purposes.",
+            "Provisions for bad and doubtful debts and standard asset provisions are generally disallowed under the Income Tax Act (subject to specific deductions like Section 36(1)(viia) for provision for bad and doubtful debts up to specified limits), requiring tax adjustments in the Tax Audit Report (Form 3CD).",
+            "Tax audit has no jurisdiction over bank provisions.",
+            "Standard asset provisions are deductible at 100%."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the Income Tax Act, provisions made as per RBI prudential norms (IRACP) are generally not deductible unless they qualify under specific provisions such as Section 36(1)(viia). Tax auditors must report these disallowances in Form 3CD.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Tax Audit",
+            "Form 3CD",
+            "Provision Deductions"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-10_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-10_05",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-10",
+          "subject": "Audit",
+          "prompt": "What is the primary audit risk concerning the outsourcing of IT infrastructure and loan recovery services without periodic vendor audits?",
+          "options": [
+            "Risk of physical fire in the bank's head office.",
+            "Operational, data security, and compliance risks arising from third-party non-performance or data breaches without independent oversight.",
+            "Risk of excess SLR maintenance.",
+            "Statutory violation of the Banking Regulation Act Section 5."
+          ],
+          "answerIndex": 1,
+          "explanation": "Outsourcing critical functions (IT, recovery, customer data) creates significant operational and cyber security risks. Banks must maintain oversight, and auditors must verify compliance with RBI guidelines on outsourcing of financial services.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Outsourcing",
+            "Operational Risk",
+            "IT Controls"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-10_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-10_05",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-10",
+          "subject": "Audit",
+          "prompt": "How should CA Vikram report the unadjusted suspense account entries pending for over a year?",
+          "options": [
+            "Reclassify them as fixed assets.",
+            "Highlight them in the LFAR and Main Audit Report as a control deficiency, as suspense accounts are prone to concealment of unauthorized or fraudulent transactions.",
+            "Write them off against customer deposits.",
+            "Ignore them if the net balance is small."
+          ],
+          "answerIndex": 1,
+          "explanation": "Long-pending unadjusted entries in suspense or sundry accounts represent major internal control weaknesses and potential parking spots for fraudulent transactions. Auditors must report them in detail in the LFAR.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Suspense Accounts",
+            "Internal Controls",
+            "LFAR"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

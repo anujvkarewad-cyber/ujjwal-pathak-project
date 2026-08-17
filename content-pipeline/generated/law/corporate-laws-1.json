@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "corporate-laws-1",
+  "subject": "Law",
+  "paper": "Paper 2: Corporate and Other Laws",
+  "module": "Module 1",
+  "chapterNumber": 1,
+  "chapterTitle": "Preliminary",
+  "generatedAt": "2026-08-16T14:08:55.219Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_corporate-laws-1_001",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "Which of the following persons is explicitly empowered by Section 2(60) of the Companies Act, 2013 to be designated as an 'Officer who is in default'?",
+      "options": [
+        "Every independent director in respect of all board decisions",
+        "A whole-time director",
+        "Any external statutory auditor",
+        "An independent legal advisor retained by the company"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 2(60) defines an 'officer who is in default' to include whole-time directors, key managerial personnel, and directors who have given their consent to proceedings or failed to take adequate steps. Independent directors are specifically excluded unless the contravention occurs without their knowledge or consent, or despite their due diligence. Therefore, whole-time directors are included.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Officer in Default",
+        "Definitions",
+        "Section 2(60)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_002",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "Under the Companies Act, 2013, what is the statutory minimum paid-up share capital requirement for a Private Company?",
+      "options": [
+        "One Lakh Rupees",
+        "Five Lakh Rupees",
+        "Ten Lakh Rupees",
+        "There is no minimum paid-up share capital requirement prescribed"
+      ],
+      "answerIndex": 3,
+      "explanation": "By virtue of the Companies (Amendment) Act, 2015, the requirement for a minimum paid-up share capital of Rs. 1 lakh for private companies and Rs. 5 lakhs for public companies was removed. Consequently, there is no minimum paid-up capital requirement under the Act now.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Private Company",
+        "Share Capital",
+        "Section 2(68)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_003",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "Which of the following entities is specifically *excluded* from the definition of 'Financial Institution' under Section 2(39) of the Companies Act, 2013?",
+      "options": [
+        "A scheduled bank",
+        "The Industrial Finance Corporation of India",
+        "The Life Insurance Corporation of India",
+        "A non-banking financial company registered under the RBI Act"
+      ],
+      "answerIndex": 3,
+      "explanation": "Section 2(39) defines a financial institution to include a industrial finance corporation, a scheduled bank, the Life Insurance Corporation, etc. An NBFC is governed separately under the RBI Act and is not listed as a financial institution under this specific sub-section.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Financial Institution",
+        "Definitions",
+        "Section 2(39)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_004",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "In relation to a holding company, a 'subsidiary company' as per Section 2(87) includes a company in which the holding company controls:",
+      "options": [
+        "More than 25% of the total voting power",
+        "Not less than 35% of the total voting power",
+        "More than one-half of the total voting power",
+        "Exactly 50% of the total voting power"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 2(87) defines a subsidiary company as one in which the holding company controls the composition of the Board of Directors or exercises or controls more than one-half of the total voting power either on its own or together with one or more of its subsidiary companies.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Subsidiary Company",
+        "Holding Company",
+        "Section 2(87)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_005",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "According to Section 2(20), the term 'Company' means a company formed and registered under this Act or under any:",
+      "options": [
+        "Previous Company Law",
+        "Foreign Company Law",
+        "Partnership Act, 1932",
+        "Cooperative Societies Act, 1912"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 2(20) states that 'company' means a company formed and registered under this Act or under any previous company law, encompassing legislations like the Companies Act, 1956 and earlier acts.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Company Definition",
+        "Section 2(20)",
+        "Previous Company Law"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_006",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "Which of the following is an essential characteristic of a 'Government Company' as defined under Section 2(45) of the Companies Act, 2013?",
+      "options": [
+        "Not less than 25% paid-up capital held by the Central Government",
+        "Not less than 50% paid-up capital held jointly by Central and State Governments",
+        "Not less than 51% paid-up capital held by a foreign government",
+        "Solely owned by statutory corporations created by Parliament"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 2(45) defines a Government Company as any company in which not less than 51% of the paid-up share capital is held by the Central Government, or by any State Government or Governments, or partly by the Central Government and partly by one or more State Governments.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Government Company",
+        "Section 2(45)",
+        "Paid-up Capital"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_007",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "Which section of the Companies Act, 2013 deals with the incorporation of a company?",
+      "options": [
+        "Section 3",
+        "Section 7",
+        "Section 9",
+        "Section 10"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 7 of the Companies Act, 2013 outlines the detailed procedure for the incorporation of a company, including filing documents with the Registrar and the issuance of the certificate of incorporation.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Incorporation",
+        "Section 7",
+        "Registration"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_008",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "A 'One Person Company' (OPC) can be formed by a natural person who is an Indian citizen and:",
+      "options": [
+        "A resident in India only",
+        "Resident in India or otherwise",
+        "A non-resident Indian holding a PIO card",
+        "A resident in India for not less than 182 days in the previous calendar year"
+      ],
+      "answerIndex": 1,
+      "explanation": "As amended by the Companies (Incorporation) Second Amendment Rules, 2021, the residency requirement of being a resident in India for not less than 182 days has been reduced to 120 days, and an OPC can be incorporated by a natural person who is an Indian citizen, whether resident in India or otherwise.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "One Person Company",
+        "Residency",
+        "Section 2(62)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_009",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "Can a minor be admitted as a member or nominee of a One Person Company (OPC) under the Companies Act, 2013?",
+      "options": [
+        "Yes, through a natural guardian",
+        "Yes, with prior approval of the National Company Law Tribunal",
+        "No, a minor cannot become a member or nominee of an OPC",
+        "Yes, provided the minor's shares are fully paid-up"
+      ],
+      "answerIndex": 2,
+      "explanation": "As per the rules governing OPCs, a minor cannot become a member or nominee of the OPC or hold share with beneficial interest. Allowing a minor would contravene the contractual capacity requirements for company membership.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "One Person Company",
+        "Nominee",
+        "Minor"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_010",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "What is the legal effect of registration of a company under Section 9 of the Companies Act, 2013?",
+      "options": [
+        "It creates a partnership among shareholders",
+        "It incorporates the company into a body corporate with perpetual succession and a common seal (optional)",
+        "It transfers ownership of all promoter assets to the directors automatically",
+        "It grants the company tax exemption for the first five financial years"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 9 provides that from the date of incorporation mentioned in the certificate of incorporation, the subscribers shall be a body corporate capable of exercising all functions of an incorporated company with perpetual succession and a common seal (optional now).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Effect of Registration",
+        "Section 9",
+        "Body Corporate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_011",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "Under Section 2(57), 'to hold' shares in a company includes being a beneficial owner of shares whose name is entered in the records of a:",
+      "options": [
+        "Stock exchange",
+        "Depository",
+        "Registrar of Companies",
+        "National Company Law Tribunal"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 2(57) defines 'to hold' in relation to shares to include a person whose name is entered as a beneficial owner in the records of a depository, acknowledging dematerialized shareholding.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Holding Shares",
+        "Depository",
+        "Section 2(57)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_012",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "Which of the following definitions under Section 2 encompasses a company incorporated outside India that has a place of business in India whether by itself or through an agent?",
+      "options": [
+        "Section 2(20) - Company",
+        "Section 2(42) - Foreign Company",
+        "Section 2(46) - Holding Company",
+        "Section 2(68) - Private Company"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 2(42) defines a 'foreign company' as any company or body corporate incorporated outside India which has a place of business in India whether by itself or through an agent, physically or through electronic mode.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Foreign Company",
+        "Section 2(42)",
+        "Definitions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_013",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "A company limited by guarantee may have a share capital. What is the liability of members in such a company in the event of winding up?",
+      "options": [
+        "Unlimited liability up to personal assets",
+        "Up to the amount guaranteed and unpaid on shares held, if any",
+        "Strictly limited to the nominal value of the shares without any guarantee amount",
+        "Zero liability if the company is solvent"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 2(22), a company limited by guarantee means a company having the liability of its members limited by the memorandum to such amount as the members may respectively undertake to contribute to the assets of the company in the event of its being wound up, plus any unpaid amount on shares if it has a share capital.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Company Limited by Guarantee",
+        "Section 2(22)",
+        "Liability"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_014",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "An 'associate company' in relation to another company, as defined in Section 2(6), means a company in which that other company has:",
+      "options": [
+        "Control of at least 10% of total voting power",
+        "Significant influence, which means control of at least 20% of total voting power or business control under an agreement",
+        "Control of exactly 50% of total voting power",
+        "Subsidiary control of more than 50% voting power"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 2(6) defines an associate company as a company in which that other company has a significant influence, which is defined as control of at least 20% of total voting power, or control of business under an agreement.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Associate Company",
+        "Significant Influence",
+        "Section 2(6)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_015",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "According to Section 2(71), a 'Public Company' is a company which is not a private company and has a minimum paid-up share capital as:",
+      "options": [
+        "May be prescribed",
+        "Not less than Rs. 5 Lakhs",
+        "Not less than Rs. 10 Lakhs",
+        "Not less than Rs. 1 Crore"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 2(71) defines a public company as a company which is not a private company and has a minimum paid-up share capital, as may be prescribed. Presently, no minimum paid-up share capital is prescribed by rules.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Public Company",
+        "Section 2(71)",
+        "Capital"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_016",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "Can a private company that is a subsidiary of a public company be treated as a private company for all exemptions under the Companies Act, 2013?",
+      "options": [
+        "Yes, because its articles contain all restrictions under Section 2(68)",
+        "No, a private company that is a subsidiary of a public company is deemed to be a public company for the purposes of the Act",
+        "Yes, provided its turnover is below 100 crores",
+        "No, unless approved by the Central Government"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per the proviso to Section 2(71), a private company which is a subsidiary of a public company shall be deemed to be a public company for the purposes of this Act even where such subsidiary company continues to be a private company in its articles.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Subsidiary of Public Company",
+        "Section 2(71)",
+        "Deemed Public Company"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_017",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "Which section of the Companies Act, 2013 contains definitions of various terms used throughout the statute?",
+      "options": [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Section 4"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 2 of the Companies Act, 2013 is the interpretation clause containing definitions of various technical and legal terms used across the Act.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Definitions",
+        "Section 2",
+        "Statutory Interpretation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_018",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "Under Section 2(84), 'share' means a share in the share capital of a company and includes:",
+      "options": [
+        "Debentures",
+        "Stock",
+        "Public deposits",
+        "Bonds"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 2(84) defines 'share' to mean a share in the share capital of a company and includes stock, except where a distinction between stock and share is expressed or implied.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Share Definition",
+        "Section 2(84)",
+        "Stock"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_019",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "Which of the following is excluded from the definition of 'deposit' under the Companies (Acceptance of Deposits) Rules, 2014?",
+      "options": [
+        "Amount raised by issuance of non-convertible debentures not constituting a charge on assets",
+        "Any amount received from a relative of a director of the company, accompanied by a declaration that it is not out of borrowed funds",
+        "Unsecured loans taken from commercial banks",
+        "Advance received against sale of goods to be delivered within 365 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under the Deposit Rules, amounts received from a relative of a director (or member in case of private company) accompanied by a written declaration that the money is not given out of borrowed funds are excluded from the definition of 'deposits'. Advances for goods within 365 days are also excluded, but bank loans are borrowings, not relative advances.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Deposits",
+        "Exclusions",
+        "Rules"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_020",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "What is the extent of territorial jurisdiction of the Companies Act, 2013?",
+      "options": [
+        "Whole of India",
+        "Whole of India including Jammu & Kashmir and all Union Territories",
+        "India and foreign subsidiaries of Indian companies",
+        "Only mainland states of India excluding Special Economic Zones"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 1(2) specifies that the Companies Act, 2013 extends to the whole of India.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Application of Act",
+        "Section 1",
+        "Territorial Jurisdiction"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_021",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "Which provision governs the incorporation of a One Person Company (OPC), restricting membership to a natural person?",
+      "options": [
+        "Section 3",
+        "Section 7",
+        "Section 8",
+        "Section 9"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 3 of the Companies Act, 2013 specifies formation of companies, providing that a company may be formed for any lawful purpose by seven or more persons (public), two or more persons (private), or one person (OPC).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Formation of Company",
+        "Section 3",
+        "OPC"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_022",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "In the context of 'dormant company' under Section 455, a company is classified as dormant if it has not been carrying on any business or operation, or has not made any significant accounting transaction during the last:",
+      "options": [
+        "One financial year",
+        "Two consecutive financial years",
+        "Three consecutive financial years",
+        "Five financial years"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 455 provides that a company which has not been carrying on any business or operation, or has not made any significant accounting transaction during the last two consecutive financial years, or has not filed financial statements and annual returns during the last two consecutive financial years, may apply to the Registrar to obtain dormant status.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Dormant Company",
+        "Section 455",
+        "Accounting Transactions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_023",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "Which of the following activities does *not* constitute a 'significant accounting transaction' for a dormant company under Section 455?",
+      "options": [
+        "Payment of fees by a company to the Registrar",
+        "Payments of statutory dues to authorities",
+        "Allotment of shares for cash",
+        "Office space rent paid to maintain its registered office"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 455 defines 'significant accounting transaction' as any transaction other than: (i) payment of fees by a company to the Registrar; (ii) payments of statutory dues; (iii) allotment of shares to fulfill requirements of the Act; and (iv) office maintenance expenses. Allotment of shares for cash is an active financial operation.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Significant Accounting Transaction",
+        "Section 455",
+        "Dormant Company"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_024",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "Which of the following bodies corporate is specifically excluded from the definition of a 'Body Corporate' under Section 2(11)?",
+      "options": [
+        "A cooperative society registered under any law relating to cooperative societies",
+        "A limited liability partnership",
+        "A foreign company",
+        "A public financial institution"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 2(11) defines 'body corporate' to include a company incorporated outside India, but specifically excludes (i) a co-operative society registered under any law relating to co-operative societies, and (ii) any other body corporate specified by the Central Government.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Body Corporate",
+        "Section 2(11)",
+        "Exclusions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_025",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "What does Section 2(68) mandate regarding the maximum number of members in a private company?",
+      "options": [
+        "Maximum 50 members",
+        "Maximum 100 members",
+        "Maximum 200 members",
+        "No limit on maximum members"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 2(68) defines a private company as one having a minimum paid-up share capital as prescribed, and which by its articles restricts the right to transfer its shares and limits the number of its members to 200 (excluding employee-members and past employee-members).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Private Company",
+        "Maximum Members",
+        "Section 2(68)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_026",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "In computing the limit of 200 members in a private company, which of the following persons are excluded?",
+      "options": [
+        "Persons who are in the employment of the company",
+        "Persons who were formerly in the employment of the company and were members while in that employment and have continued to be members after the employment ceased",
+        "Both (A) and (B)",
+        "All preference shareholders holding shares for more than 2 years"
+      ],
+      "answerIndex": 2,
+      "explanation": "The proviso to Section 2(68) states that where two or more persons hold one or more shares in a company jointly, they shall be treated as a single member, and persons in employment and persons who were formerly in employment and continue as members after cessation of employment are excluded from the limit of 200.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Private Company",
+        "Limit of Members",
+        "Section 2(68)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_027",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "Which section of the Companies Act, 2013 deals with companies with charitable and other objects (License under Section 8)?",
+      "options": [
+        "Section 7",
+        "Section 8",
+        "Section 9",
+        "Section 12"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 8 of the Companies Act, 2013 deals with formation of companies with charitable objects, promotion of commerce, art, science, sports, education, research, social welfare, religion, charity, protection of environment, etc., intending to apply profits towards promoting its objects and prohibiting dividend payment.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 8 Company",
+        "Charitable Objects",
+        "License"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_028",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "Can a partnership firm be a member of a Section 8 Company under the Companies Act, 2013?",
+      "options": [
+        "No, partnership firms cannot be members",
+        "Yes, a partnership firm can be a member of a Section 8 company",
+        "Yes, provided the partnership is registered under the Partnership Act",
+        "Only if approved by the Central Government"
+      ],
+      "answerIndex": 1,
+      "explanation": "A partnership firm, being capable of holding property and being a legal person in certain contexts (or association of persons), can be a member of a Section 8 company. Unlike ordinary companies where partnership is sometimes barred, Section 8 allows registered partnerships, associations, and bodies corporate to be members.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 8 Company",
+        "Membership",
+        "Partnership Firm"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_029",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "Which of the following is an accurate statement concerning 'Key Managerial Personnel' (KMP) under Section 2(51)?",
+      "options": [
+        "Every manager of a company is automatically a KMP",
+        "Chief Executive Officer is included even if not designated as such",
+        "Company Secretary is a KMP",
+        "Internal Auditor is statutorily designated as a KMP"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 2(51) defines KMP to include: (i) Chief Executive Officer or managing director or manager; (ii) Company Secretary; (iii) Whole-time director; (iv) Chief Financial Officer; and (v) such other officer, not more than one level below the directors who is in whole-time employment, as designated by the Board. Internal auditors are not statutory KMPs.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Key Managerial Personnel",
+        "Section 2(51)",
+        "Definitions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-1_030",
+      "kind": "normal",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "prompt": "Under Section 2(72), a 'Public Financial Institution' (PFI) includes which of the following institutions?",
+      "options": [
+        "Any cooperative bank operating in rural districts",
+        "IDBI Bank Limited",
+        "Any foreign investment bank with branches in Mumbai",
+        "Any non-banking financial institution registered with SEBI"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 2(72) lists specific institutions as Public Financial Institutions, which includes IDBI Bank Limited, LIC, UTI, and specified institutions established under Central Acts.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Public Financial Institution",
+        "Section 2(72)",
+        "Definitions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_corporate-laws-1_01",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "passage": "GreenTech Agro Solutions Limited is a public company incorporated under the Companies Act, 2013, with a registered office in Pune. It holds 55% of the total voting power in BioPower Energy Private Limited. BioPower Energy Private Limited, in turn, holds 30% of the total voting power in EcoSoil Nutrients Private Limited. GreenTech Agro Solutions Limited also holds a direct 25% voting power in EcoSoil Nutrients Private Limited. Furthermore, GreenTech Agro Solutions Limited has an independent nominee agreement giving it significant influence over another firm, AgroInputs India Limited.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-1_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-1_01",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-1",
+          "subject": "Law",
+          "prompt": "What is the status of BioPower Energy Private Limited in relation to GreenTech Agro Solutions Limited?",
+          "options": [
+            "Associate company",
+            "Subsidiary company",
+            "Joint venture",
+            "Holding company"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 2(87), since GreenTech Agro Solutions Limited controls more than one-half (55%) of the total voting power of BioPower Energy Private Limited, BioPower Energy Private Limited is a subsidiary of GreenTech Agro Solutions Limited.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Subsidiary Company",
+            "Section 2(87)",
+            "Voting Power"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-1_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-1_01",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-1",
+          "subject": "Law",
+          "prompt": "What is the relationship between GreenTech Agro Solutions Limited and EcoSoil Nutrients Private Limited?",
+          "options": [
+            "EcoSoil is a direct subsidiary of GreenTech",
+            "EcoSoil is a subsidiary of GreenTech due to combined voting power control",
+            "EcoSoil is completely independent",
+            "EcoSoil is a holding company of GreenTech"
+          ],
+          "answerIndex": 1,
+          "explanation": "GreenTech holds 25% directly, and its subsidiary BioPower holds 30%. Under Section 2(87), control of voting power can be exercised on its own or together with one or more of its subsidiary companies (25% + 30% = 55%). Therefore, EcoSoil is a subsidiary of GreenTech.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Subsidiary Company",
+            "Chain Subsidiary",
+            "Section 2(87)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-1_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-1_01",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-1",
+          "subject": "Law",
+          "prompt": "What is the status of AgroInputs India Limited in relation to GreenTech Agro Solutions Limited?",
+          "options": [
+            "Subsidiary company",
+            "Associate company",
+            "Wholly owned subsidiary",
+            "Government company"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 2(6), an associate company includes a company in which another company has significant influence, including business control under an agreement. Since GreenTech has an agreement giving it significant influence over AgroInputs, it qualifies as an associate company.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Associate Company",
+            "Section 2(6)",
+            "Significant Influence"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-1_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-1_01",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-1",
+          "subject": "Law",
+          "prompt": "Will BioPower Energy Private Limited be deemed a public company under the Companies Act, 2013 despite being registered as a private company?",
+          "options": [
+            "Yes, because it is a subsidiary of a public company",
+            "No, private companies never lose their private status",
+            "Yes, provided its turnover exceeds Rs. 200 crores",
+            "No, unless its articles are forcibly altered by NCLT"
+          ],
+          "answerIndex": 0,
+          "explanation": "As per the proviso to Section 2(71), a private company that is a subsidiary of a public company is deemed to be a public company for the purposes of the Act, despite retaining its private corporate form in its articles.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Deemed Public Company",
+            "Section 2(71)",
+            "Subsidiary"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-1_02",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "passage": "Mr. Raghav, an Indian citizen residing permanently in London for the past 5 years, intends to incorporate a One Person Company (OPC) in Mumbai under the Companies Act, 2013, to engage in software exports. He names his sister, Ms. Ritu (a resident of Delhi and an Indian citizen), as his nominee with her prior written consent. Mr. Raghav proposes to operate the company single-handedly and expects initial paid-up capital of Rs. 40,000.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-1_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-1_02",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-1",
+          "subject": "Law",
+          "prompt": "Is Mr. Raghav eligible to incorporate an OPC in India despite residing in London?",
+          "options": [
+            "No, because he has not resided in India for 182 days in the previous year",
+            "Yes, since an Indian citizen, whether resident in India or otherwise, can incorporate an OPC",
+            "No, non-resident Indian citizens are barred from forming an OPC",
+            "Yes, provided he obtains prior clearance from the Reserve Bank of India"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the amended rules for One Person Companies, a natural person who is an Indian citizen, whether resident in India or otherwise, is eligible to incorporate an OPC.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "One Person Company",
+            "NRIs",
+            "Residency Rules"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-1_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-1_02",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-1",
+          "subject": "Law",
+          "prompt": "Is Ms. Ritu eligible to be appointed as the nominee for Mr. Raghav's OPC?",
+          "options": [
+            "No, because she is a resident of Delhi and Mr. Raghav resides in London",
+            "Yes, as she is an Indian citizen and a resident in India, given her written consent",
+            "No, siblings cannot be nominees for an OPC",
+            "Yes, provided she contributes 50% of the initial capital"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 3 of the Companies (Incorporation) Rules stipulates that only a natural person who is an Indian citizen and resident in India shall be a nominee for the sole member of a OPC, upon giving prior written consent.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "OPC Nominee",
+            "Residency",
+            "Eligibility"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-1_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-1_02",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-1",
+          "subject": "Law",
+          "prompt": "What is the minimum paid-up share capital requirement for Mr. Raghav's OPC upon incorporation?",
+          "options": [
+            "Rs. 1,00,000",
+            "Rs. 5,00,000",
+            "Rs. 40,000 as proposed, since there is no minimum capital requirement under the Act",
+            "Rs. 10,00,000"
+          ],
+          "answerIndex": 2,
+          "explanation": "With the removal of minimum paid-up capital limits for private and public companies under the Companies Act, 2013, an OPC can be incorporated with any nominal capital, including Rs. 40,000.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "OPC Capital",
+            "Minimum Paid-up Capital",
+            "Incorporation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-1_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-1_02",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-1",
+          "subject": "Law",
+          "prompt": "Can Mr. Raghav simultaneously be a member or nominee in another OPC incorporated by his friend in Bangalore?",
+          "options": [
+            "Yes, up to a maximum of two OPCs",
+            "No, a natural person cannot be a member of more than one OPC at any point in time and cannot be a nominee in more than one OPC",
+            "Yes, if the business objects of both OPCs are entirely different",
+            "No, unless authorized by the Registrar of Companies"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 3 explicitly prohibits a natural person from being a member of more than one OPC at any given time and from being a nominee in more than one OPC.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "One Person Company",
+            "Restriction on Membership",
+            "Rule 3"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-1_03",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "passage": "HealAndCare Foundation is a company incorporated under Section 8 of the Companies Act, 2013 to promote advanced medical research and provide free medication to underprivileged cancer patients. The company earns surplus revenues through nominal fees charged for diagnostic camps. Over two financial years, the company accumulated a substantial surplus. The Board of Directors passed a resolution to distribute a 5% dividend to its members and to issue bonus shares to the founding members out of this surplus.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-1_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-1_03",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-1",
+          "subject": "Law",
+          "prompt": "Is the Board's decision to distribute a 5% dividend to its members valid under the Companies Act, 2013?",
+          "options": [
+            "Valid, since the surplus was earned from diagnostic operations",
+            "Valid, provided ordinary resolution is passed in General Meeting",
+            "Invalid, because Section 8 companies are prohibited from paying dividends to their members",
+            "Valid, up to a maximum ceiling of 10% dividend"
+          ],
+          "answerIndex": 2,
+          "explanation": "Section 8 companies are formed with charitable objects and must apply their profits or other income solely in promoting their objects. They are strictly prohibited from paying any dividend to their members.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 8 Company",
+            "Prohibition of Dividend",
+            "Charitable Objects"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-1_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-1_03",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-1",
+          "subject": "Law",
+          "prompt": "Can HealAndCare Foundation alter its memorandum with respect to its objects without Central Government approval?",
+          "options": [
+            "Yes, by passing a special resolution in a general meeting",
+            "No, any alteration of the memorandum or articles of a Section 8 company requires previous approval of the Central Government (or Regional Director)",
+            "Yes, provided the ROC is notified within 30 days",
+            "No alteration is permitted under any circumstances"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 8(4)(i), a Section 8 company cannot alter the provisions of its memorandum or articles except with the previous approval of the Central Government (power delegated to Regional Director).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 8 Company",
+            "Alteration of Memorandum",
+            "Approval"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-1_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-1_03",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-1",
+          "subject": "Law",
+          "prompt": "Can HealAndCare Foundation amalgamate with another company that is not a Section 8 company?",
+          "options": [
+            "Yes, freely through a scheme of merger",
+            "No, amalgamation is permitted only with another Section 8 company having similar objects",
+            "Yes, with NCLT approval",
+            "No amalgamation is allowed whatsoever"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the rules, a Section 8 company may only amalgamate with another company registered under Section 8 and having similar objects, ensuring the charitable purpose is not compromised.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 8 Company",
+            "Amalgamation",
+            "Merger"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-1_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-1_03",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-1",
+          "subject": "Law",
+          "prompt": "If HealAndCare Foundation violates any of the conditions specified in Section 8, what action can the Central Government take?",
+          "options": [
+            "Levy a minor fine on the directors and let the company function",
+            "Revoke the license of the company and direct it to wind up or amalgamate with another Section 8 company",
+            "Convert the company into a public company automatically without winding up",
+            "Imprison the founder members for 7 years"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 8(6), if the company defaults in complying with requirements or violates conditions, the Central Government may revoke its license, after which the company may be wound up or amalgamated with another Section 8 company.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 8 Company",
+            "Revocation of License",
+            "Penalties"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-1_04",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "passage": "Zenith Real Estate Developers Limited was incorporated in 2018. Due to a prolonged market downturn and pending litigations over title deeds of its major land parcels, the company did not carry on any business or operation, nor did it make any significant accounting transaction during the financial years 2023-24 and 2024-25. The management wishes to keep the corporate entity alive without incurring heavy compliance costs and filing regular operational returns, and thus considers applying for dormant status under Section 455.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-1_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-1_04",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-1",
+          "subject": "Law",
+          "prompt": "Is Zenith Real Estate Developers Limited eligible to apply for dormant company status under Section 455?",
+          "options": [
+            "No, because it is a public company",
+            "Yes, since it has not carried on any business or operation and made no significant accounting transactions for the last two consecutive financial years",
+            "No, because it has pending litigations",
+            "Yes, provided it obtains a no-objection certificate from all its debtors"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 455 allows a company that has not carried on business or operations or made any significant accounting transactions during the last two consecutive financial years to apply to the Registrar for obtaining dormant status.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Dormant Company",
+            "Section 455",
+            "Eligibility"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-1_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-1_04",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-1",
+          "subject": "Law",
+          "prompt": "What procedural requirement must Zenith fulfill before making an application to the Registrar for dormant status?",
+          "options": [
+            "Pass an ordinary resolution at a general meeting or issue a notice to all shareholders requiring consent",
+            "Pass a special resolution in a general meeting or obtain consent of at least 75% shareholders in value",
+            "Obtain unanimous consent of all directors only",
+            "Appoint a judicial manager through the NCLT"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 3 of the Companies (Miscellaneous) Rules, 2014 specifies that a company can apply for dormant status only after passing a special resolution at a general meeting or issuing a notice to all shareholders and getting consent of at least 75% in value.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Dormant Company",
+            "Special Resolution",
+            "Rules"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-1_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-1_04",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-1",
+          "subject": "Law",
+          "prompt": "During the dormant period, which of the following expenses incurred by Zenith will *not* violate its dormant status?",
+          "options": [
+            "Payment of fees to the Registrar of Companies and office maintenance charges",
+            "Purchase of new land parcels for future projects",
+            "Disbursement of commercial loans to sister concerns",
+            "Issuance of new equity shares for cash consideration to expand operations"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under Section 455, payment of statutory fees to the Registrar and payments for maintenance of its office and records do not constitute 'significant accounting transactions' and are permitted for dormant companies.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Dormant Company",
+            "Significant Accounting Transaction",
+            "Section 455"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-1_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-1_04",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-1",
+          "subject": "Law",
+          "prompt": "What is the maximum continuous period for which a company can remain under a dormant status as per the rules?",
+          "options": [
+            "Three consecutive financial years",
+            "Five consecutive financial years",
+            "Ten consecutive financial years",
+            "Indefinitely until revived by the Registrar"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Rule 7 of the Companies (Miscellaneous) Rules, 2014, the maximum period for which a company can remain as a dormant company is restricted to 5 consecutive financial years.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Dormant Company",
+            "Maximum Period",
+            "Rule 7"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-1_05",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-1",
+      "subject": "Law",
+      "passage": "Apex Infrastructure Projects Limited has a complex corporate structure. During a statutory audit, an investigation was initiated regarding non-compliance with corporate filings. The Board of Directors consisted of a Managing Director, three Whole-Time Directors, two Independent Directors, and a Company Secretary. The Chief Financial Officer also participated in board meetings. Due to a failure to file annual financial statements, a penalty notice was issued by the Registrar under the Companies Act, 2013.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Preliminary"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-1_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-1_05",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-1",
+          "subject": "Law",
+          "prompt": "Who among the following would be classified as an 'Officer who is in default' under Section 2(60) for the default in filing annual returns?",
+          "options": [
+            "The independent directors in all circumstances",
+            "The Managing Director, Whole-Time Directors, Company Secretary, and Chief Financial Officer",
+            "Only the external statutory auditor",
+            "The external legal consultant who drafted the notices"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 2(60) designates key managerial personnel such as Managing Directors, Whole-Time Directors, Company Secretaries, and Chief Financial Officers as officers who are in default when contraventions occur.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Officer in Default",
+            "Section 2(60)",
+            "KMP"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-1_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-1_05",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-1",
+          "subject": "Law",
+          "prompt": "Will the Independent Directors be held liable as 'officers in default' for the above default?",
+          "options": [
+            "Yes, all directors are jointly and severally liable without exception",
+            "No, unless the contravention had occurred with their knowledge, attributable through board processes, or where they had not acted diligently",
+            "Yes, because they attended the board meetings",
+            "No, independent directors are completely immune to any legal penalties under company law"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 2(60) explicitly shields independent directors from being designated as officers in default unless the default occurs with their knowledge (attributable through board minutes) or without their exercising adequate due diligence.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Independent Director",
+            "Officer in Default",
+            "Section 2(60)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-1_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-1_05",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-1",
+          "subject": "Law",
+          "prompt": "What category of personnel does the Company Secretary belong to under Section 2(51)?",
+          "options": [
+            "Key Managerial Personnel",
+            "Promoter group",
+            "Independent professional",
+            "Nominee director"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 2(51) explicitly lists a Company Secretary as a Key Managerial Personnel (KMP) of the company.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Key Managerial Personnel",
+            "Company Secretary",
+            "Section 2(51)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-1_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-1_05",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-1",
+          "subject": "Law",
+          "prompt": "Apex Infrastructure Projects Limited is held to be a company limited by shares. What does this fundamentally imply regarding member liability?",
+          "options": [
+            "Members are liable with their personal residential properties for all corporate debts",
+            "Liability of members is limited to the amount unpaid on the shares respectively held by them",
+            "Members have zero liability even if shares are partly paid-up",
+            "Members must contribute proportionally to corporate losses upon demand by trade creditors"
+          ],
+          "answerIndex": 1,
+          "explanation": "By definition under Section 2(22) or general corporate principles of a company limited by shares, the liability of its members is limited to the amount, if any, unpaid on the shares held by them.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Limited Liability",
+            "Company Limited by Shares",
+            "Fundamental Principles"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

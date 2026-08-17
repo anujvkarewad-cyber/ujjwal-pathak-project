@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "advanced-accounting-6",
+  "subject": "Accounts",
+  "paper": "Paper 1: Advanced Accounting",
+  "module": "Module 2",
+  "chapterNumber": 6,
+  "chapterTitle": "Liabilities Based Accounting Standards",
+  "generatedAt": "2026-08-16T13:48:23.794Z",
+  "model": "gemini-3.6-flash",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_advanced-accounting-6_001",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "According to AS 29 'Provisions, Contingent Liabilities and Contingent Assets', how should a provision be measured in the balance sheet?",
+      "options": [
+        "At the present value of the expected expenditure discounted at the risk-free rate",
+        "At the best estimate of the expenditure required to settle the present obligation at the balance sheet date without discounting",
+        "At the maximum potential loss that could arise from the obligation",
+        "At the average of the minimum and maximum possible outcome amounts"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 29, provisions are measured at the best estimate of the expenditure required to settle the present obligation at the balance sheet date. Unlike Ind AS 37, standard provisions under AS 29 are generally not discounted to present value unless specifically required by another standard.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 29",
+        "Provisions",
+        "Measurement"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_002",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "Under AS 15 'Employee Benefits', short-term employee benefits are defined as benefits expected to be settled wholly before how many months after the end of the period in which employees render the related service?",
+      "options": [
+        "6 months",
+        "12 months",
+        "24 months",
+        "36 months"
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 15 defines short-term employee benefits as employee benefits (other than termination benefits) that fall due wholly within twelve months after the end of the period in which the employees render the related service.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 15",
+        "Short-term Employee Benefits",
+        "Definition"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_003",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "Which of the following events triggers the 'Initial Disclosure Event' for a discontinuing operation under AS 24?",
+      "options": [
+        "The Board of Directors considers a preliminary feasibility report to sell an operating component",
+        "The enterprise enters into a binding sale agreement for substantially all assets attributable to the discontinuing operation",
+        "The firm negotiations with potential buyers begin without any formal board decision",
+        "The competitor announces a market takeover of the firm's business sector"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 24, the Initial Disclosure Event occurs on the earlier of: (a) the enterprise entering into a binding sale agreement for substantially all of the assets attributable to the discontinuing operation, or (b) the board of directors approving a detailed formal plan and making an announcement of the plan.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 24",
+        "Initial Disclosure Event",
+        "Discontinuing Operations"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_004",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "How should a contingent asset be treated in the financial statements under AS 29?",
+      "options": [
+        "Recognized in the Balance Sheet when economic inflow is probable",
+        "Disclosed in the Notes to Accounts when economic inflow is remote",
+        "Neither recognized nor disclosed in the financial statements, but disclosed in the Report of the Board of Directors if inflow is probable",
+        "Recognized directly in the Statement of Profit and Loss as accrued revenue"
+      ],
+      "answerIndex": 2,
+      "explanation": "AS 29 prohibits the recognition of contingent assets in financial statements. Where an inflow of economic benefits is probable, the contingent asset is disclosed in the Report of the Board of Directors, not in the financial statements.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 29",
+        "Contingent Assets",
+        "Disclosure Rules"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_005",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "In a defined contribution plan under AS 15, who bears the actuarial risk and investment risk?",
+      "options": [
+        "The enterprise (employer)",
+        "The employee",
+        "The trustee of the fund jointly with the employer",
+        "The Government pension authority"
+      ],
+      "answerIndex": 1,
+      "explanation": "In a defined contribution plan, the enterprise's obligation is limited to the contribution agreed to be paid into the fund. Consequently, actuarial risk and investment risk fall on the employee.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 15",
+        "Defined Contribution Plan",
+        "Actuarial Risk"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_006",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "A company has a present obligation arising from a past event, but it is NOT probable that an outflow of resources embodying economic benefits will be required to settle it. How should this item be treated under AS 29?",
+      "options": [
+        "Recognize a Provision",
+        "Disclose as a Contingent Liability, unless the possibility of outflow is remote",
+        "Do not disclose or recognize anything",
+        "Recognize as a Contingent Asset"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 29, a present obligation where an outflow of resources embodying economic benefits is not probable (i.e. possible or less than 50% likely) is disclosed as a contingent liability, unless the possibility of outflow is remote.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 29",
+        "Contingent Liabilities",
+        "Recognition Threshold"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_007",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "Does the piecemeal disposal of individual assets of a business line without a detailed formal plan constitute a discontinuing operation under AS 24?",
+      "options": [
+        "Yes, if the aggregate sale value of assets exceeds 10% of total assets",
+        "Yes, provided all assets are sold within one financial year",
+        "No, individual asset disposals without a single coordinated plan do not constitute a discontinuing operation",
+        "Yes, always"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under AS 24, a discontinuing operation must be pursuant to a single overall plan to dispose of, abandon, or terminate a major line of business or geographical area. Gradual piecemeal disposals without such a plan do not meet the definition.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 24",
+        "Discontinuing Operations",
+        "Scope"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_008",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "Under AS 15, how should an enterprise account for non-vesting accumulating compensated absences?",
+      "options": [
+        "No liability is recognized until employees actually take the leave",
+        "Recognize an expense and liability for the expected cost of the accumulated unutilized leave expected to be used as a result of the unused entitlement",
+        "Recognize a provision for the total accumulated unutilized leave balance for all employees at gross pay rates",
+        "Charge the entire accumulated amount directly to reserves"
+      ],
+      "answerIndex": 1,
+      "explanation": "For accumulating non-vesting paid absences, AS 15 requires an enterprise to measure the expected cost as the additional amount that it expects to pay as a result of the unused entitlement that has accumulated at the balance sheet date.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 15",
+        "Compensated Absences",
+        "Short-term Benefits"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_009",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "When the possibility of an outflow of economic resources to settle an obligation is remote, how is it treated under AS 29?",
+      "options": [
+        "Recognized as a provision",
+        "Disclosed in the Notes to Accounts",
+        "No provision and no disclosure required in financial statements",
+        "Disclosed only in the Directors' Report"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under AS 29, if the possibility of any outflow of resources in settlement of an obligation is remote, neither recognition of a provision nor disclosure as a contingent liability is required.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 29",
+        "Contingent Liabilities",
+        "Remote Possibility"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_010",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "When should an enterprise recognize an expense and liability for termination benefits under AS 15?",
+      "options": [
+        "Over the remaining service life of the retrenched employees",
+        "Immediately when the enterprise is demonstrably committed to terminate the employment",
+        "In equal installments over 5 years starting from the date of payment",
+        "Only when actual cash payment is disbursed to employees"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 15, an enterprise should recognize termination benefits as an expense immediately when the enterprise is demonstrably committed to either terminate employment before normal retirement or provide termination benefits as a result of an offer made to encourage voluntary redundancy.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 15",
+        "Termination Benefits",
+        "Recognition Timing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_011",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "Under AS 15, how is unvested past service cost recognized in the Statement of Profit and Loss?",
+      "options": [
+        "Recognized immediately as an expense in the year of amendment",
+        "Recognized as an expense on a straight-line basis over the average period until the benefits become vested",
+        "Capitalized as an intangible asset and amortized over 10 years",
+        "Deducted directly from General Reserves without routing through P&L"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 15, past service cost for unvested benefits is recognized as an expense on a straight-line basis over the average period until the benefits become vested. Vested past service cost is recognized immediately.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 15",
+        "Past Service Cost",
+        "Defined Benefit Plans"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_012",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "Apex Ltd. enters into an onerous operating lease contract for an empty warehouse. The remaining non-cancellable lease payment is ₹600,000 per annum for 2 years. The cancellation penalty is ₹900,000. Sub-leasing is permitted and estimated to yield ₹400,000 per annum. What is the provision amount under AS 29?",
+      "options": [
+        "₹1,200,000",
+        "₹900,000",
+        "₹400,000",
+        "₹800,000"
+      ],
+      "answerIndex": 2,
+      "explanation": "An onerous contract provision is measured at the unavoidable costs of meeting obligations, which is the lower of net cost of fulfilling the contract and penalty for non-fulfillment. Fulfilling net cost = (₹600,000 - ₹400,000) × 2 years = ₹400,000. Cancellation penalty = ₹900,000. Provision required = Lower of ₹400,000 and ₹900,000 = ₹400,000.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 29",
+        "Onerous Contracts",
+        "Provision Calculation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_013",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "Under AS 15, which rate should be used to discount post-employment benefit obligations (both funded and unfunded)?",
+      "options": [
+        "The enterprise's weighted average cost of capital (WACC)",
+        "The prime lending rate of State Bank of India",
+        "Market yields at the balance sheet date on government bonds",
+        "The expected rate of return on plan assets"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under AS 15, the rate used to discount post-employment benefit obligations should be determined by reference to market yields at the balance sheet date on government bonds.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 15",
+        "Discount Rate",
+        "Actuarial Assumptions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_014",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "Gamma Ltd. sells goods with a 1-year product warranty. Historical data shows that 80% goods have no defects, 15% have minor defects costing ₹200 to repair per unit, and 5% have major defects costing ₹800 to repair per unit. If 1,000 units were sold during the year, what provision for warranty should be recognized under AS 29?",
+      "options": [
+        "₹70,000",
+        "₹100,000",
+        "₹150,000",
+        "₹800,000"
+      ],
+      "answerIndex": 0,
+      "explanation": "Using expected value method: Total provision = 1,000 units × [(80% × ₹0) + (15% × ₹200) + (5% × ₹800)] = 1,000 × [0 + ₹30 + ₹40] = 1,000 × ₹70 = ₹70,000.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 29",
+        "Warranty Provision",
+        "Expected Value"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_015",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "When an enterprise expects to be reimbursed by a third party (e.g., an insurer) for expenditure required to settle a provision, how should this reimbursement be accounted for under AS 29?",
+      "options": [
+        "Recognized as a net deduction from the provision liability in the Balance Sheet",
+        "Recognized as a separate asset when it is virtually certain that reimbursement will be received, with the asset not exceeding the provision amount",
+        "Recognized as income immediately in Statement of Profit and Loss before the provision is settled",
+        "Disclosed only as a contingent asset in the Directors' Report"
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 29 mandates that reimbursement is recognized as a separate asset in the Balance Sheet when it is virtually certain that reimbursement will be received if the obligation is settled. The asset recognized cannot exceed the provision amount.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 29",
+        "Reimbursements",
+        "Asset Recognition"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_016",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "Under AS 24, which of the following is NOT a mandatory disclosure requirement in the financial statements for a discontinuing operation?",
+      "options": [
+        "A description of the discontinuing operation",
+        "The business segment or geographical segment in which it is reported under AS 17",
+        "The exact name and postal address of prospective buyers of the assets",
+        "The date and nature of the Initial Disclosure Event"
+      ],
+      "answerIndex": 2,
+      "explanation": "AS 24 mandates disclosure of the operation's description, segment details, and date/nature of the initial disclosure event, but does not require disclosing the exact identity or postal address of prospective buyers.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 24",
+        "Disclosures",
+        "Discontinuing Operations"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_017",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "Under AS 15, actuarial gains and losses on defined benefit obligations and plan assets should be:",
+      "options": [
+        "Recognized immediately in the Statement of Profit and Loss as income or expense",
+        "Deferred and amortized over the expected average remaining working lives of employees",
+        "Recognized directly in Capital Reserve",
+        "Carried forward in a special buffer reserve until retirement of employees"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under AS 15 (revised), actuarial gains and losses must be recognized immediately in the Statement of Profit and Loss in the period in which they arise.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 15",
+        "Actuarial Gains and Losses",
+        "P&L Treatment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_018",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "A restructuring provision under AS 29 can include which of the following expenditures?",
+      "options": [
+        "Retraining or relocating continuing staff",
+        "Marketing and advertising expenditure for new products",
+        "Direct costs strictly arising from restructuring such as employee severance pay",
+        "Investment in new systems and distribution networks for continuing operations"
+      ],
+      "answerIndex": 2,
+      "explanation": "A restructuring provision includes only direct expenditures arising from restructuring, which are necessarily entailed by restructuring and not associated with ongoing activities. Costs like retraining staff, marketing, or investment in new systems relate to ongoing future operations and cannot be included.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 29",
+        "Restructuring Provision",
+        "Scope of Provision"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_019",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "Under AS 15, profit-sharing and bonus plans require recognition as a liability and expense when the enterprise has a present legal or constructive obligation AND:",
+      "options": [
+        "The bonus has already been physically distributed to employees",
+        "A reliable estimate of the obligation can be made",
+        "The profit after tax exceeds 20% of net worth",
+        "The Board of Directors passes a final resolution after the AGM"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 15, an enterprise recognizes the expected cost of profit-sharing and bonus payments when it has a present legal or constructive obligation to make such payments as a result of past events, AND a reliable estimate of the obligation can be made.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 15",
+        "Profit-Sharing and Bonus Plans",
+        "Recognition Criteria"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_020",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "Which actuarial valuation method is mandated by AS 15 for determining the present value of defined benefit obligations and related current service cost?",
+      "options": [
+        "Pay-as-you-go method",
+        "Projected Unit Credit Method",
+        "Entry Age Normal Method without projection",
+        "Aggregate Cost Method"
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 15 explicitly mandates the use of the Projected Unit Credit Method (also known as the accrued benefit method prorated on service) to determine the present value of defined benefit obligations and current service cost.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 15",
+        "Projected Unit Credit Method",
+        "Actuarial Valuation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_021",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "Delta Ltd. has an ongoing business unit. On 10th March 2026, management decides to close the unit but takes no formal action, makes no announcement, and enters no binding contracts before 31st March 2026. Can a restructuring provision be recognized as of 31st March 2026 under AS 29?",
+      "options": [
+        "Yes, because management intent creates a constructive obligation",
+        "No, because management decision alone does not raise a valid expectation in those affected before the balance sheet date",
+        "Yes, provided the closure occurs before financial statements are approved",
+        "Yes, but only as a contingent liability"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 29, a management decision alone does not give rise to a constructive obligation at the balance sheet date unless a detailed formal plan has been approved and implementation started or main features announced to affected parties on or before the balance sheet date.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 29",
+        "Restructuring Provision",
+        "Constructive Obligation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_022",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "When an operation meets the definition of a discontinuing operation under AS 24, from which period's financial statements should the initial disclosures begin?",
+      "options": [
+        "From the prospective financial year following the physical closure of operations",
+        "In the financial statements for the period in which the Initial Disclosure Event occurs",
+        "Only in the year when all assets of the component are fully liquidated",
+        "Retrospectively for the past 5 financial years as prior period adjustments"
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 24 requires an enterprise to apply the disclosure requirements for a discontinuing operation starting with the financial statements for the period in which the Initial Disclosure Event occurs.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 24",
+        "Initial Disclosure Event",
+        "Timing of Disclosure"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_023",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "Under AS 29, can an enterprise create a provision for future operating losses of a business segment?",
+      "options": [
+        "Yes, if expected operating losses are reliably estimated",
+        "Yes, provided the segment is classified as a discontinuing operation under AS 24",
+        "No, provisions shall not be recognized for future operating losses because they do not meet the definition of a present obligation arising from past events",
+        "Yes, but limited to 50% of projected losses"
+      ],
+      "answerIndex": 2,
+      "explanation": "AS 29 explicitly states that provisions shall not be recognized for future operating losses because future operating losses do not meet the definition of a liability/present obligation arising from a past event.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 29",
+        "Future Operating Losses",
+        "Provisions Prohibition"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_024",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "If the Initial Disclosure Event for a discontinuing operation occurs AFTER the balance sheet date but BEFORE the financial statements are approved by the Board of Directors, what is the accounting treatment under AS 24 and AS 4?",
+      "options": [
+        "It is an adjusting event; full AS 24 disclosures must be incorporated in the balance sheet and P&L of the current reporting period",
+        "It is a non-adjusting event; no disclosure is required anywhere",
+        "It is a non-adjusting event under AS 4, but disclosure of the discontinuing operation is made in the Report of the Board of Directors",
+        "The financial statements must be delayed until the disposal process is complete"
+      ],
+      "answerIndex": 2,
+      "explanation": "If the IDE occurs after the balance sheet date but before approval of financial statements, it does not represent a condition existing at the balance sheet date (non-adjusting event under AS 4). However, disclosure is made in the Board's Report as per AS 24 / AS 4 guidance.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 24",
+        "AS 4",
+        "Post Balance Sheet Events"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_025",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "In a defined benefit plan under AS 15, if the net actuarial calculation results in an asset (surplus), how is the maximum asset to be recognized in the Balance Sheet capped?",
+      "options": [
+        "At 100% of the total annual service cost",
+        "At the lower of the net surplus and the present value of any economic benefits available in the form of refunds from the plan or reductions in future contributions",
+        "At the total fair value of plan assets",
+        "Surpluses can never be recognized under AS 15"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 15, the asset recognized in the balance sheet is limited to the lower of the net defined benefit asset (surplus) and the present value of economic benefits available in the form of refunds from the plan or reductions in future contributions to the plan.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 15",
+        "Defined Benefit Asset Ceiling",
+        "Surplus Cap"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_026",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "When an enterprise is jointly and severally liable for an obligation with other parties, how should the portion expected to be met by other parties be treated under AS 29?",
+      "options": [
+        "Recognized as a provision for the total 100% liability",
+        "Treated as a contingent liability for the portion expected to be met by other parties",
+        "Ignored completely from both Balance Sheet and Notes",
+        "Recognized as an asset under Reimbursements"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 29, that part of the joint and several obligation that is expected to be met by other parties is treated as a contingent liability (and disclosed), while the portion for which an outflow is probable is recognized as a provision.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 29",
+        "Joint and Several Liability",
+        "Contingent Liabilities"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_027",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "Under AS 24, when an enterprise presents financial statements after the Initial Disclosure Event, how are comparative figures for prior periods presented?",
+      "options": [
+        "Prior period statements are fully restated by removing discontinuing operations from previous revenues",
+        "Comparative information for prior periods presented in financial statements is reclassified to segregate continuing and discontinuing assets, liabilities, revenues, and expenses",
+        "Prior period figures are left untouched and no reclassification or disclosure is permitted",
+        "Prior period financial statements are restated as a cumulative effect adjustment in opening retained earnings"
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 24 requires comparative information for prior periods presented in the financial statements to be reclassified to segregate continuing and discontinuing assets, liabilities, revenues, expenses, and cash flows to enable meaningful comparison.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 24",
+        "Comparative Figures",
+        "Reclassification"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_028",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "Under AS 15, expected return on plan assets is based on market expectations at the beginning of the period for returns over the entire life of the related obligation. How is the difference between expected return and actual return on plan assets accounted for?",
+      "options": [
+        "Amortized over 5 years on a straight-line basis",
+        "Recognized immediately as an actuarial gain or loss in the Statement of Profit and Loss",
+        "Adjusted against opening General Reserve",
+        "Transferred to a separate Asset Equalization Reserve"
+      ],
+      "answerIndex": 1,
+      "explanation": "The difference between the actual return on plan assets and the expected return on plan assets constitutes an actuarial gain or loss on plan assets, which is recognized immediately in the Statement of Profit and Loss under AS 15.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 15",
+        "Return on Plan Assets",
+        "Actuarial Gain/Loss"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_029",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "A company is defending a lawsuit. Management's legal counsel advises that there is a 60% probability that the company will lose the case and have to pay ₹5,000,000, and a 40% probability that it will win and pay ₹0. How should this be accounted for under AS 29?",
+      "options": [
+        "Recognize a provision of ₹3,000,000 (weighted average outcome)",
+        "Recognize a provision of ₹5,000,000",
+        "Disclose a contingent liability of ₹5,000,000 with zero provision",
+        "Recognize a provision of ₹2,500,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Where a single obligation is being measured, the most likely outcome generally represents the best estimate under AS 29. Since there is a 60% (probable) chance of losing ₹5,000,000, the provision should be recognized at ₹5,000,000 rather than expected value.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 29",
+        "Single Obligation Measurement",
+        "Best Estimate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-6_030",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "prompt": "Under AS 29, if a provision is reviewed at each balance sheet date and it is clear that an outflow of resources is no longer probable, what action must be taken?",
+      "options": [
+        "The provision should be retained in the balance sheet indefinitely until the legal limitation period expires",
+        "The provision should be written back and reversed to the Statement of Profit and Loss",
+        "The provision should be transferred directly to Capital Reserve",
+        "The provision should be reclassified as a deferred liability"
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 29 requires provisions to be reviewed at each balance sheet date and adjusted to reflect the current best estimate. If it is no longer probable that an outflow of resources embodying economic benefits will be required to settle the obligation, the provision should be reversed to P&L.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 29",
+        "Review of Provisions",
+        "Reversal"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_advanced-accounting-6_01",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "passage": "Kaveri Chemicals Ltd. operates two separate business lines: a Bulk Chemical Plant and a Speciality Solvents division. For the financial year ended 31st March 2026, the following situations arise:\n\n1. In March 2026, the State Environmental Control Board passed a mandatory directive requiring Kaveri Chemicals to decontaminate soil at its Bulk Chemical Plant before April 2028. The estimated cost of decontamination is ₹15,000,000. Under AS 29, the management is evaluating whether to discount this provision.\n\n2. The Speciality Solvents division sold 2,000 chemical containers during 2025-26 under a standard 1-year leakage warranty. Historical performance indicates that 90% of containers experience no leakage, 7% suffer minor leakage (repair cost ₹2,000 per container), and 3% suffer major leakage (replacement cost ₹10,000 per container).\n\n3. An employee filed a damages suit of ₹8,000,000 against the company for workplace injury. Legal experts advise that there is a 30% chance the company will be held liable.\n\n4. For warranty claims exceeding ₹500,000 in total, Kaveri Chemicals holds an indemnity insurance contract with an insurer. The insurer has confirmed in writing that it will reimburse 80% of warranty costs incurred above ₹500,000 once claims are paid.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-6_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-6_01",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-6",
+          "subject": "Accounts",
+          "prompt": "Regarding the decontamination liability of ₹15,000,000 for the Bulk Chemical Plant, how should it be recognized in the financial statements for FY 2025-26 under AS 29?",
+          "options": [
+            "Recognize a provision at the present value of ₹15,000,000 using a 10% discount rate",
+            "Recognize a provision at the undiscounted amount of ₹15,000,000 as a present obligation",
+            "Disclose as a contingent liability because actual payment is due in 2028",
+            "Do not recognize or disclose until the decontamination work commences in 2028"
+          ],
+          "answerIndex": 1,
+          "explanation": "A mandatory directive creates a present obligation from a past event with a probable outflow. Under AS 29, provisions are measured at best estimate and are generally not discounted to present value. Hence, an undiscounted provision of ₹15,000,000 is recognized.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 29",
+            "Decontamination Provision",
+            "Discounting Rule"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-6_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-6_01",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-6",
+          "subject": "Accounts",
+          "prompt": "What is the warranty provision required for the Speciality Solvents division as of 31st March 2026 under AS 29?",
+          "options": [
+            "₹880,000",
+            "₹1,760,000",
+            "₹2,000,000",
+            "₹120,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Expected cost per container = (90% × ₹0) + (7% × ₹2,000) + (3% × ₹10,000) = ₹0 + ₹140 + ₹300 = ₹440 per container. Total provision for 2,000 containers = 2,000 × ₹440 = ₹880,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 29",
+            "Warranty Provision",
+            "Expected Value"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-6_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-6_01",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-6",
+          "subject": "Accounts",
+          "prompt": "How should the insurance reimbursement for warranty claims be presented in the Balance Sheet as of 31st March 2026?",
+          "options": [
+            "Deduct ₹304,000 directly from the Warranty Provision liability in the Balance Sheet",
+            "Recognize a separate Reimbursement Asset of ₹304,000 in the Balance Sheet, as reimbursement is virtually certain",
+            "Recognize a Reimbursement Asset of ₹704,000",
+            "Disclose as a Contingent Asset in the Board's Report only"
+          ],
+          "answerIndex": 1,
+          "explanation": "Total warranty provision = ₹880,000. Reimbursement applies to excess over ₹500,000 = ₹880,000 - ₹500,000 = ₹380,000. Insurer covers 80% of excess = 80% × ₹380,000 = ₹304,000. Under AS 29, reimbursement is recognized as a separate asset (not netted against liability in Balance Sheet) when virtually certain.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 29",
+            "Reimbursements",
+            "Separate Asset"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-6_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-6_01",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-6",
+          "subject": "Accounts",
+          "prompt": "How should the pending damages lawsuit of ₹8,000,000 be treated in the financial statements for FY 2025-26 under AS 29?",
+          "options": [
+            "Recognize a provision of ₹2,400,000 (30% of ₹8,000,000)",
+            "Recognize a provision of ₹8,000,000",
+            "Disclose as a Contingent Liability in the Notes to Accounts, since the outflow is possible (30%) but not probable",
+            "Ignore completely without any disclosure since probability is less than 50%"
+          ],
+          "answerIndex": 2,
+          "explanation": "A 30% chance represents a possible obligation (not probable, as probability < 50%). Under AS 29, a possible obligation that is not remote must be disclosed as a Contingent Liability in the Notes to Accounts.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 29",
+            "Contingent Liability",
+            "Litigation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-6_02",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "passage": "Zenith Engineering Ltd. maintains a funded Defined Benefit Gratuity Scheme for its employees. Actuarial valuation and scheme data for the financial year ended 31st March 2026 reveal the following:\n\n• Opening Present Value of Defined Benefit Obligation (DBO) as on 1st April 2025: ₹5,000,000\n• Opening Fair Value of Plan Assets as on 1st April 2025: ₹4,000,000\n• Discount Rate (based on Government Securities): 10% per annum\n• Expected Rate of Return on Plan Assets: 10% per annum\n• Current Service Cost for FY 2025-26: ₹800,000\n• Plan amendment on 1st July 2025 granted past service benefits of ₹1,000,000, of which ₹400,000 vested immediately and ₹600,000 vests over 3 remaining years of service.\n• Benefits paid to retired employees during FY 2025-26: ₹500,000\n• Contributions paid by Zenith Engineering into the plan during FY 2025-26: ₹800,000\n• Closing DBO as per Actuarial Valuation on 31st March 2026: ₹7,200,000\n• Closing Fair Value of Plan Assets as on 31st March 2026: ₹4,900,000",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-6_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-6_02",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-6",
+          "subject": "Accounts",
+          "prompt": "What is the amount of Actuarial Gain or Loss on the Defined Benefit Obligation (DBO) for FY 2025-26?",
+          "options": [
+            "Actuarial Loss of ₹400,000",
+            "Actuarial Gain of ₹400,000",
+            "Actuarial Loss of ₹200,000",
+            "Actuarial Loss of ₹600,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Expected DBO at year end = Opening DBO (₹5,000,000) + Interest Cost (10% of ₹5,000,000 = ₹500,000) + Current Service Cost (₹800,000) + Total Past Service Cost (₹1,000,000) - Benefits Paid (₹500,000) = ₹6,800,000. Actual Closing DBO = ₹7,200,000. Actuarial Loss on DBO = ₹7,200,000 - ₹6,800,000 = ₹400,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 15",
+            "Actuarial Loss",
+            "Defined Benefit Obligation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-6_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-6_02",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-6",
+          "subject": "Accounts",
+          "prompt": "What is the Actuarial Gain or Loss on Plan Assets for FY 2025-26?",
+          "options": [
+            "Actuarial Loss of ₹200,000",
+            "Actuarial Gain of ₹200,000",
+            "Actuarial Gain of ₹400,000",
+            "Actuarial Loss of ₹100,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Expected Plan Assets at year end = Opening Plan Assets (₹4,000,000) + Expected Return (10% of ₹4,000,000 = ₹400,000) + Contributions (₹800,000) - Benefits Paid (₹500,000) = ₹4,700,000. Actual Closing Plan Assets = ₹4,900,000. Actuarial Gain on Plan Assets = ₹4,900,000 - ₹4,700,000 = ₹200,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 15",
+            "Actuarial Gain",
+            "Plan Assets"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-6_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-6_02",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-6",
+          "subject": "Accounts",
+          "prompt": "What total net expense should Zenith Engineering Ltd. recognize in the Statement of Profit and Loss for FY 2025-26 under AS 15?",
+          "options": [
+            "₹2,200,000",
+            "₹1,900,000",
+            "₹2,100,000",
+            "₹1,700,000"
+          ],
+          "answerIndex": 2,
+          "explanation": "Net Expense in P&L = Current Service Cost (₹800,000) + Interest Cost (₹500,000) - Expected Return on Plan Assets (₹400,000) + Recognized Past Service Cost [₹400,000 vested + (₹600,000 / 3 yrs unvested) = ₹600,000] + Actuarial Loss on DBO (₹400,000) - Actuarial Gain on Plan Assets (₹200,000) = 800,000 + 500,000 - 400,000 + 600,000 + 400,000 - 200,000 = ₹2,100,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 15",
+            "Net Gratuity Expense",
+            "P&L Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-6_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-6_02",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-6",
+          "subject": "Accounts",
+          "prompt": "What is the Net Defined Benefit Liability to be reported in the Balance Sheet of Zenith Engineering Ltd. as of 31st March 2026?",
+          "options": [
+            "₹2,300,000",
+            "₹1,900,000",
+            "₹2,700,000",
+            "₹1,500,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Net Liability in Balance Sheet = Closing Present Value of DBO (₹7,200,000) - Unrecognized Past Service Cost (₹600,000 total - ₹200,000 recognized = ₹400,000 remaining) - Closing Fair Value of Plan Assets (₹4,900,000) = 7,200,000 - 400,000 - 4,900,000 = ₹1,900,000. (Check: Opening Net Liability ₹1,000,000 + P&L Expense ₹2,100,000 - Contributions ₹800,000 = ₹1,900,000).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 15",
+            "Net Defined Benefit Liability",
+            "Balance Sheet"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-6_03",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "passage": "Crimson Consumer Goods Ltd. manufactures textiles and healthcare products. Due to sustained losses in its Textile Division, the Board of Directors took the following actions during FY 2025-26:\n\n• On 15th December 2025, the Board approved a detailed formal plan to discontinue the entire Textile Division (which constitutes a separate major line of business and segment).\n• On 20th January 2026, the company entered into a legally binding agreement to sell the spinning equipment of Unit A of the Textile Division for ₹12,000,000.\n• On 10th February 2026, Crimson Consumer Goods Ltd. made a formal public announcement of its plan to discontinue the Textile Division.\n• The financial year ended on 31st March 2026. Financial statements were approved by the Board on 25th May 2026.\n• Carrying value of total assets of Textile Division as of 31st March 2026 was ₹50,000,000, while their net realizable value was estimated at ₹42,000,000.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-6_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-6_03",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-6",
+          "subject": "Accounts",
+          "prompt": "What is the date of the 'Initial Disclosure Event' (IDE) for the discontinuing operation under AS 24?",
+          "options": [
+            "15th December 2025",
+            "20th January 2026",
+            "10th February 2026",
+            "31st March 2026"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under AS 24, the Initial Disclosure Event occurs on the EARLIER of: (a) binding sale agreement date (20th January 2026), or (b) board approval of detailed plan AND public announcement (10th February 2026). Thus, the binding agreement date (20th January 2026) is the IDE date.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 24",
+            "Initial Disclosure Event",
+            "Discontinuing Operations"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-6_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-6_03",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-6",
+          "subject": "Accounts",
+          "prompt": "How should the impairment loss on the assets of the Textile Division be recognized in the financial statements for FY 2025-26?",
+          "options": [
+            "Recognize an impairment loss of ₹8,000,000 in the Statement of Profit and Loss for FY 2025-26",
+            "Defer the impairment loss until all assets of the division are physically handed over",
+            "Charge ₹8,000,000 directly to Revaluation Reserve",
+            "Disclose ₹8,000,000 as a contingent loss without reducing asset carrying values"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under AS 24 and AS 28, when an initial disclosure event occurs or assets are held for disposal, their recoverable/net realizable value is assessed. An impairment loss equal to Carrying Value (₹50,000,000) - Net Realizable Value (₹42,000,000) = ₹8,000,000 must be recognized immediately in P&L.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 24",
+            "AS 28",
+            "Impairment Loss"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-6_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-6_03",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-6",
+          "subject": "Accounts",
+          "prompt": "In the financial statements for FY 2025-26, which of the following details regarding the Textile Division MUST be disclosed on the face of or in the notes to the financial statements under AS 24?",
+          "options": [
+            "Pre-tax profit/loss of the discontinuing operation and income tax expense related thereto",
+            "Names of all individual machine operators who will be laid off",
+            "Estimated market share of competitors after Crimson's exit",
+            "Board minutes of all internal strategy meetings held prior to 15th December 2025"
+          ],
+          "answerIndex": 0,
+          "explanation": "AS 24 mandates disclosure of the amounts of revenue, expenses, pre-tax profit or loss of the discontinuing operation, and the related income tax expense.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 24",
+            "Disclosures",
+            "Financial Presentation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-6_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-6_03",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-6",
+          "subject": "Accounts",
+          "prompt": "How should cash flow disclosures for the Textile Division be presented in the Cash Flow Statement for FY 2025-26 under AS 24?",
+          "options": [
+            "Cash flows of discontinuing operations should be completely omitted from the Cash Flow Statement",
+            "Net cash flows attributable to operating, investing, and financing activities of the discontinuing operation must be disclosed on the face or in notes",
+            "All cash flows of the discontinuing operation must be merged into operating activities only",
+            "Cash flows should only be disclosed for future prospective years"
+          ],
+          "answerIndex": 1,
+          "explanation": "AS 24 mandates disclosure of the net cash flows attributable to the operating, investing, and financing activities of the discontinuing operation either on the face of the cash flow statement or in the notes.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 24",
+            "Cash Flow Statement",
+            "Discontinuing Operations"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-6_04",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "passage": "Apex Retailers Ltd. is preparing its financial statements for the year ended 31st March 2026. The controller faces the following independent issues:\n\nIssue 1: Apex entered into a non-cancellable 5-year commercial lease for an outlet at ₹1,200,000/year. 2 years remain. Apex vacated the premises to relocate. The landlord demands a cancellation fee of ₹1,800,000. Apex can sublet the outlet for the remaining 2 years at ₹800,000/year.\n\nIssue 2: Division B is incurring losses. The budget for FY 2026-27 projects an operating loss of ₹3,000,000 for Division B. Management wants to create a provision for this projected operating loss as of 31st March 2026.\n\nIssue 3: On 25th March 2026, the Board approved a detailed restructuring plan to close Branch X. The plan entails severance payments of ₹1,500,000. However, the plan was communicated to affected employees and public announcement was made on 5th April 2026 (before audit completion).",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-6_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-6_04",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-6",
+          "subject": "Accounts",
+          "prompt": "For Issue 1 (Onerous Lease), what provision should Apex Retailers Ltd. recognize as of 31st March 2026 under AS 29?",
+          "options": [
+            "₹2,400,000",
+            "₹1,800,000",
+            "₹800,000",
+            "₹1,600,000"
+          ],
+          "answerIndex": 2,
+          "explanation": "Onerous contract provision is the lower of net fulfillment cost and cancellation penalty. Net fulfillment cost = (₹1,200,000 rent - ₹800,000 sublet) × 2 years = ₹800,000. Cancellation penalty = ₹1,800,000. Provision required = Lower of ₹800,000 and ₹1,800,000 = ₹800,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 29",
+            "Onerous Lease",
+            "Provision Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-6_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-6_04",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-6",
+          "subject": "Accounts",
+          "prompt": "For Issue 2 (Projected Operating Loss), how should the ₹3,000,000 projected loss of Division B be accounted for as of 31st March 2026 under AS 29?",
+          "options": [
+            "Recognize a provision of ₹3,000,000 as a current liability",
+            "Recognize a provision of ₹1,500,000 (50% prudential provision)",
+            "No provision should be recognized because future operating losses do not meet the definition of a present obligation arising from past events",
+            "Disclose as a Contingent Asset in the Directors' Report"
+          ],
+          "answerIndex": 2,
+          "explanation": "AS 29 explicitly prohibits provisions for future operating losses because they do not arise from past events and do not meet the definition of a present obligation.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "AS 29",
+            "Future Operating Losses",
+            "Provisions"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-6_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-6_04",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-6",
+          "subject": "Accounts",
+          "prompt": "For Issue 3 (Restructuring Plan), can Apex Retailers Ltd. recognize a restructuring provision of ₹1,500,000 for Branch X in the balance sheet as of 31st March 2026?",
+          "options": [
+            "Yes, because the Board approved the detailed plan before 31st March 2026",
+            "No, because a constructive obligation arises only when implementation starts or main features are announced to affected parties ON OR BEFORE 31st March 2026",
+            "Yes, because public announcement occurred before audit completion date",
+            "Yes, provided approval is disclosed in the Directors' Report"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under AS 29, a management/board decision taken before the balance sheet date does not create a constructive obligation as of the balance sheet date unless the plan was announced to affected parties or implementation commenced ON OR BEFORE the balance sheet date (31st March 2026). Communication on 5th April 2026 is a post-balance sheet non-adjusting event.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 29",
+            "Restructuring Provision",
+            "Constructive Obligation Timing"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-6_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-6_04",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-6",
+          "subject": "Accounts",
+          "prompt": "If in FY 2026-27, Apex Retailers Ltd. sub-leases the outlet in Issue 1 for ₹1,300,000/year (which exceeds the lease rent of ₹1,200,000/year), what should happen to the onerous lease provision of ₹800,000?",
+          "options": [
+            "Retain ₹800,000 in Capital Reserve",
+            "Reverse the ₹800,000 provision to the Statement of Profit and Loss as it is no longer required",
+            "Amortize the provision over the remaining lease term",
+            "Transfer ₹800,000 to General Reserve"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under AS 29, provisions must be reviewed at each balance sheet date. If an obligation is no longer onerous (sub-lease covers lease liability), an outflow is no longer probable, so the provision must be reversed to Profit and Loss.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 29",
+            "Provision Reversal",
+            "Onerous Contracts"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-6_05",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-6",
+      "subject": "Accounts",
+      "passage": "Beta Services Ltd. employs 100 individuals and has the following employee benefit policies for FY 2025-26:\n\n1. Paid Leave Policy: Each employee earns 12 days of paid leave per year. Unused leaves accumulate up to 30 days. The leave is non-vesting (employees cannot encash unused leave upon leaving/retirement, but can take paid leave). Historical data shows average leave utilization:\n• 70 employees use all 12 days earned in the year.\n• 30 employees use 10 days and accumulate 2 days each.\n• Actuarial calculations estimate that out of the accumulated leaves, these 30 employees will actually utilize a total of 45 accumulated leave days in future years.\n• Average salary per employee per day is ₹1,000.\n\n2. Annual Profit Sharing Bonus: Beta Services Ltd. announced a policy to distribute 5% of Profit Before Tax (PBT) as bonus to employees if PBT exceeds ₹10,000,000. PBT for FY 2025-26 is ₹20,000,000.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Liabilities Based Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-6_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-6_05",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-6",
+          "subject": "Accounts",
+          "prompt": "Under AS 15, what provision amount should Beta Services Ltd. recognize for accumulating non-vesting compensated absences at the end of FY 2025-26?",
+          "options": [
+            "₹60,000",
+            "₹45,000",
+            "₹300,000",
+            "₹120,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "For non-vesting accumulating compensated absences, AS 15 requires measuring expected cost as the additional amount expected to be paid as a result of unused entitlement that has accumulated. Estimated expected utilization = 45 days × ₹1,000/day = ₹45,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 15",
+            "Compensated Absences",
+            "Accumulating Non-Vesting"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-6_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-6_05",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-6",
+          "subject": "Accounts",
+          "prompt": "What liability should Beta Services Ltd. recognize for the profit-sharing bonus for FY 2025-26 under AS 15?",
+          "options": [
+            "₹1,000,000",
+            "₹500,000",
+            "₹100,000",
+            "Nil, until payments are actually disbursed"
+          ],
+          "answerIndex": 0,
+          "explanation": "Bonus liability = 5% of PBT when PBT > ₹10,000,000. PBT is ₹20,000,000. Bonus = 5% of ₹20,000,000 = ₹1,000,000. Under AS 15, present constructive obligation with reliable estimate must be recognized as liability and expense.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 15",
+            "Profit-Sharing Bonus",
+            "Short-term Benefits"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-6_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-6_05",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-6",
+          "subject": "Accounts",
+          "prompt": "If Beta Services Ltd. alters its leave policy to make leaves VESTING (encashable in cash upon retirement/resignation), how would the liability measurement change under AS 15?",
+          "options": [
+            "Liability must be measured based on the full total accumulated unutilized leave days for all employees at current salary rate",
+            "Liability remains based only on expected days used during service",
+            "No liability is required until retirement",
+            "Vesting leaves are treated as defined contribution plans"
+          ],
+          "answerIndex": 0,
+          "explanation": "For vesting compensated absences, employees are entitled to a cash payment for unutilized entitlement upon leaving. Therefore, the enterprise must recognize a liability for the entire accumulated unused leave balance at the balance sheet date.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 15",
+            "Vesting Compensated Absences",
+            "Leave Encashment"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-6_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-6_05",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-6",
+          "subject": "Accounts",
+          "prompt": "Suppose in FY 2026-27, employees actually utilize 50 days of accumulated leave instead of the estimated 45 days. How is the difference of 5 days accounted for under AS 15?",
+          "options": [
+            "Prior period error adjustment in opening reserves",
+            "Recognized as an employee benefit expense in the Statement of Profit and Loss for FY 2026-27",
+            "Capitalized as part of intangible assets",
+            "Charged directly to General Reserve"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under AS 15, changes in estimates of short-term employee benefit utilization/obligations are recognized as an expense or income in the Statement of Profit and Loss in the period in which the change occurs.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 15",
+            "Change in Estimate",
+            "Employee Benefit Expense"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

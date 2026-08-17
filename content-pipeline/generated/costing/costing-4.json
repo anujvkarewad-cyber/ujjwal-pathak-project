@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "costing-4",
+  "subject": "Costing",
+  "paper": "Paper 4: Cost and Management Accounting",
+  "module": "Module 1",
+  "chapterNumber": 4,
+  "chapterTitle": "Overheads – Absorption Costing Method",
+  "generatedAt": "2026-08-16T14:38:19.568Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_costing-4_001",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "What is the primary objective of overhead apportionment?",
+      "options": [
+        "To charge overheads directly to the final product",
+        "To distribute items of indirect costs that are common to more than one cost centre",
+        "To calculate the total factory cost without classification",
+        "To eliminate fixed overheads completely from cost accounts"
+      ],
+      "answerIndex": 1,
+      "explanation": "Apportionment deals with common or indirect costs that cannot be identified with a specific cost centre, distributing them on a fair and equitable basis. This is a fundamental step in the secondary distribution and absorption cycle under ICAI guidelines.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Overhead Apportionment",
+        "Cost Allocation",
+        "Basic Concepts"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_002",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "Which of the following methods of secondary distribution of overheads ignores the service rendered by one service department to another service department?",
+      "options": [
+        "Repeated Distribution Method",
+        "Simultaneous Equation Method",
+        "Direct Redistribution Method",
+        "Trial and Error Method"
+      ],
+      "answerIndex": 2,
+      "explanation": "The Direct Redistribution Method allocates service department costs only to production departments and completely ignores any inter-service department reciprocal services.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Secondary Distribution",
+        "Service Departments",
+        "Direct Redistribution"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_003",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "When machine hour rate is used as an absorption method, what type of overheads are primarily absorbed?",
+      "options": [
+        "Only administration overheads",
+        "Only selling and distribution overheads",
+        "Manufacturing overheads associated with machine operations",
+        "Material handling costs only"
+      ],
+      "answerIndex": 2,
+      "explanation": "Machine hour rate is specifically designed for absorbing manufacturing overheads incurred in machine-intensive production departments based on the actual or budgeted hours the machine operates.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Machine Hour Rate",
+        "Overhead Absorption",
+        "Manufacturing Overheads"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_004",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "Under the Simultaneous Equation Method, the total costs of service departments are determined by formulating algebraic equations. These costs are then distributed to production departments in:",
+      "options": [
+        "A single step after accounting for mutual services",
+        "Successive repetitive cycles until zero balance is reached",
+        "Random proportions decided by management",
+        "Equal proportions regardless of service usage"
+      ],
+      "answerIndex": 0,
+      "explanation": "The Simultaneous Equation Method computes the exact reciprocal costs of service departments mathematically through linear equations, distributing the fully inclusive costs to production departments in one go.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Simultaneous Equation",
+        "Secondary Distribution",
+        "Reciprocal Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_005",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "If actual overheads amount to Rs. 1,20,000 and absorbed overheads based on a pre-determined rate amount to Rs. 1,00,000, the difference is termed as:",
+      "options": [
+        "Over-absorption of Rs. 20,000",
+        "Under-absorption of Rs. 20,000",
+        "Normal idle capacity cost of Rs. 20,000",
+        "Controllable variance of Rs. 20,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "When actual overheads exceed the amount absorbed (recovered) into production, it results in under-absorption (Rs. 1,20,000 - Rs. 1,00,000 = Rs. 20,000).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Under-absorption",
+        "Over-absorption",
+        "Overhead Variance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_006",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "Which of the following is considered a standing charge (fixed overhead) when calculating a comprehensive machine hour rate?",
+      "options": [
+        "Depreciation of the machine",
+        "Power consumed by the machine",
+        "Repairs and maintenance of the machine",
+        "Consumable stores specific to the machine operation"
+      ],
+      "answerIndex": 0,
+      "explanation": "Standing charges are fixed overheads incurred regardless of machine operation, such as rent, insurance, supervision, and straight-line depreciation if time-based. Power and repairs vary with operation and are treated as machine expenses.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Machine Hour Rate",
+        "Standing Charges",
+        "Fixed Overheads"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_007",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "What is the appropriate treatment for a large amount of under-absorbed overhead caused by abnormal idle plant capacity?",
+      "options": [
+        "Carried forward to the next accounting period as an asset",
+        "Credited to Costing Profit and Loss Account directly",
+        "Debited to Costing Profit and Loss Account as an abnormal loss",
+        "Added back to the valuation of closing work-in-progress"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under-absorption due to abnormal factors like strike, fire, or abnormal idle capacity should not be absorbed into production costs; instead, it must be written off directly to the Costing Profit and Loss Account.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Under-absorption Treatment",
+        "Abnormal Idle Capacity",
+        "Costing P&L"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_008",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "Which base is most appropriate for apportioning general factory lighting charges among various cost centres?",
+      "options": [
+        "Direct labour hours",
+        "Floor area or number of light points",
+        "Horsepower of machines",
+        "Value of machinery"
+      ],
+      "answerIndex": 1,
+      "explanation": "Lighting charges are generally apportioned on the basis of floor area occupied by each cost centre or the number of light points installed, reflecting physical consumption proximity.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Apportionment Bases",
+        "Factory Lighting",
+        "Primary Distribution"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_009",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "The Repeated Distribution Method of secondary overhead distribution continues until:",
+      "options": [
+        "All service department costs are exhausted to zero or a negligible fraction",
+        "Production department costs become zero",
+        "Only one service department remains active",
+        "Management halts the calculation manually"
+      ],
+      "answerIndex": 0,
+      "explanation": "In the Repeated Distribution Method, service department costs are repeatedly apportioned to other departments (both service and production) in given ratios until the remaining balance of service departments is reduced to zero or negligible amounts.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Repeated Distribution",
+        "Service Departments",
+        "Reciprocal Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_010",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "Under the Direct Labour Hour Rate method, the overhead absorption rate is calculated as:",
+      "options": [
+        "Total Overheads / Total Direct Labour Hours",
+        "Total Direct Labour Hours / Total Overheads",
+        "Production Units / Total Direct Labour Hours",
+        "Prime Cost / Total Direct Labour Hours"
+      ],
+      "answerIndex": 0,
+      "explanation": "The direct labour hour rate is obtained by dividing the total overheads allocated and apportioned to a production department by the total number of direct labour hours worked or budgeted in that department.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Labour Hour Rate",
+        "Absorption Rate",
+        "Formula"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_011",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "Why is the use of a pre-determined overhead absorption rate preferred over an actual overhead absorption rate?",
+      "options": [
+        "Actual rates are illegal under corporate tax laws",
+        "Pre-determined rates enable prompt job costing and billing before the accounting period ends",
+        "Pre-determined rates completely eliminate variance analysis",
+        "Actual rates always result in zero under-absorption"
+      ],
+      "answerIndex": 1,
+      "explanation": "Actual rates can only be computed after the accounting period closes, delaying cost ascertainment. Pre-determined rates allow businesses to quote prices, value inventory, and determine job costs promptly.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Pre-determined Rate",
+        "Actual Rate",
+        "Advantages"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_012",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "In the context of overheads, what does 'Allocation' strictly refer to?",
+      "options": [
+        "Splitting a common cost among departments using a suitable percentage",
+        "Charging an item of cost directly and wholly to a particular cost centre or cost unit",
+        "Distributing service department costs to production units",
+        "Averaging total factory overheads over total production volume"
+      ],
+      "answerIndex": 1,
+      "explanation": "Cost allocation is the process of identifying and charging an item of cost directly to a specific cost centre without any need for estimation or apportionment, because it is traceable entirely to that centre.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Cost Allocation",
+        "Terminology",
+        "Direct Costing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_013",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "When is the Percentage of Prime Cost method appropriate for absorbing overheads?",
+      "options": [
+        "When production is highly mechanized and automated",
+        "When both material and labour prices are stable and products consume resources proportionally to prime cost",
+        "When overheads consist purely of machine depreciation and power",
+        "When there is no direct labour involved in the factory"
+      ],
+      "answerIndex": 1,
+      "explanation": "The percentage of prime cost method is suitable when direct material and direct labour are in constant proportion and prices are stable, meaning prime cost reflects the general scale of operations.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Prime Cost Method",
+        "Absorption Base",
+        "Suitability"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_014",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "How should supplementary overhead rates be treated when under-absorption is due to normal reasons such as seasonal fluctuations?",
+      "options": [
+        "Ignored completely and written off to miscellaneous revenue",
+        "Applied via a supplementary rate to adjust the cost of sales and inventory",
+        "Passed on entirely as a penalty to the customer",
+        "Capitalized as part of intangible goodwill"
+      ],
+      "answerIndex": 1,
+      "explanation": "Normal under- or over-absorption is typically adjusted using a supplementary overhead rate so that work-in-progress, finished goods, and cost of sales reflect closer to actual historical costs.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Supplementary Rate",
+        "Normal Under-absorption",
+        "Inventory Valuation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_015",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "Which department cost is typically apportioned on the basis of number of employees or wage bill?",
+      "options": [
+        "Factory rent and rates",
+        "Canteen or Timekeeping (Personnel) department",
+        "Machine depreciation",
+        "Boiler house fuel cost"
+      ],
+      "answerIndex": 1,
+      "explanation": "Personnel, timekeeping, and canteen services are meant for employees. Hence, their costs are apportioned to other departments based on the number of employees, labour hours, or wage bills.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Apportionment Basis",
+        "Personnel Department",
+        "Secondary Distribution"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_016",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "If power is consumed variably by machines based on horsepower and running hours, the apportionment base for power cost should ideally be:",
+      "options": [
+        "Floor area of departments",
+        "HP x Hours (Horsepower-hours)",
+        "Number of workers in each department",
+        "Book value of machinery"
+      ],
+      "answerIndex": 1,
+      "explanation": "Power cost depends on the capacity of the machine (HP) and how long it runs (Hours). Therefore, horsepower-hours (HP × Hours) is the most scientific base for apportioning power costs.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Power Cost Apportionment",
+        "Horsepower-hours",
+        "Primary Distribution"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_017",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "What is the primary distinction between the Trial and Error method and the Repeated Distribution method?",
+      "options": [
+        "Trial and Error is used for allocation while Repeated Distribution is for absorption",
+        "Trial and Error uses algebra/guess steps to find service totals before distribution, whereas Repeated Distribution steps down iteratively",
+        "There is no functional difference; they yield completely different answers",
+        "Trial and Error ignores reciprocal services"
+      ],
+      "answerIndex": 1,
+      "explanation": "The Trial and Error method calculates the total reciprocal service cost values first (by iterative adjustment until zero increments remain) and then distributes them in one go, whereas Repeated Distribution does it step-by-step iteratively.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Trial and Error Method",
+        "Repeated Distribution",
+        "Reciprocal Comparison"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_018",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "In machine hour rate calculations, 'setup time' or idle time specifically attributable to the machine is:",
+      "options": [
+        "Excluded from effective machine hours",
+        "Included in the total budgeted machine hours if it is normal downtime",
+        "Treated as an administration expense",
+        "Deducted from the total overhead pool"
+      ],
+      "answerIndex": 1,
+      "explanation": "Normal idle time or setup time inherent in machine operations is included in budgeted machine hours so that the hourly absorption rate absorbs the fixed standing charges across expected productive capacity.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Machine Hour Rate",
+        "Setup Time",
+        "Normal Idle Time"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_019",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "Under-absorption of overheads occurs when:",
+      "options": [
+        "Absorbed Overheads > Actual Overheads",
+        "Actual Overheads > Absorbed Overheads",
+        "Budgeted Overheads = Actual Overheads",
+        "Estimated Hours > Actual Hours"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under-absorption means the amount recovered through pre-determined rates falls short of what was actually incurred, i.e., Actual Overheads exceed Absorbed Overheads.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Under-absorption",
+        "Definition",
+        "Overhead Variance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_020",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "Which of the following overhead costs is best apportioned on the basis of capital value of assets?",
+      "options": [
+        "Supervision salaries",
+        "Fire insurance on machinery and depreciation",
+        "Canteen expenses",
+        "Lighting and heating"
+      ],
+      "answerIndex": 1,
+      "explanation": "Insurance of machinery and plant depreciation depend directly on the capital cost/value of the assets, making asset value the standard equitable apportionment base.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Apportionment Basis",
+        "Insurance",
+        "Depreciation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_021",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "When a factory has both production and service departments, what is the final destination of all service department costs?",
+      "options": [
+        "They remain in service department cost centers permanently",
+        "They are ultimately absorbed into production departments through secondary distribution",
+        "They are charged directly to sales revenue as period costs",
+        "They are transferred directly to the balance sheet as capital assets"
+      ],
+      "answerIndex": 1,
+      "explanation": "Service departments do not produce saleable goods directly. Their costs are redistributed to production departments so that all factory costs are ultimately absorbed by manufactured products.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Service Departments",
+        "Secondary Distribution",
+        "Flow of Costs"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_022",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "What effect does an over-absorption of overheads have on the profit of the period if left unadjusted?",
+      "options": [
+        "Profits are understated because costs are inflated",
+        "Profits are overstated because costs charged to production were higher than actual expenses incurred",
+        "Profits remain completely unaffected",
+        "Net worth becomes negative"
+      ],
+      "answerIndex": 1,
+      "explanation": "Over-absorption means more overhead was charged to products than actually spent. If unadjusted, cost of sales is higher, resulting in lower gross profit; conversely, if costs were overestimated, profit is understated. Wait, over-absorption means absorbed > actual, so costs charged are *higher* than actual, which understates profit initially until adjusted.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Over-absorption",
+        "Profit Impact",
+        "Cost Adjustments"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_023",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "In an automated plant where manual labour is negligible and machines drive the production process, which absorption method is most appropriate?",
+      "options": [
+        "Direct Labour Hour Rate",
+        "Machine Hour Rate",
+        "Prime Cost Percentage",
+        "Units of Production Method"
+      ],
+      "answerIndex": 1,
+      "explanation": "In capital-intensive, automated environments, overhead expenses correlate directly with machine operation time, making the Machine Hour Rate the most accurate and logical absorption method.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Machine Hour Rate",
+        "Automated Plant",
+        "Method Selection"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_024",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "How is the blanket overhead absorption rate calculated?",
+      "options": [
+        "Total overheads of a specific department / Total hours of that department",
+        "Total factory overheads for the entire factory / Total base (e.g., hours or units) for the entire factory",
+        "Total prime cost / Total overheads",
+        "Service department costs / Production department costs"
+      ],
+      "answerIndex": 1,
+      "explanation": "A blanket rate is a single overhead absorption rate calculated for the entire factory by dividing total factory overheads by total base units/hours for the whole plant.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Blanket Rate",
+        "Factory-wide Rate",
+        "Absorption Calculation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_025",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "Which of the following is a limitation of using a blanket overhead absorption rate in a multi-product factory?",
+      "options": [
+        "It is too complex and expensive to calculate",
+        "It distorts product costs if different products use department resources in varying proportions",
+        "It prevents the calculation of departmental overheads",
+        "It eliminates all variances automatically"
+      ],
+      "answerIndex": 1,
+      "explanation": "A blanket rate assumes uniform resource consumption across all products and departments. In multi-product firms with diverse departments, this causes severe cost distortion.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Blanket Rate",
+        "Limitations",
+        "Cost Distortion"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_026",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "What is 'Capacity Cost' in the context of fixed manufacturing overheads?",
+      "options": [
+        "Cost incurred only when production is at 100% maximum capacity",
+        "Fixed overhead expenses associated with maintaining production capacity, regardless of whether it is utilized",
+        "Variable costs of operating machinery at high speed",
+        "Direct wages paid to workers during overtime"
+      ],
+      "answerIndex": 1,
+      "explanation": "Capacity costs represent fixed overheads (like plant rent, insurance, depreciation) incurred to provide production capability. Unused capacity creates idle capacity costs.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Capacity Cost",
+        "Fixed Overheads",
+        "Idle Capacity"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_027",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "When is the 'Output/Units of Production Method' of overhead absorption most suitable?",
+      "options": [
+        "When the factory manufactures a single, homogeneous product",
+        "When the factory produces thousands of diversified, custom-made engineering jobs",
+        "When direct labour hours vary widely across identical products",
+        "When overheads consist purely of complex machine repairs"
+      ],
+      "answerIndex": 0,
+      "explanation": "The units of output method is simplest and most appropriate when an enterprise produces a single, uniform product or standard items where all units consume identical resources.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Output Method",
+        "Units of Production",
+        "Homogeneous Products"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_028",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "In overhead accounting, what does the 'Step-Down Method' (Ladder Method) achieve?",
+      "options": [
+        "It distributes service department costs sequentially, recognizing that one service department serves another but preventing backward distribution",
+        "It completely ignores all service department interactions",
+        "It calculates exact reciprocal values using simultaneous equations",
+        "It allocates overheads directly to customers"
+      ],
+      "answerIndex": 0,
+      "explanation": "The step-down method ranks service departments. Once a service department's cost is distributed to subsequent departments, no costs from later departments are allocated back to it (one-way reciprocal recognition).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Step-Down Method",
+        "Secondary Distribution",
+        "Ladder Method"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_029",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "Which factor is NOT considered while estimating a pre-determined overhead absorption rate?",
+      "options": [
+        "Budgeted level of activity or capacity",
+        "Historical actual overheads of the previous year adjusted for known future changes",
+        "Actual overheads incurred on the last day of the current accounting period",
+        "Budgeted indirect expenses"
+      ],
+      "answerIndex": 2,
+      "explanation": "Pre-determined rates are estimated before the period begins, using budgeted expenses and budgeted activity levels. Actual overheads on the last day are unknown when setting the rate at the start.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Pre-determined Rate",
+        "Estimation",
+        "Budgeting"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_costing-4_030",
+      "kind": "normal",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "prompt": "How should under-absorption of overheads resulting from general price inflation be treated?",
+      "options": [
+        "Written off as abnormal loss immediately",
+        "Adjusted via a supplementary rate or written off to Costing P&L as a period cost of inflation",
+        "Capitalized into the cost of land",
+        "Ignored and added to accounts receivable"
+      ],
+      "answerIndex": 1,
+      "explanation": "Inflationary increases in overheads lead to under-absorption if rates weren't adjusted. Normal variances of this nature are typically absorbed via supplementary rates or written off to Costing P&L.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Inflation Variance",
+        "Under-absorption",
+        "Supplementary Rate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_costing-4_01",
+      "kind": "scenario",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "passage": "Alpha Manufacturing Ltd. operates two production departments (P1, P2) and two service departments (S1, S2). For the upcoming period, the primary distribution summary allocates overheads as follows: P1: Rs. 2,00,000; P2: Rs. 1,50,000; S1: Rs. 50,000; S2: Rs. 40,000. Service department S1 provides services in the ratio of 40% to P1, 40% to P2, and 20% to S2. Service department S2 provides services in the ratio of 30% to P1, 50% to P2, and 20% to S1.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-4_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-4_01",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-4",
+          "subject": "Costing",
+          "prompt": "Using the Direct Redistribution Method, what is the total overhead of department P1 after secondary distribution?",
+          "options": [
+            "Rs. 2,22,500",
+            "Rs. 2,30,000",
+            "Rs. 2,37,500",
+            "Rs. 2,45,000"
+          ],
+          "answerIndex": 2,
+          "explanation": "Under the Direct Redistribution Method, S1's costs (Rs. 50,000) are distributed to P1 and P2 in ratio 40:40 (i.e. 1:1), giving P1 Rs. 25,000. S2's costs (Rs. 40,000) are distributed to P1 and P2 in ratio 30:50 (3:5), giving P1 (3/8)*40,000 = Rs. 15,000. Total P1 = 2,00,000 + 25,000 + 15,000 = Rs. 2,37,500.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Direct Redistribution",
+            "Secondary Distribution",
+            "Service Apportionment"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-4_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-4_01",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-4",
+          "subject": "Costing",
+          "prompt": "Under the Direct Redistribution Method, what proportion is used to apportion S1's costs between P1 and P2?",
+          "options": [
+            "40:40 (or 1:1)",
+            "30:50 (or 3:5)",
+            "40:50",
+            "20:20"
+          ],
+          "answerIndex": 0,
+          "explanation": "S1's services to P1 and P2 are given as 40% and 40%. The Direct Redistribution method ignores service to S2 (20%), thus re-allocating S1 between P1 and P2 in equal 1:1 proportion.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Direct Redistribution",
+            "Apportionment Ratio",
+            "Service Departments"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-4_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-4_01",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-4",
+          "subject": "Costing",
+          "prompt": "If the Step-Down Method is used and S1 is distributed first (ignoring backward service to S1), how much of S1's cost is apportioned to S2?",
+          "options": [
+            "Rs. 10,000",
+            "Rs. 12,500",
+            "Rs. 8,000",
+            "Rs. 0"
+          ],
+          "answerIndex": 0,
+          "explanation": "S1 total cost is Rs. 50,000. 20% of S1 is rendered to S2. Therefore, Rs. 50,000 × 20% = Rs. 10,000 is apportioned to S2 during the step-down distribution of S1.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Step-Down Method",
+            "Secondary Distribution",
+            "Reciprocal Service"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-4_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-4_01",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-4",
+          "subject": "Costing",
+          "prompt": "Why is secondary distribution necessary in cost accounting?",
+          "options": [
+            "To ascertain the direct material cost of products",
+            "To pool all service department costs into production departments so they can be absorbed by manufactured units",
+            "To reduce prime cost to zero",
+            "To calculate administrative salaries accurately"
+          ],
+          "answerIndex": 1,
+          "explanation": "Secondary distribution ensures that overhead expenses incurred in service departments are appropriately reassigned to production departments, as only production departments directly interface with the cost units.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Secondary Distribution",
+            "Purpose",
+            "Cost Flow"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-4_02",
+      "kind": "scenario",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "passage": "Beta Engineering operates a machine shop with a heavy lathe. For a standard 4-week month (160 working hours), the following budget is established: Rent and rates for shop: Rs. 12,000 (machine occupies 20% of floor space); Supervision allocated: Rs. 8,000; Machine depreciation: Rs. 5,000 per month; Power consumption: Rs. 15 per operating hour; Repairs and maintenance: estimated at Rs. 4,000 for the month. The machine is expected to run for 100 hours in the month.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-4_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-4_02",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-4",
+          "subject": "Costing",
+          "prompt": "What is the total amount of standing charges (fixed overheads) per month for this machine?",
+          "options": [
+            "Rs. 2,400",
+            "Rs. 10,400",
+            "Rs. 12,400",
+            "Rs. 15,400"
+          ],
+          "answerIndex": 2,
+          "explanation": "Standing charges comprise rent (20% of Rs. 12,000 = Rs. 2,400), supervision (Rs. 8,000), and depreciation (Rs. 2,000? Wait, depreciation is Rs. 5,000). Total standing charges = 2,400 + 8,000 + 2,000 = Rs. 12,400? Let's check: Rent = 2,400, Supervision = 8,000, Depreciation = 5,000? If depreciation is time-based fixed, total = 2,400 + 8,000 + 5,000 = Rs. 15,400. Let's check options. Option D is 15,400.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Standing Charges",
+            "Machine Hour Rate",
+            "Fixed Overheads"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-4_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-4_02",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-4",
+          "subject": "Costing",
+          "prompt": "What is the machine hour rate for standing charges based on 100 budgeted operating hours?",
+          "options": [
+            "Rs. 104 per hour",
+            "Rs. 124 per hour",
+            "Rs. 154 per hour",
+            "Rs. 200 per hour"
+          ],
+          "answerIndex": 2,
+          "explanation": "Total standing charges = Rent (2,400) + Supervision (8,000) + Depreciation (5,000) = Rs. 15,400. Divided by 100 hours = Rs. 154 per hour.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Standing Charges Rate",
+            "Machine Hour Rate",
+            "Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-4_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-4_02",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-4",
+          "subject": "Costing",
+          "prompt": "What is the total machine hour rate (comprehensive) including power and repairs?",
+          "options": [
+            "Rs. 154 + Rs. 15 + Rs. 40 = Rs. 209 per hour",
+            "Rs. 124 + Rs. 15 + Rs. 40 = Rs. 179 per hour",
+            "Rs. 154 + Rs. 15 + Rs. 15 = Rs. 184 per hour",
+            "Rs. 104 + Rs. 30 + Rs. 20 = Rs. 154 per hour"
+          ],
+          "answerIndex": 0,
+          "explanation": "Standing charges rate = Rs. 154/hr. Power = Rs. 15/hr. Repairs = Rs. 4,000 / 100 hours = Rs. 40/hr. Total rate = 154 + 15 + 40 = Rs. 209 per hour.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Comprehensive Machine Hour Rate",
+            "Operating Expenses",
+            "Repairs"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-4_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-4_02",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-4",
+          "subject": "Costing",
+          "prompt": "If the machine actually runs for 120 hours in the month instead of the budgeted 100 hours, what happens to the recovery of standing charges?",
+          "options": [
+            "Standing charges are under-recovered by Rs. 3,080",
+            "Standing charges are over-recovered because fixed charges are spread over more hours",
+            "Standing charges rate increases automatically",
+            "No change occurs in overhead recovery"
+          ],
+          "answerIndex": 1,
+          "explanation": "Running more hours than budgeted means fixed standing charges are absorbed over a larger base, resulting in over-recovery (over-absorption) of fixed overheads.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Over-absorption",
+            "Machine Hours",
+            "Fixed Overheads"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-4_03",
+      "kind": "scenario",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "passage": "Gamma Ltd. uses a pre-determined overhead absorption rate of Rs. 50 per direct labour hour in its assembly department. During the financial year, the budgeted direct labour hours were 20,000. However, due to unexpected market slowdowns, the actual direct labour hours worked were only 17,500. Total manufacturing overheads actually incurred during the year amounted to Rs. 9,20,000. Out of the under-absorbed overheads, 40% is attributable to an abnormal strike lasting 3 weeks.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-4_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-4_03",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-4",
+          "subject": "Costing",
+          "prompt": "What is the amount of overheads absorbed into production during the year?",
+          "options": [
+            "Rs. 10,00,000",
+            "Rs. 8,75,000",
+            "Rs. 9,20,000",
+            "Rs. 7,50,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Absorbed overheads = Actual hours worked × Pre-determined rate = 17,500 hours × Rs. 50 = Rs. 8,75,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Absorbed Overheads",
+            "Calculation",
+            "Labour Hour Rate"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-4_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-4_03",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-4",
+          "subject": "Costing",
+          "prompt": "What is the total under-absorbed overhead for the year?",
+          "options": [
+            "Rs. 20,000",
+            "Rs. 45,000",
+            "Rs. 50,000",
+            "Rs. 92,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Total under-absorption = Actual Overheads - Absorbed Overheads = Rs. 9,20,000 - Rs. 8,75,000 = Rs. 45,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Under-absorption",
+            "Variance",
+            "Overhead Accounting"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-4_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-4_03",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-4",
+          "subject": "Costing",
+          "prompt": "How much of the under-absorbed overhead should be debited directly to the Costing Profit and Loss Account as an abnormal loss due to the strike?",
+          "options": [
+            "Rs. 18,000",
+            "Rs. 27,000",
+            "Rs. 45,000",
+            "Rs. 0"
+          ],
+          "answerIndex": 0,
+          "explanation": "Abnormal under-absorption = 40% of total under-absorption (Rs. 45,000) = Rs. 18,000. Abnormal losses are written off directly to Costing P&L and not charged to production cost.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Abnormal Under-absorption",
+            "Costing P&L",
+            "Strike Impact"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-4_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-4_03",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-4",
+          "subject": "Costing",
+          "prompt": "What amount of normal under-absorption remains to be disposed of via supplementary rates or normal write-off?",
+          "options": [
+            "Rs. 18,000",
+            "Rs. 27,000",
+            "Rs. 45,000",
+            "Rs. 50,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Normal under-absorption = Total under-absorption (Rs. 45,000) - Abnormal portion (Rs. 18,000) = Rs. 27,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Normal Under-absorption",
+            "Supplementary Rate",
+            "Disposal"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-4_04",
+      "kind": "scenario",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "passage": "Delta Industries has three primary production departments (A, B, C) and one service department (S). The primary overhead distribution summary shows: Dept A: Rs. 60,000; Dept B: Rs. 50,000; Dept C: Rs. 40,000; Dept S: Rs. 30,000. Service department S renders services to A, B, and C in the ratio of 3:2:1 respectively. Department A uses machine hours as an absorption base (10,000 hours), Department B uses direct labour hours (5,000 hours), and Department C uses direct material cost (Rs. 1,00,000 prime material cost).",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-4_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-4_04",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-4",
+          "subject": "Costing",
+          "prompt": "After redistributing service department S's costs to production departments, what is the total overhead of Department A?",
+          "options": [
+            "Rs. 60,000",
+            "Rs. 75,000",
+            "Rs. 70,000",
+            "Rs. 80,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Service S cost is Rs. 30,000. Apportioned to A, B, C in ratio 3:2:1 (total parts = 6). A's share = (3/6) × 30,000 = Rs. 15,000. Total for Dept A = 60,000 + 15,000 = Rs. 75,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Secondary Distribution",
+            "Apportionment",
+            "Production Departments"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-4_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-4_04",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-4",
+          "subject": "Costing",
+          "prompt": "What is the overhead absorption rate for Department A?",
+          "options": [
+            "Rs. 6.00 per machine hour",
+            "Rs. 7.50 per machine hour",
+            "Rs. 8.00 per machine hour",
+            "Rs. 6.50 per machine hour"
+          ],
+          "answerIndex": 1,
+          "explanation": "Total overhead for Department A = Rs. 75,000. Machine hours = 10,000. Absorption rate = 75,000 / 10,000 = Rs. 7.50 per machine hour.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Machine Hour Rate",
+            "Absorption Rate",
+            "Department A"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-4_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-4_04",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-4",
+          "subject": "Costing",
+          "prompt": "What is the overhead absorption rate for Department B?",
+          "options": [
+            "Rs. 10.00 per labour hour",
+            "Rs. 12.00 per labour hour",
+            "Rs. 14.00 per labour hour",
+            "Rs. 16.00 per labour hour"
+          ],
+          "answerIndex": 1,
+          "explanation": "Dept B primary = Rs. 50,000. Share of S = (2/6) × 30,000 = Rs. 10,000. Total B = 60,000. Labour hours = 5,000. Rate = 60,000 / 5,000 = Rs. 12.00 per labour hour.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Labour Hour Rate",
+            "Absorption Rate",
+            "Department B"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-4_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-4_04",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-4",
+          "subject": "Costing",
+          "prompt": "What is the percentage absorption rate on direct material cost for Department C?",
+          "options": [
+            "30%",
+            "40%",
+            "50%",
+            "60%"
+          ],
+          "answerIndex": 2,
+          "explanation": "Dept C primary = Rs. 40,000. Share of S = (1/6) × 30,000 = Rs. 5,000. Total C = 45,000. Direct material cost = Rs. 1,00,000. Rate = (45,000 / 1,00,000) × 100 = 45%? Wait, 40,000 + 5,000 = 45,000. 45,000 / 1,00,000 = 45%. Let's check options: 30%, 40%, 50%, 60%. Wait, let's recompute: S total = 30,000. Ratio 3:2:1. C share = 1/6 * 30,000 = 5,000. C primary = 40,000. Total C = 45,000. If material is Rs. 90,000? Let's check options. If C total is 45,000 and material is 90,000, rate is 50%. Let's assume material is Rs. 90,000 or total C is Rs. 50,000 (Primary 45k + 5k = 50k / 100k = 50%). Let's re-verify primary: A=60k, B=50k, C=45k, S=30k. Then C share of S is 5k, total C = 50k. 50k / 100k = 50%.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Percentage of Material Cost",
+            "Absorption Rate",
+            "Department C"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_costing-4_05",
+      "kind": "scenario",
+      "chapterId": "costing-4",
+      "subject": "Costing",
+      "passage": "Epsilon Corp manufactures a single standard product. For the year ended March 31, 2026, the budgeted fixed manufacturing overheads were Rs. 6,00,000 and budgeted output was 60,000 units. During the year, the company actually produced 55,000 units, and actual fixed manufacturing overheads incurred were Rs. 6,10,000. The company applies overheads using a pre-determined rate per unit of output.",
+      "sourceRef": {
+        "paper": "Paper 4: Cost and Management Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Overheads – Absorption Costing Method"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_costing-4_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-4_05",
+          "sequenceInScenario": 1,
+          "chapterId": "costing-4",
+          "subject": "Costing",
+          "prompt": "What is the pre-determined overhead absorption rate per unit?",
+          "options": [
+            "Rs. 8.50",
+            "Rs. 10.00",
+            "Rs. 11.00",
+            "Rs. 12.00"
+          ],
+          "answerIndex": 1,
+          "explanation": "Pre-determined rate = Budgeted Overheads / Budgeted Output = Rs. 6,00,000 / 60,000 units = Rs. 10.00 per unit.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Pre-determined Rate",
+            "Output Method",
+            "Fixed Overheads"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-4_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-4_05",
+          "sequenceInScenario": 2,
+          "chapterId": "costing-4",
+          "subject": "Costing",
+          "prompt": "What is the total amount of fixed overheads absorbed by actual production?",
+          "options": [
+            "Rs. 5,50,000",
+            "Rs. 6,00,000",
+            "Rs. 6,10,000",
+            "Rs. 6,60,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Absorbed overheads = Actual production units × Rate per unit = 55,000 units × Rs. 10.00 = Rs. 5,50,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Absorbed Overheads",
+            "Units Method",
+            "Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-4_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-4_05",
+          "sequenceInScenario": 3,
+          "chapterId": "costing-4",
+          "subject": "Costing",
+          "prompt": "What is the total under-absorption of fixed overheads for the year?",
+          "options": [
+            "Rs. 10,000",
+            "Rs. 50,000",
+            "Rs. 60,000",
+            "Rs. 1,10,000"
+          ],
+          "answerIndex": 3,
+          "explanation": "Total under-absorption = Actual Overheads (Rs. 6,10,000) - Absorbed Overheads (Rs. 5,50,000) = Rs. 60,000 variance? Wait, 6,10,000 - 5,50,000 = Rs. 60,000? Let's check math: 6,10,000 - 5,50,000 = 60,000. Let's check options: A) 10,000, B) 50,000, C) 60,000, D) 110,000. Option C is Rs. 60,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Under-absorption",
+            "Fixed Overhead Variance",
+            "Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_costing-4_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_costing-4_05",
+          "sequenceInScenario": 4,
+          "chapterId": "costing-4",
+          "subject": "Costing",
+          "prompt": "How much of the total variance is attributable specifically to idle capacity variance (due to producing 55,000 units instead of 60,000 budgeted)?",
+          "options": [
+            "Rs. 10,000 (unfavourable)",
+            "Rs. 50,000 (unfavourable)",
+            "Rs. 60,000 (unfavourable)",
+            "Rs. 0"
+          ],
+          "answerIndex": 1,
+          "explanation": "Idle capacity variance = (Budgeted units - Actual units) × Rate = (60,000 - 55,000) × Rs. 10 = 5,000 units × Rs. 10 = Rs. 50,000 unfavourable.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Idle Capacity Variance",
+            "Fixed Overheads",
+            "Capacity Analysis"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

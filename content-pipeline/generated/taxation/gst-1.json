@@ -1,0 +1,1425 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "gst-1",
+  "subject": "Taxation",
+  "paper": "Paper 3: Taxation",
+  "module": "Module 1",
+  "chapterNumber": 1,
+  "chapterTitle": "GST in India - An Introduction",
+  "generatedAt": "2026-08-16T14:26:20.975Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_gst-1_001",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "Which of the following constitutional amendments paved the way for the introduction of Goods and Services Tax (GST) in India?",
+      "options": [
+        "101st Constitution Amendment Act, 2016",
+        "103rd Constitution Amendment Act, 2019",
+        "99th Constitution Amendment Act, 2014",
+        "105th Constitution Amendment Act, 2021"
+      ],
+      "answerIndex": 0,
+      "explanation": "The 101st Constitution Amendment Act, 2016 inserted Article 246A, empowering the Parliament and State Legislatures to make laws with respect to GST. This landmark amendment fundamentally restructured India's indirect tax framework.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Constitutional Amendment",
+        "Article 246A",
+        "Introduction of GST"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_002",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "Under Article 279A of the Constitution of India, who is the Chairperson of the Goods and Services Tax Council?",
+      "options": [
+        "Prime Minister of India",
+        "Union Minister of State for Finance",
+        "Union Finance Minister",
+        "Governor of the Reserve Bank of India"
+      ],
+      "answerIndex": 2,
+      "explanation": "Article 279A mandates the constitution of the GST Council by the President. The Union Finance Minister acts as the Chairperson of the GST Council, while the Union Minister of State in charge of Revenue or Finance is a member.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "GST Council",
+        "Article 279A",
+        "Chairperson"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_003",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "Which of the following items is currently NOT subsumed under GST and continues to be taxed under the pre-GST central excise and state VAT regime?",
+      "options": [
+        "Medicinal formulations containing alcohol",
+        "Aviation Turbine Fuel (ATF)",
+        "High Speed Diesel (HSD)",
+        "Toothpaste and soaps"
+      ],
+      "answerIndex": 2,
+      "explanation": "Petroleum crude, high speed diesel, motor spirit (petrol), natural gas, and aviation turbine fuel (ATF) have been temporarily excluded from GST. The GST Council will decide the date from which GST will be levied on these petroleum products.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Subsumed Taxes",
+        "Petroleum Products",
+        "Exclusions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_004",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "What is the primary voting weight allocated to the Central Government and the State Governments combined in the decisions of the GST Council?",
+      "options": [
+        "Center has 1/3rd weight and States have 2/3rd weight combined",
+        "Center has 1/2 weight and States have 1/2 weight combined",
+        "Center has 2/3rd weight and States have 1/3rd weight combined",
+        "Center has 3/4th weight and States have 1/4th weight combined"
+      ],
+      "answerIndex": 0,
+      "explanation": "According to Article 279A, the vote of the Central Government has a weight of one-third of the total votes cast, and the votes of all the State Governments taken together have a weight of two-thirds of the total votes cast in that meeting.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "GST Council",
+        "Voting Weight",
+        "Article 279A"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_005",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "Which of the following taxes levied by the Central Government was NOT subsumed into GST?",
+      "options": [
+        "Central Excise Duty",
+        "Service Tax",
+        "Basic Customs Duty",
+        "Additional Excise Duty (Goods of Special Importance)"
+      ],
+      "answerIndex": 2,
+      "explanation": "Basic Customs Duty (BCD) is levied on goods imported into India under the Customs Act, 1962, and has not been subsumed under GST. Central Excise, Service Tax, and Additional Excise Duties were subsumed.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Subsumed Taxes",
+        "Customs Duty",
+        "Central Levies"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_006",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "GST is a destination-based consumption tax. What does this fundamentally imply regarding tax revenue collection?",
+      "options": [
+        "Tax revenue accrues to the state where the manufacturing unit is located",
+        "Tax revenue accrues to the state where the goods or services are consumed",
+        "Tax revenue is retained entirely by the Central Government",
+        "Tax revenue is distributed equally among all states regardless of consumption"
+      ],
+      "answerIndex": 1,
+      "explanation": "GST is a destination-based tax, meaning the tax revenue goes to the state where the final consumption takes place, unlike origin-based taxes which favoured manufacturing states.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Destination-Based Tax",
+        "Consumption Tax",
+        "Revenue Distribution"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_007",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "Under the dual GST model implemented in India, intra-state supplies attract which of the following combinations of taxes?",
+      "options": [
+        "Only IGST",
+        "CGST and SGST/UTGST",
+        "CGST and IGST",
+        "VAT and Central Excise"
+      ],
+      "answerIndex": 1,
+      "explanation": "In an intra-state supply of goods or services, both Central GST (CGST) and State GST (SGST) or Union Territory GST (UTGST) are levied concurrently on the same taxable value.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Dual GST Model",
+        "CGST",
+        "SGST",
+        "Intra-state Supply"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_008",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "Which article of the Constitution of India defines 'Goods and Services Tax' as any tax on supply of goods, or services or both except taxes on the supply of the alcoholic liquor for human consumption?",
+      "options": [
+        "Article 366(12A)",
+        "Article 246A",
+        "Article 279A",
+        "Article 265"
+      ],
+      "answerIndex": 0,
+      "explanation": "Article 366(12A) of the Constitution of India defines GST as 'any tax on supply of goods, or services or both except taxes on the supply of the alcoholic liquor for human consumption'.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Constitutional Definitions",
+        "Article 366(12A)",
+        "Scope of GST"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_009",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "What majority is required for taking any decision in the GST Council?",
+      "options": [
+        "Simple majority of members present and voting",
+        "Not less than three-fourths of the weighted votes of the members present and voting",
+        "Two-thirds majority of all members of the council",
+        "Unanimous consent of all members"
+      ],
+      "answerIndex": 1,
+      "explanation": "Every decision of the GST Council must be taken at a meeting by a majority of not less than three-fourths of the weighted votes of the members present and voting.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "GST Council",
+        "Decision Making",
+        "Three-fourths Majority"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_010",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "Which of the following authorities administers the Integrated Goods and Services Tax (IGST) on inter-state supplies and imports?",
+      "options": [
+        "State Government exclusively",
+        "Central Government exclusively",
+        "Both Central and State Governments in a 50:50 ratio",
+        "GST Council directly"
+      ],
+      "answerIndex": 1,
+      "explanation": "IGST is levied and collected by the Central Government under the IGST Act, and the tax is subsequently apportioned between the Centre and the consuming State as per the recommendations of the GST Council.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "IGST",
+        "Inter-state Supply",
+        "Administration"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_011",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "Why was the 'additional tax of up to 1% on inter-state supply of goods' proposed during the conceptual stages of GST ultimately dropped?",
+      "options": [
+        "It violated the fundamental destination-based nature of GST and caused cascading effects",
+        "It generated too much revenue for the Centre",
+        "It was declared unconstitutional by the Supreme Court prior to enactment",
+        "States requested higher compensation instead"
+      ],
+      "answerIndex": 0,
+      "explanation": "The proposed 1% additional tax on inter-state supplies was dropped because it violated the fundamental destination-based principle of GST, acted as a cascading tax (origin-based), and created economic distortions.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Inter-state Supply",
+        "Additional Tax",
+        "Economic Distortions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_012",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "Which Constitutional provision prohibits any tax to be levied or collected except by authority of law?",
+      "options": [
+        "Article 246",
+        "Article 265",
+        "Article 279A",
+        "Article 300A"
+      ],
+      "answerIndex": 1,
+      "explanation": "Article 265 of the Constitution of India lays down that 'No tax shall be levied or collected except by authority of law', which forms the foundational bedrock for all tax legislation, including GST.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Article 265",
+        "Authority of Law",
+        "Constitutional Safeguard"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_013",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "Which of the following taxes levied by State Governments was NOT subsumed into GST?",
+      "options": [
+        "State VAT / Sales Tax",
+        "Entertainment Tax (levied by states)",
+        "Stamp Duty",
+        "Luxury Tax"
+      ],
+      "answerIndex": 2,
+      "explanation": "Stamp duty levied on immovable property transactions has not been subsumed under GST. State VAT, entertainment tax, and luxury tax levied by states were successfully subsumed.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Subsumed Taxes",
+        "State Levies",
+        "Stamp Duty"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_014",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "In the context of GST, what does the acronym SGST stand for?",
+      "options": [
+        "Standard Goods and Services Tax",
+        "State Goods and Services Tax",
+        "Special Goods and Services Tariff",
+        "Seamless Goods and Services Transaction"
+      ],
+      "answerIndex": 0,
+      "explanation": "SGST stands for State Goods and Services Tax, levied by individual state governments on intra-state supplies under respective State GST Acts.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SGST",
+        "Terminology",
+        "State GST"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_015",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "How does GST eliminate the cascading effect of taxes (tax on tax)?",
+      "options": [
+        "By offering exemptions to all small businesses",
+        "By providing seamless Input Tax Credit (ITC) across the supply chain",
+        "By fixing a uniform tax rate of 18% on all goods and services",
+        "By collecting tax only at the retail level"
+      ],
+      "answerIndex": 1,
+      "explanation": "GST eliminates the cascading effect by allowing registered taxable persons to claim Input Tax Credit (ITC) for taxes paid on inputs at each stage of the supply chain, ensuring tax is paid only on the value added.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Cascading Effect",
+        "Input Tax Credit",
+        "Value Addition"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_016",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "Which specific constitutional article empowers Parliament to make laws with respect to GST while granting concurrent powers to State Legislatures?",
+      "options": [
+        "Article 246A",
+        "Article 248",
+        "Article 254",
+        "Article 286"
+      ],
+      "answerIndex": 0,
+      "explanation": "Article 246A (introduced by the 101st Amendment) gives both Parliament and State Legislatures the power to make laws with respect to GST imposed by the Union or by the State respectively.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Article 246A",
+        "Legislative Powers",
+        "Concurrent Power"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_017",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "What is the status of 'alcoholic liquor for human consumption' under the GST framework?",
+      "options": [
+        "Taxable at the highest GST slab of 28% plus cess",
+        "Completely outside the purview of GST; continues to be taxed by states",
+        "Taxable under CGST only",
+        "Exempted from all forms of taxation"
+      ],
+      "answerIndex": 1,
+      "explanation": "Alcoholic liquor for human consumption is completely kept outside the constitutional definition and purview of GST. States retain the exclusive power to levy excise duty and sales tax/VAT on it.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Alcoholic Liquor",
+        "Constitutional Exclusions",
+        "State Taxation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_018",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "Which of the following lists in the Seventh Schedule of the Constitution was amended to accommodate GST?",
+      "options": [
+        "List I (Union List) only",
+        "List II (State List) only",
+        "Both List I (Union List) and List II (State List)",
+        "List III (Concurrent List) only"
+      ],
+      "answerIndex": 2,
+      "explanation": "The Seventh Schedule was amended: entries in List I (Union List) and List II (State List) were modified (e.g., Entry 92 and 92C of Union List deleted; Entry 54 of State List modified) to enable dual GST.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Seventh Schedule",
+        "Union List",
+        "State List",
+        "Constitutional Amendments"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_019",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "Under GST law, what is the nomenclature used for supplies made within the same Union Territory without a legislature?",
+      "options": [
+        "CGST and SGST",
+        "CGST and UTGST",
+        "IGST only",
+        "UGST and IGST"
+      ],
+      "answerIndex": 1,
+      "explanation": "For intra-UT supplies in Union Territories without a legislature (like Andaman and Nicobar Islands, Lakshadweep), CGST and UTGST (Union Territory Goods and Services Tax) are levied concurrently.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "UTGST",
+        "Union Territories",
+        "Intra-UT Supply"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_020",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "Which of the following taxes levied by local bodies (such as municipalities) was subsumed into GST?",
+      "options": [
+        "Property tax",
+        "Octroi and Entry Tax",
+        "Professional tax",
+        "Vehicle parking tax"
+      ],
+      "answerIndex": 1,
+      "explanation": "Octroi and Entry Tax levied by local bodies were subsumed into GST. Property tax, professional tax, and local parking taxes remain outside GST and continue to be levied by local authorities.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Subsumed Taxes",
+        "Octroi",
+        "Local Bodies"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_021",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "What was the primary legislative objective behind enacting the Goods and Services Tax (Compensation to States) Act, 2017?",
+      "options": [
+        "To provide permanent financial grants to underdeveloped states",
+        "To compensate states for any revenue loss arising due to the implementation of GST for a transition period",
+        "To fund infrastructure projects in union territories",
+        "To compensate central government for losses incurred in inter-state trade"
+      ],
+      "answerIndex": 1,
+      "explanation": "The GST (Compensation to States) Act, 2017 was enacted to provide compensation to states for loss of revenue arising on account of implementation of GST for a transition period (originally 5 years) funded via a cess on luxury and demerit goods.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "GST Compensation",
+        "Compensation Cess",
+        "Transition Period"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_022",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "Which constitutional article places restrictions on the imposition of tax on the sale or purchase of goods in the course of inter-state trade or commerce?",
+      "options": [
+        "Article 269",
+        "Article 286",
+        "Article 301",
+        "Article 304"
+      ],
+      "answerIndex": 1,
+      "explanation": "Article 286 of the Constitution imposes restrictions on imposition of tax on the sale or purchase of goods in the course of inter-state trade or commerce, which led to the formulation of IGST.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Article 286",
+        "Inter-state Trade",
+        "Constitutional Restrictions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_023",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "What is the role of the Goods and Services Tax Network (GSTN)?",
+      "options": [
+        "To adjudicate tax disputes between taxpayers and the department",
+        "To provide the IT infrastructure and services to central and state governments, taxpayers, and other stakeholders",
+        "To formulate tax rates and exemption policies",
+        "To audit all registered taxpayers annually"
+      ],
+      "answerIndex": 1,
+      "explanation": "GSTN is a non-profit, non-government company providing the robust IT backbone and shared IT infrastructure for registration, return filing, tax payments, and matching of invoices under GST.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "GSTN",
+        "IT Infrastructure",
+        "GST Network"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_024",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "Which of the following best describes the tax structure of GST regarding multiple rate slabs?",
+      "options": [
+        "Single flat rate across all goods and services",
+        "Multiple rate slabs (e.g., 0%, 5%, 12%, 18%, 28%) along with a compensation cess on specified goods",
+        "Regressive rate structure decreasing with higher transaction value",
+        "Discretionary rates decided by individual states"
+      ],
+      "answerIndex": 1,
+      "explanation": "India has adopted a multi-rate GST structure with standard slabs of 0%, 5%, 12%, 18%, and 28%, supplemented by a compensation cess on luxury, sin, and demerit goods.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Rate Slabs",
+        "Multi-rate GST",
+        "Compensation Cess"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_025",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "Which authority is empowered to make recommendations on GST rates, exemption lists, and threshold limits under Article 279A?",
+      "options": [
+        "Central Board of Indirect Taxes and Customs (CBIC)",
+        "Goods and Services Tax Council (GST Council)",
+        "NITI Aayog",
+        "Reserve Bank of India (RBI)"
+      ],
+      "answerIndex": 1,
+      "explanation": "Article 279A empowers the GST Council to make recommendations to the Union and States on GST rates, exemptions, threshold limits, model GST laws, etc.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "GST Council",
+        "Recommendations",
+        "Article 279A"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_026",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "Can a supplier registered in Maharashtra charge IGST on the supply of goods to a buyer located within Maharashtra?",
+      "options": [
+        "Yes, if the buyer requests an inter-state invoice",
+        "No, because a supply within the same state is an intra-state supply attracting CGST and SGST",
+        "Yes, if the goods originated outside Maharashtra",
+        "Yes, at the discretion of the supplier"
+      ],
+      "answerIndex": 1,
+      "explanation": "When both the location of the supplier and the place of supply are in the same state, it constitutes an intra-state supply, which mandatorily attracts CGST and SGST/UTGST, not IGST.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Intra-state Supply",
+        "CGST and SGST",
+        "Place of Supply"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_027",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "Which of the following constitutional provisions guarantees freedom of trade, commerce, and intercourse throughout the territory of India, subject to public interest restrictions?",
+      "options": [
+        "Article 14",
+        "Article 19(1)(g)",
+        "Article 301",
+        "Article 32"
+      ],
+      "answerIndex": 2,
+      "explanation": "Article 301 of the Constitution states that trade, commerce, and intercourse throughout the territory of India shall be free, which necessitated careful structuring of IGST to prevent trade barriers between states.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Article 301",
+        "Freedom of Trade",
+        "Inter-state Commerce"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_028",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "Under the pre-GST indirect tax regime, what was the primary cause of the 'cascading effect'?",
+      "options": [
+        "Non-availability of cross-credit between Central taxes (like Excise) and State taxes (like VAT)",
+        "Excessive use of electronic invoicing",
+        "Uniform tax rates across all states",
+        "Exemption of small traders from taxation"
+      ],
+      "answerIndex": 0,
+      "explanation": "The cascading effect occurred because Central taxes paid on inputs could not be set off against State taxes output liabilities (and vice versa), leading to tax being levied on tax.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Cascading Effect",
+        "Pre-GST Regime",
+        "Cross-credit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_029",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "Which of the following entities functions as the apex operational body for administering central indirect tax laws including GST at the national level?",
+      "options": [
+        "Central Board of Direct Taxes (CBDT)",
+        "Central Board of Indirect Taxes and Customs (CBIC)",
+        "Goods and Services Tax Network (GSTN)",
+        "Securities and Exchange Board of India (SEBI)"
+      ],
+      "answerIndex": 1,
+      "explanation": "The Central Board of Indirect Taxes and Customs (CBIC) under the Ministry of Finance administers central indirect tax laws, including CGST, IGST, and Customs.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "CBIC",
+        "Administration",
+        "Indirect Taxes"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-1_030",
+      "kind": "normal",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "prompt": "In the context of petroleum and natural gas, when can the GST Council notify the levy of GST on crude oil and high-speed diesel?",
+      "options": [
+        "Automatically after 10 years from GST rollout",
+        "Only upon the recommendation of the GST Council",
+        "By a direct executive order of the Prime Minister",
+        "After ratification by all 28 states unconditionally"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Article 246A and related constitutional provisions, GST on petroleum crude, HSD, petrol, natural gas, and ATF will be levied from a date to be recommended by the GST Council.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Petroleum Products",
+        "GST Council",
+        "Constitutional Provisions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_gst-1_01",
+      "kind": "scenario",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "passage": "M/s Apex Manufacturing Ltd., located in the State of Gujarat, procures raw materials worth Rs. 10,00,000 from local suppliers within Gujarat and pays CGST and SGST. It also imports specialized machinery from Germany, paying Basic Customs Duty and IGST. The company manufactures finished goods and sells 60% of its production to buyers in Maharashtra and 40% to buyers within Gujarat.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-1_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-1_01",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-1",
+          "subject": "Taxation",
+          "prompt": "What type of tax will M/s Apex Manufacturing Ltd. charge on the sale of goods made to buyers located in Maharashtra?",
+          "options": [
+            "CGST and SGST",
+            "IGST",
+            "UTGST and CGST",
+            "State VAT"
+          ],
+          "answerIndex": 1,
+          "explanation": "Since the location of the supplier is in Gujarat and the place of supply (buyer) is in Maharashtra, it is an inter-state supply, which attracts Integrated Goods and Services Tax (IGST).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Inter-state Supply",
+            "IGST",
+            "Place of Supply"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-1_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-1_01",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-1",
+          "subject": "Taxation",
+          "prompt": "What type of tax will M/s Apex Manufacturing Ltd. charge on the sale of goods made to buyers located within Gujarat?",
+          "options": [
+            "IGST only",
+            "CGST and SGST",
+            "CGST and UTGST",
+            "Basic Customs Duty"
+          ],
+          "answerIndex": 1,
+          "explanation": "When both the supplier and the buyer are located within the same state (Gujarat), it is an intra-state supply, attracting CGST and SGST concurrently.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Intra-state Supply",
+            "CGST",
+            "SGST"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-1_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-1_01",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-1",
+          "subject": "Taxation",
+          "prompt": "Can M/s Apex Manufacturing Ltd. utilize the IGST paid on the import of machinery against the CGST/SGST liability arising on intra-state sales?",
+          "options": [
+            "No, import IGST cannot be utilized for domestic supplies",
+            "Yes, IGST credit can be utilized against CGST and SGST liability in the prescribed order",
+            "Yes, but only against SGST and never against CGST",
+            "No, import duties cannot be set off under GST"
+          ],
+          "answerIndex": 1,
+          "explanation": "Input Tax Credit (ITC) of IGST paid on imports is seamlessly integrated into the GST credit pool and can be utilized against CGST and SGST liabilities after utilizing available IGST liability first.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Input Tax Credit",
+            "IGST Utilization",
+            "Import of Machinery"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-1_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-1_01",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-1",
+          "subject": "Taxation",
+          "prompt": "Which constitutional principle ensures that the revenue from the IGST charged on sales to Maharashtra eventually benefits the consuming state?",
+          "options": [
+            "Origin-based taxation principle",
+            "Destination-based consumption tax principle",
+            "Central revenue pooling principle",
+            "State equalization grant principle"
+          ],
+          "answerIndex": 1,
+          "explanation": "GST is a destination-based consumption tax; hence, the IGST collected on inter-state sales is apportioned to the consuming state where the goods are finally consumed.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Destination-Based Tax",
+            "IGST Apportionment",
+            "Consumption Principle"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-1_02",
+      "kind": "scenario",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "passage": "The State of Zeta has recently witnessed a sharp decline in its state tax revenues following the nationwide rollout of GST. The state finance minister raises concerns in a GST Council meeting regarding budgetary shortfalls. Simultaneously, the Council discusses whether to bring electricity and alcoholic liquor for human consumption under the GST net, and whether to revise the compensation cess rates on luxury vehicles.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-1_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-1_02",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-1",
+          "subject": "Taxation",
+          "prompt": "What constitutional mechanism was originally established to protect states like Zeta from revenue shortfalls during the initial years of GST?",
+          "options": [
+            "Permanent special grants from the RBI",
+            "GST Compensation to States Act providing guaranteed revenue growth backed by a compensation cess",
+            "Automatic borrowing rights from international banks",
+            "Exemption from paying Central taxes"
+          ],
+          "answerIndex": 1,
+          "explanation": "The GST (Compensation to States) Act, 2017 guaranteed states a 14% protected revenue growth for a transition period, funded through a compensation cess levied on luxury and demerit goods.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "GST Compensation",
+            "Protected Revenue",
+            "Compensation Cess"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-1_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-1_02",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-1",
+          "subject": "Taxation",
+          "prompt": "Can the GST Council unilaterally bring 'alcoholic liquor for human consumption' under GST without a constitutional amendment?",
+          "options": [
+            "Yes, by a three-fourths majority vote in the GST Council",
+            "No, because the Constitution explicitly excludes alcoholic liquor from the definition of GST under Article 366(12A)",
+            "Yes, if all Union Territories agree",
+            "Yes, through an executive notification issued by the Ministry of Finance"
+          ],
+          "answerIndex": 1,
+          "explanation": "Alcoholic liquor for human consumption is excluded by definition in Article 366(12A). Bringing it under GST requires a formal constitutional amendment passed by Parliament and ratified by states.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Alcoholic Liquor",
+            "Constitutional Amendment",
+            "Article 366(12A)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-1_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-1_02",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-1",
+          "subject": "Taxation",
+          "prompt": "What voting majority is required in the GST Council for decisions regarding changes in compensation cess or tax rates?",
+          "options": [
+            "Simple majority (more than 50%)",
+            "Unanimous consensus of all members",
+            "Not less than three-fourths of the weighted votes of members present and voting",
+            "Two-thirds majority of central members only"
+          ],
+          "answerIndex": 2,
+          "explanation": "All decisions of the GST Council, including rates, exemptions, and cesses, must be taken by a majority of not less than three-fourths of the weighted votes of the members present and voting.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "GST Council",
+            "Voting Majority",
+            "Article 279A"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-1_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-1_02",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-1",
+          "subject": "Taxation",
+          "prompt": "What is the status of electricity under the GST framework?",
+          "options": [
+            "Taxed at a special merit rate of 5%",
+            "Exempted under GST while continuing to be governed by state electricity duties and pre-GST laws",
+            "Taxed under IGST for inter-state transmission",
+            "Subsumed completely into CGST"
+          ],
+          "answerIndex": 1,
+          "explanation": "Electricity is neither subsumed into GST nor taxed under GST currently; it continues to be governed by pre-GST laws and state-level electricity duties.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Electricity",
+            "Exclusions",
+            "Pre-GST Laws"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-1_03",
+      "kind": "scenario",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "passage": "A multi-national enterprise, Global Tech Corp, provides IT-enabled consultancy services from its office in Bengaluru to a client in Chennai. In the same tax period, Global Tech Corp also procures office stationery locally in Bengaluru, paying CGST and SGST, and avails cloud computing services from a server hosted in Mumbai, paying IGST.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-1_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-1_03",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-1",
+          "subject": "Taxation",
+          "prompt": "What category of supply is the consultancy service provided by Global Tech Corp from Bengaluru to the client in Chennai?",
+          "options": [
+            "Intra-state supply",
+            "Inter-state supply",
+            "Export of service",
+            "Exempt supply"
+          ],
+          "answerIndex": 1,
+          "explanation": "Since the location of the supplier (Bengaluru, Karnataka) and the place of supply (Chennai, Tamil Nadu) are in two different states, it is an inter-state supply attracting IGST.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Inter-state Supply",
+            "Services",
+            "Place of Supply"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-1_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-1_03",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-1",
+          "subject": "Taxation",
+          "prompt": "How should Global Tech Corp treat the CGST and SGST paid on local procurement of office stationery?",
+          "options": [
+            "Claim it as an expense in the Profit and Loss account",
+            "Claim it as Input Tax Credit (ITC) to set off against its output tax liabilities",
+            "Claim a refund directly from the State Government treasury",
+            "Ignore it as non-allowable credit"
+          ],
+          "answerIndex": 1,
+          "explanation": "Taxes paid on local procurements used in the course or furtherance of business qualify as Input Tax Credit (ITC) and can be utilized to offset output tax liabilities, preventing cascading.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Input Tax Credit",
+            "Office Stationery",
+            "Set-off"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-1_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-1_03",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-1",
+          "subject": "Taxation",
+          "prompt": "Which tax will be levied on the cloud computing service procured from Mumbai by the Bengaluru office?",
+          "options": [
+            "CGST and SGST",
+            "IGST",
+            "Customs Duty",
+            "Service Tax"
+          ],
+          "answerIndex": 1,
+          "explanation": "Supply of services between Mumbai (Maharashtra) and Bengaluru (Karnataka) is an inter-state supply of services, which attracts Integrated Goods and Services Tax (IGST).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Inter-state Supply",
+            "Cloud Computing",
+            "IGST"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-1_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-1_03",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-1",
+          "subject": "Taxation",
+          "prompt": "Which legislative enactment governs the levy of IGST on inter-state supply of services in India?",
+          "options": [
+            "The CGST Act, 2017",
+            "The IGST Act, 2017",
+            "The Customs Act, 1962",
+            "The Finance Act, 1994"
+          ],
+          "answerIndex": 1,
+          "explanation": "The Integrated Goods and Services Tax Act, 2017 (IGST Act) governs the levy and collection of IGST on all inter-state supplies of goods and services and on imports into India.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "IGST Act 2017",
+            "Legislation",
+            "Inter-state Supply"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-1_04",
+      "kind": "scenario",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "passage": "A legislative drafting committee is reviewing the historical evolution of indirect taxes in India to prepare a training module for CA Intermediate students. The committee is analyzing why certain taxes like Central Excise Duty and State VAT were replaced, why Customs Duty was retained, and how the dual GST structure was embedded into the Constitution through specific legislative entries.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-1_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-1_04",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-1",
+          "subject": "Taxation",
+          "prompt": "Why was Basic Customs Duty retained outside the GST framework?",
+          "options": [
+            "Because customs duties are exclusively levied on domestic consumption within states",
+            "Because customs duty protects domestic industry from foreign competition and is levied on goods entering India from outside the country, separate from domestic supply",
+            "Because the Constitution prohibits merging customs with GST",
+            "Because international trade agreements forbid subsuming customs duties"
+          ],
+          "answerIndex": 1,
+          "explanation": "Basic Customs Duty is levied on imports from foreign territories under the Customs Act to regulate foreign trade and protect domestic industry, and is distinct from domestic supplies taxed under GST.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Customs Duty",
+            "Imports",
+            "Subsumed Taxes"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-1_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-1_04",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-1",
+          "subject": "Taxation",
+          "prompt": "Which entry in the Union List (List I of the Seventh Schedule) was amended or deleted to accommodate the taxation of services under GST?",
+          "options": [
+            "Entry 92 (Taxes on sale or purchase of newspapers)",
+            "Entry 92C (Taxes on services)",
+            "Entry 84 (Duties of excise)",
+            "Entry 54 (Taxes on sale or purchase of goods)"
+          ],
+          "answerIndex": 1,
+          "explanation": "Entry 92C of the Union List, which earlier dealt with 'Taxes on services', was deleted by the Constitution (101st Amendment) Act, 2016, as services are now taxed under Article 246A via CGST and IGST.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Union List",
+            "Entry 92C",
+            "Seventh Schedule"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-1_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-1_04",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-1",
+          "subject": "Taxation",
+          "prompt": "What primary economic defect of the pre-GST regime was addressed by the introduction of the dual GST model?",
+          "options": [
+            "High compliance cost for large enterprises",
+            "Cascading effect of taxes due to lack of seamless input tax credit across central and state levies",
+            "Excessive collection of direct income taxes",
+            "Fluctuations in foreign exchange reserves"
+          ],
+          "answerIndex": 1,
+          "explanation": "The dual GST model eliminated the cascading effect by allowing cross-utilization of CGST and SGST (or seamless IGST credit), ensuring tax is levied only on value addition.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Cascading Effect",
+            "Dual GST",
+            "Value Addition"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-1_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-1_04",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-1",
+          "subject": "Taxation",
+          "prompt": "Under the dual GST framework, if a state enacts a State GST law, what is the mandatory constitutional prerequisite regarding conformity with model laws?",
+          "options": [
+            "State laws must be identical to Central law in all substantive matters recommended by the GST Council",
+            "State GST laws can have completely independent tax rate slabs and exemption limits",
+            "State GST laws require prior presidential assent before draft preparation",
+            "State GST laws apply only to manufacturing sectors"
+          ],
+          "answerIndex": 1,
+          "explanation": "While SGST laws are enacted by respective state legislatures, they generally conform to the Model SGST Act recommended by the GST Council to maintain uniformity in definitions, procedures, and tax incidence across India.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Model GST Law",
+            "SGST",
+            "GST Council Harmonization"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-1_05",
+      "kind": "scenario",
+      "chapterId": "gst-1",
+      "subject": "Taxation",
+      "passage": "Zenith Enterprises operates a chain of retail stores across multiple states and Union Territories, including Delhi (UT with legislature), Andaman and Nicobar Islands (UT without legislature), and Uttar Pradesh. The company transfers goods inter-branch, makes retail sales to consumers, and procures taxable services from local consultants.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "GST in India - An Introduction"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-1_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-1_05",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-1",
+          "subject": "Taxation",
+          "prompt": "For retail sales made from a store in Andaman and Nicobar Islands to a local customer, which taxes will Zenith Enterprises charge?",
+          "options": [
+            "CGST and SGST",
+            "CGST and UTGST",
+            "IGST only",
+            "VAT and Excise"
+          ],
+          "answerIndex": 1,
+          "explanation": "Andaman and Nicobar Islands is a Union Territory without a legislature. Intra-UT supplies in such territories attract CGST and UTGST concurrently.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "UTGST",
+            "Union Territories",
+            "Andaman and Nicobar"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-1_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-1_05",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-1",
+          "subject": "Taxation",
+          "prompt": "For retail sales made from a store in Delhi to a local customer, which taxes will Zenith Enterprises charge?",
+          "options": [
+            "CGST and UTGST",
+            "CGST and SGST",
+            "IGST only",
+            "Delhi Sales Tax"
+          ],
+          "answerIndex": 1,
+          "explanation": "Delhi is a Union Territory with its own legislature (treated as a State for GST purposes). Intra-state/intra-UT supplies in Delhi attract CGST and SGST concurrently.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Delhi",
+            "SGST",
+            "Union Territory with Legislature"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-1_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-1_05",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-1",
+          "subject": "Taxation",
+          "prompt": "What is the legal status of UTGST under the GST legislative framework?",
+          "options": [
+            "It is levied under the Union Territory Goods and Services Tax Act, 2017 for UTs without legislatures",
+            "It is a state tax levied by neighboring state governments",
+            "It is an optional tax levied by municipal corporations",
+            "It replaces IGST for all domestic transactions"
+          ],
+          "answerIndex": 0,
+          "explanation": "UTGST is levied under the UTGST Act, 2017 in Union Territories without a legislature (such as Chandigarh, Dadra and Nagar Haveli and Daman and Diu, Andaman and Nicobar Islands, Lakshadweep, Ladakh).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "UTGST Act 2017",
+            "Union Territories",
+            "Legislation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-1_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-1_05",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-1",
+          "subject": "Taxation",
+          "prompt": "If Zenith Enterprises transfers goods from its warehouse in Uttar Pradesh to its retail branch in Delhi, how is this transaction treated under GST?",
+          "options": [
+            "Not a supply since it is between branches of the same entity",
+            "Deemed supply of goods between distinct persons, attracting IGST",
+            "Exempted from all taxes as internal stock transfer",
+            "Subject to CGST and SGST of Uttar Pradesh only"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 7 read with Schedule I of the CGST Act, supply of goods between different establishments of the same person having separate registrations (in different states/UTs) is treated as a supply ('distinct persons') and attracts IGST.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Stock Transfer",
+            "Distinct Persons",
+            "Schedule I Supply"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

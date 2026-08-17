@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "gst-7",
+  "subject": "Taxation",
+  "paper": "Paper 3: Taxation",
+  "module": "Module 1",
+  "chapterNumber": 7,
+  "chapterTitle": "Value of Supply",
+  "generatedAt": "2026-08-16T14:29:49.417Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_gst-7_001",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "What is the primary basis for determining the value of a taxable supply under Section 15(1) of the CGST Act, 2017 when the supplier and recipient are not related and price is the sole consideration?",
+      "options": [
+        "Market value of the goods or services",
+        "Transaction value, which is the price actually paid or payable",
+        "Cost of production plus 10% markup",
+        "Wholesale price index adjusted value"
+      ],
+      "answerIndex": 1,
+      "explanation": "According to Section 15(1) of the CGST Act, 2017, the value of a supply of goods or services shall be the transaction value, which is the price actually paid or payable for the said supply, provided the supplier and the recipient are not related and price is the sole consideration.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Transaction Value",
+        "Section 15(1)",
+        "Sole Consideration"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_002",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "Which of the following components must be ADDED to the price actually paid or payable to arrive at the value of supply under Section 15(2)?",
+      "options": [
+        "Any discount given after the supply has been effected, if known beforehand",
+        "Incidental expenses charged by the supplier up to the time of delivery of goods",
+        "Central GST and State GST charged separately on the invoice",
+        "Subsidies received from a non-government individual"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 15(2)(c), any amount that the supplier is liable to pay in relation to such supply but which has been incurred by the recipient of the supply and not included in the price actually paid or payable, and incidental expenses charged by the supplier up to the time of delivery, must be added to the transaction value.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 15(2)",
+        "Incidental Expenses",
+        "Additions to Value"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_003",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "Under Section 15(2)(a), which of the following taxes, duties, cesses, and fees are to be included in the value of supply?",
+      "options": [
+        "CGST, SGST, UTGST, and IGST",
+        "GST Compensation Cess",
+        "All taxes, duties, cesses, and fees levied under any law FOR THE TIME BEING IN FORCE other than CGST, SGST, UTGST, and IGST",
+        "Only municipal taxes levied on commercial properties"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 15(2)(a) mandates the inclusion of any taxes, duties, cesses, fees, and charges levied under any law for the time being in force other than the CGST, the SGST, the UTGST, and the IGST, if charged separately by the supplier.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 15(2)(a)",
+        "Taxes and Duties",
+        "Value Inclusions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_004",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "Interest, late fee or penalty for delayed payment of any consideration for any supply is treated as part of the value of supply. When should this amount be included in the taxable value?",
+      "options": [
+        "At the time when the invoice for the original supply was issued",
+        "Only when the supplier actually receives such interest, late fee, or penalty",
+        "At the end of the financial year in which the delay occurred",
+        "When the buyer agrees in writing to pay the penalty"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 15(2)(d), the value of supply includes interest, late fee or penalty for delayed payment of any consideration. According to the proviso to Section 12/13 and valuation rules, this is taxable in the period in which it is actually received by the supplier.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 15(2)(d)",
+        "Delayed Payment",
+        "Interest and Late Fee"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_005",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "When can a discount be EXCLUDED from the value of supply under Section 15(3)(a)?",
+      "options": [
+        "If the discount is given after the supply is completed based on annual turnover targets",
+        "If the discount is established and agreed upon before or at the time of the supply and specifically linked to relevant invoices",
+        "If the discount is offered at the sole discretion of the supplier without prior agreement",
+        "If the discount exceeds 50% of the list price"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 15(3)(a) states that a discount shall not be included in the value of supply if it is given before or at the time of the supply and has been duly recorded in the invoice issued in respect of such supply.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 15(3)",
+        "Discounts",
+        "Exclusions from Value"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_006",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "A company offers a post-supply discount to its dealers. Under what condition is such post-supply discount deductible from the value of supply under Section 15(3)(b)?",
+      "options": [
+        "It must be known to the dealer at the time of placing the initial order and linked to specific invoices, with the corresponding ITC reversed by the recipient",
+        "It can be given at any time without any documentation as long as payment is received",
+        "It must be approved by the jurisdictional Commissioner of Central Tax",
+        "Post-supply discounts are never deductible under GST"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 15(3)(b), post-supply discounts are deductible if established in terms of a pre-existing agreement, linked to specific invoices, and the recipient has reversed the proportional input tax credit attributable to such discount.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Post-supply Discounts",
+        "Section 15(3)(b)",
+        "ITC Reversal"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_007",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "What is the valuation rule applicable when the consideration for a supply is NOT solely in money?",
+      "options": [
+        "Rule 27 of the CGST Rules, 2017",
+        "Rule 28 of the CGST Rules, 2017",
+        "Rule 30 of the CGST Rules, 2017",
+        "Rule 32 of the CGST Rules, 2017"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 27 of the CGST Rules, 2017 governs the valuation of taxable supplies where the consideration supplied is not solely in money.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Rule 27",
+        "Non-monetary Consideration",
+        "CGST Rules"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_008",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "Under Rule 27 of the CGST Rules, 2017, if the value of supply cannot be determined by the open market value, what is the next sequential method?",
+      "options": [
+        "Cost of supply plus 10% markup",
+        "Sum total of consideration in money and such further amount in money as is equivalent to the consideration not in money, if such amount is known",
+        "Resale price of goods minus 20%",
+        "Value of like kind and quality"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Rule 27, where the supply is not solely in money, the value shall be: (a) open market value; if not available, (b) sum total of consideration in money and the monetary equivalent of the non-monetary consideration, if known.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Rule 27",
+        "Sequential Valuation",
+        "Open Market Value"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_009",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "How is the value of supply determined between distinct persons or related persons (other than through an agent) under Rule 28 of the CGST Rules, 2017?",
+      "options": [
+        "Always at actual cost of manufacture",
+        "Open market value; if not available, value of supply of goods/services of like kind and quality; if not available, Rule 30 or Rule 31",
+        "At 50% of the MRP printed on the goods",
+        "At the discretion of the management of the supplier company"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 28 prescribes the sequential valuation for supplies between distinct/related persons: Open market value -> Value of goods/services of like kind and quality -> Cost-based value (Rule 30) or residual value (Rule 31). (Note: Proviso also allows recipient's ITC eligibility to determine OMV under certain conditions).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rule 28",
+        "Related Persons",
+        "Distinct Persons"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_010",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "In the context of Rule 28, what is the special provision if the goods supplied to a related person are intended for further supply as such by the recipient?",
+      "options": [
+        "Value must be 110% of the manufacturing cost",
+        "At the option of the supplier, the value may be 90% of the price charged for the supply of goods of like kind and quality by the recipient to his unrelated customer",
+        "Value must be zero since intra-entity transfers are not taxable",
+        "Value must be equal to the MRP"
+      ],
+      "answerIndex": 1,
+      "explanation": "The first proviso to Rule 28 allows that where the goods are intended for further supply as such by the recipient, the value shall, at the option of the supplier, be an amount equivalent to 90% of the price charged for the supply of goods of like kind and quality supplied by the recipient to his unrelated customer.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rule 28 Proviso",
+        "Further Supply",
+        "90% Rule"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_011",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "What is the valuation method prescribed under Rule 30 (Cost Method) of the CGST Rules, 2017?",
+      "options": [
+        "100% of the direct material cost",
+        "110% of the cost of production or manufacture or the cost of acquisition of such goods or the cost of provision of such services",
+        "Cost of production plus 15% profit margin",
+        "Book value as per audited balance sheet"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 30 stipulates that where the value of a supply cannot be determined under Rule 27 or Rule 28, the value shall be 110% of the cost of production/manufacture/acquisition of such goods or cost of provision of such services.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Rule 30",
+        "Cost Method",
+        "110% of Cost"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_012",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "When valuation cannot be ascertained under any of the preceding rules (Rules 27 to 30), what does Rule 31 (Residual Method) require?",
+      "options": [
+        "Supply is exempt from GST",
+        "Value shall be determined using reasonable means consistent with the principles and general provisions of Section 15",
+        "Value shall be determined by a chartered accountant certificate only",
+        "Value shall be deemed to be zero"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 31 provides that where the value of supply of goods or services cannot be determined under rules 27 to 30, the same shall be determined using reasonable means consistent with the principles and general provisions of Section 15 and the provisions of Chapter IV.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Rule 31",
+        "Residual Method",
+        "Reasonable Means"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_013",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "What is the special valuation rule under Rule 32(5) for second-hand goods sold by a dealer who deals in buying and selling second-hand goods?",
+      "options": [
+        "GST is payable on the total sale price",
+        "Value of supply is the difference between the selling price and the purchase price, and if the margin is negative, it is ignored",
+        "GST is exempted on all second-hand goods",
+        "Value of supply is 50% of the purchase price"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Rule 32(5), where a taxable person supplies second-hand goods after minor processing that does not change their nature, the value of supply shall be the difference between the selling price and the purchase price. If the margin is negative, it is ignored.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Rule 32(5)",
+        "Second-hand Goods",
+        "Margin Scheme"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_014",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "How is the taxable value determined under Rule 32(2)(a) for a foreign exchange (forex) conversion service where one of the currencies exchanged is Indian Rupees (INR)?",
+      "options": [
+        "Difference between buying rate/selling rate and RBI reference rate, multiplied by total units",
+        "1% of the gross amount of Indian Rupees provided",
+        "Total commission charged by the bank",
+        "RBI reference rate multiplied by the exchange rate"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Rule 32(2)(a), for currency conversion where one currency is INR, the value is the difference between the buying rate or selling rate and the Reserve Bank of India (RBI) reference rate for that day, multiplied by the total units of currency.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rule 32(2)",
+        "Foreign Currency",
+        "Forex Conversion"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_015",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "For life insurance business, what is the value of supply under Rule 32(4) in case of an annuity policy where policy allocation is for investments/savings?",
+      "options": [
+        "Gross premium charged from the policyholder",
+        "Actual amount allocated for investments/savings if intimated to the policyholder",
+        "25% of the premium charged in the first year and 12.5% in subsequent years",
+        "10% of the gross premium charged"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under Rule 32(4)(a), in case of life insurance where the policyholder's fund is managed, the value is the single premium charged minus the amount allocated for investment/savings (if intimated). For other policies, it is 25% of premium in year 1 and 12.5% in subsequent years (or 10% for single premium annuity).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rule 32(4)",
+        "Life Insurance",
+        "Insurance Valuation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_016",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "What is the taxable value of supply for services provided by a travel agent in relation to booking of tickets for air travel under Rule 32(3)?",
+      "options": [
+        "10% of the basic air fare for domestic bookings and 15% for international bookings",
+        "5% of the basic fare for domestic bookings and 10% for international bookings",
+        "Actual commission received from the airline",
+        "Total ticket price paid by the customer"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per Rule 32(3), the value of supply of services in relation to air travel booking by a travel agent shall be 5% of the basic fare in case of domestic bookings and 10% in case of international bookings. (Note: Basic fare means that part of the air fare on which commission is normally earned).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rule 32(3)",
+        "Travel Agent",
+        "Air Travel Booking"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_017",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "Under Rule 33, what expenses incurred by a pure agent can be EXCLUDED from the value of supply?",
+      "options": [
+        "All overhead expenses incurred by the supplier during the execution of the contract",
+        "Expenditure incurred by the supplier as a pure agent of the recipient of supply, subject to specified conditions",
+        "Transportation and handling charges incurred by the supplier up to the buyer's premises",
+        "Cost of raw materials supplied by third party subcontractors"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 33 allows the exclusion of expenditure incurred by a supplier as a pure agent of the recipient of supply, provided conditions such as separate billing, no holding of goods for self, and actual reimbursement are satisfied.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Rule 33",
+        "Pure Agent",
+        "Exclusion of Expenses"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_018",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "Which of the following conditions is NOT mandatory for qualifying as a 'pure agent' under Rule 33?",
+      "options": [
+        "The supplier acts as a pure agent of the recipient of supply, when he makes payment to the third party for the goods or services procured",
+        "The supplier holds title to the goods and uses them for his own business operations",
+        "The supply of service procured by the pure agent is in addition to the primary services he provides on his own account",
+        "The recovery is separately indicated in the invoice issued by the pure agent"
+      ],
+      "answerIndex": 1,
+      "explanation": "Holding title to the goods and using them for own business operations disqualifies a person from being a pure agent. A pure agent does not hold title to the goods or services procured and only acts on authorization.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Rule 33",
+        "Pure Agent Conditions",
+        "Exclusions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_019",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "How is the value of supply determined in cases where a coupon, voucher, or stamp (other than postage stamp) is redeemable against a supply of goods or services?",
+      "options": [
+        "Face value of the voucher",
+        "Value of the goods or services redeemable against such voucher",
+        "Zero, until the voucher is actually redeemed",
+        "Cost of printing the voucher"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 15 read with general principles establishes that the value of supply of a token, voucher, coupon, or stamp (other than postage stamp) that is redeemable against a supply of goods or services is equal to the money value of the goods or services redeemable against such voucher.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Vouchers",
+        "Coupons",
+        "Redeemable Value"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_020",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "In determining the value of supply, packing charges levied by the supplier separately in the invoice are:",
+      "options": [
+        "Deductible from the transaction value",
+        "Includible in the value of supply",
+        "Exempt from GST entirely",
+        "Taxable only if they exceed 5% of the goods value"
+      ],
+      "answerIndex": 1,
+      "explanation": "Packing charges (whether incidental or otherwise up to delivery) are specifically includible in the value of supply under Section 15(2)(c) as incidental expenses incurred by the supplier in respect of the supply.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Packing Charges",
+        "Section 15(2)(c)",
+        "Incidental Expenses"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_021",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "Can a discount given AFTER the supply has been effected be deducted from the value of supply if it was NOT linked to any pre-existing agreement or invoice?",
+      "options": [
+        "Yes, provided the recipient reverses the ITC",
+        "No, because post-supply discounts not known at or before supply and not linked to invoices are not deductible under Section 15(3)(b)",
+        "Yes, up to a maximum limit of 10% of turnover",
+        "Yes, if approved by the GST Council"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 15(3)(b) explicitly requires that post-supply discounts must be established in terms of an agreement entered into before or at the time of such supply and specifically linked to relevant invoices. If not, they cannot be deducted.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Post-supply Discounts",
+        "Section 15(3)(b)",
+        "Ineligibility"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_022",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "What is the valuation treatment of municipal taxes paid by the tenant on behalf of the landlord directly to the municipality, where such tax liability is legally that of the landlord?",
+      "options": [
+        "It is excluded from the value of supply of rental service",
+        "It is included in the value of supply of rental service as it represents consideration paid to a third party on behalf of the supplier",
+        "It is treated as a pure supply of municipal service and taxed at 0%",
+        "It is deducted from the monthly rent"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 15(2)(b), any amount that the supplier is liable to pay in relation to such supply but which has been incurred by the recipient of the supply forms part of the value of supply. Since property tax is the statutory liability of the landlord (supplier), its payment by the tenant is added to the rental value.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 15(2)(b)",
+        "Municipal Taxes",
+        "Rental Supply"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_023",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "Which of the following provisions governs the valuation of services of booking/cancellation of tickets by an agent of Indian Railways?",
+      "options": [
+        "Rule 32(3)",
+        "Rule 31A",
+        "Rule 32(5)",
+        "Rule 27"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 31A specifically deals with the value of supply in relation to lottery, betting, gambling, and horse racing, while Rule 32(3) specifically covers air travel agents. (Note: Indian Railways ticket booking agent value is governed by Rule 31A / specific trade circulars as applicable under Rule 32 provisions).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rule 31A",
+        "Railways",
+        "Special Valuation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_024",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "How is the value of supply determined for a lottery run by a State Government?",
+      "options": [
+        "100/112 of the face value of the ticket or the price notified in the Official Gazette, whichever is higher",
+        "100/128 of the face value of the ticket or the price notified in the Official Gazette, whichever is higher",
+        "Actual collections minus prize payouts",
+        "Face value of the ticket excluding GST"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Rule 31A(2), the value of supply of lottery run by a State Government shall be 100/112 of the face value of the ticket or of the price notified in the Official Gazette, whichever is higher.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rule 31A",
+        "Lottery",
+        "State Government Lottery"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_025",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "What is the value of supply of lottery authorized by a State Government (private organizer)?",
+      "options": [
+        "100/128 of the face value of the ticket or the price notified in the Official Gazette, whichever is higher",
+        "100/112 of the face value of the ticket",
+        "Gross collections from ticket sales",
+        "50% of the face value"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Rule 31A(2), the value of supply of lottery authorized by a State Government is 100/128 of the face value of the ticket or of the price notified in the Official Gazette, whichever is higher.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rule 31A",
+        "Authorized Lottery",
+        "Private Organizer"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_026",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "In the case of foreign exchange transactions, if the RBI reference rate is not available on that day, how is the value determined under Rule 32(2)(a)?",
+      "options": [
+        "1% of the gross amount of currency exchanged",
+        "The value shall be 1% of the gross amount of Indian Rupees provided or received",
+        "The buying rate and selling rate are averaged",
+        "Exchange rate published by IMF"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per the proviso to Rule 32(2)(a), where the RBI reference rate is not available for a currency on a given day, the value shall be 1% of the gross amount of Indian Rupees provided or received by the person converting the money.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rule 32(2)",
+        "RBI Reference Rate Missing",
+        "Forex Valuation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_027",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "Can subsidies directly linked to the price, received from a Non-Government NGO, be excluded from the value of supply under Section 15?",
+      "options": [
+        "Yes, all subsidies are excluded",
+        "No, only subsidies provided by the Central Government and State Governments are excluded from the value of supply",
+        "Yes, if approved by the supplier's board",
+        "No, subsidies can never be excluded"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 15(2)(e), subsidies directly linked to the price shall be included in the value of supply, *except* subsidies provided by the Central Government and State Governments. Hence, subsidies from NGOs are included.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 15(2)(e)",
+        "Subsidies",
+        "Non-Government Subsidies"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_028",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "A supplier offers a 20% trade discount on goods at the time of supply and records it correctly on the invoice. How should this discount be treated?",
+      "options": [
+        "It must be added back to the invoice value for tax calculation",
+        "It is excluded from the value of supply, and GST is levied only on the net discounted price",
+        "It is treated as a subsidy and taxed separately",
+        "It is deductible only if the buyer pays within 7 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 15(3)(a), discounts given before or at the time of supply and recorded in the invoice are excluded from the value of supply. GST is charged on the net value after deducting such discount.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 15(3)(a)",
+        "Trade Discount",
+        "Invoice Level Discount"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_029",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "Which of the following items is EXCLUDED from the cost of production when applying Rule 30 (Cost Method)?",
+      "options": [
+        "Direct material and direct wages",
+        "Direct expenses and factory overheads",
+        "GST paid on the procurement of inputs used in the manufacture of goods",
+        "Administrative overheads directly attributable to production"
+      ],
+      "answerIndex": 2,
+      "explanation": "In determining the cost of production/manufacture under Rule 30, input tax credit (ITC) available in respect of inputs or input services is not part of the cost borne by the taxpayer; moreover, CGST/SGST/IGST paid are taxes, not production costs.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Rule 30",
+        "Cost of Production",
+        "Exclusions from Cost"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-7_030",
+      "kind": "normal",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "prompt": "What is the timeline for issuance of credit notes under GST for post-supply discounts so that the supplier can reduce their output tax liability?",
+      "options": [
+        "Any time before the end of the financial year",
+        "Up to 30th November following the end of the financial year in which such supply was made, or the date of furnishing of the relevant annual return, whichever is earlier",
+        "Within 180 days from the date of supply",
+        "There is no time limit specified in the GST law"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 34 read with Section 15(3)(b), a credit note for post-supply discount must be issued and declared up to 30th November following the end of the financial year in which such supply was made, or the date of furnishing of the relevant annual return, whichever is earlier.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Credit Note",
+        "Time Limit",
+        "Post-supply Discount"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_gst-7_01",
+      "kind": "scenario",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "passage": "M/s. Apex Machines Ltd. manufactures industrial machinery in Mumbai. They sell a specialized lathe machine to M/s. Beta Enterprises in Pune for an agreed invoice price of Rs. 10,00,000 (exclusive of taxes). The following additional costs are incurred in relation to the supply: (i) Municipal tax levied on the factory premises amounting to Rs. 25,000, paid by Beta Enterprises on behalf of Apex Machines Ltd.; (ii) Loading and handling charges incurred up to the delivery site amounting to Rs. 15,000; (iii) Inspection charges mandated by the buyer before delivery, paid directly by Beta Enterprises amounting to Rs. 10,000; (iv) Apex Machines Ltd. offers a 2% trade discount on the basic price as it was pre-agreed and recorded in the invoice. Beta Enterprises delays payment beyond the stipulated 30 days and pays interest of Rs. 12,000 in a subsequent month.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-7_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-7_01",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-7",
+          "subject": "Taxation",
+          "prompt": "What is the net basic price after considering the pre-agreed trade discount under Section 15(3)(a)?",
+          "options": [
+            "Rs. 10,00,000",
+            "Rs. 9,80,000",
+            "Rs. 9,75,000",
+            "Rs. 9,50,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "A pre-agreed trade discount of 2% on Rs. 10,00,000 amounts to Rs. 20,000. Under Section 15(3)(a), this discount is excluded from the value of supply, leaving a net price of Rs. 9,80,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 15(3)(a)",
+            "Trade Discount",
+            "Scenario Valuation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-7_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-7_01",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-7",
+          "subject": "Taxation",
+          "prompt": "How should the municipal tax of Rs. 25,000 paid by the recipient (Beta Enterprises) on behalf of the supplier be treated under Section 15?",
+          "options": [
+            "Ignored as it is a local tax",
+            "Added to the value of supply under Section 15(2)(b)",
+            "Deducted from the transaction value",
+            "Taxes separately under Reverse Charge Mechanism"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 15(2)(b), any amount that the supplier is liable to pay in relation to the supply but incurred by the recipient and not included in the price must be added to the value of supply.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 15(2)(b)",
+            "Recipient Liability",
+            "Addition to Value"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-7_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-7_01",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-7",
+          "subject": "Taxation",
+          "prompt": "What is the total value of supply (excluding the delayed payment interest) for the lathe machine transaction?",
+          "options": [
+            "Rs. 10,00,000",
+            "Rs. 10,20,000",
+            "Rs. 10,30,000",
+            "Rs. 10,42,000"
+          ],
+          "answerIndex": 2,
+          "explanation": "Calculation: Net price after discount = Rs. 9,80,000 + Municipal tax paid by buyer (Sec 15(2)(b)) = Rs. 25,000 + Loading/handling charges (Sec 15(2)(c)) = Rs. 15,000 + Inspection charges paid by buyer (Sec 15(2)(c)) = Rs. 10,000. Total = 9,80,000 + 25,000 + 15,000 + 10,000 = Rs. 10,30,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Total Value of Supply",
+            "Section 15 Calculation",
+            "Incidental Expenses"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-7_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-7_01",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-7",
+          "subject": "Taxation",
+          "prompt": "When is the interest of Rs. 12,000 received for delayed payment taxable under GST?",
+          "options": [
+            "At the time of supply of the lathe machine",
+            "At the time when the interest is actually received by Apex Machines Ltd.",
+            "At the end of the financial year",
+            "It is exempt from GST"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per the proviso to Section 12/13 and Section 15(2)(d), interest, late fee, or penalty for delayed payment is taxable in the tax period in which it is actually received by the supplier.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 15(2)(d)",
+            "Delayed Payment Interest",
+            "Time of Supply"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-7_02",
+      "kind": "scenario",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "passage": "M/s. Radiant Electronics, a registered dealer, supplies smart TVs to its related corporate entity, M/s. Nebula Retailers, for internal corporate gifting. The manufacturing cost per TV is Rs. 40,000. The open market value of such smart TVs is not readily available. However, identical smart TVs are sold by Radiant Electronics to unrelated wholesale buyers at Rs. 55,000 per unit. Alternatively, Nebula Retailers could also procure similar TVs from another independent manufacturer in the market for Rs. 52,000. Nebula Retailers intends to further supply these TVs *as such* to its independent retail customers at Rs. 60,000.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-7_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-7_02",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-7",
+          "subject": "Taxation",
+          "prompt": "Which valuation rule applies primarily to supplies made between related persons such as Radiant Electronics and Nebula Retailers?",
+          "options": [
+            "Rule 27",
+            "Rule 28",
+            "Rule 30",
+            "Rule 31"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 28 of the CGST Rules, 2017 prescribes the valuation methods for supplies of goods or services made between distinct persons or related persons.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Rule 28",
+            "Related Persons",
+            "Valuation Rules"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-7_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-7_02",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-7",
+          "subject": "Taxation",
+          "prompt": "What is the primary value of supply under Rule 28 when supplies are made to a related person, given the facts of the case?",
+          "options": [
+            "Rs. 40,000 (Manufacturing cost)",
+            "Rs. 55,000 (Open market value / price of goods of like kind and quality to unrelated buyers)",
+            "Rs. 60,000 (Recipient's retail price)",
+            "Rs. 44,000 (110% of cost)"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Rule 28(a), the value of supply between related persons shall be the open market value of such supply. Here, the price of goods of like kind and quality supplied to unrelated wholesale buyers is Rs. 55,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Rule 28(a)",
+            "Open Market Value",
+            "Related Supply"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-7_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-7_02",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-7",
+          "subject": "Taxation",
+          "prompt": "If Nebula Retailers intends to further supply the goods *as such* to unrelated customers at Rs. 60,000, what optional value can Radiant Electronics adopt under the first proviso to Rule 28?",
+          "options": [
+            "Rs. 54,000 (90% of Rs. 60,000)",
+            "Rs. 60,000",
+            "Rs. 44,000 (110% of cost)",
+            "Rs. 52,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under the first proviso to Rule 28, where goods are intended for further supply as such by the recipient, the supplier may opt for 90% of the price charged for the supply of goods of like kind and quality by the recipient to his unrelated customer (90% of Rs. 60,000 = Rs. 54,000).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Rule 28 Proviso",
+            "Further Supply",
+            "90% Rule Option"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-7_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-7_02",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-7",
+          "subject": "Taxation",
+          "prompt": "If neither open market value nor the 90% proviso nor any other Rule 28 criteria can be applied, what fallback method does Rule 28 prescribe before resorting to residual rules?",
+          "options": [
+            "Value shall be deemed to be zero",
+            "Cost of production plus 10% markup under Rule 30",
+            "50% of the manufacturing cost",
+            "Book value certified by cost accountant"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 28 directs that if value cannot be determined under clause (a) or (b) of Rule 28, it shall be determined under Rule 30 (110% of cost of production/manufacture) or Rule 31.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Rule 28 Fallback",
+            "Rule 30",
+            "Cost Method"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-7_03",
+      "kind": "scenario",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "passage": "M/s. Swift Express Logistics acts as a pure agent for its client, M/s. Global Traders. Swift Express Logistics incurred the following expenses on behalf of Global Traders during the month of October: (i) Freight charges paid to transporters amounting to Rs. 50,000; (ii) Municipal octroi charges paid to the municipal corporation amounting to Rs. 5,000; (iii) Packing and sorting charges incurred by Swift Express Logistics in its own warehouse amounting to Rs. 8,000; (iv) Statutory inspection fee paid to the port authority amounting to Rs. 12,000. All out-of-pocket expenses (freight, octroi, and inspection fee) were billed to Global Traders at actuals in separate debit notes along with Swift's own service fee of Rs. 20,000 for logistical coordination.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-7_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-7_03",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-7",
+          "subject": "Taxation",
+          "prompt": "Which rule governs the exclusion of expenses incurred by a supplier acting as a pure agent from the value of supply?",
+          "options": [
+            "Rule 27",
+            "Rule 30",
+            "Rule 32",
+            "Rule 33"
+          ],
+          "answerIndex": 3,
+          "explanation": "Rule 33 of the CGST Rules, 2017 specifies the conditions and methodology for excluding expenditure incurred by a supplier as a pure agent of the recipient of supply.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Rule 33",
+            "Pure Agent",
+            "Exclusions"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-7_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-7_03",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-7",
+          "subject": "Taxation",
+          "prompt": "Which of the following expenses incurred by Swift Express Logistics qualifies for exclusion under Rule 33 as a pure agent?",
+          "options": [
+            "Packing and sorting charges of Rs. 8,000",
+            "Freight charges of Rs. 50,000, municipal octroi of Rs. 5,000, and inspection fee of Rs. 12,000",
+            "Logistical coordination service fee of Rs. 20,000",
+            "None of the expenses qualify"
+          ],
+          "answerIndex": 1,
+          "explanation": "Freight, municipal octroi, and port inspection fees were incurred by Swift as a pure agent on behalf of Global Traders, billed at actuals separately, and represent third-party statutory/service liabilities of the client. Packing/sorting charges are the supplier's own operational costs.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Rule 33 Conditions",
+            "Pure Agent Expenses",
+            "Exclusion Eligibility"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-7_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-7_03",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-7",
+          "subject": "Taxation",
+          "prompt": "What is the taxable value of supply for Swift Express Logistics excluding the pure agent reimbursements?",
+          "options": [
+            "Rs. 20,000 (Service fee only)",
+            "Rs. 28,000 (Service fee + packing charges)",
+            "Rs. 95,000 (Gross billing)",
+            "Rs. 87,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "The taxable value includes Swift's own service fee (Rs. 20,000) and its own operational expenses like packing/sorting (Rs. 8,000), totaling Rs. 28,000. Pure agent reimbursements (Rs. 50,000 + Rs. 5,000 + Rs. 12,000) are excluded under Rule 33.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Taxable Value Calculation",
+            "Pure Agent Exclusion",
+            "Service Fee"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-7_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-7_03",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-7",
+          "subject": "Taxation",
+          "prompt": "Which of the following is NOT a mandatory condition for Swift Express Logistics to be treated as a pure agent under Rule 33?",
+          "options": [
+            "Swift acts as a pure agent of Global Traders when making payment to third parties",
+            "Swift holds title to the goods procured and uses them for its own consumption",
+            "The supply of service procured by the pure agent is in addition to the primary service provided",
+            "The recovery is separately indicated in the invoice"
+          ],
+          "answerIndex": 1,
+          "explanation": "Holding title to goods or services and using them for one's own account violates the definition of a pure agent. A pure agent must not hold title to the goods or services procured.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Pure Agent Definition",
+            "Rule 33 Conditions",
+            "Title to Goods"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-7_04",
+      "kind": "scenario",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "passage": "M/s. Zenith Forex Bureau, a registered person under GST, undertakes currency exchange transactions. During the week, it converts USD 10,000 into Indian Rupees (INR). On that day, the RBI reference rate for USD is Rs. 82.50 per USD. Zenith buys the USD from the customer at an exchange rate of Rs. 82.10 per USD. In another transaction, Zenith converts EUR 5,000 into INR, but the RBI reference rate for EUR is not announced/available on that day. For this EUR transaction, the gross amount of Indian Rupees provided to the customer is Rs. 4,50,000.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-7_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-7_04",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-7",
+          "subject": "Taxation",
+          "prompt": "Which rule of the CGST Rules, 2017 specifically governs the valuation of supply of foreign exchange services?",
+          "options": [
+            "Rule 32(2)",
+            "Rule 32(4)",
+            "Rule 32(5)",
+            "Rule 33"
+          ],
+          "answerIndex": 0,
+          "explanation": "Rule 32(2) of the CGST Rules, 2017 prescribes the special valuation methods for the supply of services in relation to the purchase or sale of foreign currency, including money changing.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Rule 32(2)",
+            "Foreign Currency",
+            "Money Changing"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-7_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-7_04",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-7",
+          "subject": "Taxation",
+          "prompt": "What is the taxable value of supply for the conversion of USD 10,000 under Rule 32(2)(a)?",
+          "options": [
+            "Rs. 8,25,000",
+            "Rs. 8,21,000",
+            "Rs. 4,000",
+            "Rs. 40,000"
+          ],
+          "answerIndex": 2,
+          "explanation": "Under Rule 32(2)(a), when one currency is INR, value = (RBI reference rate - buying rate) * total units = (82.50 - 82.10) * 10,000 = Rs. 0.40 * 10,000 = Rs. 4,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Rule 32(2)(a)",
+            "Forex Calculation",
+            "RBI Reference Rate"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-7_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-7_04",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-7",
+          "subject": "Taxation",
+          "prompt": "How is the value of supply determined for the EUR 5,000 transaction where the RBI reference rate is not available on that day?",
+          "options": [
+            "1% of the gross amount of Indian Rupees provided (1% of Rs. 4,50,000)",
+            "Difference between buying rate and selling rate",
+            "0.5% of the total EUR converted",
+            "Exempt from GST due to absence of RBI rate"
+          ],
+          "answerIndex": 0,
+          "explanation": "As per the proviso to Rule 32(2)(a), where the RBI reference rate is not available, the value shall be 1% of the gross amount of Indian Rupees provided or received (1% of Rs. 4,50,000 = Rs. 4,500).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Rule 32(2) Proviso",
+            "Missing RBI Rate",
+            "Forex Valuation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-7_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-7_04",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-7",
+          "subject": "Taxation",
+          "prompt": "What is the alternative method available for valuing foreign exchange transactions under Rule 32(2)(b) if the taxpayer opts for slab-based valuation instead of Rule 32(2)(a)?",
+          "options": [
+            "Fixed percentage of the total transaction value based on tiered slabs of currency converted",
+            "Flat Rs. 1,000 per transaction",
+            "10% of the commission charged",
+            "Actual gross profit earned"
+          ],
+          "answerIndex": 0,
+          "explanation": "Rule 32(2)(b) permits a taxable person to opt for valuation based on slab rates (e.g., 1% up to Rs. 1 lakh, etc.) of the gross amount of currency exchanged, once exercised for a financial year.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Rule 32(2)(b)",
+            "Slab-based Valuation",
+            "Money Changing Options"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-7_05",
+      "kind": "scenario",
+      "chapterId": "gst-7",
+      "subject": "Taxation",
+      "passage": "M/s. Vintage Wheels, a registered second-hand car dealer, purchases a pre-owned luxury car from an unregistered individual for Rs. 15,00,000. Vintage Wheels undertakes minor cleaning, denting, and painting costing Rs. 50,000 (which does not alter the fundamental nature of the car) and sells the car to a retail customer for Rs. 18,50,000. In a separate transaction during the same month, Vintage Wheels purchases another old motorcycle for Rs. 40,000 and sells it for Rs. 35,000.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 7,
+        "chapterTitle": "Value of Supply"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-7_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-7_05",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-7",
+          "subject": "Taxation",
+          "prompt": "Which specific valuation rule applies to the supply of second-hand goods by a dealer engaged in buying and selling second-hand goods?",
+          "options": [
+            "Rule 32(3)",
+            "Rule 32(4)",
+            "Rule 32(5)",
+            "Rule 33"
+          ],
+          "answerIndex": 2,
+          "explanation": "Rule 32(5) of the CGST Rules, 2017 governs the valuation of taxable supplies of second-hand goods dealt in by a registered person after minor processing.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Rule 32(5)",
+            "Second-hand Goods",
+            "Margin Scheme Rule"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-7_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-7_05",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-7",
+          "subject": "Taxation",
+          "prompt": "What is the taxable value of supply for the luxury car under Rule 32(5)?",
+          "options": [
+            "Rs. 18,50,000",
+            "Rs. 15,00,000",
+            "Rs. 3,50,000",
+            "Rs. 3,00,000"
+          ],
+          "answerIndex": 2,
+          "explanation": "Under Rule 32(5), the value of supply of second-hand goods is the difference between the selling price and the purchase price (Margin = Selling price Rs. 18,50,000 - Purchase price Rs. 15,00,000 = Rs. 3,50,000). Minor processing costs are ignored in computing the margin.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Rule 32(5) Calculation",
+            "Car Margin",
+            "Second-hand Valuation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-7_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-7_05",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-7",
+          "subject": "Taxation",
+          "prompt": "How is the transaction involving the motorcycle (purchase Rs. 40,000, sale Rs. 35,000) treated for GST purposes under Rule 32(5)?",
+          "options": [
+            "The negative margin of Rs. 5,000 can be set off against the car's positive margin",
+            "The negative margin of Rs. 5,000 is ignored, and the taxable value for this transaction is nil",
+            "GST refund is available for the negative margin",
+            "The purchase price is adjusted to Rs. 35,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "The proviso to Rule 32(5) explicitly states that if the margin is negative (selling price is less than purchase price), it shall be ignored and cannot be used to offset margins of other transactions.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Rule 32(5) Proviso",
+            "Negative Margin",
+            "Second-hand Goods"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-7_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-7_05",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-7",
+          "subject": "Taxation",
+          "prompt": "What is a mandatory pre-condition for a dealer to adopt the margin scheme under Rule 32(5) for second-hand goods?",
+          "options": [
+            "Input tax credit must have been availed on the purchase of the second-hand goods",
+            "No input tax credit has been availed on the purchase of such second-hand goods",
+            "The purchase must be made from a registered manufacturer only",
+            "The selling price must exceed 200% of the purchase price"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 32(5) applies only if no input tax credit (ITC) has been availed on the purchase of the second-hand goods from the unregistered supplier or person.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Rule 32(5) Condition",
+            "ITC Prohibition",
+            "Margin Scheme"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

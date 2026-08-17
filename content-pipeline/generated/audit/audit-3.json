@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "audit-3",
+  "subject": "Audit",
+  "paper": "Paper 5: Auditing and Ethics",
+  "module": "Module 1",
+  "chapterNumber": 3,
+  "chapterTitle": "Risk Assessment and Internal Control",
+  "generatedAt": "2026-08-16T14:47:43.518Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_audit-3_001",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "According to SA 315, which of the following best describes 'Risk of Material Misstatement' at the assertion level?",
+      "options": [
+        "The risk that the auditor will express an inappropriate audit opinion when the financial statements are materially misstated.",
+        "The risk that financial statements are materially misstated prior to audit.",
+        "The combination of inherent risk and control risk.",
+        "The risk that the auditor's procedures will not detect a misstatement."
+      ],
+      "answerIndex": 2,
+      "explanation": "Under SA 315, risk of material misstatement at the assertion level consists of two components: inherent risk and control risk. Option A defines audit risk, and option D defines detection risk.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 315",
+        "Risk Assessment",
+        "ROMM"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_002",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "In the context of understanding the entity and its environment, which of the following is considered an external factor to be evaluated by the auditor under SA 315?",
+      "options": [
+        "The entity's selection and application of accounting policies.",
+        "The nature of the entity, including its operations and ownership governance.",
+        "Industry, regulatory, and other external factors, including the applicable financial reporting framework.",
+        "The measurement and review of the entity's financial performance."
+      ],
+      "answerIndex": 2,
+      "explanation": "SA 315 requires the auditor to understand industry, regulatory, and other external factors including the applicable financial reporting framework as part of obtaining an understanding of the entity and its environment.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 315",
+        "Entity Understanding",
+        "External Factors"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_003",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "What is the primary objective of the auditor when performing risk assessment procedures under SA 315?",
+      "options": [
+        "To provide absolute assurance that no material misstatements exist in the financial statements.",
+        "To identify and assess the risks of material misstatement, whether due to fraud or error, at the financial statement and assertion levels.",
+        "To test the operating effectiveness of internal controls across all transaction cycles.",
+        "To determine the final audit fee based on the assessed level of inherent risk."
+      ],
+      "answerIndex": 1,
+      "explanation": "SA 315 states that the objective of the auditor is to identify and assess the risks of material misstatement, whether due to fraud or error, at the financial statement and assertion levels through understanding the entity and its environment.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 315",
+        "Audit Objectives",
+        "Risk Assessment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_004",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "Which of the following components of internal control sets the tone of an organization, influencing the control consciousness of its people?",
+      "options": [
+        "Risk Assessment Process",
+        "Control Activities",
+        "Control Environment",
+        "Monitoring of Controls"
+      ],
+      "answerIndex": 2,
+      "explanation": "The control environment sets the tone of an organization, governing governance and management functions, and serving as the foundation for all other components of internal control.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Internal Control",
+        "Control Environment",
+        "COSO Components"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_005",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "In assessing risks of material misstatement, an auditor identifies a risk that requires special audit consideration. What is this risk termed under SA 315?",
+      "options": [
+        "Significant Risk",
+        "Inherent Risk",
+        "Control Risk",
+        "Detection Risk"
+      ],
+      "answerIndex": 0,
+      "explanation": "SA 315 defines a significant risk as an identified and assessed risk of material misstatement that, in the auditor's judgment, requires special audit consideration.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 315",
+        "Significant Risk",
+        "Special Consideration"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_006",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "Which of the following procedures is mandatory for an auditor to perform as part of risk assessment procedures under SA 315?",
+      "options": [
+        "Test of controls for all major cash disbursement transactions.",
+        "Inquiries of management and of others within the entity who in the auditor's judgment may have information that is likely to assist in identifying risks.",
+        "External confirmation of all accounts receivable balances exceeding materiality.",
+        "Physical inventory count observation at all branch locations."
+      ],
+      "answerIndex": 1,
+      "explanation": "SA 315 explicitly mandates risk assessment procedures to include inquiries of management and others within the entity, analytical procedures, and observation and inspection.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 315",
+        "Risk Assessment Procedures",
+        "Inquiries"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_007",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "Internal control systems are designed to provide reasonable assurance regarding achievement of objectives in which of the following categories?",
+      "options": [
+        "Reliability of financial reporting, effectiveness and efficiency of operations, and compliance with applicable laws and regulations.",
+        "Elimination of all fraud, maximization of net profit, and absolute compliance with tax laws.",
+        "Zero error rate in transaction processing, full automation of controls, and risk-free investments.",
+        "Prevention of operational losses, customer satisfaction, and employee retention."
+      ],
+      "answerIndex": 0,
+      "explanation": "Internal control is broadly categorized to provide reasonable assurance regarding the reliability of financial reporting, effectiveness and efficiency of operations, and compliance with applicable laws and regulations.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Internal Control",
+        "Objectives",
+        "Reasonable Assurance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_008",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "When evaluating the design of controls, what does the auditor primarily determine?",
+      "options": [
+        "Whether the control has been implemented and is operating effectively throughout the period.",
+        "Whether the control, singly or in combination with other controls, is capable of effectively preventing, or detecting and correcting, material misstatements.",
+        "Whether the control can completely eliminate inherent risk.",
+        "Whether the client's internal audit department has tested the control."
+      ],
+      "answerIndex": 1,
+      "explanation": "Evaluating the design of a control involves considering whether it is capable of effectively preventing, or detecting and correcting, material misstatements, whereas implementation means the control exists and the entity is using it.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Internal Control",
+        "Design Evaluation",
+        "Implementation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_009",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "Which of the following best exemplifies an inherent limitation of internal control?",
+      "options": [
+        "Failure of staff to understand instructions due to poor training.",
+        "The potential for human error due to carelessness, distraction, or misjudgment.",
+        "Management override of controls.",
+        "Collusion among employees to bypass segregation of duties."
+      ],
+      "answerIndex": 1,
+      "explanation": "All options are inherent limitations, but human error due to carelessness, distraction, or misjudgment is a fundamental behavioral limitation inherent in any system operated by humans. (Note: ICAI study material lists human error, collusion, management override, and cost-benefit constraints as inherent limitations).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Internal Control",
+        "Inherent Limitations",
+        "Human Error"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_010",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "Under SA 315, which of the following is NOT typically evaluated as part of understanding the entity's selection and application of accounting policies?",
+      "options": [
+        "Methods used to account for significant and unusual transactions.",
+        "Changes in the entity's accounting policies and reasons for those changes.",
+        "Financial reporting standards and regulations applicable in new domains.",
+        "The personal remuneration package and bonus structure of the Chief Executive Officer."
+      ],
+      "answerIndex": 3,
+      "explanation": "The CEO's personal remuneration package relates more to governance, management compensation, and potentially control environment or incentive risks, whereas accounting policies deal with financial reporting methods, choices, and changes.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 315",
+        "Accounting Policies",
+        "Entity Understanding"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_011",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "What is the auditor's responsibility regarding the evaluation of the entity's risk assessment process?",
+      "options": [
+        "The auditor must take over the risk assessment process to ensure no risks are missed.",
+        "The auditor shall evaluate whether the entity's risk assessment process identifies business risks relevant to financial reporting objectives and decides about actions to address them.",
+        "The auditor must certify that the entity's risk assessment process complies with ISO standards.",
+        "The auditor is only required to review the process if fraud has already been detected."
+      ],
+      "answerIndex": 1,
+      "explanation": "SA 315 requires the auditor to obtain an understanding of whether the entity has a process for identifying business risks relevant to financial reporting objectives and deciding about actions to address those risks.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 315",
+        "Risk Assessment Process",
+        "Entity Evaluation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_012",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "Which of the following describes 'Walk-through tests' commonly used by auditors?",
+      "options": [
+        "Tracing a few transactions through the financial information system from origin to disposition to confirm the auditor's understanding of control design and implementation.",
+        "Physically walking around the factory floor to count inventory items.",
+        "Testing 100% of journal entries posted at year-end.",
+        "Reviewing board minutes for the entire audit period."
+      ],
+      "answerIndex": 0,
+      "explanation": "A walk-through test involves tracing a few transactions through the financial reporting system from their origin to their final disposition, helping the auditor evaluate the design of controls and confirm their implementation.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Walk-through Tests",
+        "Control Implementation",
+        "Audit Procedures"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_013",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "When is an auditor required to test the operating effectiveness of controls?",
+      "options": [
+        "In every audit engagement, regardless of the assessed risk.",
+        "When the auditor's risk assessment includes an expectation of the operating effectiveness of controls, or when substantive procedures alone cannot provide sufficient appropriate audit evidence.",
+        "Only when the client requests a separate internal control report.",
+        "Only when material weakness is identified in the control environment."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under SA 330 (and referenced in SA 315 context), tests of operating effectiveness are required when the auditor's risk assessment expects controls to operate effectively, or when substantive procedures alone do not provide sufficient appropriate audit evidence.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 330",
+        "Operating Effectiveness",
+        "Tests of Controls"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_014",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "Which of the following is an example of a 'control activity' within an internal control system?",
+      "options": [
+        "Management's philosophy and operating style.",
+        "An independent bank reconciliation prepared monthly and reviewed by a supervisor.",
+        "The establishment of an independent audit committee.",
+        "The entity's internal communication channels regarding whistleblowing."
+      ],
+      "answerIndex": 1,
+      "explanation": "Bank reconciliations and supervisory reviews are classic examples of control activities (specifically segregation of duties, performance reviews, or information processing controls). Management philosophy is part of the control environment.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Control Activities",
+        "Bank Reconciliation",
+        "Segregation of Duties"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_015",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "How does IT (Information Technology) environment complexity affect the auditor's risk assessment?",
+      "options": [
+        "It only affects the speed of report generation and has no bearing on material misstatement risks.",
+        "It can introduce specific risks to IT systems, such as unauthorized access to data, unauthorized changes to systems or programs, and the need for IT general controls evaluation.",
+        "It completely eliminates the need for manual risk assessment procedures.",
+        "It guarantees the accuracy of all financial statement assertions."
+      ],
+      "answerIndex": 1,
+      "explanation": "An IT environment introduces specific risks regarding data integrity, unauthorized access, and program changes, requiring the auditor to understand IT risks and evaluate both IT general controls and application controls.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "IT Risks",
+        "SA 315",
+        "General Controls"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_016",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "Which of the following best defines 'Management Override of Controls'?",
+      "options": [
+        "When lower-level staff members bypass authorization limits due to emergencies.",
+        "An action by management to ignore, circumvent, or override established internal control policies and procedures for illegitimate or fraudulent purposes, or to manipulate financial statements.",
+        "When the Board of Directors replaces the Chief Financial Officer.",
+        "The automation of manual approval workflows by the IT department."
+      ],
+      "answerIndex": 1,
+      "explanation": "Management override refers to management's ability to manipulate accounting records and override controls that otherwise appear to be operating effectively, presenting a significant risk of material misstatement due to fraud.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Management Override",
+        "Fraud Risk",
+        "Internal Control Limitations"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_017",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "In evaluating internal control, what is the distinction between 'Design of controls' and 'Implementation of controls'?",
+      "options": [
+        "Design refers to whether controls exist; implementation refers to whether they are tested for operating effectiveness.",
+        "Design checks if a control is capable of preventing/detecting misstatements; implementation checks whether the control actually exists and the entity is using it.",
+        "Design is performed by internal auditors; implementation is evaluated exclusively by external statutory auditors.",
+        "There is no practical distinction under SA 315."
+      ],
+      "answerIndex": 1,
+      "explanation": "Evaluating design means assessing if the control can achieve its objective if properly executed. Evaluating implementation means determining that the control exists and that the entity has put it into operation.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Design",
+        "Implementation",
+        "SA 315"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_018",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "Which of the following factors would most likely indicate a 'Significant Risk' under SA 315?",
+      "options": [
+        "Routine, repetitive sales transactions processed through an automated POS system.",
+        "Significant non-routine transactions or matters involving high degrees of subjective judgment or complex calculations.",
+        "Minor adjustments to office supply petty cash balances.",
+        "Consistent profitability over the last five consecutive years."
+      ],
+      "answerIndex": 1,
+      "explanation": "SA 315 notes that significant risks often derive from significant non-routine transactions and matters involving significant measurement uncertainty or subjective judgment.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Significant Risk",
+        "Non-routine Transactions",
+        "Subjective Judgment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_019",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "What role does the 'Monitoring of Controls' component play in an entity's internal control system?",
+      "options": [
+        "It replaces the need for annual statutory audits.",
+        "It assesses the quality of internal control performance over time and takes timely actions to address control deficiencies.",
+        "It establishes the organizational structure and reporting lines.",
+        "It directly sets prices and sales targets for operating divisions."
+      ],
+      "answerIndex": 1,
+      "explanation": "Monitoring of controls is a process to assess the effectiveness of internal control performance over time, involving ongoing activities, separate evaluations, or a combination of both.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Monitoring of Controls",
+        "Internal Control Components",
+        "Deficiencies"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_020",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "When documenting the understanding of internal control, which of the following tools is typically used to depict the flow of documents and procedures through an organization?",
+      "options": [
+        "Audit sampling plan",
+        "Internal control questionnaire (ICQ)",
+        "Flowchart",
+        "Trial balance worksheet"
+      ],
+      "answerIndex": 2,
+      "explanation": "Flowcharts are diagrammatic representations depicting the flow of documents and sequential processing steps through an organization's transaction cycles.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Documentation",
+        "Flowcharts",
+        "Internal Control"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_021",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "Under SA 315, why must the auditor understand the entity's objectives and strategies and those business risks that might result in risks of material misstatement?",
+      "options": [
+        "To assist management in improving overall operational efficiency and profitability.",
+        "Because business risks can give rise to risks of material misstatement in the financial statements.",
+        "To ensure compliance with corporate social responsibility guidelines.",
+        "To determine executive compensation plans."
+      ],
+      "answerIndex": 1,
+      "explanation": "Although most business risks will not give rise to risks of material misstatement, those that do have a direct bearing on the financial statements must be understood by the auditor.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 315",
+        "Business Risks",
+        "ROMM Linkage"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_022",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "How should an auditor approach risks for which substantive procedures alone do not provide sufficient appropriate audit evidence?",
+      "options": [
+        "Issue a disclaimer of opinion due to lack of audit evidence.",
+        "Obtain audit evidence about the operating effectiveness of controls through tests of controls.",
+        "Rely entirely on management representations regarding those balances.",
+        "Increase materiality thresholds to bypass testing."
+      ],
+      "answerIndex": 1,
+      "explanation": "Per SA 330 (referenced in SA 315 context), when the auditor determines that an assessed risk of material misstatement at the assertion level is a significant risk, or when substantive procedures alone cannot provide sufficient appropriate audit evidence, the auditor shall test the operating effectiveness of controls.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 330",
+        "Substantive Procedures",
+        "Tests of Controls"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_023",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "In evaluating the design of an entity's controls over journal entries, which feature is critical for addressing the risk of fraudulent financial reporting?",
+      "options": [
+        "Controls over non-standard, unusual, or manual journal entries, including segregation of duties and independent review.",
+        "Automatic generation of routine depreciation entries.",
+        "Having the same person who initiates the entry also approve and post it for speed.",
+        "Limiting journal entry access exclusively to the external auditor."
+      ],
+      "answerIndex": 0,
+      "explanation": "Manual, unusual, or non-standard journal entries are frequently used in financial statement fraud. Controls requiring review, approval, and segregation of duties specifically target this risk.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Journal Entries",
+        "Fraud Risk",
+        "Internal Control Design"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_024",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "What is the auditor's responsibility regarding communication of internal control deficiencies identified during the audit?",
+      "options": [
+        "The auditor must report all deficiencies, regardless of magnitude, directly to the regulatory authorities.",
+        "The auditor shall communicate in writing on a timely basis significant deficiencies in internal control identified during the audit to those charged with governance and management.",
+        "The auditor is prohibited from discussing internal control deficiencies with management.",
+        "Communication is optional and only required if requested by shareholders."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under SA 265, the auditor is required to communicate in writing significant deficiencies in internal control identified during the audit to those charged with governance and management on a timely basis.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 265",
+        "Control Deficiencies",
+        "Communication"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_025",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "Which of the following best distinguishes between Application Controls and IT General Controls (ITGCs)?",
+      "options": [
+        "Application controls apply to the processing of individual transactions within applications; ITGCs are policies and procedures that relate to many applications and support the effective functioning of application controls.",
+        "Application controls are manual; ITGCs are strictly automated.",
+        "Application controls are evaluated by management; ITGCs are evaluated exclusively by internal auditors.",
+        "There is no functional distinction; both terms are used interchangeably in auditing standards."
+      ],
+      "answerIndex": 0,
+      "explanation": "ITGCs support application controls by ensuring the ongoing proper operation of IT systems (security, change management, backup), whereas application controls are automated procedures designed to ensure integrity of specific data processing.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "ITGC",
+        "Application Controls",
+        "IT Environment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_026",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "If an auditor identifies a control deficiency during the audit, what factor determines whether that deficiency is a 'significant deficiency'?",
+      "options": [
+        "The absolute dollar amount of any resulting misstatement found so far.",
+        "The likelihood of the deficiency resulting in a material misstatement and the magnitude of potential misstatement, considering relevant financial statement items.",
+        "Whether management agrees with the auditor's assessment.",
+        "The number of employees working in the accounting department."
+      ],
+      "answerIndex": 1,
+      "explanation": "A significant deficiency is evaluated based on its likelihood of leading to a material misstatement and the potential magnitude of misstatement, considering qualitative and quantitative factors.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Significant Deficiency",
+        "Evaluation",
+        "SA 265"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_027",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "In assessing inherent risk for complex financial instruments (such as derivatives), what primary factor increases this risk?",
+      "options": [
+        "Lack of standardized accounting rules.",
+        "High estimation uncertainty, complexity in valuation models, and volatile market conditions.",
+        "Strict regulatory oversight by government bodies.",
+        "Routine and repetitive transaction volume."
+      ],
+      "answerIndex": 1,
+      "explanation": "Complex financial instruments involve estimation uncertainty, valuation model complexity, and market volatility, which inherently elevate the risk of material misstatement.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Inherent Risk",
+        "Complex Instruments",
+        "Estimation Uncertainty"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_028",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "How does the auditor's understanding of the control environment influence the assessment of risks of material misstatement?",
+      "options": [
+        "A strong control environment allows the auditor to completely eliminate substantive testing.",
+        "Deficiencies in the control environment can undermine the effectiveness of other controls, increasing the assessed risk of material misstatement across multiple assertions.",
+        "The control environment has no bearing on assertion-level risk assessments.",
+        "A strong control environment automatically reduces inherent risk to zero."
+      ],
+      "answerIndex": 1,
+      "explanation": "A weak control environment (e.g., poor tone at the top, lack of integrity) negatively impacts other control components and increases overall risk, often leading the auditor to lower reliance on controls.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Control Environment",
+        "ROMM",
+        "Tone at the Top"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_029",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "When evaluating an entity's internal audit function as part of understanding internal control, what must the external auditor evaluate?",
+      "options": [
+        "The internal audit department's budget and salary structure.",
+        "The internal audit function's organizational status, relevance, competence, and objectivity.",
+        "Whether internal auditors are members of a professional accounting body.",
+        "Whether internal auditors perform statutory audits for other companies."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under SA 610 (and referenced in SA 315 when considering internal audit), the external auditor must evaluate the internal audit function's organizational status, objectivity, competence, and systematic and disciplined approach.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Internal Audit",
+        "SA 610",
+        "Evaluation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-3_030",
+      "kind": "normal",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "prompt": "In the context of automated IT controls, what is a 'preventive' application control example?",
+      "options": [
+        "Running a monthly exception report on unmatched invoices.",
+        "System validation rules preventing the processing of a sales order if the customer's credit limit is exceeded.",
+        "Reconciling general ledger control accounts to subsidiary ledgers quarterly.",
+        "Conducting a physical stock count at year-end."
+      ],
+      "answerIndex": 1,
+      "explanation": "System validation rules that block transactions exceeding credit limits prevent errors or unauthorized transactions from entering the system before processing occurs.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Application Controls",
+        "Preventive Controls",
+        "IT Controls"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_audit-3_01",
+      "kind": "scenario",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "passage": "M/s Apex Pharma Ltd., a listed pharmaceutical company, is undergoing its annual statutory audit for the financial year 2025-26. The engagement partner, CA Raman, is reviewing the risk assessment procedures performed by the audit team under SA 315. Apex Pharma recently launched a major research and development (R&D) project for a novel vaccine, capitalizing substantial development expenditures. Furthermore, the company upgraded its enterprise resource planning (ERP) system mid-year, migrating historical financial data. During preliminary inquiries, CA Raman noted that the Chief Financial Officer (CFO) has sole authority to approve journal entries without secondary review, and the internal audit department reports administratively and functionally directly to the CFO.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-3_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-3_01",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-3",
+          "subject": "Audit",
+          "prompt": "Considering the capitalization of R&D expenditures for the novel vaccine, how should CA Raman classify and approach this risk under SA 315?",
+          "options": [
+            "As an operational risk that does not require auditor attention.",
+            "As a significant risk due to subjective judgment, complex accounting criteria, and measurement uncertainty.",
+            "As an immaterial item that can be ignored if below overall materiality.",
+            "As a control risk that can be mitigated solely by testing IT general controls."
+          ],
+          "answerIndex": 1,
+          "explanation": "Capitalization of R&D involves complex accounting criteria under AS/Ind AS and significant management estimation and judgment, qualifying it as a significant risk requiring special audit consideration under SA 315.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 315",
+            "Significant Risk",
+            "R&D Capitalization"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-3_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-3_01",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-3",
+          "subject": "Audit",
+          "prompt": "The mid-year ERP system migration and upgrade present specific auditing challenges. What primary risk area does this introduce?",
+          "options": [
+            "Risk of data corruption or incomplete data migration during the transfer, affecting data integrity across the financial reporting period.",
+            "Risk of reduced operational efficiency in warehouse packing.",
+            "Risk of non-compliance with labor welfare laws.",
+            "Risk of excess inventory obsolescence."
+          ],
+          "answerIndex": 0,
+          "explanation": "System upgrades and data migrations introduce risks regarding data integrity, completeness, and accuracy of transferred balances, necessitating review of IT general controls and migration testing.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "IT Environment",
+            "Data Migration",
+            "System Upgrade"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-3_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-3_01",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-3",
+          "subject": "Audit",
+          "prompt": "What implication does the CFO having sole authority to approve journal entries without secondary review have on the internal control evaluation?",
+          "options": [
+            "It strengthens the control environment by centralizing financial authority.",
+            "It represents a significant deficiency or control weakness, increasing the risk of management override and fraudulent financial reporting.",
+            "It ensures compliance with segregation of duties principles.",
+            "It eliminates the need to test application controls."
+          ],
+          "answerIndex": 1,
+          "explanation": "Lack of segregation of duties for journal entries and unreviewed management postings create a high risk of management override and potential fraudulent financial reporting, constituting a significant control deficiency.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Management Override",
+            "Journal Entries",
+            "Control Deficiencies"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-3_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-3_01",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-3",
+          "subject": "Audit",
+          "prompt": "The internal audit department reporting directly to the CFO affects how CA Raman evaluates internal audit objectivity. What is the correct conclusion?",
+          "options": [
+            "Internal audit objectivity is compromised because the CFO is part of management whose work internal audit may need to review, limiting reliance under SA 610.",
+            "Objectivity is enhanced because the CFO has deep financial expertise.",
+            "Internal audit objectivity is guaranteed by statute regardless of reporting lines.",
+            "The external auditor can completely delegate risk assessment to this internal audit team."
+          ],
+          "answerIndex": 0,
+          "explanation": "Under SA 610, organizational status and reporting lines that do not allow internal auditors to report directly to those charged with governance (audit committee) can impair objectivity, restricting the external auditor's reliance on their work.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 610",
+            "Internal Audit Objectivity",
+            "Governance"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-3_02",
+      "kind": "scenario",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "passage": "Bright Retail Ltd. operates a chain of 50 supermarkets across the country. CA Neha is auditing the company's inventory and cash sales cycle. Each store uses a Point of Sale (POS) terminal connected to a central server at the head office. During walkthroughs, CA Neha discovers that store managers have override access to daily cash reconciliation reports and can manually adjust inventory write-off figures in the local store system without head office approval. Furthermore, there is no formal IT change management procedure; the IT supervisor makes direct code changes to the POS inventory module whenever store managers report bugs.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-3_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-3_02",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-3",
+          "subject": "Audit",
+          "prompt": "What risk is primarily highlighted by store managers having unapproved override access to cash reconciliations and inventory write-offs?",
+          "options": [
+            "Risk of delayed tax filings.",
+            "Risk of misappropriation of cash and unrecorded inventory shrinkage or theft.",
+            "Risk of foreign exchange translation losses.",
+            "Risk of non-compliance with environmental regulations."
+          ],
+          "answerIndex": 1,
+          "explanation": "Uncontrolled override access over cash reconciliations and inventory write-offs creates direct opportunities for misappropriation of cash and concealment of inventory theft (shrinkage).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Internal Control",
+            "Fraud Risk",
+            "Inventory Controls"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-3_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-3_02",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-3",
+          "subject": "Audit",
+          "prompt": "How does the absence of formal IT change management procedures impact CA Neha's audit strategy?",
+          "options": [
+            "It allows Neha to place full reliance on automated POS controls.",
+            "It weakens IT general controls (ITGCs), meaning automated application controls cannot be relied upon without extensive substantive testing.",
+            "It has no bearing since IT changes are operational, not financial.",
+            "It requires the auditor to take over IT programming duties."
+          ],
+          "answerIndex": 1,
+          "explanation": "Weak ITGCs (such as lack of change management) mean program changes could be unauthorized or flawed, preventing the auditor from relying on automated application controls and necessitating substantive procedures.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "ITGC",
+            "Change Management",
+            "Audit Strategy"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-3_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-3_02",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-3",
+          "subject": "Audit",
+          "prompt": "What audit procedure should CA Neha primarily perform to evaluate the operating effectiveness of the cash collection controls across the supermarkets?",
+          "options": [
+            "Tests of controls, such as examining sample daily cash reconciliations, reviewing exception logs, and observing cash count procedures.",
+            "Confirming accounts payable balances with major suppliers.",
+            "Physically counting 100% of inventory items at all 50 stores on the balance sheet date.",
+            "Reviewing the minutes of the annual general meeting of shareholders."
+          ],
+          "answerIndex": 0,
+          "explanation": "To test operating effectiveness of controls, the auditor performs tests of controls, such as examining documentation of reconciliations, checking exception reports, and observing procedures.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Tests of Controls",
+            "Cash Cycle",
+            "Audit Procedures"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-3_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-3_02",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-3",
+          "subject": "Audit",
+          "prompt": "If CA Neha identifies widespread control failures in the POS system and store-level overrides, what is her reporting obligation under SA 265?",
+          "options": [
+            "To immediately notify the police of suspected theft.",
+            "To communicate these significant deficiencies in writing to those charged with governance and management on a timely basis.",
+            "To resign from the audit engagement immediately.",
+            "To draft a revised business plan for Bright Retail Ltd."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under SA 265, significant deficiencies identified during the audit must be communicated in writing to those charged with governance and management.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 265",
+            "Significant Deficiencies",
+            "Communication"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-3_03",
+      "kind": "scenario",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "passage": "Green Energy Solutions Ltd. is a mid-sized engineering firm executing long-term construction contracts. CA Vikram is evaluating the internal controls and risk assessment processes for revenue recognition under the percentage-of-completion method. The estimation of total project costs and stage of completion involves significant management judgment. The company's project managers submit estimated cost-to-completion reports manually via spreadsheets. CA Vikram notes that there is no independent technical review of these spreadsheet models, and formulas are frequently modified by project managers without version control or locking.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-3_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-3_03",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-3",
+          "subject": "Audit",
+          "prompt": "What is the primary risk associated with the manual spreadsheet models used for long-term contract revenue recognition in this scenario?",
+          "options": [
+            "Risk of physical inventory damage in warehouses.",
+            "Risk of formula errors, unauthorized modifications, and subjective bias in estimating cost-to-completion, leading to material misstatement in revenue.",
+            "Risk of delays in payroll disbursement.",
+            "Risk of non-compliance with factory safety acts."
+          ],
+          "answerIndex": 1,
+          "explanation": "Manual spreadsheets lacking version control and independent review pose high risks of formula errors and biased estimations in percentage-of-completion revenue recognition.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Spreadsheet Risks",
+            "Revenue Recognition",
+            "Estimation Uncertainty"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-3_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-3_03",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-3",
+          "subject": "Audit",
+          "prompt": "How should CA Vikram classify the risk regarding revenue recognition under long-term contracts based on SA 315?",
+          "options": [
+            "Routine risk with low potential impact.",
+            "Significant risk, given the high degree of estimation uncertainty and subjective judgment involved.",
+            "Immaterial risk that requires no substantive testing.",
+            "Purely compliance risk unrelated to financial statements."
+          ],
+          "answerIndex": 1,
+          "explanation": "Contracts involving significant estimation uncertainty and management judgment in revenue determination are classified as significant risks requiring special audit consideration under SA 315.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 315",
+            "Significant Risk",
+            "Long-term Contracts"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-3_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-3_03",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-3",
+          "subject": "Audit",
+          "prompt": "Since internal controls over the estimation spreadsheets are weak, what should be the primary audit response regarding revenue assertion?",
+          "options": [
+            "Rely entirely on management representations.",
+            "Design and perform extensive substantive procedures, such as independently recalculating percentage of completion and verifying underlying contract costs against supplier invoices.",
+            "Issue a qualified audit report upfront.",
+            "Skip revenue testing and focus only on cash balances."
+          ],
+          "answerIndex": 1,
+          "explanation": "When controls are weak or deemed ineffective, the auditor must adjust the audit strategy to rely more heavily on substantive procedures, such as recalculation and detailed voucher verification.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Substantive Procedures",
+            "Audit Response",
+            "Revenue Testing"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-3_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-3_03",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-3",
+          "subject": "Audit",
+          "prompt": "Which internal control component is primarily deficient regarding the lack of independent technical review of project cost estimates?",
+          "options": [
+            "Control Environment",
+            "Control Activities (specifically performance reviews and information processing controls)",
+            "Information System and Communication",
+            "Entity's Risk Assessment Process"
+          ],
+          "answerIndex": 1,
+          "explanation": "Independent reviews of performance, reconciliations, and checks on information processing are core elements of 'Control Activities'.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Control Activities",
+            "Performance Review",
+            "Internal Control Components"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-3_04",
+      "kind": "scenario",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "passage": "Global Logistics Corp. processes thousands of vendor payments weekly through an automated accounts payable module. CA Manoj is testing the internal controls of this cycle. The system is programmed with a 3-way matching control (Purchase Order, Goods Received Note, and Vendor Invoice). However, CA Manoj discovers that senior accountants possess 'override tokens' that allow them to bypass the 3-way match for urgent disbursements without logging the business justification. Furthermore, exception reports generated when matches fail are reviewed only intermittently by the accounts manager.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-3_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-3_04",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-3",
+          "subject": "Audit",
+          "prompt": "What is the primary risk created by the 'override tokens' allowing bypass of the 3-way match without justification logging?",
+          "options": [
+            "Risk of duplicate or fictitious vendor payments escaping detection.",
+            "Risk of slow internet connectivity at payment gateways.",
+            "Risk of incorrect depreciation calculations on fleet vehicles.",
+            "Risk of employee payroll tax under-deduction."
+          ],
+          "answerIndex": 0,
+          "explanation": "Bypassing the 3-way matching control without justification defeats the automated check, creating a risk of unauthorized, duplicate, or fictitious disbursements.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "3-way Match",
+            "Disbursement Controls",
+            "Fraud Risk"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-3_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-3_04",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-3",
+          "subject": "Audit",
+          "prompt": "How does the intermittent review of exception reports by the accounts manager affect control risk assessment?",
+          "options": [
+            "It strengthens the monitoring component of internal control.",
+            "It indicates ineffective monitoring controls, weakening the operating effectiveness of the control activity and increasing control risk.",
+            "It guarantees absolute accuracy of accounts payable.",
+            "It eliminates the need for substantive analytical procedures."
+          ],
+          "answerIndex": 1,
+          "explanation": "Infrequent or casual review of exception reports means control breakdowns or errors may go undetected, representing a deficiency in monitoring and control activities.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Monitoring",
+            "Exception Reports",
+            "Control Risk"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-3_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-3_04",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-3",
+          "subject": "Audit",
+          "prompt": "In testing the 3-way matching control, what procedure should CA Manoj perform to verify its operating effectiveness?",
+          "options": [
+            "Select a sample of disbursements throughout the period and inspect system logs and documents to verify that the 3-way match executed properly or override tokens were appropriately authorized.",
+            "Count physical petty cash in the cashier's drawer.",
+            "Send positive confirmations to 100% of all trade debtors.",
+            "Review the minutes of the board of directors' meetings."
+          ],
+          "answerIndex": 1,
+          "explanation": "Testing operating effectiveness of automated application controls involves selecting sample transactions and checking that the control executed as intended or examining logs of any overrides.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Tests of Controls",
+            "Application Controls",
+            "Audit Procedures"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-3_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-3_04",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-3",
+          "subject": "Audit",
+          "prompt": "If CA Manoj concludes that the override token vulnerability is pervasive and unmitigated, what is the appropriate impact on substantive audit testing?",
+          "options": [
+            "Substantive testing of accounts payable and cash disbursements must be expanded in scope and depth.",
+            "Substantive testing can be completely eliminated.",
+            "Materiality must be raised to the maximum possible limit.",
+            "The auditor must issue an unmodified opinion without further testing."
+          ],
+          "answerIndex": 0,
+          "explanation": "When controls are assessed as ineffective, the auditor cannot rely on them and must expand substantive testing (e.g., larger sample sizes, detailed vouching) to gather sufficient appropriate audit evidence.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Substantive Testing",
+            "Control Ineffectiveness",
+            "Audit Strategy"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-3_05",
+      "kind": "scenario",
+      "chapterId": "audit-3",
+      "subject": "Audit",
+      "passage": "Metro Finserve Ltd., a non-banking financial company (NBFC), is being audited by CA Pooja. The company recently expanded its lending portfolio into unsecured personal loans processed via a mobile application. CA Pooja notes that credit scoring algorithms embedded in the app automatically approve loans up to Rs. 200,000 without human intervention. The IT department made several updates to the credit scoring algorithm during the year to capture new demographic data, but these changes were tested only by the software developers themselves without independent user acceptance testing (UAT) or sign-off from the risk management committee.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 1",
+        "chapterNumber": 3,
+        "chapterTitle": "Risk Assessment and Internal Control"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-3_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-3_05",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-3",
+          "subject": "Audit",
+          "prompt": "What is the primary audit risk arising from algorithm changes tested solely by software developers without independent UAT or risk sign-off?",
+          "options": [
+            "Risk of incorrect loan interest calculations and inappropriate credit approvals due to untested or biased algorithm parameters.",
+            "Risk of physical cash theft at branch teller counters.",
+            "Risk of non-compliance with vehicle insurance regulations.",
+            "Risk of excessive stationary consumption."
+          ],
+          "answerIndex": 0,
+          "explanation": "Lack of independent UAT and risk sign-off on algorithm changes creates a high risk of logic errors or flawed credit criteria, leading to faulty automated lending decisions and potential credit losses.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Algorithmic Risk",
+            "ITGC",
+            "UAT"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-3_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-3_05",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-3",
+          "subject": "Audit",
+          "prompt": "How does automated lending up to Rs. 200,000 impact CA Pooja's evaluation of the entity's IT application controls?",
+          "options": [
+            "IT application controls governing credit limits and eligibility checks are critical to the reliability of loan book data and require rigorous evaluation and testing.",
+            "Automated lending removes all risks of material misstatement.",
+            "Application controls are irrelevant because loans are below Rs. 200,000.",
+            "The auditor only needs to check bank statements at year-end."
+          ],
+          "answerIndex": 1,
+          "explanation": "When automated systems drive material financial statement balances (like loan receivables), the application controls governing those systems are critical and must be tested.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Application Controls",
+            "Loan Portfolio",
+            "IT Risks"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-3_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-3_05",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-3",
+          "subject": "Audit",
+          "prompt": "Which concept under SA 315 relates to the risk that the automated credit scoring model fails to accurately assess borrower default risk?",
+          "options": [
+            "Inherent risk associated with valuation and credit assessment models.",
+            "Detection risk controlled entirely by the auditor.",
+            "Standard audit risk.",
+            "Sampling risk."
+          ],
+          "answerIndex": 0,
+          "explanation": "Model risk in credit scoring falls under inherent risk, reflecting the susceptibility of an assertion to a material misstatement before consideration of related controls.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Inherent Risk",
+            "Model Risk",
+            "Credit Assessment"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-3_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-3_05",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-3",
+          "subject": "Audit",
+          "prompt": "What should be CA Pooja's recommended communication regarding the absence of independent testing for algorithm updates?",
+          "options": [
+            "It should be reported as a significant deficiency in internal control to those charged with governance under SA 265.",
+            "It should be ignored as a minor administrative oversight.",
+            "It should be reported directly to the income tax authorities as tax evasion.",
+            "It should prompt the auditor to take over the IT department's change log."
+          ],
+          "answerIndex": 0,
+          "explanation": "Lack of change management and independent testing for critical financial algorithms represents a significant deficiency in internal control that must be communicated under SA 265.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 265",
+            "Significant Deficiency",
+            "Change Management"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

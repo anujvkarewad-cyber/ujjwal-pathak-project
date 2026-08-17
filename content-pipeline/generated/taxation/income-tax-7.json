@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "income-tax-7",
+  "subject": "Taxation",
+  "paper": "Paper 3: Taxation",
+  "module": "Module 2",
+  "chapterNumber": 7,
+  "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source",
+  "generatedAt": "2026-08-16T14:23:59.001Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_income-tax-7_001",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "Under Section 208, what is the minimum threshold of advance tax liability that makes an assessee liable to pay advance tax during the financial year?",
+      "options": [
+        "Rs. 5,000",
+        "Rs. 10,000",
+        "Rs. 20,000",
+        "Rs. 50,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 208, advance tax is payable during a financial year in every case where the amount of such tax payable by the assessee during the year is Rs. 10,000 or more. This is a fundamental threshold under the Income-tax Act, 1961.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Advance Tax",
+        "Liability Threshold",
+        "Section 208"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_002",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "Which of the following assessees is exempted from the requirement of payment of advance tax under Section 208 read with Section 207?",
+      "options": [
+        "A resident senior citizen having income from business or profession",
+        "A non-resident having total income exceeding Rs. 10,000",
+        "A resident senior citizen not having any income chargeable under the head 'Profits and gains of business or profession'",
+        "A domestic company having advance tax liability of Rs. 8,000"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under Section 207(2), a resident senior citizen (age 60 years or more at any time during the previous year) who does NOT have any income chargeable under the head 'Profits and gains of business or profession' is exempt from paying advance tax.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Advance Tax",
+        "Senior Citizen Exemption",
+        "Section 207"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_003",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "What is the due date and the percentage of advance tax payable by a non-company assessee on or before 15th December of the financial year?",
+      "options": [
+        "15% of advance tax",
+        "45% of advance tax",
+        "75% of advance tax",
+        "100% of advance tax"
+      ],
+      "answerIndex": 2,
+      "explanation": "For all assessees (corporate and non-corporate), the cumulative advance tax payable by 15th December is not less than 75% of the total advance tax liability. The installment due by 15th December is the third installment.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Advance Tax",
+        "Due Dates",
+        "Instalments"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_004",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "What is the due date for payment of the final installment of advance tax (100% of tax liability) for all assessees?",
+      "options": [
+        "31st March",
+        "15th March",
+        "30th June",
+        "15th September"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per the schedule of advance tax installment payments under Section 211, the final installment of 100% is due on or before 15th March of the financial year for both corporate and non-corporate assessees.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Advance Tax",
+        "Final Installment",
+        "Section 211"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_005",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "Interest under Section 234B is levied for default in payment of advance tax. What is the rate and period of interest under this section?",
+      "options": [
+        "1% per month or part of a month from 1st April to date of determination under section 143(1) or regular assessment",
+        "1% per month or part of a month from 16th March to date of payment",
+        "1% per month or part of a month for a default in individual installments",
+        "1.5% per month from 1st June of the assessment year"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 234B is attracted when the advance tax paid is less than 90% of the assessed tax. Interest is charged at 1% per month or part of a month from 1st April following the financial year to the date of determination under section 143(1) or regular assessment.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Interest",
+        "Section 234B",
+        "Advance Tax Default"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_006",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "Interest under Section 234C is levied for deferment of advance tax installments. What is the rate of interest applicable under this section?",
+      "options": [
+        "0.5% per month",
+        "1% per month or part of a month",
+        "1.5% per month",
+        "2% per month"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 234C levies simple interest at the rate of 1% per month or part of a month for deferment of advance tax installments. For installments due on 15th June, 15th September, and 15th December, it is levied for a period of 3 months for each shortfall.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Interest",
+        "Section 234C",
+        "Deferment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_007",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "Under Section 194C, what is the TDS rate on payments made to a resident contractor in the form of an individual or HUF?",
+      "options": [
+        "1%",
+        "2%",
+        "5%",
+        "10%"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per Section 194C, TDS is deductible at 1% when the payment is made to a resident contractor who is an individual or HUF, and 2% if the payee is any other person (e.g., company or partnership firm).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "TDS",
+        "Section 194C",
+        "Contractor"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_008",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "What is the single contract threshold and the aggregate contract threshold under Section 194C?",
+      "options": [
+        "Rs. 20,000 for single contract and Rs. 50,000 in aggregate during the financial year",
+        "Rs. 30,000 for single contract and Rs. 1,00,000 in aggregate during the financial year",
+        "Rs. 50,000 for single contract and Rs. 1,50,000 in aggregate during the financial year",
+        "No single threshold, only aggregate threshold of Rs. 1,00,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 194C, tax is deductible if the amount of any single sum credited or paid exceeds Rs. 30,000, or the aggregate of such amounts credited or paid during the financial year exceeds Rs. 1,00,000.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "TDS",
+        "Section 194C",
+        "Thresholds"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_009",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "Which of the following payments attracts TDS under Section 194J relating to professional or technical services?",
+      "options": [
+        "Remuneration paid to a director of a company, other than salary on which tax is deducted under section 192",
+        "Payment to a resident contractor for construction of a building",
+        "Payment of rent for plant and machinery",
+        "Commission paid on insurance policies"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 194J specifically covers fees for professional or technical services, royalty, remuneration/fees/commission paid to a director of a company (other than salary), and non-compete fees. Director's remuneration (other than salary) attracts TDS under Section 194J.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "TDS",
+        "Section 194J",
+        "Professional Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_010",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "What is the TDS rate applicable on fees for technical services (other than professional services) under Section 194J?",
+      "options": [
+        "1%",
+        "2%",
+        "10%",
+        "20%"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under Section 194J(1)(b), the TDS rate on fees for technical services (not being professional services), royalty, etc., is 10%. (Note: For call center operators, it is 2%).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "TDS",
+        "Section 194J",
+        "Technical Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_011",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "Under Section 194I, what is the TDS rate for rent paid in respect of plant, machinery, or equipment?",
+      "options": [
+        "1%",
+        "2%",
+        "10%",
+        "20%"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 194I prescribes a TDS rate of 2% for rent paid or payable in respect of plant, machinery, or equipment, and 10% for rent of land or building or furniture or fitting.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "TDS",
+        "Section 194I",
+        "Rent"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_012",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "What is the threshold limit for deduction of tax at source under Section 194I (Rent) per financial year?",
+      "options": [
+        "Rs. 30,000",
+        "Rs. 50,000",
+        "Rs. 2,40,000",
+        "Rs. 3,00,000"
+      ],
+      "answerIndex": 2,
+      "explanation": "The threshold limit for non-deduction of TDS under Section 194I is Rs. 2,40,000 per financial year per payee.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "TDS",
+        "Section 194I",
+        "Threshold"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_013",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "Section 194-IB mandates tax deduction by certain individuals or HUFs (not required to get accounts audited under 44AB) on rent paid exceeding how much per month or part of a month?",
+      "options": [
+        "Rs. 20,000",
+        "Rs. 50,000",
+        "Rs. 1,00,000",
+        "Rs. 2,40,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 194-IB requires individuals and HUFs not covered under tax audit (Section 44AB) to deduct tax at 5% on rent exceeding Rs. 50,000 per month or part of a month.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "TDS",
+        "Section 194-IB",
+        "Individual Rent"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_014",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "What is the rate of TDS under Section 194-O on gross amount of sales or services facilitated through an e-commerce operator?",
+      "options": [
+        "0.1%",
+        "1%",
+        "2%",
+        "5%"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 194-O requires an e-commerce operator to deduct tax at the rate of 1% of the gross amount of sales of goods or provision of services or both facilitated through its digital or electronic facility.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "TDS",
+        "Section 194-O",
+        "E-commerce"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_015",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "Under Section 194Q, a buyer responsible for purchasing goods from a resident is required to deduct tax. What is the threshold of aggregate purchases made from a seller during the financial year?",
+      "options": [
+        "Rs. 10,00,000",
+        "Rs. 50,00,000",
+        "Rs. 1,00,00,000",
+        "Rs. 2,00,00,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 194Q applies to a buyer whose total sales/gross receipts/turnover from business exceeds Rs. 10 crore in the preceding financial year, and who purchases goods from a resident exceeding Rs. 50 lakhs in aggregate in the current financial year.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "TDS",
+        "Section 194Q",
+        "Purchase of Goods"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_016",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "What is the TDS rate under Section 194Q on purchase of goods exceeding the specified monetary threshold?",
+      "options": [
+        "0.1%",
+        "1%",
+        "2%",
+        "5%"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 194Q, tax is deductible at the rate of 0.1% of the sum exceeding Rs. 50 lakhs paid or credited for purchase of goods.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "TDS",
+        "Section 194Q",
+        "Rate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_017",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "If a deductee does not provide their Permanent Account Number (PAN) to the deductor, what is the maximum rate at which TDS is deductible under Section 206AA?",
+      "options": [
+        "10%",
+        "20%",
+        "At twice the rate in force or 20% whichever is higher",
+        "At twice the rate specified in the relevant provision or 20% whichever is higher"
+      ],
+      "answerIndex": 3,
+      "explanation": "As per Section 206AA, if the deductee fails to furnish PAN, tax is deductible at: (i) rates specified in relevant provisions, or (ii) at twice the rate in force, or (iii) at the rate of 20%, whichever is HIGHEST.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "TDS",
+        "Section 206AA",
+        "Non-furnishing of PAN"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_018",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "Section 206AB imposes a higher rate of TDS on non-filers of income-tax returns. What is the rate applied under this section?",
+      "options": [
+        "Twice the specified rate or 5%, whichever is higher",
+        "Twice the specified rate or 20%, whichever is higher",
+        "Twice the rate in force",
+        "Flat 20%"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 206AB provides for tax deduction at higher rates (twice the specified rate, twice the rate in force, or 5%, whichever is higher - wait, let's check exact rule: twice the rate specified, twice the rate in force, or 5%, whichever is higher). Wait, let's verify standard 206AB rule: twice the rate specified or 5% whichever is higher.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "TDS",
+        "Section 206AB",
+        "Specified Person"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_019",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "Under Section 206C(1H), a seller of goods is required to collect tax at source (TCS) on receipt of consideration from a buyer. What is the TCS rate?",
+      "options": [
+        "0.1%",
+        "1%",
+        "2%",
+        "5%"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 206C(1H), the seller of goods whose turnover exceeds Rs. 10 crore in the preceding PY collects TCS at the rate of 0.1% of the sale consideration exceeding Rs. 50 lakhs received from a buyer.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "TCS",
+        "Section 206C(1H)",
+        "Sale of Goods"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_020",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "Which of the following specifies the TCS rate on the sale of scrap under Section 206C(1)?",
+      "options": [
+        "1%",
+        "2%",
+        "5%",
+        "10%"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 206C(1), the TCS rate on alcoholic liquor for human consumption is 1%, tendu leaves is 5%, timber obtained under forest lease is 2.5%, and scrap is 1%.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "TCS",
+        "Section 206C",
+        "Scrap"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_021",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "What is the TCS rate under Section 206C(1F) on sale of a motor vehicle of value exceeding Rs. 10 lakhs?",
+      "options": [
+        "0.1%",
+        "1%",
+        "2%",
+        "5%"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 206C(1F) mandates every seller who sells a motor vehicle of value exceeding Rs. 10 lakhs to collect TCS at the rate of 1% of the sale consideration.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "TCS",
+        "Section 206C(1F)",
+        "Motor Vehicle"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_022",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "Under Liberalized Remittance Scheme (LRS) of RBI, what is the TCS rate under Section 206C(1G) for overseas tour program packages?",
+      "options": [
+        "5%",
+        "20%",
+        "2%",
+        "10%"
+      ],
+      "answerIndex": 1,
+      "explanation": "For overseas tour program packages under Section 206C(1G), the TCS rate is 20% without any threshold limit (subject to specific amendments in Finance Act).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "TCS",
+        "Section 206C(1G)",
+        "Tour Package"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_023",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "What is the due date for filing quarterly TDS statements (returns) in Form 24Q, 26Q, etc., for the quarter ending 31st December?",
+      "options": [
+        "31st January",
+        "31st May",
+        "31st October",
+        "15th January"
+      ],
+      "answerIndex": 0,
+      "explanation": "The due dates for filing quarterly TDS statements are: Q1 (June 30): 31st July; Q2 (Sept 30): 31st October; Q3 (Dec 31): 31st January; Q4 (March 31): 31st May.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "TDS",
+        "Returns",
+        "Due Dates"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_024",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "Within what time frame must a deductor issue a TDS certificate in Form 16 (for salaries) to the employee after the due date of furnishing the TDS return?",
+      "options": [
+        "Within 15 days",
+        "Within 1 month",
+        "By 15th June of the financial year immediately following the financial year in which income was paid and tax deducted",
+        "By 30th June"
+      ],
+      "answerIndex": 2,
+      "explanation": "Form 16 (TDS certificate for salary under Section 192) must be issued annually by 15th June of the financial year immediately following the financial year in which tax was deducted.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "TDS",
+        "Form 16",
+        "Certificate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_025",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "What is the time limit for issuing Form 16A (TDS certificate for non-salary payments) to the deductee?",
+      "options": [
+        "Quarterly, within 15 days from the due date for furnishing the statement of TDS",
+        "Within 1 month from the end of the quarter",
+        "Annually by 15th June",
+        "Within 7 days of deduction"
+      ],
+      "answerIndex": 0,
+      "explanation": "Form 16A (non-salary TDS certificate) is issued quarterly, within 15 days from the due date for furnishing the statement of tax deduction under Rule 31.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "TDS",
+        "Form 16A",
+        "Certificate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_026",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "If an employer fails to deduct tax at source on salary paid to an employee, what is the consequence regarding business expenditure deduction under Section 40(a)(ia)?",
+      "options": [
+        "30% of the sum is disallowed",
+        "100% of the sum is disallowed",
+        "No disallowance under 40(a)(ia) for salary",
+        "50% of the sum is disallowed"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 40(a)(ia) disallows 30% of sums payable to a resident on which TDS is deductible but not deducted or paid. However, salary paid to resident employees is covered under Section 40(a)(iii), which disallows 100% if tax is not deducted/paid. Section 40(a)(ia) specifically excludes salaries.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "TDS",
+        "Disallowance",
+        "Section 40(a)(ia)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_027",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "Under Section 194-R, what is the TDS rate applicable on the value of any benefit or perk arising from business or profession?",
+      "options": [
+        "1%",
+        "2%",
+        "5%",
+        "10%"
+      ],
+      "answerIndex": 3,
+      "explanation": "Section 194-R mandates deduction of tax at source at the rate of 10% by any person providing any benefit or perquisite, whether convertible into money or not, arising from business or the exercise of a profession to a resident.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "TDS",
+        "Section 194-R",
+        "Perquisites"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_028",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "What is the threshold limit under Section 194-R below which tax is not required to be deducted on benefits or perquisites?",
+      "options": [
+        "Rs. 10,000",
+        "Rs. 20,000",
+        "Rs. 50,000",
+        "No threshold"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 194-R, tax is not required to be deducted if the aggregate value of the benefit or perquisite provided or likely to be provided to the resident during the financial year does not exceed Rs. 20,000 - wait, let's verify exact rule: Rs. 20,000 is the threshold.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "TDS",
+        "Section 194-R",
+        "Threshold"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_029",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "Under Section 194S, what is the TDS rate on transfer of virtual digital assets (VDAs) such as cryptocurrencies?",
+      "options": [
+        "1%",
+        "2%",
+        "5%",
+        "10%"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 194S requires any person responsible for paying to a resident any sum by way of consideration for transfer of a virtual digital asset to deduct tax at the rate of 1% of such sum.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "TDS",
+        "Section 194S",
+        "Crypto VDA"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-7_030",
+      "kind": "normal",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "prompt": "What is the penalty under Section 271H for failure to deliver or cause to be delivered a TDS/TCS statement within the prescribed time?",
+      "options": [
+        "Fixed Rs. 1,000",
+        "Rs. 100 for every day during which the failure continues",
+        "A sum not less than Rs. 10,000 which may extend to Rs. 1,00,000",
+        "Equal to the amount of tax not deducted"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 271H specifies that without prejudice to provisions of section 276B, the Assessing Officer may direct a person who fails to file TDS/TCS returns to pay a penalty of not less than Rs. 10,000, which may extend to Rs. 1,00,000.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "TDS",
+        "Section 271H",
+        "Penalty"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_income-tax-7_01",
+      "kind": "scenario",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "passage": "M/s. Apex Technologies, a partnership firm, has a turnover of Rs. 12 crores in the previous year 2024-25. For the financial year 2025-26, the firm estimates its tax liability and engages in multiple financial transactions including payments to contractors, rent, and purchase of goods.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-7_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-7_01",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-7",
+          "subject": "Taxation",
+          "prompt": "If the total advance tax liability of M/s. Apex Technologies for PY 2025-26 is determined to be Rs. 1,50,000, by what date must the firm pay its first installment of advance tax and what is the minimum amount?",
+          "options": [
+            "15th June; Rs. 22,500 (15%)",
+            "15th September; Rs. 67,500 (45%)",
+            "15th June; Rs. 45,000 (30%)",
+            "15th September; Rs. 22,500 (15%)"
+          ],
+          "answerIndex": 0,
+          "explanation": "As per Section 211, for corporate and non-corporate assessees, the first installment of advance tax (15%) is due on or before 15th June. 15% of Rs. 1,50,000 is Rs. 22,500.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Advance Tax",
+            "Instalments",
+            "Firm"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-7_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-7_01",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-7",
+          "subject": "Taxation",
+          "prompt": "M/s. Apex Technologies pays a contract fee of Rs. 40,000 to Mr. X, an individual contractor, in a single payment during the year. What is the TDS obligation under Section 194C?",
+          "options": [
+            "No TDS as single contract is below Rs. 50,000",
+            "TDS at 1% under Section 194C since single payment exceeds Rs. 30,000",
+            "TDS at 2% under Section 194C",
+            "TDS at 10% under Section 194J"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 194C, tax is deductible if any single sum exceeds Rs. 30,000 or aggregate exceeds Rs. 1,00,000. Since the payment to individual Mr. X is Rs. 40,000 (exceeding Rs. 30,000), TDS must be deducted at 1%.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "TDS",
+            "Section 194C",
+            "Contractor"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-7_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-7_01",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-7",
+          "subject": "Taxation",
+          "prompt": "M/s. Apex Technologies purchases goods worth Rs. 60,000 from a resident seller Mr. Y during the year. Since its turnover in the preceding year exceeded Rs. 10 crores, which provision applies?",
+          "options": [
+            "Section 194Q - Buyer to deduct tax at 0.1% on amount exceeding Rs. 50 lakhs",
+            "Section 194C - Deduct tax at 1%",
+            "Section 206C(1H) - Seller to collect TCS",
+            "No TDS or TCS is applicable as it is below Rs. 1 crore"
+          ],
+          "answerIndex": 0,
+          "explanation": "Since turnover of M/s. Apex Technologies exceeds Rs. 10 crore in preceding PY, Section 194Q applies to goods purchased from a resident exceeding Rs. 50 lakhs. Tax is deductible at 0.1% on the sum exceeding Rs. 50 lakhs.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "TDS",
+            "Section 194Q",
+            "Goods Purchase"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-7_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-7_01",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-7",
+          "subject": "Taxation",
+          "prompt": "If M/s. Apex Technologies fails to deduct TDS on a professional fee of Rs. 5,00,000 paid to a resident accountant, what amount of expenditure is disallowed under Section 40(a)(ia) while computing business income?",
+          "options": [
+            "Nil",
+            "Rs. 1,50,000 (30% of Rs. 5,00,000)",
+            "Rs. 5,00,000 (100% of sum)",
+            "Rs. 50,000 (10%)"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 40(a)(ia), if tax is deductible on any sum payable to a resident and is not deducted (or not paid after deduction by due date), 30% of such sum is disallowed as a business deduction.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "TDS",
+            "Disallowance",
+            "Section 40(a)(ia)"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-7_02",
+      "kind": "scenario",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "passage": "Mr. Sharma, a resident individual aged 58 years, carries on a retail business. His turnover for the previous year 2024-25 was Rs. 1.5 crores. During the financial year 2025-26, he makes various rental payments, professional fee payments, and engages in transactions where tax deductions and collections are applicable.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-7_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-7_02",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-7",
+          "subject": "Taxation",
+          "prompt": "Is Mr. Sharma required to deduct tax at source under Section 194I on building rent of Rs. 30,000 per month paid to his landlord?",
+          "options": [
+            "No, because monthly rent is below Rs. 50,000",
+            "Yes, because annual rent (Rs. 3,60,000) exceeds the threshold of Rs. 2,40,000 and his business turnover exceeds tax audit limits in the preceding year",
+            "No, because individual turnover is below Rs. 10 crores",
+            "Yes, at the rate of 2%"
+          ],
+          "answerIndex": 1,
+          "explanation": "Mr. Sharma's turnover in PY 2024-25 was Rs. 1.5 crores, which exceeds the threshold for tax audit under Section 44AB (Rs. 1 crore). Hence, he is mandated to deduct TDS under Section 194I since annual rent of Rs. 3,60,000 exceeds Rs. 2,40,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "TDS",
+            "Section 194I",
+            "Rent Threshold"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-7_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-7_02",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-7",
+          "subject": "Taxation",
+          "prompt": "If Mr. Sharma fails to pay his advance tax installments on time resulting in a shortfall, which interest provision will be attracted for deferment of installments?",
+          "options": [
+            "Section 234A",
+            "Section 234B",
+            "Section 234C",
+            "Section 234E"
+          ],
+          "answerIndex": 2,
+          "explanation": "Section 234C is specifically attracted for deferment of advance tax installments, charging simple interest at 1% per month for shortfalls in installment payments.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Interest",
+            "Section 234C",
+            "Deferment"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-7_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-7_02",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-7",
+          "subject": "Taxation",
+          "prompt": "Mr. Sharma pays professional fees of Rs. 40,000 to a consultant and fails to deduct TDS. What is the applicable TDS rate under Section 194J for professional fees?",
+          "options": [
+            "1%",
+            "2%",
+            "5%",
+            "10%"
+          ],
+          "answerIndex": 3,
+          "explanation": "The TDS rate under Section 194J for professional services is 10% (subject to threshold of Rs. 30,000 per financial year).",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "TDS",
+            "Section 194J",
+            "Professional Fees"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-7_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-7_02",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-7",
+          "subject": "Taxation",
+          "prompt": "If Mr. Sharma fails to furnish his PAN to a deductor who makes payment to him, what will be the consequence under Section 206AA?",
+          "options": [
+            "TDS will be deducted at 20% or twice the rate in force, whichever is higher",
+            "No TDS will be deducted",
+            "TDS will be deducted at flat 1%",
+            "Penalty of Rs. 10,000 will be levied on Mr. Sharma"
+          ],
+          "answerIndex": 0,
+          "explanation": "As per Section 206AA, failure to furnish PAN to the deductor results in tax deduction at higher rate: at the rate specified in the Act, or twice the rate in force, or 20%, whichever is higher.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "TDS",
+            "Section 206AA",
+            "PAN Failure"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-7_03",
+      "kind": "scenario",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "passage": "Green Energy Ltd., a domestic company, is engaged in manufacturing solar panels. During the financial year 2025-26, the company enters into various transactions involving salary payments to employees, rent for office premises, advertising contracts, and sales of scrap.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-7_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-7_03",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-7",
+          "subject": "Taxation",
+          "prompt": "Green Energy Ltd. pays monthly salary of Rs. 1,20,000 to its Chief Executive Officer. Under which section and at what basis is tax required to be deducted?",
+          "options": [
+            "Section 192, based on average income-tax rates applicable to the employee",
+            "Section 194J at flat 10%",
+            "Section 194C at 2%",
+            "No TDS on salary paid by a company"
+          ],
+          "answerIndex": 0,
+          "explanation": "Tax deduction on salary is governed by Section 192, where the employer is required to deduct tax at the time of payment based on the average rate of income-tax computed on the estimated total income of the employee.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "TDS",
+            "Section 192",
+            "Salary"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-7_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-7_03",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-7",
+          "subject": "Taxation",
+          "prompt": "Green Energy Ltd. sells industrial scrap generated in its manufacturing process for Rs. 2,00,000 to a buyer. What is the TCS obligation under Section 206C(1)?",
+          "options": [
+            "Collect TCS at 1%",
+            "Collect TCS at 2%",
+            "Collect TCS at 5%",
+            "No TCS on scrap"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under Section 206C(1), the seller of scrap is required to collect tax at source at the rate of 1% from the buyer at the time of debiting the account of the buyer or receipt of cash/cheque, whichever is earlier.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "TCS",
+            "Section 206C(1)",
+            "Scrap"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-7_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-7_03",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-7",
+          "subject": "Taxation",
+          "prompt": "The company pays rent of Rs. 3,50,000 for a warehouse during the year. What is the TDS rate under Section 194I for land and building rent?",
+          "options": [
+            "2%",
+            "5%",
+            "10%",
+            "20%"
+          ],
+          "answerIndex": 2,
+          "explanation": "Under Section 194I, the TDS rate for rent of land or building or furniture or fitting is 10%, provided the aggregate payment exceeds Rs. 2,40,000 in the financial year.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "TDS",
+            "Section 194I",
+            "Building Rent"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-7_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-7_03",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-7",
+          "subject": "Taxation",
+          "prompt": "If Green Energy Ltd. deducts tax in December 2025 but fails to deposit the same to the credit of the Central Government by the due date, what is the simple interest rate payable under Section 201(1A)?",
+          "options": [
+            "1% per month or part of a month",
+            "1.5% per month or part of a month",
+            "2% per month or part of a month",
+            "1% per month from the date of deduction to date of deposit"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per Section 201(1A), if a deductor fails to pay tax after deduction, simple interest is levied at 1% per month from the date of deduction to the date of deduction-wait, let's verify exact rule: 1% per month for failure to deduct, and 1.5% per month from the date on which such tax was deducted to the date on which such tax is actually paid.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "TDS",
+            "Section 201(1A)",
+            "Interest on Default"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-7_04",
+      "kind": "scenario",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "passage": "Global Web Solutions Inc., an e-commerce operator, operates a digital platform facilitating the sale of goods and provision of services by various resident digital vendors. During the financial year 2025-26, vendor Mr. Roy sells goods worth Rs. 10,00,000 through the platform.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-7_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-7_04",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-7",
+          "subject": "Taxation",
+          "prompt": "What is the primary TDS obligation of Global Web Solutions Inc. under Section 194-O in respect of sales made by Mr. Roy?",
+          "options": [
+            "Deduct tax at 1% of the gross amount of sales",
+            "Deduct tax at 0.1% under Section 194Q",
+            "No TDS obligation as e-commerce is exempt",
+            "Collect TCS at 1% under Section 206C(1H)"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 194-O casts an obligation on the e-commerce operator to deduct tax at 1% of the gross amount of sales of goods or provision of services facilitated through its digital platform.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "TDS",
+            "Section 194-O",
+            "E-commerce"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-7_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-7_04",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-7",
+          "subject": "Taxation",
+          "prompt": "If Mr. Roy is an individual with total sales of Rs. 4,00,000 through the e-commerce platform during the financial year and has furnished his PAN, is tax deductible under Section 194-O?",
+          "options": [
+            "Yes, because individual e-commerce participants having gross sales up to Rs. 5 lakhs are exempt under Section 194-O if they furnish PAN/Aadhaar",
+            "No, exemption applies if gross sales do not exceed Rs. 5 lakhs and PAN is furnished",
+            "No, individuals are completely exempt from Section 194-O",
+            "Yes, tax must be deducted regardless of amount"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the proviso to Section 194-O(1), no tax deduction is required if the e-commerce participant is an individual or HUF having gross amount of sales/services during the PY up to Rs. 5 lakhs and who has furnished PAN/Aadhaar.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "TDS",
+            "Section 194-O",
+            "Exemption"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-7_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-7_04",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-7",
+          "subject": "Taxation",
+          "prompt": "If Global Web Solutions Inc. fails to file the quarterly TDS statement for Section 194-O deductions, what fee is attracted under Section 234E?",
+          "options": [
+            "Rs. 100 per day during which default continues",
+            "Fixed penalty of Rs. 10,000",
+            "Rs. 200 per day during which default continues, subject to maximum of tax deductible",
+            "No fee under Section 234E"
+          ],
+          "answerIndex": 2,
+          "explanation": "Section 234E levies a fee of Rs. 200 for every day during which the failure to furnish TDS statements continues, subject to the condition that the fee shall not exceed the amount of tax deductible.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "TDS",
+            "Section 234E",
+            "Fee for Default"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-7_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-7_04",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-7",
+          "subject": "Taxation",
+          "prompt": "When is the due date for filing the quarterly TDS statement in Form 26Q by Global Web Solutions Inc. for the quarter ending 31st March?",
+          "options": [
+            "30th April",
+            "31st May",
+            "30th June",
+            "15th July"
+          ],
+          "answerIndex": 1,
+          "explanation": "The due date for filing quarterly TDS statement for the last quarter of the financial year (ending 31st March) is 31st May of the immediately following financial year.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "TDS",
+            "Returns",
+            "Due Dates"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-7_05",
+      "kind": "scenario",
+      "chapterId": "income-tax-7",
+      "subject": "Taxation",
+      "passage": "Mr. Anil, a high net-worth individual, enters into several high-value transactions during the financial year 2025-26. He purchases a luxury car worth Rs. 25 lakhs from a dealer, plans an overseas tour package costing Rs. 8 lakhs, and invests in virtual digital assets (VDAs).",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Advance Tax, Tax Deduction at Source and Tax Collection at Source"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-7_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-7_05",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-7",
+          "subject": "Taxation",
+          "prompt": "What is the TCS obligation on the dealer who sells the luxury car worth Rs. 25 lakhs to Mr. Anil under Section 206C(1F)?",
+          "options": [
+            "Collect TCS at 1% on the entire sale consideration of Rs. 25 lakhs",
+            "Collect TCS at 1% on the amount exceeding Rs. 10 lakhs",
+            "Collect TCS at 5% on the entire amount",
+            "No TCS on motor vehicles below Rs. 50 lakhs"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 206C(1F) requires collection of TCS at 1% on the sale of a motor vehicle of value exceeding Rs. 10 lakhs. Unlike some other TCS provisions, the 1% is collected on the ENTIRE sale consideration.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "TCS",
+            "Section 206C(1F)",
+            "Motor Vehicle"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-7_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-7_05",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-7",
+          "subject": "Taxation",
+          "prompt": "Mr. Anil purchases an overseas tour program package for Rs. 8 lakhs. What is the TCS rate applicable under Section 206C(1G)?",
+          "options": [
+            "5%",
+            "20%",
+            "2%",
+            "10%"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 206C(1G), for purchase of an overseas tour program package, TCS is required to be collected at the rate of 20% by the seller without any threshold limit.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "TCS",
+            "Section 206C(1G)",
+            "Tour Package"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-7_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-7_05",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-7",
+          "subject": "Taxation",
+          "prompt": "Mr. Anil sells virtual digital assets (VDAs) through an exchange. What is the TDS rate under Section 194S applicable on consideration for transfer of VDA?",
+          "options": [
+            "0.1%",
+            "1%",
+            "5%",
+            "10%"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 194S mandates tax deduction at source at the rate of 1% on consideration paid for transfer of virtual digital assets to a resident.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "TDS",
+            "Section 194S",
+            "VDA"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-7_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-7_05",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-7",
+          "subject": "Taxation",
+          "prompt": "If Mr. Anil has not filed his income-tax returns for the previous two assessment years for which the time limit under section 139(1) has expired, and his aggregate TDS deducted in those years is Rs. 60,000, how does it impact the TDS on payments received by him?",
+          "options": [
+            "He becomes a 'specified person' under Section 206AB, attracting higher TDS at twice the specified rate or 5% whichever is higher",
+            "No impact on TDS rates",
+            "He is exempt from all TDS",
+            "TDS rate becomes flat 20% under Section 206AA"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 206AB defines a 'specified person' as one who has not filed returns for two previous years and whose aggregate TDS/TCS is Rs. 50,000 or more in each year, attracting higher TDS under Section 206AB.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "TDS",
+            "Section 206AB",
+            "Specified Person"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

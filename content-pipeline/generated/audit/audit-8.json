@@ -1,0 +1,1424 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "audit-8",
+  "subject": "Audit",
+  "paper": "Paper 5: Auditing and Ethics",
+  "module": "Module 2",
+  "chapterNumber": 8,
+  "chapterTitle": "Audit Report",
+  "generatedAt": "2026-08-16T14:50:50.209Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_audit-8_001",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "Which of the following standards on auditing primarily establishes the requirements for forming an opinion and reporting on financial statements?",
+      "options": [
+        "SA 700 (Revised)",
+        "SA 705 (Revised)",
+        "SA 706 (Revised)",
+        "SA 570 (Revised)"
+      ],
+      "answerIndex": 0,
+      "explanation": "SA 700 (Revised), 'Forming an Opinion and Reporting on Financial Statements', deals with the auditor's responsibility to form an opinion on the financial statements and the form and content of the audit report. SA 705 and SA 706 deal with modifications and emphasis of matter paragraphs respectively. SA 570 deals with going concern.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 700",
+        "Audit Report Basics",
+        "Forming an Opinion"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_002",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "When the auditor concludes that the financial statements as a whole are not free from material misstatement, which type of modified opinion should be expressed?",
+      "options": [
+        "Unmodified opinion with an Emphasis of Matter paragraph",
+        "Qualified opinion or Adverse opinion",
+        "Qualified opinion or Disclaimer of opinion",
+        "Adverse opinion or Disclaimer of opinion"
+      ],
+      "answerIndex": 1,
+      "explanation": "According to SA 705 (Revised), the auditor shall express a qualified opinion when the auditor, having obtained sufficient appropriate audit evidence, concludes that misstatements, individually or in the aggregate, are material but not pervasive. The auditor shall express an adverse opinion when the auditor, having obtained sufficient appropriate audit evidence, concludes that misstatements, individually or in the aggregate, are both material and pervasive.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 705",
+        "Modified Opinion",
+        "Adverse Opinion",
+        "Qualified Opinion"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_003",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "Under SA 701, for which entities are auditors required to communicate Key Audit Matters (KAM) in the independent auditor's report?",
+      "options": [
+        "All companies registered under the Companies Act, 2013",
+        "Listed entities and entities required by law/regulations",
+        "Entities with a turnover exceeding INR 250 crores",
+        "Banking companies and insurance companies only"
+      ],
+      "answerIndex": 1,
+      "explanation": "SA 701 applies to audits of complete sets of general purpose financial statements of listed entities and whenever the auditor otherwise decides to communicate key audit matters in the auditor's report.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 701",
+        "Key Audit Matters",
+        "Listed Entities"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_004",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "An auditor is unable to obtain sufficient appropriate audit evidence on which to base the opinion, and the possible effects on the financial statements of undetected misstatements could be both material and pervasive. What is the appropriate audit report modification?",
+      "options": [
+        "Qualified opinion",
+        "Adverse opinion",
+        "Disclaimer of opinion",
+        "Unmodified opinion with Other Matter paragraph"
+      ],
+      "answerIndex": 2,
+      "explanation": "Per SA 705 (Revised), when the auditor is unable to obtain sufficient appropriate audit evidence and the possible effects could be both material and pervasive, the auditor shall disclaim an opinion.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 705",
+        "Disclaimer of Opinion",
+        "Scope Limitation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_005",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "Where should the 'Auditor's Responsibilities for the Audit of the Financial Statements' section be typically located in an independent auditor's report prepared under SA 700 (Revised)?",
+      "options": [
+        "Before the Management's Responsibility section",
+        "After the Auditor's Opinion section",
+        "As an appendix attached to the financial statements",
+        "Inside the Notes to Accounts"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under SA 700 (Revised), the standard structure of the auditor's report places the Auditor's Opinion first, followed by the Basis for Opinion, followed by Key Audit Matters (if applicable), Management's Responsibilities, and then the Auditor's Responsibilities for the Audit.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 700",
+        "Report Structure",
+        "Auditor Responsibilities"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_006",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "What is the primary purpose of including an 'Emphasis of Matter' (EOM) paragraph in an auditor's report under SA 706 (Revised)?",
+      "options": [
+        "To modify the auditor's opinion because of a disagreement with management",
+        "To draw users' attention to a matter appropriately presented or disclosed that is of such importance that it is fundamental to users' understanding",
+        "To report on other regulatory and legal requirements outside the financial statements",
+        "To highlight a matter that constitutes a scope limitation imposed by management"
+      ],
+      "answerIndex": 1,
+      "explanation": "SA 706 (Revised) defines an Emphasis of Matter paragraph as a paragraph included in the auditor's report that refers to a matter appropriately presented or disclosed in the financial statements that, in the auditor's judgment, is of such importance that it is fundamental to users' understanding.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 706",
+        "Emphasis of Matter",
+        "Audit Report Structure"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_007",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "Under what circumstances must an auditor include an 'Other Matter' (OM) paragraph in the auditor's report according to SA 706 (Revised)?",
+      "options": [
+        "When the auditor wishes to emphasize a matter related to going concern uncertainty",
+        "When a matter other than those presented or disclosed in the financial statements is relevant to users' understanding of the audit, the auditor's responsibilities, or the auditor's report",
+        "When management refuses to correct a material misstatement that is pervasive",
+        "When key audit matters are communicated for a private limited company"
+      ],
+      "answerIndex": 1,
+      "explanation": "SA 706 (Revised) states that an Other Matter paragraph refers to a matter other than those presented or disclosed in the financial statements that is relevant to users' understanding of the audit, the auditor's responsibilities, or the auditor's report.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 706",
+        "Other Matter Paragraph",
+        "Audit Reporting"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_008",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "When expressing a modified opinion, where does the auditor place the 'Basis for Qualified/Adverse/Disclaimer of Opinion' section?",
+      "options": [
+        "Directly below the Auditor's Opinion",
+        "At the very end of the report after signature",
+        "Inside the Notes to Accounts",
+        "As a footnote to the Balance Sheet"
+      ],
+      "answerIndex": 0,
+      "explanation": "According to SA 705 (Revised), when the auditor modifies the audit opinion, the auditor shall use the heading 'Basis for Qualified Opinion', 'Basis for Adverse Opinion', or 'Basis for Disclaimer of Opinion', as appropriate, and position this section immediately after the Auditor's Opinion section.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 705",
+        "Basis for Opinion",
+        "Report Formatting"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_009",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "In the context of reporting on comparative information under SA 710, when corresponding figures are presented, the auditor's opinion shall:",
+      "options": [
+        "Refer to each period for which financial statements are presented",
+        "Refer only to the current period because corresponding figures are an integral part of the current period financial statements",
+        "Not mention the previous period under any circumstance",
+        "Express a separate opinion on the prior period balance sheet alone"
+      ],
+      "answerIndex": 1,
+      "explanation": "Per SA 710, when corresponding figures are presented, the auditor's opinion shall not refer to the corresponding figures except in specific circumstances (such as when the prior period report was modified or a material misstatement exists in corresponding figures). The opinion is on the current period financial statements as a whole, including the corresponding figures.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 710",
+        "Comparative Information",
+        "Corresponding Figures"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_010",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "Which of the following is NOT a required heading in the independent auditor's report for a company under the Companies Act, 2013 and relevant SAs?",
+      "options": [
+        "Report on Other Legal and Regulatory Requirements",
+        "Management's Responsibility for the Financial Statements",
+        "Auditor's Assessment of Corporate Profits",
+        "Auditor's Responsibility"
+      ],
+      "answerIndex": 2,
+      "explanation": "Standard audit reports contain sections like Report on the Financial Statements, Management's Responsibility, Auditor's Responsibility, Opinion, and Report on Other Legal and Regulatory Requirements. 'Auditor's Assessment of Corporate Profits' is not a standard heading.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Companies Act 2013",
+        "Audit Report Headings",
+        "SA 700"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_011",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "Under SA 570 (Revised), if management is unwilling to make or extend its assessment of the entity's ability to continue as a going concern when requested, what should the auditor do?",
+      "options": [
+        "Issue an unmodified opinion with an Emphasis of Matter paragraph",
+        "Consider the implications for the audit report, which may include modifying the opinion",
+        "Immediately resign from the audit engagement without notification",
+        "Issue a clean report since management's assessment is optional"
+      ],
+      "answerIndex": 1,
+      "explanation": "Per SA 570 (Revised), if management is unwilling to make or extend its assessment, the auditor shall evaluate the implications of this lack of information on the audit report, which may result in a modified opinion due to a scope limitation.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 570",
+        "Going Concern",
+        "Scope Limitation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_012",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "When the auditor's report contains an unmodified opinion on financial statements, what phrase is typically used under the opinion section?",
+      "options": [
+        "'In our opinion and to the best of our information... the financial statements give a true and fair view...'",
+        "'The financial statements are completely accurate and free from any error...'",
+        "'We guarantee that the financial statements reflect exact market value...'",
+        "'In our opinion, the management has prepared infallible records...'"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under the Companies Act, 2013 and SA 700 (Revised), the standard phrasing for a true and fair view in India includes statements expressing that the financial statements give a true and fair view of the state of affairs, profit/loss, and cash flows.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 700",
+        "True and Fair View",
+        "Unmodified Opinion"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_013",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "What does the term 'pervasive' mean in the context of SA 705 (Revised) regarding misstatements?",
+      "options": [
+        "Misstatements that affect only a single minor ledger account",
+        "Misstatements that are confined to specific elements and do not represent a fundamental portion of the financial statements",
+        "Misstatements that, in the auditor's judgment, are not confined to specific elements, accounts or items of the financial statements; or if confined, represent or could represent a substantial proportion of the financial statements",
+        "Misstatements that are detected solely after the date of the auditor's report"
+      ],
+      "answerIndex": 2,
+      "explanation": "SA 705 (Revised) defines 'pervasive' as a term used to describe the effects on financial statements of misstatements or the possible effects on financial statements of undetected misstatements, if any, that are not confined to specific elements, etc.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 705",
+        "Pervasive",
+        "Terminology"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_014",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "If an auditor detects a material misstatement in the comparative financial statements (comparative financial reports where prior period figures are compared directly), and the prior period figures were audited by a predecessor auditor, what should the current auditor do if the predecessor auditor's report is not reissued?",
+      "options": [
+        "State in an Other Matter paragraph that the predecessor auditor reported on the corresponding figures",
+        "Modify the current year's opinion directly without reference to the predecessor",
+        "Ignore the prior period misstatement since it belongs to a different auditor",
+        "Re-audit the entire prior period from scratch and issue a combined opinion"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under SA 710, when comparative financial statements are presented and the prior period was audited by a predecessor auditor whose report is not reissued, the current auditor may state in an Other Matter paragraph that the predecessor auditor reported on the financial statements of the prior period.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 710",
+        "Comparative Information",
+        "Predecessor Auditor"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_015",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "Which of the following matters is a mandatory inclusion in the 'Report on Other Legal and Regulatory Requirements' under the Companies Act, 2013?",
+      "options": [
+        "Whether proper books of account as required by law have been kept by the company",
+        "Detailed analysis of the company's marketing strategy and competitor benchmarking",
+        "A list of all employees drawing a salary above INR 1 crore per annum",
+        "Verification of the personal bank accounts of the company's directors"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 143(3) of the Companies Act, 2013, the auditor's report must state whether proper books of account as required by law have been kept by the company, among other statutory attestations.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Companies Act 2013",
+        "Section 143(3)",
+        "Regulatory Requirements"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_016",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "In discharging reporting duties under CARO 2020 (Companies (Auditor's Report) Order, 2020), which type of companies are generally exempt from its application?",
+      "options": [
+        "All Private Limited Companies regardless of size",
+        "Banking companies, Insurance companies, Section 8 companies, and specified small private companies meeting certain criteria",
+        "All listed companies with a foreign direct investment",
+        "Government companies incorporated under Section 2(45)"
+      ],
+      "answerIndex": 1,
+      "explanation": "CARO 2020 exempts banking companies, insurance companies, companies registered for charitable purposes (Section 8), and certain small private companies (meeting paid-up capital, borrowing, and turnover thresholds).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "CARO 2020",
+        "Applicability",
+        "Exemptions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_017",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "When reporting under CARO 2020, what must the auditor report regarding statutory dues such as GST, Provident Fund, and Income Tax?",
+      "options": [
+        "Whether the company has paid all dues within 7 days of month-end",
+        "Whether the company is regular in depositing undisputed statutory dues, and if not regular, the extent of arrears outstanding for more than six months from the date they became payable",
+        "Only whether income tax has been deducted at source",
+        "Whether the company owes money to foreign tax authorities"
+      ],
+      "answerIndex": 1,
+      "explanation": "Paragraph 3(vii)(a) of CARO 2020 requires reporting on whether the company is regular in depositing undisputed statutory dues and, where not regular, the extent of arrears outstanding for a period of more than six months.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "CARO 2020",
+        "Statutory Dues",
+        "Clause (vii)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_018",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "Under SA 701, how does the auditor determine which matters are 'Key Audit Matters'?",
+      "options": [
+        "By selecting matters that resulted in a modified opinion only",
+        "By selecting matters of most significance in the audit of the financial statements of the current period, based on areas of higher assessed risk of material misstatement or significant auditor attention",
+        "By listing all items that appeared in the audit program",
+        "By asking the Board of Directors to nominate five items for disclosure"
+      ],
+      "answerIndex": 1,
+      "explanation": "SA 701 defines Key Audit Matters as those matters that, in the auditor's professional judgment, were of most significance in the audit of the financial statements of the current period, drawn from areas of significant auditor attention.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 701",
+        "Key Audit Matters",
+        "Professional Judgment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_019",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "Can an auditor communicate Key Audit Matters in the auditor's report if the audit opinion is a Disclaimer of Opinion?",
+      "options": [
+        "Yes, whenever required by law or regulation",
+        "No, SA 701 prohibits communicating KAM when the auditor disclaims an opinion on the financial statements, unless required by law or regulation",
+        "Yes, provided management gives written consent",
+        "No, KAM is only permitted when an adverse opinion is issued"
+      ],
+      "answerIndex": 1,
+      "explanation": "According to SA 701, when the auditor disclaims an opinion on the financial statements, the auditor shall not communicate key audit matters in the auditor's report, unless required by law or regulation, because doing so might contradict the disclaimer.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 701",
+        "Disclaimer of Opinion",
+        "KAM Prohibition"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_020",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "If a material uncertainty related to going concern is adequately disclosed in the financial statements, how should the auditor report on it under SA 570 (Revised)?",
+      "options": [
+        "Issue an adverse opinion due to fundamental uncertainty",
+        "Issue an unmodified opinion and include a separate section under the heading 'Material Uncertainty Related to Going Concern'",
+        "Omit any reference to it to avoid alarming shareholders",
+        "Issue a disclaimer of opinion because of the existence of uncertainty"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under SA 570 (Revised), if adequate disclosure of a material uncertainty is made in the financial statements, the auditor shall express an unmodified opinion and include a separate section in the auditor's report titled 'Material Uncertainty Related to Going Concern'.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 570",
+        "Going Concern",
+        "Material Uncertainty"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_021",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "What is the consequence under SA 570 (Revised) if management's assessment of going concern discloses a material uncertainty, but that uncertainty is NOT adequately disclosed in the financial statements?",
+      "options": [
+        "The auditor shall express a qualified opinion or an adverse opinion",
+        "The auditor shall express an unmodified opinion with an Emphasis of Matter paragraph",
+        "The auditor shall issue a clean report with an Other Matter paragraph",
+        "The auditor shall take no action if the business is profitable"
+      ],
+      "answerIndex": 0,
+      "explanation": "Per SA 570 (Revised), if adequate disclosure is not made in the financial statements, the auditor shall express a qualified opinion or an adverse opinion, as appropriate, in accordance with SA 705.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 570",
+        "Inadequate Disclosure",
+        "Qualified or Adverse Opinion"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_022",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "Under Section 143(3) of the Companies Act, 2013, what must the auditor report regarding the financial statements' compliance with Accounting Standards?",
+      "options": [
+        "Whether the financial statements comply with the Accounting Standards referred to in Section 133",
+        "Whether the financial statements comply with International Financial Reporting Standards exclusively",
+        "Whether the financial statements comply with tax audit guidelines issued by CBDT",
+        "Whether the financial statements comply with the internal policies of the parent company"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 143(3)(e) of the Companies Act, 2013 requires the auditor to state whether, in their opinion, the financial statements comply with the Accounting Standards referred to in Section 133.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Companies Act 2013",
+        "Section 143(3)",
+        "Accounting Standards"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_023",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "What should the date of the independent auditor's report be, according to SA 700 (Revised)?",
+      "options": [
+        "The date on which the annual general meeting (AGM) is held",
+        "The date on which the auditor has obtained sufficient appropriate audit evidence on which to base the opinion on the financial statements",
+        "The date on which management signs the directors' report",
+        "The financial year-end date"
+      ],
+      "answerIndex": 1,
+      "explanation": "SA 700 (Revised) specifies that the auditor's report shall be dated no earlier than the date on which the auditor has obtained sufficient appropriate audit evidence on which to base the opinion on the financial statements, including evidence that the financial statements have been prepared.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "SA 700",
+        "Date of Audit Report",
+        "Audit Evidence"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_024",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "Under CARO 2020, does the auditor need to report on whether any proceedings have been initiated or are pending against the company for holding any benami property under the Benami Transactions (Prohibition) Act, 1988?",
+      "options": [
+        "No, this is outside the scope of CARO 2020",
+        "Yes, reporting on benami property proceedings is specifically required under CARO 2020 clause (xi)",
+        "Only if the company is a public sector undertaking",
+        "Only if requested by the Income Tax Department"
+      ],
+      "answerIndex": 1,
+      "explanation": "Clause (xi) of paragraph 3 of CARO 2020 requires reporting on whether any proceedings have been initiated or are pending against the company for holding any benami property under the Benami Transactions (Prohibition) Act, 1988 and rules made thereunder.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "CARO 2020",
+        "Benami Property",
+        "Clause (xi)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_025",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "Which of the following describes an 'Adverse Opinion' issued under SA 705 (Revised)?",
+      "options": [
+        "The auditor expresses no opinion because of a severe scope limitation",
+        "The auditor states that the financial statements give a true and fair view except for specific misstatements",
+        "The auditor states that the financial statements do not give a true and fair view in accordance with the financial reporting framework due to pervasive misstatements",
+        "The auditor highlights a significant uncertainty without modifying the core opinion"
+      ],
+      "answerIndex": 2,
+      "explanation": "An adverse opinion is expressed when the auditor, having obtained sufficient appropriate audit evidence, concludes that misstatements, individually or in the aggregate, are both material and pervasive to the financial statements.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 705",
+        "Adverse Opinion",
+        "True and Fair View"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_026",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "In an audit report, if an Emphasis of Matter paragraph is included, can it be placed before the Opinion section?",
+      "options": [
+        "Yes, if management prefers it to be prominent",
+        "No, SA 706 (Revised) requires the EOM paragraph to be included subsequent to the Opinion and Basis for Opinion sections",
+        "Yes, provided it is highlighted in bold font",
+        "It can be placed anywhere in the Notes to Accounts"
+      ],
+      "answerIndex": 1,
+      "explanation": "SA 706 (Revised) mandates that if the auditor includes an Emphasis of Matter paragraph in the auditor's report, the auditor shall locate it separately with an appropriate heading, after the Opinion and Basis for Opinion sections.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "SA 706",
+        "Emphasis of Matter",
+        "Paragraph Placement"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_027",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "Under Section 143(1) of the Companies Act, 2013, what inquiry is the auditor specifically required to make regarding loans and advances?",
+      "options": [
+        "Whether loans and advances made by the company are properly secured and whether terms are prejudicial to the interest of the company or its members",
+        "Whether loans and advances exceed 50% of the share capital",
+        "Whether all loans carry an interest rate higher than the bank rate",
+        "Whether loans were disbursed in cash exceeding INR 10,000"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 143(1)(a) requires the auditor to inquire whether loans and advances made by the company on the basis of security have been properly secured and whether the terms on which they have been made are prejudicial to the interests of the company or its members.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Companies Act 2013",
+        "Section 143(1)",
+        "Loans and Advances"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_028",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "When can an auditor sign the independent auditor's report of a company?",
+      "options": [
+        "Before the financial statements are approved by the Board of Directors",
+        "After the financial statements have been approved by the Board of Directors and signed by authorized signatories",
+        "At any time during the financial year regardless of financial statement preparation",
+        "Only after the Annual General Meeting concludes"
+      ],
+      "answerIndex": 1,
+      "explanation": "The auditor can sign the audit report only after the financial statements have been approved by the Board of Directors under Section 134(5) of the Companies Act, 2013 and signed in accordance with statutory requirements.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Companies Act 2013",
+        "Board Approval",
+        "Audit Report Signature"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_029",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "What is the requirement under CARO 2020 regarding unrecorded income surrendered or disclosed as income in tax assessments?",
+      "options": [
+        "No reporting required under CARO 2020",
+        "Whether any transactions not recorded in the books of account have been surrendered or disclosed as income during the year in the tax assessments under the Income Tax Act, and whether such income has been properly recorded in the books",
+        "Only report if tax penalty exceeds INR 1 crore",
+        "Report whether income tax returns were filed before the due date"
+      ],
+      "answerIndex": 1,
+      "explanation": "Clause (xix) of paragraph 3 of CARO 2020 requires the auditor to report on whether any unrecorded transactions have been surrendered or disclosed as income in tax assessments and whether they were recorded in the books.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "CARO 2020",
+        "Tax Assessments",
+        "Clause (xix)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_audit-8_030",
+      "kind": "normal",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "prompt": "Under SA 700 (Revised), what constitutes the signature of the auditor in the independent auditor's report?",
+      "options": [
+        "Only the name of the audit firm in block letters",
+        "The personal name of the engagement partner along with the firm's registration number and membership number, signed in the personal name of the individual auditor",
+        "A digital QR code generated by the Ministry of Corporate Affairs",
+        "The signature of the Managing Director of the auditee company"
+      ],
+      "answerIndex": 1,
+      "explanation": "The auditor's report must be signed in the personal name of the auditor and/or engagement partner, along with their membership number and the firm's registration number assigned by ICAI.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "SA 700",
+        "Auditor Signature",
+        "Firm Registration Number"
+      ],
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_audit-8_01",
+      "kind": "scenario",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "passage": "Zenith Pharma Ltd., a listed pharmaceutical company, is undergoing its annual audit for the year ended March 31, 2026. During the audit, the statutory auditors discovered that a massive inventory valuation dispute with tax authorities has been ongoing. The amount involved is material but restricted to specific inventory batches in one manufacturing plant. Furthermore, the management refused to allow the auditor to inspect third-party confirmation replies for trade receivables amounting to 4% of total assets, citing confidentiality agreements with overseas clients.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-8_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-8_01",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-8",
+          "subject": "Audit",
+          "prompt": "Based on the inventory valuation dispute (which is material but restricted to specific batches), how should the auditor evaluate its impact on the audit opinion under SA 705?",
+          "options": [
+            "Issue an Adverse opinion because inventory is a core asset",
+            "Issue a Qualified opinion because the misstatement is material but not pervasive",
+            "Issue a Disclaimer of opinion due to lack of cooperation",
+            "Issue an Unmodified opinion with an Emphasis of Matter paragraph"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under SA 705, when misstatements are material but not pervasive (confined to specific batches/items), the appropriate modification is a qualified opinion.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 705",
+            "Inventory Valuation",
+            "Qualified Opinion"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-8_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-8_01",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-8",
+          "subject": "Audit",
+          "prompt": "Regarding the management's refusal to permit inspection of third-party receivable confirmations (representing 4% of total assets), how should the auditor classify this situation?",
+          "options": [
+            "A management-imposed scope limitation",
+            "A routine accounting policy disagreement",
+            "A subsequent event disclosure requirement",
+            "A key audit matter only"
+          ],
+          "answerIndex": 0,
+          "explanation": "Denying access to necessary audit evidence, such as receivable confirmations, constitutes a scope limitation imposed by management under SA 705.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 705",
+            "Scope Limitation",
+            "Management Imposed"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-8_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-8_01",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-8",
+          "subject": "Audit",
+          "prompt": "Since Zenith Pharma Ltd. is a listed entity, what standard governs the communication of significant audit matters like the inventory dispute in the audit report?",
+          "options": [
+            "SA 700 (Revised)",
+            "SA 701",
+            "SA 706 (Revised)",
+            "SA 570 (Revised)"
+          ],
+          "answerIndex": 1,
+          "explanation": "SA 701 governs the communication of Key Audit Matters for listed entities, highlighting matters of most significance.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 701",
+            "Listed Entity",
+            "Key Audit Matters"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-8_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-8_01",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-8",
+          "subject": "Audit",
+          "prompt": "Where in the independent auditor's report should the specific reasons for modifying the opinion due to the inventory and receivable issues be articulated?",
+          "options": [
+            "In the Basis for Qualified Opinion section immediately following the Auditor's Opinion",
+            "In the Notes to Accounts prepared by management",
+            "In the Director's Report under Corporate Governance",
+            "In the Other Information section"
+          ],
+          "answerIndex": 0,
+          "explanation": "SA 705 requires that when the opinion is modified, the 'Basis for Qualified Opinion' section must be placed immediately after the Auditor's Opinion section to explain the reasons.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 705",
+            "Basis for Opinion",
+            "Report Structure"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-8_02",
+      "kind": "scenario",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "passage": "Sunrise Textiles Ltd., an unlisted public company, has incurred net operating losses for three consecutive years. Its current liabilities exceed its current assets by INR 45 crores. The company's key lender has issued a formal notice recalling a term loan due to covenant breaches. However, management has prepared cash flow projections showing that an impending sale of surplus land in the next quarter will generate adequate liquidity to settle the term loan and fund operations. Management has made adequate disclosures regarding these conditions and plans in the notes to the financial statements.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-8_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-8_02",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-8",
+          "subject": "Audit",
+          "prompt": "Which auditing standard primarily governs the auditor's responsibilities relating to going concern in this audit engagement?",
+          "options": [
+            "SA 500",
+            "SA 570 (Revised)",
+            "SA 701",
+            "SA 710"
+          ],
+          "answerIndex": 1,
+          "explanation": "SA 570 (Revised) deals with the auditor's responsibilities in the audit of financial statements relating to going concern.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 570",
+            "Going Concern",
+            "Auditor Responsibilities"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-8_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-8_02",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-8",
+          "subject": "Audit",
+          "prompt": "Given that a material uncertainty exists regarding going concern but adequate disclosure has been made in the financial statements, how should the auditor report on this?",
+          "options": [
+            "Issue a Disclaimer of opinion",
+            "Issue an Unmodified opinion with a separate section titled 'Material Uncertainty Related to Going Concern'",
+            "Issue an Adverse opinion because of covenant breaches",
+            "Issue a clean report without mentioning the uncertainty"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under SA 570 (Revised), if adequate disclosure of a material uncertainty is made, the auditor expresses an unmodified opinion and includes a distinct section titled 'Material Uncertainty Related to Going Concern'.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 570",
+            "Material Uncertainty",
+            "Unmodified Opinion"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-8_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-8_02",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-8",
+          "subject": "Audit",
+          "prompt": "If management refused to disclose the material uncertainty regarding the term loan recall and land sale in the notes to accounts, what would be the appropriate audit report modification?",
+          "options": [
+            "Qualified or Adverse opinion",
+            "Emphasis of Matter paragraph only",
+            "Unmodified opinion with Other Matter paragraph",
+            "No modification required"
+          ],
+          "answerIndex": 0,
+          "explanation": "Per SA 570 (Revised), if adequate disclosure is not made in the financial statements, the auditor shall express a qualified opinion or an adverse opinion.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 570",
+            "Inadequate Disclosure",
+            "Adverse Opinion"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-8_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-8_02",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-8",
+          "subject": "Audit",
+          "prompt": "Since Sunrise Textiles Ltd. is an unlisted company, is it mandatory for the auditor to communicate Key Audit Matters under SA 701?",
+          "options": [
+            "Yes, for all companies under the Companies Act, 2013",
+            "No, unless required by law/regulation or voluntarily decided by the auditor",
+            "Yes, whenever losses exceed INR 10 crores",
+            "No, SA 701 applies exclusively to banking companies"
+          ],
+          "answerIndex": 1,
+          "explanation": "SA 701 applies to audits of listed entities. For unlisted entities like Sunrise Textiles Ltd., KAM communication is not mandatory unless required by law/regulation or elected by the auditor.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 701",
+            "Key Audit Matters",
+            "Unlisted Entities"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-8_03",
+      "kind": "scenario",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "passage": "M/s Apex & Associates, Chartered Accountants, are auditing Omega Engineering Ltd. for the financial year 2025-26. The financial statements include corresponding figures for the prior year (2024-25). The prior year's financial statements were audited by a predecessor auditor, whose report expressed a qualified opinion due to unverified work-in-progress inventory. In the current year, the matter giving rise to the prior qualification has been completely resolved. However, during the current audit, a new and material dispute regarding patent infringement arises, which remains unresolved at the signing date.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-8_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-8_03",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-8",
+          "subject": "Audit",
+          "prompt": "Which auditing standard governs the auditor's responsibilities regarding comparative information and corresponding figures in this scenario?",
+          "options": [
+            "SA 700",
+            "SA 710",
+            "SA 705",
+            "SA 706"
+          ],
+          "answerIndex": 1,
+          "explanation": "SA 710 deals with the auditor's responsibilities relating to comparative information, including corresponding figures and comparative financial statements.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 710",
+            "Comparative Information",
+            "Corresponding Figures"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-8_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-8_03",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-8",
+          "subject": "Audit",
+          "prompt": "How should the auditor report on the prior year's qualification given that the matter has been fully resolved in the current period?",
+          "options": [
+            "The current auditor's report generally should not refer to the previous qualification since it is resolved",
+            "The current auditor must re-issue the predecessor's qualified report",
+            "The current auditor must express an adverse opinion on the current year's figures",
+            "The current auditor must add an Emphasis of Matter regarding the old WIP"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under SA 710, when the prior period matter that caused a qualification is resolved, the current period opinion does not need to refer to the previous qualification.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 710",
+            "Resolved Qualification",
+            "Corresponding Figures"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-8_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-8_03",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-8",
+          "subject": "Audit",
+          "prompt": "How should the current auditor deal with the new and material patent infringement dispute that is unresolved at the signing date?",
+          "options": [
+            "Ignore it because it relates to legal matters",
+            "Evaluate its materiality and pervasiveness and modify the current year's audit opinion accordingly (qualified or adverse)",
+            "Issue an unmodified opinion with an Other Matter paragraph",
+            "Issue a disclaimer of opinion automatically without assessment"
+          ],
+          "answerIndex": 1,
+          "explanation": "A current period material misstatement or scope limitation regarding a patent dispute requires the auditor to modify the opinion on the current financial statements in accordance with SA 705.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 705",
+            "Current Period Misstatement",
+            "Modified Opinion"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-8_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-8_03",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-8",
+          "subject": "Audit",
+          "prompt": "If the predecessor auditor's report on the prior period's financial statements was NOT reissued, what paragraph may the current auditor include in the report under SA 710?",
+          "options": [
+            "An Other Matter paragraph stating that the prior period financial statements were audited by a predecessor auditor",
+            "An Emphasis of Matter paragraph modifying the opinion on prior balances",
+            "A Key Audit Matter paragraph detailing predecessor fees",
+            "A CARO reporting clause on predecessor competence"
+          ],
+          "answerIndex": 0,
+          "explanation": "SA 710 permits the current auditor to include an Other Matter paragraph indicating that the prior period financial statements were audited by a predecessor auditor, the opinion expressed, and the date thereof.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 710",
+            "Predecessor Auditor",
+            "Other Matter Paragraph"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-8_04",
+      "kind": "scenario",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "passage": "Delta Commercial Ltd. is a manufacturing company registered under the Companies Act, 2013. During the statutory audit for 2025-26, the auditor reviews compliance with CARO 2020 and the Companies Act, 2013. The auditor finds that the company has defaulted in repayment of dues to a financial institution for 90 days. Furthermore, the company has taken unsecured loans from three directors, the terms of which the auditor suspects may be prejudicial to the company's interest. Lastly, management has used short-term working capital borrowings amounting to INR 12 crores to fund long-term capital machinery acquisitions.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-8_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-8_04",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-8",
+          "subject": "Audit",
+          "prompt": "Under CARO 2020, how should the auditor report on the default in repayment of dues to the financial institution?",
+          "options": [
+            "Report under clause (ix) regarding default in repayment of loans or other borrowings to any financial institution, bank, government, or debenture holders",
+            "Report under clause (i) on Fixed Assets",
+            "Report under Section 143(3) only without CARO reference",
+            "Ignore if settled before the AGM"
+          ],
+          "answerIndex": 0,
+          "explanation": "Paragraph 3(ix) of CARO 2020 requires reporting on whether the company has defaulted in repayment of loans or other borrowings or in the payment of interest thereon to any lender.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "CARO 2020",
+            "Default in Repayment",
+            "Clause (ix)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-8_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-8_04",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-8",
+          "subject": "Audit",
+          "prompt": "Regarding the unsecured loans taken from directors, which statutory inquiry under Section 143(1) of the Companies Act, 2013 is directly triggered?",
+          "options": [
+            "Whether loans and advances made by the company are prejudicial, and whether loans taken are properly managed",
+            "Whether terms on which loans and advances have been made are prejudicial to the interests of the company or its members",
+            "Whether directors have paid tax on such loans",
+            "Whether loans exceed the paid-up capital of the company"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 143(1)(a) requires the auditor to inquire whether terms on which loans and advances made by the company are prejudicial to the interests of the company or its members.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Companies Act 2013",
+            "Section 143(1)",
+            "Loans and Advances"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-8_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-8_04",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-8",
+          "subject": "Audit",
+          "prompt": "Which specific CARO 2020 clause requires reporting when short-term funds are utilized for long-term purposes?",
+          "options": [
+            "Clause (ix)(e) regarding funds raised on short term basis being used for long term purposes",
+            "Clause (iii) regarding loans granted to parties covered in register",
+            "Clause (vii) regarding statutory dues",
+            "Clause (xi) regarding managerial remuneration"
+          ],
+          "answerIndex": 0,
+          "explanation": "CARO 2020 paragraph 3(ix)(e) requires reporting on whether the company has taken any funds from any entity or person on account of or to meet the obligations of its subsidiaries, associates, or joint ventures, and clause (ix)(f) covers short-term funds used for long-term purposes.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "CARO 2020",
+            "Short-term vs Long-term Funds",
+            "Clause (ix)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-8_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-8_04",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-8",
+          "subject": "Audit",
+          "prompt": "Where must the CARO 2020 report be presented in relation to the main independent auditor's report under the Companies Act, 2013?",
+          "options": [
+            "As an annexure/addendum attached to the independent auditor's report",
+            "Inside the Director's Report as a separate chapter",
+            "Submitted directly to SEBI without attaching to the audit report",
+            "As part of the Notes to Accounts"
+          ],
+          "answerIndex": 0,
+          "explanation": "The CARO report is issued as an annexure to the independent auditor's report under the Companies Act, 2013, addressing the specific matters prescribed by the Central Government.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "CARO 2020",
+            "Report Annexure",
+            "Companies Act 2013"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_audit-8_05",
+      "kind": "scenario",
+      "chapterId": "audit-8",
+      "subject": "Audit",
+      "passage": "Aura Tech Solutions Ltd. is a software development company. During the audit for the year ended March 31, 2026, the engagement partner decided to include an Emphasis of Matter (EOM) paragraph in the auditor's report to highlight a catastrophic fire incident that occurred at the company's primary server facility after the balance sheet date but before the signing of the audit report. Management has made full and appropriate disclosure of this event in Note 24 of the financial statements. Additionally, the auditor observed that the financial statements include a supplementary unaudited schedule required by a specific industry regulator.",
+      "sourceRef": {
+        "paper": "Paper 5: Auditing and Ethics",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Audit Report"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_audit-8_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-8_05",
+          "sequenceInScenario": 1,
+          "chapterId": "audit-8",
+          "subject": "Audit",
+          "prompt": "Which auditing standard governs the inclusion of the Emphasis of Matter paragraph regarding the fire incident?",
+          "options": [
+            "SA 700",
+            "SA 706 (Revised)",
+            "SA 560",
+            "SA 570"
+          ],
+          "answerIndex": 1,
+          "explanation": "SA 706 (Revised) deals with Emphasis of Matter paragraphs and Other Matter paragraphs in the auditor's report.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 706",
+            "Emphasis of Matter",
+            "Server Fire Incident"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-8_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-8_05",
+          "sequenceInScenario": 2,
+          "chapterId": "audit-8",
+          "subject": "Audit",
+          "prompt": "Is the inclusion of the EOM paragraph for the fire incident a substitute for modifying the auditor's opinion?",
+          "options": [
+            "Yes, EOM replaces a qualified opinion when management is cooperative",
+            "No, an Emphasis of Matter paragraph is not a modification of the auditor's opinion",
+            "Yes, because the event occurred after the balance sheet date",
+            "No, but it automatically converts an unmodified opinion into a disclaimer"
+          ],
+          "answerIndex": 1,
+          "explanation": "SA 706 explicitly clarifies that an Emphasis of Matter paragraph is not a modification of the auditor's opinion; the opinion remains unmodified.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "SA 706",
+            "Unmodified Opinion",
+            "EOM Nature"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-8_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-8_05",
+          "sequenceInScenario": 3,
+          "chapterId": "audit-8",
+          "subject": "Audit",
+          "prompt": "How should the auditor report on the supplementary unaudited schedule required by the industry regulator?",
+          "options": [
+            "Using an Other Matter paragraph under SA 706 to draw attention to a matter other than those presented in financial statements",
+            "By modifying the core opinion on the main financial statements",
+            "By issuing a separate audit report with a qualified opinion",
+            "By ignoring the supplementary schedule entirely"
+          ],
+          "answerIndex": 0,
+          "explanation": "An Other Matter paragraph is used when the auditor needs to communicate a matter other than those presented or disclosed in the financial statements that is relevant to users' understanding, such as reporting on supplementary information.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 706",
+            "Other Matter Paragraph",
+            "Supplementary Information"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_audit-8_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_audit-8_05",
+          "sequenceInScenario": 4,
+          "chapterId": "audit-8",
+          "subject": "Audit",
+          "prompt": "Where should the Emphasis of Matter paragraph regarding Note 24 be positioned within the independent auditor's report?",
+          "options": [
+            "Before the Auditor's Opinion section",
+            "After the Opinion and Basis for Opinion sections, and before Key Audit Matters (if applicable)",
+            "As a footnote on the Balance Sheet",
+            "In the Report on Other Legal and Regulatory Requirements"
+          ],
+          "answerIndex": 1,
+          "explanation": "SA 706 (Revised) requires the EOM paragraph to be located separately in the auditor's report, after the Opinion and Basis for Opinion sections.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "SA 706",
+            "Paragraph Placement",
+            "Audit Report Formatting"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

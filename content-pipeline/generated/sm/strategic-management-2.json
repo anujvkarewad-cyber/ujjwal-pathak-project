@@ -1,0 +1,1373 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "strategic-management-2",
+  "subject": "SM",
+  "paper": "Paper 6: Financial Management and Strategic Management",
+  "module": "Paper 6B",
+  "chapterNumber": 2,
+  "chapterTitle": "Strategic Analysis: External Environment",
+  "generatedAt": "2026-08-16T14:59:56.059Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_strategic-management-2_001",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "Which of the following best defines the 'External Environment' in the context of strategic management?",
+      "options": [
+        "The internal resources and capabilities controlled by top management",
+        "All factors outside the organization that provide opportunities and pose threats",
+        "The operational efficiency of manufacturing plants and internal departments",
+        "The financial leverage and capital structure of the enterprise"
+      ],
+      "answerIndex": 1,
+      "explanation": "According to ICAI SM Chapter 2, the external environment consists of all external factors, conditions, and influences that affect an organization's functioning, primarily presenting opportunities and threats.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "External Environment",
+        "Basic Concepts"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_002",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "Which component of the macro-environment involves factors such as interest rates, inflation rates, disposable income, and GDP growth?",
+      "options": [
+        "Technological Environment",
+        "Socio-Cultural Environment",
+        "Economic Environment",
+        "Political-Legal Environment"
+      ],
+      "answerIndex": 2,
+      "explanation": "The economic environment comprises factors that affect consumer purchasing power and spending patterns, including GDP, inflation, interest rates, and employment levels.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Macro Environment",
+        "Economic Factors"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_003",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "What does PESTLE analysis stand for?",
+      "options": [
+        "Production, Economic, Social, Technological, Legal, Ethical",
+        "Political, Economic, Social, Technological, Legal, Environmental",
+        "Public, Ecological, Scientific, Tax, Labour, Economic",
+        "Process, Efficiency, Strategic, Tactical, Leadership, Execution"
+      ],
+      "answerIndex": 1,
+      "explanation": "PESTLE is an acronym for Political, Economic, Social, Technological, Legal, and Environmental factors used for scanning the macro-environment.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "PESTLE Analysis",
+        "Macro Environment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_004",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "In Michael Porter's Five Forces model, which force refers to the bargaining power of the buyers?",
+      "options": [
+        "The power of customers to demand lower prices or higher quality",
+        "The threat posed by new entrants entering the geographic market",
+        "The ability of suppliers to dictate raw material costs",
+        "The rivalry among existing competitors in the same industry"
+      ],
+      "answerIndex": 0,
+      "explanation": "Buyer power represents the pressure that customers can put on businesses to get them to provide lower prices, higher quality, or better service.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Porter's Five Forces",
+        "Buyer Power"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_005",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "Which of the following is considered a barrier to entry under Michael Porter's Five Forces model?",
+      "options": [
+        "High buyer concentration",
+        "Substantial economies of scale",
+        "Low product differentiation",
+        "High availability of substitute products"
+      ],
+      "answerIndex": 1,
+      "explanation": "Economies of scale act as a strong entry barrier because new entrants are forced to start at a disadvantageous cost structure or risk large-scale overproduction.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Porter's Five Forces",
+        "Barriers to Entry"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_006",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "An organization conducts environmental scanning to identify early signals of potential changes in the environment. Which characteristic of the environment makes this scanning particularly challenging?",
+      "options": [
+        "Static and predictable nature",
+        "Complexity and dynamism",
+        "Uniformity across global markets",
+        "Absolute certainty of future events"
+      ],
+      "answerIndex": 1,
+      "explanation": "The business environment is characterized by complexity, dynamism, and uncertainty, making environmental scanning essential yet challenging for strategists.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Environmental Scanning",
+        "Environment Characteristics"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_007",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "Which of the following best describes 'Strategic Intent'?",
+      "options": [
+        "The tactical operational plan for next quarter's budget",
+        "The leverage of an organization's internal resource capabilities to achieve a grand purpose",
+        "The compliance checklist for legal regulatory bodies",
+        "The daily schedule of production supervisors"
+      ],
+      "answerIndex": 1,
+      "explanation": "Strategic intent refers to the leverage of a firm's internal resource capabilities and core competencies to accomplish a grandiose, overarching organizational purpose.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Strategic Intent",
+        "Foundations"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_008",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "In the context of the macro-environment, demographic shifts like an aging population fall under which broad heading?",
+      "options": [
+        "Technological environment",
+        "Political-legal environment",
+        "Socio-cultural environment",
+        "Global economic environment"
+      ],
+      "answerIndex": 2,
+      "explanation": "Demographic trends, including age distribution, lifestyle changes, and cultural shifts, form a core part of the socio-cultural environment.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Socio-Cultural",
+        "Macro Environment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_009",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "What is the primary objective of industry and competitive analysis (I&CA)?",
+      "options": [
+        "To determine the internal salary structures of competing firms",
+        "To understand industry structure, attractiveness, and competitor positioning",
+        "To evaluate individual employee performance appraisals",
+        "To audit the financial statements of external suppliers"
+      ],
+      "answerIndex": 1,
+      "explanation": "Industry and competitive analysis helps a firm understand the structural dynamics of its industry, assess industry attractiveness, and evaluate competitors' strengths and weaknesses.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Industry Analysis",
+        "Competitive Analysis"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_010",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "Which of the following represents a 'Threat of Substitutes' rather than a 'Competitive Rivalry'?",
+      "options": [
+        "Two smartphone brands cutting prices to capture market share",
+        "Airlines competing aggressively on domestic flight routes",
+        "Video conferencing software replacing business travel",
+        "Two soft drink giants launching identical promotional campaigns"
+      ],
+      "answerIndex": 2,
+      "explanation": "Video conferencing serves a completely different technological/functional category that substitutes for business travel, representing the threat of substitutes rather than direct industry rivalry.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Porter's Five Forces",
+        "Substitutes"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_011",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "When a company analyzes how government tax policies, tariff regulations, and employment laws impact its operations, which dimension of PESTLE is it evaluating?",
+      "options": [
+        "Technological and Ecological",
+        "Political and Legal",
+        "Economic and Social",
+        "Competitive and Industrial"
+      ],
+      "answerIndex": 1,
+      "explanation": "Tax policies, tariffs, and labour or employment laws fall directly within the political-legal dimension of the macro-environment.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "PESTLE",
+        "Political-Legal"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_012",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "Which scanning technique involves monitoring a broad range of environmental factors to detect early changes and trends?",
+      "options": [
+        "Auditing",
+        "Forecasting",
+        "Scanning",
+        "Benchmarking"
+      ],
+      "answerIndex": 2,
+      "explanation": "Environmental scanning involves general surveillance of all external environmental sectors to detect early warning signals of changes.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Environmental Analysis",
+        "Scanning"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_013",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "What distinguishes 'Forecasting' from 'Environmental Monitoring' in strategic analysis?",
+      "options": [
+        "Forecasting develops plausible projections of directional outcomes, while monitoring tracks environmental changes over time.",
+        "Forecasting is exclusively used for internal cost accounting.",
+        "Monitoring is only performed by external statutory auditors.",
+        "There is no conceptual difference between the two terms."
+      ],
+      "answerIndex": 0,
+      "explanation": "Monitoring tracks the evolution of environmental trends, whereas forecasting develops feasible projections (predictions) of what might happen and when.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Forecasting",
+        "Monitoring"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_014",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "According to strategic management principles, why must an organization constantly monitor the macro-environment?",
+      "options": [
+        "To eliminate all financial risks permanently",
+        "To convert external threats into opportunities and align strategy with changing realities",
+        "To automate internal factory floor operations",
+        "To dictate government fiscal policies"
+      ],
+      "answerIndex": 1,
+      "explanation": "Continuous macro-environmental monitoring allows firms to anticipate changes, dodge threats, capture emerging opportunities, and maintain strategic alignment.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Macro Environment",
+        "Strategic Alignment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_015",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "In the context of competitive analysis, what is meant by 'strategic groups'?",
+      "options": [
+        "A group of unrelated diversified conglomerates owned by the same holding company",
+        "A set of firms within an industry that follow similar strategies along similar dimensions",
+        "An informal cartel of suppliers fixing raw material prices",
+        "A consortium of regulatory agencies overseeing industry standards"
+      ],
+      "answerIndex": 1,
+      "explanation": "Strategic groups consist of rival firms with similar competitive approaches and positions in an industry, sharing key characteristics such as pricing, product quality, or distribution channels.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Strategic Groups",
+        "Competitive Analysis"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_016",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "Which of the following is a primary limitation of PESTLE analysis if used in isolation?",
+      "options": [
+        "It provides too much granular detail about internal employee morale.",
+        "It focuses solely on broad macro factors and can result in superficial lists without strategic prioritization.",
+        "It is legally prohibited for publicly traded corporations.",
+        "It exclusively measures historical financial statements."
+      ],
+      "answerIndex": 1,
+      "explanation": "PESTLE provides a broad macro-environmental checklist; if not carefully prioritized and connected to specific business impacts, it can yield long, unactionable lists.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "PESTLE",
+        "Limitations"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_017",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "High switching costs for buyers in an industry typically lead to which of the following industry dynamics?",
+      "options": [
+        "Increased buyer bargaining power",
+        "Decreased buyer bargaining power",
+        "Immediate industry deregulation",
+        "Zero rivalry among competitors"
+      ],
+      "answerIndex": 1,
+      "explanation": "When switching costs are high, buyers find it costly and inconvenient to move to a competitor's product, which significantly reduces their bargaining power.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Porter's Five Forces",
+        "Switching Costs"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_018",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "Which level of the business environment includes customers, competitors, suppliers, and intermediaries?",
+      "options": [
+        "Macro-environment",
+        "Micro-environment (Task/Operating environment)",
+        "Global socio-economic environment",
+        "Internal organizational environment"
+      ],
+      "answerIndex": 1,
+      "explanation": "The micro-environment (also known as the task or operating environment) consists of immediate external forces like customers, suppliers, competitors, and intermediaries that directly affect the firm.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Micro Environment",
+        "Operating Environment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_019",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "What does 'industry attractiveness' mean in the context of Porter's Five Forces framework?",
+      "options": [
+        "The aesthetic appeal of industry product packaging",
+        "The overall profit potential of the industry as determined by the collective strength of the five forces",
+        "The popularity of the industry among stock market day traders",
+        "The ease of recruiting fresh graduates into the sector"
+      ],
+      "answerIndex": 1,
+      "explanation": "Industry attractiveness refers to the overall profit potential of an industry. The weaker the five forces collectively, the more attractive (profitable) the industry is.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Porter's Five Forces",
+        "Industry Attractiveness"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_020",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "Which analytical framework specifically helps strategists assess how environmental changes (Political, Economic, Social, Technological, Legal, Environmental) impact the organization?",
+      "options": [
+        "BCG Matrix",
+        "PESTLE Analysis",
+        "GE Nine-Cell Matrix",
+        "ANSCHOFF Matrix"
+      ],
+      "answerIndex": 1,
+      "explanation": "PESTLE analysis is specifically structured to evaluate Political, Economic, Social, Technological, Legal, and Environmental macro-factors.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "PESTLE Analysis",
+        "Frameworks"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_021",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "When suppliers have high bargaining power, what is the likely impact on manufacturing firms in that industry?",
+      "options": [
+        "Lower raw material costs and higher profit margins",
+        "Higher input costs, squeezed profit margins, and restricted supply flexibility",
+        "Zero competition among industry rivals",
+        "Immediate reduction in statutory tax rates"
+      ],
+      "answerIndex": 1,
+      "explanation": "Powerful suppliers can dictate higher prices, demand favorable credit terms, or restrict quality, thereby squeezing the profit margins of downstream manufacturing firms.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Porter's Five Forces",
+        "Supplier Power"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_022",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "Why is 'Assessing' an important step in the environmental analysis process?",
+      "options": [
+        "It involves determining the timing and significance of environmental changes and trends for the firm's strategy.",
+        "It replaces the need for any internal financial audits.",
+        "It sets the recruitment salaries for junior executives.",
+        "It eliminates all external business uncertainty."
+      ],
+      "answerIndex": 0,
+      "explanation": "Assessment involves evaluating the timing, significance, and implications of scanned and monitored environmental trends on the organization's strategic posture.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Environmental Analysis",
+        "Assessment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_023",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "Which of the following best characterizes a turbulent and dynamic external environment?",
+      "options": [
+        "Fewer competitors, stable customer preferences, and unchanging regulations",
+        "Rapid technological shifts, volatile consumer tastes, and unpredictable regulatory changes",
+        "Fixed commodity prices and guaranteed long-term sales contracts",
+        "Absolute certainty regarding macroeconomic indicators for the next decade"
+      ],
+      "answerIndex": 1,
+      "explanation": "A dynamic and turbulent environment features rapid, unpredictable changes in technology, customer preferences, competitive actions, and regulations.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Dynamic Environment",
+        "Uncertainty"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_024",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "In Porter's Five Forces, which condition tends to increase the intensity of rivalry among existing competitors?",
+      "options": [
+        "Slow industry growth and high fixed costs",
+        "High product differentiation and strong brand loyalty",
+        "A large number of exclusive supplier agreements",
+        "Low exit barriers across the entire sector"
+      ],
+      "answerIndex": 0,
+      "explanation": "Slow industry growth leads to fierce competition for market share, while high fixed costs create pressure to operate at full capacity, intensifying rivalry.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Porter's Five Forces",
+        "Competitive Rivalry"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_025",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "What is the primary purpose of conducting a competitive intelligence exercise?",
+      "options": [
+        "To engage in corporate espionage and illegal wiretapping",
+        "To ethically gather and analyze information about competitors' strategies, capabilities, and vulnerabilities",
+        "To audit internal payroll systems for tax compliance",
+        "To negotiate joint ventures with government regulators"
+      ],
+      "answerIndex": 1,
+      "explanation": "Competitive intelligence is the legal and ethical collection and analysis of information regarding competitors' capabilities, intentions, and performance to improve strategic decision-making.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Competitive Intelligence",
+        "Analysis"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_026",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "Which of the following represents an environmental 'opportunity' for a digital education startup?",
+      "options": [
+        "A sudden nationwide internet blackout lasting three weeks",
+        "Government mandate introducing high-speed broadband connectivity in rural schools",
+        "Stricter data privacy penalties imposed on tech firms",
+        "Increasing cost of cloud server hosting"
+      ],
+      "answerIndex": 1,
+      "explanation": "High-speed broadband connectivity in rural schools creates a favorable external condition (an opportunity) for a digital education startup to expand its market.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Opportunities & Threats",
+        "Environmental Analysis"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_027",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "How does the 'ecological/environmental' dimension in PESTLE differ from the general external environment?",
+      "options": [
+        "It specifically focuses on green initiatives, climate change, carbon emissions, and sustainability regulations.",
+        "It only examines internal office ergonomics.",
+        "It is restricted solely to macroeconomic monetary policy.",
+        "It deals exclusively with competitor pricing strategies."
+      ],
+      "answerIndex": 0,
+      "explanation": "The ecological aspect of PESTLE focuses on environmental protection laws, climate change considerations, waste disposal regulations, and sustainability expectations.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "PESTLE",
+        "Ecological Environment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_028",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "When an incumbent firm holds patents and proprietary know-how that prevent new entrants from easily copying its product, which force of Porter's model is primarily mitigated?",
+      "options": [
+        "Bargaining power of buyers",
+        "Threat of substitute products",
+        "Threat of new entrants",
+        "Bargaining power of suppliers"
+      ],
+      "answerIndex": 2,
+      "explanation": "Patents and proprietary technology act as powerful entry barriers, reducing the threat of new entrants into the industry.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Porter's Five Forces",
+        "New Entrants"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_029",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "What is the sequence of stages in the environmental analysis process as outlined in strategic management theory?",
+      "options": [
+        "Scanning, Monitoring, Forecasting, Assessing",
+        "Planning, Executing, Controlling, Auditing",
+        "Sensing, Responding, Evaluating, Terminating",
+        "Formulating, Implementing, Reviewing, Budgeting"
+      ],
+      "answerIndex": 0,
+      "explanation": "The four sequential stages of environmental analysis are Scanning, Monitoring, Forecasting, and Assessing.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Environmental Analysis",
+        "Process Stages"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_strategic-management-2_030",
+      "kind": "normal",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "prompt": "Why is understanding the micro-environment critical for strategic decision-making?",
+      "options": [
+        "It dictates the macroeconomic interest rate set by the central bank.",
+        "It directly shapes the firm's immediate operating context, customer relationships, and supply chain dynamics.",
+        "It replaces the need for any financial statement analysis.",
+        "It governs international trade treaties between sovereign nations."
+      ],
+      "answerIndex": 1,
+      "explanation": "The micro-environment comprises immediate actors (customers, suppliers, competitors) that directly influence day-to-day operations and competitive advantage.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Micro Environment",
+        "Strategic Importance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_strategic-management-2_01",
+      "kind": "scenario",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "passage": "Aura Motors Ltd., an established automobile manufacturer in the domestic market, is facing sluggish growth due to market saturation. Recently, the government introduced stringent emission norms and announced tax incentives for electric vehicle (EV) manufacturing. Meanwhile, tech giants are partnering with battery manufacturers to develop autonomous electric vehicles, posing a potential threat to traditional automakers. Aura Motors' management is meeting to analyze these external forces before finalizing their next five-year strategic plan.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_strategic-management-2_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-2_01",
+          "sequenceInScenario": 1,
+          "chapterId": "strategic-management-2",
+          "subject": "SM",
+          "prompt": "The government's announcement of tax incentives for EV manufacturing represents which type of environmental factor for Aura Motors Ltd.?",
+          "options": [
+            "An internal operational weakness",
+            "A macro-environmental opportunity",
+            "A direct supplier bargaining pressure",
+            "An internal liquidity constraint"
+          ],
+          "answerIndex": 1,
+          "explanation": "Government tax incentives fall under the political-legal dimension of the macro-environment and present a favorable external condition, i.e., an opportunity.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Opportunities",
+            "Macro Environment"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-2_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-2_01",
+          "sequenceInScenario": 2,
+          "chapterId": "strategic-management-2",
+          "subject": "SM",
+          "prompt": "The entry of tech giants partnering with battery manufacturers into the automotive space primarily alters which force in Porter's framework for Aura Motors?",
+          "options": [
+            "Bargaining power of existing buyers",
+            "Threat of substitute products",
+            "Threat of new entrants",
+            "Bargaining power of internal labor unions"
+          ],
+          "answerIndex": 2,
+          "explanation": "Tech giants entering the automotive sector with new capabilities represent potential new entrants backed by deep pockets and technological superiority.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Porter's Five Forces",
+            "New Entrants"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-2_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-2_01",
+          "sequenceInScenario": 3,
+          "chapterId": "strategic-management-2",
+          "subject": "SM",
+          "prompt": "Stringent government emission norms introduced for traditional vehicles fall under which PESTLE category?",
+          "options": [
+            "Political-Legal and Ecological",
+            "Socio-Cultural only",
+            "Economic only",
+            "Technological only"
+          ],
+          "answerIndex": 0,
+          "explanation": "Emission norms are mandated by government laws and regulations (Political-Legal) and are aimed at environmental protection (Ecological).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "PESTLE",
+            "Political-Legal"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-2_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-2_01",
+          "sequenceInScenario": 4,
+          "chapterId": "strategic-management-2",
+          "subject": "SM",
+          "prompt": "If Aura Motors decides to systematically track the evolution of EV technology and battery cost trends over the next three years, which stage of environmental analysis are they primarily engaging in?",
+          "options": [
+            "Environmental Scanning",
+            "Environmental Monitoring",
+            "Strategic Auditing",
+            "Financial Restructuring"
+          ],
+          "answerIndex": 1,
+          "explanation": "Tracking the continuous evolution of specific trends (like EV technology and battery costs) over time corresponds to the 'Monitoring' stage of environmental analysis.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Environmental Analysis",
+            "Monitoring"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_strategic-management-2_02",
+      "kind": "scenario",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "passage": "Zenith Pharma Inc. operates in a highly regulated pharmaceutical industry. The firm relies heavily on two proprietary chemical suppliers who dictate raw material prices. Recently, generic drug manufacturers have started offering bioequivalent medications at a fraction of Zenith's prices. Additionally, patent laws are shifting, reducing the exclusivity period for new drug formulations from 20 years to 15 years. Zenith's strategic team must evaluate these pressures to sustain profitability.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_strategic-management-2_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-2_02",
+          "sequenceInScenario": 1,
+          "chapterId": "strategic-management-2",
+          "subject": "SM",
+          "prompt": "The heavy reliance on two proprietary chemical suppliers who dictate raw material prices illustrates which force in Porter's Five Forces model?",
+          "options": [
+            "Bargaining power of suppliers",
+            "Bargaining power of buyers",
+            "Threat of substitutes",
+            "Competitive rivalry"
+          ],
+          "answerIndex": 0,
+          "explanation": "Concentrated suppliers with unique proprietary inputs possess high bargaining power, allowing them to dictate prices and squeeze margins.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Porter's Five Forces",
+            "Supplier Power"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-2_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-2_02",
+          "sequenceInScenario": 2,
+          "chapterId": "strategic-management-2",
+          "subject": "SM",
+          "prompt": "Generic drug manufacturers offering bioequivalent medications at lower prices represent which competitive force?",
+          "options": [
+            "Threat of substitute products",
+            "Competitive rivalry / Threat of new entrants with lower cost structures",
+            "Bargaining power of suppliers",
+            "Internal operational inefficiency"
+          ],
+          "answerIndex": 1,
+          "explanation": "Bioequivalent generic drugs that perform the same therapeutic function at lower prices increase competitive pressure and rivalry within the pharmaceutical sector.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Porter's Five Forces",
+            "Rivalry"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-2_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-2_02",
+          "sequenceInScenario": 3,
+          "chapterId": "strategic-management-2",
+          "subject": "SM",
+          "prompt": "The reduction in patent exclusivity periods from 20 to 15 years is an example of a change in which macro-environmental dimension?",
+          "options": [
+            "Technological environment",
+            "Political-Legal environment",
+            "Socio-cultural environment",
+            "Global economic environment"
+          ],
+          "answerIndex": 1,
+          "explanation": "Patent laws, intellectual property regulations, and statutory exclusivity periods fall under the legal dimension of the political-legal macro-environment.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "PESTLE",
+            "Legal Factors"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-2_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-2_02",
+          "sequenceInScenario": 4,
+          "chapterId": "strategic-management-2",
+          "subject": "SM",
+          "prompt": "How should Zenith Pharma categorize the shift in patent laws regarding its future drug development pipeline?",
+          "options": [
+            "As an internal organizational strength",
+            "As an external environmental threat",
+            "As an internal financial asset",
+            "As an operational liquidity surplus"
+          ],
+          "answerIndex": 1,
+          "explanation": "A shorter patent exclusivity period reduces the window for monopoly profits, presenting a clear external threat to the pharmaceutical firm.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Threats",
+            "Environmental Analysis"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_strategic-management-2_03",
+      "kind": "scenario",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "passage": "Global Logistics Corp (GLC) is a major cargo shipping enterprise. Macroeconomic indicators show rising global fuel prices, fluctuating exchange rates, and a shift toward green shipping corridors driven by international maritime regulations. Furthermore, smaller regional courier networks are beginning to form alliances to challenge GLC's dominance on key shipping lanes. GLC's management is conducting a PESTLE and industry analysis to adapt their strategic positioning.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_strategic-management-2_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-2_03",
+          "sequenceInScenario": 1,
+          "chapterId": "strategic-management-2",
+          "subject": "SM",
+          "prompt": "Rising global fuel prices and fluctuating exchange rates directly impact GLC through which macro-environmental sector?",
+          "options": [
+            "Socio-cultural environment",
+            "Economic environment",
+            "Technological environment",
+            "Internal operational environment"
+          ],
+          "answerIndex": 1,
+          "explanation": "Fuel prices, inflation, and exchange rate fluctuations are core economic factors within the macro-environment.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Macro Environment",
+            "Economic Factors"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-2_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-2_03",
+          "sequenceInScenario": 2,
+          "chapterId": "strategic-management-2",
+          "subject": "SM",
+          "prompt": "International maritime regulations mandating green shipping corridors represent which component of PESTLE?",
+          "options": [
+            "Political-Legal and Ecological",
+            "Technological only",
+            "Socio-cultural only",
+            "Internal administrative"
+          ],
+          "answerIndex": 0,
+          "explanation": "Mandates and regulations set by international bodies combine political-legal authority with ecological/sustainability objectives.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "PESTLE",
+            "Ecological & Legal"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-2_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-2_03",
+          "sequenceInScenario": 3,
+          "chapterId": "strategic-management-2",
+          "subject": "SM",
+          "prompt": "Smaller regional courier networks forming alliances to challenge GLC's dominance primarily affects which competitive force?",
+          "options": [
+            "Bargaining power of suppliers",
+            "Competitive rivalry among existing competitors",
+            "Threat of buyer backward integration",
+            "Threat of internal strikes"
+          ],
+          "answerIndex": 1,
+          "explanation": "Regional networks joining forces to challenge a dominant player intensifies competitive rivalry within the industry.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Porter's Five Forces",
+            "Rivalry"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-2_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-2_03",
+          "sequenceInScenario": 4,
+          "chapterId": "strategic-management-2",
+          "subject": "SM",
+          "prompt": "When GLC evaluates the long-term impact of green shipping regulations on its fleet replacement schedule, which step of environmental analysis is being executed?",
+          "options": [
+            "Scanning",
+            "Monitoring",
+            "Assessing",
+            "Auditing"
+          ],
+          "answerIndex": 2,
+          "explanation": "Evaluating the specific business implications and timing of environmental trends for organizational strategy constitutes the 'Assessing' stage.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Environmental Analysis",
+            "Assessing"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_strategic-management-2_04",
+      "kind": "scenario",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "passage": "Nova Retail Corp operates a chain of brick-and-mortar departmental stores. Consumer shopping behavior has shifted dramatically toward e-commerce platforms offering doorstep delivery and personalized recommendations. Additionally, retail landlords continue to increase commercial rental rates, while e-commerce giants offer low switching costs for online shoppers. Nova's board is deliberating whether to restructure its business model into an omnichannel retail strategy.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_strategic-management-2_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-2_04",
+          "sequenceInScenario": 1,
+          "chapterId": "strategic-management-2",
+          "subject": "SM",
+          "prompt": "The shift in consumer shopping behavior toward e-commerce platforms is driven by changes in which macro-environmental dimension?",
+          "options": [
+            "Socio-cultural and Technological environment",
+            "Political-legal environment exclusively",
+            "Macroeconomic monetary policy",
+            "Internal human resource policy"
+          ],
+          "answerIndex": 0,
+          "explanation": "Changes in consumer lifestyle, shopping habits, and digital technology adoption reflect shifts in socio-cultural and technological environments.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Macro Environment",
+            "Socio-Cultural"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-2_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-2_04",
+          "sequenceInScenario": 2,
+          "chapterId": "strategic-management-2",
+          "subject": "SM",
+          "prompt": "Increased commercial rental rates demanded by retail landlords represent an increase in which force under Porter's model?",
+          "options": [
+            "Bargaining power of buyers",
+            "Bargaining power of suppliers (landlords)",
+            "Threat of substitutes",
+            "Industry rivalry"
+          ],
+          "answerIndex": 1,
+          "explanation": "Landlords supplying vital real estate space who can dictate higher rental rates exercise high supplier bargaining power.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Porter's Five Forces",
+            "Supplier Power"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-2_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-2_04",
+          "sequenceInScenario": 3,
+          "chapterId": "strategic-management-2",
+          "subject": "SM",
+          "prompt": "Low switching costs for online shoppers buying from e-commerce platforms result in which market condition for retailers?",
+          "options": [
+            "Higher buyer bargaining power and fierce price competition",
+            "Complete monopoly control for every individual seller",
+            "Zero operational costs",
+            "Elimination of all external threats"
+          ],
+          "answerIndex": 0,
+          "explanation": "When switching costs are low, buyers can easily move between online platforms, increasing their bargaining power and intensifying competition.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Porter's Five Forces",
+            "Buyer Power"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-2_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-2_04",
+          "sequenceInScenario": 4,
+          "chapterId": "strategic-management-2",
+          "subject": "SM",
+          "prompt": "Nova Retail's proposed shift to an omnichannel strategy in response to digital disruption is an example of:",
+          "options": [
+            "Reactive environmental adaptation and strategic alignment",
+            "Internal financial window dressing",
+            "Statutory corporate tax compliance",
+            "Routine payroll management"
+          ],
+          "answerIndex": 0,
+          "explanation": "Adapting business models to counter external environmental threats and technological shifts exemplifies strategic alignment and environmental adaptation.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Strategic Adaptation",
+            "Environmental Analysis"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_strategic-management-2_05",
+      "kind": "scenario",
+      "chapterId": "strategic-management-2",
+      "subject": "SM",
+      "passage": "BioHealth Diagnostics operates diagnostic laboratories across several states. The healthcare sector is experiencing rapid technological advancements with AI-driven diagnostic tools. Simultaneously, health insurance companies are exerting pressure by negotiating lower reimbursement rates for pathology tests. Furthermore, strict data privacy laws regarding patient medical records have been enacted by lawmakers, requiring BioHealth to upgrade its IT security infrastructure.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Paper 6B",
+        "chapterNumber": 2,
+        "chapterTitle": "Strategic Analysis: External Environment"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_strategic-management-2_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-2_05",
+          "sequenceInScenario": 1,
+          "chapterId": "strategic-management-2",
+          "subject": "SM",
+          "prompt": "The emergence of AI-driven diagnostic tools represents which type of factor in the external environment?",
+          "options": [
+            "Technological opportunity / potential substitute threat",
+            "Internal accounting constraint",
+            "Macroeconomic monetary variable",
+            "Static supplier limitation"
+          ],
+          "answerIndex": 0,
+          "explanation": "AI-driven tools reflect technological advancements that can serve as opportunities if adopted or as substitution threats if introduced by competitors.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Technological Environment",
+            "Opportunities"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-2_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-2_05",
+          "sequenceInScenario": 2,
+          "chapterId": "strategic-management-2",
+          "subject": "SM",
+          "prompt": "Health insurance companies negotiating lower reimbursement rates for pathology tests illustrate high bargaining power of which stakeholder group?",
+          "options": [
+            "Suppliers of chemical reagents",
+            "Buyers / Intermediaries in the healthcare chain",
+            "Internal laboratory technicians",
+            "Government regulators"
+          ],
+          "answerIndex": 1,
+          "explanation": "Health insurance providers act as buyers or powerful intermediaries who purchase diagnostic services on behalf of patients, exerting pricing pressure.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Porter's Five Forces",
+            "Buyer Power"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-2_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-2_05",
+          "sequenceInScenario": 3,
+          "chapterId": "strategic-management-2",
+          "subject": "SM",
+          "prompt": "Enactment of strict data privacy laws regarding patient medical records by lawmakers falls under which PESTLE dimension?",
+          "options": [
+            "Economic environment",
+            "Political-Legal environment",
+            "Socio-cultural environment",
+            "Ecological environment"
+          ],
+          "answerIndex": 1,
+          "explanation": "Data privacy statutes and legislative enactments by governments form part of the political-legal macro-environment.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "PESTLE",
+            "Legal Factors"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_strategic-management-2_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_strategic-management-2_05",
+          "sequenceInScenario": 4,
+          "chapterId": "strategic-management-2",
+          "subject": "SM",
+          "prompt": "If BioHealth's management team systematically reviews tech journals and medical conferences to identify upcoming AI breakthroughs in diagnostics, which environmental analysis activity are they performing?",
+          "options": [
+            "Environmental Scanning",
+            "Financial auditing",
+            "Supply chain liquidation",
+            "Capital budgeting"
+          ],
+          "answerIndex": 0,
+          "explanation": "Surveilling broad external sources like journals and conferences to detect early signals of change is the definition of environmental scanning.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Environmental Analysis",
+            "Scanning"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1420 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "corporate-laws-7",
+  "subject": "Law",
+  "paper": "Paper 2: Corporate and Other Laws",
+  "module": "Module 2",
+  "chapterNumber": 7,
+  "chapterTitle": "Management & Administration",
+  "generatedAt": "2026-08-16T14:12:33.931Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_corporate-laws-7_001",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "According to the Companies Act, 2013, what is the maximum time gap allowed between two consecutive Annual General Meetings (AGMs) of a listed company?",
+      "options": [
+        "15 months",
+        "12 months",
+        "6 months",
+        "18 months"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 96 of the Companies Act, 2013, the maximum interval between two consecutive AGMs shall not exceed 15 months. This ensures timely reporting and shareholder oversight in companies.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AGM",
+        "Time Gap",
+        "Section 96"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_002",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "Within what period must a company hold its first Annual General Meeting from the date of its incorporation?",
+      "options": [
+        "Within 6 months",
+        "Within 9 months",
+        "Within 12 months",
+        "Within 15 months"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per the second proviso to Section 96(1), every company must hold its first AGM within 9 months from the closing of the first financial year. If the first AGM is held within this period, the Registrar is not required to grant any extension.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "First AGM",
+        "Incorporation",
+        "Section 96"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_003",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "Who has the authority to grant an extension of time for holding an Annual General Meeting (other than the first AGM) under the Companies Act, 2013?",
+      "options": [
+        "National Company Law Tribunal (NCLT)",
+        "Registrar of Companies (RoC)",
+        "Central Government",
+        "Securities and Exchange Board of India (SEBI)"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under the first proviso to Section 96(1), the Registrar of Companies (RoC) may, for any special reason, extend the time within which any AGM (other than the first AGM) shall be held, by a period not exceeding 3 months.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AGM Extension",
+        "RoC Powers",
+        "Section 96"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_004",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "At what time and on what type of day must an Annual General Meeting be held according to Section 96?",
+      "options": [
+        "Anytime during business hours on any day",
+        "During business hours on a national holiday",
+        "During business hours on any day that is not a National Holiday",
+        "At any hour on a business day"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 96(2) specifies that every AGM shall be called during business hours, that is, between 9 a.m. and 6 p.m. on any day that is not a National Holiday.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AGM Timing",
+        "National Holiday",
+        "Section 96"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_005",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "What is the minimum shorter notice requirement for calling an AGM if consent is accorded in writing or by electronic mode by members holding not less than __% of the share capital giving right to vote at such meeting?",
+      "options": [
+        "90%",
+        "95%",
+        "98%",
+        "100%"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 101(1), an AGM may be called after giving a shorter notice if consent is given in writing or by electronic mode by not less than 95% of the members entitled to vote at such meeting.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Shorter Notice",
+        "AGM",
+        "Section 101"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_006",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "In the case of a public company, what is the quorum required for a general meeting if the number of members as on the date of the meeting is more than 1,000 but up to 5,000?",
+      "options": [
+        "5 members personally present",
+        "15 members personally present",
+        "30 members personally present",
+        "50 members personally present"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 103 prescribes that for a public company, the quorum is 15 members personally present if the number of members is more than 1,000 but up to 5,000.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Quorum",
+        "Public Company",
+        "Section 103"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_007",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "If a company does not have articles providing for a larger quorum, what is the quorum for a general meeting of a private company?",
+      "options": [
+        "1 member personally present",
+        "2 members personally present",
+        "3 members personally present",
+        "5 members personally present"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 103(1)(a)(i) states that unless the articles of a company provide for a larger number, the quorum for a private company shall be 2 members personally present.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Quorum",
+        "Private Company",
+        "Section 103"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_008",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "Within how many days from the conclusion of a general meeting must a company prepare and sign the minutes of that meeting?",
+      "options": [
+        "15 days",
+        "30 days",
+        "45 days",
+        "60 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 118(1) read with Secretarial Standards, minutes of every general meeting must be signed and entered in books kept for that purpose within 30 days of the conclusion of the meeting.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Minutes",
+        "Time Limit",
+        "Section 118"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_009",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "Who can demand a poll under Section 109 before or on the declaration of the result of the voting on any resolution on a show of hands, in a company having a share capital?",
+      "options": [
+        "Any single member holding any number of shares",
+        "Members present in person or by proxy holding not less than 1/10th of the total voting power or having a paid-up capital of at least 5 lakh rupees",
+        "Only the Chairman of the meeting",
+        "Members holding at least 50% of the voting power"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 109, a poll may be demanded by members present in person or by proxy, having not less than one-tenth of the total voting power or holding shares on which an aggregate sum of not less than 5 lakh rupees (or such higher amount as prescribed) has been paid-up.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Demand for Poll",
+        "Voting",
+        "Section 109"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_010",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "What is the maximum validity period of a proxy deposited with a company before a general meeting?",
+      "options": [
+        "30 days",
+        "48 hours before the meeting",
+        "Valid until the meeting is concluded, unless revoked",
+        "6 months"
+      ],
+      "answerIndex": 2,
+      "explanation": "A proxy is valid for the meeting for which it is deposited (including any adjournment thereof) unless revoked by the member prior to the meeting. The instrument of proxy must be deposited 48 hours before the meeting.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Proxy",
+        "Validity",
+        "Section 105"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_011",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "Which of the following matters is NOT mandatorily required to be transacted as an ordinary business at an Annual General Meeting?",
+      "options": [
+        "Consideration of financial statements and reports of the Board and Auditors",
+        "Declaration of dividend",
+        "Appointment of a director in place of those retiring",
+        "Appointment and fixation of remuneration of cost auditors"
+      ],
+      "answerIndex": 3,
+      "explanation": "Section 102 classifies only four matters as ordinary business at an AGM: consideration of financial statements/reports, declaration of dividend, appointment of retiring directors, and appointment/remuneration of statutory auditors. Cost auditor appointment is special business.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Ordinary Business",
+        "AGM",
+        "Section 102"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_012",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "What is the statutory requirement regarding the explanatory statement to be annexed to the notice of a general meeting under Section 102?",
+      "options": [
+        "It is required only for ordinary business items.",
+        "It must be annexed for all items of special business to be transacted at the meeting.",
+        "It is required only if requested by 10% of shareholders.",
+        "It is never required for private companies."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 102 mandates that a statement setting out all material facts concerning each item of special business to be transacted at a general meeting must be annexed to the notice.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Explanatory Statement",
+        "Special Business",
+        "Section 102"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_013",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "If a meeting is adjourned due to lack of quorum, to what day, time, and place is it adjourned automatically by default under Section 103, unless otherwise specified by the Board?",
+      "options": [
+        "Same day in the next week at the same time and place",
+        "Next working day at the same time and place",
+        "Exactly 30 days later at the registered office",
+        "The meeting stands cancelled permanently"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 103(2) provides that if quorum is not present within half an hour from the time appointed, the meeting stands adjourned to the same day in the next week at the same time and place, or such other date, time, and place as the Board may determine.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Adjourned Meeting",
+        "Quorum",
+        "Section 103"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_014",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "Can a member of a company limited by shares, having the right to vote at a meeting, appoint multiple proxies under the Act, unless the articles restrict it?",
+      "options": [
+        "No, only one proxy is allowed per member.",
+        "Yes, a member can appoint one or more proxies to attend and vote on the same poll.",
+        "Yes, but only up to a maximum of 5 proxies.",
+        "Only institutional investors can appoint multiple proxies."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 105(1), a member entitled to attend and vote is entitled to appoint another person as a proxy to attend and vote instead of the member. Multiple proxies can be appointed if permitted by rules/articles, though a proxy does not have the right to speak on a show of hands.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Proxy",
+        "Section 105",
+        "Voting"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_015",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "In an Extraordinary General Meeting (EGM) called by requisitionists under Section 100, what happens if the Board does not proceed to call a meeting within 21 days of receipt of a valid requisition?",
+      "options": [
+        "The meeting stands cancelled automatically.",
+        "The requisitionists themselves may call and hold the meeting within 3 months from the date of requisition.",
+        "The RoC must call the meeting within 7 days.",
+        "The NCLT takes over the management."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 100(4), if the Board fails to call a meeting within 21 days from the date of deposit of a valid requisition, the requisitionists may themselves call and hold the meeting within 3 months of that date.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "EGM Requisition",
+        "Section 100",
+        "Requisitionists"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_016",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "What is the minimum voting power required for members to requisition an EGM under Section 100 in the case of a company having a share capital?",
+      "options": [
+        "Not less than 5% of the paid-up capital carrying voting rights",
+        "Not less than 10% of the paid-up capital carrying voting rights",
+        "Not less than 15% of the paid-up capital carrying voting rights",
+        "Not less than 25% of the paid-up capital carrying voting rights"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 100(1) prescribes that for a company having a share capital, members holding not less than one-tenth (10%) of the paid-up capital of the company carrying voting rights can requisition an EGM.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "EGM",
+        "Requisition",
+        "Section 100"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_017",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "Where must a company keep its minute books of general meetings for inspection by members?",
+      "options": [
+        "At the registered office of the company",
+        "At the residence of the Managing Director",
+        "At the nearest stock exchange office",
+        "At the office of the company's statutory auditor"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 119 specifies that the books containing the minutes of general meetings shall be kept at the registered office of the company and be open for inspection by members during business hours.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Minute Books",
+        "Inspection",
+        "Section 119"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_018",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "Which type of resolution requires a majority of not less than three-fourths (75%) of the votes cast for its passing?",
+      "options": [
+        "Ordinary Resolution",
+        "Special Resolution",
+        "Unanimous Resolution",
+        "Board Resolution"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 114(2), a resolution is a special resolution when the votes cast in favour are not less than three times the votes cast against (i.e., at least 75%).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Special Resolution",
+        "Section 114",
+        "Voting"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_019",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "Can a postal ballot be used by a company to transact any item of ordinary business at an AGM?",
+      "options": [
+        "Yes, all businesses can be transacted through postal ballot.",
+        "No, ordinary business items and items where directors/auditors have a right to be heard cannot be transacted through postal ballot.",
+        "Yes, if 75% members consent.",
+        "Only listed companies can use postal ballot for ordinary business."
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 22 of the Companies (Management and Administration) Rules, 2014 states that ordinary business and any business in which directors or auditors have a right of being heard at any meeting cannot be transacted by means of a postal ballot.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Postal Ballot",
+        "Ordinary Business",
+        "Rule 22"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_020",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "What is the penalty/consequence if a company defaults in holding its Annual General Meeting under Section 96?",
+      "options": [
+        "Only the Chairman is imprisoned for 1 year.",
+        "The company and every officer in default shall be punishable with fine extending up to one lakh rupees and a further fine for continuous default.",
+        "The company's incorporation is cancelled immediately.",
+        "All directors are disqualified for life without notice."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 99 sets out the punishment for default in holding an AGM: the company and every officer in default are punishable with a fine up to one lakh rupees and, in case of continuing default, with a further fine up to five thousand rupees for each day during which such default continues.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Penalty",
+        "AGM Default",
+        "Section 99"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_021",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "Who appoints the scrutinizer for conducting voting through electronic voting (e-voting) and postal ballot process in a general meeting?",
+      "options": [
+        "The Board of Directors",
+        "The Central Government",
+        "The Registrar of Companies",
+        "The Statutory Auditors"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per the Companies (Management and Administration) Rules, 2014, the Board of Directors appoints one or more scrutinizers (who may be chartered accountants in practice, cost accountants, advocates, etc.) to conduct the e-voting and postal ballot process in a fair and transparent manner.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Scrutinizer",
+        "E-voting",
+        "Postal Ballot"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_022",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "Which section of the Companies Act, 2013 deals with the calling of an Extraordinary General Meeting by the Tribunal (NCLT)?",
+      "options": [
+        "Section 96",
+        "Section 98",
+        "Section 100",
+        "Section 105"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 98 empowers the Tribunal (NCLT), either suo motu or on the application of any director or member, to order a meeting to be called, held, and conducted if it is impracticable to call a meeting in any manner prescribed.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "NCLT",
+        "EGM",
+        "Section 98"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_023",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "In case of a company having share capital, what is the voting right of a member on a poll?",
+      "options": [
+        "Every member has only one vote regardless of shares held.",
+        "In proportion to his share of the paid-up equity capital of the company.",
+        "Equal to the number of directors present.",
+        "Fixed arbitrarily by the Board of Directors."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 106 read with Section 47 provides that voting right of a member on a poll is in proportion to his share in the paid-up equity share capital of the company.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Voting Rights",
+        "Poll",
+        "Section 106"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_024",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "Can a member be prohibited from exercising voting rights on the ground that they have not paid any call or other sums due on shares?",
+      "options": [
+        "No, voting right is absolute and cannot be restricted.",
+        "Yes, if the articles of the company so provide and calls/sums are in arrears.",
+        "Only if the Central Government orders so.",
+        "Only if approved by NCLT."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 106(1), a company can restrict a member from voting if any calls or other sums presently payable have not been paid, provided the articles of the company contain such a provision.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Restriction on Voting",
+        "Calls in Arrears",
+        "Section 106"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_025",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "What is the minimum notice period required to call a general meeting of a company under Section 101?",
+      "options": [
+        "At least 14 clear days",
+        "At least 21 clear days",
+        "At least 28 clear days",
+        "At least 7 clear days"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 101(1) states that a general meeting of a company may be called by giving not less than 21 clear days' notice in writing or through electronic mode.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Notice",
+        "Clear Days",
+        "Section 101"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_026",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "When calculating the 21 clear days' notice for a general meeting, which of the following days are excluded?",
+      "options": [
+        "Date of the meeting and date of dispatch of notice",
+        "Only Sundays",
+        "Only National Holidays",
+        "Date of dispatch and date of receipt only"
+      ],
+      "answerIndex": 0,
+      "explanation": "'Clear days' means that neither the day on which the notice is served/deemed to be served nor the day of the meeting itself is to be counted.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Clear Days",
+        "Notice Calculation",
+        "Section 101"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_027",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "Under Section 111, what is the procedure for circulation of members' resolutions? What is the maximum length of the statement that members can require the company to circulate?",
+      "options": [
+        "No length limit is prescribed.",
+        "Reasonable length, as determined by the company's Board.",
+        "A reasonable length.",
+        "Maximum 1,000 words."
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 111 provides that a company is required to circulate members' resolutions and/or a statement of not more than a 'reasonable length' of matters referred to in the proposed resolution, upon a valid requisition by members.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Members Resolution",
+        "Circulation",
+        "Section 111"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_028",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "What constitutes a 'quorum' for a general meeting of a public company if the total number of members exceeds 5,000?",
+      "options": [
+        "15 members personally present",
+        "30 members personally present",
+        "50 members personally present",
+        "100 members personally present"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 103(1)(a)(ii), for a public company, the quorum is 30 members personally present if the number of members exceeds 5,000.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Quorum",
+        "Public Company",
+        "Section 103"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_029",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "Can a proxy vote on a show of hands?",
+      "options": [
+        "Yes, always.",
+        "No, a proxy does not have the right to vote on a show of hands.",
+        "Yes, if permitted by the Chairman.",
+        "Only in private companies."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 105(1) explicitly states that a proxy shall not vote on a show of hands. Proxies are only entitled to vote on a poll.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Proxy",
+        "Show of Hands",
+        "Section 105"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_corporate-laws-7_030",
+      "kind": "normal",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "prompt": "Who is responsible for filing the copy of every resolution or agreement referred to in Section 117 with the Registrar of Companies (RoC)?",
+      "options": [
+        "The statutory auditor",
+        "The company",
+        "The Chairman of the meeting",
+        "The NCLT"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 117 mandates that a copy of every resolution or agreement requiring special/unanimous majority (as specified in the section) shall be filed by the company with the RoC within 30 days of passing.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Filing of Resolutions",
+        "RoC",
+        "Section 117"
+      ],
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_corporate-laws-7_01",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "passage": "Zenith Infotech Limited is a public company listed on the National Stock Exchange, having 4,500 equity shareholders. The company's last Annual General Meeting (AGM) was held on 15th September 2024. Due to administrative delays in finalizing the consolidated accounts, the Board of Directors wishes to hold the AGM for the financial year 2024-25 on 20th November 2025. The Board seeks an extension from the Registrar of Companies (RoC) for holding this AGM.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-7_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-7_01",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-7",
+          "subject": "Law",
+          "prompt": "What is the statutory due date by which Zenith Infotech Limited was required to hold its AGM for the financial year 2024-25 under normal circumstances (assuming financial year ends on 31st March)?",
+          "options": [
+            "30th September 2025",
+            "31st December 2025",
+            "30th June 2025",
+            "15th December 2025"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under Section 96(1), every company must hold its AGM within 6 months from the close of the financial year (i.e., by 30th September for a financial year ending on 31st March).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AGM Due Date",
+            "Section 96",
+            "Financial Year"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-7_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-7_01",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-7",
+          "subject": "Law",
+          "prompt": "What is the maximum period of extension that the RoC can grant to Zenith Infotech Limited for holding its AGM under the first proviso to Section 96(1)?",
+          "options": [
+            "1 month",
+            "2 months",
+            "3 months",
+            "6 months"
+          ],
+          "answerIndex": 2,
+          "explanation": "The RoC may, for any special reason, extend the time within which any AGM (other than the first AGM) shall be held, by a period not exceeding 3 months.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AGM Extension",
+            "RoC",
+            "Section 96"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-7_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-7_01",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-7",
+          "subject": "Law",
+          "prompt": "Considering the date of the previous AGM (15th September 2024), what is the absolute maximum interval that would be permitted between the two AGMs if an extension is granted?",
+          "options": [
+            "12 months",
+            "15 months",
+            "18 months",
+            "21 months"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 96 prescribes that the maximum time gap between two consecutive AGMs shall not exceed 15 months, even with RoC extension.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Time Gap",
+            "AGM Interval",
+            "Section 96"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-7_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-7_01",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-7",
+          "subject": "Law",
+          "prompt": "What is the quorum required for the AGM of Zenith Infotech Limited, given that it is a public company with 4,500 members?",
+          "options": [
+            "5 members personally present",
+            "15 members personally present",
+            "30 members personally present",
+            "50 members personally present"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 103, for a public company having more than 1,000 but up to 5,000 members, the quorum required is 15 members personally present.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Quorum",
+            "Public Company",
+            "Section 103"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-7_02",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "passage": "AeroSphere Logistics Private Limited has 80 members. A general meeting of the company is scheduled for 10th October. On the day of the meeting, 3 members are personally present at the appointed time. The articles of the company are silent regarding the quorum. Meanwhile, Mr. X, a member, holds a proxy for 10 other members who are absent. The meeting is also attended by two corporate members represented by their authorized representatives.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-7_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-7_02",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-7",
+          "subject": "Law",
+          "prompt": "What is the statutory quorum for AeroSphere Logistics Private Limited under Section 103, given the facts?",
+          "options": [
+            "1 member personally present",
+            "2 members personally present",
+            "5 members personally present",
+            "10 members personally present"
+          ],
+          "answerIndex": 1,
+          "explanation": "For a private company, Section 103 prescribes a quorum of 2 members personally present, unless the articles provide for a larger number.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Quorum",
+            "Private Company",
+            "Section 103"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-7_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-7_02",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-7",
+          "subject": "Law",
+          "prompt": "Is the quorum present at the start of AeroSphere's meeting based on the members present in person?",
+          "options": [
+            "No, because proxies must be counted towards quorum.",
+            "Yes, because 3 members personally present exceed the statutory requirement of 2 members.",
+            "No, corporate representatives cannot be counted.",
+            "Yes, only if Mr. X also votes."
+          ],
+          "answerIndex": 1,
+          "explanation": "Quorum must be members 'personally present'. Since 3 members are personally present, the requirement of 2 members is satisfied.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Quorum Calculation",
+            "Personal Presence",
+            "Section 103"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-7_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-7_02",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-7",
+          "subject": "Law",
+          "prompt": "Can the 10 members represented by Mr. X (as proxies) be counted toward the quorum?",
+          "options": [
+            "Yes, proxies are always counted for quorum.",
+            "No, proxies are not counted for quorum under Section 103.",
+            "Yes, because Mr. X holds more than 10% voting power.",
+            "Only with the Chairman's written permission."
+          ],
+          "answerIndex": 1,
+          "explanation": "Proxies are agents of members and are not counted for the purpose of establishing a quorum under Section 103 (only members personally present count).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Proxy in Quorum",
+            "Section 103"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-7_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-7_02",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-7",
+          "subject": "Law",
+          "prompt": "How are representatives of corporate members treated for the purpose of quorum?",
+          "options": [
+            "They are treated as proxies.",
+            "They are deemed to be members personally present under Section 113.",
+            "They cannot attend general meetings.",
+            "They count as half a member each."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 113, a corporate representative is deemed to be a member personally present and is counted for quorum.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Corporate Representative",
+            "Quorum",
+            "Section 113"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-7_03",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "passage": "Radiant Power Limited issued a notice for its Extraordinary General Meeting (EGM) to be held on 15th November. The notice was dispatched on 22nd October through post. Certain institutional shareholders raised objections regarding the computation of clear days of notice and sought an explanation. Additionally, some members wished to vote through proxy.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-7_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-7_03",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-7",
+          "subject": "Law",
+          "prompt": "How many 'clear days' notice was given by Radiant Power Limited if the notice was posted on 22nd October and the meeting is held on 15th November?",
+          "options": [
+            "24 clear days",
+            "22 clear days",
+            "21 clear days",
+            "20 clear days"
+          ],
+          "answerIndex": 0,
+          "explanation": "Excluding the date of dispatch (22nd Oct), the 48-hour service rule (deemed service on 24th Oct), and the date of meeting (15th Nov), the clear days exceed 21 days (approx. 21+ days). Let's verify: Oct 22 dispatched, deemed served in 48 hours (Oct 24). Days remaining in Oct: Oct 25 to 31 (7 days). Days in Nov: Nov 1 to 14 (14 days). Total clear days = 7 + 14 = 21 clear days. Wait, 22nd dispatched + 2 days service = 24th Oct service. Oct 25 to 31 is 7 days, Nov 1 to 14 is 14 days = 21 clear days exactly.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Clear Days",
+            "Notice Computation",
+            "Section 101"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-7_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-7_03",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-7",
+          "subject": "Law",
+          "prompt": "Within how many hours before the meeting must a proxy form be deposited with Radiant Power Limited to be valid?",
+          "options": [
+            "24 hours",
+            "48 hours",
+            "72 hours",
+            "12 hours"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 105(4) requires that an instrument of proxy must be deposited with the company at least 48 hours before the meeting.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Proxy Deposit",
+            "Time Limit",
+            "Section 105"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-7_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-7_03",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-7",
+          "subject": "Law",
+          "prompt": "If a member appoints a proxy and personally attends the meeting, what is the status of the proxy?",
+          "options": [
+            "The proxy takes precedence over the member.",
+            "The proxy is automatically revoked by the member's personal presence.",
+            "Both can vote independently.",
+            "The Chairman decides who will vote."
+          ],
+          "answerIndex": 1,
+          "explanation": "When a member who has appointed a proxy personally attends the meeting and votes, the proxy's authority is impliedly revoked.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Proxy Revocation",
+            "Member Attendance",
+            "Section 105"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-7_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-7_03",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-7",
+          "subject": "Law",
+          "prompt": "If the articles of Radiant Power Limited are silent, can a proxy speak at the EGM?",
+          "options": [
+            "Yes, a proxy has full speaking rights.",
+            "No, a proxy does not have the right to speak at a general meeting.",
+            "Yes, on a poll.",
+            "Only with 75% shareholder approval."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 105, a proxy is only entitled to vote (on a poll) and does not have the right to speak at the meeting.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Proxy Rights",
+            "Speaking Rights",
+            "Section 105"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-7_04",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "passage": "A group of equity shareholders holding 12% of the paid-up voting share capital of Apex Chemicals Limited submitted a valid requisition to the Board of Directors on 1st August to call an EGM for removing a director. The Board neither called the meeting within the statutory timeframe nor responded to the requisitionists. Consequently, the requisitionists proceeded to call the EGM themselves.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-7_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-7_04",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-7",
+          "subject": "Law",
+          "prompt": "Within how many days from the date of deposit of the requisition was the Board required to proceed to call the EGM under Section 100?",
+          "options": [
+            "14 days",
+            "21 days",
+            "30 days",
+            "45 days"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 100(4), if the Board does not within 21 days from the date of receipt of a valid requisition proceed to call a meeting, the requisitionists may call it.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "EGM Requisition",
+            "Board Action",
+            "Section 100"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-7_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-7_04",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-7",
+          "subject": "Law",
+          "prompt": "Within what period must the requisitionists hold the EGM after calling it themselves?",
+          "options": [
+            "Within 1 month",
+            "Within 2 months",
+            "Within 3 months",
+            "Within 6 months"
+          ],
+          "answerIndex": 2,
+          "explanation": "Section 100(4) specifies that a meeting called by the requisitionists must be held within 3 months from the date of the deposit of the requisition.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Requisitionists Meeting",
+            "Time Limit",
+            "Section 100"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-7_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-7_04",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-7",
+          "subject": "Law",
+          "prompt": "How are the expenses incurred by the requisitionists in calling and holding the EGM to be reimbursed by the company?",
+          "options": [
+            "Apex Chemicals Limited cannot reimburse such expenses under any circumstances.",
+            "The company must reimburse the requisitionists and recover the amount from the default directors' fees/remuneration.",
+            "The Central Government bears the cost.",
+            "The requisitionists must bear the cost permanently."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 100(6) provides that any reasonable expenses incurred by the requisitionists shall be repaid by the company, and the company shall retain such sum from any fee or remuneration due to the directors who were in default.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Reimbursement",
+            "Requisition Expenses",
+            "Section 100"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-7_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-7_04",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-7",
+          "subject": "Law",
+          "prompt": "What minimum voting threshold is required to pass an ordinary resolution for removing a director at such an EGM?",
+          "options": [
+            "Simple majority (>50% of votes cast)",
+            "3/4th majority (75% of votes cast)",
+            "Unanimous consent (100%)",
+            "Two-thirds majority"
+          ],
+          "answerIndex": 0,
+          "explanation": "An ordinary resolution under Section 114 requires a simple majority (more than 50% of the votes cast in favour).",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Ordinary Resolution",
+            "Simple Majority",
+            "Section 114"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_corporate-laws-7_05",
+      "kind": "scenario",
+      "chapterId": "corporate-laws-7",
+      "subject": "Law",
+      "passage": "The Board of Directors of Innovate Tech Solutions Limited convened its general meeting. During the meeting, several resolutions were voted upon. The Chairman decided to conduct voting on a major resolution through a show of hands first. Dissatisfied with the outcome on the show of hands, a group of members demanded a poll. The company also maintains minutes of all meetings in electronic form.",
+      "sourceRef": {
+        "paper": "Paper 2: Corporate and Other Laws",
+        "module": "Module 2",
+        "chapterNumber": 7,
+        "chapterTitle": "Management & Administration"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_corporate-laws-7_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-7_05",
+          "sequenceInScenario": 1,
+          "chapterId": "corporate-laws-7",
+          "subject": "Law",
+          "prompt": "Can a poll be demanded on any resolution under Section 109 after the result of the show of hands has been declared?",
+          "options": [
+            "No, poll must be demanded before or on the declaration of the result of the show of hands.",
+            "Yes, up to 48 hours after the meeting.",
+            "Yes, if the Chairman permits.",
+            "Only for special resolutions."
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 109 states that the Chairman shall, on his own motion, and shall, if demanded by persons meeting the criteria before or on the declaration of the result on the show of hands, order a poll.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Demand for Poll",
+            "Timing",
+            "Section 109"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-7_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-7_05",
+          "sequenceInScenario": 2,
+          "chapterId": "corporate-laws-7",
+          "subject": "Law",
+          "prompt": "When must a poll ordered by the Chairman under Section 109 be taken?",
+          "options": [
+            "Within 48 hours of the demand",
+            "Not later than 48 hours from the time when the poll was demanded",
+            "Exactly 7 days later",
+            "Within 30 days"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 109(1), a poll demanded on a question other than adjournment or appointment of Chairman shall be taken at such time, not being later than forty-eight hours from the time when the poll was demanded, as the Chairman directs.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Poll Timing",
+            "Section 109"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-7_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-7_05",
+          "sequenceInScenario": 3,
+          "chapterId": "corporate-laws-7",
+          "subject": "Law",
+          "prompt": "What is the requirement under the Companies Act, 2013 regarding maintaining minutes in electronic form?",
+          "options": [
+            "Electronic minutes are not recognized by law.",
+            "Minutes may be maintained in electronic form provided every page is digitally signed.",
+            "Minutes in electronic form must be maintained under the maintenance and security standards prescribed by rules.",
+            "Electronic minutes must be printed on paper within 24 hours."
+          ],
+          "answerIndex": 2,
+          "explanation": "Section 118 permits minutes to be kept in electronic form, provided they are maintained with proper security, date, and time stamping as per prescribed rules.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Electronic Minutes",
+            "Section 118"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_corporate-laws-7_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_corporate-laws-7_05",
+          "sequenceInScenario": 4,
+          "chapterId": "corporate-laws-7",
+          "subject": "Law",
+          "prompt": "If minutes of a general meeting are recorded and signed in accordance with Section 118, what is their evidentiary value?",
+          "options": [
+            "They have no legal standing in court.",
+            "They are evidence of the proceedings recorded therein.",
+            "They are conclusive proof that cannot be challenged under any circumstances.",
+            "They require RoC attestation to be valid."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 118(7) states that minutes of meetings kept in accordance with the provisions shall be evidence of the proceedings recorded therein.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Evidentiary Value",
+            "Minutes",
+            "Section 118"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

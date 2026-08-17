@@ -1,0 +1,1422 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "gst-9",
+  "subject": "Taxation",
+  "paper": "Paper 3: Taxation",
+  "module": "Module 2",
+  "chapterNumber": 9,
+  "chapterTitle": "Registration",
+  "generatedAt": "2026-08-16T14:31:08.432Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_gst-9_001",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "What is the threshold limit for registration under GST for a person making exclusive taxable supplies of goods in the State of Manipur?",
+      "options": [
+        "Rs. 10 Lakhs",
+        "Rs. 20 Lakhs",
+        "Rs. 40 Lakhs",
+        "Rs. 50 Lakhs"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per Section 22 read with Notification No. 10/2019-CT, Manipur is listed among the Special Category States where the threshold limit for exclusive supply of goods is Rs. 10 lakhs. Therefore, Rs. 10 Lakhs is the correct threshold limit.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Threshold Limit",
+        "Goods",
+        "Special Category States"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_002",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "Which of the following persons is mandatorily required to obtain registration under Section 24 of the CGST Act, 2017, irrespective of the turnover threshold?",
+      "options": [
+        "Persons making intra-state taxable supplies of goods",
+        "Casual taxable persons making taxable supplies",
+        "Persons making inter-state supplies of goods with aggregate turnover up to Rs. 20 lakhs",
+        "Persons making taxable supplies of goods on behalf of other taxable persons as an agent with turnover below Rs. 10 lakhs"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 24 mandates compulsory registration for casual taxable persons making taxable supplies, regardless of their turnover. Inter-state supply of goods up to Rs. 20 lakhs is exempt from mandatory registration vide Notification No. 10/2017-IT, and agents making taxable supplies on behalf of others are also compulsorily registrable without threshold benefit.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Compulsory Registration",
+        "Casual Taxable Person",
+        "Section 24"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_003",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "Within how many days from the date on which liability to register arises must a person apply for GST registration?",
+      "options": [
+        "15 days",
+        "30 days",
+        "45 days",
+        "60 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "According to Section 25(1) of the CGST Act, 2017, every person who becomes liable to registration under section 22 or section 24 shall apply for registration within 30 days from the date on which he becomes liable to registration.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Time Limit",
+        "Application for Registration",
+        "Section 25"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_004",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "What is the validity period of the certificate of registration granted to a Casual Taxable Person (CTP)?",
+      "options": [
+        "90 days from registration",
+        "Maximum period of 90 days or period specified in the application, whichever is earlier",
+        "1 year from the date of issue",
+        "Till the completion of business event"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 27(1), the certificate of registration issued to a casual taxable person shall be valid for a period specified in the application for registration or 90 days from the effective date of registration, whichever is earlier.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Casual Taxable Person",
+        "Validity Period",
+        "Section 27"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_005",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "Can a supplier having multiple places of business in the same State obtain separate registrations for each such place of business?",
+      "options": [
+        "No, only one state registration is permitted per entity",
+        "Yes, provided all such places of business are engaged in identical supply of goods",
+        "Yes, under Section 25(2), a person having multiple places of business in a State may be granted a separate registration for each such place of business",
+        "Yes, but only if aggregate turnover exceeds Rs. 1.5 crores"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 25(2) of the CGST Act allows a person having multiple places of business in a State or Union territory to be granted a separate registration for each such place of business, subject to prescribed conditions.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Multiple Registrations",
+        "Same State",
+        "Section 25"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_006",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "What is the consequence if the proper officer fails to take any action on an application for registration within the prescribed time limit, and no notice is issued?",
+      "options": [
+        "The application is deemed to be rejected",
+        "The registration is deemed to have been granted after 7 working days from application submission",
+        "The registration is deemed to have been granted after verification of Aadhaar",
+        "The registration shall be deemed to have been granted after the expiry of the period specified under rule 9(5)"
+      ],
+      "answerIndex": 3,
+      "explanation": "Under Rule 9(5) of the CGST Rules, 2017, if the proper officer fails to take any action within the prescribed period of 3 days (or 7 days if Aadhaar authentication is required/failed), the application for grant of registration shall be deemed to have been approved.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Deemed Registration",
+        "CGST Rules",
+        "Proper Officer"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_007",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "Which of the following entities is required to obtain a Unique Identity Number (UIN) under Section 25(9)?",
+      "options": [
+        "Any regular supplier with turnover exceeding Rs. 40 lakhs",
+        "Specialized agency of the United Nations Organisation or any Multilateral Financial Institution",
+        "Casual taxable person operating in multiple states",
+        "Non-resident taxable person providing OIDAR services"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 25(9) provides that a specialized agency of the United Nations Organisation or any Multilateral Financial Institution and Organization notified under the United Nations (Privileges and Immunities) Act, 1947, Consulate or Embassy of foreign countries shall obtain a Unique Identity Number (UIN) for claiming refund of taxes.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "UIN",
+        "Unique Identity Number",
+        "Section 25"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_008",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "In cases where Aadhaar authentication is successfully completed, from which date does the registration become effective?",
+      "options": [
+        "Date of submission of application if applied within 30 days of liability",
+        "Date of approval by the proper officer",
+        "Date of generation of application reference number (ARN)",
+        "Date of authentication or 30th day from submission, whichever is earlier"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per Rule 10 of CGST Rules, where Aadhaar authentication is successfully completed, the application is deemed approved and registration is effective from the date on which the person became liable to registration, provided the application was submitted within 30 days.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Effective Date",
+        "Aadhaar Authentication",
+        "Rule 10"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_009",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "An electronic commerce operator (ECO) who is required to collect tax at source under Section 52 must obtain:",
+      "options": [
+        "Voluntary registration only if turnover crosses Rs. 20 lakhs",
+        "Compulsory registration under Section 24 irrespective of threshold",
+        "UIN instead of regular GSTIN",
+        "Registration only if operating in more than two States"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 24(x) explicitly mandates that every electronic commerce operator who is required to collect tax at source under section 52 must obtain registration compulsorily, regardless of their aggregate turnover threshold.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "ECO",
+        "Compulsory Registration",
+        "Section 24"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_010",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "What is the time limit for a Non-Resident Taxable Person (NRTP) to apply for registration prior to the commencement of business?",
+      "options": [
+        "At least 5 days prior",
+        "At least 15 days prior",
+        "At least 30 days prior",
+        "No prior time limit is prescribed"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per Section 27(1) read with Rule 12, a non-resident taxable person shall make an application for registration at least 5 days prior to the commencement of business.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Non-Resident Taxable Person",
+        "Advance Application",
+        "Section 27"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_011",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "When a registered person applies for cancellation of registration, what happens to their tax liability for the period prior to cancellation?",
+      "options": [
+        "It gets waived automatically",
+        "It remains unaffected and the person is liable to pay all pending dues",
+        "It is transferred to the successor automatically",
+        "It can only be recovered after 5 years"
+      ],
+      "answerIndex": 1,
+      "explanation": "Cancellation of registration under Section 29 does not affect the liability of the taxable person to pay tax and other dues for any period prior to the date of cancellation, which remains recoverable.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Cancellation",
+        "Tax Liability",
+        "Section 29"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_012",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "Can a person having multiple business verticals within a State obtain separate registrations for each vertical under the CGST Act, 2017?",
+      "options": [
+        "No, separate registration is allowed only for different States",
+        "Yes, under Section 25(2) proviso, a person having multiple business verticals within a State may obtain separate registration for each vertical",
+        "Yes, but only if turnover of each vertical exceeds Rs. 10 Crores",
+        "No, business verticals provision was omitted/amended"
+      ],
+      "answerIndex": 1,
+      "explanation": "The proviso to Section 25(2) allows a person having multiple business verticals within a State or Union territory to be granted a separate registration for each business vertical, subject to prescribed conditions.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Business Verticals",
+        "Separate Registration",
+        "Section 25"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_013",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "Which of the following actions can be taken by the proper officer if a registered person has contravened provisions relating to anti-profiteering or furnishing returns?",
+      "options": [
+        "Directly seize all bank accounts without notice",
+        "Cancel the registration under Section 29(2)",
+        "Force conversion of registration into UIN",
+        "Impose imprisonment without trial"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 29(2) of the CGST Act, the proper officer may cancel the registration of a person who has contravened such provisions of the Act or the rules made thereunder as may be prescribed.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Cancellation",
+        "Proper Officer",
+        "Section 29"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_014",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "What is the penalty for failure to obtain registration when legally mandated under the CGST Act, 2017?",
+      "options": [
+        "Fixed penalty of Rs. 5,000",
+        "10% of the tax due or Rs. 10,000, whichever is higher",
+        "Imprisonment for 7 years straight",
+        "Confiscation of all personal assets"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 122(1)(i), a taxable person who supplies any taxable goods or services without issue of invoice or suppresses turnover is liable to a penalty of Rs. 10,000 or an amount equivalent to the tax evaded or tax short deducted/collected, whichever is higher.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Penalty",
+        "Failure to Register",
+        "Section 122"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_015",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "If a registered person dies, what happens to their GST registration?",
+      "options": [
+        "It continues in the name of the deceased indefinitely",
+        "It is cancelled immediately and cannot be transferred",
+        "The legal heir/transferee is permitted to carry on business under the same registration/amended registration",
+        "It is converted into a casual taxable person registration"
+      ],
+      "answerIndex": 2,
+      "explanation": "As per Section 29(1)(a) read with Rule 21A/relevant rules, in the event of the death of a sole proprietor, the business can be continued by the legal heir, and application for amendment/transfer is made so that the transferee can operate.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Death of Proprietor",
+        "Transfer of Business",
+        "Section 29"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_016",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "Which of the following is NOT required to obtain GST registration?",
+      "options": [
+        "An agriculturist, to the extent of supply of produce out of cultivation of land",
+        "An Input Service Distributor (ISD)",
+        "A person making inter-state supplies of taxable goods with turnover of Rs. 25 lakhs",
+        "A non-resident taxable person making taxable supplies"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 23(1)(a) explicitly states that an agriculturist shall not be liable to registration to the extent of supply of produce out of cultivation of land. The others listed are either compulsorily registrable or crossed thresholds.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Exemption from Registration",
+        "Agriculturist",
+        "Section 23"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_017",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "What is the threshold limit for registration for a person engaged exclusively in intra-state taxable supply of goods in the State of Arunachal Pradesh?",
+      "options": [
+        "Rs. 10 Lakhs",
+        "Rs. 20 Lakhs",
+        "Rs. 40 Lakhs",
+        "Rs. 50 Lakhs"
+      ],
+      "answerIndex": 1,
+      "explanation": "Notification No. 10/2019-CT specifies Rs. 20 lakhs threshold for states like Arunachal Pradesh for exclusive supply of goods (unlike Manipur, Mizoram, Nagaland, Tripura which have Rs. 10 lakhs).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Threshold Limit",
+        "Arunachal Pradesh",
+        "Goods"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_018",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "When can a person voluntarily obtain registration under Section 25(3), even though their aggregate turnover is below the threshold limit?",
+      "options": [
+        "Only after obtaining prior permission from the GST Council",
+        "At any time, and all provisions of the Act shall apply to such registered person",
+        "Only if they make inter-state supplies to unregistered persons",
+        "Voluntary registration is not permitted under CGST Act"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 25(3) allows a person not liable to be registered under section 22 or section 24 to get registered voluntarily, and once registered, all provisions of the Act apply as if they are a regular taxable person.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Voluntary Registration",
+        "Section 25"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_019",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "What is the status of a registration certificate if the proper officer initiates suo-motu cancellation proceedings?",
+      "options": [
+        "It remains fully active until final order is passed",
+        "It may be suspended by the proper officer pending the cancellation proceedings",
+        "It is automatically revoked within 24 hours",
+        "It is converted into voluntary registration"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 21A of the CGST Rules provides that where the proper officer has reasons to believe that the registration of a person is liable to be cancelled, he may suspend the registration pending the cancellation proceedings.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Suspension",
+        "Suo-motu Cancellation",
+        "Rule 21A"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_020",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "Who among the following is empowered to notify categories of services where tax on intra-state supplies shall be paid by the electronic commerce operator?",
+      "options": [
+        "Central Government on the recommendations of the GST Council",
+        "Commissioner of State Tax independently",
+        "Jurisdictional Superintendent",
+        "Reserve Bank of India"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 9(5) of the CGST Act empowers the Government, on the recommendations of the Council, to specify categories of services the tax on intra-state supplies of which shall be paid by the electronic commerce operator.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "ECO",
+        "Section 9",
+        "Recommendations of Council"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_021",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "Can a person having a PAN in India obtain multiple GST registrations across different States without having multiple business verticals?",
+      "options": [
+        "No, only one GSTIN per PAN is allowed nationwide",
+        "Yes, a person having multiple places of business in different States must obtain a separate registration for each such State",
+        "Yes, but only if turnover exceeds Rs. 10 Crores per State",
+        "No, inter-state operations require only one central registration"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 25(1), a person obtaining registration has to obtain a separate registration for each State or Union territory in which he has a business and is liable to register, meaning multiple state registrations per PAN are mandatory.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Multiple States",
+        "Separate Registration",
+        "PAN"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_022",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "What is the time period within which a person whose registration has been cancelled suo-motu can apply for revocation of cancellation?",
+      "options": [
+        "Within 15 days of service of cancellation order",
+        "Within 30 days of service of cancellation order (extendable by Commissioner)",
+        "Within 90 days without any extension",
+        "Within 1 year from the date of issue"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 30 of the CGST Act, any registered person whose registration is cancelled suo-motu may apply for revocation within 30 days from the date of service of the cancellation order, which can be extended by the Commissioner/Additional/Joint Commissioner.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Revocation",
+        "Cancellation",
+        "Section 30"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_023",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "Which form is used for submitting an application for registration under CGST Rules, 2017?",
+      "options": [
+        "FORM GST REG-01",
+        "FORM GST REG-06",
+        "FORM GST REG-16",
+        "FORM GST REG-21"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 8 prescribes FORM GST REG-01 for making an application for electronic registration. FORM GST REG-06 is the certificate of registration, and FORM GST REG-16 is for cancellation.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Registration Forms",
+        "FORM GST REG-01",
+        "CGST Rules"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_024",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "What is the threshold limit for registration for a person engaged exclusively in intra-state supply of services in the State of Uttarakhand?",
+      "options": [
+        "Rs. 10 Lakhs",
+        "Rs. 20 Lakhs",
+        "Rs. 40 Lakhs",
+        "Rs. 50 Lakhs"
+      ],
+      "answerIndex": 1,
+      "explanation": "For services, the threshold limit is generally Rs. 20 lakhs (or Rs. 10 lakhs for specific special category states). Uttarakhand has a threshold of Rs. 20 lakhs for services (and Rs. 40 lakhs for goods).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Threshold Limit",
+        "Services",
+        "Uttarakhand"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_025",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "In the case of transfer of business as a going concern, what happens to the unutilized input tax credit (ITC) lying in the electronic credit ledger of the transferor?",
+      "options": [
+        "It lapses permanently",
+        "It can be refunded in cash to the transferor",
+        "It is transferred to the transferee through FORM GST ITC-02",
+        "It must be reversed and cannot be utilized"
+      ],
+      "answerIndex": 2,
+      "explanation": "As per Section 18(3) read with Rule 41, in case of amalgamation, merger, or transfer of business as a going concern, the unutilized ITC can be transferred to the transferee using FORM GST ITC-02.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Transfer of Business",
+        "Input Tax Credit",
+        "FORM GST ITC-02"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_026",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "What is the consequence of furnishing false information during the registration process under the CGST Act?",
+      "options": [
+        "Only a warning letter is issued",
+        "The proper officer can reject or cancel the registration and penalize the applicant",
+        "The registration is automatically upgraded to voluntary status",
+        "No action can be taken after ARN generation"
+      ],
+      "answerIndex": 1,
+      "explanation": "Furnishing false information or suppression of facts during registration empowers the proper officer to reject or cancel registration and initiate penal proceedings under the Act.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "False Information",
+        "Cancellation",
+        "Penalties"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_027",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "Which of the following is considered while computing 'aggregate turnover' for determining registration threshold?",
+      "options": [
+        "Central tax, State tax, Integrated tax, and Cess",
+        "Exempt supplies of goods and services",
+        "Inward supplies on which tax is payable under reverse charge basis",
+        "Value of goods supplied directly from customs bonded warehouses before clearance"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 2(6), 'aggregate turnover' includes taxable supplies, exempt supplies, exports, and inter-state supplies of persons having the same PAN, computed on all-India basis, excluding central/state/integrated taxes and cess, and reverse charge inward supplies.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Aggregate Turnover",
+        "Definition",
+        "Section 2"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_028",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "Can a person having multiple registrations within the same State transfer ITC from one GSTIN to another GSTIN of the same entity?",
+      "options": [
+        "No, transfer of ITC between different GSTINS of same PAN in same state is not allowed",
+        "Yes, through FORM GST ITC-02A",
+        "Yes, automatically without any form",
+        "Only with High Court permission"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 41A allows a registered person who has obtained separate registrations for multiple places of business within the same State to transfer unutilized ITC lying in one GSTIN to another GSTIN using FORM GST ITC-02A.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Transfer of ITC",
+        "Same State",
+        "FORM GST ITC-02A"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_029",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "What is the requirement for a Non-Resident Taxable Person regarding furnishing of returns?",
+      "options": [
+        "Annual return only in FORM GSTR-9",
+        "Quarterly return in FORM GSTR-4",
+        "Monthly return in FORM GSTR-5",
+        "No returns are required to be filed"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 39(5) mandates that a non-resident taxable person shall furnish a return in FORM GSTR-5 for every calendar month within 20 days after the end of a calendar month or within 7 days after the last day of validity of registration.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Non-Resident Taxable Person",
+        "Returns",
+        "FORM GSTR-5"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-9_030",
+      "kind": "normal",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "prompt": "Which authority issues the registration certificate in FORM GST REG-06?",
+      "options": [
+        "GST Council Secretariat",
+        "The proper officer after approval of application",
+        "Central Board of Indirect Taxes and Customs (CBIC) Chairman directly",
+        "Registrar of Companies"
+      ],
+      "answerIndex": 1,
+      "explanation": "The proper officer grants the certificate of registration in FORM GST REG-06 after successful verification and approval of the registration application.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Registration Certificate",
+        "FORM GST REG-06",
+        "Proper Officer"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_gst-9_01",
+      "kind": "scenario",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "passage": "M/s. Apex Traders, a sole proprietorship firm based in Jaipur, Rajasthan, is engaged in trading of electronic appliances. During the financial year, the aggregate turnover of M/s. Apex Traders crossed Rs. 40 Lakhs on 15th October. The proprietor, Mr. Anand, failed to apply for registration within the statutory 30-day period and ultimately submitted an online application for registration on 25th November. Mr. Anand also wishes to know whether his Jaipur branch (warehouse) requires a separate registration within the same State.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-9_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-9_01",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-9",
+          "subject": "Taxation",
+          "prompt": "By what date was M/s. Apex Traders required to apply for GST registration?",
+          "options": [
+            "15th October",
+            "30th October",
+            "14th November",
+            "25th November"
+          ],
+          "answerIndex": 2,
+          "explanation": "Since the liability to register arose on 15th October, as per Section 25(1), the application must be made within 30 days from that date. Counting 30 days from 15th October leads to 14th November.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Time Limit",
+            "Application Date",
+            "Section 25"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-9_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-9_01",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-9",
+          "subject": "Taxation",
+          "prompt": "What is the threshold limit applicable to M/s. Apex Traders for registration of goods in Rajasthan?",
+          "options": [
+            "Rs. 10 Lakhs",
+            "Rs. 20 Lakhs",
+            "Rs. 40 Lakhs",
+            "Rs. 1.5 Crores"
+          ],
+          "answerIndex": 2,
+          "explanation": "Notification No. 10/2019-CT prescribes a threshold limit of Rs. 40 Lakhs for exclusive supply of goods in states like Rajasthan, provided certain conditions (such as not dealing in notified goods like ice cream, pan masala, tobacco) are met.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Threshold Limit",
+            "Rajasthan",
+            "Goods"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-9_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-9_01",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-9",
+          "subject": "Taxation",
+          "prompt": "Is Mr. Anand legally mandated to obtain a separate registration for his warehouse in Jaipur under the CGST Act?",
+          "options": [
+            "Yes, every branch or warehouse must have a separate registration mandatorily",
+            "No, obtaining separate registration for multiple places of business within the same State is optional under Section 25(2)",
+            "Yes, if turnover of warehouse exceeds Rs. 20 Lakhs",
+            "No, intra-state warehouses are prohibited from registration"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 25(2) of the CGST Act, a person having multiple places of business in the same State *may* be granted a separate registration for each place of business, making it an option rather than a mandatory requirement.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Multiple Places of Business",
+            "Same State",
+            "Section 25"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-9_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-9_01",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-9",
+          "subject": "Taxation",
+          "prompt": "Assuming Mr. Anand successfully completes Aadhaar authentication, what will be the effective date of registration for M/s. Apex Traders?",
+          "options": [
+            "15th October (date on which liability to register arose)",
+            "25th November (date of submission of application)",
+            "Date of approval by proper officer",
+            "1st April of the financial year"
+          ],
+          "answerIndex": 1,
+          "explanation": "Since the application was submitted on 25th November, which is after the expiry of 30 days from the date of liability (14th November), where Aadhaar authentication is completed, the effective date of registration is the date of grant of registration / submission of application as per Rule 10.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Effective Date",
+            "Delayed Application",
+            "Rule 10"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-9_02",
+      "kind": "scenario",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "passage": "Mr. John, a resident of London, UK, visits India to participate in an industrial trade fair held in Mumbai, Maharashtra. He sets up a temporary stall and sells taxable machine parts directly to Indian consumers. Furthermore, Mr. John intends to clear goods imported into India through custom clearances. He has no fixed place of business in India.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-9_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-9_02",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-9",
+          "subject": "Taxation",
+          "prompt": "Under which category of taxable persons does Mr. John fall for the purpose of GST registration?",
+          "options": [
+            "Casual Taxable Person",
+            "Non-Resident Taxable Person",
+            "Input Service Distributor",
+            "Regular Taxable Person"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per Section 2(77), a non-resident taxable person means any person who occasionally undertakes transactions involving supply of goods or services or both, whether as principal or agent or in any other capacity, but who has no fixed place of business or residence in India.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Non-Resident Taxable Person",
+            "Definition",
+            "Section 2"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-9_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-9_02",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-9",
+          "subject": "Taxation",
+          "prompt": "What is the advance time limit for Mr. John to apply for GST registration prior to commencing business in Mumbai?",
+          "options": [
+            "At least 30 days prior",
+            "At least 15 days prior",
+            "At least 5 days prior",
+            "No prior application is required"
+          ],
+          "answerIndex": 2,
+          "explanation": "As per Section 27(1) read with Rule 12, a non-resident taxable person shall make an application for registration at least 5 days prior to the commencement of business.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "NRTP",
+            "Advance Application",
+            "Section 27"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-9_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-9_02",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-9",
+          "subject": "Taxation",
+          "prompt": "What advance deposit of tax must Mr. John make while applying for registration as a non-resident taxable person?",
+          "options": [
+            "Nil, deposit is required only after monthly filing",
+            "An amount equivalent to the estimated tax liability of such person for the period for which the registration is sought",
+            "Fixed deposit of Rs. 1,00,000 irrespective of turnover",
+            "50% of total invoice value"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 27(2) mandates that the certificate of registration issued to a non-resident taxable person shall be granted or renewed only upon advance deposit of an amount equivalent to the estimated tax liability for the period for which registration is sought.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Advance Tax Deposit",
+            "NRTP",
+            "Section 27"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-9_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-9_02",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-9",
+          "subject": "Taxation",
+          "prompt": "What is the initial validity period of the registration certificate granted to Mr. John?",
+          "options": [
+            "90 days, or period specified in application, whichever is earlier",
+            "180 days fixed",
+            "1 year",
+            "30 days"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 27(1) states that the certificate of registration issued to a casual taxable person or a non-resident taxable person shall be valid for a period specified in the application or 90 days from the effective date of registration, whichever is earlier.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Validity Period",
+            "NRTP",
+            "Section 27"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-9_03",
+      "kind": "scenario",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "passage": "M/s. Zenith Logistics Solutions, registered in Karnataka, provides taxable logistics services across multiple states. Due to internal restructuring, the firm decides to transfer its entire business as a going concern to M/s. Swift Carriers Pvt. Ltd., which is also registered under GST in Karnataka. The transfer includes all assets, liabilities, and unutilized input tax credit.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-9_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-9_03",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-9",
+          "subject": "Taxation",
+          "prompt": "What is the statutory requirement under the CGST Act regarding registration for M/s. Swift Carriers Pvt. Ltd. consequent to the transfer of business?",
+          "options": [
+            "It must apply for fresh registration ignoring transferor's history",
+            "It shall be liable to be registered with effect from the date of such transfer or succession",
+            "It is exempt from registration if turnover is below Rs. 20 lakhs",
+            "It must convert into an ISD"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 22(3) provides that where a business carried on by a registered person is transferred to another person as a going concern, the transferee shall be liable to be registered with effect from the date of such transfer or succession.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Transfer of Business",
+            "Compulsory Registration",
+            "Section 22"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-9_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-9_03",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-9",
+          "subject": "Taxation",
+          "prompt": "How can M/s. Zenith Logistics Solutions transfer its unutilized input tax credit (ITC) to M/s. Swift Carriers Pvt. Ltd.?",
+          "options": [
+            "By filing a cash refund claim",
+            "By filing FORM GST ITC-02",
+            "By writing a letter to the jurisdictional Commissioner",
+            "ITC cannot be transferred under any circumstance"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 41 of the CGST Rules specifies that in case of transfer of business as a going concern, the unutilized ITC can be transferred to the transferee by filing FORM GST ITC-02 electronically.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Transfer of ITC",
+            "FORM GST ITC-02",
+            "Rule 41"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-9_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-9_03",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-9",
+          "subject": "Taxation",
+          "prompt": "What will happen to the existing GST registration of M/s. Zenith Logistics Solutions after the complete transfer of business as a going concern?",
+          "options": [
+            "It continues to be used by the transferor for other businesses indefinitely",
+            "It is liable to be cancelled under Section 29(1)(a) due to transfer of business",
+            "It automatically gets renamed without any application",
+            "It is converted into a UIN"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 29(1)(a) provides for cancellation of registration in the event of transfer of business fully on account of amalgamation, merger, demerger, sale, lease or otherwise of the business.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Cancellation",
+            "Transfer of Business",
+            "Section 29"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-9_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-9_03",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-9",
+          "subject": "Taxation",
+          "prompt": "Is M/s. Swift Carriers Pvt. Ltd. liable for any tax liabilities of M/s. Zenith Logistics Solutions prior to the date of transfer?",
+          "options": [
+            "No, past liabilities extinguish completely upon transfer",
+            "Yes, transferee is jointly and severally liable along with transferor for past dues as per Section 85",
+            "Liability is restricted only to the bank balance transferred",
+            "Only the transferor remains liable; transferee has zero liability"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 85 of the CGST Act, where a taxable person transfers their business in whole or in part, the transferor and transferee shall jointly and severally be liable for payment of tax, interest, or penalty due up to the time of such transfer.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Joint and Several Liability",
+            "Transfer of Business",
+            "Section 85"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-9_04",
+      "kind": "scenario",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "passage": "M/s. RetailCorp India, an online marketplace operator (Electronic Commerce Operator - ECO), facilitates the supply of branded apparel by various unorganized third-party vendors to consumers across India through its digital portal. Some vendors have an aggregate turnover below the Rs. 20 Lakhs threshold and are unregistered.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-9_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-9_04",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-9",
+          "subject": "Taxation",
+          "prompt": "Is M/s. RetailCorp India required to obtain compulsory GST registration?",
+          "options": [
+            "No, ECOs are exempt from registration if turnover is below Rs. 40 lakhs",
+            "Yes, under Section 24(x), every electronic commerce operator required to collect tax at source must obtain compulsory registration",
+            "Only if it supplies goods outside India",
+            "Voluntary registration is sufficient"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 24(x) mandates that electronic commerce operators who are required to collect tax at source under section 52 must obtain registration regardless of any turnover threshold.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "ECO",
+            "Compulsory Registration",
+            "Section 24"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-9_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-9_04",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-9",
+          "subject": "Taxation",
+          "prompt": "Are the third-party vendors selling goods through M/s. RetailCorp India's portal required to register under GST if their turnover is below the threshold limit?",
+          "options": [
+            "Yes, selling through ECO makes registration compulsory for all suppliers under Section 24(ix)",
+            "No, Notification No. 34/2023-CT exempts suppliers supplying goods through ECO from compulsory registration under Section 24(ix) if their aggregate turnover does not exceed the threshold limit and certain conditions are met",
+            "Yes, but only if they are registered as casual taxable persons",
+            "No supplier can ever sell online without registration"
+          ],
+          "answerIndex": 1,
+          "explanation": "Vide Notification No. 34/2023-CT, intra-state suppliers supplying goods through an ECO are exempt from compulsory registration under Section 24(ix) provided their aggregate turnover is below the threshold and they meet specified conditions (such as not making inter-state supplies).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "ECO",
+            "Exemption from Compulsory Registration",
+            "Notification"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-9_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-9_04",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-9",
+          "subject": "Taxation",
+          "prompt": "What is the statutory obligation of M/s. RetailCorp India regarding tax collection on supplies made through its portal by unregistered vendors qualifying for exemption?",
+          "options": [
+            "It must collect Tax Collected at Source (TCS) under Section 52 on such supplies",
+            "It is prohibited from allowing unregistered vendors on its platform",
+            "It must pay tax under reverse charge mechanism as a recipient",
+            "It has no TCS obligation on exempted suppliers"
+          ],
+          "answerIndex": 0,
+          "explanation": "Even if suppliers are exempt from registration under the notification, ECOs collecting consideration must collect TCS under Section 52 on supplies made through their portal, as specified by GST provisions.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "TCS",
+            "ECO",
+            "Section 52"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-9_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-9_04",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-9",
+          "subject": "Taxation",
+          "prompt": "Which return form is required to be filed by M/s. RetailCorp India for reporting details of supplies and TCS collected?",
+          "options": [
+            "FORM GSTR-1",
+            "FORM GSTR-3B",
+            "FORM GSTR-8",
+            "FORM GSTR-9"
+          ],
+          "answerIndex": 2,
+          "explanation": "Section 52(5) read with rules mandates that every electronic commerce operator required to collect tax at source shall furnish a statement in FORM GSTR-8 electronically containing details of outward supplies and TCS.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "TCS Return",
+            "FORM GSTR-8",
+            "ECO"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-9_05",
+      "kind": "scenario",
+      "chapterId": "gst-9",
+      "subject": "Taxation",
+      "passage": "Mr. Vikram was a registered taxpayer operating a retail store in Pune, Maharashtra under GSTIN 27AABCV1234F1Z5. On 10th January, the proper officer issued a notice for suo-motu cancellation of registration due to continuous non-furnishing of returns for a prescribed consecutive period. Mr. Vikram's registration was subsequently cancelled on 25th January. Realizing his mistake, Mr. Vikram cleared all pending tax dues and filed all delayed returns, wishing to restore his registration.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 9,
+        "chapterTitle": "Registration"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-9_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-9_05",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-9",
+          "subject": "Taxation",
+          "prompt": "Within what time period must Mr. Vikram apply for revocation of the cancellation of his registration?",
+          "options": [
+            "Within 15 days from the date of service of the cancellation order",
+            "Within 30 days from the date of service of the cancellation order",
+            "Within 90 days from the date of order",
+            "Within 1 year from the date of order"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 30(1) of the CGST Act states that any registered person whose registration is cancelled by the proper officer on his own motion may apply for revocation of cancellation within 30 days from the date of service of the cancellation order.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Revocation",
+            "Time Limit",
+            "Section 30"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-9_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-9_05",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-9",
+          "subject": "Taxation",
+          "prompt": "Can the time limit for applying for revocation of cancellation be extended, and if so, by whom?",
+          "options": [
+            "No extension is possible under any circumstance",
+            "Yes, by the Commissioner or Joint Commissioner for a further period not exceeding 30 days",
+            "Yes, by the jurisdictional GST Inspector indefinitely",
+            "Yes, by the High Court only"
+          ],
+          "answerIndex": 1,
+          "explanation": "Proviso to Section 30(1) allows the Commissioner or Additional/Joint Commissioner to extend the period for filing application for revocation by a further period not exceeding 30 days, and further by the Commissioner for another 30 days (as amended).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Extension",
+            "Revocation",
+            "Section 30"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-9_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-9_05",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-9",
+          "subject": "Taxation",
+          "prompt": "What is the pre-condition for Mr. Vikram to apply for revocation of cancellation of registration?",
+          "options": [
+            "He must pay a penalty of Rs. 1,00,000 upfront",
+            "He must furnish all pending returns and pay any amount due as tax, interest, and penalty",
+            "He must obtain prior approval from the Supreme Court",
+            "He must convert his business into a private limited company"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 23 of CGST Rules mandates that no application for revocation shall be filed unless the applicant has deposited the pending returns and paid all tax, interest, and penalty due in respect of which the registration was cancelled.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Revocation Conditions",
+            "Pending Returns",
+            "Rule 23"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-9_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-9_05",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-9",
+          "subject": "Taxation",
+          "prompt": "If the proper officer is satisfied with Mr. Vikram's revocation application, what action is taken?",
+          "options": [
+            "A fresh GSTIN is allotted with new PAN",
+            "The proper officer shall revoke the cancellation by an order within 30 days of receipt of application",
+            "The application is forwarded to the GST Council for voting",
+            "The registration remains cancelled but penalty is waived"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per Rule 23(2), the proper officer shall, in such manner and within such period as prescribed (30 days), by order, revoke the cancellation of registration, making the original registration operational again.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Revocation Order",
+            "Proper Officer",
+            "Rule 23"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

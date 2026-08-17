@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "advanced-accounting-2",
+  "subject": "Accounts",
+  "paper": "Paper 1: Advanced Accounting",
+  "module": "Module 1",
+  "chapterNumber": 2,
+  "chapterTitle": "Framework for Preparation and Presentation of Financial Statements",
+  "generatedAt": "2026-08-16T13:37:06.321Z",
+  "model": "gemini-3.6-flash",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_advanced-accounting-2_001",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "Under the ICAI Framework for the Preparation and Presentation of Financial Statements, what is the status of the Framework in the event of a conflict with a specific Accounting Standard (AS)?",
+      "options": [
+        "The Framework overrides the Accounting Standard.",
+        "The Accounting Standard overrides the Framework.",
+        "The entity may choose whichever treatment results in a higher net profit.",
+        "The matter must be referred to the Ministry of Corporate Affairs for a ruling."
+      ],
+      "answerIndex": 1,
+      "explanation": "The Framework clearly states that it is not an Accounting Standard and does not override any specific Accounting Standard. In case of a conflict between the Framework and an Accounting Standard, the requirements of the specific Accounting Standard override those of the Framework.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Framework Status",
+        "Conflict with AS",
+        "Hierarchy of Standards"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_002",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "Which of the following is NOT categorized as a fundamental accounting assumption in the Framework and AS 1?",
+      "options": [
+        "Going Concern",
+        "Accrual",
+        "Consistency",
+        "Prudence"
+      ],
+      "answerIndex": 3,
+      "explanation": "Going Concern, Accrual, and Consistency are the three fundamental accounting assumptions specified in AS 1 and the Framework. Prudence is a qualitative consideration used in selecting accounting policies, not a fundamental accounting assumption.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Fundamental Accounting Assumptions",
+        "AS 1",
+        "Prudence"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_003",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "Which three essential conditions must be satisfied for an item to meet the definition of an 'Asset' according to the Framework?",
+      "options": [
+        "Legal ownership, physical existence, and past cash outflow.",
+        "Control by the enterprise, result of past events, and expected inflow of future economic benefits.",
+        "Present legal title, reliable market value, and future tax savings.",
+        "Management intention to hold long-term, historical cost measurement, and physical form."
+      ],
+      "answerIndex": 1,
+      "explanation": "An asset is defined as a resource controlled by the enterprise as a result of past events and from which future economic benefits are expected to flow to the enterprise. Physical form and legal ownership are not absolute prerequisites.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Asset Definition",
+        "Elements of Financial Statements",
+        "Control"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_004",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "The Framework defines 'Income' to include both revenues and gains. Which of the following is explicitly excluded from the definition of income?",
+      "options": [
+        "Gains on disposal of non-current assets",
+        "Unrealized appreciation on investment property",
+        "Contributions from equity participants",
+        "Reversal of excess impairment provisions"
+      ],
+      "answerIndex": 2,
+      "explanation": "Income is defined as increases in economic benefits during the accounting period in the form of inflows or enhancements of assets or decreases of liabilities that result in increases in equity, other than those relating to contributions from equity participants.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Income Definition",
+        "Equity Contributions",
+        "Elements of Financial Statements"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_005",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "An entity acquires equipment under a contract where legal ownership transfers only upon payment of the final installment, but all operational risks and rewards pass to the entity on day one. How should this equipment be recognized?",
+      "options": [
+        "Recognize as an asset and liability immediately, applying the principle of 'substance over form'.",
+        "Record as operating lease expenses as installments are paid until legal title transfers.",
+        "Disclose as a contingent asset in the notes to accounts without financial balance recognition.",
+        "Record the asset at a nominal value of Re. 1 until full legal title is acquired."
+      ],
+      "answerIndex": 0,
+      "explanation": "Under the principle of 'substance over form', transactions are accounted for in accordance with their economic reality rather than merely their legal form. Since the risk and rewards are transferred, the asset and liability are recognized immediately.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Substance over Form",
+        "Qualitative Characteristics",
+        "Asset Recognition"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_006",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "How does the Framework define the qualitative characteristic of 'Prudence'?",
+      "options": [
+        "The deliberate understatement of assets and overstatement of liabilities to create hidden reserves.",
+        "The inclusion of a degree of caution in exercising judgments needed in making estimates under uncertainty.",
+        "The policy of recognizing revenues only when cash is fully realized in bank accounts.",
+        "The immediate write-off of all capital expenditures incurred during the financial year."
+      ],
+      "answerIndex": 1,
+      "explanation": "Prudence is the inclusion of a degree of caution in the exercise of judgments needed in making estimates required under conditions of uncertainty, such that assets or income are not overstated and liabilities or expenses are not understated. It does not permit the creation of hidden or secret reserves.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Prudence",
+        "Qualitative Characteristics",
+        "Reliability"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_007",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "Assets are recorded at the amount of cash or cash equivalents paid or the fair value of consideration given at the time of acquisition. Which measurement basis is described?",
+      "options": [
+        "Current Cost",
+        "Realisable Value",
+        "Historical Cost",
+        "Present Value"
+      ],
+      "answerIndex": 2,
+      "explanation": "Historical cost is the measurement basis where assets are recorded at the amount of cash or cash equivalents paid or the fair value of the consideration given to acquire them at the time of their acquisition.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Measurement Basis",
+        "Historical Cost",
+        "Valuation Principles"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_008",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "Under which measurement basis are assets carried at the amount of cash or cash equivalents that would have to be paid if the same or an equivalent asset was acquired currently?",
+      "options": [
+        "Historical Cost",
+        "Current Cost",
+        "Settlement Value",
+        "Present Value"
+      ],
+      "answerIndex": 1,
+      "explanation": "Current cost measures assets at the amount of cash or cash equivalents that would have to be paid if the same or an equivalent asset were acquired currently.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Current Cost",
+        "Measurement Basis",
+        "Asset Valuation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_009",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "In financial statement preparation, liabilities carried at the undiscounted amount of cash expected to be paid to satisfy obligations in the normal course of business are measured at:",
+      "options": [
+        "Realisable / Settlement Value",
+        "Present Value",
+        "Historical Cost",
+        "Fair Value through Profit and Loss"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under the realisable (settlement) value basis, liabilities are carried at their settlement values, which are the undiscounted amounts of cash or cash equivalents expected to be paid to satisfy the liabilities in the normal course of business.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Settlement Value",
+        "Realisable Value",
+        "Measurement Basis"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_010",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "Under the concept of Financial Capital Maintenance at nominal monetary units, profit is earned only if:",
+      "options": [
+        "Physical productive capacity at the end of the period exceeds that at the beginning.",
+        "The financial amount of net assets at the end of the period exceeds that at the beginning, after excluding distributions to and contributions from owners.",
+        "Net assets at the end of the period, adjusted for inflation, exceed net assets at the beginning.",
+        "Cash balances at the end of the period exceed cash balances at the beginning."
+      ],
+      "answerIndex": 1,
+      "explanation": "Financial capital maintenance in nominal monetary units measures profit as the increase in nominal financial capital (net assets) over the period, excluding any transactions with owners (contributions and distributions).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Financial Capital Maintenance",
+        "Nominal Monetary Units",
+        "Capital Maintenance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_011",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "Which capital maintenance concept requires all price changes affecting assets and liabilities to be treated as capital maintenance adjustments in equity rather than profit?",
+      "options": [
+        "Financial capital maintenance in nominal units",
+        "Financial capital maintenance in constant purchasing power",
+        "Physical capital maintenance",
+        "Realized operating cash flow maintenance"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under physical capital maintenance (operating capability), all price changes affecting the assets and liabilities of the enterprise are viewed as capital maintenance adjustments that form part of equity, rather than being included in profit or loss.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Physical Capital Maintenance",
+        "Operating Capability",
+        "Equity Adjustments"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_012",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "Financial information must be free from deliberate bias so that it produces neutral outcomes without influencing decisions toward a predetermined result. Which qualitative characteristic does this describe?",
+      "options": [
+        "Neutrality",
+        "Comparability",
+        "Understandability",
+        "Timeliness"
+      ],
+      "answerIndex": 0,
+      "explanation": "To be reliable, the information contained in financial statements must be neutral, meaning free from bias. Financial statements are not neutral if, by the selection or presentation of information, they influence the making of a decision or judgment in order to achieve a predetermined result or outcome.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Neutrality",
+        "Reliability",
+        "Qualitative Characteristics"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_013",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "An item meeting the definition of an element should be recognized in financial statements if and only if:",
+      "options": [
+        "It is legally enforceable and approved by the board of directors.",
+        "It is probable that any future economic benefit will flow to/from the enterprise AND its cost or value can be measured reliably.",
+        "A completed cash flow transaction has taken place during the current financial year.",
+        "It does not result in an increased tax liability for the reporting period."
+      ],
+      "answerIndex": 1,
+      "explanation": "The Framework mandates two cumulative criteria for recognition of an element: (1) it is probable that any future economic benefit associated with the item will flow to or from the enterprise, and (2) the item has a cost or value that can be measured with reliability.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Recognition Criteria",
+        "Probability",
+        "Reliable Measurement"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_014",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "An entity delays issuing its annual report by eight months to obtain absolute confirmation of a pending insurance claim. Which constraint trade-off is highlighted?",
+      "options": [
+        "Timeliness versus Reliability",
+        "Relevance versus Materiality",
+        "Substance over Form versus Prudence",
+        "Understandability versus Comparability"
+      ],
+      "answerIndex": 0,
+      "explanation": "This situation illustrates the constraint between timeliness and reliability. Delaying reporting improves the reliability of the information regarding the claim but impairs timeliness, rendering the financial statements less relevant for decision-making.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Timeliness vs Reliability",
+        "Constraints",
+        "Qualitative Characteristics"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_015",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "According to the Framework, information is considered material if its omission or misstatement could:",
+      "options": [
+        "Lead to regulatory penalties from government authorities.",
+        "Influence the economic decisions of users taken on the basis of financial statements.",
+        "Exceed 5% of gross revenues in all circumstances.",
+        "Directly alter the credit rating assigned to the entity."
+      ],
+      "answerIndex": 1,
+      "explanation": "Information is material if its omission or misstatement could influence the economic decisions of users taken on the basis of the financial statements. Materiality depends on the size and nature of the item judged in the specific circumstances.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Materiality",
+        "Relevance",
+        "Qualitative Characteristics"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_016",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "When the going concern assumption of an entity is no longer valid, how should its financial statements be prepared?",
+      "options": [
+        "On a standard historical cost basis with explanatory note disclosure.",
+        "On a liquidation/net realisable value basis, adjusting asset carrying amounts and providing for liabilities.",
+        "On a cash basis of accounting excluding all non-cash items.",
+        "Financial statements must be withheld completely."
+      ],
+      "answerIndex": 1,
+      "explanation": "If the going concern assumption is invalid, financial statements can no longer be prepared on a normal going-concern historical cost basis. They must be prepared on a net realisable / liquidation basis, remeasuring assets at realisable values and recognizing obligations arising from liquidation.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Going Concern",
+        "Fundamental Accounting Assumptions",
+        "Liquidation Basis"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_017",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "When economic benefits are expected to arise over several accounting periods and the connection with income can only be broadly or indirectly determined, expenses are recognized on the basis of:",
+      "options": [
+        "Immediate full write-off in the year of expenditure.",
+        "Systematic and rational allocation procedures.",
+        "Cash outflows as and when disbursements occur.",
+        "Historical cost adjusted for general purchasing power."
+      ],
+      "answerIndex": 1,
+      "explanation": "When economic benefits are expected to arise over several accounting periods and the association with income can only be broadly or indirectly determined, expenses are recognized in the income statement on the basis of systematic and rational allocation procedures (e.g., depreciation).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Matching Principle",
+        "Expense Recognition",
+        "Systematic Allocation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_018",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "How does the Framework define 'Equity'?",
+      "options": [
+        "Total non-current assets minus total non-current liabilities.",
+        "Residual interest in the assets of the enterprise after deducting all its liabilities.",
+        "Paid-up share capital plus statutory reserves.",
+        "Net current assets available for operational expansion."
+      ],
+      "answerIndex": 1,
+      "explanation": "Equity is defined in the Framework as the residual interest in the assets of the enterprise after deducting all its liabilities.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Equity Definition",
+        "Elements of Financial Statements",
+        "Residual Interest"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_019",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "Which user group of financial statements is primarily concerned with the risk inherent in, and return provided by, their investments?",
+      "options": [
+        "Lenders",
+        "Suppliers and trade creditors",
+        "Investors",
+        "Government and regulatory agencies"
+      ],
+      "answerIndex": 2,
+      "explanation": "Investors are the providers of risk capital and are concerned with the risk inherent in, and return provided by, their investments. They need information to help them decide whether to buy, hold, or sell shares.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Users of Financial Statements",
+        "Investors",
+        "Information Needs"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_020",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "An asset is reported at the present discounted value of future net cash inflows expected to be generated in the normal course of business. Which measurement basis is used?",
+      "options": [
+        "Historical Cost",
+        "Current Cost",
+        "Present Value",
+        "Realisable Value"
+      ],
+      "answerIndex": 2,
+      "explanation": "Present value is a financial measurement basis under which assets are carried at the discounted present value of the future net cash inflows that the item is expected to generate in the normal course of business.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Present Value",
+        "Measurement Basis",
+        "Discounted Cash Flow"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_021",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "Entity Delta started business with capital of ₹2,00,000 on 1st April 2024. During FY 2024-25, the general price index increased by 15%. At year-end (31st March 2025), closing net assets were ₹2,50,000. Under Financial Capital Maintenance in Constant Purchasing Power units, what is Delta's profit?",
+      "options": [
+        "₹50,000",
+        "₹20,000",
+        "₹30,000",
+        "Nil"
+      ],
+      "answerIndex": 1,
+      "explanation": "Capital required to maintain constant purchasing power = ₹2,00,000 * 1.15 = ₹2,30,000. Profit = Closing Net Assets (₹2,50,000) - Adjusted Capital (₹2,30,000) = ₹20,00,000.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Constant Purchasing Power",
+        "Financial Capital Maintenance",
+        "Profit Determination"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_022",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "To be reliable, financial statement information must be complete within the bounds of:",
+      "options": [
+        "Legal permissibility and taxation provisions.",
+        "Materiality and cost.",
+        "Statutory audit deadlines.",
+        "Management's discretionary judgment."
+      ],
+      "answerIndex": 1,
+      "explanation": "To be reliable, the information in financial statements must be complete within the bounds of materiality and cost. An omission can cause information to be false or misleading and thus unreliable.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Completeness",
+        "Reliability",
+        "Materiality and Cost"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_023",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "Entity Omega enters into a construction contract expected to generate losses of ₹8,00,000 due to severe structural modifications required mid-project. How should this loss be recognized under the Framework?",
+      "options": [
+        "Deferred and written off upon final contract handover.",
+        "Recognized immediately as a provision/expense, as a present obligation with a probable economic outflow exists.",
+        "Disclosed solely as a note to the financial statements.",
+        "Capitalized as part of contract work-in-progress assets."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under the Framework's liability and expense recognition principles, an onerous obligation where future costs exceed economic benefits represents a present liability and an immediate expense that must be recognized when probable and measurable.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Liability Recognition",
+        "Onerous Contracts",
+        "Expense Recognition"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_024",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "The consistency assumption requires that accounting policies are:",
+      "options": [
+        "Never altered under any circumstances.",
+        "Applied consistently from one period to another, unless a change is required by law/AS or yields better presentation.",
+        "Identical to those followed by competitors in the same industry.",
+        "Updated annually to match changing tax regulations."
+      ],
+      "answerIndex": 1,
+      "explanation": "Consistency assumes that accounting policies are followed consistently from one period to another. Changes are permitted only if required by statute, for compliance with an accounting standard, or if it results in a more appropriate presentation.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Consistency",
+        "Fundamental Accounting Assumptions",
+        "Accounting Policy Changes"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_025",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "According to the Framework, financial statements present a 'true and fair view' when:",
+      "options": [
+        "An unqualified audit report is issued by a Chartered Accountant.",
+        "Qualitative characteristics and applicable Accounting Standards are appropriately applied.",
+        "Zero tax disputes are pending with revenue authorities.",
+        "Positive net profits are recorded consistently every year."
+      ],
+      "answerIndex": 1,
+      "explanation": "Financial statements are described as showing a true and fair view, or presenting fairly, if the principal qualitative characteristics are present and appropriate accounting standards are applied.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "True and Fair View",
+        "Financial Statement Objective",
+        "Application of Standards"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_026",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "Under the Physical Capital Maintenance concept, price increases in held assets are accounted for as:",
+      "options": [
+        "Realized operational gains in the Income Statement.",
+        "Extraordinary items in Profit and Loss.",
+        "Capital maintenance adjustments included directly in Equity.",
+        "Deferred revenue credits in liabilities."
+      ],
+      "answerIndex": 2,
+      "explanation": "Under physical capital maintenance, price increases on assets retained by the enterprise are treated as capital maintenance adjustments forming part of equity, rather than operational profit.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Physical Capital Maintenance",
+        "Holding Gains",
+        "Equity Adjustments"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_027",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "Which user group requires financial statement information to regulate enterprise activities, determine taxation policies, and compile national income statistics?",
+      "options": [
+        "Public at large",
+        "Government and its agencies",
+        "Lenders and financial institutions",
+        "Employees and trade unions"
+      ],
+      "answerIndex": 1,
+      "explanation": "Government and its agencies are interested in the allocation of resources and the activities of enterprises. They require information to regulate activities, establish taxation policies, and serve as the basis for national income and similar statistics.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Users of Financial Statements",
+        "Government and Agencies",
+        "Information Needs"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_028",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "When an item has strong relevance to decision-making but cannot be measured with acceptable reliability, the Framework dictates that the item should be:",
+      "options": [
+        "Recognized in the balance sheet at a token value of Re. 1.",
+        "Excluded from financial balance recognition, but disclosed in explanatory notes if material.",
+        "Included in the Income Statement as an extraordinary expense.",
+        "Recognized using the highest possible subjective estimate."
+      ],
+      "answerIndex": 1,
+      "explanation": "If an item meets the relevance test but fails the reliable measurement criterion, it cannot be recognized in the body of financial statements. However, disclosure in notes is appropriate when the item is relevant to user evaluation.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Reliability vs Relevance",
+        "Recognition Criteria",
+        "Note Disclosure"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_029",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "A trading firm holds inventory acquired for ₹1,00,000. Due to market decline, expected net realisable value drops to ₹70,000. At what amount should inventory be reported under the Framework?",
+      "options": [
+        "₹1,00,000",
+        "₹70,000",
+        "₹85,000",
+        "₹0"
+      ],
+      "answerIndex": 1,
+      "explanation": "Assets should not be carried at amounts exceeding expected economic benefits. Inventory measurement follows lower of cost and net realisable value, so it must be reported at ₹70,000, recognizing a ₹30,000 write-down.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Inventory Valuation",
+        "Realisable Value",
+        "Asset Recognition"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-2_030",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "prompt": "Entity Gamma sells machinery carrying a book value of ₹5,00,000 for ₹3,80,000. The resulting ₹1,20,000 difference meets the Framework's definition of:",
+      "options": [
+        "A capital deficit contribution by owners.",
+        "An expense, specifically a loss.",
+        "A long-term deferred liability.",
+        "A capital reserve charge."
+      ],
+      "answerIndex": 1,
+      "explanation": "Expenses encompass losses as well as expenses arising in the ordinary course of activity. A loss on disposal of non-current assets represents a decrease in economic benefits (and reduction in equity) not relating to distributions to owners.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Expense Definition",
+        "Losses",
+        "Elements of Financial Statements"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_advanced-accounting-2_01",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "passage": "Zenith Enterprises began operations on 1st April 2024 with a financial capital of ₹20,00,000, represented by 2,000 units of Product A at ₹1,000 per unit. During FY 2024-25, Zenith sold all 2,000 units for ₹32,00,000 cash. During the year, the general price index rose from 100 to 125 (a 25% inflation rate). At the end of the year on 31st March 2025, the replacement cost of Product A rose to ₹1,400 per unit. Zenith made no equity contributions or withdrawals during the financial year.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-2_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-2_01",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-2",
+          "subject": "Accounts",
+          "prompt": "What is the net profit earned by Zenith Enterprises under the Financial Capital Maintenance concept in nominal monetary units?",
+          "options": [
+            "₹12,00,000",
+            "₹7,00,000",
+            "₹4,00,000",
+            "₹5,00,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under nominal monetary units, profit = Closing Net Assets (₹32,00,000) - Opening Capital (₹20,00,000) = ₹12,00,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Nominal Capital Maintenance",
+            "Profit Determination",
+            "Capital Maintenance"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-2_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-2_01",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-2",
+          "subject": "Accounts",
+          "prompt": "What is the net profit earned by Zenith Enterprises under the Financial Capital Maintenance concept in Constant Purchasing Power units?",
+          "options": [
+            "₹12,00,000",
+            "₹7,00,000",
+            "₹4,00,000",
+            "₹5,00,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Inflation-adjusted opening capital = ₹20,00,000 * (125 / 100) = ₹25,00,000. Profit under constant purchasing power = Closing Net Assets (₹32,00,000) - Adjusted Capital (₹25,00,000) = ₹7,00,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Constant Purchasing Power",
+            "Financial Capital Maintenance",
+            "Inflation Accounting"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-2_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-2_01",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-2",
+          "subject": "Accounts",
+          "prompt": "What is the net profit earned by Zenith Enterprises under the Physical Capital Maintenance concept?",
+          "options": [
+            "₹12,00,000",
+            "₹7,00,000",
+            "₹4,00,000",
+            "₹2,00,000"
+          ],
+          "answerIndex": 2,
+          "explanation": "Capital required to maintain physical productive capacity (2,000 units at ₹1,400 replacement cost) = ₹28,00,000. Profit = Closing Cash (₹32,00,000) - Physical Capital needed (₹28,00,000) = ₹4,00,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Physical Capital Maintenance",
+            "Operating Capability",
+            "Profit Determination"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-2_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-2_01",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-2",
+          "subject": "Accounts",
+          "prompt": "Under the Physical Capital Maintenance concept, how is the ₹8,00,000 price increase (from ₹20,00,000 opening cost to ₹28,00,000 replacement cost) recognized?",
+          "options": [
+            "Credited to Profit and Loss as realized operating revenue.",
+            "Credited directly to Equity as a capital maintenance adjustment.",
+            "Debited to Profit and Loss as an extraordinary operating expense.",
+            "Recognized as a long-term deferred liability in the Balance Sheet."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under physical capital maintenance, holding gains resulting from price changes on assets are not treated as profit. Instead, they are recognized directly in equity as capital maintenance adjustments required to preserve productive capacity.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Physical Capital Maintenance",
+            "Equity Adjustments",
+            "Holding Gains"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-2_02",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "passage": "Nova Technologies Ltd. is finalizing its financial statements for the year ended 31st March 2025. Management faces four distinct accounting dilemmas:\n1. Nova spent ₹40,00,000 on preliminary research for a novel battery technology. Commercial viability is unproven.\n2. Nova acquired high-end servers under a 5-year non-cancellable lease matching the total economic life of the servers. Nova incurs maintenance and risk, but legal title remains with the lessor until the final token payment in Year 5.\n3. A former employee filed a legal suit claiming ₹60,00,000 for wrongful termination. Legal counsel estimates only a 15% probability that Nova will lose.\n4. Nova spent ₹15,00,000 on general brand-building advertisements. While management expects long-term brand equity, future economic inflows cannot be isolated or measured reliably.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-2_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-2_02",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-2",
+          "subject": "Accounts",
+          "prompt": "How should the research expenditure of ₹40,00,000 be treated under the Framework's asset recognition criteria?",
+          "options": [
+            "Capitalized as an Intangible Asset in the Balance Sheet.",
+            "Expensed immediately in Profit and Loss.",
+            "Deferred and amortized over a 5-year period.",
+            "Deducted directly from Shareholder Equity reserves."
+          ],
+          "answerIndex": 1,
+          "explanation": "Because commercial viability is unproven, future economic benefit flow is not probable. Under the Framework, if probability of economic inflow is absent, expenditure must be expensed immediately in Profit and Loss.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Asset Recognition Criteria",
+            "Research Expenditure",
+            "Probability Criterion"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-2_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-2_02",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-2",
+          "subject": "Accounts",
+          "prompt": "The server acquisition should be capitalized as an asset by Nova based on which key qualitative characteristic/principle?",
+          "options": [
+            "Prudence",
+            "Substance over Form",
+            "Materiality",
+            "Timeliness"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under 'substance over form', economic reality prevails over legal form. Since Nova assumes all economic risks and rewards for the full economic life, the servers are recognized as assets despite legal title remaining with the lessor.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Substance over Form",
+            "Qualitative Characteristics",
+            "Asset Recognition"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-2_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-2_02",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-2",
+          "subject": "Accounts",
+          "prompt": "How should the legal lawsuit of ₹60,00,000 (15% loss probability) be treated in Nova's financial statements?",
+          "options": [
+            "Recognized as a Provision liability in the Balance Sheet.",
+            "Written off as an extraordinary loss in Profit and Loss.",
+            "Disclosed as a Contingent Liability in notes without balance sheet liability recognition.",
+            "Ignored entirely with no disclosure required."
+          ],
+          "answerIndex": 2,
+          "explanation": "A liability recognition requires a probable outflow of resources (greater than 50%). Since the loss probability is only 15% (not probable), it fails balance sheet liability recognition criteria and must be disclosed as a contingent liability in the notes.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Liability Recognition",
+            "Contingent Liability",
+            "Probability Assessment"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-2_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-2_02",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-2",
+          "subject": "Accounts",
+          "prompt": "Why are the ₹15,00,000 brand-building advertisement costs excluded from asset recognition?",
+          "options": [
+            "Because advertisement cost is not physical property.",
+            "Because future economic benefits cannot be measured with reasonable reliability.",
+            "Because advertising violates the fundamental going concern assumption.",
+            "Because advertising is regulated under tax laws only."
+          ],
+          "answerIndex": 1,
+          "explanation": "An asset requires both probable future economic benefits and a cost/value that can be measured with reliability. General brand expenditure cannot be separately identified or measured reliably, failing the reliable measurement recognition criterion.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Reliable Measurement",
+            "Recognition Criteria",
+            "Intangibles"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-2_03",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "passage": "Valence Manufacturing Ltd. holds four assets/liabilities at year-end (31st March 2025) and requires valuation guidance under the Framework:\n- Asset 1: Raw Material 'M' purchased for ₹6,00,000. Replacement cost today is ₹5,10,000. Finished product made from 'M' will be sold at a price above cost.\n- Asset 2: Finished Goods 'G' produced at cost of ₹10,00,000. Current market selling price is ₹9,20,000, with estimated selling costs of ₹50,000.\n- Asset 3: Heavy Machinery purchased 4 years ago for ₹25,00,000 (carrying value ₹16,00,000). Current replacement cost of equivalent new machine is ₹20,00,000. Present value of expected future cash flows from continuing usage is ₹14,50,000.\n- Obligation 4: Foreign supplier debt of $20,000 initially recorded at $1 = ₹75 (₹15,00,000). Closing exchange rate on 31st March 2025 is $1 = ₹83.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-2_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-2_03",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-2",
+          "subject": "Accounts",
+          "prompt": "Under the Framework and applicable valuation rules, at what value should Raw Material 'M' be reported?",
+          "options": [
+            "₹5,10,000",
+            "₹6,00,000",
+            "₹5,55,000",
+            "₹0"
+          ],
+          "answerIndex": 1,
+          "explanation": "Raw materials held for use in production are not written down below cost if the finished products in which they will be incorporated are expected to be sold at or above cost. Hence, Raw Material 'M' remains valued at historical cost ₹6,00,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Raw Material Valuation",
+            "Lower of Cost and NRV",
+            "Asset Measurement"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-2_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-2_03",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-2",
+          "subject": "Accounts",
+          "prompt": "At what value should Finished Goods 'G' be carried in the Balance Sheet?",
+          "options": [
+            "₹10,00,000",
+            "₹9,20,000",
+            "₹8,70,000",
+            "₹9,50,000"
+          ],
+          "answerIndex": 2,
+          "explanation": "Inventories are measured at lower of cost and net realisable value (NRV). NRV = Selling Price (₹9,20,000) - Selling Costs (₹50,000) = ₹8,70,000. Since NRV (₹8,70,000) is lower than cost (₹10,00,000), it is valued at ₹8,70,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Inventory NRV",
+            "Lower of Cost and NRV",
+            "Measurement Basis"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-2_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-2_03",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-2",
+          "subject": "Accounts",
+          "prompt": "What figure represents the Present Value measurement basis for Heavy Machinery (Asset 3)?",
+          "options": [
+            "₹25,00,000",
+            "₹16,00,000",
+            "₹20,00,000",
+            "₹14,50,000"
+          ],
+          "answerIndex": 3,
+          "explanation": "Present value is defined as the discounted present value of the future net cash inflows expected from the item in the normal course of business, which is explicitly given as ₹14,50,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Present Value",
+            "Measurement Basis",
+            "Asset Valuation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-2_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-2_03",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-2",
+          "subject": "Accounts",
+          "prompt": "Under which measurement basis principle is Foreign Obligation 4 adjusted to ₹16,60,000 ($20,000 × ₹83) at year-end?",
+          "options": [
+            "Historical Cost",
+            "Current Settlement Value at balance sheet date rates",
+            "Physical Capital Maintenance",
+            "Discounted Future Cash Flows"
+          ],
+          "answerIndex": 1,
+          "explanation": "Settlement value reflects the undiscounted amount of cash required to discharge obligations at the reporting date. Adjusting foreign currency debt to closing spot rates measures the obligation at its current settlement value.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Settlement Value",
+            "Foreign Currency Obligation",
+            "Measurement Basis"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-2_04",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "passage": "Aura Retail Ltd., a chain store, faces four accounting evaluation issues in preparing financial reports:\nIssue A: Aura owns 5,00,000 low-value shopping baskets costing ₹10 each. Tracking individual depreciation across 500 stores would cost ₹12,00,000 in administrative systems. Aura proposes expensing them immediately.\nIssue B: To beat competitors, management wants to publish financial results 5 days after year-end using unverified sales estimates rather than waiting 25 days for fully audited sales numbers.\nIssue C: Aura changed its depreciation policy from Straight Line Method to Written Down Value Method purely to reduce reported profits and save manager bonuses, without any change in asset usage pattern or AS compliance.\nIssue D: Management created a 'General Contingency Reserve' of ₹30,00,000 against vague future business risks, claiming compliance with 'prudence'.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-2_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-2_04",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-2",
+          "subject": "Accounts",
+          "prompt": "Regarding Issue A (shopping baskets), which constraint justifies expensing these items immediately rather than tracking detailed depreciation?",
+          "options": [
+            "Timeliness versus Reliability",
+            "Balance between Benefit and Cost",
+            "Substance over Form",
+            "Prudence versus Neutrality"
+          ],
+          "answerIndex": 1,
+          "explanation": "The balance between benefit and cost is a pervasive constraint. The benefits derived from tracking low-value items individually should exceed the cost of providing that detailed accounting info.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Benefit and Cost Constraint",
+            "Materiality",
+            "Qualitative Constraints"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-2_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-2_04",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-2",
+          "subject": "Accounts",
+          "prompt": "Issue B (early reporting using estimated figures) highlights a direct trade-off between which two qualitative attributes/constraints?",
+          "options": [
+            "Timeliness and Reliability",
+            "Materiality and Relevance",
+            "Substance over Form and Prudence",
+            "Neutrality and Comparability"
+          ],
+          "answerIndex": 0,
+          "explanation": "Releasing results quickly enhances timeliness, but relying on unverified estimates compromises reliability. Management must balance timeliness with reliability to best satisfy economic decision-making needs.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Timeliness vs Reliability",
+            "Constraints",
+            "Reporting Trade-offs"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-2_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-2_04",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-2",
+          "subject": "Accounts",
+          "prompt": "Issue C (changing accounting policy to manipulate bonuses) violates which fundamental principle/assumption?",
+          "options": [
+            "Going Concern",
+            "Consistency / Comparability",
+            "Accrual",
+            "Materiality"
+          ],
+          "answerIndex": 1,
+          "explanation": "Consistency requires accounting policies to be applied uniformly over time. Arbitrary changes without justification (like better presentation or statutory requirement) violate consistency and comparability.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Consistency",
+            "Comparability",
+            "Accounting Policy Changes"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-2_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-2_04",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-2",
+          "subject": "Accounts",
+          "prompt": "Does Issue D (vague contingency reserve) comply with the Framework's concept of 'Prudence'?",
+          "options": [
+            "Yes, because prudence encourages anticipating all imaginable future operational risks.",
+            "No, because prudence does not permit the creation of hidden reserves or deliberate overstatement of liabilities/expenses.",
+            "Yes, provided it is authorized by the board of directors.",
+            "No, because prudence applies exclusively to assets, not provisions or liabilities."
+          ],
+          "answerIndex": 1,
+          "explanation": "Prudence does not permit the creation of hidden reserves or excessive provisions, as deliberate understatement of assets/income or overstatement of liabilities/expenses makes financial statements non-neutral and unreliable.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Prudence",
+            "Neutrality",
+            "Hidden Reserves"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-2_05",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-2",
+      "subject": "Accounts",
+      "passage": "Kestrel Logistics Ltd. suffered severe operational disruption in FY 2024-25. On 20th March 2025, its primary banking facility was withdrawn, and major clients terminated service contracts. On 31st March 2025, management determined that the entity has no realistic alternative but to cease operations and liquidate within 60 days.\nFinancial records at 31st March 2025 show:\n- Transport Trucks: Original Historical Cost ₹1,00,000,000; Accumulated Depreciation ₹40,00,000; Realisable Value in forced liquidation ₹25,00,000.\n- Warehouse Lease Agreement: Early termination penalty payable upon breach in April 2025 is ₹10,00,000.\n- Outstanding Driver Salaries: ₹6,00,000 incurred for services rendered in March 2025.\n- Spares Inventory: Cost ₹15,00,000; Realizable liquidation value ₹4,00,000.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 2,
+        "chapterTitle": "Framework for Preparation and Presentation of Financial Statements"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-2_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-2_05",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-2",
+          "subject": "Accounts",
+          "prompt": "Which fundamental accounting assumption is invalidated for Kestrel Logistics Ltd. as of 31st March 2025?",
+          "options": [
+            "Accrual",
+            "Consistency",
+            "Going Concern",
+            "Materiality"
+          ],
+          "answerIndex": 2,
+          "explanation": "Since the entity is forced to liquidate within 60 days, it cannot continue operations for the foreseeable future. Thus, the Going Concern assumption is no longer valid.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Going Concern",
+            "Fundamental Accounting Assumptions",
+            "Liquidation Impact"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-2_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-2_05",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-2",
+          "subject": "Accounts",
+          "prompt": "At what amount should the Transport Trucks be carried on the Balance Sheet as of 31st March 2025?",
+          "options": [
+            "₹60,00,000 (Book Value)",
+            "₹25,00,000 (Liquidation Value)",
+            "₹100,00,000 (Historical Cost)",
+            "Nil"
+          ],
+          "answerIndex": 1,
+          "explanation": "When going concern is invalidated, assets cannot be carried at book values under normal historical cost assumptions. They must be written down to their net realisable / forced liquidation values (₹25,00,000).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Net Realisable Value",
+            "Liquidation Measurement Basis",
+            "Asset Valuation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-2_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-2_05",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-2",
+          "subject": "Accounts",
+          "prompt": "How should the Warehouse Lease termination penalty of ₹10,00,000 be treated on 31st March 2025?",
+          "options": [
+            "Ignored because the breach technically occurs in April 2025.",
+            "Recognized as a present liability/provision because liquidation is imminent.",
+            "Disclosed only as a non-quantifiable footnote.",
+            "Deferred and amortized over the original lease duration."
+          ],
+          "answerIndex": 1,
+          "explanation": "Because liquidation is imminent, the termination of the lease becomes an unavoidable present obligation arising from current events, requiring immediate liability recognition on the liquidation basis.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Liability Recognition",
+            "Present Obligation",
+            "Liquidation Adjustments"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-2_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-2_05",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-2",
+          "subject": "Accounts",
+          "prompt": "At what value should Spares Inventory be reported in Kestrel's financial statements?",
+          "options": [
+            "₹15,00,000",
+            "₹4,00,000",
+            "₹9,50,000",
+            "₹0"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the net realisable / liquidation framework, inventories are written down to their immediate net liquidation value of ₹4,00,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Inventory Valuation",
+            "Realisable Value",
+            "Going Concern Invalidation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

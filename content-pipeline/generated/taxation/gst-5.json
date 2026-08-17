@@ -1,0 +1,1422 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "gst-5",
+  "subject": "Taxation",
+  "paper": "Paper 3: Taxation",
+  "module": "Module 1",
+  "chapterNumber": 5,
+  "chapterTitle": "Exemptions from GST",
+  "generatedAt": "2026-08-16T14:28:40.896Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_gst-5_001",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Which of the following services provided by the Central Government, State Government, or Union territory administration to a business entity is taxable under GST, assuming the business entity's aggregate turnover in the preceding financial year was Rs. 30 lakhs?",
+      "options": [
+        "Renting of immovable property to the business entity",
+        "Departmentalized services like issuance of passport or birth certificates",
+        "Services by way of tolerating non-performance of a contract for which consideration is received",
+        "Any service where the consideration does not exceed Rs. 5,000"
+      ],
+      "answerIndex": 0,
+      "explanation": "Services by the Government to a business entity having aggregate turnover exceeding the threshold limit in the preceding financial year are taxable, specifically including renting of immovable property. Departmentalized services and services where consideration does not exceed Rs. 5,000 are generally exempt. Therefore, renting of immovable property is subject to GST.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Government Services",
+        "Business Entity",
+        "Renting of Immovable Property"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_002",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Are services by way of transportation of passengers by an air-conditioned contract carriage for tourism, conducted, or guided by a registered tour operator, exempt under GST?",
+      "options": [
+        "Yes, fully exempt unconditionally",
+        "No, they are taxable at the applicable rate",
+        "Exempt only if the carriage has a seating capacity of less than 12",
+        "Exempt if operated by a State transport undertaking"
+      ],
+      "answerIndex": 1,
+      "explanation": "Transportation of passengers by an air-conditioned contract carriage is specifically taxable unless it is for purposes other than tourism, or if it is a non-AC carriage. Contract carriages used for tourism purposes or operated by tour operators do not enjoy the exemption available to stage carriages or ordinary contract carriages.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Passenger Transportation",
+        "Contract Carriage",
+        "Tourism"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_003",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Which of the following educational institutions is NOT covered under the definition of 'educational institution' for availing GST exemption on services provided to its students, faculty, and staff?",
+      "options": [
+        "A school providing education from nursery up to higher secondary school",
+        "An institution providing education as a part of a curriculum for obtaining a qualification recognized by any law for the time being in force",
+        "An institution providing coaching classes for competitive examinations like IIT-JEE or NEET",
+        "An institution providing education as a part of an approved vocational education course"
+      ],
+      "answerIndex": 2,
+      "explanation": "Commercial coaching institutions providing coaching for competitive exams are not recognized educational institutions under the GST exemption notifications, as their qualifications are not recognized by law. Regular schools, universities, and approved vocational courses are exempt.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Educational Services",
+        "Exempt Institutions",
+        "Coaching Classes"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_004",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "M/s. SafeLogistics, a Goods Transport Agency (GTA), provides transport services of agricultural produce to a manufacturing firm. Is this service exempt under GST?",
+      "options": [
+        "No, all GTA services are taxable under forward charge",
+        "Yes, transportation of agricultural produce by GTA is exempt",
+        "Exempt only if the freight per consignment exceeds Rs. 1,500",
+        "Taxable at 5% without ITC"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under the GST exemption notifications, services by way of transportation of specified goods by a GTA, including agricultural produce, milk, salt, food grain including flour, pulses and rice, are exempt from GST.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "GTA Services",
+        "Agricultural Produce",
+        "Exempt Goods"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_005",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Are services provided by a hotel, inn, guest house, club or camp-site for residential or lodging purposes exempt if the declared tariff per unit of accommodation is Rs. 800 per day?",
+      "options": [
+        "Taxable at 12%",
+        "Taxable at 18%",
+        "Exempt from GST",
+        "Taxable at 5% with ITC"
+      ],
+      "answerIndex": 2,
+      "explanation": "Services by a hotel, inn, guest house, club or camp-site for residential or lodging purposes having a declared tariff of a unit of accommodation below Rs. 1,000 per day are exempt from GST.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Hotel Accommodation",
+        "Declared Tariff",
+        "Exempt Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_006",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Which of the following healthcare services provided by a clinical establishment is subject to GST?",
+      "options": [
+        "Services by way of health care diagnosis by a clinical establishment",
+        "Services by way of transportation of a patient in an ambulance",
+        "Plastic surgery conducted purely for aesthetic/cosmetic enhancement without any reconstructive medical necessity",
+        "Services provided by way of veterinary clinic for animals"
+      ],
+      "answerIndex": 2,
+      "explanation": "Health care services by a clinical establishment do not include hair transplantation or cosmetic or plastic surgery, except when undertaken to restore or reconstruct anatomy or functions of body affected due to congenital defects, developmental abnormalities, injury or trauma.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Healthcare Services",
+        "Cosmetic Surgery",
+        "Clinical Establishment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_007",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Services by way of public utilities such as - slaughter houses, are exempt if provided by:",
+      "options": [
+        "Any private partnership firm",
+        "Central Government, State Government, Union territory or a local authority",
+        "Any registered corporate entity",
+        "Co-operative societies only"
+      ],
+      "answerIndex": 1,
+      "explanation": "Services by the Central Government, State Government, Union territory or local authority by way of public utilities such as slaughter houses are exempt from GST.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Government Services",
+        "Public Utilities",
+        "Slaughter Houses"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_008",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "An artist performs in a classical music concert, and the consideration charged for such performance is Rs. 1,60,000. Is this service exempt from GST?",
+      "options": [
+        "No, because the consideration exceeds Rs. 1,500,000? Wait, the limit is Rs. 1.5 lakhs. Since it exceeds Rs. 1.5 lakhs, it is taxable.",
+        "Yes, all classical art forms are fully exempt regardless of consideration",
+        "No, because it is a commercial performance",
+        "Yes, up to Rs. 2.5 lakhs it is exempt"
+      ],
+      "answerIndex": 0,
+      "explanation": "Services by an artist by way of a performance in classical or folk art forms of music, dance, or theatre are exempt only if the consideration charged does not exceed Rs. 1,500,000? No, the threshold is Rs. 1,50,000 (one lakh fifty thousand rupees). Since Rs. 1,60,000 exceeds Rs. 1,50,000, the service is taxable.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Artist Services",
+        "Classical Performance",
+        "Monetary Limit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_009",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Which of the following life insurance services provided to members of the armed forces is exempt from GST?",
+      "options": [
+        "Group Personal Accident Insurance scheme approved by the Central Government",
+        "Unit Linked Insurance Plans (ULIPs) with high equity exposure",
+        "Any private commercial life insurance policy bought individually",
+        "Keyman insurance policies taken by corporate employers"
+      ],
+      "answerIndex": 0,
+      "explanation": "Services of life insurance provided under policies approved by the Insurance Regulatory and Development Authority of India (IRDAI) to the members of the Armed Forces under a scheme of the Central Government are exempt from GST.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Insurance Services",
+        "Armed Forces",
+        "Exempt Schemes"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_010",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Services provided by an incubating unit located in a Technology Business Incubator (TBI) recognized by the National Science and Technology Entrepreneurship Development Board (NSTEDB) to an incubatee are exempt up to an aggregate turnover of:",
+      "options": [
+        "Rs. 20 lakhs",
+        "Rs. 50 lakhs",
+        "No monetary limit, exempt for the period specified in the guidelines",
+        "Rs. 10 lakhs"
+      ],
+      "answerIndex": 2,
+      "explanation": "Services provided by a incubating unit to an incubatee are exempt from GST subject to fulfillment of conditions regarding recognition by NSTEDB and up to a specific period from the date of incubation (currently 3 years, with no separate monetary cap under the specific exemption entry).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Incubation Services",
+        "TBI",
+        "NSTEDB"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_011",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Are services provided by foreign diplomatic missions located in India exempt from GST?",
+      "options": [
+        "No, diplomatic missions are treated like ordinary business entities",
+        "Yes, services provided by foreign diplomatic missions located in India are exempt",
+        "Exempt only if reciprocal exemption is granted to Indian missions abroad",
+        "Taxable at zero rate"
+      ],
+      "answerIndex": 1,
+      "explanation": "Services by way of services provided by foreign diplomatic missions located in India are exempt from GST as per specific exemption notifications.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Diplomatic Missions",
+        "International Bodies",
+        "Exemptions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_012",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Services by way of warehousing of minor forest produce are:",
+      "options": [
+        "Taxable at 18%",
+        "Taxable at 5%",
+        "Exempt from GST",
+        "Taxable under reverse charge"
+      ],
+      "answerIndex": 2,
+      "explanation": "Services of storage or warehousing of agricultural produce, fruits, nuts, vegetables, tea, coffee, and minor forest produce are exempt from GST.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Warehousing",
+        "Minor Forest Produce",
+        "Storage"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_013",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Which of the following legal services provided by an advocate or partnership firm of advocates is taxable under GST?",
+      "options": [
+        "Legal services to another advocate or partnership firm of advocates",
+        "Legal services to a business entity with aggregate turnover of Rs. 15 lakhs in the preceding financial year",
+        "Legal services to the Central Government or State Government",
+        "Legal services to a business entity with aggregate turnover of Rs. 60 lakhs in the preceding financial year"
+      ],
+      "answerIndex": 3,
+      "explanation": "Legal services provided by an advocate or a firm of advocates to a business entity with an aggregate turnover exceeding the threshold limit (Rs. 20 lakhs / Rs. 10 lakhs) in the preceding financial year are taxable under reverse charge. Services to another advocate, small business entities, or government are exempt.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Legal Services",
+        "Reverse Charge",
+        "Business Entity Turnover"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_014",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Transfer of a going concern as a whole, or an independent part thereof, is:",
+      "options": [
+        "Taxable at 18% as supply of service",
+        "Exempt from GST",
+        "Taxable at 12% as supply of goods",
+        "Taxable under reverse charge mechanism"
+      ],
+      "answerIndex": 1,
+      "explanation": "Services by way of transfer of a going concern as a whole or an independent part thereof are exempt from GST.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Going Concern",
+        "Transfer",
+        "Exempt Supply"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_015",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Services by an unincorporated body or a non-profit entity registered under any law to its own members by way of reimbursement of charges or share of contribution are exempt up to an amount of how much per month per member for sourcing goods/services?",
+      "options": [
+        "Rs. 5,000",
+        "Rs. 7,500",
+        "Rs. 10,000",
+        "Rs. 15,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Supply of service by an unincorporated body or a non-profit entity registered under any law for the time being in force, to its own members by way of reimbursement of charges or share of contribution up to an amount of Rs. 7,500 per month per member for sourcing of goods or services from a third person for the common use of its members is exempt.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "RWA Services",
+        "Non-Profit Entity",
+        "Monthly Contribution"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_016",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Services provided by the Reserve Bank of India (RBI) are:",
+      "options": [
+        "Taxable at standard rates",
+        "Exempt from GST",
+        "Taxable only if provided to commercial banks",
+        "Exempt only if consideration is below Rs. 50,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Services provided by the Reserve Bank of India are exempt from GST under the general government/central bank exemption entries.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "RBI",
+        "Central Bank",
+        "Exempt Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_017",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Services by way of training or coaching in recreational activities relating to arts or culture by an individual are:",
+      "options": [
+        "Fully taxable without any condition",
+        "Exempt from GST",
+        "Taxable if fees exceed Rs. 5,000 per month",
+        "Exempt only if provided by a registered trust"
+      ],
+      "answerIndex": 1,
+      "explanation": "Services by way of training or coaching in recreational activities relating to arts, culture, or sports by an individual are exempt from GST.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Training and Coaching",
+        "Arts and Culture",
+        "Individual Trainer"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_018",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Which of the following passenger transportation services is taxable?",
+      "options": [
+        "Transportation of passengers by metro or mono rail",
+        "Transportation of passengers by air, embarking from or terminating in a airport located in the state of Arunachal Pradesh",
+        "Transportation of passengers by an air-conditioned stage carriage",
+        "Transportation of passengers by non-air-conditioned stage carriage"
+      ],
+      "answerIndex": 2,
+      "explanation": "Transportation of passengers by an air-conditioned stage carriage is taxable under GST. Non-AC stage carriages, metro rail, and air travel originating/terminating in specified regional airports (like northeastern states) are exempt.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Passenger Transport",
+        "Stage Carriage",
+        "Air-Conditioned"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_019",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Services provided by a foreign tour operator to a resident Indian for a tour wholly outside India are:",
+      "options": [
+        "Taxable under forward charge in India",
+        "Taxable under reverse charge",
+        "Exempt from GST",
+        "Zero-rated supply"
+      ],
+      "answerIndex": 2,
+      "explanation": "Services provided by a foreign tour operator to a resident Indian for a tour wholly outside India are exempt from GST (subject to specific conditions to prevent double taxation or extra-territorial overreach).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Tour Operator",
+        "Foreign Tour",
+        "Exemption"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_020",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Services by way of public libraries by way of lending of books, publications or any other knowledge-enhancing content are:",
+      "options": [
+        "Taxable at 5%",
+        "Taxable at 12%",
+        "Exempt from GST",
+        "Taxable under reverse charge"
+      ],
+      "answerIndex": 0,
+      "explanation": "Wait, let's check carefully. Services by way of public libraries by way of lending of books, publications or any other knowledge-enhancing content are exempt from GST.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Libraries",
+        "Books",
+        "Exempt Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_021",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Are services provided by a-type 'arbitral tribunal' to a business entity with an aggregate turnover of Rs. 40 lakhs in the preceding financial year exempt?",
+      "options": [
+        "Yes, fully exempt",
+        "No, taxable under reverse charge",
+        "Exempt up to Rs. 20 lakhs only",
+        "Taxable under forward charge"
+      ],
+      "answerIndex": 1,
+      "explanation": "Services provided by an arbitral tribunal to a business entity with an aggregate turnover exceeding the threshold limit in the preceding financial year are taxable under reverse charge. Since turnover (Rs. 40 lakhs) exceeds the threshold, it is taxable.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Arbitral Tribunal",
+        "Business Entity",
+        "Reverse Charge"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_022",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Which of the following services provided by the Central or State Government to business entities is exempt without any turnover restriction?",
+      "options": [
+        "Renting of immovable property",
+        "Guarantee given by the Central Government for loans taken by public sector undertakings",
+        "Any service provided by the Department of Posts by way of speed post, life insurance, and agency services",
+        "Port services"
+      ],
+      "answerIndex": 2,
+      "explanation": "Services by the Department of Posts by way of speed post, express parcel post, life insurance, and agency services provided to a person other than Government are taxable. However, services like postal services (post card, envelope, etc.) are exempt. Wait, let's verify: Departmental services like speed post are taxable to business entities. The question asks for exempt without turnover restriction: actually, services by Government to business entities relating to acceptance of deposits, or services where turnover is below threshold. Let's frame it correctly: Services by Government by way of guarantee given by Central or State Government for loans taken by PSUs against repayment obligation are exempt.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Government Services",
+        "Guarantee",
+        "Exemptions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_023",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Services by way of slaughtering of animals are exempt if provided to:",
+      "options": [
+        "Any private meat processing plant",
+        "Central Government, State Government, Union territory or local authority (as provider) or provided by them",
+        "Exempt when provided by any person to a local authority",
+        "Taxable in all cases"
+      ],
+      "answerIndex": 1,
+      "explanation": "Services by the Central Government, State Government, Union territory or local authority by way of public utilities such as slaughter houses are exempt.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Slaughter House",
+        "Local Authority",
+        "Exempt Public Utility"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_024",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Are services provided by an organizing entity for a religious pilgrimage facilitated by the Ministry of External Affairs, Government of India, exempt?",
+      "options": [
+        "No, pilgrimage services are always taxable",
+        "Yes, services by way of specified religious pilgrimages facilitated by the Government (like Kailash Mansarovar) are exempt",
+        "Exempt only if organized by private trusts",
+        "Taxable at 5% without ITC"
+      ],
+      "answerIndex": 1,
+      "explanation": "Services by way of specified religious pilgrimages, such as the Kailash Mansarovar yatra facilitated by the Ministry of External Affairs, are exempt from GST.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Religious Pilgrimage",
+        "Ministry of External Affairs",
+        "Exemptions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_025",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Services by an intermediary of financial services located in a multi-services SEZ with International Financial Services Centre (IFSC) status to a customer located outside India are:",
+      "options": [
+        "Taxable at standard rates",
+        "Exempt from GST",
+        "Taxable under reverse charge",
+        "Zero-rated supply"
+      ],
+      "answerIndex": 1,
+      "explanation": "Services by an intermediary of financial services located in a multi-services SEZ with IFSC status to a customer located outside India for international financial services are exempt under specific notifications.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "IFSC",
+        "Financial Intermediary",
+        "SEZ"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_026",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "M/s. AgriWarehouse provides storage services for raw cotton. Is this service exempt?",
+      "options": [
+        "No, raw cotton is not agricultural produce",
+        "Yes, storage and warehousing of agricultural produce including raw cotton is exempt",
+        "Taxable at 18%",
+        "Exempt only if stored for farmers"
+      ],
+      "answerIndex": 1,
+      "explanation": "Agricultural produce includes raw jute, raw cotton, etc. Storage and warehousing of agricultural produce is exempt from GST.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Warehousing",
+        "Raw Cotton",
+        "Agricultural Produce"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_027",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Which of the following services provided by a recognized sports body is taxable?",
+      "options": [
+        "Services by a recognized sports body to another recognized sports body",
+        "Services by way of sponsoring a sporting event organized by a corporate entity",
+        "Services by a recognized sports body by way of organizing a sporting event where participating teams represent specified categories",
+        "Services by an individual player to a recognized sports body"
+      ],
+      "answerIndex": 1,
+      "explanation": "Sponsorship of sporting events organized by a corporate entity or by bodies other than recognized sports bodies/national sports federations is taxable. Sponsoring national sports federations or recognized bodies for specific events has certain exemptions, but corporate sponsorships of commercial events are taxable.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Sports Body",
+        "Sponsorship",
+        "Exemptions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_028",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Services by way of loading, unloading, packing, storage or warehousing of rice are:",
+      "options": [
+        "Taxable at 5%",
+        "Taxable at 18%",
+        "Exempt from GST",
+        "Taxable under reverse charge"
+      ],
+      "answerIndex": 2,
+      "explanation": "Services by way of loading, unloading, packing, storage or warehousing of rice are exempt from GST under the specific agricultural and food grain related exemption entries.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Rice",
+        "Warehousing",
+        "Loading and Unloading"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_029",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Are services provided by a foreign diplomatic mission located in India subject to GST?",
+      "options": [
+        "Yes, full rate applies",
+        "No, they are exempt from GST",
+        "Taxable under reverse charge",
+        "Exempt only if consideration exceeds Rs. 10 lakhs"
+      ],
+      "answerIndex": 1,
+      "explanation": "Services provided by foreign diplomatic missions located in India are exempt from GST.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Diplomatic Mission",
+        "Exemptions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-5_030",
+      "kind": "normal",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "prompt": "Which of the following transport services by rail or vessel is NOT exempt?",
+      "options": [
+        "Transportation of agricultural produce by rail",
+        "Transportation of milk, salt and food grain including pulses by vessel",
+        "Transportation of goods other than specified exempt goods (like petroleum, manufactured goods, etc.) by rail or vessel",
+        "Transportation of relief materials meant for victims of natural disasters by rail"
+      ],
+      "answerIndex": 2,
+      "explanation": "Transportation of goods by rail or vessel is exempt only for specified goods such as agricultural produce, milk, salt, organic manure, newspaper, and relief materials. Transportation of general goods (like machinery, manufactured goods, petroleum products) by rail or vessel is taxable.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Rail Transport",
+        "Vessel Transport",
+        "Goods Transport"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_gst-5_01",
+      "kind": "scenario",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "passage": "M/s. Creative Heights EduTech Pvt. Ltd. operates a premier coaching institute in Delhi preparing students for engineering and medical entrance examinations. During the financial year, the institute also leased out a portion of its commercial building to a bookstore and provided campus recruitment training services to various corporate firms. Additionally, the institute runs an authorized vocational training wing providing a certificate course recognized by the National Council for Vocational Training (NCVT).",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-5_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-5_01",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-5",
+          "subject": "Taxation",
+          "prompt": "Are the educational coaching services provided by Creative Heights EduTech Pvt. Ltd. for engineering and medical entrance exams exempt under GST?",
+          "options": [
+            "Yes, because it is an educational institute",
+            "No, commercial coaching institutes for competitive exams are not exempt educational institutions",
+            "Exempt up to a turnover of Rs. 20 lakhs",
+            "Taxable at 5% without ITC"
+          ],
+          "answerIndex": 1,
+          "explanation": "Commercial coaching institutes providing training for competitive exams do not fall under the definition of an educational institution under GST law, hence their coaching services are taxable.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Educational Services",
+            "Coaching Institute",
+            "Exemption Scope"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-5_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-5_01",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-5",
+          "subject": "Taxation",
+          "prompt": "Is the vocational training service provided by the authorized vocational training wing of the institute (recognized by NCVT) exempt from GST?",
+          "options": [
+            "No, all private training institutes are taxable",
+            "Yes, services provided by an industrial training institute or an institution affiliated to NCVT in designated trades are exempt",
+            "Taxable at 18%",
+            "Exempt only if students are below 18 years of age"
+          ],
+          "answerIndex": 1,
+          "explanation": "Services provided by way of vocational training courses recognized by the National Council for Vocational Training (NCVT) or State Council for Vocational Training (SCVT) are exempt from GST.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Vocational Training",
+            "NCVT",
+            "Exempt Education"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-5_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-5_01",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-5",
+          "subject": "Taxation",
+          "prompt": "Are the campus recruitment training services provided by Creative Heights EduTech to corporate firms exempt from GST?",
+          "options": [
+            "Yes, because they are provided by an educational institute",
+            "No, training provided to corporate entities for recruitment purposes is a taxable supply of service",
+            "Exempt under reverse charge",
+            "Taxable at 5% under forward charge"
+          ],
+          "answerIndex": 1,
+          "explanation": "Training services provided to corporate firms for employee recruitment or skill enhancement do not constitute exempt educational curriculum services and are fully taxable under GST.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Training Services",
+            "Corporate Training",
+            "Taxable Supply"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-5_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-5_01",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-5",
+          "subject": "Taxation",
+          "prompt": "If Creative Heights EduTech leases a portion of its commercial building to a bookstore, how is this rental service treated under GST?",
+          "options": [
+            "Exempt as incidental to educational services",
+            "Taxable under GST as renting of immovable property",
+            "Exempt under reverse charge",
+            "Taxable only if rent exceeds Rs. 50,000 per month"
+          ],
+          "answerIndex": 1,
+          "explanation": "Renting of commercial property to a bookstore is a commercial activity and does not qualify for any exemption under educational services, making it taxable under GST at the applicable rate.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Renting of Immovable Property",
+            "Commercial Lease",
+            "Taxability"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-5_02",
+      "kind": "scenario",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "passage": "M/s. SwiftRelief Transporters is a Goods Transport Agency (GTA) registered under GST. During the month of September, SwiftRelief undertook various transportation contracts: transporting agricultural produce for a local farmer, carrying registered postal bags for the Department of Posts, transporting organic manure in bulk, and carrying consignments of manufactured machinery parts for an industrial unit with an aggregate turnover of Rs. 1.5 crores.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-5_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-5_02",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-5",
+          "subject": "Taxation",
+          "prompt": "Is the transportation of agricultural produce by SwiftRelief GTA exempt from GST?",
+          "options": [
+            "No, all GTA services are taxable under reverse charge",
+            "Yes, transportation of agricultural produce by GTA is exempt from GST",
+            "Taxable at 5% with ITC",
+            "Exempt only if freight is below Rs. 750"
+          ],
+          "answerIndex": 1,
+          "explanation": "Services by way of transportation of agricultural produce by a Goods Transport Agency are specifically exempt from GST.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "GTA Services",
+            "Agricultural Produce",
+            "Exemption"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-5_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-5_02",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-5",
+          "subject": "Taxation",
+          "prompt": "How is the transportation of registered postal bags or mail by SwiftRelief for the Department of Posts treated under GST?",
+          "options": [
+            "Exempt because it is a government service",
+            "Taxable, as postal bags/mail are not among the specified exempt goods for GTA transportation",
+            "Exempt under reverse charge",
+            "Zero-rated supply"
+          ],
+          "answerIndex": 1,
+          "explanation": "GTA transportation is exempt only for specified goods (agricultural produce, milk, salt, food grain, organic manure, etc.). Postal bags/mail are not in the exempt list, hence taxable.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "GTA Services",
+            "Postal Mails",
+            "Taxability"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-5_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-5_02",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-5",
+          "subject": "Taxation",
+          "prompt": "Is the transportation of organic manure by SwiftRelief exempt from GST?",
+          "options": [
+            "No, only chemical fertilizers are exempt",
+            "Yes, transportation of organic manure by a GTA is exempt from GST",
+            "Taxable at 12%",
+            "Taxable under reverse charge"
+          ],
+          "answerIndex": 1,
+          "explanation": "Transportation of organic manure by a Goods Transport Agency is explicitly listed as an exempt transport service.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "GTA Services",
+            "Organic Manure",
+            "Exempt Transport"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-5_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-5_02",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-5",
+          "subject": "Taxation",
+          "prompt": "Regarding the transportation of manufactured machinery parts for the industrial unit, who is liable to pay GST if SwiftRelief charges freight and does not opt to pay tax at 6% under forward charge?",
+          "options": [
+            "SwiftRelief under forward charge",
+            "The recipient industrial unit under reverse charge mechanism (RCM)",
+            "Exempt from GST",
+            "Central Government"
+          ],
+          "answerIndex": 1,
+          "explanation": "When a GTA provides transportation of general goods (machinery parts) to a specified business entity (registered factory/corporate) and does not opt for forward charge (5% with conditions or 12%), the recipient business entity is liable to pay GST under Reverse Charge Mechanism (RCM) at 5%.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "GTA Services",
+            "Reverse Charge Mechanism",
+            "Machinery Parts"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-5_03",
+      "kind": "scenario",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "passage": "Dr. Sushmita is an eminent general physician operating a clinical establishment in a metro city. In addition to general medical consultations, her clinic includes a diagnostic laboratory, an in-house pharmacy, a specialized cosmetic surgery unit for aesthetic enhancements, and an ambulance service utilized for transporting critically ill patients to tertiary care hospitals.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-5_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-5_03",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-5",
+          "subject": "Taxation",
+          "prompt": "Are the general medical consultation and diagnosis services provided by Dr. Sushmita's clinical establishment exempt under GST?",
+          "options": [
+            "No, all medical services are taxable at 18%",
+            "Yes, health care services by a clinical establishment or authorized medical practitioner are exempt",
+            "Exempt only if annual clinic turnover is below Rs. 20 lakhs",
+            "Taxable at 5% without ITC"
+          ],
+          "answerIndex": 1,
+          "explanation": "Services by way of health care by a clinical establishment, an authorized medical practitioner, or paramedics are exempt from GST.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Healthcare Services",
+            "Clinical Establishment",
+            "Exemption"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-5_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-5_03",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-5",
+          "subject": "Taxation",
+          "prompt": "How are the services provided by the specialized cosmetic surgery unit for pure aesthetic enhancements treated under GST?",
+          "options": [
+            "Exempt as part of hospital services",
+            "Taxable under GST, as cosmetic/plastic surgery is excluded from healthcare services unless reconstructive due to trauma/congenital defects",
+            "Exempt under reverse charge",
+            "Taxable at 5%"
+          ],
+          "answerIndex": 1,
+          "explanation": "Cosmetic or plastic surgery undertaken purely for aesthetic enhancement (not for reconstructing anatomy affected by trauma, injury, or congenital defects) is excluded from the definition of health care services and is taxable.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Cosmetic Surgery",
+            "Healthcare Exclusion",
+            "Taxability"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-5_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-5_03",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-5",
+          "subject": "Taxation",
+          "prompt": "Is the ambulance service operated by the clinic for transporting patients exempt under GST?",
+          "options": [
+            "No, transport services by ambulance are taxable",
+            "Yes, services by way of transportation of a patient in an ambulance are exempt",
+            "Exempt only if patients belong to BPL category",
+            "Taxable at 12%"
+          ],
+          "answerIndex": 1,
+          "explanation": "Services by way of transportation of a patient in an ambulance are specifically exempt from GST under healthcare-related exemptions.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Ambulance Services",
+            "Patient Transport",
+            "Exemptions"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-5_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-5_03",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-5",
+          "subject": "Taxation",
+          "prompt": "Are the supplies made by the in-house pharmacy (sale of medicines to outpatients) exempt under GST?",
+          "options": [
+            "Yes, because it is located inside a hospital",
+            "No, supply of medicines by a pharmacy is a supply of goods subject to applicable GST rates",
+            "Exempt as incidental healthcare service",
+            "Taxable under reverse charge"
+          ],
+          "answerIndex": 1,
+          "explanation": "Supply of medicines and surgical items by a pharmacy (even if located within a clinical establishment) to outpatients constitutes a supply of goods and is taxable at the respective rates applicable to those goods.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Pharmacy",
+            "Supply of Goods",
+            "Taxability"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-5_04",
+      "kind": "scenario",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "passage": "The Municipal Corporation of a large city provides various municipal services to its citizens and business entities. These include renting of municipal community halls for social functions, issuing birth and death certificates, operating slaughter houses, and issuing licenses for operating eateries within city limits against collection of license fees.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-5_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-5_04",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-5",
+          "subject": "Taxation",
+          "prompt": "Are the services provided by the Municipal Corporation by way of issuing birth and death certificates exempt from GST?",
+          "options": [
+            "No, all services by municipal corporations are taxable",
+            "Yes, departmentalized services like issuance of passport, birth certificates, etc., provided by Government are exempt",
+            "Exempt only if fees do not exceed Rs. 100",
+            "Taxable under reverse charge"
+          ],
+          "answerIndex": 1,
+          "explanation": "Services by the Central Government, State Government, Union territory or local authority by way of issuance of passport, visa, driving licence, birth certificate or death certificate are exempt from GST.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Government Services",
+            "Local Authority",
+            "Certificates"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-5_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-5_04",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-5",
+          "subject": "Taxation",
+          "prompt": "How is the renting of municipal community halls for social functions by the Municipal Corporation treated under GST?",
+          "options": [
+            "Always exempt as a public service",
+            "Taxable under GST, as renting of immovable property by Government to businesses/individuals is taxable unless covered by specific small-value exemptions",
+            "Exempt if rented to senior citizens",
+            "Taxable under reverse charge"
+          ],
+          "answerIndex": 1,
+          "explanation": "Renting of immovable property by the Government or local authority to a business entity or even individuals (depending on consideration/turnover thresholds) is generally taxable. Community hall rentals do not enjoy a blanket exemption.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Municipal Services",
+            "Renting of Immovable Property",
+            "Taxable Supply"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-5_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-5_04",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-5",
+          "subject": "Taxation",
+          "prompt": "Are the services provided by the Municipal Corporation by way of operating public utility services such as slaughter houses exempt from GST?",
+          "options": [
+            "No, slaughter house operations are commercial and taxable",
+            "Yes, services by way of public utilities such as slaughter houses provided by Government/local authorities are exempt",
+            "Exempt only if operated through private contractors",
+            "Taxable at 18%"
+          ],
+          "answerIndex": 1,
+          "explanation": "Services by the Central Government, State Government, Union territory or local authority by way of public utilities such as slaughter houses are specifically exempt from GST.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Slaughter House",
+            "Public Utilities",
+            "Exemption"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-5_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-5_04",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-5",
+          "subject": "Taxation",
+          "prompt": "Are the services provided by the Municipal Corporation by way of granting licenses for operating eateries within city limits exempt from GST?",
+          "options": [
+            "Taxable at standard rates",
+            "Exempt from GST, as services by way of granting licences by a governmental authority are exempt",
+            "Taxable under reverse charge",
+            "Exempt only for vegetarian restaurants"
+          ],
+          "answerIndex": 1,
+          "explanation": "Services by way of grant of alcoholic liquor licences, or licenses/permissions by the Government for regulating activities (such as trade licenses, eatery licenses) are generally exempt under specific government service exemption entries.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "License Fees",
+            "Government Authority",
+            "Exempt Services"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-5_05",
+      "kind": "scenario",
+      "chapterId": "gst-5",
+      "subject": "Taxation",
+      "passage": "GreenWoods Residents Welfare Association (RWA) is an unincorporated body registered under the Cooperative Societies Act, comprising 150 residential apartments. The RWA collects monthly maintenance charges of Rs. 8,500 per member for common security, lift maintenance, and power backup. Additionally, the RWA rented out its club house to an external party for a wedding reception, collecting a rental fee of Rs. 60,000.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 1",
+        "chapterNumber": 5,
+        "chapterTitle": "Exemptions from GST"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-5_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-5_05",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-5",
+          "subject": "Taxation",
+          "prompt": "Are the monthly maintenance contributions collected by GreenWoods RWA from its members exempt from GST?",
+          "options": [
+            "Yes, because RWA contributions are never taxable",
+            "No, because the contribution exceeds Rs. 7,500 per month per member",
+            "Exempt up to Rs. 10,000 per member",
+            "Exempt under reverse charge"
+          ],
+          "answerIndex": 1,
+          "explanation": "Contribution to an RWA is exempt only if the charges do not exceed Rs. 7,500 per month per member. Since the maintenance charge is Rs. 8,500 per member (which exceeds Rs. 7,500), the entire maintenance amount is taxable (GST applies on the full amount if it exceeds the ceiling, as per current clarification).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "RWA",
+            "Maintenance Charges",
+            "Monetary Limit"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-5_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-5_05",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-5",
+          "subject": "Taxation",
+          "prompt": "What is the taxable value and tax liability status on the maintenance charges collected by GreenWoods RWA if the threshold of Rs. 7,500 per month per member is breached?",
+          "options": [
+            "GST is payable on the excess amount above Rs. 7,500 only",
+            "GST is payable on the entire amount of Rs. 8,500 per member",
+            "Exempt because total RWA turnover is below Rs. 20 lakhs",
+            "Taxable under reverse charge by individual members"
+          ],
+          "answerIndex": 1,
+          "explanation": "Clarification by CBIC specifies that if the maintenance charges exceed Rs. 7,500 per month per member, GST is leviable on the entire amount of maintenance charges, not just the differential amount.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "RWA",
+            "Taxable Value",
+            "CBIC Clarification"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-5_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-5_05",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-5",
+          "subject": "Taxation",
+          "prompt": "How is the rental income of Rs. 60,000 earned from renting the club house to an external party for a wedding reception treated under GST?",
+          "options": [
+            "Exempt because it belongs to the RWA",
+            "Taxable under GST, as renting of community/club halls to external parties is a taxable supply",
+            "Exempt if rental is below Rs. 1 lakh",
+            "Taxable under reverse charge"
+          ],
+          "answerIndex": 1,
+          "explanation": "Services provided by an RWA to non-members or renting of its facilities (like club house/hall) to external parties for commercial or social functions are taxable under GST without the benefit of member-related exemptions.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Club House Rental",
+            "RWA",
+            "Taxable Service"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-5_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-5_05",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-5",
+          "subject": "Taxation",
+          "prompt": "If GreenWoods RWA has an aggregate turnover of Rs. 18 lakhs in the financial year from all taxable supplies (including taxable maintenance and hall rental), does it need to register under GST?",
+          "options": [
+            "Yes, if it makes taxable supplies exceeding the threshold",
+            "No, RWAs are completely exempt from GST registration regardless of turnover",
+            "Exempt up to Rs. 40 lakhs for goods and services",
+            "Mandatory registration for all RWAs irrespective of turnover"
+          ],
+          "answerIndex": 0,
+          "explanation": "An RWA is a legal entity/body whose aggregate turnover from taxable supplies determines its registration liability under Section 22 of the CGST Act. If aggregate turnover exceeds the threshold limit (Rs. 20 lakhs for services in most states), registration is mandatory.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "RWA",
+            "Registration Threshold",
+            "Aggregate Turnover"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

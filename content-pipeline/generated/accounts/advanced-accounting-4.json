@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "advanced-accounting-4",
+  "subject": "Accounts",
+  "paper": "Paper 1: Advanced Accounting",
+  "module": "Module 1",
+  "chapterNumber": 4,
+  "chapterTitle": "Presentation & Disclosures Based Accounting Standards",
+  "generatedAt": "2026-08-16T13:41:56.623Z",
+  "model": "gemini-3.6-flash",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_advanced-accounting-4_001",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "Which of the following is NOT recognized as a Fundamental Accounting Assumption under AS 1 (Disclosure of Accounting Policies)?",
+      "options": [
+        "Going Concern",
+        "Consistency",
+        "Prudence",
+        "Accrual"
+      ],
+      "answerIndex": 2,
+      "explanation": "AS 1 explicitly identifies Going Concern, Consistency, and Accrual as the three Fundamental Accounting Assumptions. Prudence is a major consideration in selecting and applying accounting policies, not a fundamental accounting assumption. Therefore, Prudence is the correct answer.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 1",
+        "Fundamental Assumptions",
+        "Accounting Policies"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_002",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "Under AS 1, if all fundamental accounting assumptions are followed in the preparation of financial statements, what disclosure is required?",
+      "options": [
+        "A specific disclosure is required in the notes to accounts stating that all fundamental assumptions were followed.",
+        "No specific disclosure is required.",
+        "Disclosure is required only in the Director's Report.",
+        "Disclosure is required only if the enterprise is a listed entity."
+      ],
+      "answerIndex": 1,
+      "explanation": "According to AS 1, fundamental accounting assumptions are presumed to have been followed in financial statements. Specific disclosure is required only if a fundamental accounting assumption is NOT followed. Hence, no specific disclosure is needed when they are followed.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 1",
+        "Disclosure Requirements",
+        "Fundamental Assumptions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_003",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "According to AS 18 (Related Party Disclosures), which of the following relationships automatically constitutes a related party relationship?",
+      "options": [
+        "A single major customer who accounts for 85% of total sales",
+        "Key Management Personnel (KMP) of the enterprise",
+        "A provider of finance who exercises normal restrictive covenants",
+        "A trade union representing 90% of the workforce"
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 18 explicitly covers Key Management Personnel (KMP) and their relatives as related parties. Major customers, providers of finance, and trade unions are explicitly excluded from being considered related parties merely by virtue of their normal dealings.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 18",
+        "Related Party Definition",
+        "KMP"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_004",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "Which of the following persons is EXCLUDED from the definition of 'relative' of an individual under AS 18?",
+      "options": [
+        "Spouse",
+        "Brother or Sister",
+        "Grandparent",
+        "Son or Daughter"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under AS 18, 'relative' in relation to an individual means the spouse, son, daughter, brother, sister, father, and mother who are expected to influence, or be influenced by, that individual in dealings with the enterprise. Grandparents are not included in this definition.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 18",
+        "Definition of Relative",
+        "Scope"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_005",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "Under AS 20 (Earnings Per Share), how should bonus shares issued during the financial year be treated in the calculation of Weighted Average Number of Equity Shares (WANES)?",
+      "options": [
+        "Weighted from the actual date of issue of the bonus shares",
+        "Treated as if they were issued at the beginning of the earliest period reported",
+        "Weighted for 6 months irrespective of the date of issue",
+        "Ignored for Basic EPS and included only for Diluted EPS"
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 20 specifies that in case of a bonus issue, equity shares are issued without additional consideration. Therefore, they are treated as if they had been issued at the beginning of the earliest period reported, adjusting WANES retrospectively.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 20",
+        "WANES",
+        "Bonus Issue"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_006",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "What is the basic formula for calculating Basic Earnings Per Share under AS 20?",
+      "options": [
+        "Net Profit before Tax / Total Number of Equity Shares issued",
+        "Net Profit or Loss for the period attributable to Equity Shareholders / Weighted Average Number of Equity Shares outstanding during the period",
+        "(Net Profit after Tax + Non-controlling Interest) / Weighted Average Number of Equity Shares",
+        "Operating Profit / Total Paid-up Equity Share Capital"
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 20 defines Basic EPS as Net Profit or Loss for the period attributable to equity shareholders divided by the Weighted Average Number of Equity Shares outstanding during the period. Numerator must be after deducting preference dividends and tax.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 20",
+        "Basic EPS",
+        "Formula"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_007",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "Which of the following events triggers the 'Initial Disclosure Event' for a discontinuing operation under AS 24?",
+      "options": [
+        "When the enterprise decides in an informal meeting to shut down a segment",
+        "Whichever occurs EARLIER: entering into a binding sale agreement OR board approval of a detailed formal plan and making a public announcement",
+        "Whichever occurs LATER: entering into a binding sale agreement OR board approval of a detailed formal plan and making a public announcement",
+        "When the actual transfer of all assets of the discontinuing segment is completed"
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 24 defines the Initial Disclosure Event as the earlier of two events: (a) the enterprise entering into a binding sale agreement for substantially all assets of the discontinuing operation, or (b) approval by the board of a detailed formal plan and making a public announcement.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 24",
+        "Initial Disclosure Event",
+        "Discontinuing Operations"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_008",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "Under AS 24, a discontinuing operation is a component of an enterprise that represents:",
+      "options": [
+        "Any small product line that is being phased out",
+        "A separate major line of business or geographical area of operations",
+        "A temporary suspension of factory operations due to strike",
+        "Sale of individual obsolete machinery in the ordinary course of business"
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 24 requires that a discontinuing operation must represent a separate major line of business or geographical area of operations that can be distinguished operationally and for financial reporting purposes pursuant to a single plan.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 24",
+        "Definition",
+        "Scope"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_009",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "According to AS 18, transactions with which of the following entities are exempt from disclosure requirements in the financial statements of state-controlled enterprises?",
+      "options": [
+        "Key Management Personnel of the state-controlled enterprise",
+        "Other state-controlled enterprises",
+        "Private limited subsidiaries of the state-controlled enterprise",
+        "Foreign joint ventures of the state-controlled enterprise"
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 18 explicitly provides an exemption to state-controlled enterprises from disclosing related party transactions with other state-controlled enterprises. However, disclosures of transactions with KMP or non-state-controlled entities remain applicable.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 18",
+        "Exemptions",
+        "State-controlled Enterprises"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_010",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "Potential equity shares are considered 'anti-dilutive' under AS 20 when their conversion into equity shares would:",
+      "options": [
+        "Decrease Earnings Per Share from continuing ordinary operations",
+        "Increase Earnings Per Share from continuing ordinary operations",
+        "Have zero effect on Earnings Per Share",
+        "Reduce Loss Per Share from continuing ordinary operations"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 20, potential equity shares are anti-dilutive when their conversion would result in an increase in earnings per share (or a decrease in loss per share) from continuing ordinary operations. Anti-dilutive potential shares are excluded from Diluted EPS.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 20",
+        "Anti-dilutive",
+        "Diluted EPS"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_011",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "Alpha Ltd changes its method of charging depreciation from Straight Line Method (SLM) to Written Down Value (WDV) method for all plant items to better reflect the pattern of economic benefits. Under AS 1, how should this change be disclosed?",
+      "options": [
+        "No disclosure is required as depreciation is an accounting estimate, not a policy.",
+        "The change, reason for change, and its financial effect on current period profit must be disclosed.",
+        "It must be disclosed retrospectively by adjusting opening retained earnings without disclosure in notes.",
+        "Only the total accumulated depreciation amount needs to be disclosed."
+      ],
+      "answerIndex": 1,
+      "explanation": "A change in accounting policy or accounting treatment (such as method of depreciation reflecting economic benefit consumption) requires disclosure of the change, reasons for the change, and the financial impact on current period financial statements under AS 1.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 1",
+        "Accounting Policy Change",
+        "Disclosure"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_012",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "An enterprise presents financial statements where 'Substance over Form' was prioritized over technical legal form in recording a lease transaction. Which Accounting Standard governs this overarching principle of policy selection?",
+      "options": [
+        "AS 1 (Disclosure of Accounting Policies)",
+        "AS 19 (Leases)",
+        "AS 5 (Net Profit or Loss for the Period)",
+        "AS 18 (Related Party Disclosures)"
+      ],
+      "answerIndex": 0,
+      "explanation": "AS 1 lays down the primary considerations for selection and application of accounting policies, which are Prudence, Substance over Form, and Materiality.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 1",
+        "Substance over Form",
+        "Policy Considerations"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_013",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "Company A holds 22% of the voting power in Company B. During the year ended 31st March 2025, Company B sold goods to Company A worth ₹15 Lakhs. No transactions occurred between them in the prior year. Under AS 18, how should Company B disclose this in its financial statements?",
+      "options": [
+        "No disclosure required as 22% voting power only represents significant influence and not control.",
+        "Disclosure of related party relationship name, nature of relationship, and details of transaction (amount & outstanding balance) is mandatory.",
+        "Only the name of Company A needs to be disclosed without transaction amounts.",
+        "Disclosure is required only in Consolidated Financial Statements, not Standalone Financial Statements."
+      ],
+      "answerIndex": 1,
+      "explanation": "Holding 20% or more voting power creates significant influence under AS 18. When related party transactions take place during the period, disclosure of the relationship, description of transaction, volume/amount, and outstanding balances is mandatory in standalone FS.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 18",
+        "Significant Influence",
+        "Disclosure"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_014",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "Director X is a Director in both Company P and Company Q. Director X holds 1% equity shares in Company P and 2% equity shares in Company Q, and cannot direct the policies of either enterprise. Are Company P and Company Q related parties under AS 18?",
+      "options": [
+        "Yes, because they have a common director.",
+        "No, mere common directorship without ability to affect transactions does not make enterprises related parties.",
+        "Yes, because Director X holds equity shares in both companies.",
+        "Yes, provided transactions exceed ₹10 Lakhs."
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 18 specifically states that two enterprises are not related parties simply because they have a director in common, unless the director is able to affect the policies of both enterprises in their mutual dealings.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 18",
+        "Common Directorship",
+        "Related Party Exclusions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_015",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "If a control relationship exists between Holding Co and Subsidiary Co, but NO transactions took place between them during the financial year, what is the requirement under AS 18?",
+      "options": [
+        "No disclosure is required because no transactions took place.",
+        "The reporting enterprise must disclose the name of the related party and the nature of the related party relationship.",
+        "Disclosure is required only if requested by auditors.",
+        "Disclosure is required only if the holding company is a foreign entity."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 18, where CONTROL exists between parties, disclosure of the related party relationship (name and nature) is mandatory irrespective of whether any transactions took place between them during the year.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 18",
+        "Control",
+        "Nil Transaction Disclosure"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_016",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "Beta Ltd had 100,000 equity shares outstanding on 1st April 2024. It issued 20,000 equity shares for cash on 1st October 2024. Net profit after tax for the year ended 31st March 2025 is ₹11,000,000. Calculate Basic EPS under AS 20.",
+      "options": [
+        "₹100.00",
+        "₹91.67",
+        "₹110.00",
+        "₹83.33"
+      ],
+      "answerIndex": 0,
+      "explanation": "WANES = 100,000 + (20,000 * 6/12) = 100,000 + 10,000 = 110,000 shares. Basic EPS = ₹11,000,000 / 110,000 = ₹100.00.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 20",
+        "Basic EPS Calculation",
+        "WANES"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_017",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "Gamma Ltd had 200,000 equity shares outstanding on 1st April 2024. On 1st January 2025, the company executed a share split, dividing each existing equity share of ₹10 into 2 equity shares of ₹5 each. What is the WANES for calculating Basic EPS for the year ended 31st March 2025?",
+      "options": [
+        "250,000 shares",
+        "400,000 shares",
+        "200,000 shares",
+        "300,000 shares"
+      ],
+      "answerIndex": 1,
+      "explanation": "A share split increases the number of equity shares without additional consideration. Under AS 20, a share split is treated as if it occurred at the beginning of the earliest period reported. Thus, total shares = 200,000 * 2 = 400,000 shares for the entire year.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 20",
+        "Share Split",
+        "WANES"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_018",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "Under AS 20, when calculating Diluted EPS, what adjustment is required in the numerator (Net Profit attributable to equity shareholders) for convertible debentures?",
+      "options": [
+        "Deduct interest on debentures net of tax effect",
+        "Add back interest on debentures net of tax effect",
+        "Add back interest on debentures without adjusting tax effect",
+        "No adjustment to numerator, only denominator is adjusted"
+      ],
+      "answerIndex": 1,
+      "explanation": "If convertible debentures are converted into equity shares, the company saves interest expense on those debentures. Hence, for Diluted EPS, the interest expense saved (net of attributable tax effect) is added back to the net profit attributable to equity shareholders.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 20",
+        "Diluted EPS",
+        "Convertible Debentures"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_019",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "Delta Ltd reported Basic EPS of ₹15.00 for FY 2023-24 (WANES was 1,000,000 shares). On 1st July 2024, Delta Ltd issued 1 bonus share for every 1 existing share held (1:1 bonus issue). What is the restated Basic EPS for FY 2023-24 to be presented in the comparative column of FY 2024-25 financial statements?",
+      "options": [
+        "₹15.00",
+        "₹7.50",
+        "₹30.00",
+        "₹10.00"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 20, if bonus shares are issued, the Basic EPS for all prior periods presented must be restated. Restated WANES for FY 2023-24 = 1,000,000 * 2 = 2,000,000 shares. Restated EPS = Original EPS / 2 = ₹15.00 / 2 = ₹7.50.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 20",
+        "Restatement of EPS",
+        "Comparative Figures"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_020",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "On 15th December 2024, the Board of Directors of Apex Ltd approved a detailed formal plan to dispose of its Fertilizer Division. On 20th January 2025, a formal public announcement of the plan was made. On 10th February 2025, a binding sale agreement was signed. What is the date of the Initial Disclosure Event under AS 24?",
+      "options": [
+        "15th December 2024",
+        "20th January 2025",
+        "10th February 2025",
+        "31st March 2025"
+      ],
+      "answerIndex": 1,
+      "explanation": "Initial Disclosure Event is the EARLIER of (a) entering into a binding sale agreement (10th Feb 2025) or (b) board approval of detailed formal plan AND making a public announcement (20th Jan 2025). Approval plus announcement occurred on 20th January 2025, which is earlier than 10th February 2025.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 24",
+        "Initial Disclosure Event",
+        "Timing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_021",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "How should cash flows attributable to operating, investing, and financing activities of a discontinuing operation be presented under AS 24?",
+      "options": [
+        "They should be combined with continuing operations without separate disclosure.",
+        "Net cash flows attributable to operating, investing, and financing activities of the discontinuing operation must be disclosed separately on the face of cash flow statement or in notes.",
+        "Only operating cash flows of discontinuing operations need disclosure.",
+        "Cash flow disclosure is optional under AS 24."
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 24 requires disclosure of the net cash flows attributable to the operating, investing, and financing activities of the discontinuing operation either on the face of the cash flow statement or in the notes to financial statements.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 24",
+        "Cash Flow Statement",
+        "Disclosures"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_022",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "Company ABC changed its valuation of inventory from FIFO to Weighted Average Cost method. The change resulted in a decrease in current year profit by ₹8 Lakhs, but the effect on future years is not determinable. What is the appropriate disclosure requirement under AS 1?",
+      "options": [
+        "Disclose only the change in policy without any monetary quantification.",
+        "Disclose the change in policy, reasons for change, current year impact of ₹8 Lakhs reduction in profit, and state that future impact is not determinable.",
+        "No disclosure is needed since future impact is unknown.",
+        "Restate prior year financial statements to show Weighted Average Cost."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 1, any change in accounting policy having a material effect must be disclosed along with monetary impact. If the effect on future periods is not ascertainable, that fact must be explicitly stated in the financial statements.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 1",
+        "Accounting Policy Change",
+        "Unascertainable Future Impact"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_023",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "Holding Ltd owns 60% of Sub Ltd. Sub Ltd owns 40% of Assoc Ltd. Holding Ltd directly holds 10% of Assoc Ltd. How is Assoc Ltd related to Holding Ltd under AS 18?",
+      "options": [
+        "Assoc Ltd is a Subsidiary of Holding Ltd.",
+        "Assoc Ltd is an Associate of Holding Ltd because Holding Ltd directly and indirectly controls/exercises significant influence over 50% voting power.",
+        "Assoc Ltd is not a related party of Holding Ltd.",
+        "Assoc Ltd is a Joint Venture of Holding Ltd."
+      ],
+      "answerIndex": 1,
+      "explanation": "Holding Ltd controls Sub Ltd (60%). Sub Ltd holds 40% in Assoc Ltd, so Sub Ltd has significant influence. Directly Holding Ltd has 10%. Combined effective voting influence/control over Assoc Ltd exceeds 20% (direct 10% + indirect 40% held via subsidiary = 50% voting power influence). Thus, Assoc Ltd is an associate/related party of Holding Ltd.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 18",
+        "Indirect Relationship",
+        "Associate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_024",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "Alpha Ltd pays ₹60 Lakhs as KMP remuneration to its Managing Director Mr. R. During the year, Mr. R's spouse, Mrs. R, provides legal consultancy services to Alpha Ltd worth ₹6 Lakhs. Mrs. R is an independent professional. How should this be disclosed under AS 18 in Alpha Ltd's financial statements?",
+      "options": [
+        "No disclosure required for Mrs. R because legal services were provided on arm's length basis.",
+        "Both KMP remuneration of Mr. R and the transaction with Mrs. R (relative of KMP) must be disclosed as related party transactions.",
+        "Only Mr. R's remuneration needs disclosure; transactions with relatives are exempt if under ₹10 Lakhs.",
+        "Aggregate disclosure of ₹66 Lakhs as KMP remuneration without splitting."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 18, KMP and their relatives are related parties. Both remuneration paid to KMP and commercial transactions with relatives of KMP must be disclosed, regardless of whether they are at arm's length.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 18",
+        "KMP Relatives",
+        "Remuneration & Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_025",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "Zeta Ltd had 1,000,000 equity shares outstanding on 1st April 2024. On 1st July 2024, it made a Rights Issue in the ratio of 1:4 (1 new share for every 4 shares held) at an issue price of ₹20 per share. The fair value of one equity share immediately prior to the exercise of rights was ₹30. What is the Theoretical Ex-Rights Price (TERP) per share under AS 20?",
+      "options": [
+        "₹25.00",
+        "₹28.00",
+        "₹24.00",
+        "₹22.50"
+      ],
+      "answerIndex": 1,
+      "explanation": "TERP = [(Fair value of shares prior to rights * No. of shares prior) + (Rights issue price * No. of rights shares)] / Total shares after rights issue. TERP = [(4 * ₹30) + (1 * ₹20)] / (4 + 1) = (120 + 20) / 5 = ₹140 / 5 = ₹28.00.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 20",
+        "Rights Issue",
+        "TERP Calculation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_026",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "Omega Ltd reported Net Profit after tax of ₹50,000,000 for FY 2024-25 and has 5,000,000 equity shares of ₹10 each. It has 100,000 10% Convertible Debentures of ₹100 each outstanding, each debenture convertible into 2 equity shares. Tax rate is 30%. What is the Diluted EPS under AS 20?",
+      "options": [
+        "₹9.62",
+        "₹9.75",
+        "₹10.00",
+        "₹9.50"
+      ],
+      "answerIndex": 1,
+      "explanation": "Basic EPS = ₹50,000,000 / 5,000,000 = ₹10.00. Interest saved net of tax = 100,000 * 100 * 10% * (1 - 0.30) = ₹700,000. Adjusted Profit = 50,000,000 + 700,000 = ₹50,700,000. Dilutive shares = 100,000 * 2 = 200,000 shares. Diluted WANES = 5,000,000 + 200,000 = 5,200,000. Diluted EPS = ₹50,700,000 / 5,200,000 = ₹9.75.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 20",
+        "Diluted EPS",
+        "Convertible Debentures"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_027",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "A company has 100,000 stock options outstanding exercisable at ₹40 per share. The average fair value of one equity share during the year was ₹50. Under AS 20, what is the incremental number of dilutive potential equity shares to be added to WANES for calculating Diluted EPS?",
+      "options": [
+        "100,000 shares",
+        "80,000 shares",
+        "20,000 shares",
+        "50,000 shares"
+      ],
+      "answerIndex": 2,
+      "explanation": "Number of shares issued for full consideration = (100,000 * ₹40) / ₹50 = 80,000 shares. Incremental free/dilutive shares = Total options - Shares for consideration = 100,000 - 80,000 = 20,000 shares [or 100,000 * (1 - 40/50) = 20,000 shares].",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 20",
+        "Options",
+        "Dilutive Potential Shares"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_028",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "An enterprise sells its idle manufacturing equipment representing 15% of total plant assets from its ongoing main operating unit. The equipment sale is completed in a single deal. Does this transaction qualify as a Discontinuing Operation under AS 24?",
+      "options": [
+        "Yes, because it represents a disposal of a significant portion of assets pursuant to a single plan.",
+        "No, because selling individual assets without disposing of a major line of business or geographical segment does not satisfy AS 24 definition.",
+        "Yes, provided the revenue from the equipment is disclosed separately.",
+        "No, because AS 24 applies only to statutory mergers and amalgamations."
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 24 explicitly clarifies that disposal of individual assets or routine phasing out of products/machinery within an ongoing major line of business does not constitute a discontinuing operation unless it represents a separate major line of business or geographical area.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 24",
+        "Discontinuing Operation Scope",
+        "Asset Disposal"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_029",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "If a discontinuing operation continues operations into the next financial year before final completion, what disclosure is required under AS 24 in subsequent period financial statements?",
+      "options": [
+        "No further disclosures required once initial disclosure event occurred in prior year.",
+        "Disclosures must be updated in subsequent periods including description of significant changes in the plan, cash flows, and pre-tax profit/loss until completion.",
+        "The entire operation must be reclassified back to continuing operations.",
+        "Only the total realized cash consideration needs disclosure."
+      ],
+      "answerIndex": 1,
+      "explanation": "AS 24 mandates that for a discontinuing operation, disclosures must continue in financial statements for subsequent periods until the completion of the disposal plan, including updates on any significant changes in the amounts or timing of cash flows/proceeds.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 24",
+        "Subsequent Disclosures",
+        "Reporting Requirements"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-4_030",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "prompt": "Company X has Net Profit of ₹1,000,000 and 100,000 equity shares (Basic EPS = ₹10). It has 10,000 12% Convertible Debentures of ₹100 each (each convertible into 1 share; interest net of tax = ₹8,400) and 5,000 15% Convertible Preference Shares of ₹100 each (dividend = ₹75,000, each convertible into 10 shares). Which potential equity shares are dilutive?",
+      "options": [
+        "Both Convertible Debentures and Convertible Preference Shares are dilutive.",
+        "Only Convertible Debentures are dilutive (incremental EPS = ₹0.84), while Convertible Preference Shares are anti-dilutive (incremental EPS = ₹1.50). Both are dilutive relative to Basic EPS ₹10, but tested in sequence.",
+        "Convertible Debentures (incremental EPS ₹0.84) and Convertible Preference Shares (incremental EPS ₹1.50) are both dilutive since their incremental EPS is below basic EPS of ₹10.",
+        "Neither is dilutive."
+      ],
+      "answerIndex": 2,
+      "explanation": "Incremental EPS of Convertible Debentures = ₹8,400 / 10,000 = ₹0.84. Incremental EPS of Convertible Preference Shares = ₹75,000 / 50,000 = ₹1.50. Since both incremental EPS values (₹0.84 and ₹1.50) are lower than Basic EPS (₹10), both are dilutive potential equity shares when tested individually and sequentially.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 20",
+        "Diluted EPS",
+        "Sequential Dilution Test"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_advanced-accounting-4_01",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "passage": "Apex Ltd is preparing its financial statements for the year ended 31st March 2025. On 1st April 2024, the company had 1,000,000 equity shares of ₹10 each outstanding. Net profit attributable to equity shareholders for FY 2024-25 is ₹60,000,000.\nDuring the year, the following corporate transactions occurred:\n1. On 1st July 2024, Apex Ltd issued rights shares to existing shareholders in the ratio of 1:4 (1 new share for every 4 held) at an issue price of ₹40 per share. The fair value of one equity share immediately prior to the exercise of rights on 1st July 2024 was ₹50.\n2. Apex Ltd had 100,000 stock options outstanding throughout the year, exercisable at ₹30 per share. The average fair value per equity share during FY 2024-25 was ₹50.\n3. On 1st October 2024, the company issued 50,000 10% Convertible Debentures of ₹100 each. Each debenture is convertible into 2 equity shares. Applicable tax rate is 30%.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-4_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-4_01",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-4",
+          "subject": "Accounts",
+          "prompt": "What is the Theoretical Ex-Rights Price (TERP) per share and the rights adjustment factor for Apex Ltd under AS 20?",
+          "options": [
+            "TERP = ₹48.00; Adjustment Factor = 1.0417 (or 25/24)",
+            "TERP = ₹45.00; Adjustment Factor = 1.1111",
+            "TERP = ₹40.00; Adjustment Factor = 1.2500",
+            "TERP = ₹50.00; Adjustment Factor = 1.0000"
+          ],
+          "answerIndex": 0,
+          "explanation": "TERP = [(4 * ₹50) + (1 * ₹40)] / 5 = (200 + 40) / 5 = ₹48.00. Rights Adjustment Factor = Fair Value prior to rights / TERP = 50 / 48 = 1.041667 (or 25/24).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 20",
+            "Rights Issue",
+            "TERP"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-4_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-4_01",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-4",
+          "subject": "Accounts",
+          "prompt": "What is the Weighted Average Number of Equity Shares (WANES) for calculating Basic EPS for FY 2024-25 under AS 20?",
+          "options": [
+            "1,197,917 shares",
+            "1,250,000 shares",
+            "1,187,500 shares",
+            "1,000,000 shares"
+          ],
+          "answerIndex": 0,
+          "explanation": "WANES = [1,000,000 * (25/24) * 3/12] + [1,250,000 * 9/12] = 260,416.67 + 937,500 = 1,197,916.67 (approx 1,197,917 shares).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 20",
+            "WANES",
+            "Rights Issue Adjustment"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-4_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-4_01",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-4",
+          "subject": "Accounts",
+          "prompt": "What is the number of incremental dilutive potential equity shares arising from the stock options to be included in Diluted EPS calculation under AS 20?",
+          "options": [
+            "40,000 shares",
+            "100,000 shares",
+            "60,000 shares",
+            "20,000 shares"
+          ],
+          "answerIndex": 0,
+          "explanation": "Options dilutive shares = Total options * (1 - Exercise Price / Fair Value) = 100,000 * (1 - 30/50) = 100,000 * 0.40 = 40,000 shares.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 20",
+            "Stock Options",
+            "Dilutive Shares"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-4_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-4_01",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-4",
+          "subject": "Accounts",
+          "prompt": "What is the Diluted Earnings Per Share (DEPS) of Apex Ltd for FY 2024-25 under AS 20?",
+          "options": [
+            "₹46.72",
+            "₹50.09",
+            "₹48.61",
+            "₹45.10"
+          ],
+          "answerIndex": 0,
+          "explanation": "Basic EPS = ₹60,000,000 / 1,197,917 = ₹50.09. Convertible Debentures interest saved net of tax (for 6 months from 1st Oct) = 50,000 * 100 * 10% * 6/12 * (1 - 0.30) = ₹175,000. Incremental shares from debentures weighted for 6 months = (50,000 * 2) * 6/12 = 50,000 shares. Total Diluted WANES = 1,197,917 (Basic) + 40,000 (Options) + 50,000 (Debentures) = 1,287,917 shares. Adjusted Profit = 60,000,000 + 175,000 = ₹60,175,000. Diluted EPS = 60,175,000 / 1,287,917 = ₹46.72.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 20",
+            "Diluted EPS",
+            "Comprehensive Calculation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-4_02",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "passage": "Vibrant Infra Ltd (VIL) is an unlisted public company. For the financial year ended 31st March 2025, the accountant is reviewing the following relationships and transactions for compliance with AS 18 (Related Party Disclosures):\n1. Mr. Vijay is the Managing Director of VIL. VIL paid him a salary of ₹1.2 Crores. Mr. Vijay's brother, Mr. Ajay, supplied raw materials worth ₹40 Lakhs to VIL at prevailing market rates.\n2. VIL holds 25% voting power in Solar Tech Ltd (STL). VIL had no commercial transactions with STL during FY 2024-25.\n3. VIL holds 60% equity shares in Metro Projects Ltd (MPL). VIL had zero business transactions with MPL during FY 2024-25.\n4. State Bank of India (SBI) provided a term loan of ₹50 Crores to VIL with standard financial covenants. VIL also purchased machinery worth ₹2 Crores from Bharat Heavy Electricals Ltd (BHEL), a state-controlled enterprise.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-4_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-4_02",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-4",
+          "subject": "Accounts",
+          "prompt": "How should the raw material supply transaction with Mr. Ajay (brother of Managing Director Mr. Vijay) be disclosed in VIL's financial statements under AS 18?",
+          "options": [
+            "Exempt from disclosure because the transaction was conducted at prevailing market rates (arm's length).",
+            "Must be disclosed as a related party transaction including the nature of relationship, description, and amount of ₹40 Lakhs.",
+            "Disclosed only if the amount exceeds ₹1 Crore.",
+            "Merged with KMP remuneration of Mr. Vijay without separate disclosure."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under AS 18, relatives of Key Management Personnel are related parties. Transactions with related parties must be disclosed regardless of whether they are on an arm's length basis.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 18",
+            "KMP Relatives",
+            "Arm's Length Exemption"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-4_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-4_02",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-4",
+          "subject": "Accounts",
+          "prompt": "Is VIL required to disclose its relationship with Solar Tech Ltd (STL) for FY 2024-25 under AS 18?",
+          "options": [
+            "Yes, because holding 25% voting power creates significant influence.",
+            "No, because no transactions took place during the year and the relationship is only 'significant influence' (not control).",
+            "Yes, disclosure of relationship name is mandatory even for significant influence without transactions.",
+            "No, because STL is an unlisted company."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under AS 18, when NO transactions take place during the financial year, disclosures are required ONLY for relationships where CONTROL exists. Since VIL exercises significant influence (not control) over STL and no transactions took place, no disclosure is required.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 18",
+            "Significant Influence",
+            "Nil Transactions"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-4_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-4_02",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-4",
+          "subject": "Accounts",
+          "prompt": "Is VIL required to disclose its relationship with Metro Projects Ltd (MPL) for FY 2024-25 under AS 18?",
+          "options": [
+            "No, because no business transactions took place between VIL and MPL during the year.",
+            "Yes, because VIL exercises CONTROL (60% holding) over MPL, requiring disclosure of relationship name and nature even without transactions.",
+            "Disclosure is optional at management's discretion.",
+            "Disclose only in the Director's Report, not in financial statements."
+          ],
+          "answerIndex": 1,
+          "explanation": "AS 18 mandates that where CONTROL exists, disclosure of the related party relationship (name and nature) is mandatory irrespective of whether any transactions took place between the related parties during the year.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 18",
+            "Control Relationship",
+            "Nil Transaction Requirement"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-4_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-4_02",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-4",
+          "subject": "Accounts",
+          "prompt": "Which of the following entities is EXEMPT from being considered a related party of VIL under AS 18 based on the facts provided?",
+          "options": [
+            "Mr. Vijay (Managing Director)",
+            "Metro Projects Ltd (Subsidiary)",
+            "State Bank of India (Provider of Finance)",
+            "Mr. Ajay (Brother of KMP)"
+          ],
+          "answerIndex": 2,
+          "explanation": "AS 18 explicitly excludes providers of finance (such as banks) from being considered related parties merely by virtue of their normal dealings with an enterprise.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "AS 18",
+            "Exclusions",
+            "Provider of Finance"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-4_03",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "passage": "Zenith Consumer Products Ltd has two distinct operating divisions: Division A (Electronics) and Division B (Home Appliances). Both represent major lines of business and are operationally and financially distinguishable.\nDuring FY 2024-25, Zenith's management initiated a process regarding Division B:\n- On 15th September 2024, the Board of Directors approved a detailed formal plan to discontinue Division B by selling its assets piecemeal.\n- On 1st November 2024, Zenith issued a press release and formally notified stock exchanges about the board's decision to discontinue Division B.\n- On 15th January 2025, Zenith signed a binding sale agreement to dispose of 60% of Division B's assets to a buyer.\n- The remaining assets were sold in March 2025.\nFor FY 2024-25, Division B reported revenue of ₹20 Crores, pre-tax operating loss of ₹3 Crores, and income tax benefit of ₹0.9 Crores.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-4_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-4_03",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-4",
+          "subject": "Accounts",
+          "prompt": "On which date did the 'Initial Disclosure Event' (IDE) occur for Division B under AS 24?",
+          "options": [
+            "15th September 2024",
+            "1st November 2024",
+            "15th January 2025",
+            "31st March 2025"
+          ],
+          "answerIndex": 1,
+          "explanation": "Initial Disclosure Event is the EARLIER of (a) entering into binding sale agreement (15th Jan 2025) or (b) approval of detailed formal plan AND making a public announcement (1st Nov 2024). Hence, IDE occurred on 1st November 2024.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 24",
+            "Initial Disclosure Event",
+            "Timing"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-4_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-4_03",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-4",
+          "subject": "Accounts",
+          "prompt": "How should the pre-tax loss and tax benefit of Division B be presented in Zenith's financial statements for FY 2024-25 under AS 24?",
+          "options": [
+            "Pre-tax loss of ₹3 Crores and tax benefit of ₹0.9 Crores attributable to the discontinuing operation must be disclosed on the face of profit & loss or in notes.",
+            "Net loss of ₹2.1 Crores must be credited directly to General Reserve.",
+            "No disclosure is required until all assets are completely transferred.",
+            "Include Division B's results under Continuing Operations without separate breakdown."
+          ],
+          "answerIndex": 0,
+          "explanation": "AS 24 mandates disclosure of the amount of pre-tax gain/loss recognized on the disposal of assets or settlement of liabilities attributable to discontinuing operation, and the related income tax expense/benefit.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 24",
+            "P&L Presentation",
+            "Discontinuing Disclosures"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-4_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-4_03",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-4",
+          "subject": "Accounts",
+          "prompt": "How should cash flows attributable to Division B be presented in the Cash Flow Statement of Zenith Ltd under AS 24?",
+          "options": [
+            "Net cash flows from operating, investing, and financing activities of Division B must be disclosed separately on the face of Cash Flow Statement or in notes.",
+            "Cash flows must be omitted from Cash Flow Statement since it is a discontinuing operation.",
+            "Only financing cash flows of Division B require disclosure.",
+            "Cash flows should be adjusted against capital reserves."
+          ],
+          "answerIndex": 0,
+          "explanation": "AS 24 requires separate disclosure of net cash flows attributable to operating, investing, and financing activities of the discontinuing operation.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 24",
+            "Cash Flow Statement",
+            "Presentation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-4_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-4_03",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-4",
+          "subject": "Accounts",
+          "prompt": "If Zenith Ltd had sold only one idle manufacturing unit of Division B (which did not constitute a separate major line of business or geographical area), how would AS 24 apply?",
+          "options": [
+            "AS 24 would fully apply because it is a disposal of plant assets.",
+            "AS 24 would NOT apply because disposal of an individual unit within an operating segment does not satisfy the definition of a discontinuing operation.",
+            "AS 24 would apply only if the sale generated a capital loss.",
+            "AS 24 applies at management's discretion."
+          ],
+          "answerIndex": 1,
+          "explanation": "AS 24 explicitly excludes from its scope the disposal of individual assets or components that do not represent a separate major line of business or geographical area of operations.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 24",
+            "Scope Exclusion",
+            "Major Line of Business"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-4_04",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "passage": "Nova Retail Ltd operates a chain of supermarkets. For the financial year ended 31st March 2025, the auditor identified the following matters regarding accounting policies:\n1. Nova Retail changed its method of valuation of inventory from Weighted Average Cost method to FIFO method to achieve uniformity with its parent company. This change resulted in an increase in closing inventory and current period profit by ₹45 Lakhs. The financial impact on prior periods cannot be reasonably determined.\n2. The company capitalized administrative overheads of ₹12 Lakhs into the cost of store fixtures, arguing that corporate management spent time supervising store setup.\n3. Due to intense competition, Nova Retail's accumulated losses eroded its net worth by 80%. However, management secured a binding line of credit from promoters for 3 years and restructured store operations, expecting cash inflows.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-4_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-4_04",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-4",
+          "subject": "Accounts",
+          "prompt": "Under AS 1, is the change in inventory valuation method permissible, and how should it be disclosed?",
+          "options": [
+            "Impermissible; inventory valuation methods can never be changed once chosen.",
+            "Permissible if it complies with AS 2 / AS 1 or statute; the change, reasons, and ₹45 Lakhs current period profit impact must be disclosed along with a note that prior period impact is undeterminable.",
+            "Permissible only with prior approval from ICAI.",
+            "Permissible without disclosure if profit increases."
+          ],
+          "answerIndex": 1,
+          "explanation": "A change in accounting policy is permissible if required by statute, for AS compliance, or for more appropriate presentation. Under AS 1, the impact (₹45 Lakhs profit increase) and reasons must be disclosed, and if past impacts are undeterminable, that fact must be stated.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 1",
+            "Change in Accounting Policy",
+            "Disclosure"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-4_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-4_04",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-4",
+          "subject": "Accounts",
+          "prompt": "Regarding the capitalization of administrative overheads into store fixtures, which principle under AS 1 and general AS principles is violated?",
+          "options": [
+            "Prudence and Substance over Form, as general administrative overheads do not directly add to the location/condition of assets.",
+            "Consistency Assumption.",
+            "Going Concern Assumption.",
+            "Accrual Assumption."
+          ],
+          "answerIndex": 0,
+          "explanation": "Under AS 1 and asset valuation standards, administrative overheads that do not directly contribute to bringing assets to their present location and condition should be expensed. Capitalizing them distorts true financial position, violating Prudence and Substance over Form.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 1",
+            "Substance over Form",
+            "Prudence"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-4_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-4_04",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-4",
+          "subject": "Accounts",
+          "prompt": "Regarding the fundamental accounting assumption of 'Going Concern' for Nova Retail Ltd, what is the reporting requirement under AS 1?",
+          "options": [
+            "Going concern assumption must be treated as failed and liquidation basis must be adopted mandatory.",
+            "If management reasonably assesses that going concern is valid (supported by promoter credit line), no disclosure of non-going concern is required, but disclosure of material uncertainties in notes may be necessary.",
+            "Specific disclosure is mandatory stating that Going Concern IS followed.",
+            "The company must cease financial reporting."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under AS 1, fundamental accounting assumptions are assumed to be followed. If management concludes going concern remains valid despite distress (due to credit support), specific disclosure that fundamental assumption is NOT followed is not required, though material uncertainty disclosures may be made.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 1",
+            "Going Concern",
+            "Fundamental Assumption"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-4_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-4_04",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-4",
+          "subject": "Accounts",
+          "prompt": "What are the three primary considerations prescribed by AS 1 for the selection and application of accounting policies?",
+          "options": [
+            "Prudence, Substance over Form, and Materiality",
+            "Relevance, Reliability, and Comparability",
+            "Going Concern, Consistency, and Accrual",
+            "Historical Cost, Fair Value, and Liquidation Value"
+          ],
+          "answerIndex": 0,
+          "explanation": "AS 1 explicitly states that the major considerations governing the selection and application of accounting policies are: (a) Prudence, (b) Substance over Form, and (c) Materiality.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "AS 1",
+            "Policy Selection Criteria",
+            "Core Principles"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-4_05",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-4",
+      "subject": "Accounts",
+      "passage": "Orion Enterprises Ltd had 200,000 equity shares of ₹10 each outstanding on 1st April 2024. Profit after tax attributable to equity shareholders for FY 2024-25 is ₹40,000,000.\nDuring FY 2024-25, Orion engaged in the following events:\n1. On 1st October 2024, Orion issued 100,000 equity shares for cash at market price.\n2. On 1st January 2025, Orion declared a bonus issue of 1 equity share for every 3 equity shares held as on that date.\n3. Mr. K is the Chief Financial Officer (CFO) of Orion. During the year, Orion paid ₹30 Lakhs as CFO salary to Mr. K. Orion also paid ₹15 Lakhs as professional fee to a legal firm in which Mr. K's son holds a 50% partnership interest.\nComparative financial figures for FY 2023-24 showed Net Profit of ₹30,000,000 and 200,000 equity shares.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 1",
+        "chapterNumber": 4,
+        "chapterTitle": "Presentation & Disclosures Based Accounting Standards"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-4_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-4_05",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-4",
+          "subject": "Accounts",
+          "prompt": "What is the Weighted Average Number of Equity Shares (WANES) for FY 2024-25 for calculating Basic EPS under AS 20?",
+          "options": [
+            "333,333 shares",
+            "400,000 shares",
+            "250,000 shares",
+            "300,000 shares"
+          ],
+          "answerIndex": 0,
+          "explanation": "Original 200k + Bonus 1:3 on 200k (66.667k) = 266,667 shares for 12 months = 266,667. Issued on 1st Oct 100k + Bonus 1:3 on 100k (33.333k) = 133,333 shares for 6 months = 66,667. Total WANES = 266,667 + 66,667 = 333,334 (or 333,333) shares.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 20",
+            "WANES Calculation",
+            "Bonus & Cash Issue"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-4_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-4_05",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-4",
+          "subject": "Accounts",
+          "prompt": "What is the restated Basic EPS for the comparative year FY 2023-24 under AS 20?",
+          "options": [
+            "₹112.50",
+            "₹150.00",
+            "₹75.00",
+            "₹100.00"
+          ],
+          "answerIndex": 0,
+          "explanation": "Original WANES FY 23-24 = 200,000 shares. Bonus issue ratio 1:3 adds 66,667 bonus shares retrospectively. Restated WANES = 266,667 shares. Restated EPS = ₹30,000,000 / 266,667 = ₹112.50.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 20",
+            "Comparative EPS Restatement",
+            "Bonus Issue"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-4_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-4_05",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-4",
+          "subject": "Accounts",
+          "prompt": "What is the Basic EPS of Orion Enterprises Ltd for FY 2024-25 under AS 20?",
+          "options": [
+            "₹120.00",
+            "₹100.00",
+            "₹133.33",
+            "₹160.00"
+          ],
+          "answerIndex": 0,
+          "explanation": "Basic EPS FY 2024-25 = Net Profit / WANES = ₹40,000,000 / 333,333 shares = ₹120.00.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 20",
+            "Basic EPS",
+            "Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-4_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-4_05",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-4",
+          "subject": "Accounts",
+          "prompt": "How should the payment of ₹15 Lakhs to the legal firm (where CFO Mr. K's son is a partner) be disclosed under AS 18?",
+          "options": [
+            "No disclosure required as it was paid to a partnership firm, not directly to Mr. K.",
+            "Must be disclosed as a related party transaction with a relative of KMP/enterprise influenced by relative of KMP.",
+            "Exempt from disclosure because it is a professional fee.",
+            "Aggregate with CFO salary and disclose total as ₹45 Lakhs without breakup."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under AS 18, KMP and their relatives are related parties. An enterprise over which a KMP or their relative exercises significant influence (e.g., 50% partner) is a related party. Hence, transaction details of ₹15 Lakhs must be disclosed.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 18",
+            "KMP Relative Enterprise",
+            "Disclosure"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

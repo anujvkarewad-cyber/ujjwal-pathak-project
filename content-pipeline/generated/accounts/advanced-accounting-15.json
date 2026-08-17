@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "advanced-accounting-15",
+  "subject": "Accounts",
+  "paper": "Paper 1: Advanced Accounting",
+  "module": "Module 3",
+  "chapterNumber": 15,
+  "chapterTitle": "Accounting for Branches including Foreign Branches",
+  "generatedAt": "2026-08-16T14:08:19.910Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_advanced-accounting-15_001",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "Which of the following branches maintains independent accounting records and prepares its own Trial Balance?",
+      "options": [
+        "Dependent Branch",
+        "Independent Branch",
+        "Foreign Branch operating under AS 11 without self-accounting",
+        "Inland Branch with centralized billing"
+      ],
+      "answerIndex": 1,
+      "explanation": "An independent branch maintains its own comprehensive set of books of account and prepares its own Trial Balance, Trading, and Profit & Loss Account. It only interacts with the Head Office via a Current Account. Dependent branches do not maintain independent double-entry books.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Branch Accounting",
+        "Independent Branch",
+        "Bookkeeping"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_002",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "In the books of the Head Office, goods sent to a dependent branch at an invoice price (cost plus profit) require which of the following entries to cancel the loading at the end of the accounting period?",
+      "options": [
+        "Goods Sent to Branch A/c Dr. to Branch A/c",
+        "Branch Adjustment A/c Dr. to Stock Reserve A/c",
+        "Branch Stock A/c Dr. to Branch Adjustment A/c",
+        "Stock Reserve A/c Dr. to Branch Adjustment A/c"
+      ],
+      "answerIndex": 3,
+      "explanation": "To eliminate unrealized profit included in the closing stock of an invoice-price branch, the entry is Stock Reserve A/c Dr. to Branch Adjustment A/c (or Trading A/c). Conversely, the loading on goods sent is cancelled by debiting Goods Sent to Branch A/c and crediting Branch Adjustment A/c.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Invoice Price",
+        "Stock Reserve",
+        "Dependent Branch"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_003",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "When preparing branch accounts under the stock and debtors system, how is cash received from debtors recorded in the Branch Debtors Account?",
+      "options": [
+        "Debited to Branch Debtors A/c",
+        "Credited to Branch Debtors A/c",
+        "Debited to Branch Cash A/c and credited to Head Office A/c",
+        "Ignored as it is an internal transaction"
+      ],
+      "answerIndex": 1,
+      "explanation": "Cash received from debtors reduces the total amount due from branch debtors. Therefore, it is credited to the Branch Debtors Account and debited to the Branch Cash/Bank Account.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Stock and Debtors System",
+        "Branch Debtors",
+        "Dependent Branch"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_004",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "Under AS 11 (The Effects of Changes in Foreign Exchange Rates), how are fixed assets of an integral foreign operation translated into the reporting currency?",
+      "options": [
+        "At the closing rate prevailing on the balance sheet date",
+        "At the average rate for the period",
+        "At the actual historical rate on the date of purchase",
+        "At the opening rate of the financial year"
+      ],
+      "answerIndex": 2,
+      "explanation": "As per AS 11, for an integral foreign operation, monetary items are translated at the closing rate, while non-monetary items like fixed assets are translated at the exchange rate on the date of the transaction (historical rate).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Foreign Branch",
+        "AS 11",
+        "Translation of Assets"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_005",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "How is the translation difference arising from the translation of a non-integral foreign entity's financial statements treated under AS 11?",
+      "options": [
+        "Recognized immediately in the Statement of Profit and Loss",
+        "Accumulated in a foreign currency translation reserve until disposal",
+        "Adjusted against General Reserve directly",
+        "Capitalized as part of goodwill"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under AS 11, exchange differences arising on translation of the financial statements of a non-integral foreign operation are accumulated in a foreign currency translation reserve (FCTR) until the disposal of the net investment.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Non-Integral Foreign Operation",
+        "AS 11",
+        "Translation Reserve"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_006",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "In the context of branch accounting, what does a debit balance in the 'Branch Current Account' in the books of the Head Office signify?",
+      "options": [
+        "Liability of the Head Office towards the branch",
+        "Amount due from the branch to the Head Office",
+        "Total profit earned by the branch during the year",
+        "Accumulated depreciation of branch assets"
+      ],
+      "answerIndex": 1,
+      "explanation": "The Branch Current Account maintained in the Head Office books is an asset account representing the net investment or amount due from the branch.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Head Office Books",
+        "Branch Current Account",
+        "Reconciliation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_007",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "In the Final Accounts (Trading and P&L method) of a dependent branch, if goods are sent by HO at cost plus 25%, what is the percentage of loading on invoice price?",
+      "options": [
+        "25.00%",
+        "20.00%",
+        "16.67%",
+        "33.33%"
+      ],
+      "answerIndex": 1,
+      "explanation": "If profit is 25% on cost, let cost = 100, profit = 25, invoice price = 125. The loading percentage on invoice price is (25 / 125) * 100 = 20%.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Invoice Price",
+        "Loading Calculation",
+        "Branch Trading A/c"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_008",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "When goods are in transit from the Head Office to a branch at the end of the accounting period, what adjustment entry does the Head Office make if the branch has not yet recorded it?",
+      "options": [
+        "Goods in Transit A/c Dr. to Branch A/c",
+        "Branch A/c Dr. to Goods Sent to Branch A/c",
+        "Trading A/c Dr. to Goods in Transit A/c",
+        "No entry is required in HO books"
+      ],
+      "answerIndex": 0,
+      "explanation": "Goods in transit represent stock belonging to the branch that has left the HO. The HO records 'Goods in Transit A/c Dr. to Branch A/c' so that the Branch Current Account reflects the correct balance considering goods dispatched.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Goods in Transit",
+        "Reconciliation",
+        "Head Office Books"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_009",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "Which of the following is treated as a monetary item when translating a foreign branch's financial statements under AS 11?",
+      "options": [
+        "Inventory",
+        "Plant and Machinery",
+        "Trade Payables",
+        "Share Capital"
+      ],
+      "answerIndex": 2,
+      "explanation": "Monetary items are units of currency held and assets and liabilities to be received or paid in a fixed or determinable number of units of currency. Trade Payables are monetary items, whereas inventory and plant & machinery are non-monetary.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 11",
+        "Monetary Items",
+        "Foreign Branch"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_010",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "Under the debtors system for a dependent branch, what does the closing balance of the Branch Stock Account represent?",
+      "options": [
+        "Cost of goods sold by the branch",
+        "Closing inventory held at the branch",
+        "Total cash remitted to Head Office",
+        "Total credit sales made during the period"
+      ],
+      "answerIndex": 1,
+      "explanation": "In the debtors system, the Branch Stock Account is maintained at invoice price. The balancing figure at the end of the period represents the closing stock at the branch.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Debtors System",
+        "Branch Stock Account",
+        "Closing Inventory"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_011",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "If a branch purchases goods locally from third parties and pays for them out of branch cash, how is this recorded in the Head Office books under the debtors system?",
+      "options": [
+        "Recorded via Branch Trading Account",
+        "Not recorded in HO books if local purchase is permitted",
+        "Debited to Branch Stock A/c and Credited to Branch Cash A/c",
+        "Debited to Purchases A/c and Credited to HO A/c"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under the standard debtors system, local purchases made by the branch out of branch cash or petty cash are generally adjusted through memorandum records or handled directly within the branch's cash/stock summary if authorized, but typically require no direct entry in HO books unless cash remitted/withdrawn is affected.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Debtors System",
+        "Local Purchases",
+        "Branch Accounting"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_012",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "In independent branch accounting, what is the nature of the 'Head Office Account' appearing in the Trial Balance of the branch?",
+      "options": [
+        "Nominal Account",
+        "Real Account",
+        "Personal Account representing HO's equity/liability",
+        "Fictitious Asset Account"
+      ],
+      "answerIndex": 2,
+      "explanation": "The Head Office Account in the branch books represents the owner's equity or liability of the branch towards the Head Office, functioning essentially as a personal account.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Independent Branch",
+        "Head Office Account",
+        "Nature of Accounts"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_013",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "How are revenue and expense items of a non-integral foreign operation translated into the reporting currency under AS 11?",
+      "options": [
+        "At the closing rate on the balance sheet date",
+        "At the actual exchange rate on the date of each transaction",
+        "At the average rate prevailing during the reporting period",
+        "At the opening rate of the financial year"
+      ],
+      "answerIndex": 2,
+      "explanation": "As per AS 11, for a non-integral foreign operation, income and expense items are translated at the exchange rates at the dates of the transactions, or an average rate approximating those rates is often used for practicality.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Non-Integral Foreign Operation",
+        "AS 11",
+        "Revenue Translation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_014",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "When cash is remitted by a branch to the Head Office, but has not been received by the Head Office before the close of the financial year, what is this called?",
+      "options": [
+        "Cash in Transit",
+        "Remittance in Suspense",
+        "Unadjusted Cash",
+        "Unrealized Cash Reserve"
+      ],
+      "answerIndex": 0,
+      "explanation": "Cash remitted by the branch but not yet received or recorded by the Head Office at the balance sheet date is termed 'Cash in Transit'.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Cash in Transit",
+        "Reconciliation",
+        "Branch Current Account"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_015",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "In a dependent branch operating under the Stock and Debtors system, what does a shortage of stock revealed on memorandum stock reconciliation represent?",
+      "options": [
+        "Normal loss or abnormal loss/pilferage",
+        "Profit on sale of goods",
+        "Exchange gain on foreign remittances",
+        "Head Office profit margin"
+      ],
+      "answerIndex": 0,
+      "explanation": "A shortage in the Branch Stock Account compared to physical stock verification (adjusted for sales, returns, etc.) represents normal loss, abnormal loss, pilferage, or unrecorded wastage.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Stock and Debtors System",
+        "Stock Shortage",
+        "Branch Stock"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_016",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "Which of the following accounts is NOT maintained under the Stock and Debtors System for a dependent branch?",
+      "options": [
+        "Branch Stock A/c",
+        "Branch Debtors A/c",
+        "Branch P&L A/c",
+        "Branch Trading A/c"
+      ],
+      "answerIndex": 3,
+      "explanation": "Under the Stock and Debtors System, specific accounts like Branch Stock, Branch Debtors, Branch Expenses, Branch Adjustment, Branch Cash, and Branch P&L are maintained, but a traditional Branch Trading Account is usually substituted by the Branch Adjustment Account.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Stock and Debtors System",
+        "Branch Accounts",
+        "Exclusions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_017",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "When incorporating the trial balance of an independent branch into the Head Office books, which accounts are typically cancelled or eliminated?",
+      "options": [
+        "Branch third-party debtors and creditors",
+        "Branch Current Account in HO books and Head Office Account in branch books",
+        "Branch depreciation and fixed assets",
+        "Branch opening inventory and closing inventory"
+      ],
+      "answerIndex": 1,
+      "explanation": "During consolidation or incorporation of independent branch books, reciprocal accounts—namely the Branch Current Account in the HO books and the Head Office Account in the branch books—are eliminated/cancelled.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Independent Branch",
+        "Incorporation",
+        "Reciprocal Accounts"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_018",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "If a Head Office incurs expenses on behalf of a branch, what entry does the Head Office pass in its own books?",
+      "options": [
+        "Expenses A/c Dr. to Bank A/c",
+        "Branch Current A/c Dr. to Bank/Cash A/c",
+        "Branch Current A/c Dr. to Expenses A/c",
+        "Bank A/c Dr. to Branch Current A/c"
+      ],
+      "answerIndex": 1,
+      "explanation": "When HO incurs expenses for the branch, it pays out of its cash/bank and treats it as an amount receivable from the branch, resulting in a debit to the Branch Current Account and credit to Bank/Cash.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Head Office Books",
+        "Branch Expenses",
+        "Journal Entries"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_019",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "How should depreciation on a foreign branch's fixed assets be translated when the foreign operation is classified as integral?",
+      "options": [
+        "At the closing rate on the balance sheet date",
+        "At the average rate for the accounting period",
+        "At the historical rate corresponding to the date of purchase of the fixed asset",
+        "At the rate prevailing on the date depreciation is charged"
+      ],
+      "answerIndex": 2,
+      "explanation": "Since fixed assets of an integral foreign operation are translated at historical rates, the depreciation on those assets is also translated at the historical exchange rates corresponding to the dates of purchase of the respective fixed assets.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Integral Foreign Operation",
+        "Depreciation Translation",
+        "AS 11"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_020",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "In the context of branch accounting, what is the primary purpose of the 'Branch Adjustment Account'?",
+      "options": [
+        "To calculate gross profit when goods are invoiced at selling/invoice price",
+        "To record remittances between HO and branch",
+        "To adjust foreign exchange rate fluctuations",
+        "To track petty cash expenses incurred by the branch manager"
+      ],
+      "answerIndex": 0,
+      "explanation": "The Branch Adjustment Account is used primarily in invoice-price branch accounting to eliminate loading, record gross profit, and incorporate loading on opening and closing stock.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Branch Adjustment Account",
+        "Invoice Price",
+        "Gross Profit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_021",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "An Indian company has a branch in London. The London branch's transactions are financed mainly by the Head Office in Mumbai and it purchases goods from Mumbai. How is this London branch classified under AS 11?",
+      "options": [
+        "Non-Integral Foreign Operation",
+        "Integral Foreign Operation",
+        "Independent Foreign Branch",
+        "Subsidiary Entity"
+      ],
+      "answerIndex": 1,
+      "explanation": "An operation that is carried on as an extension of the reporting enterprise (e.g., selling goods imported from HO and remitting proceeds to HO) is classified as an integral foreign operation under AS 11.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "AS 11",
+        "Integral Foreign Operation",
+        "Foreign Branch Classification"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_022",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "When reconciling the Branch Current Account and Head Office Account, if the HO has debited the branch for goods in transit, what adjustment should the branch make in its memorandum reconciliation?",
+      "options": [
+        "Add goods in transit to the Head Office Account balance",
+        "Deduct goods in transit from the Head Office Account balance",
+        "Debit its own Trading Account",
+        "Ignore the item as it belongs to HO"
+      ],
+      "answerIndex": 0,
+      "explanation": "In the branch's reconciliation statement with the HO account, goods sent by HO but not received yet are treated as received (by adding to the HO account balance) to match the HO's credit/debit adjustments.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Reconciliation",
+        "Goods in Transit",
+        "Branch Books"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_023",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "What is the accounting treatment for opening stock reserve when preparing final accounts of a branch receiving goods at invoice price?",
+      "options": [
+        "Credited to Branch Adjustment Account",
+        "Debited to Branch Adjustment Account",
+        "Credited to Stock Reserve Account",
+        "Debited to Goods Sent to Branch Account"
+      ],
+      "answerIndex": 1,
+      "explanation": "The opening stock reserve (loading on opening stock) is debited to the Branch Adjustment Account (with a corresponding credit to Stock Reserve) to bring the opening stock down from invoice price to cost.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Opening Stock Reserve",
+        "Branch Adjustment",
+        "Invoice Price"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_024",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "Under the wholesale branch system where goods are sent at cost, what is the nature of the profit earned by the branch?",
+      "options": [
+        "It is treated as Head Office general profit and transferred to General Reserve",
+        "It is computed through a normal Trading and Profit and Loss Account for the branch",
+        "It is eliminated entirely as unrealized profit",
+        "It is credited directly to Branch Adjustment Account"
+      ],
+      "answerIndex": 1,
+      "explanation": "When goods are sent at cost, the branch operates independently in terms of profit determination, and a standard Branch Trading and P&L Account is prepared to ascertain branch profit without any loading eliminations.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Wholesale Branch",
+        "Cost Price",
+        "Branch Trading A/c"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_025",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "Which exchange rate is used to translate the opening and closing balances of cash and bank for a non-integral foreign operation under AS 11?",
+      "options": [
+        "Average rate of the year",
+        "Historical rate on the date of acquisition",
+        "Closing rate on the balance sheet date",
+        "Opening rate of the year"
+      ],
+      "answerIndex": 2,
+      "explanation": "Cash and bank balances (being monetary items) are always translated at the closing rate on the balance sheet date, regardless of whether the foreign operation is integral or non-integral.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "AS 11",
+        "Cash Translation",
+        "Closing Rate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_026",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "If a branch returns damaged goods directly to the Head Office, how does the Head Office record this under the debtors system?",
+      "options": [
+        "Goods Sent to Branch A/c Dr. to Branch Stock A/c",
+        "Branch Stock A/c Dr. to Goods Sent to Branch A/c",
+        "Trading A/c Dr. to Branch Stock A/c",
+        "Branch Adjustment A/c Dr. to Branch Debtors A/c"
+      ],
+      "answerIndex": 0,
+      "explanation": "When goods are returned by the branch to the HO, the original entry of sending goods is reversed in the HO books, i.e., Goods Sent to Branch A/c is debited and Branch Stock A/c is credited (at invoice price).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Goods Returned",
+        "Debtors System",
+        "Head Office Books"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_027",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "When incorporating independent branch trial balance into HO books, how are branch revenues and expenses handled?",
+      "options": [
+        "Ignored because only assets and liabilities are incorporated",
+        "Combined line-by-line with the Head Office's own revenues and expenses",
+        "Transferred directly to Capital Account",
+        "Netted off and shown as a single item called 'Branch Net Result'"
+      ],
+      "answerIndex": 1,
+      "explanation": "In independent branch accounting, the branch revenues and expenses are incorporated line-by-line into the Head Office's Statement of Profit and Loss during final consolidation.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Independent Branch",
+        "Incorporation",
+        "Consolidation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_028",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "What is the primary distinguishing feature of a non-integral foreign operation compared to an integral one under AS 11?",
+      "options": [
+        "It is financially independent and conducts business as if it were a distinct entity.",
+        "It relies entirely on Head Office for cash financing and inventory purchases.",
+        "It does not maintain independent books of accounts.",
+        "Its financial statements are never translated into the reporting currency."
+      ],
+      "answerIndex": 0,
+      "explanation": "A non-integral foreign operation accumulates cash and other monetary items, incurs expenses, generates income, and arranges borrowings substantially in its local currency, operating with significant financial autonomy.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "AS 11",
+        "Non-Integral Foreign Operation",
+        "Distinguishing Features"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_029",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "In branch accounts, if the Head Office charges goods to the branch at cost plus 33.1/3%, what is the loading on cost?",
+      "options": [
+        "25.00%",
+        "33.33%",
+        "20.00%",
+        "50.00%"
+      ],
+      "answerIndex": 1,
+      "explanation": "Cost plus 33.1/3% (or 1/3rd of cost) means if cost is 3, profit is 1, and invoice price is 4. The loading on cost is 33.33% (1/3).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Loading",
+        "Cost Plus",
+        "Invoice Price"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_advanced-accounting-15_030",
+      "kind": "normal",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "prompt": "If an asset of an integral foreign branch was purchased when the exchange rate was 1 USD = INR 70, and the closing rate is 1 USD = INR 75, at what rate should depreciation for the year be calculated and translated?",
+      "options": [
+        "INR 75 per USD",
+        "INR 72.50 per USD (Average rate)",
+        "INR 70 per USD",
+        "Rate on the last day of the month"
+      ],
+      "answerIndex": 2,
+      "explanation": "For an integral foreign operation, fixed assets are translated at the historical rate (date of purchase, i.e., INR 70), and depreciation is also translated at the same historical rate.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Integral Foreign Operation",
+        "Depreciation",
+        "Historical Rate"
+      ],
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_advanced-accounting-15_01",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "passage": "Zenith Ltd. (Head Office in Delhi) operates a dependent retail branch in Jaipur. Goods are invoiced to the branch at cost plus 25%. All branch sales are for cash and remitted immediately to the Head Office. The branch maintains a Branch Stock Account and Branch Debtors Account under the debtors system. For the year ended 31st March 2026, the following details are available: Opening Stock at Branch (Invoice Price) ₹ 1,25,000; Goods sent to Branch (Invoice Price) ₹ 6,25,000; Cash Sales ₹ 6,00,000; Closing Stock at Branch (Invoice Price) ₹ 1,50,000.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-15_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-15_01",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-15",
+          "subject": "Accounts",
+          "prompt": "What is the amount of loading included in the opening stock of the Jaipur branch?",
+          "options": [
+            "₹ 31,250",
+            "₹ 25,000",
+            "₹ 30,000",
+            "₹ 20,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Opening stock at invoice price is ₹ 1,25,000. Since goods are invoiced at cost plus 25% (or 20% on invoice price), loading = 20% of ₹ 1,25,000 = ₹ 25,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Loading",
+            "Opening Stock",
+            "Invoice Price"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-15_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-15_01",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-15",
+          "subject": "Accounts",
+          "prompt": "What is the total loading on goods sent to the branch during the year?",
+          "options": [
+            "₹ 1,25,000",
+            "₹ 1,56,250",
+            "₹ 1,00,000",
+            "₹ 1,15,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Goods sent to branch at invoice price = ₹ 6,25,000. Loading is 20% on invoice price (25/125), which equals ₹ 6,25,000 * (25/125) = ₹ 1,25,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Goods Sent to Branch",
+            "Loading",
+            "Invoice Price"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-15_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-15_01",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-15",
+          "subject": "Accounts",
+          "prompt": "What is the amount of stock reserve required on the closing stock of the branch at 31st March 2026?",
+          "options": [
+            "₹ 37,500",
+            "₹ 30,000",
+            "₹ 25,000",
+            "₹ 31,250"
+          ],
+          "answerIndex": 1,
+          "explanation": "Closing stock at invoice price is ₹ 1,50,000. The loading percentage on invoice price is 20% (25/125). Stock reserve = 20% of ₹ 1,50,000 = ₹ 30,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Stock Reserve",
+            "Closing Stock",
+            "Invoice Price"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-15_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-15_01",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-15",
+          "subject": "Accounts",
+          "prompt": "What is the gross profit transferred to the Branch Adjustment Account from the Branch Stock Account for the year?",
+          "options": [
+            "₹ 1,30,000",
+            "₹ 1,20,000",
+            "₹ 1,25,000",
+            "₹ 1,00,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Opening Stock (1,25,000) + Goods Sent (6,25,000) = 7,50,000. Less: Closing Stock (1,50,000) = Cost of goods sold/sold goods at invoice price ₹ 6,00,000. Since cash sales equal invoice value, gross profit (loading realized) on sales is 20% of ₹ 6,00,000 = ₹ 1,20,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Gross Profit",
+            "Branch Adjustment",
+            "Invoice Price"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-15_02",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "passage": "Omega Inc., an Indian company, has a branch in New York. The New York branch is classified as an integral foreign operation under AS 11. The trial balance of the New York branch as on 31st March 2026 shows: Share Capital / HO Account: USD 50,000; Fixed Assets (purchased when exchange rate was ₹ 72/USD): USD 20,000; Opening Inventory (purchased when exchange rate was ₹ 74/USD): USD 10,000; Monetary Assets (Cash and Receivables): USD 15,000; Monetary Liabilities (Payables): USD 5,000. Relevant exchange rates are: Opening rate = ₹ 73/USD; Closing rate = ₹ 76/USD; Average rate = ₹ 74.50/USD.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-15_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-15_02",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-15",
+          "subject": "Accounts",
+          "prompt": "At what exchange rate should the Fixed Assets of the New York branch be translated in the financial statements?",
+          "options": [
+            "₹ 76.00 per USD",
+            "₹ 74.50 per USD",
+            "₹ 72.00 per USD",
+            "₹ 73.00 per USD"
+          ],
+          "answerIndex": 2,
+          "explanation": "Under AS 11, for an integral foreign operation, non-monetary items like fixed assets are translated at the historical exchange rate prevailing on the date of transaction, which is ₹ 72 per USD.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 11",
+            "Fixed Assets Translation",
+            "Integral Operation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-15_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-15_02",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-15",
+          "subject": "Accounts",
+          "prompt": "What is the translated value of the Monetary Assets (Cash and Receivables) of USD 15,000 on the balance sheet date?",
+          "options": [
+            "₹ 10,80,000",
+            "₹ 11,40,000",
+            "₹ 11,17,500",
+            "₹ 10,95,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Monetary items are translated at the closing rate on the balance sheet date. USD 15,000 * ₹ 76.00/USD = ₹ 11,40,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 11",
+            "Monetary Assets",
+            "Closing Rate"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-15_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-15_02",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-15",
+          "subject": "Accounts",
+          "prompt": "How is the translation of opening inventory handled for this integral foreign operation under AS 11?",
+          "options": [
+            "Translated at the closing rate of ₹ 76/USD",
+            "Translated at the average rate of ₹ 74.50/USD",
+            "Translated at the historical rate of ₹ 74/USD",
+            "Ignored for translation purposes"
+          ],
+          "answerIndex": 2,
+          "explanation": "Inventory is a non-monetary item. For an integral foreign operation, inventory carried at cost is translated at the historical exchange rate prevailing on the date of purchase (₹ 74/USD).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 11",
+            "Inventory Translation",
+            "Historical Rate"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-15_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-15_02",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-15",
+          "subject": "Accounts",
+          "prompt": "Where is the resulting exchange difference arising from the translation of the integral foreign operation's financial statements recognized?",
+          "options": [
+            "Foreign Currency Translation Reserve (FCTR)",
+            "Statement of Profit and Loss",
+            "General Reserve directly",
+            "Capital Reserve"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per AS 11, exchange differences arising on the translation of financial statements of an integral foreign operation are recognized in the Statement of Profit and Loss of the period.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 11",
+            "Exchange Difference",
+            "Integral Operation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-15_03",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "passage": "Beta Branch of Metro Ltd. maintains independent books of accounts. On 31st March 2026, before final incorporation, the Trial Balance of Beta Branch shows a 'Head Office Account' credit balance of ₹ 2,40,000, while the 'Branch Current Account' in the Head Office books shows a debit balance of ₹ 2,15,000. Investigation reveals the following discrepancies: (1) Head Office sent goods worth ₹ 35,000 on 28th March 2026, which the branch received on 3rd April 2026. (2) The branch collected ₹ 10,000 from a Head Office debtor on 30th March 2026 but recorded it only in branch books; HO was unaware.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-15_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-15_03",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-15",
+          "subject": "Accounts",
+          "prompt": "What is the correct treatment for the goods in transit worth ₹ 35,000 in the reconciliation statement?",
+          "options": [
+            "Added to Branch Current Account in HO books",
+            "Deducted from Branch Current Account in HO books",
+            "Added to Head Office Account in branch books",
+            "Deducted from Head Office Account in branch books"
+          ],
+          "answerIndex": 0,
+          "explanation": "HO has recorded the dispatch (debiting Branch Current A/c), but the branch hasn't received/recorded it yet. In reconciling the HO books, the goods in transit represent an asset already debited by HO, so the ₹ 2,15,000 matches once transit items are accounted for properly (or viewed from branch perspective, added to HO account balance).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Reconciliation",
+            "Goods in Transit",
+            "Independent Branch"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-15_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-15_03",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-15",
+          "subject": "Accounts",
+          "prompt": "What entry should the Head Office pass upon discovering that the branch collected ₹ 10,000 from an HO debtor?",
+          "options": [
+            "Branch Current A/c Dr. to Branch Debtors A/c",
+            "Branch Debtors A/c Dr. to Branch Current A/c",
+            "Branch Current A/c Dr. to Sundry Debtors A/c",
+            "Sundry Debtors A/c Dr. to Branch Current A/c"
+          ],
+          "answerIndex": 2,
+          "explanation": "When the branch collects cash from an HO debtor, the HO needs to reduce its Sundry Debtors balance and increase the receivable from the branch (Branch Current A/c Dr. to Sundry Debtors A/c).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Reconciliation",
+            "HO Books",
+            "Debtor Collection"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-15_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-15_03",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-15",
+          "subject": "Accounts",
+          "prompt": "What is the reconciled balance of the current accounts after accounting for all valid adjustments?",
+          "options": [
+            "₹ 2,15,000",
+            "₹ 2,50,000",
+            "₹ 2,40,000",
+            "₹ 2,25,000"
+          ],
+          "answerIndex": 3,
+          "explanation": "HO Branch Current A/c starts at ₹ 2,15,000. Add goods in transit ₹ 35,000 (dispatched by HO, so already in HO books), and adjust for debtor collection ₹ 10,000 not in HO books: ₹ 2,15,000 + ₹ 35,000 (transit in HO) - ₹ 25,000 net effect yields reconciled figure of ₹ 2,25,000 matching branch adjusted books.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Reconciled Balance",
+            "Branch Accounting",
+            "Current Account"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-15_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-15_03",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-15",
+          "subject": "Accounts",
+          "prompt": "During the incorporation of the independent branch trial balance into the Head Office books, what happens to the reciprocal accounts?",
+          "options": [
+            "They are added together to form total branch equity.",
+            "They are offset and eliminated against each other.",
+            "The difference is transferred to Capital Reserve.",
+            "They remain as separate asset and liability lines on the consolidated balance sheet."
+          ],
+          "answerIndex": 1,
+          "explanation": "Reciprocal accounts (Branch Current Account in HO books and Head Office Account in branch books) represent internal transactions between the same legal entity and must be eliminated during consolidation.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Incorporation",
+            "Reciprocal Accounts",
+            "Consolidation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-15_04",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "passage": "Global Retails Ltd. has a branch at Pune which is supplied goods at invoice price (cost plus 33.1/3%). Pune branch sells goods on both cash and credit terms. For the year ended 31st March 2026, summary of branch transactions is: Opening Stock at Invoice Price ₹ 80,000; Goods sent to Branch at Invoice Price ₹ 4,00,000; Credit Sales ₹ 2,50,000; Cash Sales ₹ 1,80,000; Cash collected from Debtors ₹ 2,30,000; Closing Stock at Invoice Price ₹ 1,00,000.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-15_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-15_04",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-15",
+          "subject": "Accounts",
+          "prompt": "What is the cost of goods sent to the branch if goods are invoiced at cost plus 33.1/3%?",
+          "options": [
+            "₹ 3,00,000",
+            "₹ 2,66,667",
+            "₹ 3,20,000",
+            "₹ 3,50,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Invoice price = Cost + 33.1/3% of cost (i.e., Cost + 1/3 Cost = 4/3 Cost). Invoice price is ₹ 4,00,000. Therefore, Cost = ₹ 4,00,000 * (3/4) = ₹ 3,00,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Invoice Price",
+            "Cost Calculation",
+            "Pune Branch"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-15_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-15_04",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-15",
+          "subject": "Accounts",
+          "prompt": "What is the total invoice value of goods available for sale at the Pune branch during the year?",
+          "options": [
+            "₹ 4,00,000",
+            "₹ 4,80,000",
+            "₹ 5,00,000",
+            "₹ 4,50,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Goods available for sale at invoice price = Opening Stock at Invoice Price (₹ 80,000) + Goods Sent to Branch at Invoice Price (₹ 4,00,000) = ₹ 4,80,000.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Goods Available for Sale",
+            "Invoice Price",
+            "Branch Stock"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-15_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-15_04",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-15",
+          "subject": "Accounts",
+          "prompt": "What is the total sales made by the Pune branch during the year?",
+          "options": [
+            "₹ 2,50,000",
+            "₹ 1,80,000",
+            "₹ 4,30,000",
+            "₹ 4,10,000"
+          ],
+          "answerIndex": 2,
+          "explanation": "Total sales = Cash Sales + Credit Sales = ₹ 1,80,000 + ₹ 2,50,000 = ₹ 4,30,000.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Total Sales",
+            "Cash and Credit Sales",
+            "Pune Branch"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-15_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-15_04",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-15",
+          "subject": "Accounts",
+          "prompt": "What is the amount of unrealized profit (stock reserve) to be maintained on the closing stock of ₹ 1,00,000?",
+          "options": [
+            "₹ 33,333",
+            "₹ 25,000",
+            "₹ 20,000",
+            "₹ 30,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Loading is cost plus 33.1/3%, which means loading is 25% of the invoice price (1/4th). Stock reserve on closing stock of ₹ 1,00,000 = 25% of ₹ 1,00,000 = ₹ 25,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Stock Reserve",
+            "Closing Stock",
+            "Unrealized Profit"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_advanced-accounting-15_05",
+      "kind": "scenario",
+      "chapterId": "advanced-accounting-15",
+      "subject": "Accounts",
+      "passage": "Apex Software Ltd. (India) established a branch in Tokyo, Japan, on 1st April 2025. The branch operates as a non-integral foreign operation. The trial balance for the year ended 31st March 2026 is denominated in Japanese Yen (JPY): Fixed Assets (Purchased 1st April 2025) = 10,00,000 JPY; Opening Inventory = NIL; Purchases = 40,000,000 JPY; Sales = 60,000,000 JPY; Operating Expenses = 10,000,000 JPY; Current Assets = 15,000,000 JPY; Current Liabilities = 5,000,000 JPY; Head Office Account = 10,000,000 JPY. Exchange rates: Date of purchase of fixed assets = 1 JPY = ₹ 0.55; Average rate for the year = 1 JPY = ₹ 0.58; Closing rate on 31st March 2026 = 1 JPY = ₹ 0.60.",
+      "sourceRef": {
+        "paper": "Paper 1: Advanced Accounting",
+        "module": "Module 3",
+        "chapterNumber": 15,
+        "chapterTitle": "Accounting for Branches including Foreign Branches"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_advanced-accounting-15_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-15_05",
+          "sequenceInScenario": 1,
+          "chapterId": "advanced-accounting-15",
+          "subject": "Accounts",
+          "prompt": "At what exchange rate should the Sales of the Tokyo branch be translated into Indian Rupees (INR)?",
+          "options": [
+            "₹ 0.60 per JPY",
+            "₹ 0.55 per JPY",
+            "₹ 0.58 per JPY",
+            "Historical rate on the last day"
+          ],
+          "answerIndex": 2,
+          "explanation": "For a non-integral foreign operation, revenue and expense items are translated at the average exchange rate prevailing during the reporting period (₹ 0.58 per JPY).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 11",
+            "Non-Integral Operation",
+            "Revenue Translation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-15_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-15_05",
+          "sequenceInScenario": 2,
+          "chapterId": "advanced-accounting-15",
+          "subject": "Accounts",
+          "prompt": "What is the translated value of the Fixed Assets of 10,000,000 JPY on the balance sheet date?",
+          "options": [
+            "₹ 6,000,000",
+            "₹ 5,80,000",
+            "₹ 55,00,000",
+            "₹ 60,00,000"
+          ],
+          "answerIndex": 2,
+          "explanation": "Fixed assets of a non-integral foreign operation are translated at the exchange rate on the date of transaction (historical rate), which is 10,000,000 JPY * ₹ 0.55 = ₹ 55,00,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 11",
+            "Fixed Assets",
+            "Historical Rate"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-15_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-15_05",
+          "sequenceInScenario": 3,
+          "chapterId": "advanced-accounting-15",
+          "subject": "Accounts",
+          "prompt": "How are Current Assets and Current Liabilities translated on the balance sheet date under AS 11 for this non-integral foreign operation?",
+          "options": [
+            "At the average rate of ₹ 0.58",
+            "At the closing rate of ₹ 0.60",
+            "At the historical rate of ₹ 0.55",
+            "At the opening rate of ₹ 0.55"
+          ],
+          "answerIndex": 1,
+          "explanation": "For a non-integral foreign operation, all assets and liabilities (both monetary and non-monetary items) are translated at the closing exchange rate on the balance sheet date (₹ 0.60 per JPY).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "AS 11",
+            "Non-Integral Operation",
+            "Closing Rate"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_advanced-accounting-15_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_advanced-accounting-15_05",
+          "sequenceInScenario": 4,
+          "chapterId": "advanced-accounting-15",
+          "subject": "Accounts",
+          "prompt": "Where should the exchange difference arising from the translation of the non-integral foreign operation's financial statements be accumulated?",
+          "options": [
+            "Credited or debited directly to the Statement of Profit and Loss",
+            "Accumulated in a Foreign Currency Translation Reserve (FCTR) until disposal",
+            "Adjusted against General Reserve without routing through equity",
+            "Credited to Capital Reserve as capital profit"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under AS 11, exchange differences arising on translation of a non-integral foreign operation are accumulated in a foreign currency translation reserve until disposal of the net investment.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "AS 11",
+            "FCTR",
+            "Non-Integral Operation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

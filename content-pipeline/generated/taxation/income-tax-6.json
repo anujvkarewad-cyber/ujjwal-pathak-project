@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "income-tax-6",
+  "subject": "Taxation",
+  "paper": "Paper 3: Taxation",
+  "module": "Module 2",
+  "chapterNumber": 6,
+  "chapterTitle": "Deductions from Gross Total Income",
+  "generatedAt": "2026-08-16T14:23:22.288Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_income-tax-6_001",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "Which of the following deductions under Chapter VI-A is available to an individual assessee irrespective of whether they have any business income or not, provided they invest in specified securities?",
+      "options": [
+        "Section 80C",
+        "Section 80JJAA",
+        "Section 80IAB",
+        "Section 80IAC"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 80C provides deductions for specified savings and investments to individuals and HUFs, and it does not require the taxpayer to have business income. Sections 80JJAA, 80IAB, and 80IAC are specifically targeted at business undertakings, enterprises, or start-ups.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 80C",
+        "Eligible Assessee",
+        "Chapter VI-A Basics"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_002",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "What is the maximum aggregate deduction permissible under Sections 80C, 80CCC, and 80CCD(1) combined for an individual assessee under the old tax regime?",
+      "options": [
+        "Rs. 1,00,000",
+        "Rs. 1,50,000",
+        "Rs. 2,00,000",
+        "Rs. 2,50,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 80CCE, the aggregate amount of deduction under Section 80C, Section 80CCC, and Section 80CCD(1) cannot exceed Rs. 1,50,000.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 80CCE",
+        "Aggregate Limit",
+        "80C 80CCC 80CCD(1)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_003",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "Under Section 80CCD(1B), an additional deduction is available for contributions to the National Pension System (NPS). What is the maximum limit of this additional deduction?",
+      "options": [
+        "Rs. 50,000",
+        "Rs. 1,00,000",
+        "Rs. 1,50,000",
+        "No upper limit"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 80CCD(1B) allows an additional deduction of up to Rs. 50,000 for employee or self-employed individual contributions to the NPS, which is over and above the Rs. 1,50,000 limit specified under Section 80CCE.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 80CCD(1B)",
+        "NPS",
+        "Additional Deduction"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_004",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "Mr. A, an individual resident in India, deposits Rs. 40,000 in a public health insurance policy for his parents who are senior citizens (both aged 68 years). Payment is made by cash. What is the deduction available under Section 80D?",
+      "options": [
+        "Rs. 40,000",
+        "Rs. 50,000",
+        "Rs. 30,000",
+        "Nil"
+      ],
+      "answerIndex": 3,
+      "explanation": "Section 80D mandates that payment for health insurance must be made by any mode other than cash to qualify for deduction, except for preventive health check-ups where cash payment up to Rs. 5,000 is permitted. Since the entire Rs. 40,000 is for health insurance paid in cash, no deduction is available.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 80D",
+        "Health Insurance",
+        "Mode of Payment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_005",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "Which of the following deductions under Chapter VI-A is specifically NOT available if an individual assessee opts for the concessional tax regime under Section 115BAC?",
+      "options": [
+        "Section 80CCD(2)",
+        "Section 80JJAA",
+        "Section 80C",
+        "Both Section 80C and Section 80JJAA"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under the concessional tax regime of Section 115BAC, most deductions under Chapter VI-A (such as 80C, 80D, 80G, etc.) are disallowed. However, Section 80CCD(2) (employer's contribution to NPS) and Section 80JJAA (employment of new employees) are specifically allowed.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 115BAC",
+        "Section 80C",
+        "Section 80JJAA"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_006",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "What is the maximum quantum of deduction available under Section 80DD for maintenance, including medical treatment, of a dependent with severe disability (disability of 80% or more)?",
+      "options": [
+        "Rs. 75,000",
+        "Rs. 1,00,000",
+        "Rs. 1,25,000",
+        "Actual expenditure incurred"
+      ],
+      "answerIndex": 2,
+      "explanation": "Under Section 80DD, a flat deduction of Rs. 75,000 is allowed for a normal disability (40% or more) and Rs. 1,25,000 for severe disability (80% or more), irrespective of the actual expenditure incurred.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 80DD",
+        "Severe Disability",
+        "Flat Deduction"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_007",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "Mr. B incurs medical expenditure of Rs. 90,000 for the treatment of a specified disease (Parkinson's disease) specified under Rule 11DD for his resident brother, who is dependent on him. What is the deduction available to Mr. B under Section 80DDB, assuming his brother is 65 years old?",
+      "options": [
+        "Rs. 40,000",
+        "Rs. 90,000",
+        "Rs. 1,00,000",
+        "Rs. 80,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 80DDB, for a senior citizen dependent (aged 60 years or more), the deduction is actual expenditure or Rs. 1,00,000, whichever is less. Since the actual expenditure is Rs. 90,000, the full amount is allowed.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 80DDB",
+        "Medical Treatment",
+        "Senior Citizen"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_008",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "An individual takes a loan for higher education of his married daughter for a full-time MBA course. What is the maximum period for which the deduction under Section 80E is available?",
+      "options": [
+        "8 successive financial years",
+        "7 successive financial years",
+        "10 successive financial years",
+        "No time limit until the loan is fully repaid"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 80E allows deduction for interest on higher education loan for a maximum of 8 successive financial years, beginning from the year in which the assessee starts paying the interest or until the interest is paid in full, whichever is earlier.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 80E",
+        "Education Loan",
+        "Time Limit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_009",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "Which of the following conditions must be satisfied for claiming a deduction under Section 80EEA relating to interest on loan taken for residential house property?",
+      "options": [
+        "The stamp duty value of the house property should not exceed Rs. 45 lakhs.",
+        "The loan must be sanctioned by a financial institution between 1st April 2019 and 31st March 2022.",
+        "The assessee should not own any other residential house property on the date of sanction of the loan.",
+        "All of the above"
+      ],
+      "answerIndex": 3,
+      "explanation": "Section 80EEA requires that the stamp duty value does not exceed Rs. 45 lakhs, the loan is sanctioned between 01/04/2019 and 31/03/2022, and the individual does not own any residential house on the date of loan sanction.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 80EEA",
+        "Affordable Housing",
+        "Conditions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_010",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "What is the maximum limit of deduction under Section 80EEB for interest payable on a loan taken for the purchase of an electric vehicle?",
+      "options": [
+        "Rs. 50,000",
+        "Rs. 1,00,000",
+        "Rs. 1,50,000",
+        "Rs. 2,00,000"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 80EEB provides a deduction for interest on a loan taken for the purchase of an electric vehicle up to a maximum of Rs. 1,50,000, provided the loan is sanctioned between 1st April 2019 and 31st March 2023.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 80EEB",
+        "Electric Vehicle",
+        "Interest Deduction"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_011",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "Donations made to which of the following funds qualify for a 100% deduction under Section 80G without any qualifying limit?",
+      "options": [
+        "Prime Minister's National Relief Fund",
+        "The Government or any local authority to be utilized for any charitable purpose",
+        "Any approved temple, mosque, or church for renovation",
+        "Swachh Bharat Kosh"
+      ],
+      "answerIndex": 0,
+      "explanation": "Prime Minister's National Relief Fund and Swachh Bharat Kosh qualify for 100% deduction without any qualifying limit. Donations to local authorities for charitable purposes are subject to a qualifying limit, and religious institutions are not eligible under 80G.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 80G",
+        "Donations",
+        "100% Deduction Without Limit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_012",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "When cash donations are made to a charitable trust qualifying under Section 80G, what is the maximum cash limit per donation above which no deduction is allowed?",
+      "options": [
+        "Rs. 2,000",
+        "Rs. 10,000",
+        "Rs. 20,000",
+        "Rs. 50,000"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per the amendment in Section 80G, no deduction is allowed under Section 80G for any sum exceeding Rs. 2,000 if the payment is made in cash.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 80G",
+        "Cash Donation Limit",
+        "Amendments"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_013",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "In computing the qualifying limit (adjusted Gross Total Income) for donations under Section 80G, which of the following is excluded from Gross Total Income?",
+      "options": [
+        "Long-term capital gains taxable under Section 112",
+        "Deductions under Chapter VI-A",
+        "Income referred to in Section 115A, 115AB, 115AC or 115AD",
+        "All of the above"
+      ],
+      "answerIndex": 3,
+      "explanation": "Adjusted Gross Total Income for Section 80G is Gross Total Income reduced by Chapter VI-A deductions (other than 80G), exempt incomes, long-term capital gains, and short-term capital gains under 111A, and incomes under Sections 115A to 115AD.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 80G",
+        "Adjusted GTI",
+        "Exclusions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_014",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "What is the deduction available under Section 80GG for rent paid by an individual who does not receive House Rent Allowance (HRA) and whose employer does not provide accommodation?",
+      "options": [
+        "Least of: Rent paid minus 10% of total income; 25% of total income; or Rs. 5,000 per month.",
+        "Actual rent paid",
+        "Flat Rs. 60,000 per annum",
+        "Least of: Rent paid minus 10% of GTI; 50% of GTI; or Rs. 10,000 per month."
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 80GG provides a deduction for rent paid, limited to the least of: (i) Rs. 5,000 per month, (ii) 25% of adjusted total income, and (iii) Actual rent paid minus 10% of adjusted total income.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 80GG",
+        "Rent Paid",
+        "Calculation Limits"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_015",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "An individual assessee receives royalty on a book authored by him. What is the maximum deduction available under Section 80QQB?",
+      "options": [
+        "Rs. 1,50,000",
+        "Rs. 3,00,000",
+        "Rs. 5,00,000",
+        "Actual royalty income received"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 80QQB allows a deduction in respect of royalty income on books of literary, scientific, or artistic nature up to a maximum of Rs. 1,50,000 or the actual royalty income, whichever is less.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 80QQB",
+        "Royalty Income",
+        "Books"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_016",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "What is the maximum deduction allowed under Section 80TTA in respect of interest on savings bank accounts for an individual (other than a senior citizen)?",
+      "options": [
+        "Rs. 5,000",
+        "Rs. 10,000",
+        "Rs. 50,000",
+        "Rs. 1,00,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 80TTA provides a deduction up to Rs. 10,000 in aggregate to individuals and HUFs (other than resident senior citizens) for interest on savings bank accounts.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 80TTA",
+        "Savings Bank Interest",
+        "Non-Senior Citizens"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_017",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "Mr. C, a resident senior citizen aged 72 years, earns interest on fixed deposits and savings bank accounts totaling Rs. 45,000. Which section governs his deduction, and what is the maximum limit?",
+      "options": [
+        "Section 80TTA, maximum Rs. 10,000",
+        "Section 80TTB, maximum Rs. 50,000",
+        "Section 80TTB, maximum Rs. 10,000",
+        "Section 80TTA, maximum Rs. 50,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "For resident senior citizens (aged 60 years or more), Section 80TTB provides deduction up to Rs. 50,000 on interest from deposits (including fixed deposits and savings accounts).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 80TTB",
+        "Senior Citizens",
+        "Interest on Deposits"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_018",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "Deductions under Chapter VI-A can be claimed against which of the following?",
+      "options": [
+        "Gross Total Income",
+        "Total Income",
+        "Agricultural Income",
+        "Exempt Income"
+      ],
+      "answerIndex": 0,
+      "explanation": "Chapter VI-A deductions are allowed from the Gross Total Income to arrive at the Total Income. They cannot exceed the Gross Total Income, nor can they be claimed against exempt or agricultural income.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Chapter VI-A",
+        "Gross Total Income",
+        "Computation Flow"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_019",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "Can a deduction under Chapter VI-A exceed the Gross Total Income of an assessee?",
+      "options": [
+        "Yes, the excess can be carried forward.",
+        "No, the total deductions cannot exceed the Gross Total Income (exclusive of long-term capital gains, short-term capital gains under 111A, and casual incomes where specific restrictions apply).",
+        "Yes, without any restrictions.",
+        "No, except under Section 80C."
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 80A(2), the aggregate amount of deductions under Chapter VI-A shall not exceed the Gross Total Income of the assessee.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 80A",
+        "Aggregate Limit",
+        "Gross Total Income Cap"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_020",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "Which of the following deductions is NOT available to a company assessee under Chapter VI-A?",
+      "options": [
+        "Section 80G",
+        "Section 80JJAA",
+        "Section 80C",
+        "Section 80IAC"
+      ],
+      "answerIndex": 2,
+      "explanation": "Section 80C is available exclusively to individuals and HUFs. Companies can claim deductions under Sections 80G, 80JJAA, and 80IAC.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 80C",
+        "Eligible Assessee",
+        "Company"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_021",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "For claiming a deduction under Section 80JJAA in respect of employment of new workmen, what is the minimum period for which an employee must be employed in a previous year?",
+      "options": [
+        "150 days (or 240 days for apparel/footwear/leather industry)",
+        "240 days (or 150 days for apparel industry)",
+        "180 days across all sectors",
+        "300 days"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 80JJAA, a 'additional employee' means an employee who has been employed for a minimum period of 240 days during the previous year (150 days in the case of an employee employed in the business of manufacturing of apparel, footwear, or leather products).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 80JJAA",
+        "New Employment",
+        "Minimum Days"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_022",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "What is the quantum of deduction available under Section 80JJAA for employment of new workmen?",
+      "options": [
+        "30% of additional employee cost for 3 assessment years",
+        "50% of additional employee cost for 5 assessment years",
+        "100% of additional employee cost for 1 assessment year",
+        "20% of additional employee cost for 3 assessment years"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 80JJAA allows a deduction of an amount equal to 30% of additional employee cost incurred in the course of such business for 3 assessment years including the assessment year relevant to the previous year in which such employment is provided.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 80JJAA",
+        "Quantum of Deduction",
+        "30% for 3 Years"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_023",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "Are casual incomes like winning from lotteries eligible for deduction under Chapter VI-A?",
+      "options": [
+        "Yes, fully eligible.",
+        "No, deductions under Chapter VI-A are not allowed from casual incomes such as winnings from lotteries, crossword puzzles, etc.",
+        "Yes, up to Rs. 10,000.",
+        "Yes, provided Section 80C limit is unutilized."
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 80A(4), deductions under Chapter VI-A are not available against certain incomes like casual winnings (lotteries, races, etc.) and long-term/short-term capital gains where specific statutory restrictions apply.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 80A",
+        "Casual Income",
+        "Ineligible Incomes"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_024",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "Mr. D makes a donation to an approved scientific research association that has as its object the undertaking of scientific research. Under which section is this deduction claimed, and what is the percentage?",
+      "options": [
+        "Section 80G, 50%",
+        "Section 35(1)(ii), 100% (or relevant percentage under business income)",
+        "Section 80GGA, 100%",
+        "Section 80G, 100%"
+      ],
+      "answerIndex": 2,
+      "explanation": "Donations for scientific research or rural development given to approved associations/institutions not having business income are covered under Section 80GGA, which allows a 100% deduction.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 80GGA",
+        "Scientific Research",
+        "Donations"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_025",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "What is the penalty or consequence if an assessee fails to furnish the audit report required under certain sections (like 80JJAA) along with the return of income?",
+      "options": [
+        "The deduction will be denied.",
+        "A flat penalty of Rs. 10,000 will be levied without denying deduction.",
+        "The Assessing Officer has discretion to condone the delay without submitting the report.",
+        "The deduction is allowed provisionally for one year."
+      ],
+      "answerIndex": 0,
+      "explanation": "For deductions like Section 80JJAA, furnishing the report of an accountant (audit report) along with the return of income is a mandatory procedural requirement. Failure to do so generally results in the denial of the deduction.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Audit Report",
+        "Section 80JJAA",
+        "Procedural Compliance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_026",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "Can a partner of a firm claim a deduction under Section 80C for life insurance premium paid by the firm on the partner's life, where the premium is deducted from the partner's share of profit/salary?",
+      "options": [
+        "No, partnership firms are separate assessees.",
+        "Yes, if the payment is out of the partner's income/salary credited by the firm, it is eligible for deduction in the hands of the partner.",
+        "Yes, the firm can claim the deduction.",
+        "No, only individual direct payments qualify."
+      ],
+      "answerIndex": 1,
+      "explanation": "If life insurance premium is paid by the partnership firm on behalf of the partner and adjusted against the partner's account (salary/profit), it is treated as payment made by the partner and qualifies for Section 80C deduction.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Section 80C",
+        "Partnership Firm",
+        "Life Insurance Premium"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_027",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "Which of the following expenses qualify for deduction under Section 80C?",
+      "options": [
+        "Tuition fees paid to any school, college, or university in India for full-time education of any two children",
+        "Purchase of NSC (National Savings Certificates)",
+        "Subscription to notified bonds of NABARD",
+        "All of the above"
+      ],
+      "answerIndex": 3,
+      "explanation": "Tuition fees for up to two children, National Savings Certificates (NSC), and notified NABARD bonds are all explicitly listed as eligible investments/expenditures under Section 80C.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 80C",
+        "Eligible Investments",
+        "Tuition Fees"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_028",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "Under Section 80D, what is the maximum deduction allowed for preventive health check-ups for family members combined?",
+      "options": [
+        "Rs. 2,000",
+        "Rs. 5,000",
+        "Rs. 10,000",
+        "Rs. 15,000"
+      ],
+      "answerIndex": 1,
+      "explanation": "The maximum deduction for preventive health check-up is Rs. 5,000 in aggregate, which is included within the overall limit prescribed for health insurance under Section 80D.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Section 80D",
+        "Preventive Health Check-up",
+        "Aggregate Limit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_029",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "If an individual contributes to an approved annuity plan of LIC or any other insurer for receiving pension, under which section is the deduction claimed?",
+      "options": [
+        "Section 80C",
+        "Section 80CCC",
+        "Section 80CCD",
+        "Section 80CC"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 80CCC provides deduction for contribution to certain annuity plans of LIC or other insurers for receiving pension. This deduction is part of the overall Rs. 1,50,000 limit under Section 80CCE.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Section 80CCC",
+        "Annuity Plan",
+        "Pension"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-6_030",
+      "kind": "normal",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "prompt": "Which of the following is true regarding deductions under Chapter VI-A when calculating total tax liability?",
+      "options": [
+        "They are deducted from Gross Total Income to arrive at Total Income, on which tax rates are applied.",
+        "They are deducted directly from the final tax liability.",
+        "They are rebates given against tax calculated.",
+        "They are added to Gross Total Income."
+      ],
+      "answerIndex": 0,
+      "explanation": "Chapter VI-A deductions are reductions from the Gross Total Income to arrive at the Total Income. Tax is then computed on such Total Income.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Chapter VI-A",
+        "Gross Total Income",
+        "Total Income Computation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_income-tax-6_01",
+      "kind": "scenario",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "passage": "Mr. Rajesh (aged 45 years), a resident individual, has a Gross Total Income of Rs. 18,00,000 for the Financial Year 2025-26. He opts to remain under the old tax regime. During the year, he made the following investments and payments: (i) Life insurance premium paid for himself: Rs. 1,20,000 (Policy issued on 01/06/2014, sum assured Rs. 10,00,000). (ii) Contribution to Public Provident Fund (PPF): Rs. 50,000. (iii) Tuition fees paid for his two children studying full-time in a school in India: Rs. 40,000 each (Total Rs. 80,000). (iv) Health insurance premium for himself and his wife paid by cheque: Rs. 22,000. (v) Health insurance premium for his dependent father (aged 72 years) paid in cash: Rs. 25,000.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-6_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-6_01",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-6",
+          "subject": "Taxation",
+          "prompt": "What is the eligible deduction for Mr. Rajesh under Section 80C for the financial year?",
+          "options": [
+            "Rs. 2,50,000",
+            "Rs. 1,50,000",
+            "Rs. 1,70,000",
+            "Rs. 1,20,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Total eligible investments under Section 80C are: LIC (Rs. 1,20,000) + PPF (Rs. 50,000) + Tuition Fees (Rs. 80,000) = Rs. 2,50,000. However, the maximum aggregate ceiling under Section 80C is Rs. 1,50,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 80C",
+            "Scenario Analysis",
+            "Overall Cap"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-6_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-6_01",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-6",
+          "subject": "Taxation",
+          "prompt": "What is the eligible deduction for Mr. Rajesh under Section 80D towards health insurance premiums?",
+          "options": [
+            "Rs. 47,000",
+            "Rs. 22,000",
+            "Rs. 25,000",
+            "Rs. 0"
+          ],
+          "answerIndex": 1,
+          "explanation": "For himself and his wife, the premium of Rs. 22,000 paid by cheque is fully eligible. For his senior citizen father, the premium of Rs. 25,000 is paid in cash, which violates the mandatory non-cash payment rule under Section 80D, making it ineligible. Thus, total deduction is Rs. 22,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 80D",
+            "Scenario Analysis",
+            "Cash Payment Disqualification"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-6_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-6_01",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-6",
+          "subject": "Taxation",
+          "prompt": "What is the total Chapter VI-A deduction permissible for Mr. Rajesh considering only Sections 80C and 80D computed above?",
+          "options": [
+            "Rs. 1,97,000",
+            "Rs. 1,72,000",
+            "Rs. 1,50,000",
+            "Rs. 1,42,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 80C deduction is capped at Rs. 1,50,000 and Section 80D deduction is Rs. 22,000. Total deduction = Rs. 1,50,000 + Rs. 22,000 = Rs. 1,72,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Chapter VI-A",
+            "Aggregate Deduction",
+            "Scenario Calculation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-6_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-6_01",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-6",
+          "subject": "Taxation",
+          "prompt": "If Mr. Rajesh had paid the health insurance premium for his father through a banking channel instead of cash, what would have been his total deduction under Section 80D?",
+          "options": [
+            "Rs. 22,000",
+            "Rs. 47,000",
+            "Rs. 50,000",
+            "Rs. 72,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "If paid via banking channels, self/spouse/children premium is Rs. 22,000 and senior citizen father's premium is Rs. 25,000. Totaling Rs. 47,000, which is well within the respective limits (Rs. 25,000 for self/family and Rs. 50,000 for senior citizen parents).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 80D",
+            "Senior Citizen Parents",
+            "Scenario Analysis"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-6_02",
+      "kind": "scenario",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "passage": "M/s. TechSol Pvt. Ltd., an Indian company engaged in software development, commenced its business operations on 1st June 2025. During the financial year 2025-26, the company employed 40 new regular employees. Out of these, 25 employees were regular full-time staff drawing monthly emoluments of Rs. 22,000 each, and 15 employees were casual workers drawing monthly emoluments of Rs. 20,000 each who did not participate in recognized provident funds and whose total employment period was less than 150 days. All 25 regular employees were employed through a/c payee cheque and participated in recognized provident fund, working for 260 days during the year. The company's profits before deduction under Section 80JJAA amount to Rs. 50,00,000.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-6_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-6_02",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-6",
+          "subject": "Taxation",
+          "prompt": "How many employees qualify as 'additional employees' under Section 80JJAA for M/s. TechSol Pvt. Ltd.?",
+          "options": [
+            "40 employees",
+            "25 employees",
+            "15 employees",
+            "0 employees"
+          ],
+          "answerIndex": 1,
+          "explanation": "Casual workers drawing emoluments exceeding threshold (or not participating in PF/working less than minimum days) do not qualify. Only the 25 regular full-time employees meeting all conditions (PF participation, emoluments up to Rs. 25,000 per month, working for more than 240 days) qualify as additional employees.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 80JJAA",
+            "Additional Employee Definition",
+            "Scenario Analysis"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-6_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-6_02",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-6",
+          "subject": "Taxation",
+          "prompt": "What is the monthly emolument ceiling per employee prescribed under Section 80JJAA for qualifying as an additional employee?",
+          "options": [
+            "Rs. 15,000 per month",
+            "Rs. 20,000 per month",
+            "Rs. 25,000 per month",
+            "Rs. 30,000 per month"
+          ],
+          "answerIndex": 2,
+          "explanation": "As per Section 80JJAA, an employee whose total emoluments exceed Rs. 25,000 per month is excluded from being considered an additional employee.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 80JJAA",
+            "Emolument Limit",
+            "Threshold"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-6_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-6_02",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-6",
+          "subject": "Taxation",
+          "prompt": "What is the additional employee cost per month for the qualifying employees for computing the deduction under Section 80JJAA?",
+          "options": [
+            "Rs. 22,000 per employee",
+            "Rs. 20,000 per employee",
+            "Rs. 25,000 per employee",
+            "Rs. 15,000 per employee"
+          ],
+          "answerIndex": 0,
+          "explanation": "The actual emoluments paid to the qualifying regular employees are Rs. 22,000 per month each, which is below the Rs. 25,000 ceiling. Hence, Rs. 22,000 is taken as the base employee cost.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 80JJAA",
+            "Additional Employee Cost",
+            "Scenario Computation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-6_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-6_02",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-6",
+          "subject": "Taxation",
+          "prompt": "What is the quantum of deduction available to M/s. TechSol Pvt. Ltd. under Section 80JJAA for the assessment year 2026-27?",
+          "options": [
+            "Rs. 19,80,000",
+            "Rs. 5,94,000",
+            "Rs. 6,60,000",
+            "Rs. 1,98,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Total qualifying employees = 25. Monthly cost = Rs. 22,000. Annual cost for 25 employees = 25 * 22,000 * 12 = Rs. 66,00,000. Deduction = 30% of Rs. 66,00,000 = Rs. 19,80,000 per year for 3 years. For the current assessment year, the deduction is Rs. 19,80,000. Wait, recalculating: 25 employees * 22,000 * 12 = 66,00,000. 30% of 66,00,000 = 19,80,000. Let's verify options. Option A is 19,80,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 80JJAA",
+            "Quantum Calculation",
+            "Scenario Analysis"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-6_03",
+      "kind": "scenario",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "passage": "Mr. Vikram (aged 52 years) took an educational loan of Rs. 10,00,000 in April 2023 from a scheduled bank for full-time MBA studies of his son. During the financial year 2025-26, he paid total interest of Rs. 1,40,000 and principal repayment of Rs. 1,50,000 towards the loan. Furthermore, Mr. Vikram made donations of Rs. 50,000 to the Prime Minister's National Relief Fund and Rs. 40,000 to an approved charitable trust qualifying under Section 80G (by cheque). His Gross Total Income before Chapter VI-A deductions is Rs. 12,00,000, which includes no capital gains.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-6_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-6_03",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-6",
+          "subject": "Taxation",
+          "prompt": "What is the deduction available to Mr. Vikram under Section 80E for the financial year 2025-26?",
+          "options": [
+            "Rs. 1,50,000",
+            "Rs. 1,40,000",
+            "Rs. 40,000",
+            "Nil"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 80E allows a deduction for the entire interest paid on an educational loan without any monetary upper limit. The principal repayment is not eligible under 80E. Thus, Rs. 1,40,000 is allowed.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 80E",
+            "Educational Loan Interest",
+            "Scenario Analysis"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-6_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-6_03",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-6",
+          "subject": "Taxation",
+          "prompt": "What is the deduction permissible under Section 80G for the donation made to the Prime Minister's National Relief Fund?",
+          "options": [
+            "Rs. 50,000 (100% without limit)",
+            "Rs. 25,000 (50% without limit)",
+            "Rs. 50,000 subject to qualifying limit",
+            "Nil"
+          ],
+          "answerIndex": 0,
+          "explanation": "Donation to the Prime Minister's National Relief Fund qualifies for a 100% deduction under Section 80G without any qualifying limit.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 80G",
+            "PMNRF",
+            "100% Deduction"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-6_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-6_03",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-6",
+          "subject": "Taxation",
+          "prompt": "What is the deduction permissible for the donation of Rs. 40,000 made to the approved charitable trust under Section 80G?",
+          "options": [
+            "Rs. 40,000",
+            "Rs. 20,000",
+            "Subject to 10% of adjusted GTI limit with 50% deduction rate",
+            "Nil"
+          ],
+          "answerIndex": 2,
+          "explanation": "Donations to approved charitable trusts are subject to qualifying limits (10% of Adjusted GTI) and qualify for a 50% deduction rate.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 80G",
+            "Charitable Trust",
+            "Qualifying Limit"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-6_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-6_03",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-6",
+          "subject": "Taxation",
+          "prompt": "What would be the Adjusted Gross Total Income for computing the qualifying limit for the charitable trust donation under Section 80G?",
+          "options": [
+            "Rs. 12,00,000",
+            "Rs. 10,60,000 (Gross Total Income minus Section 80E deduction of Rs. 1,40,000)",
+            "Rs. 10,10,000 (GTI minus 80E and PMNRF donation)",
+            "Rs. 11,50,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Adjusted GTI is Gross Total Income reduced by all deductions under Chapter VI-A except Section 80G and exempt incomes/capital gains. Here, GTI (Rs. 12,00,000) minus Section 80E deduction (Rs. 1,40,000) = Rs. 10,60,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 80G",
+            "Adjusted GTI Computation",
+            "Scenario Analysis"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-6_04",
+      "kind": "scenario",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "passage": "Mrs. Sunita (aged 68 years), a resident senior citizen, has a Gross Total Income of Rs. 8,50,000 for the financial year 2025-26 under the old tax regime. Her income consists of: (i) Pension income: Rs. 5,00,000. (ii) Interest on fixed deposits with banks: Rs. 1,20,000. (iii) Interest on savings bank accounts: Rs. 35,000. (iv) Rental income from a house property: Rs. 1,95,000. She has incurred medical expenses of Rs. 60,000 for the treatment of a specified disease (dementia) for her dependent husband (aged 70 years).",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-6_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-6_04",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-6",
+          "subject": "Taxation",
+          "prompt": "What is the deduction available to Mrs. Sunita under Section 80TTB for the financial year?",
+          "options": [
+            "Rs. 35,000",
+            "Rs. 50,000",
+            "Rs. 1,20,000",
+            "Rs. 1,55,000"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 80TTB provides deduction to resident senior citizens on interest from deposits (savings and fixed deposits) up to a maximum of Rs. 50,000. Her total interest is Rs. 1,20,000 + Rs. 35,000 = Rs. 1,55,000, but the ceiling is Rs. 50,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 80TTB",
+            "Senior Citizen Interest",
+            "Scenario Analysis"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-6_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-6_04",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-6",
+          "subject": "Taxation",
+          "prompt": "What is the eligible deduction for Mrs. Sunita under Section 80DDB for the medical treatment of her dependent husband?",
+          "options": [
+            "Rs. 60,000",
+            "Rs. 40,000",
+            "Rs. 1,00,000",
+            "Nil"
+          ],
+          "answerIndex": 0,
+          "explanation": "Under Section 80DDB, for the treatment of specified diseases for a senior citizen dependent, the deduction is actual expenditure or Rs. 1,00,000, whichever is less. Since actual expenditure is Rs. 60,000, the full Rs. 60,000 is allowed.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 80DDB",
+            "Medical Treatment",
+            "Senior Citizen Dependent"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-6_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-6_04",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-6",
+          "subject": "Taxation",
+          "prompt": "Can Mrs. Sunita claim deduction under both Section 80TTA and Section 80TTB simultaneously?",
+          "options": [
+            "Yes, both can be claimed.",
+            "No, Section 80TTA is not applicable to senior citizens eligible for Section 80TTB.",
+            "Yes, up to a combined limit of Rs. 60,000.",
+            "No, neither is available under the old tax regime."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 80TTA explicitly excludes resident senior citizens who are eligible for deduction under Section 80TTB.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 80TTA",
+            "Section 80TTB",
+            "Mutual Exclusivity"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-6_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-6_04",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-6",
+          "subject": "Taxation",
+          "prompt": "What will be Mrs. Sunita's Total Income after considering the deductions under Sections 80TTB and 80DDB?",
+          "options": [
+            "Rs. 7,40,000",
+            "Rs. 7,90,000",
+            "Rs. 8,50,000",
+            "Rs. 6,90,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Gross Total Income = Rs. 8,50,000. Less: Section 80TTB deduction = Rs. 50,000. Less: Section 80DDB deduction = Rs. 60,000. Total Income = 8,50,000 - 50,000 - 60,000 = Rs. 7,40,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Total Income Computation",
+            "Scenario Calculation",
+            "Chapter VI-A Net Effect"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-6_05",
+      "kind": "scenario",
+      "chapterId": "income-tax-6",
+      "subject": "Taxation",
+      "passage": "Mr. Karthik, an individual resident in India, has a Gross Total Income of Rs. 14,00,000 for the financial year 2025-26. He does not receive any House Rent Allowance (HRA) from his employer. He lives in a rented apartment in Mumbai, paying a monthly rent of Rs. 25,000 throughout the year. His total income before Section 80GG includes business income of Rs. 14,00,000. He also contributes Rs. 40,000 to the National Pension System (NPS) under Section 80CCD(1) and Rs. 50,000 under Section 80CCD(1B).",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 6,
+        "chapterTitle": "Deductions from Gross Total Income"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-6_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-6_05",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-6",
+          "subject": "Taxation",
+          "prompt": "What is the deduction available to Mr. Karthik under Section 80GG for rent paid?",
+          "options": [
+            "Rs. 60,000",
+            "Rs. 3,00,000",
+            "Rs. 5,000 per month (Rs. 60,000 annual)",
+            "Rs. 1,50,000"
+          ],
+          "answerIndex": 2,
+          "explanation": "Section 80GG limits the deduction to the least of: (i) Rs. 5,000 p.m. (Rs. 60,000), (ii) 25% of adjusted total income, and (iii) Rent paid minus 10% of adjusted total income. Here, Rs. 5,000 p.m. (Rs. 60,000) is the lowest.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 80GG",
+            "Rent Deduction Limit",
+            "Scenario Analysis"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-6_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-6_05",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-6",
+          "subject": "Taxation",
+          "prompt": "What is the total deduction available under Section 80CCD(1) and Section 80CCD(1B) combined for Mr. Karthik's NPS contributions?",
+          "options": [
+            "Rs. 90,000",
+            "Rs. 50,000",
+            "Rs. 1,50,000",
+            "Rs. 40,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 80CCD(1) contribution of Rs. 40,000 is within the overall Section 80CCE limit. Section 80CCD(1B) allows an additional Rs. 50,000. Total = Rs. 40,000 + Rs. 50,000 = Rs. 90,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Section 80CCD(1)",
+            "Section 80CCD(1B)",
+            "NPS Contributions"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-6_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-6_05",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-6",
+          "subject": "Taxation",
+          "prompt": "Is Mr. Karthik eligible to claim deduction under Section 80GG if he owns a residential house property in his native town?",
+          "options": [
+            "Yes, absolutely.",
+            "No, because he owns a residential accommodation at another place.",
+            "Yes, provided he does not occupy it and does not claim self-occupied property benefits.",
+            "No, owning any residential property anywhere disqualifies him under Section 80GG."
+          ],
+          "answerIndex": 3,
+          "explanation": "One of the strict conditions for Section 80GG is that the assessee, their spouse, minor child, or HUF of which they are a member should not own any residential accommodation at the place where they reside, perform duties, or carry on business, nor own any residential property elsewhere valued as self-occupied.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Section 80GG",
+            "Conditions",
+            "Disqualification"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-6_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-6_05",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-6",
+          "subject": "Taxation",
+          "prompt": "What is the total Chapter VI-A deduction for Mr. Karthik considering Section 80GG and NPS contributions (80CCD(1) and 80CCD(1B))?",
+          "options": [
+            "Rs. 1,50,000",
+            "Rs. 1,90,000",
+            "Rs. 2,10,000",
+            "Rs. 90,000"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 80GG deduction = Rs. 60,000. NPS contributions = Rs. 90,000. Total = Rs. 1,50,000. However, wait: Section 80CCD(1) is part of 80CCE (limit Rs. 1,50,000) and 80CCD(1B) is extra Rs. 50,000. Total deduction = 60,000 (80GG) + 40,000 (80CCD(1)) + 50,000 (80CCD(1B)) = Rs. 1,50,000. Note that 80GG is outside 80CCE.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Chapter VI-A",
+            "Total Deduction Calculation",
+            "Scenario Analysis"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

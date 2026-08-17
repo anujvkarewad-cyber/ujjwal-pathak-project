@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "financial-management-1",
+  "subject": "FM",
+  "paper": "Paper 6: Financial Management and Strategic Management",
+  "module": "Module 1",
+  "chapterNumber": 1,
+  "chapterTitle": "Scope and Objectives of Financial Management",
+  "generatedAt": "2026-08-16T14:53:32.509Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_financial-management-1_001",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "Which of the following best defines Financial Management according to the ICAI curriculum?",
+      "options": [
+        "Procuring funds at the lowest possible cost without any regard to risk",
+        "Planning, organizing, directing, and controlling the financial activities such as procurement and utilization of funds of the enterprise",
+        "Exclusively managing the day-to-day cash flows and inventory levels of a business",
+        "Preparing financial statements in accordance with Accounting Standards for external stakeholders"
+      ],
+      "answerIndex": 1,
+      "explanation": "Financial management is concerned with managerial activities pertaining to the procurement and utilization of funds for business operations. It covers planning, organizing, directing, and controlling financial resources. It goes beyond mere accounting by focusing on value creation and efficient deployment of capital.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Introduction",
+        "Definition",
+        "Scope of FM"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_002",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "What is considered the primary and ultimate objective of a business firm under modern financial management?",
+      "options": [
+        "Maximization of earnings per share (EPS) in the short run",
+        "Maximization of total sales revenue and market share",
+        "Maximization of shareholder wealth or firm's value",
+        "Minimization of operational and financial risk"
+      ],
+      "answerIndex": 2,
+      "explanation": "Shareholder wealth maximization, reflected by the maximization of the market value of the firm's equity, is the primary objective of financial management. It considers the time value of money, risks, and benefits over the life of the firm, unlike profit maximization which is short-sighted.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Objectives of FM",
+        "Wealth Maximization",
+        "Shareholder Value"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_003",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "Why is Profit Maximization generally considered an inadequate operational objective for financial decision-making?",
+      "options": [
+        "It ignores the timing and risk associated with expected future cash flows",
+        "It focuses too heavily on long-term capital appreciation rather than immediate dividends",
+        "It is too difficult to calculate using standard accounting principles",
+        "It requires complex discounted cash flow techniques that are unreliable"
+      ],
+      "answerIndex": 0,
+      "explanation": "Profit maximization suffers from several limitations: it is ambiguous, ignores the time value of money, and completely ignores the risk factor associated with cash flows. A rupee earned today is worth more than a rupee earned in the future, which profit maximization fails to incorporate.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Profit Maximization",
+        "Limitations",
+        "Objectives of FM"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_004",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "How is Shareholder Wealth formally measured in corporate finance?",
+      "options": [
+        "Book value of total assets minus total outside liabilities",
+        "Total accumulated retained earnings plus paid-up share capital",
+        "Product of the number of equity shares and the current market price per share",
+        "Net operating profit after taxes divided by total capital employed"
+      ],
+      "answerIndex": 2,
+      "explanation": "Shareholder wealth is represented by the market value of equity, which is calculated as the number of equity shares outstanding multiplied by the prevailing market price per share (MPS). An increase in MPS signifies the wealth maximization of shareholders.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Wealth Maximization",
+        "Market Price",
+        "Valuation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_005",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "Which of the following decisions forms a core pillar of the Financial Management framework?",
+      "options": [
+        "Investment decision, financing decision, and dividend decision",
+        "Production decision, marketing decision, and human resource decision",
+        "Auditing decision, taxation decision, and compliance decision",
+        "Pricing decision, branding decision, and distribution decision"
+      ],
+      "answerIndex": 0,
+      "explanation": "The scope of financial management is structured around three major financial decisions: Investment decisions (where to invest), Financing decisions (how to raise funds), and Dividend decisions (how much to distribute vs retain).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Scope of FM",
+        "Financial Decisions",
+        "Core Pillars"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_006",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "In the context of financial decisions, what does an investment decision primarily involve?",
+      "options": [
+        "Determining the optimal debt-equity mix for raising new long-term capital",
+        "Deciding whether to distribute profits as dividends or plough them back into the business",
+        "Commitment of funds to long-term assets (Capital Budgeting) and short-term assets (Working Capital)",
+        "Negotiating lower interest rates with commercial banks for short-term working capital loans"
+      ],
+      "answerIndex": 2,
+      "explanation": "Investment decisions relate to the allocation of scarce financial resources among competing long-term assets (capital budgeting) and short-term working capital assets. The goal is to select assets that yield a return greater than the cost of capital.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Investment Decision",
+        "Capital Budgeting",
+        "Working Capital"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_007",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "What is the primary focus of a financing decision?",
+      "options": [
+        "Selecting the best physical machinery to minimize production downtime",
+        "Determining the sources of funds and the optimal capital structure (mix of debt and equity)",
+        "Deciding the credit period to be offered to retail customers",
+        "Evaluating the salvage value of obsolete equipment"
+      ],
+      "answerIndex": 1,
+      "explanation": "Financing decision is concerned with sourcing funds. It involves evaluating different sources of finance (equity, preference, debt, retained earnings) and establishing an optimal capital structure that minimizes the overall cost of capital while keeping financial risk manageable.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Financing Decision",
+        "Capital Structure",
+        "Cost of Capital"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_008",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "How does the dividend decision impact the firm's overall financial strategy?",
+      "options": [
+        "It determines the exact rate of corporate income tax payable by the company",
+        "It decides the proportion of net profits to be distributed as dividends versus retained earnings",
+        "It regulates the wage rates and bonus structure for key managerial personnel",
+        "It sets the depreciation rates for fixed assets under the Companies Act"
+      ],
+      "answerIndex": 1,
+      "explanation": "The dividend decision involves striking a balance between paying out cash dividends to shareholders and retaining earnings for reinvestment in profitable business opportunities. Retained earnings are an important internal source of financing.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Dividend Decision",
+        "Retained Earnings",
+        "Payout Policy"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_009",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "Which of the following functions of a finance manager relates to managing day-to-day liquidity and current assets?",
+      "options": [
+        "Capital Budgeting Management",
+        "Working Capital Management",
+        "Long-term Debt Refinancing",
+        "Initial Public Offering (IPO) Structuring"
+      ],
+      "answerIndex": 1,
+      "explanation": "Working capital management is concerned with the management of current assets (cash, receivables, inventory) and current liabilities. It ensures that the firm has sufficient liquidity to run day-to-day operations without disruption.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Working Capital",
+        "Liquidity",
+        "Short-term Finance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_010",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "What is the role of the Chief Financial Officer (CFO) in modern corporate governance?",
+      "options": [
+        "Acting solely as a bookkeeper who records historical financial transactions",
+        "Participating in strategic planning, capital allocation, risk management, and value creation",
+        "Handling routine clerical tasks like bank reconciliation and payroll distribution",
+        "Conducting statutory audits and certifying internal financial controls independently"
+      ],
+      "answerIndex": 1,
+      "explanation": "The role of the CFO has evolved from a traditional record-keeper to a strategic business partner. The CFO actively participates in shaping corporate strategy, capital budgeting, risk management, and enhancing shareholder value.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Role of CFO",
+        "Corporate Governance",
+        "Strategic FM"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_011",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "Agency problem in financial management refers to:",
+      "options": [
+        "Conflict of interest between the regulatory authorities and the company management",
+        "Conflict of interest between shareholders (principals) and managers or debt holders (agents)",
+        "Disputes between competing suppliers regarding raw material pricing",
+        "Miscommunication between the internal audit team and external auditors"
+      ],
+      "answerIndex": 1,
+      "explanation": "An agency problem arises when there is a conflict of goals between the principals (shareholders) and agents (managers). Managers may pursue personal benefits (perks, empire-building) at the expense of shareholder wealth maximization.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Agency Problem",
+        "Corporate Governance",
+        "Shareholders vs Managers"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_012",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "Which of the following mechanisms helps mitigate the agency problem between shareholders and managers?",
+      "options": [
+        "Offering stock options (ESOPs), performance-linked bonuses, and rigorous monitoring by independent directors",
+        "Eliminating the board of directors to reduce administrative overheads",
+        "Restricting shareholder voting rights during the Annual General Meeting",
+        "Maintaining absolute secrecy regarding executive remuneration packages"
+      ],
+      "answerIndex": 0,
+      "explanation": "Agency costs and conflicts are minimized through alignment of interests (e.g., ESOPs, performance-based compensation), active monitoring by the board of directors, threat of hostile takeovers, and regulatory governance standards.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Agency Costs",
+        "Corporate Governance",
+        "ESOPs"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_013",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "What is the primary distinction between Financial Accounting and Financial Management?",
+      "options": [
+        "Financial accounting is forward-looking, while financial management is strictly historical",
+        "Financial management focuses on cash flows, risk, and value creation, whereas financial accounting focuses on historical record-keeping and reporting",
+        "Financial accounting is used only by internal management, while financial management is for tax authorities",
+        "There is no functional difference; both terms are used interchangeably in practice"
+      ],
+      "answerIndex": 1,
+      "explanation": "Financial accounting is primarily historical and focuses on reporting past financial performance following GAAP/Ind AS. Financial management is futuristic, focusing on cash flows, valuation, risk-return trade-offs, and decision-making.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "FM vs Accounting",
+        "Cash Flows",
+        "Decision Making"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_014",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "Why are cash flows preferred over accounting profits in financial decision-making models?",
+      "options": [
+        "Accounting profits can be manipulated through accounting policies and do not account for the time value of money",
+        "Cash flows are always tax-exempt, whereas accounting profits are heavily taxed",
+        "Calculating accounting profits requires complex probability distributions",
+        "Cash flows are irrelevant for long-term capital budgeting decisions"
+      ],
+      "answerIndex": 0,
+      "explanation": "Accounting profit is based on accrual concepts and can be influenced by non-cash items (like depreciation) and accounting policy choices. Cash flows represent actual cash inflows and outflows, which are essential for evaluating investment viability and the time value of money.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Cash Flows vs Profits",
+        "Time Value of Money",
+        "Investment Decision"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_015",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "How does the risk-return trade-off influence financial decision-making?",
+      "options": [
+        "Higher returns can generally be achieved only by accepting higher levels of risk, requiring managers to balance the two",
+        "Risk should be completely ignored if the expected return is positive",
+        "Returns are entirely independent of risk in well-functioning capital markets",
+        "Firms should always select the lowest risk option regardless of the expected return"
+      ],
+      "answerIndex": 0,
+      "explanation": "The risk-return trade-off is a fundamental principle of finance. Investors and managers demand higher expected returns to compensate for higher risk. Financial decisions must optimize this trade-off to maximize value.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Risk-Return Trade-off",
+        "Financial Principles",
+        "Valuation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_016",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "Which of the following is an example of a financing decision?",
+      "options": [
+        "Acquiring a new fleet of delivery trucks through financial leasing",
+        "Issuing non-convertible debentures to fund a major plant expansion",
+        "Investing surplus funds in short-term liquid mutual funds",
+        "Writing off obsolete inventory from the warehouse"
+      ],
+      "answerIndex": 1,
+      "explanation": "Issuing non-convertible debentures is a financing decision because it involves raising long-term capital from outside sources, shaping the capital structure of the firm.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Financing Decision",
+        "Capital Structure",
+        "Debentures"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_017",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "In the context of corporate objectives, stakeholder theory suggests that:",
+      "options": [
+        "Management should exclusively maximize returns for equity shareholders",
+        "Firms should consider the interests of all stakeholders including employees, customers, suppliers, creditors, and society",
+        "Creditors are the only rightful claimants to corporate residual income",
+        "Government regulation should dictate every operational decision of the firm"
+      ],
+      "answerIndex": 1,
+      "explanation": "Stakeholder theory argues that while shareholder wealth maximization is paramount, a firm must also create value for other stakeholders (employees, customers, suppliers, community) to ensure long-term sustainable success.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Stakeholder Theory",
+        "Corporate Objectives",
+        "Sustainability"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_018",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "What does 'Cost of Capital' represent in financial management?",
+      "options": [
+        "The historical cost incurred in floating an initial public offering five years ago",
+        "The minimum rate of return that a firm must earn on its investments to satisfy its investors",
+        "The total interest paid on bank overdrafts during the current financial year",
+        "The brokerage fee paid to underwriters for issuing equity shares"
+      ],
+      "answerIndex": 1,
+      "explanation": "Cost of capital is the minimum required rate of return expected by capital providers. It serves as the benchmark hurdle rate for evaluating capital budgeting investment proposals.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Cost of Capital",
+        "Hurdle Rate",
+        "Investment Appraisal"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_019",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "Which departmental interface is most critical for a finance manager when deciding on credit terms for customers?",
+      "options": [
+        "Marketing and Sales department",
+        "Production and Plant operations department",
+        "Internal Audit and Compliance department",
+        "Information Technology infrastructure department"
+      ],
+      "answerIndex": 0,
+      "explanation": "Credit terms directly impact sales volume and accounts receivable. The finance manager must collaborate closely with the marketing and sales team to balance revenue growth with credit risk and working capital lock-up.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Working Capital",
+        "Inter-departmental Interface",
+        "Credit Policy"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_020",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "What is the primary function of financial markets from a corporate finance perspective?",
+      "options": [
+        "Providing a platform for speculative day trading by retail investors",
+        "Facilitating the efficient transfer of funds from savers to business enterprises requiring capital",
+        "Determining the corporate tax rates applicable to manufacturing companies",
+        "Regulating labor unions and employee compensation standards"
+      ],
+      "answerIndex": 1,
+      "explanation": "Financial markets act as a bridge between savers (suppliers of capital) and corporations (users of capital), facilitating capital allocation, liquidity, and price discovery.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Financial Markets",
+        "Capital Allocation",
+        "Scope of FM"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_021",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "Which of the following best characterizes the liquidity-profitability trade-off in working capital management?",
+      "options": [
+        "Maintaining high liquidity (cash and inventory) increases safety but reduces overall profitability; conversely, lean working capital increases profit potential but raises liquidity risk.",
+        "Liquidity and profitability always move in the exact same direction without any conflict.",
+        "Working capital management has no impact on either liquidity or profitability.",
+        "Profitability can only be maximized by maintaining zero current assets."
+      ],
+      "answerIndex": 0,
+      "explanation": "There is a trade-off between liquidity and profitability. Idle cash and excess inventory earn zero or low returns (lowering profitability) but provide high safety (high liquidity). Tight working capital boosts returns but risks insolvency.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Working Capital",
+        "Liquidity vs Profitability",
+        "Trade-off"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_022",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "How do ethical considerations intersect with financial management objectives?",
+      "options": [
+        "Ethical practices are irrelevant as long as shareholder wealth is maximized at any cost",
+        "Ethical behavior builds long-term reputation and trust, safeguarding the firm's market value and avoiding legal penalties",
+        "Ethics only apply to accounting reporting and have no bearing on financial decision-making",
+        "Ethical compliance strictly reduces the management's flexibility in raising debt"
+      ],
+      "answerIndex": 1,
+      "explanation": "Unethical practices may yield short-term gains but destroy corporate reputation, leading to legal liabilities, loss of customer trust, and destruction of shareholder wealth in the long run. Ethics and wealth maximization go hand in hand.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Ethics",
+        "Corporate Governance",
+        "Value Maximization"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_023",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "An industrial company is evaluating whether to replace an old machine with a new automated robot. This scenario primarily falls under which financial decision category?",
+      "options": [
+        "Financing Decision",
+        "Dividend Decision",
+        "Investment Decision (Capital Budgeting)",
+        "Liquidity Management Decision"
+      ],
+      "answerIndex": 2,
+      "explanation": "Replacing an old machine with a new asset is a classic capital budgeting (investment) decision involving long-term capital commitment and future cash flow generation.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Capital Budgeting",
+        "Investment Decision",
+        "Asset Replacement"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_024",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "Consider two firms, Firm X and Firm Y, with identical net operating profits. Firm X is financed entirely by equity, while Firm Y uses 50% debt and 50% equity. This difference relates to:",
+      "options": [
+        "Capital Budgeting Decision",
+        "Financing Decision and Capital Structure",
+        "Dividend Payout Decision",
+        "Working Capital Financing Decision"
+      ],
+      "answerIndex": 1,
+      "explanation": "The mix of debt and equity used to finance the firm's assets constitutes the capital structure, which is the core focus of the financing decision.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Capital Structure",
+        "Financing Decision",
+        "Financial Leverage"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_025",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "Why might a conflict arise between equity shareholders and bondholders (debt holders) regarding corporate risk-taking?",
+      "options": [
+        "Bondholders benefit from high-risk projects because they share in unlimited upside profits",
+        "Equity shareholders may prefer high-risk projects because their downside is limited while upside potential is high, whereas bondholders prefer low risk to protect their fixed claims",
+        "Bondholders have voting rights that override shareholder decisions",
+        "Equity shareholders receive fixed interest payments regardless of project success"
+      ],
+      "answerIndex": 1,
+      "explanation": "Shareholders hold a residual claim and benefit disproportionately from high-risk, high-return projects, while bondholders receive fixed returns and bear the risk of default. This creates a classic agency conflict between debt holders and shareholders.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Agency Conflict",
+        "Debt vs Equity",
+        "Risk-taking"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_026",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "In evaluating corporate performance, Economic Value Added (EVA) is superior to traditional net profit because:",
+      "options": [
+        "EVA accounts for the cost of equity capital as well as debt capital",
+        "EVA ignores depreciation and amortization entirely",
+        "EVA is mandated by the Income Tax Act for all corporate filers",
+        "EVA is calculated purely on cash receipts without accrual adjustments"
+      ],
+      "answerIndex": 0,
+      "explanation": "EVA measures the value created by a firm in excess of its cost of capital (including the cost of equity). Traditional accounting profit often ignores the cost of equity capital, whereas EVA provides a true economic profit measure.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "EVA",
+        "Value Creation",
+        "Cost of Capital"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_027",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "How does the time value of money (TVM) underpin the shareholder wealth maximization objective?",
+      "options": [
+        "TVM ensures that future cash flows are discounted back to present value using an appropriate discount rate, reflecting risk and timing",
+        "TVM assumes that money has the same purchasing power across all future periods",
+        "TVM eliminates the need to calculate net present value in capital budgeting",
+        "TVM focuses exclusively on nominal accounting profits without discounting"
+      ],
+      "answerIndex": 0,
+      "explanation": "Wealth maximization relies on discounted cash flow (DCF) techniques. TVM recognizes that cash flows occurring at different times cannot be directly compared without discounting them to present value based on required rates of return.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Time Value of Money",
+        "Wealth Maximization",
+        "DCF"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_028",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "An international conglomerate decides to centralize its treasury operations to optimize global cash management. Which financial management function is primarily being addressed?",
+      "options": [
+        "Long-term capital budgeting for overseas plant construction",
+        "Working capital and liquidity management across multiple subsidiaries",
+        "Statutory financial statement auditing and tax filing",
+        "Designing executive compensation packages for foreign managers"
+      ],
+      "answerIndex": 1,
+      "explanation": "Centralizing treasury functions relates directly to managing cash concentrations, liquidity, currency risks, and short-term working capital across corporate entities.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Treasury Management",
+        "Working Capital",
+        "Global Finance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_029",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "Which of the following scenarios best illustrates the manifestation of an agency cost within a corporation?",
+      "options": [
+        "Management incurring excessive expenditure on corporate jets and lavish offices that do not contribute to shareholder value",
+        "Paying regular market-rate interest to commercial banks on term loans",
+        "Paying statutory corporate income tax to the government as per the Finance Act",
+        "Distributing dividends to equity shareholders as recommended by the board"
+      ],
+      "answerIndex": 0,
+      "explanation": "Perquisite consumption and unnecessary administrative expenditures by managers that do not maximize shareholder wealth represent classic agency costs incurred due to the separation of ownership and control.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Agency Costs",
+        "Corporate Governance",
+        "Perquisites"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_financial-management-1_030",
+      "kind": "normal",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "prompt": "In the evolution of financial management, the modern phase (starting around the 1950s) is primarily characterized by:",
+      "options": [
+        "Exclusive focus on legal compliance during corporate formations and mergers",
+        "Rigid adherence to accounting rule-books and balance sheet verification",
+        "Analytical decision-making models focusing on portfolio theory, capital budgeting, and valuation under uncertainty",
+        "State-controlled credit rationing and fixed interest rate regimes"
+      ],
+      "answerIndex": 2,
+      "explanation": "The modern phase of financial management shifted from descriptive, legalistic approaches to analytical and quantitative decision-making, emphasizing risk, return, portfolio theory, and valuation.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Evolution of FM",
+        "Modern Finance",
+        "Decision Models"
+      ],
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_financial-management-1_01",
+      "kind": "scenario",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "passage": "Zenith Motors Ltd., an established automotive component manufacturer, is evaluating its strategic financial goals for the upcoming decade. The board of directors is divided between pursuing traditional profit maximization and adopting a modern shareholder wealth maximization framework. The CFO presents an analysis showing that while a recent expansion project boosts short-term accounting profits, it involves high volatility in cash flows. Furthermore, the company is planning to raise ₹50 crores through a mix of equity and long-term debt to fund a new research facility.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_financial-management-1_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-1_01",
+          "sequenceInScenario": 1,
+          "chapterId": "financial-management-1",
+          "subject": "FM",
+          "prompt": "Which objective should Zenith Motors Ltd. adopt to align with modern financial management principles?",
+          "options": [
+            "Profit Maximization, because it guarantees highest short-term dividend payouts",
+            "Shareholder Wealth Maximization, as it accounts for cash flows, timing, and risk",
+            "Sales Revenue Maximization, ignoring profit margins and capital costs",
+            "Cost Minimization, by completely halting research and development expenditures"
+          ],
+          "answerIndex": 1,
+          "explanation": "Modern financial management advocates shareholder wealth maximization because it evaluates investment projects based on discounted cash flows, factoring in risk and the time value of money, rather than focusing on short-term accounting profits.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Wealth Maximization",
+            "Corporate Objectives",
+            "Zenith Motors"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-1_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-1_01",
+          "sequenceInScenario": 2,
+          "chapterId": "financial-management-1",
+          "subject": "FM",
+          "prompt": "The CFO's observation regarding cash flow volatility highlights which fundamental financial trade-off?",
+          "options": [
+            "Liquidity versus Solvency trade-off",
+            "Risk-Return trade-off",
+            "Fixed Cost versus Variable Cost trade-off",
+            "Tax Shield versus Interest Burden trade-off"
+          ],
+          "answerIndex": 1,
+          "explanation": "High volatility in cash flows represents increased investment risk. The risk-return trade-off dictates that higher risk projects must offer correspondingly higher expected returns to justify capital allocation.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Risk-Return Trade-off",
+            "Cash Flow Volatility",
+            "Investment Appraisal"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-1_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-1_01",
+          "sequenceInScenario": 3,
+          "chapterId": "financial-management-1",
+          "subject": "FM",
+          "prompt": "The decision by Zenith Motors to raise ₹50 crores through a mix of equity and long-term debt falls under which category of financial decisions?",
+          "options": [
+            "Investment Decision",
+            "Financing Decision",
+            "Dividend Decision",
+            "Working Capital Decision"
+          ],
+          "answerIndex": 1,
+          "explanation": "Raising long-term capital by combining debt and equity instruments is a classic financing decision aimed at determining the optimal capital structure.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Financing Decision",
+            "Capital Structure",
+            "Zenith Motors"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-1_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-1_01",
+          "sequenceInScenario": 4,
+          "chapterId": "financial-management-1",
+          "subject": "FM",
+          "prompt": "If Zenith Motors decides to fund the research facility entirely through retained earnings instead of issuing new shares, what is the financial implication?",
+          "options": [
+            "It eliminates the cost of capital entirely",
+            "It utilizes an internal source of financing, avoiding flotation costs and preserving equity control",
+            "It legally exempts the firm from paying corporate income tax",
+            "It guarantees an immediate increase in the market price per share"
+          ],
+          "answerIndex": 1,
+          "explanation": "Retained earnings represent an internal source of finance. Using retained earnings avoids external flotation costs and dilution of existing shareholding control, though it still carries an opportunity cost of capital.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Retained Earnings",
+            "Financing Decision",
+            "Internal Finance"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_financial-management-1_02",
+      "kind": "scenario",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "passage": "Apex Technologies Ltd. is a fast-growing IT services firm. The promoters own 40% of the equity, while institutional investors and public shareholders hold the remaining 60%. Recently, the executive management proposed a massive diversification into an unrelated retail sector, which requires substantial capital outlay and carries high uncertainty. Institutional shareholders express strong opposition, arguing that the project destroys shareholder value and increases agency risks. Meanwhile, the finance team is struggling to maintain optimal working capital due to delayed collections from corporate clients.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_financial-management-1_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-1_02",
+          "sequenceInScenario": 1,
+          "chapterId": "financial-management-1",
+          "subject": "FM",
+          "prompt": "The opposition by institutional shareholders against management's retail diversification plan is a classic symptom of:",
+          "options": [
+            "Liquidity crisis",
+            "Agency conflict between shareholders and managers",
+            "Statutory non-compliance with tax laws",
+            "Foreign exchange translation exposure"
+          ],
+          "answerIndex": 1,
+          "explanation": "When managers pursue risky diversification projects that do not maximize shareholder wealth, it creates an agency conflict between the principals (shareholders) and the agents (managers).",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Agency Conflict",
+            "Apex Technologies",
+            "Corporate Governance"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-1_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-1_02",
+          "sequenceInScenario": 2,
+          "chapterId": "financial-management-1",
+          "subject": "FM",
+          "prompt": "Delayed collections from corporate clients impacting working capital at Apex Technologies primarily affects which financial dimension?",
+          "options": [
+            "Capital structure and long-term leverage",
+            "Liquidity and day-to-day operational solvency",
+            "Dividend payout ratio",
+            "Corporate tax liability"
+          ],
+          "answerIndex": 1,
+          "explanation": "Delayed receivables lock up working capital, directly impairing the firm's liquidity and short-term operational solvency necessary to pay immediate dues.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Working Capital",
+            "Liquidity",
+            "Receivables Management"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-1_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-1_02",
+          "sequenceInScenario": 3,
+          "chapterId": "financial-management-1",
+          "subject": "FM",
+          "prompt": "How can Apex Technologies effectively mitigate the agency conflict regarding the diversification project?",
+          "options": [
+            "By granting management absolute immunity from board oversight",
+            "By tying executive compensation and stock options to long-term shareholder value creation and enhancing board monitoring",
+            "By eliminating institutional shareholding entirely",
+            "By stopping all internal financial audits"
+          ],
+          "answerIndex": 1,
+          "explanation": "Aligning managerial interests with shareholder wealth through performance-linked compensation (like ESOPs) and strengthening independent board oversight mitigates agency problems.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Agency Costs",
+            "ESOPs",
+            "Corporate Governance"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-1_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-1_02",
+          "sequenceInScenario": 4,
+          "chapterId": "financial-management-1",
+          "subject": "FM",
+          "prompt": "If the finance manager evaluates whether to discount client invoices for early payment (cash discounts), this decision falls under:",
+          "options": [
+            "Capital Budgeting",
+            "Working Capital / Receivables Management",
+            "Long-term Debt Refinancing",
+            "Dividend Policy formulation"
+          ],
+          "answerIndex": 1,
+          "explanation": "Managing customer credit terms, invoice discounting, and receivables collection policies is a core component of working capital management.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Working Capital",
+            "Receivables",
+            "Credit Policy"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_financial-management-1_03",
+      "kind": "scenario",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "passage": "Global Pharma Ltd. is evaluating two mutually exclusive capital investment projects: Project Alpha (a conventional drug manufacturing plant with steady cash flows) and Project Beta (a high-risk biotechnology research venture with uncertain but potentially massive future payoffs). The company's cost of capital is 12%. The finance team notes that Project Alpha yields an accounting profit of ₹15 crores annually, whereas Project Beta shows losses for the first three years followed by high positive cash flows.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_financial-management-1_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-1_03",
+          "sequenceInScenario": 1,
+          "chapterId": "financial-management-1",
+          "subject": "FM",
+          "prompt": "Project Alpha's high annual accounting profit versus Project Beta's initial losses illustrates the limitation of relying solely on:",
+          "options": [
+            "Discounted cash flow techniques",
+            "Accounting profit as a decision criterion",
+            "Cost of capital benchmarks",
+            "Capital structure leverage ratios"
+          ],
+          "answerIndex": 1,
+          "explanation": "Relying on accounting profit can be misleading because R&D heavy projects like Project Beta show initial accounting losses due to accrual rules despite having high future cash flow potential.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Accounting Profit",
+            "Cash Flows",
+            "Global Pharma"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-1_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-1_03",
+          "sequenceInScenario": 2,
+          "chapterId": "financial-management-1",
+          "subject": "FM",
+          "prompt": "The 12% cost of capital used by Global Pharma serves primarily as:",
+          "options": [
+            "The corporate income tax rate payable on project profits",
+            "The minimum hurdle rate required to evaluate the viability of investment proposals",
+            "The exact dividend payout percentage mandated by law",
+            "The rate of inflation expected over the project life"
+          ],
+          "answerIndex": 1,
+          "explanation": "The cost of capital acts as the hurdle rate in capital budgeting. Projects must yield a return exceeding this rate to create shareholder value.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Cost of Capital",
+            "Hurdle Rate",
+            "Investment Decision"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-1_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-1_03",
+          "sequenceInScenario": 3,
+          "chapterId": "financial-management-1",
+          "subject": "FM",
+          "prompt": "In evaluating Project Beta, which financial concept is critical to compare cash flows occurring in different years?",
+          "options": [
+            "Time Value of Money (TVM)",
+            "Financial Leverage Multiplier",
+            "Operating Leverage Degree",
+            "Current Ratio Analysis"
+          ],
+          "answerIndex": 0,
+          "explanation": "The Time Value of Money principle discounts future cash flows back to present value, allowing fair comparison of multi-period cash streams under uncertainty.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Time Value of Money",
+            "Discounted Cash Flow",
+            "Valuation"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-1_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-1_03",
+          "sequenceInScenario": 4,
+          "chapterId": "financial-management-1",
+          "subject": "FM",
+          "prompt": "Choosing between Project Alpha and Project Beta is a fundamental decision regarding:",
+          "options": [
+            "Financing structure",
+            "Capital budgeting (Investment decision)",
+            "Dividend payout policy",
+            "Working capital liquidity"
+          ],
+          "answerIndex": 1,
+          "explanation": "Selecting among mutually exclusive long-term projects is the essence of capital budgeting, which forms part of the core investment decision in financial management.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Capital Budgeting",
+            "Investment Decision",
+            "Mutually Exclusive Projects"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_financial-management-1_04",
+      "kind": "scenario",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "passage": "Beta Infra Ltd. is executing a massive highway construction project. The company has funded the project through 70% long-term debt and 30% equity. Due to unexpected regulatory delays, toll revenues are sluggish, making it difficult to service the heavy interest obligations to debenture holders. Meanwhile, equity shareholders are concerned that their residual returns will be wiped out. The board is meeting to discuss whether to declare dividends this year or retain all earnings to meet debt servicing obligations.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_financial-management-1_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-1_04",
+          "sequenceInScenario": 1,
+          "chapterId": "financial-management-1",
+          "subject": "FM",
+          "prompt": "The heavy reliance on 70% debt financing by Beta Infra Ltd. exposes the firm to high:",
+          "options": [
+            "Business liquidity risk only",
+            "Financial risk and solvency pressure",
+            "Foreign exchange translation risk",
+            "Inventory obsolescence risk"
+          ],
+          "answerIndex": 1,
+          "explanation": "A high proportion of debt increases financial leverage, resulting in fixed financial charges (interest) that heighten financial risk and solvency pressure when operating cash flows drop.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Financial Risk",
+            "Capital Structure",
+            "Beta Infra"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-1_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-1_04",
+          "sequenceInScenario": 2,
+          "chapterId": "financial-management-1",
+          "subject": "FM",
+          "prompt": "The conflict between debenture holders (expecting fixed interest and principal safety) and equity shareholders (concerned about residual returns) exemplifies:",
+          "options": [
+            "An agency problem between debt holders and equity shareholders",
+            "A dispute over accounting depreciation methods",
+            "A failure in marketing and sales coordination",
+            "A regulatory violation under the Factories Act"
+          ],
+          "answerIndex": 0,
+          "explanation": "When a firm is financially distressed due to high leverage, conflicts emerge between debt holders seeking repayment security and equity shareholders seeking risk-taking upside.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Agency Conflict",
+            "Debt vs Equity",
+            "Financial Distress"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-1_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-1_04",
+          "sequenceInScenario": 3,
+          "chapterId": "financial-management-1",
+          "subject": "FM",
+          "prompt": "The board's dilemma regarding whether to declare dividends or retain earnings to service debt pertains to which core financial decision?",
+          "options": [
+            "Investment Decision and Working Capital",
+            "Financing and Dividend Decision interface",
+            "Capital Budgeting asset replacement",
+            "Treasury cash pooling"
+          ],
+          "answerIndex": 1,
+          "explanation": "Deciding whether to pay dividends or retain earnings directly links the dividend decision with liquidity management and financing obligations.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Dividend Decision",
+            "Retained Earnings",
+            "Debt Servicing"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-1_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-1_04",
+          "sequenceInScenario": 4,
+          "chapterId": "financial-management-1",
+          "subject": "FM",
+          "prompt": "From the perspective of shareholder wealth maximization, why might omitting dividends in this distress scenario be justifiable?",
+          "options": [
+            "Because dividends are illegal under all corporate laws",
+            "Because conserving cash preserves firm solvency and prevents costly bankruptcy, protecting long-term enterprise value",
+            "Because investors never care about dividends",
+            "Because it automatically reduces corporate income tax to zero"
+          ],
+          "answerIndex": 1,
+          "explanation": "Conserving cash during financial distress avoids bankruptcy and default costs, which is crucial for protecting the long-term economic value of the firm and shareholder wealth.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Wealth Maximization",
+            "Dividend Policy",
+            "Solvency"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_financial-management-1_05",
+      "kind": "scenario",
+      "chapterId": "financial-management-1",
+      "subject": "FM",
+      "passage": "Omega Retail Corp is undergoing a comprehensive corporate restructuring. The newly appointed CFO decides to evaluate the company's performance using Economic Value Added (EVA) alongside traditional Return on Capital Employed (ROCE). The CFO discovers that while ROCE looks impressive due to high historical book values of assets, the EVA is negative because the firm's net operating profit after tax fails to cover the weighted average cost of capital (WACC) applied to the total capital employed. The CFO recommends altering both the investment appraisal methods and the credit control policies.",
+      "sourceRef": {
+        "paper": "Paper 6: Financial Management and Strategic Management",
+        "module": "Module 1",
+        "chapterNumber": 1,
+        "chapterTitle": "Scope and Objectives of Financial Management"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_financial-management-1_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-1_05",
+          "sequenceInScenario": 1,
+          "chapterId": "financial-management-1",
+          "subject": "FM",
+          "prompt": "Why did ROCE show an impressive picture while EVA was negative for Omega Retail Corp?",
+          "options": [
+            "ROCE accounts for the cost of equity, whereas EVA ignores it",
+            "ROCE is based on accounting profits and book values without explicitly incorporating the full cost of equity capital, whereas EVA accounts for total cost of capital (WACC)",
+            "EVA is calculated strictly on cash receipts without depreciation",
+            "ROCE includes future projected cash flows, while EVA is historical"
+          ],
+          "answerIndex": 1,
+          "explanation": "Traditional metrics like ROCE often rely on accounting profits and book values without fully charging for the cost of equity. EVA measures true economic profit by deducting the total cost of capital (WACC × Capital Employed) from NOPAT.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "EVA",
+            "ROCE",
+            "Cost of Capital"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-1_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-1_05",
+          "sequenceInScenario": 2,
+          "chapterId": "financial-management-1",
+          "subject": "FM",
+          "prompt": "A negative EVA indicates that:",
+          "options": [
+            "The firm is generating surplus returns for its equity shareholders",
+            "The firm is destroying shareholder value because returns are less than the cost of capital",
+            "The firm has zero debt in its capital structure",
+            "The firm's corporate tax liability has exceeded its gross revenue"
+          ],
+          "answerIndex": 1,
+          "explanation": "Negative EVA signifies that the firm's operating returns are insufficient to cover the cost of capital employed, resulting in the destruction of shareholder value.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "EVA",
+            "Value Destruction",
+            "Shareholder Value"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-1_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-1_05",
+          "sequenceInScenario": 3,
+          "chapterId": "financial-management-1",
+          "subject": "FM",
+          "prompt": "The CFO's recommendation to alter credit control policies relates to which operational aspect of financial management?",
+          "options": [
+            "Long-term capital budgeting decisions",
+            "Working capital and receivables management",
+            "Capital structure debt-equity mix",
+            "Dividend payout ratio optimization"
+          ],
+          "answerIndex": 1,
+          "explanation": "Modifying credit control policies directly impacts accounts receivable, cash conversion cycles, and overall working capital management.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Working Capital",
+            "Credit Control",
+            "Omega Retail"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_financial-management-1_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_financial-management-1_05",
+          "sequenceInScenario": 4,
+          "chapterId": "financial-management-1",
+          "subject": "FM",
+          "prompt": "In aligning management incentives with EVA enhancement, what should Omega Retail Corp do?",
+          "options": [
+            "Reward managers based solely on top-line revenue growth",
+            "Link executive bonuses to positive EVA generation and capital efficiency",
+            "Penalize managers for maintaining any current assets",
+            "Prohibit managers from investing in new long-term projects"
+          ],
+          "answerIndex": 1,
+          "explanation": "Linking managerial compensation to EVA encourages managers to make value-adding investment, financing, and working capital decisions, directly mitigating agency problems.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "EVA",
+            "Agency Conflict",
+            "Executive Compensation"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

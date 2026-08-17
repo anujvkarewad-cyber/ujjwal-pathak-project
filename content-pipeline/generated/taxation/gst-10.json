@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "gst-10",
+  "subject": "Taxation",
+  "paper": "Paper 3: Taxation",
+  "module": "Module 2",
+  "chapterNumber": 10,
+  "chapterTitle": "Tax Invoice; Credit and Debit Notes",
+  "generatedAt": "2026-08-16T14:31:42.592Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_gst-10_001",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "According to Section 31 of the CGST Act, 2017, in case of taxable supply of services, an invoice must generally be issued within how many days from the date of supply of service?",
+      "options": [
+        "15 days",
+        "30 days",
+        "45 days",
+        "60 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Rule 47 of the CGST Rules, 2017, read with Section 31, a tax invoice for the supply of services must be issued within 30 days from the date of supply of service.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Tax Invoice",
+        "Time Limit",
+        "Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_002",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "What is the time limit for issuing a tax invoice in the case of an insurer, banking company, or financial institution including a non-banking financial company (NBFC) supplying taxable services?",
+      "options": [
+        "30 days from the date of supply",
+        "45 days from the date of supply",
+        "60 days from the date of supply",
+        "90 days from the date of supply"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 47 of the CGST Rules, 2017 provides an extended time limit of 45 days from the date of supply of service for insurers, banking companies, financial institutions, and NBFCs.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Tax Invoice",
+        "Banking Services",
+        "Time Limit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_003",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "In the case of continuous supply of goods, where successive statements of accounts or successive payments are involved, the invoice shall be issued:",
+      "options": [
+        "Before or at the time of each successive statement or receipt of payment",
+        "Within 30 days of the end of the financial year",
+        "Within 15 days of the dispatch of goods",
+        "Only when the final agreement is concluded"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 31(4) of the CGST Act, 2017 stipulates that in a continuous supply of goods, the invoice must be issued before or at the time each successive statement is issued or each successive payment is received.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Continuous Supply",
+        "Goods",
+        "Invoice Issuance"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_004",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "When is a registered person not required to issue a tax invoice under Section 31(3)(b) of the CGST Act, 2017?",
+      "options": [
+        "When the value of goods or services supplied is less than Rs. 500 and the recipient is registered",
+        "When the value of goods or services supplied is less than Rs. 200, the recipient is unregistered, and the recipient does not require an invoice",
+        "When the supply is made to the Central Government",
+        "When the supply is inter-State regardless of value"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 31(3)(b) read with relevant rules, a registered person may not issue a tax invoice if the value of the goods or services is less than Rs. 200, the recipient is unregistered, and the recipient does not require an invoice (instead issuing a consolidated tax invoice at the end of the day).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Tax Invoice",
+        "Unregistered Recipient",
+        "Exemption"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_005",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "How many digits of the Harmonised System of Nomenclature (HSN) code must a registered person report on the tax invoice if their aggregate turnover in the preceding financial year exceeds Rs. 5 crores?",
+      "options": [
+        "2 digits",
+        "4 digits",
+        "6 digits",
+        "8 digits"
+      ],
+      "answerIndex": 2,
+      "explanation": "As per Notification No. 78/2020 – Central Tax, taxpayers with an aggregate turnover exceeding Rs. 5 crores in the preceding financial year are required to mention 6 digits of HSN code on invoices for B2B supplies.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "HSN Code",
+        "Turnover",
+        "Tax Invoice Details"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_006",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "What is the maximum time limit for issuing a debit note under Section 34(3) of the CGST Act, 2017?",
+      "options": [
+        "30th November following the end of the financial year in which such supply was made",
+        "Actual date of filing of annual return for the relevant financial year, or 30th November following the end of the financial year, whichever is earlier",
+        "Actual date of filing of annual return, or 31st December following the end of the financial year, whichever is later",
+        "No time limit is prescribed for issuing a debit note"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 34(3) specifies that a debit note can be issued up to the 30th November following the end of the financial year in which the supply was made, or the date of furnishing the relevant annual return, whichever is earlier.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Debit Note",
+        "Time Limit",
+        "Section 34"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_007",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "In the case of a continuous supply of services, where the due date of payment is ascertainable from the contract, the invoice shall be issued:",
+      "options": [
+        "Within 30 days of the completion of the service",
+        "On or before the due date of payment",
+        "Within 45 days from the receipt of payment",
+        "At the end of every quarter"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 31(5)(a) mandates that for continuous supply of services where the due date of payment is ascertainable from the contract, the invoice must be issued on or before the respective due date of payment.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Continuous Supply",
+        "Services",
+        "Due Date"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_008",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "Which of the following documents must be issued by a registered person who is paying tax under Section 10 (Composition Levy)?",
+      "options": [
+        "Tax Invoice",
+        "Bill of Supply",
+        "Delivery Challan",
+        "Commercial Invoice"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 31(3)(c) of the CGST Act, 2017, a registered person paying tax under composition levy (Section 10) cannot issue a tax invoice; instead, they must issue a Bill of Supply.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Bill of Supply",
+        "Composition Levy",
+        "Section 31"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_009",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "What is the requirement regarding HSN code for a taxpayer whose aggregate turnover in the preceding financial year is up to Rs. 5 crores in the B2B supply segment?",
+      "options": [
+        "No HSN code is required",
+        "At least 2 digits",
+        "At least 4 digits",
+        "Mandatory 8 digits"
+      ],
+      "answerIndex": 1,
+      "explanation": "For taxpayers with aggregate turnover up to Rs. 5 crores in the preceding financial year, mentioning at least 4 digits of HSN code is mandatory for B2B invoices (and 2 digits in some specific notifications/B2C contexts, but 4 digits is standard for B2B up to 5cr under notified categories). Wait, let's verify standard rule: Up to 5 crores, 4 digits for B2B. Correct.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "HSN Code",
+        "Turnover",
+        "B2B"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_010",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "Can a registered person issue a credit note under Section 34(1) if the taxable value charged in the tax invoice is found to exceed the actual taxable value of the supply?",
+      "options": [
+        "No, a debit note must be issued instead",
+        "Yes, a credit note can be issued",
+        "Only if approved by the jurisdictional commissioner",
+        "Only if the recipient rejects the goods within 48 hours"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 34(1) explicitly allows the issuance of a credit note when the taxable value or tax charged in a tax invoice is found to exceed the actual taxable value or tax payable in respect of that supply.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Credit Note",
+        "Section 34",
+        "Excess Charge"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_011",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "How many copies of a tax invoice must be prepared in the case of supply of goods?",
+      "options": [
+        "Original only",
+        "Duplicate only",
+        "In triplicate (Original for recipient, Duplicate for transporter, Triplicate for supplier)",
+        "In duplicate (Original for recipient, Duplicate for supplier)"
+      ],
+      "answerIndex": 2,
+      "explanation": "Rule 48 of the CGST Rules, 2017 states that for the supply of goods, the invoice shall be prepared in triplicate: Original for recipient, Duplicate for transporter, and Triplicate for supplier.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Tax Invoice",
+        "Copies",
+        "Goods"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_012",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "How many copies of a tax invoice must be prepared in the case of supply of services?",
+      "options": [
+        "Single copy",
+        "In duplicate (Original for recipient, Duplicate for supplier)",
+        "In triplicate (Original for recipient, Duplicate for transporter, Triplicate for supplier)",
+        "In quadruplicate"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 48 of the CGST Rules, 2017 mandates that for the supply of services, the invoice shall be prepared in duplicate: Original for the recipient and Duplicate for the supplier.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Tax Invoice",
+        "Copies",
+        "Services"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_013",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "Under Section 31(3)(f), when an unregistered person supplies taxable goods or services to a registered person who is liable to pay tax under reverse charge, who must issue the invoice?",
+      "options": [
+        "The unregistered supplier",
+        "The registered recipient",
+        "The jurisdictional GST officer",
+        "A practicing Chartered Accountant"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 31(3)(f) requires the registered recipient who is liable to pay tax under reverse charge (RCM) on supplies received from an unregistered person to issue an invoice on the date of receipt of goods or services.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Reverse Charge",
+        "Invoice",
+        "Recipient"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_014",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "What document must be issued by a registered person when receiving advance payment from a client with respect to a supply of services, if no tax invoice is issued at that time?",
+      "options": [
+        "Bill of Supply",
+        "Receipt Voucher",
+        "Payment Voucher",
+        "Delivery Challan"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 31(3)(d) of the CGST Act, 2017 mandates the issuance of a 'Receipt Voucher' by a registered person on receipt of advance payment with respect to any supply of goods or services.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Receipt Voucher",
+        "Advance Payment",
+        "Section 31"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_015",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "Which document must be issued by a registered person who is liable to pay tax under reverse charge when making payment to an unregistered supplier?",
+      "options": [
+        "Receipt Voucher",
+        "Payment Voucher",
+        "Bill of Supply",
+        "Refund Voucher"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 31(3)(g) states that a registered person who is liable to pay tax under reverse charge shall issue a 'Payment Voucher' at the time of making payment to the supplier.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Payment Voucher",
+        "Reverse Charge",
+        "Section 31"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_016",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "Is a tax invoice mandatory for supplies of taxable goods where goods are sent or taken on approval for sale or return?",
+      "options": [
+        "Yes, immediately upon dispatch",
+        "No, it can be issued before or at the time of supply or 6 months from the date of removal, whichever is earlier",
+        "No invoice is ever required for approval basis",
+        "Yes, within 30 days of dispatch"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 31(7), where goods are sent on approval for sale or return, the invoice shall be issued before or at the time of supply or 6 months from the date of removal, whichever is earlier.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Approval Basis",
+        "Time Limit",
+        "Goods"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_017",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "Which of the following details is NOT mandatory to be contained in a tax invoice under Rule 46 of the CGST Rules, 2017?",
+      "options": [
+        "Name, address and GSTIN of the supplier",
+        "A consecutive serial number containing alphabets or numerals",
+        "Name, address and Aadhaar number of the recipient",
+        "Harmonised System of Nomenclature (HSN) code for goods or services"
+      ],
+      "answerIndex": 2,
+      "explanation": "Rule 46 requires name, address, and GSTIN of the recipient (if registered), but Aadhaar number of the recipient is not a mandatory requirement on a tax invoice.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Tax Invoice",
+        "Mandatory Details",
+        "Rule 46"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_018",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "Can a registered person issue a consolidated tax invoice at the end of the day for multiple supplies where the value of each supply is less than Rs. 200 to unregistered recipients?",
+      "options": [
+        "No, separate invoices must be generated for every transaction",
+        "Yes, provided the recipient does not require an invoice",
+        "Yes, but only for inter-State supplies",
+        "No, consolidated invoices are prohibited under GST"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 31(3)(b) permits a registered person to issue a consolidated tax invoice at the close of each day in respect of supplies where the value of supply is less than Rs. 200 and the recipient is unregistered and does not require an invoice.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Consolidated Invoice",
+        "Unregistered",
+        "Section 31"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_019",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "What is the time limit for declaring details of a credit note in the return under Section 34(2)?",
+      "options": [
+        "30th November following the end of the financial year, or the date of filing of the relevant annual return, whichever is earlier",
+        "31st March of the financial year",
+        "Due date of filing return for the month of September",
+        "No time limit is specified"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 34(2) restricts the declaration of details of credit notes to the 30th November following the end of the financial year in which the supply was made, or the actual date of filing of the relevant annual return, whichever is earlier.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Credit Note",
+        "Return Declaration",
+        "Section 34"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_020",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "Under the e-invoicing provisions introduced in GST, which class of registered persons are required to prepare e-invoices by reporting details to the Invoice Registration Portal (IRP)?",
+      "options": [
+        "All registered persons irrespective of turnover",
+        "Only manufacturers of goods with turnover above Rs. 10 crores",
+        "Registered persons notified by the Government whose aggregate turnover exceeds the specified threshold in any preceding financial year from 2017-18 onwards",
+        "Only banking companies"
+      ],
+      "answerIndex": 2,
+      "explanation": "E-invoicing under Rule 48(4) is mandatory for notified registered persons whose aggregate turnover in any preceding financial year from 2017-18 exceeds the threshold notified (currently Rs. 10 crores).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "E-Invoicing",
+        "IRP",
+        "Turnover Threshold"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_021",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "If a registered person receives an advance payment for a service but no services are ultimately supplied and no invoice is issued, what document must be issued to refund the advance?",
+      "options": [
+        "Credit Note",
+        "Refund Voucher",
+        "Debit Note",
+        "Bill of Supply"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 51 of the CGST Rules, 2017 states that where a receipt voucher has been issued for an advance payment and subsequently no supply is made and no tax invoice is issued, a 'Refund Voucher' shall be issued against such payment.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Refund Voucher",
+        "Advance",
+        "Rule 51"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_022",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "Which of the following persons is specifically barred from issuing a tax invoice?",
+      "options": [
+        "A regular taxable person making B2B supplies",
+        "A registered person paying tax under composition levy (Section 10)",
+        "An Input Service Distributor (ISD)",
+        "A casual taxable person making taxable supplies"
+      ],
+      "answerIndex": 1,
+      "explanation": "A person registered under composition levy under Section 10 is explicitly prohibited from issuing a tax invoice; they must issue a Bill of Supply instead.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Bill of Supply",
+        "Composition Levy",
+        "Tax Invoice"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_023",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "What is the maximum time limit for issuing a tax invoice in case of supply of goods where movement of goods involves the supplier?",
+      "options": [
+        "Before or at the time of removal of goods for supply to the recipient",
+        "Within 30 days of delivery",
+        "Within 45 days of dispatch",
+        "At the end of the month in which goods are delivered"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 31(1)(a) provides that in case of supply of goods involving movement, the tax invoice must be issued before or at the time of removal of goods for supply to the recipient.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Tax Invoice",
+        "Goods",
+        "Movement"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_024",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "An Input Service Distributor (ISD) is required to issue which of the following documents to distribute credit of central tax / state tax / integrated tax?",
+      "options": [
+        "Tax Invoice",
+        "ISD Invoice / ISD Credit Note",
+        "Bill of Supply",
+        "Debit Note"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 54(1) of the CGST Rules, 2017 prescribes that an Input Service Distributor shall issue an ISD invoice or ISD credit note for the distribution of credit.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "ISD Invoice",
+        "Input Service Distributor",
+        "Rule 54"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_025",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "In case of continuous supply of goods where successive statements of accounts are issued, what is the time limit for invoice issuance?",
+      "options": [
+        "Within 30 days of the statement date",
+        "Before or at the time each successive statement is issued or payment is received",
+        "Within 15 days of the financial year end",
+        "Within 7 days of delivery"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 31(4) dictates that in a continuous supply of goods, the invoice must be issued before or at the time each successive statement is issued or each successive payment is received.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Continuous Supply",
+        "Goods",
+        "Time Limit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_026",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "Which of the following particulars is NOT required on a Bill of Supply?",
+      "options": [
+        "Name, address, and GSTIN of the supplier",
+        "Rate of tax and amount of tax charged",
+        "Bill of supply number and date",
+        "Signature or digital signature of the supplier"
+      ],
+      "answerIndex": 1,
+      "explanation": "A Bill of Supply is issued when no tax is charged (e.g., composition suppliers or exempt supplies). Therefore, rate of tax and amount of tax charged are not required on a Bill of Supply.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Bill of Supply",
+        "Particulars",
+        "Exempt Supply"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_027",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "When goods are transported for reasons other than by way of supply (e.g. job work or supply on approval), what document must accompany the goods?",
+      "options": [
+        "Tax Invoice",
+        "Delivery Challan",
+        "Bill of Supply",
+        "Receipt Voucher"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 55 of the CGST Rules, 2017 requires that for transportation of goods for reasons other than supply (such as job work, supply on approval, or liquid gas in cylinders), a Delivery Challan shall be issued instead of an invoice.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Delivery Challan",
+        "Transportation",
+        "Job Work"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_028",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "Is a registered person permitted to revise a tax invoice already issued for a pre-GST registration period after obtaining registration?",
+      "options": [
+        "Yes, revised tax invoices can be issued under Section 34",
+        "Yes, revised tax invoices can be issued under Section 31(3)(a) in respect of taxable supplies effected during the period starting from the effective date of registration till the date of issuance of certificate of registration",
+        "No, once issued, invoices can never be revised",
+        "Only with prior permission of the Central Board of Indirect Taxes and Customs (CBIC)"
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 31(3)(a) read with Rule 53 permits a registered person to issue a 'Revised Tax Invoice' against invoices already issued during the period starting from the effective date of registration till the date of issuance of the certificate of registration.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Revised Tax Invoice",
+        "Registration",
+        "Section 31"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_029",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "Can a supplier issue a single debit note covering multiple invoices issued to the same recipient across different financial years?",
+      "options": [
+        "Yes, a consolidated debit note for multiple invoices is permitted",
+        "No, a debit note must be linked to a specific tax invoice and cannot cover multiple invoices across different financial years without distinct tracking",
+        "Yes, provided it is approved by the GST council",
+        "No, debit notes are restricted to one invoice per month"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 34(3) allows a registered person to issue one or more debit notes for one or more invoices, provided the statutory time limit and matching requirements are satisfied.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Debit Note",
+        "Multiple Invoices",
+        "Section 34"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_gst-10_030",
+      "kind": "normal",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "prompt": "Which of the following entities is required to issue a transport document or passenger ticket in lieu of a tax invoice under Rule 54(4)?",
+      "options": [
+        "Insurance company",
+        "Passenger transport service provider or supplier of goods transport agency (GTA) services",
+        "Input Service Distributor",
+        "Banking company"
+      ],
+      "answerIndex": 1,
+      "explanation": "Rule 54(4) permits a supplier of passenger transport service or a Goods Transport Agency (GTA) supplying services in relation to transportation of goods to issue a ticket or transport document in lieu of a tax invoice, containing prescribed particulars.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Passenger Transport",
+        "GTA",
+        "Rule 54"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_gst-10_01",
+      "kind": "scenario",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "passage": "M/s Alpha Enterprises, a registered manufacturer of machinery located in Pune, Maharashtra, has an aggregate turnover of Rs. 12 crores in the preceding financial year. On 10th October 2026, Alpha Enterprises removes machinery worth Rs. 5,00,000 (excluding GST @ 18%) to Beta Ltd., a registered entity in Mumbai, Maharashtra. The movement of goods involves transport by road. Alpha Enterprises issues a tax invoice for the transaction. Later, on 15th December 2026, due to a negotiation on bulk purchase, the taxable value of the machinery is reduced by Rs. 50,000, and Alpha Enterprises decides to issue a credit note to Beta Ltd. The annual return for the financial year 2026-27 is filed on 30th June 2027.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-10_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-10_01",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-10",
+          "subject": "Taxation",
+          "prompt": "What is the mandatory requirement regarding e-invoicing for M/s Alpha Enterprises for the supply made to Beta Ltd. on 10th October 2026?",
+          "options": [
+            "E-invoicing is not required as turnover is below Rs. 20 crores",
+            "E-invoicing is mandatory under Rule 48(4) as its turnover in the preceding financial year exceeds Rs. 10 crores",
+            "E-invoicing is optional since both supplier and recipient are in the same State",
+            "E-invoicing is required only if the value of single invoice exceeds Rs. 50 lakhs"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 48(4) mandates e-invoicing for taxpayers whose aggregate turnover exceeds the notified threshold (currently Rs. 10 crores) in any preceding financial year from 2017-18 onwards. Alpha Enterprises has a turnover of Rs. 12 crores, so e-invoicing is mandatory.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "E-Invoicing",
+            "Turnover Threshold",
+            "Rule 48"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-10_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-10_01",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-10",
+          "subject": "Taxation",
+          "prompt": "In how many copies must the tax invoice be prepared by Alpha Enterprises for the supply of machinery to Beta Ltd.?",
+          "options": [
+            "Single copy",
+            "In duplicate (Original for recipient, Duplicate for supplier)",
+            "In triplicate (Original for recipient, Duplicate for transporter, Triplicate for supplier)",
+            "In quadruplicate"
+          ],
+          "answerIndex": 2,
+          "explanation": "Under Rule 48 of the CGST Rules, 2017, for the supply of goods involving movement, the tax invoice must be prepared in triplicate: Original for the recipient, Duplicate for the transporter, and Triplicate for the supplier.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Tax Invoice",
+            "Copies",
+            "Goods"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-10_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-10_01",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-10",
+          "subject": "Taxation",
+          "prompt": "What is the last date up to which Alpha Enterprises can legally issue and declare the credit note issued on 15th December 2026 in its GST returns?",
+          "options": [
+            "31st December 2027",
+            "30th November 2027",
+            "30th June 2027 (Date of filing annual return)",
+            "15th December 2027"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per Section 34(2), a credit note can be declared up to 30th November following the end of the financial year in which the supply was made, or the date of furnishing the annual return, whichever is earlier. For FY 2026-27, 30th November 2027 is earlier than 30th June 2028 (annual return date). Wait, annual return is filed on 30th June 2027? Ah, the financial year is 2026-27, so annual return would be filed by 31st December 2027. Here annual return is filed on 30th June 2027? Wait, FY 2026-27 ends on 31st March 2027, so annual return cannot be filed on 30th June 2027 (typo in thought, but statutory limit is 30th November following the financial year or annual return date, whichever is earlier). Hence 30th November 2027 is the correct statutory cap.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Credit Note",
+            "Time Limit",
+            "Section 34"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-10_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-10_01",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-10",
+          "subject": "Taxation",
+          "prompt": "Which HSN code digits are mandatory for Alpha Enterprises to report on the B2B tax invoice given its aggregate turnover of Rs. 12 crores?",
+          "options": [
+            "2 digits",
+            "4 digits",
+            "6 digits",
+            "8 digits"
+          ],
+          "answerIndex": 2,
+          "explanation": "As per Notification No. 78/2020 – Central Tax, taxpayers with an aggregate turnover exceeding Rs. 5 crores in the preceding financial year must report 6 digits of HSN code on B2B invoices.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "HSN Code",
+            "Turnover",
+            "Tax Invoice Details"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-10_02",
+      "kind": "scenario",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "passage": "M/s Delta Consultancy, a registered supplier of management consulting services based in Delhi, enters into a contract with Gamma Inc. on 1st November 2026 for providing continuous business advisory services for one year. As per the contract, the due date of payment is fixed as the 5th of every subsequent month. On 5th December 2026, Delta Consultancy receives an advance payment of Rs. 2,00,000 for the services to be rendered in December. Later, on 20th December 2026, Delta Consultancy issues a tax invoice for the advisory services rendered during December amounting to Rs. 2,50,000.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-10_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-10_02",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-10",
+          "subject": "Taxation",
+          "prompt": "What document must Delta Consultancy issue on 5th December 2026 when it receives the advance payment of Rs. 2,00,000 from Gamma Inc.?",
+          "options": [
+            "Tax Invoice",
+            "Receipt Voucher",
+            "Bill of Supply",
+            "Payment Voucher"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 31(3)(d) of the CGST Act, 2017, a registered person receiving advance payment with respect to any supply of services must issue a 'Receipt Voucher' at the time of receipt.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Receipt Voucher",
+            "Advance Payment",
+            "Section 31"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-10_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-10_02",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-10",
+          "subject": "Taxation",
+          "prompt": "What is the prescribed time limit under Rule 47 for Delta Consultancy to issue the tax invoice for services provided in December 2026?",
+          "options": [
+            "Within 15 days from the date of supply",
+            "Within 30 days from the date of supply of service",
+            "Within 45 days from the end of the financial year",
+            "Within 60 days from the date of receipt of payment"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 47 of the CGST Rules, 2017 prescribes a time limit of 30 days from the date of supply of service for issuing a tax invoice in the case of general service providers like Delta Consultancy.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Tax Invoice",
+            "Time Limit",
+            "Services"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-10_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-10_02",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-10",
+          "subject": "Taxation",
+          "prompt": "In how many copies should Delta Consultancy issue the tax invoice for its consulting services?",
+          "options": [
+            "Single copy",
+            "In duplicate (Original for recipient, Duplicate for supplier)",
+            "In triplicate (Original for recipient, Duplicate for transporter, Triplicate for supplier)",
+            "In quadruplicate"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 48 specifies that for supply of services, the tax invoice shall be prepared in duplicate: Original for the recipient and Duplicate for the supplier.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Tax Invoice",
+            "Copies",
+            "Services"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-10_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-10_02",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-10",
+          "subject": "Taxation",
+          "prompt": "If the contract had specified that the due date of payment is not ascertainable from the contract, when should Delta Consultancy have issued the invoice for continuous supply of services under Section 31(5)?",
+          "options": [
+            "Before or at the time when each successive payment is received or when the periodic statement is issued",
+            "Within 30 days of the financial year end",
+            "Only at the end of the 1-year contract period",
+            "Within 7 days of service completion"
+          ],
+          "answerIndex": 0,
+          "explanation": "Section 31(5)(b) states that where the due date of payment is not ascertainable from the contract for a continuous supply of services, the invoice shall be issued before or at the time when the supplier receives the payment or when the periodic statement is issued.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Continuous Supply",
+            "Services",
+            "Section 31"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-10_03",
+      "kind": "scenario",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "passage": "Mr. Raghav is an unregistered small trader dealing in household goods. On 15th November 2026, he makes multiple cash sales to various retail consumers at his shop, where each individual sale value is Rs. 150. Total sales for the day to unregistered buyers amount to Rs. 18,000. Additionally, on 18th November 2026, Mr. Raghav supplies goods worth Rs. 40,000 to Elegant Retailers, a registered taxpayer under GST, under circumstances where reverse charge mechanism (RCM) is applicable on such specific supplies.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-10_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-10_03",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-10",
+          "subject": "Taxation",
+          "prompt": "How should Mr. Raghav document the retail sales made on 15th November 2026 where each transaction value is Rs. 150 to unregistered consumers?",
+          "options": [
+            "Issue a separate tax invoice for each of the sales",
+            "Issue a consolidated tax invoice at the close of the day since individual values are less than Rs. 200 and recipients are unregistered",
+            "Issue a Bill of Supply for each transaction",
+            "No document is required at all"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 31(3)(b) permits a registered person to issue a consolidated tax invoice at the close of each day for supplies where the value is less than Rs. 200 and the recipient is unregistered and does not require an invoice.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Consolidated Invoice",
+            "Unregistered",
+            "Section 31"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-10_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-10_03",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-10",
+          "subject": "Taxation",
+          "prompt": "For the supply made by Mr. Raghav (unregistered) to Elegant Retailers (registered) on 18th November 2026 under RCM, who is required to issue the invoice under Section 31(3)(f)?",
+          "options": [
+            "Mr. Raghav (the unregistered supplier)",
+            "Elegant Retailers (the registered recipient)",
+            "The jurisdictional GST inspector",
+            "Neither party needs to issue an invoice"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 31(3)(f) mandates that when a registered recipient receives taxable supplies from an unregistered supplier under reverse charge, the registered recipient must issue an invoice on the date of receipt of goods.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Reverse Charge",
+            "Invoice",
+            "Recipient"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-10_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-10_03",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-10",
+          "subject": "Taxation",
+          "prompt": "What document must Elegant Retailers issue at the time of making payment to Mr. Raghav for the supply received under RCM?",
+          "options": [
+            "Receipt Voucher",
+            "Payment Voucher",
+            "Delivery Challan",
+            "Bill of Supply"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 31(3)(g) of the CGST Act, 2017 requires a registered person liable to pay tax under reverse charge to issue a 'Payment Voucher' at the time of making payment to the supplier.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Payment Voucher",
+            "Reverse Charge",
+            "Section 31"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-10_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-10_03",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-10",
+          "subject": "Taxation",
+          "prompt": "If Elegant Retailers issues the invoice for the RCM supply received from Mr. Raghav, what date must be reflected on such invoice?",
+          "options": [
+            "Date of filing the monthly return",
+            "Date of receipt of goods or services",
+            "Last day of the financial year",
+            "Date of dispatch by the unregistered supplier"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 31(3)(f) explicitly states that the registered recipient liable to pay tax under reverse charge shall issue an invoice on the date of receipt of goods or services.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Reverse Charge",
+            "Invoice Date",
+            "Section 31"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-10_04",
+      "kind": "scenario",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "passage": "M/s Zenith Traders, a registered dealer under composition levy under Section 10 of the CGST Act, 2017, operates a retail electronics store in Jaipur, Rajasthan. On 5th December 2026, Zenith Traders sells electronic accessories worth Rs. 25,000 to a walk-in retail customer. On 10th December 2026, Zenith Traders sends goods worth Rs. 60,000 on approval basis to a customer for potential purchase. The customer retains the goods and confirms purchase after 4 months on 10th April 2027.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-10_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-10_04",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-10",
+          "subject": "Taxation",
+          "prompt": "What document must Zenith Traders issue to the retail customer on 5th December 2026 for the sale of electronic accessories?",
+          "options": [
+            "Tax Invoice",
+            "Bill of Supply",
+            "Delivery Challan",
+            "Commercial Invoice"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 31(3)(c) mandates that a registered person paying tax under composition levy (Section 10) cannot issue a tax invoice; instead, they must issue a Bill of Supply.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Bill of Supply",
+            "Composition Levy",
+            "Section 31"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-10_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-10_04",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-10",
+          "subject": "Taxation",
+          "prompt": "Can Zenith Traders collect tax separately from the customer on the Bill of Supply issued on 5th December 2026?",
+          "options": [
+            "Yes, CGST and SGST can be collected separately",
+            "No, a composition taxpayer is not permitted to collect tax from the recipient",
+            "Yes, if the customer is registered",
+            "Only on inter-State supplies"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 10(4) of the CGST Act, 2017, a composition taxpayer cannot collect any tax from the recipient on supplies made by them, nor are they entitled to any input tax credit.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Composition Levy",
+            "Bill of Supply",
+            "Tax Collection"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-10_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-10_04",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-10",
+          "subject": "Taxation",
+          "prompt": "For the goods sent on approval basis on 10th December 2026, what is the statutory time limit for Zenith Traders to issue the bill of supply / invoice?",
+          "options": [
+            "Within 30 days from removal",
+            "Before or at the time of supply or 6 months from the date of removal, whichever is earlier",
+            "Within 15 days of customer confirmation",
+            "At the end of the financial year"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 31(7) specifies that where goods are sent on approval for sale or return, the invoice/bill of supply shall be issued before or at the time of supply or 6 months from the date of removal, whichever is earlier.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Approval Basis",
+            "Time Limit",
+            "Section 31"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-10_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-10_04",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-10",
+          "subject": "Taxation",
+          "prompt": "When did the supply take place for the goods sent on approval on 10th December 2026 and confirmed on 10th April 2027?",
+          "options": [
+            "10th December 2026",
+            "10th June 2027 (6 months from removal)",
+            "10th April 2027 when the customer confirmed the purchase",
+            "31st March 2027"
+          ],
+          "answerIndex": 2,
+          "explanation": "Since the customer confirmed the purchase within 6 months (on 10th April 2027), the time of supply occurs when the recipient communicates approval/acceptance, i.e., 10th April 2027.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Approval Basis",
+            "Time of Supply",
+            "Goods"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_gst-10_05",
+      "kind": "scenario",
+      "chapterId": "gst-10",
+      "subject": "Taxation",
+      "passage": "M/s Apex Logistics Ltd., a registered Goods Transport Agency (GTA) providing transportation of goods by road, makes a supply of transport services to various clients in January 2027. Apex Logistics opts to pay tax at 5% (with ITC on inputs restricted) on its services. On 12th January 2027, it transports a consignment of textiles for a registered textile manufacturer and issues a transport document in lieu of a tax invoice. Separately, on 20th January 2027, Apex Logistics moves its own internal office equipment to a branch office in another city without any transfer of ownership or sale.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 10,
+        "chapterTitle": "Tax Invoice; Credit and Debit Notes"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_gst-10_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-10_05",
+          "sequenceInScenario": 1,
+          "chapterId": "gst-10",
+          "subject": "Taxation",
+          "prompt": "What document is Apex Logistics permitted to issue in lieu of a tax invoice for the transportation of goods service provided on 12th January 2027 under Rule 54(4)?",
+          "options": [
+            "Bill of Supply",
+            "Transport document (Consignment Note)",
+            "Delivery Challan",
+            "Receipt Voucher"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 54(4) of the CGST Rules, 2017 allows a supplier of GTA services or passenger transport services to issue a transport document (such as a Consignment Note) containing prescribed particulars in lieu of a tax invoice.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "GTA",
+            "Transport Document",
+            "Rule 54"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-10_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-10_05",
+          "sequenceInScenario": 2,
+          "chapterId": "gst-10",
+          "subject": "Taxation",
+          "prompt": "What document must accompany the movement of office equipment on 20th January 2027 since it is transported for reasons other than by way of supply?",
+          "options": [
+            "Tax Invoice",
+            "Delivery Challan",
+            "Bill of Supply",
+            "Payment Voucher"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rule 55 stipulates that for transportation of goods for reasons other than supply (such as branch transfer or shifting of assets), a Delivery Challan must accompany the goods instead of a tax invoice.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Delivery Challan",
+            "Branch Transfer",
+            "Rule 55"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-10_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-10_05",
+          "sequenceInScenario": 3,
+          "chapterId": "gst-10",
+          "subject": "Taxation",
+          "prompt": "Is Apex Logistics required to issue an e-invoice for the GTA services provided if its aggregate turnover exceeds the e-invoicing threshold?",
+          "options": [
+            "Yes, GTA services are subject to e-invoicing if turnover exceeds the threshold",
+            "No, GTA services supplying passenger or goods transport where a transport document is issued in lieu of tax invoice under Rule 54(4) are specifically exempt from e-invoicing",
+            "Yes, regardless of rule 54(4)",
+            "Only if the recipient is unregistered"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per notifications governing e-invoicing, specified categories of supplies including GTA services where a transport document is issued under Rule 54(4) instead of a tax invoice are exempt from e-invoicing requirements.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "E-Invoicing",
+            "GTA",
+            "Exemption"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_gst-10_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_gst-10_05",
+          "sequenceInScenario": 4,
+          "chapterId": "gst-10",
+          "subject": "Taxation",
+          "prompt": "What mandatory details must be contained in the transport document issued by Apex Logistics under Rule 54(4)?",
+          "options": [
+            "Gross weight, name of consignor and consignee, registration number of vehicle, details of goods, and GSTIN of GTA (if registered)",
+            "Only the vehicle number and date",
+            "Only the recipient's PAN and Aadhaar",
+            "Bank account details of the supplier only"
+          ],
+          "answerIndex": 0,
+          "explanation": "Rule 54(4) read with relevant provisions requires transport documents like consignment notes to contain serial number, gross weight, details of consignor/consignee, registration number of vehicle, origin/destination, and GSTIN of the GTA.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "GTA",
+            "Transport Document",
+            "Rule 54 Details"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}

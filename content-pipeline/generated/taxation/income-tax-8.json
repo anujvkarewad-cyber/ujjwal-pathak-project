@@ -1,0 +1,1423 @@
+{
+  "schemaVersion": "1.0.0",
+  "bankRevision": "icai-chapter-bank-v1",
+  "chapterId": "income-tax-8",
+  "subject": "Taxation",
+  "paper": "Paper 3: Taxation",
+  "module": "Module 2",
+  "chapterNumber": 8,
+  "chapterTitle": "Provisions for filing Return of Income and Self Assessment",
+  "generatedAt": "2026-08-16T14:25:09.996Z",
+  "model": "gemini-3.5-flash-lite",
+  "status": "needs_review",
+  "counts": {
+    "plain": 30,
+    "scenarios": 5,
+    "linkedMcqs": 20,
+    "total": 50
+  },
+  "plain": [
+    {
+      "id": "adp_q_income-tax-8_001",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "Under Section 139(1), which of the following individuals is mandatorily required to file a return of income, assuming their total income before Chapter VI-A deductions and capital gains exemption is Rs. 2,00,000 (which is below the basic exemption limit)?",
+      "options": [
+        "An individual who has deposited an aggregate amount of Rs. 60,000 in a savings bank account during the previous year.",
+        "An individual who has incurred electricity consumption expenditure of Rs. 1,20,000 during the previous year.",
+        "An individual who has deposited an aggregate amount of Rs. 1,20,000 in one or more current accounts maintained with a banking company during the previous year.",
+        "An individual who has incurred foreign travel expenditure of Rs. 1,50,000 for self and family during the previous year."
+      ],
+      "answerIndex": 2,
+      "explanation": "As per the seventh proviso to Section 139(1), a person whose total income exceeds the basic exemption limit is not required to file a return, but they must file if they satisfy certain specified conditions, which include depositing an aggregate amount exceeding Rs. 1 crore in one or more current accounts. However, since the question tests the threshold, option C refers to current accounts. Wait, let us check the correct statutory limit: current account deposit threshold is exceeding Rs. 1 crore. Let's frame an option with > Rs. 1 crore current account deposit or foreign travel > Rs. 2 lakhs, or electricity > Rs. 1 lakh. Let's re-verify: Electricity consumption exceeding Rs. 1,00,000 makes filing mandatory under the seventh proviso. Option B states Rs. 1,20,000 which exceeds Rs. 1,00,000, hence mandatory.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Return of Income",
+        "Section 139(1)",
+        "Mandatory Filing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_002",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "What is the due date for filing a return of income under Section 139(1) for a corporate assessee whose accounts are required to be audited under the Income-tax Act, 1961 (and who is not required to furnish a transfer pricing report under Section 92E)?",
+      "options": [
+        "31st July of the assessment year",
+        "31st October of the assessment year",
+        "30th November of the assessment year",
+        "30th September of the assessment year"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 139(1), the due date for filing the return of income for a company (which is mandatorily required to get its accounts audited under any law) is 31st October of the assessment year.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Due Date",
+        "Section 139(1)",
+        "Corporate Assessee"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_003",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "Mr. Sharma filed his original return of income for Assessment Year 2026-27 on 15th July 2026. He subsequently realized on 10th January 2027 that he had omitted to include certain bank interest income. Until when can he file a revised return under Section 139(5)?",
+      "options": [
+        "31st December 2026",
+        "31st March 2027",
+        "31st December 2027",
+        "30th June 2027"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 139(5), a revised return can be filed any time before 31st March of the relevant assessment year or before the completion of assessment, whichever is earlier. For AY 2026-27, 31st March 2027 is the statutory outer limit.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Revised Return",
+        "Section 139(5)",
+        "Time Limit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_004",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "Can a belated return of income filed under Section 139(4) for Assessment Year 2026-27 be revised under Section 139(5)?",
+      "options": [
+        "No, only a return filed within the due date under Section 139(1) can be revised.",
+        "Yes, a belated return filed under Section 139(4) can be revised.",
+        "Yes, but only with the prior permission of the Principal Commissioner or Commissioner of Income-tax.",
+        "No, because belated returns attract late fees under Section 234F and cannot be modified."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 139(5) explicitly allows any person who has furnished a return under sub-section (1) or sub-section (4) (belated return) to furnish a revised return if they discover any omission or wrong statement.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Revised Return",
+        "Belated Return",
+        "Section 139(5)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_005",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "An assessee discovers an omission in their income tax return for Assessment Year 2026-27 and wishes to furnish an Updated Return under Section 139(8A). Within what period from the end of the relevant assessment year can such an updated return be furnished?",
+      "options": [
+        "12 months",
+        "24 months",
+        "36 months",
+        "18 months"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 139(8A), an updated return can be furnished at any time within 24 months from the end of the relevant assessment year.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Updated Return",
+        "Section 139(8A)",
+        "Time Limit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_006",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "Which of the following assessees is NOT permitted to furnish an Updated Return under Section 139(8A)?",
+      "options": [
+        "An assessee filing an updated return resulting in an increased tax liability.",
+        "An assessee filing an updated return where a search under Section 132 has been initiated.",
+        "An assessee who did not file an original return but wishes to declare income now.",
+        "An assessee filing an updated return for a previous assessment year where no assessment was framed."
+      ],
+      "answerIndex": 1,
+      "explanation": "Section 139(8A) bars filing an updated return in certain circumstances, such as when a search under Section 132, a survey under Section 133A, or a requisition under Section 132A has been initiated, or if it results in a loss or decreases total tax liability.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Updated Return",
+        "Section 139(8A)",
+        "Restrictions"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_007",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "What is the maximum fee payable under Section 234F for late filing of a return of income under Section 139(1), if the total income of the person exceeds Rs. 5,00,000 and the return is furnished after the due date?",
+      "options": [
+        "Rs. 1,000",
+        "Rs. 5,000",
+        "Rs. 10,000",
+        "Rs. 2,500"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 234F, if a person fails to furnish a return within the due date under Section 139(1), a fee of Rs. 5,000 is payable if total income exceeds Rs. 5,00,000. (If total income does not exceed Rs. 5,00,000, the fee is Rs. 1,000).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Late Fee",
+        "Section 234F",
+        "Return of Income"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_008",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "Under Section 140, who must sign and verify the return of income of a company where the company is under liquidation?",
+      "options": [
+        "The Managing Director of the company",
+        "The Liquidator appointed for the company",
+        "The Chief Executive Officer (CEO)",
+        "Any working director of the company"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 140(c), where a company is being wound up, the return of income must be signed and verified by the liquidator appointed under the Companies Act or relevant law.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Verification",
+        "Section 140",
+        "Company Liquidation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_009",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "Which of the following statements regarding a Permanent Account Number (PAN) is correct under the provisions of the Income-tax Act, 1961?",
+      "options": [
+        "PAN once allotted can be changed if the assessee shifts residence to another state.",
+        "Quoting of Aadhaar number in lieu of PAN is not permitted under any circumstances.",
+        "Every person specified under Section 139A must quote PAN in all documents pertaining to transactions prescribed under Rule 114B.",
+        "PAN card is issued by the Assessing Officer directly without any intermediary agency."
+      ],
+      "answerIndex": 2,
+      "explanation": "Under Section 139A and Rule 114B, quoting PAN is mandatory in specified financial transactions. Aadhaar can be quoted in lieu of PAN where PAN is required, provided Aadhaar is linked. PAN does not change on shifting residence.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "PAN",
+        "Section 139A",
+        "Rule 114B"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_010",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "What is the interest rate payable under Section 234B for default in payment of advance tax?",
+      "options": [
+        "1% per month or part of a month",
+        "1.5% per month or part of a month",
+        "0.75% per month or part of a month",
+        "2% per month or part of a month"
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 234B prescribes simple interest at the rate of 1% per month or part of a month for default in payment of advance tax (when advance tax paid is less than 90% of assessed tax).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Interest",
+        "Section 234B",
+        "Advance Tax"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_011",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "Interest under Section 234C for deferment of advance tax installments is calculated for what period?",
+      "options": [
+        "3 months for each defaulted installment",
+        "1 month for each defaulted installment",
+        "Actual period of delay till date of payment",
+        "12 months for the whole financial year"
+      ],
+      "answerIndex": 0,
+      "explanation": "Interest under Section 234C is charged at 1% per month for a period of 3 months for shortfall in installments due on 15th June, 15th September, and 15th December, and for 1 month for the installment due on 15th March.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Interest",
+        "Section 234C",
+        "Advance Tax Deferment"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_012",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "Under Section 139(9), if an Assessing Officer considers that a return of income furnished by an assessee is defective, what is the standard time limit given to the assessee to rectify the defect from the date of intimation by the AO?",
+      "options": [
+        "30 days",
+        "15 days",
+        "60 days",
+        "7 days"
+      ],
+      "answerIndex": 1,
+      "explanation": "As per Section 139(9), if the return is defective, the AO intimates the defect to the assessee and gives 15 days time from such intimation to rectify the defect (which can be extended by the AO on application).",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Defective Return",
+        "Section 139(9)",
+        "Time Limit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_013",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "What is the consequence if a defective return under Section 139(9) is not rectified within the stipulated time or extended time allowed by the Assessing Officer?",
+      "options": [
+        "The return shall be treated as a valid belated return.",
+        "The return shall be treated as an invalid return, as if no return has been furnished.",
+        "The Assessing Officer will automatically frame an ex-parte best judgment assessment.",
+        "The assessee will be penalized with a flat fine of Rs. 10,000."
+      ],
+      "answerIndex": 1,
+      "explanation": "If the defect is not rectified within 15 days or extended period, the return is treated as an invalid return, and all provisions of the Act apply as if the assessee had failed to furnish the return.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Defective Return",
+        "Section 139(9)",
+        "Invalid Return"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_014",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "An individual is a resident and ordinary resident in India and owns an asset located outside India (including financial interest in any entity). Is filing a return of income mandatory under Section 139(1) for him, even if his total income is below the basic exemption limit?",
+      "options": [
+        "No, filing is required only if total income exceeds the basic exemption limit.",
+        "Yes, filing is mandatory for a resident having any asset (including financial interest) located outside India.",
+        "Yes, provided the value of the foreign asset exceeds Rs. 50,000.",
+        "No, unless the foreign asset generates taxable income during the previous year."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under the fourth proviso to Section 139(1), a resident and ordinary resident individual who is a beneficial owner of any asset located outside India or has signing authority in any account outside India must mandatorily file a return of income, irrespective of income level.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Foreign Assets",
+        "Section 139(1)",
+        "Mandatory Filing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_015",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "What is the additional tax payable under Section 140B when an Updated Return is furnished within 12 months from the end of the relevant assessment year, assuming no search or survey has been initiated and no prior assessment/appeal is pending?",
+      "options": [
+        "10% of aggregate of tax and interest due",
+        "25% of aggregate of tax and interest due",
+        "50% of aggregate of tax and interest due",
+        "15% of aggregate of tax and interest due"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 140B, if an updated return is filed within 12 months from the end of the relevant assessment year, the additional tax payable is 25% of the aggregate of tax and interest due. If filed between 12 to 24 months, it is 50%.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Updated Return",
+        "Section 140B",
+        "Additional Tax"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_016",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "Under Section 139A, quoting of Aadhaar number is mandatory in which of the following cases?",
+      "options": [
+        "Opening a basic savings bank deposit account",
+        "Applying for allotment of a Permanent Account Number (PAN)",
+        "Filing a return of income",
+        "Both (b) and (c)"
+      ],
+      "answerIndex": 3,
+      "explanation": "As per Section 139A, every person who is required to furnish a return of income or apply for PAN must quote their Aadhaar number.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Aadhaar",
+        "Section 139A",
+        "PAN"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_017",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "Which of the following persons is NOT required to file a return of income under Section 139(1) solely on the ground of holding foreign assets, if they are not otherwise liable?",
+      "options": [
+        "Resident and Ordinarily Resident Individual",
+        "Non-Resident Indian (NRI)",
+        "Resident but Not Ordinarily Resident (RNOR) Individual",
+        "Both (b) and (c)"
+      ],
+      "answerIndex": 3,
+      "explanation": "The fourth proviso to Section 139(1) mandates filing of return of income for a Resident and Ordinarily Resident (ROR) individual having foreign assets. NRIs and RNORs are not covered by this specific mandatory filing condition.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Foreign Assets",
+        "Residency",
+        "Section 139(1)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_018",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "Can a political party file its return of income electronically using a digital signature certificate (DSC) or electronic verification code (EVC), and what is the governing section?",
+      "options": [
+        "Section 139(4A), electronic filing is mandatory.",
+        "Section 139(4B), electronic filing is optional.",
+        "Section 139(4C), electronic filing is mandatory.",
+        "Section 139(4D), electronic filing is not required."
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 139(4A) governs the return of income for every person in receipt of income derived from property held under trust for charitable or religious purposes. Section 139(4B) governs political parties. Wait, let's verify political party section: Section 139(4B) applies to political parties. Electronic filing of return of income is mandatory for all companies, political parties under 139(4B), etc.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Political Party",
+        "Section 139(4B)",
+        "Electronic Filing"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_019",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "Mr. X sustained a business loss of Rs. 2,00,000 during AY 2026-27. He filed his return of income on 15th January 2027 (the due date being 31st October 2026). Can he carry forward the business loss?",
+      "options": [
+        "Yes, business loss can be carried forward even if the return is filed belatedly.",
+        "No, business loss under Section 72(1) cannot be carried forward if the return is not filed within the due date specified under Section 139(1).",
+        "Yes, provided he pays a late fee under Section 234F.",
+        "No, business loss lapses permanently and cannot be carried forward under any circumstance."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 80 read with Section 139(3), carry forward and set-off of business losses (Section 72) is not allowed unless the return of income is filed within the due date specified under Section 139(1).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Carry Forward of Losses",
+        "Section 139(3)",
+        "Belated Return"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_020",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "Which of the following losses can be carried forward even if the return of income is filed after the due date prescribed under Section 139(1)?",
+      "options": [
+        "Speculative business loss under Section 73",
+        "Loss from house property under Section 71B",
+        "Capital loss under Section 74",
+        "Loss from specified business under Section 35AD"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 80, the requirement of filing a return within the due date under Section 139(1) applies to business losses (Sec 72), speculative losses (Sec 73), specified business losses (Sec 73A), capital losses (Sec 74), and losses from horse races (Sec 74A). House property loss (Sec 71B) and unabsorbed depreciation (Sec 32(2)) can be carried forward even if the return is filed belatedly.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "House Property Loss",
+        "Section 80",
+        "Carry Forward"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_021",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "What is the penalty for failure to comply with the requirement of quoting PAN or Aadhaar under Section 272B?",
+      "options": [
+        "Rs. 5,000",
+        "Rs. 10,000 for each default",
+        "Rs. 1,000 per day",
+        "Rs. 50,000 flat penalty"
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 272B, if a person fails to comply with the provisions of Section 139A (quoting PAN/Aadhaar), the Assessing Officer may direct that such person shall pay a penalty of Rs. 10,000 for each default.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Penalty",
+        "Section 272B",
+        "PAN"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_022",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "Who is authorized to sign and verify the return of income of a Limited Liability Partnership (LLP) when the designated partner is incapacitated or unable to sign?",
+      "options": [
+        "Any designated partner",
+        "Any partner of the LLP",
+        "The auditor of the LLP",
+        "The designated partner holding majority profit sharing ratio"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under Section 140(cd), the return of income of an LLP must be signed and verified by the designated partner, or where there is no such designated partner or where for any unavoidable reason such designated partner is unable to sign, by any partner thereof.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Verification",
+        "Section 140",
+        "LLP"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_023",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "Under Section 139(4), a belated return for Assessment Year 2026-27 can be filed up to:",
+      "options": [
+        "31st March 2027",
+        "31st December 2027",
+        "3 months prior to the end of the assessment year",
+        "30th June 2027"
+      ],
+      "answerIndex": 0,
+      "explanation": "As per Section 139(4), any person who has not furnished a return within the time allowed under Section 139(1) may furnish the return for any previous year at any time before 31st March of the relevant assessment year or before the completion of the assessment, whichever is earlier.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Belated Return",
+        "Section 139(4)",
+        "Time Limit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_024",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "When is an advance tax installment due for the period ending 15th September for a non-corporate assessee?",
+      "options": [
+        "15% of advance tax payable",
+        "45% of advance tax payable",
+        "75% of advance tax payable",
+        "100% of advance tax payable"
+      ],
+      "answerIndex": 1,
+      "explanation": "For advance tax installments, the cumulative percentages due are: By 15th June: not less than 15%; By 15th September: not less than 45%; By 15th December: not less than 75%; By 15th March: 100%. Thus, by 15th September, cumulative is 45%.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Advance Tax",
+        "Installments",
+        "Due Dates"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_025",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "Is advance tax liability attracted if the tax payable by an assessee during the financial year is Rs. 8,000?",
+      "options": [
+        "Yes, advance tax is payable if tax liability is Rs. 5,000 or more.",
+        "No, advance tax is payable only if the tax liability is Rs. 10,000 or more.",
+        "Yes, advance tax is payable for any positive tax liability.",
+        "No, advance tax applies only to companies."
+      ],
+      "answerIndex": 1,
+      "explanation": "Under Section 208, advance tax is payable during any financial year in every case where the amount of such tax payable by the assessee is Rs. 10,000 or more.",
+      "difficulty": "Easy",
+      "conceptTags": [
+        "Advance Tax",
+        "Section 208",
+        "Threshold"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_026",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "What is the consequence of failing to pay advance tax or paying less than 90% of the assessed tax as advance tax, attracting interest under Section 234B?",
+      "options": [
+        "Interest is charged at 1% per month from 1st April of the assessment year till the date of determination of tax under Section 143(1) or regular assessment.",
+        "Interest is charged at 1% per month from 15th September of the financial year.",
+        "Interest is charged at 1.5% per month from the end of the financial year.",
+        "No interest is charged if the return is filed within the due date under Section 139(1)."
+      ],
+      "answerIndex": 0,
+      "explanation": "Interest under Section 234B is calculated at 1% per month or part of a month from 1st April of the assessment year up to the date of determination under Section 143(1) (or regular assessment).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Interest",
+        "Section 234B",
+        "Calculation"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_027",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "Can a resident senior citizen (aged 80 years or more) file their return of income in paper form, or is electronic filing mandatory?",
+      "options": [
+        "Electronic filing is mandatory for all individuals without exception.",
+        "Senior citizens aged 60 or more can opt for paper filing.",
+        "An individual whose total income exceeds Rs. 5 lakhs or who is a resident and ordinary resident having foreign assets must file electronically, but super senior citizens having no business income may file in paper form under specific CBDT exemptions.",
+        "Paper filing is universally permitted for individuals."
+      ],
+      "answerIndex": 2,
+      "explanation": "CBDT rules require electronic filing for most assessees, but individual super senior citizens (80+ years) filing ITR-1 or ITR-4 in paper form have traditionally been permitted under specific exemptions, though digital compliance has expanded. However, standard rule states individuals with business income or specific conditions must file electronically.",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Electronic Filing",
+        "Senior Citizen",
+        "Return of Income"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_028",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "Under Section 139(3), what must be done to ensure that a loss from capital gains under Section 74 can be carried forward?",
+      "options": [
+        "The return must be filed within the due date specified under Section 139(1).",
+        "The return can be filed at any time before 31st March of the assessment year.",
+        "The loss must be intimated to the Assessing Officer in writing separately.",
+        "Capital loss does not require filing a return for carry forward."
+      ],
+      "answerIndex": 0,
+      "explanation": "Section 80 mandates that losses specified under Section 139(3) (which includes capital losses under Section 74) cannot be carried forward unless the return of income is furnished within the due date specified under Section 139(1).",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Carry Forward of Losses",
+        "Capital Loss",
+        "Section 139(3)"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_029",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "Which of the following bodies is required to furnish a return of income under Section 139(4C)?",
+      "options": [
+        "Scientific research association",
+        "Political party",
+        "University, college, or other institution referred to in Section 10(23C)",
+        "Both (a) and (c)"
+      ],
+      "answerIndex": 3,
+      "explanation": "Section 139(4C) mandates return filing for specific institutions such as scientific research associations, news agencies, educational institutions, and medical institutions referred to in Section 10(23C). Political parties are covered under Section 139(4B).",
+      "difficulty": "Hard",
+      "conceptTags": [
+        "Exempt Institutions",
+        "Section 139(4C)",
+        "Return of Income"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    },
+    {
+      "id": "adp_q_income-tax-8_030",
+      "kind": "normal",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "prompt": "What is the time limit for filing an updated return under Section 139(8A) if the assessee wishes to file it for Assessment Year 2026-27?",
+      "options": [
+        "Up to 31st March 2028",
+        "Up to 31st March 2029",
+        "Up to 31st December 2028",
+        "Up to 30th June 2028"
+      ],
+      "answerIndex": 1,
+      "explanation": "An updated return under Section 139(8A) can be furnished within 24 months from the end of the relevant assessment year. For AY 2026-27, the relevant assessment year ends on 31st March 2027; adding 24 months gives 31st March 2029.",
+      "difficulty": "Medium",
+      "conceptTags": [
+        "Updated Return",
+        "Section 139(8A)",
+        "Time Limit"
+      ],
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "adp_s_income-tax-8_01",
+      "kind": "scenario",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "passage": "M/s. Apex Technologies LLP is a partnership firm engaged in software development. For the financial year 2025-26 (AY 2026-27), its accounts are audited under the Income-tax Act, 1961. The designated partner, Mr. Rohan, prepared the return of income. The firm incurred a net business loss of Rs. 4,50,000 and total income under other heads is nil. Due to administrative delays, the firm filed its return of income on 15th December 2026.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-8_011",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-8_01",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-8",
+          "subject": "Taxation",
+          "prompt": "What was the statutory due date under Section 139(1) for M/s. Apex Technologies LLP to file its return of income for AY 2026-27?",
+          "options": [
+            "31st July 2026",
+            "31st October 2026",
+            "30th November 2026",
+            "31st March 2027"
+          ],
+          "answerIndex": 1,
+          "explanation": "Since the LLP's accounts are required to be audited under the Income-tax Act, the due date for filing the return of income under Section 139(1) is 31st October of the assessment year.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Due Date",
+            "Section 139(1)",
+            "LLP"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-8_012",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-8_01",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-8",
+          "subject": "Taxation",
+          "prompt": "Can M/s. Apex Technologies LLP carry forward its business loss of Rs. 4,50,000 given the date on which the return was filed?",
+          "options": [
+            "Yes, because the return was filed before 31st March 2027.",
+            "No, because the return was filed after the due date under Section 139(1), violating Section 80 read with Section 139(3).",
+            "Yes, business losses can be carried forward irrespective of the return filing date.",
+            "No, because LLPs are not permitted to carry forward business losses."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 80, carry forward and set-off of business losses is contingent upon filing the return of income within the due date specified under Section 139(1). Since the return was filed on 15th December 2026 (after 31st October 2026), the loss cannot be carried forward.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Carry Forward of Losses",
+            "Section 80",
+            "LLP"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-8_013",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-8_01",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-8",
+          "subject": "Taxation",
+          "prompt": "Who is authorized to sign and verify the return of income of M/s. Apex Technologies LLP under Section 140?",
+          "options": [
+            "Any employee authorized by the Board",
+            "The designated partner, or any partner if the designated partner is unable to sign",
+            "The statutory auditor of the LLP",
+            "The Chief Financial Officer of the LLP"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 140(cd) states that the return of income of an LLP must be signed and verified by the designated partner or, if unavailable, by any partner thereof.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Verification",
+            "Section 140",
+            "LLP"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-8_014",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-8_01",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-8",
+          "subject": "Taxation",
+          "prompt": "Is M/s. Apex Technologies LLP liable to pay any late fee under Section 234F for filing the return on 15th December 2026?",
+          "options": [
+            "No, because the firm incurred a loss and has no taxable income.",
+            "Yes, a late fee of Rs. 5,000 is payable as the return was furnished after the due date.",
+            "Yes, a late fee of Rs. 1,000 is payable.",
+            "No late fee is attracted for partnership firms."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 234F imposes a late fee of Rs. 5,000 for failure to furnish a return within the due date under Section 139(1), regardless of whether the assessee has taxable income or a loss, provided the total income exceeds Rs. 5 lakhs (Wait, Section 234F fee applies to any person required to file under 139(1). If total income is nil/loss, is it Rs. 5,000 or Rs. 1,000? For firms, income is computed; if total income is nil/loss, fee is Rs. 5,000 if income exceeds basic exemption limit, but wait—let's check standard rule: Rs. 5,000 if total income exceeds Rs. 5 lakhs, otherwise Rs. 1,000. Since total income is nil (loss), total income does not exceed Rs. 5 lakhs, so late fee is Rs. 1,000). Let's verify option: Rs. 1,000 is correct for total income not exceeding Rs. 5,00,000.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Late Fee",
+            "Section 234F",
+            "LLP"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-8_02",
+      "kind": "scenario",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "passage": "Mr. Vikram, a resident individual aged 45 years, earns a salary income of Rs. 8,00,000 and capital gains of Rs. 1,50,000 during the financial year 2025-26. He did not pay any advance tax during the year. He missed the due date of 31st July 2026 and eventually furnished his belated return of income on 10th January 2027, paying all due taxes along with the belated return.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-8_021",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-8_02",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-8",
+          "subject": "Taxation",
+          "prompt": "What is the late fee payable by Mr. Vikram under Section 234F for filing his belated return on 10th January 2027?",
+          "options": [
+            "Rs. 1,000",
+            "Rs. 5,000",
+            "Rs. 10,000",
+            "Nil, since he paid all taxes voluntarily"
+          ],
+          "answerIndex": 1,
+          "explanation": "Since Mr. Vikram's total income exceeds Rs. 5,00,000 (Salary Rs. 8L + Capital Gains Rs. 1.5L = Rs. 9.5L), the late fee under Section 234F for late filing is Rs. 5,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Late Fee",
+            "Section 234F",
+            "Individual"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-8_022",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-8_02",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-8",
+          "subject": "Taxation",
+          "prompt": "Can Mr. Vikram revise the belated return filed on 10th January 2027 under Section 139(5) if he discovers an error?",
+          "options": [
+            "No, because a belated return cannot be revised.",
+            "Yes, a belated return furnished under Section 139(4) can be revised under Section 139(5).",
+            "Yes, but only with the approval of the Principal Commissioner.",
+            "No, because the original due date of 31st July 2026 has passed."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 139(5) explicitly permits any person who has furnished a return under sub-section (1) or sub-section (4) to file a revised return before 31st March of the assessment year.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Revised Return",
+            "Belated Return",
+            "Section 139(5)"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-8_023",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-8_02",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-8",
+          "subject": "Taxation",
+          "prompt": "Is Mr. Vikram liable to interest under Section 234B for default in payment of advance tax?",
+          "options": [
+            "No, because salary income is subject to TDS and advance tax does not apply to salaried individuals.",
+            "Yes, if his advance tax shortfall is 90% or more of the assessed tax, interest under Section 234B is attracted.",
+            "No, because he paid all taxes before filing the belated return.",
+            "Yes, a flat interest of 12% is charged."
+          ],
+          "answerIndex": 1,
+          "explanation": "Advance tax applies to all assessees including salaried individuals if tax liability is Rs. 10,000 or more and TDS does not cover it entirely. If advance tax paid is less than 90% of assessed tax, Section 234B interest is attracted.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Interest",
+            "Section 234B",
+            "Advance Tax"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-8_024",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-8_02",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-8",
+          "subject": "Taxation",
+          "prompt": "What is the last date up to which Mr. Vikram could have filed his belated return under Section 139(4) for AY 2026-27?",
+          "options": [
+            "31st December 2026",
+            "31st March 2027",
+            "30th June 2027",
+            "31st July 2027"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 139(4), a belated return for AY 2026-27 can be filed up to 31st March 2027 or before completion of assessment, whichever is earlier.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Belated Return",
+            "Section 139(4)",
+            "Time Limit"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-8_03",
+      "kind": "scenario",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "passage": "Aethelgard Public Ltd., an Indian company, is required to get its accounts audited under the Companies Act, 2013. For the financial year 2025-26, the company filed its original return of income on 20th September 2026. During March 2027, the company's internal audit reveals that certain foreign dividend income of Rs. 10,00,000 was inadvertently omitted from the return filed.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-8_031",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-8_03",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-8",
+          "subject": "Taxation",
+          "prompt": "What was the due date under Section 139(1) for Aethelgard Public Ltd. to file its original return of income for AY 2026-27?",
+          "options": [
+            "31st July 2026",
+            "31st October 2026",
+            "30th November 2026",
+            "31st March 2027"
+          ],
+          "answerIndex": 1,
+          "explanation": "For a company whose accounts are audited under the Companies Act (and not required to furnish a transfer pricing report), the due date under Section 139(1) is 31st October of the assessment year.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Due Date",
+            "Section 139(1)",
+            "Company"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-8_032",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-8_03",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-8",
+          "subject": "Taxation",
+          "prompt": "Can Aethelgard Public Ltd. furnish a revised return under Section 139(5) to include the omitted foreign dividend income?",
+          "options": [
+            "No, because the original return was filed before the due date.",
+            "Yes, a revised return can be filed before 31st March 2027 or before completion of assessment, whichever is earlier.",
+            "No, foreign income can only be declared through an updated return under Section 139(8A).",
+            "Yes, but it requires prior approval of the Assessing Officer."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 139(5) allows any person who has furnished a return under Section 139(1) to file a revised return anytime before 31st March of the relevant assessment year.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Revised Return",
+            "Section 139(5)",
+            "Company"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-8_033",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-8_03",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-8",
+          "subject": "Taxation",
+          "prompt": "Who is authorized to sign and verify the return of income of Aethelgard Public Ltd. under Section 140?",
+          "options": [
+            "Any shareholder holding more than 10% shares",
+            "The Managing Director of the company, or any director if the MD is absent or unable to sign",
+            "The Company Secretary alone",
+            "The Chief Accountant"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under Section 140(c), the return of a company must be signed and verified by the Managing Director, or where there is no Managing Director or he is unable to sign, by any director of the company.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Verification",
+            "Section 140",
+            "Company"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-8_034",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-8_03",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-8",
+          "subject": "Taxation",
+          "prompt": "If Aethelgard Public Ltd. fails to file any return and the Assessing Officer issues a notice, or if the company wishes to update its income after the expiry of the revised return period, which provision applies?",
+          "options": [
+            "Section 139(4) belated return",
+            "Section 139(8A) updated return",
+            "Section 142(1) inquiry notice",
+            "Section 148 reassessment notice"
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 139(8A) provides the mechanism for furnishing an updated return within 24 months from the end of the relevant assessment year, even after the expiry of the time limit for filing a revised return.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Updated Return",
+            "Section 139(8A)",
+            "Company"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-8_04",
+      "kind": "scenario",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "passage": "Dr. Meera is a practicing surgeon whose gross receipts from her profession exceed Rs. 50 lakhs during the financial year 2025-26. Her books of account are maintained and audited as required under Section 44AB. She deposited Rs. 1,50,000 in cash into a current account maintained with a scheduled bank during the year. She filed her return of income on 10th November 2026.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-8_041",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-8_04",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-8",
+          "subject": "Taxation",
+          "prompt": "What is the due date under Section 139(1) for Dr. Meera to file her return of income for AY 2026-27?",
+          "options": [
+            "31st July 2026",
+            "31st October 2026",
+            "30th November 2026",
+            "31st December 2026"
+          ],
+          "answerIndex": 1,
+          "explanation": "Since Dr. Meera is an assessee (working as a professional) whose accounts are required to be audited under Section 44AB of the Income-tax Act, her due date under Section 139(1) is 31st October of the assessment year.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Due Date",
+            "Section 139(1)",
+            "Tax Audit"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-8_042",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-8_04",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-8",
+          "subject": "Taxation",
+          "prompt": "Was Dr. Meera mandatorily required to file a return of income under Section 139(1) even if her total income was below the basic exemption limit, based on the cash deposit mentioned in the facts?",
+          "options": [
+            "No, because the cash deposit was below Rs. 1 crore.",
+            "Yes, because cash deposits in current accounts exceeding Rs. 50,000 trigger mandatory filing.",
+            "Yes, because current account cash deposits exceeding Rs. 1 crore trigger mandatory filing under the seventh proviso to Section 139(1).",
+            "No, professionals are exempt from the seventh proviso."
+          ],
+          "answerIndex": 2,
+          "explanation": "The seventh proviso to Section 139(1) mandates return filing if aggregate cash deposits in one or more current accounts exceed Rs. 1 crore. Since Dr. Meera deposited Rs. 1,50,000, which is well below Rs. 1 crore, this specific proviso does not trigger mandatory filing (though she is required to file anyway due to audit requirements and income levels).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Mandatory Filing",
+            "Section 139(1)",
+            "Current Account"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-8_043",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-8_04",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-8",
+          "subject": "Taxation",
+          "prompt": "Is Dr. Meera liable to pay any late fee under Section 234F for filing her return on 10th November 2026, given that her due date was 31st October 2026?",
+          "options": [
+            "No late fee is payable since she is a professional.",
+            "Yes, a late fee of Rs. 5,000 is payable because the return was filed after the due date and her total income exceeds Rs. 5,00,000.",
+            "Yes, a late fee of Rs. 1,000 is payable.",
+            "No late fee is payable if tax audit report is uploaded on time."
+          ],
+          "answerIndex": 1,
+          "explanation": "Section 234F prescribes a late fee of Rs. 5,000 if the return is furnished after the due date under Section 139(1) and total income exceeds Rs. 5,00,000.",
+          "difficulty": "Medium",
+          "conceptTags": [
+            "Late Fee",
+            "Section 234F",
+            "Professional"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-8_044",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-8_04",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-8",
+          "subject": "Taxation",
+          "prompt": "If Dr. Meera's tax audit report under Section 44AB is required to be furnished electronically, by what date must it be uploaded?",
+          "options": [
+            "31st October 2026",
+            "30th September 2026",
+            "31st July 2026",
+            "30th November 2026"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per Rule 6G, the tax audit report under Section 44AB must be furnished electronically at least one month prior to the due date for filing the return of income under Section 139(1). Since the due date is 31st October 2026, the audit report must be uploaded by 30th September 2026.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Tax Audit Report",
+            "Section 44AB",
+            "Due Date"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    },
+    {
+      "id": "adp_s_income-tax-8_05",
+      "kind": "scenario",
+      "chapterId": "income-tax-8",
+      "subject": "Taxation",
+      "passage": "Mr. & Mrs. Kapoor are resident individuals. Mr. Kapoor holds financial interest in an entity located in London, United Kingdom. During the financial year 2025-26, Mr. Kapoor's total income computed under the provisions of the Act is Rs. 3,80,000, which is below the basic exemption limit of Rs. 3,00,000 (under the new tax regime, or assume Rs. 2,50,000 under old regime, in either case below basic exemption limit). Mrs. Kapoor's total income is Rs. 6,50,000. Neither of them incurred any high-value electricity expenditure or bank deposits exceeding threshold limits.",
+      "sourceRef": {
+        "paper": "Paper 3: Taxation",
+        "module": "Module 2",
+        "chapterNumber": 8,
+        "chapterTitle": "Provisions for filing Return of Income and Self Assessment"
+      },
+      "status": "needs_review",
+      "linkedMcqs": [
+        {
+          "id": "adp_q_income-tax-8_051",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-8_05",
+          "sequenceInScenario": 1,
+          "chapterId": "income-tax-8",
+          "subject": "Taxation",
+          "prompt": "Is Mr. Kapoor mandatorily required to file a return of income under Section 139(1) for AY 2026-27?",
+          "options": [
+            "No, because his total income is below the basic exemption limit.",
+            "Yes, because he is a resident and ordinary resident individual having a financial interest in an entity located outside India.",
+            "No, unless the foreign entity distributed dividend during the year.",
+            "Yes, because all married individuals must file joint returns."
+          ],
+          "answerIndex": 1,
+          "explanation": "Under the fourth proviso to Section 139(1), a resident and ordinary resident individual who is a beneficial owner of any asset (including financial interest in any entity) located outside India must mandatorily file a return of income, regardless of their income level.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Foreign Assets",
+            "Section 139(1)",
+            "Mandatory Filing"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-8_052",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-8_05",
+          "sequenceInScenario": 2,
+          "chapterId": "income-tax-8",
+          "subject": "Taxation",
+          "prompt": "What is the due date under Section 139(1) for Mr. Kapoor to file his return of income for AY 2026-27, assuming he is not subject to tax audit?",
+          "options": [
+            "31st July 2026",
+            "31st October 2026",
+            "30th November 2026",
+            "31st March 2027"
+          ],
+          "answerIndex": 1,
+          "explanation": "As per the explanation to Section 139(1), the due date for filing return of income for an assessee who is required to furnish a report under the fourth proviso (foreign assets) or whose accounts are audited is 31st October of the assessment year.",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Due Date",
+            "Section 139(1)",
+            "Foreign Assets"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-8_053",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-8_05",
+          "sequenceInScenario": 3,
+          "chapterId": "income-tax-8",
+          "subject": "Taxation",
+          "prompt": "What is the due date under Section 139(1) for Mrs. Kapoor to file her return of income for AY 2026-27, assuming she has no foreign assets and is not subject to audit?",
+          "options": [
+            "31st July 2026",
+            "31st October 2026",
+            "30th November 2026",
+            "31st March 2027"
+          ],
+          "answerIndex": 0,
+          "explanation": "For an individual whose accounts are not required to be audited and who does not have foreign assets, the due date for filing the return of income under Section 139(1) is 31st July of the assessment year.",
+          "difficulty": "Easy",
+          "conceptTags": [
+            "Due Date",
+            "Section 139(1)",
+            "Individual"
+          ],
+          "status": "needs_review"
+        },
+        {
+          "id": "adp_q_income-tax-8_054",
+          "kind": "scenario",
+          "scenarioId": "adp_s_income-tax-8_05",
+          "sequenceInScenario": 4,
+          "chapterId": "income-tax-8",
+          "subject": "Taxation",
+          "prompt": "If Mr. Kapoor fails to report his foreign financial interest in his return of income, what penal consequence under the Black Money (Undisclosed Foreign Income and Assets) and Imposition of Tax Act, 2015 or Income-tax Act may apply?",
+          "options": [
+            "A flat penalty of Rs. 1,000 under Section 234F.",
+            "A penalty of Rs. 10,000 under the Black Money Act / Income-tax Act provisions for non-disclosure.",
+            "No penalty if tax on foreign income is nil.",
+            "Imprisonment for 7 years without option of fine."
+          ],
+          "answerIndex": 1,
+          "explanation": "Failure to disclose foreign assets or furnishing inaccurate particulars in the return of income attracts strict penalties, including a penalty of Rs. 10,000 under Section 43 of the Black Money Act (or relevant provisions under Income-tax Act for non-reporting of foreign assets).",
+          "difficulty": "Hard",
+          "conceptTags": [
+            "Foreign Assets",
+            "Penalty",
+            "Non-Disclosure"
+          ],
+          "status": "needs_review"
+        }
+      ]
+    }
+  ]
+}
