@@ -39,7 +39,7 @@ function RefBlock({ title, icon: Icon, refs }) {
   );
 }
 
-export default function QuestionCard({ question, readOnly = false }) {
+export default function QuestionCard({ question, readOnly = false, onApproved }) {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(null);
   const [comment, setComment] = useState('');
@@ -75,7 +75,12 @@ export default function QuestionCard({ question, readOnly = false }) {
     decideQuestion.mutate(
       { id: question.id, decision, comment, warningsAcknowledged: false, attemptSpecificRiskConfirmed: false },
       {
-        onSuccess: (saved) => toast.success(`Question ${decision.replace('_', ' ')}`),
+        onSuccess: (saved) => {
+          toast.success(`Question ${decision.replace('_', ' ')}`);
+          if (decision === 'approve' && onApproved) {
+            onApproved(saved);
+          }
+        },
         onError: (e) => toast.error(e.message),
       }
     );

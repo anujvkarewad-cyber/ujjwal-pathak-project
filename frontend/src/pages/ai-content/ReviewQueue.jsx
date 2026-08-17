@@ -189,11 +189,24 @@ export default function ReviewQueue() {
                     <td className="px-4 py-3" colSpan={7}><Skeleton className="h-5 w-full" /></td>
                   </tr>
                 ))
-              : items.map((q) => (
+              : items.map((q, idx) => (
                   <tr
                     key={q.id}
                     className="border-b border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors cursor-pointer"
-                    onClick={() => navigate(`/ai-content/questions?id=${q.id}`)}
+                    onClick={() => {
+                      // Save queue context for Prev/Next navigation in Question Review
+                      try {
+                        const ids = items.map(x => x.id);
+                        sessionStorage.setItem('reviewQueueIds', JSON.stringify(ids));
+                        sessionStorage.setItem('reviewQueueIndex', String(idx));
+                        sessionStorage.setItem('reviewQueuePage', String(page));
+                        sessionStorage.setItem('reviewQueuePageSize', String(pageSize));
+                        sessionStorage.setItem('reviewQueueTotal', String(total));
+                        // Save filters too so Back preserves them
+                        sessionStorage.setItem('reviewQueueFilters', JSON.stringify({ subject, chapterId, questionType, difficulty, status, hasWarnings }));
+                      } catch {}
+                      navigate(`/ai-content/questions?id=${q.id}`);
+                    }}
                   >
                     <td className="px-4 py-3 max-w-[380px]">
                       <div className="font-medium text-slate-800 dark:text-slate-100 line-clamp-2">{q.prompt}</div>
