@@ -101,3 +101,67 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: "after approve to publish we press gate button that gate button not working"
+
+backend:
+  - task: "Chapter gate after question approval"
+    implemented: true
+    working: true
+    file: "backend/routers/content.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: false
+        agent: "user"
+        comment: "After approving questions to publish, pressing the Gate button did nothing useful — scenarios stayed unapproved so the chapter gate stayed locked."
+      - working: true
+        agent: "main"
+        comment: "Auto-promote scenario blocks when all 4 linked MCQs are approved. GET/POST gate, approve, publish, and chapter list all run this promotion. Added POST /api/content/chapters/{id}/publish that writes a release + student bundles. dump_store after approve/publish. 49 backend tests pass including new test_gate_promotes_scenarios_after_question_approval."
+
+  - task: "In-dashboard chapter publish"
+    implemented: true
+    working: true
+    file: "backend/routers/content.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "POST /api/content/chapters/{id}/publish promotes approved/release_candidate items to published, inserts a content_releases row, and writes published-manifest.json + web/mobile chunks."
+
+frontend:
+  - task: "Gate button on Chapter Coverage"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/ai-content/ChapterCoverage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: false
+        agent: "user"
+        comment: "Gate button not working after approve to publish."
+      - working: true
+        agent: "main"
+        comment: "Gate panel now opens inline under the clicked row (was rendered off-screen at the top of a 94-chapter table). Handles loading/error without crashing. Approve + Publish buttons call the live APIs. Question/scenario Approve now acknowledges warnings so imported chapters can actually be approved."
+
+metadata:
+  created_by: "main_agent"
+  version: "1.0"
+  test_sequence: 1
+  run_ui: false
+
+test_plan:
+  current_focus:
+    - "Chapter gate after question approval"
+    - "Gate button on Chapter Coverage"
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+agent_communication:
+  - agent: "main"
+    message: "Fixed the Chapter Coverage Gate button. Root causes: (1) approving questions did not approve parent scenario blocks so the gate stayed locked; (2) the Gate panel rendered above the table so clicking Gate on a scrolled row looked like a no-op; (3) no in-app publish after approve. Backend 49/49 tests pass."

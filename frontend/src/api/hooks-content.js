@@ -72,6 +72,22 @@ export const useApproveChapter = () => {
       qc.invalidateQueries({ queryKey: ['content.chapters'] });
       qc.invalidateQueries({ queryKey: ['content.gate'] });
       qc.invalidateQueries({ queryKey: ['content.audit'] });
+      qc.invalidateQueries({ queryKey: ['content.stats'] });
+    },
+  });
+};
+
+export const usePublishChapter = () => {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: (id) => contentApi.publishChapter(id),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ['content.chapters'] });
+      qc.invalidateQueries({ queryKey: ['content.gate'] });
+      qc.invalidateQueries({ queryKey: ['content.audit'] });
+      qc.invalidateQueries({ queryKey: ['content.releases'] });
+      qc.invalidateQueries({ queryKey: ['content.stats'] });
+      qc.invalidateQueries({ queryKey: ['content.queue'] });
     },
   });
 };

@@ -18,8 +18,10 @@ export const decideQuestion = (id, body) => call(`/api/content/questions/${id}/d
 export const getScenario = (id) => call(`/api/content/scenarios/${id}`);
 export const decideScenario = (id, body) => call(`/api/content/scenarios/${id}/decision`, { method: 'POST', body });
 export const listChapters = (params) => call('/api/content/chapters', { params });
-export const getChapterGate = (id) => call(`/api/content/chapters/${id}/gate`);
-export const approveChapter = (id) => call(`/api/content/chapters/${id}/approve`, { method: 'POST', body: {} });
+export const getChapterGate = (id) => call(`/api/content/chapters/${encodeURIComponent(id)}/gate`);
+export const approveChapter = (id) => call(`/api/content/chapters/${encodeURIComponent(id)}/approve`, { method: 'POST', body: {} });
+export const publishChapter = (id) =>
+  call(`/api/content/chapters/${encodeURIComponent(id)}/publish`, { method: 'POST', body: { warningsAcknowledged: true } });
 export const listReleases = (params) => call('/api/content/releases', { params });
 export const getRelease = (rev) => call(`/api/content/releases/${rev}`);
 export const listAudit = (params) => call('/api/content/audit', { params });

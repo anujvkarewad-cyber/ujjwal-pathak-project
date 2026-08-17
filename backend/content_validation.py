@@ -106,11 +106,12 @@ def chapter_gate(chapter_id: str, questions: list, scenarios: list, plain_target
         "scenarioMcqsApproved": len(scenario_qs),
         "scenarioMcqsTarget": scenarios_target * per_scenario,
     }
-    if len(plain) != plain_target:
+    # Minimums, not exact counts: extra approved items must not lock the gate.
+    if len(plain) < plain_target:
         errors.append(f"{plain_target} plain MCQs not all approved (have {len(plain)})")
-    if len(scenarios) != scenarios_target:
+    if len(scenarios) < scenarios_target:
         errors.append(f"{scenarios_target} scenarios not all approved (have {len(scenarios)})")
-    if len(scenario_qs) != scenarios_target * per_scenario:
+    if len(scenario_qs) < scenarios_target * per_scenario:
         errors.append(f"all {scenarios_target * per_scenario} scenario MCQs not approved (have {len(scenario_qs)})")
 
     linked_ids = {qid for s in scenarios for qid in (s.get("questionIds") or [])}
