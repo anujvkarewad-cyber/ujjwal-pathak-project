@@ -40,6 +40,14 @@ async def bootstrap():
     if restored:
         print("[dev_server] restored previous mentor approvals from disk")
 
+    # NEW: SEED_ALL=1 seeds 94 chapters x 50 = 4700 questions (real count)
+    if _flag("SEED_ALL") and not restored:
+        import seed_all_94
+        await seed_all_94.seed_all()
+        await dump_store()
+        print("[dev_server] SEED_ALL complete - 4700 questions ready")
+        return
+
     if _flag("SEED_DEMO") and not restored:
         import seed_demo
 
