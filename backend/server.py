@@ -10,7 +10,7 @@ import uuid
 from datetime import datetime, timezone
 
 from db import get_db, close_db, ensure_indexes
-from routers import auth_router, content, student_attempts, student_content, student_sync, analytics
+from routers import auth_router, content, student_attempts, student_content, student_sync, analytics, admin_fast
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -91,6 +91,7 @@ app.include_router(student_content.router)
 app.include_router(student_attempts.router)
 app.include_router(student_sync.router)
 app.include_router(analytics.router)
+app.include_router(admin_fast.router)
 
 # ── SPA static serving (production deployment + live preview) ───────────────
 # Serves the built React dashboard from the same origin as /api. Registered
