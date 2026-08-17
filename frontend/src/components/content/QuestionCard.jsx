@@ -73,7 +73,7 @@ export default function QuestionCard({ question, readOnly = false, onApproved })
 
   const decide = (decision) => {
     decideQuestion.mutate(
-      { id: question.id, decision, comment, warningsAcknowledged: true, attemptSpecificRiskConfirmed: true },)
+      { id: question.id, decision, comment, warningsAcknowledged: true, attemptSpecificRiskConfirmed: true },
       {
         onSuccess: (saved) => {
           toast.success(`Question ${decision.replace('_', ' ')}`);

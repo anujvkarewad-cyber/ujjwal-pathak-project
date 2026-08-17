@@ -16,7 +16,7 @@ function ScenarioBlock({ scenarioId }) {
 
   const decide = (decision) => {
     decideScenario.mutate(
-      { id: scenarioId, decision, comment, warningsAcknowledged: true, attemptSpecificRiskConfirmed: true },)
+      { id: scenarioId, decision, comment, warningsAcknowledged: true, attemptSpecificRiskConfirmed: true },
       {
         onSuccess: () => toast.success(`Scenario block ${decision === 'approve' ? 'approved' : 'rejected'}`),
         onError: (e) => toast.error(e.message),
