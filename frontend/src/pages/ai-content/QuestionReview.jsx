@@ -1,15 +1,24 @@
 // AI Content → Question Review. Single-question deep review with validation,
 // references and approval actions. Also renders the parent scenario passage
 // when the question belongs to a scenario block.
-// NEW: Previous/Next navigation so approving doesn't send you back to Q1.
+//
+// Previous / Next navigation works across queue pages: when you reach the end
+// of the loaded page it fetches the next page with the same filters and keeps
+// going. "Approve & Next" approves the current question and jumps straight to
+// the next one — no more landing back on question 1.
 
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useSearchParams, Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
-import { useQuestion, useScenario, useValidationDetail } from '@/api/hooks-content';
+import { ArrowLeft, ChevronLeft, ChevronRight, CheckCircle2, Loader2 } from 'lucide-react';
+import { toast } from 'sonner';
+import { useQuestion, useScenario, useValidationDetail, useDecideQuestion } from '@/api/hooks-content';
+import { listQueue } from '@/api/content';
+import { loadQueueContext, saveQueueContext, queueFiltersToParams } from '@/utils/reviewQueueSession';
 import QuestionCard, { QuestionCardSkeleton } from '@/components/content/QuestionCard';
 import { StatusBadge } from '@/components/content/ContentBadges';
 import { Button } from '@/components/ui/button';
+
+const ACTIONABLE_STATUSES = ['needs_review', 'changes_requested', 'rejected'];
 
 export default function QuestionReview() {
   const [params] = useSearchParams();
@@ -20,64 +29,135 @@ export default function QuestionReview() {
   const scenarioId = question?.scenario?.scenarioId;
   const { data: scenario } = useScenario(scenarioId);
 
-  const [queueIds, setQueueIds] = useState(() => {
-    try {
-      const raw = sessionStorage.getItem('reviewQueueIds');
-      return raw ? JSON.parse(raw) : [];
-    } catch { return []; }
-  });
-  const [queueIndex, setQueueIndex] = useState(() => {
-    try {
-      const raw = sessionStorage.getItem('reviewQueueIndex');
-      return raw !== null ? Number(raw) : -1;
-    } catch { return -1; }
-  });
-  const [queueTotal, setQueueTotal] = useState(() => {
-    try {
-      const raw = sessionStorage.getItem('reviewQueueTotal');
-      return raw ? Number(raw) : 0;
-    } catch { return 0; }
-  });
+  // Queue context saved when a row is clicked in Review Queue:
+  // { ids, index, page, size, total, filters }
+  const [ctx, setCtx] = useState(loadQueueContext);
+  // 'prev' | 'next' while fetching an adjacent queue page (cross-page nav)
+  const [loadingDir, setLoadingDir] = useState(null);
   const [autoNext, setAutoNext] = useState(() => {
-    try {
-      return localStorage.getItem('reviewAutoNext') === '1';
-    } catch { return true; }
+    try { return localStorage.getItem('reviewAutoNext') !== '0'; } catch { return true; }
   });
 
-  // Update index when id changes and queueIds available
-  useEffect(() => {
-    if (!id || queueIds.length === 0) return;
-    const idx = queueIds.indexOf(id);
-    if (idx !== -1 && idx !== queueIndex) {
-      setQueueIndex(idx);
-      try { sessionStorage.setItem('reviewQueueIndex', String(idx)); } catch {}
-    }
-  }, [id, queueIds]);
-
-  // Load queue from sessionStorage on mount (in case user refreshed)
-  useEffect(() => {
-    try {
-      const rawIds = sessionStorage.getItem('reviewQueueIds');
-      const rawIdx = sessionStorage.getItem('reviewQueueIndex');
-      const rawTotal = sessionStorage.getItem('reviewQueueTotal');
-      if (rawIds) setQueueIds(JSON.parse(rawIds));
-      if (rawIdx !== null) setQueueIndex(Number(rawIdx));
-      if (rawTotal) setQueueTotal(Number(rawTotal));
-    } catch {}
-  }, []);
+  const decideQuestion = useDecideQuestion();
 
   useEffect(() => {
     try { localStorage.setItem('reviewAutoNext', autoNext ? '1' : '0'); } catch {}
   }, [autoNext]);
 
+  // Keep the index in sync when the URL id changes (prev/next, scenario links)
+  useEffect(() => {
+    if (!id || ctx.ids.length === 0) return;
+    const idx = ctx.ids.indexOf(id);
+    if (idx !== -1 && idx !== ctx.index) {
+      setCtx((c) => {
+        const next = { ...c, index: idx };
+        saveQueueContext(next);
+        return next;
+      });
+    }
+  }, [id, ctx.ids, ctx.index]);
+
+  // Where are we in the whole queue (across pages)?
+  const inQueue = ctx.ids.length > 0 && ctx.index >= 0;
+  const position = inQueue ? (ctx.page - 1) * ctx.size + ctx.index + 1 : null;
+  const totalAll = ctx.total || ctx.ids.length;
+  const progressText = inQueue ? `Question ${position} of ${totalAll}` : null;
+
+  const hasPrevInPage = inQueue && ctx.index > 0;
+  const hasNextInPage = inQueue && ctx.index < ctx.ids.length - 1;
+  const hasPrevPage = ctx.page > 1;
+  const hasNextPage = ctx.total > 0 && ctx.page * ctx.size < ctx.total;
+  const hasPrev = hasPrevInPage || hasPrevPage;
+  const hasNext = hasNextInPage || hasNextPage;
+
+  // Fetch the adjacent queue page with the same filters and swap it in as the
+  // new navigation window. Returns the updated context.
+  const fetchAdjacentPage = useCallback(async (direction) => {
+    const page = direction === 'next' ? ctx.page + 1 : ctx.page - 1;
+    const res = await listQueue(queueFiltersToParams(ctx.filters, ctx.size, (page - 1) * ctx.size));
+    const items = res?.items || [];
+    if (items.length === 0) throw new Error(`No questions found on page ${page} of the queue.`);
+    const ids = items.map((q) => q.id);
+    const nextCtx = {
+      ...ctx,
+      ids,
+      page,
+      total: res?.total ?? ctx.total,
+      index: direction === 'next' ? 0 : ids.length - 1,
+    };
+    setCtx(nextCtx);
+    saveQueueContext(nextCtx);
+    return nextCtx;
+  }, [ctx]);
+
+  const goPrev = useCallback(async () => {
+    if (!hasPrev || loadingDir) return;
+    if (hasPrevInPage) {
+      const next = { ...ctx, index: ctx.index - 1 };
+      setCtx(next);
+      saveQueueContext(next);
+      navigate(`/ai-content/questions?id=${ctx.ids[ctx.index - 1]}`);
+      return;
+    }
+    setLoadingDir('prev');
+    try {
+      const c = await fetchAdjacentPage('prev');
+      navigate(`/ai-content/questions?id=${c.ids[c.index]}`);
+    } catch (e) {
+      toast.error(e.message || 'Could not load the previous page of the queue.');
+    } finally {
+      setLoadingDir(null);
+    }
+  }, [ctx, hasPrev, hasPrevInPage, loadingDir, navigate, fetchAdjacentPage]);
+
+  const goNext = useCallback(async () => {
+    if (!hasNext || loadingDir) return;
+    if (hasNextInPage) {
+      const next = { ...ctx, index: ctx.index + 1 };
+      setCtx(next);
+      saveQueueContext(next);
+      navigate(`/ai-content/questions?id=${ctx.ids[ctx.index + 1]}`);
+      return;
+    }
+    setLoadingDir('next');
+    try {
+      const c = await fetchAdjacentPage('next');
+      navigate(`/ai-content/questions?id=${c.ids[c.index]}`);
+    } catch (e) {
+      toast.error(e.message || 'Could not load the next page of the queue.');
+    } finally {
+      setLoadingDir(null);
+    }
+  }, [ctx, hasNext, hasNextInPage, loadingDir, navigate, fetchAdjacentPage]);
+
+  // Approve & Next: approve the current question, then jump to the next one.
+  const approveAndNext = () => {
+    if (!id || decideQuestion.isPending) return;
+    decideQuestion.mutate(
+      { id, decision: 'approve', comment: '', warningsAcknowledged: false, attemptSpecificRiskConfirmed: false },
+      {
+        onSuccess: () => {
+          toast.success('Question approved');
+          goNext();
+        },
+        onError: (e) => toast.error(e.message),
+      }
+    );
+  };
+
+  // Auto-next when the card's own Approve button is used
+  const handleApproved = () => {
+    if (autoNext) setTimeout(() => goNext(), 350); // brief pause so the toast is visible
+  };
+
   // Keyboard shortcuts: ← → navigate, Esc back to queue
   useEffect(() => {
     const handler = (e) => {
       if (e.target && (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT' || e.target.isContentEditable)) return;
-      if (e.key === 'ArrowLeft' && prevId) {
+      if (e.key === 'ArrowLeft' && hasPrev) {
         e.preventDefault();
         goPrev();
-      } else if (e.key === 'ArrowRight' && nextId) {
+      } else if (e.key === 'ArrowRight' && hasNext) {
         e.preventDefault();
         goNext();
       } else if (e.key === 'Escape') {
@@ -86,42 +166,37 @@ export default function QuestionReview() {
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  });
+  }, [goPrev, goNext, hasPrev, hasNext, navigate]);
 
-  const prevId = useMemo(() => {
-    if (queueIds.length === 0 || queueIndex <= 0) return null;
-    return queueIds[queueIndex - 1] || null;
-  }, [queueIds, queueIndex]);
+  const canApprove = !!question && ACTIONABLE_STATUSES.includes(question.status);
 
-  const nextId = useMemo(() => {
-    if (queueIds.length === 0) return null;
-    if (queueIndex === -1) return null;
-    if (queueIndex >= queueIds.length - 1) return null;
-    return queueIds[queueIndex + 1] || null;
-  }, [queueIds, queueIndex]);
+  const prevBtn = (withKeys) => (
+    <Button
+      size="sm"
+      variant="outline"
+      onClick={goPrev}
+      disabled={!hasPrev || loadingDir === 'prev'}
+      className="gap-1"
+      title="Previous question (← arrow)"
+    >
+      {loadingDir === 'prev' ? <Loader2 className="w-4 h-4 animate-spin" /> : <ChevronLeft className="w-4 h-4" />}
+      Previous{withKeys ? ' (←)' : ''}
+    </Button>
+  );
 
-  const goPrev = () => {
-    if (!prevId) return;
-    try { sessionStorage.setItem('reviewQueueIndex', String(queueIndex - 1)); } catch {}
-    navigate(`/ai-content/questions?id=${prevId}`);
-  };
-
-  const goNext = () => {
-    if (!nextId) return;
-    try { sessionStorage.setItem('reviewQueueIndex', String(queueIndex + 1)); } catch {}
-    navigate(`/ai-content/questions?id=${nextId}`);
-  };
-
-  // When question is approved, auto-next if enabled
-  const handleApproved = () => {
-    if (autoNext && nextId) {
-      setTimeout(() => goNext(), 400); // small delay to let toast show
-    }
-  };
-
-  const progressText = queueIds.length > 0 && queueIndex >= 0
-    ? `Question ${queueIndex + 1} of ${queueTotal || queueIds.length}`
-    : null;
+  const nextBtn = (withKeys) => (
+    <Button
+      size="sm"
+      variant="outline"
+      onClick={goNext}
+      disabled={!hasNext || loadingDir === 'next'}
+      className="gap-1"
+      title="Next question (→ arrow)"
+    >
+      Next{withKeys ? ' (→)' : ''}
+      {loadingDir === 'next' ? <Loader2 className="w-4 h-4 animate-spin" /> : <ChevronRight className="w-4 h-4" />}
+    </Button>
+  );
 
   return (
     <div className="space-y-4" data-testid="question-review">
@@ -155,31 +230,10 @@ export default function QuestionReview() {
             )}
           </div>
 
-          {/* Prev / Next buttons */}
+          {/* Prev / Next — continue across queue pages automatically */}
           <div className="flex items-center gap-2">
-            <Button
-              size="sm"
-              variant="outline"
-              onClick={goPrev}
-              disabled={!prevId}
-              className="gap-1"
-              title="Previous question (← arrow)"
-            >
-              <ChevronLeft className="w-4 h-4" /> Previous
-            </Button>
-            <Button
-              size="sm"
-              variant="outline"
-              onClick={goNext}
-              disabled={!nextId}
-              className="gap-1"
-              title="Next question (→ arrow)"
-            >
-              Next <ChevronRight className="w-4 h-4" />
-            </Button>
-            {nextId && (
-              <span className="text-[11px] text-slate-400 hidden md:inline">→ auto after approve if checked</span>
-            )}
+            {prevBtn(false)}
+            {nextBtn(false)}
           </div>
         </div>
       </div>
@@ -199,12 +253,6 @@ export default function QuestionReview() {
                   <Link
                     key={qid}
                     to={`/ai-content/questions?id=${qid}`}
-                    onClick={() => {
-                      try {
-                        const idx = queueIds.indexOf(qid);
-                        if (idx !== -1) sessionStorage.setItem('reviewQueueIndex', String(idx));
-                      } catch {}
-                    }}
                     className={`px-2 py-0.5 rounded-md text-[11px] font-semibold border ${
                       qid === id
                         ? 'bg-violet-600 text-white border-violet-600'
@@ -217,7 +265,6 @@ export default function QuestionReview() {
               </div>
             </div>
           )}
-          {/* Pass onApproved to auto-next */}
           <QuestionCard question={question} onApproved={handleApproved} />
 
           {validation && (
@@ -232,18 +279,29 @@ export default function QuestionReview() {
             </div>
           )}
 
-          {/* Bottom Prev/Next duplicate for convenience after long card */}
-          <div className="flex items-center justify-between gap-2 pt-2 border-t border-slate-200 dark:border-slate-800">
+          {/* Bottom Prev / Approve & Next / Next for convenience after the long card */}
+          <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-slate-200 dark:border-slate-800">
             <Button size="sm" variant="ghost" onClick={() => navigate('/ai-content/queue')} className="gap-1">
               <ArrowLeft className="w-4 h-4" /> Back to queue (Esc)
             </Button>
             <div className="flex items-center gap-2">
-              <Button size="sm" variant="outline" onClick={goPrev} disabled={!prevId} className="gap-1">
-                <ChevronLeft className="w-4 h-4" /> Previous (←)
-              </Button>
-              <Button size="sm" className="bg-[#2563EB] hover:bg-[#1d4ed8] text-white gap-1" onClick={goNext} disabled={!nextId}>
-                {autoNext ? <><CheckCircle2 className="w-4 h-4" /> Approve & Next</> : <>Next <ChevronRight className="w-4 h-4" /></>}
-              </Button>
+              {prevBtn(true)}
+              {canApprove ? (
+                <Button
+                  size="sm"
+                  className="bg-[#2563EB] hover:bg-[#1d4ed8] text-white gap-1"
+                  onClick={approveAndNext}
+                  disabled={!hasNext || decideQuestion.isPending || loadingDir === 'next'}
+                  title="Approve this question and jump to the next one"
+                >
+                  {decideQuestion.isPending || loadingDir === 'next'
+                    ? <Loader2 className="w-4 h-4 animate-spin" />
+                    : <CheckCircle2 className="w-4 h-4" />}
+                  Approve & Next
+                </Button>
+              ) : (
+                nextBtn(true)
+              )}
             </div>
           </div>
         </>
