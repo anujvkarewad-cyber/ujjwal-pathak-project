@@ -74,4 +74,35 @@ async def reset_db():
 
 async def ensure_indexes():
     db = get_db()
-    await 
+    await db[CONTENT_QUESTIONS].create_index([("chapterId", 1), ("status", 1)])
+    await db[CONTENT_QUESTIONS].create_index([("chapterId", 1), ("id", 1)])
+    await db[CONTENT_QUESTIONS].create_index([("status", 1), ("chapterId", 1), ("id", 1)])
+    await db[CONTENT_QUESTIONS].create_index([("questionType", 1), ("chapterId", 1), ("id", 1)])
+    await db[CONTENT_QUESTIONS].create_index("id")
+    await db[CONTENT_QUESTIONS].create_index("status")
+    await db[CONTENT_SCENARIOS].create_index([("chapterId", 1), ("status", 1)])
+    await db[CONTENT_SCENARIOS].create_index("scenarioId")
+    await db[CONTENT_CHAPTERS].create_index("chapterId")
+    await db[CONTENT_RELEASES].create_index("revision")
+    await db[CONTENT_AUDIT].create_index("at")
+    await db[ANALYTICS_SUMMARIES].create_index([("studentId", 1), ("chapterId", 1)])
+    await db[ANALYTICS_CONSENTS].create_index("studentId")
+    await db[ANALYTICS_TRENDS].create_index([("studentId", 1), ("chapterId", 1)])
+    await db[STUDENT_MCQ_ATTEMPTS].create_index(
+        [("studentId", 1), ("kind", 1), ("attemptId", 1)], unique=True
+    )
+    await db[STUDENT_MCQ_ATTEMPTS].create_index([("studentId", 1), ("completedAt", -1)])
+
+
+async def ensure_unique_indexes():
+    db = get_db()
+    specs = (
+        (CONTENT_QUESTIONS, [("id", 1), ("revision", 1)], "id_revision_unique"),
+        (CONTENT_SCENARIOS, "scenarioId", "scenarioId_unique"),
+        (CONTENT_CHAPTERS, "chapterId", "chapterId_unique"),
+    )
+    for collection, keys, name in specs:
+        try:
+            await db[collection].create_index(keys, unique=True, name=name)
+        except Exception as exc:
+            logger.warning("[db] unique index %s.%s not applied: %s", collection, name, exc)
