@@ -1,9 +1,4 @@
-"""Central configuration for the mentor backend.
-
-Loads .env (gitignored). Production behavior is unchanged when MONGO_URL and
-DB_NAME are set as before; `MONGO_URL=memory://` (or missing MONGO_URL in a
-dev/test environment) selects the in-memory mock store.
-"""
+"""Central configuration for the mentor backend."""
 import os
 from pathlib import Path
 
@@ -41,15 +36,13 @@ class Settings:
     sync_max_summaries: int = _int("SYNC_MAX_SUMMARIES", 94)
     sync_rate_limit_seconds: int = _int("SYNC_RATE_LIMIT_SECONDS", 300)
 
-    # Student credentials continue to be owned by the existing Apps Script
-    # backend. FastAPI delegates each backup/restore authentication check;
-    # passwords are never written to MongoDB.
     student_auth_url: str = os.environ.get(
         "STUDENT_AUTH_URL",
         "https://student-dashboard-frontend-iota.vercel.app/api/proxy",
     )
     mcq_daily_retention: int = _int("MCQ_DAILY_RETENTION", 180)
     mcq_practice_retention: int = _int("MCQ_PRACTICE_RETENTION", 150)
+    auto_publish_if_empty: bool = _int("AUTO_PUBLISH_IF_EMPTY", 1) == 1
 
 
 settings = Settings()
