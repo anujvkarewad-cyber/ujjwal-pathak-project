@@ -1,0 +1,77 @@
+{
+  "expo": {
+    "name": "Ujjwal Pathak Mentorship",
+    "slug": "ujjwal-pathak-mentorship",
+    "version": "1.10.2",
+    "runtimeVersion": {
+      "policy": "fingerprint"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "upmentorship",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#F4F7FB"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.ujjwalpathak.mentorship",
+      "config": {
+        "usesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.ujjwalpathak.mentorship",
+      "googleServicesFile": "./google-services.json",
+      "versionCode": 17,
+      "adaptiveIcon": {
+        "backgroundColor": "#F9F5EF",
+        "foregroundImage": "./assets/adaptive-icon.png"
+      },
+      "predictiveBackGestureEnabled": true,
+      "permissions": [
+        "INTERNET",
+        "POST_NOTIFICATIONS",
+        "REQUEST_INSTALL_PACKAGES"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-updates",
+        {
+          "username": "anujvkarewad-cyber"
+        }
+      ],
+      [
+        "expo-secure-store",
+        {
+          "configureAndroidBackup": true
+        }
+      ],
+      "expo-document-picker",
+      [
+        "expo-notifications",
+        {
+          "color": "#3157D5",
+          "defaultChannel": "ump-updates"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Allow Ujjwal Pathak Mentorship to use your location only for local weather and adaptive dashboard themes.",
+          "isAndroidBackgroundLocationEnabled": false,
+          "isAndroidForegroundServiceEnabled": false
+        }
+      ]
+    ]
+  }
+}

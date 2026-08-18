@@ -1,0 +1,63 @@
+{
+  "cli": {
+    "version": ">= 18.0.0",
+    "appVersionSource": "local"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "channel": "preview",
+      "env": {
+        "EXPO_PUBLIC_BACKEND_MODE": "mock",
+        "EXPO_PUBLIC_ALLOW_MODE_SWITCH": "true",
+        "EXPO_PUBLIC_API_BASE_URL": "https://student-dashboard-frontend-iota.vercel.app"
+      }
+    },
+    "apk-readonly": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "channel": "preview",
+      "env": {
+        "EXPO_PUBLIC_BACKEND_MODE": "live-readonly",
+        "EXPO_PUBLIC_ALLOW_MODE_SWITCH": "false",
+        "EXPO_PUBLIC_API_BASE_URL": "https://student-dashboard-frontend-iota.vercel.app"
+      }
+    },
+    "apk": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "channel": "production",
+      "env": {
+        "EXPO_PUBLIC_BACKEND_MODE": "live",
+        "EXPO_PUBLIC_ALLOW_MODE_SWITCH": "false",
+        "EXPO_PUBLIC_API_BASE_URL": "https://student-dashboard-frontend-iota.vercel.app"
+      }
+    },
+    "production": {
+      "distribution": "store",
+      "android": {
+        "buildType": "apk"
+      },
+      "channel": "production",
+      "env": {
+        "EXPO_PUBLIC_BACKEND_MODE": "live",
+        "EXPO_PUBLIC_ALLOW_MODE_SWITCH": "false",
+        "EXPO_PUBLIC_API_BASE_URL": "https://student-dashboard-frontend-iota.vercel.app"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}

@@ -48,3 +48,25 @@ git push
 ```
 
 Then build a new APK (EAS) and deploy.
+
+## OTA updates (no more APK rebuild for small changes)
+
+This project now uses Expo EAS Update (expo-updates). After you push this
+version and build ONE new APK with expo-updates embedded, all future
+JS/UI/logic changes go to installed apps via `eas update` — no new APK needed.
+
+Setup (one time, on your machine):
+```
+cd mobile
+npx eas-cli login          # your Expo account (one time)
+npx eas-cli build --platform android --profile apk   # one APK with expo-updates
+```
+
+Push small changes WITHOUT a new APK:
+```
+cd mobile
+npx eas-cli update --channel production --message "describe change"
+```
+Students' installed apps auto-download the new bundle on next open (or via
+`update.` reload). Only NATIVE changes (new native module, permissions,
+adding a native dependency) still require an APK build.
