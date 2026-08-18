@@ -21,6 +21,7 @@ from auth import verify_sync_token
 from config import settings
 from db import ANALYTICS_AUDIT_SYNC, ANALYTICS_CONSENTS, ANALYTICS_SUMMARIES, ANALYTICS_TRENDS, get_db
 from models import ConsentRequest, ProgressSyncRequest
+from persist import dump_store
 
 router = APIRouter(prefix="/api", tags=["student-sync"])
 
@@ -47,6 +48,7 @@ async def set_consent(body: ConsentRequest, request: Request):
         upsert=True,
     )
     await _audit(db, body.studentId, "consent_set", {"sharing": body.sharing, "device": body.device})
+    await dump_store()
     return {"ok": True, "studentId": body.studentId, "sharing": body.sharing}
 
 
@@ -96,6 +98,7 @@ async def progress_sync(
         trend_stored += 1
 
     await _audit(db, body.studentId, "progress_sync", {"summaries": stored, "trend": trend_stored})
+    await dump_store()
     return {"ok": True, "accepted": {"summaries": stored, "trend": trend_stored}}
 
 

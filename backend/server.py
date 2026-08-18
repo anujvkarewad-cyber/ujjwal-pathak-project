@@ -175,6 +175,16 @@ def _bootstrap_requested() -> bool:
 @app.on_event("startup")
 async def startup_db_client():
     await ensure_indexes()
+    # Restore the file-backed snapshot first so previously submitted student
+    # consents/progress and mentor decisions survive restarts. Must run on every
+    # boot (not only when import/seed flags are set), otherwise data persisted
+    # in the in-memory store is silently lost whenever the process restarts.
+    try:
+        from persist import restore_store
+
+        await restore_store()
+    except Exception:
+        logging.getLogger(__name__).exception("failed to restore persisted store")
     if _bootstrap_requested():
         from dev_server import bootstrap
 

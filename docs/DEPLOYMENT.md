@@ -43,10 +43,12 @@ curl https://<backend-url>/api/content/chapters   # → 94 chapters, ~sub-second
 ### Free-tier caveats
 
 * **Cold starts** — free instances sleep after idle; first request takes ~30-60s.
-* **Ephemeral disk + `MONGO_URL=memory://`** — mentor approvals are persisted
-  to `backend/data/content-store.json`, but a redeploy/instance recycle resets
-  the disk, so decisions can be lost. For permanent storage create a free
-  MongoDB Atlas cluster and set:
+* **Ephemeral disk + `MONGO_URL=memory://`** — the in-memory store is snapshotted
+  to `backend/data/content-store.json` (restored on every boot; dumped after
+  mentor decisions **and** every student consent / progress-sync). This survives
+  plain process restarts of the same instance, but a redeploy / instance
+  recycle resets the disk, so submitted student progress and decisions can be
+  lost. For permanent storage create a free MongoDB Atlas cluster and set:
 
   ```
   MONGO_URL=mongodb+srv://<user>:<pass>@<cluster>.mongodb.net

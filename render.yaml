@@ -13,6 +13,12 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.11
+      # IMPORTANT — durable student data requires a real MongoDB.
+      # `memory://` is a dev/test in-memory store; even with the file-backed
+      # snapshot (restore on boot + dump on every consent/progress-sync) it lives
+      # on Render's ephemeral disk and is LOST on deploy/recycle.
+      # For permanent storage set MONGO_URL to a MongoDB Atlas connection string
+      # (e.g. mongodb+srv://user:pass@cluster.mongodb.net/ujjwal_pathak).
       - key: MONGO_URL
         value: memory://          # swap for a MongoDB Atlas URI for permanent storage
       - key: DB_NAME
