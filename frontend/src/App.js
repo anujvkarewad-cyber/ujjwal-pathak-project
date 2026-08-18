@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'sonner';
 import '@/App.css';
 import DashboardLayout from '@/layouts/DashboardLayout';
+import ErrorBoundary from '@/components/common/ErrorBoundary';
 import Dashboard from '@/pages/Dashboard';
 import Students from '@/pages/Students';
 import StudentProfile from '@/pages/StudentProfile';
@@ -33,7 +34,8 @@ function App() {
   return (
     <BrowserRouter>
       <Toaster position="top-right" richColors />
-      <Routes>
+      <ErrorBoundary>
+        <Routes>
         <Route element={<DashboardLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="/students" element={<Students />} />
@@ -64,7 +66,8 @@ function App() {
           <Route path="/analytics/followups" element={<FollowUps />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
-      </Routes>
+        </Routes>
+      </ErrorBoundary>
     </BrowserRouter>
   );
 }

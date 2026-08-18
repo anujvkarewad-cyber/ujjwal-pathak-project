@@ -9,7 +9,8 @@ import { Skeleton } from '@/components/common/Skeleton';
 import { BAND_COLORS } from '@/components/content/ContentBadges';
 
 export default function AnalyticsOverview() {
-  const { data: k, isLoading } = useAnalyticsOverview();
+  const { data, isLoading, isError, error } = useAnalyticsOverview();
+  const k = data ?? {};
 
   return (
     <div className="space-y-6" data-testid="analytics-overview">
@@ -20,8 +21,17 @@ export default function AnalyticsOverview() {
         </p>
       </div>
 
+      {isError && (
+        <div className="rounded-xl border border-rose-200 dark:border-rose-500/30 bg-rose-50 dark:bg-rose-500/10 p-5" data-testid="analytics-overview-error">
+          <h3 className="font-heading font-semibold text-rose-700 dark:text-rose-300 mb-1">Couldn’t load analytics</h3>
+          <p className="text-sm text-rose-600 dark:text-rose-300">
+            {error?.message || 'Something went wrong while loading the All Students overview. Please try again.'}
+          </p>
+        </div>
+      )}
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {isLoading
+        {isLoading || !data
           ? Array.from({ length: 4 }).map((_, i) => <Skeleton key={i} className="h-28 w-full" />)
           : (
             <>
@@ -36,11 +46,11 @@ export default function AnalyticsOverview() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5">
           <h3 className="font-heading font-semibold text-slate-900 dark:text-white mb-3">Mastery band distribution</h3>
-          {isLoading ? (
+          {isLoading || !data ? (
             <Skeleton className="h-40 w-full" />
           ) : (
             <div className="space-y-2.5">
-              {Object.entries(k.bandDistribution).map(([band, count]) => (
+              {Object.entries(k.bandDistribution || {}).map(([band, count]) => (
                 <div key={band} className="flex items-center gap-3">
                   <span className="w-28 text-xs font-medium text-slate-600 dark:text-slate-300">{band}</span>
                   <div className="flex-1 h-3 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
@@ -67,7 +77,7 @@ export default function AnalyticsOverview() {
           </ul>
           <div className="mt-4 flex items-center gap-2 text-xs text-slate-500">
             <Activity className="w-3.5 h-3.5" />
-            {k.inactiveChapterCells} chapter cells show no recent activity (14-day threshold).
+            {k.inactiveChapterCells ?? 0} chapter cells show no recent activity (14-day threshold).
           </div>
         </div>
       </div>
