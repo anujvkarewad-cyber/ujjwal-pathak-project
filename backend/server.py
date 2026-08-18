@@ -142,5 +142,52 @@ async def spa_fallback(full_path: str):
                 return FileResponse(index, media_type='text/html')
         except Exception:
             pass
-    return JSONResponse(
-        {'message': 'API running. Frontend not built. Run npm run 
+       return JSONResponse(
+        {"message": "API running. Frontend not built."},
+        status_code=200
+    )
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+)
+logger = logging.getLogger(__name__)
+
+
+def _bootstrap_requested() -> bool:
+    if os.environ.get("BOOTSTRAP_DONE") == "1":
+        return False
+    flags = ("IMPORT_GENERATED", "SEED_DEMO", "SEED_ALL")
+    return any(
+        os.environ.get(f, "").strip().lower() in ("1", "true", "yes", "on")
+        for f in flags
+    )
+
+
+@app.on_event("startup")
+async def startup_db_client():
+    await ensure_indexes()
+    if uses_real_mongo():
+        logger.info("[startup] using durable MongoDB")
+    if _bootstrap_requested():
+        from dev_server import bootstrap
+        await bootstrap()
+        os.environ["BOOTSTRAP_DONE"] = "1"
+    if os.environ.get("DB_NAME") not in {"test_db", "pytest"}:
+        from repair import publish_if_empty, repair_store
+        await repair_store()
+        await ensure_unique_indexes()
+        await publish_if_empty()
+
+
+@app.on_event("shutdown")
+async def shutdown_db_client():
+    try:
+        from persist import dump_store_sync
+        await dump_store_sync()
+    except Exception:
+        logging.getLogger(__name__).exception("persist failed")
+    await close_db()
+
+
+# END OF FILE 
