@@ -161,7 +161,10 @@ export default function ChapterCoverage() {
   const { data, isLoading } = useChapters();
   const [openChapter, setOpenChapter] = useState(null);
 
-  const chapters = data?.items || [];
+  const items = data?.items;
+  // Stable reference so the derived hooks below don't re-run every render
+  // (react-hooks/exhaustive-deps) and CI lint stays green.
+  const chapters = useMemo(() => items || [], [items]);
 
   const bulkChapter = useBulkApproveChapter();
   const bulkSubject = useBulkApproveSubject();
