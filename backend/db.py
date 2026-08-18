@@ -1,6 +1,4 @@
-"""Database access (Motor). MONGO_URL=memory:// uses the in-memory mock so the
-backend and its tests run without a MongoDB server; any other value behaves
-exactly as before (real MongoDB via the official async driver)."""
+"""Database access (Motor)."""
 import logging
 
 from motor.motor_asyncio import AsyncIOMotorClient
@@ -34,7 +32,7 @@ def get_db():
                 from mongomock_motor import AsyncMongoMockClient
 
                 _client = AsyncMongoMockClient()
-            except ImportError:  # pragma: no cover
+            except ImportError:
                 raise RuntimeError(
                     "MONGO_URL=memory:// requires `mongomock-motor` (pip install mongomock-motor)"
                 )
@@ -53,40 +51,27 @@ async def close_db():
 
 
 async def reset_db():
-    """Test helper: wipe the database. For the in-memory mock this replaces
-    the client entirely; for real MongoDB it drops the database."""
     global _client, _db
-    db = get_db()
+    get_db()
     if settings.mongo_url == "memory://":
         try:
             from mongomock_motor import AsyncMongoMockClient
 
             _client = AsyncMongoMockClient()
             _db = _client[settings.db_name]
-        except ImportError:  # pragma: no cover
+        except ImportError:
             raise RuntimeError("MONGO_URL=memory:// requires `mongomock-motor`")
     else:
         await _client.drop_database(settings.db_name)
         _db = _client[settings.db_name]
+    try:
+        from routers.student_content import invalidate_student_bank
+
+        invalidate_student_bank()
+    except Exception:
+        pass
 
 
 async def ensure_indexes():
     db = get_db()
-    await db[CONTENT_QUESTIONS].create_index([("chapterId", 1), ("status", 1)])
-    await db[CONTENT_QUESTIONS].create_index([("chapterId", 1), ("id", 1)])
-    await db[CONTENT_QUESTIONS].create_index([("status", 1), ("chapterId", 1), ("id", 1)])
-    await db[CONTENT_QUESTIONS].create_index([("questionType", 1), ("chapterId", 1), ("id", 1)])
-    await db[CONTENT_QUESTIONS].create_index("id")
-    await db[CONTENT_QUESTIONS].create_index("status")
-    await db[CONTENT_SCENARIOS].create_index([("chapterId", 1), ("status", 1)])
-    await db[CONTENT_SCENARIOS].create_index("scenarioId")
-    await db[CONTENT_CHAPTERS].create_index("chapterId")
-    await db[CONTENT_RELEASES].create_index("revision")
-    await db[CONTENT_AUDIT].create_index("at")
-    await db[ANALYTICS_SUMMARIES].create_index([("studentId", 1), ("chapterId", 1)])
-    await db[ANALYTICS_CONSENTS].create_index("studentId")
-    await db[ANALYTICS_TRENDS].create_index([("studentId", 1), ("chapterId", 1)])
-    await db[STUDENT_MCQ_ATTEMPTS].create_index(
-        [("studentId", 1), ("kind", 1), ("attemptId", 1)], unique=True
-    )
-    await db[STUDENT_MCQ_ATTEMPTS].create_index([("studentId", 1), ("completedAt", -1)])
+    await 
