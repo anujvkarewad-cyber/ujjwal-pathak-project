@@ -142,11 +142,10 @@ async def spa_fallback(full_path: str):
                 return FileResponse(index, media_type='text/html')
         except Exception:
             pass
-       return JSONResponse(
+    return JSONResponse(
         {"message": "API running. Frontend not built."},
         status_code=200
     )
-
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
