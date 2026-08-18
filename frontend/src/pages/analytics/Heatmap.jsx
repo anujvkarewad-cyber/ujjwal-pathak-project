@@ -5,6 +5,7 @@ import { useMemo, useState } from 'react';
 import { useHeatmap } from '@/api/hooks-content';
 import { BAND_COLORS } from '@/components/content/ContentBadges';
 import { Skeleton } from '@/components/common/Skeleton';
+import InlineError from '@/components/common/InlineError';
 import { cn } from '@/utils/format';
 
 const BANDS = ['Not assessed', 'Weak', 'Medium', 'Strong', 'Mastered'];
@@ -12,7 +13,7 @@ const BANDS = ['Not assessed', 'Weak', 'Medium', 'Strong', 'Mastered'];
 export default function Heatmap() {
   const [band, setBand] = useState('');
   const [chapterId, setChapterId] = useState('');
-  const { data, isLoading } = useHeatmap({ band, chapterId });
+  const { data, isLoading, isError, error } = useHeatmap({ band, chapterId });
 
   const cellMap = useMemo(() => {
     const m = {};
@@ -53,6 +54,8 @@ export default function Heatmap() {
       <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-x-auto">
         {isLoading ? (
           <Skeleton className="h-64 w-full" />
+        ) : isError ? (
+          <div className="p-5"><InlineError error={error} title="Couldn’t load the heatmap" /></div>
         ) : (
           <table className="w-full text-sm border-collapse min-w-[900px]">
             <thead>

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { AlertTriangle, ChevronRight, UserX } from 'lucide-react';
 import { useAtRisk, useInactive, useWeakChapters } from '@/api/hooks-content';
 import { Skeleton } from '@/components/common/Skeleton';
+import InlineError from '@/components/common/InlineError';
 import { cn } from '@/utils/format';
 
 const TABS = [
@@ -13,12 +14,13 @@ const TABS = [
 ];
 
 function WeakTab() {
-  const { data, isLoading } = useWeakChapters();
+  const { data, isLoading, isError, error } = useWeakChapters();
   const items = data?.items || [];
   return (
     <div className="space-y-1.5">
       {isLoading && <Skeleton className="h-32 w-full" />}
-      {!isLoading && items.map((c) => (
+      {!isLoading && isError && <InlineError error={error} title="Couldn’t load weak students" />}
+      {!isLoading && !isError && items.map((c) => (
         <div key={c.chapterId} className="flex items-center gap-3 border border-slate-200 dark:border-slate-800 rounded-lg px-3 py-2.5 text-sm">
           <UserX className="w-4 h-4 text-rose-500 shrink-0" />
           <span className="font-mono text-xs text-slate-700 dark:text-slate-200">{c.chapterId}</span>
@@ -27,18 +29,19 @@ function WeakTab() {
           <span className="text-xs text-slate-400">/ {c.totalStudents} assessed</span>
         </div>
       ))}
-      {!isLoading && items.length === 0 && <p className="text-sm text-slate-500">No weak chapters detected.</p>}
+      {!isLoading && !isError && items.length === 0 && <p className="text-sm text-slate-500">No weak chapters detected.</p>}
     </div>
   );
 }
 
 function AtRiskTab() {
-  const { data, isLoading } = useAtRisk();
+  const { data, isLoading, isError, error } = useAtRisk();
   const items = data?.items || [];
   return (
     <div className="space-y-1.5">
       {isLoading && <Skeleton className="h-32 w-full" />}
-      {!isLoading && items.map((s) => (
+      {!isLoading && isError && <InlineError error={error} title="Couldn’t load at-risk students" />}
+      {!isLoading && !isError && items.map((s) => (
         <div key={s.studentId} className="flex items-center gap-3 border border-rose-200 dark:border-rose-900/60 rounded-lg px-3 py-2.5 text-sm bg-rose-50/50 dark:bg-rose-500/5">
           <AlertTriangle className="w-4 h-4 text-rose-500 shrink-0" />
           <span className="font-mono text-xs text-slate-800 dark:text-slate-100">{s.studentId}</span>
@@ -49,18 +52,19 @@ function AtRiskTab() {
           </Link>
         </div>
       ))}
-      {!isLoading && items.length === 0 && <p className="text-sm text-slate-500">No at-risk students detected.</p>}
+      {!isLoading && !isError && items.length === 0 && <p className="text-sm text-slate-500">No at-risk students detected.</p>}
     </div>
   );
 }
 
 function InactiveTab() {
-  const { data, isLoading } = useInactive();
+  const { data, isLoading, isError, error } = useInactive();
   const items = data?.items || [];
   return (
     <div className="space-y-1.5">
       {isLoading && <Skeleton className="h-32 w-full" />}
-      {!isLoading && items.map((s, i) => (
+      {!isLoading && isError && <InlineError error={error} title="Couldn’t load recent activity" />}
+      {!isLoading && !isError && items.map((s, i) => (
         <div key={i} className="flex items-center gap-3 border border-slate-200 dark:border-slate-800 rounded-lg px-3 py-2.5 text-sm">
           <span className="font-mono text-xs text-slate-700 dark:text-slate-200">{s.studentId}</span>
           <span className="font-mono text-xs text-slate-400">{s.chapterId}</span>
@@ -70,7 +74,7 @@ function InactiveTab() {
           </Link>
         </div>
       ))}
-      {!isLoading && items.length === 0 && <p className="text-sm text-slate-500">Everyone has recent activity.</p>}
+      {!isLoading && !isError && items.length === 0 && <p className="text-sm text-slate-500">Everyone has recent activity.</p>}
     </div>
   );
 }

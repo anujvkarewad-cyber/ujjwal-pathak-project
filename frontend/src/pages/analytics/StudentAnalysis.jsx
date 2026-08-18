@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import { ChevronRight, ShieldCheck, ShieldOff } from 'lucide-react';
 import { useStudentsList } from '@/api/hooks-content';
 import { Skeleton } from '@/components/common/Skeleton';
+import InlineError from '@/components/common/InlineError';
 
 export default function StudentAnalysis() {
-  const { data, isLoading } = useStudentsList();
+  const { data, isLoading, isError, error } = useStudentsList();
   const students = data?.items || [];
 
   return (
@@ -34,7 +35,10 @@ export default function StudentAnalysis() {
               Array.from({ length: 5 }).map((_, i) => (
                 <tr key={i} className="border-b border-slate-200 dark:border-slate-800"><td colSpan={5} className="px-4 py-3"><Skeleton className="h-5 w-full" /></td></tr>
               ))}
-            {!isLoading && students.map((s) => (
+            {!isLoading && isError && (
+              <tr><td colSpan={5} className="px-4 py-6"><InlineError error={error} title="Couldn’t load students" /></td></tr>
+            )}
+            {!isLoading && !isError && students.map((s) => (
               <tr key={s.studentId} className="border-b border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50">
                 <td className="px-4 py-3 font-mono font-medium text-slate-800 dark:text-slate-100">{s.studentId}</td>
                 <td className="px-4 py-3">
@@ -53,7 +57,7 @@ export default function StudentAnalysis() {
                 </td>
               </tr>
             ))}
-            {!isLoading && students.length === 0 && (
+            {!isLoading && !isError && students.length === 0 && (
               <tr><td colSpan={5} className="px-4 py-8 text-center text-sm text-slate-500">No analytics students yet — student devices sync after enabling sharing.</td></tr>
             )}
           </tbody>

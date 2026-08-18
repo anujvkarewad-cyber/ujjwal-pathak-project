@@ -1,6 +1,7 @@
 // Analytics → Group I / Group II analysis and Subject analysis.
 import { useGroupAnalysis, useWeakChapters } from '@/api/hooks-content';
 import { Skeleton } from '@/components/common/Skeleton';
+import InlineError from '@/components/common/InlineError';
 import { BAND_COLORS } from '@/components/content/ContentBadges';
 
 function GroupBars({ items }) {
@@ -30,7 +31,7 @@ function GroupBars({ items }) {
 }
 
 export function GroupAnalysis() {
-  const { data, isLoading } = useGroupAnalysis();
+  const { data, isLoading, isError, error } = useGroupAnalysis();
   return (
     <div className="space-y-4" data-testid="group-analysis">
       <div>
@@ -38,15 +39,17 @@ export function GroupAnalysis() {
         <p className="text-sm text-slate-500 dark:text-slate-400">Mastery band distribution across groups, from consented summaries.</p>
       </div>
       <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5">
-        {isLoading ? <Skeleton className="h-48 w-full" /> : <GroupBars items={data?.items || []} />}
-        {!isLoading && !(data?.items || []).length && <p className="text-sm text-slate-500">No group data yet.</p>}
+        {isLoading ? <Skeleton className="h-48 w-full" />
+          : isError ? <InlineError error={error} title="Couldn’t load group analysis" />
+          : <GroupBars items={data?.items || []} />}
+        {!isLoading && !isError && !(data?.items || []).length && <p className="text-sm text-slate-500">No group data yet.</p>}
       </div>
     </div>
   );
 }
 
 export function SubjectAnalysis() {
-  const { data, isLoading } = useWeakChapters();
+  const { data, isLoading, isError, error } = useWeakChapters();
   const items = data?.items || [];
   return (
     <div className="space-y-4" data-testid="subject-analysis">
@@ -68,7 +71,10 @@ export function SubjectAnalysis() {
             {isLoading && Array.from({ length: 4 }).map((_, i) => (
               <tr key={i} className="border-b border-slate-200 dark:border-slate-800"><td colSpan={4} className="px-4 py-3"><Skeleton className="h-5 w-full" /></td></tr>
             ))}
-            {!isLoading && items.map((c) => (
+            {!isLoading && isError && (
+              <tr><td colSpan={4} className="px-4 py-6"><InlineError error={error} title="Couldn’t load subject analysis" /></td></tr>
+            )}
+            {!isLoading && !isError && items.map((c) => (
               <tr key={c.chapterId} className="border-b border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50">
                 <td className="px-4 py-3 font-mono text-xs text-slate-700 dark:text-slate-200">{c.chapterId}</td>
                 <td className="px-4 py-3 text-xs text-rose-600 font-semibold">{c.weakStudents}</td>
@@ -83,7 +89,7 @@ export function SubjectAnalysis() {
                 </td>
               </tr>
             ))}
-            {!isLoading && items.length === 0 && (
+            {!isLoading && !isError && items.length === 0 && (
               <tr><td colSpan={4} className="px-4 py-8 text-center text-sm text-slate-500">No data yet.</td></tr>
             )}
           </tbody>

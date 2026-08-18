@@ -4,11 +4,12 @@ import { CheckCircle2, Plus, Trash2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { useCreateFollowup, useFollowups, useUpdateFollowup } from '@/api/hooks-content';
 import { Skeleton } from '@/components/common/Skeleton';
+import InlineError from '@/components/common/InlineError';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/utils/format';
 
 export default function FollowUps() {
-  const { data, isLoading } = useFollowups();
+  const { data, isLoading, isError, error } = useFollowups();
   const create = useCreateFollowup();
   const update = useUpdateFollowup();
   const [title, setTitle] = useState('');
@@ -65,7 +66,8 @@ export default function FollowUps() {
 
       <div className="space-y-2">
         {isLoading && <Skeleton className="h-32 w-full" />}
-        {!isLoading && items.map((f) => (
+        {!isLoading && isError && <InlineError error={error} title="Couldn’t load follow-ups" />}
+        {!isLoading && !isError && items.map((f) => (
           <div key={f.followupId} className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4">
             <div className="flex flex-wrap items-center gap-3">
               <span className="text-sm font-medium text-slate-800 dark:text-slate-100">{f.title}</span>
@@ -106,7 +108,7 @@ export default function FollowUps() {
             )}
           </div>
         ))}
-        {!isLoading && items.length === 0 && <p className="text-sm text-slate-500 p-6 text-center">No follow-up actions yet.</p>}
+        {!isLoading && !isError && items.length === 0 && <p className="text-sm text-slate-500 p-6 text-center">No follow-up actions yet.</p>}
       </div>
     </div>
   );

@@ -8,11 +8,12 @@ import { useStudent } from '@/api/hooks';
 import { useStudentAnalysis } from '@/api/hooks-content';
 import { BandBadge } from '@/components/content/ContentBadges';
 import { Skeleton } from '@/components/common/Skeleton';
+import InlineError from '@/components/common/InlineError';
 import { StatusBadge as ProfileStatusBadge } from '@/components/common/RiskBadge';
 
 export default function StudentAnalysisDetail() {
   const { id } = useParams();
-  const { data: analysis, isLoading } = useStudentAnalysis(id);
+  const { data: analysis, isLoading, isError, error } = useStudentAnalysis(id);
   // Existing backend profile (Apps Script) — study activity, group, attempt.
   const { data: profile } = useStudent(id);
 
@@ -26,6 +27,8 @@ export default function StudentAnalysisDetail() {
       </div>
 
       {isLoading && <Skeleton className="h-64 w-full" />}
+
+      {!isLoading && isError && <InlineError error={error} title="Couldn’t load this student’s analysis" />}
 
       {analysis && (
         <>

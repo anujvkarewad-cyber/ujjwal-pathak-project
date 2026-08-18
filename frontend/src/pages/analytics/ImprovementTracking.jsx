@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import { ChevronRight, TrendingDown, TrendingUp } from 'lucide-react';
 import { useImprovement } from '@/api/hooks-content';
 import { Skeleton } from '@/components/common/Skeleton';
+import InlineError from '@/components/common/InlineError';
 
 export default function ImprovementTracking() {
-  const { data, isLoading } = useImprovement();
+  const { data, isLoading, isError, error } = useImprovement();
   const items = data?.items || [];
 
   return (
@@ -17,7 +18,8 @@ export default function ImprovementTracking() {
       </div>
 
       {isLoading && <Skeleton className="h-40 w-full" />}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      {!isLoading && isError && <InlineError error={error} title="Couldn’t load improvement tracking" />}
+      {!isError && <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4">
           <div className="flex items-center gap-2 text-sm font-semibold text-emerald-600 mb-3">
             <TrendingUp className="w-4 h-4" /> Improving
@@ -53,7 +55,7 @@ export default function ImprovementTracking() {
             {!items.some((i) => i.decliningChapters?.length) && <p className="text-sm text-slate-500">No declining students — nice.</p>}
           </div>
         </div>
-      </div>
+      </div>}
     </div>
   );
 }
