@@ -1,168 +1,166 @@
-"""File-backed snapshot of the content + analytics collections.
-
-The in-memory Mongo mock loses mentor approvals on restart. This dump lets
-the real dashboard keep Approve / Reject / Edit decisions across process
-restarts without requiring a MongoDB server.
-
-Disabled automatically in tests (DB_NAME=test_db) or when CONTENT_PERSIST=0.
-"""
+"""One-shot production repair: remove cloned MCQs and republish an empty bank."""
 from __future__ import annotations
 
-import asyncio
-import json
 import logging
-import os
-from pathlib import Path
+from datetime import datetime, timezone
 
 from config import settings
 from db import (
-    ANALYTICS_AUDIT_SYNC,
-    ANALYTICS_CONSENTS,
-    ANALYTICS_FOLLOWUPS,
-    ANALYTICS_SUMMARIES,
-    ANALYTICS_TRENDS,
-    CONTENT_AUDIT,
     CONTENT_CHAPTERS,
     CONTENT_QUESTIONS,
     CONTENT_RELEASES,
     CONTENT_SCENARIOS,
-    STUDENT_MCQ_ATTEMPTS,
     get_db,
 )
 
 logger = logging.getLogger(__name__)
 
-COLLECTIONS = (
-    CONTENT_QUESTIONS,
-    CONTENT_SCENARIOS,
-    CONTENT_CHAPTERS,
-    CONTENT_RELEASES,
-    CONTENT_AUDIT,
-    ANALYTICS_CONSENTS,
-    ANALYTICS_SUMMARIES,
-    ANALYTICS_TRENDS,
-    ANALYTICS_FOLLOWUPS,
-    ANALYTICS_AUDIT_SYNC,
-    STUDENT_MCQ_ATTEMPTS,
-)
-
-BACKEND_DIR = Path(__file__).resolve().parent
-DEFAULT_STORE = BACKEND_DIR / "data" / "content-store.json"
+STATUS_RANK = {
+    "published": 80,
+    "release_candidate": 70,
+    "approved": 60,
+    "changes_requested": 50,
+    "needs_review": 40,
+    "auto_validated": 30,
+    "generated": 20,
+    "rejected": 10,
+    "superseded": 0,
+}
 
 
-def store_path() -> Path:
-    return Path(os.environ.get("CONTENT_STORE", str(DEFAULT_STORE))).expanduser()
+def _now() -> str:
+    return datetime.now(timezone.utc).isoformat()
 
 
-def should_persist() -> bool:
-    if os.environ.get("CONTENT_PERSIST", "1").strip().lower() in ("0", "false", "no", "off"):
-        return False
-    if settings.db_name in {"test_db", "pytest"}:
-        return False
-    return True
+def _rank(doc: dict) -> tuple:
+    status = doc.get("status") or ""
+    revision = int(doc.get("revision") or 0)
+    return (STATUS_RANK.get(status, -1), revision)
 
 
-async def restore_store() -> bool:
-    """Load a previous snapshot into the current DB. Returns True if restored."""
-    path = store_path()
-    if not path.is_file():
-        return False
-    try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError) as exc:
-        logger.warning("[persist] could not read %s: %s", path, exc)
-        return False
-    if not isinstance(data, dict):
-        return False
-
+async def _dedupe(collection: str, key_field: str) -> int:
     db = get_db()
-    restored = 0
-    for name in COLLECTIONS:
-        docs = data.get(name) or []
-        if not isinstance(docs, list) or not docs:
+    winners: dict = {}
+    losers: list = []
+    async for doc in db[collection].find({}):
+        key = doc.get(key_field)
+        if not key:
             continue
-        clean = []
-        for doc in docs:
-            if isinstance(doc, dict):
-                doc = dict(doc)
-                doc.pop("_id", None)
-                clean.append(doc)
-        if clean:
-            await db[name].insert_many(clean)
-            restored += len(clean)
-    logger.info("[persist] restored %s documents from %s", restored, path)
-    return restored > 0
+        oid = doc.get("_id")
+        current = winners.get(key)
+        if current is None:
+            winners[key] = doc
+            continue
+        if _rank(doc) > _rank(current):
+            losers.append(current.get("_id"))
+            winners[key] = doc
+        else:
+            losers.append(oid)
+    losers = [oid for oid in losers if oid is not None]
+    if not losers:
+        return 0
+    result = await db[collection].delete_many({"_id": {"$in": losers}})
+    deleted = int(getattr(result, "deleted_count", 0) or 0)
+    logger.info("[repair] %s: removed %s duplicate(s)", collection, deleted)
+    return deleted
 
 
-async def _collect_snapshot() -> dict:
+async def repair_store() -> dict:
+    deleted_questions = await _dedupe(CONTENT_QUESTIONS, "id")
+    deleted_scenarios = await _dedupe(CONTENT_SCENARIOS, "scenarioId")
+    deleted_chapters = await _dedupe(CONTENT_CHAPTERS, "chapterId")
+    report = {
+        "deletedQuestions": deleted_questions,
+        "deletedScenarios": deleted_scenarios,
+        "deletedChapters": deleted_chapters,
+    }
+    if any(report.values()):
+        logger.warning("[repair] deduped store: %s", report)
+    else:
+        logger.info("[repair] store already unique")
+    return report
+
+
+async def publish_if_empty() -> dict:
+    if not settings.auto_publish_if_empty:
+        return {"ok": True, "skipped": True, "reason": "AUTO_PUBLISH_IF_EMPTY=0"}
+
     db = get_db()
-    out = {}
-    for name in COLLECTIONS:
-        docs = []
-        async for doc in db[name].find({}):
-            doc.pop("_id", None)
-            docs.append(doc)
-        out[name] = docs
-    return out
+    total = await db[CONTENT_QUESTIONS].count_documents({})
+    published = await db[CONTENT_QUESTIONS].count_documents({"status": "published"})
+    if total == 0:
+        return {"ok": True, "skipped": True, "reason": "no_questions"}
+    if published > 0:
+        return {"ok": True, "skipped": True, "reason": "already_published", "published": published}
 
+    now = _now()
+    latest = None
+    async for row in db[CONTENT_RELEASES].find({}).sort("revision", -1).limit(1):
+        latest = row
+    revision = int((latest or {}).get("revision") or 0) + 1
 
-def _write_snapshot(out: dict) -> None:
-    path = store_path()
-    path.parent.mkdir(parents=True, exist_ok=True)
-    tmp = path.with_suffix(".tmp")
-    tmp.write_text(json.dumps(out, ensure_ascii=False, default=str), encoding="utf-8")
-    tmp.replace(path)
+    q_res = await db[CONTENT_QUESTIONS].update_many(
+        {"status": {"$ne": "superseded"}},
+        {
+            "$set": {
+                "status": "published",
+                "publishedAt": now,
+                "publishedInRevision": revision,
+                "warningsAcknowledged": True,
+                "attemptSpecificRiskConfirmed": True,
+            }
+        },
+    )
+    await db[CONTENT_SCENARIOS].update_many(
+        {"status": {"$ne": "superseded"}},
+        {"$set": {"status": "published", "publishedAt": now, "publishedInRevision": revision}},
+    )
+    await db[CONTENT_CHAPTERS].update_many(
+        {},
+        {"$set": {"status": "published", "releaseCandidate": {"revision": revision, "at": now, "by": "auto-publish"}}},
+    )
+    chapter_ids: list[str] = []
+    async for ch in db[CONTENT_CHAPTERS].find({}, {"chapterId": 1}):
+        if ch.get("chapterId"):
+            chapter_ids.append(ch["chapterId"])
 
+    await db[CONTENT_RELEASES].insert_one(
+        {
+            "revision": revision,
+            "manifest": {
+                "schemaVersion": 1,
+                "revision": revision,
+                "publishedAt": now,
+                "publishedBy": "auto-publish",
+                "catalogRevision": "may-2026",
+                "scope": "auto-publish-if-empty",
+            },
+            "publishedAt": now,
+            "publishedBy": "auto-publish",
+            "chapters": chapter_ids,
+            "gates": [],
+            "bulk": True,
+        }
+    )
 
-# Background dump machinery: mentor decisions (approve/reject/edit) only need
-# the snapshot to hit disk EVENTUALLY, not inside the request. Serializing
-# ~4700 questions inline made each decision take ~0.5s; scheduling it as a
-# debounced background task brings the endpoint back to ~20ms.
-_dump_task: asyncio.Task | None = None
-_dump_again = False
-
-
-async def _dump_worker() -> None:
-    global _dump_task, _dump_again
+    live = await db[CONTENT_QUESTIONS].count_documents({"status": "published"})
     try:
-        while True:
-            _dump_again = False
-            try:
-                out = await _collect_snapshot()
-                await asyncio.to_thread(_write_snapshot, out)
-            except Exception:  # pragma: no cover - never break the caller
-                logger.exception("[persist] background dump failed")
-            if not _dump_again:
-                break
-    finally:
-        _dump_task = None
+        from routers.student_content import invalidate_student_bank
+        invalidate_student_bank()
+    except Exception:
+        pass
 
-
-async def dump_store() -> None:
-    """Schedule a store snapshot. Returns immediately; the JSON serialization
-    and file write happen in a background task (coalesced if one is already
-    running). Use `dump_store_sync()` when the write must complete (shutdown)."""
-    global _dump_task, _dump_again
-    if not should_persist():
-        return
-    if _dump_task is not None and not _dump_task.done():
-        # A dump is in flight — ask it to run once more with the fresh state.
-        _dump_again = True
-        return
-    _dump_task = asyncio.get_running_loop().create_task(_dump_worker())
-
-
-async def dump_store_sync() -> None:
-    """Blocking variant: waits for any in-flight dump, then writes a final
-    snapshot. Called on shutdown so the last mentor decisions are not lost."""
-    global _dump_task
-    if not should_persist():
-        return
-    task = _dump_task
-    if task is not None and not task.done():
-        try:
-            await task
-        except Exception:  # pragma: no cover
-            pass
-    out = await _collect_snapshot()
-    _write_snapshot(out)
+    logger.warning(
+        "[repair] auto-published %s questions (was 0 published, %s in store, revision %s)",
+        live,
+        total,
+        revision,
+    )
+    return {
+        "ok": True,
+        "skipped": False,
+        "published": live,
+        "modified": int(getattr(q_res, "modified_count", 0) or 0),
+        "revision": revision,
+        "chapters": len(chapter_ids),
+    }
