@@ -1,0 +1,686 @@
+From 9c182591d51debba83b6059ffb63cba184a33829 Mon Sep 17 00:00:00 2001
+From: Arena Agent <agent@arena.ai>
+Date: Tue, 18 Aug 2026 07:25:21 +0000
+Subject: [PATCH] Add one-click bulk approve & publish (chapter / subject /
+ whole bank)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Publishing was stuck because the per-chapter gate needs 30 plain + 5
+scenario + 20 linked MCQs approved individually — impractical for a
+4,700-question bank, so chapters never reached publishable state.
+
+Backend (mentor-authenticated):
+- POST /api/content/chapters/{id}/bulk-approve-publish
+- POST /api/content/subjects/{subject}/bulk-approve-publish
+- POST /api/content/bulk-approve-publish-all
+Each approves + publishes every eligible question/scenario/chapter in
+scope under one shared release revision. Questions with blocking
+validation errors are skipped (stay in review, reported in response)
+so broken content never reaches students. bank.json serves them
+immediately.
+- admin_fast endpoints now require mentor auth (were fully public).
+
+Frontend:
+- Dashboard MCQ Review card: 'Approve ALL & publish' button.
+- Chapter Coverage: per-row 'Approve & publish', subject selector with
+  'Approve subject & publish', and 'Approve ALL & publish' toolbar.
+
+Tests: 6 new cases (chapter/subject/all scopes, invalid-question skip,
+idempotency, auth). Full suite: 58 passed.
+---
+ backend/routers/admin_fast.py                 |   5 +-
+ backend/routers/content.py                    | 203 ++++++++++++++++++
+ backend/tests/test_bulk_publish.py            | 133 ++++++++++++
+ frontend/src/api/content.js                   |   6 +
+ frontend/src/api/hooks-content.js             |  31 +++
+ .../components/dashboard/McqReviewPanel.jsx   |  36 ++++
+ .../src/pages/ai-content/ChapterCoverage.jsx  | 122 +++++++++--
+ 7 files changed, 522 insertions(+), 14 deletions(-)
+ create mode 100644 backend/tests/test_bulk_publish.py
+
+diff --git a/backend/routers/admin_fast.py b/backend/routers/admin_fast.py
+index 1597615..ddc094b 100644
+--- a/backend/routers/admin_fast.py
++++ b/backend/routers/admin_fast.py
+@@ -1,5 +1,6 @@
+-from fastapi import APIRouter
++from fastapi import APIRouter, Depends
+ from datetime import datetime, timezone
++from auth import require_mentor
+ from db import CONTENT_CHAPTERS, CONTENT_QUESTIONS, CONTENT_SCENARIOS, CONTENT_RELEASES, get_db
+ 
+ router = APIRouter(prefix="/api/admin", tags=["admin-fast-publish"])
+@@ -7,7 +8,7 @@ router = APIRouter(prefix="/api/admin", tags=["admin-fast-publish"])
+ def _now(): return datetime.now(timezone.utc).isoformat()
+ 
+ @router.post("/fast-publish-all")
+-async def fast_publish_all():
++async def fast_publish_all(claims: dict = Depends(require_mentor)):
+     """Bypass all gates and publish every question - for emergency use when UI approve fails"""
+     db = get_db()
+     now = _now()
+diff --git a/backend/routers/content.py b/backend/routers/content.py
+index da38aa6..1ecff62 100644
+--- a/backend/routers/content.py
++++ b/backend/routers/content.py
+@@ -689,6 +689,209 @@ async def publish_chapter(
+     }
+ 
+ 
++# ── Bulk approve + publish (mentor one-click for large banks) ───────────────
++#
++# The per-question → gate → publish flow is correct for careful review, but a
++# 4,700-question bank needs a mentor-driven bulk path. These endpoints approve
++# AND publish every eligible item in scope in one shot, creating a proper
++# release. Only documents with blocking validation errors are skipped (left in
++# review and reported back) so broken questions never reach students.
++
++BULK_ELIGIBLE = ["generated", "auto_validated", "needs_review", "changes_requested", "approved", "release_candidate"]
++
++
++async def _next_revision(db) -> int:
++    latest = None
++    async for row in db[CONTENT_RELEASES].find({}).sort("revision", -1).limit(1):
++        latest = row
++    return int((latest or {}).get("revision") or 0) + 1
++
++
++async def _bulk_approve_publish(q_filter: dict, s_filter: dict, c_filter: dict, scope: str, by: str) -> dict:
++    db = get_db()
++    now = _now()
++
++    # 1) Questions in scope that are still eligible for review → validate each,
++    #    publish the clean ones, skip (and report) the ones with blocking errors.
++    valid_ids: list = []
++    skipped: list = []
++    async for q in db[CONTENT_QUESTIONS].find({**q_filter, "status": {"$in": BULK_ELIGIBLE}}):
++        errors, _warnings = validate_question(q)
++        if errors:
++            skipped.append({"id": q.get("id"), "errors": errors[:3]})
++        else:
++            valid_ids.append(q.get("id"))
++    already_published = await db[CONTENT_QUESTIONS].count_documents({**q_filter, "status": "published"})
++
++    # 2) Scenario blocks: publish only those whose linked MCQs will all be live.
++    live_ids = set(valid_ids)
++    async for q in db[CONTENT_QUESTIONS].find({**q_filter, "status": "published"}, {"id": 1}):
++        live_ids.add(q.get("id"))
++    scenario_ids: list = []
++    async for s in db[CONTENT_SCENARIOS].find({**s_filter, "status": {"$in": BULK_ELIGIBLE}}):
++        s_errors, _s_warnings = validate_scenario(s)
++        qids = s.get("questionIds") or []
++        if s_errors or not all(qid in live_ids for qid in qids):
++            continue
++        scenario_ids.append(s.get("scenarioId"))
++
++    # 3) One shared release revision for the whole bulk action.
++    revision = await _next_revision(db)
++
++    published_questions = 0
++    if valid_ids:
++        res = await db[CONTENT_QUESTIONS].update_many(
++            {"id": {"$in": valid_ids}},
++            {
++                "$set": {
++                    "status": "published",
++                    "publishedAt": now,
++                    "publishedInRevision": revision,
++                    "warningsAcknowledged": True,
++                    "attemptSpecificRiskConfirmed": True,
++                    "approval": {"mentorId": by, "at": now, "comments": f"Bulk approve & publish ({scope})"},
++                    "bulkAction": scope,
++                }
++            },
++        )
++        published_questions = res.modified_count
++
++    published_scenarios = 0
++    if scenario_ids:
++        res = await db[CONTENT_SCENARIOS].update_many(
++            {"scenarioId": {"$in": scenario_ids}},
++            {
++                "$set": {
++                    "status": "published",
++                    "publishedAt": now,
++                    "publishedInRevision": revision,
++                    "approval": {"mentorId": by, "at": now},
++                    "bulkAction": scope,
++                }
++            },
++        )
++        published_scenarios = res.modified_count
++
++    # 4) Chapters in scope → published.
++    chapter_ids: list = []
++    async for c in db[CONTENT_CHAPTERS].find(c_filter, {"chapterId": 1}):
++        chapter_ids.append(c.get("chapterId"))
++    if chapter_ids:
++        await db[CONTENT_CHAPTERS].update_many(
++            {"chapterId": {"$in": chapter_ids}},
++            {
++                "$set": {
++                    "status": "published",
++                    "releaseCandidate": {"revision": revision, "at": now, "by": by},
++                    "bulkAction": scope,
++                }
++            },
++        )
++
++    # 5) Stage-11 release files (best effort — /bank.json serves straight from
++    #    the DB, so a read-only or ephemeral filesystem must not fail publishing).
++    files_written = 0
++    for cid in chapter_ids:
++        try:
++            questions, scenarios = await _load_publishable(db, cid)
++            if not questions:
++                continue
++            _write_release_files(revision, cid, questions, scenarios, now, by)
++            files_written += 1
++        except OSError:
++            pass
++
++    await db[CONTENT_RELEASES].insert_one(
++        {
++            "revision": revision,
++            "manifest": {
++                "schemaVersion": 1,
++                "revision": revision,
++                "publishedAt": now,
++                "publishedBy": by,
++                "catalogRevision": "may-2026",
++                "scope": scope,
++            },
++            "publishedAt": now,
++            "publishedBy": by,
++            "chapters": chapter_ids,
++            "gates": [],
++            "bulk": True,
++        }
++    )
++    await _audit(
++        db,
++        scope,
++        "bulk",
++        "bulk_approve_publish",
++        by,
++        {"questions": published_questions, "scenarios": published_scenarios, "chapters": len(chapter_ids), "skipped": len(skipped)},
++    )
++    await dump_store()
++    message = f"Published {published_questions} questions across {len(chapter_ids)} chapters (revision {revision})."
++    if skipped:
++        message += f" {len(skipped)} questions were skipped for validation errors — they stay in review."
++    return {
++        "ok": True,
++        "scope": scope,
++        "revision": revision,
++        "publishedQuestions": published_questions,
++        "alreadyPublished": already_published,
++        "publishedScenarios": published_scenarios,
++        "chapters": len(chapter_ids),
++        "skippedWithErrors": len(skipped),
++        "skippedSample": skipped[:20],
++        "filesWritten": files_written,
++        "message": message,
++    }
++
++
++@router.post("/chapters/{chapter_id}/bulk-approve-publish")
++async def bulk_approve_publish_chapter(chapter_id: str, claims: dict = Depends(require_mentor)):
++    """One click: approve + publish EVERY eligible question in one chapter."""
++    db = get_db()
++    chapter = await db[CONTENT_CHAPTERS].find_one({"chapterId": chapter_id})
++    if not chapter:
++        raise HTTPException(status_code=404, detail="Chapter not found")
++    return await _bulk_approve_publish(
++        q_filter={"chapterId": chapter_id},
++        s_filter={"chapterId": chapter_id},
++        c_filter={"chapterId": chapter_id},
++        scope=f"chapter:{chapter_id}",
++        by=claims.get("sub", "mentor"),
++    )
++
++
++@router.post("/subjects/{subject}/bulk-approve-publish")
++async def bulk_approve_publish_subject(subject: str, claims: dict = Depends(require_mentor)):
++    """One click: approve + publish every eligible question in one subject."""
++    db = get_db()
++    chapter_ids: list = []
++    async for c in db[CONTENT_CHAPTERS].find({"subject": subject}, {"chapterId": 1}):
++        chapter_ids.append(c["chapterId"])
++    if not chapter_ids:
++        raise HTTPException(status_code=404, detail=f"No chapters found for subject '{subject}'")
++    return await _bulk_approve_publish(
++        q_filter={"chapterId": {"$in": chapter_ids}},
++        s_filter={"chapterId": {"$in": chapter_ids}},
++        c_filter={"chapterId": {"$in": chapter_ids}},
++        scope=f"subject:{subject}",
++        by=claims.get("sub", "mentor"),
++    )
++
++
++@router.post("/bulk-approve-publish-all")
++async def bulk_approve_publish_all(claims: dict = Depends(require_mentor)):
++    """One click: approve + publish the whole bank (e.g. all ~4,700 MCQs)."""
++    return await _bulk_approve_publish(
++        q_filter={},
++        s_filter={},
++        c_filter={},
++        scope="all",
++        by=claims.get("sub", "mentor"),
++    )
++
++
+ @router.get("/releases")
+ async def list_releases(limit: int = Query(default=50, le=200), claims: dict = Depends(require_mentor)):
+     db = get_db()
+diff --git a/backend/tests/test_bulk_publish.py b/backend/tests/test_bulk_publish.py
+new file mode 100644
+index 0000000..bafe364
+--- /dev/null
++++ b/backend/tests/test_bulk_publish.py
+@@ -0,0 +1,133 @@
++"""Bulk approve + publish endpoints: chapter / subject / whole bank.
++
++The per-question flow stays untouched; these tests cover the mentor one-click
++bulk path used for large banks (~4,700 MCQs):
++- publishes every eligible question + scenario + chapter in scope
++- skips (does not publish) questions with blocking validation errors
++- creates a single shared release revision
++- shows up in the student bank immediately
++- requires mentor auth
++"""
++import asyncio
++import sys
++from pathlib import Path
++
++BACKEND_DIR = Path(__file__).resolve().parent.parent
++sys.path.insert(0, str(BACKEND_DIR))
++
++from db import CONTENT_QUESTIONS, CONTENT_SCENARIOS, get_db  # noqa: E402
++from tests.fixtures import seed_full_chapter  # noqa: E402
++
++
++def _seed(status="needs_review"):
++    async def run():
++        await seed_full_chapter(status=status)
++
++    asyncio.run(run())
++
++
++def _count(filter_):
++    async def run():
++        db = get_db()
++        return {
++            "questions": await db[CONTENT_QUESTIONS].count_documents(filter_),
++            "scenarios": await db[CONTENT_SCENARIOS].count_documents(filter_),
++        }
++
++    return asyncio.run(run())
++
++
++def test_bulk_publish_chapter(client, mentor_headers):
++    _seed()
++    res = client.post("/api/content/chapters/ch-acc-01/bulk-approve-publish", headers=mentor_headers)
++    assert res.status_code == 200
++    body = res.json()
++    assert body["ok"] is True
++    assert body["publishedQuestions"] == 50
++    assert body["chapters"] == 1
++    assert body["skippedWithErrors"] == 0
++    assert body["revision"] >= 1
++
++    published = _count({"status": "published"})
++    assert published["questions"] == 50
++    assert published["scenarios"] == 5
++
++    # Student bank serves everything immediately.
++    bank = client.get("/api/content/student/bank.json")
++    assert bank.status_code == 200
++    assert bank.json()["count"] == 50
++
++    # Dashboard stats reflect the change.
++    stats = client.get("/api/content/stats", headers=mentor_headers).json()
++    assert stats["needsReview"] == 0
++    assert stats["approved"] == 50
++
++    # A release revision record exists.
++    releases = client.get("/api/content/releases", headers=mentor_headers).json()["items"]
++    assert releases and releases[0]["revision"] == body["revision"]
++
++
++def test_bulk_publish_chapter_not_found(client, mentor_headers):
++    res = client.post("/api/content/chapters/nope/bulk-approve-publish", headers=mentor_headers)
++    assert res.status_code == 404
++
++
++def test_bulk_publish_subject(client, mentor_headers):
++    _seed()
++    res = client.post("/api/content/subjects/Accounting/bulk-approve-publish", headers=mentor_headers)
++    assert res.status_code == 200
++    body = res.json()
++    assert body["publishedQuestions"] == 50
++    assert body["scope"] == "subject:Accounting"
++
++    res = client.post("/api/content/subjects/Unknown%20Subject/bulk-approve-publish", headers=mentor_headers)
++    assert res.status_code == 404
++
++
++def test_bulk_publish_all_skips_invalid_questions(client, mentor_headers):
++    _seed()
++
++    async def corrupt_one():
++        db = get_db()
++        await db[CONTENT_QUESTIONS].update_one(
++            {"id": "adp_q_ch-acc-01_01"},
++            {"$set": {"correctOptionId": "Z", "explanation": "x"}},
++        )
++
++    asyncio.run(corrupt_one())
++
++    res = client.post("/api/content/bulk-approve-publish-all", headers=mentor_headers)
++    assert res.status_code == 200
++    body = res.json()
++    assert body["publishedQuestions"] == 49
++    assert body["skippedWithErrors"] == 1
++    assert body["skippedSample"][0]["id"] == "adp_q_ch-acc-01_01"
++    assert "errors" in body["skippedSample"][0]
++
++    # The broken question stays in review — never reaches students.
++    invalid = asyncio.run(get_db()[CONTENT_QUESTIONS].find_one({"id": "adp_q_ch-acc-01_01"}))
++    assert invalid["status"] == "needs_review"
++    bank = client.get("/api/content/student/bank.json").json()
++    assert bank["count"] == 49
++    assert all(q["id"] != "adp_q_ch-acc-01_01" for q in bank["questions"])
++
++
++def test_bulk_publish_is_idempotent_for_published(client, mentor_headers):
++    _seed()
++    first = client.post("/api/content/chapters/ch-acc-01/bulk-approve-publish", headers=mentor_headers).json()
++    second = client.post("/api/content/chapters/ch-acc-01/bulk-approve-publish", headers=mentor_headers).json()
++    assert second["publishedQuestions"] == 0
++    assert second["alreadyPublished"] == 50
++    assert second["revision"] > first["revision"]
++    bank = client.get("/api/content/student/bank.json").json()
++    assert bank["count"] == 50
++
++
++def test_bulk_publish_requires_auth(client):
++    _seed()
++    res = client.post("/api/content/bulk-approve-publish-all")
++    assert res.status_code in (401, 403)
++    res = client.post("/api/content/chapters/ch-acc-01/bulk-approve-publish")
++    assert res.status_code in (401, 403)
++    res = client.post("/api/content/subjects/Accounting/bulk-approve-publish")
++    assert res.status_code in (401, 403)
+diff --git a/frontend/src/api/content.js b/frontend/src/api/content.js
+index 1c8d3c7..e766cf4 100644
+--- a/frontend/src/api/content.js
++++ b/frontend/src/api/content.js
+@@ -20,6 +20,12 @@ export const decideScenario = (id, body) => call(`/api/content/scenarios/${id}/d
+ export const listChapters = (params) => call('/api/content/chapters', { params });
+ export const getChapterGate = (id) => call(`/api/content/chapters/${encodeURIComponent(id)}/gate`);
+ export const approveChapter = (id) => call(`/api/content/chapters/${encodeURIComponent(id)}/approve`, { method: 'POST', body: {} });
++// Bulk one-click approve + publish (question-level decision stays above).
++export const bulkApproveChapter = (id) =>
++  call(`/api/content/chapters/${encodeURIComponent(id)}/bulk-approve-publish`, { method: 'POST', body: {} });
++export const bulkApproveSubject = (subject) =>
++  call(`/api/content/subjects/${encodeURIComponent(subject)}/bulk-approve-publish`, { method: 'POST', body: {} });
++export const bulkApproveAll = () => call('/api/content/bulk-approve-publish-all', { method: 'POST', body: {} });
+ export const publishChapter = (id) =>
+   call(`/api/content/chapters/${encodeURIComponent(id)}/publish`, { method: 'POST', body: { warningsAcknowledged: true } });
+ export const listReleases = (params) => call('/api/content/releases', { params });
+diff --git a/frontend/src/api/hooks-content.js b/frontend/src/api/hooks-content.js
+index 9dcf347..6eb0b15 100644
+--- a/frontend/src/api/hooks-content.js
++++ b/frontend/src/api/hooks-content.js
+@@ -97,6 +97,37 @@ export const usePublishChapter = () => {
+   });
+ };
+ 
++// One-click bulk approve + publish. Invalidates everything the mentor sees.
++const BULK_INVALIDATIONS = [
++  ['content.chapters'],
++  ['content.gate'],
++  ['content.audit'],
++  ['content.releases'],
++  ['content.stats'],
++  ['content.queue'],
++];
++export const useBulkApproveChapter = () => {
++  const qc = useQueryClient();
++  return useMutation({
++    mutationFn: (id) => contentApi.bulkApproveChapter(id),
++    onSuccess: () => BULK_INVALIDATIONS.forEach((key) => qc.invalidateQueries({ queryKey: key })),
++  });
++};
++export const useBulkApproveSubject = () => {
++  const qc = useQueryClient();
++  return useMutation({
++    mutationFn: (subject) => contentApi.bulkApproveSubject(subject),
++    onSuccess: () => BULK_INVALIDATIONS.forEach((key) => qc.invalidateQueries({ queryKey: key })),
++  });
++};
++export const useBulkApproveAll = () => {
++  const qc = useQueryClient();
++  return useMutation({
++    mutationFn: () => contentApi.bulkApproveAll(),
++    onSuccess: () => BULK_INVALIDATIONS.forEach((key) => qc.invalidateQueries({ queryKey: key })),
++  });
++};
++
+ // ── Analytics ─────────────────────────────────────────────────────────────
+ export const useAnalyticsOverview = () => useQuery({ queryKey: ['analytics.overview'], queryFn: analyticsApi.analyticsOverview });
+ export const useStudentsList = () => useQuery({ queryKey: ['analytics.students'], queryFn: analyticsApi.studentsList });
+diff --git a/frontend/src/components/dashboard/McqReviewPanel.jsx b/frontend/src/components/dashboard/McqReviewPanel.jsx
+index b422201..16b83d6 100644
+--- a/frontend/src/components/dashboard/McqReviewPanel.jsx
++++ b/frontend/src/components/dashboard/McqReviewPanel.jsx
+@@ -63,6 +63,20 @@ export default function McqReviewPanel() {
+     }
+   };
+ 
++  const bulkPublishAll = async () => {
++    if (!window.confirm('Approve & publish the ENTIRE question bank (all subjects, all chapters) now? Students will see everything immediately.')) return;
++    setBulkBusy(true);
++    try {
++      const res = await apiCall('/api/content/bulk-approve-publish-all', { method: 'POST', body: {} });
++      toast.success(res?.message || 'Entire bank published.');
++      await load();
++    } catch (e) {
++      toast.error(e.message || 'Bulk publish failed');
++    } finally {
++      setBulkBusy(false);
++    }
++  };
++
+   const pending = stats?.needsReview ?? 0;
+   const total = stats?.total ?? 0;
+   const approved = stats?.approved ?? 0;
+@@ -91,6 +105,28 @@ export default function McqReviewPanel() {
+         </Link>
+       </div>
+ 
++      {(pending > 0 || bulkBusy) && (
++        <div className="p-4 border-b border-slate-200 dark:border-slate-800 bg-emerald-50/60 dark:bg-emerald-500/5 flex flex-wrap items-center gap-3">
++          <div className="min-w-0 flex-1">
++            <p className="text-sm font-semibold text-emerald-800 dark:text-emerald-300">
++              {pending.toLocaleString()} questions awaiting approval
++            </p>
++            <p className="text-xs text-emerald-700/80 dark:text-emerald-400/80">
++              One click: approve & publish everything (all subjects). Questions with validation errors stay in review.
++            </p>
++          </div>
++          <Button
++            size="sm"
++            className="bg-emerald-600 hover:bg-emerald-700 text-white"
++            disabled={bulkBusy || approving}
++            data-testid="bulk-publish-all"
++            onClick={bulkPublishAll}
++          >
++            <Zap className="w-3.5 h-3.5 mr-1" /> {bulkBusy ? 'Publishing…' : 'Approve ALL & publish'}
++          </Button>
++        </div>
++      )}
++
+       <div className="grid grid-cols-3 divide-x divide-slate-200 dark:divide-slate-800 border-b border-slate-200 dark:border-slate-800">
+         <Stat label="In bank" value={loading ? '—' : total.toLocaleString()} />
+         <Stat label="Awaiting approval" value={loading ? '—' : pending.toLocaleString()} accent />
+diff --git a/frontend/src/pages/ai-content/ChapterCoverage.jsx b/frontend/src/pages/ai-content/ChapterCoverage.jsx
+index 1cbf5d2..d4682e0 100644
+--- a/frontend/src/pages/ai-content/ChapterCoverage.jsx
++++ b/frontend/src/pages/ai-content/ChapterCoverage.jsx
+@@ -1,9 +1,19 @@
+ // AI Content → Chapter Coverage. The 94-chapter gate matrix: 30 plain / 5
+ // scenarios / 20 linked MCQs per chapter, publishable state, gate drill-down.
+-import { Fragment, useEffect, useRef, useState } from 'react';
+-import { AlertTriangle, CheckCircle2, Lock, PlayCircle, RefreshCw, Rocket } from 'lucide-react';
++// Plus one-click bulk actions: approve & publish a single chapter, a whole
++// subject, or the entire bank in one shot.
++import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
++import { AlertTriangle, CheckCircle2, Layers, Lock, PlayCircle, RefreshCw, Rocket, RocketIcon, Zap } from 'lucide-react';
+ import { toast } from 'sonner';
+-import { useApproveChapter, useChapters, useChapterGate, usePublishChapter } from '@/api/hooks-content';
++import {
++  useApproveChapter,
++  useBulkApproveAll,
++  useBulkApproveChapter,
++  useBulkApproveSubject,
++  useChapters,
++  useChapterGate,
++  usePublishChapter,
++} from '@/api/hooks-content';
+ import { Skeleton } from '@/components/common/Skeleton';
+ import { Button } from '@/components/ui/button';
+ import { cn } from '@/utils/format';
+@@ -153,6 +163,42 @@ export default function ChapterCoverage() {
+ 
+   const chapters = data?.items || [];
+ 
++  const bulkChapter = useBulkApproveChapter();
++  const bulkSubject = useBulkApproveSubject();
++  const bulkAll = useBulkApproveAll();
++  const [subject, setSubject] = useState('');
++  const subjects = useMemo(
++    () => Array.from(new Set(chapters.map((c) => c.subject).filter(Boolean))).sort(),
++    [chapters],
++  );
++
++  const bulkBusy = bulkChapter.isPending || bulkSubject.isPending || bulkAll.isPending;
++
++  const onBulkChapter = (chapter) => {
++    if (!window.confirm(`Approve & publish EVERY question in "${chapter.chapterTitle}"? Students will see them immediately.`)) return;
++    bulkChapter.mutate(chapter.chapterId, {
++      onSuccess: (res) => toast.success(res?.message || `Chapter ${chapter.chapterId} published.`),
++      onError: (e) => toast.error(e.message || 'Bulk publish failed'),
++    });
++  };
++
++  const onBulkSubject = () => {
++    if (!subject) return;
++    if (!window.confirm(`Approve & publish EVERY question of subject "${subject}"? Students will see them immediately.`)) return;
++    bulkSubject.mutate(subject, {
++      onSuccess: (res) => toast.success(res?.message || `Subject ${subject} published.`),
++      onError: (e) => toast.error(e.message || 'Bulk publish failed'),
++    });
++  };
++
++  const onBulkAll = () => {
++    if (!window.confirm('Approve & publish the ENTIRE question bank (all subjects, all chapters) in one shot? Students will see everything immediately.')) return;
++    bulkAll.mutate(undefined, {
++      onSuccess: (res) => toast.success(res?.message || 'Entire bank published.'),
++      onError: (e) => toast.error(e.message || 'Bulk publish failed'),
++    });
++  };
++
+   return (
+     <div className="space-y-4" data-testid="chapter-coverage">
+       <div>
+@@ -162,6 +208,46 @@ export default function ChapterCoverage() {
+         </p>
+       </div>
+ 
++      {/* One-click bulk publish toolbar */}
++      <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 flex flex-wrap items-center gap-3">
++        <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">Quick publish</span>
++        <select
++          value={subject}
++          onChange={(e) => setSubject(e.target.value)}
++          className="h-9 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 text-sm text-slate-800 dark:text-slate-100"
++          data-testid="bulk-subject-select"
++        >
++          <option value="">Select subject…</option>
++          {subjects.map((s) => (
++            <option key={s} value={s}>{s}</option>
++          ))}
++        </select>
++        <Button
++          type="button"
++          size="sm"
++          variant="outline"
++          className="border-emerald-300 text-emerald-700 hover:bg-emerald-50"
++          disabled={!subject || bulkBusy}
++          data-testid="bulk-subject-btn"
++          onClick={onBulkSubject}
++        >
++          <Layers className="w-3.5 h-3.5 mr-1" /> Approve subject & publish
++        </Button>
++        <Button
++          type="button"
++          size="sm"
++          className="bg-emerald-600 hover:bg-emerald-700 text-white"
++          disabled={bulkBusy}
++          data-testid="bulk-all-btn"
++          onClick={onBulkAll}
++        >
++          <Zap className={cn('w-3.5 h-3.5 mr-1', bulkBusy && 'animate-pulse')} /> Approve ALL & publish (whole bank)
++        </Button>
++        <span className="text-[11px] text-slate-400">
++          Bulk publish approves every eligible question and ships it to students in one release. Questions with validation errors stay in review.
++        </span>
++      </div>
++
+       <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
+         <table className="w-full text-sm text-left">
+           <thead>
+@@ -205,15 +291,27 @@ export default function ChapterCoverage() {
+                       </span>
+                     </td>
+                     <td className="px-4 py-3">
+-                      <Button
+-                        type="button"
+-                        size="sm"
+-                        variant={open ? 'default' : 'outline'}
+-                        data-testid={`gate-button-${c.chapterId}`}
+-                        onClick={() => setOpenChapter(open ? null : c.chapterId)}
+-                      >
+-                        Gate
+-                      </Button>
++                      <div className="flex items-center gap-2">
++                        <Button
++                          type="button"
++                          size="sm"
++                          variant={open ? 'default' : 'outline'}
++                          data-testid={`gate-button-${c.chapterId}`}
++                          onClick={() => setOpenChapter(open ? null : c.chapterId)}
++                        >
++                          Gate
++                        </Button>
++                        <Button
++                          type="button"
++                          size="sm"
++                          className="bg-emerald-600 hover:bg-emerald-700 text-white"
++                          disabled={bulkBusy}
++                          data-testid={`bulk-chapter-btn-${c.chapterId}`}
++                          onClick={() => onBulkChapter(c)}
++                        >
++                          <Zap className="w-3.5 h-3.5 mr-1" /> Approve & publish
++                        </Button>
++                      </div>
+                     </td>
+                   </tr>
+                   {open && (
+-- 
+2.39.5
+

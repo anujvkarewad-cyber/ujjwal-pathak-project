@@ -689,6 +689,209 @@ async def publish_chapter(
     }
 
 
+# ── Bulk approve + publish (mentor one-click for large banks) ───────────────
+#
+# The per-question → gate → publish flow is correct for careful review, but a
+# 4,700-question bank needs a mentor-driven bulk path. These endpoints approve
+# AND publish every eligible item in scope in one shot, creating a proper
+# release. Only documents with blocking validation errors are skipped (left in
+# review and reported back) so broken questions never reach students.
+
+BULK_ELIGIBLE = ["generated", "auto_validated", "needs_review", "changes_requested", "approved", "release_candidate"]
+
+
+async def _next_revision(db) -> int:
+    latest = None
+    async for row in db[CONTENT_RELEASES].find({}).sort("revision", -1).limit(1):
+        latest = row
+    return int((latest or {}).get("revision") or 0) + 1
+
+
+async def _bulk_approve_publish(q_filter: dict, s_filter: dict, c_filter: dict, scope: str, by: str) -> dict:
+    db = get_db()
+    now = _now()
+
+    # 1) Questions in scope that are still eligible for review → validate each,
+    #    publish the clean ones, skip (and report) the ones with blocking errors.
+    valid_ids: list = []
+    skipped: list = []
+    async for q in db[CONTENT_QUESTIONS].find({**q_filter, "status": {"$in": BULK_ELIGIBLE}}):
+        errors, _warnings = validate_question(q)
+        if errors:
+            skipped.append({"id": q.get("id"), "errors": errors[:3]})
+        else:
+            valid_ids.append(q.get("id"))
+    already_published = await db[CONTENT_QUESTIONS].count_documents({**q_filter, "status": "published"})
+
+    # 2) Scenario blocks: publish only those whose linked MCQs will all be live.
+    live_ids = set(valid_ids)
+    async for q in db[CONTENT_QUESTIONS].find({**q_filter, "status": "published"}, {"id": 1}):
+        live_ids.add(q.get("id"))
+    scenario_ids: list = []
+    async for s in db[CONTENT_SCENARIOS].find({**s_filter, "status": {"$in": BULK_ELIGIBLE}}):
+        s_errors, _s_warnings = validate_scenario(s)
+        qids = s.get("questionIds") or []
+        if s_errors or not all(qid in live_ids for qid in qids):
+            continue
+        scenario_ids.append(s.get("scenarioId"))
+
+    # 3) One shared release revision for the whole bulk action.
+    revision = await _next_revision(db)
+
+    published_questions = 0
+    if valid_ids:
+        res = await db[CONTENT_QUESTIONS].update_many(
+            {"id": {"$in": valid_ids}},
+            {
+                "$set": {
+                    "status": "published",
+                    "publishedAt": now,
+                    "publishedInRevision": revision,
+                    "warningsAcknowledged": True,
+                    "attemptSpecificRiskConfirmed": True,
+                    "approval": {"mentorId": by, "at": now, "comments": f"Bulk approve & publish ({scope})"},
+                    "bulkAction": scope,
+                }
+            },
+        )
+        published_questions = res.modified_count
+
+    published_scenarios = 0
+    if scenario_ids:
+        res = await db[CONTENT_SCENARIOS].update_many(
+            {"scenarioId": {"$in": scenario_ids}},
+            {
+                "$set": {
+                    "status": "published",
+                    "publishedAt": now,
+                    "publishedInRevision": revision,
+                    "approval": {"mentorId": by, "at": now},
+                    "bulkAction": scope,
+                }
+            },
+        )
+        published_scenarios = res.modified_count
+
+    # 4) Chapters in scope → published.
+    chapter_ids: list = []
+    async for c in db[CONTENT_CHAPTERS].find(c_filter, {"chapterId": 1}):
+        chapter_ids.append(c.get("chapterId"))
+    if chapter_ids:
+        await db[CONTENT_CHAPTERS].update_many(
+            {"chapterId": {"$in": chapter_ids}},
+            {
+                "$set": {
+                    "status": "published",
+                    "releaseCandidate": {"revision": revision, "at": now, "by": by},
+                    "bulkAction": scope,
+                }
+            },
+        )
+
+    # 5) Stage-11 release files (best effort — /bank.json serves straight from
+    #    the DB, so a read-only or ephemeral filesystem must not fail publishing).
+    files_written = 0
+    for cid in chapter_ids:
+        try:
+            questions, scenarios = await _load_publishable(db, cid)
+            if not questions:
+                continue
+            _write_release_files(revision, cid, questions, scenarios, now, by)
+            files_written += 1
+        except OSError:
+            pass
+
+    await db[CONTENT_RELEASES].insert_one(
+        {
+            "revision": revision,
+            "manifest": {
+                "schemaVersion": 1,
+                "revision": revision,
+                "publishedAt": now,
+                "publishedBy": by,
+                "catalogRevision": "may-2026",
+                "scope": scope,
+            },
+            "publishedAt": now,
+            "publishedBy": by,
+            "chapters": chapter_ids,
+            "gates": [],
+            "bulk": True,
+        }
+    )
+    await _audit(
+        db,
+        scope,
+        "bulk",
+        "bulk_approve_publish",
+        by,
+        {"questions": published_questions, "scenarios": published_scenarios, "chapters": len(chapter_ids), "skipped": len(skipped)},
+    )
+    await dump_store()
+    message = f"Published {published_questions} questions across {len(chapter_ids)} chapters (revision {revision})."
+    if skipped:
+        message += f" {len(skipped)} questions were skipped for validation errors — they stay in review."
+    return {
+        "ok": True,
+        "scope": scope,
+        "revision": revision,
+        "publishedQuestions": published_questions,
+        "alreadyPublished": already_published,
+        "publishedScenarios": published_scenarios,
+        "chapters": len(chapter_ids),
+        "skippedWithErrors": len(skipped),
+        "skippedSample": skipped[:20],
+        "filesWritten": files_written,
+        "message": message,
+    }
+
+
+@router.post("/chapters/{chapter_id}/bulk-approve-publish")
+async def bulk_approve_publish_chapter(chapter_id: str, claims: dict = Depends(require_mentor)):
+    """One click: approve + publish EVERY eligible question in one chapter."""
+    db = get_db()
+    chapter = await db[CONTENT_CHAPTERS].find_one({"chapterId": chapter_id})
+    if not chapter:
+        raise HTTPException(status_code=404, detail="Chapter not found")
+    return await _bulk_approve_publish(
+        q_filter={"chapterId": chapter_id},
+        s_filter={"chapterId": chapter_id},
+        c_filter={"chapterId": chapter_id},
+        scope=f"chapter:{chapter_id}",
+        by=claims.get("sub", "mentor"),
+    )
+
+
+@router.post("/subjects/{subject}/bulk-approve-publish")
+async def bulk_approve_publish_subject(subject: str, claims: dict = Depends(require_mentor)):
+    """One click: approve + publish every eligible question in one subject."""
+    db = get_db()
+    chapter_ids: list = []
+    async for c in db[CONTENT_CHAPTERS].find({"subject": subject}, {"chapterId": 1}):
+        chapter_ids.append(c["chapterId"])
+    if not chapter_ids:
+        raise HTTPException(status_code=404, detail=f"No chapters found for subject '{subject}'")
+    return await _bulk_approve_publish(
+        q_filter={"chapterId": {"$in": chapter_ids}},
+        s_filter={"chapterId": {"$in": chapter_ids}},
+        c_filter={"chapterId": {"$in": chapter_ids}},
+        scope=f"subject:{subject}",
+        by=claims.get("sub", "mentor"),
+    )
+
+
+@router.post("/bulk-approve-publish-all")
+async def bulk_approve_publish_all(claims: dict = Depends(require_mentor)):
+    """One click: approve + publish the whole bank (e.g. all ~4,700 MCQs)."""
+    return await _bulk_approve_publish(
+        q_filter={},
+        s_filter={},
+        c_filter={},
+        scope="all",
+        by=claims.get("sub", "mentor"),
+    )
+
+
 @router.get("/releases")
 async def list_releases(limit: int = Query(default=50, le=200), claims: dict = Depends(require_mentor)):
     db = get_db()

@@ -1,9 +1,19 @@
 // AI Content → Chapter Coverage. The 94-chapter gate matrix: 30 plain / 5
 // scenarios / 20 linked MCQs per chapter, publishable state, gate drill-down.
-import { Fragment, useEffect, useRef, useState } from 'react';
-import { AlertTriangle, CheckCircle2, Lock, PlayCircle, RefreshCw, Rocket } from 'lucide-react';
+// Plus one-click bulk actions: approve & publish a single chapter, a whole
+// subject, or the entire bank in one shot.
+import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
+import { AlertTriangle, CheckCircle2, Layers, Lock, PlayCircle, RefreshCw, Rocket, RocketIcon, Zap } from 'lucide-react';
 import { toast } from 'sonner';
-import { useApproveChapter, useChapters, useChapterGate, usePublishChapter } from '@/api/hooks-content';
+import {
+  useApproveChapter,
+  useBulkApproveAll,
+  useBulkApproveChapter,
+  useBulkApproveSubject,
+  useChapters,
+  useChapterGate,
+  usePublishChapter,
+} from '@/api/hooks-content';
 import { Skeleton } from '@/components/common/Skeleton';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/utils/format';
@@ -153,6 +163,42 @@ export default function ChapterCoverage() {
 
   const chapters = data?.items || [];
 
+  const bulkChapter = useBulkApproveChapter();
+  const bulkSubject = useBulkApproveSubject();
+  const bulkAll = useBulkApproveAll();
+  const [subject, setSubject] = useState('');
+  const subjects = useMemo(
+    () => Array.from(new Set(chapters.map((c) => c.subject).filter(Boolean))).sort(),
+    [chapters],
+  );
+
+  const bulkBusy = bulkChapter.isPending || bulkSubject.isPending || bulkAll.isPending;
+
+  const onBulkChapter = (chapter) => {
+    if (!window.confirm(`Approve & publish EVERY question in "${chapter.chapterTitle}"? Students will see them immediately.`)) return;
+    bulkChapter.mutate(chapter.chapterId, {
+      onSuccess: (res) => toast.success(res?.message || `Chapter ${chapter.chapterId} published.`),
+      onError: (e) => toast.error(e.message || 'Bulk publish failed'),
+    });
+  };
+
+  const onBulkSubject = () => {
+    if (!subject) return;
+    if (!window.confirm(`Approve & publish EVERY question of subject "${subject}"? Students will see them immediately.`)) return;
+    bulkSubject.mutate(subject, {
+      onSuccess: (res) => toast.success(res?.message || `Subject ${subject} published.`),
+      onError: (e) => toast.error(e.message || 'Bulk publish failed'),
+    });
+  };
+
+  const onBulkAll = () => {
+    if (!window.confirm('Approve & publish the ENTIRE question bank (all subjects, all chapters) in one shot? Students will see everything immediately.')) return;
+    bulkAll.mutate(undefined, {
+      onSuccess: (res) => toast.success(res?.message || 'Entire bank published.'),
+      onError: (e) => toast.error(e.message || 'Bulk publish failed'),
+    });
+  };
+
   return (
     <div className="space-y-4" data-testid="chapter-coverage">
       <div>
@@ -160,6 +206,46 @@ export default function ChapterCoverage() {
         <p className="text-sm text-slate-500 dark:text-slate-400">
           Publish gate per official ICAI chapter: {TARGETS.plain} plain MCQs + {TARGETS.scenarios} scenarios × 4 linked MCQs = 50 questions.
         </p>
+      </div>
+
+      {/* One-click bulk publish toolbar */}
+      <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 flex flex-wrap items-center gap-3">
+        <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">Quick publish</span>
+        <select
+          value={subject}
+          onChange={(e) => setSubject(e.target.value)}
+          className="h-9 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 text-sm text-slate-800 dark:text-slate-100"
+          data-testid="bulk-subject-select"
+        >
+          <option value="">Select subject…</option>
+          {subjects.map((s) => (
+            <option key={s} value={s}>{s}</option>
+          ))}
+        </select>
+        <Button
+          type="button"
+          size="sm"
+          variant="outline"
+          className="border-emerald-300 text-emerald-700 hover:bg-emerald-50"
+          disabled={!subject || bulkBusy}
+          data-testid="bulk-subject-btn"
+          onClick={onBulkSubject}
+        >
+          <Layers className="w-3.5 h-3.5 mr-1" /> Approve subject & publish
+        </Button>
+        <Button
+          type="button"
+          size="sm"
+          className="bg-emerald-600 hover:bg-emerald-700 text-white"
+          disabled={bulkBusy}
+          data-testid="bulk-all-btn"
+          onClick={onBulkAll}
+        >
+          <Zap className={cn('w-3.5 h-3.5 mr-1', bulkBusy && 'animate-pulse')} /> Approve ALL & publish (whole bank)
+        </Button>
+        <span className="text-[11px] text-slate-400">
+          Bulk publish approves every eligible question and ships it to students in one release. Questions with validation errors stay in review.
+        </span>
       </div>
 
       <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
@@ -205,15 +291,27 @@ export default function ChapterCoverage() {
                       </span>
                     </td>
                     <td className="px-4 py-3">
-                      <Button
-                        type="button"
-                        size="sm"
-                        variant={open ? 'default' : 'outline'}
-                        data-testid={`gate-button-${c.chapterId}`}
-                        onClick={() => setOpenChapter(open ? null : c.chapterId)}
-                      >
-                        Gate
-                      </Button>
+                      <div className="flex items-center gap-2">
+                        <Button
+                          type="button"
+                          size="sm"
+                          variant={open ? 'default' : 'outline'}
+                          data-testid={`gate-button-${c.chapterId}`}
+                          onClick={() => setOpenChapter(open ? null : c.chapterId)}
+                        >
+                          Gate
+                        </Button>
+                        <Button
+                          type="button"
+                          size="sm"
+                          className="bg-emerald-600 hover:bg-emerald-700 text-white"
+                          disabled={bulkBusy}
+                          data-testid={`bulk-chapter-btn-${c.chapterId}`}
+                          onClick={() => onBulkChapter(c)}
+                        >
+                          <Zap className="w-3.5 h-3.5 mr-1" /> Approve & publish
+                        </Button>
+                      </div>
                     </td>
                   </tr>
                   {open && (

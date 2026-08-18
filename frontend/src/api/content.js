@@ -20,6 +20,12 @@ export const decideScenario = (id, body) => call(`/api/content/scenarios/${id}/d
 export const listChapters = (params) => call('/api/content/chapters', { params });
 export const getChapterGate = (id) => call(`/api/content/chapters/${encodeURIComponent(id)}/gate`);
 export const approveChapter = (id) => call(`/api/content/chapters/${encodeURIComponent(id)}/approve`, { method: 'POST', body: {} });
+// Bulk one-click approve + publish (question-level decision stays above).
+export const bulkApproveChapter = (id) =>
+  call(`/api/content/chapters/${encodeURIComponent(id)}/bulk-approve-publish`, { method: 'POST', body: {} });
+export const bulkApproveSubject = (subject) =>
+  call(`/api/content/subjects/${encodeURIComponent(subject)}/bulk-approve-publish`, { method: 'POST', body: {} });
+export const bulkApproveAll = () => call('/api/content/bulk-approve-publish-all', { method: 'POST', body: {} });
 export const publishChapter = (id) =>
   call(`/api/content/chapters/${encodeURIComponent(id)}/publish`, { method: 'POST', body: { warningsAcknowledged: true } });
 export const listReleases = (params) => call('/api/content/releases', { params });

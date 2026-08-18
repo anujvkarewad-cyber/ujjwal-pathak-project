@@ -97,6 +97,37 @@ export const usePublishChapter = () => {
   });
 };
 
+// One-click bulk approve + publish. Invalidates everything the mentor sees.
+const BULK_INVALIDATIONS = [
+  ['content.chapters'],
+  ['content.gate'],
+  ['content.audit'],
+  ['content.releases'],
+  ['content.stats'],
+  ['content.queue'],
+];
+export const useBulkApproveChapter = () => {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: (id) => contentApi.bulkApproveChapter(id),
+    onSuccess: () => BULK_INVALIDATIONS.forEach((key) => qc.invalidateQueries({ queryKey: key })),
+  });
+};
+export const useBulkApproveSubject = () => {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: (subject) => contentApi.bulkApproveSubject(subject),
+    onSuccess: () => BULK_INVALIDATIONS.forEach((key) => qc.invalidateQueries({ queryKey: key })),
+  });
+};
+export const useBulkApproveAll = () => {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: () => contentApi.bulkApproveAll(),
+    onSuccess: () => BULK_INVALIDATIONS.forEach((key) => qc.invalidateQueries({ queryKey: key })),
+  });
+};
+
 // ── Analytics ─────────────────────────────────────────────────────────────
 export const useAnalyticsOverview = () => useQuery({ queryKey: ['analytics.overview'], queryFn: analyticsApi.analyticsOverview });
 export const useStudentsList = () => useQuery({ queryKey: ['analytics.students'], queryFn: analyticsApi.studentsList });

@@ -1,5 +1,6 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 from datetime import datetime, timezone
+from auth import require_mentor
 from db import CONTENT_CHAPTERS, CONTENT_QUESTIONS, CONTENT_SCENARIOS, CONTENT_RELEASES, get_db
 
 router = APIRouter(prefix="/api/admin", tags=["admin-fast-publish"])
@@ -7,7 +8,7 @@ router = APIRouter(prefix="/api/admin", tags=["admin-fast-publish"])
 def _now(): return datetime.now(timezone.utc).isoformat()
 
 @router.post("/fast-publish-all")
-async def fast_publish_all():
+async def fast_publish_all(claims: dict = Depends(require_mentor)):
     """Bypass all gates and publish every question - for emergency use when UI approve fails"""
     db = get_db()
     now = _now()

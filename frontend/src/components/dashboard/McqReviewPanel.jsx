@@ -63,6 +63,20 @@ export default function McqReviewPanel() {
     }
   };
 
+  const bulkPublishAll = async () => {
+    if (!window.confirm('Approve & publish the ENTIRE question bank (all subjects, all chapters) now? Students will see everything immediately.')) return;
+    setBulkBusy(true);
+    try {
+      const res = await apiCall('/api/content/bulk-approve-publish-all', { method: 'POST', body: {} });
+      toast.success(res?.message || 'Entire bank published.');
+      await load();
+    } catch (e) {
+      toast.error(e.message || 'Bulk publish failed');
+    } finally {
+      setBulkBusy(false);
+    }
+  };
+
   const pending = stats?.needsReview ?? 0;
   const total = stats?.total ?? 0;
   const approved = stats?.approved ?? 0;
@@ -90,6 +104,28 @@ export default function McqReviewPanel() {
           Open full queue <ChevronRight className="w-4 h-4" />
         </Link>
       </div>
+
+      {(pending > 0 || bulkBusy) && (
+        <div className="p-4 border-b border-slate-200 dark:border-slate-800 bg-emerald-50/60 dark:bg-emerald-500/5 flex flex-wrap items-center gap-3">
+          <div className="min-w-0 flex-1">
+            <p className="text-sm font-semibold text-emerald-800 dark:text-emerald-300">
+              {pending.toLocaleString()} questions awaiting approval
+            </p>
+            <p className="text-xs text-emerald-700/80 dark:text-emerald-400/80">
+              One click: approve & publish everything (all subjects). Questions with validation errors stay in review.
+            </p>
+          </div>
+          <Button
+            size="sm"
+            className="bg-emerald-600 hover:bg-emerald-700 text-white"
+            disabled={bulkBusy || approving}
+            data-testid="bulk-publish-all"
+            onClick={bulkPublishAll}
+          >
+            <Zap className="w-3.5 h-3.5 mr-1" /> {bulkBusy ? 'Publishing…' : 'Approve ALL & publish'}
+          </Button>
+        </div>
+      )}
 
       <div className="grid grid-cols-3 divide-x divide-slate-200 dark:divide-slate-800 border-b border-slate-200 dark:border-slate-800">
         <Stat label="In bank" value={loading ? '—' : total.toLocaleString()} />
