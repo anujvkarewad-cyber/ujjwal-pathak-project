@@ -5,8 +5,7 @@
 // Base URL: REACT_APP_MENTOR_API_URL. When empty the client defaults to
 // same-origin and always talks to the live backend — there is no mock
 // fallback, so the dashboard can never show DEMO content.
-
-const DEPLOYED_BACKEND_URL = 'https://ujjwal-pathak-project.onrender.com';
+const DEPLOYED_BACKEND_URL = 'https://ujjwal-pathak-mentor-api.onrender.com';
 const CONFIGURED_BASE_URL = (process.env.REACT_APP_MENTOR_API_URL || 'same-origin').trim();
 const IS_VERCEL_STATIC_HOST = typeof window !== 'undefined' && window.location.hostname.endsWith('.vercel.app');
 
