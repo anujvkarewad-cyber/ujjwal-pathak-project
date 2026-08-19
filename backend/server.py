@@ -20,7 +20,7 @@ from db import (
     get_db,
 )
 from persist import uses_real_mongo
-from routers import auth_router, content, student_auth, student_attempts, student_content, student_sync, analytics, admin_fast
+from routers import auth_router, content, student_auth, student_dashboard, student_attempts, student_content, student_sync, analytics, admin_fast
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
