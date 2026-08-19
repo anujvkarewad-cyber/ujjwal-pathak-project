@@ -12,6 +12,7 @@ from datetime import datetime, timezone
 from db import (
     CONTENT_CHAPTERS,
     CONTENT_QUESTIONS,
+    STUDENT_ACCOUNTS,
     STUDENT_MCQ_ATTEMPTS,
     close_db,
     ensure_indexes,
@@ -19,7 +20,7 @@ from db import (
     get_db,
 )
 from persist import uses_real_mongo
-from routers import auth_router, content, student_attempts, student_content, student_sync, analytics, admin_fast
+from routers import auth_router, content, student_auth, student_attempts, student_content, student_sync, analytics, admin_fast
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -99,6 +100,7 @@ app.include_router(api_router)
 app.include_router(auth_router.router)
 app.include_router(content.router)
 app.include_router(student_content.router)
+app.include_router(student_auth.router)
 app.include_router(student_attempts.router)
 app.include_router(student_sync.router)
 app.include_router(analytics.router)
