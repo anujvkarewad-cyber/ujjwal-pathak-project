@@ -18,6 +18,7 @@ ANALYTICS_TRENDS = "analytics_trends"
 ANALYTICS_FOLLOWUPS = "analytics_followups"
 ANALYTICS_AUDIT_SYNC = "analytics_audit_sync"
 STUDENT_MCQ_ATTEMPTS = "student_mcq_attempts"
+STUDENT_ACCOUNTS = "student_accounts"
 
 
 def get_db():
@@ -62,7 +63,7 @@ async def ensure_indexes():
     await db[STUDENT_MCQ_ATTEMPTS].create_index(
         [("studentId", 1), ("kind", 1), ("attemptId", 1)], unique=True
     )
-
+    await db[STUDENT_ACCOUNTS].create_index("studentId", unique=True)
 
 async def ensure_unique_indexes():
     db = get_db()
