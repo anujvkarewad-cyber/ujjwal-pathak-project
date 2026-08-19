@@ -19,6 +19,8 @@ ANALYTICS_FOLLOWUPS = "analytics_followups"
 ANALYTICS_AUDIT_SYNC = "analytics_audit_sync"
 STUDENT_MCQ_ATTEMPTS = "student_mcq_attempts"
 STUDENT_ACCOUNTS = "student_accounts"
+DASHBOARD_SHARED = "dashboard_shared"
+DASHBOARD_STUDENTS = "dashboard_students"
 
 
 def get_db():
