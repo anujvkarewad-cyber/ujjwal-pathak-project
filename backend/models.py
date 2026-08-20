@@ -1,6 +1,7 @@
 """Pydantic request models for content review, analytics and consent APIs.
 Mirrors the canonical content model defined in
-docs/integration-design.md §4 and content-pipeline/src/lib/schemas.mjs."""
+docs/integration-design.md §4 and content-pipeline/src/lib/schemas.mjs.
+"""
 from datetime import date
 from enum import Enum
 from typing import Dict, List, Literal, Optional
@@ -64,10 +65,28 @@ class McqPracticeConfig(BaseModel):
     requestedCount: int = Field(default=10, ge=1, le=50)
 
 
+class McqReviewItem(BaseModel):
+    """Snapshot of one question after submit — lets students reopen wrong answers."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    id: str = Field(min_length=1, max_length=80)
+    prompt: str = Field(default="", max_length=4000)
+    options: List[str] = Field(default_factory=list, max_length=4)
+    answer: int = Field(default=0, ge=0, le=3)
+    selected: Optional[int] = Field(default=None)
+    explanation: str = Field(default="", max_length=4000)
+    subject: str = Field(default="", max_length=80)
+    chapter: str = Field(default="", max_length=240)
+    difficulty: str = Field(default="", max_length=32)
+    kind: str = Field(default="", max_length=32)
+    correct: bool = False
+
+
 class StudentMcqAttempt(BaseModel):
     """A completed attempt safe to restore on another student device."""
 
-    model_config = ConfigDict(extra="forbid")
+    model_config = ConfigDict(extra="ignore")
 
     attemptId: str = Field(min_length=1, max_length=180)
     kind: Literal["daily", "practice"]
@@ -82,6 +101,7 @@ class StudentMcqAttempt(BaseModel):
     score: int = Field(ge=0, le=50)
     total: int = Field(ge=1, le=50)
     durationSeconds: int = Field(ge=0, le=24 * 60 * 60)
+    review: Optional[List[McqReviewItem]] = Field(default=None, max_length=50)
 
     @field_validator("answers")
     @classmethod
@@ -150,7 +170,7 @@ class TrendPoint(BaseModel):
 
 
 class ProgressSyncRequest(BaseModel):
-    model_config = ConfigDict(extra="forbid")  # raw answers / unknown fields are rejected
+    model_config = ConfigDict(extra="forbid")
 
     studentId: str = Field(min_length=1, max_length=64)
     consentVersion: int = Field(default=1, ge=1, le=10)
@@ -170,10 +190,10 @@ class ConsentRequest(BaseModel):
 class FollowupCreate(BaseModel):
     studentId: Optional[str] = None
     title: str = Field(min_length=3, max_length=200)
-    priority: str = "medium"  # low | medium | high
+    priority: str = "medium"
     rule: Optional[str] = None
 
 
 class FollowupUpdate(BaseModel):
-    status: Optional[str] = None  # open | in_progress | completed
+    status: Optional[str] = None
     note: Optional[str] = None
