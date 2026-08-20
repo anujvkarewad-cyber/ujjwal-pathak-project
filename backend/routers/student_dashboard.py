@@ -1,10 +1,5 @@
-"""Student dashboard reads from Mongo so 8 parallel Apps Script calls stop.
-
-Import copies announcements, leaderboard, notes, stats, logs, reports and
-mentor notes from the Students spreadsheet. The Vercel proxy asks this API
-first and only falls back to Google when a section has not been imported yet.
-"""
-from datetime import datetime, timezone
+"""Student dashboard reads/writes on Mongo, with sheet import merge."""
+from datetime import datetime, timedelta, timezone
 from typing import Any, Optional
 
 from fastapi import APIRouter, HTTPException, Request
@@ -29,9 +24,15 @@ SHARED_ACTIONS = {
     "getLeaderboard": "leaderboard",
 }
 
+IST = timezone(timedelta(hours=5, minutes=30))
+
 
 def _now() -> str:
     return datetime.now(timezone.utc).isoformat()
+
+
+def _today() -> str:
+    return datetime.now(IST).date().isoformat()
 
 
 def _import_allowed(request: Request) -> bool:
@@ -46,7 +47,6 @@ def _import_allowed(request: Request) -> bool:
 
 class DashboardStudentItem(BaseModel):
     model_config = ConfigDict(extra="ignore")
-
     studentId: str = Field(min_length=1, max_length=64)
     stats: Any = None
     studyLog: Any = None
@@ -58,7 +58,6 @@ class DashboardStudentItem(BaseModel):
 
 class DashboardImportBody(BaseModel):
     model_config = ConfigDict(extra="ignore")
-
     announcements: Optional[list] = None
     leaderboard: Optional[list] = None
     notes: Optional[list] = None
@@ -67,7 +66,6 @@ class DashboardImportBody(BaseModel):
 
 class DashboardGetBody(BaseModel):
     model_config = ConfigDict(extra="ignore")
-
     action: str = ""
     studentId: Optional[str] = None
     payload: Optional[dict] = None
@@ -75,10 +73,129 @@ class DashboardGetBody(BaseModel):
 
 class DashboardWriteBody(BaseModel):
     model_config = ConfigDict(extra="ignore")
-
     action: str = ""
     payload: Optional[dict] = None
     result: Optional[Any] = None
+
+
+def _parse_day(value):
+    try:
+        return datetime.strptime(str(value or "")[:10], "%Y-%m-%d").date()
+    except ValueError:
+        return None
+
+
+def _merge_logs(old, new) -> list:
+    seen = set()
+    out = []
+    for row in list(new or []) + list(old or []):
+        if not isinstance(row, dict):
+            continue
+        try:
+            hours = round(float(row.get("hours") or 0), 2)
+        except (TypeError, ValueError):
+            hours = 0.0
+        key = (
+            str(row.get("date") or "")[:10],
+            str(row.get("topic") or row.get("subjects") or ""),
+            hours,
+            str(row.get("proof") or "")[:80],
+        )
+        if key in seen or (not key[0] and not hours):
+            continue
+        seen.add(key)
+        out.append({
+            "date": key[0],
+            "topic": str(row.get("topic") or row.get("subjects") or ""),
+            "hours": hours,
+            "proof": str(row.get("proof") or ""),
+        })
+    out.sort(key=lambda r: r.get("date") or "", reverse=True)
+    return out[:400]
+
+
+def _recompute_stats(logs: list, prev: Optional[dict] = None) -> dict:
+    prev = dict(prev or {})
+    today = datetime.now(IST).date()
+    month_key = today.strftime("%Y-%m")
+    week_start = today - timedelta(days=6)
+    last7 = [0.0] * 7
+    total = 0.0
+    today_h = 0.0
+    month_h = 0.0
+    week_h = 0.0
+    last_sub = ""
+    entries = 0
+    for row in logs or []:
+        if not isinstance(row, dict):
+            continue
+        day = _parse_day(row.get("date"))
+        try:
+            hours = float(row.get("hours") or 0)
+        except (TypeError, ValueError):
+            hours = 0.0
+        if not day or hours <= 0:
+            continue
+        entries += 1
+        total += hours
+        if day == today:
+            today_h += hours
+        if day.strftime("%Y-%m") == month_key:
+            month_h += hours
+        if week_start <= day <= today:
+            week_h += hours
+            last7[(day.weekday() + 1) % 7] += hours
+        iso = day.isoformat()
+        if iso > last_sub:
+            last_sub = iso
+    return {
+        "totalHours": round(total, 2),
+        "monthlyHours": round(month_h, 2),
+        "weeklyHours": round(week_h, 2),
+        "todayHours": round(today_h, 2),
+        "averageHours": round(total / entries, 2) if entries else 0,
+        "totalEntries": entries,
+        "lastSubmission": last_sub,
+        "last7": [round(x, 1) for x in last7],
+        "streak": int(prev.get("streak") or 0),
+        "rank": int(prev.get("rank") or 0),
+        "weeklyRank": int(prev.get("weeklyRank") or 0),
+        "monthlyRank": int(prev.get("monthlyRank") or 0),
+    }
+
+
+async def _rebuild_leaderboard(db) -> None:
+    names = {}
+    async for account in db[STUDENT_ACCOUNTS].find({}):
+        sid = account.get("studentId")
+        if sid:
+            names[sid] = account.get("studentName") or sid
+    rows = []
+    async for doc in db[DASHBOARD_STUDENTS].find({}):
+        sid = doc.get("studentId")
+        if not sid:
+            continue
+        stats = doc.get("stats") or {}
+        rows.append({
+            "studentId": sid,
+            "studentName": names.get(sid) or sid,
+            "weeklyHours": round(float(stats.get("weeklyHours") or 0), 1),
+            "totalHours": round(float(stats.get("totalHours") or 0), 2),
+            "streak": int(stats.get("streak") or 0),
+            "status": "Active" if float(stats.get("weeklyHours") or 0) > 0 else "Inactive",
+        })
+    rows.sort(key=lambda r: (-r["weeklyHours"], -r["totalHours"], r["studentId"]))
+    for index, row in enumerate(rows, 1):
+        row["rank"] = index
+        await db[DASHBOARD_STUDENTS].update_one(
+            {"studentId": row["studentId"]},
+            {"$set": {"stats.rank": index, "stats.weeklyRank": index}},
+        )
+    await db[DASHBOARD_SHARED].update_one(
+        {"_id": "shared"},
+        {"$set": {"leaderboard": rows, "updatedAt": _now()}},
+        upsert=True,
+    )
 
 
 def _notes_for_student(notes: list, account: Optional[dict]) -> list:
@@ -129,8 +246,6 @@ async def import_dashboard(body: DashboardImportBody, request: Request):
     shared_set = {"updatedAt": _now()}
     if body.announcements is not None:
         shared_set["announcements"] = body.announcements
-    if body.leaderboard is not None:
-        shared_set["leaderboard"] = body.leaderboard
     if body.notes is not None:
         shared_set["notes"] = body.notes
     if len(shared_set) > 1:
@@ -145,14 +260,22 @@ async def import_dashboard(body: DashboardImportBody, request: Request):
         sid = normalize_student_id(item.studentId)
         if not sid:
             continue
+        existing = await db[DASHBOARD_STUDENTS].find_one({"studentId": sid}) or {}
+        incoming_logs = item.studyLog if isinstance(item.studyLog, list) else []
+        existing_logs = existing.get("studyLog") if isinstance(existing.get("studyLog"), list) else []
+        merged_logs = _merge_logs(existing_logs, incoming_logs)
+        prev_stats = dict(existing.get("stats") or {})
+        if item.stats and isinstance(item.stats, dict):
+            for key, value in item.stats.items():
+                if value not in (None, "", []):
+                    prev_stats[key] = value
+        stats = _recompute_stats(merged_logs, prev_stats)
         doc = {
             "studentId": sid,
             "updatedAt": _now(),
+            "studyLog": merged_logs,
+            "stats": stats,
         }
-        if item.stats is not None:
-            doc["stats"] = item.stats
-        if item.studyLog is not None:
-            doc["studyLog"] = item.studyLog
         if item.reports is not None:
             doc["reports"] = item.reports
         if item.mentorNotes is not None:
@@ -168,6 +291,7 @@ async def import_dashboard(body: DashboardImportBody, request: Request):
         )
         upserted += 1
 
+    await _rebuild_leaderboard(db)
     return {"ok": True, "students": upserted}
 
 
@@ -195,29 +319,18 @@ async def get_dashboard_section(body: DashboardGetBody):
         return {"found": True, "result": _notes_for_student(shared.get("notes") or [], account)}
 
     field = PERSONAL_ACTIONS.get(action)
-    if not field:
-        return {"found": False}
-    if not student_id:
+    if not field or not student_id:
         return {"found": False}
     doc = await db[DASHBOARD_STUDENTS].find_one({"studentId": student_id})
     if not doc or field not in doc:
         return {"found": False}
     value = doc.get(field)
     if field == "stats":
+        logs = doc.get("studyLog") if isinstance(doc.get("studyLog"), list) else []
+        if logs:
+            value = _recompute_stats(logs, value if isinstance(value, dict) else {})
         return {"found": True, "result": value or {}}
     return {"found": True, "result": value or []}
-
-
-def _today() -> str:
-    return datetime.now(timezone.utc).date().isoformat()
-
-
-def _last7_index(iso_date: str) -> int:
-    try:
-        day = datetime.fromisoformat(str(iso_date)[:10]).date()
-    except ValueError:
-        day = datetime.now(timezone.utc).date()
-    return (day.weekday() + 1) % 7
 
 
 async def _student_doc(db, student_id: str) -> dict:
@@ -253,32 +366,15 @@ async def apply_dashboard_write(action: str, payload: dict, result: Any = None) 
             "proof": proof,
         }
         doc = await _student_doc(db, sid)
-        logs = [row] + [x for x in (doc.get("studyLog") or []) if isinstance(x, dict)]
-        stats = dict(doc.get("stats") or {})
-        prev_total = float(stats.get("totalHours") or 0)
-        prev_entries = int(stats.get("totalEntries") or 0)
-        last7 = list(stats.get("last7") or [0, 0, 0, 0, 0, 0, 0])
-        while len(last7) < 7:
-            last7.append(0)
-        idx = _last7_index(entry_date)
-        last7[idx] = float(last7[idx] or 0) + hours
-        today = _today()
-        stats.update({
-            "todayHours": hours if entry_date == today else float(stats.get("todayHours") or 0),
-            "weeklyHours": float(stats.get("weeklyHours") or 0) + hours,
-            "monthlyHours": float(stats.get("monthlyHours") or 0) + hours,
-            "totalHours": prev_total + hours,
-            "totalEntries": prev_entries + 1,
-            "averageHours": round((prev_total + hours) / max(prev_entries + 1, 1), 2),
-            "lastSubmission": entry_date,
-            "last7": last7,
-        })
+        logs = _merge_logs(doc.get("studyLog") or [], [row])
+        stats = _recompute_stats(logs, doc.get("stats") or {})
         await db[DASHBOARD_STUDENTS].update_one(
             {"studentId": sid},
-            {"$set": {"studentId": sid, "studyLog": logs[:400], "stats": stats, "updatedAt": now}},
+            {"$set": {"studentId": sid, "studyLog": logs, "stats": stats, "updatedAt": now}},
             upsert=True,
         )
-        return {"ok": True, "success": True, "proofUrl": proof}
+        await _rebuild_leaderboard(db)
+        return {"ok": True, "success": True, "proofUrl": proof, "stats": stats}
 
     if action == "announcements.create":
         created = result if isinstance(result, dict) else {}
@@ -383,4 +479,4 @@ async def write_dashboard_section(body: DashboardWriteBody):
     applied = await apply_dashboard_write(action, payload, body.result)
     if not applied.get("ok"):
         return {"ok": False, "result": {"success": False, "message": applied.get("message") or "Write failed"}}
-    return {"ok": True, "result": applied.get("result") or {"success": True, "proofUrl": applied.get("proofUrl")}}
+    return {"ok": True, "result": applied.get("result") or {"success": True, "proofUrl": applied.get("proofUrl"), "stats": applied.get("stats")}}
