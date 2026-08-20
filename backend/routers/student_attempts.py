@@ -1,17 +1,13 @@
-"""Authenticated cloud backup/restore for completed student MCQ attempts.
-
-Student credentials remain owned by the existing Apps Script backend. Every
-backup/restore request delegates authentication there; MongoDB never stores the
-password. Only completed, size-bounded Daily/Practice attempts are accepted.
-"""
+"""Authenticated cloud backup/restore for completed student MCQ attempts."""
 from datetime import datetime, timezone
 
 import httpx
 from fastapi import APIRouter, HTTPException
 from config import settings
-from db import ANALYTICS_AUDIT_SYNC, STUDENT_MCQ_ATTEMPTS, get_db
+from db import ANALYTICS_AUDIT_SYNC, CONTENT_QUESTIONS, CONTENT_SCENARIOS, STUDENT_MCQ_ATTEMPTS, get_db
 from models import StudentMcqSyncRequest, StudentTokenRequest
 from persist import dump_store
+from routers.student_content import _student_question
 
 router = APIRouter(prefix="/api", tags=["student-mcq-attempts"])
 
@@ -21,7 +17,12 @@ def _now() -> str:
 
 
 async def _validate_existing_student_login(student_id: str, password: str) -> dict:
-    """Delegate credential verification to the existing Apps Script API."""
+    from routers.student_auth import authenticate_student
+
+    mongo_result = await authenticate_student(student_id, password)
+    if mongo_result.get("success") is True:
+        return mongo_result
+
     try:
         async with httpx.AsyncClient(timeout=60.0, follow_redirects=True) as client:
             response = await client.post(
@@ -32,8 +33,12 @@ async def _validate_existing_student_login(student_id: str, password: str) -> di
                 },
             )
     except httpx.HTTPError as exc:
+        if mongo_result.get("code") == "wrong_password":
+            raise HTTPException(status_code=401, detail="Invalid Student ID or password")
         raise HTTPException(status_code=503, detail="Student login service is unavailable") from exc
     if response.status_code != 200:
+        if mongo_result.get("code") == "wrong_password":
+            raise HTTPException(status_code=401, detail="Invalid Student ID or password")
         raise HTTPException(status_code=503, detail="Student login service rejected the verification request")
     try:
         envelope = response.json()
@@ -46,6 +51,65 @@ async def _validate_existing_student_login(student_id: str, password: str) -> di
     if returned_id != student_id:
         raise HTTPException(status_code=401, detail="Student identity mismatch")
     return result
+
+
+async def _question_lookup(db, question_ids: list[str]) -> dict:
+    if not question_ids:
+        return {}
+    scenarios: dict = {}
+    async for scenario in db[CONTENT_SCENARIOS].find({}):
+        scenarios[scenario["scenarioId"]] = scenario
+    found = {}
+    async for doc in db[CONTENT_QUESTIONS].find({"id": {"$in": question_ids}}):
+        found[doc.get("id")] = _student_question(doc, scenarios)
+    return found
+
+
+def _review_from_bank(question_ids: list, answers: dict, bank: dict) -> list:
+    review = []
+    for qid in question_ids:
+        question = bank.get(qid)
+        if not question:
+            continue
+        selected = answers.get(qid)
+        if selected is not None:
+            try:
+                selected = int(selected)
+            except (TypeError, ValueError):
+                selected = None
+        correct_index = int(question.get("answer") or 0)
+        review.append({
+            "id": qid,
+            "prompt": question.get("prompt") or "",
+            "options": question.get("options") or [],
+            "answer": correct_index,
+            "selected": selected,
+            "explanation": question.get("explanation") or "",
+            "subject": question.get("subject") or "",
+            "chapter": question.get("chapter") or "",
+            "difficulty": question.get("difficulty") or "",
+            "kind": question.get("kind") or "",
+            "correct": selected == correct_index,
+        })
+    return review
+
+
+async def _ensure_review(db, doc: dict) -> dict:
+    if not isinstance(doc, dict):
+        return doc
+    if doc.get("review"):
+        return doc
+    question_ids = list(doc.get("questionIds") or [])
+    answers = doc.get("answers") or {}
+    bank = await _question_lookup(db, question_ids)
+    review = _review_from_bank(question_ids, answers, bank)
+    if review:
+        doc["review"] = review
+        await db[STUDENT_MCQ_ATTEMPTS].update_one(
+            {"studentId": doc.get("studentId"), "kind": doc.get("kind"), "attemptId": doc.get("attemptId")},
+            {"$set": {"review": review}},
+        )
+    return doc
 
 
 async def _prune_student_attempts(db, student_id: str, kind: str, keep: int) -> None:
@@ -71,6 +135,11 @@ async def sync_student_attempts(body: StudentMcqSyncRequest):
             "studentId": student_id,
             "syncedAt": _now(),
         })
+        if not doc.get("review"):
+            bank = await _question_lookup(db, list(doc.get("questionIds") or []))
+            review = _review_from_bank(list(doc.get("questionIds") or []), doc.get("answers") or {}, bank)
+            if review:
+                doc["review"] = review
         await db[STUDENT_MCQ_ATTEMPTS].update_one(
             {
                 "studentId": student_id,
@@ -102,8 +171,10 @@ async def restore_student_attempts(body: StudentTokenRequest):
     daily = []
     practice = []
     async for doc in db[STUDENT_MCQ_ATTEMPTS].find(
-        {"studentId": student_id}, {"_id": 0, "studentId": 0, "syncedAt": 0}
+        {"studentId": student_id}, {"_id": 0, "syncedAt": 0}
     ).sort("completedAt", -1):
+        doc = await _ensure_review(db, doc)
+        doc.pop("studentId", None)
         (daily if doc.get("kind") == "daily" else practice).append(doc)
     return {
         "studentId": student_id,
