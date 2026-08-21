@@ -165,6 +165,49 @@ def _recompute_stats(logs: list, prev: Optional[dict] = None) -> dict:
     }
 
 
+def _weekly_reports_from_logs(logs: list, stats: Optional[dict] = None) -> list:
+    stats = dict(stats or {})
+    buckets: dict = {}
+    for row in logs or []:
+        if not isinstance(row, dict):
+            continue
+        day = _parse_day(row.get("date"))
+        try:
+            hours = float(row.get("hours") or 0)
+        except (TypeError, ValueError):
+            hours = 0.0
+        if not day or hours <= 0:
+            continue
+        start = day - timedelta(days=day.weekday())
+        key = start.isoformat()
+        bucket = buckets.setdefault(key, {"hours": 0.0, "days": set()})
+        bucket["hours"] += hours
+        bucket["days"].add(day)
+    today = datetime.now(IST).date()
+    this_week = (today - timedelta(days=today.weekday())).isoformat()
+    out = []
+    for key in sorted(buckets.keys(), reverse=True):
+        hours = round(buckets[key]["hours"], 1)
+        if hours <= 0:
+            continue
+        if hours >= 35:
+            level = "Excellent"
+        elif hours >= 20:
+            level = "Strong"
+        else:
+            level = "Progressing"
+        start = datetime.strptime(key, "%Y-%m-%d").date()
+        item = {
+            "weekOf": start.strftime("%d %b %Y"),
+            "weeklyHours": hours,
+            "streak": int(stats.get("streak") or 0) if key == this_week else len(buckets[key]["days"]),
+            "rank": int(stats.get("weeklyRank") or stats.get("rank") or 0) if key == this_week else 0,
+            "level": level,
+        }
+        out.append(item)
+    return out[:12]
+
+
 async def _rebuild_leaderboard(db) -> None:
     names = {}
     async for account in db[STUDENT_ACCOUNTS].find({}):
@@ -276,12 +319,11 @@ async def import_dashboard(body: DashboardImportBody, request: Request):
             "updatedAt": _now(),
             "studyLog": merged_logs,
             "stats": stats,
+            "reports": _weekly_reports_from_logs(merged_logs, stats),
         }
         name = (item.studentName or "").strip()
         if name:
             doc["studentName"] = name
-        if item.reports is not None:
-            doc["reports"] = item.reports
         if item.mentorNotes is not None:
             doc["mentorNotes"] = item.mentorNotes
         if item.feedback is not None:
@@ -372,9 +414,10 @@ async def apply_dashboard_write(action: str, payload: dict, result: Any = None) 
         doc = await _student_doc(db, sid)
         logs = _merge_logs(doc.get("studyLog") or [], [row])
         stats = _recompute_stats(logs, doc.get("stats") or {})
+        reports = _weekly_reports_from_logs(logs, stats)
         await db[DASHBOARD_STUDENTS].update_one(
             {"studentId": sid},
-            {"$set": {"studentId": sid, "studyLog": logs, "stats": stats, "updatedAt": now}},
+            {"$set": {"studentId": sid, "studyLog": logs, "stats": stats, "reports": reports, "updatedAt": now}},
             upsert=True,
         )
         await _rebuild_leaderboard(db)
