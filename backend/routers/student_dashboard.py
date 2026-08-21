@@ -87,8 +87,9 @@ def _parse_day(value):
 
 
 def _merge_logs(old, new) -> list:
-    seen = set()
-    out = []
+    """One row per date+topic+hours. Extra proof-only copies from dual-write are collapsed."""
+    best = {}
+    order = []
     for row in list(new or []) + list(old or []):
         if not isinstance(row, dict):
             continue
@@ -96,21 +97,19 @@ def _merge_logs(old, new) -> list:
             hours = round(float(row.get("hours") or 0), 2)
         except (TypeError, ValueError):
             hours = 0.0
-        key = (
-            str(row.get("date") or "")[:10],
-            str(row.get("topic") or row.get("subjects") or ""),
-            hours,
-            str(row.get("proof") or "")[:80],
-        )
-        if key in seen or (not key[0] and not hours):
+        date = str(row.get("date") or "")[:10]
+        topic = str(row.get("topic") or row.get("subjects") or "")
+        proof = str(row.get("proof") or "")
+        if not date and not hours:
             continue
-        seen.add(key)
-        out.append({
-            "date": key[0],
-            "topic": str(row.get("topic") or row.get("subjects") or ""),
-            "hours": hours,
-            "proof": str(row.get("proof") or ""),
-        })
+        key = (date, topic, hours)
+        current = best.get(key)
+        if current is None:
+            best[key] = {"date": date, "topic": topic, "hours": hours, "proof": proof}
+            order.append(key)
+        elif len(proof) > len(str(current.get("proof") or "")):
+            current["proof"] = proof
+    out = [best[key] for key in order]
     out.sort(key=lambda r: r.get("date") or "", reverse=True)
     return out[:400]
 
@@ -368,15 +367,31 @@ async def get_dashboard_section(body: DashboardGetBody):
     if not field or not student_id:
         return {"found": False}
     doc = await db[DASHBOARD_STUDENTS].find_one({"studentId": student_id})
-    if not doc or field not in doc:
+    if not doc:
         return {"found": False}
-    value = doc.get(field)
+    logs = _merge_logs(doc.get("studyLog") if isinstance(doc.get("studyLog"), list) else [], [])
+    stats = doc.get("stats") if isinstance(doc.get("stats"), dict) else {}
+    if field == "studyLog":
+        raw = doc.get("studyLog") if isinstance(doc.get("studyLog"), list) else []
+        if len(logs) != len(raw):
+            stats = _recompute_stats(logs, stats)
+            reports = _weekly_reports_from_logs(logs, stats)
+            await db[DASHBOARD_STUDENTS].update_one(
+                {"studentId": student_id},
+                {"$set": {"studyLog": logs, "stats": stats, "reports": reports, "updatedAt": _now()}},
+            )
+            await _rebuild_leaderboard(db)
+        return {"found": True, "result": logs}
     if field == "stats":
-        logs = doc.get("studyLog") if isinstance(doc.get("studyLog"), list) else []
         if logs:
-            value = _recompute_stats(logs, value if isinstance(value, dict) else {})
-        return {"found": True, "result": value or {}}
-    return {"found": True, "result": value or []}
+            stats = _recompute_stats(logs, stats)
+        return {"found": True, "result": stats or {}}
+    if field == "reports":
+        generated = _weekly_reports_from_logs(logs, stats)
+        return {"found": True, "result": generated or doc.get("reports") or []}
+    if field not in doc:
+        return {"found": False}
+    return {"found": True, "result": doc.get(field) or []}
 
 
 async def _student_doc(db, student_id: str) -> dict:
@@ -422,6 +437,46 @@ async def apply_dashboard_write(action: str, payload: dict, result: Any = None) 
         )
         await _rebuild_leaderboard(db)
         return {"ok": True, "success": True, "proofUrl": proof, "stats": stats}
+
+    if action == "deleteStudyLog":
+        sid = normalize_student_id(payload.get("studentId") or "")
+        date = str(payload.get("date") or "")[:10]
+        topic = str(payload.get("topic") or payload.get("subjects") or "")
+        try:
+            hours = round(float(payload.get("hours") or 0), 2)
+        except (TypeError, ValueError):
+            hours = 0.0
+        if not sid or not date:
+            return {"ok": False, "message": "Date missing."}
+        doc = await _student_doc(db, sid)
+        logs = []
+        removed = False
+        for row in list(doc.get("studyLog") or []):
+            if not isinstance(row, dict):
+                continue
+            try:
+                row_hours = round(float(row.get("hours") or 0), 2)
+            except (TypeError, ValueError):
+                row_hours = 0.0
+            same = (
+                str(row.get("date") or "")[:10] == date
+                and row_hours == hours
+                and (not topic or str(row.get("topic") or "") == topic)
+            )
+            if same and not removed:
+                removed = True
+                continue
+            logs.append(row)
+        logs = _merge_logs(logs, [])
+        stats = _recompute_stats(logs, doc.get("stats") or {})
+        reports = _weekly_reports_from_logs(logs, stats)
+        await db[DASHBOARD_STUDENTS].update_one(
+            {"studentId": sid},
+            {"$set": {"studentId": sid, "studyLog": logs, "stats": stats, "reports": reports, "updatedAt": now}},
+            upsert=True,
+        )
+        await _rebuild_leaderboard(db)
+        return {"ok": True, "success": True, "removed": removed, "stats": stats}
 
     if action == "announcements.create":
         created = result if isinstance(result, dict) else {}
