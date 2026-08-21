@@ -48,6 +48,7 @@ def _import_allowed(request: Request) -> bool:
 class DashboardStudentItem(BaseModel):
     model_config = ConfigDict(extra="ignore")
     studentId: str = Field(min_length=1, max_length=64)
+    studentName: str = ""
     stats: Any = None
     studyLog: Any = None
     reports: Any = None
@@ -169,7 +170,7 @@ async def _rebuild_leaderboard(db) -> None:
     async for account in db[STUDENT_ACCOUNTS].find({}):
         sid = account.get("studentId")
         if sid:
-            names[sid] = account.get("studentName") or sid
+            names[sid] = (account.get("studentName") or "").strip() or sid
     rows = []
     async for doc in db[DASHBOARD_STUDENTS].find({}):
         sid = doc.get("studentId")
@@ -178,7 +179,7 @@ async def _rebuild_leaderboard(db) -> None:
         stats = doc.get("stats") or {}
         rows.append({
             "studentId": sid,
-            "studentName": names.get(sid) or sid,
+            "studentName": names.get(sid) or (doc.get("studentName") or "").strip() or sid,
             "weeklyHours": round(float(stats.get("weeklyHours") or 0), 1),
             "totalHours": round(float(stats.get("totalHours") or 0), 2),
             "streak": int(stats.get("streak") or 0),
@@ -276,6 +277,9 @@ async def import_dashboard(body: DashboardImportBody, request: Request):
             "studyLog": merged_logs,
             "stats": stats,
         }
+        name = (item.studentName or "").strip()
+        if name:
+            doc["studentName"] = name
         if item.reports is not None:
             doc["reports"] = item.reports
         if item.mentorNotes is not None:
