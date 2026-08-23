@@ -148,6 +148,22 @@ def _recompute_stats(logs: list, prev: Optional[dict] = None) -> dict:
         iso = day.isoformat()
         if iso > last_sub:
             last_sub = iso
+    dated = set()
+    for row in logs or []:
+        if not isinstance(row, dict):
+            continue
+        day = _parse_day(row.get("date"))
+        try:
+            row_hours = float(row.get("hours") or 0)
+        except (TypeError, ValueError):
+            row_hours = 0.0
+        if day and row_hours > 0:
+            dated.add(day)
+    cursor = today if today in dated else today - timedelta(days=1)
+    streak = 0
+    while cursor in dated:
+        streak += 1
+        cursor = cursor - timedelta(days=1)
     return {
         "totalHours": round(total, 2),
         "monthlyHours": round(month_h, 2),
@@ -157,7 +173,7 @@ def _recompute_stats(logs: list, prev: Optional[dict] = None) -> dict:
         "totalEntries": entries,
         "lastSubmission": last_sub,
         "last7": [round(x, 1) for x in last7],
-        "streak": int(prev.get("streak") or 0),
+        "streak": streak,
         "rank": int(prev.get("rank") or 0),
         "weeklyRank": int(prev.get("weeklyRank") or 0),
         "monthlyRank": int(prev.get("monthlyRank") or 0),
