@@ -1,4 +1,9 @@
-"""Student login against Mongo so 100–200 concurrent sign-ins do not hit Apps Script."""
+"""Student login against Mongo so 100–200 concurrent sign-ins do not hit Apps Script.
+
+Passwords are stored as bcrypt hashes. A one-shot import copies the Students
+sheet into Mongo. The Vercel proxy tries this API first, then falls back to
+Apps Script only when the account is not in Mongo yet.
+"""
 import re
 from datetime import datetime, timezone
 from typing import Any, Optional
@@ -15,6 +20,35 @@ router = APIRouter(prefix="/api/student-auth", tags=["student-auth"])
 
 def _now() -> str:
     return datetime.now(timezone.utc).isoformat()
+
+
+def _group_i_only(group: str) -> bool:
+    value = str(group or "").strip().lower()
+    if not value or "both" in value:
+        return False
+    if re.search(r"group\s*(i|1)\s*(&|and|\+)\s*(ii|2)", value):
+        return False
+    has_two = bool(re.search(r"group\s*(ii|2)\b", value) or re.search(r"\bg2\b", value))
+    has_one = bool(re.search(r"group\s*(i(?!i)|1)\b", value) or re.search(r"\bg1\b", value))
+    return has_one and not has_two
+
+
+def _sept_2026_attempt(attempt: str, batch: str = "") -> bool:
+    """Sept 2026 CA attempt only. Empty attempt is not treated as Sept 26."""
+    if not str(attempt or "").strip():
+        return False
+    text = f"{attempt} {batch}".strip().lower()
+    if re.search(r"sept(?:ember)?\s*20?26", text):
+        return True
+    if re.search(r"\bsep(?:t)?[\s./-]*26\b", text):
+        return True
+    return False
+
+
+def _group_i_sept26_closed(doc: dict) -> bool:
+    return _group_i_only(str(doc.get("group") or "")) and _sept_2026_attempt(
+        str(doc.get("attempt") or ""), str(doc.get("batch") or "")
+    )
 
 
 def normalize_student_id(raw: str) -> str:
@@ -66,6 +100,7 @@ def _extract_login(body: "StudentLoginBody") -> tuple[str, str]:
 
 class StudentLoginBody(BaseModel):
     model_config = ConfigDict(extra="ignore")
+
     studentId: Optional[str] = None
     password: Optional[str] = Field(default=None, repr=False)
     action: Optional[str] = None
@@ -74,6 +109,7 @@ class StudentLoginBody(BaseModel):
 
 class StudentImportItem(BaseModel):
     model_config = ConfigDict(extra="ignore")
+
     studentId: str = Field(min_length=1, max_length=64)
     password: str = Field(min_length=1, max_length=256, repr=False)
     studentName: str = ""
@@ -90,17 +126,20 @@ class StudentImportItem(BaseModel):
 
 class StudentImportBody(BaseModel):
     model_config = ConfigDict(extra="ignore")
+
     students: list[StudentImportItem] = Field(default_factory=list, max_length=500)
 
 
 class ChangePasswordBody(BaseModel):
     model_config = ConfigDict(extra="ignore")
+
     studentId: str = Field(min_length=1, max_length=64)
     currentPassword: str = Field(min_length=1, max_length=256, repr=False)
     newPassword: str = Field(min_length=1, max_length=256, repr=False)
 
 
 async def authenticate_student(student_id: str, password: str) -> dict:
+    """Mongo-only check. Never calls Apps Script (avoids proxy loops)."""
     sid = normalize_student_id(student_id)
     pwd = str(password or "").strip()
     if not sid or not pwd:
@@ -111,6 +150,12 @@ async def authenticate_student(student_id: str, password: str) -> dict:
         return {"success": False, "message": "Student ID not found.", "code": "not_found"}
     if not _password_ok(pwd, doc):
         return {"success": False, "message": "Incorrect password.", "code": "wrong_password"}
+    if _group_i_sept26_closed(doc):
+        return {
+            "success": False,
+            "message": "Sept 2026 Group I access is closed. Only Group II and Both Groups students can sign in.",
+            "code": "group_closed",
+        }
     if doc.get("password") and not doc.get("passwordHash"):
         await db[STUDENT_ACCOUNTS].update_one(
             {"studentId": sid},
