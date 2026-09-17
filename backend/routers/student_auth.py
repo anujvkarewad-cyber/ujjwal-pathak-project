@@ -22,17 +22,6 @@ def _now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
-def _group_i_only(group: str) -> bool:
-    value = str(group or "").strip().lower()
-    if not value or "both" in value:
-        return False
-    if re.search(r"group\s*(i|1)\s*(&|and|\+)\s*(ii|2)", value):
-        return False
-    has_two = bool(re.search(r"group\s*(ii|2)\b", value) or re.search(r"\bg2\b", value))
-    has_one = bool(re.search(r"group\s*(i(?!i)|1)\b", value) or re.search(r"\bg1\b", value))
-    return has_one and not has_two
-
-
 def _sept_2026_attempt(attempt: str, batch: str = "") -> bool:
     """Sept 2026 CA attempt only. Empty attempt is not treated as Sept 26."""
     if not str(attempt or "").strip():
@@ -43,12 +32,6 @@ def _sept_2026_attempt(attempt: str, batch: str = "") -> bool:
     if re.search(r"\bsep(?:t)?[\s./-]*26\b", text):
         return True
     return False
-
-
-def _group_i_sept26_closed(doc: dict) -> bool:
-    return _group_i_only(str(doc.get("group") or "")) and _sept_2026_attempt(
-        str(doc.get("attempt") or ""), str(doc.get("batch") or "")
-    )
 
 
 def normalize_student_id(raw: str) -> str:
@@ -150,10 +133,10 @@ async def authenticate_student(student_id: str, password: str) -> dict:
         return {"success": False, "message": "Student ID not found.", "code": "not_found"}
     if not _password_ok(pwd, doc):
         return {"success": False, "message": "Incorrect password.", "code": "wrong_password"}
-    if _group_i_sept26_closed(doc):
+    if _sept_2026_attempt(str(doc.get("attempt") or ""), str(doc.get("batch") or "")):
         return {
             "success": False,
-            "message": "Sept 2026 Group I access is closed. Only Group II and Both Groups students can sign in.",
+            "message": "Sept 2026 access is closed.",
             "code": "group_closed",
         }
     if doc.get("password") and not doc.get("passwordHash"):
