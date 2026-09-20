@@ -4,8 +4,9 @@ Passwords are stored as bcrypt hashes. A one-shot import copies the Students
 sheet into Mongo. The Vercel proxy tries this API first, then falls back to
 Apps Script only when the account is not in Mongo yet.
 """
+import os
 import re
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from typing import Any, Optional
 
 from fastapi import APIRouter, HTTPException, Request
@@ -32,6 +33,23 @@ def _sept_2026_attempt(attempt: str, batch: str = "") -> bool:
     if re.search(r"\bsep(?:t)?[\s./-]*26\b", text):
         return True
     return False
+
+
+# ── Sept 2026 group access window ─────────────────────────────────────────
+# The Sept 2026 attempt group keeps full access UP TO AND INCLUDING the close
+# date (end of day, IST). From the next day their login returns
+# "Sept 2026 access is closed." Override via env SEPT_GROUP_CLOSE_ON (YYYY-MM-DD).
+IST = timezone(timedelta(hours=5, minutes=30))
+
+
+def _sept_group_closed_now() -> bool:
+    close_on = (os.environ.get("SEPT_GROUP_CLOSE_ON") or "2026-09-25").strip()
+    try:
+        year, month, day = (int(p) for p in close_on.split("-"))
+    except Exception:
+        year, month, day = 2026, 9, 25
+    cutoff = datetime(year, month, day, 23, 59, 59, tzinfo=IST)
+    return datetime.now(IST) > cutoff
 
 
 def normalize_student_id(raw: str) -> str:
@@ -133,7 +151,7 @@ async def authenticate_student(student_id: str, password: str) -> dict:
         return {"success": False, "message": "Student ID not found.", "code": "not_found"}
     if not _password_ok(pwd, doc):
         return {"success": False, "message": "Incorrect password.", "code": "wrong_password"}
-    if _sept_2026_attempt(str(doc.get("attempt") or ""), str(doc.get("batch") or "")):
+    if _sept_2026_attempt(str(doc.get("attempt") or ""), str(doc.get("batch") or "")) and _sept_group_closed_now():
         return {
             "success": False,
             "message": "Sept 2026 access is closed.",
