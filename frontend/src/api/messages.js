@@ -8,3 +8,5 @@ export const replyToStudent = (studentId, text) =>
   apiCall('/api/messages/reply', { method: 'POST', body: { studentId, text } });
 export const fetchWhatsAppStatus = () => apiCall('/api/whatsapp/status');
 export const fetchWhatsAppLog = () => apiCall('/api/whatsapp/log', { params: { limit: 12 } });
+export const sendWhatsAppAnnouncement = (text) =>
+  apiCall('/api/whatsapp/announce', { method: 'POST', body: { text } });

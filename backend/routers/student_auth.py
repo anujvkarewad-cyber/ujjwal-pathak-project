@@ -105,6 +105,7 @@ def _public_profile(doc: dict) -> dict:
         "joinedOn": doc.get("joinedOn") or "",
         "forcePasswordChange": not bool(doc.get("passwordChanged")),
         "master": bool(doc.get("master")),
+        "whatsapp": doc.get("whatsapp") or doc.get("phone") or "",
     }
 
 
@@ -295,3 +296,49 @@ async def import_students(body: StudentImportBody, request: Request):
         await upsert_student_account(item)
         upserted += 1
     return {"ok": True, "upserted": upserted}
+
+
+class SaveWhatsAppBody(BaseModel):
+    studentId: str = Field(min_length=1, max_length=64)
+    number: str = Field(min_length=6, max_length=20)
+
+
+@router.post("/whatsapp")
+async def save_whatsapp(body: SaveWhatsAppBody):
+    """Student saves their own WhatsApp number (used for enrollment welcome,
+    reminders and announcements)."""
+    from whatsapp import normalize_number
+
+    sid = normalize_student_id(body.studentId)
+    db = get_db()
+    doc = await db[STUDENT_ACCOUNTS].find_one({"studentId": sid})
+    if not doc:
+        return {"result": {"success": False, "message": "Student ID not found."}}
+    num = normalize_number(body.number)
+    await db[STUDENT_ACCOUNTS].update_one(
+        {"studentId": sid},
+        {"$set": {"whatsapp": num, "phone": num, "updatedAt": _now()}},
+    )
+    return {"result": {"success": True, "whatsapp": num}}
+
+
+class ReminderNotifyBody(BaseModel):
+    studentId: str = Field(min_length=1, max_length=64)
+    text: str = Field(min_length=1, max_length=300)
+
+
+@router.post("/reminder-notify")
+async def reminder_notify(body: ReminderNotifyBody):
+    """Mirror a student reminder to their saved WhatsApp number."""
+    from whatsapp import normalize_number, send_whatsapp
+
+    sid = normalize_student_id(body.studentId)
+    db = get_db()
+    doc = await db[STUDENT_ACCOUNTS].find_one({"studentId": sid})
+    if not doc:
+        return {"result": {"success": False, "message": "Student ID not found."}}
+    raw = str(doc.get("whatsapp") or doc.get("phone") or "").strip()
+    if not raw:
+        return {"result": {"success": False, "message": "No WhatsApp number saved yet."}}
+    ok = await send_whatsapp(normalize_number(raw), f"Reminder: {body.text}", purpose="reminder")
+    return {"result": {"success": bool(ok)}}
