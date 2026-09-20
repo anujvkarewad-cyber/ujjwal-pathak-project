@@ -35,21 +35,46 @@ def _sept_2026_attempt(attempt: str, batch: str = "") -> bool:
     return False
 
 
-# ── Sept 2026 group access window ─────────────────────────────────────────
-# The Sept 2026 attempt group keeps full access UP TO AND INCLUDING the close
-# date (end of day, IST). From the next day their login returns
-# "Sept 2026 access is closed." Override via env SEPT_GROUP_CLOSE_ON (YYYY-MM-DD).
+# ── Attempt-based access control ──────────────────────────────────────────
+# App access is allowed ONLY for students whose attempt is the configured
+# minimum or later. Earlier attempts are closed because their attempt is
+# finished (e.g. Sept 2026 attempt done → closed now).
+#   default minimum: Jan 2027 → "jan 27", "Jan 2027", "March 2027"… allowed
+#                                 "sept 2026", "dec 26"… closed
+# Override without code changes: ACCESS_MIN_ATTEMPT="YYYY-MM" (e.g. "2027-01").
 IST = timezone(timedelta(hours=5, minutes=30))
 
+_MONTHS = {
+    "jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6,
+    "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12,
+}
 
-def _sept_group_closed_now() -> bool:
-    close_on = (os.environ.get("SEPT_GROUP_CLOSE_ON") or "2026-09-25").strip()
+
+def _attempt_ym(attempt: str, batch: str = ""):
+    """Parse 'sept 2026' / 'jan 27' / 'January 2027' → (year, month) or None."""
+    text = f"{attempt} {batch}".strip().lower()
+    m = re.search(r"\b(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*[\s./-]*(\d{2,4})\b", text)
+    if not m:
+        return None
+    mon = _MONTHS.get(m.group(1)[:3])
+    if mon is None:
+        return None
+    year = int(m.group(2))
+    if year < 100:
+        year += 2000
+    return (year, mon)
+
+
+def _attempt_access_allowed(attempt: str, batch: str = "") -> bool:
+    raw = (os.environ.get("ACCESS_MIN_ATTEMPT") or "2027-01").strip().split("-")
     try:
-        year, month, day = (int(p) for p in close_on.split("-"))
+        min_ym = (int(raw[0]), int(raw[1]))
     except Exception:
-        year, month, day = 2026, 9, 25
-    cutoff = datetime(year, month, day, 23, 59, 59, tzinfo=IST)
-    return datetime.now(IST) > cutoff
+        min_ym = (2027, 1)
+    ym = _attempt_ym(attempt, batch)
+    if ym is None:
+        return False
+    return ym >= min_ym
 
 
 def normalize_student_id(raw: str) -> str:
@@ -151,10 +176,10 @@ async def authenticate_student(student_id: str, password: str) -> dict:
         return {"success": False, "message": "Student ID not found.", "code": "not_found"}
     if not _password_ok(pwd, doc):
         return {"success": False, "message": "Incorrect password.", "code": "wrong_password"}
-    if _sept_2026_attempt(str(doc.get("attempt") or ""), str(doc.get("batch") or "")) and _sept_group_closed_now():
+    if not _attempt_access_allowed(str(doc.get("attempt") or ""), str(doc.get("batch") or "")):
         return {
             "success": False,
-            "message": "Sept 2026 access is closed.",
+            "message": "Your attempt access is closed. The app is open for Jan 2027 attempt students onwards.",
             "code": "group_closed",
         }
     if doc.get("password") and not doc.get("passwordHash"):
