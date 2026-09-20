@@ -130,6 +130,10 @@ export const useBulkApproveAll = () => {
 
 // ── Analytics ─────────────────────────────────────────────────────────────
 export const useAnalyticsOverview = () => useQuery({ queryKey: ['analytics.overview'], queryFn: analyticsApi.analyticsOverview });
+export const useBatchAnalyticsReport = (range) =>
+  useQuery({ queryKey: ['analytics.batchReport', range], queryFn: () => analyticsApi.batchReport(range) });
+export const useStudentReportAnalytics = (id) =>
+  useQuery({ queryKey: ['analytics.studentReport', id], queryFn: () => analyticsApi.studentReport(id), enabled: !!id });
 export const useStudentsList = () => useQuery({ queryKey: ['analytics.students'], queryFn: analyticsApi.studentsList });
 export const useStudentAnalysis = (id) =>
   useQuery({ queryKey: ['analytics.student', id], queryFn: () => analyticsApi.studentAnalysis(id), enabled: !!id });

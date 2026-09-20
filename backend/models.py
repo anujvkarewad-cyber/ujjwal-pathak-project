@@ -1,7 +1,6 @@
 """Pydantic request models for content review, analytics and consent APIs.
 Mirrors the canonical content model defined in
-docs/integration-design.md §4 and content-pipeline/src/lib/schemas.mjs.
-"""
+docs/integration-design.md §4 and content-pipeline/src/lib/schemas.mjs."""
 from datetime import date
 from enum import Enum
 from typing import Dict, List, Literal, Optional
@@ -170,7 +169,7 @@ class TrendPoint(BaseModel):
 
 
 class ProgressSyncRequest(BaseModel):
-    model_config = ConfigDict(extra="forbid")
+    model_config = ConfigDict(extra="forbid")  # raw answers / unknown fields are rejected
 
     studentId: str = Field(min_length=1, max_length=64)
     consentVersion: int = Field(default=1, ge=1, le=10)
@@ -190,10 +189,59 @@ class ConsentRequest(BaseModel):
 class FollowupCreate(BaseModel):
     studentId: Optional[str] = None
     title: str = Field(min_length=3, max_length=200)
-    priority: str = "medium"
+    priority: str = "medium"  # low | medium | high
     rule: Optional[str] = None
 
 
 class FollowupUpdate(BaseModel):
-    status: Optional[str] = None
+    status: Optional[str] = None  # open | in_progress | completed
     note: Optional[str] = None
+
+
+class TestHistoryItem(BaseModel):
+    """One mentor-test attempt uploaded by the student app.
+
+    kind=mcq-test   → auto-graded score (score/total/scorePct)
+    kind=paper-test → submission record; score is the SELF-EVALUATED marks
+                      the student wrote after checking answer key + marking scheme
+    """
+    model_config = ConfigDict(extra="forbid")
+
+    id: str = Field(min_length=1, max_length=96)
+    testId: str = Field(min_length=1, max_length=96)
+    kind: Literal["mcq-test", "paper-test"]
+    title: str = Field(min_length=1, max_length=200)
+    subject: Optional[str] = Field(default=None, max_length=120)
+    at: str = Field(min_length=1, max_length=64)
+    score: Optional[float] = Field(default=None, ge=0)
+    total: Optional[float] = Field(default=None, ge=0)
+    scorePct: Optional[int] = Field(default=None, ge=0, le=100)
+    selfMarks: Optional[bool] = None
+    note: Optional[str] = Field(default=None, max_length=500)
+
+
+class TestHistorySyncRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    studentId: str = Field(min_length=1, max_length=64)
+    studentName: Optional[str] = Field(default=None, max_length=120)
+    batch: Optional[str] = Field(default=None, max_length=80)
+    entries: List[TestHistoryItem] = Field(default_factory=list, max_length=300)
+
+
+class MessageSendRequest(BaseModel):
+    """Student → mentor message from the UMP app."""
+    model_config = ConfigDict(extra="forbid")
+
+    studentId: str = Field(min_length=1, max_length=64)
+    studentName: Optional[str] = Field(default=None, max_length=120)
+    batch: Optional[str] = Field(default=None, max_length=80)
+    text: str = Field(min_length=1, max_length=2000)
+
+
+class MessageReplyRequest(BaseModel):
+    """Mentor → student reply (dashboard inbox)."""
+    model_config = ConfigDict(extra="forbid")
+
+    studentId: str = Field(min_length=1, max_length=64)
+    text: str = Field(min_length=1, max_length=2000)

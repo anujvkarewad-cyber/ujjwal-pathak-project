@@ -1,4 +1,9 @@
-"""One-shot production repair: remove cloned MCQs and republish an empty bank."""
+"""One-shot production repair: remove cloned MCQs and republish an empty bank.
+
+Render restarts used to `insert_many` the on-disk snapshot on top of Mongo,
+so the live DB grew 4700 → 9400 → … and students saw an empty bank. This
+module is safe to run on every boot: it is a no-op when the store is clean.
+"""
 from __future__ import annotations
 
 import logging
@@ -15,6 +20,7 @@ from db import (
 
 logger = logging.getLogger(__name__)
 
+# Higher wins when two copies of the same id exist (restore clone vs published).
 STATUS_RANK = {
     "published": 80,
     "release_candidate": 70,
@@ -39,6 +45,7 @@ def _rank(doc: dict) -> tuple:
 
 
 async def _dedupe(collection: str, key_field: str) -> int:
+    """Keep the best document per key; delete the rest. Returns deleted count."""
     db = get_db()
     winners: dict = {}
     losers: list = []
@@ -66,6 +73,7 @@ async def _dedupe(collection: str, key_field: str) -> int:
 
 
 async def repair_store() -> dict:
+    """Remove cloned questions / scenarios / chapters. Idempotent."""
     deleted_questions = await _dedupe(CONTENT_QUESTIONS, "id")
     deleted_scenarios = await _dedupe(CONTENT_SCENARIOS, "scenarioId")
     deleted_chapters = await _dedupe(CONTENT_CHAPTERS, "chapterId")
@@ -82,6 +90,12 @@ async def repair_store() -> dict:
 
 
 async def publish_if_empty() -> dict:
+    """If questions exist but none are published, publish the whole bank.
+
+    Students read `status=published` only. Connecting Mongo does not publish
+    by itself; a restart that restored the needs_review snapshot left the
+    student bank at 0. This puts the bank back without a mentor click.
+    """
     if not settings.auto_publish_if_empty:
         return {"ok": True, "skipped": True, "reason": "AUTO_PUBLISH_IF_EMPTY=0"}
 
@@ -146,8 +160,9 @@ async def publish_if_empty() -> dict:
     live = await db[CONTENT_QUESTIONS].count_documents({"status": "published"})
     try:
         from routers.student_content import invalidate_student_bank
+
         invalidate_student_bank()
-    except Exception:
+    except Exception:  # pragma: no cover - cache is best-effort
         pass
 
     logger.warning(

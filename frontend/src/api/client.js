@@ -46,7 +46,9 @@ function jsonpCall(action, payload) {
     window[cb] = (data) => {
       cleanup();
       if (data && data.error) return reject(new Error(data.error));
-      resolve(data && data.result !== undefined ? data.result : data);
+      const result = data && data.result !== undefined ? data.result : data;
+      mirrorDashboardWrite_(action, payload, result);
+      resolve(result);
     };
 
     const url = new URL(APPS_SCRIPT_URL);
@@ -88,7 +90,9 @@ function postCall(action, payload) {
     .then((res) => res.json())
     .then((data) => {
       if (data && data.error) throw new Error(data.error);
-      return data && data.result !== undefined ? data.result : data;
+      const result = data && data.result !== undefined ? data.result : data;
+      mirrorDashboardWrite_(action, payload, result);
+      return result;
     });
 }
 
@@ -141,7 +145,9 @@ function postCallWithProgress(action, payload, onProgress) {
       try {
         const data = JSON.parse(xhr.responseText);
         if (data && data.error) { reject(new Error(data.error)); return; }
-        resolve(data && data.result !== undefined ? data.result : data);
+        const result = data && data.result !== undefined ? data.result : data;
+        mirrorDashboardWrite_(action, payload, result);
+        resolve(result);
       } catch (err) {
         reject(err);
       }

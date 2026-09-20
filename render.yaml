@@ -1,6 +1,6 @@
 # Render blueprint for the FastAPI mentor backend.
 # Deploy: Render dashboard → New → Blueprint → point at this repo.
-# (Frontend goes to Vercel separately — see docs/DEPLOYMENT.md.)
+# (Mentor frontend goes to Vercel separately — project 'ujjwal-pathak-project'.)
 services:
   - type: web
     name: ujjwal-pathak-mentor-api
@@ -9,19 +9,47 @@ services:
     plan: free
     buildCommand: pip install -r requirements.txt && pip install mongomock-motor
     startCommand: uvicorn server:app --host 0.0.0.0 --port $PORT
-    healthCheckPath: /api/
+    healthCheckPath: /api/health
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.11
+      # ── Database: set your MongoDB Atlas URI in the Render dashboard ──
+      # sync:false → blueprint refresh will NOT overwrite the value you set there.
       - key: MONGO_URL
-        value: memory://          # swap for a MongoDB Atlas URI for permanent storage
+        sync: false
       - key: DB_NAME
         value: ujjwal_pathak
+      # ── Mentor login (PRODUCTION: bypass OFF, JWT enforced) ──
       - key: DEV_AUTH_BYPASS
-        value: "1"                # set to 0 + configure MENTOR_EMAIL/MENTOR_PASSWORD_HASH for real auth
+        value: "0"
+      # Set in Render dashboard. Format: email1:pass1,email2:pass2
+      # e.g. mentor@ujjwalpathak.in:YourPass,admin@ujjwalpathak.in:OtherPass
+      - key: MENTOR_ACCOUNTS
+        sync: false
+      # Long random string, 32+ characters. Set in Render dashboard.
+      - key: JWT_SECRET
+        sync: false
+      # ── Content pipeline ──
       - key: IMPORT_GENERATED
         value: "1"
       - key: GENERATED_DIR
         value: ../content-pipeline/generated
+      # ── WhatsApp mirror (student messages → mentor's WhatsApp) ──
+      # Provider: meta | msg91 | simulate | blank=off. Set all in Render dashboard.
+      - key: WHATSAPP_PROVIDER
+        sync: false
+      - key: WHATSAPP_TOKEN
+        sync: false
+      - key: WHATSAPP_PHONE_NUMBER_ID
+        sync: false
+      - key: WHATSAPP_MENTOR_NUMBER
+        sync: false
+      - key: MSG91_AUTH_KEY
+        sync: false
+      - key: MSG91_TEMPLATE_ID
+        sync: false
+      # ── Student sync security (optional but recommended) ──
+      - key: SYNC_SECRET
+        sync: false
       - key: CORS_ORIGINS
         value: "*"                # tighten to your Vercel URL once known

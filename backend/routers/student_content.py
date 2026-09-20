@@ -8,6 +8,8 @@
 No draft or merely-approved content can be exposed by construction: the bundle
 routes only read gated stage-11 output, and bank.json filters on `published`.
 """
+from __future__ import annotations
+
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -22,6 +24,21 @@ router = APIRouter(prefix="/api/content/student", tags=["student-content"])
 MANIFEST_NAME = "published-manifest.json"
 CACHE_IMMUTABLE = "public, max-age=31536000, immutable"
 CACHE_MANIFEST = "public, max-age=300"
+
+# In-process bank cache. Building 4,700 student-shaped questions is ~7MB and
+# was taking ~4s per request on Render free — enough to look like a crash.
+# Invalidated whenever the published count or release revision changes.
+_bank_cache: dict | None = None
+_bank_cache_revision: int | None = None
+_bank_cache_count: int | None = None
+
+
+def invalidate_student_bank() -> None:
+    global _bank_cache, _bank_cache_revision, _bank_cache_count
+    _bank_cache = None
+    _bank_cache_revision = None
+    _bank_cache_count = None
+
 
 # Student visibility is a publish boundary, not an approval boundary. Individual
 # question approval and chapter release-candidate status remain mentor-only.
@@ -131,7 +148,25 @@ async def live_bank():
     Successful empty responses are authoritative: clients must clear any older
     cached/static bank instead of silently showing removed preview questions.
     """
+    global _bank_cache, _bank_cache_revision, _bank_cache_count
     db = get_db()
+    latest_revision = await _latest_release_revision(db)
+    published_count = await db[CONTENT_QUESTIONS].count_documents(
+        {"status": {"$in": list(STUDENT_VISIBLE_STATUSES)}}
+    )
+    if (
+        _bank_cache is not None
+        and _bank_cache_revision == latest_revision
+        and _bank_cache_count == published_count
+    ):
+        return JSONResponse(
+            _bank_cache,
+            headers={
+                "Cache-Control": "no-store, max-age=0",
+                "X-Content-Revision": str(latest_revision),
+            },
+        )
+
     scenarios: dict = {}
     # Passage text is joined only to a student-visible question. Loading all
     # scenario records here does not expose them in the response by itself.
@@ -144,14 +179,15 @@ async def live_bank():
     ).sort([("chapterId", 1), ("id", 1)]):
         questions.append(_student_question(doc, scenarios))
 
-    latest_revision = await _latest_release_revision(db)
-
     payload = {
         "revision": f"published-r{latest_revision}",
         "generatedAt": _now(),
         "count": len(questions),
         "questions": questions,
     }
+    _bank_cache = payload
+    _bank_cache_revision = latest_revision
+    _bank_cache_count = published_count
     return JSONResponse(
         payload,
         headers={

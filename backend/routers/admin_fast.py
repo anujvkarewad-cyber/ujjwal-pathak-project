@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends
 from datetime import datetime, timezone
 from auth import require_mentor
 from db import CONTENT_CHAPTERS, CONTENT_QUESTIONS, CONTENT_SCENARIOS, CONTENT_RELEASES, get_db
+from routers.student_content import invalidate_student_bank
 
 router = APIRouter(prefix="/api/admin", tags=["admin-fast-publish"])
 
@@ -50,6 +51,7 @@ async def fast_publish_all(claims: dict = Depends(require_mentor)):
     })
 
     published = await db[CONTENT_QUESTIONS].count_documents({"status": "published"})
+    invalidate_student_bank()
 
     return {
         "ok": True,

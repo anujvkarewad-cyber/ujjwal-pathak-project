@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import { Toaster } from 'sonner';
 import '@/App.css';
 import DashboardLayout from '@/layouts/DashboardLayout';
@@ -10,6 +11,23 @@ import Leaderboard from '@/pages/Leaderboard';
 import Announcements from '@/pages/Announcements';
 import Notes from '@/pages/Notes';
 import Reports from '@/pages/Reports';
+import Tests from '@/pages/Tests';
+import Messages from '@/pages/Messages';
+import Login from '@/pages/Login';
+import { getToken, setToken, AUTH_EVENT } from '@/api/backendClient';
+
+// Route guard: everything inside the dashboard requires a mentor JWT.
+// Any 401 from the API (token expired/invalid) drops back to the login page.
+function RequireAuth({ children }) {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const onAuthRequired = () => { setToken(''); navigate('/login', { replace: true }); };
+    window.addEventListener(AUTH_EVENT, onAuthRequired);
+    return () => window.removeEventListener(AUTH_EVENT, onAuthRequired);
+  }, [navigate]);
+  if (!getToken()) return <Navigate to="/login" replace />;
+  return children;
+}
 import Settings from '@/pages/Settings';
 // NEW — AI Content review center
 import ReviewQueue from '@/pages/ai-content/ReviewQueue';
@@ -34,7 +52,8 @@ function App() {
     <BrowserRouter>
       <Toaster position="top-right" richColors />
       <Routes>
-        <Route element={<DashboardLayout />}>
+        <Route path="/login" element={<Login />} />
+        <Route element={<RequireAuth><DashboardLayout /></RequireAuth>}>
           <Route index element={<Dashboard />} />
           <Route path="/students" element={<Students />} />
           <Route path="/students/:id" element={<StudentProfile />} />
@@ -43,6 +62,8 @@ function App() {
           <Route path="/announcements" element={<Announcements />} />
           <Route path="/notes" element={<Notes />} />
           <Route path="/reports" element={<Reports />} />
+          <Route path="/tests" element={<Tests />} />
+          <Route path="/messages" element={<Messages />} />
           <Route path="/settings" element={<Settings />} />
           {/* NEW — AI Content */}
           <Route path="/ai-content/queue" element={<ReviewQueue />} />

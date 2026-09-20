@@ -1,14 +1,17 @@
-import { Search, Bell, Sun, Moon, Menu, ShieldCheck } from 'lucide-react';
+import { Search, Bell, Sun, Moon, Menu, LogOut, ShieldCheck } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { useTheme } from '@/hooks/useTheme';
 import { useState, useEffect } from 'react';
 import { getMentorNotifications } from '@/api/dashboard';
-import LoginDialog from '@/components/content/LoginDialog';
+import { getToken, setToken } from '@/api/backendClient';
 
 export default function Topbar({ onMenu, title, subtitle }) {
   const { theme, toggle } = useTheme();
+  const navigate = useNavigate();
   const [notifications, setNotifications] = useState([]);
   const [open, setOpen] = useState(false);
-  const [loginOpen, setLoginOpen] = useState(false);
+  const mentorEmail = (() => { try { return localStorage.getItem('upm_mentor_email') || ''; } catch { return ''; } })();
+  const signOut = () => { setToken(''); try { localStorage.removeItem('upm_mentor_email'); } catch { /* ignore */ } navigate('/login', { replace: true }); };
  
 useEffect(() => {
   loadNotifications();
@@ -39,15 +42,21 @@ async function loadNotifications() {
       </div>
 
       <div className="ml-auto flex items-center gap-2 sm:gap-3">
-        <button
-          onClick={() => setLoginOpen(true)}
-          className="p-2.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:text-[#2563EB] transition-colors"
-          aria-label="Mentor sign-in for AI Content and Analytics"
-          data-testid="mentor-login-btn"
-          title="Mentor sign-in (AI Content + Analytics)"
-        >
-          <ShieldCheck className="w-[18px] h-[18px]" />
-        </button>
+        {getToken() ? (
+          <div className="hidden sm:flex items-center gap-2 h-10 pl-3 pr-1.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+            <ShieldCheck className="w-4 h-4 text-emerald-500 shrink-0" />
+            <span className="text-xs font-semibold text-slate-700 dark:text-slate-200 max-w-[160px] truncate" title={mentorEmail}>{mentorEmail || 'Mentor'}</span>
+            <button
+              onClick={signOut}
+              className="p-2 rounded-md text-slate-400 hover:text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-500/10 transition-colors"
+              aria-label="Sign out"
+              data-testid="mentor-signout-btn"
+              title="Sign out"
+            >
+              <LogOut className="w-4 h-4" />
+            </button>
+          </div>
+        ) : null}
         <div className="hidden md:flex items-center gap-2 h-10 px-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 w-72">
           <Search className="w-4 h-4 text-slate-400" />
           <input
@@ -105,7 +114,7 @@ async function loadNotifications() {
 </div>
       </div>
 
-      <LoginDialog open={loginOpen} onOpenChange={setLoginOpen} />
+
     </header>
   );
 }

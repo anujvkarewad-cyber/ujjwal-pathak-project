@@ -19,3 +19,5 @@ export const listFollowups = (params) => call('/api/analytics/followups', { para
 export const createFollowup = (body) => call('/api/analytics/followups', { method: 'POST', body });
 export const updateFollowup = (id, body) => call(`/api/analytics/followups/${id}`, { method: 'POST', body });
 export const getConsent = (studentId) => call(`/api/consent/${studentId}`);
+export const batchReport = (range) => call('/api/analytics/batch-report', { params: { range } });
+export const studentReport = (studentId) => call(`/api/analytics/student-report/${encodeURIComponent(studentId)}`);

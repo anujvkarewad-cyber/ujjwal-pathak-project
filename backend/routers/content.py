@@ -24,6 +24,7 @@ from db import (
 )
 from models import ChapterPublishRequest, DecisionRequest, QuestionUpdate
 from persist import dump_store
+from routers.student_content import invalidate_student_bank
 
 router = APIRouter(prefix="/api/content", tags=["content"])
 
@@ -678,6 +679,7 @@ async def publish_chapter(
     )
     await _audit(db, chapter_id, "chapter", "publish", by, {"revision": revision, "coverage": gate["coverage"]})
     await dump_store()
+    invalidate_student_bank()
     return {
         "ok": True,
         "chapterId": chapter_id,
@@ -828,6 +830,7 @@ async def _bulk_approve_publish(q_filter: dict, s_filter: dict, c_filter: dict, 
         {"questions": published_questions, "scenarios": published_scenarios, "chapters": len(chapter_ids), "skipped": len(skipped)},
     )
     await dump_store()
+    invalidate_student_bank()
     message = f"Published {published_questions} questions across {len(chapter_ids)} chapters (revision {revision})."
     if skipped:
         message += f" {len(skipped)} questions were skipped for validation errors — they stay in review."

@@ -17,6 +17,7 @@ from db import (
     ANALYTICS_CONSENTS,
     ANALYTICS_FOLLOWUPS,
     ANALYTICS_SUMMARIES,
+    ANALYTICS_TEST_HISTORY,
     ANALYTICS_TRENDS,
     CONTENT_AUDIT,
     get_db,
@@ -59,6 +60,23 @@ def _band_trend(points: list) -> Optional[str]:
     return "stable"
 
 
+async def _test_stats(db, student_ids=None):
+    """Aggregate mentor-test submissions (MCQ auto-scores + paper self-marks)."""
+    query = {"studentId": {"$in": list(student_ids)}} if student_ids is not None else {}
+    entries = []
+    async for t in db[ANALYTICS_TEST_HISTORY].find(query):
+        t.pop("_id", None)
+        entries.append(t)
+    mcq = [e for e in entries if e.get("kind") == "mcq-test" and e.get("scorePct") is not None]
+    return {
+        "submissions": len(entries),
+        "studentsTested": len({e.get("studentId") for e in entries}),
+        "pendingSelfMarks": len([e for e in entries if e.get("kind") == "paper-test" and e.get("score") is None]),
+        "avgMcqTestPct": round(sum(e["scorePct"] for e in mcq) / len(mcq)) if mcq else None,
+        "entries": entries,
+    }
+
+
 @router.get("/overview")
 async def overview(claims: dict = Depends(require_mentor)):
     db = get_db()
@@ -84,6 +102,10 @@ async def overview(claims: dict = Depends(require_mentor)):
                 pass
 
     open_followups = await db[ANALYTICS_FOLLOWUPS].count_documents({"status": {"$in": ["open", "in_progress"]}})
+
+    tests = await _test_stats(db, consenting or None)
+    recent = sorted(tests.pop("entries"), key=lambda e: e.get("at") or "", reverse=True)[:8]
+
     await _audit(db, claims.get("sub"), "overview", {})
     return {
         "consentOnStudents": len(consenting),
@@ -92,6 +114,8 @@ async def overview(claims: dict = Depends(require_mentor)):
         "bandDistribution": band_counts,
         "inactiveChapterCells": inactive,
         "openFollowups": open_followups,
+        "tests": tests,
+        "recentTestSubmissions": recent,
     }
 
 
@@ -111,9 +135,32 @@ async def students_list(claims: dict = Depends(require_mentor)):
         sid = s["studentId"]
         if sid not in consents:
             consents[sid] = {"sharing": None, "updatedAt": None}
+    # name/batch/test stats come from synced test-history records
+    test_info: dict = {}
+    async for t in db[ANALYTICS_TEST_HISTORY].find({}):
+        sid = t.get("studentId")
+        info = test_info.setdefault(sid, {"studentName": None, "batch": None, "testCount": 0, "lastTestAt": None})
+        if t.get("studentName"):
+            info["studentName"] = t["studentName"]
+        if t.get("batch"):
+            info["batch"] = t["batch"]
+        info["testCount"] += 1
+        if not info["lastTestAt"] or (t.get("at") or "") > info["lastTestAt"]:
+            info["lastTestAt"] = t.get("at")
+
     for sid, c in consents.items():
         n = await db[ANALYTICS_SUMMARIES].count_documents({"studentId": sid})
-        students.append({"studentId": sid, "sharing": c["sharing"], "consentUpdatedAt": c["updatedAt"], "summaryCount": n})
+        info = test_info.get(sid, {"studentName": None, "batch": None, "testCount": 0, "lastTestAt": None})
+        students.append({
+            "studentId": sid,
+            "studentName": info["studentName"],
+            "batch": info["batch"],
+            "sharing": c["sharing"],
+            "consentUpdatedAt": c["updatedAt"],
+            "summaryCount": n,
+            "testCount": info["testCount"],
+            "lastTestAt": info["lastTestAt"],
+        })
     students.sort(key=lambda x: x["studentId"])
     await _audit(db, claims.get("sub"), "students", {})
     return {"items": students}
@@ -171,10 +218,23 @@ async def student_analysis(student_id: str, claims: dict = Depends(require_mento
         f.pop("_id", None)
         followups.append(f)
 
+    test_history = []
+    async for t in db[ANALYTICS_TEST_HISTORY].find({"studentId": student_id}).sort("at", -1):
+        t.pop("_id", None)
+        test_history.append(t)
+    mcq_tests = [t for t in test_history if t.get("kind") == "mcq-test" and t.get("scorePct") is not None]
+    test_stats = {
+        "count": len(test_history),
+        "pendingSelfMarks": len([t for t in test_history if t.get("kind") == "paper-test" and t.get("score") is None]),
+        "avgMcqTestPct": round(sum(t["scorePct"] for t in mcq_tests) / len(mcq_tests)) if mcq_tests else None,
+    }
+
     await _audit(db, claims.get("sub"), f"students/{student_id}", {"studentId": student_id})
     return {
         "studentId": student_id,
         "sharing": sharing,
+        "testHistory": test_history,
+        "testStats": test_stats,
         "summaries": summaries,
         "weakChapters": weak_chapters,
         "weakConcepts": weak_concepts,
@@ -386,3 +446,276 @@ async def update_followup(followup_id: str, body: FollowupUpdate, claims: dict =
         updates["notes"] = notes
     await db[ANALYTICS_FOLLOWUPS].update_one({"followupId": followup_id}, {"$set": updates})
     return {"ok": True, "followupId": followup_id}
+
+
+def _range_cutoff(range_key: Optional[str]):
+    """Week cutoff for report ranges: week = current week, month = last 5 weeks, all = no cutoff."""
+    if range_key == "week":
+        return date.today() - timedelta(days=date.today().weekday())
+    if range_key == "month":
+        return date.today() - timedelta(days=date.today().weekday() + 28)
+    return None
+
+
+async def _student_names(db) -> dict:
+    """studentId → {studentName, batch} from consent records + test history."""
+    names: dict = {}
+    async for c in db[ANALYTICS_CONSENTS].find({}):
+        if c.get("studentName") or c.get("batch"):
+            names.setdefault(c["studentId"], {}).update(
+                {k: v for k, v in (("studentName", c.get("studentName")), ("batch", c.get("batch")), ("joinedOn", c.get("joinedOn"))) if v}
+            )
+    async for t in db[ANALYTICS_TEST_HISTORY].find({}):
+        sid = t.get("studentId")
+        entry = names.setdefault(sid, {})
+        if t.get("studentName") and not entry.get("studentName"):
+            entry["studentName"] = t["studentName"]
+        if t.get("batch") and not entry.get("batch"):
+            entry["batch"] = t["batch"]
+    return names
+
+
+@router.get("/batch-report")
+async def batch_report(
+    range: Optional[str] = Query(default="all", pattern="^(week|month|all)$"),
+    claims: dict = Depends(require_mentor),
+):
+    """Cohort report till date with a weekly series — who is progressing, who
+    is falling behind, subject averages and weak chapters. Range filter:
+    week = current week, month = last 5 weeks, all = everything synced."""
+    db = get_db()
+    consenting = await _consenting_students(db)
+    cutoff = _range_cutoff(range)
+    names = await _student_names(db)
+
+    # weekly series from trends
+    series: dict = {}
+    async for t in db[ANALYTICS_TRENDS].find({"studentId": {"$in": list(consenting)} if consenting else []}):
+        week = str(t.get("weekStart") or "")[:10]
+        if not week:
+            continue
+        if cutoff and date.fromisoformat(week) < cutoff:
+            continue
+        point = series.setdefault(week, {"bandScores": [], "students": set()})
+        point["bandScores"].append(BAND_ORDER.get(t.get("masteryBand"), 0))
+        point["students"].add(t.get("studentId"))
+
+    # tests per week
+    tests_total = 0
+    test_pcts = []
+    pending_marks = 0
+    async for e in db[ANALYTICS_TEST_HISTORY].find({}):
+        day = str(e.get("at") or "")[:10]
+        if cutoff and day and date.fromisoformat(day) < cutoff:
+            continue
+        week = (date.fromisoformat(day) - timedelta(days=date.fromisoformat(day).weekday())).isoformat() if day else None
+        tests_total += 1
+        if e.get("kind") == "paper-test" and e.get("score") is None:
+            pending_marks += 1
+        if e.get("scorePct") is not None:
+            test_pcts.append(e["scorePct"])
+        if week and week in series:
+            series[week].setdefault("tests", 0)
+            series[week]["tests"] += 1
+
+    weeks = []
+    for week in sorted(series):
+        point = series[week]
+        weeks.append({
+            "weekStart": week,
+            "avgBandScore": round(sum(point["bandScores"]) / len(point["bandScores"]), 2),
+            "activeStudents": len(point["students"]),
+            "testsGiven": point.get("tests", 0),
+        })
+
+    # current mastery snapshot (summaries)
+    summaries = []
+    async for s in db[ANALYTICS_SUMMARIES].find({"studentId": {"$in": list(consenting)} if consenting else []}):
+        summaries.append(s)
+    band_counts = {"Not assessed": 0, "Weak": 0, "Medium": 0, "Strong": 0, "Mastered": 0}
+    subject_scores: dict = {}
+    weak_agg: dict = {}
+    for s in summaries:
+        band = s.get("masteryBand")
+        if band in band_counts:
+            band_counts[band] += 1
+        subject_scores.setdefault(s.get("subject") or "Unknown", []).append(BAND_ORDER.get(band, 0))
+        if band in ("Weak", "Not assessed"):
+            key = s["chapterId"]
+            agg = weak_agg.setdefault(key, {"chapterId": key, "subject": s.get("subject"), "weakStudents": 0, "totalStudents": 0})
+            agg["weakStudents"] += 1
+    for s in summaries:
+        key = s["chapterId"]
+        if key in weak_agg:
+            weak_agg[key]["totalStudents"] += 1
+    subject_averages = [
+        {"subject": k, "avgScore": round(sum(v) / len(v), 2), "chapters": len(v)}
+        for k, v in sorted(subject_scores.items(), key=lambda kv: -sum(kv[1]) / len(kv[1]))
+    ]
+    weak_chapters = sorted(weak_agg.values(), key=lambda x: -x["weakStudents"])[:8]
+
+    # progressing vs falling behind (trend over the last 4 snapshots)
+    by_student_chapter: dict = {}
+    async for t in db[ANALYTICS_TRENDS].find({"studentId": {"$in": list(consenting)} if consenting else []}):
+        by_student_chapter.setdefault(t.get("studentId"), {}).setdefault(t.get("chapterId"), []).append(t)
+    progressing, falling_behind = [], []
+    for sid, chapters in by_student_chapter.items():
+        improving = [c for c, pts in chapters.items() if _band_trend(pts) == "improving"]
+        declining = [c for c, pts in chapters.items() if _band_trend(pts) == "declining"]
+        info = names.get(sid, {})
+        label = info.get("studentName") or sid
+        if improving and not declining:
+            progressing.append({"studentId": sid, "name": label, "batch": info.get("batch"), "chapters": improving})
+        elif declining:
+            falling_behind.append({"studentId": sid, "name": label, "batch": info.get("batch"), "chapters": declining, "reason": "declining_trend"})
+    # inactive students join the falling-behind list
+    threshold = date.today() - timedelta(days=INACTIVE_DAYS)
+    last_seen: dict = {}
+    for s in summaries:
+        try:
+            d = date.fromisoformat(str(s.get("lastActivityDate")))
+            if d > last_seen.get(s["studentId"], date.min):
+                last_seen[s["studentId"]] = d
+        except (ValueError, TypeError):
+            pass
+    already = {x["studentId"] for x in falling_behind}
+    for sid, d in last_seen.items():
+        if d < threshold and sid not in already:
+            info = names.get(sid, {})
+            falling_behind.append({
+                "studentId": sid, "name": info.get("studentName") or sid, "batch": info.get("batch"),
+                "chapters": [], "reason": f"inactive_{(date.today() - d).days}d",
+            })
+
+    await _audit(db, claims.get("sub"), "batch-report", {"range": range})
+    return {
+        "range": range or "all",
+        "kpis": {
+            "students": len(consenting),
+            "chaptersCovered": len({s["chapterId"] for s in summaries}),
+            "avgMasteryScore": round(sum(BAND_ORDER.get(s.get("masteryBand"), 0) for s in summaries) / len(summaries), 2) if summaries else 0,
+            "testsGiven": tests_total,
+            "avgTestPct": round(sum(test_pcts) / len(test_pcts)) if test_pcts else None,
+            "pendingSelfMarks": pending_marks,
+        },
+        "weeks": weeks,
+        "bandDistribution": band_counts,
+        "subjectAverages": subject_averages,
+        "weakChapters": weak_chapters,
+        "progressing": progressing,
+        "fallingBehind": falling_behind,
+    }
+
+
+@router.get("/student-report/{student_id}")
+async def student_report(student_id: str, claims: dict = Depends(require_mentor)):
+    """Individual report: everything from joining till date — journey, mastery,
+    tests, weaknesses and recommendations."""
+    db = get_db()
+    consent = await db[ANALYTICS_CONSENTS].find_one({"studentId": student_id}) or {}
+    sharing = bool(consent.get("sharing"))
+    names = await _student_names(db)
+    info = names.get(student_id, {})
+
+    summaries = []
+    async for s in db[ANALYTICS_SUMMARIES].find({"studentId": student_id}):
+        s.pop("_id", None)
+        summaries.append(s)
+    trends = []
+    async for t in db[ANALYTICS_TRENDS].find({"studentId": student_id}).sort("weekStart", 1):
+        t.pop("_id", None)
+        trends.append(t)
+
+    # weekly journey series
+    journey: dict = {}
+    for t in trends:
+        week = str(t.get("weekStart") or "")[:10]
+        if not week:
+            continue
+        point = journey.setdefault(week, {"bandScores": [], "attempts": 0})
+        point["bandScores"].append(BAND_ORDER.get(t.get("masteryBand"), 0))
+        point["attempts"] += t.get("attemptCount") or 0
+    weeks = [
+        {
+            "weekStart": week,
+            "avgBandScore": round(sum(p["bandScores"]) / len(p["bandScores"]), 2),
+            "masteredCount": sum(1 for b in p["bandScores"] if b >= 4),
+            "attempts": p["attempts"],
+        }
+        for week, p in sorted(journey.items())
+    ]
+
+    tests = []
+    async for t in db[ANALYTICS_TEST_HISTORY].find({"studentId": student_id}).sort("at", -1):
+        t.pop("_id", None)
+        tests.append(t)
+    mcq_tests = [t for t in tests if t.get("kind") == "mcq-test" and t.get("scorePct") is not None]
+
+    earliest = None
+    for s in summaries:
+        try:
+            d = date.fromisoformat(str(s.get("lastActivityDate")))
+            if earliest is None or d < earliest:
+                earliest = d
+        except (ValueError, TypeError):
+            pass
+    for t in trends:
+        try:
+            d = date.fromisoformat(str(t.get("weekStart"))[:10])
+            if earliest is None or d < earliest:
+                earliest = d
+        except (ValueError, TypeError):
+            pass
+    joined_on = consent.get("joinedOn") or (earliest.isoformat() if earliest else None)
+
+    weak_chapters = [s for s in summaries if s.get("masteryBand") in ("Weak", "Not assessed")]
+    weak_concepts = sorted({tag for s in summaries for tag in (s.get("weakConceptTags") or [])})
+    by_chapter = {}
+    for t in trends:
+        by_chapter.setdefault(t.get("chapterId"), []).append(t)
+    improving = [c for c, pts in by_chapter.items() if _band_trend(pts) == "improving"]
+    declining = [c for c, pts in by_chapter.items() if _band_trend(pts) == "declining"]
+
+    recommendations = []
+    if weak_chapters:
+        recommendations.append(f"Focus practice on {len(weak_chapters)} weak chapter(s): " + ", ".join(w["chapterId"] for w in weak_chapters[:3]))
+    if declining:
+        recommendations.append("Declining in " + ", ".join(declining) + " — schedule a mentor call")
+    if improving:
+        recommendations.append("Strong improvement in " + ", ".join(improving) + " — keep the momentum")
+    if any(t.get("kind") == "paper-test" and t.get("score") is None for t in tests):
+        recommendations.append("Paper self-evaluation marks are still due")
+
+    followups = []
+    async for f in db[ANALYTICS_FOLLOWUPS].find({"studentId": student_id}).sort("createdAt", -1):
+        f.pop("_id", None)
+        followups.append(f)
+
+    await _audit(db, claims.get("sub"), f"student-report/{student_id}", {"studentId": student_id})
+    return {
+        "studentId": student_id,
+        "profile": {
+            "studentName": info.get("studentName") or consent.get("studentName"),
+            "batch": info.get("batch") or consent.get("batch"),
+            "group": next((s.get("group") for s in summaries if s.get("group")), None),
+            "joinedOn": joined_on,
+            "sharing": sharing,
+        },
+        "totals": {
+            "chaptersTracked": len(summaries),
+            "mastered": sum(1 for s in summaries if s.get("masteryBand") == "Mastered"),
+            "weak": len(weak_chapters),
+            "totalAttempts": sum(s.get("attemptCount") or 0 for s in summaries),
+            "testsGiven": len(tests),
+            "avgMcqTestPct": round(sum(t["scorePct"] for t in mcq_tests) / len(mcq_tests)) if mcq_tests else None,
+            "pendingSelfMarks": sum(1 for t in tests if t.get("kind") == "paper-test" and t.get("score") is None),
+        },
+        "weeks": weeks,
+        "chapters": sorted(summaries, key=lambda s: -BAND_ORDER.get(s.get("masteryBand"), 0)),
+        "weakConcepts": weak_concepts,
+        "improvingChapters": improving,
+        "decliningChapters": declining,
+        "tests": tests,
+        "recommendations": recommendations,
+        "followups": followups,
+    }

@@ -1,4 +1,9 @@
-"""Authenticated cloud backup/restore for completed student MCQ attempts."""
+"""Authenticated cloud backup/restore for completed student MCQ attempts.
+
+Student credentials remain owned by the existing Apps Script backend. Every
+backup/restore request delegates authentication there; MongoDB never stores the
+password. Only completed, size-bounded Daily/Practice attempts are accepted.
+"""
 from datetime import datetime, timezone
 
 import httpx
@@ -17,6 +22,7 @@ def _now() -> str:
 
 
 async def _validate_existing_student_login(student_id: str, password: str) -> dict:
+    """Prefer Mongo login. Fall back to Apps Script only if the account is not imported yet."""
     from routers.student_auth import authenticate_student
 
     mongo_result = await authenticate_student(student_id, password)
@@ -135,11 +141,6 @@ async def sync_student_attempts(body: StudentMcqSyncRequest):
             "studentId": student_id,
             "syncedAt": _now(),
         })
-        if not doc.get("review"):
-            bank = await _question_lookup(db, list(doc.get("questionIds") or []))
-            review = _review_from_bank(list(doc.get("questionIds") or []), doc.get("answers") or {}, bank)
-            if review:
-                doc["review"] = review
         await db[STUDENT_MCQ_ATTEMPTS].update_one(
             {
                 "studentId": student_id,

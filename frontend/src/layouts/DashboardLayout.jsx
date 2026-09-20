@@ -11,6 +11,8 @@ const TITLES = {
   '/announcements': { title: 'Announcements', subtitle: 'Broadcast updates to your students' },
   '/notes': { title: 'Notes', subtitle: 'Mentor notes for students' },
   '/reports': { title: 'Reports', subtitle: 'Detailed batch & student reports' },
+  '/tests': { title: 'Tests', subtitle: 'Student test submissions and self-evaluation marks' },
+  '/messages': { title: 'Messages', subtitle: 'Student messages from the app — read and reply' },
   '/settings': { title: 'Settings', subtitle: 'Manage your mentor profile and preferences' },
   '/ai-content': { title: 'MCQ Review', subtitle: 'Approve chapter MCQs before students see them' },
   '/analytics': { title: 'Analytics', subtitle: 'Consented chapter mastery and follow-ups' },

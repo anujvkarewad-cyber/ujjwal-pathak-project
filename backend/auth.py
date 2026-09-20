@@ -48,8 +48,36 @@ def decode_token(token: str) -> dict:
     return jwt.decode(token, settings.jwt_secret, algorithms=["HS256"])
 
 
+def mentor_account_list() -> list:
+    """Parse MENTOR_ACCOUNTS="email1:pass1,email2:pass2" → [(email, pass), ...]."""
+    accounts = []
+    for chunk in (settings.mentor_accounts or "").split(","):
+        chunk = chunk.strip()
+        if not chunk or ":" not in chunk:
+            continue
+        email, _, password = chunk.partition(":")
+        email = email.strip().lower()
+        if email and password.strip():
+            accounts.append((email, password.strip()))
+    return accounts
+
+
+def verify_mentor_login(email: str, password: str):
+    """Returns the account email when credentials match, else None.
+    Checks MENTOR_ACCOUNTS first (demo/dev multi-user), then the legacy
+    MENTOR_EMAIL + MENTOR_PASSWORD_HASH pair."""
+    email_norm = (email or "").strip().lower()
+    for acc_email, acc_pass in mentor_account_list():
+        if acc_email == email_norm and hmac.compare_digest(acc_pass, password or ""):
+            return acc_email
+    if settings.mentor_email and settings.mentor_password_hash:
+        if email_norm == settings.mentor_email.lower() and verify_password(password, settings.mentor_password_hash):
+            return settings.mentor_email
+    return None
+
+
 def login_credentials_configured() -> bool:
-    return bool(settings.mentor_email and settings.mentor_password_hash)
+    return bool(mentor_account_list() or (settings.mentor_email and settings.mentor_password_hash))
 
 
 async def require_mentor(request: Request) -> dict:

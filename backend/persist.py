@@ -65,7 +65,7 @@ def should_persist() -> bool:
 
     A real MongoDB is already durable — dumping ~14MB of questions to disk on
     every mentor click / student sync is what OOM-killed the Render free tier.
-    Restoring that file *on top of* Mongo is also what cloned the bank 2x.
+    Restoring that file *on top of* Mongo is also what cloned the bank 2×.
     """
     if uses_real_mongo():
         return False
@@ -95,6 +95,8 @@ async def restore_store() -> bool:
         docs = data.get(name) or []
         if not isinstance(docs, list) or not docs:
             continue
+        # Never stack a snapshot on top of data that is already in the DB.
+        # insert_many here is what doubled 4,700 MCQs to 9,400 on Render.
         existing = await db[name].count_documents({})
         if existing:
             logger.info("[persist] skip restore of %s — collection already has %s docs", name, existing)
@@ -132,6 +134,10 @@ def _write_snapshot(out: dict) -> None:
     tmp.replace(path)
 
 
+# Background dump machinery: mentor decisions (approve/reject/edit) only need
+# the snapshot to hit disk EVENTUALLY, not inside the request. Serializing
+# ~4700 questions inline made each decision take ~0.5s; scheduling it as a
+# debounced background task brings the endpoint back to ~20ms.
 _dump_task: asyncio.Task | None = None
 _dump_again = False
 
@@ -144,7 +150,7 @@ async def _dump_worker() -> None:
             try:
                 out = await _collect_snapshot()
                 await asyncio.to_thread(_write_snapshot, out)
-            except Exception:
+            except Exception:  # pragma: no cover - never break the caller
                 logger.exception("[persist] background dump failed")
             if not _dump_again:
                 break
@@ -153,16 +159,22 @@ async def _dump_worker() -> None:
 
 
 async def dump_store() -> None:
+    """Schedule a store snapshot. Returns immediately; the JSON serialization
+    and file write happen in a background task (coalesced if one is already
+    running). Use `dump_store_sync()` when the write must complete (shutdown)."""
     global _dump_task, _dump_again
     if not should_persist():
         return
     if _dump_task is not None and not _dump_task.done():
+        # A dump is in flight — ask it to run once more with the fresh state.
         _dump_again = True
         return
     _dump_task = asyncio.get_running_loop().create_task(_dump_worker())
 
 
 async def dump_store_sync() -> None:
+    """Blocking variant: waits for any in-flight dump, then writes a final
+    snapshot. Called on shutdown so the last mentor decisions are not lost."""
     global _dump_task
     if not should_persist():
         return
@@ -170,7 +182,7 @@ async def dump_store_sync() -> None:
     if task is not None and not task.done():
         try:
             await task
-        except Exception:
+        except Exception:  # pragma: no cover
             pass
     out = await _collect_snapshot()
     _write_snapshot(out)
