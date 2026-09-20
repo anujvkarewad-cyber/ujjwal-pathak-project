@@ -104,6 +104,7 @@ def _public_profile(doc: dict) -> dict:
         "address": doc.get("address") or "",
         "joinedOn": doc.get("joinedOn") or "",
         "forcePasswordChange": not bool(doc.get("passwordChanged")),
+        "master": bool(doc.get("master")),
     }
 
 
@@ -176,6 +177,10 @@ async def authenticate_student(student_id: str, password: str) -> dict:
         return {"success": False, "message": "Student ID not found.", "code": "not_found"}
     if not _password_ok(pwd, doc):
         return {"success": False, "message": "Incorrect password.", "code": "wrong_password"}
+    # Master accounts (mentor's own app IDs) always have full access,
+    # regardless of the attempt-based access rule.
+    if doc.get("master"):
+        return _public_profile(doc)
     if not _attempt_access_allowed(str(doc.get("attempt") or ""), str(doc.get("batch") or "")):
         return {
             "success": False,
