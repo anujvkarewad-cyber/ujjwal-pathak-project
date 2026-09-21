@@ -59,25 +59,34 @@ _STOP = {"the", "a", "an", "is", "are", "was", "were", "of", "in", "on", "for", 
 
 
 def _tokens(text: str) -> set:
-    return {t for t in re.findall(r"[a-z']+", text.lower()) if t not in _STOP and len(t) > 2}
+    return {t for t in re.findall(r"[a-z0-9']+", text.lower()) if t not in _STOP and len(t) > 1}
 
 
 def retrieve_anchors(question: str, limit: int = 4) -> list:
-    """Top provision anchors whose keywords overlap the question."""
-    from data_section_map import ANCHORS
+    """Authoritative anchors: direct 'Section N' hits first, then keyword overlap."""
+    from data_section_map import ANCHORS, SECNUM
+    picked = []
+    for m in re.finditer(r"(?:section|sec\.?)\s*([0-9]{1,3}[a-z]?(?:\([0-9]+\))?)", question.lower()):
+        num = m.group(1)
+        if num in SECNUM and SECNUM[num] not in picked:
+            picked.append(SECNUM[num])
     qt = _tokens(question)
-    if not qt:
-        return []
-    scored = []
-    for keywords, text in ANCHORS:
-        kt = set()
-        for k in keywords:
-            kt |= _tokens(k)
-        overlap = qt & kt
-        if overlap:
-            scored.append((len(overlap), text))
-    scored.sort(key=lambda x: -x[0])
-    return [t for _, t in scored[:limit]]
+    if qt and len(picked) < limit:
+        scored = []
+        for keywords, text in ANCHORS:
+            kt = set()
+            for k in keywords:
+                kt |= _tokens(k)
+            overlap = qt & kt
+            if overlap:
+                scored.append((len(overlap), text))
+        scored.sort(key=lambda x: -x[0])
+        for _, text in scored:
+            if len(picked) >= limit:
+                break
+            if text not in picked:
+                picked.append(text)
+    return picked
 
 
 def match_chapter(question: str, chapter_id: Optional[str] = None):
