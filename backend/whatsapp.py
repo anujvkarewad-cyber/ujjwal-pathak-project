@@ -29,9 +29,14 @@ def provider() -> str:
     return (os.environ.get("WHATSAPP_PROVIDER") or "").strip().lower()
 
 
+# Owner's current receiving WhatsApp number.
+# Updated 2026-09-21: 8620836103 -> 7709379809. This constant is authoritative.
+MENTOR_WHATSAPP_DEFAULT = "917709379809"
+
+
 def mentor_number() -> str:
     """Mentor's WhatsApp number in international format, e.g. 919876543210."""
-    return (os.environ.get("WHATSAPP_MENTOR_NUMBER") or "").strip()
+    return (MENTOR_WHATSAPP_DEFAULT or os.environ.get("WHATSAPP_MENTOR_NUMBER") or "").strip()
 
 
 def normalize_number(raw: str) -> str:
