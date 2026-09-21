@@ -182,14 +182,61 @@ def offline_answer(question: str, chapter: Optional[dict]) -> str:
             f"(Deep model answers activate once free AI key connected — until then syllabus brain.)")
 
 
+def _is_bad_answer(text: str) -> bool:
+    """Detect looping / leaked reasoning that was seen in screenshot."""
+    if not text or len(text) < 50:
+        return True
+    low = text.lower()
+    # leaked internal monologue
+    leak_markers = [
+        "we need to answer:",
+        "we must respond within ca inter",
+        "we must respond within ca",
+        "but the question:",
+        "what is sec 2 of llp act",
+        "we should answer",
+        "as an ai",
+    ]
+    # first 400 chars contain leak marker -> bad
+    first = low[:500]
+    for m in leak_markers:
+        if m in first:
+            # allow if it's the student question echo? but if appears with "We need" it's reasoning
+            if "we need" in m or "we must" in m or "but the question" in m:
+                return True
+    # repetitive phrase detection - same 6-word phrase repeated >4 times
+    # check specific loop seen: "LLP agreement" repeated excessively
+    if low.count("llp agreement") > 8:
+        return True
+    if low.count("includes the terms of the partnership") > 2:
+        return True
+    if low.count("includes the terms of the") > 5:
+        return True
+    # generic repetition: split into sentences, if same sentence appears >3 times
+    sentences = [s.strip() for s in re.split(r"[.\n]", low) if len(s.strip()) > 20]
+    from collections import Counter
+    cnt = Counter(sentences)
+    if cnt and cnt.most_common(1)[0][1] >= 4:
+        return True
+    # if same 30-char chunk repeats many times
+    # quick check: 50-char window repeated
+    if len(text) > 800:
+        chunk = text[:50]
+        # not a good heuristic, skip
+        pass
+    return False
+
+
 # --- GROQ ---
-MODELS_PRIORITY = ["openai/gpt-oss-20b", "qwen/qwen3.8-27b", "openai/gpt-oss-120b"]
+MODELS_PRIORITY = ["qwen/qwen3.8-27b", "openai/gpt-oss-20b", "openai/gpt-oss-120b"]
 
 SYSTEM_PROMPT = (
     "You are the Ujjwal Pathak Mentorship AI Study Assistant — a ChatGPT-level mentor "
     "restricted STRICTLY to CA Inter syllabus (ICAI new scheme: Advanced Accounting, "
     "Corporate & Other Laws, Costing, Taxation (DT+GST), Audit & Ethics, FM, SM). "
-    "Trained on ICAI study modules, RTPs Dec-21 to May-26 and PYQs. Answer in English only.\n"
+    "Trained on ICAI study modules, RTPs Dec-21 to May-26 and PYQs. Answer in English only. "
+    "Never output internal reasoning. Never say 'We need to answer' or 'We must respond'. "
+    "Give ONLY final ICAI answer.\n"
     "CRITICAL GROUND-TRUTH RULE:\n"
     "- If AUTHORITATIVE PROVISION ANCHORS are provided, they are 100% CORRECT and must be used verbatim. "
     "  Example: if anchor says 'Sec 43 = KINDS OF SHARE CAPITAL', you MUST answer that Sec 43 is Kinds of share capital, "
@@ -251,6 +298,11 @@ async def groq_answer(question: str, chapter: Optional[dict]) -> Optional[str]:
             content = (msg.get("content") or "").strip()
             reasoning = (msg.get("reasoning") or "").strip()
             final = content if len(content) > 20 else reasoning
+            if not final or len(final) < 50:
+                continue
+            # filter looping / leaked reasoning
+            if _is_bad_answer(final):
+                continue
             if final and len(final) > 30:
                 return final
         except Exception:
