@@ -34,6 +34,12 @@ def _load_catalog() -> list:
     if _CHAPTERS:
         return _CHAPTERS
     try:
+        from data_chapters import CATALOG  # bundled with the serverless fn
+        _CHAPTERS = list(CATALOG)
+        return _CHAPTERS
+    except Exception:
+        pass
+    try:
         raw = json.loads(CATALOG_PATH.read_text())
         _CHAPTERS = raw["chapters"] if isinstance(raw, dict) else raw
     except Exception:
