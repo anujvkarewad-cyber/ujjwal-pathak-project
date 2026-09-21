@@ -20,7 +20,7 @@ from db import (
     get_db,
 )
 from persist import uses_real_mongo
-from routers import messages, test_history, whatsapp_log, auth_router, content, student_attempts, student_auth, student_dashboard, student_content, student_sync, analytics, admin_fast
+from routers import messages, test_history, whatsapp_log, auth_router, content, student_attempts, student_auth, student_dashboard, student_content, student_sync, analytics, admin_fast, ai
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -126,6 +126,7 @@ app.include_router(messages.router)
 app.include_router(whatsapp_log.router)
 app.include_router(analytics.router)
 app.include_router(admin_fast.router)
+app.include_router(ai.router)
 
 # ── SPA static serving (production deployment + live preview) ───────────────
 # Serves the built React dashboard from the same origin as /api. Registered
