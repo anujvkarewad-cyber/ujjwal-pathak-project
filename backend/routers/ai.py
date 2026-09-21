@@ -124,17 +124,6 @@ def match_chapter(question: str, chapter_id: Optional[str] = None):
                 score -= 0.5  # penalize wrong amalgamation match
         if overlap and score > best_score:
             best, best_score = c, score
-    # Higher threshold to avoid false positives (e.g. "quorum" -> amalgamation)
-    # If anchor keywords exist, try to find chapter matching anchor text
-    if has_secnum:
-        # If we have a strong anchor like share capital, quorum etc, try to match chapter title to anchor
-        anchor_text = " ".join(retrieve_anchors(question, 3)).lower()
-        for ch in chapters:
-            title_lower = ch.get('chapterTitle','').lower()
-            if any(k in title_lower for k in anchor_text.split() if len(k)>4):
-                # check overlap with anchor keywords
-                if len(tokens(anchor_text) & tokens(title_lower)) >= 2:
-                    return ch
     threshold = 0.40
     return best if best_score >= threshold else None
 
