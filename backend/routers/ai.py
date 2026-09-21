@@ -94,6 +94,26 @@ _SUBJECT_GUIDE = {
 }
 
 
+_SMALLTALK = {
+    "hi": "Hello! 👋 Ready to study? Tell me a chapter name or type your doubt.",
+    "hello": "Hello! 👋 Which chapter shall we revise today?",
+    "hey": "Hey! 💪 In study mode? Ask me any syllabus doubt.",
+    "gm": "Good morning! ☀️ Start the day with one chapter — which one?",
+    "good morning": "Good morning! ☀️ Start the day with one chapter — which one?",
+    "thanks": "You're welcome! Keep going — consistency beats talent. 📚",
+    "thank you": "You're welcome! Keep going — consistency beats talent. 📚",
+    "ok": "Great! Ask me your next doubt whenever ready.",
+    "bye": "All the best! 🍀 Come back after your study session for a revision round.",
+}
+
+
+def _smalltalk(question: str) -> Optional[str]:
+    q = question.strip().lower().rstrip("!.,")
+    if q in _SMALLTALK:
+        return _SMALLTALK[q]
+    return None
+
+
 def offline_answer(question: str, chapter: Optional[dict]) -> str:
     if not chapter:
         return ("I cover the full CA Inter syllabus: Accounts, Law, Taxation, Costing, "
@@ -102,14 +122,18 @@ def offline_answer(question: str, chapter: Optional[dict]) -> str:
     title = chapter.get("chapterTitle", "")
     subject = chapter.get("subject", "")
     guide = _SUBJECT_GUIDE.get(subject, _SUBJECT_GUIDE["Accounts"])
-    return (f"📘 {title} ({subject})\n\n"
-            f"Your question: \"{question}\"\n\n"
-            f"How to approach this chapter in exams: {guide}\n\n"
-            f"Study loop for this chapter: read the ICAI module paragraph → memorise the "
-            f"section/standard/formula list → solve 10 module MCQs → attempt the chapter's "
-            f"RTP and MTP questions → re-attempt wrong ones after 3 days.\n\n"
-            f"(Full AI explanations activate automatically once the mentor connects the AI key — "
-            f"until then I answer with this syllabus brain.)")
+    return (f"📘 {title} ({subject}) — ICAI answer format\n\n"
+            f"Provision: identify and cite the exact section/standard/formula governing "
+            f"\"{question}\".\n"
+            f"Points: bullet the conditions, recognition/measurement rules and disclosures.\n"
+            f"Application: apply each point to the case facts given in the question.\n"
+            f"Conclusion: close with one decisive 'Hence, ...' sentence.\n\n"
+            f"Chapter exam strategy: {guide}\n\n"
+            f"Study loop: ICAI module paragraph → memorise section/standard/formula list → "
+            f"10 module MCQs → RTP & MTP questions of this chapter → re-attempt wrong ones "
+            f"after 3 days.\n\n"
+            f"(Deep model answers in exact ICAI wording activate automatically once the mentor "
+            f"connects the free AI key — until then I coach you with this syllabus brain.)")
 
 
 async def groq_answer(question: str, chapter: Optional[dict]) -> Optional[str]:
@@ -121,11 +145,26 @@ async def groq_answer(question: str, chapter: Optional[dict]) -> Optional[str]:
         ctx = (f"Current chapter context: {chapter.get('chapterTitle')} "
                f"(subject {chapter.get('subject')}, {chapter.get('module','')}). ")
     system = (
-        "You are the Ujjwal Pathak Mentorship AI Study Assistant for CA Inter students. "
-        "Answer ONLY in English. Be a strict but encouraging mentor. Use the ICAI study-module "
-        "perspective; where relevant mention the applicable section/standard/formula, a short "
-        "worked example, common exam traps, and one RTP/MTP practice pointer. Keep answers under "
-        "250 words, use short bullet points, no markdown headers."
+        "You are the Ujjwal Pathak Mentorship AI Study Assistant for CA Inter students "
+        "(ICAI new scheme). Trained on ICAI study modules, RTPs (Dec 21 to May 26) and PYQs. "
+        "Answer ONLY in English, in ICAI model-answer style.\n"
+        "STRICT ANSWER FORMAT RULES:\n"
+        "1. THEORY / LAW / AUDIT questions: use headed bullet points exactly like ICAI model "
+        "answers: 'Provision:' (cite exact section/rule/SA/Ind AS number) -> bullet the "
+        "conditions/requirements -> 'Application:' apply to the case facts -> 'Conclusion:' "
+        "one decisive sentence ('Hence, ...'). Define terms first when asked 'what is/define'.\n"
+        "2. NUMERICAL questions (FM / Costing / Tax): ONLY if you are confident, start with an "
+        "'Assumptions:' block listing every assumption ICAI would state (e.g. dates, rates, "
+        "sections applied, treatment chosen when law allows alternatives), then 'Computation:' "
+        "as a step-by-step table-like list with figures, then 'Working Notes:' and a bold final "
+        "answer line. If not confident, say so and give the method + formula instead.\n"
+        "3. SMALL TALK: if the student says hi/hello/gm/thanks or casual chat, reply warmly and "
+        "briefly like a friendly mentor, then gently offer a study action (e.g. ask which "
+        "chapter to revise). Never be rude.\n"
+        "4. MCQ help: give the correct option AND a 2-3 line ICAI-style reason citing the "
+        "provision.\n"
+        "5. Keep answers under 300 words, plain-text bullet points (no markdown headers), "
+        "exam-focused, mention one RTP/MTP practice pointer when relevant."
     )
     try:
         async with httpx.AsyncClient(timeout=45) as client:
@@ -151,6 +190,9 @@ async def groq_answer(question: str, chapter: Optional[dict]) -> Optional[str]:
 
 @router.post("/ask")
 async def ask(body: AskBody):
+    chit = _smalltalk(body.question)
+    if chit:
+        return {"answer": chit, "mode": "chitchat", "chapter": None}
     chapter = match_chapter(body.question, body.chapterId)
     answer = await groq_answer(body.question, chapter)
     if not answer:
