@@ -97,13 +97,58 @@ def retrieve_anchors(question: str, limit: int = 5) -> List[str]:
 
 
 def retrieve_knowledge_chunks(question: str, limit: int = 5) -> List[dict]:
-    """RAG Step 1-2: Search in database, get top relevant chunks"""
+    """RAG Step 1-2: Search in database, get top relevant chunks - now 513+ chunks auto-generated"""
     try:
-        from data_knowledge_base import search_knowledge_base
-        return search_knowledge_base(question, limit=limit)
+        from data_knowledge_base import search_knowledge_base as search_manual
+        from data_knowledge_base_auto import KNOWLEDGE_BASE_AUTO
+        
+        # Search manual (15 chunks)
+        manual_chunks = search_manual(question, limit=limit)
+        
+        # Search auto (513 chunks) - simple keyword scoring
+        q_lower = question.lower()
+        q_tokens = set(q_lower.split())
+        scored_auto = []
+        for chunk in KNOWLEDGE_BASE_AUTO:
+            content_lower = chunk["content"].lower()
+            topic_lower = chunk["topic"].lower()
+            score = 0
+            if q_lower in content_lower:
+                score += 10
+            if q_lower in topic_lower:
+                score += 15
+            content_tokens = set(content_lower.split())
+            overlap = len(q_tokens & content_tokens)
+            score += overlap * 2
+            import re
+            sec_match = re.search(r'section\s*(\d+[a-z]?)', q_lower)
+            if sec_match and sec_match.group(1) in content_lower:
+                score += 20
+            if score > 0:
+                scored_auto.append((score, chunk))
+        scored_auto.sort(key=lambda x: -x[0])
+        auto_chunks = [c for s, c in scored_auto[:limit]]
+        
+        # Combine: prioritize auto (real study material) + manual + dedupe
+        combined = []
+        seen_ids = set()
+        for c in auto_chunks + manual_chunks:
+            if c["id"] not in seen_ids:
+                combined.append(c)
+                seen_ids.add(c["id"])
+            if len(combined) >= limit:
+                break
+        
+        return combined[:limit]
     except Exception as e:
         print(f"KB search failed: {e}")
-        return []
+        import traceback; traceback.print_exc()
+        # Fallback to manual only
+        try:
+            from data_knowledge_base import search_knowledge_base
+            return search_knowledge_base(question, limit=limit)
+        except:
+            return []
 
 
 def match_chapter(question: str, chapter_id: Optional[str] = None):
