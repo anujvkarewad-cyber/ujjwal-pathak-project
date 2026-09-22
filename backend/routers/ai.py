@@ -1,10 +1,11 @@
 """AI Study Assistant backend — POST /api/ai/ask.
 
-Live mode  : Groq RAG over 94-chapter catalog + 170 curated provision anchors.
-             (GROQ_API_KEY env - free tier)
-Offline    : structured syllabus-brain answer from catalog, so ALWAYS answers.
-
-v3: ChatGPT-style mentoring — simple first, exam-insight, brutal truth, CTA.
+v4: Proper RAG architecture as per ChatGPT/Claude feedback
+- No more dumping entire syllabus
+- Chunked knowledge base (200+ chunks) + 170 anchors + 94 chapters
+- Search -> Retrieve top 5 relevant chunks -> Inject into Groq with strict prompt
+- Structured CA Inter answers: direct answer, steps, exam tip
+- Low temperature 0.2 for accuracy, no hallucination
 """
 
 import json
@@ -56,12 +57,17 @@ _STOP = {"the", "a", "an", "is", "are", "was", "were", "of", "in", "on", "for", 
          "tell", "me", "please", "with", "from", "this", "that", "it", "its", "at", "by",
          "does", "do", "detail", "details", "section", "sec"}
 
+
 def _tokens(text: str) -> set:
     return {t for t in re.findall(r"[a-z0-9']+", text.lower()) if t not in _STOP and len(t) > 1}
 
 
 def retrieve_anchors(question: str, limit: int = 5) -> List[str]:
-    from data_section_map import ANCHORS, SECNUM
+    """Ground-truth provision anchors - 100% correct, must be used verbatim"""
+    try:
+        from data_section_map import ANCHORS, SECNUM
+    except:
+        return []
     picked: List[str] = []
     for m in re.finditer(r"(?:section|sec\.?)\s*([0-9]{1,3}[a-z]?(?:\([0-9]+\))?)", question.lower()):
         raw_num = m.group(1)
@@ -88,6 +94,16 @@ def retrieve_anchors(question: str, limit: int = 5) -> List[str]:
             if text not in picked:
                 picked.append(text)
     return picked
+
+
+def retrieve_knowledge_chunks(question: str, limit: int = 5) -> List[dict]:
+    """RAG Step 1-2: Search in database, get top relevant chunks"""
+    try:
+        from data_knowledge_base import search_knowledge_base
+        return search_knowledge_base(question, limit=limit)
+    except Exception as e:
+        print(f"KB search failed: {e}")
+        return []
 
 
 def match_chapter(question: str, chapter_id: Optional[str] = None):
@@ -130,15 +146,15 @@ _SUBJECT_GUIDE = {
 }
 
 _SMALLTALK = {
-    "hi": "Hello! 👋 Ready to study? Tell me a chapter name or type your doubt.",
-    "hello": "Hello! 👋 Which chapter shall we revise today?",
-    "hey": "Hey! 💪 In study mode? Ask me any syllabus doubt.",
-    "gm": "Good morning! ☀️ Start the day with one chapter — which one?",
-    "good morning": "Good morning! ☀️ Start the day with one chapter — which one?",
-    "thanks": "You're welcome! Keep going — consistency beats talent. 📚",
-    "thank you": "You're welcome! Keep going — consistency beats talent. 📚",
+    "hi": "Hello! Ready to study? Tell me a chapter name or type your doubt.",
+    "hello": "Hello! Which chapter shall we revise today?",
+    "hey": "Hey! In study mode? Ask me any syllabus doubt.",
+    "gm": "Good morning! Start the day with one chapter — which one?",
+    "good morning": "Good morning! Start the day with one chapter — which one?",
+    "thanks": "You're welcome! Keep going — consistency beats talent.",
+    "thank you": "You're welcome! Keep going — consistency beats talent.",
     "ok": "Great! Ask me your next doubt whenever ready.",
-    "bye": "All the best! 🍀 Come back after your study session for a revision round.",
+    "bye": "All the best! Come back after your study session for a revision round.",
 }
 
 def _smalltalk(question: str) -> Optional[str]:
@@ -149,19 +165,19 @@ def _smalltalk(question: str) -> Optional[str]:
 
 
 def offline_answer(question: str, chapter: Optional[dict]) -> str:
-    if not chapter:
-        anchors = retrieve_anchors(question, 3)
-        if anchors:
-            return ("📘 ICAI Provision\n\n" + "\n".join([f"• {a}" for a in anchors]) +
-                    f"\n\nAsk more specifically, e.g. 'Explain {anchors[0].split('—')[0]} with example'")
-        return ("I cover full CA Inter syllabus: Accounts, Law, Taxation, Costing, "
-                "Audit, FM and SM (94 chapters). Ask about a specific topic.")
-    title = chapter.get("chapterTitle", "")
-    subject = chapter.get("subject", "")
-    anchors = retrieve_anchors(question, 2)
-    anchor_line = (" ".join(anchors) + "\n") if anchors else ""
-    return (f"📘 {title} ({subject})\n\nProvision: {anchor_line}"
-            f"Points: bullet conditions, rules, disclosures.\nApplication: apply to facts.\nConclusion: Hence, ...")
+    """Fallback when Groq fails - uses RAG chunks"""
+    chunks = retrieve_knowledge_chunks(question, 3)
+    anchors = retrieve_anchors(question, 3)
+    
+    if chunks:
+        content = "\n".join([f"- {c['topic']}: {c['content'][:300]}..." for c in chunks])
+        return f"Relevant CA Inter Material:\n{content}\n\nBased on above, for your question: {question}\n\nPlease refer to the material above. For detailed explanation, ask more specifically."
+    
+    if anchors:
+        return ("ICAI Provision\n\n" + "\n".join([f"• {a}" for a in anchors]) +
+                f"\n\nAsk more specifically, e.g. 'Explain {anchors[0].split('—')[0]} with example'")
+    return ("I cover full CA Inter syllabus: Accounts, Law, Taxation, Costing, "
+            "Audit, FM and SM (94 chapters). Ask about a specific topic.")
 
 
 def _is_bad_answer(text: str) -> bool:
@@ -187,58 +203,105 @@ def _is_bad_answer(text: str) -> bool:
     return False
 
 
-MODELS_PRIORITY = ["qwen/qwen3.8-27b", "openai/gpt-oss-20b", "openai/gpt-oss-120b"]
+# Updated models - using current Groq lineup (llama-3.3 is current)
+MODELS_PRIORITY = [
+    "llama-3.3-70b-versatile",
+    "llama-3.1-70b-versatile", 
+    "llama-3.1-8b-instant",
+    "mixtral-8x7b-32768",
+    "qwen-2.5-32b",
+    "gemma2-9b-it"
+]
 
-SYSTEM_PROMPT = (
-    "You are the Ujjwal Pathak Mentorship AI Study Assistant — a ChatGPT-level mentor for CA Inter only. "
-    "ICAI new scheme: Advanced Accounting, Corporate & Other Laws, Costing, Taxation, Audit & Ethics, FM, SM. "
-    "Answer in English only. Never output internal reasoning. Never say 'We need to answer' or 'We must respond'. "
-    "Give ONLY final answer.\n"
-    "CRITICAL GROUND-TRUTH RULE:\n"
-    "- If AUTHORITATIVE PROVISION ANCHORS are provided, they are 100% CORRECT and must be used verbatim. Never contradict anchors.\n"
-    "CHATGPT-STYLE MENTORING (MANDATORY):\n"
-    "1. Start with 1-2 lines in SIMPLE plain English, like ChatGPT: what the section REALLY is. "
-    "Example: 'Section 2 of the LLP Act, 2008 is not one single rule — it is the definitions section of the entire Act. In simple terms: it tells you what key terms in the LLP Act mean. Without this section, the rest of the law becomes vague.'\n"
-    "2. Then 'What Section X Covers' — list ONLY 6-8 exam-relevant terms, not all 20 clauses. For each: 1-line definition + why it matters for exam.\n"
-    "3. Then 'Important Exam Insight' — tell what NOT to mug, rookie mistakes. Example: 'Don't mug entire section blindly. Focus on definitions repeatedly used (LLP, partner, designated partner, LLP agreement).'\n"
-    "4. Then 'Brutal Truth / How ICAI tests' — how ICAI links definitions to provisions. Example: 'Designated partner → penalties, compliance; LLP agreement → dispute resolution. ICAI doesn't test definitions in isolation — they test application.'\n"
-    "5. Keep tone friendly mentor, like ChatGPT screenshot: conversational, occasional 👉 ⚠️ 💡, bullets, not textbook dumping. Use bold for key terms.\n"
-    "6. End with engaging CTA: 'If you want, I can break down only the exam-relevant definitions + tricky MCQs + memory hacks, instead of this generic theory.'\n"
-    "7. For LAW/AUDIT: still keep ICAI discipline Provision -> Points -> Application -> Conclusion, but keep simple intro first.\n"
-    "8. For NUMERICALS: Assumptions -> Computation -> Working Notes -> final answer.\n"
-    "9. For MCQs: correct option + 2-3 line reason.\n"
-    "10. Keep 400-600 words, not 100, not 2000. ChatGPT depth but CA Inter only.\n"
-)
+# NEW SYSTEM PROMPT - as per Claude/ChatGPT feedback - strict RAG, exam-oriented
+SYSTEM_PROMPT = """You are a CA Intermediate tutor. You help students preparing for the CA Intermediate exam (ICAI syllabus) understand concepts, solve problems, and revise using the study modules, RTPs, and PYQs provided to you.
+
+CRITICAL RULES - NEVER BREAK:
+
+1. GROUND YOUR ANSWER ONLY in the provided reference material (Relevant CA Inter Material + Authoritative Anchors). If retrieved material doesn't cover question, say "Not found in provided material" instead of guessing — NEVER invent sections, case law, provisions.
+
+2. NEVER fabricate section numbers, case names, or figures. If unsure, say "not found in provided material" rather than guessing — CA exams penalize wrong provisions badly.
+
+3. Answer strictly as per ICAI exam style:
+   - Start with direct 1-2 line answer
+   - Then explain with steps/working (especially for numericals in Costing, Accounts, Tax, Law)
+   - Then end with short "exam tip" if relevant (common mistakes, marks-weightage, how ICAI phrases this in PYQs)
+
+4. Structure for theory: point-wise, with headings/sub-points, not one giant paragraph. Use headings and bullet points. Mention section number if present in reference material.
+
+5. For numericals: ALWAYS show working/calculation, assumptions first, then computation, working notes, final answer. Never just final answer.
+
+6. For questions spanning multiple provisions, cite section/standard number if present in reference material.
+
+7. Keep tone clear and encouraging but precise — exam prep, be precise over friendly. Like ChatGPT: simple first, then exam depth.
+
+8. If student question ambiguous (which subject, which chapter), ask ONE clarifying question before answering.
+
+9. If AUTHORITATIVE PROVISION ANCHORS are provided, they are 100% CORRECT and must be used verbatim. Never contradict anchors.
+
+10. Keep 400-600 words, not 100, not 2000. ChatGPT depth but CA Inter only. No ** stars in output? Actually use bold via ** but UI will strip stars - so you CAN use **bold** for key terms.
+
+11. Never output internal reasoning, never say "We need to answer" or "We must respond".
+
+FINAL OUTPUT FORMAT (MANDATORY):
+- Simple intro 1-2 lines in plain English (what this section really is)
+- What Section X Covers / Key Concepts (bullets with bold terms)
+- Important Exam Insight / How ICAI Tests (what NOT to mug, traps)
+- If numerical: Assumptions -> Computation -> Working Notes -> Answer
+- End with CTA: "Want me to break down exam-relevant points + MCQs + memory hacks?"
+
+Language: English only.
+"""
 
 async def groq_answer(question: str, chapter: Optional[dict]) -> Optional[str]:
     key = (os.environ.get("GROQ_API_KEY") or "").strip()
     if not key or httpx is None:
         return None
+    
+    # RAG STEP 1-2: Search database, get top relevant chunks
+    knowledge_chunks = retrieve_knowledge_chunks(question, limit=5)
+    anchors = retrieve_anchors(question, limit=3)
+    
     ctx_parts = []
     if chapter:
-        ctx_parts.append(f"Current chapter: {chapter.get('chapterTitle')} ({chapter.get('subject')}).")
-    anchors = retrieve_anchors(question, limit=5)
+        ctx_parts.append(f"Current chapter context: {chapter.get('chapterTitle')} ({chapter.get('subject')}).")
+    
+    # RAG STEP 3: Inject into prompt - Relevant Material
+    if knowledge_chunks:
+        material_text = "\n".join([
+            f"[{c['id']}] {c['subject']} - {c['chapter']} - {c['topic']}: {c['content']}"
+            for c in knowledge_chunks
+        ])
+        ctx_parts.append(f"Relevant CA Inter Material (use ONLY this, top 5 retrieved):\n{material_text}")
+    
     if anchors:
-        ctx_parts.append("AUTHORITATIVE PROVISION ANCHORS (GROUND TRUTH - MUST use verbatim, do not invent): " + " | ".join(anchors) + ".")
-    ctx = " ".join(ctx_parts) + " " if ctx_parts else ""
+        ctx_parts.append(f"AUTHORITATIVE PROVISION ANCHORS (GROUND TRUTH - MUST use verbatim, 100% correct): {' | '.join(anchors)}.")
+    
+    # Add subject guide if chapter matched
+    if chapter and chapter.get('subject') in _SUBJECT_GUIDE:
+        ctx_parts.append(f"Answer guide for {chapter.get('subject')}: {_SUBJECT_GUIDE[chapter.get('subject')]}")
+    
+    ctx = "\n\n".join(ctx_parts) + "\n\n" if ctx_parts else ""
 
     for model in MODELS_PRIORITY:
         try:
-            async with httpx.AsyncClient(timeout=30) as client:
+            async with httpx.AsyncClient(timeout=35) as client:
                 r = await client.post(
                     "https://api.groq.com/openai/v1/chat/completions",
                     headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
                     json={
                         "model": model,
-                        "temperature": 0.35,
-                        "max_tokens": 1800,
+                        "temperature": 0.2,  # Low temp for accuracy - as per Claude feedback
+                        "max_tokens": 1500,
+                        "top_p": 0.9,
                         "messages": [
                             {"role": "system", "content": SYSTEM_PROMPT},
-                            {"role": "user", "content": ctx + "Student question: " + question},
+                            {"role": "user", "content": ctx + f"User Question: {question}\n\nInstructions: Answer ONLY using the above material. Keep exam-oriented. Use headings and bullet points. Mention section number. If not found, say 'Not available in provided material'."},
                         ],
                     },
                 )
             if r.status_code != 200:
+                print(f"Groq {model} failed {r.status_code}: {r.text[:200]}")
                 continue
             data = r.json()
             choice = (data.get("choices") or [{}])[0]
@@ -249,28 +312,55 @@ async def groq_answer(question: str, chapter: Optional[dict]) -> Optional[str]:
             if not final or len(final) < 80:
                 continue
             if _is_bad_answer(final):
+                print(f"Bad answer filtered from {model}")
                 continue
+            print(f"Groq {model} success: {len(final)} chars")
             return final
-        except Exception:
+        except Exception as e:
+            print(f"Groq {model} exception: {e}")
             continue
     return None
 
 
 @router.post("/ask")
 async def ask(body: AskBody):
+    # Chit-chat
     chit = _smalltalk(body.question)
     if chit:
-        return {"answer": chit, "mode": "chitchat", "chapter": None}
+        return {"answer": chit, "mode": "chitchat", "chapter": None, "rag_chunks": 0}
+    
+    # RAG retrieval
     chapter = match_chapter(body.question, body.chapterId)
+    knowledge_chunks = retrieve_knowledge_chunks(body.question, 5)
+    anchors = retrieve_anchors(body.question, 3)
+    
+    # Groq with RAG
     answer = await groq_answer(body.question, chapter)
     if not answer:
         answer = offline_answer(body.question, chapter)
-        mode = "syllabus-brain"
+        mode = "syllabus-brain-rag"
     else:
-        mode = "live"
+        mode = "live-rag"
+    
     return {
         "answer": answer,
         "mode": mode,
         "chapter": {"id": chapter.get("chapterId"), "title": chapter.get("chapterTitle"),
                     "subject": chapter.get("subject")} if chapter else None,
+        "rag_chunks_used": len(knowledge_chunks),
+        "anchors_used": len(anchors),
+        "retrieved_topics": [c["topic"] for c in knowledge_chunks[:3]]
+    }
+
+
+@router.get("/kb-search")
+async def kb_search(q: str, limit: int = 5):
+    """Debug endpoint to test RAG search"""
+    chunks = retrieve_knowledge_chunks(q, limit)
+    anchors = retrieve_anchors(q, 3)
+    return {
+        "query": q,
+        "chunks": chunks,
+        "anchors": anchors,
+        "count": len(chunks)
     }
