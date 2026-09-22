@@ -953,3 +953,119 @@ async def validation_detail(question_id: str, claims: dict = Depends(require_men
         "calibrationRefs": doc.get("calibrationRefs") or [],
         "statusHistory": doc.get("statusHistory") or [],
     }
+
+
+# ── Auto RAG Knowledge Base (no manual typing) ─────────────────────────────
+import time
+from fastapi import UploadFile, File, Form
+from typing import List
+
+def _extract_text_from_pdf_bytes(pdf_bytes: bytes) -> str:
+    try:
+        from pypdf import PdfReader
+        import io, re
+        reader = PdfReader(io.BytesIO(pdf_bytes))
+        full_text = ""
+        for page in reader.pages:
+            try:
+                txt = page.extract_text() or ""
+                txt = re.sub(r'\s+', ' ', txt)
+                full_text += txt + " "
+            except:
+                continue
+        return re.sub(r'\s+', ' ', full_text).strip()
+    except Exception as e:
+        print(f"PDF extract failed: {e}")
+        return ""
+
+def _chunk_text(text: str, subject: str, chapter: str, topic: str, chunk_size=600) -> List[dict]:
+    import re
+    words = text.split()
+    chunks = []
+    for i in range(0, len(words), chunk_size):
+        chunk_words = words[i:i+chunk_size]
+        chunk_text = " ".join(chunk_words)
+        if len(chunk_text) < 200:
+            continue
+        chunk_text = chunk_text[:2000]
+        base_name = re.sub(r'[^a-zA-Z0-9]', '_', topic[:20])
+        chunk_id = f"{subject[:3].upper()}_{base_name}_{i//chunk_size}_{int(time.time())%10000}"[:60]
+        sec_match = re.search(r'Section\s+(\d+[A-Z]?)', chunk_text)
+        chunk_topic = topic
+        if sec_match:
+            chunk_topic = f"Section {sec_match.group(1)} - {topic}"
+        chunks.append({
+            "id": re.sub(r'[^A-Z0-9_]', '_', chunk_id.upper())[:50],
+            "subject": subject,
+            "chapter": chapter[:60],
+            "topic": chunk_topic[:80],
+            "content": chunk_text
+        })
+    return chunks
+
+@router.post("/kb-upload")
+async def upload_kb_pdf(
+    file: UploadFile = File(...),
+    subject: str = Form(...),
+    chapter: str = Form(...),
+    topic: str = Form(...),
+    claims: dict = Depends(require_mentor)
+):
+    try:
+        pdf_bytes = await file.read()
+        if len(pdf_bytes) < 1000:
+            raise HTTPException(400, "File too small")
+        full_text = _extract_text_from_pdf_bytes(pdf_bytes)
+        if len(full_text) < 500:
+            raise HTTPException(400, f"Could not extract enough text. Got {len(full_text)} chars.")
+        chunks = _chunk_text(full_text, subject, chapter, topic)
+        if not chunks:
+            raise HTTPException(400, "No chunks generated")
+        try:
+            from data_knowledge_base_auto import KNOWLEDGE_BASE_AUTO
+            existing = list(KNOWLEDGE_BASE_AUTO)
+        except:
+            existing = []
+        existing.extend(chunks)
+        kb_path = Path(__file__).parent.parent / "data_knowledge_base_auto.py"
+        import json
+        with open(kb_path, 'w') as f:
+            f.write('"""\nAuto-generated KB - includes uploaded PDFs\n"""\n')
+            f.write(f'KNOWLEDGE_BASE_AUTO = {json.dumps(existing, indent=2)}\n')
+        return {
+            "success": True,
+            "filename": file.filename,
+            "chunks_created": len(chunks),
+            "total_chunks_now": len(existing),
+            "message": f"Auto-chunked {file.filename} into {len(chunks)} chunks. Total now {len(existing)}."
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        import traceback; traceback.print_exc()
+        raise HTTPException(500, f"Upload failed: {str(e)}")
+
+@router.get("/kb-stats")
+async def kb_stats(claims: dict = Depends(require_mentor)):
+    try:
+        from data_knowledge_base import KNOWLEDGE_BASE as MANUAL_KB
+        manual_count = len(MANUAL_KB)
+    except:
+        manual_count = 0
+    try:
+        from data_knowledge_base_auto import KNOWLEDGE_BASE_AUTO
+        auto_count = len(KNOWLEDGE_BASE_AUTO)
+        by_subject = {}
+        for c in KNOWLEDGE_BASE_AUTO:
+            subj = c.get("subject","Unknown")
+            by_subject[subj] = by_subject.get(subj,0)+1
+    except:
+        auto_count = 0
+        by_subject = {}
+    return {
+        "manual_chunks": manual_count,
+        "auto_chunks": auto_count,
+        "total": manual_count + auto_count,
+        "by_subject": by_subject,
+        "status": "RAG fully automated"
+    }
