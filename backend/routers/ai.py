@@ -97,53 +97,138 @@ def retrieve_anchors(question: str, limit: int = 5) -> List[str]:
 
 
 def retrieve_knowledge_chunks(question: str, limit: int = 5) -> List[dict]:
-    """RAG Step 1-2: Search in database, get top relevant chunks - now 513+ chunks auto-generated"""
+    """RAG Step 1-2: Search in database, get top relevant chunks - 1247 auto chunks + 15 manual, subject-aware"""
     try:
-        from data_knowledge_base import search_knowledge_base as search_manual
+        from data_knowledge_base import search_knowledge_base as search_manual, KNOWLEDGE_BASE as MANUAL_KB
         from data_knowledge_base_auto import KNOWLEDGE_BASE_AUTO
         
-        # Search manual (15 chunks)
-        manual_chunks = search_manual(question, limit=limit)
-        
-        # Search auto (513 chunks) - simple keyword scoring
         q_lower = question.lower()
-        q_tokens = set(q_lower.split())
-        scored_auto = []
-        for chunk in KNOWLEDGE_BASE_AUTO:
+        q_tokens = set(re.findall(r"[a-z0-9]+", q_lower))
+        
+        # Detect subject from question
+        subject_hint = None
+        if any(w in q_lower for w in ["audit", "sa 500", "sa 200", "s auditing"]):
+            subject_hint = "Audit"
+        elif any(w in q_lower for w in ["costing", "eoq", "material cost", "labour", "overhead", "abc", "budget"]):
+            subject_hint = "Costing"
+        elif any(w in q_lower for w in ["account", "as ", "accounting standard", "amalgamation", "consolidat", "holding"]):
+            subject_hint = "Accounts"
+        elif any(w in q_lower for w in ["law", "companies act", "llp", "section 43", "section 2", "sec 2", "sec 43", "deposits", "prospectus", "share capital"]):
+            subject_hint = "Law"
+        elif any(w in q_lower for w in ["fm", "financial management", "cost of capital", "leverage", "capital structure", "dividend", "ratio", "working capital"]):
+            subject_hint = "FM"
+        elif any(w in q_lower for w in ["sm", "strategic", "swot", "porter", "bcg", "strategic management"]):
+            subject_hint = "SM"
+        elif any(w in q_lower for w in ["tax", "dt", "gst", "income tax", "residential status", "supply"]):
+            subject_hint = "Taxation"
+        
+        # Combine both KBs
+        all_chunks = []
+        # Add manual (high quality, curated)
+        all_chunks.extend(MANUAL_KB)
+        # Add auto (1247 chunks, but filter low quality)
+        for c in KNOWLEDGE_BASE_AUTO:
+            content = c.get("content","")
+            # Filter low quality: skip if too short, or contains only learning outcomes, or has file ID as topic
+            if len(content) < 300:
+                continue
+            if "learning outcomes" in content.lower() and len(content) < 800:
+                continue
+            if "institute of chartered accountants" in content.lower() and len(content.split()) < 100:
+                # Skip cover pages
+                if content.lower().count("the institute") > 3:
+                    continue
+            # Skip chunks where topic is just file ID
+            topic = c.get("topic","")
+            if len(topic) < 5 or re.match(r'^[A-Za-z0-9_-]{20,}$', topic):
+                continue
+            all_chunks.append(c)
+        
+        scored = []
+        for chunk in all_chunks:
             content_lower = chunk["content"].lower()
             topic_lower = chunk["topic"].lower()
+            chapter_lower = chunk["chapter"].lower()
+            subject = chunk.get("subject","")
+            
             score = 0
-            if q_lower in content_lower:
-                score += 10
-            if q_lower in topic_lower:
+            
+            # Subject boost - very important
+            if subject_hint and subject.lower() == subject_hint.lower():
+                score += 25
+            elif subject_hint and subject_hint.lower() in subject.lower():
                 score += 15
-            content_tokens = set(content_lower.split())
-            overlap = len(q_tokens & content_tokens)
-            score += overlap * 2
-            import re
-            sec_match = re.search(r'section\s*(\d+[a-z]?)', q_lower)
-            if sec_match and sec_match.group(1) in content_lower:
+            
+            # Exact phrase match in topic (high value)
+            if q_lower in topic_lower:
+                score += 30
+            if q_lower in chapter_lower:
                 score += 20
-            if score > 0:
-                scored_auto.append((score, chunk))
-        scored_auto.sort(key=lambda x: -x[0])
-        auto_chunks = [c for s, c in scored_auto[:limit]]
+            if q_lower in content_lower:
+                score += 15
+            
+            # Token overlap - but weighted by importance
+            content_tokens = set(re.findall(r"[a-z0-9]+", content_lower))
+            topic_tokens = set(re.findall(r"[a-z0-9]+", topic_lower))
+            
+            # Topic overlap is more important than content
+            topic_overlap = len(q_tokens & topic_tokens)
+            content_overlap = len(q_tokens & content_tokens)
+            score += topic_overlap * 8
+            score += content_overlap * 1
+            
+            # Section number boost
+            sec_match = re.search(r'section\s*(\d+[a-z]?)|sec\s*(\d+[a-z]?)', q_lower)
+            if sec_match:
+                sec_num = sec_match.group(1) or sec_match.group(2)
+                if sec_num and sec_num in content_lower:
+                    score += 30
+                # Also check topic
+                if sec_num and sec_num in topic_lower:
+                    score += 25
+            
+            # Specific term boosts
+            if "eoq" in q_lower and "eoq" in content_lower:
+                score += 40
+            if "swot" in q_lower and "swot" in content_lower:
+                score += 40
+            if "audit evidence" in q_lower and "audit evidence" in content_lower:
+                score += 40
+            if "share capital" in q_lower and "share capital" in content_lower:
+                score += 35
+            
+            # Penalize low quality content
+            if len(content_lower) < 400:
+                score -= 10
+            if "learning outcomes" in content_lower:
+                score -= 15
+            
+            if score > 5:
+                scored.append((score, chunk))
         
-        # Combine: prioritize auto (real study material) + manual + dedupe
-        combined = []
-        seen_ids = set()
-        for c in auto_chunks + manual_chunks:
-            if c["id"] not in seen_ids:
-                combined.append(c)
-                seen_ids.add(c["id"])
-            if len(combined) >= limit:
+        scored.sort(key=lambda x: -x[0])
+        
+        # Return top, but ensure diversity and quality
+        result = []
+        seen_content = set()
+        for score, chunk in scored:
+            # Dedupe by content hash
+            content_hash = chunk["content"][:100]
+            if content_hash in seen_content:
+                continue
+            seen_content.add(content_hash)
+            result.append(chunk)
+            if len(result) >= limit:
                 break
         
-        return combined[:limit]
+        print(f"RAG search for '{question[:50]}' -> subject_hint={subject_hint}, found {len(result)} chunks, top score {scored[0][0] if scored else 0}")
+        if result:
+            print(f"  Top: {result[0]['topic']} ({result[0]['subject']}) score {scored[0][0]}")
+        
+        return result[:limit]
     except Exception as e:
         print(f"KB search failed: {e}")
         import traceback; traceback.print_exc()
-        # Fallback to manual only
         try:
             from data_knowledge_base import search_knowledge_base
             return search_knowledge_base(question, limit=limit)
