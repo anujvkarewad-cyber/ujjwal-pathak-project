@@ -80,6 +80,16 @@ class AskBody(BaseModel):
     attachment: Optional[Attachment] = None
 
 
+# ---- written-answer evaluation -------------------------------------------------
+class EvaluateBody(BaseModel):
+    studentId: str = Field(min_length=1, max_length=64)
+    question: str = Field(min_length=3, max_length=2000)
+    studentAnswer: str = Field(min_length=1, max_length=8000)
+    subject: Optional[str] = None
+    chapterId: Optional[str] = None
+    concept: Optional[str] = None
+
+
 _STOP = {"the", "a", "an", "is", "are", "was", "were", "of", "in", "on", "for", "and",
          "or", "to", "what", "which", "how", "why", "when", "explain", "define", "about",
          "tell", "me", "please", "with", "from", "this", "that", "it", "its", "at", "by",
@@ -1683,6 +1693,271 @@ async def ask(body: AskBody):
         "rag_chunks_used": len(knowledge_chunks),
         "anchors_used": len(anchors),
         "retrieved_topics": [c["topic"] for c in knowledge_chunks[:3]]
+    }
+
+
+EVAL_SYSTEM = """You are a senior ICAI examiner marking a CA Intermediate answer sheet.
+
+MARK STRICTLY. This is marking, not encouragement.
+
+How marks are actually awarded:
+- Award marks ONLY for points that are explicitly written.
+- A vague statement earns NOTHING. "It is important for companies to follow the
+  law" is worth zero. "The Board appoints the first auditor within 30 days of
+  incorporation under Section 139(6)" is worth full marks.
+- Penalise a missing governing provision. In Law, Tax and Audit, an answer with
+  no section, rule, standard or SA number cannot score above 4.
+- Penalise wrong logic or a wrong provision even if the writing is fluent. A
+  confident wrong answer is a serious error, not a partially right one.
+- Penalise an answer with no conclusion or no final figure where one belongs.
+- Do NOT reward length. Padding and repetition earn nothing extra.
+
+Scoring guide (out of 10):
+- 0-2   Nothing usable, or the core provision is wrong.
+- 3-4   Correct generalities only: no provision, no precision.
+- 5-6   Core idea present, provision partly right, working incomplete.
+- 7-8   Correct provision, complete reasoning, minor presentation gaps.
+- 9-10  Exam-ready: correct provision, complete working, explicit conclusion.
+
+Score honestly. Never manufacture partial credit for an empty or irrelevant answer.
+
+For the model answer, write it the way a topper writes in the exam:
+- Name the provision actually in force, precisely, first.
+- Then the reasoning or the working, in steps.
+- Then an explicit conclusion, or the final figure with its label.
+- Use the skeleton that fits the paper (theory / computation / case).
+- Be concise and dense, not long.
+
+Return ONLY a JSON object. No markdown fence, no text before or after it.
+
+{
+  "score": <integer 0-10>,
+  "verdict": "<Insufficient | Weak | Average | Good | Exam-ready>",
+  "missingKeyPoints": ["<a specific point the examiner expected and the student did not write>"],
+  "conceptualMistakes": ["<something the student wrote that is wrong, and why>"],
+  "keywordsExpected": ["<key term / provision / formula an examiner looks for>"],
+  "keywordsPresent": ["<the subset of those the student actually used>"],
+  "strengths": ["<what the student got right - empty array if nothing>"],
+  "modelAnswer": "<the full model answer in ICAI exam format, plain text with line breaks>",
+  "improvementAdvice": ["<one concrete thing to do differently next time, max 3>"]
+}
+
+Every key must be present. Arrays may be empty. Advice must be actionable,
+never "study more"."""
+
+
+def _eval_user_text(question: str, student_answer: str, subject: str,
+                    material: str, anchors: str, concept: str) -> str:
+    parts = []
+    if subject:
+        parts.append(f"Paper: {subject}.")
+    if concept:
+        parts.append(f"Concept being tested: {concept}.")
+    if anchors:
+        parts.append(f"AUTHORITATIVE PROVISIONS (ground truth, use verbatim): {anchors}")
+    if material:
+        parts.append(
+            "Reference material from the official ICAI study material. Base your "
+            f"model answer on this and nothing else:\n{material}"
+        )
+    parts.append(f"QUESTION PUT TO THE STUDENT:\n{question}")
+    parts.append(f"THE STUDENT'S ANSWER (mark this, verbatim):\n{student_answer}")
+    parts.append(
+        "Mark the answer against the question and the reference material. "
+        "Return the JSON object described in your instructions."
+    )
+    return "\n\n".join(parts)
+
+
+def _extract_json(text: str) -> Optional[dict]:
+    """Pull a JSON object out of a model reply.
+
+    Models add code fences or a lead-in sentence even when told not to, so these
+    common shapes are stripped rather than failing the whole request.
+    """
+    if not text:
+        return None
+    cleaned = text.strip()
+    if cleaned.startswith("```"):
+        parts = cleaned.split("```")
+        if len(parts) >= 3:
+            cleaned = parts[1]
+        if cleaned.lstrip().lower().startswith("json"):
+            cleaned = cleaned.lstrip()[4:]
+    start = cleaned.find("{")
+    end = cleaned.rfind("}")
+    if start == -1 or end == -1 or end <= start:
+        return None
+    try:
+        return json.loads(cleaned[start:end + 1])
+    except Exception:
+        return None
+
+
+def _coerce_evaluation(raw) -> Optional[dict]:
+    """Validate and normalise a model payload.
+
+    Returns None when the payload is unusable so the caller can try the next
+    model, rather than storing a half-built result that then drives a student's
+    revision schedule.
+    """
+    if not isinstance(raw, dict):
+        return None
+    try:
+        score = int(round(float(raw.get("score"))))
+    except (TypeError, ValueError):
+        return None
+    score = max(0, min(10, score))
+
+    def as_list(key: str) -> list:
+        value = raw.get(key)
+        if value is None:
+            return []
+        if isinstance(value, str):
+            value = [value]
+        if not isinstance(value, list):
+            return []
+        out = []
+        for item in value:
+            text = str(item).strip()
+            if text:
+                out.append(text[:400])
+        return out[:8]
+
+    model_answer = str(raw.get("modelAnswer") or "").strip()
+    if len(model_answer) < 40:
+        return None
+
+    allowed = ("Insufficient", "Weak", "Average", "Good", "Exam-ready")
+    verdict = str(raw.get("verdict") or "").strip()
+    if verdict not in allowed:
+        verdict = ("Insufficient" if score <= 2 else
+                   "Weak" if score <= 4 else
+                   "Average" if score <= 6 else
+                   "Good" if score <= 8 else "Exam-ready")
+
+    expected = as_list("keywordsExpected")
+    present_raw = as_list("keywordsPresent")
+    present_lower = {p.lower() for p in present_raw}
+    present = [k for k in expected if k.lower() in present_lower] or present_raw
+
+    return {
+        "score": score,
+        "accuracyPct": score * 10,
+        "verdict": verdict,
+        "missingKeyPoints": as_list("missingKeyPoints"),
+        "conceptualMistakes": as_list("conceptualMistakes"),
+        "keywordsExpected": expected,
+        "keywordsPresent": present,
+        "strengths": as_list("strengths"),
+        "modelAnswer": model_answer[:6000],
+        "improvementAdvice": as_list("improvementAdvice")[:3],
+    }
+
+
+async def evaluate_written_answer(question: str, student_answer: str, subject: str,
+                                  concept: str, diag: list) -> Optional[dict]:
+    """Mark a written answer. Returns None when no model produced a usable grade.
+
+    Never invents a score: a fabricated mark would be stored and would then
+    drive the student's revision schedule.
+    """
+    key = (os.environ.get("GROQ_API_KEY") or "").strip()
+    if not key or httpx is None:
+        diag.append({"reason": "no_api_key_or_httpx"})
+        return None
+
+    knowledge_chunks = await retrieve_knowledge_chunks(question, limit=4)
+    anchors = retrieve_anchors(question, limit=3)
+    material = ""
+    if knowledge_chunks:
+        material = "\n".join([
+            f"[{c['id']}] {c['subject']} - {c['chapter']} - {c['topic']}: "
+            f"{_clip_chunk(c.get('content') or '', 700)}"
+            for c in knowledge_chunks
+        ])
+
+    user_text = _eval_user_text(question, student_answer, subject, material,
+                                " | ".join(anchors) if anchors else "", concept)
+
+    for model in MODELS_PRIORITY:
+        for use_json_mode in (True, False):
+            try:
+                payload = {
+                    "model": model,
+                    "temperature": 0.1,
+                    "max_tokens": 1800,
+                    "messages": [
+                        {"role": "system", "content": EVAL_SYSTEM},
+                        {"role": "user", "content": user_text},
+                    ],
+                }
+                if use_json_mode:
+                    payload["response_format"] = {"type": "json_object"}
+                async with httpx.AsyncClient(timeout=45) as client:
+                    r = await client.post(
+                        "https://api.groq.com/openai/v1/chat/completions",
+                        headers={"Authorization": f"Bearer {key}",
+                                 "Content-Type": "application/json"},
+                        json=payload,
+                    )
+                if r.status_code != 200:
+                    diag.append({"model": model, "json_mode": use_json_mode,
+                                 "http": r.status_code, "body": r.text[:160]})
+                    # A 400 here usually means this model rejects json_object,
+                    # so retrying the same model without it is worth one shot.
+                    continue
+                data = r.json()
+                choice = (data.get("choices") or [{}])[0]
+                msg = choice.get("message", {})
+                content = (msg.get("content") or "").strip()
+                if not content:
+                    content = (msg.get("reasoning") or "").strip()
+                parsed = _coerce_evaluation(_extract_json(content))
+                if parsed:
+                    parsed["model"] = model
+                    return parsed
+                diag.append({"model": model, "json_mode": use_json_mode,
+                             "reason": "unusable_payload", "head": content[:160]})
+            except Exception as e:
+                diag.append({"model": model, "json_mode": use_json_mode,
+                             "exception": str(e)[:160]})
+                continue
+    return None
+
+
+@router.post("/evaluate")
+async def evaluate(body: EvaluateBody):
+    """Mark a written answer the way an ICAI examiner would.
+
+    Returns score 0-10, what was missing, what was wrong, the key terms an
+    examiner looks for, a model answer in exam format, and what to fix.
+    """
+    diag: list = []
+    chapter = match_chapter(body.question, body.chapterId)
+    subject = body.subject or (chapter or {}).get("subject") or ""
+
+    result = await evaluate_written_answer(
+        body.question, body.studentAnswer, subject, body.concept or "", diag
+    )
+
+    if not result:
+        # Say so plainly. A made-up mark would be stored and would then drive
+        # the revision schedule, which is worse than admitting the failure.
+        return {
+            "ok": False,
+            "mode": "unavailable",
+            "error": "Could not grade this answer right now. Please try again.",
+            "chapter": chapter,
+            "diag": diag[-4:],
+        }
+
+    return {
+        "ok": True,
+        "mode": "graded",
+        "chapter": chapter,
+        "subject": subject,
+        **{k: v for k, v in result.items()},
     }
 
 
