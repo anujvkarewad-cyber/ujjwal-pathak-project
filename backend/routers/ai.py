@@ -885,11 +885,41 @@ def _no_material_answer(question: str, topic: str) -> str:
     )
 
 
+# Emoji that must never appear in an ICAI answer.
+#
+# Deliberately NARROW. An earlier version flagged the whole 0x2600-0x27BF and
+# 0x2190-0x21FF blocks, which wrongly rejected perfectly good costing answers
+# that used "->" arrows or a tick mark in a working-notes table. Arrows,
+# tick/cross marks, rupee signs and mathematical operators are all legitimate
+# in an exam answer and are explicitly allowed below.
+_EMOJI_RANGES = (
+    (0x1F300, 0x1FAFF),   # pictographs, emoticons, transport, symbols
+    (0x1F000, 0x1F0FF),   # playing cards, mahjong
+    (0x1F900, 0x1F9FF),   # supplemental symbols
+)
+_EMOJI_EXACT = {
+    0x2705,  # white heavy check mark (green box)
+    0x274C,  # cross mark
+    0x274E,  # cross mark (negative squared)
+    0x2B50,  # white medium star
+    0x1F4D8,  # blue book
+    0x1F4DA,  # books
+    0x1F4A1,  # light bulb
+    0x1F680,  # rocket
+    0x1F389,  # party popper
+    0x1F44D,  # thumbs up
+    0x1F44F,  # clapping hands
+}
+
+
 def _has_emoji(text: str) -> bool:
     for ch in text:
         o = ord(ch)
-        if 0x1F300 <= o <= 0x1FAFF or 0x2600 <= o <= 0x27BF or 0x2190 <= o <= 0x21FF:
+        if o in _EMOJI_EXACT:
             return True
+        for lo, hi in _EMOJI_RANGES:
+            if lo <= o <= hi:
+                return True
     return False
 
 
@@ -1050,7 +1080,17 @@ async def groq_answer(question: str, chapter: Optional[dict],
             if not final or len(final) < 80:
                 continue
             if _is_bad_answer(final):
-                print(f"Bad answer filtered from {model}")
+                reason = "emoji" if _has_emoji(final) else (
+                    "ends-with-question" if final.rstrip().endswith("?") else (
+                        "cta-in-tail" if any(
+                            b in final.lower()[-300:] for b in
+                            ("want me to", "shall i ", "let me know", "would you like",
+                             "brutal truth", "i can also", "feel free to ask",
+                             "here is your answer", "i hope this helps")
+                        ) else "short-or-repetitive"
+                    )
+                )
+                print(f"Bad answer filtered from {model} (reason: {reason}): {final[:180]!r}")
                 continue
             print(f"Groq {model} success: {len(final)} chars")
             return final
