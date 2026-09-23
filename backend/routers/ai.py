@@ -680,6 +680,19 @@ HARD RULES - breaking any of these makes the answer unusable:
    ICAI actually sets.
 8. Where ICAI commonly traps students on this topic, add one line starting
    "Examiner's angle:" stating the trap. One line, only if genuinely relevant.
+9. NO LaTeX AND NO MATH MARKUP. The app prints your reply as plain text, so
+   "$$", "\sqrt", "\frac{2}{3}", "\text" and "\times" reach the student as
+   literal backslashes and braces - the formula becomes unreadable. Write every
+   formula in plain characters instead:
+     right:  EOQ = sqrt(2 x A x O / C)
+     right:  EOQ = square root of (2 x Annual demand x Ordering cost / Carrying cost)
+     right:  P/V ratio = Contribution / Sales x 100
+     wrong:  $$EOQ = \sqrt{\frac{2AO}{C}}$$
+   Show the substitution line by line, then the result. Use x for multiply, /
+   for divide, and write "sqrt(...)" or the words "square root of" rather than
+   a radical sign. Never wrap a formula in $ signs.
+10. Plain markdown only: **bold** and simple "-" or "1." lists and "|" tables.
+   No HTML, no <br>, no \n escapes, no code fences.
 %s
 
 DEPTH
