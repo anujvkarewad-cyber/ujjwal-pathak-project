@@ -912,15 +912,66 @@ _EMOJI_EXACT = {
 }
 
 
-def _has_emoji(text: str) -> bool:
-    for ch in text:
-        o = ord(ch)
-        if o in _EMOJI_EXACT:
+def _is_emoji_char(ch: str) -> bool:
+    o = ord(ch)
+    if o in _EMOJI_EXACT:
+        return True
+    for lo, hi in _EMOJI_RANGES:
+        if lo <= o <= hi:
             return True
-        for lo, hi in _EMOJI_RANGES:
-            if lo <= o <= hi:
-                return True
     return False
+
+
+def _has_emoji(text: str) -> bool:
+    return any(_is_emoji_char(ch) for ch in text)
+
+
+def _sanitize_answer(text: str) -> str:
+    """Repair small format violations instead of discarding a good answer.
+
+    Rejecting an otherwise excellent answer because it ended with "Let me know
+    if you need more examples" threw away the whole thing and served a much
+    worse offline answer. Trimming the offending line is strictly better.
+
+    Removes, from the END only, up to 4 trailing lines that are:
+      - a question back to the student
+      - a call to action / upsell
+      - a sign-off pleasantry
+    and strips emoji characters anywhere in the text.
+    """
+    if not text:
+        return text
+
+    # 1. strip emoji (narrow set - arrows and tick marks are legitimate)
+    text = "".join(ch for ch in text if not _is_emoji_char(ch))
+    text = re.sub(r"[ \t]{2,}", " ", text)
+
+    # 2. drop trailing CTA / question / sign-off lines
+    _CTA = (
+        "want me to", "shall i ", "let me know", "would you like",
+        "do you want", "if you want", "feel free to ask", "i can also",
+        "i hope this helps", "hope this helps", "here is your answer",
+        "happy to help", "let me know if", "give it a try",
+        "brutal truth", "great question", "all the best",
+    )
+    lines = text.rstrip().split("\n")
+    removed = 0
+    while lines and removed < 4:
+        last = lines[-1].strip()
+        if not last:
+            lines.pop()
+            continue
+        low = last.lower()
+        is_question = last.endswith("?")
+        is_cta = any(c in low for c in _CTA)
+        # only trim a short trailing line - never a real paragraph of content
+        if (is_question or is_cta) and len(last) < 220:
+            lines.pop()
+            removed += 1
+            continue
+        break
+
+    return "\n".join(lines).rstrip()
 
 
 def _is_bad_answer(text: str) -> bool:
@@ -1077,6 +1128,8 @@ async def groq_answer(question: str, chapter: Optional[dict],
             content = (msg.get("content") or "").strip()
             reasoning = (msg.get("reasoning") or "").strip()
             final = content if len(content) > 20 else reasoning
+            # repair small violations before judging the answer
+            final = _sanitize_answer(final)
             if not final or len(final) < 80:
                 continue
             if _is_bad_answer(final):
