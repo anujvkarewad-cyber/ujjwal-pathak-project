@@ -1296,3 +1296,43 @@ async def migrate_public(key: str = ""):
     except Exception as e:
         import traceback; traceback.print_exc()
         raise HTTPException(500, f"Migration failed: {str(e)}")
+
+@router.post("/kb-push-public")
+async def push_public(chunks: List[dict], key: str = ""):
+    if key != "ump-migrate-2026-secret":
+        raise HTTPException(401, "Invalid key")
+    try:
+        from db import get_db, KNOWLEDGE_CHUNKS
+        db = get_db()
+        if not chunks:
+            raise HTTPException(400, "No chunks")
+        to_insert = []
+        for c in chunks:
+            if not c.get("content") or len(c.get("content","")) < 50:
+                continue
+            doc = {
+                "id": _clean_mongo_text(c.get("id") or f"CHUNK_{int(time.time())}_{len(to_insert)}", 100),
+                "subject": _clean_mongo_text(c.get("subject","Unknown"), 100),
+                "chapter": _clean_mongo_text(c.get("chapter",""), 200),
+                "topic": _clean_mongo_text(c.get("topic",""), 200),
+                "content": _clean_mongo_text(c.get("content",""), 5000),
+                "created_at": _now()
+            }
+            to_insert.append(doc)
+        inserted = 0
+        # Batch insert
+        batch_size = 500
+        for i in range(0, len(to_insert), batch_size):
+            batch = to_insert[i:i+batch_size]
+            try:
+                await db[KNOWLEDGE_CHUNKS].insert_many(batch, ordered=False)
+            except:
+                # If duplicate, upsert one by one
+                for doc in batch:
+                    await db[KNOWLEDGE_CHUNKS].replace_one({"id": doc["id"]}, doc, upsert=True)
+            inserted += len(batch)
+        count = await db[KNOWLEDGE_CHUNKS].count_documents({})
+        return {"success": True, "pushed": inserted, "total_now": count, "message": f"Pushed {inserted}, total {count}"}
+    except Exception as e:
+        import traceback; traceback.print_exc()
+        raise HTTPException(500, f"Push failed: {str(e)}")
