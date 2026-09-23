@@ -1298,14 +1298,20 @@ async def migrate_public(key: str = ""):
         raise HTTPException(500, f"Migration failed: {str(e)}")
 
 @router.post("/kb-push-public")
-async def push_public(chunks: List[dict], key: str = ""):
+async def push_public(key: str = "", body: List[dict] = None):
+    from fastapi import Body
+    # FastAPI will parse body as List[dict] if we use Body
+    # Actually we need to accept raw list
     if key != "ump-migrate-2026-secret":
         raise HTTPException(401, "Invalid key")
     try:
         from db import get_db, KNOWLEDGE_CHUNKS
         db = get_db()
+        # body is the chunks list
+        chunks = body
         if not chunks:
-            raise HTTPException(400, "No chunks")
+            # Try to get from request body directly via Body
+            raise HTTPException(400, "No chunks - send JSON array as body")
         to_insert = []
         for c in chunks:
             if not c.get("content") or len(c.get("content","")) < 50:
@@ -1320,19 +1326,20 @@ async def push_public(chunks: List[dict], key: str = ""):
             }
             to_insert.append(doc)
         inserted = 0
-        # Batch insert
         batch_size = 500
         for i in range(0, len(to_insert), batch_size):
             batch = to_insert[i:i+batch_size]
             try:
                 await db[KNOWLEDGE_CHUNKS].insert_many(batch, ordered=False)
             except:
-                # If duplicate, upsert one by one
                 for doc in batch:
                     await db[KNOWLEDGE_CHUNKS].replace_one({"id": doc["id"]}, doc, upsert=True)
             inserted += len(batch)
         count = await db[KNOWLEDGE_CHUNKS].count_documents({})
         return {"success": True, "pushed": inserted, "total_now": count, "message": f"Pushed {inserted}, total {count}"}
+    except HTTPException:
+        raise
     except Exception as e:
         import traceback; traceback.print_exc()
         raise HTTPException(500, f"Push failed: {str(e)}")
+
