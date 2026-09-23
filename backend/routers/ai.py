@@ -414,11 +414,30 @@ _CASESTUDY_CUES = (
 )
 
 
+# Judgment phrases. A case-study question about whether someone's conduct was
+# proper is a case study even when it also contains a computational-sounding
+# word: "the auditor did not PREPARE an audit plan" used to match the practical
+# cue "prepare", so a judgment question got the costing skeleton with Working
+# Notes and a Statement. These phrases are checked before the practical cues
+# because they cannot plausibly appear in a computation.
+_JUDGMENT_CUES = (
+    "is proper", "was proper", "conduct is", "is it proper", "proper or not",
+    "examine whether", "comment whether", "comment on whether",
+    "is he liable", "is she liable", "are they liable", "is the company liable",
+    "is he correct", "is she correct", "whether the auditor", "whether the",
+    "state with reasons", "discuss the validity", "validity of the",
+    "in the given case", "given the following facts", "case study",
+    "advise whether", "what should the auditor", "as a professional",
+)
+
+
 def detect_answer_mode(question: str) -> str:
     """Classify the question so the answer gets the right ICAI skeleton."""
     q = " " + (question or "").lower() + " "
     if any(c in q for c in _DISTINGUISH_CUES):
         return MODE_DISTINGUISH
+    if any(c in q for c in _JUDGMENT_CUES):
+        return MODE_CASE_STUDY
     if any(c in q for c in _PRACTICAL_CUES):
         return MODE_PRACTICAL
     if any(c in q for c in _CASESTUDY_CUES):
