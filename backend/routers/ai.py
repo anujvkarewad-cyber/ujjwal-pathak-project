@@ -13,9 +13,11 @@ v6: ICAI ANSWER FORMAT ENGINE (on top of the v5 MongoDB RAG)
 - Kept from v5: MongoDB Atlas RAG (4777 chunks), file fallback, subject hints.
 """
 
+import hashlib
 import json
 import os
 import re
+import time
 from pathlib import Path
 from typing import Optional, List
 
@@ -850,7 +852,7 @@ async def offline_answer(question: str, chapter: Optional[dict],
 
 def _chunk_points(chunk: dict, limit: int = 6) -> list:
     """Pull clean exam-usable points out of a retrieved module chunk."""
-    text = (chunk.get("content") or "").strip()
+    text = _clean_page_text(chunk.get("content") or "")
     if not text:
         return []
     raw = re.split(r"(?<=[.;])\s+|\n+|\u2022", text)
@@ -976,6 +978,44 @@ def _sanitize_answer(text: str) -> str:
     return "\n".join(lines).rstrip()
 
 
+def _clean_page_text(text: str) -> str:
+    """Strip ICAI page furniture out of a retrieved module extract.
+
+    Every page of the module PDFs repeats a running head, a footer line and a
+    page number, and retrieval returns them verbatim. Left in, they land in the
+    middle of the student's answer - stray text such as
+    "ACCOUNTS OF COMPANIES 9.77 ... The Institute of Chartered Accountants of
+    India" between two paragraphs. Offline answers showed exactly that.
+    """
+    out = []
+    for ln in (text or "").split("\n"):
+        s = ln.strip()
+        if not s:
+            continue
+        if re.fullmatch(r"[\d\s.\-]+", s):                 # bare page number
+            continue
+        if "The Institute of Chartered Accountants of India" in s:
+            continue
+        if re.fullmatch(r"[A-Z][A-Z &,\-]{8,}", s) and len(s) < 60:
+            continue                                          # running head
+        out.append(s)
+    return " ".join(out)
+
+
+def _clip_chunk(text: str, limit: int = 1100) -> str:
+    """Trim a retrieved chunk to a token-cheap extract.
+
+    Keeps the head (which states the provision) plus the tail (which usually
+    carries the penalty or conclusion) when the text is long.
+    """
+    body = _clean_page_text(text)
+    if len(body) <= limit:
+        return body
+    head = body[: int(limit * 0.7)].rstrip()
+    tail = body[-int(limit * 0.25):].lstrip()
+    return f"{head} ... {tail}"
+
+
 def _is_table_markup(line: str) -> bool:
     """True for markdown table rules and separator rows - they carry no prose."""
     s = line.strip()
@@ -1059,9 +1099,66 @@ def _is_bad_answer(text: str) -> bool:
 # answers start looking thin again - Groq has retired 7 models since Mar 2026.
 MODELS_PRIORITY = [
     "openai/gpt-oss-120b",   # Groq's recommended flagship (500 tok/s)
-    "qwen/qwen3.6-27b",      # recommended alternative
+    "qwen/qwen3.8-27b",      # separate rate-limit bucket, so a 429 on 120b
+                             #   still gets a real answer (500 -> 450 tok/s)
     "openai/gpt-oss-20b",    # fastest + cheapest fallback (1000 tok/s)
 ]
+# NOTE on 429s. The free tier gives 8,000 tokens per minute PER MODEL, and the
+# requested max_tokens counts against that budget. Several students asking at
+# the same moment therefore used to exhaust it and drop to the offline answer.
+# Three models in the list means three separate buckets, the context is clipped
+# and max_tokens is kept small - together that roughly triples the questions
+# this key can serve per minute.
+
+# ---------------------------------------------------------------------------
+# Answer cache
+# ---------------------------------------------------------------------------
+# Every student in a batch asks the same textbook questions. Groq's free tier
+# allows 8,000 tokens per minute per model, shared across the whole
+# organisation, so without a cache a busy evening of study exhausts the quota
+# and answers start falling back to the offline text. Caching a good answer the
+# first time it is produced is the single cheapest way to raise capacity: the
+# second and every later student asking the same question costs zero tokens.
+ANSWER_CACHE = "ai_answer_cache"
+_CACHE_TTL_DAYS = 45
+
+
+def _cache_key(question: str, mode: str) -> str:
+    """Stable key for a question, ignoring case, punctuation and spacing."""
+    norm = " ".join(re.sub(r"[^a-z0-9 ]+", " ", (question or "").lower()).split())
+    return hashlib.sha1(f"{mode}|{norm}".encode("utf-8")).hexdigest()
+
+
+async def _cache_get(key: str) -> Optional[dict]:
+    try:
+        from db import get_db
+        col = get_db()[ANSWER_CACHE]
+        cutoff = time.time() - _CACHE_TTL_DAYS * 86400
+        doc = await col.find_one({"_id": key, "created_ts": {"$gt": cutoff}})
+        if not doc:
+            return None
+        await col.update_one({"_id": key}, {"$inc": {"hits": 1}})
+        return doc
+    except Exception as e:
+        print(f"answer cache read unavailable (non-fatal): {e}")
+        return None
+
+
+async def _cache_put(key: str, question: str, mode: str, answer: str,
+                     tier: str, chunks: int) -> None:
+    try:
+        from db import get_db
+        await get_db()[ANSWER_CACHE].update_one(
+            {"_id": key},
+            {"$set": {"question": (question or "")[:300], "answer_format": mode,
+                      "answer": answer, "grounding": tier, "chunks": chunks,
+                      "created_ts": time.time()},
+             "$setOnInsert": {"hits": 0}},
+            upsert=True,
+        )
+    except Exception as e:
+        print(f"answer cache write unavailable (non-fatal): {e}")
+
 
 async def groq_answer(question: str, chapter: Optional[dict],
                       mode: str = MODE_THEORY,
@@ -1099,8 +1196,14 @@ async def groq_answer(question: str, chapter: Optional[dict],
     if chapter:
         ctx_parts.append(f"Current chapter context: {chapter.get('chapterTitle')} ({chapter.get('subject')}).")
     if knowledge_chunks:
+        # Token budget. Groq's free tier allows only 8,000 tokens per minute and
+        # the requested max_tokens is reserved against it too, so pushing five
+        # full PDF pages into the prompt left room for about one question a
+        # minute. Each chunk is clipped; the model needs the provision and the
+        # working, not a whole scanned page.
         material_text = "\n".join([
-            f"[{c['id']}] {c['subject']} - {c['chapter']} - {c['topic']}: {c['content']}"
+            f"[{c['id']}] {c['subject']} - {c['chapter']} - {c['topic']}: "
+            f"{_clip_chunk(c.get('content') or '')}"
             for c in knowledge_chunks
         ])
         ctx_parts.append(f"Relevant CA Inter Material (use ONLY this, top 5 retrieved):\n{material_text}")
@@ -1149,7 +1252,7 @@ async def groq_answer(question: str, chapter: Optional[dict],
                     json={
                         "model": model,
                         "temperature": 0.2,
-                        "max_tokens": 2048,
+                        "max_tokens": 1500,
                         "top_p": 0.9,
                         "messages": messages,
                     },
@@ -1210,11 +1313,33 @@ async def ask(body: AskBody):
     if chit:
         return {"answer": chit, "mode": "chitchat", "chapter": None, "rag_chunks": 0}
     chapter = match_chapter(body.question, body.chapterId)
+
+    # ICAI answer mode for this question type (cheap, regex only)
+    ans_mode = detect_answer_mode(body.question)
+
+    # A follow-up depends on the conversation, so it can never be served from
+    # the cache - only standalone questions can.
+    cache_key = None if body.history else _cache_key(body.question, ans_mode)
+    if cache_key:
+        hit = await _cache_get(cache_key)
+        if hit:
+            print(f"answer cache HIT: {(body.question or '')[:60]}")
+            return {
+                "answer": hit["answer"],
+                "mode": "live-rag",
+                "cached": True,
+                "groq_diag": [{"cache": "hit"}],
+                "answerFormat": hit.get("answer_format") or ans_mode,
+                "grounding": hit.get("grounding") or "full",
+                "chapter": {"id": chapter.get("chapterId"), "title": chapter.get("chapterTitle"),
+                            "subject": chapter.get("subject")} if chapter else None,
+                "rag_chunks_used": hit.get("chunks") or 0,
+                "anchors_used": 0,
+                "retrieved_topics": [],
+            }
+
     knowledge_chunks = await retrieve_knowledge_chunks(body.question, 5)
     anchors = retrieve_anchors(body.question, 3)
-
-    # ICAI answer mode for this question type + how well the material covers it
-    ans_mode = detect_answer_mode(body.question)
     tier = assess_grounding(knowledge_chunks, anchors)
 
     _diag = []
@@ -1224,9 +1349,14 @@ async def ask(body: AskBody):
         mode = "syllabus-brain-rag"
     else:
         mode = "live-rag"
+        # only a real Groq answer is worth remembering
+        if cache_key:
+            await _cache_put(cache_key, body.question, ans_mode, answer, tier,
+                             len(knowledge_chunks))
     return {
         "answer": answer,
         "mode": mode,
+        "cached": False,
         "groq_diag": _diag,
         "answerFormat": ans_mode,
         "grounding": tier,
