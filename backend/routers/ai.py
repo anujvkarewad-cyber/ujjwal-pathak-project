@@ -466,6 +466,27 @@ ICAI_PAPER_FORMAT = {
 }
 
 
+_CONCLUSION_WORDING = {
+    "Audit": "Proper / Improper / Partially proper - say which, and say why in the "
+             "same sentence. This is the vocabulary an audit examiner expects.",
+    "Law": "Liable / Not liable, Valid / Void, Allowed / Disallowed - use the pair "
+           "that fits the question and state it plainly.",
+    "Taxation": "Taxable / Not taxable, Deductible / Not deductible, Allowed / "
+                "Disallowed, and the quantum where the question asks for one.",
+}
+
+
+def _conclusion_rule(subject: str) -> str:
+    """Tell the model the conclusion vocabulary that this paper is marked on."""
+    word = (_CONCLUSION_WORDING.get(subject or "") or "").rstrip(".")
+    if not word:
+        return ""
+    return ("\nCONCLUSION VOCABULARY FOR THIS PAPER:\n"
+            "End with a decision, not a discussion: %s. A case-study answer that "
+            "fades out with \"it depends\" or lists both sides without choosing "
+            "loses the conclusion mark outright.\n" % word)
+
+
 _MODE_SKELETON = {
     MODE_THEORY: """Provision
 State the exact section / SA / AS / Ind AS and what it provides. If the
@@ -605,6 +626,69 @@ def _tier_rule(tier: str) -> str:
     return _TIER_RULES.get(tier, _TIER_RULES[TIER_PARTIAL])
 
 
+
+# Verified against ICAI's own Standards on Auditing list. The model is allowed
+# to cite an SA number ONLY from here, and ONLY where the concept matches the
+# SA's actual scope. Hardcoding beats hoping: a plausible-looking wrong SA
+# number is the fastest way for a CA student to lose marks, and the model will
+# cheerfully invent "SA 305" if nothing stops it.
+SA_ALLOWED = {
+    "200": "Overall objectives of the independent auditor and the conduct of an audit",
+    "210": "Agreeing the terms of audit engagements",
+    "220": "Quality control for an audit of financial statements",
+    "230": "Audit documentation",
+    "240": "The auditor's responsibilities relating to fraud - includes the "
+           "requirement to incorporate an element of unpredictability",
+    "250": "Consideration of laws and regulations in an audit",
+    "260": "Communication with those charged with governance",
+    "265": "Communicating deficiencies in internal control",
+    "299": "Joint audit of financial statements",
+    "300": "Planning an audit of financial statements - audit strategy and "
+           "audit plan, including discussion among the engagement team",
+    "315": "Identifying and assessing the risks of material misstatement "
+           "through understanding the entity and its environment, including "
+           "the entity's system of internal control",
+    "320": "Materiality in planning and performing an audit",
+    "330": "The auditor's responses to assessed risks - tests of controls and "
+           "substantive procedures",
+    "402": "Audit considerations relating to an entity using a service organisation",
+    "450": "Evaluation of misstatements identified during the audit",
+    "500": "Audit evidence",
+    "501": "Audit evidence - specific considerations for selected items "
+           "(inventory, litigation, segment information)",
+    "505": "External confirmations",
+    "510": "Initial audit engagements - opening balances",
+    "520": "Analytical procedures",
+    "530": "Audit sampling",
+    "540": "Auditing accounting estimates and related disclosures",
+    "550": "Related parties",
+    "560": "Subsequent events",
+    "570": "Going concern",
+    "580": "Written representations",
+    "600": "Using the work of another auditor",
+    "610": "Using the work of internal auditors",
+    "620": "Using the work of an auditor's expert",
+    "700": "Forming an opinion and reporting on financial statements",
+    "701": "Communicating key audit matters",
+    "705": "Modifications to the opinion in the independent auditor's report",
+    "706": "Emphasis of matter and other matter paragraphs",
+    "710": "Comparative information - corresponding figures and comparative "
+           "financial statements",
+    "720": "The auditor's responsibilities relating to other information",
+}
+
+SA_RULE = """
+SA DISCIPLINE (audit paper - the examiner marks the SA number):
+You may cite an SA number ONLY from this list, and ONLY where the concept in
+the question genuinely falls within that standard's scope:
+%s
+Never cite an SA number that is not on that list, and never bend a listed SA
+to a concept it does not cover. If the concept is right but no listed SA fits
+it, name the concept in words without a number. "SA 500" on a fraud question
+or "SA 315" on a reporting question loses more marks than citing nothing.
+""" % "\n".join("  SA %s - %s" % (k, v) for k, v in sorted(SA_ALLOWED.items()))
+
+
 def build_system_prompt(mode: str, subject: str = "", tier: str = TIER_PARTIAL,
                         marks: int = 0) -> str:
     """Compose the ICAI answer-writer prompt for this question type + tier."""
@@ -616,6 +700,12 @@ def build_system_prompt(mode: str, subject: str = "", tier: str = TIER_PARTIAL,
             "\nPRESENTATION RULES FOR THIS PAPER (%s):\n%s\n"
             % (subject, ICAI_PAPER_FORMAT[subject])
         )
+
+    sa_rules = ""
+    if "audit" in (subject or "").lower():
+        sa_rules = SA_RULE
+
+    conclusion_rule = _conclusion_rule(subject)
 
     if marks:
         depth = (
@@ -693,18 +783,34 @@ HARD RULES - breaking any of these makes the answer unusable:
    a radical sign. Never wrap a formula in $ signs.
 10. Plain markdown only: **bold** and simple "-" or "1." lists and "|" tables.
     No HTML, no <br>, no \\n escapes, no code fences.
+11. BALANCED EVALUATION. Where the facts show some things done correctly and
+    some not - the usual shape of an ICAI case study - do not pick a side and
+    argue it. State what was right, state what was wrong, and conclude
+    "Partially proper" if that is genuinely what the facts support. Check for
+    partial correctness instead of assuming it: facts that are wholly compliant
+    still get a clean "Proper", and facts that are wholly wrong get a clean
+    "Improper". Inventing a middle position on a clear-cut case is as wrong as
+    missing one on a mixed case.
+12. NO FILLER. Do not restate the question, do not open with scene-setting
+    ("In the given case, it is important to note that..."), do not close with a
+    summary of what you just said, and do not pad a heading to reach a length.
+    Every sentence must be one an examiner can put a tick against. If a line
+    adds no mark, cut it.
 %s
 
 DEPTH
 %s
 
 %s
+%s
+%s
 REQUIRED SKELETON FOR THIS QUESTION TYPE:
 %s
 
 Language: English only. Use Rs for currency. Bold key terms with **double
 stars**, never inside a heading.""" % (
-        _tier_rule(tier), example_rule, depth, paper, skeleton,
+        _tier_rule(tier), example_rule, depth, paper, conclusion_rule,
+        skeleton, sa_rules,
     )
 
 
