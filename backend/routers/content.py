@@ -1215,3 +1215,74 @@ async def clear_mongo_kb(claims: dict = Depends(require_mentor)):
     db = get_db()
     result = await db[KNOWLEDGE_CHUNKS].delete_many({})
     return {"deleted": result.deleted_count, "message": f"Cleared {result.deleted_count} chunks from MongoDB"}
+
+# ── Public one-time migration (secret key) for MongoDB RAG ─────────────────
+@router.post("/kb-migrate-public")
+async def migrate_public(key: str = ""):
+    """Public migration with secret key - for one-time MongoDB setup"""
+    if key != "ump-migrate-2026-secret":
+        raise HTTPException(401, "Invalid migration key")
+    try:
+        from db import get_db, KNOWLEDGE_CHUNKS
+        db = get_db()
+        try:
+            from data_knowledge_base_auto import KNOWLEDGE_BASE_AUTO
+            auto_chunks = list(KNOWLEDGE_BASE_AUTO)
+        except Exception as e:
+            auto_chunks = []
+        try:
+            from data_knowledge_base import KNOWLEDGE_BASE as MANUAL_KB
+            manual_chunks = list(MANUAL_KB)
+        except:
+            manual_chunks = []
+        all_chunks = manual_chunks + auto_chunks
+        if not all_chunks:
+            raise HTTPException(400, "No chunks found in files")
+        await db[KNOWLEDGE_CHUNKS].delete_many({})
+        to_insert = []
+        seen_ids = set()
+        for c in all_chunks:
+            cid = c.get("id") or f"{c.get('subject','UNK')}_{len(to_insert)}"
+            orig_id = cid
+            counter = 1
+            while cid in seen_ids:
+                cid = f"{orig_id}_{counter}"
+                counter += 1
+            seen_ids.add(cid)
+            doc = {
+                "id": cid,
+                "subject": c.get("subject","Unknown"),
+                "chapter": c.get("chapter","")[:200],
+                "topic": c.get("topic","")[:200],
+                "content": c.get("content","")[:5000],
+                "created_at": _now()
+            }
+            to_insert.append(doc)
+        batch_size = 500
+        inserted = 0
+        for i in range(0, len(to_insert), batch_size):
+            batch = to_insert[i:i+batch_size]
+            await db[KNOWLEDGE_CHUNKS].insert_many(batch)
+            inserted += len(batch)
+        try:
+            await db[KNOWLEDGE_CHUNKS].create_index("id", unique=True)
+            await db[KNOWLEDGE_CHUNKS].create_index([("subject", 1)])
+            await db[KNOWLEDGE_CHUNKS].create_index([("content", "text"), ("topic", "text"), ("chapter", "text")], name="knowledge_text_search")
+        except Exception as e:
+            print(f"Index: {e}")
+        by_subject = {}
+        for c in to_insert:
+            by_subject[c["subject"]] = by_subject.get(c["subject"], 0) + 1
+        return {
+            "success": True,
+            "migrated": inserted,
+            "manual": len(manual_chunks),
+            "auto": len(auto_chunks),
+            "by_subject": by_subject,
+            "message": f"Migrated {inserted} chunks to MongoDB. RAG now smooth & fast!"
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        import traceback; traceback.print_exc()
+        raise HTTPException(500, f"Migration failed: {str(e)}")
