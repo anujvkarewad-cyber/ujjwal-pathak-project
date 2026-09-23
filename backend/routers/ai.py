@@ -59,6 +59,14 @@ class Turn(BaseModel):
     text: str = Field(default="", max_length=6000)
 
 
+class Attachment(BaseModel):
+    """An image of a question, or a small file, sent as base64."""
+    kind: str = Field(default="image", max_length=16)        # "image" | "file"
+    name: Optional[str] = Field(default=None, max_length=200)
+    mime: Optional[str] = Field(default=None, max_length=100)
+    data: Optional[str] = None                               # base64, no prefix
+
+
 class AskBody(BaseModel):
     studentId: str = Field(min_length=1, max_length=64)
     question: str = Field(min_length=1, max_length=2000)
@@ -67,6 +75,9 @@ class AskBody(BaseModel):
     # "give an example", "what about for a private company?". Optional so old
     # app versions keep working.
     history: Optional[List[Turn]] = None
+    # A photographed question, or a file the student uploaded. Optional, so
+    # app builds that never send it keep working unchanged.
+    attachment: Optional[Attachment] = None
 
 
 _STOP = {"the", "a", "an", "is", "are", "was", "were", "of", "in", "on", "for", "and",
@@ -1171,10 +1182,85 @@ async def _cache_put(key: str, question: str, mode: str, answer: str,
         print(f"answer cache write unavailable (non-fatal): {e}")
 
 
+# ---------------------------------------------------------------------------
+# Attachments: a photographed question, or a PDF the student uploaded
+# ---------------------------------------------------------------------------
+# Groq's chat API takes images as a data: URL inside the message content, so
+# this endpoint accepts base64. Only qwen is multimodal in the current line-up,
+# which is why an image pins the model instead of walking MODELS_PRIORITY.
+VISION_MODEL = "qwen/qwen3.8-27b"
+MAX_ATTACHMENT_B64 = 5_000_000      # ~3.7 MB of original bytes
+
+
+def _pdf_text_from_b64(data: str, limit: int = 8000) -> str:
+    """Best-effort text of an uploaded PDF. Returns '' when unreadable.
+
+    pypdf is not a dependency of the API, so this degrades quietly: the caller
+    falls back to asking the student for a photo instead.
+    """
+    try:
+        import base64 as _b64
+        import io
+        from pypdf import PdfReader
+        raw = _b64.b64decode(data, validate=False)
+        reader = PdfReader(io.BytesIO(raw))
+        out = []
+        for page in reader.pages[:12]:
+            out.append(page.extract_text() or "")
+            if sum(len(x) for x in out) > limit:
+                break
+        return "\n".join(out)[:limit].strip()
+    except Exception as e:
+        print(f"PDF extract unavailable (non-fatal): {e}")
+        return ""
+
+
+def _build_attachment(body) -> tuple:
+    """Turn the request attachment into (image_data_url, pdf_text, error)."""
+    att = getattr(body, "attachment", None)
+    if not att:
+        return None, "", ""
+    # getattr everywhere: an older app build may send a partial attachment.
+    data = (getattr(att, "data", None) or "").strip()
+    name = getattr(att, "name", None) or ""
+    if not data:
+        return None, "", ""
+    name = name.lower()
+    if data.startswith("data:"):
+        data = data.split(",", 1)[-1]
+    if len(data) > MAX_ATTACHMENT_B64:
+        return None, "", (
+            "That image is too large for me to read. Please retake the photo "
+            "at a lower resolution, or crop it to just the question."
+        )
+    mime = (getattr(att, "mime", None) or "").lower()
+    if mime == "application/pdf" or name.endswith(".pdf"):
+        text = _pdf_text_from_b64(data)
+        if not text:
+            return None, "", (
+                "I could not read the text out of that PDF. Please send a "
+                "photo or a screenshot of the question instead - I can read "
+                "pictures of questions directly."
+            )
+        return None, text, ""
+    if mime.startswith("text/") or name.endswith((".txt", ".md", ".csv")):
+        try:
+            import base64 as _b64
+            text = _b64.b64decode(data, validate=False).decode("utf-8", "ignore")
+            return None, text[:8000], ""
+        except Exception:
+            return None, "", "I could not read that file. Please try a photo of the question."
+    if not mime.startswith("image/"):
+        mime = "image/jpeg"
+    return f"data:{mime};base64,{data}", "", ""
+
+
 async def groq_answer(question: str, chapter: Optional[dict],
                       mode: str = MODE_THEORY,
                       history: Optional[list] = None,
-                      diag: Optional[list] = None) -> Optional[str]:
+                      diag: Optional[list] = None,
+                      image_data_url: Optional[str] = None,
+                      pdf_text: str = "") -> Optional[str]:
     """Ask Groq. Returns None when every model failed or was rejected.
 
     `diag`, if given, collects one entry per rejection so the API response can
@@ -1242,19 +1328,40 @@ async def groq_answer(question: str, chapter: Optional[dict],
             messages.append({"role": role, "content": text.strip()[:6000]})
             replayed += 1
 
-    messages.append({"role": "user", "content": ctx + (
+    user_text = ctx + (
         f"Question type detected: {mode}.\n"
         f"Grounding tier: {tier}.\n"
         + ("This is a follow-up in an ongoing conversation - continue from the "
            "previous turns, do not repeat what you already said.\n" if replayed else "")
+        + (f"Uploaded document text (read it, it holds the question):\n{pdf_text[:6000]}\n\n"
+           if pdf_text else "")
         + f"Question: {question}\n\n"
         "Write the answer in the required ICAI skeleton for this question type, "
         "following the grounding rules given in your instructions. End with the "
         "conclusion or final answer - never with an offer or a question back to "
         "the student."
-    )})
+    )
+    if image_data_url:
+        # The question is in the picture, not in the text, so ask the model to
+        # read it back first. That lets the student check the transcription and
+        # spot a misread figure before trusting the working.
+        user_text += (
+            "\n\nAn image of the question is attached. Begin your reply with a "
+            "single line in exactly this form:\n"
+            "**Question read from the image:** <the full question as you see it>\n"
+            "Then answer it in the ICAI skeleton. If the picture is too blurred "
+            "or does not contain a question, say so in one short line and stop."
+        )
+        messages.append({"role": "user", "content": [
+            {"type": "text", "text": user_text},
+            {"type": "image_url", "image_url": {"url": image_data_url}},
+        ]})
+    else:
+        messages.append({"role": "user", "content": user_text})
     groq_errors = []
-    for model in MODELS_PRIORITY:
+    # Only qwen reads images. A text model would silently ignore the picture.
+    models_to_try = [VISION_MODEL] if image_data_url else MODELS_PRIORITY
+    for model in models_to_try:
         try:
             async with httpx.AsyncClient(timeout=35) as client:
                 r = await client.post(
@@ -1284,6 +1391,12 @@ async def groq_answer(question: str, chapter: Optional[dict],
             final = _sanitize_answer(final)
             if not final or len(final) < 80:
                 continue
+            if image_data_url:
+                # A short "the photo is unreadable, please retake it" reply is a
+                # correct answer for an image request, and trimming a trailing
+                # question would destroy it. Emoji are still stripped.
+                print(f"Groq {model} vision answer: {len(final)} chars")
+                return final
             if _is_bad_answer(final):
                 reason = "emoji" if _has_emoji(final) else (
                     "ends-with-question" if final.rstrip().endswith("?") else (
@@ -1323,14 +1436,29 @@ async def ask(body: AskBody):
     chit = _smalltalk(body.question)
     if chit:
         return {"answer": chit, "mode": "chitchat", "chapter": None, "rag_chunks": 0}
+    image_data_url, pdf_text, att_error = _build_attachment(body)
+    if att_error:
+        return {
+            "answer": att_error,
+            "mode": "attachment",
+            "cached": False,
+            "answerFormat": "notice",
+            "grounding": "none",
+            "chapter": None,
+            "rag_chunks_used": 0,
+            "anchors_used": 0,
+            "retrieved_topics": [],
+        }
+
     chapter = match_chapter(body.question, body.chapterId)
 
     # ICAI answer mode for this question type (cheap, regex only)
     ans_mode = detect_answer_mode(body.question)
 
     # A follow-up depends on the conversation, so it can never be served from
-    # the cache - only standalone questions can.
-    cache_key = None if body.history else _cache_key(body.question, ans_mode)
+    # the cache - only standalone questions can. An uploaded image is unique to
+    # the student who sent it, so it is never cached either.
+    cache_key = None if (body.history or image_data_url or pdf_text) else _cache_key(body.question, ans_mode)
     if cache_key:
         hit = await _cache_get(cache_key)
         if hit:
@@ -1349,13 +1477,26 @@ async def ask(body: AskBody):
                 "retrieved_topics": [],
             }
 
-    knowledge_chunks = await retrieve_knowledge_chunks(body.question, 5)
-    anchors = retrieve_anchors(body.question, 3)
-    tier = assess_grounding(knowledge_chunks, anchors)
+    # When the question is only in the picture there is no text to search on,
+    # so retrieval is skipped rather than run against a placeholder.
+    if image_data_url and len((body.question or "").split()) < 6:
+        knowledge_chunks, anchors, tier = [], [], "image"
+    else:
+        knowledge_chunks = await retrieve_knowledge_chunks(body.question, 5)
+        anchors = retrieve_anchors(body.question, 3)
+        tier = assess_grounding(knowledge_chunks, anchors)
 
     _diag = []
-    answer = await groq_answer(body.question, chapter, ans_mode, body.history, _diag)
-    if not answer:
+    answer = await groq_answer(body.question, chapter, ans_mode, body.history, _diag,
+                               image_data_url=image_data_url, pdf_text=pdf_text)
+    if not answer and image_data_url:
+        # The offline notes cannot see a photograph, so never dress up a text
+        # fallback as an answer to a picture.
+        answer = ("I could not read that question right now - the AI service is "
+                  "busy. Please send it again in a moment, or type the question "
+                  "out and I will answer from the module.")
+        mode = "image-busy"
+    elif not answer:
         answer = await offline_answer(body.question, chapter, ans_mode, tier)
         mode = "syllabus-brain-rag"
     else:
