@@ -29,6 +29,7 @@ STUDENT_MCQ_ATTEMPTS = "student_mcq_attempts"
 STUDENT_ACCOUNTS = "student_accounts"
 DASHBOARD_SHARED = "dashboard_shared"
 DASHBOARD_STUDENTS = "dashboard_students"
+KNOWLEDGE_CHUNKS = "knowledge_chunks"
 
 
 def get_db():
@@ -104,6 +105,12 @@ async def ensure_indexes():
     await db[STUDENT_MCQ_ATTEMPTS].create_index([("studentId", 1), ("completedAt", -1)])
     await db[STUDENT_ACCOUNTS].create_index("studentId", unique=True)
     await db[DASHBOARD_STUDENTS].create_index("studentId", unique=True)
+    # RAG knowledge base - for smooth search (4777 chunks)
+    await db[KNOWLEDGE_CHUNKS].create_index("id", unique=True)
+    await db[KNOWLEDGE_CHUNKS].create_index([("subject", 1)])
+    await db[KNOWLEDGE_CHUNKS].create_index([("content", "text"), ("topic", "text"), ("chapter", "text")], name="knowledge_text_search")
+    await db[KNOWLEDGE_CHUNKS].create_index([("topic", 1)])
+    await db[KNOWLEDGE_CHUNKS].create_index([("chapter", 1)])
 
 
 async def ensure_unique_indexes():

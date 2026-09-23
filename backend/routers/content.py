@@ -1047,6 +1047,7 @@ async def upload_kb_pdf(
 
 @router.get("/kb-stats")
 async def kb_stats(claims: dict = Depends(require_mentor)):
+    # File-based counts
     try:
         from data_knowledge_base import KNOWLEDGE_BASE as MANUAL_KB
         manual_count = len(MANUAL_KB)
@@ -1055,17 +1056,162 @@ async def kb_stats(claims: dict = Depends(require_mentor)):
     try:
         from data_knowledge_base_auto import KNOWLEDGE_BASE_AUTO
         auto_count = len(KNOWLEDGE_BASE_AUTO)
-        by_subject = {}
+        by_subject_file = {}
         for c in KNOWLEDGE_BASE_AUTO:
             subj = c.get("subject","Unknown")
-            by_subject[subj] = by_subject.get(subj,0)+1
+            by_subject_file[subj] = by_subject_file.get(subj,0)+1
     except:
         auto_count = 0
-        by_subject = {}
+        by_subject_file = {}
+    
+    # MongoDB counts
+    mongo_count = 0
+    by_subject_mongo = {}
+    try:
+        from db import get_db, KNOWLEDGE_CHUNKS
+        db = get_db()
+        mongo_count = await db[KNOWLEDGE_CHUNKS].count_documents({})
+        pipeline = [{"$group": {"_id": "$subject", "count": {"$sum": 1}}}]
+        async for doc in db[KNOWLEDGE_CHUNKS].aggregate(pipeline):
+            by_subject_mongo[doc["_id"]] = doc["count"]
+    except Exception as e:
+        print(f"kb-stats mongo failed: {e}")
+    
     return {
         "manual_chunks": manual_count,
-        "auto_chunks": auto_count,
-        "total": manual_count + auto_count,
-        "by_subject": by_subject,
-        "status": "RAG fully automated"
+        "auto_chunks_file": auto_count,
+        "auto_chunks_mongo": mongo_count,
+        "total_file": manual_count + auto_count,
+        "total_mongo": manual_count + mongo_count,
+        "by_subject_file": by_subject_file,
+        "by_subject_mongo": by_subject_mongo,
+        "status": "MongoDB RAG live" if mongo_count > 100 else "File fallback (Mongo empty)",
+        "smooth": mongo_count > 100
     }
+
+# ── MongoDB RAG Migration (smooth, fast) ─────────────────────────────────
+@router.post("/kb-migrate-to-mongo")
+async def migrate_kb_to_mongo(claims: dict = Depends(require_mentor)):
+    """Migrate file-based KB (4777 chunks) to MongoDB for smooth search. Run once after deploy."""
+    try:
+        from db import get_db, KNOWLEDGE_CHUNKS
+        db = get_db()
+        
+        # Load file-based KB
+        try:
+            from data_knowledge_base_auto import KNOWLEDGE_BASE_AUTO
+            auto_chunks = list(KNOWLEDGE_BASE_AUTO)
+        except Exception as e:
+            auto_chunks = []
+        
+        try:
+            from data_knowledge_base import KNOWLEDGE_BASE as MANUAL_KB
+            manual_chunks = list(MANUAL_KB)
+        except:
+            manual_chunks = []
+        
+        all_chunks = manual_chunks + auto_chunks
+        if not all_chunks:
+            raise HTTPException(400, "No chunks found in files to migrate")
+        
+        # Clear existing and insert
+        await db[KNOWLEDGE_CHUNKS].delete_many({})
+        
+        # Prepare for insert - ensure id unique
+        to_insert = []
+        seen_ids = set()
+        for c in all_chunks:
+            cid = c.get("id") or f"{c.get('subject','UNK')}_{len(to_insert)}"
+            orig_id = cid
+            counter = 1
+            while cid in seen_ids:
+                cid = f"{orig_id}_{counter}"
+                counter += 1
+            seen_ids.add(cid)
+            doc = {
+                "id": cid,
+                "subject": c.get("subject","Unknown"),
+                "chapter": c.get("chapter","")[:200],
+                "topic": c.get("topic","")[:200],
+                "content": c.get("content","")[:5000],
+                "created_at": _now()
+            }
+            to_insert.append(doc)
+        
+        batch_size = 500
+        inserted = 0
+        for i in range(0, len(to_insert), batch_size):
+            batch = to_insert[i:i+batch_size]
+            await db[KNOWLEDGE_CHUNKS].insert_many(batch)
+            inserted += len(batch)
+        
+        try:
+            await db[KNOWLEDGE_CHUNKS].create_index("id", unique=True)
+            await db[KNOWLEDGE_CHUNKS].create_index([("subject", 1)])
+            await db[KNOWLEDGE_CHUNKS].create_index([("content", "text"), ("topic", "text"), ("chapter", "text")], name="knowledge_text_search")
+        except Exception as e:
+            print(f"Index creation: {e}")
+        
+        by_subject = {}
+        for c in to_insert:
+            by_subject[c["subject"]] = by_subject.get(c["subject"], 0) + 1
+        
+        return {
+            "success": True,
+            "migrated": inserted,
+            "manual": len(manual_chunks),
+            "auto": len(auto_chunks),
+            "by_subject": by_subject,
+            "message": f"Migrated {inserted} chunks to MongoDB. RAG now smooth & fast!"
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        import traceback; traceback.print_exc()
+        raise HTTPException(500, f"Migration failed: {str(e)}")
+
+@router.post("/kb-push-mongo")
+async def push_chunks_to_mongo(
+    chunks: List[dict],
+    claims: dict = Depends(require_mentor)
+):
+    try:
+        from db import get_db, KNOWLEDGE_CHUNKS
+        db = get_db()
+        if not chunks:
+            raise HTTPException(400, "No chunks provided")
+        
+        to_insert = []
+        for c in chunks:
+            if not c.get("content") or len(c.get("content","")) < 50:
+                continue
+            doc = {
+                "id": c.get("id") or f"CHUNK_{int(time.time())}_{len(to_insert)}",
+                "subject": c.get("subject","Unknown"),
+                "chapter": c.get("chapter","")[:200],
+                "topic": c.get("topic","")[:200],
+                "content": c.get("content","")[:5000],
+                "created_at": _now()
+            }
+            to_insert.append(doc)
+        
+        if to_insert:
+            for doc in to_insert:
+                await db[KNOWLEDGE_CHUNKS].replace_one({"id": doc["id"]}, doc, upsert=True)
+        
+        count = await db[KNOWLEDGE_CHUNKS].count_documents({})
+        return {
+            "success": True,
+            "pushed": len(to_insert),
+            "total_now": count,
+            "message": f"Pushed {len(to_insert)} chunks, total now {count}"
+        }
+    except Exception as e:
+        raise HTTPException(500, f"Push failed: {str(e)}")
+
+@router.delete("/kb-mongo-clear")
+async def clear_mongo_kb(claims: dict = Depends(require_mentor)):
+    from db import get_db, KNOWLEDGE_CHUNKS
+    db = get_db()
+    result = await db[KNOWLEDGE_CHUNKS].delete_many({})
+    return {"deleted": result.deleted_count, "message": f"Cleared {result.deleted_count} chunks from MongoDB"}

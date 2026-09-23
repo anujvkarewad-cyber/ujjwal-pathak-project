@@ -1,11 +1,9 @@
 """AI Study Assistant backend — POST /api/ai/ask.
 
-v4: Proper RAG architecture as per ChatGPT/Claude feedback
-- No more dumping entire syllabus
-- Chunked knowledge base (200+ chunks) + 170 anchors + 94 chapters
-- Search -> Retrieve top 5 relevant chunks -> Inject into Groq with strict prompt
-- Structured CA Inter answers: direct answer, steps, exam tip
-- Low temperature 0.2 for accuracy, no hallucination
+v5: MongoDB RAG — 4777 chunks in Atlas, smooth search
+- MongoDB first (text index + regex), fallback to file
+- 11MB file no longer loaded on every request
+- Fast, smooth, free (Atlas free tier)
 """
 
 import json
@@ -63,7 +61,6 @@ def _tokens(text: str) -> set:
 
 
 def retrieve_anchors(question: str, limit: int = 5) -> List[str]:
-    """Ground-truth provision anchors - 100% correct, must be used verbatim"""
     try:
         from data_section_map import ANCHORS, SECNUM
     except:
@@ -96,144 +93,183 @@ def retrieve_anchors(question: str, limit: int = 5) -> List[str]:
     return picked
 
 
-def retrieve_knowledge_chunks(question: str, limit: int = 5) -> List[dict]:
-    """RAG Step 1-2: Search in database, get top relevant chunks - 1247 auto chunks + 15 manual, subject-aware"""
+def _detect_subject_hint(q_lower: str) -> Optional[str]:
+    if any(w in q_lower for w in ["audit", "sa 500", "sa 200", "s auditing"]):
+        return "Audit"
+    elif any(w in q_lower for w in ["costing", "eoq", "material cost", "labour", "overhead", "abc", "budget"]):
+        return "Costing"
+    elif any(w in q_lower for w in ["account", "as ", "accounting standard", "amalgamation", "consolidat", "holding"]):
+        return "Accounts"
+    elif any(w in q_lower for w in ["law", "companies act", "llp", "section 43", "section 2", "sec 2", "sec 43", "deposits", "prospectus", "share capital"]):
+        return "Law"
+    elif any(w in q_lower for w in ["fm", "financial management", "cost of capital", "leverage", "capital structure", "dividend", "ratio", "working capital"]):
+        return "FM"
+    elif any(w in q_lower for w in ["sm", "strategic", "swot", "porter", "bcg", "strategic management"]):
+        return "SM"
+    elif any(w in q_lower for w in ["tax", "dt", "gst", "income tax", "residential status", "supply"]):
+        return "Taxation"
+    return None
+
+
+def _score_chunks(all_chunks: List[dict], question: str, subject_hint: Optional[str], q_tokens: set, q_lower: str, limit: int = 5) -> List[dict]:
+    scored = []
+    for chunk in all_chunks:
+        content_lower = chunk.get("content","").lower()
+        topic_lower = chunk.get("topic","").lower()
+        chapter_lower = chunk.get("chapter","").lower()
+        subject = chunk.get("subject","")
+        score = 0
+        if subject_hint and subject.lower() == subject_hint.lower():
+            score += 25
+        elif subject_hint and subject_hint.lower() in subject.lower():
+            score += 15
+        if q_lower in topic_lower:
+            score += 30
+        if q_lower in chapter_lower:
+            score += 20
+        if q_lower in content_lower:
+            score += 15
+        content_tokens = set(re.findall(r"[a-z0-9]+", content_lower))
+        topic_tokens = set(re.findall(r"[a-z0-9]+", topic_lower))
+        topic_overlap = len(q_tokens & topic_tokens)
+        content_overlap = len(q_tokens & content_tokens)
+        score += topic_overlap * 8
+        score += content_overlap * 1
+        sec_match = re.search(r'section\s*(\d+[a-z]?)|sec\s*(\d+[a-z]?)', q_lower)
+        if sec_match:
+            sec_num = sec_match.group(1) or sec_match.group(2)
+            if sec_num and sec_num in content_lower:
+                score += 30
+            if sec_num and sec_num in topic_lower:
+                score += 25
+        if "eoq" in q_lower and "eoq" in content_lower:
+            score += 40
+        if "swot" in q_lower and "swot" in content_lower:
+            score += 40
+        if "audit evidence" in q_lower and "audit evidence" in content_lower:
+            score += 40
+        if "share capital" in q_lower and "share capital" in content_lower:
+            score += 35
+        if len(content_lower) < 400:
+            score -= 10
+        if "learning outcomes" in content_lower:
+            score -= 15
+        if score > 5:
+            scored.append((score, chunk))
+    scored.sort(key=lambda x: -x[0])
+    result = []
+    seen_content = set()
+    for score, chunk in scored:
+        content_hash = chunk.get("content","")[:100]
+        if content_hash in seen_content:
+            continue
+        seen_content.add(content_hash)
+        result.append(chunk)
+        if len(result) >= limit:
+            break
+    return result
+
+
+def retrieve_knowledge_chunks_sync(question: str, limit: int = 5) -> List[dict]:
     try:
-        from data_knowledge_base import search_knowledge_base as search_manual, KNOWLEDGE_BASE as MANUAL_KB
-        from data_knowledge_base_auto import KNOWLEDGE_BASE_AUTO
-        
+        from data_knowledge_base import KNOWLEDGE_BASE as MANUAL_KB
+        try:
+            from data_knowledge_base_auto import KNOWLEDGE_BASE_AUTO
+        except:
+            KNOWLEDGE_BASE_AUTO = []
         q_lower = question.lower()
         q_tokens = set(re.findall(r"[a-z0-9]+", q_lower))
-        
-        # Detect subject from question
-        subject_hint = None
-        if any(w in q_lower for w in ["audit", "sa 500", "sa 200", "s auditing"]):
-            subject_hint = "Audit"
-        elif any(w in q_lower for w in ["costing", "eoq", "material cost", "labour", "overhead", "abc", "budget"]):
-            subject_hint = "Costing"
-        elif any(w in q_lower for w in ["account", "as ", "accounting standard", "amalgamation", "consolidat", "holding"]):
-            subject_hint = "Accounts"
-        elif any(w in q_lower for w in ["law", "companies act", "llp", "section 43", "section 2", "sec 2", "sec 43", "deposits", "prospectus", "share capital"]):
-            subject_hint = "Law"
-        elif any(w in q_lower for w in ["fm", "financial management", "cost of capital", "leverage", "capital structure", "dividend", "ratio", "working capital"]):
-            subject_hint = "FM"
-        elif any(w in q_lower for w in ["sm", "strategic", "swot", "porter", "bcg", "strategic management"]):
-            subject_hint = "SM"
-        elif any(w in q_lower for w in ["tax", "dt", "gst", "income tax", "residential status", "supply"]):
-            subject_hint = "Taxation"
-        
-        # Combine both KBs
+        subject_hint = _detect_subject_hint(q_lower)
         all_chunks = []
-        # Add manual (high quality, curated)
         all_chunks.extend(MANUAL_KB)
-        # Add auto (1247 chunks, but filter low quality)
         for c in KNOWLEDGE_BASE_AUTO:
             content = c.get("content","")
-            # Filter low quality: skip if too short, or contains only learning outcomes, or has file ID as topic
             if len(content) < 300:
                 continue
             if "learning outcomes" in content.lower() and len(content) < 800:
                 continue
             if "institute of chartered accountants" in content.lower() and len(content.split()) < 100:
-                # Skip cover pages
                 if content.lower().count("the institute") > 3:
                     continue
-            # Skip chunks where topic is just file ID
             topic = c.get("topic","")
             if len(topic) < 5 or re.match(r'^[A-Za-z0-9_-]{20,}$', topic):
                 continue
             all_chunks.append(c)
-        
-        scored = []
-        for chunk in all_chunks:
-            content_lower = chunk["content"].lower()
-            topic_lower = chunk["topic"].lower()
-            chapter_lower = chunk["chapter"].lower()
-            subject = chunk.get("subject","")
-            
-            score = 0
-            
-            # Subject boost - very important
-            if subject_hint and subject.lower() == subject_hint.lower():
-                score += 25
-            elif subject_hint and subject_hint.lower() in subject.lower():
-                score += 15
-            
-            # Exact phrase match in topic (high value)
-            if q_lower in topic_lower:
-                score += 30
-            if q_lower in chapter_lower:
-                score += 20
-            if q_lower in content_lower:
-                score += 15
-            
-            # Token overlap - but weighted by importance
-            content_tokens = set(re.findall(r"[a-z0-9]+", content_lower))
-            topic_tokens = set(re.findall(r"[a-z0-9]+", topic_lower))
-            
-            # Topic overlap is more important than content
-            topic_overlap = len(q_tokens & topic_tokens)
-            content_overlap = len(q_tokens & content_tokens)
-            score += topic_overlap * 8
-            score += content_overlap * 1
-            
-            # Section number boost
-            sec_match = re.search(r'section\s*(\d+[a-z]?)|sec\s*(\d+[a-z]?)', q_lower)
-            if sec_match:
-                sec_num = sec_match.group(1) or sec_match.group(2)
-                if sec_num and sec_num in content_lower:
-                    score += 30
-                # Also check topic
-                if sec_num and sec_num in topic_lower:
-                    score += 25
-            
-            # Specific term boosts
-            if "eoq" in q_lower and "eoq" in content_lower:
-                score += 40
-            if "swot" in q_lower and "swot" in content_lower:
-                score += 40
-            if "audit evidence" in q_lower and "audit evidence" in content_lower:
-                score += 40
-            if "share capital" in q_lower and "share capital" in content_lower:
-                score += 35
-            
-            # Penalize low quality content
-            if len(content_lower) < 400:
-                score -= 10
-            if "learning outcomes" in content_lower:
-                score -= 15
-            
-            if score > 5:
-                scored.append((score, chunk))
-        
-        scored.sort(key=lambda x: -x[0])
-        
-        # Return top, but ensure diversity and quality
-        result = []
-        seen_content = set()
-        for score, chunk in scored:
-            # Dedupe by content hash
-            content_hash = chunk["content"][:100]
-            if content_hash in seen_content:
-                continue
-            seen_content.add(content_hash)
-            result.append(chunk)
-            if len(result) >= limit:
-                break
-        
-        print(f"RAG search for '{question[:50]}' -> subject_hint={subject_hint}, found {len(result)} chunks, top score {scored[0][0] if scored else 0}")
-        if result:
-            print(f"  Top: {result[0]['topic']} ({result[0]['subject']}) score {scored[0][0]}")
-        
+        result = _score_chunks(all_chunks, question, subject_hint, q_tokens, q_lower, limit)
+        print(f"RAG FILE search for '{question[:50]}' -> subject_hint={subject_hint}, found {len(result)} chunks")
         return result[:limit]
     except Exception as e:
-        print(f"KB search failed: {e}")
-        import traceback; traceback.print_exc()
-        try:
-            from data_knowledge_base import search_knowledge_base
-            return search_knowledge_base(question, limit=limit)
-        except:
-            return []
+        print(f"KB sync search failed: {e}")
+        return []
+
+
+async def retrieve_knowledge_chunks(question: str, limit: int = 5) -> List[dict]:
+    q_lower = question.lower()
+    q_tokens = set(re.findall(r"[a-z0-9]+", q_lower))
+    subject_hint = _detect_subject_hint(q_lower)
+    try:
+        from db import get_db, KNOWLEDGE_CHUNKS
+        db = get_db()
+        count = await db[KNOWLEDGE_CHUNKS].count_documents({})
+        if count > 100:
+            mongo_filter = {}
+            if subject_hint:
+                mongo_filter["subject"] = {"$regex": f"^{subject_hint}$", "$options": "i"}
+            try:
+                search_terms = " ".join([t for t in q_tokens if len(t) > 2][:5])
+                if search_terms:
+                    cursor = db[KNOWLEDGE_CHUNKS].find(
+                        {"$text": {"$search": search_terms}, **mongo_filter},
+                        {"score": {"$meta": "textScore"}}
+                    ).sort([("score", {"$meta": "textScore"})]).limit(limit * 3)
+                    docs = []
+                    async for d in cursor:
+                        d.pop("_id", None)
+                        docs.append(d)
+                    if docs:
+                        scored = _score_chunks(docs, question, subject_hint, q_tokens, q_lower, limit)
+                        print(f"RAG MONGO TEXT search '{question[:50]}' -> {len(scored)} chunks from {count} total")
+                        return scored[:limit]
+            except Exception as e:
+                print(f"Mongo text search failed, trying regex: {e}")
+            try:
+                important_tokens = [t for t in q_tokens if len(t) > 2][:4]
+                if important_tokens:
+                    regex_pattern = "|".join(re.escape(t) for t in important_tokens)
+                    regex_filter = {
+                        "$or": [
+                            {"topic": {"$regex": regex_pattern, "$options": "i"}},
+                            {"chapter": {"$regex": regex_pattern, "$options": "i"}},
+                            {"content": {"$regex": regex_pattern, "$options": "i"}},
+                        ]
+                    }
+                    if subject_hint:
+                        regex_filter = {"$and": [mongo_filter, regex_filter]}
+                    cursor = db[KNOWLEDGE_CHUNKS].find(regex_filter).limit(limit * 4)
+                    docs = []
+                    async for d in cursor:
+                        d.pop("_id", None)
+                        docs.append(d)
+                    if docs:
+                        scored = _score_chunks(docs, question, subject_hint, q_tokens, q_lower, limit)
+                        print(f"RAG MONGO REGEX search '{question[:50]}' -> {len(scored)} chunks")
+                        return scored[:limit]
+            except Exception as e:
+                print(f"Mongo regex search failed: {e}")
+            if subject_hint:
+                cursor = db[KNOWLEDGE_CHUNKS].find({"subject": {"$regex": f"^{subject_hint}$", "$options": "i"}}).limit(limit * 2)
+                docs = []
+                async for d in cursor:
+                    d.pop("_id", None)
+                    docs.append(d)
+                if docs:
+                    scored = _score_chunks(docs, question, subject_hint, q_tokens, q_lower, limit)
+                    if scored:
+                        print(f"RAG MONGO SUBJECT search '{question[:50]}' -> {len(scored)} chunks")
+                        return scored[:limit]
+    except Exception as e:
+        print(f"Mongo RAG failed, falling back to file: {e}")
+    return retrieve_knowledge_chunks_sync(question, limit)
 
 
 def match_chapter(question: str, chapter_id: Optional[str] = None):
@@ -294,21 +330,14 @@ def _smalltalk(question: str) -> Optional[str]:
     return None
 
 
-def offline_answer(question: str, chapter: Optional[dict]) -> str:
-    """Fallback when Groq fails - generates ChatGPT-quality answer from RAG chunks directly"""
-    chunks = retrieve_knowledge_chunks(question, 5)
+async def offline_answer(question: str, chapter: Optional[dict]) -> str:
+    chunks = await retrieve_knowledge_chunks(question, 5)
     anchors = retrieve_anchors(question, 5)
-    
-    # If we have chunks, build structured answer like ChatGPT
     if chunks or anchors:
-        # Detect what section/topic is asked
         q_lower = question.lower()
         is_sec2_llp = "sec 2" in q_lower and "llp" in q_lower
         is_sec43 = "sec 43" in q_lower or "section 43" in q_lower
-        
-        # Build answer from best chunk
         best_chunk = chunks[0] if chunks else None
-        
         if is_sec2_llp and best_chunk:
             return f"""Section 2 of the LLP Act, 2008 is not just a list of words — it is the dictionary for the entire law.
 
@@ -330,9 +359,7 @@ Brutal Truth / How ICAI Tests
 If you want, I can break down only the exam-relevant definitions + tricky MCQs + memory hacks, instead of this generic theory.
 
 Relevant Material Used: {best_chunk['topic']} - {best_chunk['chapter']}"""
-        
         if is_sec43:
-            # Find Sec 43 chunk
             sec43_chunk = next((c for c in chunks if "43" in c['content'] or "share capital" in c['content'].lower()), best_chunk)
             if sec43_chunk:
                 return f"""Section 43 of Companies Act, 2013 deals with Kinds of Share Capital - this is your capital structure foundation.
@@ -355,23 +382,17 @@ Example: Company wants to issue equity with differential voting rights - check 2
 Want MCQs on Sec 43 + DVR rules?
 
 Relevant Material Used: {sec43_chunk['topic']} - {sec43_chunk['chapter']}"""
-        
-        # Generic RAG answer builder
         if best_chunk:
-            # Build structured answer from chunk content
             lines = best_chunk['content'].split('. ')
             intro = lines[0] if lines else best_chunk['content'][:200]
             bullets = []
             for line in best_chunk['content'].split('•'):
                 if line.strip() and len(line.strip()) > 20:
                     bullets.append(line.strip().split('.')[0][:120])
-            
             bullet_text = "\n".join([f"• {b[:100]}" for b in bullets[:5]]) if bullets else f"• {best_chunk['content'][:400]}"
-            
             anchor_text = ""
             if anchors:
                 anchor_text = "\n\nAuthoritative Provision:\n" + "\n".join([f"• {a[:150]}" for a in anchors[:2]])
-            
             return f"""{intro}.
 
 What {best_chunk['topic']} Covers
@@ -387,7 +408,6 @@ ICAI doesn't test definitions in isolation - they test application via case stud
 Want me to break down exam-relevant points + MCQs + memory hacks for {best_chunk['topic']}?
 
 Relevant Material Used: {best_chunk['topic']} - {best_chunk['chapter']}"""
-    
     if anchors:
         return ("ICAI Provision\n\n" + "\n".join([f"• {a}" for a in anchors]) +
                 f"\n\nAsk more specifically, e.g. 'Explain {anchors[0].split('—')[0]} with example'")
@@ -418,7 +438,6 @@ def _is_bad_answer(text: str) -> bool:
     return False
 
 
-# Updated models - using current Groq lineup (llama-3.3 is current)
 MODELS_PRIORITY = [
     "llama-3.3-70b-versatile",
     "llama-3.1-70b-versatile", 
@@ -428,7 +447,6 @@ MODELS_PRIORITY = [
     "gemma2-9b-it"
 ]
 
-# NEW SYSTEM PROMPT - as per Claude/ChatGPT feedback - strict RAG, exam-oriented
 SYSTEM_PROMPT = """You are a CA Intermediate tutor. You help students preparing for the CA Intermediate exam (ICAI syllabus) understand concepts, solve problems, and revise using the study modules, RTPs, and PYQs provided to you.
 
 CRITICAL RULES - NEVER BREAK:
@@ -454,7 +472,7 @@ CRITICAL RULES - NEVER BREAK:
 
 9. If AUTHORITATIVE PROVISION ANCHORS are provided, they are 100% CORRECT and must be used verbatim. Never contradict anchors.
 
-10. Keep 400-600 words, not 100, not 2000. ChatGPT depth but CA Inter only. No ** stars in output? Actually use bold via ** but UI will strip stars - so you CAN use **bold** for key terms.
+10. Keep 400-600 words, not 100, not 2000. ChatGPT depth but CA Inter only.
 
 11. Never output internal reasoning, never say "We need to answer" or "We must respond".
 
@@ -472,32 +490,22 @@ async def groq_answer(question: str, chapter: Optional[dict]) -> Optional[str]:
     key = (os.environ.get("GROQ_API_KEY") or "").strip()
     if not key or httpx is None:
         return None
-    
-    # RAG STEP 1-2: Search database, get top relevant chunks
-    knowledge_chunks = retrieve_knowledge_chunks(question, limit=5)
+    knowledge_chunks = await retrieve_knowledge_chunks(question, limit=5)
     anchors = retrieve_anchors(question, limit=3)
-    
     ctx_parts = []
     if chapter:
         ctx_parts.append(f"Current chapter context: {chapter.get('chapterTitle')} ({chapter.get('subject')}).")
-    
-    # RAG STEP 3: Inject into prompt - Relevant Material
     if knowledge_chunks:
         material_text = "\n".join([
             f"[{c['id']}] {c['subject']} - {c['chapter']} - {c['topic']}: {c['content']}"
             for c in knowledge_chunks
         ])
         ctx_parts.append(f"Relevant CA Inter Material (use ONLY this, top 5 retrieved):\n{material_text}")
-    
     if anchors:
         ctx_parts.append(f"AUTHORITATIVE PROVISION ANCHORS (GROUND TRUTH - MUST use verbatim, 100% correct): {' | '.join(anchors)}.")
-    
-    # Add subject guide if chapter matched
     if chapter and chapter.get('subject') in _SUBJECT_GUIDE:
         ctx_parts.append(f"Answer guide for {chapter.get('subject')}: {_SUBJECT_GUIDE[chapter.get('subject')]}")
-    
     ctx = "\n\n".join(ctx_parts) + "\n\n" if ctx_parts else ""
-
     for model in MODELS_PRIORITY:
         try:
             async with httpx.AsyncClient(timeout=35) as client:
@@ -506,7 +514,7 @@ async def groq_answer(question: str, chapter: Optional[dict]) -> Optional[str]:
                     headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
                     json={
                         "model": model,
-                        "temperature": 0.2,  # Low temp for accuracy - as per Claude feedback
+                        "temperature": 0.2,
                         "max_tokens": 1500,
                         "top_p": 0.9,
                         "messages": [
@@ -539,24 +547,18 @@ async def groq_answer(question: str, chapter: Optional[dict]) -> Optional[str]:
 
 @router.post("/ask")
 async def ask(body: AskBody):
-    # Chit-chat
     chit = _smalltalk(body.question)
     if chit:
         return {"answer": chit, "mode": "chitchat", "chapter": None, "rag_chunks": 0}
-    
-    # RAG retrieval
     chapter = match_chapter(body.question, body.chapterId)
-    knowledge_chunks = retrieve_knowledge_chunks(body.question, 5)
+    knowledge_chunks = await retrieve_knowledge_chunks(body.question, 5)
     anchors = retrieve_anchors(body.question, 3)
-    
-    # Groq with RAG
     answer = await groq_answer(body.question, chapter)
     if not answer:
-        answer = offline_answer(body.question, chapter)
+        answer = await offline_answer(body.question, chapter)
         mode = "syllabus-brain-rag"
     else:
         mode = "live-rag"
-    
     return {
         "answer": answer,
         "mode": mode,
@@ -570,8 +572,7 @@ async def ask(body: AskBody):
 
 @router.get("/kb-search")
 async def kb_search(q: str, limit: int = 5):
-    """Debug endpoint to test RAG search"""
-    chunks = retrieve_knowledge_chunks(q, limit)
+    chunks = await retrieve_knowledge_chunks(q, limit)
     anchors = retrieve_anchors(q, 3)
     return {
         "query": q,
@@ -579,3 +580,22 @@ async def kb_search(q: str, limit: int = 5):
         "anchors": anchors,
         "count": len(chunks)
     }
+
+
+@router.get("/kb-stats")
+async def kb_stats_public():
+    try:
+        from db import get_db, KNOWLEDGE_CHUNKS
+        db = get_db()
+        mongo_count = await db[KNOWLEDGE_CHUNKS].count_documents({})
+        by_subject = {}
+        pipeline = [{"$group": {"_id": "$subject", "count": {"$sum": 1}}}]
+        async for doc in db[KNOWLEDGE_CHUNKS].aggregate(pipeline):
+            by_subject[doc["_id"]] = doc["count"]
+        return {
+            "mongo_chunks": mongo_count,
+            "by_subject": by_subject,
+            "status": "MongoDB RAG live" if mongo_count > 100 else "MongoDB empty, using file fallback"
+        }
+    except Exception as e:
+        return {"mongo_chunks": 0, "error": str(e), "status": "MongoDB not available, file fallback"}
