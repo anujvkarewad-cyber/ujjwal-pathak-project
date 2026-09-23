@@ -1,9 +1,16 @@
 """AI Study Assistant backend — POST /api/ai/ask.
 
-v5: MongoDB RAG — 4777 chunks in Atlas, smooth search
-- MongoDB first (text index + regex), fallback to file
-- 11MB file no longer loaded on every request
-- Fast, smooth, free (Atlas free tier)
+v6: ICAI ANSWER FORMAT ENGINE (on top of the v5 MongoDB RAG)
+- Answers are rendered in the skeleton an ICAI examiner expects for that
+  question type (theory / practical / distinguish / case-study) instead of
+  generic chatbot prose.
+- The old "tutor explainer" ending ("Want me to break down...?") is banned.
+  ICAI answers end with a stated Conclusion.
+- Tiered grounding: full / partial / general. The assistant now always
+  answers - it no longer refuses when retrieval is thin - while still being
+  forbidden from guessing section numbers.
+- Conversation memory: follow-ups like "explain more" now work.
+- Kept from v5: MongoDB Atlas RAG (4777 chunks), file fallback, subject hints.
 """
 
 import json
@@ -44,10 +51,20 @@ def _load_catalog() -> list:
     return _CHAPTERS
 
 
+class Turn(BaseModel):
+    """One earlier message in the conversation."""
+    role: str = Field(default="user")      # "user" or "assistant"
+    text: str = Field(default="", max_length=6000)
+
+
 class AskBody(BaseModel):
     studentId: str = Field(min_length=1, max_length=64)
     question: str = Field(min_length=1, max_length=2000)
     chapterId: Optional[str] = None
+    # Earlier turns, oldest first. Powers follow-ups like "explain more",
+    # "give an example", "what about for a private company?". Optional so old
+    # app versions keep working.
+    history: Optional[List[Turn]] = None
 
 
 _STOP = {"the", "a", "an", "is", "are", "was", "were", "of", "in", "on", "for", "and",
@@ -301,7 +318,318 @@ def match_chapter(question: str, chapter_id: Optional[str] = None):
     return best if best_score >= threshold else None
 
 
-_SUBJECT_GUIDE = {
+# =====================================================================
+# ICAI ANSWER FORMAT ENGINE (v6)
+# ---------------------------------------------------------------------
+# Student complaint: "answers are not as per ICAI format".
+# Root cause: the prompt asked for a friendly tutor explanation that ended
+# with a sales CTA. ICAI answers have a fixed presentation per question type:
+#
+#   Theory        -> Provision -> Explanation -> Conclusion
+#   Practical     -> Assumptions -> Working Notes -> Statement -> Final Answer
+#   Distinguish   -> two-column table on exam-relevant bases
+#   Case study    -> Provisions Applicable -> Application to facts -> Conclusion
+#
+# Every answer is now rendered in one of those four skeletons.
+# =====================================================================
+
+MODE_THEORY = "theory"
+MODE_PRACTICAL = "practical"
+MODE_DISTINGUISH = "distinguish"
+MODE_CASE_STUDY = "case_study"
+
+_PRACTICAL_CUES = (
+    "compute", "calculate", "solve", "prepare", "find the", "amount of",
+    "value of", "working note", "cost sheet", "valuation", "depreciat",
+    "closing stock", "trial balance", "gross profit", "net profit",
+    "reconciliation", "statement of profit", "statement of cost",
+    "apportion", "reapportion", "marginal cost", "break even", "breakeven",
+    "npv", "irr", "payback", "wacc", "eps", "how much", "what is the cost",
+)
+_DISTINGUISH_CUES = (
+    "distinguish", "differentiate", "difference between", "compare",
+    "versus", "v/s", " vs ", "tabulate",
+)
+_CASESTUDY_CUES = (
+    "in the given case", "advise", "comment whether", "is he liable",
+    "are they liable", "is the company liable", "whether the company",
+    "state with reasons", "examine whether", "discuss the validity",
+    "case study", "ltd.", "limited,", "pvt", "given the following facts",
+)
+
+
+def detect_answer_mode(question: str) -> str:
+    """Classify the question so the answer gets the right ICAI skeleton."""
+    q = " " + (question or "").lower() + " "
+    if any(c in q for c in _DISTINGUISH_CUES):
+        return MODE_DISTINGUISH
+    if any(c in q for c in _PRACTICAL_CUES):
+        return MODE_PRACTICAL
+    if any(c in q for c in _CASESTUDY_CUES):
+        return MODE_CASE_STUDY
+    return MODE_THEORY
+
+
+# -------- per-paper presentation rules (how ICAI wants this paper written) --
+ICAI_PAPER_FORMAT = {
+    "Accounts": (
+        "Applicable AS / Ind AS / Schedule III. For every adjustment show the "
+        "effect on Profit and on Balance Sheet. Numericals need numbered Working "
+        "Notes. Journal entries in the standard Dr/Cr format with narration."
+    ),
+    "Law": (
+        "State the exact section number and Act first, then the conditions or "
+        "thresholds, then the consequence/penalty. For case studies finish with "
+        "an explicit Conclusion naming the person/company and liability. "
+        "Never paraphrase a section number from memory."
+    ),
+    "Taxation": (
+        "Name the head of income / nature of supply first, then the computation "
+        "in a statement, then the tax effect. State Previous Year and Assessment "
+        "Year. Quote the exact section or GST section/rule."
+    ),
+    "Costing": (
+        "Lead with the method and its purpose, then a clearly titled statement "
+        "(e.g. 'Statement of Cost and Profit'), then numbered Working Notes for "
+        "every apportionment. Show the basis of apportionment explicitly."
+    ),
+    "Audit": (
+        "Cite the SA number and the section (e.g. Section 143(3)). Structure as "
+        "Requirement of SA -> Audit procedure to be performed -> Reporting impact. "
+        "Use the words ICAI expects: 'the auditor should', 'shall report'."
+    ),
+    "FM": (
+        "State the concept and the formula, then the assumption, then the "
+        "decision rule (accept/reject, higher/lower is better), then compute in "
+        "a statement with Working Notes."
+    ),
+    "SM": (
+        "Name the framework explicitly (SWOT / PESTEL / Porter / value chain), "
+        "apply each element to the given organisation, then give a recommendation."
+    ),
+}
+
+
+_MODE_SKELETON = {
+    MODE_THEORY: """Provision
+State the exact section / SA / AS / Ind AS and what it provides. If the
+material does not give the section number, write the principle without a
+number - NEVER guess one.
+
+Explanation
+Point-wise explanation with sub-points and bolded key terms. One idea per
+line. No long unbroken paragraphs.
+
+Conclusion
+Apply the provision to what the student asked and state the conclusion in
+one or two clear lines, starting with the word "Conclusion:".""",
+
+    MODE_PRACTICAL: """Assumptions
+Only if the question is silent on something you must assume. If nothing is
+assumed, skip this block entirely.
+
+Working Notes
+Numbered: Working Note 1, Working Note 2 ... Every figure used in the final
+statement must be traceable to a working note. Show the basis of every
+apportionment.
+
+Statement
+A properly titled statement, e.g. "Statement showing Computation of
+<what> as on <date>", in Particulars / Amount (Rs) form. Amounts aligned.
+
+Final Answer
+The answer in bold with the unit stated (Rs / Rs lakhs / %). A reader must
+be able to find the answer without re-reading the workings.""",
+
+    MODE_DISTINGUISH: """Open with one line naming both items being distinguished.
+
+Then a single table only, no prose paragraphs:
+
+| Basis of Difference | <First item> | <Second item> |
+|---|---|---|
+| ... | ... | ... |
+
+Use 4 to 6 rows, and only bases that ICAI actually tests. Each cell is a
+short phrase, not a sentence. No conclusion line is needed for a pure
+"distinguish between" answer.""",
+
+    MODE_CASE_STUDY: """Provisions Applicable
+State the exact section / SA / AS and its requirement.
+
+Application to the Given Facts
+Apply it to the facts of the question, point by point. Name the parties.
+
+Conclusion
+Start with "Conclusion:" and answer the specific question asked (liable /
+not liable, valid / void, allowed / disallowed). Two sentences maximum.""",
+}
+
+_BANNED = [
+    "Want me to", "want me to break down", "Brutal Truth", "Let me know if",
+    "Shall I", "Would you like me to", "I can also", "Here is your answer",
+    "I hope this helps", "Feel free to ask", "Great question",
+    "As an AI", "I think", "In my opinion",
+]
+
+
+# =====================================================================
+# TIERED GROUNDING
+# ---------------------------------------------------------------------
+# The old rule was "answer ONLY from the provided material, else say Not
+# found". Where retrieval is thin that silently produces refusals - which is
+# why answers felt unlike ChatGPT. But simply dropping the rule would let the
+# model invent section numbers, which is worse for a CA student.
+#
+# So: grade the retrieved context, then set the rules to match.
+#
+#   full     >= 3 solid chunks  -> answer strictly from material, cite it
+#   partial  1-2 chunks         -> material is the backbone, may add standard
+#                                  syllabus knowledge, marked as unsourced
+#   general  no usable chunks   -> answer from CA Inter knowledge, opened with
+#                                  a clear "not module-verified" note, and
+#                                  forbidden from guessing section numbers
+# =====================================================================
+
+TIER_FULL = "full"
+TIER_PARTIAL = "partial"
+TIER_GENERAL = "general"
+
+
+def assess_grounding(chunks: list, anchors: list) -> str:
+    """Grade how well the retrieved material covers the question."""
+    solid = 0
+    for c in chunks or []:
+        if len(((c or {}).get("content") or "").strip()) >= 200:
+            solid += 1
+    if anchors:
+        solid += len(anchors)
+    if solid >= 3:
+        return TIER_FULL
+    if solid >= 1:
+        return TIER_PARTIAL
+    return TIER_GENERAL
+
+
+_TIER_RULES = {
+    TIER_FULL: """HOW MUCH YOU MAY RELY ON THE MATERIAL: FULL
+The reference material below is sufficient. Answer from it. Cite the section,
+SA, AS or Ind AS number when it appears in the material. Do not add outside
+provisions - there is no need, the material covers this.""",
+
+    TIER_PARTIAL: """HOW MUCH YOU MAY RELY ON THE MATERIAL: PARTIAL
+The material below covers the question only partly. Use it as the backbone and
+cite whatever it gives you. Where it runs out, complete the answer from
+standard CA Intermediate syllabus knowledge. End the affected part with
+"(standard syllabus point - verify with your module)" so the student knows
+which lines are not sourced from the extract. Never leave the answer
+half-finished just because the extract ran out.""",
+
+    TIER_GENERAL: """HOW MUCH YOU MAY RELY ON THE MATERIAL: NONE
+The material below does not cover this question. Do NOT refuse and do NOT say
+"not found in provided material" - that is unhelpful for a student who needs to
+understand the topic today.
+
+Instead: open with exactly this line on its own -
+"Note: not verified against your module extract - this is standard CA
+Intermediate knowledge. Cross-check the provision number in your study
+material."
+
+Then answer the question fully, in the ICAI format required below, from your CA
+Intermediate knowledge. You MUST obey these two safety rules:
+  - Do not state a specific section / SA / AS / Ind AS NUMBER unless you are
+    certain of it. If unsure of the number, describe the provision and say
+    "see the relevant chapter in your module for the exact section number".
+  - Do not invent case names, dates, rates or amendment years.
+Getting the concept right is what matters; a wrong section number is what
+costs marks.""",
+}
+
+
+def _tier_rule(tier: str) -> str:
+    return _TIER_RULES.get(tier, _TIER_RULES[TIER_PARTIAL])
+
+
+def build_system_prompt(mode: str, subject: str = "", tier: str = TIER_PARTIAL,
+                        marks: int = 0) -> str:
+    """Compose the ICAI answer-writer prompt for this question type + tier."""
+    skeleton = _MODE_SKELETON.get(mode, _MODE_SKELETON[MODE_THEORY])
+
+    paper = ""
+    if subject and subject in ICAI_PAPER_FORMAT:
+        paper = (
+            "\nPRESENTATION RULES FOR THIS PAPER (%s):\n%s\n"
+            % (subject, ICAI_PAPER_FORMAT[subject])
+        )
+
+    if marks:
+        depth = (
+            "This is worth about %d marks. Write roughly %d lines of substance. "
+            "Do not pad to reach it and do not write a paragraph where a line "
+            "will do." % (marks, max(6, marks * 2))
+        )
+    else:
+        depth = (
+            "Length follows the marks weightage: a short question gets 4-6 tight "
+            "lines per heading, a long one gets the full treatment. Never pad, "
+            "never truncate a working."
+        )
+
+    if mode in (MODE_THEORY, MODE_CASE_STUDY):
+        example_rule = (
+            "\n9. Where a one-line illustration makes the provision land, add it "
+            "as a short \"Illustration:\" line. One line only."
+        )
+    elif mode == MODE_PRACTICAL:
+        example_rule = (
+            "\n9. Show every figure. A reader must be able to reproduce your "
+            "number without asking a question."
+        )
+    else:
+        example_rule = ""
+
+    return """You are writing a CA Intermediate exam answer for a student who will
+be graded on it. Write the way a rank-holder writes in the answer-sheet:
+precise, complete, and laid out so an examiner can award marks by scanning the
+headings.
+
+There is no conversation here. No greeting, no sign-off, no chit-chat.
+
+%s
+
+HARD RULES - breaking any of these makes the answer unusable:
+1. Never invent a section number, SA number, AS/Ind AS number, case name, date
+   or rate. A wrong provision costs more marks than a missing one.
+2. Authoritative provision anchors below are ground truth. Use them verbatim
+   and never contradict them.
+3. NEVER end with a question, an offer, or an upsell. Banned: "Want me to",
+   "Shall I", "Let me know", "Would you like". An ICAI answer ends with the
+   conclusion or the final answer.
+4. No emojis, no "Brutal Truth", no "Great question", no motivational filler.
+5. No "I think", "in my opinion", "as an AI". Write objectively, third person.
+6. Keep every mark-relevant heading. An examiner must be able to award marks
+   from the headings alone.
+7. Explain WHY the provision exists or HOW it is applied - not just what it
+   says. A student who understands the reason can answer the twisted version
+   ICAI actually sets.
+8. Where ICAI commonly traps students on this topic, add one line starting
+   "Examiner's angle:" stating the trap. One line, only if genuinely relevant.
+%s
+
+DEPTH
+%s
+
+%s
+REQUIRED SKELETON FOR THIS QUESTION TYPE:
+%s
+
+Language: English only. Use Rs for currency. Bold key terms with **double
+stars**, never inside a heading.""" % (
+        _tier_rule(tier), example_rule, depth, paper, skeleton,
+    )
+
+
+# kept for older call sites
+_ORIG_SUBJECT_GUIDE = {
     "Accounts": "structure: applicable AS/Ind AS, recognition, measurement, presentation & disclosure.",
     "Law": "answer with exact section number, conditions/thresholds, consequence.",
     "Taxation": "step by step: head/supply type, applicability, computation sequence.",
@@ -330,100 +658,199 @@ def _smalltalk(question: str) -> Optional[str]:
     return None
 
 
-async def offline_answer(question: str, chapter: Optional[dict]) -> str:
+async def offline_answer(question: str, chapter: Optional[dict],
+                         mode: Optional[str] = None,
+                         tier: Optional[str] = None) -> str:
+    """Fallback when Groq is unavailable.
+
+    v6: renders the SAME ICAI skeleton as the live path, built from the
+    retrieved module chunks. The old version returned hardcoded paragraphs for
+    two topics and generic filler ("Brutal Truth / How ICAI Tests") for
+    everything else, and always ended with an offer. That filler is gone.
+    """
+    if mode is None:
+        mode = detect_answer_mode(question)
+
     chunks = await retrieve_knowledge_chunks(question, 5)
     anchors = retrieve_anchors(question, 5)
-    if chunks or anchors:
-        q_lower = question.lower()
-        is_sec2_llp = "sec 2" in q_lower and "llp" in q_lower
-        is_sec43 = "sec 43" in q_lower or "section 43" in q_lower
-        best_chunk = chunks[0] if chunks else None
-        if is_sec2_llp and best_chunk:
-            return f"""Section 2 of the LLP Act, 2008 is not just a list of words — it is the dictionary for the entire law.
+    if tier is None:
+        tier = assess_grounding(chunks, anchors)
 
-What Section 2 Covers
-• Limited Liability Partnership (Clause n) - A partnership formed and registered under this Act. This is the core - separate legal entity, limited liability.
-• Designated Partner - Any partner designated as such pursuant to Section 7. Minimum 2 DPs, at least one resident in India.
-• Body Corporate - Includes a company, an LLP, and an LLP incorporated outside India. Excludes corporation sole, cooperative society.
-• Business - Includes every trade, profession, service, and occupation. Very wide definition.
-• LLP Agreement - Written agreement between partners or between LLP and partners determining mutual rights and duties.
+    topic = ""
+    if chapter:
+        topic = chapter.get("chapterTitle") or ""
+    if chunks:
+        topic = chunks[0].get("topic") or topic
 
-Important Exam Insight
-Don't mug entire section blindly - ICAI rarely asks direct definition questions. They test the application. Focus on definitions repeatedly used in other sections: LLP, partner, designated partner, LLP agreement, body corporate.
+    if not chunks and not anchors:
+        return _no_material_answer(question, topic)
 
-Brutal Truth / How ICAI Tests
-• Designated Partner -> Section 7 & 8: Minimum 2 DPs, one resident? Case study on DP vacancy, resignation, penalty for non-compliance.
-• LLP Agreement -> Section 23: Is it mandatory? Consequences of non-filing? Rights/duties derived from Agreement.
-• Body Corporate -> Section 3: Distinguish LLP from Company? Eligibility to be a partner.
+    best = chunks[0] if chunks else None
+    chapter_name = (best.get("chapter") if best else "") or ""
+    subject = ""
+    if chapter:
+        subject = chapter.get("subject") or ""
+    if not subject and best:
+        subject = best.get("subject") or ""
 
-If you want, I can break down only the exam-relevant definitions + tricky MCQs + memory hacks, instead of this generic theory.
+    provision = "\n".join("- " + a.strip() for a in anchors[:3]) if anchors else ""
 
-Relevant Material Used: {best_chunk['topic']} - {best_chunk['chapter']}"""
-        if is_sec43:
-            sec43_chunk = next((c for c in chunks if "43" in c['content'] or "share capital" in c['content'].lower()), best_chunk)
-            if sec43_chunk:
-                return f"""Section 43 of Companies Act, 2013 deals with Kinds of Share Capital - this is your capital structure foundation.
+    points: list = []
+    for c in chunks[:3]:
+        points.extend(_chunk_points(c, limit=4))
+    seen = set()
+    deduped = []
+    for p in points:
+        key = p[:60].lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        deduped.append(p)
+    points = deduped[:7]
 
-What Section 43 Covers
-• Equity Share Capital - With voting rights, or with differential rights as to dividend, voting, etc. All share capital which is NOT preference share capital.
-• Preference Share Capital - Carries preferential right on dividend (fixed amount/rate) and repayment of capital on winding up. Has priority over equity.
-• For private companies, memorandum or articles may permit other kinds.
+    source_line = ""
+    if best:
+        bits = [b for b in (best.get("topic"), chapter_name) if b]
+        if bits:
+            source_line = "\n\n[Source: ICAI module extract \u2014 " + " / ".join(bits) + "]"
 
-Important Exam Insight
-Don't confuse with Section 43A (old). Focus on differential voting rights conditions - Rule 4: 26% voting power limit, 3 years distributable profits track record, no default in filing annual accounts/returns. ICAI loves asking conditions for DVR.
+    # ---------------- DISTINGUISH ----------------
+    if mode == MODE_DISTINGUISH:
+        if points:
+            rows = "\n".join("| " + p.rstrip(".") + " |  |  |" for p in points[:6])
+            body = "| Basis of Difference | | |\n|---|---|---|\n" + rows
+        else:
+            body = "\n".join("- " + p for p in points)
+        return "The two items to be distinguished are covered below.\n\n" + body + source_line
 
-Brutal Truth / How ICAI Tests
-• Distinguish equity vs preference - rights, risk, return.
-• DVR conditions - 4 conditions + disclosure in Board Report.
-• Can private company have other kinds? Yes, if MOA/AOA permits.
+    # ---------------- PRACTICAL ----------------
+    if mode == MODE_PRACTICAL:
+        method_pts = "\n".join("- " + p for p in points[:5])
+        return (
+            "Assumptions\nNone stated in the question.\n\n"
+            "Working Notes\n"
+            "The offline module extract does not hold the figures for this "
+            "question, so the computation cannot be completed here. The method "
+            "and treatment to apply are:\n"
+            + (method_pts if method_pts else "- Not found in the provided material.") + "\n\n"
+            "Statement\nSet out your statement with the title the question asks for "
+            "(for example \"Statement showing Computation of <what>\"), in "
+            "Particulars / Amount (Rs) form, using the method above.\n\n"
+            "Final Answer\nState the figure with its unit once the statement is complete."
+            + source_line
+        )
 
-Example: Company wants to issue equity with differential voting rights - check 26% limit, 3-year profit history, no default, approval via postal ballot, disclosure.
+    # ---------------- CASE STUDY ----------------
+    if mode == MODE_CASE_STUDY:
+        prov_block = provision if provision else "Not found in the provided material."
+        expl = "\n".join("- " + p for p in points[:5])
+        return (
+            "Provisions Applicable\n" + prov_block + "\n\n"
+            "Application to the Given Facts\n" + expl + "\n\n"
+            "Conclusion\nApply the provisions above to the facts of your question "
+            "and state the outcome (liable / not liable, valid / void, allowed / "
+            "disallowed). A case-study conclusion needs the specific facts of your "
+            "question."
+            + source_line
+        )
 
-Want MCQs on Sec 43 + DVR rules?
+    # ---------------- THEORY (default) ----------------
+    prov_block = provision if provision else (
+        "The retrieved module extract for %s provides as follows:" % (topic or "this topic")
+    )
+    expl = "\n".join("- " + p for p in points[:6])
 
-Relevant Material Used: {sec43_chunk['topic']} - {sec43_chunk['chapter']}"""
-        if best_chunk:
-            lines = best_chunk['content'].split('. ')
-            intro = lines[0] if lines else best_chunk['content'][:200]
-            bullets = []
-            for line in best_chunk['content'].split('•'):
-                if line.strip() and len(line.strip()) > 20:
-                    bullets.append(line.strip().split('.')[0][:120])
-            bullet_text = "\n".join([f"• {b[:100]}" for b in bullets[:5]]) if bullets else f"• {best_chunk['content'][:400]}"
-            anchor_text = ""
-            if anchors:
-                anchor_text = "\n\nAuthoritative Provision:\n" + "\n".join([f"• {a[:150]}" for a in anchors[:2]])
-            return f"""{intro}.
+    concl = ""
+    anchor_blob = " ".join(anchors).lower()
+    for p in reversed(points):
+        key = p[:45].lower()
+        if key and key not in anchor_blob:
+            concl = p
+            break
+    if not concl and points:
+        concl = points[-1]
 
-What {best_chunk['topic']} Covers
-{bullet_text}
+    return (
+        "Provision\n" + prov_block + "\n\n"
+        "Explanation\n" + expl + "\n\n"
+        "Conclusion\n" + (concl if concl else "Not found in the provided material.")
+        + source_line
+    )
 
-Important Exam Insight
-Focus on exam-relevant points from this topic. Don't mug blindly - understand application. ICAI tests how provisions link to each other.
 
-Brutal Truth / How ICAI Tests
-ICAI doesn't test definitions in isolation - they test application via case studies. Link {best_chunk['topic']} to related sections.
-{anchor_text}
+def _chunk_points(chunk: dict, limit: int = 6) -> list:
+    """Pull clean exam-usable points out of a retrieved module chunk."""
+    text = (chunk.get("content") or "").strip()
+    if not text:
+        return []
+    raw = re.split(r"(?<=[.;])\s+|\n+|\u2022", text)
+    out = []
+    for s in raw:
+        s = s.strip(" -\t")
+        if len(s) < 25:
+            continue
+        out.append(s if s.endswith(".") else s + ".")
+        if len(out) >= limit:
+            break
+    return out
 
-Want me to break down exam-relevant points + MCQs + memory hacks for {best_chunk['topic']}?
 
-Relevant Material Used: {best_chunk['topic']} - {best_chunk['chapter']}"""
-    if anchors:
-        return ("ICAI Provision\n\n" + "\n".join([f"• {a}" for a in anchors]) +
-                f"\n\nAsk more specifically, e.g. 'Explain {anchors[0].split('—')[0]} with example'")
-    return ("I cover full CA Inter syllabus: Accounts, Law, Taxation, Costing, "
-            "Audit, FM and SM (94 chapters). Ask about a specific topic.")
+def _no_material_answer(question: str, topic: str) -> str:
+    """Last resort: nothing retrieved AND the live model is unavailable."""
+    where = " on %s" % topic if topic else ""
+    return (
+        "Note: not verified against your module extract - this is standard CA "
+        "Intermediate knowledge. Cross-check the provision number in your study "
+        "material.\n\n"
+        "Provision\nThe offline notes did not retrieve a module extract" + where +
+        ", so the exact section / SA number could not be confirmed.\n\n"
+        "Explanation\nThe assistant is currently running without the live AI "
+        "service, which is what produces full worked answers. What can be "
+        "confirmed offline is the approach: identify the chapter, state the "
+        "governing provision, apply each condition to the facts, then conclude.\n\n"
+        "Conclusion\nThis question needs the live AI service for a complete "
+        "answer. If it stays unavailable, work through the chapter in your module "
+        "using the approach above, or rephrase using the exact chapter or "
+        "provision name (\"Section 43\", \"AS 10\", \"SA 700\")."
+    )
+
+
+def _has_emoji(text: str) -> bool:
+    for ch in text:
+        o = ord(ch)
+        if 0x1F300 <= o <= 0x1FAFF or 0x2600 <= o <= 0x27BF or 0x2190 <= o <= 0x21FF:
+            return True
+    return False
 
 
 def _is_bad_answer(text: str) -> bool:
+    """Reject answers that break ICAI presentation rules."""
     if not text or len(text) < 50:
         return True
+
     low = text.lower()
-    leak_markers = ["we need to answer:", "we must respond within ca inter", "but the question:", "we should answer", "as an ai"]
-    first = low[:600]
-    for m in leak_markers:
-        if m in first and ("we need" in m or "we must" in m or "but the question" in m):
+
+    # model leaked its own reasoning
+    for m in ("we need to answer:", "we must respond within ca inter",
+              "but the question:", "we should answer", "as an ai"):
+        if m in low[:600]:
             return True
+
+    # ICAI answers never end with an offer or a question back to the student
+    tail = low[-300:]
+    for banned in ("want me to", "shall i ", "let me know", "would you like",
+                   "brutal truth", "i can also", "feel free to ask",
+                   "here is your answer", "i hope this helps"):
+        if banned in tail:
+            return True
+    if text.rstrip().endswith("?"):
+        return True
+
+    # no emojis in an exam answer
+    if _has_emoji(text):
+        return True
+
+    # repetition guards
     if low.count("llp agreement") > 8:
         return True
     if low.count("includes the terms of the partnership") > 2:
@@ -438,60 +865,39 @@ def _is_bad_answer(text: str) -> bool:
     return False
 
 
+# Groq lineup, strongest first. Falls through on failure or a rejected answer.
 MODELS_PRIORITY = [
     "llama-3.3-70b-versatile",
-    "llama-3.1-70b-versatile", 
-    "llama-3.1-8b-instant",
-    "mixtral-8x7b-32768",
+    "llama-3.1-70b-versatile",
     "qwen-2.5-32b",
-    "gemma2-9b-it"
+    "llama-3.1-8b-instant",
+    "gemma2-9b-it",
+    "mixtral-8x7b-32768",
 ]
 
-SYSTEM_PROMPT = """You are a CA Intermediate tutor. You help students preparing for the CA Intermediate exam (ICAI syllabus) understand concepts, solve problems, and revise using the study modules, RTPs, and PYQs provided to you.
-
-CRITICAL RULES - NEVER BREAK:
-
-1. GROUND YOUR ANSWER ONLY in the provided reference material (Relevant CA Inter Material + Authoritative Anchors). If retrieved material doesn't cover question, say "Not found in provided material" instead of guessing — NEVER invent sections, case law, provisions.
-
-2. NEVER fabricate section numbers, case names, or figures. If unsure, say "not found in provided material" rather than guessing — CA exams penalize wrong provisions badly.
-
-3. Answer strictly as per ICAI exam style:
-   - Start with direct 1-2 line answer
-   - Then explain with steps/working (especially for numericals in Costing, Accounts, Tax, Law)
-   - Then end with short "exam tip" if relevant (common mistakes, marks-weightage, how ICAI phrases this in PYQs)
-
-4. Structure for theory: point-wise, with headings/sub-points, not one giant paragraph. Use headings and bullet points. Mention section number if present in reference material.
-
-5. For numericals: ALWAYS show working/calculation, assumptions first, then computation, working notes, final answer. Never just final answer.
-
-6. For questions spanning multiple provisions, cite section/standard number if present in reference material.
-
-7. Keep tone clear and encouraging but precise — exam prep, be precise over friendly. Like ChatGPT: simple first, then exam depth.
-
-8. If student question ambiguous (which subject, which chapter), ask ONE clarifying question before answering.
-
-9. If AUTHORITATIVE PROVISION ANCHORS are provided, they are 100% CORRECT and must be used verbatim. Never contradict anchors.
-
-10. Keep 400-600 words, not 100, not 2000. ChatGPT depth but CA Inter only.
-
-11. Never output internal reasoning, never say "We need to answer" or "We must respond".
-
-FINAL OUTPUT FORMAT (MANDATORY):
-- Simple intro 1-2 lines in plain English (what this section really is)
-- What Section X Covers / Key Concepts (bullets with bold terms)
-- Important Exam Insight / How ICAI Tests (what NOT to mug, traps)
-- If numerical: Assumptions -> Computation -> Working Notes -> Answer
-- End with CTA: "Want me to break down exam-relevant points + MCQs + memory hacks?"
-
-Language: English only.
-"""
-
-async def groq_answer(question: str, chapter: Optional[dict]) -> Optional[str]:
+async def groq_answer(question: str, chapter: Optional[dict],
+                      mode: str = MODE_THEORY,
+                      history: Optional[list] = None) -> Optional[str]:
     key = (os.environ.get("GROQ_API_KEY") or "").strip()
     if not key or httpx is None:
         return None
-    knowledge_chunks = await retrieve_knowledge_chunks(question, limit=5)
-    anchors = retrieve_anchors(question, limit=3)
+    # For a follow-up, search with the follow-up text AND the previous user
+    # turn, so "explain more" still retrieves the right chapter.
+    search_text = question
+    if history:
+        prev_user = ""
+        for t in reversed(history):
+            role = t.get("role") if isinstance(t, dict) else getattr(t, "role", "")
+            text = t.get("text") if isinstance(t, dict) else getattr(t, "text", "")
+            if role == "user" and text:
+                prev_user = text
+                break
+        if prev_user and len(question.split()) <= 8:
+            search_text = prev_user + " " + question
+
+    knowledge_chunks = await retrieve_knowledge_chunks(search_text, limit=5)
+    anchors = retrieve_anchors(search_text, limit=3)
+    tier = assess_grounding(knowledge_chunks, anchors)
     ctx_parts = []
     if chapter:
         ctx_parts.append(f"Current chapter context: {chapter.get('chapterTitle')} ({chapter.get('subject')}).")
@@ -503,9 +909,39 @@ async def groq_answer(question: str, chapter: Optional[dict]) -> Optional[str]:
         ctx_parts.append(f"Relevant CA Inter Material (use ONLY this, top 5 retrieved):\n{material_text}")
     if anchors:
         ctx_parts.append(f"AUTHORITATIVE PROVISION ANCHORS (GROUND TRUTH - MUST use verbatim, 100% correct): {' | '.join(anchors)}.")
-    if chapter and chapter.get('subject') in _SUBJECT_GUIDE:
-        ctx_parts.append(f"Answer guide for {chapter.get('subject')}: {_SUBJECT_GUIDE[chapter.get('subject')]}")
+    subject = (chapter or {}).get('subject') or ''
+    if subject:
+        ctx_parts.append(
+            f"Paper: {subject}. Presentation rules for this paper: "
+            f"{ICAI_PAPER_FORMAT.get(subject, '')}"
+        )
     ctx = "\n\n".join(ctx_parts) + "\n\n" if ctx_parts else ""
+
+    system_prompt = build_system_prompt(mode, subject, tier)
+
+    # ---- conversation memory: replay the last few turns (ChatGPT-style) ----
+    messages = [{"role": "system", "content": system_prompt}]
+    replayed = 0
+    if history:
+        for t in history[-8:]:
+            role = t.get("role") if isinstance(t, dict) else getattr(t, "role", "")
+            text = t.get("text") if isinstance(t, dict) else getattr(t, "text", "")
+            if role not in ("user", "assistant") or not (text or "").strip():
+                continue
+            messages.append({"role": role, "content": text.strip()[:6000]})
+            replayed += 1
+
+    messages.append({"role": "user", "content": ctx + (
+        f"Question type detected: {mode}.\n"
+        f"Grounding tier: {tier}.\n"
+        + ("This is a follow-up in an ongoing conversation - continue from the "
+           "previous turns, do not repeat what you already said.\n" if replayed else "")
+        + f"Question: {question}\n\n"
+        "Write the answer in the required ICAI skeleton for this question type, "
+        "following the grounding rules given in your instructions. End with the "
+        "conclusion or final answer - never with an offer or a question back to "
+        "the student."
+    )})
     for model in MODELS_PRIORITY:
         try:
             async with httpx.AsyncClient(timeout=35) as client:
@@ -515,12 +951,9 @@ async def groq_answer(question: str, chapter: Optional[dict]) -> Optional[str]:
                     json={
                         "model": model,
                         "temperature": 0.2,
-                        "max_tokens": 1500,
+                        "max_tokens": 2048,
                         "top_p": 0.9,
-                        "messages": [
-                            {"role": "system", "content": SYSTEM_PROMPT},
-                            {"role": "user", "content": ctx + f"User Question: {question}\n\nInstructions: Answer ONLY using the above material. Keep exam-oriented. Use headings and bullet points. Mention section number. If not found, say 'Not available in provided material'."},
-                        ],
+                        "messages": messages,
                     },
                 )
             if r.status_code != 200:
@@ -553,20 +986,42 @@ async def ask(body: AskBody):
     chapter = match_chapter(body.question, body.chapterId)
     knowledge_chunks = await retrieve_knowledge_chunks(body.question, 5)
     anchors = retrieve_anchors(body.question, 3)
-    answer = await groq_answer(body.question, chapter)
+
+    # ICAI answer mode for this question type + how well the material covers it
+    ans_mode = detect_answer_mode(body.question)
+    tier = assess_grounding(knowledge_chunks, anchors)
+
+    answer = await groq_answer(body.question, chapter, ans_mode, body.history)
     if not answer:
-        answer = await offline_answer(body.question, chapter)
+        answer = await offline_answer(body.question, chapter, ans_mode, tier)
         mode = "syllabus-brain-rag"
     else:
         mode = "live-rag"
     return {
         "answer": answer,
         "mode": mode,
+        "answerFormat": ans_mode,
+        "grounding": tier,
         "chapter": {"id": chapter.get("chapterId"), "title": chapter.get("chapterTitle"),
                     "subject": chapter.get("subject")} if chapter else None,
         "rag_chunks_used": len(knowledge_chunks),
         "anchors_used": len(anchors),
         "retrieved_topics": [c["topic"] for c in knowledge_chunks[:3]]
+    }
+
+
+@router.get("/format-preview")
+async def format_preview(q: str):
+    """Debug: which ICAI skeleton will this question get?"""
+    mode = detect_answer_mode(q)
+    chapter = match_chapter(q, None)
+    subject = (chapter or {}).get("subject") or ""
+    return {
+        "question": q,
+        "answerFormat": mode,
+        "subject": subject,
+        "skeleton": _MODE_SKELETON.get(mode, ""),
+        "paperRules": ICAI_PAPER_FORMAT.get(subject, ""),
     }
 
 
