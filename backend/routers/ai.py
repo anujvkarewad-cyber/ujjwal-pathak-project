@@ -555,9 +555,20 @@ State the exact section / SA / AS and its requirement.
 Application to the Given Facts
 Apply it to the facts of the question, point by point. Name the parties.
 
+What Was Done Correctly
+List every step in the facts that DID comply, and the provision it satisfied.
+If genuinely nothing complied, write "None of the required steps was carried
+out" - but check before you write it. Most ICAI case studies put one right
+step in on purpose, and it is a mark.
+
+What Was Not Done Correctly
+List every step that did not comply, and the provision it breached.
+
 Conclusion
-Start with "Conclusion:" and answer the specific question asked (liable /
-not liable, valid / void, allowed / disallowed). Two sentences maximum.""",
+Start with "Conclusion:" and answer the specific question asked. Where some
+steps complied and some did not the answer is "Partially proper" - not
+"Improper". Reserve "Improper" for facts where nothing required was done.
+Two sentences maximum.""",
 }
 
 _BANNED = [
@@ -705,6 +716,23 @@ Never cite an SA number that is not on that list, and never bend a listed SA
 to a concept it does not cover. If the concept is right but no listed SA fits
 it, name the concept in words without a number. "SA 500" on a fraud question
 or "SA 315" on a reporting question loses more marks than citing nothing.
+
+Pairs students and careless answers confuse - get the side right:
+  SA 505 External Confirmations  vs  SA 520 Analytical Procedures
+      Confirmations sent to third parties = 505. Comparing ratios, trends or
+      relationships = 520. A question about confirmation replies that are not
+      received is SA 505, never SA 520.
+  SA 315 Assessing the risk      vs  SA 330 Responding to the risk
+      Understanding the entity and identifying risks = 315. Tests of controls
+      and substantive procedures performed in response = 330.
+  SA 240 Fraud                   vs  SA 250 Laws and regulations
+  SA 500 Audit evidence generally vs  SA 501 Specific items (inventory,
+      litigation, segment information) - use 501 when the question names one
+      of those three, otherwise 500.
+  SA 700 Forming an unmodified opinion  vs  SA 705 Modifying it
+  SA 230 Documentation           vs  SA 300 Planning
+      The audit plan is made under 300; the record that it was made and carried
+      out is required by 230. A question about not recording the work is 230.
 """ % "\n".join("  SA %s - %s" % (k, v) for k, v in sorted(SA_ALLOWED.items()))
 
 
