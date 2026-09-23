@@ -936,13 +936,23 @@ def _is_bad_answer(text: str) -> bool:
 
 
 # Groq lineup, strongest first. Falls through on failure or a rejected answer.
+# Groq model IDs, strongest first. Falls through to the next on failure or a
+# rejected answer.
+#
+# UPDATED 23 Sep 2026 - the previous list was ENTIRELY decommissioned, which is
+# why every answer fell back to offline mode and nothing ever reached Groq:
+#   llama-3.3-70b-versatile  shut down 16 Aug 2026 -> openai/gpt-oss-120b
+#   llama-3.1-8b-instant     shut down 16 Aug 2026 -> openai/gpt-oss-20b
+#   qwen-2.5-32b / qwen 3 32B shut down 17 Jul 2026 -> openai/gpt-oss-120b
+#   llama-3.1-70b-versatile  shut down 24 Jan 2025 -> llama-3.3 (itself gone)
+#   mixtral-8x7b-32768       shut down 20 Mar 2025
+#   gemma2-9b-it             removed
+# See https://console.groq.com/docs/deprecations and re-check this list when
+# answers start looking thin again - Groq has retired 7 models since Mar 2026.
 MODELS_PRIORITY = [
-    "llama-3.3-70b-versatile",
-    "llama-3.1-70b-versatile",
-    "qwen-2.5-32b",
-    "llama-3.1-8b-instant",
-    "gemma2-9b-it",
-    "mixtral-8x7b-32768",
+    "openai/gpt-oss-120b",   # Groq's recommended flagship (500 tok/s)
+    "qwen/qwen3.6-27b",      # recommended alternative
+    "openai/gpt-oss-20b",    # fastest + cheapest fallback (1000 tok/s)
 ]
 
 async def groq_answer(question: str, chapter: Optional[dict],
@@ -1012,6 +1022,7 @@ async def groq_answer(question: str, chapter: Optional[dict],
         "conclusion or final answer - never with an offer or a question back to "
         "the student."
     )})
+    groq_errors = []
     for model in MODELS_PRIORITY:
         try:
             async with httpx.AsyncClient(timeout=35) as client:
@@ -1027,6 +1038,7 @@ async def groq_answer(question: str, chapter: Optional[dict],
                     },
                 )
             if r.status_code != 200:
+                groq_errors.append(f"{model}={r.status_code}")
                 print(f"Groq {model} failed {r.status_code}: {r.text[:200]}")
                 continue
             data = r.json()
@@ -1043,8 +1055,18 @@ async def groq_answer(question: str, chapter: Optional[dict],
             print(f"Groq {model} success: {len(final)} chars")
             return final
         except Exception as e:
+            groq_errors.append(f"{model}=exc")
             print(f"Groq {model} exception: {e}")
             continue
+
+    if groq_errors:
+        print(
+            "!! ALL GROQ MODELS FAILED: " + ", ".join(groq_errors) +
+            " - falling back to offline answers. 404/model_not_found means the "
+            "model list is out of date (see console.groq.com/docs/deprecations); "
+            "401 means GROQ_API_KEY is invalid.",
+            flush=True,
+        )
     return None
 
 
