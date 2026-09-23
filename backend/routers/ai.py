@@ -77,6 +77,22 @@ def _tokens(text: str) -> set:
     return {t for t in re.findall(r"[a-z0-9']+", text.lower()) if t not in _STOP and len(t) > 1}
 
 
+# Words that recur across almost every CA Inter chapter. A single one of these
+# matching an anchor's keywords is noise, not evidence - it is how a FEMA or
+# Cost-of-capital provision ended up inside a Companies Act answer.
+_GENERIC_TOKENS = {
+    "capital", "account", "accounting", "accounts", "company", "companies",
+    "share", "shares", "audit", "auditing", "cost", "costing", "tax", "taxation",
+    "law", "laws", "value", "values", "profit", "profits", "loss", "losses",
+    "income", "asset", "assets", "fund", "funds", "investment", "investments",
+    "financial", "finance", "statement", "statements", "management", "managed",
+    "standard", "standards", "provision", "provisions", "interest", "dividend",
+    "dividends", "equity", "debt", "cash", "bank", "banks", "credit", "insure",
+    "insurance", "business", "office", "section", "sections", "matters", "matter",
+    "records", "report", "reports", "auditor", "auditors", "practice", "revenue",
+}
+
+
 def retrieve_anchors(question: str, limit: int = 5) -> List[str]:
     try:
         from data_section_map import ANCHORS, SECNUM
@@ -93,14 +109,41 @@ def retrieve_anchors(question: str, limit: int = 5) -> List[str]:
             picked.append(SECNUM[raw_num])
     qt = _tokens(question)
     if qt and len(picked) < limit:
+        # Section numbers the student actually named, e.g. "Section 43".
+        named = set()
+        for m in re.finditer(r"(?:section|sec\.?)\s*([0-9]{1,3}[a-z]?)", question.lower()):
+            named.add(m.group(1))
+
         scored = []
         for keywords, text in ANCHORS:
             kt = set()
             for k in keywords:
                 kt |= _tokens(k)
             overlap = qt & kt
-            if overlap:
-                scored.append((len(overlap), text))
+            if not overlap:
+                continue
+
+            # A single common word is not enough to call something GROUND TRUTH.
+            # Words that appear in nearly every CA chapter carry no signal on
+            # their own, so they cannot qualify an anchor by themselves.
+            distinctive = [
+                t for t in overlap
+                if len(t) >= 7 and t not in _GENERIC_TOKENS
+            ]
+            if not (len(overlap) >= 2 or distinctive):
+                continue
+
+            # If the student named a section, an anchor that cites a DIFFERENT
+            # section must not ride in on a weak match. This is what let a FEMA
+            # provision appear inside a Companies Act answer.
+            if named and len(overlap) < 3:
+                cited = set(re.findall(
+                    r"(?:sec\.?|sections?)\s*([0-9]{1,3}[a-z]?)", text.lower()))
+                if cited and not (cited & named):
+                    continue
+
+            scored.append((len(overlap), text))
+
         scored.sort(key=lambda x: -x[0])
         for _, text in scored:
             if len(picked) >= limit:
@@ -716,12 +759,29 @@ async def offline_answer(question: str, chapter: Optional[dict],
 
     # ---------------- DISTINGUISH ----------------
     if mode == MODE_DISTINGUISH:
-        if points:
-            rows = "\n".join("| " + p.rstrip(".") + " |  |  |" for p in points[:6])
-            body = "| Basis of Difference | | |\n|---|---|---|\n" + rows
-        else:
-            body = "\n".join("- " + p for p in points)
-        return "The two items to be distinguished are covered below.\n\n" + body + source_line
+        if not points:
+            return (
+                "The module extract does not contain the two items this comparison "
+                "needs. Name both items exactly as they appear in your module "
+                "(for example \"equity share capital vs preference share capital\") "
+                "and ask again." + source_line
+            )
+        listed = "\n".join(
+            "%d. %s" % (i + 1, p.rstrip(".")) for i, p in enumerate(points[:6])
+        )
+        return (
+            "ICAI expects this answered as a two-column table. These are the bases "
+            "from the module extract to compare on:\n\n"
+            + listed
+            + "\n\nAnswer format for this question:\n"
+            "| Basis of Difference | <first item> | <second item> |\n"
+            "|---|---|---|\n"
+            "| ... | ... | ... |\n\n"
+            "The side-by-side comparison needs the live AI service, which is "
+            "currently unavailable. Arrange the module points above against each "
+            "of the two items in your answer sheet."
+            + source_line
+        )
 
     # ---------------- PRACTICAL ----------------
     if mode == MODE_PRACTICAL:
@@ -760,15 +820,25 @@ async def offline_answer(question: str, chapter: Optional[dict],
     )
     expl = "\n".join("- " + p for p in points[:6])
 
+    # Pick a conclusion that reads as a complete statement, not a list fragment.
+    # Bad candidates look like "(b) Preference share capital - ..." or "Sec 43 - ...".
     concl = ""
     anchor_blob = " ".join(anchors).lower()
     for p in reversed(points):
         key = p[:45].lower()
-        if key and key not in anchor_blob:
-            concl = p
-            break
+        if not key or key in anchor_blob:
+            continue
+        stripped = p.strip()
+        if re.match(r"^\(?[a-z0-9]\)?[\.)]\s", stripped.lower()):
+            continue          # lettered/numbered list fragment
+        if re.match(r"^(sec\.?|section|as |sa |ind as|clause)\b", stripped.lower()):
+            continue          # bare citation, not a conclusion
+        if len(stripped) < 60:
+            continue          # too short to be a conclusion
+        concl = stripped
+        break
     if not concl and points:
-        concl = points[-1]
+        concl = max(points, key=len)
 
     return (
         "Provision\n" + prov_block + "\n\n"
