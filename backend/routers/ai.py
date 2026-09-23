@@ -964,14 +964,28 @@ def _sanitize_answer(text: str) -> str:
         low = last.lower()
         is_question = last.endswith("?")
         is_cta = any(c in low for c in _CTA)
-        # only trim a short trailing line - never a real paragraph of content
-        if (is_question or is_cta) and len(last) < 220:
+        # A line ending in "?" at the very end is a question back to the
+        # student, whatever its length - trim it. A CTA is only trimmed when
+        # the line is short, so a real paragraph is never lost.
+        if is_question or (is_cta and len(last) < 220):
             lines.pop()
             removed += 1
             continue
         break
 
     return "\n".join(lines).rstrip()
+
+
+def _is_table_markup(line: str) -> bool:
+    """True for markdown table rules and separator rows - they carry no prose."""
+    s = line.strip()
+    if not s:
+        return False
+    if set(s) <= set("-:|+ \t"):          # |---|---|  or  ----------
+        return True
+    if s.count("|") >= 2 and sum(c.isalnum() for c in s) == 0:
+        return True
+    return False
 
 
 def _is_bad_answer(text: str) -> bool:
@@ -1008,11 +1022,24 @@ def _is_bad_answer(text: str) -> bool:
         return True
     if low.count("includes the terms of the") > 5:
         return True
-    sentences = [s.strip() for s in re.split(r"[.\n]", low) if len(s.strip()) > 25]
+    # Repetition guard. Markdown table markup must be stripped first: a row
+    # separator such as "|-------------|----------|" is 27 characters long, so
+    # any answer containing a few tables used to look like a model stuck in a
+    # loop and the entire answer was discarded in favour of the offline one.
+    prose = "\n".join(ln for ln in text.split("\n") if not _is_table_markup(ln))
     from collections import Counter
-    cnt = Counter(sentences)
-    if cnt and cnt.most_common(1)[0][1] >= 4:
-        return True
+    sentences = [
+        s.strip() for s in re.split(r"[.\n]", prose.lower())
+        if len(s.strip()) > 25 and sum(c.isalpha() for c in s) >= 20
+    ]
+    # A genuine loop repeats one sentence over and over. A table header or a
+    # recurring phrase legitimately reappears a few times in a long answer, so
+    # require both a hard floor and a large share of the answer to call it a loop.
+    if len(sentences) >= 8:
+        cnt = Counter(sentences)
+        repeated = cnt.most_common(1)[0][1]
+        if repeated >= 4 and repeated >= 0.4 * len(sentences):
+            return True
     return False
 
 
@@ -1038,7 +1065,16 @@ MODELS_PRIORITY = [
 
 async def groq_answer(question: str, chapter: Optional[dict],
                       mode: str = MODE_THEORY,
-                      history: Optional[list] = None) -> Optional[str]:
+                      history: Optional[list] = None,
+                      diag: Optional[list] = None) -> Optional[str]:
+    """Ask Groq. Returns None when every model failed or was rejected.
+
+    `diag`, if given, collects one entry per rejection so the API response can
+    explain a fallback instead of leaving it a mystery.
+    """
+    _diag = diag if diag is not None else []
+    _diag.append({"key_present": bool((os.environ.get("GROQ_API_KEY") or "").strip()),
+                  "httpx": httpx is not None})
     key = (os.environ.get("GROQ_API_KEY") or "").strip()
     if not key or httpx is None:
         return None
@@ -1120,6 +1156,8 @@ async def groq_answer(question: str, chapter: Optional[dict],
                 )
             if r.status_code != 200:
                 groq_errors.append(f"{model}={r.status_code}")
+                _diag.append({"model": model, "http": r.status_code,
+                              "body": r.text[:200]})
                 print(f"Groq {model} failed {r.status_code}: {r.text[:200]}")
                 continue
             data = r.json()
@@ -1144,11 +1182,14 @@ async def groq_answer(question: str, chapter: Optional[dict],
                     )
                 )
                 print(f"Bad answer filtered from {model} (reason: {reason}): {final[:180]!r}")
+                groq_errors.append(f"{model}=rejected:{reason}")
+                _diag.append({"model": model, "reason": reason, "head": final[:120]})
                 continue
             print(f"Groq {model} success: {len(final)} chars")
             return final
         except Exception as e:
             groq_errors.append(f"{model}=exc")
+            _diag.append({"model": model, "exception": str(e)[:200]})
             print(f"Groq {model} exception: {e}")
             continue
 
@@ -1176,7 +1217,8 @@ async def ask(body: AskBody):
     ans_mode = detect_answer_mode(body.question)
     tier = assess_grounding(knowledge_chunks, anchors)
 
-    answer = await groq_answer(body.question, chapter, ans_mode, body.history)
+    _diag = []
+    answer = await groq_answer(body.question, chapter, ans_mode, body.history, _diag)
     if not answer:
         answer = await offline_answer(body.question, chapter, ans_mode, tier)
         mode = "syllabus-brain-rag"
@@ -1185,6 +1227,7 @@ async def ask(body: AskBody):
     return {
         "answer": answer,
         "mode": mode,
+        "groq_diag": _diag,
         "answerFormat": ans_mode,
         "grounding": tier,
         "chapter": {"id": chapter.get("chapterId"), "title": chapter.get("chapterTitle"),
