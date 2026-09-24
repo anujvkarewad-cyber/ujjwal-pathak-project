@@ -51,7 +51,19 @@ _MONTHS = {
 
 
 def _attempt_ym(attempt: str, batch: str = ""):
-    """Parse 'sept 2026' / 'jan 27' / 'January 2027' → (year, month) or None."""
+    """Parse month text or a sheet date (01/01/2027, 2027-01-01) into (year, month)."""
+    for raw in (attempt, batch):
+        s = str(raw or "").strip()
+        iso = re.match(r"^(\d{4})-(\d{2})-(\d{2})", s)
+        if iso:
+            month = int(iso.group(2))
+            if 1 <= month <= 12:
+                return (int(iso.group(1)), month)
+        dmy = re.match(r"^(\d{1,2})[/.](\d{1,2})[/.](\d{4})$", s)
+        if dmy:
+            month = int(dmy.group(2))
+            if 1 <= month <= 12:
+                return (int(dmy.group(3)), month)
     text = f"{attempt} {batch}".strip().lower()
     m = re.search(r"\b(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*[\s./-]*(\d{2,4})\b", text)
     if not m:
@@ -204,24 +216,28 @@ async def upsert_student_account(item: StudentImportItem) -> None:
     changed = item.passwordChanged
     password_changed = str(changed).strip().lower() in {"1", "true", "yes", "y"}
     db = get_db()
+    existing = await db[STUDENT_ACCOUNTS].find_one({"studentId": sid}) or {}
+    keep_password = bool(existing.get("passwordChanged")) and bool(existing.get("passwordHash"))
+    fields = {
+        "studentId": sid,
+        "studentName": (item.studentName or "").strip(),
+        "email": (item.email or "").strip(),
+        "caLevel": (item.caLevel or "").strip(),
+        "group": (item.group or "").strip(),
+        "attempt": (item.attempt or "").strip(),
+        "batch": (item.batch or "").strip(),
+        "phone": (item.phone or "").strip(),
+        "address": (item.address or "").strip(),
+        "joinedOn": (item.joinedOn or "").strip(),
+        "updatedAt": _now(),
+    }
+    if not keep_password:
+        fields["passwordHash"] = hash_password(pwd)
+        fields["passwordChanged"] = password_changed
     await db[STUDENT_ACCOUNTS].update_one(
         {"studentId": sid},
         {
-            "$set": {
-                "studentId": sid,
-                "studentName": (item.studentName or "").strip(),
-                "email": (item.email or "").strip(),
-                "caLevel": (item.caLevel or "").strip(),
-                "group": (item.group or "").strip(),
-                "attempt": (item.attempt or "").strip(),
-                "batch": (item.batch or "").strip(),
-                "phone": (item.phone or "").strip(),
-                "address": (item.address or "").strip(),
-                "joinedOn": (item.joinedOn or "").strip(),
-                "passwordHash": hash_password(pwd),
-                "passwordChanged": password_changed,
-                "updatedAt": _now(),
-            },
+            "$set": fields,
             "$unset": {"password": ""},
             "$setOnInsert": {"createdAt": _now()},
         },

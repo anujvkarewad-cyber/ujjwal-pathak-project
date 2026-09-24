@@ -384,7 +384,9 @@ async def get_dashboard_section(body: DashboardGetBody):
         return {"found": False}
     doc = await db[DASHBOARD_STUDENTS].find_one({"studentId": student_id})
     if not doc:
-        return {"found": False}
+        if field == "stats":
+            return {"found": True, "result": {}}
+        return {"found": True, "result": []}
     logs = _merge_logs(doc.get("studyLog") if isinstance(doc.get("studyLog"), list) else [], [])
     stats = doc.get("stats") if isinstance(doc.get("stats"), dict) else {}
     if field == "studyLog":
