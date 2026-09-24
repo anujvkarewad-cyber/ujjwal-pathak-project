@@ -7,6 +7,7 @@ import Dashboard from '@/pages/Dashboard';
 import Students from '@/pages/Students';
 import StudentProfile from '@/pages/StudentProfile';
 import DailyTracker from '@/pages/DailyTracker';
+import DailyTargets from '@/pages/DailyTargets';
 import Leaderboard from '@/pages/Leaderboard';
 import Announcements from '@/pages/Announcements';
 import Notes from '@/pages/Notes';
@@ -58,6 +59,7 @@ function App() {
           <Route path="/students" element={<Students />} />
           <Route path="/students/:id" element={<StudentProfile />} />
           <Route path="/daily-tracker" element={<DailyTracker />} />
+          <Route path="/daily-targets" element={<DailyTargets />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/announcements" element={<Announcements />} />
           <Route path="/notes" element={<Notes />} />

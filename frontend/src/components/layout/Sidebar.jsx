@@ -5,6 +5,7 @@ import {
   BarChart3, UserSearch, GitCompareArrows, School, Table2, UserX, TrendingUp, CheckSquare,
   ClipboardCheck,
   MessageCircle,
+  Target,
 } from 'lucide-react';
 import { cn } from '@/utils/format';
 
@@ -13,6 +14,7 @@ const NAV = [
   { to: '/ai-content/queue', label: 'MCQ Review', icon: BookOpenCheck, testid: 'nav-mcq-review' },
   { to: '/students', label: 'Students', icon: Users, testid: 'nav-students' },
   { to: '/daily-tracker', label: 'Daily Tracker', icon: ClipboardList, testid: 'nav-daily-tracker' },
+  { to: '/daily-targets', label: 'Daily Targets', icon: Target, testid: 'nav-daily-targets' },
   { to: '/tests', label: 'Tests', icon: ClipboardCheck, testid: 'nav-tests' },
   { to: '/messages', label: 'Messages', icon: MessageCircle, testid: 'nav-messages' },
   { to: '/leaderboard', label: 'Leaderboard', icon: Trophy, testid: 'nav-leaderboard' },

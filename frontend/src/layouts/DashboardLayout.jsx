@@ -7,6 +7,7 @@ const TITLES = {
   '/': { title: 'Dashboard', subtitle: 'Overview of your mentorship program' },
   '/students': { title: 'Students', subtitle: 'Manage all enrolled students' },
   '/daily-tracker': { title: 'Daily Tracker', subtitle: 'Track daily submissions across batches' },
+  '/daily-targets': { title: 'Daily Targets', subtitle: 'Upload a target by subject, group, batch, and attempt' },
   '/leaderboard': { title: 'Leaderboard', subtitle: 'Top performers across time frames' },
   '/announcements': { title: 'Announcements', subtitle: 'Broadcast updates to your students' },
   '/notes': { title: 'Notes', subtitle: 'Mentor notes for students' },
