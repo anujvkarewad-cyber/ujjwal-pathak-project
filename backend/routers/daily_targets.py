@@ -16,6 +16,7 @@ from pydantic import BaseModel, Field
 
 from auth import require_mentor
 from db import STUDENT_ACCOUNTS, get_db
+from routers.revision_schedule import due_revisions
 
 try:
     import httpx
@@ -216,7 +217,10 @@ def _public_target(row: dict) -> dict:
 
 def _plain_reminder(subject: str) -> str:
     paper = subject if subject and not _is_all(subject) else "today's target"
-    return f"Revise {paper} once before you finish. Use only what your mentor set. Do not start a new chapter."
+    return (
+        f"Do {paper} on the timer. When the timer ends, answer the receipt questions. "
+        "Those answers decide if the chapter is weak, average, or strong, and that sets the revision date."
+    )
 
 
 def _clean_reminder(text: str) -> str:
@@ -234,9 +238,11 @@ async def _groq_reminder(subject: str, tasks: list) -> tuple:
         return fallback, "plain"
     lines = "\n".join(f"- {task.get('label')}" for task in tasks if task.get("label"))
     prompt = (
-        "Write one revision reminder for a CA student. "
-        "Use only the mentor's target below. Do not add a chapter, section number, case, or new task. "
-        "One or two sentences. English only. No emoji.\n"
+        "Write two short sentences for a CA student. "
+        "First, tell them to do only the mentor's target on the timer. "
+        "Second, tell them that after the timer they must answer the receipt questions, "
+        "and those answers decide weak, average, or strong. "
+        "Do not add a chapter, section number, case, or revision date. English only. No emoji.\n"
         f"Subject: {subject or 'All subjects'}\n"
         f"Mentor target:\n{lines}"
     )
@@ -445,7 +451,8 @@ async def student_daily_target(studentId: str = Query(min_length=1, max_length=6
         {"_id": 0},
     ).to_list(300)
     chosen = _best_targets(student, rows, today)
-    if not chosen:
+    due = await due_revisions(sid)
+    if not chosen and not due:
         raise HTTPException(status_code=404, detail="No target published.")
     done = {
         row.get("taskId")
@@ -468,26 +475,37 @@ async def student_daily_target(studentId: str = Query(min_length=1, max_length=6
                 "kind": task.get("kind") or "chapter",
                 "done": task.get("id") in done,
             })
-    yesterday = _best_targets(student, rows, today - timedelta(days=1))
-    reminder_row = max(yesterday or chosen, key=lambda row: (_specificity(row), str(row.get("createdAt") or "")))
-    pieces = []
-    for row in (yesterday or [reminder_row]):
-        text = (row.get("revisionReminder") or "").strip()
-        if text and text not in pieces:
-            pieces.append(text)
-    reminder = " ".join(pieces)[:320] or _plain_reminder(reminder_row.get("subject"))
-    reminder_id = "revise-" + str(reminder_row.get("id") or "today")
-    tasks.append({
-        "id": reminder_id,
-        "label": "Revision reminder",
-        "detail": reminder,
-        "kind": "revise",
-        "done": reminder_id in done,
-    })
+    if chosen:
+        yesterday = _best_targets(student, rows, today - timedelta(days=1))
+        reminder_row = max(yesterday or chosen, key=lambda row: (_specificity(row), str(row.get("createdAt") or "")))
+        pieces = []
+        for row in (yesterday or [reminder_row]):
+            text = (row.get("revisionReminder") or "").strip()
+            if text and text not in pieces:
+                pieces.append(text)
+        reminder = " ".join(pieces)[:320] or _plain_reminder(reminder_row.get("subject"))
+        reminder_id = "revise-" + str(reminder_row.get("id") or "today")
+        tasks.append({
+            "id": reminder_id,
+            "label": "Use the timer",
+            "detail": reminder,
+            "kind": "revise",
+            "done": reminder_id in done,
+        })
+    for item in due:
+        task_id = "due-" + _norm(item.get("concept"))[:40].replace(" ", "-")
+        tasks.append({
+            "id": task_id,
+            "label": "Revise " + str(item.get("concept") or "chapter"),
+            "detail": item.get("reminder") or "",
+            "kind": "revise",
+            "done": task_id in done,
+        })
     return {
         "date": today.isoformat(),
         "tasks": tasks,
         "locked": False,
         "source": "mentor",
-        "reminderSource": reminder_row.get("reminderSource") or "plain",
+        "reminderSource": "mentor",
+        "dueRevisions": due,
     }

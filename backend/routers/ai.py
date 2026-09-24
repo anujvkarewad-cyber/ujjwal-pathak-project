@@ -88,6 +88,7 @@ class EvaluateBody(BaseModel):
     subject: Optional[str] = None
     chapterId: Optional[str] = None
     concept: Optional[str] = None
+    confidence: Optional[str] = None
 
 
 _STOP = {"the", "a", "an", "is", "are", "was", "were", "of", "in", "on", "for", "and",
@@ -1952,11 +1953,30 @@ async def evaluate(body: EvaluateBody):
             "diag": diag[-4:],
         }
 
+    schedule = None
+    try:
+        from routers.revision_schedule import record_written_mark
+        chapter_name = ""
+        if chapter:
+            chapter_name = str(chapter.get("chapterTitle") or chapter.get("title") or chapter.get("displayTitle") or "").strip()
+        concept = (body.concept or chapter_name or subject or "Chapter").strip()
+        schedule = await record_written_mark(
+            student_id=body.studentId,
+            concept=concept,
+            subject=subject,
+            chapter_id=body.chapterId or ((chapter or {}).get("id") or ""),
+            score=float(result.get("score") or 0),
+            confidence=body.confidence or "",
+        )
+    except Exception as exc:
+        diag.append({"revision": str(exc)[:160]})
+
     return {
         "ok": True,
         "mode": "graded",
         "chapter": chapter,
         "subject": subject,
+        "revision": schedule,
         **{k: v for k, v in result.items()},
     }
 

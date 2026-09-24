@@ -99,7 +99,8 @@ export default function DailyTargets() {
     <div className="space-y-6" data-testid="daily-targets-page">
       <p className="text-sm text-slate-500 dark:text-slate-400 max-w-3xl">
         You write the study target. Students in the selected attempt, group, and batch see that list.
-        Groq does not create the target. It only writes a revision reminder from the lines you enter.
+        Groq does not create the target. The student does it on the timer, then answers the receipt questions.
+        Those marks decide weak, average, or strong. Weak comes back in 1 day, average in 3 days, strong in 7 days, and above 85% in 14 days.
       </p>
 
       <form onSubmit={publish} className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 space-y-4">
