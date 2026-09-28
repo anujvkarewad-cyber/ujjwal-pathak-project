@@ -136,11 +136,9 @@ def _audience_matches(student: dict, target: dict) -> bool:
     student_group = _group_key(student.get("group"))
     if target_group == "all":
         return True
-    if student_group == "both":
-        return True
-    if target_group == "both":
-        return student_group == "both"
-    return target_group == student_group
+    # "Both Groups" is a distinct audience, not a wildcard for G1/G2.
+    # Only a target explicitly addressed to All can cross group boundaries.
+    return target_group in {"g1", "g2", "both"} and target_group == student_group
 
 
 def _specificity(target: dict) -> int:
@@ -373,6 +371,7 @@ async def preview_target(
     return {
         "count": len(matched),
         "names": [row.get("studentName") or row.get("studentId") for row in matched[:8]],
+        "sample": [{"studentId": row.get("studentId"), "group": row.get("group")} for row in matched[:8]],
     }
 
 
