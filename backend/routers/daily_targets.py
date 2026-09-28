@@ -242,9 +242,12 @@ async def _groq_reminder(subject: str, tasks: list) -> tuple:
         f"Subject: {subject or 'All subjects'}\n"
         f"Mentor target:\n{lines}"
     )
+    errors = []
+    # Use supported production Groq models (the old Llama IDs are retired
+    # for free/developer accounts). Keep reasoning out of student messages.
     # At most two AI attempts, with a wall-clock cap on each request.
     # An alternate Groq model is still AI generation, never a plain-text fallback.
-    for model in ("llama-3.3-70b-versatile", "llama-3.1-8b-instant"):
+    for model in ("openai/gpt-oss-20b", "openai/gpt-oss-120b"):
         try:
             async with httpx.AsyncClient(timeout=8) as client:
                 response = await asyncio.wait_for(client.post(
@@ -253,7 +256,9 @@ async def _groq_reminder(subject: str, tasks: list) -> tuple:
                     json={
                         "model": model,
                         "temperature": 0.2,
-                        "max_tokens": 120,
+                        "max_completion_tokens": 768,
+                        "reasoning_effort": "low",
+                        "include_reasoning": False,
                         "messages": [
                             {"role": "system", "content": "You only remind the student to revise the given target. You never create a new study target."},
                             {"role": "user", "content": prompt},
@@ -264,20 +269,35 @@ async def _groq_reminder(subject: str, tasks: list) -> tuple:
                 logger.warning("Groq reminder authorization failed (HTTP %s)", response.status_code)
                 raise HTTPException(status_code=503, detail="Groq rejected the AI configuration. No changes were saved. Ask the administrator to check the Groq API key and access.")
             if response.status_code != 200:
-                logger.warning("Groq reminder request failed (model=%s, HTTP %s)", model, response.status_code)
+                provider_code = ""
+                try:
+                    raw_code = (response.json().get("error") or {}).get("code") or ""
+                    provider_code = re.sub(r"[^a-zA-Z0-9_-]", "", str(raw_code))[:60]
+                except Exception:
+                    pass
+                reason = f"HTTP {response.status_code}" + (f"/{provider_code}" if provider_code else "")
+                errors.append(f"{model}: {reason}")
+                logger.warning("Groq reminder request failed (model=%s, reason=%s)", model, reason)
                 continue
-            content = (((response.json().get("choices") or [{}])[0].get("message") or {}).get("content") or "")
+            choice = (response.json().get("choices") or [{}])[0]
+            # Never use internal reasoning as a substitute for the final answer.
+            content = ((choice.get("message") or {}).get("content") or "")
             cleaned = _clean_reminder(content)
+            if choice.get("finish_reason") == "length":
+                errors.append(f"{model}: incomplete_output")
+                continue
             if len(cleaned) >= 20:
                 return cleaned, "groq"
+            errors.append(f"{model}: empty_or_short_output")
         except HTTPException:
             raise
         except Exception as exc:
+            errors.append(f"{model}: {type(exc).__name__}")
             logger.warning("Groq reminder request failed (model=%s, error=%s)", model, type(exc).__name__)
             continue
     raise HTTPException(
         status_code=503,
-        detail="AI reminder generation failed after two attempts. No changes were saved. Your draft is still available; please try again.",
+        detail="AI reminder generation failed after two attempts. No changes were saved. Your draft is still available. " + "; ".join(errors),
     )
 
 
