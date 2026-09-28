@@ -4,6 +4,8 @@ Groq does not invent the study target. The mentor types the tasks and chooses
 who receives them: subject, group, batch, and attempt. Groq's only job here is
 one short revision reminder, written once from those exact tasks.
 """
+import asyncio
+import logging
 import os
 import re
 import uuid
@@ -29,6 +31,7 @@ TARGETS = "daily_targets"
 DONE = "daily_target_done"
 IST = ZoneInfo("Asia/Kolkata")
 ALL = "All"
+logger = logging.getLogger(__name__)
 
 SUBJECTS = [
     "Advanced Accounting",
@@ -208,19 +211,11 @@ def _public_target(row: dict) -> dict:
         "batch": row.get("batch") or ALL,
         "subject": row.get("subject") or ALL,
         "tasks": row.get("tasks") or [],
-        "revisionReminder": row.get("revisionReminder") or "",
+        "revisionReminder": (row.get("revisionReminder") or "") if row.get("reminderSource") == "groq" else "",
         "reminderSource": row.get("reminderSource") or "plain",
         "createdAt": row.get("createdAt"),
         "studentCount": row.get("studentCount") or 0,
     }
-
-
-def _plain_reminder(subject: str) -> str:
-    paper = subject if subject and not _is_all(subject) else "today's target"
-    return (
-        f"Do {paper} on the timer. When the timer ends, answer the receipt questions. "
-        "Those answers decide if the chapter is weak, average, or strong, and that sets the revision date."
-    )
 
 
 def _clean_reminder(text: str) -> str:
@@ -232,10 +227,11 @@ def _clean_reminder(text: str) -> str:
 
 
 async def _groq_reminder(subject: str, tasks: list) -> tuple:
-    fallback = _plain_reminder(subject)
     key = (os.environ.get("GROQ_API_KEY") or "").strip()
-    if not key or httpx is None or not tasks:
-        return fallback, "plain"
+    if not key or httpx is None:
+        raise HTTPException(status_code=503, detail="AI revision reminders are not configured. No changes were saved. Ask the administrator to check the Groq configuration.")
+    if not tasks:
+        raise HTTPException(status_code=400, detail="Add at least one task before generating an AI reminder.")
     lines = "\n".join(f"- {task.get('label')}" for task in tasks if task.get("label"))
     prompt = (
         "Write two short sentences for a CA student. "
@@ -246,10 +242,12 @@ async def _groq_reminder(subject: str, tasks: list) -> tuple:
         f"Subject: {subject or 'All subjects'}\n"
         f"Mentor target:\n{lines}"
     )
+    # At most two AI attempts, with a wall-clock cap on each request.
+    # An alternate Groq model is still AI generation, never a plain-text fallback.
     for model in ("llama-3.3-70b-versatile", "llama-3.1-8b-instant"):
         try:
-            async with httpx.AsyncClient(timeout=12) as client:
-                response = await client.post(
+            async with httpx.AsyncClient(timeout=8) as client:
+                response = await asyncio.wait_for(client.post(
                     "https://api.groq.com/openai/v1/chat/completions",
                     headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
                     json={
@@ -261,16 +259,26 @@ async def _groq_reminder(subject: str, tasks: list) -> tuple:
                             {"role": "user", "content": prompt},
                         ],
                     },
-                )
+                ), timeout=10)
+            if response.status_code in (401, 403):
+                logger.warning("Groq reminder authorization failed (HTTP %s)", response.status_code)
+                raise HTTPException(status_code=503, detail="Groq rejected the AI configuration. No changes were saved. Ask the administrator to check the Groq API key and access.")
             if response.status_code != 200:
+                logger.warning("Groq reminder request failed (model=%s, HTTP %s)", model, response.status_code)
                 continue
             content = (((response.json().get("choices") or [{}])[0].get("message") or {}).get("content") or "")
             cleaned = _clean_reminder(content)
             if len(cleaned) >= 20:
                 return cleaned, "groq"
-        except Exception:
+        except HTTPException:
+            raise
+        except Exception as exc:
+            logger.warning("Groq reminder request failed (model=%s, error=%s)", model, type(exc).__name__)
             continue
-    return fallback, "plain"
+    raise HTTPException(
+        status_code=503,
+        detail="AI reminder generation failed after two attempts. No changes were saved. Your draft is still available; please try again.",
+    )
 
 
 async def _ensure_indexes():
@@ -379,6 +387,8 @@ async def create_target(body: TargetIn, mentor=Depends(require_mentor)):
         raise HTTPException(status_code=400, detail="Add at least one task.")
     subject = (body.subject or ALL).strip() or ALL
     reminder, source = await _groq_reminder(subject, tasks)
+    if source != "groq" or not reminder.strip():
+        raise HTTPException(status_code=503, detail="An AI-generated reminder is required. The target was not published.")
     students = await _students()
     draft = {
         "attempt": body.attempt or ALL,
@@ -407,6 +417,25 @@ async def create_target(body: TargetIn, mentor=Depends(require_mentor)):
     await get_db()[TARGETS].insert_one(doc)
     doc.pop("_id", None)
     return {"ok": True, "target": _public_target(doc)}
+
+
+@router.post("/api/targets/{target_id}/reminder")
+async def regenerate_target_reminder(target_id: str, _mentor=Depends(require_mentor)):
+    """Repair an existing plain reminder without publishing a duplicate target."""
+    collection = get_db()[TARGETS]
+    row = await collection.find_one({"id": target_id, "active": {"$ne": False}})
+    if not row:
+        raise HTTPException(status_code=404, detail="Target not found.")
+    reminder, source = await _groq_reminder(row.get("subject") or ALL, row.get("tasks") or [])
+    if source != "groq" or not reminder.strip():
+        raise HTTPException(status_code=503, detail="An AI-generated reminder is required. The target was not changed.")
+    changes = {"revisionReminder": reminder, "reminderSource": source, "reminderUpdatedAt": _now()}
+    result = await collection.update_one(
+        {"id": target_id, "active": {"$ne": False}}, {"$set": changes},
+    )
+    if result.matched_count == 0:
+        raise HTTPException(status_code=404, detail="Target no longer active.")
+    return {"ok": True, "target": _public_target(dict(row, **changes))}
 
 
 @router.delete("/api/targets/{target_id}")
@@ -477,21 +506,24 @@ async def student_daily_target(studentId: str = Query(min_length=1, max_length=6
             })
     if chosen:
         yesterday = _best_targets(student, rows, today - timedelta(days=1))
-        reminder_row = max(yesterday or chosen, key=lambda row: (_specificity(row), str(row.get("createdAt") or "")))
-        pieces = []
-        for row in (yesterday or [reminder_row]):
-            text = (row.get("revisionReminder") or "").strip()
-            if text and text not in pieces:
-                pieces.append(text)
-        reminder = " ".join(pieces)[:320] or _plain_reminder(reminder_row.get("subject"))
-        reminder_id = "revise-" + str(reminder_row.get("id") or "today")
-        tasks.append({
-            "id": reminder_id,
-            "label": "Use the timer",
-            "detail": reminder,
-            "kind": "revise",
-            "done": reminder_id in done,
-        })
+        # Historical plain reminders stay stored, but are never sent to students.
+        candidates = [row for row in (yesterday or chosen)
+                      if row.get("reminderSource") == "groq" and (row.get("revisionReminder") or "").strip()]
+        if candidates:
+            reminder_row = max(candidates, key=lambda row: (_specificity(row), str(row.get("createdAt") or "")))
+            pieces = []
+            for row in candidates:
+                text = (row.get("revisionReminder") or "").strip()
+                if text not in pieces:
+                    pieces.append(text)
+            reminder_id = "revise-" + str(reminder_row.get("id") or "today")
+            tasks.append({
+                "id": reminder_id,
+                "label": "Use the timer",
+                "detail": " ".join(pieces)[:320],
+                "kind": "revise",
+                "done": reminder_id in done,
+            })
     for item in due:
         task_id = "due-" + _norm(item.get("concept"))[:40].replace(" ", "-")
         tasks.append({

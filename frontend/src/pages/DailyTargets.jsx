@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Trash2, Upload } from 'lucide-react';
-import { fetchTargetOptions, fetchTargets, previewTargetAudience, publishTarget, removeTarget } from '@/api/dailyTargets';
+import { fetchTargetOptions, fetchTargets, previewTargetAudience, publishTarget, removeTarget, regenerateTargetReminder } from '@/api/dailyTargets';
 
 const ALL = 'All';
 
@@ -30,6 +30,7 @@ export default function DailyTargets() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const [notice, setNotice] = useState('');
+  const [generatingId, setGeneratingId] = useState('');
 
   const load = () => {
     fetchTargetOptions().then(setOptions).catch((err) => setError(err.message || 'Could not load student groups.'));
@@ -74,14 +75,36 @@ export default function DailyTargets() {
         tasks,
       });
       const reminder = res?.target?.revisionReminder || '';
-      const source = res?.target?.reminderSource === 'groq' ? 'Groq wrote the revision reminder.' : 'Groq was busy, so a plain revision reminder was saved.';
-      setNotice(`${source} ${reminder}`);
+      if (res?.target?.reminderSource !== 'groq' || !reminder.trim()) {
+        load();
+        throw new Error('The server did not confirm an AI reminder. Check the published list before trying again.');
+      }
+      setNotice(`Published with an AI-generated revision reminder. ${reminder}`);
       setTaskText('');
       load();
     } catch (err) {
       setError(err.message || 'Could not publish the target.');
     } finally {
       setBusy(false);
+    }
+  };
+
+  const generateReminder = async (id) => {
+    if (generatingId) return;
+    setGeneratingId(id);
+    setError('');
+    setNotice('');
+    try {
+      const res = await regenerateTargetReminder(id);
+      if (res?.target?.reminderSource !== 'groq' || !res?.target?.revisionReminder?.trim()) {
+        throw new Error('The server did not confirm an AI reminder. Please refresh the published list.');
+      }
+      setTargets((prev) => prev.map((row) => row.id === id ? res.target : row));
+      setNotice('AI-generated reminder saved on the existing target. No duplicate target was published.');
+    } catch (err) {
+      setError(err.message || 'Could not generate the AI reminder. The existing target was not changed.');
+    } finally {
+      setGeneratingId('');
     }
   };
 
@@ -152,7 +175,7 @@ export default function DailyTargets() {
           disabled={busy}
           className="h-11 px-4 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm font-semibold inline-flex items-center gap-2 disabled:opacity-60"
         >
-          <Upload className="w-4 h-4" /> {busy ? 'Publishing...' : 'Publish target'}
+          <Upload className="w-4 h-4" /> {busy ? 'Generating AI reminder...' : 'Publish target'}
         </button>
       </form>
 
@@ -177,11 +200,19 @@ export default function DailyTargets() {
             <ul className="mt-3 space-y-1 text-sm text-slate-700 dark:text-slate-200">
               {(row.tasks || []).map((task) => <li key={task.id}>{task.label}</li>)}
             </ul>
-            {row.revisionReminder && (
+            {row.reminderSource === 'groq' && row.revisionReminder ? (
               <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
-                <span className="font-semibold">Revision reminder{row.reminderSource === 'groq' ? ' by Groq' : ''}: </span>
+                <span className="font-semibold">AI revision reminder by Groq: </span>
                 {row.revisionReminder}
               </p>
+            ) : (
+              <div className="mt-3 text-sm text-amber-700 dark:text-amber-400">
+                <p>AI reminder required. The previous plain reminder is not sent to students. The study target remains available.</p>
+                <button type="button" disabled={!!generatingId || busy} onClick={() => generateReminder(row.id)}
+                  className="mt-2 px-3 py-2 rounded-lg border border-amber-300 font-semibold disabled:opacity-60">
+                  {generatingId === row.id ? 'Generating AI reminder...' : 'Generate AI reminder'}
+                </button>
+              </div>
             )}
           </article>
         ))}
