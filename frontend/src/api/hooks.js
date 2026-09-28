@@ -77,6 +77,18 @@ export const useTogglePinAnnouncement = () => {
   });
 };
 
+export const useDeleteAnnouncement = () => {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: announcementsApi.deleteAnnouncement,
+    onSuccess: async (_data, id) => {
+      await qc.cancelQueries({ queryKey: ['announcements'] });
+      qc.setQueryData(['announcements'], (rows = []) => rows.filter((row) => row.id !== id));
+      qc.invalidateQueries({ queryKey: ['announcements'] });
+    },
+  });
+};
+
 // ── Notes (PDF study material) ────────────────────────────────────────────
 export const useNotes = () =>
   useQuery({ queryKey: ['notes'], queryFn: notesApi.getNotes });

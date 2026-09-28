@@ -1,14 +1,37 @@
 import { useState } from 'react';
-import { Pin, Send, Users, Calendar } from 'lucide-react';
-import { useAnnouncements, useCreateAnnouncement, useTogglePinAnnouncement } from '@/api/hooks';
+import { Pin, Send, Users, Calendar, Trash2 } from 'lucide-react';
+import { useAnnouncements, useCreateAnnouncement, useTogglePinAnnouncement, useDeleteAnnouncement } from '@/api/hooks';
 import { sendWhatsAppAnnouncement } from '@/api/messages';
 import { Skeleton } from '@/components/common/Skeleton';
 import { cn } from '@/utils/format';
+import { AlertDialog, AlertDialogContent, AlertDialogHeader, AlertDialogFooter, AlertDialogTitle, AlertDialogDescription, AlertDialogAction, AlertDialogCancel } from '@/components/ui/alert-dialog';
 
 export default function Announcements() {
-  const { data: list = [], isLoading } = useAnnouncements();
+  const { data: list = [], isLoading, error: loadError } = useAnnouncements();
   const createMut = useCreateAnnouncement();
   const pinMut = useTogglePinAnnouncement();
+  const deleteMut = useDeleteAnnouncement();
+  const [deleteTarget, setDeleteTarget] = useState(null);
+  const [deleteError, setDeleteError] = useState('');
+  const [deleteNotice, setDeleteNotice] = useState('');
+
+  const requestDelete = (announcement) => {
+    setDeleteError('');
+    setDeleteNotice('');
+    setDeleteTarget(announcement);
+  };
+  const confirmDelete = async (event) => {
+    event.preventDefault();
+    if (!deleteTarget || deleteMut.isPending) return;
+    setDeleteError('');
+    try {
+      await deleteMut.mutateAsync(deleteTarget.id);
+      setDeleteTarget(null);
+      setDeleteNotice('Announcement deleted. Students will no longer see it after refreshing the app.');
+    } catch (err) {
+      setDeleteError(err.message || 'Could not delete the announcement. Please try again.');
+    }
+  };
 
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
@@ -44,6 +67,25 @@ export default function Announcements() {
 
   return (
     <div className="space-y-6" data-testid="announcements-page">
+      {loadError && <p role="alert" className="text-sm text-red-600">{loadError.message || 'Could not load announcements.'}</p>}
+      {deleteNotice && <p role="status" className="text-sm text-emerald-700">{deleteNotice}</p>}
+      <AlertDialog open={!!deleteTarget} onOpenChange={(open) => { if (!open && !deleteMut.isPending) setDeleteTarget(null); }}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Delete announcement?</AlertDialogTitle>
+            <AlertDialogDescription>
+              Delete “{deleteTarget?.title}” from the dashboard and student announcement list? Sheet sync will not restore it. Already delivered notifications cannot be recalled.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          {deleteError && <p role="alert" className="text-sm text-red-600">{deleteError}</p>}
+          <AlertDialogFooter>
+            <AlertDialogCancel disabled={deleteMut.isPending}>Cancel</AlertDialogCancel>
+            <AlertDialogAction onClick={confirmDelete} disabled={deleteMut.isPending} className="bg-red-600 hover:bg-red-700" data-testid="confirm-delete-announcement">
+              {deleteMut.isPending ? 'Deleting...' : 'Delete announcement'}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <form onSubmit={create} className="lg:col-span-1 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 space-y-3" data-testid="create-announcement">
           <h3 className="font-heading font-semibold text-slate-900 dark:text-white">Create Announcement</h3>
@@ -99,7 +141,7 @@ export default function Announcements() {
                 <Pin className="w-3 h-3" /> Pinned
               </div>
               <div className="space-y-3">
-                {pinned.map(a => <Card key={a.id} a={a} onPin={() => pinMut.mutate(a.id)} pinned />)}
+                {pinned.map(a => <Card key={a.id} a={a} onPin={() => pinMut.mutate(a.id)} onDelete={() => requestDelete(a)} deleting={deleteMut.isPending} pinned />)}
               </div>
             </div>
           )}
@@ -107,7 +149,7 @@ export default function Announcements() {
             <div>
               <div className="text-[11px] uppercase tracking-[0.18em] font-semibold text-slate-500 dark:text-slate-400 mb-2">History</div>
               <div className="space-y-3">
-                {rest.map(a => <Card key={a.id} a={a} onPin={() => pinMut.mutate(a.id)} />)}
+                {rest.map(a => <Card key={a.id} a={a} onPin={() => pinMut.mutate(a.id)} onDelete={() => requestDelete(a)} deleting={deleteMut.isPending} />)}
               </div>
             </div>
           )}
@@ -117,7 +159,7 @@ export default function Announcements() {
   );
 }
 
-function Card({ a, onPin, pinned }) {
+function Card({ a, onPin, onDelete, deleting, pinned }) {
   return (
     <div className={cn(
       'border rounded-xl p-5 transition-colors',
@@ -134,7 +176,20 @@ function Card({ a, onPin, pinned }) {
             <span>· by {a.author}</span>
           </div>
         </div>
+        <div className="flex items-center gap-1">
         <button
+          type="button"
+          onClick={onDelete}
+          disabled={deleting || !a.id}
+          data-testid={`delete-${a.id}`}
+          aria-label={`Delete announcement: ${a.title}`}
+          className="inline-flex items-center gap-1.5 px-2 py-2 rounded-lg text-sm font-medium text-red-600 hover:bg-red-50 dark:hover:bg-red-950 disabled:opacity-50"
+        >
+          <Trash2 className="w-4 h-4" /> Delete
+        </button>
+        <button
+          type="button"
+          disabled={deleting}
           onClick={onPin}
           data-testid={`pin-${a.id}`}
           className={cn('p-2 rounded-lg transition-colors', pinned ? 'text-[#2563EB] bg-blue-100 dark:bg-blue-500/20' : 'text-slate-400 hover:text-[#2563EB] hover:bg-slate-100 dark:hover:bg-slate-800')}
@@ -142,6 +197,7 @@ function Card({ a, onPin, pinned }) {
         >
           <Pin className="w-4 h-4" />
         </button>
+        </div>
       </div>
       <p className="mt-3 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">{a.body}</p>
     </div>

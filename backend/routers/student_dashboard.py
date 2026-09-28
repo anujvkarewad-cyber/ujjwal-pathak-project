@@ -2,7 +2,8 @@
 from datetime import datetime, timedelta, timezone
 from typing import Any, Optional
 
-from fastapi import APIRouter, HTTPException, Request
+from fastapi import APIRouter, Depends, HTTPException, Request
+from fastapi.responses import JSONResponse
 from pydantic import BaseModel, ConfigDict, Field
 
 from auth import require_mentor
@@ -11,6 +12,41 @@ from db import DASHBOARD_SHARED, DASHBOARD_STUDENTS, STUDENT_ACCOUNTS, get_db
 from routers.student_auth import normalize_student_id, _attempt_ym
 
 router = APIRouter(prefix="/api/student-dashboard", tags=["student-dashboard"])
+
+# Durable tombstones are kept outside the sheet-imported shared document.
+# An old sheet sync can never make a mentor-deleted announcement visible again.
+ANNOUNCEMENT_DELETIONS = "announcement_deletions"
+
+
+async def _deleted_announcement_ids(db) -> set:
+    return {str(row["_id"]) async for row in db[ANNOUNCEMENT_DELETIONS].find({}, {"_id": 1})}
+
+
+async def _visible_announcements(db, rows) -> list:
+    deleted = await _deleted_announcement_ids(db)
+    return [row for row in (rows if isinstance(rows, list) else [])
+            if isinstance(row, dict) and str(row.get("id") or "").strip() not in deleted]
+
+
+@router.get("/announcements/deleted")
+async def deleted_announcements(_mentor=Depends(require_mentor)):
+    ids = sorted(await _deleted_announcement_ids(get_db()))
+    return JSONResponse({"deletedIds": ids}, headers={"Cache-Control": "no-store"})
+
+
+@router.delete("/announcements/{announcement_id}")
+async def delete_announcement(announcement_id: str, mentor=Depends(require_mentor)):
+    aid = str(announcement_id or "").strip()
+    if not aid or len(aid) > 120:
+        raise HTTPException(status_code=400, detail="A valid announcement ID is required.")
+    # Idempotent: record deletion only. Do not delete sheet rows or send messages.
+    await get_db()[ANNOUNCEMENT_DELETIONS].update_one(
+        {"_id": aid},
+        {"$setOnInsert": {"deletedAt": _now(), "deletedBy": mentor.get("sub") or "mentor"}},
+        upsert=True,
+    )
+    return {"ok": True, "id": aid}
+
 
 PERSONAL_ACTIONS = {
     "getStats": "stats",
@@ -343,7 +379,7 @@ async def import_dashboard(body: DashboardImportBody, request: Request):
     db = get_db()
     shared_set = {"updatedAt": _now()}
     if body.announcements is not None:
-        shared_set["announcements"] = body.announcements
+        shared_set["announcements"] = await _visible_announcements(db, body.announcements)
     if body.notes is not None:
         shared_set["notes"] = body.notes
     if len(shared_set) > 1:
@@ -409,6 +445,8 @@ async def get_dashboard_section(body: DashboardGetBody):
         rows = shared.get(SHARED_ACTIONS[action]) or []
         if action == "getLeaderboard":
             rows = await _leaderboard_for_student(db, rows, student_id)
+        elif action == "getAnnouncements":
+            rows = await _visible_announcements(db, rows)
         return {"found": True, "result": rows}
 
     if action == "notes.listForStudent":
@@ -550,7 +588,7 @@ async def apply_dashboard_write(action: str, payload: dict, result: Any = None) 
             "author": created.get("author") or "Ujjwal Pathak",
         }
         shared = await db[DASHBOARD_SHARED].find_one({"_id": "shared"}) or {}
-        announcements = [item] + list(shared.get("announcements") or [])
+        announcements = await _visible_announcements(db, [item] + list(shared.get("announcements") or []))
         await db[DASHBOARD_SHARED].update_one(
             {"_id": "shared"},
             {"$set": {"announcements": announcements[:200], "updatedAt": now}},
