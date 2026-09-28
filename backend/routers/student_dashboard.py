@@ -8,7 +8,7 @@ from pydantic import BaseModel, ConfigDict, Field
 from auth import require_mentor
 from config import settings
 from db import DASHBOARD_SHARED, DASHBOARD_STUDENTS, STUDENT_ACCOUNTS, get_db
-from routers.student_auth import normalize_student_id
+from routers.student_auth import normalize_student_id, _attempt_ym
 
 router = APIRouter(prefix="/api/student-dashboard", tags=["student-dashboard"])
 
@@ -277,6 +277,45 @@ def _notes_for_student(notes: list, account: Optional[dict]) -> list:
     return out
 
 
+async def _leaderboard_for_student(db, rows, student_id: str) -> list:
+    """Hide closed/unknown cohorts at read time without deleting stored history.
+
+    Use current student accounts, never a stale imported row's attempt.
+    Older app clients omit studentId: they receive only the two open cohorts.
+    Clients sending studentId receive only their own open attempt.
+    """
+    allowed = {(2027, 1): "Jan 2027", (2027, 5): "May 2027"}
+    attempts = {}
+    async for account in db[STUDENT_ACCOUNTS].find({}, {"studentId": 1, "attempt": 1}):
+        sid = normalize_student_id(account.get("studentId") or "")
+        if sid:
+            attempts[sid] = _attempt_ym(account.get("attempt") or "", "")
+
+    wanted = normalize_student_id(student_id or "")
+    wanted_attempt = attempts.get(wanted) if wanted else None
+    if wanted and wanted_attempt not in allowed:
+        return []
+
+    result = []
+    seen = set()
+    for row in rows if isinstance(rows, list) else []:
+        if not isinstance(row, dict):
+            continue
+        sid = normalize_student_id(row.get("studentId") or "")
+        attempt = attempts.get(sid)
+        if not sid or sid in seen or attempt not in allowed:
+            continue
+        if wanted and attempt != wanted_attempt:
+            continue
+        seen.add(sid)
+        item = dict(row)
+        item["studentId"] = sid
+        item["attempt"] = allowed[attempt]
+        item["rank"] = len(result) + 1
+        result.append(item)
+    return result
+
+
 @router.get("/status")
 async def dashboard_status():
     db = get_db()
@@ -367,7 +406,10 @@ async def get_dashboard_section(body: DashboardGetBody):
         shared = await db[DASHBOARD_SHARED].find_one({"_id": "shared"})
         if not shared or SHARED_ACTIONS[action] not in shared:
             return {"found": False}
-        return {"found": True, "result": shared.get(SHARED_ACTIONS[action]) or []}
+        rows = shared.get(SHARED_ACTIONS[action]) or []
+        if action == "getLeaderboard":
+            rows = await _leaderboard_for_student(db, rows, student_id)
+        return {"found": True, "result": rows}
 
     if action == "notes.listForStudent":
         student_doc = await db[DASHBOARD_STUDENTS].find_one({"studentId": student_id}) if student_id else None
