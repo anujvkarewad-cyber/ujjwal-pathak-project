@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { CheckCircle2, XCircle, Filter } from 'lucide-react';
+import { useMemo, useState } from 'react';
+import { CheckCircle2, XCircle, Filter, RotateCcw } from 'lucide-react';
 import {
   useTrackerDay,
   useStudents,
@@ -7,22 +7,40 @@ import {
 } from '@/api/hooks';
 import { Skeleton } from '@/components/common/Skeleton';
 import { cn } from '@/utils/format';
+import { matchesStudentGroup, TRACKER_GROUP_FILTERS } from '@/utils/studentGroup';
 
 
 export default function DailyTracker() {
   const [batch, setBatch] = useState('All Batches');
+  const [group, setGroup] = useState('All Groups');
   const [dayIndex, setDayIndex] = useState(13);
   const [feedbackOpen, setFeedbackOpen] = useState(false);
   const [selectedStudent, setSelectedStudent] = useState(null);
   const [feedbackMessage, setFeedbackMessage] = useState("");
   const [feedbackPriority, setFeedbackPriority] = useState("Normal");
-  const { data: sData } = useStudents();
-  const { data, isLoading } = useTrackerDay({ dayIndex, batch });
+  const { data: sData, isLoading: studentsLoading } = useStudents();
+  const { data, isLoading: trackerLoading } = useTrackerDay({ dayIndex, batch });
   const sendFeedbackMutation = useSendFeedback();
 
   const batchOptions = sData?.options?.batchOptions || ['All Batches'];
   const days = data?.days || [];
   const last7Start = Math.max(0, days.length - 7);
+  const visibleRows = useMemo(() => {
+    const groupByStudent = new Map(
+      (sData?.students || []).map((student) => [String(student.id || '').trim().toUpperCase(), student.group || ''])
+    );
+    return (data?.list || [])
+      .map((student) => ({
+        ...student,
+        group: student.group || groupByStudent.get(String(student.id || '').trim().toUpperCase()) || 'Unassigned',
+      }))
+      .filter((student) => matchesStudentGroup(student.group, group));
+  }, [data?.list, group, sData?.students]);
+  const submitted = visibleRows.filter((student) => student.entry?.submitted).length;
+  const missed = visibleRows.length - submitted;
+  const rate = visibleRows.length ? Math.round((submitted / visibleRows.length) * 100) : 0;
+  const isLoading = trackerLoading || studentsLoading;
+  const filtersActive = batch !== 'All Batches' || group !== 'All Groups';
 
   return (
     <>
@@ -30,29 +48,56 @@ export default function DailyTracker() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5">
           <div className="text-[11px] uppercase tracking-[0.18em] font-semibold text-slate-500 dark:text-slate-400">Submissions</div>
-          <div className="mt-2 font-heading text-3xl font-bold text-emerald-600 dark:text-emerald-400">{data?.submitted ?? '—'}</div>
+          <div className="mt-2 font-heading text-3xl font-bold text-emerald-600 dark:text-emerald-400">{isLoading ? '—' : submitted}</div>
         </div>
         <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5">
           <div className="text-[11px] uppercase tracking-[0.18em] font-semibold text-slate-500 dark:text-slate-400">Missed</div>
-          <div className="mt-2 font-heading text-3xl font-bold text-rose-600 dark:text-rose-400">{data?.missed ?? '—'}</div>
+          <div className="mt-2 font-heading text-3xl font-bold text-rose-600 dark:text-rose-400">{isLoading ? '—' : missed}</div>
         </div>
         <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5">
           <div className="text-[11px] uppercase tracking-[0.18em] font-semibold text-slate-500 dark:text-slate-400">Submission Rate</div>
-          <div className="mt-2 font-heading text-3xl font-bold text-[#2563EB]">{data ? `${data.rate}%` : '—'}</div>
+          <div className="mt-2 font-heading text-3xl font-bold text-[#2563EB]">{isLoading ? '—' : `${rate}%`}</div>
         </div>
       </div>
 
       <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
         <div className="p-5 border-b border-slate-200 dark:border-slate-800 flex flex-wrap items-center gap-3">
           <Filter className="w-4 h-4 text-slate-400" />
-          <select
-            data-testid="tracker-batch"
-            value={batch}
-            onChange={(e) => setBatch(e.target.value)}
-            className="h-10 px-3 pr-8 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm text-slate-700 dark:text-slate-200 outline-none focus:border-[#2563EB]"
-          >
-            {batchOptions.map(o => <option key={o} value={o}>{o}</option>)}
-          </select>
+          <label className="flex items-center gap-2">
+            <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">Batch</span>
+            <select
+              data-testid="tracker-batch"
+              value={batch}
+              onChange={(e) => setBatch(e.target.value)}
+              className="h-10 px-3 pr-8 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm text-slate-700 dark:text-slate-200 outline-none focus:border-[#2563EB]"
+            >
+              {batchOptions.map(o => <option key={o} value={o}>{o}</option>)}
+            </select>
+          </label>
+          <label className="flex items-center gap-2">
+            <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">Group</span>
+            <select
+              data-testid="tracker-group"
+              value={group}
+              onChange={(e) => setGroup(e.target.value)}
+              className="h-10 px-3 pr-8 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm text-slate-700 dark:text-slate-200 outline-none focus:border-[#2563EB]"
+            >
+              {TRACKER_GROUP_FILTERS.map(option => <option key={option} value={option}>{option}</option>)}
+            </select>
+          </label>
+          {filtersActive && (
+            <button
+              type="button"
+              data-testid="tracker-reset-filters"
+              onClick={() => { setBatch('All Batches'); setGroup('All Groups'); }}
+              className="h-10 px-3 inline-flex items-center gap-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+            >
+              <RotateCcw className="w-3.5 h-3.5" /> Reset
+            </button>
+          )}
+          <span className="text-xs text-slate-500 dark:text-slate-400" data-testid="tracker-filter-count">
+            {isLoading ? 'Loading students…' : `${visibleRows.length} student${visibleRows.length === 1 ? '' : 's'}`}
+          </span>
           <div className="ml-auto flex items-center gap-1 overflow-x-auto">
             {days.slice(-7).map((d, i) => {
               const realIdx = last7Start + i;
@@ -80,6 +125,7 @@ export default function DailyTracker() {
   <tr className="text-left text-[10px] uppercase tracking-[0.18em] font-semibold text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/40 border-b border-slate-200 dark:border-slate-800">
     <th className="px-5 py-3">Student</th>
     <th className="px-5 py-3">Batch</th>
+    <th className="px-5 py-3">Group</th>
     <th className="px-5 py-3">Hours</th>
     <th className="px-5 py-3">Subjects</th>
     <th className="px-5 py-3">Tomorrow Target</th>
@@ -98,14 +144,14 @@ export default function DailyTracker() {
         key={i}
         className="border-b border-slate-100 dark:border-slate-800"
       >
-        <td className="px-5 py-3" colSpan={11}>
+        <td className="px-5 py-3" colSpan={12}>
           <Skeleton className="h-8 w-full" />
         </td>
       </tr>
     ))}
 
   {!isLoading &&
-    (data?.list || []).map((s) => (
+    visibleRows.map((s) => (
       
       <tr
         key={s.id}
@@ -129,6 +175,12 @@ export default function DailyTracker() {
 
         <td className="px-5 py-3 text-slate-600 dark:text-slate-300">
           {s.batch}
+        </td>
+
+        <td className="px-5 py-3 text-slate-600 dark:text-slate-300">
+          <span className="inline-flex rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1 text-xs font-semibold">
+            {s.group}
+          </span>
         </td>
 
         <td className="px-5 py-3 font-semibold text-slate-800 dark:text-slate-200">
@@ -208,6 +260,14 @@ export default function DailyTracker() {
 </td>
       </tr>
     ))}
+  {!isLoading && visibleRows.length === 0 && (
+    <tr>
+      <td colSpan={12} className="px-5 py-12 text-center">
+        <div className="font-semibold text-slate-700 dark:text-slate-200">No students match these filters</div>
+        <div className="mt-1 text-xs text-slate-500 dark:text-slate-400">Choose another batch or group, or reset the filters.</div>
+      </td>
+    </tr>
+  )}
 </tbody>
                   </table>
       </div>
