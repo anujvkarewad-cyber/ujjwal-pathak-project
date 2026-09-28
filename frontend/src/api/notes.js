@@ -1,6 +1,18 @@
 import { apiCall, apiCallLarge, apiCallLargeWithProgress, apiCallWithRetry } from './client';
 
-export const getNotes = () => apiCall('notes.list');
+import { apiCall as backendCall } from './backendClient';
+
+export const getNotes = async () => {
+  const [rows, state] = await Promise.all([
+    apiCall('notes.list'), backendCall('/api/student-dashboard/materials/hidden'),
+  ]);
+  const hidden = new Set(state.hiddenKeys || []);
+  return (Array.isArray(rows) ? rows : []).filter((row) => ![
+    row.id ? 'id:' + String(row.id).trim() : '',
+    row.fileId ? 'file:' + String(row.fileId).trim() : '',
+    row.fileUrl ? 'url:' + String(row.fileUrl).trim() : '',
+  ].some((key) => key && hidden.has(key)));
+};
 
 // payload: { title, description, subject, audience, fileName, mimeType, fileData }
 // fileData must be base64 (no "data:application/pdf;base64," prefix).

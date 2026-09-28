@@ -1,4 +1,5 @@
 """Student dashboard reads/writes on Mongo, with sheet import merge."""
+import uuid
 from datetime import datetime, timedelta, timezone
 from typing import Any, Optional
 
@@ -46,6 +47,88 @@ async def delete_announcement(announcement_id: str, mentor=Depends(require_mento
         upsert=True,
     )
     return {"ok": True, "id": aid}
+
+
+MATERIAL_DELETIONS = "material_deletions"
+CONTENT_RESET_ARCHIVE = "content_reset_archive"
+
+
+def _material_keys(row) -> set:
+    if not isinstance(row, dict):
+        return set()
+    keys = set()
+    for field, prefix in (("id", "id:"), ("fileId", "file:"), ("fileUrl", "url:")):
+        value = str(row.get(field) or "").strip()
+        if value:
+            keys.add(prefix + value)
+    return keys
+
+
+async def _hidden_material_keys(db) -> set:
+    return {str(row["_id"]) async for row in db[MATERIAL_DELETIONS].find({}, {"_id": 1})}
+
+
+async def _visible_materials(db, rows) -> list:
+    hidden = await _hidden_material_keys(db)
+    return [row for row in (rows if isinstance(rows, list) else [])
+            if isinstance(row, dict) and not (_material_keys(row) & hidden)]
+
+
+@router.get("/materials/hidden")
+async def hidden_materials(_mentor=Depends(require_mentor)):
+    keys = sorted(await _hidden_material_keys(get_db()))
+    return JSONResponse({"hiddenKeys": keys}, headers={"Cache-Control": "no-store"})
+
+
+class ClearOldContentBody(BaseModel):
+    confirm: str = ""
+    dryRun: bool = True
+    # Snapshot of the sheet-backed mentor view, if any rows have not synced yet.
+    sheetAnnouncements: list[dict] = Field(default_factory=list, max_length=5000)
+    sheetMaterials: list[dict] = Field(default_factory=list, max_length=5000)
+
+
+@router.post("/content/clear-old")
+async def clear_old_app_content(body: ClearOldContentBody, mentor=Depends(require_mentor)):
+    if body.confirm != "CLEAR_OLD_APP_CONTENT_ONLY":
+        raise HTTPException(status_code=400, detail="Explicit content-only confirmation is required.")
+    db = get_db()
+    shared = await db[DASHBOARD_SHARED].find_one({"_id": "shared"}) or {}
+    announcements = list(shared.get("announcements") or []) + body.sheetAnnouncements
+    materials = list(shared.get("notes") or []) + body.sheetMaterials
+    personal = []
+    async for doc in db[DASHBOARD_STUDENTS].find({}, {"studentId": 1, "notes": 1}):
+        notes = doc.get("notes") if isinstance(doc.get("notes"), list) else []
+        if notes:
+            personal.append({"studentId": doc.get("studentId"), "notes": notes})
+            materials.extend(notes)
+    ann_ids = {str(x.get("id") or "").strip() for x in announcements if isinstance(x, dict)} - {""}
+    keys = set().union(*(_material_keys(x) for x in materials)) if materials else set()
+    # A row without stable identity could reappear after sync: stop, do not guess.
+    if any(not _material_keys(x) for x in materials) or any(not isinstance(x, dict) or not str(x.get("id") or "").strip() for x in announcements):
+        raise HTTPException(status_code=409, detail="Some content has no stable ID. Reset stopped; no content was changed.")
+    counts = {"announcementIds": len(ann_ids), "sharedMaterialRows": len(shared.get("notes") or []),
+              "sheetMaterialRows": len(body.sheetMaterials), "personalMaterialRows": sum(len(x["notes"]) for x in personal),
+              "materialIdentityKeys": len(keys)}
+    if body.dryRun:
+        return {"ok": True, "dryRun": True, "counts": counts}
+    reset_id = "content-reset-" + uuid.uuid4().hex
+    now = _now()
+    # Archive content only. No logs, scores, accounts, targets or Drive files touched.
+    await db[CONTENT_RESET_ARCHIVE].insert_one({"_id": reset_id, "createdAt": now,
+        "createdBy": mentor.get("sub") or "mentor", "announcements": announcements,
+        "sharedMaterials": shared.get("notes") or [], "sheetMaterials": body.sheetMaterials, "counts": counts})
+    for index, doc in enumerate(personal):
+        await db[CONTENT_RESET_ARCHIVE].insert_one({"_id": reset_id + ":" + str(index), "resetId": reset_id, **doc})
+    for aid in sorted(ann_ids):
+        await db[ANNOUNCEMENT_DELETIONS].update_one({"_id": aid},
+            {"$setOnInsert": {"deletedAt": now, "deletedBy": mentor.get("sub") or "mentor", "resetId": reset_id}}, upsert=True)
+    for key in sorted(keys):
+        await db[MATERIAL_DELETIONS].update_one({"_id": key},
+            {"$setOnInsert": {"hiddenAt": now, "resetId": reset_id}}, upsert=True)
+    return {"ok": True, "dryRun": False, "resetId": reset_id, "counts": counts,
+            "localNotificationsCleared": False, "driveFilesDeleted": False,
+            "protectedDataUnchanged": True}
 
 
 PERSONAL_ACTIONS = {
@@ -381,7 +464,7 @@ async def import_dashboard(body: DashboardImportBody, request: Request):
     if body.announcements is not None:
         shared_set["announcements"] = await _visible_announcements(db, body.announcements)
     if body.notes is not None:
-        shared_set["notes"] = body.notes
+        shared_set["notes"] = await _visible_materials(db, body.notes)
     if len(shared_set) > 1:
         await db[DASHBOARD_SHARED].update_one(
             {"_id": "shared"},
@@ -452,12 +535,12 @@ async def get_dashboard_section(body: DashboardGetBody):
     if action == "notes.listForStudent":
         student_doc = await db[DASHBOARD_STUDENTS].find_one({"studentId": student_id}) if student_id else None
         if student_doc and isinstance(student_doc.get("notes"), list):
-            return {"found": True, "result": student_doc.get("notes") or []}
+            return {"found": True, "result": await _visible_materials(db, student_doc.get("notes") or [])}
         shared = await db[DASHBOARD_SHARED].find_one({"_id": "shared"})
         if not shared or "notes" not in shared:
             return {"found": False}
         account = await db[STUDENT_ACCOUNTS].find_one({"studentId": student_id}) if student_id else None
-        return {"found": True, "result": _notes_for_student(shared.get("notes") or [], account)}
+        return {"found": True, "result": _notes_for_student(await _visible_materials(db, shared.get("notes") or []), account)}
 
     field = PERSONAL_ACTIONS.get(action)
     if not field or not student_id:
@@ -613,7 +696,7 @@ async def apply_dashboard_write(action: str, payload: dict, result: Any = None) 
             "category": payload.get("category") or "",
         }
         shared = await db[DASHBOARD_SHARED].find_one({"_id": "shared"}) or {}
-        notes = [item] + list(shared.get("notes") or [])
+        notes = await _visible_materials(db, [item] + list(shared.get("notes") or []))
         await db[DASHBOARD_SHARED].update_one(
             {"_id": "shared"},
             {"$set": {"notes": notes[:400], "updatedAt": now}},
