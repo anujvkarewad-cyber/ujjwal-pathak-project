@@ -1,5 +1,28 @@
 """Mongo-backed student login."""
-from routers.student_auth import upsert_student_account, StudentImportItem
+from datetime import date
+
+from routers.student_auth import (
+    StudentImportItem,
+    _attempt_access_allowed,
+    _attempt_ym,
+    upsert_student_account,
+)
+
+
+def test_attempt_access_accepts_google_sheet_date_strings():
+    jan = "Fri Jan 01 2027 00:00:00 GMT+0530 (India Standard Time)"
+    may = "Sat May 01 2027 00:00:00 GMT+0530 (India Standard Time)"
+
+    assert _attempt_ym(jan) == (2027, 1)
+    assert _attempt_ym(may) == (2027, 5)
+    assert _attempt_access_allowed(jan, today=date(2027, 1, 20)) is True
+    assert _attempt_access_allowed(jan, today=date(2027, 1, 21)) is False
+    assert _attempt_access_allowed(may, today=date(2027, 1, 21)) is True
+
+
+def test_attempt_access_still_rejects_old_or_missing_attempts():
+    assert _attempt_access_allowed("Sep 2026") is False
+    assert _attempt_access_allowed("") is False
 
 
 def test_student_login_roundtrip(client, mentor_headers):
@@ -13,6 +36,7 @@ def test_student_login_roundtrip(client, mentor_headers):
                     "password": "UPM2026@001",
                     "studentName": "Test Student",
                     "email": "a@test.local",
+                    "attempt": "Jan 2027",
                     "batch": "Super 30",
                     "passwordChanged": "Yes",
                 }

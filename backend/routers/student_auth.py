@@ -6,7 +6,7 @@ Apps Script only when the account is not in Mongo yet.
 """
 import os
 import re
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from typing import Any, Optional
 
 from fastapi import APIRouter, HTTPException, Request
@@ -64,6 +64,20 @@ def _attempt_ym(attempt: str, batch: str = ""):
             month = int(dmy.group(2))
             if 1 <= month <= 12:
                 return (int(dmy.group(3)), month)
+        # Google Sheets can serialize a date as
+        # "Fri Jan 01 2027 00:00:00 GMT+0530 (India Standard Time)".
+        # Parse month-day-year before the generic month-year rule below;
+        # otherwise that rule mistakes the day (01) for the year 2001 and
+        # incorrectly closes a valid Jan/May 2027 student's access.
+        sheet_date = re.search(
+            r"\b(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*"
+            r"\s+\d{1,2}(?:st|nd|rd|th)?(?:\s*,\s*|\s+)(\d{4})\b",
+            s.lower(),
+        )
+        if sheet_date:
+            month = _MONTHS.get(sheet_date.group(1)[:3])
+            if month is not None:
+                return (int(sheet_date.group(2)), month)
     text = f"{attempt} {batch}".strip().lower()
     m = re.search(r"\b(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*[\s./-]*(\d{2,4})\b", text)
     if not m:
@@ -77,16 +91,40 @@ def _attempt_ym(attempt: str, batch: str = ""):
     return (year, mon)
 
 
-def _attempt_access_allowed(attempt: str, batch: str = "") -> bool:
+def _jan_2027_access_through() -> date:
+    raw = (os.environ.get("JAN_2027_ACCESS_THROUGH") or "2027-01-20").strip()
+    try:
+        return date.fromisoformat(raw)
+    except (TypeError, ValueError):
+        return date(2027, 1, 20)
+
+
+def _attempt_access_allowed(
+    attempt: str,
+    batch: str = "",
+    today: Optional[date] = None,
+) -> bool:
     raw = (os.environ.get("ACCESS_MIN_ATTEMPT") or "2027-01").strip().split("-")
     try:
         min_ym = (int(raw[0]), int(raw[1]))
     except Exception:
         min_ym = (2027, 1)
     ym = _attempt_ym(attempt, batch)
-    if ym is None:
+    if ym is None or ym < min_ym:
         return False
-    return ym >= min_ym
+    # Jan 2027 students retain access through 20 Jan 2027 in India. Closing
+    # this cohort must not close May 2027 or any later eligible attempt.
+    if ym == (2027, 1):
+        ist_today = today or datetime.now(IST).date()
+        return ist_today <= _jan_2027_access_through()
+    return True
+
+
+def _attempt_access_closed_message(attempt: str, batch: str = "") -> str:
+    ym = _attempt_ym(attempt, batch)
+    if ym == (2027, 1) and datetime.now(IST).date() > _jan_2027_access_through():
+        return "Your Jan 2027 app access closed after 20 January 2027."
+    return "Your attempt access is closed. The app is open for Jan 2027 attempt students onwards."
 
 
 def normalize_student_id(raw: str) -> str:
@@ -197,7 +235,10 @@ async def authenticate_student(student_id: str, password: str) -> dict:
     if not _attempt_access_allowed(str(doc.get("attempt") or ""), str(doc.get("batch") or "")):
         return {
             "success": False,
-            "message": "Your attempt access is closed. The app is open for Jan 2027 attempt students onwards.",
+            "message": _attempt_access_closed_message(
+                str(doc.get("attempt") or ""),
+                str(doc.get("batch") or ""),
+            ),
             "code": "group_closed",
         }
     if doc.get("password") and not doc.get("passwordHash"):
