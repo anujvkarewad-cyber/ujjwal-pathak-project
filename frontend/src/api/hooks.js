@@ -53,6 +53,13 @@ export const useTrackerDay = ({ dayIndex, batch }) =>
     enabled: dayIndex != null,
   });
 
+export const useMissedTrackerReport = ({ from, to, enabled = true }) =>
+  useQuery({
+    queryKey: ['tracker', 'missed-report', from, to],
+    queryFn: () => trackerApi.getMissedTrackerReport({ from, to }),
+    enabled: enabled && Boolean(from && to),
+  });
+
 // ── Leaderboard ─────────────────────────────────────────────────────────
 export const useLeaderboard = (mode = 'overall') =>
   useQuery({ queryKey: ['leaderboard', mode], queryFn: () => leaderboardApi.getLeaderboard(mode) });

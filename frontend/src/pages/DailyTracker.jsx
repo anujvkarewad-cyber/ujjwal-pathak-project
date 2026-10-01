@@ -6,6 +6,7 @@ import {
   useSendFeedback,
 } from '@/api/hooks';
 import { Skeleton } from '@/components/common/Skeleton';
+import MissedTrackerReport from '@/components/tracker/MissedTrackerReport';
 import { cn } from '@/utils/format';
 import { matchesStudentGroup, TRACKER_GROUP_FILTERS } from '@/utils/studentGroup';
 
@@ -59,6 +60,8 @@ export default function DailyTracker() {
           <div className="mt-2 font-heading text-3xl font-bold text-[#2563EB]">{isLoading ? '—' : `${rate}%`}</div>
         </div>
       </div>
+
+      <MissedTrackerReport />
 
       <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
         <div className="p-5 border-b border-slate-200 dark:border-slate-800 flex flex-wrap items-center gap-3">

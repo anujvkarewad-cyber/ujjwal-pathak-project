@@ -1,9 +1,15 @@
 """Student dashboard reads/writes on Mongo, with sheet import merge."""
+import asyncio
+import csv
+import io
+import os
+import re
 import uuid
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from typing import Any, Optional
 
-from fastapi import APIRouter, Depends, HTTPException, Request
+import requests
+from fastapi import APIRouter, Depends, HTTPException, Query, Request
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, ConfigDict, Field
 
@@ -152,6 +158,191 @@ def _now() -> str:
 
 def _today() -> str:
     return datetime.now(IST).date().isoformat()
+
+
+TRACKER_SHEET_ID = os.environ.get(
+    "TRACKER_SHEET_ID",
+    "1oYYodP_XcbJOjrP5c4PirQDCnl54NFyPUbf7lwM1Ycc",
+).strip()
+TRACKER_FORM_SHEET = os.environ.get("TRACKER_FORM_SHEET", "Form responses 1").strip()
+
+
+def _parse_tracker_day(value: Any) -> Optional[date]:
+    """Read an ISO or Google-Sheets India date without timezone drift."""
+    text = str(value or "").strip()
+    if not text:
+        return None
+    for fmt, length in (
+        ("%Y-%m-%d", 10),
+        ("%d/%m/%Y", 10),
+        ("%d/%m/%Y %H:%M:%S", 19),
+        ("%Y-%m-%d %H:%M:%S", 19),
+        ("%a %b %d %Y", 15),
+    ):
+        try:
+            return datetime.strptime(text[:length], fmt).date()
+        except ValueError:
+            continue
+    match = re.match(r"^(\d{4})-(\d{2})-(\d{2})", text)
+    if match:
+        try:
+            return date(int(match.group(1)), int(match.group(2)), int(match.group(3)))
+        except ValueError:
+            return None
+    return None
+
+
+def _header_key(value: Any) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", str(value or "").strip().lower()).strip()
+
+
+def _tracker_submission_day(study_value: Any, timestamp_value: Any) -> Optional[date]:
+    study_day = _parse_tracker_day(study_value)
+    timestamp_day = _parse_tracker_day(timestamp_value)
+    # A broken browser/date control can serialize an epoch date such as 1970.
+    # Prefer the form timestamp when the supplied study date is implausibly far
+    # away, rather than losing a genuine submission or assigning it to 1970.
+    if study_day and timestamp_day and abs((timestamp_day - study_day).days) > 366:
+        return timestamp_day
+    return study_day or timestamp_day
+
+
+def _fetch_tracker_submissions_sync() -> list[dict]:
+    """Read the complete tracker form history; this endpoint never writes to Sheets."""
+    if not TRACKER_SHEET_ID:
+        raise RuntimeError("Tracker sheet is not configured.")
+    url = f"https://docs.google.com/spreadsheets/d/{TRACKER_SHEET_ID}/gviz/tq"
+    response = requests.get(
+        url,
+        params={"tqx": "out:csv", "sheet": TRACKER_FORM_SHEET, "_": str(int(datetime.now().timestamp()))},
+        headers={"User-Agent": "UPM-mentor-tracker-report/1.0"},
+        timeout=20,
+    )
+    response.raise_for_status()
+    reader = csv.DictReader(io.StringIO(response.content.decode("utf-8-sig")))
+    fields = reader.fieldnames or []
+    by_key = {_header_key(name): name for name in fields}
+    id_col = by_key.get("student id") or by_key.get("studentid")
+    timestamp_col = by_key.get("timestamp")
+    study_date_col = by_key.get("study date")
+    if not id_col or not timestamp_col:
+        raise RuntimeError("Tracker sheet columns could not be identified.")
+
+    submissions = []
+    for row in reader:
+        sid = normalize_student_id(row.get(id_col) or "")
+        day = _tracker_submission_day(
+            row.get(study_date_col) if study_date_col else "",
+            row.get(timestamp_col) or "",
+        )
+        if sid and day:
+            submissions.append({"studentId": sid, "date": day})
+    return submissions
+
+
+def _build_missed_tracker_report(
+    accounts: list[dict],
+    submissions: list[dict],
+    from_day: date,
+    to_day: date,
+) -> dict:
+    submitted_by_student: dict[str, set[date]] = {}
+    for row in submissions:
+        sid = normalize_student_id(row.get("studentId") or "")
+        day = row.get("date")
+        if sid and isinstance(day, date) and from_day <= day <= to_day:
+            submitted_by_student.setdefault(sid, set()).add(day)
+
+    items = []
+    roster_count = 0
+    for account in accounts:
+        if account.get("master") or _attempt_ym(account.get("attempt") or "", account.get("batch") or "") != (2027, 1):
+            continue
+        sid = normalize_student_id(account.get("studentId") or "")
+        if not sid:
+            continue
+        roster_count += 1
+        joined = _parse_tracker_day(account.get("joinedOn") or "")
+        expected_from = max(from_day, joined) if joined else from_day
+        expected_dates = []
+        if expected_from <= to_day:
+            expected_dates = [
+                expected_from + timedelta(days=offset)
+                for offset in range((to_day - expected_from).days + 1)
+            ]
+        submitted = submitted_by_student.get(sid, set())
+        submitted_dates = [day for day in expected_dates if day in submitted]
+        missed_dates = [day for day in expected_dates if day not in submitted]
+        items.append({
+            "studentId": sid,
+            "studentName": str(account.get("studentName") or sid).strip() or sid,
+            "group": str(account.get("group") or "Unassigned").strip() or "Unassigned",
+            "batch": str(account.get("batch") or "Unassigned").strip() or "Unassigned",
+            "joinedOn": joined.isoformat() if joined else None,
+            "expectedFrom": expected_from.isoformat(),
+            "expectedDays": len(expected_dates),
+            "submittedDays": len(submitted_dates),
+            "missedDays": len(missed_dates),
+            "submittedDates": [day.isoformat() for day in submitted_dates],
+            "missedDates": [day.isoformat() for day in missed_dates],
+        })
+
+    items.sort(key=lambda row: (-row["missedDays"], row["studentName"].lower(), row["studentId"]))
+    students_with_misses = sum(1 for row in items if row["missedDays"] > 0)
+    return {
+        "attempt": "Jan 2027",
+        "from": from_day.isoformat(),
+        "to": to_day.isoformat(),
+        "dayRule": "Every calendar day",
+        "totalCalendarDays": (to_day - from_day).days + 1,
+        "rosterCount": roster_count,
+        "studentsWithMissedDays": students_with_misses,
+        "studentsWithNoMissedDays": max(0, roster_count - students_with_misses),
+        "items": items,
+    }
+
+
+@router.get("/tracker-missed-report")
+async def tracker_missed_report(
+    from_value: str = Query(alias="from"),
+    to_value: str = Query(alias="to"),
+    _mentor=Depends(require_mentor),
+):
+    from_day = _parse_tracker_day(from_value)
+    to_day = _parse_tracker_day(to_value)
+    if not from_day or not to_day:
+        raise HTTPException(status_code=400, detail="From and To must be valid YYYY-MM-DD dates.")
+    if from_day > to_day:
+        raise HTTPException(status_code=400, detail="From date cannot be after To date.")
+    if (to_day - from_day).days > 365:
+        raise HTTPException(status_code=400, detail="Choose a date range of 366 days or fewer.")
+    today = datetime.now(IST).date()
+    if to_day > today:
+        raise HTTPException(status_code=400, detail="To date cannot be in the future.")
+
+    db = get_db()
+    accounts = await db[STUDENT_ACCOUNTS].find(
+        {},
+        {
+            "studentId": 1,
+            "studentName": 1,
+            "group": 1,
+            "batch": 1,
+            "attempt": 1,
+            "joinedOn": 1,
+            "master": 1,
+        },
+    ).to_list(length=500)
+    try:
+        submissions = await asyncio.to_thread(_fetch_tracker_submissions_sync)
+    except Exception as exc:
+        raise HTTPException(status_code=502, detail="Tracker form data could not be loaded. No report was calculated.") from exc
+
+    report = _build_missed_tracker_report(accounts, submissions, from_day, to_day)
+    report["source"] = "Form responses 1"
+    report["sourceSubmissionRows"] = len(submissions)
+    report["generatedAt"] = _now()
+    return JSONResponse(report, headers={"Cache-Control": "no-store"})
 
 
 def _import_allowed(request: Request) -> bool:
