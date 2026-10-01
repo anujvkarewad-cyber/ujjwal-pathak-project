@@ -65,6 +65,25 @@ def test_student_login_roundtrip(client, mentor_headers):
     assert result["studentName"] == "Test Student"
     assert result["forcePasswordChange"] is False
 
+    # A mentor reset can force one account to change its password even when a
+    # later sheet import still says Password Changed = Yes. The override must
+    # survive imports and clear only after the student changes the password.
+    import asyncio
+    from db import STUDENT_ACCOUNTS, get_db
+
+    asyncio.run(
+        get_db()[STUDENT_ACCOUNTS].update_one(
+            {"studentId": "UMP0001"},
+            {"$set": {"forcePasswordChange": True}},
+        )
+    )
+    forced = client.post(
+        "/api/student-auth/login",
+        json={"studentId": "UMP0001", "password": "UPM2026@001"},
+    )
+    assert forced.json()["result"]["success"] is True
+    assert forced.json()["result"]["forcePasswordChange"] is True
+
     changed = client.post(
         "/api/student-auth/change-password",
         json={"studentId": "UMP0001", "currentPassword": "UPM2026@001", "newPassword": "NewPass#1"},
@@ -74,6 +93,7 @@ def test_student_login_roundtrip(client, mentor_headers):
     assert old.json()["result"]["success"] is False
     new = client.post("/api/student-auth/login", json={"studentId": "UMP0001", "password": "NewPass#1"})
     assert new.json()["result"]["success"] is True
+    assert new.json()["result"]["forcePasswordChange"] is False
 
 
 def test_import_requires_auth(client):

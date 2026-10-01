@@ -153,7 +153,7 @@ def _public_profile(doc: dict) -> dict:
         "phone": doc.get("phone") or "",
         "address": doc.get("address") or "",
         "joinedOn": doc.get("joinedOn") or "",
-        "forcePasswordChange": not bool(doc.get("passwordChanged")),
+        "forcePasswordChange": bool(doc.get("forcePasswordChange")) or not bool(doc.get("passwordChanged")),
         "master": bool(doc.get("master")),
         "whatsapp": doc.get("whatsapp") or doc.get("phone") or "",
     }
@@ -331,6 +331,7 @@ async def student_change_password(body: ChangePasswordBody):
             "$set": {
                 "passwordHash": hash_password(new_pwd),
                 "passwordChanged": True,
+                "forcePasswordChange": False,
                 "updatedAt": _now(),
             },
             "$unset": {"password": ""},
