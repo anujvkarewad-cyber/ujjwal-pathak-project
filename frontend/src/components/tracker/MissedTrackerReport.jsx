@@ -4,10 +4,13 @@ import {
   CalendarDays,
   Check,
   Download,
+  FileText,
   Minus,
   Search,
   X,
 } from 'lucide-react';
+import jsPDF from 'jspdf';
+import autoTable from 'jspdf-autotable';
 import { useMissedTrackerReport } from '@/api/hooks';
 import { Skeleton } from '@/components/common/Skeleton';
 
@@ -114,6 +117,134 @@ function downloadReport(data, dates, mode) {
   URL.revokeObjectURL(url);
 }
 
+const PDF_GROUPS = [
+  { key: 'group1', label: 'Group 1', color: [37, 99, 235] },
+  { key: 'group2', label: 'Group 2', color: [124, 58, 237] },
+  { key: 'both', label: 'Both', color: [8, 145, 178] },
+];
+
+function pdfGroupKey(value) {
+  const group = String(value || '').trim().toLowerCase();
+  if (group.includes('both')) return 'both';
+  if (/group\s*2|^2$/.test(group)) return 'group2';
+  if (/group\s*1|^1$/.test(group)) return 'group1';
+  return 'both';
+}
+
+function pdfStatus(row, day) {
+  const status = attendanceStatus(row, day);
+  if (status === 'Submitted') return 'S';
+  if (status === 'Not submitted') return 'M';
+  return '—';
+}
+
+function downloadGroupPdf(data, dates, mode) {
+  const isMonthly = mode === 'monthly';
+  const doc = new jsPDF({
+    orientation: 'landscape',
+    unit: 'mm',
+    format: isMonthly ? 'a3' : 'a4',
+  });
+
+  PDF_GROUPS.forEach((section, index) => {
+    if (index > 0) doc.addPage();
+    const students = (data.items || [])
+      .filter((row) => pdfGroupKey(row.group) === section.key)
+      .sort((a, b) => a.studentName.localeCompare(b.studentName));
+    const submitted = students.reduce((sum, row) => sum + Number(row.submittedDays || 0), 0);
+    const missed = students.reduce((sum, row) => sum + Number(row.missedDays || 0), 0);
+
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(15);
+    doc.text('Ujjwal Pathak Mentorship', 12, 13);
+    doc.setFontSize(12);
+    doc.text(`Tracker Attendance · Jan 2027 · ${section.label}`, 12, 21);
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(8);
+    doc.text(
+      `${mode === 'monthly' ? 'Monthly' : 'Weekly'} · ${displayDate(data.from)} to ${displayDate(data.to)} · Students: ${students.length} · Submitted: ${submitted} · Missed: ${missed}`,
+      12,
+      27,
+    );
+    doc.text('Legend: S = Submitted   M = Not submitted   — = Not expected', 12, 32);
+    if (!students.length) {
+      doc.setFontSize(10);
+      doc.text(`No Jan 2027 students are assigned to ${section.label}.`, 12, 44);
+      return;
+    }
+
+    autoTable(doc, {
+      startY: 36,
+      head: [[
+        'Student',
+        'ID',
+        ...dates.map((day) => `${day.slice(-2)}\n${weekday(day)}`),
+        'Submitted',
+        'Missed',
+      ]],
+      body: students.map((row) => [
+        row.studentName,
+        row.studentId,
+        ...dates.map((day) => pdfStatus(row, day)),
+        row.submittedDays,
+        row.missedDays,
+      ]),
+      theme: 'grid',
+      headStyles: {
+        fillColor: section.color,
+        textColor: 255,
+        fontStyle: 'bold',
+        halign: 'center',
+      },
+      styles: {
+        fontSize: isMonthly ? 5.3 : 7,
+        cellPadding: isMonthly ? 0.7 : 1.2,
+        valign: 'middle',
+        overflow: 'linebreak',
+      },
+      columnStyles: {
+        0: { cellWidth: isMonthly ? 31 : 38, halign: 'left' },
+        1: { cellWidth: isMonthly ? 17 : 20, halign: 'left' },
+      },
+      horizontalPageBreak: true,
+      horizontalPageBreakRepeat: [0, 1],
+      rowPageBreak: 'avoid',
+      didParseCell: (hook) => {
+        if (hook.section !== 'body' || hook.column.index < 2 || hook.column.index >= dates.length + 2) return;
+        if (hook.cell.raw === 'S') {
+          hook.cell.styles.fillColor = [220, 252, 231];
+          hook.cell.styles.textColor = [21, 128, 61];
+          hook.cell.styles.fontStyle = 'bold';
+          hook.cell.styles.halign = 'center';
+        } else if (hook.cell.raw === 'M') {
+          hook.cell.styles.fillColor = [255, 228, 230];
+          hook.cell.styles.textColor = [190, 18, 60];
+          hook.cell.styles.fontStyle = 'bold';
+          hook.cell.styles.halign = 'center';
+        } else {
+          hook.cell.styles.fillColor = [241, 245, 249];
+          hook.cell.styles.textColor = [100, 116, 139];
+          hook.cell.styles.halign = 'center';
+        }
+      },
+    });
+  });
+
+  const pages = doc.internal.getNumberOfPages();
+  for (let page = 1; page <= pages; page += 1) {
+    doc.setPage(page);
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(7);
+    doc.setTextColor(100);
+    doc.text(
+      `Generated ${new Date().toLocaleString('en-IN')} · Page ${page} of ${pages}`,
+      12,
+      doc.internal.pageSize.getHeight() - 6,
+    );
+  }
+  doc.save(`jan-2027-tracker-attendance-group-wise-${mode}-${data.from}-to-${data.to}.pdf`);
+}
+
 function AttendanceCell({ status, day }) {
   if (status === 'Submitted') {
     return (
@@ -186,14 +317,24 @@ export default function MissedTrackerReport() {
             </p>
           </div>
           {data && (
-            <button
-              type="button"
-              onClick={() => downloadReport(data, dates, mode)}
-              className="inline-flex h-10 items-center gap-2 rounded-lg border border-slate-200 px-4 text-sm font-semibold text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800"
-              data-testid="tracker-attendance-download"
-            >
-              <Download className="h-4 w-4" /> Download CSV
-            </button>
+            <div className="flex flex-wrap gap-2">
+              <button
+                type="button"
+                onClick={() => downloadGroupPdf(data, dates, mode)}
+                className="inline-flex h-10 items-center gap-2 rounded-lg bg-[#2563EB] px-4 text-sm font-semibold text-white hover:bg-blue-700"
+                data-testid="tracker-attendance-pdf"
+              >
+                <FileText className="h-4 w-4" /> Group-wise PDF
+              </button>
+              <button
+                type="button"
+                onClick={() => downloadReport(data, dates, mode)}
+                className="inline-flex h-10 items-center gap-2 rounded-lg border border-slate-200 px-4 text-sm font-semibold text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800"
+                data-testid="tracker-attendance-download"
+              >
+                <Download className="h-4 w-4" /> Download CSV
+              </button>
+            </div>
           )}
         </div>
 
