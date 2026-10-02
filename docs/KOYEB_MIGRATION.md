@@ -1,4 +1,15 @@
-# Koyeb migration (replaces the disabled Vercel deployment)
+# Container migration (replaces the disabled Vercel deployment)
+
+> ## ⚠️ Read first: Koyeb has no free tier for new accounts
+> Mistral AI acquired Koyeb in February 2026. New sign-ups are **paid-only**
+> (Pro, from $29/month); the free Starter tier was closed to new users and
+> existing organizations keep their plans. The platform roadmap now targets
+> AI inference/GPU workloads rather than general web hosting.
+>
+> **If you do not already have a Koyeb org, use Render instead** — the same
+> repo-root `Dockerfile` is deployed by the `ujjwal-pathak-app` service in
+> [`render.yaml`](../render.yaml); see "Render (Docker)" at the bottom of this
+> file. The Koyeb instructions below remain valid for a paid/existing org.
 
 **Why:** the Vercel deployment started answering every request with
 `HTTP 402 … DEPLOYMENT_DISABLED` (account/plan level — nothing in this repo
@@ -144,3 +155,32 @@ subsequent logins use the new password only.
    create the `CNAME` to `<app>.koyeb.app`; TLS is issued automatically).
 5. Update the Apps Script `STUDENT_AUTH_URL` / proxy target to the Koyeb URL.
 6. Keep `render.yaml` as-is: Render remains a working fallback host.
+
+
+---
+
+## Appendix — Render (Docker): the free-tier alternative
+
+Same image, same env vars, same reset. `render.yaml` already defines the
+service `ujjwal-pathak-app` (runtime `docker`, `dockerfilePath: ./Dockerfile`).
+
+1. <https://dashboard.render.com> → **New → Blueprint** → select this repo and
+   branch → Render reads `render.yaml` and proposes the services.
+2. Keep **`ujjwal-pathak-app`** (API + SPA in one container). Delete or skip
+   `ujjwal-pathak-mentor-api` — it is the older API-only fallback.
+3. Render prompts for every `sync: false` variable. These are stored encrypted
+   in the dashboard and never written to Git — this is Render's equivalent of
+   a Koyeb Secret:
+   `MONGO_URL`, `JWT_SECRET`, `MENTOR_ACCOUNTS`, `STUDENT_IMPORT_KEY`,
+   `SYNC_SECRET`, the WhatsApp credentials, and optionally
+   `ACCOUNT_RESET_SHEET_PASSWORDS` (delete it after the first successful boot).
+   For anything you want to reuse across services, use **Environment Groups**
+   or a **Secret File**.
+4. Health check `/api/health` and the port are already in the blueprint; Render
+   injects `$PORT` and the Dockerfile honours it.
+5. The `free` plan sleeps after ~15 minutes idle (slow first login). Switch the
+   plan to `starter` for an always-on service before students rely on it.
+6. Everything in §3 (the four-account reset) applies unchanged — same env var,
+   same marker, same mentor endpoints, just a `*.onrender.com` host.
+
+Railway and Fly.io work identically: both build this `Dockerfile` as-is.
