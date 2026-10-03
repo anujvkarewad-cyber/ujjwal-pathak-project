@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Depends
+from pydantic import BaseModel, ConfigDict, Field
 from datetime import datetime, timezone
 from auth import require_mentor
 from config import settings
@@ -130,3 +131,40 @@ async def db_stats(_: dict = Depends(require_mentor)):
             else "Approaching the M0 free limit: lower MCQ retention or upgrade to Atlas Flex."
         ),
     }
+
+
+class CohortPurgeBody(BaseModel):
+    """End-of-attempt cleanup request. Dry run unless explicitly disabled."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    attempt: str = Field(default="", max_length=64)
+    studentIds: list[str] = Field(default_factory=list, max_length=1000)
+    dryRun: bool = True
+    deleteAccounts: bool = False
+    confirm: str = Field(default="", max_length=64)
+
+
+@router.post("/purge-cohort")
+async def purge_cohort_endpoint(body: CohortPurgeBody, _: dict = Depends(require_mentor)):
+    """Delete one finished cohort's attempts/analytics so Atlas stays free.
+
+    Dry run by default. A real delete additionally requires
+    `confirm: "DELETE"` so a stray click can never wipe live data.
+    Content collections are never touched.
+    """
+    from cohort_purge import purge_cohort
+
+    dry_run = bool(body.dryRun)
+    if not dry_run and body.confirm.strip().upper() != "DELETE":
+        return {
+            "ok": False,
+            "reason": "confirmation_required",
+            "hint": 'Send {"dryRun": false, "confirm": "DELETE"} to actually delete.',
+        }
+    return await purge_cohort(
+        attempt=body.attempt,
+        student_ids=body.studentIds,
+        dry_run=dry_run,
+        delete_accounts=bool(body.deleteAccounts),
+    )
