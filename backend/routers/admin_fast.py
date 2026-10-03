@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends
 from datetime import datetime, timezone
 from auth import require_mentor
+from config import settings
 from db import CONTENT_CHAPTERS, CONTENT_QUESTIONS, CONTENT_SCENARIOS, CONTENT_RELEASES, get_db
 from routers.student_content import invalidate_student_bank
 
@@ -77,4 +78,55 @@ async def fast_status():
         "approved": approved,
         "chapters": chapters,
         "releases": releases
+    }
+
+
+@router.get("/db-stats")
+async def db_stats(_: dict = Depends(require_mentor)):
+    """Storage/ops headroom for the current MongoDB plan.
+
+    Atlas M0 (free) allows 512 MB and ~100 ops/sec. Watch `usedPercent`:
+    past ~80% either lower MCQ_DAILY_RETENTION / MCQ_PRACTICE_RETENTION
+    (cheapest, stays free) or move the cluster to Atlas Flex.
+    """
+    db = get_db()
+    free_limit_mb = 512
+    try:
+        stats = await db.command("dbStats", scale=1024 * 1024)
+    except Exception as exc:  # in-memory mock or restricted cluster
+        return {"ok": False, "reason": str(exc)[:200], "freeLimitMB": free_limit_mb}
+
+    used_mb = round(float(stats.get("dataSize", 0)) + float(stats.get("indexSize", 0)), 2)
+    collections = {}
+    for name in (
+        "student_mcq_attempts",
+        "student_accounts",
+        "content_questions",
+        "knowledge_chunks",
+        "analytics_summaries",
+        "analytics_trends",
+    ):
+        try:
+            collections[name] = await db[name].count_documents({})
+        except Exception:
+            collections[name] = None
+
+    return {
+        "ok": True,
+        "usedMB": used_mb,
+        "freeLimitMB": free_limit_mb,
+        "usedPercent": round(used_mb / free_limit_mb * 100, 1),
+        "storageMB": round(float(stats.get("storageSize", 0)), 2),
+        "indexMB": round(float(stats.get("indexSize", 0)), 2),
+        "documents": int(stats.get("objects", 0)),
+        "counts": collections,
+        "retention": {
+            "mcqDaily": settings.mcq_daily_retention,
+            "mcqPractice": settings.mcq_practice_retention,
+        },
+        "advice": (
+            "Under 80% of the M0 free limit — no action needed."
+            if used_mb < free_limit_mb * 0.8
+            else "Approaching the M0 free limit: lower MCQ retention or upgrade to Atlas Flex."
+        ),
     }
