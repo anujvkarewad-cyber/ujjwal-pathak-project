@@ -23,6 +23,11 @@ def _int(name: str, default: int) -> int:
 class Settings:
     mongo_url: str = os.environ.get("MONGO_URL") or "memory://"
     db_name: str = os.environ.get("DB_NAME") or "ujjwal_pathak"
+    # Connections per process. Serverless hosts (Cloud Run) run several
+    # instances, and Motor's default pool of 100 each would blow past the
+    # 500-connection limit of an Atlas M0/M2 cluster. 20 × 10 instances = 200.
+    mongo_max_pool_size: int = _int("MONGO_MAX_POOL_SIZE", 20)
+    mongo_min_pool_size: int = _int("MONGO_MIN_POOL_SIZE", 0)
 
     jwt_secret: str = os.environ.get("JWT_SECRET") or "dev-secret-do-not-use-in-prod"
     mentor_email: str = os.environ.get("MENTOR_EMAIL") or "mentor@ujjwalpathak.in"

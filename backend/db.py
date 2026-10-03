@@ -47,7 +47,14 @@ def get_db():
                     "MONGO_URL=memory:// requires `mongomock-motor` (pip install mongomock-motor)"
                 )
         else:
-            _client = AsyncIOMotorClient(settings.mongo_url)
+            _client = AsyncIOMotorClient(
+                settings.mongo_url,
+                maxPoolSize=settings.mongo_max_pool_size,
+                minPoolSize=settings.mongo_min_pool_size,
+                maxIdleTimeMS=60_000,
+                serverSelectionTimeoutMS=10_000,
+                retryWrites=True,
+            )
         _db = _client[settings.db_name]
     return _db
 

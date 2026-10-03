@@ -34,6 +34,8 @@ ENV_VARS="${ENV_VARS},DEV_AUTH_BYPASS=0"
 ENV_VARS="${ENV_VARS},IMPORT_GENERATED=${IMPORT_GENERATED:-0}"
 ENV_VARS="${ENV_VARS},GENERATED_DIR=../content-pipeline/generated"
 ENV_VARS="${ENV_VARS},CORS_ORIGINS=*"
+# Keep total Mongo connections sane across instances: 20 × max-instances.
+ENV_VARS="${ENV_VARS},MONGO_MAX_POOL_SIZE=${MONGO_MAX_POOL_SIZE:-20}"
 
 SECRETS="MONGO_URL=MONGO_URL:latest"
 SECRETS="${SECRETS},JWT_SECRET=JWT_SECRET:latest"
@@ -53,7 +55,7 @@ gcloud run deploy "${SERVICE}" \
   --cpu "${CPU}" \
   --memory "${MEMORY}" \
   --min-instances "${MIN_INSTANCES}" \
-  --max-instances "${MAX_INSTANCES:-4}" \
+  --max-instances "${MAX_INSTANCES:-10}" \
   --concurrency 80 \
   --timeout 300 \
   --cpu-boost \
