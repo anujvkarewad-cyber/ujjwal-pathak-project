@@ -200,6 +200,12 @@ class StudentImportItem(BaseModel):
     address: str = ""
     joinedOn: str = ""
     passwordChanged: Any = False
+    # Trusted Sheet/Apps-Script imports normally preserve a password that the
+    # student already changed. Account recovery is the one explicit exception:
+    # after a verified OTP, the reset service must be allowed to replace that
+    # existing hash. This flag is accepted only on the import-key/mentor-
+    # protected /import route; public login/change-password cannot set it.
+    forcePasswordReset: bool = False
 
 
 class StudentImportBody(BaseModel):
@@ -258,7 +264,12 @@ async def upsert_student_account(item: StudentImportItem) -> None:
     password_changed = str(changed).strip().lower() in {"1", "true", "yes", "y"}
     db = get_db()
     existing = await db[STUDENT_ACCOUNTS].find_one({"studentId": sid}) or {}
-    keep_password = bool(existing.get("passwordChanged")) and bool(existing.get("passwordHash"))
+    force_password_reset = bool(item.forcePasswordReset)
+    keep_password = (
+        bool(existing.get("passwordChanged"))
+        and bool(existing.get("passwordHash"))
+        and not force_password_reset
+    )
     fields = {
         "studentId": sid,
         "studentName": (item.studentName or "").strip(),
@@ -275,6 +286,14 @@ async def upsert_student_account(item: StudentImportItem) -> None:
     if not keep_password:
         fields["passwordHash"] = hash_password(pwd)
         fields["passwordChanged"] = password_changed
+        if force_password_reset:
+            # A self-service reset chooses the final password (changed=True),
+            # while a mentor-issued temporary password (changed=False) must be
+            # changed on next login.
+            fields["forcePasswordChange"] = not password_changed
+            fields["sheetPasswordResyncPending"] = False
+            fields["passwordResetAt"] = _now()
+            fields["passwordResetBy"] = "trusted_password_reset_import"
     await db[STUDENT_ACCOUNTS].update_one(
         {"studentId": sid},
         {

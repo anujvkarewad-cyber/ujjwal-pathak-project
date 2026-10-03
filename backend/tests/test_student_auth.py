@@ -96,6 +96,63 @@ def test_student_login_roundtrip(client, mentor_headers):
     assert new.json()["result"]["forcePasswordChange"] is False
 
 
+def test_trusted_import_requires_explicit_force_to_reset_changed_password(client, mentor_headers):
+    original = {
+        "studentId": "UMP0044",
+        "password": "StudentChosen#1",
+        "studentName": "Recovery Test",
+        "email": "recovery@test.local",
+        "attempt": "May 2027",
+        "passwordChanged": True,
+    }
+    created = client.post(
+        "/api/student-auth/import",
+        headers=mentor_headers,
+        json={"students": [original]},
+    )
+    assert created.status_code == 200
+
+    # A normal Sheet sync must not overwrite a password the student chose.
+    sheet_sync = client.post(
+        "/api/student-auth/import",
+        headers=mentor_headers,
+        json={"students": [{**original, "password": "StaleSheet#1", "passwordChanged": False}]},
+    )
+    assert sheet_sync.status_code == 200
+    still_original = client.post(
+        "/api/student-auth/login",
+        json={"studentId": "UMP0044", "password": "StudentChosen#1"},
+    ).json()["result"]
+    assert still_original["success"] is True
+
+    # After an OTP has been verified, the trusted reset service opts in to
+    # replacing the existing hash. The new password is final, not temporary.
+    recovery = client.post(
+        "/api/student-auth/import",
+        headers=mentor_headers,
+        json={
+            "students": [{
+                **original,
+                "password": "Recovered#2",
+                "passwordChanged": True,
+                "forcePasswordReset": True,
+            }]
+        },
+    )
+    assert recovery.status_code == 200
+    old = client.post(
+        "/api/student-auth/login",
+        json={"studentId": "UMP0044", "password": "StudentChosen#1"},
+    ).json()["result"]
+    assert old["success"] is False
+    new = client.post(
+        "/api/student-auth/login",
+        json={"studentId": "UMP0044", "password": "Recovered#2"},
+    ).json()["result"]
+    assert new["success"] is True
+    assert new["forcePasswordChange"] is False
+
+
 def test_import_requires_auth(client):
     denied = client.post(
         "/api/student-auth/import",
