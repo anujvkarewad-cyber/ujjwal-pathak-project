@@ -356,6 +356,34 @@ async def import_students(body: StudentImportBody, request: Request):
     return {"ok": True, "upserted": upserted}
 
 
+@router.get("/account-reset-status")
+async def account_reset_status(request: Request):
+    """Mentor-only: has the four-account emergency reset already run?"""
+    from account_reset import MARKER_KEY, RESET_STUDENT_IDS, marker_doc
+
+    if not settings.dev_auth_bypass:
+        await require_mentor(request)
+    doc = await marker_doc()
+    if doc:
+        doc.pop("_id", None)
+    return {
+        "key": MARKER_KEY,
+        "studentIds": list(RESET_STUDENT_IDS),
+        "applied": bool(doc),
+        "marker": doc,
+    }
+
+
+@router.post("/account-reset")
+async def run_account_reset(request: Request, force: bool = False):
+    """Mentor-only manual trigger for the idempotent four-account reset."""
+    from account_reset import reset_accounts
+
+    if not settings.dev_auth_bypass:
+        await require_mentor(request)
+    return await reset_accounts(force=force)
+
+
 class SaveWhatsAppBody(BaseModel):
     studentId: str = Field(min_length=1, max_length=64)
     number: str = Field(min_length=6, max_length=20)

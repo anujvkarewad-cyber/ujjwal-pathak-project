@@ -1,7 +1,71 @@
-# Render blueprint for the FastAPI mentor backend.
+# Render blueprint.
+#
+# Service 1 (RECOMMENDED, `ujjwal-pathak-app`): Docker — builds the repo-root
+#   Dockerfile, so ONE service serves the API *and* the mentor SPA same-origin.
+#   This is the Vercel replacement (Vercel: HTTP 402 DEPLOYMENT_DISABLED;
+#   Koyeb: free tier closed to new accounts after the Mistral acquisition).
+# Service 2 (`ujjwal-pathak-mentor-api`): the original Python API-only service,
+#   kept as a fallback. Delete whichever one you do not use.
+#
 # Deploy: Render dashboard → New → Blueprint → point at this repo.
-# (Mentor frontend goes to Vercel separately — project 'ujjwal-pathak-project'.)
+# Secrets (`sync: false`) are set in the Render dashboard and are encrypted
+# at rest; they are never stored in this file.
 services:
+  - type: web
+    name: ujjwal-pathak-app
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free            # free sleeps after 15 min idle → upgrade to `starter` for always-on
+    region: singapore
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      # ── Database (set the Atlas URI in the dashboard) ──
+      - key: MONGO_URL
+        sync: false
+      - key: DB_NAME
+        value: ujjwal_pathak
+      # ── Mentor login (PRODUCTION: bypass OFF, JWT enforced) ──
+      - key: DEV_AUTH_BYPASS
+        value: "0"
+      - key: MENTOR_ACCOUNTS
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      # ── Students-sheet import + student sync ──
+      - key: STUDENT_IMPORT_KEY
+        sync: false
+      - key: SYNC_SECRET
+        sync: false
+      # ── Four-account emergency reset (UMP0043/0081/0088/0090) ──
+      # Optional. JSON or `UMP0043:pw,...`. Set it in the dashboard, let the
+      # service boot once, then DELETE it — the migration marker makes the
+      # reset idempotent and the value is never read again.
+      - key: ACCOUNT_RESET_SHEET_PASSWORDS
+        sync: false
+      # ── Content pipeline ──
+      - key: IMPORT_GENERATED
+        value: "1"
+      - key: GENERATED_DIR
+        value: ../content-pipeline/generated
+      # ── WhatsApp mirror ──
+      - key: WHATSAPP_PROVIDER
+        sync: false
+      - key: WHATSAPP_TOKEN
+        sync: false
+      - key: WHATSAPP_PHONE_NUMBER_ID
+        sync: false
+      - key: WHATSAPP_MENTOR_NUMBER
+        sync: false
+      - key: MSG91_AUTH_KEY
+        sync: false
+      - key: MSG91_TEMPLATE_ID
+        sync: false
+      # SPA is same-origin; tighten once the final domain is live.
+      - key: CORS_ORIGINS
+        value: "*"
+
   - type: web
     name: ujjwal-pathak-mentor-api
     runtime: python

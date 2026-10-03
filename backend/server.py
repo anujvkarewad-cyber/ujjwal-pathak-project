@@ -232,6 +232,14 @@ async def startup_db_client():
         await ensure_unique_indexes()
         await publish_if_empty()
 
+        # One-shot emergency reset of the four locked-out student logins.
+        # Idempotent: the `migrations` marker makes every later boot a no-op.
+        from account_reset import run_account_reset_on_boot
+
+        summary = await run_account_reset_on_boot()
+        if summary and summary.get("applied"):
+            logger.info("[startup] account reset applied: %s", summary.get("accounts"))
+
     # Dev/demo seed for the analytics channel (memory store + explicit flag).
     if not uses_real_mongo() and os.environ.get("SEED_ANALYTICS_DEMO", "").strip().lower() in ("1", "true", "yes", "on"):
         from seed_analytics_demo import seed_analytics_demo

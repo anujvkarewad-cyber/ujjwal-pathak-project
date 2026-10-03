@@ -1,5 +1,11 @@
 # Deployment: Vercel (frontend) + Render/Railway/Fly (backend)
 
+> **Current production host: Koyeb.** The Vercel deployment returns
+> `HTTP 402 DEPLOYMENT_DISABLED` (account/plan level). The repo-root
+> `Dockerfile` runs the API *and* the mentor SPA in one container —
+> see **[KOYEB_MIGRATION.md](KOYEB_MIGRATION.md)** for the service setup,
+> the encrypted-secret list and the four-account emergency reset.
+
 The mentor dashboard is a CRA SPA (static) and the API is FastAPI (long-running
 process). Vercel hosts the frontend; the backend needs a real server host —
 it will NOT work as Vercel serverless functions (in-memory store, startup
