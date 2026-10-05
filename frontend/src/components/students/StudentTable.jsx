@@ -4,6 +4,7 @@ import { Search, ChevronLeft, ChevronRight, Eye } from 'lucide-react';
 import { RiskBadge, StatusBadge } from '@/components/common/RiskBadge';
 import { Skeleton } from '@/components/common/Skeleton';
 import { useStudents } from '@/api/hooks';
+import { ALL_BATCHES, ENROLLMENT_BATCHES } from '@/constants/batches';
 import { cn } from '@/utils/format';
 
 const PAGE_SIZE = 8;
@@ -25,6 +26,11 @@ export default function StudentTable() {
   const { data, isLoading } = useStudents();
   const all = data?.students;
   const options = data?.options;
+  const batchOptions = useMemo(() => {
+    const actual = (all || []).map((student) => student.batch).filter(Boolean);
+    const supplied = (options?.batchOptions || []).filter((value) => value && value !== ALL_BATCHES);
+    return [ALL_BATCHES, ...new Set([...ENROLLMENT_BATCHES, ...actual, ...supplied])];
+  }, [all, options]);
 
   const [q, setQ] = useState('');
   const [batch, setBatch] = useState('All Batches');
@@ -70,7 +76,7 @@ export default function StudentTable() {
         </div>
         {options && (
           <div className="flex flex-wrap gap-2">
-            <FilterSelect value={batch} onChange={wrap(setBatch)} options={options.batchOptions} testid="filter-batch" />
+            <FilterSelect value={batch} onChange={wrap(setBatch)} options={batchOptions} testid="filter-batch" />
             <FilterSelect value={attempt} onChange={wrap(setAttempt)} options={options.attemptOptions} testid="filter-attempt" />
             <FilterSelect value={group} onChange={wrap(setGroup)} options={options.groupOptions} testid="filter-group" />
             <FilterSelect value={status} onChange={wrap(setStatus)} options={options.statusOptions} testid="filter-status" />

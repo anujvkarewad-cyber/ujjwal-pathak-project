@@ -12,7 +12,7 @@ const AVATARS = [
 
 const FIRST_NAMES = ['Aarav', 'Vivaan', 'Aditya', 'Vihaan', 'Arjun', 'Sai', 'Reyansh', 'Krishna', 'Ishaan', 'Rudra', 'Aanya', 'Diya', 'Isha', 'Kavya', 'Myra', 'Ananya', 'Riya', 'Priya', 'Saanvi', 'Meera', 'Rohan', 'Kabir', 'Neel', 'Yash', 'Advik', 'Aarohi', 'Navya', 'Ira', 'Pari', 'Zara'];
 const LAST_NAMES = ['Sharma', 'Verma', 'Patel', 'Gupta', 'Iyer', 'Reddy', 'Nair', 'Kumar', 'Singh', 'Joshi', 'Mehta', 'Kapoor', 'Malhotra', 'Bansal', 'Agarwal'];
-const BATCHES = ['Super 30', 'Super 11', 'Last 15 Days', 'Last 40 Days'];
+const BATCHES = ['Before Result Batch 1', 'Before Result Batch 2', 'After Result Batch 1', 'After Result Batch 2'];
 const GROUPS = ['Group 1', 'Group 2', 'Both Groups'];
 const LEVELS = ['CA Foundation', 'CA Intermediate', 'CA Final'];
 const STATUSES = ['Active', 'Inactive', 'At Risk'];

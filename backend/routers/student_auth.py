@@ -9,14 +9,24 @@ import re
 from datetime import date, datetime, timedelta, timezone
 from typing import Any, Optional
 
-from fastapi import APIRouter, HTTPException, Request
+import httpx
+from fastapi import APIRouter, Depends, HTTPException, Request
 from pydantic import BaseModel, ConfigDict, Field
 
 from auth import hash_password, require_mentor, verify_password
 from config import settings
-from db import STUDENT_ACCOUNTS, get_db
+from db import STUDENT_ACCOUNTS, STUDENT_ADMIN_AUDIT, get_db
 
 router = APIRouter(prefix="/api/student-auth", tags=["student-auth"])
+
+# Enrollment batch values are deliberately closed, rather than accepting
+# arbitrary mentor-entered text. These labels must match the Google Form.
+ALLOWED_STUDENT_BATCHES = (
+    "Before Result Batch 1",
+    "Before Result Batch 2",
+    "After Result Batch 1",
+    "After Result Batch 2",
+)
 
 
 def _now() -> str:
@@ -214,6 +224,16 @@ class StudentImportBody(BaseModel):
     students: list[StudentImportItem] = Field(default_factory=list, max_length=500)
 
 
+class StudentBatchChangeBody(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
+    batch: str = Field(min_length=1, max_length=80)
+    # Optimistic concurrency: the mentor UI sends the batch it displayed. If
+    # another mentor changed it in the meantime, Apps Script rejects the stale
+    # write instead of silently overwriting the newer choice.
+    expectedBatch: str = Field(default="", max_length=80)
+
+
 class ChangePasswordBody(BaseModel):
     model_config = ConfigDict(extra="ignore")
 
@@ -315,6 +335,62 @@ def _import_allowed(request: Request) -> bool:
     return False
 
 
+async def _change_sheet_batch(
+    student_id: str,
+    batch: str,
+    expected_batch: str = "",
+) -> dict:
+    """Update the authoritative Students sheet through its owner-authorized
+    Apps Script. The shared import key stays server-side and never reaches the
+    mentor browser."""
+    url = (getattr(settings, "student_admin_script_url", "") or "").strip()
+    key = (getattr(settings, "student_import_key", "") or "").strip()
+    if not url or not key:
+        raise HTTPException(status_code=503, detail="Student batch management is not configured.")
+
+    try:
+        async with httpx.AsyncClient(timeout=20.0, follow_redirects=True) as client:
+            response = await client.post(
+                url,
+                json={
+                    "action": "mentorChangeBatch",
+                    "payload": {
+                        "studentId": student_id,
+                        "batch": batch,
+                        "expectedBatch": expected_batch,
+                        "adminKey": key,
+                    },
+                },
+            )
+        response.raise_for_status()
+        envelope = response.json()
+    except (httpx.HTTPError, ValueError) as exc:
+        raise HTTPException(
+            status_code=502,
+            detail="Students Sheet could not be updated. No Mongo change was made.",
+        ) from exc
+
+    result = envelope.get("result") if isinstance(envelope, dict) else None
+    if not isinstance(result, dict):
+        raise HTTPException(status_code=502, detail="Students Sheet returned an invalid response. No Mongo change was made.")
+    if result.get("success"):
+        return result
+    code = str(result.get("code") or "")
+    if code == "not_found":
+        raise HTTPException(status_code=404, detail="Student ID was not found in the Students Sheet.")
+    if code == "batch_conflict":
+        raise HTTPException(
+            status_code=409,
+            detail={
+                "message": "This student's batch changed after the page was opened. Refresh and try again.",
+                "currentBatch": str(result.get("currentBatch") or ""),
+            },
+        )
+    if code == "unauthorized":
+        raise HTTPException(status_code=502, detail="Students Sheet rejected the protected update. Check server configuration.")
+    raise HTTPException(status_code=502, detail="Students Sheet rejected the batch change. No Mongo change was made.")
+
+
 @router.get("/status")
 async def student_auth_status():
     db = get_db()
@@ -373,6 +449,93 @@ async def import_students(body: StudentImportBody, request: Request):
         await upsert_student_account(item)
         upserted += 1
     return {"ok": True, "upserted": upserted}
+
+
+@router.patch("/students/{student_id}/batch")
+async def change_student_batch(
+    student_id: str,
+    body: StudentBatchChangeBody,
+    claims: dict = Depends(require_mentor),
+):
+    """Mentor-only batch correction.
+
+    The owner-authorized Apps Script changes the Students Sheet first. Mongo is
+    then updated without touching credentials or any other profile field. If
+    Mongo fails, the Sheet change is rolled back on a best-effort basis.
+    """
+    sid = normalize_student_id(student_id)
+    if not re.fullmatch(r"UMP\d{4,}", sid):
+        raise HTTPException(status_code=400, detail="Invalid Student ID.")
+    requested = str(body.batch or "").strip()
+    if requested not in ALLOWED_STUDENT_BATCHES:
+        raise HTTPException(
+            status_code=400,
+            detail={"message": "Choose a valid batch.", "allowedBatches": list(ALLOWED_STUDENT_BATCHES)},
+        )
+    expected = str(body.expectedBatch or "").strip()
+
+    sheet_result = await _change_sheet_batch(sid, requested, expected)
+    previous = str(sheet_result.get("previousBatch") or "").strip()
+    db = get_db()
+    mongo_updated = False
+    try:
+        update_result = await db[STUDENT_ACCOUNTS].update_one(
+            {"studentId": sid},
+            {
+                "$set": {
+                    "batch": requested,
+                    "batchUpdatedAt": _now(),
+                    "batchUpdatedBy": claims.get("sub") or "mentor",
+                    "updatedAt": _now(),
+                }
+            },
+        )
+        mongo_updated = bool(update_result.matched_count)
+    except Exception as exc:
+        rollback_errors = []
+        try:
+            await db[STUDENT_ACCOUNTS].update_one(
+                {"studentId": sid},
+                {"$set": {"batch": previous, "updatedAt": _now()}},
+            )
+        except Exception as rollback_exc:  # pragma: no cover - real Mongo outage
+            rollback_errors.append(type(rollback_exc).__name__)
+        try:
+            await _change_sheet_batch(sid, previous, requested)
+        except Exception as rollback_exc:  # pragma: no cover - external outage
+            rollback_errors.append(type(rollback_exc).__name__)
+        detail = "Mongo could not be updated; the Sheet change was rolled back."
+        if rollback_errors:
+            detail = "Batch update failed and automatic rollback needs manual verification."
+        raise HTTPException(status_code=502, detail=detail) from exc
+
+    changed_at = _now()
+    try:
+        await db[STUDENT_ADMIN_AUDIT].insert_one(
+            {
+                "action": "student_batch_change",
+                "studentId": sid,
+                "previousBatch": previous,
+                "batch": requested,
+                "mentor": claims.get("sub") or "mentor",
+                "sheetUpdated": True,
+                "mongoUpdated": mongo_updated,
+                "at": changed_at,
+            }
+        )
+    except Exception:
+        # The requested state is already consistent in Sheet + Mongo. An audit
+        # write failure must not make the mentor repeat the mutation.
+        pass
+    return {
+        "ok": True,
+        "studentId": sid,
+        "previousBatch": previous,
+        "batch": requested,
+        "sheetUpdated": True,
+        "mongoUpdated": mongo_updated,
+        "changedAt": changed_at,
+    }
 
 
 @router.get("/account-reset-status")

@@ -34,6 +34,9 @@ ENV_VARS="${ENV_VARS},DEV_AUTH_BYPASS=0"
 ENV_VARS="${ENV_VARS},IMPORT_GENERATED=${IMPORT_GENERATED:-0}"
 ENV_VARS="${ENV_VARS},GENERATED_DIR=../content-pipeline/generated"
 ENV_VARS="${ENV_VARS},CORS_ORIGINS=*"
+# Owner-authorized Apps Script used for mentor batch corrections. This URL is
+# public; the actual authorization stays in STUDENT_IMPORT_KEY.
+ENV_VARS="${ENV_VARS},STUDENT_ADMIN_SCRIPT_URL=${STUDENT_ADMIN_SCRIPT_URL:-https://script.google.com/macros/s/AKfycbyWjeCaMGwCnG5h2M5gjLsURcnBz8tOxoNzd2sZoLlBB8IA5FygE4WQKB1YEcGwpoPHfg/exec}"
 # Keep total Mongo connections sane across instances: 20 × max-instances.
 ENV_VARS="${ENV_VARS},MONGO_MAX_POOL_SIZE=${MONGO_MAX_POOL_SIZE:-20}"
 

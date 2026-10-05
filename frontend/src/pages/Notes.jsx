@@ -4,6 +4,7 @@ import { useNotes, useDeleteNote } from '@/api/hooks';
 import { createNoteChunked } from '@/api/notes';
 import { useQueryClient } from '@tanstack/react-query';
 import { Skeleton } from '@/components/common/Skeleton';
+import { ALL_BATCHES, ENROLLMENT_BATCHES } from '@/constants/batches';
 
 const MAX_FILE_MB = 20;
 const SUBJECT_GROUP_MAP = {
@@ -64,7 +65,7 @@ export default function Notes() {
   const [description, setDescription] = useState('');
   const [subject, setSubject] = useState(SUBJECTS[0]);
   const [group, setGroup] = useState(SUBJECT_GROUP_MAP[SUBJECTS[0]]);
-  const [audience, setAudience] = useState('All Batches');
+  const [audience, setAudience] = useState(ALL_BATCHES);
   const [files, setFiles] = useState([]); // File[]
   const [error, setError] = useState('');
 
@@ -76,7 +77,7 @@ export default function Notes() {
     setDescription('');
     setSubject(SUBJECTS[0]);
     setGroup(SUBJECT_GROUP_MAP[SUBJECTS[0]]);
-    setAudience('All Batches');
+    setAudience(ALL_BATCHES);
     setFiles([]);
     setBatch(null);
     if (fileInputRef.current) fileInputRef.current.value = '';
@@ -234,7 +235,7 @@ export default function Notes() {
             disabled={isUploading}
             className="w-full h-11 px-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm text-slate-700 dark:text-slate-200 outline-none focus:border-[#2563EB] disabled:opacity-60"
           >
-            {['All Batches', 'Super 30', 'Super 11', 'Last 16 Days', 'Last 30 Days'].map(o => <option key={o}>{o}</option>)}
+            {[ALL_BATCHES, ...ENROLLMENT_BATCHES].map(o => <option key={o}>{o}</option>)}
           </select>
 
           {!isUploading && (

@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft, Mail, Phone, MapPin, Calendar, StickyNote, X } from 'lucide-react';
+import { ArrowLeft, Mail, Phone, MapPin, Calendar, StickyNote, UsersRound, X } from 'lucide-react';
+import { toast } from 'sonner';
 import { RiskBadge, StatusBadge } from '@/components/common/RiskBadge';
 import { StudentWeeklyLine, StudentMonthlyBar, PerformanceRadar } from '@/components/charts/Charts';
 import { Skeleton } from '@/components/common/Skeleton';
-import { useStudent, useAddMentorNote } from '@/api/hooks';
+import { useStudent, useAddMentorNote, useChangeStudentBatch } from '@/api/hooks';
+import { ENROLLMENT_BATCHES } from '@/constants/batches';
 import { cn } from '@/utils/format';
 
 const Stat = ({ label, value, suffix, tone = 'text-slate-900 dark:text-white' }) => (
@@ -19,7 +21,10 @@ export default function StudentProfile() {
   const { data: s, isLoading } = useStudent(id);
   const [noteOpen, setNoteOpen] = useState(false);
   const [noteText, setNoteText] = useState('');
+  const [batchOpen, setBatchOpen] = useState(false);
+  const [nextBatch, setNextBatch] = useState('');
   const addNote = useAddMentorNote();
+  const changeBatch = useChangeStudentBatch();
 
   if (isLoading) {
     return (
@@ -52,6 +57,28 @@ export default function StudentProfile() {
     });
   };
 
+  const openBatchChange = () => {
+    setNextBatch('');
+    setBatchOpen(true);
+  };
+
+  const submitBatchChange = (e) => {
+    e.preventDefault();
+    if (!nextBatch || nextBatch === s.batch) return;
+    changeBatch.mutate({ id: s.id, batch: nextBatch, expectedBatch: s.batch || '' }, {
+      onSuccess: (result) => {
+        setBatchOpen(false);
+        setNextBatch('');
+        if (result?.mongoUpdated === false) {
+          toast.success('Batch updated in the Students Sheet. Mongo will sync when this account is activated.');
+        } else {
+          toast.success(`Batch changed to ${result?.batch || nextBatch}.`);
+        }
+      },
+      onError: (error) => toast.error(error?.message || 'Batch could not be changed.'),
+    });
+  };
+
   return (
     <div className="space-y-6" data-testid="student-profile">
       <Link to="/students" className="inline-flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300 hover:text-[#2563EB]" data-testid="back-to-students">
@@ -62,10 +89,20 @@ export default function StudentProfile() {
         <div className="flex flex-col sm:flex-row gap-5">
           <img src={s.avatar} alt={s.name} className="w-24 h-24 rounded-2xl object-cover ring-4 ring-slate-100 dark:ring-slate-800" />
           <div className="flex-1 min-w-0">
-            <div className="flex flex-wrap items-center gap-2">
-              <h2 className="font-heading text-2xl font-bold text-slate-900 dark:text-white">{s.name}</h2>
-              <StatusBadge status={s.status} />
-              <RiskBadge risk={s.risk} />
+            <div className="flex flex-col lg:flex-row lg:items-start gap-3">
+              <div className="flex flex-wrap items-center gap-2">
+                <h2 className="font-heading text-2xl font-bold text-slate-900 dark:text-white">{s.name}</h2>
+                <StatusBadge status={s.status} />
+                <RiskBadge risk={s.risk} />
+              </div>
+              <button
+                type="button"
+                onClick={openBatchChange}
+                data-testid="change-batch-btn"
+                className="lg:ml-auto inline-flex items-center justify-center gap-2 h-9 px-3 rounded-lg border border-blue-200 dark:border-blue-500/30 text-[#2563EB] dark:text-blue-300 bg-blue-50/70 dark:bg-blue-500/10 hover:bg-blue-100 dark:hover:bg-blue-500/20 text-sm font-semibold transition-colors"
+              >
+                <UsersRound className="w-4 h-4" /> Change Batch
+              </button>
             </div>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">{s.id} · {s.level} · {s.batch} · Attempt {s.attempt}</p>
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
@@ -134,6 +171,47 @@ export default function StudentProfile() {
           <span className="inline-flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-rose-300 dark:bg-rose-500/40" /> Missed</span>
         </div>
       </div>
+
+      {batchOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm" onClick={() => !changeBatch.isPending && setBatchOpen(false)}>
+          <form onClick={(e) => e.stopPropagation()} onSubmit={submitBatchChange} className="w-full max-w-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-xl" data-testid="change-batch-dialog">
+            <div className="flex items-center justify-between">
+              <div>
+                <h4 className="font-heading font-semibold text-slate-900 dark:text-white">Change student batch</h4>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{s.id} · Current: <span className="font-semibold">{s.batch || 'Unassigned'}</span></p>
+              </div>
+              <button type="button" disabled={changeBatch.isPending} onClick={() => setBatchOpen(false)} className="p-1 text-slate-400 hover:text-slate-700 dark:hover:text-white disabled:opacity-50" aria-label="Close">
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            <label htmlFor="student-batch-select" className="block mt-5 text-sm font-semibold text-slate-700 dark:text-slate-200">Allot correct batch</label>
+            <select
+              id="student-batch-select"
+              data-testid="batch-select"
+              value={nextBatch}
+              onChange={(e) => setNextBatch(e.target.value)}
+              className="mt-2 w-full h-11 px-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-sm text-slate-800 dark:text-slate-100 outline-none focus:border-[#2563EB]"
+            >
+              <option value="">Select the correct batch</option>
+              {ENROLLMENT_BATCHES.map((batch) => (
+                <option key={batch} value={batch} disabled={batch === s.batch}>{batch}{batch === s.batch ? ' (current)' : ''}</option>
+              ))}
+            </select>
+
+            <div className="mt-4 rounded-lg border border-amber-200 dark:border-amber-500/30 bg-amber-50 dark:bg-amber-500/10 px-3 py-2.5 text-xs text-amber-800 dark:text-amber-200">
+              This updates the Students Sheet and the student app. Password, email, attempt and group will not change.
+            </div>
+
+            <div className="mt-5 flex items-center justify-end gap-2">
+              <button type="button" disabled={changeBatch.isPending} onClick={() => setBatchOpen(false)} className="h-9 px-4 rounded-lg border border-slate-200 dark:border-slate-800 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors disabled:opacity-50">Cancel</button>
+              <button type="submit" disabled={!nextBatch || nextBatch === s.batch || changeBatch.isPending} data-testid="confirm-batch-change" className="h-9 px-4 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                {changeBatch.isPending ? 'Updating...' : 'Confirm batch'}
+              </button>
+            </div>
+          </form>
+        </div>
+      )}
 
       {noteOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm" onClick={() => setNoteOpen(false)}>

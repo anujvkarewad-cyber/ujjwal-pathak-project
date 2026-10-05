@@ -5,6 +5,7 @@ import { sendWhatsAppAnnouncement } from '@/api/messages';
 import { Skeleton } from '@/components/common/Skeleton';
 import { cn } from '@/utils/format';
 import { AlertDialog, AlertDialogContent, AlertDialogHeader, AlertDialogFooter, AlertDialogTitle, AlertDialogDescription, AlertDialogAction, AlertDialogCancel } from '@/components/ui/alert-dialog';
+import { ALL_BATCHES, ENROLLMENT_BATCHES } from '@/constants/batches';
 
 export default function Announcements() {
   const { data: list = [], isLoading, error: loadError } = useAnnouncements();
@@ -35,7 +36,7 @@ export default function Announcements() {
 
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
-  const [audience, setAudience] = useState('All Batches');
+  const [audience, setAudience] = useState(ALL_BATCHES);
   const [waAlso, setWaAlso] = useState(true);
   const [waStatus, setWaStatus] = useState('');
 
@@ -47,7 +48,7 @@ export default function Announcements() {
       { title: title.trim(), body: body.trim(), audience },
       {
         onSuccess: async () => {
-          setTitle(''); setBody(''); setAudience('All Batches');
+          setTitle(''); setBody(''); setAudience(ALL_BATCHES);
           if (waAlso) {
             setWaStatus('Sending on WhatsApp…');
             try {
@@ -110,7 +111,7 @@ export default function Announcements() {
             onChange={(e) => setAudience(e.target.value)}
             className="w-full h-11 px-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm text-slate-700 dark:text-slate-200 outline-none focus:border-[#2563EB]"
           >
-            {['All Batches', 'Super 30', 'Super 11', 'Last 15 Days', 'Last 40 Days'].map(o => <option key={o}>{o}</option>)}
+            {[ALL_BATCHES, ...ENROLLMENT_BATCHES].map(o => <option key={o}>{o}</option>)}
           </select>
           <label className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200 select-none">
             <input
