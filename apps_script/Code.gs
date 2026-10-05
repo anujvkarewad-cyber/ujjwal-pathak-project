@@ -32,7 +32,7 @@ const CONFIG = {
   NOTIFICATIONS_SHEET: 'Notifications',
   MCQ_SHEET: 'MCQ',
   ATTENDANCE_SHEET: 'Attendance',
-  DEFAULT_BATCH: 'Super 30',
+  DEFAULT_BATCH: 'Before Result Batch 1',
   DEFAULT_ATTEMPT: 'Sept 2026',
   DEFAULT_GROUP: 'Both Groups',
   DEFAULT_LEVEL: 'CA Intermediate',
@@ -520,7 +520,7 @@ function getStudent(ss, id) {
 
 function options_() {
   return {
-    batchOptions: ['All Batches', 'Super 30', 'Super 11', 'Last 15 Days', 'Last 40 Days'],
+    batchOptions: ['All Batches', 'Before Result Batch 1', 'Before Result Batch 2', 'After Result Batch 1', 'After Result Batch 2'],
     attemptOptions: ['All Attempts', 'Sept 2026'],
     groupOptions: ['All Groups', 'Group 1', 'Group 2', 'Both Groups'],
     statusOptions: ['All Status', 'Active', 'Inactive', 'At Risk'],

@@ -161,6 +161,106 @@ def test_import_requires_auth(client):
     assert denied.status_code == 401
 
 
+def test_mentor_can_change_batch_without_changing_password(client, mentor_headers, monkeypatch):
+    imported = client.post(
+        "/api/student-auth/import",
+        headers=mentor_headers,
+        json={
+            "students": [{
+                "studentId": "UMP0038",
+                "password": "KeepThis#1",
+                "studentName": "Batch Test",
+                "batch": "Super 30",
+                "attempt": "May 2027",
+                "passwordChanged": True,
+            }]
+        },
+    )
+    assert imported.status_code == 200
+
+    calls = []
+
+    async def fake_sheet_change(student_id, batch, expected_batch=""):
+        calls.append((student_id, batch, expected_batch))
+        return {
+            "success": True,
+            "studentId": student_id,
+            "previousBatch": "Super 30",
+            "batch": batch,
+        }
+
+    import routers.student_auth as student_auth
+    monkeypatch.setattr(student_auth, "_change_sheet_batch", fake_sheet_change)
+
+    changed = client.patch(
+        "/api/student-auth/students/ump38/batch",
+        headers=mentor_headers,
+        json={"batch": "Before Result Batch 1", "expectedBatch": "Super 30"},
+    )
+    assert changed.status_code == 200, changed.text
+    result = changed.json()
+    assert result["batch"] == "Before Result Batch 1"
+    assert result["previousBatch"] == "Super 30"
+    assert result["sheetUpdated"] is True
+    assert result["mongoUpdated"] is True
+    assert calls == [("UMP0038", "Before Result Batch 1", "Super 30")]
+
+    login = client.post(
+        "/api/student-auth/login",
+        json={"studentId": "UMP0038", "password": "KeepThis#1"},
+    ).json()["result"]
+    assert login["success"] is True
+    assert login["batch"] == "Before Result Batch 1"
+
+
+def test_batch_change_requires_mentor_and_allowlisted_batch(client, mentor_headers, monkeypatch):
+    called = False
+
+    async def fake_sheet_change(*_args, **_kwargs):
+        nonlocal called
+        called = True
+        return {"success": True, "previousBatch": "Super 30"}
+
+    import routers.student_auth as student_auth
+    monkeypatch.setattr(student_auth, "_change_sheet_batch", fake_sheet_change)
+
+    unauthenticated = client.patch(
+        "/api/student-auth/students/UMP0038/batch",
+        json={"batch": "Before Result Batch 1"},
+    )
+    assert unauthenticated.status_code == 401
+
+    invalid = client.patch(
+        "/api/student-auth/students/UMP0038/batch",
+        headers=mentor_headers,
+        json={"batch": "Made-up Batch"},
+    )
+    assert invalid.status_code == 400
+    assert called is False
+
+
+def test_batch_change_updates_sheet_even_when_mongo_account_is_missing(client, mentor_headers, monkeypatch):
+    async def fake_sheet_change(student_id, batch, expected_batch=""):
+        return {
+            "success": True,
+            "studentId": student_id,
+            "previousBatch": "Super 30",
+            "batch": batch,
+        }
+
+    import routers.student_auth as student_auth
+    monkeypatch.setattr(student_auth, "_change_sheet_batch", fake_sheet_change)
+
+    changed = client.patch(
+        "/api/student-auth/students/UMP0082/batch",
+        headers=mentor_headers,
+        json={"batch": "After Result Batch 2", "expectedBatch": "Super 30"},
+    )
+    assert changed.status_code == 200, changed.text
+    assert changed.json()["sheetUpdated"] is True
+    assert changed.json()["mongoUpdated"] is False
+
+
 def test_upsert_helper_and_status(client, mentor_headers):
     import asyncio
 

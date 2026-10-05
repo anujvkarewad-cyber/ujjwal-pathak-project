@@ -72,7 +72,9 @@ export async function apiCall(path, { method = 'GET', body = null, params = null
     let detail = `HTTP ${res.status}`;
     try {
       const j = await res.json();
-      detail = typeof j.detail === 'string' ? j.detail : JSON.stringify(j.detail || j);
+      detail = typeof j.detail === 'string'
+        ? j.detail
+        : (j.detail?.message || j.message || JSON.stringify(j.detail || j));
     } catch {
       /* keep default */
     }

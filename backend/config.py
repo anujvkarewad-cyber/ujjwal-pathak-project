@@ -55,8 +55,14 @@ class Settings:
         "STUDENT_AUTH_URL",
         "https://student-dashboard-frontend-iota.vercel.app/api/proxy",
     )
-    # Optional header for the one-shot Students-sheet → Mongo import.
+    # Optional header for the one-shot Students-sheet → Mongo import. The same
+    # secret authenticates server-to-server mentor batch changes; it is never
+    # sent to the browser.
     student_import_key: str = os.environ.get("STUDENT_IMPORT_KEY") or ""
+    student_admin_script_url: str = os.environ.get(
+        "STUDENT_ADMIN_SCRIPT_URL",
+        "https://script.google.com/macros/s/AKfycbyWjeCaMGwCnG5h2M5gjLsURcnBz8tOxoNzd2sZoLlBB8IA5FygE4WQKB1YEcGwpoPHfg/exec",
+    )
     mcq_daily_retention: int = _int("MCQ_DAILY_RETENTION", 180)
     mcq_practice_retention: int = _int("MCQ_PRACTICE_RETENTION", 150)
 

@@ -48,14 +48,14 @@ export const performanceMix = [
 ];
 
 export const batchOverview = [
-  { name: 'Super 30', students: 30, attendance: 92 },
-  { name: 'Super 11', students: 11, attendance: 88 },
-  { name: 'Last 15 Days', students: 4, attendance: 76 },
-  { name: 'Last 40 Days', students: 5, attendance: 81 },
+  { name: 'Before Result Batch 1', students: 30, attendance: 92 },
+  { name: 'Before Result Batch 2', students: 11, attendance: 88 },
+  { name: 'After Result Batch 1', students: 4, attendance: 76 },
+  { name: 'After Result Batch 2', students: 5, attendance: 81 },
 ];
 
 export const upcomingTasks = [
-  { id: 1, title: 'Weekly review call — Super 30', due: 'Today, 6:00 PM', priority: 'high' },
+  { id: 1, title: 'Weekly review call — Before Result Batch 1', due: 'Today, 6:00 PM', priority: 'high' },
   { id: 2, title: 'Publish mock test results', due: 'Tomorrow', priority: 'medium' },
   { id: 3, title: 'Send progress reports to parents', due: 'Feb 24', priority: 'medium' },
   { id: 4, title: 'Schedule 1:1 with At Risk students', due: 'Feb 25', priority: 'high' },

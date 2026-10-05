@@ -29,6 +29,19 @@ export const useAddMentorNote = () => {
   });
 };
 
+export const useChangeStudentBatch = () => {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: studentsApi.changeStudentBatch,
+    onSuccess: (_data, vars) => {
+      qc.invalidateQueries({ queryKey: ['student', vars.id] });
+      qc.invalidateQueries({ queryKey: ['students'] });
+      qc.invalidateQueries({ queryKey: ['dashboard'] });
+      qc.invalidateQueries({ queryKey: ['tracker'] });
+    },
+  });
+};
+
 // ── Dashboard ───────────────────────────────────────────────────────────
 export const useDashboardKpis = () =>
   useQuery({ queryKey: ['dashboard', 'kpis'], queryFn: dashboardApi.getKpis });

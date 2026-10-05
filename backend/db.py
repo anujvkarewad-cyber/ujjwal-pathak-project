@@ -27,6 +27,7 @@ STUDENT_MESSAGES = "student_messages"
 WHATSAPP_LOG = "whatsapp_log"
 STUDENT_MCQ_ATTEMPTS = "student_mcq_attempts"
 STUDENT_ACCOUNTS = "student_accounts"
+STUDENT_ADMIN_AUDIT = "student_admin_audit"
 DASHBOARD_SHARED = "dashboard_shared"
 DASHBOARD_STUDENTS = "dashboard_students"
 KNOWLEDGE_CHUNKS = "knowledge_chunks"
@@ -112,6 +113,7 @@ async def ensure_indexes():
     )
     await db[STUDENT_MCQ_ATTEMPTS].create_index([("studentId", 1), ("completedAt", -1)])
     await db[STUDENT_ACCOUNTS].create_index("studentId", unique=True)
+    await db[STUDENT_ADMIN_AUDIT].create_index([("studentId", 1), ("at", -1)])
     await db[DASHBOARD_STUDENTS].create_index("studentId", unique=True)
     await db[MIGRATIONS].create_index("key", unique=True)
     # RAG knowledge base - for smooth search (4777 chunks)
