@@ -64,6 +64,9 @@ export const useTrackerDay = ({ dayIndex, batch }) =>
     queryKey: ['tracker', dayIndex, batch],
     queryFn: () => trackerApi.getTrackerDay({ dayIndex, batch }),
     enabled: dayIndex != null,
+    staleTime: 0,
+    refetchInterval: 30000,
+    refetchOnWindowFocus: true,
   });
 
 export const useMissedTrackerReport = ({ from, to, scope = 'range', enabled = true }) =>

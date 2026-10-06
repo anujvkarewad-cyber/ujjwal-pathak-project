@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { CheckCircle2, XCircle, Filter, RotateCcw } from 'lucide-react';
+import { CheckCircle2, XCircle, Filter, RotateCcw, RefreshCw } from 'lucide-react';
 import {
   useTrackerDay,
   useStudents,
@@ -19,11 +19,21 @@ export default function DailyTracker() {
   const [selectedStudent, setSelectedStudent] = useState(null);
   const [feedbackMessage, setFeedbackMessage] = useState("");
   const [feedbackPriority, setFeedbackPriority] = useState("Normal");
-  const { data: sData, isLoading: studentsLoading } = useStudents();
-  const { data, isLoading: trackerLoading } = useTrackerDay({ dayIndex, batch });
+  const { data: sData } = useStudents();
+  const {
+    data,
+    isLoading: trackerLoading,
+    isFetching: trackerFetching,
+    refetch: refreshTracker,
+    error: trackerError,
+  } = useTrackerDay({ dayIndex, batch });
   const sendFeedbackMutation = useSendFeedback();
 
-  const batchOptions = sData?.options?.batchOptions || ['All Batches'];
+  const batchOptions = useMemo(() => {
+    const fromTracker = (data?.list || []).map((student) => student.batch).filter(Boolean);
+    const supplied = (sData?.options?.batchOptions || []).filter((value) => value && value !== 'All Batches');
+    return ['All Batches', ...new Set([...fromTracker, ...supplied])];
+  }, [data?.list, sData?.options?.batchOptions]);
   const days = data?.days || [];
   const last7Start = Math.max(0, days.length - 7);
   const visibleRows = useMemo(() => {
@@ -40,7 +50,7 @@ export default function DailyTracker() {
   const submitted = visibleRows.filter((student) => student.entry?.submitted).length;
   const missed = visibleRows.length - submitted;
   const rate = visibleRows.length ? Math.round((submitted / visibleRows.length) * 100) : 0;
-  const isLoading = trackerLoading || studentsLoading;
+  const isLoading = trackerLoading;
   const filtersActive = batch !== 'All Batches' || group !== 'All Groups';
 
   return (
@@ -62,6 +72,12 @@ export default function DailyTracker() {
       </div>
 
       <MissedTrackerReport />
+
+      {trackerError && (
+        <div className="rounded-lg border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700 dark:border-rose-500/30 dark:bg-rose-500/10 dark:text-rose-200" role="alert">
+          Live tracker could not refresh: {trackerError.message || 'Please try again.'}
+        </div>
+      )}
 
       <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
         <div className="p-5 border-b border-slate-200 dark:border-slate-800 flex flex-wrap items-center gap-3">
@@ -101,6 +117,16 @@ export default function DailyTracker() {
           <span className="text-xs text-slate-500 dark:text-slate-400" data-testid="tracker-filter-count">
             {isLoading ? 'Loading students…' : `${visibleRows.length} student${visibleRows.length === 1 ? '' : 's'}`}
           </span>
+          <button
+            type="button"
+            onClick={() => refreshTracker()}
+            disabled={trackerFetching}
+            className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-slate-200 px-3 text-xs font-semibold text-slate-600 hover:bg-slate-50 disabled:opacity-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
+            data-testid="tracker-refresh"
+          >
+            <RefreshCw className={cn('h-3.5 w-3.5', trackerFetching && 'animate-spin')} />
+            {trackerFetching ? 'Updating…' : 'Refresh'}
+          </button>
           <div className="ml-auto flex items-center gap-1 overflow-x-auto">
             {days.slice(-7).map((d, i) => {
               const realIdx = last7Start + i;

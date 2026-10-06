@@ -1,11 +1,13 @@
 """Mentor-only Jan 2027 missed daily-tracker report."""
 import asyncio
-from datetime import date
+from datetime import date, datetime
 
-from db import STUDENT_ACCOUNTS, get_db
+from db import DASHBOARD_STUDENTS, STUDENT_ACCOUNTS, get_db
 from routers.student_dashboard import (
+    IST,
     _full_tracker_history_start,
     _parse_tracker_day,
+    _tracker_day_entry,
     _tracker_submission_day,
 )
 
@@ -16,6 +18,32 @@ def test_tracker_dates_parse_sheet_values_and_reject_broken_epoch_as_study_day()
         "01/01/1970 05:30:00",
         "01/10/2026 00:10:32",
     ) == date(2026, 10, 1)
+
+
+def test_tracker_day_entry_merges_form_and_mongo_without_double_counting_hours():
+    entry = _tracker_day_entry(
+        [{
+            "hours": 6,
+            "subjects": "Accounts",
+            "tomorrowTarget": "Audit",
+            "mentorSupport": "Yes",
+            "submissionTime": "06/10/2026 09:00:00",
+            "source": "form",
+        }],
+        [{
+            "hours": 6,
+            "subjects": "Accounts",
+            "proofUrl": "https://example.test/proof",
+            "source": "mongo",
+        }],
+        date(2026, 10, 6),
+    )
+    assert entry["submitted"] is True
+    assert entry["hours"] == 6
+    assert entry["tomorrowTarget"] == "Audit"
+    assert entry["mentorSupport"] == "Yes"
+    assert entry["proofUrl"] == "https://example.test/proof"
+    assert entry["sources"] == ["form", "mongo"]
 
 
 def test_full_history_starts_at_earliest_joining_or_genuine_submission():
@@ -127,6 +155,57 @@ def test_missed_tracker_report_counts_unique_days_and_respects_joined_on(client,
     assert rows["UMP0005"]["submittedDays"] == 3
     assert rows["UMP0005"]["missedDays"] == 0
     assert rows["UMP0005"]["missedDates"] == []
+
+
+def test_tracker_day_includes_current_app_mongo_submissions(client, mentor_headers, monkeypatch):
+    seed_accounts()
+    today = datetime.now(IST).date()
+
+    async def _seed_logs():
+        await get_db()[DASHBOARD_STUDENTS].insert_many([
+            {
+                "studentId": "UMP0001",
+                "studyLog": [{"date": today.isoformat(), "hours": 6, "topic": "Accounts", "proof": ""}],
+            },
+            {
+                "studentId": "UMP0002",
+                "studyLog": [{"date": today.isoformat(), "hours": 4.5, "topic": "Audit", "proof": ""}],
+            },
+        ])
+
+    asyncio.run(_seed_logs())
+
+    from routers import student_dashboard
+
+    monkeypatch.setattr(
+        student_dashboard,
+        "_fetch_tracker_submissions_sync",
+        lambda: [{
+            "studentId": "UMP0002",
+            "date": today,
+            "hours": 4.5,
+            "subjects": "Audit",
+            "tomorrowTarget": "FM",
+            "source": "form",
+        }],
+    )
+
+    response = client.get(
+        "/api/student-dashboard/tracker-day?dayIndex=13&batch=All%20Batches",
+        headers=mentor_headers,
+    )
+    assert response.status_code == 200, response.text
+    body = response.json()
+    assert body["selectedDay"] == today.isoformat()
+    assert body["submitted"] == 2
+    assert body["missed"] == 1
+    rows = {row["id"]: row for row in body["list"]}
+    assert rows["UMP0001"]["entry"]["submitted"] is True
+    assert rows["UMP0001"]["entry"]["hours"] == 6
+    assert rows["UMP0002"]["entry"]["hours"] == 4.5
+    assert rows["UMP0002"]["entry"]["tomorrowTarget"] == "FM"
+    assert rows["UMP0005"]["entry"]["submitted"] is False
+    assert body["sources"]["mongoRows"] == 2
 
 
 def test_full_tracker_report_resolves_start_and_runs_through_today(client, mentor_headers, monkeypatch):

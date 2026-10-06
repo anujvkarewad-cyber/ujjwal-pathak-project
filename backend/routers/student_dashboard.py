@@ -222,21 +222,84 @@ def _fetch_tracker_submissions_sync() -> list[dict]:
     reader = csv.DictReader(io.StringIO(response.content.decode("utf-8-sig")))
     fields = reader.fieldnames or []
     by_key = {_header_key(name): name for name in fields}
-    id_col = by_key.get("student id") or by_key.get("studentid")
-    timestamp_col = by_key.get("timestamp")
-    study_date_col = by_key.get("study date")
+
+    def column(*aliases: str) -> Optional[str]:
+        for alias in aliases:
+            match = by_key.get(_header_key(alias))
+            if match:
+                return match
+        return None
+
+    id_col = column("Student ID", "StudentId")
+    timestamp_col = column("Timestamp")
+    study_date_col = column("Study Date")
+    hours_col = column("Total Study Hours", "Study Hours", "Hours")
+    reason_col = column("What was the main reason you couldn't study today?", "Reason")
+    subjects_col = column("Which subjects did you study today?", "Subjects")
+    tomorrow_col = column("What is your target for tomorrow?", "Tomorrow Target")
+    support_col = column("Do you need mentor support?", "Mentor Support")
+    proof_col = column("Upload today's study proof", "Study Proof", "Proof")
     if not id_col or not timestamp_col:
         raise RuntimeError("Tracker sheet columns could not be identified.")
 
     submissions = []
     for row in reader:
         sid = normalize_student_id(row.get(id_col) or "")
+        timestamp = str(row.get(timestamp_col) or "").strip()
         day = _tracker_submission_day(
             row.get(study_date_col) if study_date_col else "",
-            row.get(timestamp_col) or "",
+            timestamp,
         )
-        if sid and day:
-            submissions.append({"studentId": sid, "date": day})
+        if not sid or not day:
+            continue
+        try:
+            hours = float(re.sub(r"[^0-9.]+", "", str(row.get(hours_col) or ""))) if hours_col else 0.0
+        except ValueError:
+            hours = 0.0
+        submissions.append({
+            "studentId": sid,
+            "date": day,
+            "hours": max(0.0, hours),
+            "subjects": str(row.get(subjects_col) or "").strip() if subjects_col else "",
+            "tomorrowTarget": str(row.get(tomorrow_col) or "").strip() if tomorrow_col else "",
+            "reason": str(row.get(reason_col) or "").strip() if reason_col else "",
+            "mentorSupport": str(row.get(support_col) or "").strip() if support_col else "",
+            "proofUrl": str(row.get(proof_col) or "").strip() if proof_col else "",
+            "submissionTime": timestamp,
+            "source": "form",
+        })
+    return submissions
+
+
+async def _fetch_mongo_tracker_submissions(db) -> list[dict]:
+    """Read app tracker/study-log rows already persisted in Mongo."""
+    submissions = []
+    async for doc in db[DASHBOARD_STUDENTS].find({}, {"studentId": 1, "studyLog": 1}):
+        sid = normalize_student_id(doc.get("studentId") or "")
+        if not sid:
+            continue
+        for row in doc.get("studyLog") or []:
+            if not isinstance(row, dict):
+                continue
+            day = _parse_tracker_day(row.get("date") or "")
+            if not day:
+                continue
+            try:
+                hours = max(0.0, float(row.get("hours") or 0))
+            except (TypeError, ValueError):
+                hours = 0.0
+            submissions.append({
+                "studentId": sid,
+                "date": day,
+                "hours": hours,
+                "subjects": str(row.get("topic") or "").strip(),
+                "tomorrowTarget": "",
+                "reason": "",
+                "mentorSupport": "",
+                "proofUrl": str(row.get("proof") or "").strip(),
+                "submissionTime": "",
+                "source": "mongo",
+            })
     return submissions
 
 
@@ -342,6 +405,130 @@ def _build_missed_tracker_report(
     }
 
 
+def _tracker_days_through(today: date, count: int = 14) -> list[date]:
+    return [today - timedelta(days=offset) for offset in range(count - 1, -1, -1)]
+
+
+def _tracker_day_entry(form_rows: list[dict], mongo_rows: list[dict], selected: date) -> dict:
+    submitted = bool(form_rows or mongo_rows)
+    form_hours = sum(float(row.get("hours") or 0) for row in form_rows)
+    mongo_hours = sum(float(row.get("hours") or 0) for row in mongo_rows)
+
+    def latest_value(field: str) -> str:
+        for row in reversed(form_rows + mongo_rows):
+            value = str(row.get(field) or "").strip()
+            if value:
+                return value
+        return ""
+
+    subjects = []
+    for row in form_rows + mongo_rows:
+        value = str(row.get("subjects") or "").strip()
+        if value and value not in subjects:
+            subjects.append(value)
+    return {
+        "date": selected.isoformat(),
+        "submitted": submitted,
+        # The same app submission can be mirrored into both stores. Taking the
+        # larger source total avoids double-counting while still showing all
+        # same-day entries from the authoritative source.
+        "hours": round(max(form_hours, mongo_hours), 2),
+        "subjects": ", ".join(subjects),
+        "tomorrowTarget": latest_value("tomorrowTarget"),
+        "reason": latest_value("reason"),
+        "mentorSupport": latest_value("mentorSupport"),
+        "submissionTime": latest_value("submissionTime"),
+        "proofUrl": latest_value("proofUrl"),
+        "sources": sorted({str(row.get("source") or "") for row in form_rows + mongo_rows if row.get("source")}),
+    }
+
+
+@router.get("/tracker-day")
+async def tracker_day(
+    day_index: int = Query(default=13, alias="dayIndex", ge=0, le=13),
+    batch: str = Query(default="All Batches"),
+    _mentor=Depends(require_mentor),
+):
+    """Live day view merged from app/Mongo logs and legacy Form responses."""
+    today = datetime.now(IST).date()
+    days = _tracker_days_through(today)
+    selected = days[max(0, min(len(days) - 1, day_index))]
+    db = get_db()
+    accounts = await db[STUDENT_ACCOUNTS].find(
+        {},
+        {
+            "_id": 0,
+            "studentId": 1,
+            "studentName": 1,
+            "attempt": 1,
+            "batch": 1,
+            "group": 1,
+            "joinedOn": 1,
+            "master": 1,
+        },
+    ).to_list(length=5000)
+    mongo_rows = await _fetch_mongo_tracker_submissions(db)
+    form_error = ""
+    try:
+        form_rows = await asyncio.to_thread(_fetch_tracker_submissions_sync)
+    except Exception as exc:
+        # Current app submissions are already in Mongo. Keep the live day view
+        # usable during a temporary public-Sheet read outage and surface source
+        # health in metadata instead of silently marking everyone missed.
+        form_rows = []
+        form_error = type(exc).__name__
+
+    form_by_student: dict[str, list[dict]] = {}
+    mongo_by_student: dict[str, list[dict]] = {}
+    for row in form_rows:
+        if row.get("date") == selected:
+            form_by_student.setdefault(normalize_student_id(row.get("studentId") or ""), []).append(row)
+    for row in mongo_rows:
+        if row.get("date") == selected:
+            mongo_by_student.setdefault(normalize_student_id(row.get("studentId") or ""), []).append(row)
+
+    requested_batch = str(batch or "All Batches").strip()
+    items = []
+    for account in accounts:
+        if account.get("master") or _attempt_ym(account.get("attempt") or "", account.get("batch") or "") != (2027, 1):
+            continue
+        account_batch = str(account.get("batch") or "Unassigned").strip() or "Unassigned"
+        if requested_batch not in {"", "All Batches"} and account_batch != requested_batch:
+            continue
+        sid = normalize_student_id(account.get("studentId") or "")
+        if not sid:
+            continue
+        name = str(account.get("studentName") or sid).strip() or sid
+        items.append({
+            "id": sid,
+            "name": name,
+            "avatar": f"https://ui-avatars.com/api/?background=2563EB&color=fff&size=200&name={sid}",
+            "batch": account_batch,
+            "group": str(account.get("group") or "Unassigned").strip() or "Unassigned",
+            "entry": _tracker_day_entry(
+                form_by_student.get(sid, []),
+                mongo_by_student.get(sid, []),
+                selected,
+            ),
+        })
+    items.sort(key=lambda row: (not row["entry"]["submitted"], row["name"].lower(), row["id"]))
+    submitted = sum(1 for row in items if row["entry"]["submitted"])
+    return {
+        "list": items,
+        "submitted": submitted,
+        "missed": max(0, len(items) - submitted),
+        "rate": round((submitted / len(items)) * 100) if items else 0,
+        "days": [day.isoformat() for day in days],
+        "selectedDay": selected.isoformat(),
+        "sources": {
+            "formRows": len(form_rows),
+            "mongoRows": len(mongo_rows),
+            "formReadOk": not bool(form_error),
+        },
+        "generatedAt": _now(),
+    }
+
+
 @router.get("/tracker-missed-report")
 async def tracker_missed_report(
     from_value: Optional[str] = Query(default=None, alias="from"),
@@ -386,9 +573,11 @@ async def tracker_missed_report(
         },
     ).to_list(length=500)
     try:
-        submissions = await asyncio.to_thread(_fetch_tracker_submissions_sync)
+        form_submissions = await asyncio.to_thread(_fetch_tracker_submissions_sync)
     except Exception as exc:
         raise HTTPException(status_code=502, detail="Tracker form data could not be loaded. No report was calculated.") from exc
+    mongo_submissions = await _fetch_mongo_tracker_submissions(db)
+    submissions = form_submissions + mongo_submissions
 
     if full_history:
         from_day = _full_tracker_history_start(accounts, submissions, today)
@@ -403,8 +592,9 @@ async def tracker_missed_report(
         use_submission_start_for_missing_joined=full_history,
     )
     report["scope"] = "joined-to-date" if full_history else "range"
-    report["source"] = "Form responses 1"
-    report["sourceSubmissionRows"] = len(submissions)
+    report["source"] = "Form responses 1 + Mongo study logs"
+    report["sourceSubmissionRows"] = len(form_submissions)
+    report["sourceMongoRows"] = len(mongo_submissions)
     report["generatedAt"] = _now()
     return JSONResponse(report, headers={"Cache-Control": "no-store"})
 
