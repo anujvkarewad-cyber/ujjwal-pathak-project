@@ -66,11 +66,11 @@ export const useTrackerDay = ({ dayIndex, batch }) =>
     enabled: dayIndex != null,
   });
 
-export const useMissedTrackerReport = ({ from, to, enabled = true }) =>
+export const useMissedTrackerReport = ({ from, to, scope = 'range', enabled = true }) =>
   useQuery({
-    queryKey: ['tracker', 'missed-report', from, to],
-    queryFn: () => trackerApi.getMissedTrackerReport({ from, to }),
-    enabled: enabled && Boolean(from && to),
+    queryKey: ['tracker', 'missed-report', scope, from, to],
+    queryFn: () => trackerApi.getMissedTrackerReport({ from, to, scope }),
+    enabled: enabled && (scope === 'joined-to-date' || Boolean(from && to)),
   });
 
 // ── Leaderboard ─────────────────────────────────────────────────────────

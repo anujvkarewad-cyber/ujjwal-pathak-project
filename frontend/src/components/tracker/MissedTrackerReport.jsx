@@ -142,11 +142,11 @@ function pdfStatus(row, day) {
 }
 
 function downloadGroupPdf(data, dates, mode, batchLabel, groupFilter) {
-  const isMonthly = mode === 'monthly';
+  const isWide = mode === 'monthly' || mode === 'full';
   const doc = new jsPDF({
     orientation: 'landscape',
     unit: 'mm',
-    format: isMonthly ? 'a3' : 'a4',
+    format: isWide ? 'a3' : 'a4',
   });
   const sections = groupFilter === ALL_TRACKER_GROUPS
     ? PDF_GROUPS
@@ -168,7 +168,7 @@ function downloadGroupPdf(data, dates, mode, batchLabel, groupFilter) {
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(8);
     doc.text(
-      `${mode === 'monthly' ? 'Monthly' : 'Weekly'} · ${displayDate(data.from)} to ${displayDate(data.to)} · Students: ${students.length} · Submitted: ${submitted} · Missed: ${missed}`,
+      `${mode === 'full' ? 'From joining to today' : mode === 'monthly' ? 'Monthly' : 'Weekly'} · ${displayDate(data.from)} to ${displayDate(data.to)} · Students: ${students.length} · Submitted: ${submitted} · Missed: ${missed}`,
       12,
       27,
     );
@@ -203,14 +203,14 @@ function downloadGroupPdf(data, dates, mode, batchLabel, groupFilter) {
         halign: 'center',
       },
       styles: {
-        fontSize: isMonthly ? 5.3 : 7,
-        cellPadding: isMonthly ? 0.7 : 1.2,
+        fontSize: isWide ? 5.3 : 7,
+        cellPadding: isWide ? 0.7 : 1.2,
         valign: 'middle',
         overflow: 'linebreak',
       },
       columnStyles: {
-        0: { cellWidth: isMonthly ? 31 : 38, halign: 'left' },
-        1: { cellWidth: isMonthly ? 17 : 20, halign: 'left' },
+        0: { cellWidth: isWide ? 31 : 38, halign: 'left' },
+        1: { cellWidth: isWide ? 17 : 20, halign: 'left' },
       },
       horizontalPageBreak: true,
       horizontalPageBreakRepeat: [0, 1],
@@ -277,7 +277,7 @@ function AttendanceCell({ status, day }) {
 
 export default function MissedTrackerReport() {
   const today = isoDayInIndia();
-  const [mode, setMode] = useState('weekly');
+  const [mode, setMode] = useState('full');
   const [weekAnchor, setWeekAnchor] = useState(today);
   const [month, setMonth] = useState(today.slice(0, 7));
   const [batchFilter, setBatchFilter] = useState(ALL_TRACKER_BATCHES);
@@ -286,17 +286,17 @@ export default function MissedTrackerReport() {
   const [missedOnly, setMissedOnly] = useState(true);
 
   const range = useMemo(() => {
+    if (mode === 'full') return { scope: 'joined-to-date' };
     if (mode === 'monthly') {
       const from = `${month}-01`;
       const monthEnd = lastDayOfMonth(month);
-      return { from, to: monthEnd > today ? today : monthEnd };
+      return { from, to: monthEnd > today ? today : monthEnd, scope: 'range' };
     }
     const from = mondayOfWeek(weekAnchor);
     const weekEnd = addDays(from, 6);
-    return { from, to: weekEnd > today ? today : weekEnd };
+    return { from, to: weekEnd > today ? today : weekEnd, scope: 'range' };
   }, [mode, month, weekAnchor, today]);
 
-  const dates = useMemo(() => datesBetween(range.from, range.to), [range.from, range.to]);
   const { data, isLoading, isFetching, error } = useMissedTrackerReport(range);
 
   const batchOptions = useMemo(() => trackerBatchOptions(data?.items || []), [data?.items]);
@@ -312,15 +312,22 @@ export default function MissedTrackerReport() {
     () => reportWithTrackerItems(data, cohortItems),
     [data, cohortItems],
   );
+  const effectiveRange = cohortReport
+    ? { from: cohortReport.from, to: cohortReport.to }
+    : { from: range.from, to: range.to };
+  const dates = useMemo(
+    () => (effectiveRange.from && effectiveRange.to ? datesBetween(effectiveRange.from, effectiveRange.to) : []),
+    [effectiveRange.from, effectiveRange.to],
+  );
 
   const visibleItems = useMemo(() => {
     const term = search.trim().toLowerCase();
-    return cohortItems.filter((row) => {
+    return (cohortReport?.items || []).filter((row) => {
       if (missedOnly && row.missedDays === 0) return false;
       if (!term) return true;
       return `${row.studentName} ${row.studentId} ${row.group} ${row.batch}`.toLowerCase().includes(term);
     });
-  }, [cohortItems, missedOnly, search]);
+  }, [cohortReport?.items, missedOnly, search]);
 
   return (
     <section
@@ -367,6 +374,7 @@ export default function MissedTrackerReport() {
         <div className="mt-5 flex flex-wrap items-end gap-3">
           <div className="inline-flex h-10 rounded-lg bg-slate-100 p-1 dark:bg-slate-800" aria-label="Report period">
             {[
+              ['full', 'From joining to today'],
               ['weekly', 'Weekly'],
               ['monthly', 'Monthly'],
             ].map(([value, label]) => (
@@ -382,7 +390,11 @@ export default function MissedTrackerReport() {
             ))}
           </div>
 
-          {mode === 'weekly' ? (
+          {mode === 'full' ? (
+            <div className="rounded-lg border border-blue-100 bg-blue-50 px-3 py-2 text-xs font-semibold text-blue-700 dark:border-blue-900 dark:bg-blue-950/40 dark:text-blue-300">
+              Each student starts from their own joining date · ends today
+            </div>
+          ) : mode === 'weekly' ? (
             <label className="space-y-1">
               <span className="block text-xs font-semibold text-slate-500 dark:text-slate-400">Any date in week</span>
               <input
@@ -438,7 +450,9 @@ export default function MissedTrackerReport() {
           </label>
 
           <div className="pb-2 text-xs text-slate-500 dark:text-slate-400">
-            {displayDate(range.from)}–{displayDate(range.to)}{range.to === today ? ' · Live through today' : ''}
+            {effectiveRange.from && effectiveRange.to
+              ? `${displayDate(effectiveRange.from)}–${displayDate(effectiveRange.to)}${effectiveRange.to === today ? ' · Live through today' : ''}`
+              : 'Resolving joining dates…'}
           </div>
           {isFetching && !isLoading && <div className="pb-2 text-xs font-semibold text-[#2563EB]">Updating…</div>}
         </div>

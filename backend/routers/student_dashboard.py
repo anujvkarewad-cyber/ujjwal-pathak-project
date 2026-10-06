@@ -240,11 +240,46 @@ def _fetch_tracker_submissions_sync() -> list[dict]:
     return submissions
 
 
+def _full_tracker_history_start(
+    accounts: list[dict],
+    submissions: list[dict],
+    today: date,
+) -> date:
+    """Earliest genuine joining/submission date for the Jan 2027 roster.
+
+    Students with a valid joinedOn still begin on their own date in the report.
+    A submission date is also considered so rows with missing joinedOn do not
+    lose genuine tracker history from before the earliest known joining date.
+    """
+    roster_ids = {
+        normalize_student_id(account.get("studentId") or "")
+        for account in accounts
+        if not account.get("master")
+        and _attempt_ym(account.get("attempt") or "", account.get("batch") or "") == (2027, 1)
+    }
+    roster_ids.discard("")
+    candidates = []
+    for account in accounts:
+        sid = normalize_student_id(account.get("studentId") or "")
+        if sid not in roster_ids:
+            continue
+        joined = _parse_tracker_day(account.get("joinedOn") or "")
+        if joined and joined <= today:
+            candidates.append(joined)
+    for row in submissions:
+        sid = normalize_student_id(row.get("studentId") or "")
+        day = row.get("date")
+        if sid in roster_ids and isinstance(day, date) and day <= today:
+            candidates.append(day)
+    return min(candidates) if candidates else today
+
+
 def _build_missed_tracker_report(
     accounts: list[dict],
     submissions: list[dict],
     from_day: date,
     to_day: date,
+    use_submission_start_for_missing_joined: bool = False,
 ) -> dict:
     submitted_by_student: dict[str, set[date]] = {}
     for row in submissions:
@@ -263,7 +298,12 @@ def _build_missed_tracker_report(
             continue
         roster_count += 1
         joined = _parse_tracker_day(account.get("joinedOn") or "")
-        expected_from = max(from_day, joined) if joined else from_day
+        if joined:
+            expected_from = max(from_day, joined)
+        elif use_submission_start_for_missing_joined:
+            expected_from = min(submitted_by_student.get(sid, set()), default=from_day)
+        else:
+            expected_from = from_day
         expected_dates = []
         if expected_from <= to_day:
             expected_dates = [
@@ -304,21 +344,33 @@ def _build_missed_tracker_report(
 
 @router.get("/tracker-missed-report")
 async def tracker_missed_report(
-    from_value: str = Query(alias="from"),
-    to_value: str = Query(alias="to"),
+    from_value: Optional[str] = Query(default=None, alias="from"),
+    to_value: Optional[str] = Query(default=None, alias="to"),
+    scope: str = Query(default="range"),
     _mentor=Depends(require_mentor),
 ):
-    from_day = _parse_tracker_day(from_value)
-    to_day = _parse_tracker_day(to_value)
-    if not from_day or not to_day:
-        raise HTTPException(status_code=400, detail="From and To must be valid YYYY-MM-DD dates.")
-    if from_day > to_day:
-        raise HTTPException(status_code=400, detail="From date cannot be after To date.")
-    if (to_day - from_day).days > 365:
-        raise HTTPException(status_code=400, detail="Choose a date range of 366 days or fewer.")
+    normalized_scope = str(scope or "range").strip().lower()
+    full_history = normalized_scope in {"full", "joined-to-date", "joined_to_date"}
+    if not full_history and normalized_scope != "range":
+        raise HTTPException(status_code=400, detail="Scope must be range or joined-to-date.")
+
     today = datetime.now(IST).date()
-    if to_day > today:
-        raise HTTPException(status_code=400, detail="To date cannot be in the future.")
+    if full_history:
+        # The exact start is resolved after loading the roster and complete
+        # tracker history. The end is deliberately always today in India.
+        from_day = None
+        to_day = today
+    else:
+        from_day = _parse_tracker_day(from_value)
+        to_day = _parse_tracker_day(to_value)
+        if not from_day or not to_day:
+            raise HTTPException(status_code=400, detail="From and To must be valid YYYY-MM-DD dates.")
+        if from_day > to_day:
+            raise HTTPException(status_code=400, detail="From date cannot be after To date.")
+        if (to_day - from_day).days > 365:
+            raise HTTPException(status_code=400, detail="Choose a date range of 366 days or fewer.")
+        if to_day > today:
+            raise HTTPException(status_code=400, detail="To date cannot be in the future.")
 
     db = get_db()
     accounts = await db[STUDENT_ACCOUNTS].find(
@@ -338,7 +390,19 @@ async def tracker_missed_report(
     except Exception as exc:
         raise HTTPException(status_code=502, detail="Tracker form data could not be loaded. No report was calculated.") from exc
 
-    report = _build_missed_tracker_report(accounts, submissions, from_day, to_day)
+    if full_history:
+        from_day = _full_tracker_history_start(accounts, submissions, today)
+        if (to_day - from_day).days > 1095:
+            raise HTTPException(status_code=400, detail="Full tracker history exceeds the supported three-year window.")
+
+    report = _build_missed_tracker_report(
+        accounts,
+        submissions,
+        from_day,
+        to_day,
+        use_submission_start_for_missing_joined=full_history,
+    )
+    report["scope"] = "joined-to-date" if full_history else "range"
     report["source"] = "Form responses 1"
     report["sourceSubmissionRows"] = len(submissions)
     report["generatedAt"] = _now()

@@ -47,6 +47,32 @@ test('recalculates report totals for the selected cohort only', () => {
   expect(report.studentsWithNoMissedDays).toBe(2);
 });
 
+test('full history starts at the selected cohort earliest joining date and keeps each own start', () => {
+  const data = {
+    scope: 'joined-to-date',
+    from: '2026-09-01',
+    to: '2026-09-04',
+  };
+  const selected = [
+    {
+      studentId: 'UMP0001',
+      expectedFrom: '2026-09-02',
+      submittedDates: ['2026-09-02', '2026-09-04'],
+      missedDays: 0,
+    },
+    {
+      studentId: 'UMP0002',
+      expectedFrom: '2026-09-03',
+      submittedDates: ['2026-09-03'],
+      missedDays: 0,
+    },
+  ];
+  const report = reportWithTrackerItems(data, selected);
+  expect(report.from).toBe('2026-09-02');
+  expect(report.items[0]).toMatchObject({ expectedDays: 3, submittedDays: 2, missedDays: 1 });
+  expect(report.items[1]).toMatchObject({ expectedFrom: '2026-09-03', expectedDays: 2, submittedDays: 1, missedDays: 1 });
+});
+
 test('uses batch and group in safe download filenames', () => {
   expect(trackerScopeSlug('Before Result Batch 1', 'Group 1'))
     .toBe('before-result-batch-1-group-1');

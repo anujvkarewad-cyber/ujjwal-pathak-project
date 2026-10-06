@@ -3,7 +3,11 @@ import asyncio
 from datetime import date
 
 from db import STUDENT_ACCOUNTS, get_db
-from routers.student_dashboard import _parse_tracker_day, _tracker_submission_day
+from routers.student_dashboard import (
+    _full_tracker_history_start,
+    _parse_tracker_day,
+    _tracker_submission_day,
+)
 
 
 def test_tracker_dates_parse_sheet_values_and_reject_broken_epoch_as_study_day():
@@ -12,6 +16,19 @@ def test_tracker_dates_parse_sheet_values_and_reject_broken_epoch_as_study_day()
         "01/01/1970 05:30:00",
         "01/10/2026 00:10:32",
     ) == date(2026, 10, 1)
+
+
+def test_full_history_starts_at_earliest_joining_or_genuine_submission():
+    accounts = [
+        {"studentId": "UMP0001", "attempt": "Jan 2027", "joinedOn": "2026-09-02"},
+        {"studentId": "UMP0002", "attempt": "Jan 2027", "joinedOn": ""},
+        {"studentId": "UMP0003", "attempt": "May 2027", "joinedOn": "2026-08-01"},
+    ]
+    submissions = [
+        {"studentId": "UMP0002", "date": date(2026, 9, 1)},
+        {"studentId": "UMP0003", "date": date(2026, 8, 1)},
+    ]
+    assert _full_tracker_history_start(accounts, submissions, date(2026, 10, 6)) == date(2026, 9, 1)
 
 
 def seed_accounts():
@@ -110,6 +127,36 @@ def test_missed_tracker_report_counts_unique_days_and_respects_joined_on(client,
     assert rows["UMP0005"]["submittedDays"] == 3
     assert rows["UMP0005"]["missedDays"] == 0
     assert rows["UMP0005"]["missedDates"] == []
+
+
+def test_full_tracker_report_resolves_start_and_runs_through_today(client, mentor_headers, monkeypatch):
+    seed_accounts()
+
+    from routers import student_dashboard
+
+    monkeypatch.setattr(
+        student_dashboard,
+        "_fetch_tracker_submissions_sync",
+        lambda: [
+            {"studentId": "UMP0005", "date": date(2026, 9, 1)},
+            {"studentId": "UMP0001", "date": date(2026, 9, 2)},
+            {"studentId": "UMP0002", "date": date(2026, 9, 3)},
+        ],
+    )
+
+    response = client.get(
+        "/api/student-dashboard/tracker-missed-report?scope=joined-to-date",
+        headers=mentor_headers,
+    )
+    assert response.status_code == 200, response.text
+    body = response.json()
+    assert body["scope"] == "joined-to-date"
+    assert body["from"] == "2026-09-01"
+    assert body["to"] >= body["from"]
+    rows = {row["studentId"]: row for row in body["items"]}
+    assert rows["UMP0001"]["expectedFrom"] == "2026-09-02"
+    assert rows["UMP0002"]["expectedFrom"] == "2026-09-03"
+    assert rows["UMP0005"]["expectedFrom"] == "2026-09-01"
 
 
 def test_missed_tracker_report_requires_mentor_and_valid_range(client, mentor_headers, monkeypatch):
