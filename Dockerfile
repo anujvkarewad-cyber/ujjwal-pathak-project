@@ -19,7 +19,8 @@ FROM node:20-bookworm-slim AS web
 WORKDIR /web
 
 # Same-origin API calls: the FastAPI container serves the SPA itself.
-ENV REACT_APP_MENTOR_API_URL=same-origin \
+ENV REACT_APP_APPS_SCRIPT_URL=https://script.google.com/macros/s/AKfycbzyfWa8agayMB0XLjkbfhfj2MdIRElAiY2Wnd7-eQKd1zlMl099ky6Cif06TWydzr8D/exec \
+    REACT_APP_MENTOR_API_URL=same-origin \
     CI=false \
     GENERATE_SOURCEMAP=false \
     NODE_OPTIONS=--max-old-space-size=2048
