@@ -13,6 +13,16 @@ import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 import { useMissedTrackerReport } from '@/api/hooks';
 import { Skeleton } from '@/components/common/Skeleton';
+import {
+  ALL_TRACKER_BATCHES,
+  ALL_TRACKER_GROUPS,
+  TRACKER_GROUP_OPTIONS,
+  filterTrackerItems,
+  reportWithTrackerItems,
+  trackerBatchOptions,
+  trackerGroupKey,
+  trackerScopeSlug,
+} from '@/utils/trackerReport';
 
 const IST_FORMATTER = new Intl.DateTimeFormat('en-CA', {
   timeZone: 'Asia/Kolkata',
@@ -84,7 +94,7 @@ function attendanceStatus(row, day) {
   return (row.submittedDates || []).includes(day) ? 'Submitted' : 'Not submitted';
 }
 
-function downloadReport(data, dates, mode) {
+function downloadReport(data, dates, mode, batchLabel, groupLabel) {
   const headers = [
     'Student ID',
     'Student Name',
@@ -110,7 +120,8 @@ function downloadReport(data, dates, mode) {
   const url = URL.createObjectURL(blob);
   const link = document.createElement('a');
   link.href = url;
-  link.download = `jan-2027-tracker-attendance-${mode}-${data.from}-to-${data.to}.csv`;
+  const scope = trackerScopeSlug(batchLabel, groupLabel);
+  link.download = `jan-2027-tracker-attendance-${scope}-${mode}-${data.from}-to-${data.to}.csv`;
   document.body.appendChild(link);
   link.click();
   link.remove();
@@ -123,14 +134,6 @@ const PDF_GROUPS = [
   { key: 'both', label: 'Both', color: [8, 145, 178] },
 ];
 
-function pdfGroupKey(value) {
-  const group = String(value || '').trim().toLowerCase();
-  if (group.includes('both')) return 'both';
-  if (/group\s*2|^2$/.test(group)) return 'group2';
-  if (/group\s*1|^1$/.test(group)) return 'group1';
-  return 'both';
-}
-
 function pdfStatus(row, day) {
   const status = attendanceStatus(row, day);
   if (status === 'Submitted') return 'S';
@@ -138,18 +141,21 @@ function pdfStatus(row, day) {
   return '—';
 }
 
-function downloadGroupPdf(data, dates, mode) {
+function downloadGroupPdf(data, dates, mode, batchLabel, groupFilter) {
   const isMonthly = mode === 'monthly';
   const doc = new jsPDF({
     orientation: 'landscape',
     unit: 'mm',
     format: isMonthly ? 'a3' : 'a4',
   });
+  const sections = groupFilter === ALL_TRACKER_GROUPS
+    ? PDF_GROUPS
+    : PDF_GROUPS.filter((section) => section.key === groupFilter);
 
-  PDF_GROUPS.forEach((section, index) => {
+  sections.forEach((section, index) => {
     if (index > 0) doc.addPage();
     const students = (data.items || [])
-      .filter((row) => pdfGroupKey(row.group) === section.key)
+      .filter((row) => trackerGroupKey(row.group) === section.key)
       .sort((a, b) => a.studentName.localeCompare(b.studentName));
     const submitted = students.reduce((sum, row) => sum + Number(row.submittedDays || 0), 0);
     const missed = students.reduce((sum, row) => sum + Number(row.missedDays || 0), 0);
@@ -158,7 +164,7 @@ function downloadGroupPdf(data, dates, mode) {
     doc.setFontSize(15);
     doc.text('Ujjwal Pathak Mentorship', 12, 13);
     doc.setFontSize(12);
-    doc.text(`Tracker Attendance · Jan 2027 · ${section.label}`, 12, 21);
+    doc.text(`Tracker Attendance · Jan 2027 · ${batchLabel} · ${section.label}`, 12, 21);
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(8);
     doc.text(
@@ -169,7 +175,7 @@ function downloadGroupPdf(data, dates, mode) {
     doc.text('Legend: S = Submitted   M = Not submitted   — = Not expected', 12, 32);
     if (!students.length) {
       doc.setFontSize(10);
-      doc.text(`No Jan 2027 students are assigned to ${section.label}.`, 12, 44);
+      doc.text(`No students match ${batchLabel} · ${section.label}.`, 12, 44);
       return;
     }
 
@@ -242,7 +248,9 @@ function downloadGroupPdf(data, dates, mode) {
       doc.internal.pageSize.getHeight() - 6,
     );
   }
-  doc.save(`jan-2027-tracker-attendance-group-wise-${mode}-${data.from}-to-${data.to}.pdf`);
+  const groupLabel = TRACKER_GROUP_OPTIONS.find((option) => option.value === groupFilter)?.label || 'All Groups';
+  const scope = trackerScopeSlug(batchLabel, groupLabel);
+  doc.save(`jan-2027-tracker-attendance-${scope}-${mode}-${data.from}-to-${data.to}.pdf`);
 }
 
 function AttendanceCell({ status, day }) {
@@ -272,6 +280,8 @@ export default function MissedTrackerReport() {
   const [mode, setMode] = useState('weekly');
   const [weekAnchor, setWeekAnchor] = useState(today);
   const [month, setMonth] = useState(today.slice(0, 7));
+  const [batchFilter, setBatchFilter] = useState(ALL_TRACKER_BATCHES);
+  const [groupFilter, setGroupFilter] = useState(ALL_TRACKER_GROUPS);
   const [search, setSearch] = useState('');
   const [missedOnly, setMissedOnly] = useState(true);
 
@@ -289,14 +299,28 @@ export default function MissedTrackerReport() {
   const dates = useMemo(() => datesBetween(range.from, range.to), [range.from, range.to]);
   const { data, isLoading, isFetching, error } = useMissedTrackerReport(range);
 
+  const batchOptions = useMemo(() => trackerBatchOptions(data?.items || []), [data?.items]);
+  const selectedBatchLabel = batchFilter === ALL_TRACKER_BATCHES
+    ? 'All Batches'
+    : batchOptions.find((option) => option.value === batchFilter)?.label || 'Selected Batch';
+  const selectedGroupLabel = TRACKER_GROUP_OPTIONS.find((option) => option.value === groupFilter)?.label || 'All Groups';
+  const cohortItems = useMemo(
+    () => filterTrackerItems(data?.items || [], batchFilter, groupFilter),
+    [data?.items, batchFilter, groupFilter],
+  );
+  const cohortReport = useMemo(
+    () => reportWithTrackerItems(data, cohortItems),
+    [data, cohortItems],
+  );
+
   const visibleItems = useMemo(() => {
     const term = search.trim().toLowerCase();
-    return (data?.items || []).filter((row) => {
+    return cohortItems.filter((row) => {
       if (missedOnly && row.missedDays === 0) return false;
       if (!term) return true;
       return `${row.studentName} ${row.studentId} ${row.group} ${row.batch}`.toLowerCase().includes(term);
     });
-  }, [data?.items, missedOnly, search]);
+  }, [cohortItems, missedOnly, search]);
 
   return (
     <section
@@ -316,23 +340,25 @@ export default function MissedTrackerReport() {
               Date-wise submitted and not-submitted status. Every calendar day counts.
             </p>
           </div>
-          {data && (
+          {cohortReport && (
             <div className="flex flex-wrap gap-2">
               <button
                 type="button"
-                onClick={() => downloadGroupPdf(data, dates, mode)}
-                className="inline-flex h-10 items-center gap-2 rounded-lg bg-[#2563EB] px-4 text-sm font-semibold text-white hover:bg-blue-700"
+                onClick={() => downloadGroupPdf(cohortReport, dates, mode, selectedBatchLabel, groupFilter)}
+                disabled={cohortReport.items.length === 0}
+                className="inline-flex h-10 items-center gap-2 rounded-lg bg-[#2563EB] px-4 text-sm font-semibold text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
                 data-testid="tracker-attendance-pdf"
               >
-                <FileText className="h-4 w-4" /> Group-wise PDF
+                <FileText className="h-4 w-4" /> Download filtered PDF
               </button>
               <button
                 type="button"
-                onClick={() => downloadReport(data, dates, mode)}
-                className="inline-flex h-10 items-center gap-2 rounded-lg border border-slate-200 px-4 text-sm font-semibold text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800"
+                onClick={() => downloadReport(cohortReport, dates, mode, selectedBatchLabel, selectedGroupLabel)}
+                disabled={cohortReport.items.length === 0}
+                className="inline-flex h-10 items-center gap-2 rounded-lg border border-slate-200 px-4 text-sm font-semibold text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800"
                 data-testid="tracker-attendance-download"
               >
-                <Download className="h-4 w-4" /> Download CSV
+                <Download className="h-4 w-4" /> Download filtered CSV
               </button>
             </div>
           )}
@@ -382,6 +408,35 @@ export default function MissedTrackerReport() {
             </label>
           )}
 
+          <label className="space-y-1">
+            <span className="block text-xs font-semibold text-slate-500 dark:text-slate-400">Batch</span>
+            <select
+              value={batchFilter}
+              onChange={(event) => setBatchFilter(event.target.value)}
+              className="h-10 min-w-52 rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
+              data-testid="tracker-attendance-batch-filter"
+            >
+              <option value={ALL_TRACKER_BATCHES}>All Batches</option>
+              {batchOptions.map((option) => (
+                <option key={option.value} value={option.value}>{option.label}</option>
+              ))}
+            </select>
+          </label>
+
+          <label className="space-y-1">
+            <span className="block text-xs font-semibold text-slate-500 dark:text-slate-400">Group</span>
+            <select
+              value={groupFilter}
+              onChange={(event) => setGroupFilter(event.target.value)}
+              className="h-10 min-w-36 rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
+              data-testid="tracker-attendance-group-filter"
+            >
+              {TRACKER_GROUP_OPTIONS.map((option) => (
+                <option key={option.value} value={option.value}>{option.label}</option>
+              ))}
+            </select>
+          </label>
+
           <div className="pb-2 text-xs text-slate-500 dark:text-slate-400">
             {displayDate(range.from)}–{displayDate(range.to)}{range.to === today ? ' · Live through today' : ''}
           </div>
@@ -411,10 +466,10 @@ export default function MissedTrackerReport() {
         <>
           <div className="grid grid-cols-2 gap-3 p-5 lg:grid-cols-4">
             {[
-              ['Jan 2027 students', data.rosterCount],
+              ['Filtered students', cohortReport?.rosterCount || 0],
               ['Calendar days', data.totalCalendarDays],
-              ['Missed ≥ 1 day', data.studentsWithMissedDays],
-              ['No missed days', data.studentsWithNoMissedDays],
+              ['Missed ≥ 1 day', cohortReport?.studentsWithMissedDays || 0],
+              ['No missed days', cohortReport?.studentsWithNoMissedDays || 0],
             ].map(([label, value]) => (
               <div key={label} className="rounded-lg bg-slate-50 p-4 dark:bg-slate-800/60">
                 <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">{label}</div>
@@ -490,9 +545,9 @@ export default function MissedTrackerReport() {
                 {visibleItems.length === 0 && (
                   <tr>
                     <td colSpan={dates.length + 4} className="px-5 py-10 text-center text-slate-500 dark:text-slate-400">
-                      {missedOnly && data.studentsWithMissedDays === 0
-                        ? 'Every Jan 2027 student submitted on every expected day in this period.'
-                        : 'No students match the current search or filter.'}
+                      {missedOnly && cohortReport?.studentsWithMissedDays === 0 && cohortReport?.rosterCount > 0
+                        ? `Every student in ${selectedBatchLabel} · ${selectedGroupLabel} submitted on every expected day in this period.`
+                        : 'No students match the selected batch, group, search or display filter.'}
                     </td>
                   </tr>
                 )}
@@ -500,7 +555,7 @@ export default function MissedTrackerReport() {
             </table>
           </div>
           <div className="border-t border-slate-200 px-5 py-3 text-xs text-slate-500 dark:border-slate-800 dark:text-slate-400">
-            Source: {data.source}. A genuine enrollment date is respected when present; otherwise counting starts from the displayed period’s first date as requested. Current-day status can change until a student submits.
+            Downloads include only <b>{selectedBatchLabel} · {selectedGroupLabel}</b>. Search and “missed only” affect the on-screen table, not the complete selected-cohort download. Source: {data.source}. A genuine enrollment date is respected when present; otherwise counting starts from the displayed period’s first date as requested. Current-day status can change until a student submits.
           </div>
         </>
       )}
