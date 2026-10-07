@@ -2,14 +2,25 @@
 import asyncio
 from datetime import date, datetime
 
+import pytest
+
 from db import DASHBOARD_STUDENTS, STUDENT_ACCOUNTS, get_db
 from routers.student_dashboard import (
     IST,
+    TRACKER_HISTORY_FLOOR,
     _full_tracker_history_start,
+    _merge_tracker_roster,
     _parse_tracker_day,
     _tracker_day_entry,
     _tracker_submission_day,
 )
+
+
+@pytest.fixture(autouse=True)
+def avoid_live_roster_fetch(monkeypatch):
+    from routers import student_dashboard
+
+    monkeypatch.setattr(student_dashboard, "_fetch_tracker_roster_sync", lambda: [])
 
 
 def test_tracker_dates_parse_sheet_values_and_reject_broken_epoch_as_study_day():
@@ -18,6 +29,26 @@ def test_tracker_dates_parse_sheet_values_and_reject_broken_epoch_as_study_day()
         "01/01/1970 05:30:00",
         "01/10/2026 00:10:32",
     ) == date(2026, 10, 1)
+
+
+def test_tracker_roster_uses_sheet_name_for_each_student_id_and_keeps_joining_date():
+    mongo = [{
+        "studentId": "UMP0001",
+        "studentName": "Stale Wrong Name",
+        "joinedOn": "2026-09-30",
+        "attempt": "Jan 2027",
+    }]
+    sheet = [{
+        "studentId": "UMP0001",
+        "studentName": "Correct Sheet Name",
+        "group": "Group 1",
+        "attempt": "Jan 2027",
+        "batch": "Before Result Batch 1",
+    }]
+    merged = _merge_tracker_roster(mongo, sheet)
+    assert merged[0]["studentId"] == "UMP0001"
+    assert merged[0]["studentName"] == "Correct Sheet Name"
+    assert merged[0]["joinedOn"] == "2026-09-30"
 
 
 def test_tracker_day_entry_merges_form_and_mongo_without_double_counting_hours():
@@ -69,7 +100,7 @@ def seed_accounts():
                     "attempt": "Fri Jan 01 2027 00:00:00 GMT+0530 (India Standard Time)",
                     "batch": "Super 30",
                     "group": "Group 1",
-                    "joinedOn": "2026-09-02",
+                    "joinedOn": "2026-09-29",
                 },
                 {
                     "studentId": "UMP0002",
@@ -117,19 +148,19 @@ def test_missed_tracker_report_counts_unique_days_and_respects_joined_on(client,
         student_dashboard,
         "_fetch_tracker_submissions_sync",
         lambda: [
-            {"studentId": "UMP0001", "date": date(2026, 9, 1)},
-            {"studentId": "UMP0001", "date": date(2026, 9, 2)},
-            {"studentId": "UMP0001", "date": date(2026, 9, 2)},
-            {"studentId": "UMP0002", "date": date(2026, 9, 1)},
-            {"studentId": "UMP0002", "date": date(2026, 9, 3)},
-            {"studentId": "UMP0005", "date": date(2026, 9, 1)},
-            {"studentId": "UMP0005", "date": date(2026, 9, 2)},
-            {"studentId": "UMP0005", "date": date(2026, 9, 3)},
+            {"studentId": "UMP0001", "date": date(2026, 9, 28)},
+            {"studentId": "UMP0001", "date": date(2026, 9, 29)},
+            {"studentId": "UMP0001", "date": date(2026, 9, 29)},
+            {"studentId": "UMP0002", "date": date(2026, 9, 28)},
+            {"studentId": "UMP0002", "date": date(2026, 9, 30)},
+            {"studentId": "UMP0005", "date": date(2026, 9, 28)},
+            {"studentId": "UMP0005", "date": date(2026, 9, 29)},
+            {"studentId": "UMP0005", "date": date(2026, 9, 30)},
         ],
     )
 
     response = client.get(
-        "/api/student-dashboard/tracker-missed-report?from=2026-09-01&to=2026-09-03",
+        "/api/student-dashboard/tracker-missed-report?from=2026-09-28&to=2026-09-30",
         headers=mentor_headers,
     )
     assert response.status_code == 200, response.text
@@ -142,16 +173,16 @@ def test_missed_tracker_report_counts_unique_days_and_respects_joined_on(client,
     assert body["sourceSubmissionRows"] == 8
 
     rows = {row["studentId"]: row for row in body["items"]}
-    assert rows["UMP0001"]["expectedFrom"] == "2026-09-02"
+    assert rows["UMP0001"]["expectedFrom"] == "2026-09-29"
     assert rows["UMP0001"]["expectedDays"] == 2
     assert rows["UMP0001"]["submittedDays"] == 1
-    assert rows["UMP0001"]["submittedDates"] == ["2026-09-02"]
-    assert rows["UMP0001"]["missedDates"] == ["2026-09-03"]
-    assert rows["UMP0002"]["expectedFrom"] == "2026-09-01"
+    assert rows["UMP0001"]["submittedDates"] == ["2026-09-29"]
+    assert rows["UMP0001"]["missedDates"] == ["2026-09-30"]
+    assert rows["UMP0002"]["expectedFrom"] == "2026-09-28"
     assert rows["UMP0002"]["expectedDays"] == 3
     assert rows["UMP0002"]["submittedDays"] == 2
-    assert rows["UMP0002"]["submittedDates"] == ["2026-09-01", "2026-09-03"]
-    assert rows["UMP0002"]["missedDates"] == ["2026-09-02"]
+    assert rows["UMP0002"]["submittedDates"] == ["2026-09-28", "2026-09-30"]
+    assert rows["UMP0002"]["missedDates"] == ["2026-09-29"]
     assert rows["UMP0005"]["submittedDays"] == 3
     assert rows["UMP0005"]["missedDays"] == 0
     assert rows["UMP0005"]["missedDates"] == []
@@ -217,9 +248,9 @@ def test_full_tracker_report_resolves_start_and_runs_through_today(client, mento
         student_dashboard,
         "_fetch_tracker_submissions_sync",
         lambda: [
-            {"studentId": "UMP0005", "date": date(2026, 9, 1)},
-            {"studentId": "UMP0001", "date": date(2026, 9, 2)},
-            {"studentId": "UMP0002", "date": date(2026, 9, 3)},
+            {"studentId": "UMP0005", "date": date(2026, 9, 28)},
+            {"studentId": "UMP0001", "date": date(2026, 9, 29)},
+            {"studentId": "UMP0002", "date": date(2026, 9, 30)},
         ],
     )
 
@@ -230,12 +261,13 @@ def test_full_tracker_report_resolves_start_and_runs_through_today(client, mento
     assert response.status_code == 200, response.text
     body = response.json()
     assert body["scope"] == "joined-to-date"
-    assert body["from"] == "2026-09-01"
+    assert body["from"] == TRACKER_HISTORY_FLOOR.isoformat()
+    assert body["historyFloor"] == "2026-09-28"
     assert body["to"] >= body["from"]
     rows = {row["studentId"]: row for row in body["items"]}
-    assert rows["UMP0001"]["expectedFrom"] == "2026-09-02"
-    assert rows["UMP0002"]["expectedFrom"] == "2026-09-03"
-    assert rows["UMP0005"]["expectedFrom"] == "2026-09-01"
+    assert rows["UMP0001"]["expectedFrom"] == "2026-09-29"
+    assert rows["UMP0002"]["expectedFrom"] == "2026-09-30"
+    assert rows["UMP0005"]["expectedFrom"] == "2026-09-28"
 
 
 def test_missed_tracker_report_requires_mentor_and_valid_range(client, mentor_headers, monkeypatch):
@@ -262,7 +294,7 @@ def test_missed_tracker_report_fails_closed_when_sheet_is_unavailable(client, me
 
     monkeypatch.setattr(student_dashboard, "_fetch_tracker_submissions_sync", fail)
     response = client.get(
-        "/api/student-dashboard/tracker-missed-report?from=2026-09-01&to=2026-09-03",
+        "/api/student-dashboard/tracker-missed-report?from=2026-09-28&to=2026-09-30",
         headers=mentor_headers,
     )
     assert response.status_code == 502

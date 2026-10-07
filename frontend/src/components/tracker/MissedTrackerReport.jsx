@@ -168,7 +168,7 @@ function downloadGroupPdf(data, dates, mode, batchLabel, groupFilter) {
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(8);
     doc.text(
-      `${mode === 'full' ? 'From joining to today' : mode === 'monthly' ? 'Monthly' : 'Weekly'} · ${displayDate(data.from)} to ${displayDate(data.to)} · Students: ${students.length} · Submitted: ${submitted} · Missed: ${missed}`,
+      `${mode === 'full' ? 'From 28 Sep 2026 to today' : mode === 'monthly' ? 'Monthly' : 'Weekly'} · ${displayDate(data.from)} to ${displayDate(data.to)} · Students: ${students.length} · Submitted: ${submitted} · Missed: ${missed}`,
       12,
       27,
     );
@@ -374,7 +374,7 @@ export default function MissedTrackerReport() {
         <div className="mt-5 flex flex-wrap items-end gap-3">
           <div className="inline-flex h-10 rounded-lg bg-slate-100 p-1 dark:bg-slate-800" aria-label="Report period">
             {[
-              ['full', 'From joining to today'],
+              ['full', 'From 28 Sep to today'],
               ['weekly', 'Weekly'],
               ['monthly', 'Monthly'],
             ].map(([value, label]) => (
@@ -392,7 +392,7 @@ export default function MissedTrackerReport() {
 
           {mode === 'full' ? (
             <div className="rounded-lg border border-blue-100 bg-blue-50 px-3 py-2 text-xs font-semibold text-blue-700 dark:border-blue-900 dark:bg-blue-950/40 dark:text-blue-300">
-              Each student starts from their own joining date · ends today
+              Calendar starts 28 Sep 2026 · students joining later start from their own joining date
             </div>
           ) : mode === 'weekly' ? (
             <label className="space-y-1">

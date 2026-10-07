@@ -165,6 +165,9 @@ TRACKER_SHEET_ID = os.environ.get(
     "1oYYodP_XcbJOjrP5c4PirQDCnl54NFyPUbf7lwM1Ycc",
 ).strip()
 TRACKER_FORM_SHEET = os.environ.get("TRACKER_FORM_SHEET", "Form responses 1").strip()
+TRACKER_HISTORY_FLOOR = date.fromisoformat(
+    os.environ.get("TRACKER_HISTORY_FLOOR", "2026-09-28").strip()
+)
 
 
 def _parse_tracker_day(value: Any) -> Optional[date]:
@@ -301,6 +304,67 @@ async def _fetch_mongo_tracker_submissions(db) -> list[dict]:
                 "source": "mongo",
             })
     return submissions
+
+
+def _fetch_tracker_roster_sync() -> list[dict]:
+    """Read only non-sensitive roster columns from the authoritative Students sheet."""
+    if not TRACKER_SHEET_ID:
+        raise RuntimeError("Tracker sheet is not configured.")
+    url = f"https://docs.google.com/spreadsheets/d/{TRACKER_SHEET_ID}/gviz/tq"
+    response = requests.get(
+        url,
+        params={
+            "tqx": "out:csv",
+            "sheet": "Students",
+            # Never fetch email, password or access-control columns.
+            "tq": "select A,B,E,F,G",
+            "_": str(int(datetime.now().timestamp())),
+        },
+        headers={"User-Agent": "UPM-mentor-tracker-roster/1.0"},
+        timeout=20,
+    )
+    response.raise_for_status()
+    reader = csv.DictReader(io.StringIO(response.content.decode("utf-8-sig")))
+    rows = []
+    for row in reader:
+        sid = normalize_student_id(row.get("Student ID") or "")
+        if not sid:
+            continue
+        rows.append({
+            "studentId": sid,
+            "studentName": str(row.get("Student Name") or sid).strip() or sid,
+            "group": str(row.get("Group") or "Unassigned").strip() or "Unassigned",
+            "attempt": str(row.get("Attempt") or "").strip(),
+            "batch": str(row.get("Batch") or "Unassigned").strip() or "Unassigned",
+        })
+    return rows
+
+
+def _merge_tracker_roster(accounts: list[dict], sheet_rows: list[dict]) -> list[dict]:
+    """Use Sheet ID/name/cohort metadata while retaining Mongo joining dates."""
+    if not sheet_rows:
+        return accounts
+    mongo_by_id = {
+        normalize_student_id(account.get("studentId") or ""): account
+        for account in accounts
+        if normalize_student_id(account.get("studentId") or "")
+    }
+    merged = []
+    for sheet_row in sheet_rows:
+        sid = normalize_student_id(sheet_row.get("studentId") or "")
+        base = dict(mongo_by_id.get(sid) or {})
+        base.update(sheet_row)
+        base["studentId"] = sid
+        merged.append(base)
+    return merged
+
+
+async def _tracker_roster(accounts: list[dict]) -> tuple[list[dict], str]:
+    try:
+        sheet_rows = await asyncio.to_thread(_fetch_tracker_roster_sync)
+    except Exception:
+        return accounts, "Mongo fallback"
+    return _merge_tracker_roster(accounts, sheet_rows), "Students Sheet"
 
 
 def _full_tracker_history_start(
@@ -467,6 +531,7 @@ async def tracker_day(
             "master": 1,
         },
     ).to_list(length=5000)
+    accounts, roster_source = await _tracker_roster(accounts)
     mongo_rows = await _fetch_mongo_tracker_submissions(db)
     form_error = ""
     try:
@@ -524,6 +589,7 @@ async def tracker_day(
             "formRows": len(form_rows),
             "mongoRows": len(mongo_rows),
             "formReadOk": not bool(form_error),
+            "roster": roster_source,
         },
         "generatedAt": _now(),
     }
@@ -558,6 +624,10 @@ async def tracker_missed_report(
             raise HTTPException(status_code=400, detail="Choose a date range of 366 days or fewer.")
         if to_day > today:
             raise HTTPException(status_code=400, detail="To date cannot be in the future.")
+        history_floor = min(TRACKER_HISTORY_FLOOR, today)
+        if to_day < history_floor:
+            raise HTTPException(status_code=400, detail=f"Tracker attendance is available from {history_floor.isoformat()}.")
+        from_day = max(from_day, history_floor)
 
     db = get_db()
     accounts = await db[STUDENT_ACCOUNTS].find(
@@ -572,6 +642,7 @@ async def tracker_missed_report(
             "master": 1,
         },
     ).to_list(length=500)
+    accounts, roster_source = await _tracker_roster(accounts)
     try:
         form_submissions = await asyncio.to_thread(_fetch_tracker_submissions_sync)
     except Exception as exc:
@@ -580,7 +651,8 @@ async def tracker_missed_report(
     submissions = form_submissions + mongo_submissions
 
     if full_history:
-        from_day = _full_tracker_history_start(accounts, submissions, today)
+        resolved_start = _full_tracker_history_start(accounts, submissions, today)
+        from_day = max(resolved_start, min(TRACKER_HISTORY_FLOOR, today))
         if (to_day - from_day).days > 1095:
             raise HTTPException(status_code=400, detail="Full tracker history exceeds the supported three-year window.")
 
@@ -595,6 +667,8 @@ async def tracker_missed_report(
     report["source"] = "Form responses 1 + Mongo study logs"
     report["sourceSubmissionRows"] = len(form_submissions)
     report["sourceMongoRows"] = len(mongo_submissions)
+    report["rosterSource"] = roster_source
+    report["historyFloor"] = min(TRACKER_HISTORY_FLOOR, today).isoformat()
     report["generatedAt"] = _now()
     return JSONResponse(report, headers={"Cache-Control": "no-store"})
 
