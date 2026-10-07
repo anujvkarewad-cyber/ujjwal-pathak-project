@@ -580,6 +580,18 @@ def _ranking_row(ranking, display: dict) -> dict:
     }
 
 
+def _global_positions(segments: dict) -> dict:
+    """student_id -> position when every segment is merged into one list.
+
+    The student app reads a single cross-batch list with a rank column and no batch
+    column, so the student-facing number has to be unique across the whole cohort.
+    Per-batch ranks would print the same number twice in that list.
+    """
+    flat = [row for rows in segments.values() for row in rows]
+    flat.sort(key=ranking_lib.sort_key)
+    return {row.student_id: index for index, row in enumerate(flat, start=1)}
+
+
 def _ranked_segments(activities: list, period: str, segment_by: str, today: date) -> dict:
     start, end = ranking_lib.period_window(period, today, TRACKER_HISTORY_FLOOR)
     return ranking_lib.rank_segments(
@@ -1111,9 +1123,14 @@ def _recompute_stats(logs: list, prev: Optional[dict] = None) -> dict:
         "lastSubmission": last_sub,
         "last7": [round(x, 1) for x in last7],
         "streak": streak,
+        # Rank fields are written by _rebuild_leaderboard and carried through here,
+        # so recomputing hours never silently drops a student's ranking.
         "rank": int(prev.get("rank") or 0),
         "weeklyRank": int(prev.get("weeklyRank") or 0),
         "monthlyRank": int(prev.get("monthlyRank") or 0),
+        "rankInBatch": int(prev.get("rankInBatch") or 0),
+        "rankBatch": str(prev.get("rankBatch") or ""),
+        "score": prev.get("score") or 0,
     }
 
 
@@ -1195,15 +1212,20 @@ async def _rebuild_leaderboard(db) -> None:
     by_batch = _ranked_segments(activities, "overall", "batch", today)
     by_batch_weekly = _ranked_segments(activities, "weekly", "batch", today)
     by_batch_monthly = _ranked_segments(activities, "monthly", "batch", today)
-    weekly_rank = {r.student_id: r.rank for rows in by_batch_weekly.values() for r in rows}
-    monthly_rank = {r.student_id: r.rank for rows in by_batch_monthly.values() for r in rows}
-    overall_rank = {r.student_id: r.rank for rows in by_batch.values() for r in rows}
 
-    # Global order (by composite score) so clients without a student segment still
-    # receive a coherent list.
+    # Two views of the same computation:
+    #   batch_rank  -> position inside the student's own batch. The mentor
+    #                  dashboard ranks this way (owner decision).
+    #   global_rank -> position in the merged cohort list. This is what students
+    #                  see, because the app renders one cross-batch table whose
+    #                  rank column would otherwise repeat the same number.
+    batch_rank = {r.student_id: r.rank for rows in by_batch.values() for r in rows}
+    global_rank = _global_positions(by_batch)
+    weekly_rank = _global_positions(by_batch_weekly)
+    monthly_rank = _global_positions(by_batch_monthly)
+
     flat = [r for rows in by_batch.values() for r in rows]
     flat.sort(key=ranking_lib.sort_key)
-    global_rank = {r.student_id: i for i, r in enumerate(flat, start=1)}
 
     rows = []
     for ranking in flat:
@@ -1212,9 +1234,9 @@ async def _rebuild_leaderboard(db) -> None:
         # `rank` is the rank within the student's own batch (owner decision).
         # The overall position is carried alongside so a flat client list can still
         # be ordered coherently.
-        row["rank"] = int(overall_rank.get(sid) or 0)
-        row["rankInBatch"] = int(overall_rank.get(sid) or 0)
+        row["rank"] = int(global_rank.get(sid) or 0)
         row["rankOverall"] = int(global_rank.get(sid) or 0)
+        row["rankInBatch"] = int(batch_rank.get(sid) or 0)
         rows.append(row)
 
     # Push the period ranks onto each student's stats — but only when a value
@@ -1223,9 +1245,12 @@ async def _rebuild_leaderboard(db) -> None:
     for row in rows:
         sid = row["studentId"]
         target = {
-            "rank": int(overall_rank.get(sid) or 0),
+            # `rank` must equal the student's position in the list they are shown,
+            # otherwise the tile and the table disagree on the same screen.
+            "rank": int(global_rank.get(sid) or 0),
             "weeklyRank": int(weekly_rank.get(sid) or 0),
             "monthlyRank": int(monthly_rank.get(sid) or 0),
+            "rankInBatch": int(batch_rank.get(sid) or 0),
             "score": row.get("score"),
             "rankBatch": row.get("batch") or "",
         }
@@ -1356,7 +1381,6 @@ async def _leaderboard_for_student(db, rows, student_id: str) -> list:
     wanted_attempt = attempts.get(wanted) if wanted else None
     if wanted and wanted_attempt not in allowed:
         return []
-    wanted_batch = batches.get(wanted) if wanted else None
 
     result = []
     seen = set()
@@ -1369,20 +1393,22 @@ async def _leaderboard_for_student(db, rows, student_id: str) -> list:
             continue
         if wanted and attempt != wanted_attempt:
             continue
-        if wanted_batch and str(row.get("batch") or batches.get(sid) or "").strip() != wanted_batch:
-            continue
+        # Deliberately NOT filtered to the caller's batch. The app renders one
+        # table with a rank column and no batch column, and older clients send no
+        # studentId at all, so a batch-restricted list would give different
+        # students different numbers for the same rank (a web caller sees a
+        # cohort-wide #78 while the tile says #11). One meaning, every client.
+        # Per-batch ranking lives on the mentor dashboard, which can see batches.
         seen.add(sid)
         item = dict(row)
         item["studentId"] = sid
         item["attempt"] = allowed[attempt]
         item["rankInBatch"] = int(row.get("rankInBatch") or row.get("rank") or 0)
         item["rankOverall"] = int(row.get("rankOverall") or row.get("rank") or 0)
-        # Which number `rank` means depends on the caller:
-        #  * caller identified  -> their own batch, ranked inside that batch, which
-        #    is the ranking model the mentor asked for and what "my rank" means.
-        #  * caller anonymous (older clients omit studentId and just slice the
-        #    list) -> overall order, so a flat table never shows two "#1"s.
-        item["rank"] = item["rankInBatch"] if wanted else item["rankOverall"]
+        # `rank` is the cohort-wide position for every caller, so the value a
+        # student sees is identical whether they identify themselves or not, and a
+        # flat table can never show the same number twice.
+        item["rank"] = item["rankOverall"]
         # Never ship contact details to a student client.
         for secret in ("email", "phone", "proof", "proofUrl"):
             item.pop(secret, None)

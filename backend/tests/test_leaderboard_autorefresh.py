@@ -24,8 +24,15 @@ def no_live_sheet(monkeypatch):
 
 
 def _seed(client, mentor_headers, hours_by_student):
+    """hours_by_student: {id: hours} or {id: {"hours": n, "batch": "..."}}."""
     students = []
-    for sid, hours in hours_by_student.items():
+    spec = {}
+    for sid, value in hours_by_student.items():
+        if isinstance(value, dict):
+            spec[sid] = (value.get("hours", 0), value.get("batch", "Batch A"))
+        else:
+            spec[sid] = (value, "Batch A")
+        hours = spec[sid][0]
         log = [{"date": RECENT, "topic": "FM", "hours": hours}] if hours else []
         students.append({"studentId": sid, "stats": {"streak": 0}, "studyLog": log,
                          "reports": [], "mentorNotes": [], "feedback": []})
@@ -39,11 +46,11 @@ def _seed(client, mentor_headers, hours_by_student):
 
     async def accounts():
         db = get_db()
-        for sid in hours_by_student:
+        for sid, (_, batch) in spec.items():
             await db[STUDENT_ACCOUNTS].update_one(
                 {"studentId": sid},
                 {"$set": {"studentId": sid, "studentName": f"Student {sid}",
-                          "attempt": "Jan 2027", "batch": "Batch A", "group": "Group 1",
+                          "attempt": "Jan 2027", "batch": batch, "group": "Group 1",
                           "joinedOn": (TODAY - timedelta(days=30)).isoformat()}},
                 upsert=True)
 
@@ -137,32 +144,67 @@ def test_stats_also_refresh_so_the_home_tile_is_never_stale(client, mentor_heade
     assert stats["rank"] != 0, "students must never be shown rank 0"
 
 
-def test_anonymous_flat_list_is_ordered_without_duplicate_ranks(client, mentor_headers):
-    """Older clients omit studentId and slice the list; ranks must not repeat."""
-    _seed(client, mentor_headers, {"UMP0301": 10, "UMP0302": 1})
+def test_flat_list_has_no_duplicate_ranks_across_batches(client, mentor_headers):
+    """The student app shows ONE cross-batch table with a rank column.
+
+    With per-batch ranks that table would print the same number twice, so the
+    student-facing rank must be unique across the whole cohort.
+    """
+    _seed(client, mentor_headers, {
+        "UMP0301": {"hours": 40, "batch": "Batch A"},
+        "UMP0302": {"hours": 30, "batch": "Batch A"},
+        "UMP0303": {"hours": 20, "batch": "Batch B"},   # best of Batch B
+        "UMP0304": {"hours": 10, "batch": "Batch B"},
+    })
     _age_snapshot(10 * 60)
 
     rows = _student_leaderboard(client)["result"]
-    assert rows, "expected leaderboard rows"
+    assert len(rows) == 4, rows
     ranks = [r["rank"] for r in rows]
     assert ranks == sorted(ranks), "flat list should be in rank order"
     assert len(set(ranks)) == len(ranks), f"duplicate ranks in a flat list: {ranks}"
+    assert ranks == [1, 2, 3, 4], f"ranks should be contiguous and unique: {ranks}"
+
+    # The batch rank is still carried for the mentor dashboard's per-batch view,
+    # and it legitimately repeats across batches.
+    by_id = {r["studentId"]: r for r in rows}
+    assert by_id["UMP0303"]["rankInBatch"] == 1     # best of Batch B
+    assert by_id["UMP0303"]["rank"] == 3            # third in the cohort
+    assert by_id["UMP0301"]["rank"] == by_id["UMP0301"]["rankInBatch"] == 1
+
     for row in rows:
-        assert "rankInBatch" in row and "rankOverall" in row
         assert "email" not in row and "phone" not in row
 
 
-def test_identified_student_sees_their_batch_rank(client, mentor_headers):
-    _seed(client, mentor_headers, {"UMP0301": 10, "UMP0302": 1})
+def test_student_tile_matches_their_row_in_the_list(client, mentor_headers):
+    """The rank on the student's home tile must equal the number beside their
+    name in the list, or they see two different numbers on one screen."""
+    _seed(client, mentor_headers, {
+        "UMP0301": {"hours": 40, "batch": "Batch A"},
+        "UMP0302": {"hours": 30, "batch": "Batch A"},
+        "UMP0303": {"hours": 20, "batch": "Batch B"},
+    })
     _age_snapshot(10 * 60)
 
-    rows = _student_leaderboard(client, "UMP0302")["result"]
-    assert rows, "student should receive their own batch"
-    assert all(r["batch"] == "Batch A" for r in rows)
-    mine = next(r for r in rows if r["studentId"] == "UMP0302")
-    assert mine["rank"] == mine["rankInBatch"]
-    assert mine["rank"] == 2          # second within the batch
-    assert mine["rankOverall"] == 2
+    identified = _student_leaderboard(client, "UMP0303")["result"]
+    anonymous = _student_leaderboard(client)["result"]
+
+    # Same list, same numbers, whichever way the client asks. A student must never
+    # see one rank in the table and another number on their tile.
+    assert [r["studentId"] for r in identified] == [r["studentId"] for r in anonymous]
+    for a, b in zip(identified, anonymous):
+        assert a["rank"] == b["rank"], f"{a['studentId']}: {a['rank']} vs {b['rank']}"
+
+    mine = next(r for r in identified if r["studentId"] == "UMP0303")
+    stats = client.post("/api/student-dashboard/get",
+                        json={"action": "getStats", "payload": {"studentId": "UMP0303"}}).json()["result"]
+    assert stats["rank"] == mine["rank"], (
+        f"tile says #{stats['rank']} but the list row says #{mine['rank']}")
+
+    # The mentor-facing per-batch rank is still recorded, just not shown to students.
+    assert mine["rankInBatch"] == 1
+    assert stats["rankInBatch"] == 1
+    assert mine["rank"] == 3          # third across the cohort of three
 
 
 def test_concurrent_reads_do_not_all_rebuild(client, mentor_headers):

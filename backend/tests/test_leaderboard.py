@@ -188,8 +188,13 @@ def test_batch_filter_narrows_the_result(client, mentor_headers):
     assert keys == ["Before Result Batch 1"]
 
 
-def test_student_projection_hides_contact_details_and_ranks_within_batch(client, mentor_headers):
-    """A student sees their own batch, and never anyone's email or phone."""
+def test_student_projection_hides_contact_details(client, mentor_headers):
+    """Students get the cohort list ranked cohort-wide, and never contact details.
+
+    Rank must mean one thing: the app's table has a rank column and no batch
+    column, and older clients send no studentId, so a batch-restricted number
+    would show different students different values for the same rank.
+    """
     _import(client, mentor_headers)
     _seed_accounts(client, mentor_headers)
 
@@ -215,12 +220,14 @@ def test_student_projection_hides_contact_details_and_ranks_within_batch(client,
     row = client.post("/api/student-dashboard/get",
                       json={"action": "getLeaderboard", "payload": {"studentId": "UMP0102"}}).json()
     assert row["found"] is True
-    assert row["result"], "student should see their own batch"
+    assert row["result"], "student should see the ranked list"
     for entry in row["result"]:
         assert "email" not in entry
         assert "phone" not in entry
-    assert all(e["rank"] >= 1 for e in row["result"])
-    assert [e["studentId"] for e in row["result"]] == ["UMP0101", "UMP0102"]
+    ranks = [e["rank"] for e in row["result"]]
+    assert ranks == list(range(1, len(ranks) + 1)), f"ranks must be unique and contiguous: {ranks}"
+    # Across batches too: UMP0103 sits in a different batch but still appears.
+    assert {e["studentId"] for e in row["result"]} == {"UMP0101", "UMP0102", "UMP0103"}
 
 
 def test_student_write_never_calls_google_sheets(client, mentor_headers, monkeypatch):
