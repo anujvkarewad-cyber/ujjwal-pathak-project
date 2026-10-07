@@ -23,6 +23,12 @@
 
 import { APPS_SCRIPT_URL, USE_MOCK, MOCK_DELAY_MS } from './config';
 import { handle as mockHandle } from './local-adapter';
+import { getToken as getMentorToken } from './backendClient';
+import { withMentorToken } from './mentorToken';
+
+// Every Apps Script request carries the mentor's session token (see
+// api/mentorToken.js). The token is the short-lived JWT issued at mentor login;
+// it never appears in the bundle itself.
 
 const wait = (ms) => new Promise(r => setTimeout(r, ms));
 let jsonpCounter = 0;
@@ -59,6 +65,8 @@ function jsonpCall(action, payload) {
     }
     // Cache buster so browsers don't reuse stale JS responses.
     url.searchParams.set('_', String(Date.now()));
+    // Authorise the call (no-op when the script has not enabled the gate yet).
+    withMentorToken(url, getMentorToken());
 
     script.src = url.toString();
     script.async = true;
@@ -85,7 +93,7 @@ function postCall(action, payload) {
   return fetch(APPS_SCRIPT_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-    body: JSON.stringify({ action, payload }),
+    body: JSON.stringify({ action, payload, token: getMentorToken() }),
   })
     .then((res) => res.json())
     .then((data) => {

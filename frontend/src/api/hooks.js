@@ -77,8 +77,13 @@ export const useMissedTrackerReport = ({ from, to, scope = 'range', enabled = tr
   });
 
 // ── Leaderboard ─────────────────────────────────────────────────────────
-export const useLeaderboard = (mode = 'overall') =>
-  useQuery({ queryKey: ['leaderboard', mode], queryFn: () => leaderboardApi.getLeaderboard(mode) });
+// Rank is computed server-side (composite score, unique ranks, per segment), so
+// the period AND the segment are part of the query key.
+export const useLeaderboard = ({ period = 'overall', segment = 'batch', batch, group, attempt } = {}) =>
+  useQuery({
+    queryKey: ['leaderboard', period, segment, batch, group, attempt],
+    queryFn: () => leaderboardApi.getLeaderboard({ period, segment, batch, group, attempt }),
+  });
 
 // ── Announcements ───────────────────────────────────────────────────────
 export const useAnnouncements = () =>

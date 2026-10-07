@@ -15,7 +15,14 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from auth import require_mentor
 from config import settings
-from db import DASHBOARD_SHARED, DASHBOARD_STUDENTS, STUDENT_ACCOUNTS, get_db
+from db import (
+    DASHBOARD_SHARED,
+    DASHBOARD_STUDENTS,
+    STUDENT_ACCOUNTS,
+    STUDENT_MCQ_ATTEMPTS,
+    get_db,
+)
+from routers import ranking as ranking_lib
 from routers.student_auth import normalize_student_id, _attempt_ym
 
 router = APIRouter(prefix="/api/student-dashboard", tags=["student-dashboard"])
@@ -165,6 +172,14 @@ TRACKER_SHEET_ID = os.environ.get(
     "1oYYodP_XcbJOjrP5c4PirQDCnl54NFyPUbf7lwM1Ycc",
 ).strip()
 TRACKER_FORM_SHEET = os.environ.get("TRACKER_FORM_SHEET", "Form responses 1").strip()
+# Leaderboard freshness. Students read a stored snapshot through the frozen app,
+# which cannot ask for a refresh, so freshness must not depend on a submission
+# happening or on anyone pressing a button: any read that finds the snapshot older
+# than this rebuilds it, at most one rebuild at a time.
+LEADERBOARD_MAX_AGE_SECONDS = int(os.environ.get("LEADERBOARD_MAX_AGE_SECONDS", "90"))
+LEADERBOARD_REBUILD_LOCK_SECONDS = int(os.environ.get("LEADERBOARD_REBUILD_LOCK_SECONDS", "30"))
+LEADERBOARD_REBUILD_CLAIM = "leaderboard_rebuild_claim"
+
 TRACKER_HISTORY_FLOOR = date.fromisoformat(
     os.environ.get("TRACKER_HISTORY_FLOOR", "2026-09-28").strip()
 )
@@ -401,6 +416,194 @@ def _full_tracker_history_start(
     return min(candidates) if candidates else today
 
 
+def _ist_day_from_ms(value: Any) -> Optional[date]:
+    """Epoch milliseconds from an app client -> IST calendar date."""
+    try:
+        ms = float(value)
+    except (TypeError, ValueError):
+        return None
+    if ms <= 0:
+        return None
+    if ms > 1e12:  # already milliseconds; guard against seconds being passed
+        ms = ms
+    try:
+        stamp = datetime.fromtimestamp(ms / 1000.0, tz=timezone.utc)
+    except (OverflowError, OSError, ValueError):
+        return None
+    return stamp.astimezone(IST).date()
+
+
+async def _mcq_days_by_student(db) -> dict:
+    """Real MCQ performance per student, keyed by IST day.
+
+    Uses the attempts the app already syncs (``student_mcq_attempts``), so the MCQ
+    component of the composite score is genuine data rather than a guess.
+    """
+    totals: dict = {}
+    async for row in db[STUDENT_MCQ_ATTEMPTS].find(
+        {}, {"studentId": 1, "completedAt": 1, "score": 1, "total": 1}
+    ):
+        sid = normalize_student_id(row.get("studentId") or "")
+        day = _ist_day_from_ms(row.get("completedAt"))
+        if not sid or not day:
+            continue
+        try:
+            total = int(row.get("total") or 0)
+            score = int(row.get("score") or 0)
+        except (TypeError, ValueError):
+            continue
+        if total <= 0:
+            continue
+        by_day = totals.setdefault(sid, {})
+        bucket = by_day.setdefault(day, [0, 0])
+        bucket[0] += max(0, total)
+        bucket[1] += max(0, min(score, total))
+    return totals
+
+
+def _tracker_cohort_accounts(accounts: list) -> list:
+    """Jan 2027 cohort, master accounts excluded. Same rule as the tracker."""
+    return [
+        account for account in accounts
+        if not account.get("master")
+        and _attempt_ym(account.get("attempt") or "", account.get("batch") or "") == (2027, 1)
+    ]
+
+
+async def _ranking_activities(db, accounts: list, include_sheets: bool = False) -> tuple[list, dict]:
+    """Build per-student ranking inputs.
+
+    Hours: the greater of the Mongo study-log total and the legacy Form total for
+    each student/day, mirroring the day view so the same submission is never
+    counted twice. Submissions: a day counts if either source has a row.
+
+    ``include_sheets`` is False for the stored rebuild that runs inside student
+    writes: that path must stay Mongo-only so a slow or unavailable Google Sheets
+    can never slow down a student submitting their study log. The mentor endpoint
+    passes True, where authoritative Sheet names and full legacy history matter.
+    """
+    cohort = _tracker_cohort_accounts(accounts)
+    mongo_rows = await _fetch_mongo_tracker_submissions(db)
+    if include_sheets:
+        try:
+            form_rows = await asyncio.to_thread(_fetch_tracker_submissions_sync)
+            form_ok = True
+        except Exception:
+            form_rows = []
+            form_ok = False
+    else:
+        form_rows = []
+        form_ok = False
+
+    hours: dict = {}
+    submitted: dict = {}
+    for row in list(mongo_rows) + list(form_rows):
+        sid = normalize_student_id(row.get("studentId") or "")
+        day = row.get("date")
+        if not sid or not isinstance(day, date):
+            continue
+        try:
+            value = max(0.0, float(row.get("hours") or 0))
+        except (TypeError, ValueError):
+            value = 0.0
+        submitted.setdefault(sid, set()).add(day)
+        per_student = hours.setdefault(sid, {})
+        source = row.get("source") or "form"
+        bucket = per_student.setdefault(day, {})
+        bucket[source] = max(bucket.get(source, 0.0), value)
+
+    mcq = await _mcq_days_by_student(db)
+
+    activities = []
+    for account in cohort:
+        sid = normalize_student_id(account.get("studentId") or "")
+        if not sid:
+            continue
+        hours_by_date = {}
+        for day, by_source in (hours.get(sid) or {}).items():
+            hours_by_date[day] = max(by_source.values()) if by_source else 0.0
+        attempted = 0
+        correct = 0
+        for _, (total, score) in (mcq.get(sid) or {}).items():
+            attempted += total
+            correct += score
+        activities.append(ranking_lib.StudentActivity(
+            student_id=sid,
+            name=str(account.get("studentName") or "").strip() or sid,
+            batch=str(account.get("batch") or "").strip(),
+            group=str(account.get("group") or "").strip(),
+            attempt=str(account.get("attempt") or "").strip(),
+            joined_on=_parse_tracker_day(account.get("joinedOn") or ""),
+            hours_by_date=hours_by_date,
+            submitted_dates=set(submitted.get(sid) or set()),
+            questions_attempted=attempted,
+            questions_correct=correct,
+        ))
+    return activities, {
+        "mongoRows": len(mongo_rows),
+        "formRows": len(form_rows),
+        "formRead": form_ok,
+        "cohort": len(activities),
+    }
+
+
+def _ranking_row(ranking, display: dict) -> dict:
+    """One leaderboard row.
+
+    ``display`` carries the period-independent figures the shipped app/APK always
+    renders (weekly hours, total hours, streak); ``ranking`` supplies the rank and
+    score for the period being requested.
+    """
+    return {
+        # --- keys the shipped app/APK already reads: keep names and meanings ---
+        "studentId": ranking.student_id,
+        "studentName": ranking.name,
+        "weeklyHours": round(float(display.get("weeklyHours") or 0), 1),
+        "totalHours": round(float(display.get("totalHours") or 0), 2),
+        "streak": int(display.get("streak") or 0),
+        "status": "Active" if display.get("active") else "Inactive",
+        # --- ranking fields ---
+        "rank": ranking.rank,
+        "score": ranking.score,
+        "hours": round(ranking.hours, 2),
+        "hoursPerDay": ranking.hours_per_day,
+        "mcqAccuracy": ranking.accuracy,
+        "attendance": round(ranking.attendance_rate * 100),
+        "submittedDays": ranking.submitted_days,
+        "expectedDays": ranking.expected_days,
+        "batch": ranking.batch,
+        "group": ranking.group,
+        "breakdown": ranking.breakdown,
+        "mcqUsed": ranking.mcq_used,
+        "components": list(ranking.components or []),
+        "notRankedReason": ranking.not_ranked_reason,
+    }
+
+
+def _ranked_segments(activities: list, period: str, segment_by: str, today: date) -> dict:
+    start, end = ranking_lib.period_window(period, today, TRACKER_HISTORY_FLOOR)
+    return ranking_lib.rank_segments(
+        activities, start, end, period, segment_by, TRACKER_HISTORY_FLOOR
+    )
+
+
+def _display_fields(activities: list, today: date, streaks: dict) -> dict:
+    """Weekly/total hours per student, for the columns the clients always show."""
+    weekly = ranking_lib.period_window("weekly", today, TRACKER_HISTORY_FLOOR)
+    overall = ranking_lib.period_window("overall", today, TRACKER_HISTORY_FLOOR)
+    display = {}
+    for activity in activities:
+        weekly_row = ranking_lib.score_student(activity, *weekly, "weekly", TRACKER_HISTORY_FLOOR)
+        overall_row = ranking_lib.score_student(activity, *overall, "overall", TRACKER_HISTORY_FLOOR)
+        display[activity.student_id] = {
+            "weeklyHours": weekly_row.hours,
+            "totalHours": overall_row.hours,
+            "streak": int(streaks.get(activity.student_id) or 0),
+            "active": weekly_row.is_active,
+        }
+    return display
+
+
 def _build_missed_tracker_report(
     accounts: list[dict],
     submissions: list[dict],
@@ -505,6 +708,102 @@ def _tracker_day_entry(form_rows: list[dict], mongo_rows: list[dict], selected: 
         "proofUrl": latest_value("proofUrl"),
         "sources": sorted({str(row.get("source") or "") for row in form_rows + mongo_rows if row.get("source")}),
     }
+
+
+@router.get("/leaderboard")
+async def mentor_leaderboard(
+    period: str = Query("overall"),
+    segment: str = Query("batch"),
+    batch: Optional[str] = Query(None),
+    group: Optional[str] = Query(None),
+    attempt: Optional[str] = Query(None),
+    refresh: int = Query(0),
+    _mentor=Depends(require_mentor),
+):
+    """Ranked leaderboard computed from live Mongo data.
+
+    Replaces the legacy Apps Script ``leaderboard.list`` call, which returned
+    every student with zero stats and no rank at all.
+    """
+    period = (period or "overall").strip().lower()
+    if period not in ranking_lib.PERIODS:
+        raise HTTPException(status_code=400, detail="period must be overall, weekly or monthly")
+    segment = (segment or "batch").strip().lower()
+    if segment not in ("batch", "group"):
+        raise HTTPException(status_code=400, detail="segment must be batch or group")
+
+    db = get_db()
+    if refresh:
+        # Push corrected ranks into the stored leaderboard and each student's
+        # stats straight away, so installed app clients are fixed without waiting
+        # for the next student submission to trigger a rebuild. Mongo-only.
+        await _rebuild_leaderboard(db)
+    accounts = [account async for account in db[STUDENT_ACCOUNTS].find({})]
+    roster, roster_source = await _tracker_roster(accounts)
+    activities, sources = await _ranking_activities(db, roster, include_sheets=True)
+
+    def keep(activity) -> bool:
+        if batch and activity.batch != batch:
+            return False
+        if group and activity.group != group:
+            return False
+        if attempt and activity.attempt != attempt:
+            return False
+        return True
+
+    activities = [a for a in activities if keep(a)]
+    today = datetime.now(IST).date()
+    streaks = {}
+    student_stats = {}
+    async for doc in db[DASHBOARD_STUDENTS].find({}, {"studentId": 1, "stats": 1}):
+        sid = normalize_student_id(doc.get("studentId") or "")
+        if sid:
+            stats = doc.get("stats") if isinstance(doc.get("stats"), dict) else {}
+            student_stats[sid] = stats
+            streaks[sid] = int(stats.get("streak") or 0)
+    display = _display_fields(activities, today, streaks)
+
+    start, end = ranking_lib.period_window(period, today, TRACKER_HISTORY_FLOOR)
+    segments = _ranked_segments(activities, period, segment, today)
+
+    payload = []
+    members_by_key = {}
+    for activity in activities:
+        bucket = (getattr(activity, segment, "") or "").strip() or "(unassigned)"
+        members_by_key.setdefault(bucket, []).append(activity)
+
+    for key, rankings in segments.items():
+        members = members_by_key.get(key) or []
+        coverage = ranking_lib.mcq_coverage(members, start, end, TRACKER_HISTORY_FLOOR)
+        payload.append({
+            "key": key,
+            "label": key,
+            "studentCount": len(rankings),
+            "mcqUsed": ranking_lib.mcq_enabled(members, start, end, TRACKER_HISTORY_FLOOR),
+            "mcqCoverage": round(coverage, 3),
+            "entries": [_ranking_row(r, display.get(r.student_id) or {}) for r in rankings],
+        })
+
+    return JSONResponse(
+        {
+            "period": period,
+            "segment": segment,
+            "from": start.isoformat(),
+            "to": end.isoformat(),
+            "historyFloor": TRACKER_HISTORY_FLOOR.isoformat(),
+            "generatedAt": _now(),
+            "source": {"roster": roster_source, "scoring": "mongo", **sources},
+            "weights": {
+                "hours": ranking_lib.W_HOURS,
+                "mcq": ranking_lib.W_MCQ,
+                "attendance": ranking_lib.W_ATTENDANCE,
+                "mcqMode": ranking_lib.MCQ_MODE,
+                "mcqMinCoverage": ranking_lib.MCQ_MIN_COVERAGE,
+            },
+            "segments": payload,
+        },
+        headers={"Cache-Control": "no-store"},
+    )
 
 
 @router.get("/tracker-day")
@@ -818,8 +1117,15 @@ def _recompute_stats(logs: list, prev: Optional[dict] = None) -> dict:
     }
 
 
-def _weekly_reports_from_logs(logs: list, stats: Optional[dict] = None) -> list:
+def _weekly_reports_from_logs(logs: list, stats: Optional[dict] = None,
+                              weekly_ranks: Optional[dict] = None) -> list:
+    """Weekly reports. `weekly_ranks` maps week key -> ranked-for-that-week value.
+
+    A week with no known rank reports ``None`` rather than 0, so clients stop
+    showing "Rank #0" for history the backend cannot rank.
+    """
     stats = dict(stats or {})
+    weekly_ranks = dict(weekly_ranks or {})
     buckets: dict = {}
     for row in logs or []:
         if not isinstance(row, dict):
@@ -854,7 +1160,8 @@ def _weekly_reports_from_logs(logs: list, stats: Optional[dict] = None) -> list:
             "weekOf": start.strftime("%d %b %Y"),
             "weeklyHours": hours,
             "streak": int(stats.get("streak") or 0) if key == this_week else len(buckets[key]["days"]),
-            "rank": int(stats.get("weeklyRank") or stats.get("rank") or 0) if key == this_week else 0,
+            "rank": (int(stats.get("weeklyRank") or stats.get("rank") or 0) if key == this_week
+                     else weekly_ranks.get(key)),
             "level": level,
         }
         out.append(item)
@@ -862,37 +1169,150 @@ def _weekly_reports_from_logs(logs: list, stats: Optional[dict] = None) -> list:
 
 
 async def _rebuild_leaderboard(db) -> None:
-    names = {}
-    async for account in db[STUDENT_ACCOUNTS].find({}):
-        sid = account.get("studentId")
+    """Recompute the stored leaderboard from live Mongo data.
+
+    Rank is per Batch segment (owner decision), unique, and composite-scored. The
+    stored rows keep every key the shipped app/APK reads, so installed clients get
+    corrected ranks without a new build.
+    """
+    accounts = [account async for account in db[STUDENT_ACCOUNTS].find({})]
+    # Mongo-only on purpose: this runs inside student write requests, so it must
+    # never wait on Google Sheets. The mentor endpoint merges the Sheet roster.
+    roster_source = "Mongo"
+    activities, sources = await _ranking_activities(db, accounts, include_sheets=False)
+    today = datetime.now(IST).date()
+
+    streaks = {}
+    student_stats = {}
+    async for doc in db[DASHBOARD_STUDENTS].find({}, {"studentId": 1, "stats": 1}):
+        sid = normalize_student_id(doc.get("studentId") or "")
         if sid:
-            names[sid] = (account.get("studentName") or "").strip() or sid
+            stats = doc.get("stats") if isinstance(doc.get("stats"), dict) else {}
+            student_stats[sid] = stats
+            streaks[sid] = int(stats.get("streak") or 0)
+    display = _display_fields(activities, today, streaks)
+
+    by_batch = _ranked_segments(activities, "overall", "batch", today)
+    by_batch_weekly = _ranked_segments(activities, "weekly", "batch", today)
+    by_batch_monthly = _ranked_segments(activities, "monthly", "batch", today)
+    weekly_rank = {r.student_id: r.rank for rows in by_batch_weekly.values() for r in rows}
+    monthly_rank = {r.student_id: r.rank for rows in by_batch_monthly.values() for r in rows}
+    overall_rank = {r.student_id: r.rank for rows in by_batch.values() for r in rows}
+
+    # Global order (by composite score) so clients without a student segment still
+    # receive a coherent list.
+    flat = [r for rows in by_batch.values() for r in rows]
+    flat.sort(key=ranking_lib.sort_key)
+    global_rank = {r.student_id: i for i, r in enumerate(flat, start=1)}
+
     rows = []
-    async for doc in db[DASHBOARD_STUDENTS].find({}):
-        sid = doc.get("studentId")
-        if not sid:
+    for ranking in flat:
+        row = _ranking_row(ranking, display.get(ranking.student_id) or {})
+        sid = ranking.student_id
+        # `rank` is the rank within the student's own batch (owner decision).
+        # The overall position is carried alongside so a flat client list can still
+        # be ordered coherently.
+        row["rank"] = int(overall_rank.get(sid) or 0)
+        row["rankInBatch"] = int(overall_rank.get(sid) or 0)
+        row["rankOverall"] = int(global_rank.get(sid) or 0)
+        rows.append(row)
+
+    # Push the period ranks onto each student's stats — but only when a value
+    # actually changed, so a routinely-refreshing snapshot costs almost no writes.
+    existing = {sid: (stats or {}) for sid, stats in student_stats.items()}
+    for row in rows:
+        sid = row["studentId"]
+        target = {
+            "rank": int(overall_rank.get(sid) or 0),
+            "weeklyRank": int(weekly_rank.get(sid) or 0),
+            "monthlyRank": int(monthly_rank.get(sid) or 0),
+            "score": row.get("score"),
+            "rankBatch": row.get("batch") or "",
+        }
+        current = existing.get(sid) or {}
+        if all(current.get(key) == value for key, value in target.items()):
             continue
-        stats = doc.get("stats") or {}
-        rows.append({
-            "studentId": sid,
-            "studentName": names.get(sid) or (doc.get("studentName") or "").strip() or sid,
-            "weeklyHours": round(float(stats.get("weeklyHours") or 0), 1),
-            "totalHours": round(float(stats.get("totalHours") or 0), 2),
-            "streak": int(stats.get("streak") or 0),
-            "status": "Active" if float(stats.get("weeklyHours") or 0) > 0 else "Inactive",
-        })
-    rows.sort(key=lambda r: (-r["weeklyHours"], -r["totalHours"], r["studentId"]))
-    for index, row in enumerate(rows, 1):
-        row["rank"] = index
         await db[DASHBOARD_STUDENTS].update_one(
-            {"studentId": row["studentId"]},
-            {"$set": {"stats.rank": index, "stats.weeklyRank": index}},
+            {"studentId": sid},
+            {"$set": {f"stats.{key}": value for key, value in target.items()}},
         )
+
     await db[DASHBOARD_SHARED].update_one(
         {"_id": "shared"},
-        {"$set": {"leaderboard": rows, "updatedAt": _now()}},
+        {"$set": {
+            "leaderboard": rows,
+            "leaderboardMeta": {
+                "generatedAt": _now(),
+                "segment": "batch",
+                "historyFloor": TRACKER_HISTORY_FLOOR.isoformat(),
+                "rosterSource": roster_source,
+                **sources,
+            },
+        }},
         upsert=True,
     )
+
+
+def _seconds_since(iso_value: str, now: datetime) -> Optional[float]:
+    raw = str(iso_value or "").strip()
+    if not raw:
+        return None
+    try:
+        return (now - datetime.fromisoformat(raw)).total_seconds()
+    except (TypeError, ValueError):
+        return None
+
+
+async def _claim_rebuild(db, now: datetime) -> bool:
+    """Atomically claim the right to rebuild, so concurrent readers cannot stampede.
+
+    A conditional upsert would be one round trip, but a failed condition turns into
+    an insert and raises a duplicate-key error, which mongomock does not raise
+    identically. This read-then-claim form behaves the same on both.
+    """
+    cutoff = (now - timedelta(seconds=LEADERBOARD_REBUILD_LOCK_SECONDS)).isoformat()
+    claim = await db[DASHBOARD_SHARED].find_one({"_id": LEADERBOARD_REBUILD_CLAIM})
+    if claim and str(claim.get("at") or "") > cutoff:
+        return False            # someone rebuilt very recently
+    try:
+        if claim:
+            result = await db[DASHBOARD_SHARED].update_one(
+                {"_id": LEADERBOARD_REBUILD_CLAIM, "at": {"$lte": cutoff}},
+                {"$set": {"at": now.isoformat()}},
+            )
+            return bool(result.modified_count)
+        await db[DASHBOARD_SHARED].insert_one({"_id": LEADERBOARD_REBUILD_CLAIM, "at": now.isoformat()})
+        return True
+    except Exception:
+        return False            # lost the race; the other caller is rebuilding
+
+
+async def _leaderboard_snapshot(db, force: bool = False) -> dict:
+    """The stored leaderboard, rebuilt automatically when it has gone stale.
+
+    This is what makes ranks update by themselves. The installed app cannot request
+    a refresh and there is no scheduler, so freshness is driven by reads: whichever
+    request first finds the snapshot older than LEADERBOARD_MAX_AGE_SECONDS
+    rebuilds it, everyone else keeps serving the existing rows. That also covers
+    the case nobody submits anything — ranks still roll over correctly when the
+    weekly window moves.
+    """
+    shared = await db[DASHBOARD_SHARED].find_one({"_id": "shared"}) or {}
+    now = datetime.now(timezone.utc)
+
+    if not force:
+        # The snapshot's own timestamp is the single source of truth for freshness.
+        # A missing timestamp means it has never been built (first run on a fresh
+        # database), which is the only case that forces one.
+        age = _seconds_since(((shared.get("leaderboardMeta") or {}).get("generatedAt")), now)
+        if age is not None and age < LEADERBOARD_MAX_AGE_SECONDS:
+            return shared
+
+    if not await _claim_rebuild(db, now):
+        return shared           # another request is already rebuilding
+
+    await _rebuild_leaderboard(db)
+    return await db[DASHBOARD_SHARED].find_one({"_id": "shared"}) or shared
 
 
 def _notes_for_student(notes: list, account: Optional[dict]) -> list:
@@ -916,23 +1336,27 @@ def _notes_for_student(notes: list, account: Optional[dict]) -> list:
 
 
 async def _leaderboard_for_student(db, rows, student_id: str) -> list:
-    """Hide closed/unknown cohorts at read time without deleting stored history.
+    """Student-safe leaderboard: the caller's own batch segment, ranked.
 
-    Use current student accounts, never a stale imported row's attempt.
-    Older app clients omit studentId: they receive only the two open cohorts.
-    Clients sending studentId receive only their own open attempt.
+    Ranking is per Batch (owner decision), so a student sees how they stand among
+    their own batch rather than against the whole cohort. Closed/unknown cohorts
+    stay hidden at read time without deleting stored history.
     """
     allowed = {(2027, 1): "Jan 2027", (2027, 5): "May 2027"}
     attempts = {}
-    async for account in db[STUDENT_ACCOUNTS].find({}, {"studentId": 1, "attempt": 1}):
+    batches = {}
+    async for account in db[STUDENT_ACCOUNTS].find({}, {"studentId": 1, "attempt": 1, "batch": 1}):
         sid = normalize_student_id(account.get("studentId") or "")
-        if sid:
-            attempts[sid] = _attempt_ym(account.get("attempt") or "", "")
+        if not sid:
+            continue
+        attempts[sid] = _attempt_ym(account.get("attempt") or "", "")
+        batches[sid] = str(account.get("batch") or "").strip()
 
     wanted = normalize_student_id(student_id or "")
     wanted_attempt = attempts.get(wanted) if wanted else None
     if wanted and wanted_attempt not in allowed:
         return []
+    wanted_batch = batches.get(wanted) if wanted else None
 
     result = []
     seen = set()
@@ -945,12 +1369,25 @@ async def _leaderboard_for_student(db, rows, student_id: str) -> list:
             continue
         if wanted and attempt != wanted_attempt:
             continue
+        if wanted_batch and str(row.get("batch") or batches.get(sid) or "").strip() != wanted_batch:
+            continue
         seen.add(sid)
         item = dict(row)
         item["studentId"] = sid
         item["attempt"] = allowed[attempt]
-        item["rank"] = len(result) + 1
+        item["rankInBatch"] = int(row.get("rankInBatch") or row.get("rank") or 0)
+        item["rankOverall"] = int(row.get("rankOverall") or row.get("rank") or 0)
+        # Which number `rank` means depends on the caller:
+        #  * caller identified  -> their own batch, ranked inside that batch, which
+        #    is the ranking model the mentor asked for and what "my rank" means.
+        #  * caller anonymous (older clients omit studentId and just slice the
+        #    list) -> overall order, so a flat table never shows two "#1"s.
+        item["rank"] = item["rankInBatch"] if wanted else item["rankOverall"]
+        # Never ship contact details to a student client.
+        for secret in ("email", "phone", "proof", "proofUrl"):
+            item.pop(secret, None)
         result.append(item)
+    result.sort(key=lambda r: (int(r.get("rankOverall") or 0), str(r.get("studentId"))))
     return result
 
 
@@ -1041,7 +1478,12 @@ async def get_dashboard_section(body: DashboardGetBody):
     db = get_db()
 
     if action in SHARED_ACTIONS:
-        shared = await db[DASHBOARD_SHARED].find_one({"_id": "shared"})
+        # getLeaderboard carries the rank snapshot, so refresh it automatically
+        # before serving. Announcements do not need a rebuild.
+        if action == "getLeaderboard":
+            shared = await _leaderboard_snapshot(db)
+        else:
+            shared = await db[DASHBOARD_SHARED].find_one({"_id": "shared"})
         if not shared or SHARED_ACTIONS[action] not in shared:
             return {"found": False}
         rows = shared.get(SHARED_ACTIONS[action]) or []
@@ -1064,6 +1506,10 @@ async def get_dashboard_section(body: DashboardGetBody):
     field = PERSONAL_ACTIONS.get(action)
     if not field or not student_id:
         return {"found": False}
+    if field == "stats":
+        # Rank fields live on the student document; refresh the snapshot first so
+        # the rank a student sees is never stale.
+        await _leaderboard_snapshot(db)
     doc = await db[DASHBOARD_STUDENTS].find_one({"studentId": student_id})
     if not doc:
         if field == "stats":
