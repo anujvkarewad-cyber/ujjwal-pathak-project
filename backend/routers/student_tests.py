@@ -22,7 +22,7 @@ frozen APK, which loads this web app, needs no rebuild):
 Everything is additive: if the student app never calls these, nothing changes.
 """
 from __future__ import annotations
-from access import require_student_access
+
 
 import hashlib
 import random
@@ -257,7 +257,7 @@ async def _candidates(db, test: dict) -> list[dict]:
 async def list_tests(body: StudentLogin):
     """Published tests for this student, newest first, with attempt status."""
     sid = body.studentId.strip().upper()
-    await require_student_access(sid)
+    
     await _validate_existing_student_login(sid, body.password)
     db = get_db()
     account = await _account(db, sid)
@@ -305,7 +305,7 @@ async def list_tests(body: StudentLogin):
 async def paper(body: PaperRequest):
     """The question paper for one test — answers stay on the server."""
     sid = body.studentId.strip().upper()
-    await require_student_access(sid)
+    
     await _validate_existing_student_login(sid, body.password)
     db = get_db()
     test = await db[MENTOR_TESTS].find_one({"testId": body.testId, "published": True})
@@ -374,7 +374,7 @@ async def paper(body: PaperRequest):
 async def submit(body: SubmitRequest):
     """Grade on the server, then write the attempt for mentor + student views."""
     sid = body.studentId.strip().upper()
-    await require_student_access(sid)
+    
     await _validate_existing_student_login(sid, body.password)
     db = get_db()
     test = await db[MENTOR_TESTS].find_one({"testId": body.testId, "published": True})
