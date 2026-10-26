@@ -7,8 +7,22 @@ from datetime import date, timedelta
 
 import pytest
 
+from week_window import week_start
+
 TODAY = date.today()
-RECENT = (TODAY - timedelta(days=1)).isoformat()
+# Every day of the week the board is currently ranking, oldest first. Pinning the seed
+# to "yesterday" made these tests pass six days a week and fail on the first day of a
+# new week, when yesterday belongs to the week that already closed.
+WEEK_DAYS = [
+    (week_start(TODAY) + timedelta(days=i)).isoformat()
+    for i in range((TODAY - week_start(TODAY)).days + 1)
+]
+RECENT = WEEK_DAYS[-1]
+
+
+def log_days(hours: float, topic: str = "FM") -> list:
+    """One entry per day of the running week, so the window always has data."""
+    return [{"date": d, "topic": topic, "hours": hours} for d in WEEK_DAYS]
 
 
 @pytest.fixture(autouse=True)
@@ -41,13 +55,13 @@ def _import(client, mentor_headers):
                 {
                     "studentId": "UMP0101",
                     "stats": {"weeklyHours": 0, "streak": 5},
-                    "studyLog": [{"date": RECENT, "topic": "FM", "hours": 10}],
+                    "studyLog": log_days(10),
                     "reports": [], "mentorNotes": [], "feedback": [],
                 },
                 {
                     "studentId": "UMP0102",
                     "stats": {"weeklyHours": 0, "streak": 2},
-                    "studyLog": [{"date": RECENT, "topic": "FM", "hours": 4}],
+                    "studyLog": log_days(4),
                     "reports": [], "mentorNotes": [], "feedback": [],
                 },
                 {
@@ -79,6 +93,7 @@ def _seed_accounts(client, mentor_headers):
              "joinedOn": (TODAY - timedelta(days=30)).isoformat()},
         ]
         for row in rows:
+            row["password"]="synthetic-leaderboard"
             await db[STUDENT_ACCOUNTS].update_one({"studentId": row["studentId"]},
                                                   {"$set": row}, upsert=True)
 
@@ -217,8 +232,17 @@ def test_student_projection_hides_contact_details(client, mentor_headers):
 
     asyncio.run(rebuild())
 
-    row = client.post("/api/student-dashboard/get",
-                      json={"action": "getLeaderboard", "payload": {"studentId": "UMP0102"}}).json()
+    denied = client.post('/api/student-dashboard/get',json={"action":"getLeaderboard"})
+    assert denied.status_code==401
+    blocked = client.post('/api/student-dashboard/get',headers={"X-Student-Id":"UMP0102","X-Session-Password":"synthetic-leaderboard"},json={"action":"getLeaderboard"})
+    assert blocked.status_code==503 and 'result' not in blocked.json()
+    # Internal projection contract only, not permission to expose a global list.
+    from routers.student_dashboard import _leaderboard_for_student
+    async def projection():
+        from db import DASHBOARD_SHARED
+        db=get_db(); shared=await db[DASHBOARD_SHARED].find_one({"_id":"shared"})
+        return await _leaderboard_for_student(db,shared['leaderboard'],'UMP0102')
+    row={"found":True,"result":asyncio.run(projection())}
     assert row["found"] is True
     assert row["result"], "student should see the ranked list"
     for entry in row["result"]:
@@ -238,6 +262,8 @@ def test_student_write_never_calls_google_sheets(client, mentor_headers, monkeyp
     """
     from routers import student_dashboard as sd
 
+    _import(client, mentor_headers)
+    _seed_accounts(client, mentor_headers)
     called = []
 
     def spy_roster():
@@ -252,7 +278,7 @@ def test_student_write_never_calls_google_sheets(client, mentor_headers, monkeyp
     monkeypatch.setattr(sd, "_fetch_tracker_submissions_sync", spy_form)
 
     res = client.post(
-        "/api/student-dashboard/write",
+        "/api/student-dashboard/write", headers={"X-Student-Id":"UMP0101","X-Session-Password":"synthetic-leaderboard"},
         json={"action": "addStudyLog",
               "payload": {"studentId": "UMP0101", "date": TODAY.isoformat(),
                           "hours": 3, "subjects": "FM"}},
@@ -294,7 +320,7 @@ def test_stored_rows_keep_the_frozen_client_contract(client, mentor_headers):
         assert isinstance(row["totalHours"], (int, float))
 
     # getStats must expose real period ranks, never the old literal 0 / duplicate.
-    stats = client.post("/api/student-dashboard/get",
+    stats = client.post("/api/student-dashboard/get", headers={"X-Student-Id":"UMP0101","X-Session-Password":"synthetic-leaderboard"},
                         json={"action": "getStats", "payload": {"studentId": "UMP0101"}}).json()["result"]
     for key in ("rank", "weeklyRank", "monthlyRank"):
         assert key in stats, f"getStats must keep returning {key}"
@@ -344,3 +370,88 @@ def test_segment_reports_whether_mcq_counted(client, mentor_headers):
     assert all(seg["mcqUsed"] is False for seg in payload["segments"])
     for entry in [e for seg in payload["segments"] for e in seg["entries"]]:
         assert entry["breakdown"]["mcqScore"] == 0.0
+
+
+def test_individual_mcq_policy_is_reported_and_counts_below_sixty_percent(client, mentor_headers, monkeypatch):
+    """Real endpoint wiring, synthetic Mongo inputs; not a live sync test."""
+    import asyncio
+    from datetime import datetime
+    from db import STUDENT_MCQ_ATTEMPTS, get_db
+    from routers import ranking, student_dashboard as sd
+
+    today = datetime.now(sd.IST).date()
+    monkeypatch.setattr(ranking, "INDIVIDUAL_MCQ_FROM", week_start(today))
+    monkeypatch.setattr(sd, "_fetch_tracker_submissions_sync", lambda: [])
+    _import(client, mentor_headers)
+    _seed_accounts(client, mentor_headers)
+
+    # Exercise the actual authenticated issuance/sync pipeline, not a client eligibility label.
+    from db import CONTENT_QUESTIONS
+    monkeypatch.setenv("MCQ_VERIFIED_DAILY_ENABLED", "1")
+    async def seed_attempt():
+        db = get_db()
+        await db[STUDENT_MCQ_ATTEMPTS].insert_one({"studentId":"UMP0101", "attemptId":"legacy-practice", "kind":"practice", "score":20, "total":20})
+        for i in range(10):
+            await db[CONTENT_QUESTIONS].insert_one({"id":f"official-{i}", "status":"published", "subject":"Advanced Accounting", "chapterId":"synthetic", "prompt":f"Synthetic {i}", "questionType":"scenario_mcq" if i>=7 else "normal", "options":[{"id":"a","text":"A"},{"id":"b","text":"B"}], "correctOptionId":"a"})
+    asyncio.run(seed_attempt())
+    credentials = {"studentId":"UMP0101", "password":"synthetic-leaderboard"}
+    # Router-only issuance does not relax candidate owner-only ASGI routing.
+    from fastapi import FastAPI
+    from fastapi.testclient import TestClient
+    from routers import student_attempts
+    primary_app = FastAPI(); primary_app.include_router(student_attempts.router)
+    primary_client = TestClient(primary_app)
+    issued = primary_client.post("/api/student-attempts/daily-set", json=credentials|{"group":"Group I"})
+    assert issued.status_code == 200, issued.text
+    assignment = issued.json()
+    attempt = {k:assignment[k] for k in ("officialSetId","date","group","bankRevision","questionIds")}
+    attempt.update(attemptId="client-official", kind="daily", answers={q:0 for q in assignment["questionIds"]}, startedAt=assignment["issuedAt"], completedAt=int(datetime.now(sd.IST).timestamp()*1000), score=0, total=10, durationSeconds=1)
+    synced = primary_client.post("/api/student-attempts/sync", json=credentials|{"attempts":[attempt]})
+    assert synced.status_code == 200, synced.text
+    assert synced.json()["acknowledgements"][0]["rankingEligible"] is True
+    payload = _leaderboard(client, mentor_headers, period="weekly", segment="batch")
+    assert payload["weights"]["mcqMode"] == "on"
+    assert payload["weights"]["mcqMinCoverage"] is None
+    assert payload["weights"]["mcqCoverageInformational"] is True
+    board = next(b for b in payload["segments"] if b["key"] == "Before Result Batch 1")
+    assert board["mcqCoverage"] == .5
+    assert board["mcqUsed"] is True
+    assert board["effectiveWeights"] == {"hours":40., "mcq":30., "attendance":30.}
+    assert board["mcqPolicy"] == "individual-daily-full10-v2"
+    points = {e["studentId"]:e["breakdown"]["mcqScore"] for e in board["entries"]}
+    assert points == {"UMP0101":15., "UMP0102":0.}
+    assert all(b["mcqUsed"] for b in payload["segments"])
+
+    # The stored projection consumed by BOTH installed web and Android clients
+    # must carry the same MCQ components, not a separate old coverage decision.
+    _leaderboard(client, mentor_headers, period="weekly", refresh=1)
+    projected = client.post('/api/student-dashboard/get',headers={"X-Student-Id":"UMP0101","X-Session-Password":"synthetic-leaderboard"},json={"action":"getLeaderboard"})
+    assert projected.status_code==503  # no inferred global audience authority
+    from db import DASHBOARD_SHARED
+    from routers.student_dashboard import _leaderboard_for_student
+    async def projection():
+        db=get_db();shared=await db[DASHBOARD_SHARED].find_one({"_id":"shared"})
+        return await _leaderboard_for_student(db,shared['leaderboard'],'UMP0101')
+    student_rows=asyncio.run(projection())
+    matching = [e for e in student_rows if e["studentId"] in points]
+    assert len(matching) == 2
+    for entry in matching:
+        assert entry["mcqUsed"] is True
+        assert entry["breakdown"]["mcqScore"] == points[entry["studentId"]]
+
+
+def test_individual_cutover_does_not_rewrite_previous_weekly_top_payloads(client, mentor_headers, monkeypatch):
+    from datetime import datetime
+    from routers import ranking, student_dashboard as sd
+
+    monkeypatch.setattr(sd, "_fetch_tracker_submissions_sync", lambda: [])
+    monkeypatch.setattr(ranking, "INDIVIDUAL_MCQ_FROM", None)
+    _import(client, mentor_headers)
+    _seed_accounts(client, mentor_headers)
+    params = {"weeks":3, "segment":"batch_group"}
+    before = client.get("/api/student-dashboard/leaderboard/weekly-tops", headers=mentor_headers, params=params)
+    assert before.status_code == 200, before.text
+    monkeypatch.setattr(ranking, "INDIVIDUAL_MCQ_FROM", week_start(datetime.now(sd.IST).date()))
+    after = client.get("/api/student-dashboard/leaderboard/weekly-tops", headers=mentor_headers, params=params)
+    assert after.status_code == 200, after.text
+    assert before.json()["weeks"][1:] == after.json()["weeks"][1:]

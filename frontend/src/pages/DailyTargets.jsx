@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Trash2, Upload } from 'lucide-react';
-import { fetchTargetOptions, fetchTargets, previewTargetAudience, publishTarget, removeTarget, regenerateTargetReminder } from '@/api/dailyTargets';
+import { backfillTargetReminders, fetchTargetOptions, fetchTargets, previewTargetAudience, publishTarget, removeTarget, regenerateTargetReminder } from '@/api/dailyTargets';
 
 const ALL = 'All';
 
@@ -31,6 +31,8 @@ export default function DailyTargets() {
   const [error, setError] = useState('');
   const [notice, setNotice] = useState('');
   const [generatingId, setGeneratingId] = useState('');
+  const [backfilling, setBackfilling] = useState(false);
+  const [backfillMsg, setBackfillMsg] = useState('');
 
   const load = () => {
     fetchTargetOptions().then(setOptions).catch((err) => setError(err.message || 'Could not load student groups.'));
@@ -76,8 +78,12 @@ export default function DailyTargets() {
       });
       const reminder = res?.target?.revisionReminder || '';
       if (res?.target?.reminderSource !== 'groq' || !reminder.trim()) {
+        // The target IS published - only the AI reminder is missing. Telling the
+        // mentor "it failed" made some of them publish a second, duplicate target.
+        setNotice('Target published. The AI reminder could not be generated just now, so it is pending - use "Generate AI reminder" on that target to retry.');
+        setTaskText('');
         load();
-        throw new Error('The server did not confirm an AI reminder. Check the published list before trying again.');
+        return;
       }
       setNotice(`Published with an AI-generated revision reminder. ${reminder}`);
       setTaskText('');
@@ -105,6 +111,46 @@ export default function DailyTargets() {
       setError(err.message || 'Could not generate the AI reminder. The existing target was not changed.');
     } finally {
       setGeneratingId('');
+    }
+  };
+
+  // A target whose date has passed is never opened again by a student, so a
+  // missing AI reminder on it is noise, not a problem worth an amber warning.
+  const today = todayIst();
+  const isCurrent = (row) => !row.endDate || row.endDate >= today;
+  const pendingReminders = useMemo(
+    () => targets.filter((row) => row.reminderSource !== 'groq' && isCurrent(row)),
+    [targets], // eslint-disable-line react-hooks/exhaustive-deps
+  );
+
+  const generateAllReminders = async () => {
+    if (backfilling) return;
+    setBackfilling(true);
+    setError('');
+    setNotice('');
+    let generated = 0;
+    let failed = 0;
+    let stillMissing = pendingReminders.length;
+    let guard = 0;
+    try {
+      do {
+        const res = await backfillTargetReminders({ limit: 5 });
+        generated += res?.generated || 0;
+        failed += (res?.failed || []).length;
+        stillMissing = res?.stillMissing || 0;
+        setBackfillMsg(`Generating… ${generated} added${stillMissing ? `, ${stillMissing} to go` : ''}`);
+        guard += 1;
+      } while (stillMissing > 0 && generated > 0 && guard < 20);
+      const parts = [`${generated} AI reminder${generated === 1 ? '' : 's'} added to the published targets.`];
+      if (failed) parts.push(`${failed} could not be generated - run it once more in a minute.`);
+      if (!generated && !failed) parts.push('Nothing was pending.');
+      setNotice(parts.join(' '));
+      load();
+    } catch (err) {
+      setError(err.message || 'Could not generate the AI reminders. No target was changed.');
+    } finally {
+      setBackfilling(false);
+      setBackfillMsg('');
     }
   };
 
@@ -179,6 +225,22 @@ export default function DailyTargets() {
         </button>
       </form>
 
+      {pendingReminders.length > 0 && (
+        <div className="rounded-xl border border-amber-300 bg-amber-50 p-4 dark:border-amber-500/40 dark:bg-amber-500/10" data-testid="reminder-backfill-banner">
+          <p className="text-sm text-amber-800 dark:text-amber-300">
+            {pendingReminders.length} published target{pendingReminders.length === 1 ? '' : 's'} still need an AI revision reminder.
+          </p>
+          <button
+            type="button"
+            onClick={generateAllReminders}
+            disabled={backfilling}
+            className="mt-2 px-3 py-2 rounded-lg border border-amber-400 bg-white text-sm font-semibold text-amber-800 disabled:opacity-60 dark:bg-slate-900 dark:text-amber-300"
+          >
+            {backfilling ? (backfillMsg || 'Generating…') : 'Generate all missing AI reminders'}
+          </button>
+        </div>
+      )}
+
       <div className="space-y-3">
         <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">Published</h2>
         {targets.length === 0 && <p className="text-sm text-slate-500">No target is published yet. Until you publish one, the phone keeps its own short list.</p>}
@@ -205,14 +267,16 @@ export default function DailyTargets() {
                 <span className="font-semibold">AI revision reminder by Groq: </span>
                 {row.revisionReminder}
               </p>
-            ) : (
+            ) : isCurrent(row) ? (
               <div className="mt-3 text-sm text-amber-700 dark:text-amber-400">
-                <p>AI reminder required. The previous plain reminder is not sent to students. The study target remains available.</p>
+                <p>AI reminder pending. The study target is already visible to students; this only adds the revision line.</p>
                 <button type="button" disabled={!!generatingId || busy} onClick={() => generateReminder(row.id)}
                   className="mt-2 px-3 py-2 rounded-lg border border-amber-300 font-semibold disabled:opacity-60">
                   {generatingId === row.id ? 'Generating AI reminder...' : 'Generate AI reminder'}
                 </button>
               </div>
+            ) : (
+              <p className="mt-3 text-sm text-slate-400 dark:text-slate-500">No AI reminder for a date that has passed — nothing to fix here.</p>
             )}
           </article>
         ))}

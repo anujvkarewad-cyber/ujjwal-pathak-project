@@ -101,6 +101,10 @@ function jsonOut(obj) {
 // ─────────────────────────────────────────────────────────────────────────
 
 function handleAction(action, payload) {
+  // Protected server-only transfer dispatch BEFORE legacy sheet setup.
+  if (action === 'mentorMembershipCapabilities') return mentorMembershipCapabilities_(payload);
+  if (action === 'mentorMembershipFence') return mentorMembershipFence_(payload);
+  if (action === 'mentorChangeMembership') return mentorChangeMembership_(payload);
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   ensureAllSheets(ss); // idempotent — safe on every call
 

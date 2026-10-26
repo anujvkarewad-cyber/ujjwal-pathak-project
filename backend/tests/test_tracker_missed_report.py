@@ -173,10 +173,11 @@ def test_missed_tracker_report_counts_unique_days_and_respects_joined_on(client,
     assert body["sourceSubmissionRows"] == 8
 
     rows = {row["studentId"]: row for row in body["items"]}
-    assert rows["UMP0001"]["expectedFrom"] == "2026-09-29"
-    assert rows["UMP0001"]["expectedDays"] == 2
-    assert rows["UMP0001"]["submittedDays"] == 1
-    assert rows["UMP0001"]["submittedDates"] == ["2026-09-29"]
+    # UMP0001 joined 29 Sep — join day is never counted, so the tracker starts 30 Sep.
+    assert rows["UMP0001"]["expectedFrom"] == "2026-09-30"
+    assert rows["UMP0001"]["expectedDays"] == 1
+    assert rows["UMP0001"]["submittedDays"] == 0
+    assert rows["UMP0001"]["submittedDates"] == []
     assert rows["UMP0001"]["missedDates"] == ["2026-09-30"]
     assert rows["UMP0002"]["expectedFrom"] == "2026-09-28"
     assert rows["UMP0002"]["expectedDays"] == 3
@@ -265,7 +266,7 @@ def test_full_tracker_report_resolves_start_and_runs_through_today(client, mento
     assert body["historyFloor"] == "2026-09-28"
     assert body["to"] >= body["from"]
     rows = {row["studentId"]: row for row in body["items"]}
-    assert rows["UMP0001"]["expectedFrom"] == "2026-09-29"
+    assert rows["UMP0001"]["expectedFrom"] == "2026-09-30"  # joined 29 Sep -> day after
     assert rows["UMP0002"]["expectedFrom"] == "2026-09-30"
     assert rows["UMP0005"]["expectedFrom"] == "2026-09-28"
 
@@ -299,3 +300,76 @@ def test_missed_tracker_report_fails_closed_when_sheet_is_unavailable(client, me
     )
     assert response.status_code == 502
     assert response.json()["detail"] == "Tracker form data could not be loaded. No report was calculated."
+
+
+def seed_accounts_with_one_blocked():
+    async def _seed():
+        await get_db()[STUDENT_ACCOUNTS].insert_many(
+            [
+                {
+                    "studentId": "UMP0001",
+                    "studentName": "Active Student",
+                    "attempt": "Jan 2027",
+                    "batch": "Before Result Batch 1",
+                    "group": "Group 1",
+                    "joinedOn": "2026-09-29",
+                },
+                {
+                    "studentId": "UMP0002",
+                    "studentName": "Blocked Student",
+                    "attempt": "Jan 2027",
+                    "batch": "Before Result Batch 1",
+                    "group": "Group 1",
+                    "joinedOn": "2026-09-29",
+                    "accessEnabled": False,
+                    "accessReason": "Stopped studying",
+                },
+                {
+                    "studentId": "UMP0003",
+                    "studentName": "Explicitly Active Student",
+                    "attempt": "Jan 2027",
+                    "batch": "Before Result Batch 1",
+                    "group": "Group 2",
+                    "joinedOn": "2026-09-29",
+                    "accessEnabled": True,
+                },
+            ]
+        )
+
+    asyncio.run(_seed())
+
+
+def test_tracker_views_hide_access_blocked_students(client, mentor_headers, monkeypatch):
+    """Owner rule (14 Oct 2026): a blocked student is out of the tracker.
+
+    Access-off students cannot log in or submit, so keeping them in the day view
+    and the missed report showed them as "missed" every single day and buried
+    the students who actually needed a follow-up.
+    """
+    seed_accounts_with_one_blocked()
+
+    from routers import student_dashboard
+
+    monkeypatch.setattr(
+        student_dashboard, "_fetch_tracker_submissions_sync", lambda: []
+    )
+
+    day = client.get(
+        "/api/student-dashboard/tracker-day?dayIndex=13&batch=All%20Batches",
+        headers=mentor_headers,
+    )
+    assert day.status_code == 200, day.text
+    ids = {row["id"] for row in day.json()["list"]}
+    assert "UMP0002" not in ids, "blocked student must not appear in the day view"
+    assert {"UMP0001", "UMP0003"} <= ids
+    assert day.json()["missed"] == 2  # only the two active students count
+
+    report = client.get(
+        "/api/student-dashboard/tracker-missed-report?from=2026-09-28&to=2026-09-30",
+        headers=mentor_headers,
+    )
+    assert report.status_code == 200, report.text
+    body = report.json()
+    report_ids = {row["studentId"] for row in body["items"]}
+    assert "UMP0002" not in report_ids, "blocked student must not appear in the missed report"
+    assert body["rosterCount"] == 2

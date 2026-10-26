@@ -1,8 +1,8 @@
 """Authenticated cloud backup/restore for completed student MCQ attempts.
 
-Student credentials remain owned by the existing Apps Script backend. Every
-backup/restore request delegates authentication there; MongoDB never stores the
-password. Only completed, size-bounded Daily/Practice attempts are accepted.
+Current imported-account credentials/access are authoritative. Unverified legacy
+migration is unavailable, never a fallback around denial or unknown accounts.
+Only completed, size-bounded Daily/Practice attempts are accepted.
 """
 from datetime import datetime, timezone
 
@@ -10,8 +10,10 @@ import httpx
 from fastapi import APIRouter, HTTPException
 from config import settings
 from db import ANALYTICS_AUDIT_SYNC, CONTENT_QUESTIONS, CONTENT_SCENARIOS, STUDENT_MCQ_ATTEMPTS, get_db
-from models import StudentMcqSyncRequest, StudentTokenRequest
-from persist import dump_store
+from models import StudentMcqSyncRequest, StudentTokenRequest, OfficialDailySetRequest
+from persist import dump_store_sync
+from daily_mcq_verification import issue_set, verify_attempt, response_fingerprint, SETS
+from pymongo.errors import DuplicateKeyError
 from routers.student_content import _student_question
 
 router = APIRouter(prefix="/api", tags=["student-mcq-attempts"])
@@ -22,41 +24,21 @@ def _now() -> str:
 
 
 async def _validate_existing_student_login(student_id: str, password: str) -> dict:
-    """Prefer Mongo login. Fall back to Apps Script only if the account is not imported yet."""
+    """Validate current imported account; block unverified migration."""
     from routers.student_auth import authenticate_student
 
     mongo_result = await authenticate_student(student_id, password)
     if mongo_result.get("success") is True:
         return mongo_result
+    if mongo_result.get("code") != "not_found":
+        # A legacy service must never override an imported account's denial.
+        code = mongo_result.get("code")
+        raise HTTPException(status_code=403 if code in {"removed", "access_blocked", "group_closed"} else 401,
+                            detail="Student authentication unavailable.")
 
-    try:
-        async with httpx.AsyncClient(timeout=60.0, follow_redirects=True) as client:
-            response = await client.post(
-                settings.student_auth_url,
-                json={
-                    "action": "validateLogin",
-                    "payload": {"studentId": student_id, "password": password},
-                },
-            )
-    except httpx.HTTPError as exc:
-        if mongo_result.get("code") == "wrong_password":
-            raise HTTPException(status_code=401, detail="Invalid Student ID or password")
-        raise HTTPException(status_code=503, detail="Student login service is unavailable") from exc
-    if response.status_code != 200:
-        if mongo_result.get("code") == "wrong_password":
-            raise HTTPException(status_code=401, detail="Invalid Student ID or password")
-        raise HTTPException(status_code=503, detail="Student login service rejected the verification request")
-    try:
-        envelope = response.json()
-    except ValueError as exc:
-        raise HTTPException(status_code=503, detail="Student login service returned an invalid response") from exc
-    result = envelope.get("result") if isinstance(envelope, dict) else None
-    if not isinstance(result, dict) or result.get("success") is not True:
-        raise HTTPException(status_code=401, detail="Invalid Student ID or password")
-    returned_id = str(result.get("studentId") or student_id).strip().upper()
-    if returned_id != student_id:
-        raise HTTPException(status_code=401, detail="Student identity mismatch")
-    return result
+    # The deployed legacy authority/migration checks are unavailable. Do not
+    # accept an unknown account via that path until independently verified.
+    raise HTTPException(status_code=503, detail="Student migration verification unavailable.")
 
 
 async def _question_lookup(db, question_ids: list[str]) -> dict:
@@ -103,6 +85,12 @@ def _review_from_bank(question_ids: list, answers: dict, bank: dict) -> list:
 async def _ensure_review(db, doc: dict) -> dict:
     if not isinstance(doc, dict):
         return doc
+    if doc.get('officialSetId'):
+        official = await db[SETS].find_one({'_id': doc['officialSetId'], 'studentId': doc.get('studentId')})
+        if official:
+            doc['officialQuestions'] = official['questions']
+            doc['review'] = _review_from_bank(doc['questionIds'], doc.get('answers') or {}, {q['id']: q for q in official['questions']})
+            return doc
     if doc.get("review"):
         return doc
     question_ids = list(doc.get("questionIds") or [])
@@ -120,8 +108,10 @@ async def _ensure_review(db, doc: dict) -> dict:
 
 async def _prune_student_attempts(db, student_id: str, kind: str, keep: int) -> None:
     stale_ids = []
+    # The legacy backup limit must not delete official grading evidence or its
+    # immutable response fingerprint. Ranking reads this same canonical store.
     cursor = db[STUDENT_MCQ_ATTEMPTS].find(
-        {"studentId": student_id, "kind": kind}, {"_id": 1}
+        {"studentId": student_id, "kind": kind, "officialSetId": {"$in": [None, ""]}}, {"_id": 1}
     ).sort("completedAt", -1).skip(keep)
     async for row in cursor:
         stale_ids.append(row["_id"])
@@ -135,22 +125,41 @@ async def sync_student_attempts(body: StudentMcqSyncRequest):
     await _validate_existing_student_login(student_id, body.password)
     db = get_db()
     accepted = 0
+    acknowledgements = []
     for attempt in body.attempts:
         doc = attempt.model_dump()
-        doc.update({
-            "studentId": student_id,
-            "syncedAt": _now(),
-        })
-        await db[STUDENT_MCQ_ATTEMPTS].update_one(
-            {
-                "studentId": student_id,
-                "kind": doc["kind"],
-                "attemptId": doc["attemptId"],
-            },
-            {"$set": doc},
-            upsert=True,
-        )
+        original_id = doc['attemptId']
+        verdict = await verify_attempt(db, student_id, doc)
+        doc.update(studentId=student_id, syncedAt=_now(), rankingVerification=verdict)
+        key = {"studentId": student_id, "kind": doc['kind'], "attemptId": doc['attemptId']}
+        if doc.get('officialSetId'):
+            doc['attemptId'] = f"daily:{doc['date']}:{doc['group']}"
+            key['attemptId'] = doc['attemptId']
+            doc['responseFingerprint'] = response_fingerprint(doc)
+            if verdict['eligible']:
+                doc['score'] = verdict['correct']; doc['total'] = 10
+            # Immutable submission + exact replay; never silently replace a completed answer set.
+            existing = await db[STUDENT_MCQ_ATTEMPTS].find_one(key)
+            if existing and existing.get('responseFingerprint') != doc['responseFingerprint']:
+                raise HTTPException(409, 'Conflicting Daily MCQ backup; local answers are retained, not overwritten')
+            try:
+                result = await db[STUDENT_MCQ_ATTEMPTS].update_one(key, {'$setOnInsert': doc}, upsert=True)
+            except DuplicateKeyError:
+                result = None
+            saved = await db[STUDENT_MCQ_ATTEMPTS].find_one(key)
+            if saved.get('responseFingerprint') != doc['responseFingerprint']:
+                raise HTTPException(409, 'Conflicting Daily MCQ backup; local answers are retained, not overwritten')
+            status = 'stored' if result and result.upserted_id else 'duplicate'
+        else:
+            # Never let an older client overwrite verified data under the canonical daily key.
+            existing = await db[STUDENT_MCQ_ATTEMPTS].find_one(key)
+            if existing and existing.get('officialSetId'):
+                raise HTTPException(409, 'Official Daily MCQ backup is immutable')
+            await db[STUDENT_MCQ_ATTEMPTS].update_one(key, {'$set': doc}, upsert=True)
+            status = 'stored'
         accepted += 1
+        acknowledgements.append({'attemptId': original_id, 'status': status,
+                                 'rankingEligible': verdict['eligible'], 'reason': verdict['reason']})
 
     await _prune_student_attempts(db, student_id, "daily", settings.mcq_daily_retention)
     await _prune_student_attempts(db, student_id, "practice", settings.mcq_practice_retention)
@@ -160,8 +169,8 @@ async def sync_student_attempts(body: StudentMcqSyncRequest):
         "action": "mcq_attempt_sync",
         "detail": {"accepted": accepted},
     })
-    await dump_store()
-    return {"ok": True, "accepted": accepted}
+    await dump_store_sync()
+    return {"ok": True, "accepted": accepted, "acknowledgements": acknowledgements}
 
 
 @router.post("/student-attempts/restore")
@@ -182,3 +191,12 @@ async def restore_student_attempts(body: StudentTokenRequest):
         "daily": daily[: settings.mcq_daily_retention],
         "practice": practice[: settings.mcq_practice_retention],
     }
+
+
+@router.post('/student-attempts/daily-set')
+async def official_daily_set(body: OfficialDailySetRequest):
+    student_id = body.studentId.strip().upper()
+    profile = await _validate_existing_student_login(student_id, body.password)
+    assignment = await issue_set(get_db(), student_id, profile, body.group)
+    await dump_store_sync()
+    return assignment

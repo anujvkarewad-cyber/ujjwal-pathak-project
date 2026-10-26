@@ -1,0 +1,242 @@
+[
+  {
+    "path": "backend/backend/routers/workbook_practice.py",
+    "beforeSHA256": null,
+    "afterSHA256": "4d8366481f7be95c6aa5e68b95e88d19be9974ea7dd8e975f75e532921287841",
+    "change": "added"
+  },
+  {
+    "path": "backend/backend/server.py",
+    "beforeSHA256": "a8857df27b017ccd91fe818c14c05ca3bf6cab67bf7d71bbb7bc879142de74c8",
+    "afterSHA256": "b579945afc4f636f1c4446f646c1f016bf546a1442e17943d68b348d05407e28",
+    "change": "modified"
+  },
+  {
+    "path": "backend/backend/tests/fixtures/workbook_authoring_payloads.json",
+    "beforeSHA256": null,
+    "change": "added",
+    "afterSHA256": "0e78a0fa0a9e578969f80249a34f06f20fe4ea3b09001a37e39feb10ddcd0a7c"
+  },
+  {
+    "path": "backend/backend/tests/test_workbook_authoring_contract.py",
+    "beforeSHA256": null,
+    "afterSHA256": "5daa40f205d6d413d7807047ca9d53be4e851ca8066372c60c0be30b28c0e26e",
+    "change": "added"
+  },
+  {
+    "path": "backend/backend/tests/test_workbook_objective_formats.py",
+    "beforeSHA256": null,
+    "afterSHA256": "ee4d1e8d2d081c4a8c63db211679f2228fbfb34135234578d25c22375913ead0",
+    "change": "added"
+  },
+  {
+    "path": "backend/backend/tests/test_workbook_practice.py",
+    "beforeSHA256": null,
+    "afterSHA256": "ab013738608d0315f7142275158db4a77174c66cf7abc009c928ef71d8bc6a4c",
+    "change": "added"
+  },
+  {
+    "path": "backend/backend/tests/test_workbook_surface_isolation.py",
+    "beforeSHA256": null,
+    "change": "added",
+    "afterSHA256": "6b9e857fff8e472993220a1f3a72adcaca4e19bfaf5730d872d4ee44bdb67ba3"
+  },
+  {
+    "path": "backend/backend/tests/test_workbook_write_ack.py",
+    "beforeSHA256": null,
+    "change": "added",
+    "afterSHA256": "5443218f7419da16637e3f77b3c0ea4bc45399a06de27cade22ed99e4785e58d"
+  },
+  {
+    "path": "backend/backend/workbook_formats.py",
+    "beforeSHA256": null,
+    "afterSHA256": "18463f1467040f0e5c48a9333e09e5e4ad1e876bc01e9a1329aa26ac5a2c17d8",
+    "change": "added"
+  },
+  {
+    "path": "backend/frontend/src/App.js",
+    "beforeSHA256": "cf0ee3fb3d7e5d93b5531b42aa3791c5ab5fd8e41d58f4ff15904e1aa3cfc46e",
+    "afterSHA256": "6597f24aea0ef6e344290f19243698e57db23c6ac4ed938e0ec77f32e930a9e4",
+    "change": "modified"
+  },
+  {
+    "path": "backend/frontend/src/layouts/DashboardLayout.jsx",
+    "beforeSHA256": "f9cea14e7b502254439828f24c6fe4555d58be3a796aef5a88bd021bd8ca57e6",
+    "afterSHA256": "60ba267898c6f92abe0c24c3a2b004904dfa3806d830e9818e9579da50b2f90c",
+    "change": "modified"
+  },
+  {
+    "path": "backend/frontend/src/pages/BatchWorkspace.jsx",
+    "beforeSHA256": "c64d7e58fd24e4dc147e09157629ae63a3c5a69174856fde9a3679b46562fb2b",
+    "afterSHA256": "5a9398ce358404c7f7a5690deaeb2b624d7501e37a5672c212a8b8ef3d8614cd",
+    "change": "modified"
+  },
+  {
+    "path": "backend/frontend/src/pages/Workbooks.jsx",
+    "beforeSHA256": null,
+    "afterSHA256": "a834aef1396af314a2455f133a7780ae7e81ebd05493e30bfe8f372402b6c950",
+    "change": "added"
+  },
+  {
+    "path": "backend/frontend/src/pages/workbookAuthoring.js",
+    "beforeSHA256": null,
+    "afterSHA256": "aacf917ecfae095c7aeaa2b685dab5989b560e250476c5c197f1bcec2275ac7e",
+    "change": "added"
+  },
+  {
+    "path": "mentor-merge/live-deploy/candidate/backend/routers/workbook_practice.py",
+    "beforeSHA256": null,
+    "afterSHA256": "4d8366481f7be95c6aa5e68b95e88d19be9974ea7dd8e975f75e532921287841",
+    "change": "added"
+  },
+  {
+    "path": "mentor-merge/live-deploy/candidate/backend/server.py",
+    "beforeSHA256": "f5d64b6c3e078a1bb058d5441bc9f959c99957f1539bce9971159f8c68e00373",
+    "afterSHA256": "3fffaf51dbe38ab4887820ca8c9523c33a111b6dd4c2f70c9793518c85fe56eb",
+    "change": "modified"
+  },
+  {
+    "path": "mentor-merge/live-deploy/candidate/backend/tests/fixtures/workbook_authoring_payloads.json",
+    "beforeSHA256": null,
+    "change": "added",
+    "afterSHA256": "0e78a0fa0a9e578969f80249a34f06f20fe4ea3b09001a37e39feb10ddcd0a7c"
+  },
+  {
+    "path": "mentor-merge/live-deploy/candidate/backend/tests/test_workbook_authoring_contract.py",
+    "beforeSHA256": null,
+    "afterSHA256": "5daa40f205d6d413d7807047ca9d53be4e851ca8066372c60c0be30b28c0e26e",
+    "change": "added"
+  },
+  {
+    "path": "mentor-merge/live-deploy/candidate/backend/tests/test_workbook_objective_formats.py",
+    "beforeSHA256": null,
+    "afterSHA256": "ee4d1e8d2d081c4a8c63db211679f2228fbfb34135234578d25c22375913ead0",
+    "change": "added"
+  },
+  {
+    "path": "mentor-merge/live-deploy/candidate/backend/tests/test_workbook_practice.py",
+    "beforeSHA256": null,
+    "afterSHA256": "ab013738608d0315f7142275158db4a77174c66cf7abc009c928ef71d8bc6a4c",
+    "change": "added"
+  },
+  {
+    "path": "mentor-merge/live-deploy/candidate/backend/tests/test_workbook_surface_isolation.py",
+    "beforeSHA256": null,
+    "change": "added",
+    "afterSHA256": "6b9e857fff8e472993220a1f3a72adcaca4e19bfaf5730d872d4ee44bdb67ba3"
+  },
+  {
+    "path": "mentor-merge/live-deploy/candidate/backend/tests/test_workbook_write_ack.py",
+    "beforeSHA256": null,
+    "change": "added",
+    "afterSHA256": "5443218f7419da16637e3f77b3c0ea4bc45399a06de27cade22ed99e4785e58d"
+  },
+  {
+    "path": "mentor-merge/live-deploy/candidate/backend/workbook_formats.py",
+    "beforeSHA256": null,
+    "afterSHA256": "18463f1467040f0e5c48a9333e09e5e4ad1e876bc01e9a1329aa26ac5a2c17d8",
+    "change": "added"
+  },
+  {
+    "path": "mentor-merge/live-deploy/candidate/frontend/src/App.js",
+    "beforeSHA256": "cf0ee3fb3d7e5d93b5531b42aa3791c5ab5fd8e41d58f4ff15904e1aa3cfc46e",
+    "afterSHA256": "6597f24aea0ef6e344290f19243698e57db23c6ac4ed938e0ec77f32e930a9e4",
+    "change": "modified"
+  },
+  {
+    "path": "mentor-merge/live-deploy/candidate/frontend/src/layouts/DashboardLayout.jsx",
+    "beforeSHA256": "ca953fbeebe56747775bd5f72662b26d3c7370b1dde5b7ebcc9b37297935289b",
+    "afterSHA256": "0b428bd2d6962659cbcc20b06b8b5ace5116c0af2ae8045e61462a6eb41f9a82",
+    "change": "modified"
+  },
+  {
+    "path": "mentor-merge/live-deploy/candidate/frontend/src/pages/BatchWorkspace.jsx",
+    "beforeSHA256": "c64d7e58fd24e4dc147e09157629ae63a3c5a69174856fde9a3679b46562fb2b",
+    "afterSHA256": "5a9398ce358404c7f7a5690deaeb2b624d7501e37a5672c212a8b8ef3d8614cd",
+    "change": "modified"
+  },
+  {
+    "path": "mentor-merge/live-deploy/candidate/frontend/src/pages/Workbooks.jsx",
+    "beforeSHA256": null,
+    "afterSHA256": "a834aef1396af314a2455f133a7780ae7e81ebd05493e30bfe8f372402b6c950",
+    "change": "added"
+  },
+  {
+    "path": "mentor-merge/live-deploy/candidate/frontend/src/pages/workbookAuthoring.js",
+    "beforeSHA256": null,
+    "afterSHA256": "aacf917ecfae095c7aeaa2b685dab5989b560e250476c5c197f1bcec2275ac7e",
+    "change": "added"
+  },
+  {
+    "path": "student-app/mobile/src/screens/WorkbooksScreen.tsx",
+    "beforeSHA256": "bcafda9359f554efeb70c2c35070c57be8dd34e085d9f57d4291fefb623085cf",
+    "afterSHA256": "9324e9096eae8fd7e8f71debbdb0d6b02673e56fe4ccc8695172adc3476fbfeb",
+    "change": "modified"
+  },
+  {
+    "path": "student-app/mobile/src/services/practiceTools.ts",
+    "beforeSHA256": "7e5d782bff33d4308e89decb49ef942c22570c178ab419aef995f7e674b90c5f",
+    "afterSHA256": "ce787a80d1478d4041a88085ba833642cf68b7c36cc4d0e28361842ed727367e",
+    "change": "modified"
+  },
+  {
+    "path": "student-app/mobile/test/workbook-session-scope.test.cjs",
+    "beforeSHA256": null,
+    "change": "added",
+    "afterSHA256": "08b08d402c3b888c723c00c95769b35e3367dd63a103664f8bce7e9bffce591a"
+  },
+  {
+    "path": "student-app/practice-client.js",
+    "beforeSHA256": "c27f997f39b3328ba03bad05735a4c26b07a5297ca0720d57ca46ea69c802fbb",
+    "afterSHA256": "bf987fef69a583e14bb160f20b876597e986a05666060896de6f794b9264eff5",
+    "change": "modified"
+  },
+  {
+    "path": "student-app/test/workbook-session-scope.test.mjs",
+    "beforeSHA256": null,
+    "change": "added",
+    "afterSHA256": "c4bde00fe4e9c7c40fda6590b094541bd2805efdef641c7340a2b76ea6afd5b8"
+  },
+  {
+    "path": "student-app/workbook.html",
+    "beforeSHA256": "5d6d102a83bfdb025d1a981f4be1e672c8a957527f298d326afe590145f96973",
+    "afterSHA256": "e46f64a751f0dd7859dc3b8a5f656ece762d343b17e9489bbf369ca065f28535",
+    "change": "modified"
+  },
+  {
+    "path": "workbook-receipts/project/backend/routers/practice_tools.py",
+    "beforeSHA256": "f491af49f729bc4459e87b19c5606642130f15db7d47df8e71ec15661e9c1f4f",
+    "afterSHA256": "218b687dee405350b7b56b7ade524eddf7d003983ee39d4eca0c0598109c4d5c",
+    "change": "modified"
+  },
+  {
+    "path": "workbook-receipts/project/backend/tests/fixtures/workbook_authoring_payloads.json",
+    "beforeSHA256": null,
+    "change": "added",
+    "afterSHA256": "0e78a0fa0a9e578969f80249a34f06f20fe4ea3b09001a37e39feb10ddcd0a7c"
+  },
+  {
+    "path": "workbook-receipts/project/backend/tests/test_workbook_authoring_contract.py",
+    "beforeSHA256": null,
+    "change": "added",
+    "afterSHA256": "5cb83328dab1812deef07f699dc4bf53237a0703e2672d1469aa817a64c1e9f0"
+  },
+  {
+    "path": "workbook-receipts/project/backend/tests/test_workbook_write_ack.py",
+    "beforeSHA256": null,
+    "change": "added",
+    "afterSHA256": "2c9602e0976d2bed7dafc54b4116dacb4b489195701e6c35b80f4ca13fa46c41"
+  },
+  {
+    "path": "workbook-receipts/project/frontend/src/pages/Workbooks.jsx",
+    "beforeSHA256": "ec351c79bef0d2193d4315b8195e9fd32cc1d4307690650f85e53e7741102755",
+    "change": "modified",
+    "afterSHA256": "a834aef1396af314a2455f133a7780ae7e81ebd05493e30bfe8f372402b6c950"
+  },
+  {
+    "path": "workbook-receipts/project/frontend/src/pages/workbookAuthoring.js",
+    "beforeSHA256": null,
+    "change": "added",
+    "afterSHA256": "aacf917ecfae095c7aeaa2b685dab5989b560e250476c5c197f1bcec2275ac7e"
+  }
+]

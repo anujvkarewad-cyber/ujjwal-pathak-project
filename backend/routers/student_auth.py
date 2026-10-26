@@ -4,17 +4,23 @@ Passwords are stored as bcrypt hashes. A one-shot import copies the Students
 sheet into Mongo. The Vercel proxy tries this API first, then falls back to
 Apps Script only when the account is not in Mongo yet.
 """
+import logging
 import os
 import re
 from datetime import date, datetime, timedelta, timezone
 from typing import Any, Optional
 
 import httpx
+from routers.dashboard_access import dashboard_student, own_payload
 from fastapi import APIRouter, Depends, HTTPException, Request
 from pydantic import BaseModel, ConfigDict, Field
 
 from auth import hash_password, require_mentor, verify_password
 from config import settings
+import login_failures
+import password_sheet_sync
+
+logger = logging.getLogger(__name__)
 from db import STUDENT_ACCOUNTS, STUDENT_ADMIN_AUDIT, get_db
 
 router = APIRouter(prefix="/api/student-auth", tags=["student-auth"])
@@ -242,7 +248,38 @@ class ChangePasswordBody(BaseModel):
     newPassword: str = Field(min_length=1, max_length=256, repr=False)
 
 
+def _plausible_login_id(raw) -> str:
+    """An id worth recording a failure against: uppercase, long enough, has a digit.
+
+    Someone typing rubbish at the login screen must not create a row the mentor then
+    has to ignore, but a real-looking id that simply has no account yet is exactly what
+    the mentor needs to see (that student is trying to get in).
+    """
+    sid = str(raw or "").strip().upper()
+    if len(sid) < 6 or not any(ch.isdigit() for ch in sid):
+        return ""
+    return sid[:24]
+
+
 async def authenticate_student(student_id: str, password: str) -> dict:
+    """Login check + a record of whether it worked.
+
+    The outcome is the whole point of the mentor's Password Reset tab: a student being
+    told "Incorrect password" used to leave no trace at all. Recorded here rather than
+    in one route, because the app and the proxy path both come through this function.
+    """
+    result = await _check_credentials(student_id, password)
+    try:
+        ok = isinstance(result, dict) and bool(result.get("success"))
+        sid = normalize_student_id(student_id) if ok else _plausible_login_id(student_id)
+        if sid:
+            login_failures.note_attempt(sid, ok, "" if ok else str(result.get("code") or ""))
+    except Exception as exc:  # noqa: BLE001 - an auth result must never depend on bookkeeping
+        logger.warning("[login-failures] bookkeeping skipped (%s)", type(exc).__name__)
+    return result
+
+
+async def _check_credentials(student_id: str, password: str) -> dict:
     """Mongo-only check. Never calls Apps Script (avoids proxy loops)."""
     sid = normalize_student_id(student_id)
     pwd = str(password or "").strip()
@@ -252,6 +289,30 @@ async def authenticate_student(student_id: str, password: str) -> dict:
     doc = await db[STUDENT_ACCOUNTS].find_one({"studentId": sid})
     if not doc:
         return {"success": False, "message": "Student ID not found.", "code": "not_found"}
+    # Soft-removed students (mentor removed them from the program) cannot log
+    # in. Their data is kept so a mentor restore brings the account back.
+    if doc.get("removedAt") or str(doc.get("status") or "").strip().lower() == "removed":
+        return {
+            "success": False,
+            "message": "This account has been removed from the program. Please contact your mentor.",
+            "code": "removed",
+        }
+    # Mentor-controlled access OFF (restored 2026-10-13 — the owner flow that
+    # blocks non-studious students with a visible reason). The message is what
+    # every app client shows on the login screen.
+    if doc.get("accessEnabled") is False:
+        reason = str(doc.get("accessReason") or "").strip()
+        detail = f" Reason: {reason}." if reason else ""
+        return {
+            "success": False,
+            "message": (
+                "Your app access is turned off by your mentor."
+                + detail
+                + " Contact your mentor to turn it back on."
+            ),
+            "code": "access_blocked",
+            "reason": reason,
+        }
     if not _password_ok(pwd, doc):
         return {"success": False, "message": "Incorrect password.", "code": "wrong_password"}
     # Master accounts (mentor's own app IDs) always have full access,
@@ -300,9 +361,13 @@ async def upsert_student_account(item: StudentImportItem) -> None:
         "batch": (item.batch or "").strip(),
         "phone": (item.phone or "").strip(),
         "address": (item.address or "").strip(),
-        "joinedOn": (item.joinedOn or "").strip(),
         "updatedAt": _now(),
     }
+    # joinedOn drives the per-student tracker start. Never blank a stored date:
+    # an import row without a join date keeps what is already known, and a brand
+    # new account defaults to today — the day the student was added (IST).
+    joined = (item.joinedOn or "").strip() or str(existing.get("joinedOn") or "").strip()
+    fields["joinedOn"] = joined or datetime.now(IST).date().isoformat()
     if not keep_password:
         fields["passwordHash"] = hash_password(pwd)
         fields["passwordChanged"] = password_changed
@@ -402,6 +467,12 @@ async def student_auth_status():
 async def student_login(body: StudentLoginBody):
     student_id, password = _extract_login(body)
     result = await authenticate_student(student_id, password)
+    # The sheet is the mentor's credential ledger, and a password a student
+    # changed in the app is otherwise unknowable. A successful login is the one
+    # request that proves the value, so the sheet is refreshed here - off the
+    # response path, and never for a failed attempt.
+    if isinstance(result, dict) and result.get("success"):
+        password_sheet_sync.queue_sync(student_id, password)
     return {"result": result}
 
 
@@ -432,6 +503,7 @@ async def student_change_password(body: ChangePasswordBody):
             "$unset": {"password": ""},
         },
     )
+    password_sheet_sync.queue_sync(sid, new_pwd, flag_changed=True)
     return {"result": {"success": True, "message": "Password changed."}}
 
 
@@ -457,85 +529,307 @@ async def change_student_batch(
     body: StudentBatchChangeBody,
     claims: dict = Depends(require_mentor),
 ):
-    """Mentor-only batch correction.
+    """Compatibility route: authoritative moves now require reviewed batch+group.
 
-    The owner-authorized Apps Script changes the Students Sheet first. Mongo is
-    then updated without touching credentials or any other profile field. If
-    Mongo fails, the Sheet change is rolled back on a best-effort basis.
+    Preserve the route and action via the workspace, but never let a stale mentor
+    client bypass CAS, durable locks or the no-automatic-rollback safety contract.
     """
     sid = normalize_student_id(student_id)
     if not re.fullmatch(r"UMP\d{4,}", sid):
-        raise HTTPException(status_code=400, detail="Invalid Student ID.")
-    requested = str(body.batch or "").strip()
-    if requested not in ALLOWED_STUDENT_BATCHES:
-        raise HTTPException(
-            status_code=400,
-            detail={"message": "Choose a valid batch.", "allowedBatches": list(ALLOWED_STUDENT_BATCHES)},
-        )
-    expected = str(body.expectedBatch or "").strip()
+        raise HTTPException(400, "Invalid Student ID.")
+    if str(body.batch or "").strip() not in ALLOWED_STUDENT_BATCHES:
+        raise HTTPException(400, {"message": "Choose a valid batch.", "allowedBatches": list(ALLOWED_STUDENT_BATCHES)})
+    raise HTTPException(409, {"code": "reviewed_membership_required", "message": "Use the reviewed batch/group workspace. Nothing changed.", "workspace": "/batches?studentId=" + sid + "&action=transfer"})
 
-    sheet_result = await _change_sheet_batch(sid, requested, expected)
-    previous = str(sheet_result.get("previousBatch") or "").strip()
-    db = get_db()
-    mongo_updated = False
-    try:
-        update_result = await db[STUDENT_ACCOUNTS].update_one(
-            {"studentId": sid},
-            {
-                "$set": {
-                    "batch": requested,
-                    "batchUpdatedAt": _now(),
-                    "batchUpdatedBy": claims.get("sub") or "mentor",
-                    "updatedAt": _now(),
-                }
-            },
-        )
-        mongo_updated = bool(update_result.matched_count)
-    except Exception as exc:
-        rollback_errors = []
-        try:
-            await db[STUDENT_ACCOUNTS].update_one(
-                {"studentId": sid},
-                {"$set": {"batch": previous, "updatedAt": _now()}},
-            )
-        except Exception as rollback_exc:  # pragma: no cover - real Mongo outage
-            rollback_errors.append(type(rollback_exc).__name__)
-        try:
-            await _change_sheet_batch(sid, previous, requested)
-        except Exception as rollback_exc:  # pragma: no cover - external outage
-            rollback_errors.append(type(rollback_exc).__name__)
-        detail = "Mongo could not be updated; the Sheet change was rolled back."
-        if rollback_errors:
-            detail = "Batch update failed and automatic rollback needs manual verification."
-        raise HTTPException(status_code=502, detail=detail) from exc
 
-    changed_at = _now()
+# ── Students sheet ⇄ Mongo batch drift ──────────────────────────────────────
+# A student's own profile (APK and webapp) shows what validateLogin returns, and
+# validateLogin is served by Apps Script - that is, from the Students sheet.
+# Every audience decision (which test, which notes, which daily target, which
+# push, which batch rank) is taken from Mongo instead. So a batch typed by hand
+# into the sheet shows up nowhere and quietly keeps sending a student the other
+# batch's material. These two routes make that gap visible and let the mentor
+# close it in one click, without touching passwords or any other profile field.
+
+STUDENTS_SHEET_ID = os.environ.get(
+    "TRACKER_SHEET_ID", "1oYYodP_XcbJOjrP5c4PirQDCnl54NFyPUbf7lwM1Ycc"
+).strip()
+BATCH_DRIFT_TTL_SEC = 90
+_drift_cache: dict = {"at": None, "payload": None}
+
+# Master/test accounts are not students; their sheet row does not exist on
+# purpose and their batch is intentionally "ALL".
+BATCH_DRIFT_SKIP_IDS = {"UMP0000", "UMP9999"}
+
+
+def batch_drift_rows(sheet_rows: list, accounts: list) -> dict:
+    """Compare the sheet's Batch column with the Mongo account batch.
+
+    Pure on purpose: this is the whole rule, so it is testable without Google.
+    Returns {"drift": [...], "needsImport": [...], "skipped": {...}} where a
+    drift row carries both values so the mentor can see who is right.
+    """
+    if not sheet_rows:
+        return {"drift": [], "needsImport": [], "skipped": {"noHeader": True}}
+    header = [str(cell or "").strip().lower() for cell in sheet_rows[0]]
     try:
-        await db[STUDENT_ADMIN_AUDIT].insert_one(
-            {
-                "action": "student_batch_change",
-                "studentId": sid,
-                "previousBatch": previous,
-                "batch": requested,
-                "mentor": claims.get("sub") or "mentor",
-                "sheetUpdated": True,
-                "mongoUpdated": mongo_updated,
-                "at": changed_at,
-            }
-        )
-    except Exception:
-        # The requested state is already consistent in Sheet + Mongo. An audit
-        # write failure must not make the mentor repeat the mutation.
-        pass
+        id_col = header.index("student id")
+        batch_col = header.index("batch")
+    except ValueError:
+        return {"drift": [], "needsImport": [], "skipped": {"noHeader": True}}
+
+    by_sid = {}
+    for doc in accounts:
+        sid = str(doc.get("studentId") or "").strip().upper()
+        if sid:
+            by_sid[sid] = doc
+
+    drift, needs_import, skipped_removed = [], [], 0
+    seen: set = set()
+    for row in sheet_rows[1:]:
+        sid = str(row[id_col] if len(row) > id_col else "").strip().upper()
+        if not re.fullmatch(r"UMP\d{4,}", sid) or sid in BATCH_DRIFT_SKIP_IDS:
+            continue
+        seen.add(sid)
+        sheet_batch = str(row[batch_col] if len(row) > batch_col else "").strip()
+        account = by_sid.get(sid)
+        if account is None:
+            if sheet_batch:
+                needs_import.append({
+                    "studentId": sid,
+                    "studentName": str(_sheet_row_name(row, header) or ""),
+                    "sheetBatch": sheet_batch,
+                })
+            continue
+        if account.get("removedAt"):
+            skipped_removed += 1
+            continue
+        mongo_batch = str(account.get("batch") or "").strip()
+        if not sheet_batch or sheet_batch == mongo_batch:
+            continue
+        drift.append({
+            "studentId": sid,
+            "studentName": str(account.get("studentName") or ""),
+            "sheetBatch": sheet_batch,
+            "mongoBatch": mongo_batch,
+        })
+    drift.sort(key=lambda r: r["studentId"])
+    needs_import.sort(key=lambda r: r["studentId"])
     return {
-        "ok": True,
-        "studentId": sid,
-        "previousBatch": previous,
-        "batch": requested,
-        "sheetUpdated": True,
-        "mongoUpdated": mongo_updated,
-        "changedAt": changed_at,
+        "drift": drift,
+        "needsImport": needs_import,
+        "skipped": {"removedStudents": skipped_removed, "sheetRowsWithoutAccount": len(seen) - len(drift) - len(needs_import) - skipped_removed},
     }
+
+
+
+def _sheet_row_name(row: list, header: list) -> str:
+    """Student name from the sheet row, whatever column order the sheet has."""
+    try:
+        idx = header.index("student name")
+    except ValueError:
+        return ""
+    return str(row[idx] if len(row) > idx else "").strip()
+
+
+_coverage_cache: dict = {"at": None, "payload": None}
+
+
+async def _sheet_students_rows() -> list:
+    """The whole Students tab (one read) - shared by the drift and coverage checks."""
+    from routers.notes_inbox import _google_token
+
+    try:
+        token = _google_token()
+    except HTTPException as exc:
+        raise HTTPException(status_code=503, detail=str(exc.detail)) from exc
+    except Exception as exc:
+        raise HTTPException(status_code=503, detail="Students sheet could not be read.") from exc
+    url = f"https://sheets.googleapis.com/v4/spreadsheets/{STUDENTS_SHEET_ID}/values/Students!A1:U400"
+    try:
+        async with httpx.AsyncClient(timeout=25.0, follow_redirects=True) as client:
+            resp = await client.get(url, headers={"Authorization": f"Bearer {token}"})
+    except httpx.HTTPError as exc:
+        raise HTTPException(status_code=503, detail="Students sheet is unreachable right now.") from exc
+    if resp.status_code >= 400:
+        raise HTTPException(status_code=502, detail=f"Students sheet read failed (HTTP {resp.status_code}).")
+    return resp.json().get("values") or []
+
+
+async def _accounts_lite() -> list:
+    db = get_db()
+    cursor = db[STUDENT_ACCOUNTS].find(
+        {},
+        {"studentId": 1, "studentName": 1, "batch": 1, "removedAt": 1, "passwordHash": 1, "password": 1},
+    )
+    try:
+        return await cursor.to_list(1000)
+    except AttributeError:  # a test double without to_list
+        return list(cursor)
+
+
+async def _sheet_batch_rows() -> list:
+    """Read the Students sheet (same service account the access toggle uses)."""
+    return await _sheet_students_rows()
+
+
+async def _live_accounts() -> list:
+    return await _accounts_lite()
+
+
+@router.get("/students/batch-drift")
+async def get_batch_drift(refresh: bool = False, claims: dict = Depends(require_mentor)):
+    """Mentor-only: which students' batch differs between the sheet and the app."""
+    now = datetime.now(timezone.utc)
+    cached = _drift_cache.get("payload")
+    if (
+        not refresh
+        and cached
+        and _drift_cache.get("at")
+        and (now - _drift_cache["at"]).total_seconds() < BATCH_DRIFT_TTL_SEC
+    ):
+        return {**cached, "cached": True}
+
+    sheet_rows = await _sheet_batch_rows()
+    accounts = await _live_accounts()
+    diff = batch_drift_rows(sheet_rows, accounts)
+    payload = {
+        "ok": True,
+        "checkedAt": _now(),
+        "sheetRows": max(0, len(sheet_rows) - 1),
+        "accountsChecked": len(accounts),
+        "driftCount": len(diff["drift"]),
+        "needsImportCount": len(diff["needsImport"]),
+        "drift": diff["drift"],
+        "needsImport": diff["needsImport"],
+        "skipped": diff["skipped"],
+    }
+    _drift_cache["at"] = now
+    _drift_cache["payload"] = payload
+    return {**payload, "cached": False}
+
+
+class BatchDriftApplyBody(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    studentIds: list[str] = Field(default_factory=list)
+
+
+@router.post("/students/batch-drift/apply")
+async def apply_batch_drift(body: BatchDriftApplyBody, claims: dict = Depends(require_mentor)):
+    """Mentor-only: copy the sheet's Batch into Mongo for the named students.
+
+    The sheet is re-read here instead of trusting what the browser showed, so a
+    stale dialog can never write an outdated batch. Only rows that are still
+    drifting are written; everything else is left exactly as it is.
+    """
+    wanted = {str(sid or "").strip().upper() for sid in body.studentIds if str(sid or "").strip()}
+    all_rows = "*" in wanted or "ALL" in wanted
+    sheet_rows = await _sheet_batch_rows()
+    accounts = await _live_accounts()
+    drift = batch_drift_rows(sheet_rows, accounts)["drift"]
+    selected = [row for row in drift if all_rows or row["studentId"] in wanted]
+    if not selected:
+        return {"ok": True, "synced": 0, "rows": [], "remaining": len(drift),
+                "message": "Nothing to sync - those students already match."}
+
+    db = get_db()
+    mentor = claims.get("sub") or "mentor"
+    done, failed = [], []
+    from routers.mentor_workspace import LOCKS
+    from pymongo.errors import DuplicateKeyError
+    import uuid
+    for row in selected:
+        stamp = _now()
+        owner = "drift-" + str(uuid.uuid4())
+        try:
+            await db[LOCKS].insert_one({'_id':row['studentId'], 'planId':owner, 'kind':'batch_drift', 'at':stamp})
+        except DuplicateKeyError:
+            failed.append(row['studentId'])
+            continue
+        account = await db[STUDENT_ACCOUNTS].find_one({'studentId':row['studentId']}) or {}
+        try:
+            result = await db[STUDENT_ACCOUNTS].update_one(
+                {"studentId": row["studentId"], "batch":row["mongoBatch"], "membershipVersion":account.get("membershipVersion")},
+                {"$set": {
+                    "batch": row["sheetBatch"],
+                    "membershipVersion": str(uuid.uuid4()),
+                    "batchUpdatedAt": stamp,
+                    "batchUpdatedBy": mentor,
+                    "updatedAt": stamp,
+                }},
+            )
+        except Exception:
+            failed.append(row["studentId"])
+            continue
+        await db[LOCKS].delete_one({'_id':row['studentId'], 'planId':owner})
+        if not getattr(result, "matched_count", 0):
+            failed.append(row["studentId"])
+            continue
+        done.append({
+            "studentId": row["studentId"],
+            "from": row["mongoBatch"],
+            "to": row["sheetBatch"],
+        })
+        try:
+            await db[STUDENT_ADMIN_AUDIT].insert_one({
+                "action": "student_batch_drift_sync",
+                "studentId": row["studentId"],
+                "previousBatch": row["mongoBatch"],
+                "batch": row["sheetBatch"],
+                "mentor": mentor,
+                "sheetUpdated": False,
+                "mongoUpdated": True,
+                "at": stamp,
+            })
+        except Exception:
+            pass  # already consistent; an audit failure must not undo the fix
+    _drift_cache["at"] = None
+    _drift_cache["payload"] = None
+    return {
+        "ok": not failed,
+        "synced": len(done),
+        "rows": done,
+        "failed": failed,
+        "remaining": max(0, len(drift) - len(done)),
+        "message": (
+            f"{len(done)} student(s) now follow the sheet."
+            + (f" {len(failed)} could not be written." if failed else "")
+        ),
+    }
+
+
+@router.get("/students/password-coverage")
+async def get_password_coverage(refresh: bool = False, claims: dict = Depends(require_mentor)):
+    """Mentor-only: how many Students-sheet password cells a student can actually use.
+
+    The sheet is the ledger the mentor reads and the welcome mail is built from, and
+    a student's own password reaches it only at the moment they sign in. So this is
+    the progress meter for that: 'pending' shrinks by itself as students log in, and
+    it is empty when every active student's sheet cell matches their live password.
+    """
+    now = datetime.now(timezone.utc)
+    cached = _coverage_cache.get("payload")
+    if (
+        not refresh
+        and cached
+        and _coverage_cache.get("at")
+        and (now - _coverage_cache["at"]).total_seconds() < BATCH_DRIFT_TTL_SEC
+    ):
+        return {**cached, "cached": True}
+
+    rows = await _sheet_students_rows()
+    accounts = await _accounts_lite()
+    out = password_sheet_sync.coverage_of(rows, accounts)
+    payload = {
+        "ok": True,
+        "checkedAt": _now(),
+        "accountsChecked": len(accounts),
+        "usablePct": round(100 * out["valid"] / out["total"], 1) if out["total"] else 0,
+        **out,
+    }
+    _coverage_cache["at"] = now
+    _coverage_cache["payload"] = payload
+    return {**payload, "cached": False}
 
 
 @router.get("/account-reset-status")
@@ -572,12 +866,12 @@ class SaveWhatsAppBody(BaseModel):
 
 
 @router.post("/whatsapp")
-async def save_whatsapp(body: SaveWhatsAppBody):
+async def save_whatsapp(body: SaveWhatsAppBody, principal=Depends(dashboard_student)):
     """Student saves their own WhatsApp number (used for enrollment welcome,
     reminders and announcements)."""
     from whatsapp import normalize_number
 
-    sid = normalize_student_id(body.studentId)
+    sid = own_payload(principal, {"studentId":body.studentId})["studentId"]
     db = get_db()
     doc = await db[STUDENT_ACCOUNTS].find_one({"studentId": sid})
     if not doc:
@@ -596,11 +890,11 @@ class ReminderNotifyBody(BaseModel):
 
 
 @router.post("/reminder-notify")
-async def reminder_notify(body: ReminderNotifyBody):
+async def reminder_notify(body: ReminderNotifyBody, principal=Depends(dashboard_student)):
     """Mirror a student reminder to their saved WhatsApp number."""
     from whatsapp import normalize_number, send_whatsapp
 
-    sid = normalize_student_id(body.studentId)
+    sid = own_payload(principal, {"studentId":body.studentId})["studentId"]
     db = get_db()
     doc = await db[STUDENT_ACCOUNTS].find_one({"studentId": sid})
     if not doc:

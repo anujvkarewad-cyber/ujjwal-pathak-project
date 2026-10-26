@@ -41,3 +41,24 @@ def test_login_disabled_when_credentials_unconfigured(client):
         assert res.status_code == 503
     finally:
         config.settings.mentor_password_hash = original
+
+
+def test_existing_token_cannot_survive_removed_configured_principal(client, mentor_headers, monkeypatch):
+    from config import settings
+    monkeypatch.setattr(settings, 'mentor_email', 'replacement@test.local')
+    monkeypatch.setattr(settings, 'mentor_accounts', '')
+    assert client.get('/api/content/queue', headers=mentor_headers).status_code == 401
+
+
+def test_unconfigured_mentor_credentials_also_disable_existing_token(client, mentor_headers, monkeypatch):
+    from config import settings
+    monkeypatch.setattr(settings, 'mentor_password_hash', '')
+    monkeypatch.setattr(settings, 'mentor_accounts', '')
+    assert client.get('/api/analytics/overview', headers=mentor_headers).status_code == 401
+
+
+def test_configured_multi_account_principal_keeps_authority(client, mentor_headers, monkeypatch):
+    from config import settings
+    monkeypatch.setattr(settings, 'mentor_accounts', 'mentor@test.local:synthetic-not-used')
+    monkeypatch.setattr(settings, 'mentor_password_hash', '')
+    assert client.get('/api/content/queue', headers=mentor_headers).status_code == 200

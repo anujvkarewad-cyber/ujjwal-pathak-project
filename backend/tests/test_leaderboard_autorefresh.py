@@ -50,7 +50,7 @@ def _seed(client, mentor_headers, hours_by_student):
             await db[STUDENT_ACCOUNTS].update_one(
                 {"studentId": sid},
                 {"$set": {"studentId": sid, "studentName": f"Student {sid}",
-                          "attempt": "Jan 2027", "batch": batch, "group": "Group 1",
+                          "attempt": "Jan 2027", "batch": batch, "group": "Group 1", "password":"synthetic-leaderboard",
                           "joinedOn": (TODAY - timedelta(days=30)).isoformat()}},
                 upsert=True)
 
@@ -84,14 +84,21 @@ def _snapshot_generated_at():
 
 
 def _student_leaderboard(client, student_id=None):
-    payload = {"studentId": student_id} if student_id else {}
-    res = client.post("/api/student-dashboard/get",
-                      json={"action": "getLeaderboard", "payload": payload})
-    assert res.status_code == 200, res.text
-    return res.json()
+    # Explicit internal snapshot tests: the public student audience route stays closed.
+    import asyncio
+    from db import get_db
+    from routers import student_dashboard as sd
+    sid=student_id or "UMP0301"
+    assert client.post('/api/student-dashboard/get',json={"action":"getLeaderboard"}).status_code==401
+    blocked=client.post('/api/student-dashboard/get',headers={"X-Student-Id":sid,"X-Session-Password":"synthetic-leaderboard"},json={"action":"getLeaderboard"})
+    assert blocked.status_code==503
+    async def internal():
+        db=get_db();shared=await sd._leaderboard_snapshot(db)
+        return {"result":await sd._leaderboard_for_student(db,shared.get('leaderboard')or[],student_id)}
+    return asyncio.run(internal())
 
 
-def test_a_student_read_rebuilds_a_stale_snapshot(client, mentor_headers):
+def test_internal_snapshot_rebuilds_when_stale(client, mentor_headers):
     """The core requirement: opening the app is enough to refresh ranks."""
     _seed(client, mentor_headers, {"UMP0301": 5, "UMP0302": 2})
     _age_snapshot(10 * 60)                      # 10 minutes stale
@@ -101,7 +108,7 @@ def test_a_student_read_rebuilds_a_stale_snapshot(client, mentor_headers):
     assert _snapshot_generated_at() != stale_at, "read did not refresh the snapshot"
 
 
-def test_a_fresh_snapshot_is_not_rebuilt(client, mentor_headers):
+def test_internal_fresh_snapshot_is_not_rebuilt(client, mentor_headers):
     """Freshness must not turn every app open into a rebuild."""
     _seed(client, mentor_headers, {"UMP0301": 5})
     _age_snapshot(10 * 60)
@@ -122,7 +129,7 @@ def test_ranks_follow_new_submissions_without_any_manual_step(client, mentor_hea
     before = next(r for r in first if r["studentId"] == "UMP0302")["rank"]
 
     # UMP0302 studies hard; nobody touches the dashboard or clicks anything.
-    client.post("/api/student-dashboard/write",
+    client.post("/api/student-dashboard/write", headers={"X-Student-Id":"UMP0302","X-Session-Password":"synthetic-leaderboard"},
                 json={"action": "addStudyLog",
                       "payload": {"studentId": "UMP0302", "date": RECENT,
                                   "hours": 60, "subjects": "FM"}})
@@ -138,7 +145,7 @@ def test_stats_also_refresh_so_the_home_tile_is_never_stale(client, mentor_heade
     _seed(client, mentor_headers, {"UMP0301": 10, "UMP0302": 1})
     _age_snapshot(10 * 60)
 
-    stats = client.post("/api/student-dashboard/get",
+    stats = client.post("/api/student-dashboard/get", headers={"X-Student-Id":"UMP0302","X-Session-Password":"synthetic-leaderboard"},
                         json={"action": "getStats", "payload": {"studentId": "UMP0302"}}).json()["result"]
     assert stats["rank"] >= 1
     assert stats["rank"] != 0, "students must never be shown rank 0"
@@ -196,7 +203,7 @@ def test_student_tile_matches_their_row_in_the_list(client, mentor_headers):
         assert a["rank"] == b["rank"], f"{a['studentId']}: {a['rank']} vs {b['rank']}"
 
     mine = next(r for r in identified if r["studentId"] == "UMP0303")
-    stats = client.post("/api/student-dashboard/get",
+    stats = client.post("/api/student-dashboard/get", headers={"X-Student-Id":"UMP0303","X-Session-Password":"synthetic-leaderboard"},
                         json={"action": "getStats", "payload": {"studentId": "UMP0303"}}).json()["result"]
     assert stats["rank"] == mine["rank"], (
         f"tile says #{stats['rank']} but the list row says #{mine['rank']}")
@@ -207,7 +214,7 @@ def test_student_tile_matches_their_row_in_the_list(client, mentor_headers):
     assert mine["rank"] == 3          # third across the cohort of three
 
 
-def test_concurrent_reads_do_not_all_rebuild(client, mentor_headers):
+def test_serial_internal_reads_rebuild_once(client, mentor_headers):
     """The claim must stop every reader rebuilding at once."""
     _seed(client, mentor_headers, {"UMP0301": 5})
     _age_snapshot(10 * 60)

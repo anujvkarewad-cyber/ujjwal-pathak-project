@@ -161,7 +161,7 @@ def test_import_requires_auth(client):
     assert denied.status_code == 401
 
 
-def test_mentor_can_change_batch_without_changing_password(client, mentor_headers, monkeypatch):
+def test_legacy_batch_change_redirects_to_review_without_changing_password(client, mentor_headers, monkeypatch):
     imported = client.post(
         "/api/student-auth/import",
         headers=mentor_headers,
@@ -197,20 +197,16 @@ def test_mentor_can_change_batch_without_changing_password(client, mentor_header
         headers=mentor_headers,
         json={"batch": "Before Result Batch 1", "expectedBatch": "Super 30"},
     )
-    assert changed.status_code == 200, changed.text
-    result = changed.json()
-    assert result["batch"] == "Before Result Batch 1"
-    assert result["previousBatch"] == "Super 30"
-    assert result["sheetUpdated"] is True
-    assert result["mongoUpdated"] is True
-    assert calls == [("UMP0038", "Before Result Batch 1", "Super 30")]
+    assert changed.status_code == 409, changed.text
+    assert changed.json()["detail"]["code"] == "reviewed_membership_required"
+    assert calls == []
 
     login = client.post(
         "/api/student-auth/login",
         json={"studentId": "UMP0038", "password": "KeepThis#1"},
     ).json()["result"]
     assert login["success"] is True
-    assert login["batch"] == "Before Result Batch 1"
+    assert login["batch"] == "Super 30"
 
 
 def test_batch_change_requires_mentor_and_allowlisted_batch(client, mentor_headers, monkeypatch):
@@ -239,7 +235,7 @@ def test_batch_change_requires_mentor_and_allowlisted_batch(client, mentor_heade
     assert called is False
 
 
-def test_batch_change_updates_sheet_even_when_mongo_account_is_missing(client, mentor_headers, monkeypatch):
+def test_legacy_batch_change_never_writes_sheet_when_account_is_missing(client, mentor_headers, monkeypatch):
     async def fake_sheet_change(student_id, batch, expected_batch=""):
         return {
             "success": True,
@@ -256,9 +252,8 @@ def test_batch_change_updates_sheet_even_when_mongo_account_is_missing(client, m
         headers=mentor_headers,
         json={"batch": "After Result Batch 2", "expectedBatch": "Super 30"},
     )
-    assert changed.status_code == 200, changed.text
-    assert changed.json()["sheetUpdated"] is True
-    assert changed.json()["mongoUpdated"] is False
+    assert changed.status_code == 409, changed.text
+    assert changed.json()["detail"]["code"] == "reviewed_membership_required"
 
 
 def test_upsert_helper_and_status(client, mentor_headers):

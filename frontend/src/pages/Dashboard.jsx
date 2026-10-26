@@ -42,6 +42,7 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-6" data-testid="dashboard-page">
+      <div className="flex items-center justify-between rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900"><div><h2 className="font-semibold">Batch & group workspaces</h2><p className="text-xs text-slate-500">Current roster, day-wise tracker and existing student records.</p></div><button onClick={() => navigate('/batches')} className="rounded-lg bg-blue-600 px-4 py-2 text-sm text-white">Open batches</button></div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <button
           type="button"

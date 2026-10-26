@@ -183,4 +183,12 @@ const configureDevServer = webpackConfig.devServer;
 webpackConfig.devServer = (devServerConfig) =>
   makeDevServerV5Compatible(configureDevServer(devServerConfig));
 
+// Match the existing webpack @ alias in component/integration tests too.
+webpackConfig.jest = {
+  configure: (config) => ({
+    ...config,
+    moduleNameMapper: { ...config.moduleNameMapper, '^@/(.*)$': '<rootDir>/src/$1' },
+  }),
+};
+
 module.exports = webpackConfig;

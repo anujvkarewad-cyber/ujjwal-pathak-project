@@ -1,12 +1,13 @@
 import { useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft, Mail, Phone, MapPin, Calendar, StickyNote, UsersRound, X } from 'lucide-react';
+import { Link, useParams, useNavigate } from 'react-router-dom';
+import { ArrowLeft, Mail, Phone, MapPin, Calendar, StickyNote, UsersRound, X, Power, PowerOff, Trash2, UserCheck } from 'lucide-react';
 import { toast } from 'sonner';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { RiskBadge, StatusBadge } from '@/components/common/RiskBadge';
 import { StudentWeeklyLine, StudentMonthlyBar, PerformanceRadar } from '@/components/charts/Charts';
 import { Skeleton } from '@/components/common/Skeleton';
-import { useStudent, useAddMentorNote, useChangeStudentBatch } from '@/api/hooks';
-import { ENROLLMENT_BATCHES } from '@/constants/batches';
+import { useStudent, useAddMentorNote } from '@/api/hooks';
+import { getAdminState, setStudentAccess, removeStudent, restoreStudent } from '@/api/studentAdmin';
 import { cn } from '@/utils/format';
 
 const Stat = ({ label, value, suffix, tone = 'text-slate-900 dark:text-white' }) => (
@@ -18,13 +19,49 @@ const Stat = ({ label, value, suffix, tone = 'text-slate-900 dark:text-white' })
 
 export default function StudentProfile() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const { data: s, isLoading } = useStudent(id);
   const [noteOpen, setNoteOpen] = useState(false);
   const [noteText, setNoteText] = useState('');
-  const [batchOpen, setBatchOpen] = useState(false);
-  const [nextBatch, setNextBatch] = useState('');
+  const [offReason, setOffReason] = useState('');
+  const [askingOff, setAskingOff] = useState(false);
   const addNote = useAddMentorNote();
-  const changeBatch = useChangeStudentBatch();
+  const queryClient = useQueryClient();
+  const { data: adminState, isLoading: adminLoading } = useQuery({
+    queryKey: ['student-admin', id],
+    queryFn: () => getAdminState(id),
+    enabled: !!id,
+  });
+  const accessMutation = useMutation({
+    mutationFn: ({ enabled, reason }) => setStudentAccess(id, enabled, reason),
+    onSuccess: (res) => {
+      setAskingOff(false);
+      setOffReason('');
+      queryClient.invalidateQueries({ queryKey: ['student-admin', id] });
+      toast.success(res?.accessEnabled ? 'App access turned ON.' : 'App access turned OFF.');
+    },
+    onError: (error) => toast.error(error?.message || 'Access could not be changed.'),
+  });
+  const removeMutation = useMutation({
+    mutationFn: () => removeStudent(id, id),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['student-admin', id] });
+      queryClient.invalidateQueries({ queryKey: ['tracker'] });
+      queryClient.invalidateQueries({ queryKey: ['students'] });
+      toast.success('Student removed. They can no longer log in.');
+    },
+    onError: (error) => toast.error(error?.message || 'Could not remove the student.'),
+  });
+  const restoreMutation = useMutation({
+    mutationFn: () => restoreStudent(id),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['student-admin', id] });
+      queryClient.invalidateQueries({ queryKey: ['tracker'] });
+      queryClient.invalidateQueries({ queryKey: ['students'] });
+      toast.success('Student restored.');
+    },
+    onError: (error) => toast.error(error?.message || 'Could not restore the student.'),
+  });
 
   if (isLoading) {
     return (
@@ -57,27 +94,7 @@ export default function StudentProfile() {
     });
   };
 
-  const openBatchChange = () => {
-    setNextBatch('');
-    setBatchOpen(true);
-  };
-
-  const submitBatchChange = (e) => {
-    e.preventDefault();
-    if (!nextBatch || nextBatch === s.batch) return;
-    changeBatch.mutate({ id: s.id, batch: nextBatch, expectedBatch: s.batch || '' }, {
-      onSuccess: (result) => {
-        setBatchOpen(false);
-        setNextBatch('');
-        if (result?.mongoUpdated === false) {
-          toast.success('Batch updated in the Students Sheet. Mongo will sync when this account is activated.');
-        } else {
-          toast.success(`Batch changed to ${result?.batch || nextBatch}.`);
-        }
-      },
-      onError: (error) => toast.error(error?.message || 'Batch could not be changed.'),
-    });
-  };
+  const openBatchChange = () => navigate(`/batches?studentId=${encodeURIComponent(s.id)}&action=transfer`);
 
   return (
     <div className="space-y-6" data-testid="student-profile">
@@ -103,6 +120,7 @@ export default function StudentProfile() {
               >
                 <UsersRound className="w-4 h-4" /> Change Batch
               </button>
+              <Link to={`/batches?studentId=${encodeURIComponent(s.id)}&action=transfer`} className="inline-flex items-center gap-2 rounded-lg border border-blue-200 px-3 py-2 text-xs text-blue-600">Change batch / group · reviewed</Link>
             </div>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">{s.id} · {s.level} · {s.batch} · Attempt {s.attempt}</p>
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
@@ -119,6 +137,130 @@ export default function StudentProfile() {
         <Stat label="Attendance" value={s.attendance} suffix="%" tone={s.attendance >= 80 ? 'text-emerald-600 dark:text-emerald-400' : 'text-amber-600 dark:text-amber-400'} />
         <Stat label="Study Hours / day" value={s.studyHours} suffix="h" />
         <Stat label="Weekly Submission" value={s.submissionRate} suffix="%" />
+      </div>
+
+      <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6" data-testid="access-removal-card">
+        <h3 className="font-heading font-semibold text-slate-900 dark:text-white text-lg">Access &amp; Removal</h3>
+        <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+          Turn app access off for students who stop studying — they see the reason when they try to log in.
+          Removing a student blocks login and hides them from tracker views, leaderboards and notifications (their data is kept).
+        </p>
+        {adminLoading || !adminState ? (
+          <div className="mt-4"><Skeleton className="h-16 w-full" /></div>
+        ) : (
+          <div className="mt-5 space-y-4">
+            <div className="flex flex-wrap items-start justify-between gap-4 rounded-lg border border-slate-100 dark:border-slate-800 p-4">
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="text-[11px] uppercase tracking-[0.16em] font-semibold text-slate-500 dark:text-slate-400">App access</span>
+                  <span className={cn(
+                    'inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-bold',
+                    adminState.accessEnabled
+                      ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300'
+                      : 'bg-rose-100 text-rose-700 dark:bg-rose-950/50 dark:text-rose-300'
+                  )} data-testid="access-status">
+                    {adminState.accessEnabled ? 'ON' : 'OFF'}
+                  </span>
+                </div>
+                {!adminState.accessEnabled && (
+                  <p className="mt-1.5 text-xs text-rose-700 dark:text-rose-300">
+                    Blocked{adminState.accessReason ? ` — ${adminState.accessReason}` : ''}
+                    {adminState.accessUpdatedAt ? ` (since ${String(adminState.accessUpdatedAt).slice(0, 10)})` : ''}
+                  </p>
+                )}
+              </div>
+              {adminState.accessEnabled ? (
+                <button
+                  type="button"
+                  onClick={() => setAskingOff((v) => !v)}
+                  className="h-9 px-4 rounded-lg border border-rose-200 text-rose-700 hover:bg-rose-50 text-xs font-semibold inline-flex items-center gap-1.5 dark:border-rose-800 dark:text-rose-300 dark:hover:bg-rose-950/30"
+                  data-testid="access-turn-off"
+                >
+                  <PowerOff className="w-3.5 h-3.5" /> Turn access OFF
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  disabled={accessMutation.isPending}
+                  onClick={() => accessMutation.mutate({ enabled: true, reason: '' })}
+                  className="h-9 px-4 rounded-lg border border-emerald-200 text-emerald-700 hover:bg-emerald-50 text-xs font-semibold inline-flex items-center gap-1.5 disabled:opacity-50 dark:border-emerald-800 dark:text-emerald-300 dark:hover:bg-emerald-950/30"
+                  data-testid="access-turn-on"
+                >
+                  <Power className="w-3.5 h-3.5" /> Turn access ON
+                </button>
+              )}
+              {askingOff && (
+                <form
+                  className="w-full"
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    if (!offReason.trim()) return;
+                    accessMutation.mutate({ enabled: false, reason: offReason.trim() });
+                  }}
+                >
+                  <label className="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1">
+                    Reason (shown to the student on login)
+                  </label>
+                  <textarea
+                    value={offReason}
+                    onChange={(e) => setOffReason(e.target.value)}
+                    rows={2}
+                    placeholder="e.g. Due to non-submission of tracker"
+                    className="w-full rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-sm dark:text-slate-100"
+                    data-testid="access-off-reason"
+                  />
+                  <div className="mt-2 flex items-center gap-2">
+                    <button type="submit" disabled={accessMutation.isPending || !offReason.trim()} className="h-9 px-4 rounded-lg bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold disabled:opacity-50">
+                      {accessMutation.isPending ? 'Saving…' : 'Confirm — turn OFF'}
+                    </button>
+                    <button type="button" onClick={() => { setAskingOff(false); setOffReason(''); }} className="h-9 px-4 rounded-lg border border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-600 dark:text-slate-300">
+                      Cancel
+                    </button>
+                  </div>
+                </form>
+              )}
+            </div>
+
+            <div className="flex flex-wrap items-center justify-between gap-4 rounded-lg border border-slate-100 dark:border-slate-800 p-4">
+              <div>
+                <span className="text-[11px] uppercase tracking-[0.16em] font-semibold text-slate-500 dark:text-slate-400">Program membership</span>
+                <p className="mt-1 text-xs text-slate-600 dark:text-slate-300">
+                  {adminState.removed
+                    ? `Removed${adminState.removedAt ? ` on ${String(adminState.removedAt).slice(0, 10)}` : ''}. Restore brings everything back.`
+                    : 'Active in the program.'}
+                </p>
+              </div>
+              {adminState.removed ? (
+                <button
+                  type="button"
+                  disabled={restoreMutation.isPending}
+                  onClick={() => restoreMutation.mutate()}
+                  className="h-9 px-4 rounded-lg border border-emerald-200 text-emerald-700 hover:bg-emerald-50 text-xs font-semibold inline-flex items-center gap-1.5 disabled:opacity-50 dark:border-emerald-800 dark:text-emerald-300 dark:hover:bg-emerald-950/30"
+                  data-testid="restore-student-btn"
+                >
+                  <UserCheck className="w-3.5 h-3.5" /> Restore student
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  disabled={removeMutation.isPending}
+                  onClick={() => {
+                    const ok = window.confirm(
+                      `Remove ${s.name} (${s.id}) from the program?\n\n` +
+                      'They will lose app access immediately and drop out of tracker views, ' +
+                      'leaderboards and notifications. Their data is kept and you can restore them later.'
+                    );
+                    if (ok) removeMutation.mutate();
+                  }}
+                  className="h-9 px-4 rounded-lg border border-rose-200 text-rose-700 hover:bg-rose-50 text-xs font-semibold inline-flex items-center gap-1.5 disabled:opacity-50 dark:border-rose-800 dark:text-rose-300 dark:hover:bg-rose-950/30"
+                  data-testid="remove-student-btn"
+                >
+                  <Trash2 className="w-3.5 h-3.5" /> Remove from program
+                </button>
+              )}
+            </div>
+          </div>
+        )}
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
@@ -171,47 +313,6 @@ export default function StudentProfile() {
           <span className="inline-flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-rose-300 dark:bg-rose-500/40" /> Missed</span>
         </div>
       </div>
-
-      {batchOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm" onClick={() => !changeBatch.isPending && setBatchOpen(false)}>
-          <form onClick={(e) => e.stopPropagation()} onSubmit={submitBatchChange} className="w-full max-w-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-xl" data-testid="change-batch-dialog">
-            <div className="flex items-center justify-between">
-              <div>
-                <h4 className="font-heading font-semibold text-slate-900 dark:text-white">Change student batch</h4>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{s.id} · Current: <span className="font-semibold">{s.batch || 'Unassigned'}</span></p>
-              </div>
-              <button type="button" disabled={changeBatch.isPending} onClick={() => setBatchOpen(false)} className="p-1 text-slate-400 hover:text-slate-700 dark:hover:text-white disabled:opacity-50" aria-label="Close">
-                <X className="w-4 h-4" />
-              </button>
-            </div>
-
-            <label htmlFor="student-batch-select" className="block mt-5 text-sm font-semibold text-slate-700 dark:text-slate-200">Allot correct batch</label>
-            <select
-              id="student-batch-select"
-              data-testid="batch-select"
-              value={nextBatch}
-              onChange={(e) => setNextBatch(e.target.value)}
-              className="mt-2 w-full h-11 px-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 text-sm text-slate-800 dark:text-slate-100 outline-none focus:border-[#2563EB]"
-            >
-              <option value="">Select the correct batch</option>
-              {ENROLLMENT_BATCHES.map((batch) => (
-                <option key={batch} value={batch} disabled={batch === s.batch}>{batch}{batch === s.batch ? ' (current)' : ''}</option>
-              ))}
-            </select>
-
-            <div className="mt-4 rounded-lg border border-amber-200 dark:border-amber-500/30 bg-amber-50 dark:bg-amber-500/10 px-3 py-2.5 text-xs text-amber-800 dark:text-amber-200">
-              This updates the Students Sheet and the student app. Password, email, attempt and group will not change.
-            </div>
-
-            <div className="mt-5 flex items-center justify-end gap-2">
-              <button type="button" disabled={changeBatch.isPending} onClick={() => setBatchOpen(false)} className="h-9 px-4 rounded-lg border border-slate-200 dark:border-slate-800 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors disabled:opacity-50">Cancel</button>
-              <button type="submit" disabled={!nextBatch || nextBatch === s.batch || changeBatch.isPending} data-testid="confirm-batch-change" className="h-9 px-4 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
-                {changeBatch.isPending ? 'Updating...' : 'Confirm batch'}
-              </button>
-            </div>
-          </form>
-        </div>
-      )}
 
       {noteOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm" onClick={() => setNoteOpen(false)}>

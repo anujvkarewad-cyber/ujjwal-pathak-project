@@ -79,6 +79,7 @@ function jsonpCall(action, payload) {
 }
 
 export async function apiCall(action, payload = {}) {
+  if (USE_MOCK && process.env.NODE_ENV !== 'test') throw new Error('Current Apps Script source is not configured. Demo data is disabled.');
   if (USE_MOCK) {
     if (MOCK_DELAY_MS > 0) await wait(MOCK_DELAY_MS);
     return mockHandle(action, payload);
@@ -105,6 +106,7 @@ function postCall(action, payload) {
 }
 
 export async function apiCallLarge(action, payload = {}) {
+  if (USE_MOCK && process.env.NODE_ENV !== 'test') throw new Error('Current Apps Script source is not configured. Demo data is disabled.');
   if (USE_MOCK) {
     if (MOCK_DELAY_MS > 0) await wait(MOCK_DELAY_MS);
     return mockHandle(action, payload);
@@ -166,6 +168,7 @@ function postCallWithProgress(action, payload, onProgress) {
 }
 
 export async function apiCallLargeWithProgress(action, payload = {}, onProgress) {
+  if (USE_MOCK && process.env.NODE_ENV !== 'test') throw new Error('Current Apps Script source is not configured. Demo data is disabled.');
   if (USE_MOCK) {
     if (onProgress) {
       // Fake a smooth progress bar in mock/dev mode.

@@ -13,8 +13,8 @@ import * as mentorApi from './mentor';
 import * as feedbackApi from './feedback';
 
 // ── Students ────────────────────────────────────────────────────────────
-export const useStudents = () =>
-  useQuery({ queryKey: ['students'], queryFn: studentsApi.getStudents });
+export const useStudents = ({ enabled = true } = {}) =>
+  useQuery({ queryKey: ['students'], queryFn: studentsApi.getStudents, enabled });
 
 export const useStudent = (id) =>
   useQuery({ queryKey: ['student', id], queryFn: () => studentsApi.getStudentById(id), enabled: !!id });
@@ -76,6 +76,50 @@ export const useMissedTrackerReport = ({ from, to, scope = 'range', enabled = tr
     enabled: enabled && (scope === 'joined-to-date' || Boolean(from && to)),
   });
 
+// Leave / absent self-reports for one day (mentor can cancel or override).
+export const useAttendanceDay = ({ date, enabled = true }) =>
+  useQuery({
+    queryKey: ['tracker', 'attendance', date],
+    queryFn: () => trackerApi.getAttendanceDay({ date }),
+    enabled: enabled && Boolean(date),
+    staleTime: 15000,
+  });
+
+export const useStudentAttendance = (studentId) =>
+  useQuery({
+    queryKey: ['tracker', 'attendance', 'student', studentId],
+    queryFn: () => trackerApi.getStudentAttendance(studentId),
+    enabled: Boolean(studentId),
+  });
+
+const invalidateTracker = (queryClient) => {
+  queryClient.invalidateQueries({ queryKey: ['tracker'] });
+};
+
+export const useMarkMentorAbsent = () => {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: trackerApi.markMentorAbsent,
+    onSuccess: () => invalidateTracker(queryClient),
+  });
+};
+
+export const useMarkMentorLeave = () => {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: trackerApi.markMentorLeave,
+    onSuccess: () => invalidateTracker(queryClient),
+  });
+};
+
+export const useCancelAttendance = () => {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: trackerApi.cancelAttendance,
+    onSuccess: () => invalidateTracker(queryClient),
+  });
+};
+
 // ── Leaderboard ─────────────────────────────────────────────────────────
 // Rank is computed server-side (composite score, unique ranks, per segment), so
 // the period AND the segment are part of the query key.
@@ -93,7 +137,7 @@ export const useCreateAnnouncement = () => {
   const qc = useQueryClient();
   return useMutation({
     mutationFn: announcementsApi.createAnnouncement,
-    onSuccess: () => qc.invalidateQueries({ queryKey: ['announcements'] }),
+    onSuccess: () => { qc.invalidateQueries({ queryKey: ['announcements'] }); qc.invalidateQueries({ queryKey: ['workspace-announcements'] }); },
   });
 };
 
@@ -101,7 +145,7 @@ export const useTogglePinAnnouncement = () => {
   const qc = useQueryClient();
   return useMutation({
     mutationFn: (id) => announcementsApi.togglePinAnnouncement(id),
-    onSuccess: () => qc.invalidateQueries({ queryKey: ['announcements'] }),
+    onSuccess: () => { qc.invalidateQueries({ queryKey: ['announcements'] }); qc.invalidateQueries({ queryKey: ['workspace-announcements'] }); },
   });
 };
 
@@ -113,6 +157,7 @@ export const useDeleteAnnouncement = () => {
       await qc.cancelQueries({ queryKey: ['announcements'] });
       qc.setQueryData(['announcements'], (rows = []) => rows.filter((row) => row.id !== id));
       qc.invalidateQueries({ queryKey: ['announcements'] });
+      qc.invalidateQueries({ queryKey: ['workspace-announcements'] });
     },
   });
 };
@@ -133,6 +178,14 @@ export const useDeleteNote = () => {
   const qc = useQueryClient();
   return useMutation({
     mutationFn: (id) => notesApi.deleteNote(id),
+    onSuccess: () => qc.invalidateQueries({ queryKey: ['notes'] }),
+  });
+};
+
+export const useUpdateNote = () => {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: ({ id, ...payload }) => notesApi.updateNote(id, payload),
     onSuccess: () => qc.invalidateQueries({ queryKey: ['notes'] }),
   });
 };

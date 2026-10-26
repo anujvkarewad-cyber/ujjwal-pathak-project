@@ -9,6 +9,7 @@ Every NEW student message can optionally notify the mentor on WhatsApp
 """
 from datetime import datetime, timezone
 
+from routers.dashboard_access import dashboard_student, own_payload
 from fastapi import APIRouter, Depends, HTTPException, Query
 
 from auth import require_mentor
@@ -37,18 +38,20 @@ async def _thread_doc(db, student_id: str) -> dict:
 
 
 @router.get("/thread")
-async def get_thread(studentId: str = Query(min_length=1, max_length=64)):
+async def get_thread(studentId: str = Query(min_length=1, max_length=64), principal=Depends(dashboard_student)):
     """Student app: full conversation with the mentor."""
     db = get_db()
+    studentId = own_payload(principal, {"studentId":studentId})["studentId"]
     doc = await _thread_doc(db, studentId)
     # student opening the thread clears nothing — unread count is mentor-side only
-    return {"ok": True, "studentId": studentId, "messages": doc.get("messages", [])}
+    return {"ok": True, "studentId": studentId, "messages": [m for m in doc.get("messages", []) if not str(m.get("id") or "").startswith("ws-")]}
 
 
 @router.post("/send")
-async def send_message(body: MessageSendRequest):
+async def send_message(body: MessageSendRequest, principal=Depends(dashboard_student)):
     """Student app → mentor. Appends to the thread and (optionally) pings the
     mentor on WhatsApp."""
+    body.studentId = own_payload(principal, {"studentId":body.studentId})["studentId"]
     db = get_db()
     message = {"id": f"m-{datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f')}",
                "from": "student", "text": body.text, "at": _now()}

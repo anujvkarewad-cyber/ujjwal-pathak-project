@@ -2,23 +2,62 @@ import { apiCall, apiCallLarge, apiCallLargeWithProgress, apiCallWithRetry } fro
 
 import { apiCall as backendCall } from './backendClient';
 
+const isHidden = (row, hidden) => [
+  row.id ? 'id:' + String(row.id).trim() : '',
+  row.fileId ? 'file:' + String(row.fileId).trim() : '',
+  row.fileUrl ? 'url:' + String(row.fileUrl).trim() : '',
+].some((key) => key && hidden.has(key));
+
+// Students read their notes from the app backend (Mongo), not from the Sheet —
+// the Sheet is only a best-effort mirror, so the two used to disagree (a file
+// published from the web Notes Inbox appeared in the app but not here). The
+// dashboard now reads the SAME app list, with the Sheet-backed Apps Script list
+// kept only as a fallback for when the backend is unreachable.
 export const getNotes = async () => {
+  try {
+    const [published, state] = await Promise.all([
+      backendCall('/api/notes-inbox/published'),
+      backendCall('/api/student-dashboard/materials/hidden'),
+    ]);
+    if (published && Array.isArray(published.notes)) {
+      const hidden = new Set(state.hiddenKeys || []);
+      return published.notes.filter((row) => !isHidden(row, hidden));
+    }
+  } catch {
+    /* backend down — fall through to the sheet-backed list */
+  }
   const [rows, state] = await Promise.all([
     apiCall('notes.list'), backendCall('/api/student-dashboard/materials/hidden'),
   ]);
   const hidden = new Set(state.hiddenKeys || []);
-  return (Array.isArray(rows) ? rows : []).filter((row) => ![
-    row.id ? 'id:' + String(row.id).trim() : '',
-    row.fileId ? 'file:' + String(row.fileId).trim() : '',
-    row.fileUrl ? 'url:' + String(row.fileUrl).trim() : '',
-  ].some((key) => key && hidden.has(key)));
+  return (Array.isArray(rows) ? rows : []).filter((row) => !isHidden(row, hidden));
 };
+
+// Edit a published note (title / description / subject / group / batch). Writes
+// to the app list students read, and to the Sheet mirror best-effort.
+// Ek saath kai notes par series + chapter (purane notes chapter-wise divide karne ke liye).
+export const bulkUpdateNotes = ({ ids, series, chapter }) =>
+  backendCall('/api/notes-inbox/notes/bulk-update', {
+    method: 'POST',
+    body: { ids, series, chapter },
+  });
+
+export const updateNote = (id, payload) =>
+  backendCall('/api/notes-inbox/notes/update', { method: 'POST', body: { id, ...payload } });
 
 // payload: { title, description, subject, audience, fileName, mimeType, fileData }
 // fileData must be base64 (no "data:application/pdf;base64," prefix).
 export const createNote = (payload) => apiCallLarge('notes.create', payload);
 
-export const deleteNote = (id) => apiCall('notes.delete', { id });
+// Delete from the app list (+ Sheet mirror row). The Drive PDF is left in place
+// on purpose — deleting a note should not destroy the file itself.
+export const deleteNote = async (id) => {
+  try {
+    return await backendCall('/api/notes-inbox/notes/delete', { method: 'POST', body: { id } });
+  } catch {
+    return apiCall('notes.delete', { id });
+  }
+};
 
 // Single-shot upload with native XHR progress. Kept for reference / small
 // payloads, but for PDF notes prefer createNoteChunked below — a single
@@ -58,7 +97,8 @@ export async function createNoteChunked(payload, onProgress) {
   const totalChunks = Math.max(1, Math.ceil(fileData.length / CHUNK_SIZE));
   // base64 is ~4/3 the size of the original bytes — scale back down so the
   // progress bar reflects the real file size, not the inflated encoding.
-  const rawTotalBytes = Math.floor((fileData.length * 3) / 4);
+  const padding = fileData.endsWith('==') ? 2 : fileData.endsWith('=') ? 1 : 0;
+  const rawTotalBytes = Math.floor((fileData.length * 3) / 4) - padding;
 
   for (let i = 0; i < totalChunks; i++) {
     const chunk = fileData.slice(i * CHUNK_SIZE, (i + 1) * CHUNK_SIZE);

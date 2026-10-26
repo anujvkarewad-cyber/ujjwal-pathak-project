@@ -1,4 +1,5 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   AlertCircle,
   CalendarDays,
@@ -6,13 +7,21 @@ import {
   Download,
   FileText,
   Minus,
+  Pencil,
   Search,
+  Settings2,
+  Trash2,
+  UserCheck,
   X,
 } from 'lucide-react';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useMissedTrackerReport } from '@/api/hooks';
+import { getTrackerStartConfig, saveTrackerStartConfig } from '@/api/tracker';
+import { removeStudent, restoreStudent, getRemovedStudents } from '@/api/studentAdmin';
 import { Skeleton } from '@/components/common/Skeleton';
+import AttendanceModal from '@/components/tracker/AttendanceModal';
 import {
   ALL_TRACKER_BATCHES,
   ALL_TRACKER_GROUPS,
@@ -51,10 +60,12 @@ function addDays(value, amount) {
   return toIsoDay(day);
 }
 
-function mondayOfWeek(value) {
+// The week the mentor exports must be the week the app ranks on: Sunday..Saturday
+// (backend week_window.py), because students who log Sunday on Monday morning still
+// belong to that day's week. getUTCDay() is 0 on Sunday, so no offset is needed.
+function sundayOfWeek(value) {
   const day = parseIsoDay(value);
-  const distance = (day.getUTCDay() + 6) % 7;
-  day.setUTCDate(day.getUTCDate() - distance);
+  day.setUTCDate(day.getUTCDate() - day.getUTCDay());
   return toIsoDay(day);
 }
 
@@ -90,8 +101,21 @@ function csvCell(value) {
 }
 
 function attendanceStatus(row, day) {
+  // A real submission is always visible, even before the computed start date
+  // (bulk-imported histories can predate the derived window). Owner rule
+  // (14-Oct-2026): a submitted day always shows the tick, even if the student
+  // also declared himself absent/on leave that day.
+  if ((row.submittedDates || []).includes(day)) return 'Submitted';
+  // Student self-reported leave / absent (A = absent, L = on leave).
+  if ((row.leaveDates || []).includes(day)) return 'Leave';
+  if ((row.absentDates || []).includes(day)) return 'Absent';
   if (day < row.expectedFrom) return 'Not expected';
-  return (row.submittedDates || []).includes(day) ? 'Submitted' : 'Not submitted';
+  return 'Not submitted';
+}
+
+/** Per-day excuse detail (kind + reason + record id) for one student. */
+function excuseFor(row, day) {
+  return (row.excuseDetails || []).find((entry) => entry.date === day) || null;
 }
 
 function downloadReport(data, dates, mode, batchLabel, groupLabel) {
@@ -100,9 +124,12 @@ function downloadReport(data, dates, mode, batchLabel, groupLabel) {
     'Student Name',
     'Group',
     'Batch',
+    'Tracker Start',
     ...dates.map((day) => `${displayDate(day)} (${weekday(day)})`),
     'Expected Days',
     'Submitted Days',
+    'Leave Days',
+    'Absent Days',
     'Missed Days',
   ];
   const rows = (data.items || []).map((row) => [
@@ -110,9 +137,14 @@ function downloadReport(data, dates, mode, batchLabel, groupLabel) {
     row.studentName,
     row.group,
     row.batch,
+    row.effectiveStart
+      ? `${displayDate(row.effectiveStart)}${row.startSource === 'override' ? ' (manual)' : ''}`
+      : '',
     ...dates.map((day) => attendanceStatus(row, day)),
     row.expectedDays,
     row.submittedDays,
+    row.leaveDays || 0,
+    row.absentDays || 0,
     row.missedDays,
   ]);
   const csv = [headers, ...rows].map((row) => row.map(csvCell).join(',')).join('\r\n');
@@ -137,6 +169,8 @@ const PDF_GROUPS = [
 function pdfStatus(row, day) {
   const status = attendanceStatus(row, day);
   if (status === 'Submitted') return 'S';
+  if (status === 'Leave') return 'L';
+  if (status === 'Absent') return 'A';
   if (status === 'Not submitted') return 'M';
   return '—';
 }
@@ -253,37 +287,114 @@ function downloadGroupPdf(data, dates, mode, batchLabel, groupFilter) {
   doc.save(`jan-2027-tracker-attendance-${scope}-${mode}-${data.from}-to-${data.to}.pdf`);
 }
 
-function AttendanceCell({ status, day }) {
+function AttendanceCell({ status, day, reason, onOpen }) {
+  const clickable = typeof onOpen === 'function';
+  const wrap = (node) =>
+    clickable ? (
+      <button type="button" onClick={onOpen} className="mx-auto block rounded-full focus:outline-none focus:ring-2 focus:ring-[#2563EB]/40">
+        {node}
+      </button>
+    ) : (
+      node
+    );
+  if (status === 'Leave') {
+    return wrap(
+      <div
+        title={`${displayDate(day)}: On leave${reason ? ` — ${reason}` : ''}`}
+        aria-label={`${displayDate(day)} on leave`}
+        data-testid={`attendance-leave-${day}`}
+        className="mx-auto flex h-7 w-7 items-center justify-center rounded-full bg-blue-100 text-xs font-black text-[#1D4ED8] dark:bg-blue-950/60 dark:text-blue-300"
+      >
+        L
+      </div>,
+    );
+  }
+  if (status === 'Absent') {
+    return wrap(
+      <div
+        title={`${displayDate(day)}: Absent${reason ? ` — ${reason}` : ''}`}
+        aria-label={`${displayDate(day)} absent`}
+        data-testid={`attendance-absent-${day}`}
+        className="mx-auto flex h-7 w-7 items-center justify-center rounded-full bg-amber-100 text-xs font-black text-amber-700 dark:bg-amber-950/60 dark:text-amber-300"
+      >
+        A
+      </div>,
+    );
+  }
   if (status === 'Submitted') {
-    return (
+    return wrap(
       <div title={`${displayDate(day)}: Submitted`} aria-label={`${displayDate(day)} submitted`} className="mx-auto flex h-7 w-7 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300">
         <Check className="h-4 w-4" strokeWidth={3} />
-      </div>
+      </div>,
     );
   }
   if (status === 'Not submitted') {
-    return (
+    return wrap(
       <div title={`${displayDate(day)}: Not submitted`} aria-label={`${displayDate(day)} not submitted`} className="mx-auto flex h-7 w-7 items-center justify-center rounded-full bg-rose-100 text-rose-700 dark:bg-rose-950/60 dark:text-rose-300">
         <X className="h-4 w-4" strokeWidth={3} />
-      </div>
+      </div>,
     );
   }
-  return (
+  return wrap(
     <div title={`${displayDate(day)}: Not expected`} aria-label={`${displayDate(day)} not expected`} className="mx-auto flex h-7 w-7 items-center justify-center rounded-full bg-slate-100 text-slate-400 dark:bg-slate-800">
       <Minus className="h-4 w-4" />
-    </div>
+    </div>,
   );
 }
 
-export default function MissedTrackerReport() {
+export default function MissedTrackerReport({ scopedBatch, scopedGroup } = {}) {
   const today = isoDayInIndia();
   const [mode, setMode] = useState('full');
   const [weekAnchor, setWeekAnchor] = useState(today);
   const [month, setMonth] = useState(today.slice(0, 7));
-  const [batchFilter, setBatchFilter] = useState(ALL_TRACKER_BATCHES);
-  const [groupFilter, setGroupFilter] = useState(ALL_TRACKER_GROUPS);
+  const [batchFilter, setBatchFilter] = useState(scopedBatch ? scopedBatch.trim().toLowerCase().replace(/\s+/g, ' ') : ALL_TRACKER_BATCHES);
+  const [groupFilter, setGroupFilter] = useState(scopedGroup || ALL_TRACKER_GROUPS);
   const [search, setSearch] = useState('');
-  const [missedOnly, setMissedOnly] = useState(true);
+  const [missedOnly, setMissedOnly] = useState(!scopedBatch);
+  const [showStartConfig, setShowStartConfig] = useState(false);
+  const [editingStart, setEditingStart] = useState(null); // { id, value } — per-student override editor
+  const [showRemoved, setShowRemoved] = useState(false);
+  const [adminNotice, setAdminNotice] = useState('');
+  // Cell clicked in the grid -> mark / change / cancel leave|absent for that day.
+  const [attendanceCell, setAttendanceCell] = useState(null);
+  const batchDraftRef = useRef({}); // batch label → draft date for the config panel
+  const queryClient = useQueryClient();
+  const { data: startConfig } = useQuery({
+    queryKey: ['tracker-start-config'],
+    queryFn: getTrackerStartConfig,
+  });
+  const saveConfigMutation = useMutation({
+    mutationFn: saveTrackerStartConfig,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['tracker-start-config'] });
+      queryClient.invalidateQueries({ queryKey: ['tracker'] });
+    },
+  });
+  const { data: removedData, isFetching: removedFetching } = useQuery({
+    queryKey: ['tracker-removed-students'],
+    queryFn: getRemovedStudents,
+    enabled: showRemoved,
+  });
+  const removeMutation = useMutation({
+    mutationFn: (studentId) => removeStudent(studentId, studentId),
+    onSuccess: (_res, studentId) => {
+      setAdminNotice(`Student removed. They no longer appear in tracker views and cannot log in to the app.`);
+      queryClient.invalidateQueries({ queryKey: ['tracker'] });
+      queryClient.invalidateQueries({ queryKey: ['tracker-removed-students'] });
+      queryClient.invalidateQueries({ queryKey: ['students'] });
+    },
+    onError: (err) => setAdminNotice(err?.message || 'Could not remove the student. Please try again.'),
+  });
+  const restoreMutation = useMutation({
+    mutationFn: (studentId) => restoreStudent(studentId),
+    onSuccess: () => {
+      setAdminNotice('Student restored.');
+      queryClient.invalidateQueries({ queryKey: ['tracker'] });
+      queryClient.invalidateQueries({ queryKey: ['tracker-removed-students'] });
+      queryClient.invalidateQueries({ queryKey: ['students'] });
+    },
+    onError: (err) => setAdminNotice(err?.message || 'Could not restore the student. Please try again.'),
+  });
 
   const range = useMemo(() => {
     if (mode === 'full') return { scope: 'joined-to-date' };
@@ -292,7 +403,7 @@ export default function MissedTrackerReport() {
       const monthEnd = lastDayOfMonth(month);
       return { from, to: monthEnd > today ? today : monthEnd, scope: 'range' };
     }
-    const from = mondayOfWeek(weekAnchor);
+    const from = sundayOfWeek(weekAnchor);
     const weekEnd = addDays(from, 6);
     return { from, to: weekEnd > today ? today : weekEnd, scope: 'range' };
   }, [mode, month, weekAnchor, today]);
@@ -300,6 +411,11 @@ export default function MissedTrackerReport() {
   const { data, isLoading, isFetching, error } = useMissedTrackerReport(range);
 
   const batchOptions = useMemo(() => trackerBatchOptions(data?.items || []), [data?.items]);
+  const configBatchLabels = useMemo(() => {
+    const fromData = batchOptions.map((option) => option.label).filter(Boolean);
+    const fromConfig = Object.keys(startConfig?.batchStarts || {});
+    return [...new Set([...fromData, ...fromConfig])].sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' }));
+  }, [batchOptions, startConfig]);
   const selectedBatchLabel = batchFilter === ALL_TRACKER_BATCHES
     ? 'All Batches'
     : batchOptions.find((option) => option.value === batchFilter)?.label || 'Selected Batch';
@@ -392,7 +508,7 @@ export default function MissedTrackerReport() {
 
           {mode === 'full' ? (
             <div className="rounded-lg border border-blue-100 bg-blue-50 px-3 py-2 text-xs font-semibold text-blue-700 dark:border-blue-900 dark:bg-blue-950/40 dark:text-blue-300">
-              Calendar starts 28 Sep 2026 · students joining later start from their own joining date
+              Calendar starts 28 Sep 2026 · each student is counted only from their own start date (joining / batch start / manual)
             </div>
           ) : mode === 'weekly' ? (
             <label className="space-y-1">
@@ -423,6 +539,7 @@ export default function MissedTrackerReport() {
           <label className="space-y-1">
             <span className="block text-xs font-semibold text-slate-500 dark:text-slate-400">Batch</span>
             <select
+              disabled={!!scopedBatch}
               value={batchFilter}
               onChange={(event) => setBatchFilter(event.target.value)}
               className="h-10 min-w-52 rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
@@ -438,6 +555,7 @@ export default function MissedTrackerReport() {
           <label className="space-y-1">
             <span className="block text-xs font-semibold text-slate-500 dark:text-slate-400">Group</span>
             <select
+              disabled={!!scopedGroup}
               value={groupFilter}
               onChange={(event) => setGroupFilter(event.target.value)}
               className="h-10 min-w-36 rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
@@ -501,6 +619,22 @@ export default function MissedTrackerReport() {
             <div className="flex flex-wrap items-center gap-2">
               <button
                 type="button"
+                onClick={() => setShowStartConfig((value) => !value)}
+                className={`h-9 rounded-lg border px-3 text-xs font-semibold inline-flex items-center gap-1.5 ${showStartConfig ? 'border-[#2563EB] bg-blue-50 text-[#2563EB] dark:border-blue-700 dark:bg-blue-950/40 dark:text-blue-300' : 'border-slate-200 text-slate-600 dark:border-slate-700 dark:text-slate-300'}`}
+                data-testid="tracker-start-config-toggle"
+              >
+                <Settings2 className="h-3.5 w-3.5" /> Start dates
+              </button>
+              <button
+                type="button"
+                onClick={() => setShowRemoved((value) => !value)}
+                className={`h-9 rounded-lg border px-3 text-xs font-semibold inline-flex items-center gap-1.5 ${showRemoved ? 'border-rose-200 bg-rose-50 text-rose-700 dark:border-rose-900 dark:bg-rose-950/40 dark:text-rose-300' : 'border-slate-200 text-slate-600 dark:border-slate-700 dark:text-slate-300'}`}
+                data-testid="tracker-removed-toggle"
+              >
+                <UserCheck className="h-3.5 w-3.5" /> Removed students
+              </button>
+              <button
+                type="button"
                 onClick={() => setMissedOnly((value) => !value)}
                 className={`h-9 rounded-lg border px-3 text-xs font-semibold ${missedOnly ? 'border-rose-200 bg-rose-50 text-rose-700 dark:border-rose-900 dark:bg-rose-950/40 dark:text-rose-300' : 'border-slate-200 text-slate-600 dark:border-slate-700 dark:text-slate-300'}`}
                 data-testid="tracker-attendance-missed-only"
@@ -521,12 +655,128 @@ export default function MissedTrackerReport() {
             </div>
           </div>
 
+          {adminNotice && (
+            <div className="mx-5 mb-4 rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 text-xs font-semibold text-slate-700 dark:border-slate-700 dark:bg-slate-800/60 dark:text-slate-200" data-testid="tracker-admin-notice">
+              {adminNotice}
+            </div>
+          )}
+
+          {showRemoved && (
+            <div className="mx-5 mb-4 rounded-lg border border-rose-200 bg-rose-50/60 p-4 dark:border-rose-900 dark:bg-rose-950/30" data-testid="tracker-removed-panel">
+              <div className="text-xs font-bold uppercase tracking-[0.14em] text-rose-800 dark:text-rose-300">
+                Removed students
+              </div>
+              <p className="mt-1 text-xs text-rose-700/90 dark:text-rose-300/90">
+                Removed students cannot log in and do not appear in tracker views, leaderboards or notifications.
+                Their data is kept — restoring brings the account back exactly as it was.
+              </p>
+              {(removedData?.removed || []).length === 0 ? (
+                <p className="mt-3 text-xs text-slate-600 dark:text-slate-300">
+                  {removedFetching ? 'Loading…' : 'No removed students.'}
+                </p>
+              ) : (
+                <ul className="mt-3 space-y-2">
+                  {(removedData?.removed || []).map((row) => (
+                    <li key={row.studentId} className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-rose-100 bg-white px-3 py-2 dark:border-rose-900/60 dark:bg-slate-900">
+                      <span className="text-xs text-slate-800 dark:text-slate-100">
+                        <b>{row.studentName || row.studentId}</b> · {row.studentId} · {row.batch || 'Unassigned'}
+                        {row.removedAt ? ` · removed ${displayDate(String(row.removedAt).slice(0, 10))}` : ''}
+                      </span>
+                      <button
+                        type="button"
+                        disabled={restoreMutation.isPending}
+                        onClick={() => restoreMutation.mutate(row.studentId)}
+                        className="h-8 rounded-lg border border-emerald-200 px-3 text-xs font-semibold text-emerald-700 hover:bg-emerald-50 disabled:opacity-50 dark:border-emerald-800 dark:text-emerald-300 dark:hover:bg-emerald-950/40"
+                        data-testid={`tracker-restore-${row.studentId}`}
+                      >
+                        Restore
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          )}
+
+          {showStartConfig && (
+            <div className="mx-5 mb-4 rounded-lg border border-blue-200 bg-blue-50/60 p-4 dark:border-blue-900 dark:bg-blue-950/30" data-testid="tracker-start-config-panel">
+              <div className="text-xs font-bold uppercase tracking-[0.14em] text-blue-800 dark:text-blue-300">
+                Batch start dates
+              </div>
+              <p className="mt-1 text-[11px] text-slate-600 dark:text-slate-400">
+                Every student is counted from the <b>day after their joining date</b>, or from their
+                <b> batch start date</b> if they joined before the batch started — whichever is later.
+                The joining day itself is never counted. To change one student's start manually, use the pencil
+                icon in the Start column — a manual override wins over both. Leave a date empty if a batch has no fixed start.
+              </p>
+              <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {configBatchLabels.map((label) => (
+                  <label key={`${label}-${startConfig?.batchStarts?.[label] || ''}`} className="block">
+                    <span className="block text-[11px] font-semibold text-slate-600 dark:text-slate-300">{label}</span>
+                    <input
+                      type="date"
+                      defaultValue={startConfig?.batchStarts?.[label] || ''}
+                      max={today}
+                      onChange={(event) => { batchDraftRef.current = { ...batchDraftRef.current, [label]: event.target.value }; }}
+                      className="mt-1 h-9 w-full rounded-lg border border-slate-200 bg-white px-2 text-xs text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
+                      data-testid={`tracker-batch-start-${label}`}
+                    />
+                  </label>
+                ))}
+                {configBatchLabels.length === 0 && (
+                  <div className="text-xs text-slate-500 dark:text-slate-400">Loading batches…</div>
+                )}
+              </div>
+              <div className="mt-3 flex flex-wrap items-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => { saveConfigMutation.mutate({ batchStarts: { ...batchDraftRef.current } }); batchDraftRef.current = {}; }}
+                  disabled={saveConfigMutation.isPending}
+                  className="h-9 rounded-lg bg-[#2563EB] px-4 text-xs font-bold text-white hover:bg-blue-700 disabled:opacity-50"
+                  data-testid="tracker-batch-start-save"
+                >
+                  {saveConfigMutation.isPending ? 'Saving…' : 'Save batch starts'}
+                </button>
+                {saveConfigMutation.isError && (
+                  <span className="text-xs font-semibold text-rose-600 dark:text-rose-400">Could not save: {saveConfigMutation.error.message}</span>
+                )}
+                {!saveConfigMutation.isError && saveConfigMutation.isSuccess && (
+                  <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">Saved — refreshing the report.</span>
+                )}
+              </div>
+            </div>
+          )}
+
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-slate-200 bg-slate-50/60 px-5 py-3 text-[11px] font-semibold text-slate-600 dark:border-slate-800 dark:bg-slate-800/30 dark:text-slate-300">
+            <span className="inline-flex items-center gap-1.5">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300"><Check className="h-3 w-3" strokeWidth={3} /></span>
+              Submitted
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-amber-100 text-[10px] font-black text-amber-700 dark:bg-amber-950/60 dark:text-amber-300">A</span>
+              Absent (student ne khud bataya)
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-100 text-[10px] font-black text-[#1D4ED8] dark:bg-blue-950/60 dark:text-blue-300">L</span>
+              On leave
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-rose-100 text-rose-700 dark:bg-rose-950/60 dark:text-rose-300"><X className="h-3 w-3" strokeWidth={3} /></span>
+              Missed
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-slate-400 dark:bg-slate-800"><Minus className="h-3 w-3" /></span>
+              Not expected
+            </span>
+            <span className="ml-auto font-normal text-slate-500 dark:text-slate-400">Kisi bhi cell par click karke Leave/Absent daal ya cancel kar sakte ho.</span>
+          </div>
           <div className="overflow-x-auto border-t border-slate-200 dark:border-slate-800">
             <table className="min-w-full border-separate border-spacing-0 text-sm" data-testid="tracker-attendance-table">
               <thead>
                 <tr className="bg-slate-50 text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-500 dark:bg-slate-800/70 dark:text-slate-400">
                   <th className="sticky left-0 z-20 min-w-56 border-b border-r border-slate-200 bg-slate-50 px-5 py-3 text-left dark:border-slate-700 dark:bg-slate-800">Student</th>
                   <th className="min-w-24 border-b border-slate-200 px-3 py-3 text-left dark:border-slate-700">Group</th>
+                  <th className="min-w-32 border-b border-l border-slate-200 px-3 py-3 text-left dark:border-slate-700">Start</th>
                   {dates.map((day) => (
                     <th key={day} className="min-w-14 border-b border-l border-slate-200 px-1 py-2 text-center dark:border-slate-700">
                       <div>{day.slice(-2)}</div>
@@ -534,6 +784,7 @@ export default function MissedTrackerReport() {
                     </th>
                   ))}
                   <th className="min-w-20 border-b border-l border-slate-200 px-2 py-3 text-center dark:border-slate-700">Submitted</th>
+                  <th className="min-w-24 border-b border-l border-slate-200 px-2 py-3 text-center dark:border-slate-700" title="Leave / absent days the student reported himself">Leave/Absent</th>
                   <th className="min-w-20 border-b border-l border-slate-200 px-2 py-3 text-center dark:border-slate-700">Missed</th>
                 </tr>
               </thead>
@@ -541,16 +792,115 @@ export default function MissedTrackerReport() {
                 {visibleItems.map((row) => (
                   <tr key={row.studentId} className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40">
                     <td className="sticky left-0 z-10 border-b border-r border-slate-100 bg-white px-5 py-3 dark:border-slate-800 dark:bg-slate-900">
-                      <div className="font-semibold text-slate-900 dark:text-white">{row.studentName}</div>
+                      <Link
+                        to={`/students/${row.studentId}`}
+                        title={`Open ${row.studentName}'s full profile`}
+                        className="font-semibold text-slate-900 dark:text-white hover:text-[#2563EB] dark:hover:text-blue-300 underline-offset-2 hover:underline"
+                        data-testid={`tracker-profile-${row.studentId}`}
+                      >
+                        {row.studentName}
+                      </Link>
                       <div className="text-xs text-slate-500">{row.studentId} · {row.batch}</div>
                     </td>
                     <td className="border-b border-slate-100 px-3 py-3 text-xs text-slate-600 dark:border-slate-800 dark:text-slate-300">{row.group}</td>
-                    {dates.map((day) => (
-                      <td key={day} className="border-b border-l border-slate-100 px-1 py-2 text-center dark:border-slate-800">
-                        <AttendanceCell status={attendanceStatus(row, day)} day={day} />
-                      </td>
-                    ))}
+                    <td className="border-b border-l border-slate-100 px-3 py-3 text-xs dark:border-slate-800">
+                      {editingStart?.id === row.studentId ? (
+                        <span className="flex items-center gap-1">
+                          <input
+                            type="date"
+                            value={editingStart.value}
+                            max={today}
+                            onChange={(event) => setEditingStart({ id: row.studentId, value: event.target.value })}
+                            className="h-7 w-28 rounded border border-slate-200 bg-white px-1 text-[11px] text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
+                            aria-label={`Tracker start date for ${row.studentName}`}
+                          />
+                          <button
+                            type="button"
+                            disabled={saveConfigMutation.isPending}
+                            onClick={() => {
+                              saveConfigMutation.mutate({ overrides: { [row.studentId]: editingStart.value || null } });
+                              setEditingStart(null);
+                            }}
+                            className="rounded bg-[#2563EB] px-1.5 py-1 text-[10px] font-bold text-white hover:bg-blue-700 disabled:opacity-50"
+                          >
+                            Save
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => setEditingStart(null)}
+                            className="rounded border border-slate-200 px-1.5 py-1 text-[10px] font-semibold text-slate-500 dark:border-slate-700 dark:text-slate-400"
+                            aria-label="Cancel start date edit"
+                          >
+                            <X className="h-3 w-3" />
+                          </button>
+                        </span>
+                      ) : (
+                        <span className="flex items-center gap-1.5 whitespace-nowrap">
+                          <span className="text-slate-600 dark:text-slate-300">
+                            {row.effectiveStart ? displayDate(row.effectiveStart) : <span className="text-slate-400">period start</span>}
+                          </span>
+                          {row.startSource === 'override' && (
+                            <span className="rounded bg-amber-100 px-1 py-0.5 text-[9px] font-bold uppercase text-amber-700 dark:bg-amber-950/50 dark:text-amber-300">manual</span>
+                          )}
+                          <button
+                            type="button"
+                            title={`Change ${row.studentName}'s tracker start date`}
+                            onClick={() => setEditingStart({ id: row.studentId, value: row.effectiveStart || row.joinedOn || today })}
+                            className="text-slate-400 hover:text-[#2563EB]"
+                            data-testid={`tracker-start-edit-${row.studentId}`}
+                          >
+                            <Pencil className="h-3 w-3" />
+                          </button>
+                          <button
+                            type="button"
+                            title={`Remove ${row.studentName} from the program`}
+                            disabled={removeMutation.isPending}
+                            onClick={() => {
+                              const ok = window.confirm(
+                                `Remove ${row.studentName} (${row.studentId}) from the program?\n\n` +
+                                'They will lose app access immediately and drop out of tracker views, ' +
+                                'leaderboards and notifications. Their data is kept and you can restore them later.'
+                              );
+                              if (ok) removeMutation.mutate(row.studentId);
+                            }}
+                            className="text-slate-400 hover:text-rose-600 disabled:opacity-50"
+                            data-testid={`tracker-remove-${row.studentId}`}
+                          >
+                            <Trash2 className="h-3 w-3" />
+                          </button>
+                        </span>
+                      )}
+                    </td>
+                    {dates.map((day) => {
+                      const excuse = excuseFor(row, day);
+                      return (
+                        <td key={day} className="border-b border-l border-slate-100 px-1 py-2 text-center dark:border-slate-800">
+                          <AttendanceCell
+                            status={attendanceStatus(row, day)}
+                            day={day}
+                            reason={excuse?.reason || ''}
+                            onOpen={() =>
+                              setAttendanceCell({
+                                student: { id: row.studentId, name: row.studentName },
+                                day,
+                                existing: excuse,
+                              })
+                            }
+                          />
+                        </td>
+                      );
+                    })}
                     <td className="border-b border-l border-slate-100 px-2 py-3 text-center font-bold text-emerald-600 dark:border-slate-800 dark:text-emerald-400">{row.submittedDays}</td>
+                    <td className="border-b border-l border-slate-100 px-2 py-3 text-center dark:border-slate-800">
+                      {row.leaveDays || row.absentDays ? (
+                        <span className="inline-flex items-center gap-1 text-[11px] font-bold">
+                          {row.leaveDays ? <span className="rounded-full bg-blue-100 px-2 py-0.5 text-[#1D4ED8] dark:bg-blue-950/50 dark:text-blue-300">{row.leaveDays}L</span> : null}
+                          {row.absentDays ? <span className="rounded-full bg-amber-100 px-2 py-0.5 text-amber-700 dark:bg-amber-950/50 dark:text-amber-300">{row.absentDays}A</span> : null}
+                        </span>
+                      ) : (
+                        <span className="text-slate-300 dark:text-slate-600">—</span>
+                      )}
+                    </td>
                     <td className="border-b border-l border-slate-100 px-2 py-3 text-center dark:border-slate-800">
                       <span className="inline-flex min-w-9 justify-center rounded-full bg-rose-100 px-2.5 py-1 font-bold text-rose-700 dark:bg-rose-950/50 dark:text-rose-300">{row.missedDays}</span>
                     </td>
@@ -558,7 +908,7 @@ export default function MissedTrackerReport() {
                 ))}
                 {visibleItems.length === 0 && (
                   <tr>
-                    <td colSpan={dates.length + 4} className="px-5 py-10 text-center text-slate-500 dark:text-slate-400">
+                    <td colSpan={dates.length + 6} className="px-5 py-10 text-center text-slate-500 dark:text-slate-400">
                       {missedOnly && cohortReport?.studentsWithMissedDays === 0 && cohortReport?.rosterCount > 0
                         ? `Every student in ${selectedBatchLabel} · ${selectedGroupLabel} submitted on every expected day in this period.`
                         : 'No students match the selected batch, group, search or display filter.'}
@@ -569,10 +919,18 @@ export default function MissedTrackerReport() {
             </table>
           </div>
           <div className="border-t border-slate-200 px-5 py-3 text-xs text-slate-500 dark:border-slate-800 dark:text-slate-400">
-            Downloads include only <b>{selectedBatchLabel} · {selectedGroupLabel}</b>. Search and “missed only” affect the on-screen table, not the complete selected-cohort download. Source: {data.source}. A genuine enrollment date is respected when present; otherwise counting starts from the displayed period’s first date as requested. Current-day status can change until a student submits.
+            Downloads include only <b>{selectedBatchLabel} · {selectedGroupLabel}</b>. Search and “missed only” affect the on-screen table, not the complete selected-cohort download. Source: {data.source}. Every student is counted from their own start date — the day after joining (joining day is never counted), the batch start date for students who joined before the batch started, or a manual override (latest wins); earlier days show <b>— Not expected</b>. Current-day status can change until a student submits.
           </div>
         </>
       )}
+
+      <AttendanceModal
+        student={attendanceCell?.student || null}
+        date={attendanceCell?.day || ''}
+        existing={attendanceCell?.existing || null}
+        open={Boolean(attendanceCell)}
+        onClose={() => setAttendanceCell(null)}
+      />
     </section>
   );
 }

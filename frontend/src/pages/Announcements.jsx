@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Pin, Send, Users, Calendar, Trash2 } from 'lucide-react';
 import { useAnnouncements, useCreateAnnouncement, useTogglePinAnnouncement, useDeleteAnnouncement } from '@/api/hooks';
-import { sendWhatsAppAnnouncement } from '@/api/messages';
 import { Skeleton } from '@/components/common/Skeleton';
 import { cn } from '@/utils/format';
 import { AlertDialog, AlertDialogContent, AlertDialogHeader, AlertDialogFooter, AlertDialogTitle, AlertDialogDescription, AlertDialogAction, AlertDialogCancel } from '@/components/ui/alert-dialog';
@@ -37,27 +36,16 @@ export default function Announcements() {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [audience, setAudience] = useState(ALL_BATCHES);
-  const [waAlso, setWaAlso] = useState(true);
-  const [waStatus, setWaStatus] = useState('');
 
   const create = (e) => {
     e.preventDefault();
     if (!title.trim() || !body.trim()) return;
-    const waText = `${title.trim()}: ${body.trim()}`;
     createMut.mutate(
       { title: title.trim(), body: body.trim(), audience },
       {
         onSuccess: async () => {
           setTitle(''); setBody(''); setAudience(ALL_BATCHES);
-          if (waAlso) {
-            setWaStatus('Sending on WhatsApp…');
-            try {
-              const r = await sendWhatsAppAnnouncement(waText);
-              setWaStatus(`WhatsApp: delivered to ${r.sent} student${r.sent === 1 ? '' : 's'} (${r.skippedNoNumber} without a saved number).`);
-            } catch {
-              setWaStatus('WhatsApp send failed — announcement still published in app.');
-            }
-          }
+
         },
       }
     );
@@ -113,17 +101,7 @@ export default function Announcements() {
           >
             {[ALL_BATCHES, ...ENROLLMENT_BATCHES].map(o => <option key={o}>{o}</option>)}
           </select>
-          <label className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200 select-none">
-            <input
-              type="checkbox"
-              checked={waAlso}
-              onChange={(e) => setWaAlso(e.target.checked)}
-              data-testid="announcement-whatsapp"
-              className="w-4 h-4 rounded border-slate-300 accent-[#2563EB]"
-            />
-            Also send on WhatsApp to students with a saved number
-          </label>
-          {waStatus && <p className="text-xs text-emerald-600 dark:text-emerald-400" data-testid="whatsapp-status">{waStatus}</p>}
+          <p className="text-xs text-slate-500">App inbox + best-effort push only. No WhatsApp sending.</p>
           <button
             type="submit"
             disabled={createMut.isPending}

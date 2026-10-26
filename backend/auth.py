@@ -95,6 +95,14 @@ async def require_mentor(request: Request) -> dict:
         raise HTTPException(status_code=401, detail="Invalid or expired token")
     if claims.get("role") != "mentor":
         raise HTTPException(status_code=403, detail="Mentor role required")
+    # JWT role is not current account authority. Reuse the configured login
+    # principal source; do not invent student/cohort assignments here.
+    subject = claims.get("sub")
+    active = {email.strip().lower() for email, _ in mentor_account_list()}
+    if settings.mentor_email and settings.mentor_password_hash:
+        active.add(settings.mentor_email.strip().lower())
+    if not isinstance(subject, str) or subject.strip().lower() not in active:
+        raise HTTPException(status_code=401, detail="Mentor account is no longer authorized")
     return claims
 
 
