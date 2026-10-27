@@ -296,8 +296,9 @@ async def publish_plan(body: PlanIn, mentor=Depends(require_mentor)):
             raise HTTPException(status_code=400, detail=f"Day {day.day} is listed twice.")
         seen.add(day.day)
         ordered.append(day)
-    if ordered[0].day != 1 or [row.day for row in ordered] != list(range(1, len(ordered) + 1)):
-        raise HTTPException(status_code=400, detail="Days must start at 1 and run consecutively.")
+    first_day = ordered[0].day
+    if [row.day for row in ordered] != list(range(first_day, first_day + len(ordered))):
+        raise HTTPException(status_code=400, detail="Days must run consecutively from the first day number (e.g. 1,2,3 or 24,25,26).")
 
     students = await _students()
     if body.mode == "personal":
@@ -314,7 +315,7 @@ async def publish_plan(body: PlanIn, mentor=Depends(require_mentor)):
     days: List[dict] = []
     total_targets = 0
     for row in ordered:
-        date = start + timedelta(days=row.day - 1)
+        date = start + timedelta(days=row.day - first_day)
         entries = _clean_entries(row.entries)
         days.append({
             "day": row.day,

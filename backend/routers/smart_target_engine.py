@@ -27,6 +27,9 @@ def view(state, today):
     approved = sum(e.get('approvedDays', 0) for e in state['extensions'] if e['status'] == 'approved')
     backups = state['includedBackupDays']
     total = len(state['days'])
+    # Plans may continue an ongoing journey (first uploaded day = 24 etc.); anchor
+    # all date math on the first day number actually present, not on 1.
+    first_day = state['days'][0]['day'] if state['days'] else 1
     deadline = start + timedelta(days=total + backups + approved - 1)
     rows, current, complete, done_tasks, mandatory_done = [], None, 0, 0, 0
     mandatory_total = sum(sum(bool(t["mandatory"]) for t in d["tasks"]) for d in state["days"])
@@ -35,7 +38,7 @@ def view(state, today):
     for day in state['days']:
         required = [t for t in day['tasks'] if t['mandatory']]
         is_done = all(t['id'] in day['completions'] for t in required)
-        nominal = start + timedelta(days=day['day'] - 1)
+        nominal = start + timedelta(days=day['day'] - first_day)
         scheduled = date.fromisoformat(day['scheduledDate']) if day.get('scheduledDate') else next_date
         actual = date.fromisoformat(day['completedOn']) if is_done else None
         projected = actual or max(next_date, today)
@@ -85,10 +88,12 @@ def complete_task(state, task_id, today, now):
     status = view(state, today)
     if not status['canWork']:
         raise HTTPException(409, 'This day is locked. Finish the current day, wait for its IST date, or request an extension.')
-    day = out['days'][status['currentDay']-1]
+    day = next((d for d in out['days'] if d['day'] == status['currentDay']), None)
+    if day is None:
+        raise HTTPException(409, 'The current day is not part of this plan.')
     if not any(t['id'] == task_id for t in day['tasks']):
         raise HTTPException(409, 'Only tasks from the current personal day can be completed.')
-    scheduled = status['days'][day['day']-1]['scheduledDate']
+    scheduled = next(r for r in status['days'] if r['day'] == day['day'])['scheduledDate']
     day['scheduledDate'] = scheduled
     day['completions'][task_id] = {'completedAt': now, 'completedOn': today.isoformat(),
                                   'scheduledDate': scheduled, 'source': 'student-confirmed'}

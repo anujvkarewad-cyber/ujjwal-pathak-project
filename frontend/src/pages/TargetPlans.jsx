@@ -152,6 +152,7 @@ export default function TargetPlans() {
   const [includedBackupDays, setIncludedBackupDays] = useState(1);
   const [revisionBudgetMinutes, setRevisionBudgetMinutes] = useState(30);
   const [startDate, setStartDate] = useState(today);
+  const [firstDay, setFirstDay] = useState(1); // Journey day number of the FIRST uploaded day (e.g. 24 when continuing an ongoing plan)
   const [attempt, setAttempt] = useState(ALL);
   const [group, setGroup] = useState(ALL);
   const [batch, setBatch] = useState(ALL);
@@ -218,12 +219,14 @@ export default function TargetPlans() {
 
   const publish = async () => {
     setMessage(null);
+    const offset = Number.isInteger(Number(firstDay)) ? Math.min(Math.max(Number(firstDay), 1), 90) : 1;
     const cleanDays = days
       .map((day, index) => ({
-        day: index + 1,
+        day: offset + index,
         entries: day.entries.map(entryPayload).filter((entry) => entry.subject && entry.topic),
       }))
       .filter((day) => day.entries.length > 0);
+    if (offset + days.length - 1 > 90) return setMessage({ kind: 'err', text: 'Total days cannot go beyond Day 90. Reduce the first-day number or days.' });
     if (!name.trim()) return setMessage({ kind: 'err', text: 'Add a plan name.' });
     if (!cleanDays.length) return setMessage({ kind: 'err', text: 'Fill at least one line in a day.' });
     setBusy(true);
@@ -233,10 +236,11 @@ export default function TargetPlans() {
       });
       setMessage({
         kind: 'ok',
-        text: mode === 'personal' ? `Personal plan published for ${res.studentCount} students. Each student starts Day 1 independently. Sheet mirror: ${res.sheetMirror}.` : `Plan published: ${res.targetsCreated} targets for ${res.studentCount} students. Sheet mirror: ${res.sheetMirror}. AI reminders are generating in the background.`,
+        text: mode === 'personal' ? `Personal plan published for ${res.studentCount} students. Each student starts Day ${offset} independently. Sheet mirror: ${res.sheetMirror}.` : `Plan published: ${res.targetsCreated} targets for ${res.studentCount} students. Sheet mirror: ${res.sheetMirror}. AI reminders are generating in the background.`,
       });
       setName('');
       setDays([blankDay(), blankDay()]);
+      setFirstDay(1);
       load();
     } catch (err) {
       setMessage({ kind: 'err', text: err.message || 'Publish failed.' });
@@ -361,8 +365,13 @@ export default function TargetPlans() {
               <input value={name} onChange={(e) => setName(e.target.value)} placeholder="CA Inter Super 75" className={`${inputClass} w-full`} />
             </label>
             <label className="space-y-1">
-              <span className={labelClass}>{mode === 'personal' ? 'Available for personal starts from' : 'Day 1 starts on'}</span>
-              <input type="date" value={startDate} min={today} onChange={(e) => setStartDate(e.target.value)} className={`${inputClass} w-full`} />
+              <span className={labelClass}>{mode === 'personal' ? 'Available for personal starts from' : `Day ${Number(firstDay) || 1} starts on`}</span>
+              <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} className={`${inputClass} w-full`} />
+            </label>
+            <label className="space-y-1">
+              <span className={labelClass}>First day number</span>
+              <input aria-label="First day number" type="number" min="1" max="90" value={firstDay} onChange={(e) => setFirstDay(e.target.value)} className={`${inputClass} w-full`} />
+              <span className="block text-xs text-slate-400">Ongoing plan continue karte time: e.g. 24. Naya plan: 1.</span>
             </label>
             <label className="space-y-1">
               <span className={labelClass}>Batch</span>
@@ -393,7 +402,7 @@ export default function TargetPlans() {
             <div key={index} className="rounded-lg border border-slate-200 p-3 dark:border-slate-700">
               <div className="mb-2 flex items-center justify-between">
                 <div className="text-sm font-bold text-slate-800 dark:text-slate-100">
-                  Day {index + 1}
+                  Day {(Number(firstDay) || 1) + index}
                   <span className="ml-2 text-xs font-semibold text-slate-400">{mode === 'personal' ? 'Personal date after student starts' : displayDate(addDays(startDate, index))}</span>
                 </div>
                 {days.length > 1 && index === days.length - 1 && (
