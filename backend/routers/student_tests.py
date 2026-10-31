@@ -24,17 +24,21 @@ Everything is additive: if the student app never calls these, nothing changes.
 from __future__ import annotations
 
 
+import base64
 import hashlib
 import random
 import time
 from datetime import datetime, timezone
 from typing import Optional
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Request
+from fastapi.responses import Response
 from pydantic import BaseModel, ConfigDict, Field
 
+from auth import require_mentor
 from db import (
     ANALYTICS_TEST_HISTORY,
+    ANSWER_SHEET_FILES,
     CONTENT_QUESTIONS,
     MENTOR_TESTS,
     STUDENT_ACCOUNTS,
@@ -487,3 +491,127 @@ async def submit(body: SubmitRequest):
         "questionCount": len(chosen),
         "review": result["review"],
     }
+
+
+# --------------------------------------------------------------------------- #
+# Answer-sheet upload (paper tests)
+# --------------------------------------------------------------------------- #
+MAX_UPLOAD_BYTES = 10 * 1024 * 1024  # 10 MB — matches the webapp client limit
+ALLOWED_UPLOAD_MIME = {"application/pdf", "image/jpeg", "image/png", "image/webp"}
+
+
+class AnswerSheetUpload(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    studentId: str = Field(min_length=3, max_length=32)
+    password: str = Field(min_length=1, max_length=128)
+    testId: str = Field(min_length=2, max_length=96)
+    base64: str = Field(min_length=1, max_length=20 * 1024 * 1024)  # ~15 MB base64
+    mimeType: str = Field(default="application/pdf", max_length=120)
+    filename: str = Field(default="answer-sheet", max_length=200)
+
+
+@router.post("/upload")
+async def upload_answer_sheet(body: AnswerSheetUpload):
+    """Upload a paper-test answer sheet (base64) — replaces the dead Apps Script
+    `student.test.uploadSubmission` action.
+
+    The file is stored in MongoDB (``answer_sheet_files``) and a retrieval URL
+    is returned.  The student later passes that URL as ``answerUrl`` to
+    ``/api/student-tests/submit`` (paper-test self-evaluation flow).
+    """
+    sid = body.studentId.strip().upper()
+    await _validate_existing_student_login(sid, body.password)
+
+    db = get_db()
+    test = await db[MENTOR_TESTS].find_one({"testId": body.testId, "published": True})
+    if not test:
+        raise HTTPException(status_code=404, detail="Test nahi mila ya abhi publish nahi hua")
+
+    try:
+        file_bytes = base64.b64decode(body.base64)
+    except Exception:
+        raise HTTPException(status_code=400, detail="File data invalid")
+
+    if not file_bytes:
+        raise HTTPException(status_code=400, detail="File khali nahi honi chahiye")
+    if len(file_bytes) > MAX_UPLOAD_BYTES:
+        raise HTTPException(status_code=413, detail="File 10 MB se bada nahi hona chahiye")
+
+    mime = body.mimeType.split(";")[0].strip().lower()
+    if mime not in ALLOWED_UPLOAD_MIME:
+        raise HTTPException(status_code=415, detail="Only PDF, JPEG, PNG ya WebP allowed")
+
+    file_id = f"AS-{int(time.time() * 1000)}-{hashlib.md5(file_bytes).hexdigest()[:8]}"
+    await db[ANSWER_SHEET_FILES].update_one(
+        {"fileId": file_id},
+        {
+            "$set": {
+                "fileId": file_id,
+                "studentId": sid,
+                "testId": body.testId,
+                "filename": body.filename[:200],
+                "mimeType": mime,
+                "size": len(file_bytes),
+                "data": base64.b64encode(file_bytes).decode("ascii"),
+                "createdAt": _now_iso(),
+            }
+        },
+        upsert=True,
+    )
+
+    return {
+        "ok": True,
+        "fileId": file_id,
+        "url": f"/api/student-tests/answer-sheet/{file_id}",
+    }
+
+
+@router.get("/answer-sheet/{file_id}")
+async def get_answer_sheet(file_id: str, request: Request):
+    """Retrieve a stored answer sheet.
+
+    Auth (either):
+    - Mentor: ``Authorization: Bearer <jwt>`` — full access.
+    - Student: ``X-Student-Id`` + ``X-Session-Password`` headers — own files only.
+    """
+    db = get_db()
+    doc = await db[ANSWER_SHEET_FILES].find_one({"fileId": file_id})
+    if not doc:
+        raise HTTPException(status_code=404, detail="Answer sheet nahi mila")
+
+    auth = request.headers.get("Authorization", "")
+    if auth.startswith("Bearer "):
+        # Mentor JWT — allow all (require_mentor is imported but we check
+        # the header manually so the endpoint also works for students).
+        from auth import decode_token
+
+        try:
+            claims = decode_token(auth[len("Bearer "):].strip())
+            if claims.get("role") != "mentor":
+                raise HTTPException(status_code=403, detail="Mentor role required")
+        except HTTPException:
+            raise
+        except Exception:
+            raise HTTPException(status_code=401, detail="Invalid or expired token")
+    else:
+        sid = request.headers.get("X-Student-Id", "").strip().upper()
+        pwd = request.headers.get("X-Session-Password", "")
+        if not sid or not pwd:
+            raise HTTPException(status_code=401, detail="Authentication required")
+        if sid != doc.get("studentId"):
+            raise HTTPException(status_code=403, detail="Yeh answer sheet tumhare liye nahi hai")
+        from routers.student_auth import authenticate_student
+
+        result = await authenticate_student(sid, pwd)
+        if result.get("success") is not True:
+            raise HTTPException(status_code=401, detail="Session expired. Sign in again.")
+
+    file_bytes = base64.b64decode(doc["data"])
+    return Response(
+        content=file_bytes,
+        media_type=doc["mimeType"],
+        headers={
+            "Content-Disposition": f'inline; filename="{doc["filename"]}"',
+            "Content-Length": str(len(file_bytes)),
+        },
+    )

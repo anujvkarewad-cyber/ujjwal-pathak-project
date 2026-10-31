@@ -29,6 +29,7 @@ STUDENT_MCQ_ATTEMPTS = "student_mcq_attempts"
 STUDENT_ACCOUNTS = "student_accounts"
 MENTOR_TESTS = "mentor_tests"
 ANALYTICS_TEST_HISTORY = "analytics_test_history"
+ANSWER_SHEET_FILES = "answer_sheet_files"
 STUDENT_ADMIN_AUDIT = "student_admin_audit"
 DASHBOARD_SHARED = "dashboard_shared"
 DASHBOARD_STUDENTS = "dashboard_students"
@@ -118,6 +119,8 @@ async def ensure_indexes():
     await db[STUDENT_ADMIN_AUDIT].create_index([("studentId", 1), ("at", -1)])
     await db[DASHBOARD_STUDENTS].create_index("studentId", unique=True)
     await db[MIGRATIONS].create_index("key", unique=True)
+    await db[ANSWER_SHEET_FILES].create_index("fileId", unique=True)
+    await db[ANSWER_SHEET_FILES].create_index([("studentId", 1), ("testId", 1)])
     # RAG knowledge base - for smooth search (4777 chunks)
     await db[KNOWLEDGE_CHUNKS].create_index("id", unique=True)
     await db[KNOWLEDGE_CHUNKS].create_index([("subject", 1)])
