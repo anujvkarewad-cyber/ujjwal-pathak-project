@@ -61,7 +61,7 @@ async def progress_sync(
 
     db = get_db()
     consent = await db[ANALYTICS_CONSENTS].find_one({"studentId": body.studentId})
-    if not consent or not consent.get("sharing"):
+    if consent and consent.get("sharing") is False:
         raise HTTPException(status_code=403, detail="Sharing is disabled for this student")
 
     now_ts = time.time()
@@ -104,6 +104,6 @@ async def get_consent(student_id: str):
     db = get_db()
     doc = await db[ANALYTICS_CONSENTS].find_one({"studentId": student_id})
     if not doc:
-        return {"studentId": student_id, "sharing": None, "note": "No consent record — default is Off"}
+        return {"studentId": student_id, "sharing": True, "note": "No explicit consent record — default is ON"}
     doc.pop("_id", None)
     return doc

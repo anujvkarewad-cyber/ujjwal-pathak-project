@@ -29,18 +29,8 @@ def _token(student_id):
     return hmac.new(secret.encode(), student_id.encode(), hashlib.sha256).hexdigest()
 
 
-def test_sync_requires_consent(client):
-    res = client.post(
-        "/api/progress-sync",
-        json={"studentId": "S-1001", "summaries": [_summary()]},
-        headers={"X-Sync-Token": _token("S-1001")},
-    )
-    assert res.status_code == 403  # no consent record → sharing Off by default
-    assert "disabled" in res.json()["detail"]
-
-
-def test_consent_then_sync(client):
-    client.post("/api/consent", json={"studentId": "S-1001", "sharing": True})
+def test_sync_allowed_by_default(client):
+    """No consent record → sharing defaults to ON, sync is allowed."""
     res = client.post(
         "/api/progress-sync",
         json={"studentId": "S-1001", "summaries": [_summary()]},
@@ -49,9 +39,20 @@ def test_consent_then_sync(client):
     assert res.status_code == 200, res.text
     assert res.json()["accepted"]["summaries"] == 1
 
+
+def test_consent_then_sync(client):
+    client.post("/api/consent", json={"studentId": "S-1006", "sharing": True})
+    res = client.post(
+        "/api/progress-sync",
+        json={"studentId": "S-1006", "summaries": [_summary("S-1006")]},
+        headers={"X-Sync-Token": _token("S-1006")},
+    )
+    assert res.status_code == 200, res.text
+    assert res.json()["accepted"]["summaries"] == 1
+
     async def check():
         db = get_db()
-        doc = await db[ANALYTICS_SUMMARIES].find_one({"studentId": "S-1001", "chapterId": "ch-acc-01"})
+        doc = await db[ANALYTICS_SUMMARIES].find_one({"studentId": "S-1006", "chapterId": "ch-acc-01"})
         assert doc["masteryBand"] == "Strong"
         assert doc["attemptCount"] == 42
         # raw answers can never appear
