@@ -1,37 +1,16 @@
-# Koyeb deployment image for the Ujjwal Pathak platform (API + mentor SPA).
+# Cloud Run deployment image for the Ujjwal Pathak platform (API + mentor SPA).
 #
-# Replaces the Vercel deployment that started returning
-# HTTP 402 DEPLOYMENT_DISABLED. One container serves everything:
+# One container serves everything:
 #   /api/*  → FastAPI (mentor + student APIs)
-#   /*      → the CRA build (SPA fallback in server.py)
+#   /*      → static mentor dashboard (vanilla HTML/CSS/JS)
 # The SPA calls the API same-origin, so no cross-origin config is needed.
 #
-# Koyeb: Create Service → GitHub → this repo → Builder: Dockerfile
-#        (Dockerfile path: ./Dockerfile, work directory: repo root).
-# Koyeb injects $PORT; health check path: /api/health.
+# Cloud Run: gcloud run deploy --source . --region asia-south1
 #
 #   Local build:  docker build -t ump-api .
 #   Local run:    docker run -p 8000:8000 -e MONGO_URL="mongodb+srv://..." ump-api
 
-# ── Stage 1: build the mentor SPA ─────────────────────────────────────────
-FROM node:20-bookworm-slim AS web
-
-WORKDIR /web
-
-# Same-origin API calls: the FastAPI container serves the SPA itself.
-ENV REACT_APP_APPS_SCRIPT_URL=https://script.google.com/macros/s/AKfycbzyfWa8agayMB0XLjkbfhfj2MdIRElAiY2Wnd7-eQKd1zlMl099ky6Cif06TWydzr8D/exec \
-    REACT_APP_MENTOR_API_URL=same-origin \
-    CI=false \
-    GENERATE_SOURCEMAP=false \
-    NODE_OPTIONS=--max-old-space-size=2048
-
-COPY frontend/package.json frontend/package-lock.json ./
-RUN npm ci --no-audit --no-fund
-
-COPY frontend/ ./
-RUN npm run build
-
-# ── Stage 2: API runtime ──────────────────────────────────────────────────
+# ── Runtime stage: API + static dashboard ─────────────────────────────────
 FROM python:3.11-slim AS runtime
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
@@ -57,8 +36,8 @@ RUN pip install --upgrade pip \
 COPY backend/ /app/backend/
 COPY content-pipeline/ /app/content-pipeline/
 
-# Mentor SPA from stage 1 (server.py serves it via the SPA fallback).
-COPY --from=web /web/build /app/frontend/build
+# Static mentor dashboard (vanilla HTML/CSS/JS, no build step needed).
+COPY frontend/build /app/frontend/build
 
 # Run as a non-root user.
 RUN useradd --create-home --uid 10001 appuser && chown -R appuser:appuser /app
@@ -71,5 +50,5 @@ EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=45s --retries=3 \
   CMD curl -fsS "http://127.0.0.1:${PORT}/api/health" || exit 1
 
-# Shell form so Koyeb's $PORT is expanded at runtime.
+# Shell form so Cloud Run's $PORT is expanded at runtime.
 CMD uvicorn server:app --host 0.0.0.0 --port ${PORT} --proxy-headers --forwarded-allow-ips="*"
