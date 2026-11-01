@@ -73,6 +73,35 @@ def test_spa_routes_still_serve_index_html(client, built_frontend):
         assert "<div id=\"root\">" in res.text
 
 
+def test_index_html_is_never_served_from_cache(client, built_frontend):
+    """The 18-Oct leaderboard deploy was invisible to the owner for an hour.
+
+    index.html carried no Cache-Control, so the browser applied heuristic
+    freshness (a share of the age since Last-Modified) and kept loading the
+    OLD main.<hash>.js - the new segment option existed on the server and not
+    on his screen. The shell must always revalidate.
+    """
+    for path in ["/", "/leaderboard"]:
+        res = client.get(path)
+        assert res.status_code == 200, path
+        assert res.headers["cache-control"] == "no-cache", (
+            f"{path} returned cache-control={res.headers.get('cache-control')!r}; "
+            "a cached shell pins the app to a stale bundle"
+        )
+
+
+def test_hashed_static_assets_may_be_cached_forever(client, built_frontend):
+    (built_frontend / "static" / "js").mkdir(parents=True)
+    (built_frontend / "static" / "js" / "main.abc12345.js").write_text("x=1;")
+
+    res = client.get("/static/js/main.abc12345.js")
+
+    assert res.status_code == 200
+    assert "immutable" in res.headers["cache-control"]
+    # an unhashed file at the top level is not covered by that promise
+    assert "cache-control" not in client.get("/asset.js").headers
+
+
 def test_static_assets_still_served(client, built_frontend):
     res = client.get("/asset.js")
     assert res.status_code == 200

@@ -45,6 +45,12 @@ export const setToken = (t) => {
   }
 };
 
+// Absolute (or same-origin) URL for a backend path — for callers that need a
+// non-JSON body, e.g. multipart photo uploads.
+export function apiUrl(path) {
+  return `${BASE_URL}${path}`;
+}
+
 export async function apiCall(path, { method = 'GET', body = null, params = null } = {}) {
   let url = `${BASE_URL}${path}`;
   if (params) {

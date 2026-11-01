@@ -30,8 +30,8 @@ NOW = datetime.now(timezone.utc).isoformat()
 
 
 def _weeks_ago(n: int) -> str:
-    monday = TODAY - timedelta(days=TODAY.weekday())
-    return (monday - timedelta(weeks=n)).isoformat()
+    from week_window import week_start
+    return (week_start(TODAY) - timedelta(weeks=n)).isoformat()
 
 
 def _days_ago(n: int) -> str:

@@ -27,9 +27,11 @@ from __future__ import annotations
 import base64
 import hashlib
 import random
+import re
 import time
 from datetime import datetime, timezone
 from typing import Optional
+from urllib.parse import parse_qs, urlparse, quote
 
 from fastapi import APIRouter, HTTPException, Request
 from fastapi.responses import Response
@@ -45,6 +47,7 @@ from db import (
     STUDENT_MCQ_ATTEMPTS,
     get_db,
 )
+from routers import access_events as access_lib
 from routers.student_attempts import _validate_existing_student_login
 
 router = APIRouter(prefix="/api/student-tests", tags=["student-tests"])
@@ -187,7 +190,11 @@ def paper_submission(test: dict, self_marks: Optional[float], remarks: Optional[
 
 
 def window_state(test: dict, now_ms: int) -> str:
-    """open | upcoming | closed — plain string compare, dates are ISO-ish."""
+    """open | upcoming | closed — plain string compare, dates are ISO-ish.
+
+    A student who was locked out during the window is handed a shifted copy of the
+    test (access_lib.shifted_view) instead of a second rule here, so the list, the
+    paper and the makeup flag can never disagree about their deadline."""
     start = test.get("window_start")
     end = test.get("window_end")
     now_iso = datetime.fromtimestamp(now_ms / 1000, tz=timezone.utc).strftime("%Y-%m-%dT%H:%M")
@@ -198,8 +205,38 @@ def window_state(test: dict, now_ms: int) -> str:
     return "open"
 
 
+_DRIVE_FILE_PATTERNS = (
+    re.compile(r"https?://drive\.google\.com/file/d/([^/?#]+)"),
+    re.compile(r"https?://drive\.google\.com/open\?id=([^&#]+)"),
+    re.compile(r"https?://drive\.google\.com/uc\?(?:[^#]*&)?id=([^&#]+)"),
+)
+
+
+def direct_download_url(url) -> str:
+    """Drive *share* links hand raw fetchers an HTML viewer page, which the
+    in-app PDF viewer rejects with 'Invalid PDF structure' (web browsers never
+    noticed because they render Drive's own viewer). Rewrite share links to
+    the direct-download endpoint that serves the actual bytes."""
+    if not url:
+        return url or ""
+    text = str(url)
+    for pat in _DRIVE_FILE_PATTERNS:
+        m = pat.search(text)
+        if m:
+            resource_key = parse_qs(urlparse(text).query).get("resourcekey", [""])[0]
+            suffix = "&resourcekey=" + quote(resource_key, safe="") if resource_key else ""
+            return f"https://drive.google.com/uc?export=download&id={m.group(1)}{suffix}"
+    return text
+
+
 def matches_target(test: dict, account: dict) -> bool:
     """Batch/group targeting — blank on the test means 'everyone'."""
+    if test.get("exclusiveGroup"):
+        from routers.mentor_workspace import group_key
+        if not test.get("batch") or test.get("batch") != account.get("batch"):
+            return False
+        wanted = group_key(test.get("group"))
+        return wanted != "unknown" and wanted == group_key(account.get("group"))
     want_batch = (test.get("batch") or "").strip().lower()
     want_group = (test.get("group") or "").strip().lower()
     have_batch = str(account.get("batch") or "").strip().lower()
@@ -273,12 +310,18 @@ async def list_tests(body: StudentLogin):
         if tid and int(row.get("at_ms") or 0) >= int(done.get(tid, {}).get("at_ms") or 0):
             done[tid] = row
 
+    # One read of this student's lockout timeline, then a per-test credit: a window
+    # that closed while their access was OFF must not stay closed after the mentor
+    # unlocks them (owner decision 15-Oct-2026: "access on karte hi unhe dikhna chahiye").
+    lockouts = await access_lib.off_intervals(db, sid, account)
     items = []
     async for test in db[MENTOR_TESTS].find({"published": True}).sort("createdAt", -1).limit(200):
         if not matches_target(test, account):
             continue
         tid = test.get("testId")
         previous = done.get(tid)
+        extra = access_lib.credit_for(lockouts, test)
+        view = access_lib.shifted_view(test, extra)
         items.append({
             "testId": tid,
             "title": test.get("title"),
@@ -287,8 +330,10 @@ async def list_tests(body: StudentLogin):
             "group": test.get("group") or "",
             "batch": test.get("batch") or "",
             "test_date": test.get("test_date") or "",
-            "window_start": test.get("window_start") or "",
-            "window_end": test.get("window_end") or "",
+            "window_start": view.get("window_start") or "",
+            "window_end": view.get("window_end") or "",
+            "makeup": bool(extra),
+            "makeupMinutes": int(extra),
             "durationMinutes": test.get("duration_minutes") or 0,
             "maxMarks": test.get("total_marks") or 0,
             "questionCount": test.get("question_count") or 0,
@@ -296,7 +341,7 @@ async def list_tests(body: StudentLogin):
             "hasAnswerSheet": bool(test.get("answer_sheet_url") or test.get("answer_sheet_text")),
             "hasMarkingScheme": bool(test.get("marking_scheme")),
             "hasPaper": bool(test.get("paper_url")),
-            "status": window_state(test, now),
+            "status": window_state(view, now),
             "attempted": bool(previous),
             "lastScore": previous.get("score") if previous else None,
             "lastTotal": previous.get("total") if previous else None,
@@ -320,7 +365,8 @@ async def paper(body: PaperRequest):
     if not matches_target(test, account):
         raise HTTPException(status_code=403, detail="Ye test aapke batch/group ke liye nahi hai")
 
-    state = window_state(test, _now_ms())
+    view = access_lib.shifted_view(test, await access_lib.makeup_minutes(db, sid, test, account))
+    state = window_state(view, _now_ms())
     if state == "closed":
         raise HTTPException(status_code=409, detail="Is test ki window band ho gayi")
 
@@ -328,24 +374,31 @@ async def paper(body: PaperRequest):
         # Paper test: app me solve karne ke liye questions nahi hote — student
         # khud paper karta hai, phir answer sheet + marking scheme se check karke
         # apne marks bharta hai.
+        # NOTE: payload is mirrored under BOTH `test` and `meta` keys. `test` is
+        # what the web app and v45+ native read; `meta` exists so the shipped
+        # v1.15.0/44 APK (which parsed `data.meta`) also receives paperUrl
+        # without needing an app update. Additive only - safe for all clients.
+        paper_meta = {
+            "testId": test.get("testId"),
+            "title": test.get("title"),
+            "kind": "paper-test",
+            "subject": test.get("subject") or "",
+            "durationMinutes": test.get("duration_minutes") or 0,
+            "maxMarks": test.get("total_marks") or 0,
+            "questionCount": test.get("question_count") or 0,
+            "instructions": test.get("instructions") or "",
+            "paperUrl": direct_download_url(test.get("paper_url") or ""),
+            "answerSheetUrl": direct_download_url(test.get("answer_sheet_url") or ""),
+            "answerSheetText": test.get("answer_sheet_text") or "",
+            "markingScheme": test.get("marking_scheme") or "",
+            "markingSchemeUrl": direct_download_url(test.get("marking_scheme_url") or ""),
+            "status": state,
+        }
         return {
             "ok": True,
             "selfEvaluate": True,
-            "test": {
-                "testId": test.get("testId"),
-                "title": test.get("title"),
-                "kind": "paper-test",
-                "subject": test.get("subject") or "",
-                "durationMinutes": test.get("duration_minutes") or 0,
-                "maxMarks": test.get("total_marks") or 0,
-                "questionCount": test.get("question_count") or 0,
-                "instructions": test.get("instructions") or "",
-                "paperUrl": test.get("paper_url") or "",
-                "answerSheetUrl": test.get("answer_sheet_url") or "",
-                "answerSheetText": test.get("answer_sheet_text") or "",
-                "markingScheme": test.get("marking_scheme") or "",
-                "status": state,
-            },
+            "test": paper_meta,
+            "meta": paper_meta,
             "questions": [],
         }
 
@@ -389,6 +442,11 @@ async def submit(body: SubmitRequest):
     now_ms = _now_ms()
     account = await _account(db, sid)
     attempt_id = f"mentor-test:{body.testId}:{sid}"
+    # /submit has no deadline of its own (the paper is the gate), so an attempt can
+    # legitimately land after the window. When it is covered by granted makeup days,
+    # record that: the mentor's analysis must tell "late with credit" from "on time".
+    makeup_minutes = await access_lib.makeup_minutes(db, sid, test, account)
+    makeup_attempt = bool(makeup_minutes) and window_state(test, now_ms) == "closed"
 
     if kind == "paper-test":
         # Self-evaluation: student ke bataye marks hi final maane jaate hain.
@@ -412,6 +470,7 @@ async def submit(body: SubmitRequest):
             "selfMarks": True,
             "remarks": result["remarks"],
             "answerUrl": result.get("answerUrl", ""),
+            "makeup": makeup_attempt,
         }
         await db[ANALYTICS_TEST_HISTORY].update_one(
             {"studentId": sid, "id": attempt_id}, {"$set": history}, upsert=True
@@ -456,6 +515,7 @@ async def submit(body: SubmitRequest):
         "total": result["total"],
         "scorePct": result["scorePct"],
         "selfMarks": False,
+        "makeup": makeup_attempt,
     }
     await db[ANALYTICS_TEST_HISTORY].update_one(
         {"studentId": sid, "id": attempt_id}, {"$set": history}, upsert=True

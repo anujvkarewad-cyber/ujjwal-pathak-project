@@ -63,6 +63,13 @@ class Settings:
         "STUDENT_ADMIN_SCRIPT_URL",
         "https://script.google.com/macros/s/AKfycbyWjeCaMGwCnG5h2M5gjLsURcnBz8tOxoNzd2sZoLlBB8IA5FygE4WQKB1YEcGwpoPHfg/exec",
     )
+    # The mentor's own Google Apps Script ("Mentor Dashboard API"). Test file
+    # uploads go through it because only the script's owner (the mentor) can
+    # create files in his Drive — a service account has zero storage quota.
+    mentor_script_url: str = os.environ.get(
+        "MENTOR_SCRIPT_URL",
+        "https://script.google.com/macros/s/AKfycbzyfWa8agayMB0XLjkbfhfj2MdIRElAiY2Wnd7-eQKd1zlMl099ky6Cif06TWydzr8D/exec",
+    )
     mcq_daily_retention: int = _int("MCQ_DAILY_RETENTION", 180)
     mcq_practice_retention: int = _int("MCQ_PRACTICE_RETENTION", 150)
 

@@ -17,3 +17,9 @@ export const getLeaderboard = ({
   backendApiCall('/api/student-dashboard/leaderboard', {
     params: { period, segment, batch, group, attempt },
   });
+
+// Per-week Top 3 history ("kis week kaun top 3"): one podium per calendar week.
+export const getWeeklyTops = ({ weeks = 6, segment = 'batch', batch, group } = {}) =>
+  backendApiCall('/api/student-dashboard/leaderboard/weekly-tops', {
+    params: { weeks, segment, batch, group },
+  });

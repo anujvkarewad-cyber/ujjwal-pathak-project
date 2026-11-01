@@ -21,13 +21,16 @@ from routers.ranking import (
     weights,
 )
 
-TODAY = date(2026, 10, 7)          # Wednesday -> 3-day window Mon 5 - Wed 7
+TODAY = date(2026, 10, 7)          # Wednesday
+# An explicit 3-day window, not "the running week": these tests are about window
+# arithmetic (the week anchor itself is pinned by tests/test_week_window.py).
 WEEK_START, WEEK_END = date(2026, 10, 5), date(2026, 10, 7)
 
-# A complete Mon-Sun week, for tests about realistic daily rates and totals.
-TODAY_7 = date(2026, 10, 11)       # Sunday
-SEVEN_START, SEVEN_END = date(2026, 10, 5), date(2026, 10, 11)
-FULL_WEEK = [date(2026, 10, d) for d in range(5, 12)]
+# A complete Sun..Sat week, for tests about realistic daily rates and totals: on the
+# closing day (Saturday) period_window("weekly", ...) spans exactly these seven days.
+TODAY_7 = date(2026, 10, 10)       # Saturday
+SEVEN_START, SEVEN_END = date(2026, 10, 4), date(2026, 10, 10)
+FULL_WEEK = [date(2026, 10, d) for d in range(4, 11)]
 
 
 def activity(sid, hours=0.0, days=None, correct=0, attempted=0, joined=None,
@@ -63,8 +66,18 @@ def test_missing_join_date_uses_the_window_start():
 
 # ── periods ────────────────────────────────────────────────────────────────
 
-def test_weekly_window_is_monday_to_today():
-    assert period_window("weekly", TODAY) == (date(2026, 10, 5), TODAY)
+def test_weekly_window_opens_on_sunday():
+    """Owner decision 2026-10-17: the week is Sunday..Saturday.
+
+    TODAY is Wed 7 Oct 2026, so the running week opened Sun 4 Oct - it does not
+    start on Mon 5 Oct. That one-day shift is what keeps a Sunday log entered on
+    Monday morning inside the week it belongs to.
+    """
+    assert period_window("weekly", TODAY) == (date(2026, 10, 4), TODAY)
+    assert period_window("weekly", date(2026, 10, 4)).__class__ is tuple   # Sunday input
+    assert period_window("weekly", date(2026, 10, 4))[0] == date(2026, 10, 4)
+    assert period_window("weekly", date(2026, 10, 10))[0] == date(2026, 10, 4)  # Saturday
+    assert period_window("weekly", date(2026, 10, 11))[0] == date(2026, 10, 11)  # next Sunday
 
 
 def test_monthly_window_starts_on_the_first():
@@ -148,8 +161,8 @@ def test_no_two_real_hour_totals_flatten_together():
 def test_total_hours_beat_a_better_daily_rate():
     """Owner decision: rank on total hours. 68 h beats 20 h in 2 days."""
     grinder = activity("UMP0030", hours=68, days=FULL_WEEK)                     # 9.71 h/day
-    joiner = activity("UMP0031", hours=20, days=[date(2026, 10, 10), date(2026, 10, 11)],
-                      joined=date(2026, 10, 10))                                # 10.0 h/day
+    joiner = activity("UMP0031", hours=20, days=[date(2026, 10, 9), date(2026, 10, 10)],
+                      joined=date(2026, 10, 9))                                 # 10.0 h/day
     rows = rank_segments([grinder, joiner], *period_window("weekly", TODAY_7),
                          "weekly", "batch")["B1"]
     assert rows[0].student_id == "UMP0030"

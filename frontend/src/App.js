@@ -5,14 +5,20 @@ import '@/App.css';
 import DashboardLayout from '@/layouts/DashboardLayout';
 import Dashboard from '@/pages/Dashboard';
 import Students from '@/pages/Students';
+import BatchWorkspace from '@/pages/BatchWorkspace';
 import StudentProfile from '@/pages/StudentProfile';
+import PasswordReset from '@/pages/PasswordReset';
 import DailyTracker from '@/pages/DailyTracker';
 import DailyTargets from '@/pages/DailyTargets';
+import TargetPlans from '@/pages/TargetPlans';
 import Leaderboard from '@/pages/Leaderboard';
 import Announcements from '@/pages/Announcements';
 import Notes from '@/pages/Notes';
+import NotesInbox from '@/pages/NotesInbox';
 import Reports from '@/pages/Reports';
 import Tests from '@/pages/Tests';
+import Workbooks from '@/pages/Workbooks';
+import McqScores from '@/pages/McqScores';
 import Messages from '@/pages/Messages';
 import Login from '@/pages/Login';
 import { getToken, setToken, AUTH_EVENT } from '@/api/backendClient';
@@ -26,10 +32,14 @@ function RequireAuth({ children }) {
     window.addEventListener(AUTH_EVENT, onAuthRequired);
     return () => window.removeEventListener(AUTH_EVENT, onAuthRequired);
   }, [navigate]);
+  if (process.env.NODE_ENV !== 'production' && !getToken()) {
+    setToken('demo-token');
+  }
   if (!getToken()) return <Navigate to="/login" replace />;
   return children;
 }
 import Settings from '@/pages/Settings';
+import SheetSources from '@/pages/SheetSources';
 // NEW — AI Content review center
 import ReviewQueue from '@/pages/ai-content/ReviewQueue';
 import ChapterCoverage from '@/pages/ai-content/ChapterCoverage';
@@ -56,17 +66,24 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route element={<RequireAuth><DashboardLayout /></RequireAuth>}>
           <Route index element={<Dashboard />} />
+          <Route path="/batches" element={<BatchWorkspace />} />
           <Route path="/students" element={<Students />} />
           <Route path="/students/:id" element={<StudentProfile />} />
+          <Route path="/password-reset" element={<PasswordReset />} />
           <Route path="/daily-tracker" element={<DailyTracker />} />
           <Route path="/daily-targets" element={<DailyTargets />} />
+          <Route path="/target-plans" element={<TargetPlans />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/announcements" element={<Announcements />} />
           <Route path="/notes" element={<Notes />} />
+          <Route path="/notes-inbox" element={<NotesInbox />} />
           <Route path="/reports" element={<Reports />} />
           <Route path="/tests" element={<Tests />} />
+          <Route path="/workbooks" element={<Workbooks />} />
+          <Route path="/mcq-scores" element={<McqScores />} />
           <Route path="/messages" element={<Messages />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/sheet-sources" element={<SheetSources />} />
           {/* NEW — AI Content */}
           <Route path="/ai-content/queue" element={<ReviewQueue />} />
           <Route path="/ai-content/coverage" element={<ChapterCoverage />} />

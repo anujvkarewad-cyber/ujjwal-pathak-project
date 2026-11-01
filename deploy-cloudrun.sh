@@ -1,24 +1,9 @@
 #!/usr/bin/env bash
 # Deploy the mentor API + SPA container to Google Cloud Run.
 #
-# One-time setup:
-#   gcloud auth login
-#   gcloud config set project <YOUR_PROJECT_ID>
-#   gcloud services enable run.googleapis.com cloudbuild.googleapis.com \
-#       artifactregistry.googleapis.com secretmanager.googleapis.com
-#
-# Create the encrypted secrets once (values are stored in Secret Manager,
-# encrypted at rest, never in Git — this is Cloud Run's "encrypted settings"):
-#   printf '%s' 'mongodb+srv://...'      | gcloud secrets create MONGO_URL             --data-file=-
-#   printf '%s' "$(openssl rand -hex 32)"| gcloud secrets create JWT_SECRET            --data-file=-
-#   printf '%s' 'mentor@x.in:Pass'       | gcloud secrets create MENTOR_ACCOUNTS       --data-file=-
-#   printf '%s' '<random>'               | gcloud secrets create STUDENT_IMPORT_KEY    --data-file=-
-#   printf '%s' '<random>'               | gcloud secrets create SYNC_SECRET           --data-file=-
-# Optional, for the one-shot four-account reset (delete it after the first boot):
-#   printf '%s' '{"UMP0043":"..","UMP0081":"..","UMP0088":"..","UMP0090":".."}' \
-#       | gcloud secrets create ACCOUNT_RESET_SHEET_PASSWORDS --data-file=-
-#
-# Then just:  ./deploy-cloudrun.sh
+# Usage (in Cloud Shell or local machine with gcloud logged in):
+#   git pull
+#   ./deploy-cloudrun.sh
 set -euo pipefail
 
 SERVICE="${SERVICE:-ujjwal-pathak-app}"
@@ -34,8 +19,7 @@ ENV_VARS="${ENV_VARS},DEV_AUTH_BYPASS=0"
 ENV_VARS="${ENV_VARS},IMPORT_GENERATED=${IMPORT_GENERATED:-0}"
 ENV_VARS="${ENV_VARS},GENERATED_DIR=../content-pipeline/generated"
 ENV_VARS="${ENV_VARS},CORS_ORIGINS=*"
-# Owner-authorized Apps Script used for mentor batch corrections. This URL is
-# public; the actual authorization stays in STUDENT_IMPORT_KEY.
+# Owner-authorized Apps Script used for mentor batch corrections.
 ENV_VARS="${ENV_VARS},STUDENT_ADMIN_SCRIPT_URL=${STUDENT_ADMIN_SCRIPT_URL:-https://script.google.com/macros/s/AKfycbyWjeCaMGwCnG5h2M5gjLsURcnBz8tOxoNzd2sZoLlBB8IA5FygE4WQKB1YEcGwpoPHfg/exec}"
 # Keep total Mongo connections sane across instances: 20 × max-instances.
 ENV_VARS="${ENV_VARS},MONGO_MAX_POOL_SIZE=${MONGO_MAX_POOL_SIZE:-20}"
@@ -45,8 +29,15 @@ SECRETS="${SECRETS},JWT_SECRET=JWT_SECRET:latest"
 SECRETS="${SECRETS},MENTOR_ACCOUNTS=MENTOR_ACCOUNTS:latest"
 SECRETS="${SECRETS},STUDENT_IMPORT_KEY=STUDENT_IMPORT_KEY:latest"
 SECRETS="${SECRETS},SYNC_SECRET=SYNC_SECRET:latest"
-# Uncomment for the first boot of the four-account reset, then remove and redeploy:
-# SECRETS="${SECRETS},ACCOUNT_RESET_SHEET_PASSWORDS=ACCOUNT_RESET_SHEET_PASSWORDS:latest"
+
+# Auto-attach Google Drive/Sheets Service Account secret for Notes Inbox if present in Secret Manager.
+for sa_secret in NOTES_GOOGLE_SA_JSON GOOGLE_SERVICE_ACCOUNT_JSON ump-drive-sa; do
+  if gcloud secrets describe "${sa_secret}" >/dev/null 2>&1; then
+    echo "Found Drive service-account secret '${sa_secret}' — attaching as GOOGLE_SERVICE_ACCOUNT_JSON."
+    SECRETS="${SECRETS},GOOGLE_SERVICE_ACCOUNT_JSON=${sa_secret}:latest"
+    break
+  fi
+done
 
 echo "Deploying ${SERVICE} to ${REGION} (min-instances=${MIN_INSTANCES})..."
 gcloud run deploy "${SERVICE}" \

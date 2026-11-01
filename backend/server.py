@@ -20,8 +20,10 @@ from db import (
     get_db,
 )
 from persist import uses_real_mongo
-from routers import mentor_tests, student_tests
-from routers import messages, test_history, whatsapp_log, auth_router, content, student_attempts, student_auth, student_dashboard, student_content, student_sync, analytics, admin_fast, ai, daily_targets, revision_schedule
+from routers import attendance, mentor_tests, mentor_mcq_scores, student_tests
+from routers import smart_targets
+from routers import mentor_workspace
+from routers import messages, test_history, whatsapp_log, auth_router, content, student_attempts, student_auth, student_dashboard, student_content, student_sync, analytics, admin_fast, ai, daily_targets, revision_schedule, push_router, notes_inbox, target_plans, password_reset
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -115,6 +117,7 @@ async def get_status_checks():
 app.include_router(api_router)
 
 # ── NEW: AI Content + Analytics + student sync routers (additive) ──────────
+app.include_router(attendance.router)
 app.include_router(auth_router.router)
 app.include_router(content.router)
 app.include_router(student_content.router)
@@ -123,15 +126,48 @@ app.include_router(student_dashboard.router)
 app.include_router(student_attempts.router)
 app.include_router(student_sync.router)
 app.include_router(test_history.router)
+app.include_router(password_reset.router)
 app.include_router(mentor_tests.router)
+app.include_router(mentor_mcq_scores.router)
 app.include_router(student_tests.router)
 app.include_router(messages.router)
+app.include_router(mentor_workspace.router)
 app.include_router(whatsapp_log.router)
 app.include_router(analytics.router)
 app.include_router(admin_fast.router)
 app.include_router(ai.router)
 app.include_router(daily_targets.router)
 app.include_router(revision_schedule.router)
+app.include_router(push_router.router)
+from routers import note_compression
+app.include_router(note_compression.router)
+app.include_router(notes_inbox.router)
+app.include_router(target_plans.router)
+app.include_router(smart_targets.router)
+
+
+# Workbook-only surface; receipt routes and their private test-account gate stay unchanged.
+from routers import workbook_practice
+app.include_router(workbook_practice.router)
+
+@app.middleware("http")
+async def private_workbook_responses(request, call_next):
+    path = request.url.path
+    if not (path in ('/api/practice/workbooks', '/api/practice/grade', '/api/practice/handwriting/read', '/api/practice/mentor/workbooks') or path.startswith('/api/practice/workbooks/') or path.startswith('/api/practice/mentor/workbooks/')):
+        return await call_next(request)
+    import asyncio
+    from fastapi.responses import JSONResponse
+    try:
+        await asyncio.wait_for(workbook_practice._REQUESTS.acquire(), 0.05)
+    except asyncio.TimeoutError:
+        return JSONResponse({'detail': 'Workbook practice is busy. Your draft is safe; retry shortly.'}, status_code=429, headers={'Cache-Control': 'no-store', 'Retry-After': '5'})
+    try:
+        response = await call_next(request)
+        response.headers['Cache-Control'] = 'no-store'
+        response.headers['X-Content-Type-Options'] = 'nosniff'
+        return response
+    finally:
+        workbook_practice._REQUESTS.release()
 
 # ── SPA static serving (production deployment + live preview) ───────────────
 # Serves the built React dashboard from the same origin as /api. Registered
@@ -178,11 +214,16 @@ async def spa_fallback(full_path: str):
             candidate = (FRONTEND_BUILD_DIR / full_path).resolve()
             build_root = FRONTEND_BUILD_DIR.resolve()
             # Security: prevent path traversal
-            if full_path and str(candidate).startswith(str(build_root)) and candidate.is_file():
-                return FileResponse(candidate)
+            if full_path and candidate.is_relative_to(build_root) and candidate.is_file():
+                response = FileResponse(candidate)
+                if candidate.name == 'index.html':
+                    response.headers['Cache-Control'] = 'no-cache'
+                elif candidate.is_relative_to(build_root / 'static'):
+                    response.headers['Cache-Control'] = 'public, max-age=31536000, immutable'
+                return response
             index = FRONTEND_BUILD_DIR / 'index.html'
             if index.is_file():
-                return FileResponse(index, media_type='text/html')
+                return FileResponse(index, media_type='text/html', headers={'Cache-Control': 'no-cache'})
         except Exception:
             pass
     # No frontend build — return JSON, not HTML, to avoid confusing the client
@@ -243,6 +284,18 @@ async def startup_db_client():
         if summary and summary.get("applied"):
             logger.info("[startup] account reset applied: %s", summary.get("accounts"))
 
+        # Repair tracker start dates: accounts imported without a join date
+        # previously all inherited the batch start. Idempotent; fixes only rows
+        # where joinedOn is empty/missing.
+        from routers.student_dashboard import backfill_missing_joined_on
+
+        try:
+            backfilled = await backfill_missing_joined_on()
+            if backfilled.get("fixed"):
+                logger.info("[startup] joinedOn backfilled: %s", backfilled)
+        except Exception as exc:
+            logger.warning("[startup] joinedOn backfill skipped: %s", exc)
+
     # Dev/demo seed for the analytics channel (memory store + explicit flag).
     if not uses_real_mongo() and os.environ.get("SEED_ANALYTICS_DEMO", "").strip().lower() in ("1", "true", "yes", "on"):
         from seed_analytics_demo import seed_analytics_demo
@@ -250,8 +303,21 @@ async def startup_db_client():
         seeded = await seed_analytics_demo()
         logger.info("[startup] seeded demo analytics data: %s", seeded)
 
+    # Push scheduler (streak / rank-drop / weekly-report). Production only:
+    # tests seed their own fixtures and must not fire background jobs.
+    if os.environ.get("DB_NAME") not in {"test_db", "pytest"}:
+        import push_scheduler
+
+        push_scheduler.start()
+
 @app.on_event("shutdown")
 async def shutdown_db_client():
+    try:
+        import push_scheduler
+
+        await push_scheduler.stop()
+    except Exception:
+        pass
     try:
         from persist import dump_store_sync
 

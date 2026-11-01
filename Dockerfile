@@ -2,15 +2,11 @@
 #
 # One container serves everything:
 #   /api/*  → FastAPI (mentor + student APIs)
-#   /*      → static mentor dashboard (vanilla HTML/CSS/JS)
+#   /*      → pre-built React mentor SPA (frontend/build via server.py fallback)
 # The SPA calls the API same-origin, so no cross-origin config is needed.
 #
-# Cloud Run: gcloud run deploy --source . --region asia-south1
-#
-#   Local build:  docker build -t ump-api .
-#   Local run:    docker run -p 8000:8000 -e MONGO_URL="mongodb+srv://..." ump-api
+# Cloud Run: ./deploy-cloudrun.sh  (or gcloud run deploy --source . --region asia-south1)
 
-# ── Runtime stage: API + static dashboard ─────────────────────────────────
 FROM python:3.11-slim AS runtime
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
@@ -36,7 +32,7 @@ RUN pip install --upgrade pip \
 COPY backend/ /app/backend/
 COPY content-pipeline/ /app/content-pipeline/
 
-# Static mentor dashboard (vanilla HTML/CSS/JS, no build step needed).
+# Pre-built React mentor SPA (built with REACT_APP_APPS_SCRIPT_URL + same-origin API).
 COPY frontend/build /app/frontend/build
 
 # Run as a non-root user.

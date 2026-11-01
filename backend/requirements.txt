@@ -28,3 +28,7 @@ typer>=0.9.0
 # Added for AI Content + Analytics (dev/test tooling)
 mongomock-motor>=0.0.31
 httpx>=0.27.0
+
+# Mentor PDF preparation: no Ghostscript, no rasterization.
+pikepdf>=9.4,<11
+Pillow>=11.3,<13

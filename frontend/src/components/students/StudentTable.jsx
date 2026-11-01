@@ -4,15 +4,17 @@ import { Search, ChevronLeft, ChevronRight, Eye } from 'lucide-react';
 import { RiskBadge, StatusBadge } from '@/components/common/RiskBadge';
 import { Skeleton } from '@/components/common/Skeleton';
 import { useStudents } from '@/api/hooks';
-import { ALL_BATCHES, ENROLLMENT_BATCHES } from '@/constants/batches';
+import { ALL_BATCHES } from '@/constants/batches';
+import { matchesStudentGroup } from '@/utils/studentGroup';
 import { cn } from '@/utils/format';
 
 const PAGE_SIZE = 8;
 
-function FilterSelect({ value, onChange, options, testid }) {
+function FilterSelect({ value, onChange, options, testid, disabled = false }) {
   return (
     <select
       data-testid={testid}
+      disabled={disabled}
       value={value}
       onChange={(e) => onChange(e.target.value)}
       className="h-10 px-3 pr-8 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm text-slate-700 dark:text-slate-200 outline-none focus:border-[#2563EB]"
@@ -22,20 +24,20 @@ function FilterSelect({ value, onChange, options, testid }) {
   );
 }
 
-export default function StudentTable() {
-  const { data, isLoading } = useStudents();
-  const all = data?.students;
-  const options = data?.options;
+export default function StudentTable({ scopedBatch, scopedGroup, providedStudents, metricsLoading = false, metricsError, onRetryMetrics, showMetricsSource = false } = {}) {
+  const { data, isLoading } = useStudents({ enabled: !providedStudents });
+  const all = providedStudents || data?.students;
+  const options = useMemo(() => providedStudents ? { attemptOptions: ['All Attempts'], statusOptions: ['All Status', ...new Set(providedStudents.map(s => s.status).filter(Boolean))] } : data?.options, [providedStudents, data?.options]);
   const batchOptions = useMemo(() => {
     const actual = (all || []).map((student) => student.batch).filter(Boolean);
     const supplied = (options?.batchOptions || []).filter((value) => value && value !== ALL_BATCHES);
-    return [ALL_BATCHES, ...new Set([...ENROLLMENT_BATCHES, ...actual, ...supplied])];
+    return [ALL_BATCHES, ...new Set([...actual, ...supplied])];
   }, [all, options]);
 
   const [q, setQ] = useState('');
-  const [batch, setBatch] = useState('All Batches');
+  const [batch, setBatch] = useState(scopedBatch || 'All Batches');
   const [attempt, setAttempt] = useState('All Attempts');
-  const [group, setGroup] = useState('All Groups');
+  const [group, setGroup] = useState(scopedGroup || 'All Groups');
   const [status, setStatus] = useState('All Status');
   const [page, setPage] = useState(1);
 
@@ -45,7 +47,7 @@ export default function StudentTable() {
       if (q && !`${s.name} ${s.id} ${s.email}`.toLowerCase().includes(q.toLowerCase())) return false;
       if (batch !== 'All Batches' && s.batch !== batch) return false;
       if (attempt !== 'All Attempts' && s.attempt !== attempt) return false;
-      if (group !== 'All Groups' && s.group !== group) return false;
+      if (!matchesStudentGroup(s.group, group)) return false;
       if (status !== 'All Status' && s.status !== status) return false;
       return true;
     });
@@ -58,6 +60,7 @@ export default function StudentTable() {
 
   return (
     <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden" data-testid="student-table">
+      {showMetricsSource && <div className="border-b border-slate-200 px-5 py-3 text-xs text-slate-500 dark:border-slate-800" role="status">Attendance: last 5 completed IST days from Daily Tracker; excused days excluded. Original risk bands: below 70% At Risk, 70–79% Watch, 80%+ Healthy. No ranking or account changes.{metricsLoading && ' Refreshing metrics…'}{metricsError && <p role="alert" className="mt-2 text-amber-700">Metrics could not load. Enrollment is still shown; missing data is not absence.{onRetryMetrics && <button className="ml-2 underline" onClick={() => onRetryMetrics()}>Retry metrics</button>}</p>}</div>}
       <div className="p-5 border-b border-slate-200 dark:border-slate-800 space-y-3">
         <div className="flex flex-col md:flex-row md:items-center gap-3">
           <div className="flex items-center gap-2 h-10 px-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 flex-1 max-w-md">
@@ -76,9 +79,9 @@ export default function StudentTable() {
         </div>
         {options && (
           <div className="flex flex-wrap gap-2">
-            <FilterSelect value={batch} onChange={wrap(setBatch)} options={batchOptions} testid="filter-batch" />
+            <FilterSelect disabled={!!scopedBatch} value={batch} onChange={wrap(setBatch)} options={batchOptions} testid="filter-batch" />
             <FilterSelect value={attempt} onChange={wrap(setAttempt)} options={options.attemptOptions} testid="filter-attempt" />
-            <FilterSelect value={group} onChange={wrap(setGroup)} options={options.groupOptions} testid="filter-group" />
+            <FilterSelect disabled={!!scopedGroup} value={group} onChange={wrap(setGroup)} options={['All Groups', 'Group 1', 'Group 2', 'Both Groups']} testid="filter-group" />
             <FilterSelect value={status} onChange={wrap(setStatus)} options={options.statusOptions} testid="filter-status" />
           </div>
         )}
@@ -107,25 +110,25 @@ export default function StudentTable() {
               <tr key={s.id} className="border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors" data-testid={`row-${s.id}`}>
                 <td className="px-5 py-3">
                   <div className="flex items-center gap-3">
-                    <img src={s.avatar} alt={s.name} className="w-9 h-9 rounded-full object-cover ring-2 ring-slate-100 dark:ring-slate-800" />
+                    <span className="grid h-9 w-9 place-items-center rounded-full bg-blue-50 text-xs text-blue-600">{String(s.name || s.id).split(' ').map(x => x[0]).slice(0, 2).join('')}</span>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">{s.name}</div>
-                      <div className="text-xs text-slate-500 dark:text-slate-400">{s.id} · {s.level}</div>
+                      <div className="text-xs text-slate-500 dark:text-slate-400">{s.id}{s.level ? ` · ${s.level}` : ''}</div>
                     </div>
                   </div>
                 </td>
                 <td className="px-5 py-3 text-slate-700 dark:text-slate-300">{s.batch}</td>
                 <td className="px-5 py-3 text-slate-700 dark:text-slate-300">{s.group}</td>
                 <td className="px-5 py-3">
-                  <div className="flex items-center gap-2 min-w-[100px]">
+                  {s.attendance == null ? <span title={s.metricsReason || 'Attendance unavailable'} className="text-xs text-slate-400">{metricsLoading ? 'Loading…' : 'Unavailable'}</span> : <div className="flex items-center gap-2 min-w-[100px]">
                     <div className="flex-1 h-1.5 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
                       <div className={cn('h-full rounded-full', s.attendance >= 80 ? 'bg-emerald-500' : s.attendance >= 70 ? 'bg-amber-500' : 'bg-rose-500')} style={{ width: `${s.attendance}%` }} />
                     </div>
                     <span className="text-xs font-semibold text-slate-700 dark:text-slate-200 w-8 text-right">{s.attendance}%</span>
-                  </div>
+                  </div>}
                 </td>
-                <td className="px-5 py-3"><StatusBadge status={s.status} /></td>
-                <td className="px-5 py-3"><RiskBadge risk={s.risk} /></td>
+                <td className="px-5 py-3">{s.status ? <StatusBadge status={s.status} /> : <span className="text-xs text-slate-400">—</span>}</td>
+                <td className="px-5 py-3">{s.risk ? <RiskBadge risk={s.risk} /> : <span className="text-xs text-slate-400">Not assessed</span>}</td>
                 <td className="px-5 py-3 text-right">
                   <Link to={`/students/${s.id}`} data-testid={`view-${s.id}`} className="inline-flex items-center gap-1.5 h-8 px-3 rounded-lg text-xs font-medium text-[#2563EB] hover:bg-blue-50 dark:hover:bg-blue-500/10 transition-colors">
                     <Eye className="w-3.5 h-3.5" /> View

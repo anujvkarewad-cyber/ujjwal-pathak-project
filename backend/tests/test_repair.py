@@ -43,7 +43,10 @@ def test_repair_removes_cloned_questions_keeping_published(client):
     _run(check)
 
 
-def test_publish_if_empty_publishes_the_bank(client):
+def test_publish_if_empty_publishes_the_bank(client, monkeypatch):
+    from repair import settings
+    assert settings.mongo_url.startswith("memory://")
+    monkeypatch.setattr(settings, "auto_publish_if_empty", True)  # isolated test branch only
     _run(seed_full_chapter)
     result = _run(publish_if_empty)
     assert result["ok"] is True
@@ -58,7 +61,10 @@ def test_publish_if_empty_publishes_the_bank(client):
     assert again["reason"] == "already_published"
 
 
-def test_publish_if_empty_noop_when_store_empty(client):
+def test_publish_if_empty_noop_when_store_empty(client, monkeypatch):
+    from repair import settings
+    assert settings.mongo_url.startswith("memory://")
+    monkeypatch.setattr(settings, "auto_publish_if_empty", True)  # isolated test branch only
     result = _run(publish_if_empty)
     assert result["skipped"] is True
     assert result["reason"] == "no_questions"
@@ -88,3 +94,13 @@ def test_restore_does_not_clone_existing_docs(client, tmp_path, monkeypatch):
         assert copies[0]["status"] == "published"
 
     _run(already_there)
+
+
+def test_publication_hold_never_publishes(client, monkeypatch):
+    from repair import settings
+    assert settings.mongo_url.startswith("memory://")
+    monkeypatch.setattr(settings,"auto_publish_if_empty",False)
+    _run(seed_full_chapter)
+    before=_run(lambda: get_db()[CONTENT_QUESTIONS].count_documents({"status":"published"}))
+    assert _run(publish_if_empty)["reason"]=="AUTO_PUBLISH_IF_EMPTY=0"
+    assert _run(lambda: get_db()[CONTENT_QUESTIONS].count_documents({"status":"published"}))==before

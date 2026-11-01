@@ -21,7 +21,8 @@ import time
 from pathlib import Path
 from typing import Optional, List
 
-from fastapi import APIRouter
+from routers.dashboard_access import dashboard_student, own_payload
+from fastapi import APIRouter, Depends
 from pydantic import BaseModel, Field
 
 try:
@@ -1609,7 +1610,8 @@ async def groq_answer(question: str, chapter: Optional[dict],
 
 
 @router.post("/ask")
-async def ask(body: AskBody):
+async def ask(body: AskBody, principal=Depends(dashboard_student)):
+    body.studentId = own_payload(principal, {"studentId":body.studentId})["studentId"]
     chit = _smalltalk(body.question)
     if chit:
         return {"answer": chit, "mode": "chitchat", "chapter": None, "rag_chunks": 0}
@@ -1928,12 +1930,13 @@ async def evaluate_written_answer(question: str, student_answer: str, subject: s
 
 
 @router.post("/evaluate")
-async def evaluate(body: EvaluateBody):
+async def evaluate(body: EvaluateBody, principal=Depends(dashboard_student)):
     """Mark a written answer the way an ICAI examiner would.
 
     Returns score 0-10, what was missing, what was wrong, the key terms an
     examiner looks for, a model answer in exam format, and what to fix.
     """
+    body.studentId = own_payload(principal, {"studentId":body.studentId})["studentId"]
     diag: list = []
     chapter = match_chapter(body.question, body.chapterId)
     subject = body.subject or (chapter or {}).get("subject") or ""

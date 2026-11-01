@@ -5,7 +5,7 @@ from datetime import date
 from enum import Enum
 from typing import Dict, List, Literal, Optional
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+from pydantic import StrictInt, BaseModel, ConfigDict, Field, field_validator, model_validator
 
 
 class Decision(str, Enum):
@@ -89,12 +89,13 @@ class StudentMcqAttempt(BaseModel):
 
     attemptId: str = Field(min_length=1, max_length=180)
     kind: Literal["daily", "practice"]
+    officialSetId: Optional[str] = Field(default=None, pattern=r"^[a-f0-9]{64}$")
     bankRevision: str = Field(default="unknown", max_length=120)
     date: Optional[str] = Field(default=None, max_length=16)
     group: Optional[str] = Field(default=None, max_length=32)
     config: Optional[McqPracticeConfig] = None
     questionIds: List[str] = Field(default_factory=list, min_length=1, max_length=50)
-    answers: Dict[str, int] = Field(default_factory=dict)
+    answers: Dict[str, StrictInt] = Field(default_factory=dict)
     startedAt: int = Field(ge=0)
     completedAt: int = Field(ge=0)
     score: int = Field(ge=0, le=50)
@@ -104,7 +105,7 @@ class StudentMcqAttempt(BaseModel):
 
     @field_validator("answers")
     @classmethod
-    def validate_answers(cls, answers: Dict[str, int]):
+    def validate_answers(cls, answers: Dict[str, StrictInt]):
         if len(answers) > 50:
             raise ValueError("at most 50 answers are allowed")
         if any(not isinstance(choice, int) or choice < 0 or choice > 3 for choice in answers.values()):
@@ -113,6 +114,8 @@ class StudentMcqAttempt(BaseModel):
 
     @model_validator(mode="after")
     def validate_attempt(self):
+        if self.officialSetId and self.kind != "daily":
+            raise ValueError("officialSetId is only valid for daily attempts")
         question_ids = set(self.questionIds)
         if len(question_ids) != len(self.questionIds):
             raise ValueError("questionIds must be unique")
@@ -245,3 +248,7 @@ class MessageReplyRequest(BaseModel):
 
     studentId: str = Field(min_length=1, max_length=64)
     text: str = Field(min_length=1, max_length=2000)
+
+
+class OfficialDailySetRequest(StudentTokenRequest):
+    group: Literal["Group I", "Group II"]

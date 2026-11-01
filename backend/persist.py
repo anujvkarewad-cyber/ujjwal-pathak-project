@@ -27,6 +27,7 @@ from db import (
     CONTENT_RELEASES,
     CONTENT_SCENARIOS,
     STUDENT_MCQ_ATTEMPTS,
+    STUDENT_OFFICIAL_DAILY_SETS,
     get_db,
 )
 
@@ -44,6 +45,7 @@ COLLECTIONS = (
     ANALYTICS_FOLLOWUPS,
     ANALYTICS_AUDIT_SYNC,
     STUDENT_MCQ_ATTEMPTS,
+    STUDENT_OFFICIAL_DAILY_SETS,
 )
 
 BACKEND_DIR = Path(__file__).resolve().parent
@@ -105,7 +107,8 @@ async def restore_store() -> bool:
         for doc in docs:
             if isinstance(doc, dict):
                 doc = dict(doc)
-                doc.pop("_id", None)
+                if name != STUDENT_OFFICIAL_DAILY_SETS:
+                    doc.pop("_id", None)
                 clean.append(doc)
         if clean:
             await db[name].insert_many(clean)
@@ -120,7 +123,8 @@ async def _collect_snapshot() -> dict:
     for name in COLLECTIONS:
         docs = []
         async for doc in db[name].find({}):
-            doc.pop("_id", None)
+            if name != STUDENT_OFFICIAL_DAILY_SETS:
+                doc.pop("_id", None)
             docs.append(doc)
         out[name] = docs
     return out

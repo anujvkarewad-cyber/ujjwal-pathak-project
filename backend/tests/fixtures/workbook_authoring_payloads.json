@@ -1,0 +1,203 @@
+[
+  {
+    "title": "Synthetic Audit chapter",
+    "subject": "Audit",
+    "groups": [
+      "Group 2"
+    ],
+    "batches": [
+      "Test A",
+      "Test B"
+    ],
+    "sourceUrl": "",
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "Explain the synthetic approved concept.",
+        "modelAnswer": "Synthetic model answer used only for isolated contract testing.",
+        "referenceLabel": "Synthetic test source, not official marks",
+        "page": 1,
+        "workbookPage": 1,
+        "rubric": [
+          {
+            "id": "p1",
+            "marks": 2,
+            "concept": "First approved concept"
+          },
+          {
+            "id": "p2",
+            "marks": 2,
+            "concept": "Second approved concept"
+          }
+        ],
+        "maxMarks": 4,
+        "sourceVerified": true,
+        "format": "written"
+      }
+    ]
+  },
+  {
+    "title": "Synthetic Audit chapter",
+    "subject": "Audit",
+    "groups": [
+      "Group 2"
+    ],
+    "batches": [
+      "Test A",
+      "Test B"
+    ],
+    "sourceUrl": "",
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "Explain the synthetic approved concept.",
+        "modelAnswer": "Synthetic model answer used only for isolated contract testing.",
+        "referenceLabel": "Synthetic test source, not official marks",
+        "page": 1,
+        "workbookPage": 1,
+        "rubric": [
+          {
+            "id": "p1",
+            "marks": 4,
+            "concept": "Approved option selection"
+          }
+        ],
+        "maxMarks": 4,
+        "sourceVerified": true,
+        "format": "mcq",
+        "objective": {
+          "options": [
+            {
+              "id": "A",
+              "text": "Synthetic choice A"
+            },
+            {
+              "id": "B",
+              "text": "Synthetic choice B"
+            }
+          ],
+          "correctOptionId": "B"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Synthetic Audit chapter",
+    "subject": "Audit",
+    "groups": [
+      "Group 2"
+    ],
+    "batches": [
+      "Test A",
+      "Test B"
+    ],
+    "sourceUrl": "",
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "Explain the synthetic approved concept.",
+        "modelAnswer": "Synthetic model answer used only for isolated contract testing.",
+        "referenceLabel": "Synthetic test source, not official marks",
+        "page": 1,
+        "workbookPage": 1,
+        "rubric": [
+          {
+            "id": "p1",
+            "marks": 2,
+            "concept": "First approved concept"
+          },
+          {
+            "id": "p2",
+            "marks": 2,
+            "concept": "Second approved concept"
+          }
+        ],
+        "maxMarks": 4,
+        "sourceVerified": true,
+        "format": "blanks",
+        "objective": {
+          "slots": [
+            {
+              "id": "p1",
+              "text": "First blank",
+              "acceptedAnswers": [
+                "independent",
+                "independence"
+              ]
+            },
+            {
+              "id": "p2",
+              "text": "Second blank",
+              "acceptedAnswers": [
+                "appearance"
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "title": "Synthetic Audit chapter",
+    "subject": "Audit",
+    "groups": [
+      "Group 2"
+    ],
+    "batches": [
+      "Test A",
+      "Test B"
+    ],
+    "sourceUrl": "",
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "Explain the synthetic approved concept.",
+        "modelAnswer": "Synthetic model answer used only for isolated contract testing.",
+        "referenceLabel": "Synthetic test source, not official marks",
+        "page": 1,
+        "workbookPage": 1,
+        "rubric": [
+          {
+            "id": "p1",
+            "marks": 2,
+            "concept": "First approved concept"
+          },
+          {
+            "id": "p2",
+            "marks": 2,
+            "concept": "Second approved concept"
+          }
+        ],
+        "maxMarks": 4,
+        "sourceVerified": true,
+        "format": "matching",
+        "objective": {
+          "left": [
+            {
+              "id": "p1",
+              "text": "First item"
+            },
+            {
+              "id": "p2",
+              "text": "Second item"
+            }
+          ],
+          "right": [
+            {
+              "id": "X",
+              "text": "Match X"
+            },
+            {
+              "id": "Y",
+              "text": "Match Y"
+            }
+          ],
+          "matches": {
+            "p1": "Y",
+            "p2": "X"
+          }
+        }
+      }
+    ]
+  }
+]

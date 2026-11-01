@@ -26,6 +26,8 @@ from __future__ import annotations
 import os
 from dataclasses import dataclass, field
 from datetime import date, timedelta
+from week_window import week_start
+from group_bucket import bucket_of
 
 # ---------------------------------------------------------------------------
 # Tunables (env-overridable so policy can change without a code edit)
@@ -54,18 +56,55 @@ W_HOURS = _float_env("RANKING_W_HOURS", 40.0)
 W_MCQ = _float_env("RANKING_W_MCQ", 30.0)
 W_ATTENDANCE = _float_env("RANKING_W_ATTENDANCE", 30.0)
 
-# MCQ carries 30 of the 100 points, but the app only syncs attempts for a small
-# minority of students (43 attempt records across 148 accounts at the time of
-# writing). Scoring that component everywhere would hand a real, unearned
-# advantage to the few students whose attempts happen to have synced, and cap
-# everyone else below 100 for reasons outside their control.
-#
-# So the MCQ component is conditional: it counts only when enough of a segment
-# actually has synced attempts. When it is off, the remaining weights are
-# renormalised so scores stay a true 0-100 and remain comparable. RANKING_MCQ_MODE
-# can force it on or off; "auto" decides from live coverage.
+# Historical-policy settings only. Preserve pre-cutover calculations instead of
+# silently applying a new scoring rule to already published weekly podiums.
 MCQ_MIN_COVERAGE = _float_env("RANKING_MCQ_MIN_COVERAGE", 0.6)
 MCQ_MODE = (os.environ.get("RANKING_MCQ_MODE", "auto").strip().lower() or "auto")
+
+
+def _individual_mcq_from_env() -> date | None:
+    """Explicit Sunday cutover; unset means rollout has NOT been armed.
+
+    The owner removed the cohort-coverage gate. Activation still requires an
+    approved future week and verified sync, not an automatic all-board rollout.
+    Invalid configuration fails closed rather than silently changing old ranks.
+    """
+    raw = os.environ.get("RANKING_INDIVIDUAL_MCQ_FROM", "").strip()
+    if not raw:
+        return None
+    try:
+        effective = date.fromisoformat(raw)
+    except ValueError as exc:
+        raise ValueError("RANKING_INDIVIDUAL_MCQ_FROM must be an ISO Sunday date") from exc
+    if raw != effective.isoformat() or effective.weekday() != 6:
+        raise ValueError("RANKING_INDIVIDUAL_MCQ_FROM must be an ISO Sunday date")
+    return effective
+
+
+INDIVIDUAL_MCQ_FROM = _individual_mcq_from_env()
+
+
+def individual_mcq_active(start: date, end: date) -> bool:
+    """Policy for this as-of window, independent of peers and wall-clock time.
+
+    Historical weekly windows ending before cutover retain their old policy.
+    Monthly/overall live views use the policy of their as-of week, matching the
+    weekly live board. They must not be used to regenerate published artifacts.
+    """
+    return bool(end >= start and INDIVIDUAL_MCQ_FROM is not None
+                and week_start(end) >= INDIVIDUAL_MCQ_FROM)
+
+
+def mcq_policy_metadata(start: date, end: date) -> dict:
+    individual = individual_mcq_active(start, end)
+    return {
+        "mcqMode": "on" if individual else MCQ_MODE,
+        "mcqMinCoverage": None if individual else MCQ_MIN_COVERAGE,
+        "mcqPolicy": "individual-daily-full10-v2" if individual else "legacy-coverage-v1",
+        "mcqEffectiveFrom": INDIVIDUAL_MCQ_FROM.isoformat() if INDIVIDUAL_MCQ_FROM else None,
+        "mcqCoverageInformational": individual,
+        "mcqEligibility": "official-daily-full10" if individual else "legacy",
+    }
 
 
 def weights(use_mcq: bool = True) -> tuple[float, float, float]:
@@ -88,12 +127,23 @@ def mcq_coverage(activities: list, start: date, end: date, floor: date | None = 
     scored = [a for a in activities if expected_days(a.joined_on, start, end, floor) > 0]
     if not scored:
         return 0.0
-    with_attempts = sum(1 for a in scored if a.questions_attempted > 0)
+    if individual_mcq_active(start, end):
+        with_attempts = sum(any(max(start, floor or start, a.joined_on or start, INDIVIDUAL_MCQ_FROM) <= d <= end and v[0] > 0
+                                for d, v in a.verified_mcq_by_date.items()) for a in scored)
+    else:
+        with_attempts = sum(1 for a in scored if a.questions_attempted > 0)
     return with_attempts / len(scored)
 
 
 def mcq_enabled(activities: list, start: date, end: date, floor: date | None = None) -> bool:
-    """Whether the MCQ component should count, honouring RANKING_MCQ_MODE."""
+    """Count individual MCQ work without a cohort-participation gate.
+
+    After approved cutover even one solver gets their existing MCQ component;
+    nobody else's participation can toggle their weights. Legacy environment
+    overrides are consulted only for pre-cutover / not-yet-armed calculations.
+    """
+    if individual_mcq_active(start, end):
+        return True
     if MCQ_MODE == "on":
         return True
     if MCQ_MODE == "off":
@@ -131,6 +181,7 @@ class StudentActivity:
     submitted_dates: set = field(default_factory=set)   # dates with a submission
     questions_attempted: int = 0
     questions_correct: int = 0
+    verified_mcq_by_date: dict = field(default_factory=dict)
 
 
 @dataclass
@@ -160,10 +211,14 @@ class Ranking:
 
 
 def period_window(period: str, today: date, floor: date | None = None) -> tuple[date, date]:
-    """Window for a period, in IST dates. `today` is inclusive."""
+    """Window for a period, in IST dates. `today` is inclusive.
+
+    "weekly" opens on Sunday - see week_window. Late Sunday fills therefore land in
+    the week that is still running instead of falling behind the board.
+    """
     floor = floor or DEFAULT_HISTORY_FLOOR
     if period == "weekly":
-        return today - timedelta(days=today.weekday()), today
+        return week_start(today), today
     if period == "monthly":
         return today.replace(day=1), today
     return min(floor, today), today
@@ -244,11 +299,13 @@ def score_student(
     ref_hours = reference_hours(start, end, floor)
     hours_score = min(1.0, hours / ref_hours) if ref_hours else 0.0
 
-    accuracy = (
-        100.0 * activity.questions_correct / activity.questions_attempted
-        if activity.questions_attempted else 0.0
-    )
-    gate = min(1.0, activity.questions_attempted / _min_questions(period, start, end, floor))
+    attempted, correct = activity.questions_attempted, activity.questions_correct
+    if individual_mcq_active(start, end):
+        lower = max(start, floor or start, activity.joined_on or start, INDIVIDUAL_MCQ_FROM)
+        selected = [v for d, v in activity.verified_mcq_by_date.items() if lower <= d <= end]
+        attempted = sum(v[0] for v in selected); correct = sum(v[1] for v in selected)
+    accuracy = 100.0 * correct / attempted if attempted else 0.0
+    gate = min(1.0, attempted / _min_questions(period, start, end, floor))
     mcq_score = (accuracy / 100.0) * gate
 
     attendance_rate = len(submitted) / exp_days
@@ -298,6 +355,26 @@ def rank_segment(rankings: list) -> list:
     return ordered + sorted(ineligible, key=lambda r: r.student_id)
 
 
+SEGMENT_MODES = ("batch", "group", "batch_group")
+
+
+def segment_key(activity, segment_by: str) -> str:
+    """The board a student belongs to.
+
+    "batch" and "group" are the single-attribute views. "batch_group" is the one the
+    owner asked for on 18-Oct (chocolates go to the top 3 of each group inside a batch):
+    the key is "<batch> · <bucket>", where the bucket comes from the shared sheet rule
+    (group_bucket), so `Both` is its own board and never a union, and a student the
+    sheet cannot place lands in "(no group set)" instead of being ranked in a group
+    they are not in.
+    """
+    if segment_by == "batch_group":
+        batch = (getattr(activity, "batch", "") or "").strip() or "(no batch)"
+        bucket = bucket_of(getattr(activity, "group", ""))
+        return f"{batch} · {bucket}" if bucket else f"{batch} · (no group set)"
+    return (getattr(activity, segment_by, "") or "").strip() or "(unassigned)"
+
+
 def rank_segments(
     activities: list,
     start: date,
@@ -306,15 +383,15 @@ def rank_segments(
     segment_by: str = "batch",
     floor: date | None = None,
 ) -> dict:
-    """One ranked list per segment. segment_by is 'batch' or 'group'.
+    """One ranked list per segment. segment_by is 'batch', 'group' or 'batch_group'.
 
-    MCQ is decided per segment, because coverage can differ between them (a batch
-    whose students sync attempts keeps the MCQ component; one that does not is
-    scored on hours and attendance alone, renormalised to 0-100).
+    In the individual policy MCQ counts in every segment regardless of coverage,
+    with the unchanged hours/MCQ/attendance weights. Historical windows keep the
+    legacy rule. Coverage remains informational for the new policy.
     """
     buckets: dict = {}
     for activity in activities:
-        key = (getattr(activity, segment_by, "") or "").strip() or "(unassigned)"
+        key = segment_key(activity, segment_by)
         buckets.setdefault(key, []).append(activity)
     ranked = {}
     for key, members in sorted(buckets.items()):

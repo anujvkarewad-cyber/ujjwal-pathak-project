@@ -1,11 +1,10 @@
-# Files NOT uploaded to Cloud Build (keeps deploys fast; Docker builds the SPA).
+# Files NOT uploaded to Cloud Build (pre-built frontend/build IS uploaded so Docker skips npm build).
 .git
 .github
 .venv
 venv
 node_modules
 frontend/node_modules
-frontend/build
 **/__pycache__
 **/*.pyc
 .pytest_cache

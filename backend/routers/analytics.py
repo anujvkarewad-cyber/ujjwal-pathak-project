@@ -23,6 +23,9 @@ from db import (
     get_db,
 )
 from models import FollowupCreate, FollowupUpdate
+from week_window import normalise_week_key, week_start
+
+IST = timezone(timedelta(hours=5, minutes=30))
 
 router = APIRouter(prefix="/api/analytics", tags=["analytics"])
 
@@ -448,12 +451,19 @@ async def update_followup(followup_id: str, body: FollowupUpdate, claims: dict =
     return {"ok": True, "followupId": followup_id}
 
 
+def _ist_today() -> date:
+    """Today in IST. The container runs UTC, and date.today() there rolls over at
+    05:30 IST - which would show yesterday's week for the first five hours of the day."""
+    return datetime.now(IST).date()
+
+
 def _range_cutoff(range_key: Optional[str]):
-    """Week cutoff for report ranges: week = current week, month = last 5 weeks, all = no cutoff."""
+    """Week cutoff for report ranges: week = current week (Sunday..Saturday),
+    month = last 5 weeks, all = no cutoff."""
     if range_key == "week":
-        return date.today() - timedelta(days=date.today().weekday())
+        return week_start(_ist_today())
     if range_key == "month":
-        return date.today() - timedelta(days=date.today().weekday() + 28)
+        return week_start(_ist_today()) - timedelta(weeks=4)
     return None
 
 
@@ -491,7 +501,9 @@ async def batch_report(
     # weekly series from trends
     series: dict = {}
     async for t in db[ANALYTICS_TRENDS].find({"studentId": {"$in": list(consenting)} if consenting else []}):
-        week = str(t.get("weekStart") or "")[:10]
+        # re-anchored so a key the sync pipeline wrote on the old Monday rule still
+        # groups - and filters - with the Sunday cutoff
+        week = normalise_week_key(t.get("weekStart"))
         if not week:
             continue
         if cutoff and date.fromisoformat(week) < cutoff:
@@ -508,7 +520,7 @@ async def batch_report(
         day = str(e.get("at") or "")[:10]
         if cutoff and day and date.fromisoformat(day) < cutoff:
             continue
-        week = (date.fromisoformat(day) - timedelta(days=date.fromisoformat(day).weekday())).isoformat() if day else None
+        week = week_start(date.fromisoformat(day)).isoformat() if day else None
         tests_total += 1
         if e.get("kind") == "paper-test" and e.get("score") is None:
             pending_marks += 1

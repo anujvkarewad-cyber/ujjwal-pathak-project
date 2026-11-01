@@ -1,26 +1,17 @@
 import { NavLink } from 'react-router-dom';
 import {
-  LayoutDashboard, Users, ClipboardList, Trophy, Megaphone, FileText, FileBarChart2, Settings, GraduationCap,
-  Sparkles, ListChecks, Grid3X3, BookOpenCheck, Layers, FlaskConical, PackageCheck, History,
-  BarChart3, UserSearch, GitCompareArrows, School, Table2, UserX, TrendingUp, CheckSquare,
-  ClipboardCheck,
-  MessageCircle,
-  Target,
+  LayoutDashboard, Users, Settings, GraduationCap, Sparkles, ListChecks,
+  Grid3X3, BookOpenCheck, Layers, FlaskConical, PackageCheck, History,
+  BarChart3, UserSearch, GitCompareArrows, School, Table2, UserX, TrendingUp, CheckSquare, Inbox,
 } from 'lucide-react';
 import { cn } from '@/utils/format';
 
+// Cohort tools live inside Batch → Group. Do not duplicate them globally.
 const NAV = [
   { to: '/', label: 'Dashboard', icon: LayoutDashboard, testid: 'nav-dashboard' },
-  { to: '/ai-content/queue', label: 'MCQ Review', icon: BookOpenCheck, testid: 'nav-mcq-review' },
-  { to: '/students', label: 'Students', icon: Users, testid: 'nav-students' },
-  { to: '/daily-tracker', label: 'Daily Tracker', icon: ClipboardList, testid: 'nav-daily-tracker' },
-  { to: '/daily-targets', label: 'Daily Targets', icon: Target, testid: 'nav-daily-targets' },
-  { to: '/tests', label: 'Tests', icon: ClipboardCheck, testid: 'nav-tests' },
-  { to: '/messages', label: 'Messages', icon: MessageCircle, testid: 'nav-messages' },
-  { to: '/leaderboard', label: 'Leaderboard', icon: Trophy, testid: 'nav-leaderboard' },
-  { to: '/announcements', label: 'Announcements', icon: Megaphone, testid: 'nav-announcements' },
-  { to: '/notes', label: 'Notes', icon: FileText, testid: 'nav-notes' },
-  { to: '/reports', label: 'Reports', icon: FileBarChart2, testid: 'nav-reports' },
+  { to: '/batches', label: 'Batches & groups', icon: Users, testid: 'nav-batches' },
+  { to: '/notes-inbox', label: 'Notes Inbox', icon: Inbox, testid: 'nav-notes-inbox' },
+  { to: '/sheet-sources', label: 'Sheet Sources', icon: Table2, testid: 'nav-sheet-sources' },
   { to: '/settings', label: 'Settings', icon: Settings, testid: 'nav-settings' },
 ];
 
@@ -77,11 +68,12 @@ export default function Sidebar({ open, onClose }) {
         <nav className="flex-1 overflow-y-auto px-3 py-5 space-y-1">
           {[
             { title: 'Main', items: NAV },
-            { title: 'AI Content', items: AI_CONTENT_NAV, icon: Sparkles },
-            { title: 'Analytics', items: ANALYTICS_NAV },
-          ].map(({ title, items, icon: GroupIcon }) => (
-            <div key={title}>
-              <div className="px-3 pt-3 pb-2 text-[10px] uppercase tracking-[0.22em] font-semibold text-slate-400 dark:text-slate-500 flex items-center gap-1.5">
+            { title: 'Global content administration', items: AI_CONTENT_NAV, icon: Sparkles, collapsed: true },
+            { title: 'Global analytics', items: ANALYTICS_NAV, collapsed: true },
+          ].map(({ title, items, icon: GroupIcon, collapsed }) => (
+            <details key={title} open={collapsed ? undefined : true} className="group">
+              <summary className={`${collapsed ? 'cursor-pointer' : 'hidden'} px-3 pt-3 pb-2 text-[10px] uppercase tracking-[0.22em] font-semibold text-slate-400 dark:text-slate-500`}>{title}</summary>
+              <div className={`${collapsed ? 'hidden' : ''} px-3 pt-3 pb-2 text-[10px] uppercase tracking-[0.22em] font-semibold text-slate-400 dark:text-slate-500 flex items-center gap-1.5`}>
                 {GroupIcon && <GroupIcon className="w-3 h-3" />}
                 {title}
               </div>
@@ -106,7 +98,7 @@ export default function Sidebar({ open, onClose }) {
                   <span>{label}</span>
                 </NavLink>
               ))}
-            </div>
+            </details>
           ))}
         </nav>
 

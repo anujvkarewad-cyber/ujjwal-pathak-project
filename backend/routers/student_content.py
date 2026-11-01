@@ -135,7 +135,7 @@ async def live_bank_meta():
     return JSONResponse(
         {"revision": f"published-r{revision}", "count": count},
         headers={
-            "Cache-Control": "public, max-age=60, s-maxage=60",
+            "Cache-Control": "no-store",
             "X-Content-Revision": str(revision),
         },
     )

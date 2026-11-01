@@ -26,7 +26,9 @@ ANALYTICS_TEST_HISTORY = "analytics_test_history"
 STUDENT_MESSAGES = "student_messages"
 WHATSAPP_LOG = "whatsapp_log"
 STUDENT_MCQ_ATTEMPTS = "student_mcq_attempts"
+STUDENT_OFFICIAL_DAILY_SETS = "student_official_daily_sets_v1"
 STUDENT_ACCOUNTS = "student_accounts"
+STUDENT_ACCESS_EVENTS = "student_access_events"  # mentor ON/OFF timeline (makeup credit)
 MENTOR_TESTS = "mentor_tests"
 ANALYTICS_TEST_HISTORY = "analytics_test_history"
 ANSWER_SHEET_FILES = "answer_sheet_files"
@@ -35,6 +37,8 @@ DASHBOARD_SHARED = "dashboard_shared"
 DASHBOARD_STUDENTS = "dashboard_students"
 KNOWLEDGE_CHUNKS = "knowledge_chunks"
 MIGRATIONS = "migrations"
+DEVICE_TOKENS = "device_tokens"
+PUSH_JOBS = "push_jobs"
 
 
 def get_db():

@@ -1,0 +1,876 @@
+--- a/backend/backend/tests/test_push_midnight_glitch.py
++++ b/backend/backend/tests/test_push_midnight_glitch.py
+@@ -90,6 +90,8 @@
+ def test_a_fresh_morning_tick_still_runs_its_job(no_sending, monkeypatch):
+     _seed_devices(monkeypatch, ["UMP0001"])
+     now = datetime(2026, 10, 16, 9, 0, 30, tzinfo=IST)
++    # This is a fresh-morning fixture, not a stale tick entering quiet hours.
++    monkeypatch.setattr(push_service, "datetime", type("DT", (), {"now": staticmethod(lambda tz: now)}))
+ 
+     async def go():
+         await bp.job_weekday_rotation(now)
+--- a/backend/backend/tests/test_push_quiet_gate.py
++++ b/backend/backend/tests/test_push_quiet_gate.py
+@@ -136,6 +136,9 @@
+     monkeypatch.setattr(bp, "_recent_template_ids", lambda db, sid, days=14: asyncio.sleep(0, result=set()))
+     monkeypatch.setattr(bp, "_today", lambda: TODAY)
+     monkeypatch.setattr(bp, "_now_ist", lambda: EVENING)
++    # The delivery gate uses a separate real-clock reader. Freeze it too;
++    # otherwise this evening fixture depends on when CI happens to execute.
++    monkeypatch.setattr(push_service, "datetime", type("DT", (), {"now": staticmethod(lambda tz: EVENING)}))
+ 
+ 
+ def test_evening_nudge_skips_a_student_whose_day_is_done(monkeypatch, sends):
+--- a/student-app/Dockerfile
++++ b/student-app/Dockerfile
+@@ -21,7 +21,7 @@
+      learning-tools.js live-bank-loader.js mcq-cloud-sync.js mcq-progress-share.js \
+      mentor-host.js service-worker.js web-tests.js ./
+ COPY practice-vendor ./practice-vendor
+-COPY practice-client.js receipt-voice.js receipt-audio-vault.js workbook.html workbook-core.js workbook.js ./
++COPY practice-client.js receipt-voice.js receipt-audio-vault.js workbook.html workbook-core.js workbook-objective.js workbook.js ./
+ COPY assets ./assets
+ COPY icon ./icon
+ 
+--- a/student-app/mobile/src/services/answerEvaluator.ts
++++ b/student-app/mobile/src/services/answerEvaluator.ts
+@@ -10,6 +10,7 @@
+  * would then drive the student's revision schedule.
+  */
+ import { config } from '../config';
++import { getSavedSession, getSessionGeneration, clearSavedSession } from '../storage/session';
+ 
+ export type EvaluationResult = {
+   ok: true;
+@@ -55,10 +56,18 @@
+ export const evaluateAnswer = async (input: EvaluateInput): Promise<EvaluationOutcome> => {
+   const controller = new AbortController();
+   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
++  const unavailable = (error: string): EvaluationFailure => ({ ok: false, mode: 'unavailable', error });
++  const epoch = getSessionGeneration();
+   try {
++    const session = await getSavedSession();
++    if (!session?.studentId || !session.password) return unavailable('Sign in again before grading this answer.');
++    if (input.studentId.trim().toUpperCase() !== session.studentId.trim().toUpperCase()) return unavailable('Student scope denied. Your answer has not been graded.');
++    const unchanged = (active: typeof session | null) =>
++      epoch === getSessionGeneration() && active?.studentId === session.studentId && active.password === session.password;
++    if (!unchanged(await getSavedSession())) return unavailable('Student session changed. Your answer has not been graded.');
+     const response = await fetch(`${config.mentorApiUrl}/api/ai/evaluate`, {
+       method: 'POST',
+-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
++      headers: { 'Content-Type': 'application/json', Accept: 'application/json', 'X-Student-Id': session.studentId, 'X-Session-Password': session.password },
+       signal: controller.signal,
+       body: JSON.stringify({
+         studentId: input.studentId,
+@@ -70,6 +79,11 @@
+       }),
+     });
+ 
++    if (!unchanged(await getSavedSession())) return unavailable('Student session changed. The grading result was discarded.');
++    if (response.status === 401 || response.status === 403) {
++      await clearSavedSession();
++      return unavailable('Student session unavailable. Sign in again before grading.');
++    }
+     if (!response.ok) {
+       return {
+         ok: false,
+@@ -79,7 +93,9 @@
+     }
+ 
+     const data = await response.json();
+-    if (!data || data.ok !== true) {
++    if (!unchanged(await getSavedSession())) return unavailable('Student session changed. The grading result was discarded.');
++    const numeric = (value: unknown) => (typeof value === 'number' || (typeof value === 'string' && value.trim() !== '')) && Number.isFinite(Number(value));
++    if (!data || data.ok !== true || data.error || !numeric(data.score) || !numeric(data.accuracyPct)) {
+       return {
+         ok: false,
+         mode: 'unavailable',
+--- a/student-app/mobile/src/services/mentorTests.ts
++++ b/student-app/mobile/src/services/mentorTests.ts
+@@ -1,4 +1,4 @@
+-import { getSavedSession } from '../storage/session';
++import { getSavedSession, getSessionGeneration } from '../storage/session';
+ 
+ /**
+  * Native Mentor Tests flow (v1.15.0).
+@@ -191,15 +191,27 @@
+   mimeType: string;
+   filename: string;
+ }): Promise<string> {
++  const generation = getSessionGeneration();
++  const actor = await creds();
++  const stillOwner = async () => {
++    const current = await getSavedSession();
++    return generation === getSessionGeneration() && current?.studentId === actor.studentId && current?.password === actor.password;
++  };
++  if (!await stillOwner()) throw new Error('Session changed. Keep the original file.');
++  // This preserves the existing Script wire contract, NOT proof of Script-side
++  // authentication/private ACLs. Those require the authoritative source.
+   const res = await fetch(APPS_SCRIPT_URL, {
+-    method: 'POST',
+-    body: JSON.stringify({ action: 'student.test.uploadSubmission', payload: opts }),
++    method: 'POST', body: JSON.stringify({ action: 'student.test.uploadSubmission', payload: opts }),
+   });
+   const data = await res.json().catch(() => null);
+-  if (!data || data.error) throw new Error(data?.error ? String(data.error) : 'Upload failed. Try again.');
+-  const url = data?.result?.url || (typeof data?.result === 'string' ? data.result : '');
+-  if (!url) throw new Error('Upload finished but no file link came back. Try again.');
+-  return String(url);
++  if (!await stillOwner()) throw new Error('Session changed. Keep the original file.');
++  const result = data?.result;
++  const url = typeof result === 'string' ? result : result?.url;
++  if (!res.ok || !data || data.error || data.ok === false || data.success === false || result?.error || result?.ok === false || result?.success === false || typeof url !== 'string' || !url.trim()) {
++    throw new Error('Upload could not be confirmed. Keep the original file and check before retrying.');
++  }
++  return url;
++
+ }
+ 
+ export async function submitSelfMarks(opts: {
+--- /dev/null
++++ b/student-app/mobile/src/services/privateProof.ts
+@@ -0,0 +1,36 @@
++import { config } from '../config';
++import { getSavedSession, getSessionGeneration } from '../storage/session';
++
++export type PrivateProof = { base64: string; mimeType: string; generation: number };
++export function isPrivateProofLink(value: string): boolean {
++  try { return new URL(value, config.gatewayOrigin || 'https://invalid.local').pathname === '/api/proof-file'; }
++  catch { return value.startsWith('/api/proof-file'); }
++}
++export async function loadPrivateProof(value: string): Promise<PrivateProof> {
++  const origin = new URL(config.gatewayOrigin);
++  const url = new URL(value, origin);
++  if (origin.protocol !== 'https:' || url.origin !== origin.origin || url.pathname !== '/api/proof-file' || url.username || url.password || url.hash || [...url.searchParams.keys()].some(k => k !== 'fileId') || url.searchParams.getAll('fileId').length !== 1) throw new Error('Invalid private proof link.');
++  const generation = getSessionGeneration();
++  const actor = await getSavedSession();
++  if (!actor?.studentId || !actor.password || generation !== getSessionGeneration()) throw new Error('Sign in again to view your proof.');
++  const response = await new Promise<{ mimeType: string; bytes: ArrayBuffer }>((resolve,reject) => {
++    const xhr = new XMLHttpRequest();
++    xhr.open('GET',url.toString()); xhr.responseType='arraybuffer'; xhr.timeout=60000;
++    xhr.setRequestHeader('X-Student-Id',actor.studentId); xhr.setRequestHeader('X-Session-Password',actor.password);
++    xhr.onprogress=e=>{if(e.loaded>10*1024*1024){xhr.abort();reject(new Error('Proof exceeds the supported size.'));}};
++    xhr.onerror=xhr.ontimeout=()=>reject(new Error('Private proof could not be read.'));
++    xhr.onabort=()=>reject(new Error('Proof viewing cancelled.'));
++    xhr.onload=()=>{
++      const mimeType=String(xhr.getResponseHeader('Content-Type')||'').split(';')[0];
++      const bytes=xhr.response as ArrayBuffer;
++      if(xhr.status!==200 || !['image/png','image/jpeg','image/webp','application/pdf'].includes(mimeType) || !(bytes instanceof ArrayBuffer) || !bytes.byteLength || bytes.byteLength>10*1024*1024) return reject(new Error('Private proof is unavailable for this session.'));
++      resolve({mimeType,bytes});
++    };
++    xhr.send();
++  });
++  const current=await getSavedSession();
++  if(generation!==getSessionGeneration() || current?.studentId!==actor.studentId || current?.password!==actor.password) throw new Error('Student session changed.');
++  const bytes=new Uint8Array(response.bytes);let binary='';
++  for(let i=0;i<bytes.length;i+=32768) binary+=String.fromCharCode(...bytes.subarray(i,i+32768));
++  return {base64:btoa(binary),mimeType:response.mimeType,generation};
++}
+--- a/student-app/mobile/src/services/pushNotifications.ts
++++ b/student-app/mobile/src/services/pushNotifications.ts
+@@ -1,16 +1,12 @@
+-import AsyncStorage from '@react-native-async-storage/async-storage';
+ import * as Device from 'expo-device';
+ import * as Notifications from 'expo-notifications';
+ import { Platform } from 'react-native';
+-import { api } from '../api/client';
++import { getSavedSession, getSessionGeneration } from '../storage/session';
++import { bindPushToken } from '../storage/pushBinding';
+ 
+ export type NativePushStatus = 'idle' | 'requesting' | 'enabled' | 'denied' | 'unsupported' | 'configuration-required' | 'error';
+ 
+ const CHANNEL_ID = 'ump-updates';
+-const TOKEN_KEY_PREFIX = 'ump_native_fcm_v1_';
+-const TOKEN_REFRESH_MS = 7 * 24 * 60 * 60 * 1000;
+-
+-type StoredToken = { token: string; savedAt: number };
+ 
+ if (Platform.OS !== 'web') {
+   Notifications.setNotificationHandler({
+@@ -40,6 +36,10 @@
+ export const registerNativePush = async (studentId: string, force = false): Promise<NativePushStatus> => {
+   if (Platform.OS === 'web' || !Device.isDevice) return 'unsupported';
+ 
++  const epoch = getSessionGeneration();
++  const actor = await getSavedSession();
++  const current = () => epoch === getSessionGeneration();
++  if (!actor?.password || actor.studentId !== studentId || !current()) return 'error';
+   try {
+     await ensureAndroidChannel();
+     let permission = await Notifications.getPermissionsAsync();
+@@ -59,18 +59,9 @@
+     }
+     if (!token) return 'configuration-required';
+ 
+-    const key = `${TOKEN_KEY_PREFIX}${studentId}`;
+-    let saved: StoredToken | null = null;
+-    try {
+-      const raw = await AsyncStorage.getItem(key);
+-      saved = raw ? JSON.parse(raw) as StoredToken : null;
+-    } catch { saved = null; }
+-
+-    if (force || saved?.token !== token || Date.now() - Number(saved?.savedAt || 0) >= TOKEN_REFRESH_MS) {
+-      const result = await api.saveDeviceToken(studentId, token);
+-      if (!result?.success) throw new Error(result?.message || 'The notification token could not be registered.');
+-      await AsyncStorage.setItem(key, JSON.stringify({ token, savedAt: Date.now() } satisfies StoredToken));
+-    }
++    // Re-register every authenticated session, including A -> B -> A. A
++    // per-student cache is not evidence of the server's current token owner.
++    if (!current() || !await bindPushToken(actor, token, current)) return 'error';
+ 
+     return 'enabled';
+   } catch {
+@@ -78,15 +69,16 @@
+   }
+ };
+ 
+-export const subscribeToNativeTokenChanges = (studentId: string) => Notifications.addPushTokenListener(async (next) => {
+-  if (Platform.OS === 'web' || typeof next.data !== 'string' || !next.data) return;
+-  try {
+-    const result = await api.saveDeviceToken(studentId, next.data);
+-    if (result?.success) {
+-      await AsyncStorage.setItem(`${TOKEN_KEY_PREFIX}${studentId}`, JSON.stringify({ token: next.data, savedAt: Date.now() } satisfies StoredToken));
+-    }
+-  } catch { /* the weekly refresh retries a failed rotation */ }
+-});
++export const subscribeToNativeTokenChanges = (studentId: string) => {
++  const epoch = getSessionGeneration();
++  return Notifications.addPushTokenListener(async (next) => {
++    if (Platform.OS === 'web' || typeof next.data !== 'string' || !next.data || epoch !== getSessionGeneration()) return;
++    const actor = await getSavedSession();
++    if (!actor?.password || actor.studentId !== studentId || epoch !== getSessionGeneration()) return;
++    try { await bindPushToken(actor, next.data, () => epoch === getSessionGeneration()); }
++    catch { /* no successful binding claim; next authenticated session retries */ }
++  });
++};
+ 
+ export const notificationLink = (notification: Notifications.Notification) => {
+   const data = notification.request.content.data || {};
+--- a/student-app/mobile/src/services/smartTargets.ts
++++ b/student-app/mobile/src/services/smartTargets.ts
+@@ -1,5 +1,5 @@
+ import { config } from '../config';
+-import { getSavedSession } from '../storage/session';
++import { getSavedSession, getSessionGeneration } from '../storage/session';
+ 
+ export type SmartBinding = {
+   ownerId: string; subject: string; concept: string;
+@@ -23,20 +23,35 @@
+ /** No silent null/success or offline tick: the server is authoritative. */
+ export async function smartTargetRequest<T = any>(ownerId: string, action: string, payload: Record<string, unknown> = {}, allowWrite = false): Promise<T> {
+   if (!['dashboard', 'session'].includes(action) && !allowWrite) throw new Error('Switch to Full Live before saving target progress.');
++  const generation = getSessionGeneration();
+   const credentials = await getSavedSession();
+-  if (!credentials?.password || credentials.studentId !== ownerId) throw new Error('Please sign in again.');
++  if (!credentials?.password || credentials.studentId !== ownerId || generation !== getSessionGeneration()) throw new Error('Please sign in again.');
+   if (!config.mentorApiUrl) throw new Error('Target server is not configured.');
++  const stillOwner = async () => {
++    const current = await getSavedSession();
++    return generation === getSessionGeneration() && current?.studentId === ownerId && current.password === credentials.password;
++  };
++  const routeUnavailable = (status: number) => new Error(`Personal target service is unavailable on the configured server (HTTP ${status}). No successful result was confirmed.`);
+   const controller = new AbortController();
+   const timeout = setTimeout(() => controller.abort(), 65000);
+   try {
++    if (!await stillOwner()) throw new Error('Account changed. Reload your targets.');
+     const response = await fetch(`${config.mentorApiUrl}/api/smart-targets/student/${action}`, {
+       method: 'POST', headers: { 'Content-Type': 'application/json' }, signal: controller.signal,
+       body: JSON.stringify({ ...payload, studentId: credentials.studentId, password: credentials.password }),
+     });
+-    const data = await response.json().catch(() => ({}));
+-    if (!response.ok) throw new Error(typeof data.detail === 'string' ? data.detail : 'Target request failed. Refresh and retry.');
+-    const current = await getSavedSession();
+-    if (current?.studentId !== ownerId) throw new Error('Account changed. Reload your targets.');
++    let data;
++    try { data = await response.json(); }
++    catch {
++      if (!await stillOwner()) throw new Error('Account changed. Reload your targets.');
++      if (response.status === 404 || response.status === 405) throw routeUnavailable(response.status);
++      throw new Error('Target server returned an unreadable response. No successful result was confirmed.');
++    }
++    if (!await stillOwner()) throw new Error('Account changed. Reload your targets.');
++    // A missing POST API can be shadowed by an older backend's GET-only route.
++    // Never retry as GET, switch providers, or turn this into an empty dashboard.
++    if (response.status === 404 || response.status === 405) throw routeUnavailable(response.status);
++    if (!response.ok) throw new Error(typeof data?.detail === 'string' ? data.detail : 'Target request failed. Refresh and retry.');
+     return data as T;
+   } catch (error) {
+     if (error instanceof Error && error.name === 'AbortError') throw new Error('Request timed out. Refresh to check what was saved before retrying.');
+--- /dev/null
++++ b/student-app/test/workbook-objective.test.mjs
+@@ -0,0 +1,43 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import fs from 'node:fs';
++import { JSDOM } from 'jsdom';
++const source=fs.readFileSync(new URL('../workbook-objective.js',import.meta.url),'utf8');
++function setup(question,saved=''){
++ const dom=new JSDOM('<div id="root"></div>',{runScripts:'outside-only'}),w=dom.window;w.eval(source);const updates=[];
++ const api=w.UMP_WORKBOOK_OBJECTIVE.render(w.document.getElementById('root'),question,saved,(v,e)=>updates.push({v,error:e?.message}));
++ return{dom,w,api,updates,inputs:()=>Array.from(w.document.querySelectorAll('input,select'))};
++}
++const mcq={format:'mcq',objective:{options:[{id:'A',text:'Choice A'},{id:'B',text:'Choice B'}]}};
++const blanks={format:'blanks',objective:{slots:[{id:'s1',text:'First blank'},{id:'s2',text:'Second blank'}]}};
++const matching={format:'matching',objective:{left:[{id:'a',text:'First item'},{id:'b',text:'Second item'}],right:[{id:'x',text:'Match X'},{id:'y',text:'Match Y'}]}};
++function edit(t,index,value,event='input'){const el=t.inputs()[index];if(el.type==='radio')el.checked=true;else el.value=value;el.dispatchEvent(new t.w.Event(event,{bubbles:true}));}
++test('MCQ requires a selection and serializes only its option ID, not a guessed score',()=>{
++ const t=setup(mcq);assert.equal(t.api.isComplete(),false);edit(t,1,'B','change');assert.equal(t.api.isComplete(),true);assert.deepEqual(JSON.parse(t.api.serialize()),{choice:'B'});assert.equal(t.updates.length,1);assert.equal(t.w.document.querySelector('form'),null);t.dom.window.close();
++});
++test('blank fields keep editable individual values, reject unresolved OCR and do not auto-grade',()=>{
++ const t=setup(blanks);edit(t,0,'independent');assert.equal(t.api.isComplete(),false);edit(t,1,'[unclear]');assert.equal(t.api.isComplete(),false);edit(t,1,'appearance');assert.equal(t.api.isComplete(),true);assert.deepEqual(JSON.parse(t.api.serialize()),{responses:{s1:'independent',s2:'appearance'}});t.dom.window.close();
++});
++test('matching controls require distinct choices; reset removes choices without calling save',()=>{
++ const t=setup(matching);edit(t,0,'x','change');edit(t,1,'x','change');assert.equal(t.api.isComplete(),false);edit(t,1,'y','change');assert.equal(t.api.isComplete(),true);const n=t.updates.length;t.api.reset();assert.equal(t.api.isComplete(),false);assert.equal(t.updates.length,n);t.dom.window.close();
++});
++test('saved structured draft reopens and lock disables the fieldset',()=>{
++ const t=setup(blanks,JSON.stringify({responses:{s1:'retained first',s2:'retained second'}}));assert.equal(t.inputs()[0].value,'retained first');assert.equal(t.api.isComplete(),true);t.api.setDisabled(true);assert.equal(t.w.document.querySelector('fieldset').disabled,true);t.dom.window.close();
++});
++for(const invalid of [{...mcq,format:'future-format'},{format:'mcq',objective:{...mcq.objective,correctOptionId:'B'}},{format:'blanks',objective:{slots:[{id:'s1',text:'Blank',acceptedAnswers:['secret']}]}}])test('unknown format or leaked key cannot fall back to a generic essay field '+invalid.format,()=>{
++ assert.throws(()=>setup(invalid));
++});
++test('incompatible saved answer is not silently converted or overwritten',()=>{
++ assert.throws(()=>setup(mcq,'My retained written answer'),/different format/);assert.throws(()=>setup(mcq,'{"choice":"Z"}'),/preserved/);assert.throws(()=>setup(blanks,'{"responses":{"foreign":"answer"}}'),/do not match/);
++});
++test('labels are text, not executable markup',()=>{
++ const q=structuredClone(blanks);q.objective.slots[0].text='<img src=x onerror=alert(1)>';const t=setup(q);assert.equal(t.w.document.querySelector('img'),null);assert.match(t.w.document.body.textContent,/<img/);t.dom.window.close();
++});
++test('oversized structured serialization fails explicitly without truncation or a successful save callback',()=>{
++ const q={format:'blanks',objective:{slots:Array.from({length:20},(_,i)=>({id:'s'+i,text:'Blank '+i}))}},t=setup(q);
++ for(let i=0;i<20;i++)edit(t,i,'"'.repeat(500));assert.equal(t.api.isComplete(),false);assert.throws(()=>t.api.serialize(),/no text was truncated/);assert.match(t.updates.at(-1).error,/exceeds/);assert.equal(t.inputs()[19].value.length,500);t.dom.window.close();
++});
++test('existing workbook page wires dedicated controls and packages the asset without adding voice or automatic submission',()=>{
++ const js=fs.readFileSync(new URL('../workbook.js',import.meta.url),'utf8'),html=fs.readFileSync(new URL('../workbook.html',import.meta.url),'utf8'),docker=fs.readFileSync(new URL('../Dockerfile',import.meta.url),'utf8');
++ assert.match(js,/UMP_WORKBOOK_OBJECTIVE\.render/);assert.match(js,/objectiveController\.serialize/);assert.match(js,/confirmed.*answerReady/);assert.match(html,/id="objectiveAnswer"/);assert.match(html,/src="workbook-objective\.js"/);assert.match(docker,/workbook-objective\.js/);assert.doesNotMatch(source,/fetch\(|\/grade|ReceiptVoiceButton|\.submit\(/);
++});
+--- /dev/null
++++ b/student-app/test/workbook-static-delivery.test.mjs
+@@ -0,0 +1,44 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import { once } from 'node:events';
++import fs from 'node:fs';
++import path from 'node:path';
++import crypto from 'node:crypto';
++
++// One-shot local HTTP server only: no provider calls, fixture writes or external API.
++test('actual local gateway serves the workbook and its dedicated assets, not the dashboard fallback', async () => {
++  const prior = { PORT:process.env.PORT, HOST:process.env.HOST, MENTOR_API_URL:process.env.MENTOR_API_URL };
++  process.env.PORT='0'; process.env.HOST='0.0.0.0'; process.env.MENTOR_API_URL='http://127.0.0.1:1';
++  let server;
++  try {
++    server=(await import('../server.js?workbook-static-contract')).default;
++    if (!server.listening) await once(server,'listening');
++    const base='http://127.0.0.1:'+server.address().port;
++    for (const [resource, expectedType, marker] of [
++      ['/workbook.html','text/html','id="objectiveAnswer"'],
++      ['/workbook-objective.js','javascript','UMP_WORKBOOK_OBJECTIVE'],
++      ['/workbook-core.js','javascript','UMP_WORKBOOK_CORE'],
++      ['/workbook.js','javascript','answerReady'],
++      ['/practice-client.js','javascript','UMP_PRACTICE'],
++      ['/practice-vendor/pdf.worker.mjs','javascript','pdfjs']
++    ]) {
++      const response=await fetch(base+resource);
++      assert.equal(response.status,200,resource);assert.ok(response.headers.get('content-type').includes(expectedType),resource);
++      assert.ok((await response.text()).includes(marker),resource);
++    }
++    assert.equal((await fetch(base+'/mobile/src/storage/session.ts')).status,404);
++  } finally {
++    if (server) { server.closeAllConnections(); await new Promise(resolve=>server.close(resolve)); }
++    for (const [key,value] of Object.entries(prior)) { if(value===undefined)delete process.env[key];else process.env[key]=value; }
++  }
++});
++
++test('retained PDF renderer files match the existing vendor hash manifest',()=>{
++  const dir=new URL('../practice-vendor/',import.meta.url),manifest=JSON.parse(fs.readFileSync(new URL('manifest.json',dir),'utf8'));
++  assert.ok(Object.keys(manifest.files).length>100);
++  for (const [name,expected] of Object.entries(manifest.files)) {
++    assert.ok(!path.isAbsolute(name)&&!name.split('/').includes('..'));
++    const bytes=fs.readFileSync(new URL(name,dir));
++    assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),expected,name);
++  }
++});
+--- /dev/null
++++ b/student-app/workbook-objective.js
+@@ -0,0 +1,54 @@
++/* Objective workbook controls. No answer keys, scoring, provider calls or auto-submit. */
++(function (root) {
++  'use strict';
++  function render(container, question, saved, changed) {
++    const kind = question.format, spec = question.objective;
++    if (!['mcq', 'blanks', 'matching'].includes(kind) || !spec || typeof spec !== 'object') throw new Error('Unsupported workbook format. Your saved draft is unchanged.');
++    if (['correctOptionId', 'acceptedAnswers', 'matches'].some(k => Object.prototype.hasOwnProperty.call(spec, k))) throw new Error('Invalid student workbook descriptor.');
++    const items = kind === 'mcq' ? spec.options : kind === 'blanks' ? spec.slots : spec.left;
++    const validItems = list => Array.isArray(list) && list.length >= (kind === 'blanks' ? 1 : 2) && list.length <= 20 && list.every(v => v && /^[a-zA-Z0-9_-]{1,40}$/.test(v.id) && typeof v.text === 'string' && v.text.trim() && v.text.length <= 500 && Object.keys(v).every(k => ['id','text'].includes(k))) && new Set(list.map(v => v.id)).size === list.length;
++    if (!validItems(items) || (kind === 'matching' && (!validItems(spec.right) || spec.right.length !== items.length))) throw new Error('Invalid objective items. Your saved draft is unchanged.');
++    let previous = {};
++    if (saved && saved.trim()) {
++      try { previous = JSON.parse(saved); } catch (_) { throw new Error('The saved answer uses a different format. Copy it before changing formats.'); }
++      if (!previous || typeof previous !== 'object' || Array.isArray(previous) || Object.keys(previous).some(k => k !== (kind === 'mcq' ? 'choice' : 'responses'))) throw new Error('Saved answer format does not match this question.');
++      if (kind !== 'mcq' && (typeof previous.responses !== 'object' || previous.responses === null || Array.isArray(previous.responses) || Object.keys(previous.responses).some(k => !items.some(item => item.id === k)))) throw new Error('Saved response items do not match this question.');
++    }
++    if (kind === 'mcq' && previous.choice !== undefined && (typeof previous.choice !== 'string' || (previous.choice && !items.some(o => o.id === previous.choice)))) throw new Error('Saved option no longer exists; your original draft is preserved.');
++    const doc = container.ownerDocument, controls = [];
++    const fieldset = doc.createElement('fieldset');
++    const legend = doc.createElement('legend'); legend.textContent = kind === 'mcq' ? 'Choose one option' : kind === 'blanks' ? 'Complete each blank' : 'Match each item once'; fieldset.append(legend);
++    function notify() { try { changed(serialize()); } catch (e) { changed(null, e); } }
++    for (const item of items) {
++      const label = doc.createElement('label'); label.style.display = 'block'; label.style.margin = '12px 0';
++      if (kind === 'mcq') {
++        const input = doc.createElement('input'); input.type = 'radio'; input.name = 'workbook-objective-choice'; input.value = item.id;
++        if (previous.choice && !items.some(o => o.id === previous.choice)) throw new Error('Saved option no longer exists; your original draft is preserved.');
++        input.checked = previous.choice === item.id; input.addEventListener('change', notify); label.append(input, doc.createTextNode(' ' + item.text)); controls.push(input);
++      } else {
++        const input = doc.createElement(kind === 'blanks' ? 'input' : 'select'); input.dataset.item = item.id;
++        if (kind === 'blanks') { input.type = 'text'; input.maxLength = 500; input.autocomplete = 'off'; input.style.width = '100%'; }
++        else { const empty = doc.createElement('option'); empty.value = ''; empty.textContent = 'Choose a match…'; input.append(empty); for (const option of spec.right) { const opt = doc.createElement('option'); opt.value = option.id; opt.textContent = option.text; input.append(opt); } }
++        const value = previous.responses?.[item.id] ?? '';
++        if (typeof value !== 'string' || value.length > 500 || (kind === 'matching' && value && !spec.right.some(o => o.id === value))) throw new Error('Invalid saved response; your original draft is preserved.');
++        input.value = value; input.addEventListener(kind === 'blanks' ? 'input' : 'change', notify);
++        label.append(doc.createTextNode(item.text + ' '), input); controls.push(input);
++      }
++      fieldset.append(label);
++    }
++    function serialize() {
++      const value = kind === 'mcq' ? { choice: controls.find(c => c.checked)?.value || '' } : { responses: Object.fromEntries(controls.map(c => [c.dataset.item, c.value])) };
++      const text = JSON.stringify(value);
++      if (text.length > 12000) throw new Error('This answer exceeds draft limits. Shorten a response; no text was truncated.');
++      return text;
++    }
++    function isComplete() {
++      try { serialize(); } catch (_) { return false; }
++      if (kind === 'mcq') return controls.some(c => c.checked);
++      return controls.every(c => c.value.trim() && !c.value.toLowerCase().includes('[unclear]')) && (kind !== 'matching' || new Set(controls.map(c => c.value)).size === controls.length);
++    }
++    container.replaceChildren(fieldset);
++    return { serialize, isComplete, setDisabled(value) { fieldset.disabled = value; }, reset() { controls.forEach(c => { if (kind === 'mcq') c.checked = false; else c.value = ''; }); } };
++  }
++  root.UMP_WORKBOOK_OBJECTIVE = { render };
++})(typeof window !== 'undefined' ? window : globalThis);
+--- a/student-app/workbook.html
++++ b/student-app/workbook.html
+@@ -1 +1 @@
+-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><title>Audit & SM · Workbook Practice</title><style>*{box-sizing:border-box}body{margin:0;background:#f3f6fb;color:#17243b;font:16px system-ui,sans-serif}main{max-width:980px;margin:auto;padding:24px 16px 70px}header{padding:25px;background:#173b61;color:white;border-radius:18px;margin-bottom:20px}h1{font-size:28px;margin:8px 0}h2{font-size:21px}p{line-height:1.6}.eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#a6c9ee}.card{background:white;border:1px solid #dbe3ef;border-radius:15px;padding:20px;margin:16px 0}button,select{font:inherit;padding:11px 15px;border:1px solid #bbcbe1;border-radius:10px;background:#edf3ff;color:#214771;margin:5px 6px 5px 0;cursor:pointer}button:disabled{opacity:.5;cursor:wait}button.primary{background:#215eb4;color:white;border:0}textarea{display:block;width:100%;min-height:190px;padding:14px;border-radius:12px;border:1px solid #bac8dd;font:inherit;line-height:1.7;margin:10px 0;resize:vertical}canvas{display:block;max-width:none;width:100%;height:auto;border:1px solid #aebfd8;border-radius:10px;touch-action:none;background:white}iframe{width:100%;height:440px;border:1px solid #dbe3ef;border-radius:12px}small,.muted{color:#52677e}#error{color:#a32020;white-space:pre-wrap}.result{white-space:pre-wrap;line-height:1.7}.score{font-size:30px;font-weight:800}.badge{display:inline-block;border-radius:20px;padding:5px 10px;background:#fef3db;color:#7c5b13;font-size:13px}.hidden{display:none!important}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.toolbar{position:sticky;top:0;background:#f3f6fbf5;padding:8px 0;z-index:2}input[type=checkbox]{width:20px;height:20px}a{color:#215eb4}label{line-height:1.6}</style></head><body><main><header><span class="eyebrow">Practice · not an exam score</span><h1>Audit & SM workbooks</h1><p>Explain what you mean. Correct concepts count—not perfect wording.</p></header><p><a id="dashboardBack" href="/">Back to dashboard</a></p><div id="error" role="alert"></div><p id="status" role="status">Signing in securely…</p><div id="books"></div><section id="workspace" class="hidden"><div class="toolbar"><button id="back">All workbooks</button><select id="question" aria-label="Question"></select></div><article class="card"><h2 id="title"></h2><p id="prompt"></p><small id="marks"></small><details id="pdfBox" class="hidden"><summary>View the original workbook PDF</summary><p class="muted">Your answers below do not overwrite this original PDF. Source access follows the existing Drive permissions.</p><iframe id="pdf" title="Workbook PDF" referrerpolicy="no-referrer" allowfullscreen></iframe></details></article><article class="card"><h2>Your answer</h2><p>Type, or write on the pad and convert handwriting to editable text. No voice answers in workbooks.</p><textarea id="answer" aria-label="Workbook answer" maxlength="12000" placeholder="Explain in your own words…"></textarea><details id="writing"><summary>Write on workbook pages / handwriting pad</summary><p class="muted">Linked PDF pages are rendered underneath your ink; the source PDF stays unchanged. Turn off Write to pan the page.</p><div class="row"><select id="page" aria-label="Writing page"></select><button id="addPage">Add page (up to 3)</button><button id="undo">Undo stroke</button><button id="clearPad">Clear this page</button></div><p><label><input id="drawMode" type="checkbox" checked> Write</label> <label>Zoom <select id="zoom"><option value="100">100%</option><option value="150">150%</option><option value="200">200%</option></select></label> <span id="pdfState" class="muted"></span></p><div style="overflow:auto;max-height:650px;border-radius:12px"><canvas id="pad" width="800" height="1100" aria-label="Handwritten answer on workbook page"></canvas></div><p><button id="read" class="primary">Read handwriting into editable text</button><button id="download">Download this writing page</button><small id="nativeDownloadNote" class="hidden">PNG downloads are available in the student web dashboard. Use the app header to go back.</small></p><small>Handwriting images are sent to Groq only when you press Read. The app/server does not keep an image archive. Review unclear words and technical terms before requesting feedback.</small></details><p><label><input id="confirmed" type="checkbox"> I reviewed this answer/transcript; it matches what I intend to say.</label></p><button id="grade" class="primary" disabled>Get model-answer feedback</button><button id="clearDraft">Delete this saved draft</button><p id="saved" class="muted" role="status"></p><small>Drafts stay on this browser/device under your account (up to 20 drafts / 2 MB). Clearing app/browser data removes them. AI feedback is provisional, not a final exam or leaderboard mark.</small></article><section id="feedback" class="card hidden" aria-live="polite"></section></section></main><script src="practice-client.js"></script><script src="workbook-core.js"></script><script src="workbook.js"></script></body></html>+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><title>Audit & SM · Workbook Practice</title><style>*{box-sizing:border-box}body{margin:0;background:#f3f6fb;color:#17243b;font:16px system-ui,sans-serif}main{max-width:980px;margin:auto;padding:24px 16px 70px}header{padding:25px;background:#173b61;color:white;border-radius:18px;margin-bottom:20px}h1{font-size:28px;margin:8px 0}h2{font-size:21px}p{line-height:1.6}.eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#a6c9ee}.card{background:white;border:1px solid #dbe3ef;border-radius:15px;padding:20px;margin:16px 0}button,select{font:inherit;padding:11px 15px;border:1px solid #bbcbe1;border-radius:10px;background:#edf3ff;color:#214771;margin:5px 6px 5px 0;cursor:pointer}button:disabled{opacity:.5;cursor:wait}button.primary{background:#215eb4;color:white;border:0}textarea{display:block;width:100%;min-height:190px;padding:14px;border-radius:12px;border:1px solid #bac8dd;font:inherit;line-height:1.7;margin:10px 0;resize:vertical}canvas{display:block;max-width:none;width:100%;height:auto;border:1px solid #aebfd8;border-radius:10px;touch-action:none;background:white}iframe{width:100%;height:440px;border:1px solid #dbe3ef;border-radius:12px}small,.muted{color:#52677e}#error{color:#a32020;white-space:pre-wrap}.result{white-space:pre-wrap;line-height:1.7}.score{font-size:30px;font-weight:800}.badge{display:inline-block;border-radius:20px;padding:5px 10px;background:#fef3db;color:#7c5b13;font-size:13px}.hidden{display:none!important}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.toolbar{position:sticky;top:0;background:#f3f6fbf5;padding:8px 0;z-index:2}input[type=checkbox]{width:20px;height:20px}a{color:#215eb4}label{line-height:1.6}</style></head><body><main><header><span class="eyebrow">Practice · not an exam score</span><h1>Audit & SM workbooks</h1><p>Explain what you mean. Correct concepts count—not perfect wording.</p></header><p><a id="dashboardBack" href="/">Back to dashboard</a></p><div id="error" role="alert"></div><p id="status" role="status">Signing in securely…</p><div id="books"></div><section id="workspace" class="hidden"><div class="toolbar"><button id="back">All workbooks</button><select id="question" aria-label="Question"></select></div><article class="card"><h2 id="title"></h2><p id="prompt"></p><small id="marks"></small><details id="pdfBox" class="hidden"><summary>View the original workbook PDF</summary><p class="muted">Your answers below do not overwrite this original PDF. Source access follows the existing Drive permissions.</p><iframe id="pdf" title="Workbook PDF" referrerpolicy="no-referrer" allowfullscreen></iframe></details></article><article class="card"><h2>Your answer</h2><p>Type, or write on the pad and convert handwriting to editable text. No voice answers in workbooks.</p><div id="objectiveAnswer" class="hidden"></div><textarea id="answer" aria-label="Workbook answer" maxlength="12000" placeholder="Explain in your own words…"></textarea><details id="writing"><summary>Write on workbook pages / handwriting pad</summary><p class="muted">Linked PDF pages are rendered underneath your ink; the source PDF stays unchanged. Turn off Write to pan the page.</p><div class="row"><select id="page" aria-label="Writing page"></select><button id="addPage">Add page (up to 3)</button><button id="undo">Undo stroke</button><button id="clearPad">Clear this page</button></div><p><label><input id="drawMode" type="checkbox" checked> Write</label> <label>Zoom <select id="zoom"><option value="100">100%</option><option value="150">150%</option><option value="200">200%</option></select></label> <span id="pdfState" class="muted"></span></p><div style="overflow:auto;max-height:650px;border-radius:12px"><canvas id="pad" width="800" height="1100" aria-label="Handwritten answer on workbook page"></canvas></div><p><button id="read" class="primary">Read handwriting into editable text</button><button id="download">Download this writing page</button><small id="nativeDownloadNote" class="hidden">PNG downloads are available in the student web dashboard. Use the app header to go back.</small></p><small>Handwriting images are sent to Groq only when you press Read. The app/server does not keep an image archive. Review unclear words and technical terms before requesting feedback.</small></details><p><label><input id="confirmed" type="checkbox"> I reviewed this answer/transcript; it matches what I intend to say.</label></p><button id="grade" class="primary" disabled>Get model-answer feedback</button><button id="clearDraft">Delete this saved draft</button><p id="saved" class="muted" role="status"></p><small>Drafts stay on this browser/device under your account (up to 20 drafts / 2 MB). Clearing app/browser data removes them. AI feedback is provisional, not a final exam or leaderboard mark.</small></article><section id="feedback" class="card hidden" aria-live="polite"></section></section></main><script src="practice-client.js"></script><script src="workbook-core.js"></script><script src="workbook-objective.js"></script><script src="workbook.js"></script></body></html>--- a/student-app/workbook.js
++++ b/student-app/workbook.js
+@@ -7,14 +7,19 @@
+   let pdfDocument = null, pdfLoading = null, pdfGeneration = 0, pdfAbort = null;
+   const backgrounds = new Map();
+   let studentId, books = [], book, question, draft, page = 0, busy = false, stroke = null, saveTimer;
++  let objectiveController = null, formatBlocked = false;
++  const answerReady = () => !formatBlocked && (objectiveController ? objectiveController.isComplete() : $('answer').value.trim().length >= 8);
+   const canvas = $('pad'), ctx = canvas.getContext('2d');
+   const key = () => book.id + ':' + question.id;
+   const error = e => { $('error').textContent = e?.message || String(e || ''); };
+   const textNode = (tag, text, parent, className) => { const node = document.createElement(tag); node.textContent = text; if (className) node.className = className; parent.appendChild(node); return node; };
+   function save() {
+     clearTimeout(saveTimer); if (!draft || !studentId) return;
+-    draft.answer = $('answer').value;
+-    try { core.saveDraft(localStorage, studentId, key(), draft); $('saved').textContent = 'Draft saved on this device.'; } catch (e) { $('saved').textContent = 'Draft NOT saved: ' + e.message; }
++    try {
++      if (objectiveController) $('answer').value = objectiveController.serialize();
++      draft.answer = $('answer').value;
++      core.saveDraft(localStorage, studentId, key(), draft); $('saved').textContent = 'Draft saved on this device.';
++    } catch (e) { $('saved').textContent = 'Draft NOT saved: ' + e.message; }
+   }
+   function changed() { $('confirmed').checked = false; $('grade').disabled = true; $('feedback').classList.add('hidden'); clearTimeout(saveTimer); saveTimer = setTimeout(save, 350); }
+   function draw() {
+@@ -86,10 +91,23 @@
+   $('clearPad').onclick = () => { if (confirm('Clear only this handwriting page?')) { draft.pages[page] = []; draw(); changed(); } };
+   $('download').onclick = () => { const a = document.createElement('a'); a.download = 'workbook-' + question.id + '-page-' + (page + 1) + '.png'; a.href = canvas.toDataURL('image/png'); a.click(); };
+   $('answer').oninput = changed;
+-  $('confirmed').onchange = () => { $('grade').disabled = busy || !$('confirmed').checked || $('answer').value.trim().length < 8; };
++  $('confirmed').onchange = () => { $('grade').disabled = busy || !$('confirmed').checked || !answerReady(); };
+   function selectQuestion(id) {
+     if (draft) save(); question = book.questions.find(q => q.id === id); page = 0;
+     draft = core.loadDraft(localStorage, studentId, key()); $('answer').value = draft.answer;
++    objectiveController = null; formatBlocked = false; error('');
++    const kind = question.format || 'written', objective = kind !== 'written';
++    $('answer').classList.toggle('hidden', objective); $('writing').classList.toggle('hidden', objective);
++    $('objectiveAnswer').classList.toggle('hidden', !objective); $('objectiveAnswer').replaceChildren();
++    if (objective) {
++      try {
++        objectiveController = window.UMP_WORKBOOK_OBJECTIVE.render($('objectiveAnswer'), question, draft.answer, (value, problem) => {
++          if (problem) { error(problem); $('saved').textContent = 'Draft NOT saved: ' + problem.message; $('confirmed').checked = false; $('grade').disabled = true; return; }
++          $('answer').value = value; error(''); changed();
++        });
++      } catch (e) { formatBlocked = true; error(e); }
++    }
++
+     $('title').textContent = book.title; $('prompt').textContent = question.prompt; $('marks').textContent = `${question.maxMarks} practice marks · reference page ${question.page}`;
+     $('feedback').classList.add('hidden'); $('confirmed').checked = false; $('grade').disabled = true; $('saved').textContent = draft.answer || draft.pages.some(p => p.length) ? 'Restored your saved draft.' : 'Not saved yet.';
+     pageOptions(); draw(); void renderPaper();
+@@ -105,11 +123,12 @@
+   $('question').onchange = () => selectQuestion($('question').value);
+   $('back').onclick = () => { save(); $('workspace').classList.add('hidden'); $('books').classList.remove('hidden'); };
+   function lock(value) {
+-    busy = value; ['question','page','back','read','undo','clearPad','clearDraft','addPage'].forEach(id => { $(id).disabled = value; }); $('answer').disabled = value; $('confirmed').disabled = value;
+-    $('grade').disabled = value || !$('confirmed').checked || $('answer').value.trim().length < 8;
++    busy = value; objectiveController?.setDisabled(value); ['question','page','back','read','undo','clearPad','clearDraft','addPage'].forEach(id => { $(id).disabled = value; }); $('answer').disabled = value; $('confirmed').disabled = value;
++    $('grade').disabled = value || !$('confirmed').checked || !answerReady();
+     if (!value) pageOptions();
+   }
+   $('read').onclick = async () => {
++    if ((question?.format || 'written') !== 'written') return;
+     save(); lock(true); error(''); const originalPage = page;
+     try {
+       const parts = [];
+@@ -129,11 +148,11 @@
+     } catch (e) { error(e); } finally { page = originalPage; draw(); lock(false); }
+   };
+   $('grade').onclick = async () => {
+-    if (!$('confirmed').checked) return; save(); lock(true); error(''); $('status').textContent = 'Checking intended meaning against the mentor-approved model answer…';
++    if (!$('confirmed').checked || !answerReady()) return; save(); lock(true); error(''); $('status').textContent = objectiveController ? 'Checking your selections against the mentor-approved answer key…' : 'Checking intended meaning against the mentor-approved model answer…';
+     try {
+       const result = await api.request('/grade', { workbookId: book.id, questionId: question.id, answer: $('answer').value.trim(), confirmed: true });
+       const box = $('feedback'); box.replaceChildren(); box.classList.remove('hidden');
+-      textNode('span', 'Provisional AI practice feedback', box, 'badge');
++      textNode('span', result.assessmentMode === 'deterministic-approved-key' ? 'Practice feedback · approved answer key' : 'Provisional AI practice feedback', box, 'badge');
+       textNode('h2', 'What the checker understood', box); textNode('p', result.understoodMeaning, box);
+       if (result.status === 'clarification') { textNode('h3', 'Clarification needed — no score yet', box); textNode('p', result.clarification, box); }
+       else {
+@@ -148,7 +167,7 @@
+   };
+   $('clearDraft').onclick = () => {
+     if (!confirm('Delete this question’s local draft? Download/copy it first if needed.')) return;
+-    clearTimeout(saveTimer); core.removeDraft(localStorage, studentId, key()); draft = core.cleanDraft(null); $('answer').value = ''; page = 0; pageOptions(); draw(); $('confirmed').checked = false; $('grade').disabled = true; $('feedback').classList.add('hidden'); $('saved').textContent = 'Draft deleted.';
++    clearTimeout(saveTimer); core.removeDraft(localStorage, studentId, key()); draft = core.cleanDraft(null); objectiveController?.reset(); $('answer').value = ''; page = 0; pageOptions(); draw(); $('confirmed').checked = false; $('grade').disabled = true; $('feedback').classList.add('hidden'); $('saved').textContent = 'Draft deleted.';
+   };
+   window.addEventListener('pagehide', () => { if (draft && (draft.answer || draft.pages.some(p => p.length))) save(); });
+   try {
+--- a/workbook-receipts/project/backend/routers/practice_tools.py
++++ b/workbook-receipts/project/backend/routers/practice_tools.py
+@@ -28,6 +28,7 @@
+ from pymongo.errors import DuplicateKeyError
+ from starlette.concurrency import run_in_threadpool
+ 
++from workbook_formats import validate_objective, public_format, grade_objective
+ from auth import require_mentor
+ from config import settings
+ from db import get_db, STUDENT_ACCOUNTS
+@@ -72,6 +73,8 @@
+     maxMarks: float = Field(gt=0, le=100)
+     rubric: list[RubricPoint] = Field(min_length=1, max_length=20)
+     sourceVerified: bool = False
++    format: Literal['written', 'mcq', 'blanks', 'matching'] = 'written'
++    objective: dict | None = None
+ 
+     @model_validator(mode='after')
+     def valid_rubric(self):
+@@ -79,6 +82,7 @@
+             raise ValueError('Rubric point IDs must be unique')
+         if abs(sum(p.marks for p in self.rubric) - self.maxMarks) > 0.001:
+             raise ValueError('Rubric marks must sum to the question maximum')
++        validate_objective(self.model_dump())
+         return self
+ 
+ class Workbook(Strict):
+@@ -109,7 +113,7 @@
+ class GradeRequest(Strict):
+     workbookId: str = Field(pattern=r'^[a-f0-9]{24}$')
+     questionId: str = Field(min_length=1, max_length=40)
+-    answer: str = Field(min_length=8, max_length=12000)
++    answer: str = Field(min_length=1, max_length=12000)
+     confirmed: Literal[True]
+ 
+ class ReceiptEvaluationRequest(Strict):
+@@ -262,7 +266,7 @@
+ @router.get('/workbooks')
+ async def list_books(profile=Depends(student)):
+     rows = await get_db()[BOOKS].find({'published':True}).limit(200).to_list(200)
+-    return {'workbooks':[{'id':b['_id'],'title':b['title'],'subject':b['subject'],'sourceUrl':b.get('sourceUrl',''),'questions':[{'id':q['id'],'prompt':q['prompt'],'page':q['page'],'workbookPage':q.get('workbookPage',1),'maxMarks':q['maxMarks']} for q in b['questions']]} for b in rows if group_key(profile.get('group')) in b['groups'] and (not b.get('batches') or profile.get('batch') in b['batches'])]}
++    return {'workbooks':[{'id':b['_id'],'title':b['title'],'subject':b['subject'],'sourceUrl':b.get('sourceUrl',''),'questions':[{'id':q['id'],'prompt':q['prompt'],'page':q['page'],'workbookPage':q.get('workbookPage',1),'maxMarks':q['maxMarks'],**public_format(q)} for q in b['questions']]} for b in rows if group_key(profile.get('group')) in b['groups'] and (not b.get('batches') or profile.get('batch') in b['batches'])]}
+ 
+ 
+ async def fetch_workbook_pdf(url):
+@@ -311,6 +315,15 @@
+     book = await visible_book(body.workbookId,profile)
+     question = next((q for q in book['questions'] if q['id']==body.questionId),None)
+     if not question: raise HTTPException(404,'Question not found')
++    # Objective formats never call AI, invent marks, charge provider usage, or
++    # persist an answer/score. Assignment/auth/confirmation guards above remain.
++    if question.get('format', 'written') != 'written':
++        try:
++            return grade_objective(question, body.answer)
++        except (ValueError, TypeError, KeyError):
++            raise HTTPException(422, 'Invalid objective configuration or response. Review every item; no score was invented.')
++    if len(body.answer.strip()) < 8:
++        raise HTTPException(422, 'Write and review an answer of at least eight characters.')
+     fingerprint = hashlib.sha256(json.dumps([profile['studentId'],book['_id'],book['version'],body.questionId,body.answer],ensure_ascii=False).encode()).hexdigest()
+     db=get_db();now=datetime.now(timezone.utc)
+     cached=await db[FEEDBACK].find_one({'_id':fingerprint,'result':{'$exists':True},'expiresAt':{'$gt':now}})
+--- /dev/null
++++ b/workbook-receipts/project/backend/tests/test_workbook_objective_formats.py
+@@ -0,0 +1,103 @@
++"""Synthetic approved keys only. No academic rubric or production publication."""
++import copy
++import json
++from unittest.mock import AsyncMock
++import pytest
++from pydantic import ValidationError
++from routers import practice_tools as p
++from workbook_formats import public_format, grade_objective
++from test_practice_tools import BOOK, ANSWER, student_headers, account, feature_env
++
++
++def question(kind):
++    q=copy.deepcopy(BOOK['questions'][0]);q['format']=kind
++    if kind=='mcq':
++        q['rubric']=[{'id':'r1','concept':'Synthetic approved option','marks':4}]
++        q['objective']={'options':[{'id':'A','text':'Synthetic choice A'},{'id':'B','text':'Synthetic choice B'}],'correctOptionId':'B'}
++    elif kind=='blanks':
++        q['objective']={'slots':[{'id':'r1','text':'Synthetic first blank','acceptedAnswers':['Independent','Independence']},{'id':'r2','text':'Synthetic second blank','acceptedAnswers':['Appearance']}]}
++    else:
++        q['objective']={'left':[{'id':'r1','text':'Synthetic item one'},{'id':'r2','text':'Synthetic item two'}],'right':[{'id':'X','text':'Synthetic match X'},{'id':'Y','text':'Synthetic match Y'}],'matches':{'r1':'Y','r2':'X'}}
++    return q
++
++
++@pytest.mark.parametrize('kind',['mcq','blanks','matching'])
++def test_model_validates_and_student_descriptor_hides_keys(kind):
++    q=question(kind);p.Question.model_validate(q)
++    public=json.dumps(public_format(q))
++    for secret in ['acceptedAnswers','correctOptionId','"matches"','modelAnswer','rubric']:
++        assert secret not in public
++
++
++@pytest.mark.parametrize('choice,score',[('B',4),('A',0)])
++def test_mcq_is_deterministic_including_valid_zero(choice,score):
++    assert grade_objective(question('mcq'),json.dumps({'choice':choice}))['score']==score
++
++
++def test_blanks_only_accept_explicit_aliases_and_preserve_negation():
++    q=question('blanks')
++    assert grade_objective(q,json.dumps({'responses':{'r1':'  INDEPENDENT  ','r2':'appearance'}}))['score']==4
++    assert grade_objective(q,json.dumps({'responses':{'r1':'not independent','r2':'appearance'}}))['score']==2
++    assert grade_objective(q,json.dumps({'responses':{'r1':'unapproved synonym','r2':'wrong'}}))['score']==0
++
++
++def test_matching_scores_approved_pairs_only():
++    q=question('matching')
++    assert grade_objective(q,json.dumps({'responses':{'r1':'Y','r2':'X'}}))['score']==4
++    assert grade_objective(q,json.dumps({'responses':{'r1':'X','r2':'Y'}}))['score']==0
++    with pytest.raises(ValueError):grade_objective(q,json.dumps({'responses':{'r1':'X','r2':'X'}}))
++
++
++@pytest.mark.parametrize('answer',['{}','{"choice":"Z"}','{"choice":"A","choice":"B"}','{"choice":"B","score":100}','null','[]','{"choice":true}'])
++def test_mcq_bad_or_forged_answer_has_no_score(answer):
++    with pytest.raises(ValueError):grade_objective(question('mcq'),answer)
++
++
++@pytest.mark.parametrize('values',[{}, {'r1':'Independent'}, {'r1':'[unclear]','r2':'appearance'}, {'r1':'Independent','r2':'appearance','r3':'extra'}, {'r1':True,'r2':'appearance'}])
++def test_blanks_require_complete_reviewed_response(values):
++    with pytest.raises(ValueError):grade_objective(question('blanks'),json.dumps({'responses':values}))
++
++
++def test_malformed_keys_marks_and_formats_cannot_be_approved():
++    cases=[]
++    q=question('mcq');q['objective']['correctOptionId']='Z';cases.append(q)
++    q=question('mcq');q['maxMarks']=7;cases.append(q)
++    q=question('blanks');q['objective']['slots'][1]['id']='other';cases.append(q)
++    q=question('matching');q['objective']['matches']['r1']='X';cases.append(q)
++    q=question('mcq');q['format']='unknown';cases.append(q)
++    for q in cases:
++        with pytest.raises(ValidationError):p.Question.model_validate(q)
++
++
++@pytest.mark.parametrize('kind,response,score',[
++ ('mcq',{'choice':'B'},4),
++ ('blanks',{'responses':{'r1':'Independence','r2':'Appearance'}},4),
++ ('matching',{'responses':{'r1':'Y','r2':'X'}},4)
++])
++def test_actual_authenticated_route_uses_approved_key_without_ai_or_score_writes(client,mentor_headers,student_headers,monkeypatch,kind,response,score):
++    body=copy.deepcopy(BOOK);body['questions']=[question(kind)]
++    created=client.post('/api/practice/mentor/workbooks',json=body,headers=mentor_headers);assert created.status_code==200
++    bid=created.json()['id'];assert client.post('/api/practice/mentor/workbooks/'+bid+'/publish',headers=mentor_headers).status_code==200
++    provider=AsyncMock(side_effect=AssertionError('No provider call for objective formats'));monkeypatch.setattr(p,'chat',provider)
++    listing=client.get('/api/practice/workbooks',headers=student_headers);assert listing.status_code==200
++    public=json.dumps(listing.json());assert 'correctOptionId' not in public and 'acceptedAnswers' not in public and '"matches"' not in public
++    r=client.post('/api/practice/grade',headers=student_headers,json={'workbookId':bid,'questionId':'q1','answer':json.dumps(response),'confirmed':True})
++    assert r.status_code==200 and r.json()['score']==score and r.json()['assessmentMode']=='deterministic-approved-key';provider.assert_not_awaited()
++    import asyncio
++    assert asyncio.run(p.get_db()[p.FEEDBACK].count_documents({}))==0
++    assert asyncio.run(p.get_db()[p.USAGE].count_documents({}))==0
++
++
++def test_written_question_default_is_backward_compatible():
++    q=p.Question.model_validate(BOOK['questions'][0]);assert q.format=='written' and q.objective is None
++
++
++def test_unverified_objective_key_cannot_be_used_even_if_a_stored_book_was_marked_published():
++    q=question('mcq');q['sourceVerified']=False
++    with pytest.raises(ValueError,match='source-verified'):
++        grade_objective(q,'{"choice":"B"}')
++
++
++def test_malformed_nested_key_is_a_validation_error_not_an_internal_type_error():
++    q=question('mcq');q['objective']['correctOptionId']=[]
++    with pytest.raises(ValidationError):p.Question.model_validate(q)
+--- /dev/null
++++ b/workbook-receipts/project/backend/workbook_formats.py
+@@ -0,0 +1,168 @@
++"""Objective workbook formats. Approved keys/marks only; no provider or DB I/O.
++
++This belongs to the local, disabled workbook prototype, NOT the live backend.
++Do not infer keys, aliases or questionwise marks from a chapter weightage table.
++"""
++import json
++import math
++import re
++import unicodedata
++
++FORMATS = {'written', 'mcq', 'blanks', 'matching'}
++
++
++def _text(value, limit=500):
++    if not isinstance(value, str) or not value.strip() or len(value) > limit:
++        raise ValueError('Invalid objective text')
++    return value.strip()
++
++
++def _id(value):
++    if not isinstance(value, str) or not re.fullmatch(r'[a-zA-Z0-9_-]{1,40}', value):
++        raise ValueError('Invalid objective ID')
++    return value
++
++
++def _items(value, minimum=1):
++    if not isinstance(value, list) or not minimum <= len(value) <= 20:
++        raise ValueError('Invalid objective items')
++    seen = set()
++    for item in value:
++        if not isinstance(item, dict) or set(item) != {'id', 'text'}:
++            raise ValueError('Invalid objective item fields')
++        key = _id(item['id'])
++        if key in seen:
++            raise ValueError('Duplicate objective ID')
++        seen.add(key)
++        _text(item['text'])
++    return seen
++
++
++def _normal(value):
++    # Only case/Unicode/whitespace normalization. Never strip negation or guess synonyms.
++    return ' '.join(unicodedata.normalize('NFKC', _text(value)).casefold().split())
++
++
++def validate_objective(question):
++    fmt = question.get('format', 'written')
++    if fmt not in FORMATS:
++        raise ValueError('Unsupported workbook format')
++    objective = question.get('objective')
++    if fmt == 'written':
++        if objective is not None:
++            raise ValueError('Written question cannot contain objective keys')
++        return
++    if not isinstance(objective, dict):
++        raise ValueError('Approved objective key is required')
++    rubric = question.get('rubric', [])
++    if not isinstance(rubric, list) or not 1 <= len(rubric) <= 20:
++        raise ValueError('Approved questionwise rubric is required')
++    ids = set()
++    for point in rubric:
++        key = _id(point['id'])
++        mark = point['marks']
++        if key in ids or isinstance(mark, bool) or not isinstance(mark, (int, float)) or not math.isfinite(mark) or not 0 < mark <= 20:
++            raise ValueError('Invalid objective marks')
++        ids.add(key)
++    maximum = question.get('maxMarks')
++    if isinstance(maximum, bool) or not isinstance(maximum, (int, float)) or not math.isfinite(maximum) or not 0 < maximum <= 100 or abs(sum(p['marks'] for p in rubric) - maximum) > .001:
++        raise ValueError('Objective marks must match the approved maximum')
++    if fmt == 'mcq':
++        if set(objective) != {'options', 'correctOptionId'} or len(rubric) != 1:
++            raise ValueError('MCQ requires one approved scoring point and a key')
++        options = _items(objective['options'], minimum=2)
++        if _id(objective['correctOptionId']) not in options:
++            raise ValueError('MCQ key is not an option')
++    elif fmt == 'blanks':
++        if set(objective) != {'slots'} or not isinstance(objective['slots'], list) or not 1 <= len(objective['slots']) <= 20:
++            raise ValueError('Invalid blank slots')
++        slots = objective['slots']
++        if any(not isinstance(s, dict) or set(s) != {'id', 'text', 'acceptedAnswers'} for s in slots):
++            raise ValueError('Invalid blank fields')
++        slot_ids = _items([{'id': s['id'], 'text': s['text']} for s in slots])
++        if slot_ids != ids:
++            raise ValueError('Blank IDs must match approved rubric points')
++        for slot in slots:
++            aliases = slot['acceptedAnswers']
++            if not isinstance(aliases, list) or not 1 <= len(aliases) <= 8:
++                raise ValueError('Approved blank answer required')
++            normalized = [_normal(a) for a in aliases]
++            if len(set(normalized)) != len(normalized):
++                raise ValueError('Duplicate blank aliases')
++    else:
++        if set(objective) != {'left', 'right', 'matches'}:
++            raise ValueError('Invalid matching fields')
++        left, right = _items(objective['left'], 2), _items(objective['right'], 2)
++        matches = objective['matches']
++        if left != ids or not isinstance(matches, dict) or set(matches) != left or len(left) != len(right):
++            raise ValueError('Matching requires approved marks for every left item')
++        if any(not isinstance(v, str) for v in matches.values()) or set(matches.values()) != right:
++            raise ValueError('Approved matching key must be one-to-one')
++
++
++def public_format(question):
++    validate_objective(question)
++    fmt = question.get('format', 'written')
++    if fmt == 'written':
++        return {'format': fmt}
++    source = question['objective']
++    if fmt == 'mcq':
++        public = {'options': source['options']}
++    elif fmt == 'blanks':
++        public = {'slots': [{'id': s['id'], 'text': s['text']} for s in source['slots']]}
++    else:
++        public = {'left': source['left'], 'right': source['right']}
++    return {'format': fmt, 'objective': public}
++
++
++def grade_objective(question, answer):
++    validate_objective(question)
++    fmt = question.get('format', 'written')
++    if fmt == 'written':
++        raise ValueError('Written answers require the existing reviewed evaluator')
++    if question.get('sourceVerified') is not True:
++        raise ValueError('The objective key has not been source-verified')
++    if not isinstance(answer, str) or len(answer) > 12000:
++        raise ValueError('Invalid objective answer')
++    try:
++        # Reject duplicate JSON fields instead of silently selecting the last answer.
++        def unique(pairs):
++            output = {}
++            for key, value in pairs:
++                if key in output:
++                    raise ValueError('Duplicate answer field')
++                output[key] = value
++            return output
++        submitted = json.loads(answer, object_pairs_hook=unique)
++    except (ValueError, TypeError):
++        raise ValueError('Use the structured objective answer controls') from None
++    objective = question['objective']
++    if not isinstance(submitted, dict):
++        raise ValueError('Invalid objective answer shape')
++    if fmt == 'mcq':
++        if set(submitted) != {'choice'} or not isinstance(submitted['choice'], str) or submitted['choice'] not in {o['id'] for o in objective['options']}:
++            raise ValueError('Choose one supplied option')
++        responses = {question['rubric'][0]['id']: submitted['choice']}
++        correct = {question['rubric'][0]['id']: submitted['choice'] == objective['correctOptionId']}
++    else:
++        if set(submitted) != {'responses'} or not isinstance(submitted['responses'], dict):
++            raise ValueError('Invalid objective responses')
++        responses = submitted['responses']
++        required = {p['id'] for p in question['rubric']}
++        if set(responses) != required or any(not isinstance(v, str) or not v.strip() or len(v) > 500 or '[unclear]' in v.lower() for v in responses.values()):
++            raise ValueError('Complete and review every supplied item')
++        if fmt == 'blanks':
++            correct = {s['id']: _normal(responses[s['id']]) in {_normal(a) for a in s['acceptedAnswers']} for s in objective['slots']}
++        else:
++            right = {item['id'] for item in objective['right']}
++            if any(v not in right for v in responses.values()) or len(set(responses.values())) != len(responses):
++                raise ValueError('Choose a different supplied match for every item')
++            correct = {key: value == objective['matches'][key] for key, value in responses.items()}
++    points = [{'id': p['id'], 'concept': p['concept'], 'awarded': p['marks'] if correct[p['id']] else 0,
++               'maxMarks': p['marks'], 'quote': responses[p['id']],
++               'reason': 'Matches the mentor-approved key.' if correct[p['id']] else 'Does not match the mentor-approved key.'} for p in question['rubric']]
++    return {'status': 'graded', 'assessmentMode': 'deterministic-approved-key', 'provisional': True,
++            'score': round(sum(p['awarded'] for p in points), 2), 'maxMarks': question['maxMarks'],
++            'understoodMeaning': 'Your reviewed objective selections were checked against the mentor-approved key.',
++            'points': points, 'improvement': [], 'modelAnswer': question['modelAnswer'],
++            'referenceLabel': question['referenceLabel'], 'page': question['page']}

@@ -13,6 +13,7 @@ from datetime import datetime, timedelta
 from typing import List, Optional
 from zoneinfo import ZoneInfo
 
+from routers.dashboard_access import dashboard_student, own_payload
 from fastapi import APIRouter, Depends, HTTPException, Query
 from pydantic import BaseModel, Field
 
@@ -224,6 +225,13 @@ def _clean_reminder(text: str) -> str:
     return text[:320]
 
 
+# Default lineup = Groq's current production models (verified 15-Oct-2026).
+REMINDER_MODELS = tuple(
+    m.strip() for m in (os.environ.get("GROQ_REMINDER_MODELS")
+                        or "openai/gpt-oss-20b,openai/gpt-oss-120b").split(",") if m.strip()
+)
+
+
 async def _groq_reminder(subject: str, tasks: list) -> tuple:
     key = (os.environ.get("GROQ_API_KEY") or "").strip()
     if not key or httpx is None:
@@ -241,11 +249,12 @@ async def _groq_reminder(subject: str, tasks: list) -> tuple:
         f"Mentor target:\n{lines}"
     )
     errors = []
-    # Use supported production Groq models (the old Llama IDs are retired
-    # for free/developer accounts). Keep reasoning out of student messages.
+    # Groq retires model IDs every few months (the Llama 4 IDs died in 2026),
+    # so the lineup is env-tunable: GROQ_REMINDER_MODELS="model-a,model-b"
+    # rotates it without a rebuild. Keep reasoning out of student messages.
     # At most two AI attempts, with a wall-clock cap on each request.
     # An alternate Groq model is still AI generation, never a plain-text fallback.
-    for model in ("openai/gpt-oss-20b", "openai/gpt-oss-120b"):
+    for model in REMINDER_MODELS:
         try:
             async with httpx.AsyncClient(timeout=8) as client:
                 response = await asyncio.wait_for(client.post(
@@ -405,9 +414,17 @@ async def create_target(body: TargetIn, mentor=Depends(require_mentor)):
     if not tasks:
         raise HTTPException(status_code=400, detail="Add at least one task.")
     subject = (body.subject or ALL).strip() or ALL
-    reminder, source = await _groq_reminder(subject, tasks)
-    if source != "groq" or not reminder.strip():
-        raise HTTPException(status_code=503, detail="An AI-generated reminder is required. The target was not published.")
+    # The AI reminder is a bonus, never a gate: a missing/retired Groq key must
+    # not stop the mentor from publishing today's target (15-Oct-2026 - students
+    # were left with no target because publishing 503'd on the reminder).
+    # "pending" lets the dashboard offer a one-tap "Generate AI reminder" retry.
+    try:
+        reminder, source = await _groq_reminder(subject, tasks)
+        if source != "groq" or not reminder.strip():
+            raise HTTPException(status_code=503, detail="empty reminder")
+    except HTTPException as exc:
+        logger.warning("target published without AI reminder: %s", exc.detail)
+        reminder, source = "", "pending"
     students = await _students()
     draft = {
         "attempt": body.attempt or ALL,
@@ -457,6 +474,63 @@ async def regenerate_target_reminder(target_id: str, _mentor=Depends(require_men
     return {"ok": True, "target": _public_target(dict(row, **changes))}
 
 
+@router.post("/api/targets/reminders/backfill")
+async def backfill_target_reminders(
+    daysBack: int = Query(default=7, ge=0, le=60),
+    daysAhead: int = Query(default=30, ge=0, le=60),
+    limit: int = Query(default=25, ge=1, le=60),
+    _mentor=Depends(require_mentor),
+):
+    """Fill the AI reminder on targets published while Groq was unreachable.
+
+    One button instead of one click per target: after the key/model outage of
+    15-Oct-2026 a whole week of targets showed "AI reminder required". Only
+    targets inside the given date window are touched, so past targets (which no
+    student will ever open again) are left alone. Sequential on purpose - the
+    free Groq tier is tokens-per-minute limited and a burst fails half the rows.
+    """
+    await _ensure_indexes()
+    db = get_db()
+    today = _today()
+    since = (today - timedelta(days=daysBack)).isoformat()
+    until = (today + timedelta(days=daysAhead)).isoformat()
+    rows = await db[TARGETS].find({
+        "active": {"$ne": False},
+        "startDate": {"$lte": until},
+        "endDate": {"$gte": since},
+    }, {"_id": 0}).sort([("startDate", -1), ("createdAt", -1)]).to_list(400)
+    missing = [row for row in rows
+               if row.get("reminderSource") != "groq" or not (row.get("revisionReminder") or "").strip()]
+
+    generated, failed = 0, []
+    for row in missing[:limit]:
+        try:
+            reminder, source = await _groq_reminder(row.get("subject") or ALL, row.get("tasks") or [])
+            if source != "groq" or not reminder.strip():
+                raise HTTPException(status_code=503, detail="empty reminder")
+        except HTTPException as exc:
+            failed.append({"id": row.get("id"), "reason": str(exc.detail)[:140]})
+            continue
+        except Exception as exc:  # noqa: BLE001 — one bad row must not stop the rest
+            failed.append({"id": row.get("id"), "reason": type(exc).__name__})
+            logger.warning("reminder backfill failed for %s: %s", row.get("id"), exc)
+            continue
+        await db[TARGETS].update_one({"id": row.get("id")}, {"$set": {
+            "revisionReminder": reminder, "reminderSource": source, "reminderUpdatedAt": _now(),
+        }})
+        generated += 1
+        await asyncio.sleep(1.2)
+
+    return {
+        "ok": True,
+        "considered": len(missing),
+        "generated": generated,
+        "failed": failed[:10],
+        "stillMissing": max(0, len(missing) - generated),
+        "window": {"from": since, "until": until},
+    }
+
+
 @router.delete("/api/targets/{target_id}")
 async def remove_target(target_id: str, _mentor=Depends(require_mentor)):
     result = await get_db()[TARGETS].update_one({"id": target_id}, {"$set": {"active": False, "removedAt": _now()}})
@@ -471,19 +545,39 @@ class CompleteIn(BaseModel):
 
 
 @router.post("/api/targets/complete")
-async def complete_task(body: CompleteIn):
+async def complete_task(body: CompleteIn, principal=Depends(dashboard_student)):
+    body.studentId = own_payload(principal, {"studentId":body.studentId})["studentId"]
     sid = _student_id(body.studentId)
+    account = await get_db()[STUDENT_ACCOUNTS].find_one(
+        {"studentId": sid}, {"_id": 0, "accessEnabled": 1, "removedAt": 1, "status": 1}
+    )
+    if account and (
+        account.get("accessEnabled") is False
+        or account.get("removedAt")
+        or str(account.get("status") or "").strip().lower() == "removed"
+    ):
+        raise HTTPException(
+            status_code=403,
+            detail="Your app access is turned off by your mentor. Contact your mentor to turn it back on.",
+        )
     await get_db()[DONE].update_one(
         {"studentId": sid, "date": _today().isoformat(), "taskId": body.taskId},
         {"$set": {"doneAt": _now()}},
         upsert=True,
     )
+    # Behavior push: celebrate when the day's targets are fully done (best-effort).
+    try:
+        import behavior_push
+        behavior_push.push_service.spawn(behavior_push.on_target_completed(sid))
+    except Exception:
+        pass
     return {"ok": True}
 
 
 @router.get("/api/ai/daily-target")
-async def student_daily_target(studentId: str = Query(min_length=1, max_length=64)):
+async def student_daily_target(studentId: str = Query(min_length=1, max_length=64), principal=Depends(dashboard_student)):
     """Installed app calls this. Empty means no mentor target, so the app keeps its own list."""
+    studentId = own_payload(principal, {"studentId":studentId})["studentId"]
     sid = _student_id(studentId)
     db = get_db()
     student = await db[STUDENT_ACCOUNTS].find_one(
