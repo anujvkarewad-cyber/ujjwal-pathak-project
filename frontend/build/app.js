@@ -28,6 +28,7 @@ const S = {
   filters: { batch: "All", group: "All", seg: "All" },
   thread: null,
   drawer: null,
+  selAccess: null,
 };
 
 /* ===================== ICONS ===================== */
@@ -341,11 +342,13 @@ const TITLES = {
 
 function shell(body) {
   const email = localStorage.getItem("ump_mentor_email") || "mentor";
+  const blockedCount = (LIVEDATA.students || []).filter((s) => !s.archived && s.access === false).length;
   const navHtml = NAV.map((g) =>
     '<p class="nl">' + g.label + '</p>' +
     g.items.map((item) => {
       const [label, key, icon] = item;
-      return '<button class="ni ' + (S.screen === key ? "on" : "") + '" onclick="go(\'' + key + '\')">' + ic(icon) + '<span>' + label + '</span></button>';
+      const badge = key === "access" && blockedCount > 0 ? '<span class="bdg r">' + blockedCount + '</span>' : '';
+      return '<button class="ni ' + (S.screen === key ? "on" : "") + '" onclick="go(\'' + key + '\')">' + ic(icon) + '<span>' + label + '</span>' + badge + '</button>';
     }).join("")
   ).join("");
 
@@ -376,11 +379,11 @@ function shell(body) {
 /* ===================== PAGE PATTERN ===================== */
 function page(o) {
   const tabs = o.tabs && o.tabs.length
-    ? '<div class="tabs">' + o.tabs.map((t) => '<button class="tab ' + (o.tab === t[0] ? "on" : "") + '" onclick="S.tab.' + o.key + '=\'' + t[0] + '\';S.page=1;draw()">' + t[1] + (t[2] != null ? ' <span class="fa">' + t[2] + '</span>' : '') + '</button>').join("") + '</div>'
+    ? '<div class="tabs">' + o.tabs.map((t) => '<button class="tab ' + (o.tab === t[0] ? "on" : "") + '" onclick="S.tab.' + o.key + '=\'' + t[0] + '\';S.page=1;draw()">' + t[1] + (t[2] != null ? ' <span class="cnt">' + t[2] + '</span>' : '') + '</button>').join("") + '</div>'
     : '';
   const actions = (o.actions || []).map((a) => '<button class="b ' + (a.primary ? "bp" : "bg2") + ' sm" onclick="' + a.fn + '">' + (a.icon ? ic(a.icon, 14) : '') + a.label + '</button>').join("");
   const stats = o.stats && o.stats.length
-    ? '<div class="row" style="gap:8px;margin-bottom:12px">' + o.stats.map((st) => '<div class="card" style="padding:11px 14px;flex:1;min-width:120px"><div class="fa" style="font-size:10.5px;text-transform:uppercase;letter-spacing:.06em">' + esc(st[0]) + '</div><div class="tn" style="font-size:20px;font-weight:650;' + (st[2] ? 'color:' + st[2] : '') + '">' + st[1] + '</div></div>').join("") + '</div>'
+    ? '<div class="sts">' + o.stats.map((st) => '<div class="st"><div class="l">' + esc(st[0]) + '</div><div class="tn v" style="' + (st[2] ? 'color:' + st[2] : '') + '">' + st[1] + '</div></div>').join("") + '</div>'
     : '';
   return '<div class="ph"><div><p class="eyebrow">' + esc(o.eyebrow || "") + '</p><h1>' + esc(o.title) + '</h1>' + (o.desc ? '<p class="d">' + o.desc + '</p>' : '') + '</div><div class="row" style="flex-wrap:wrap">' + actions + '</div></div>' + stats + '<section class="card">' + tabs + o.body + '</section>' + (o.note ? '<div class="nl2">' + o.note + '</div>' : '');
 }

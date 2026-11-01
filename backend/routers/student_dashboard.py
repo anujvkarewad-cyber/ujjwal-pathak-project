@@ -1743,6 +1743,42 @@ async def apply_dashboard_write(action: str, payload: dict, result: Any = None) 
             )
         return {"ok": True, "success": True}
 
+    if action == "students.setAccess":
+        sid = normalize_student_id(payload.get("studentId") or payload.get("id") or "")
+        if not sid:
+            return {"ok": False, "message": "Student ID missing."}
+        action_type = str(payload.get("action") or "").strip()
+        now = _now()
+        if action_type == "block":
+            await db[DASHBOARD_STUDENTS].update_one(
+                {"studentId": sid},
+                {"$set": {"studentId": sid, "access": False, "accessUpdatedAt": now, "updatedAt": now}},
+                upsert=True,
+            )
+            return {"ok": True, "studentId": sid, "access": False}
+        elif action_type == "restore":
+            await db[DASHBOARD_STUDENTS].update_one(
+                {"studentId": sid},
+                {"$set": {"studentId": sid, "access": True, "accessUpdatedAt": now, "updatedAt": now}},
+                upsert=True,
+            )
+            return {"ok": True, "studentId": sid, "access": True}
+        elif action_type == "archive":
+            await db[DASHBOARD_STUDENTS].update_one(
+                {"studentId": sid},
+                {"$set": {"studentId": sid, "archived": True, "access": False, "archivedAt": now, "updatedAt": now}},
+                upsert=True,
+            )
+            return {"ok": True, "studentId": sid, "archived": True, "access": False}
+        elif action_type == "unarchive":
+            await db[DASHBOARD_STUDENTS].update_one(
+                {"studentId": sid},
+                {"$set": {"studentId": sid, "archived": False, "access": True, "archivedAt": None, "updatedAt": now}},
+                upsert=True,
+            )
+            return {"ok": True, "studentId": sid, "archived": False, "access": True}
+        return {"ok": False, "message": f"Unknown access action: {action_type}"}
+
     return {"ok": False, "message": f"Unsupported write: {action}"}
 
 

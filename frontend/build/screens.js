@@ -609,32 +609,109 @@ function studentReportBody() {
 }
 
 /* ===================== ACCESS CONTROL ===================== */
+async function setStudentAccess(studentId, action) {
+  try {
+    const res = await api("/student-dashboard/write", {
+      method: "POST",
+      body: JSON.stringify({
+        action: "students.setAccess",
+        studentId: studentId,
+        action_type: action
+      })
+    });
+    if (res.ok) {
+      toast(action === "block" ? "Access blocked for " + studentId :
+            action === "restore" ? "Access restored for " + studentId :
+            action === "archive" ? "Removed from program: " + studentId :
+            "Student restored to program: " + studentId);
+      await loadData();
+      draw();
+    } else {
+      toast("Error: " + (res.message || "Failed"));
+    }
+  } catch (e) {
+    toast("Error: " + e.message);
+  }
+}
+
 function sAccess() {
-  const stu = (LIVEDATA.students || []).filter((s) => !s.archived);
+  const allStu = LIVEDATA.students || [];
+  const stu = allStu.filter((s) => !s.archived);
   const blocked = stu.filter((s) => s.access === false);
-  const cur = S.tab.access || "blocked";
+  const active = stu.filter((s) => s.access !== false);
+  const selId = S.selAccess || (blocked[0] && blocked[0].id) || null;
+  const selStu = stu.find((s) => s.id === selId);
+
+  const sidebarHtml = blocked.length ?
+    '<div class="access-side">' +
+      '<div class="sh">' + ic("shield", 12) + ' Access — No app access (' + blocked.length + ')</div>' +
+      '<div class="ct">' +
+        blocked.map((s) =>
+          '<button class="access-item ' + (s.id === selId ? "sel" : "") + '" onclick="S.selAccess=\'' + s.id + '\';draw()">' +
+            '<span class="av gy">' + esc((s.name || s.id || "?")[0]) + '</span>' +
+            '<span style="flex:1;min-width:0"><span class="nm">' + esc(s.name || s.id) + '</span><br/><span class="mt">' + esc(s.batch || "—") + '</span></span>' +
+            '<span class="bdg">' + (s.streak || 0) + 'd</span>' +
+          '</button>'
+        ).join("") +
+      '</div>' +
+    '</div>' :
+    '<div class="access-side"><div class="sh">Access</div><div class="empty"><b>No blocked students</b>Everyone has app access.</div></div>';
+
+  const detailHtml = selStu ?
+    '<div class="card" style="padding:16px">' +
+      '<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">' +
+        '<span class="av" style="width:40px;height:40px;font-size:14px">' + esc((selStu.name || selStu.id || "?")[0]) + '</span>' +
+        '<div><div style="font-size:15px;font-weight:600">' + esc(selStu.name || selStu.id) + '</div>' +
+        '<div class="fa" style="font-size:12px">' + esc(selStu.batch || "—") + ' · ' + esc(selStu.group || "—") + '</div></div>' +
+      '</div>' +
+      '<div class="kv">' +
+        '<span>Student ID</span><b>' + esc(selStu.id) + '</b>' +
+        '<span>Status</span><b>' + (selStu.access === false ? '<span class="tag r">No access</span>' : '<span class="tag g">Active</span>') + '</b>' +
+        '<span>Streak</span><b>' + (selStu.streak || 0) + ' days</b>' +
+        '<span>Total Hours</span><b>' + (selStu.totalHours || selStu.lb || 0) + '</b>' +
+      '</div>' +
+      '<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">' +
+        (selStu.access === false ?
+          '<button class="b bp sm" onclick="setStudentAccess(\'' + selStu.id + '\',\'restore\')">' + ic("restore", 14) + ' Restore Access</button>'
+          :
+          '<button class="b bg2 sm" onclick="setStudentAccess(\'' + selStu.id + '\',\'block\')">' + ic("shield", 14) + ' Block Access</button>' +
+          '<button class="b danger sm" onclick="setStudentAccess(\'' + selStu.id + '\',\'archive\')">' + ic("trash", 14) + ' Remove from Program</button>'
+        ) +
+      '</div>' +
+    '</div>' :
+    '<div class="empty"><b>Select a student</b>Click a student on the left to view details and manage their access.</div>';
+
+  const activeTable = active.length ?
+    rowsHtml(["Student", "Batch", "Group", "Streak", "Status", "Actions"],
+      active.map((s) =>
+        cell(personCell(s)) + cell('<span class="chip gy">' + esc(s.batch || "—") + '</span>') + cell(gchip(s.group)) +
+        cell(s.streak || 0, "tn") +
+        cell('<span class="tag ' + band(s)[1] + '">' + band(s)[0] + '</span>') +
+        cell(
+          '<div style="display:flex;gap:4px;justify-content:flex-end">' +
+            '<button class="b bg2 xs" onclick="S.selAccess=\'' + s.id + '\';draw()">' + ic("eye", 11) + '</button>' +
+            '<button class="b bg2 xs" onclick="setStudentAccess(\'' + s.id + '\',\'block\')">' + ic("shield", 11) + ' Block</button>' +
+            '<button class="b danger xs" onclick="setStudentAccess(\'' + s.id + '\',\'archive\')">' + ic("trash", 11) + '</button>' +
+          '</div>', "right"
+        )
+      ).join(""), "No active students"
+    ) : '<div class="empty"><b>No active students</b></div>';
+
   return page({
     eyebrow: "Admin", title: "Access Control",
-    desc: "Turn off app access or make student IDs inactive.",
-    stats: [["No access", blocked.length, "#D97706"], ["Active", stu.length - blocked.length, "#16A34A"], ["Total", stu.length, "#111827"]],
-    tabs: [["blocked", "No app access", blocked.length], ["active", "Active students", stu.length - blocked.length]],
-    tab: cur, key: "access",
-    body: cur === "blocked" ?
-      rowsHtml(["Student", "Batch", "Group", "Status", ""],
-        blocked.map((s) =>
-          cell(personCell(s)) + cell('<span class="chip gy">' + esc(s.batch || "—") + '</span>') + cell(gchip(s.group)) +
-          cell('<span class="tag r">No access</span>') +
-          cell('<button class="b bg2 xs" onclick="toast(\'Access restored for ' + s.id + '\')">' + ic("restore", 12) + ' Restore</button>', "right")
-        ).join(""), "Nobody is blocked"
-      ) :
-      rowsHtml(["Student", "Batch", "Group", "Streak", "Status", ""],
-        stu.filter((s) => s.access !== false).map((s) =>
-          cell(personCell(s)) + cell('<span class="chip gy">' + esc(s.batch || "—") + '</span>') + cell(gchip(s.group)) +
-          cell(s.streak || 0, "tn") +
-          cell('<span class="tag ' + band(s)[1] + '">' + band(s)[0] + '</span>') +
-          cell('<button class="b bg2 xs" onclick="toast(\'Access disabled for ' + s.id + '\')">' + ic("shield", 12) + ' Block</button>', "right")
-        ).join(""), "No active students"
-      ),
+    desc: "Block app access, remove students from the program, or restore access.",
+    stats: [
+      ["No access", blocked.length, "#D97706"],
+      ["Active", active.length, "#16A34A"],
+      ["Archived", allStu.filter((s) => s.archived).length, "#9CA3AF"],
+      ["Total", allStu.length, "#111827"],
+    ],
+    body: '<div class="access-split">' + sidebarHtml + '<div>' + detailHtml +
+      '<div class="card" style="margin-top:14px">' +
+        '<div style="padding:12px 15px;border-bottom:1px solid var(--bd2);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--fa)">' + ic("check", 12) + ' Active Students (' + active.length + ')</div>' +
+        activeTable +
+      '</div>' +
+    '</div></div>',
   });
 }
 
