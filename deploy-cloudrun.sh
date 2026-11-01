@@ -8,6 +8,7 @@
 set -euo pipefail
 
 SERVICE="${SERVICE:-ujjwal-pathak-app}"
+PROJECT="${PROJECT:-ump-dashboard}"
 REGION="${REGION:-asia-south1}"          # Mumbai — Tier 1, free allowance applies
 MIN_INSTANCES="${MIN_INSTANCES:-0}"      # 0 = free but cold starts; 1 = always warm (~$5-9/mo)
 MEMORY="${MEMORY:-1Gi}"
@@ -35,7 +36,8 @@ SECRETS="${SECRETS},SYNC_SECRET=SYNC_SECRET:latest"
 
 # Auto-attach Google Drive/Sheets Service Account secret for Notes Inbox if present in Secret Manager,
 # and ensure the Cloud Run runtime service account has secretAccessor permission first.
-PROJECT_ID="$(gcloud config get-value project 2>/dev/null || true)"
+gcloud config set project "${PROJECT}" >/dev/null 2>&1 || true
+PROJECT_ID="${PROJECT}"
 PROJECT_NUM=""
 if [ -n "${PROJECT_ID}" ]; then
   PROJECT_NUM="$(gcloud projects describe "${PROJECT_ID}" --format='value(projectNumber)' 2>/dev/null || true)"
@@ -54,10 +56,11 @@ for sa_secret in NOTES_GOOGLE_SA_JSON GOOGLE_SERVICE_ACCOUNT_JSON ump-drive-sa; 
   fi
 done
 
-echo "Deploying ${SERVICE} to ${REGION} (min-instances=${MIN_INSTANCES})..."
+echo "Deploying commit $(git rev-parse --short HEAD) to ${SERVICE} (${PROJECT} / ${REGION})..."
 # NOTE: --update-env-vars and --update-secrets preserve any extra env vars / secrets
 # (such as AI keys or FCM credentials) already configured on the Cloud Run service.
 gcloud run deploy "${SERVICE}" \
+  --project "${PROJECT}" \
   --source . \
   --region "${REGION}" \
   --platform managed \
@@ -73,6 +76,6 @@ gcloud run deploy "${SERVICE}" \
   --update-env-vars "${ENV_VARS}" \
   --update-secrets "${SECRETS}"
 
-URL="$(gcloud run services describe "${SERVICE}" --region "${REGION}" --format='value(status.url)')"
+URL="$(gcloud run services describe "${SERVICE}" --project "${PROJECT}" --region "${REGION}" --format='value(status.url)')"
 echo "Deployed: ${URL}"
 echo "Health:   $(curl -fsS "${URL}/api/health" || echo 'health check failed')"
