@@ -23,19 +23,32 @@ def snapshot(plan, sid, today, now):
 
 def view(state, today):
     """Snapshots are immutable; projected dates slide, completed dates never do."""
-    start = date.fromisoformat(state['startDate'])
-    approved = sum(e.get('approvedDays', 0) for e in state['extensions'] if e['status'] == 'approved')
-    backups = state['includedBackupDays']
-    total = len(state['days'])
+    # A snapshot can come from the personal-plan flow (mode "personal"), which
+    # carries startDate/extensions/includedBackupDays, or from a calendar plan
+    # (mode "calendar"), which carries the day dates directly and has no
+    # personal schedule. Reading those fields unconditionally raised KeyError
+    # and turned /api/smart-targets/student/dashboard into a 500 for students
+    # who had a calendar plan in their history (04-Nov-2026).
+    days = state.get('days') or []
+    start_raw = str(state.get('startDate') or '').strip()
+    if start_raw:
+        start = date.fromisoformat(start_raw)
+    else:
+        # Calendar mode: the first day carries its own date.
+        start = date.fromisoformat(days[0]['date']) if days and days[0].get('date') else today
+    approved = sum(e.get('approvedDays', 0) for e in (state.get('extensions') or [])
+                   if e.get('status') == 'approved')
+    backups = int(state.get('includedBackupDays') or 0)
+    total = len(days)
     # Plans may continue an ongoing journey (first uploaded day = 24 etc.); anchor
     # all date math on the first day number actually present, not on 1.
-    first_day = state['days'][0]['day'] if state['days'] else 1
+    first_day = days[0]['day'] if days else 1
     deadline = start + timedelta(days=total + backups + approved - 1)
     rows, current, complete, done_tasks, mandatory_done = [], None, 0, 0, 0
-    mandatory_total = sum(sum(bool(t["mandatory"]) for t in d["tasks"]) for d in state["days"])
+    mandatory_total = sum(sum(bool(t["mandatory"]) for t in d["tasks"]) for d in days)
     next_date = start
     projected_finish = start
-    for day in state['days']:
+    for day in days:
         required = [t for t in day['tasks'] if t['mandatory']]
         is_done = all(t['id'] in day['completions'] for t in required)
         nominal = start + timedelta(days=day['day'] - first_day)
@@ -63,10 +76,11 @@ def view(state, today):
     can_work = active is not None and not active['locked'] and needed == 0
     if active and needed:
         active['locked'] = True
-    return {'planId': state['planId'], 'name': state['name'], 'studentId': state['studentId'],
-            'startDate': state['startDate'], 'startedAt': state['startedAt'],
+    return {'planId': state.get('planId'), 'name': state.get('name'),
+            'studentId': state.get('studentId'),
+            'startDate': state.get('startDate') or start.isoformat(), 'startedAt': state.get('startedAt'),
             'currentDay': current or total, 'totalDays': total, 'completedDays': complete,
-            'completedTasks': done_tasks, 'totalTasks': sum(len(d['tasks']) for d in state['days']),
+            'completedTasks': done_tasks, 'totalTasks': sum(len(d['tasks']) for d in days),
             'progressPercent': round(mandatory_done * 100 / mandatory_total, 1),
             'mandatoryTasksCompleted': mandatory_done, 'mandatoryTasksTotal': mandatory_total, 'complete': complete == total,
             'canWork': can_work, 'overdueDays': delay, 'extensionDaysNeeded': needed,
@@ -76,8 +90,8 @@ def view(state, today):
             'extensionDaysRemaining': max(0, approved-max(0, delay-backups)),
             'deadline': deadline.isoformat(), 'projectedFinishDate': projected_finish.isoformat(),
             'remainingCalendarDays': max(0, (deadline-today).days+1),
-            'extensions': deepcopy(state['extensions']), 'days': rows,
-            'version': state['version']}
+            'extensions': deepcopy(state.get('extensions') or []), 'days': rows,
+            'version': state.get('version', 0)}
 
 
 def complete_task(state, task_id, today, now):

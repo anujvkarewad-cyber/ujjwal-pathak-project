@@ -22,6 +22,13 @@ RULE-3  A shared, audience-targeted row must be filtered for the reader.
         A shared announcement leaked into every batch before this check
         existed.
 
+RULE-3b A stored record read from Mongo may not have every field.
+        smart_target_engine.view() indexed state['startDate'],
+        state['extensions'] and state['includedBackupDays'] unconditionally.
+        Calendar-mode snapshots have none of them, so the read raised KeyError
+        and every student with such a plan in their history got a 500 from
+        /api/smart-targets/student/dashboard.
+
 RULE-4  No breakpoint()/pdb in backend code.
 
 Exit code 0 = clean. Non-zero = do not deploy.
@@ -235,6 +242,34 @@ def rule_shared_reads_are_filtered() -> None:
                  f"read is unfiltered")
 
 
+# ------------------------------------------------------------------ RULE-3b
+def rule_no_required_field_on_optional_shape() -> None:
+    """A record read from Mongo may not have every field.
+
+    smart_target_engine.view() indexed state['startDate'], state['extensions']
+    and state['includedBackupDays'] unconditionally. Calendar-mode snapshots
+    have none of them, so the read raised KeyError and every student with such
+    a plan in their history got a 500 from /api/smart-targets/student/dashboard.
+    A field that a stored record may legitimately lack must be read with .get().
+    """
+    path = ROUTERS / "smart_target_engine.py"
+    src = path.read_text(encoding="utf-8")
+    required = ("startDate", "extensions", "includedBackupDays", "days",
+                "planId", "name", "studentId")
+    tree = ast.parse(src)
+    for fn in [n for n in ast.walk(tree)
+               if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef))
+               and n.name == "view"]:
+        for node in ast.walk(fn):
+            if (isinstance(node, ast.Subscript) and isinstance(node.value, ast.Name)
+                    and node.value.id == "state"
+                    and isinstance(node.slice, ast.Constant)
+                    and node.slice.value in required):
+                fail("RULE-3b", path, node.lineno,
+                     f"state['{node.slice.value}'] assumes the field always exists - "
+                     f"a stored record may not have it (use state.get(...))")
+
+
 # ------------------------------------------------------------------ RULE-4
 def rule_no_debugger() -> None:
     for path in sorted(BACKEND.rglob("*.py")):
@@ -251,6 +286,7 @@ def main() -> int:
     rule_no_business_5xx()
     rule_no_tuple_overread()
     rule_shared_reads_are_filtered()
+    rule_no_required_field_on_optional_shape()
     rule_no_debugger()
 
     if failures:
@@ -258,7 +294,7 @@ def main() -> int:
         for f in failures:
             print("  ✗ " + f)
         return 1
-    print("✓ contract guard clean (rules 1-4)")
+    print("✓ contract guard clean (rules 1-4, 3b)")
     return 0
 
 
