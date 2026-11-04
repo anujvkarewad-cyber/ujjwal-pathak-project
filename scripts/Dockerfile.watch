@@ -1,0 +1,21 @@
+# The error watch runs as a scheduled Cloud Run job.
+#
+# It reads the Cloud Run request logs through the Cloud Logging API (using the
+# service-account token from the metadata server), reports every 5xx on the
+# revision that is currently serving traffic, and exits non-zero when a
+# student-facing endpoint is failing.
+#
+# Nothing is deployed from here - it only watches.
+FROM python:3.11-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1
+
+WORKDIR /watch
+
+COPY scripts/watch_errors.py /watch/watch_errors.py
+
+# No dependencies needed: urllib + json from the standard library.
+ENTRYPOINT ["python", "/watch/watch_errors.py"]
+CMD ["--hours", "24"]

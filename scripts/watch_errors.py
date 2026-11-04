@@ -38,6 +38,44 @@ STUDENT_ENDPOINTS = (
 )
 
 
+def _metadata_token() -> str:
+    """A service-account token from the Cloud Run metadata server.
+
+    Lets the watch run inside a scheduled Cloud Run job, where the gcloud CLI
+    is not installed.
+    """
+    import urllib.request
+    req = urllib.request.Request(
+        "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token",
+        headers={"Metadata-Flavor": "Google"})
+    with urllib.request.urlopen(req, timeout=15) as resp:
+        return json.loads(resp.read().decode("utf-8"))["access_token"]
+
+
+def _logging_api(filt: str) -> list:
+    """Read the logs through the Cloud Logging API (works inside Cloud Run)."""
+    import urllib.parse
+    import urllib.request
+    token = _metadata_token()
+    body = json.dumps({
+        "resourceNames": [f"projects/{PROJECT}"],
+        "filter": filt,
+        "orderBy": "timestamp desc",
+        "pageSize": 2000,
+    }).encode("utf-8")
+    req = urllib.request.Request(
+        "https://logging.googleapis.com/v2/entries:list",
+        data=body,
+        headers={
+            "Authorization": f"Bearer {token}",
+            "Content-Type": "application/json",
+        },
+        method="POST")
+    with urllib.request.urlopen(req, timeout=120) as resp:
+        data = json.loads(resp.read().decode("utf-8"))
+    return data.get("entries") or []
+
+
 def run_gcloud(args: list[str]) -> str:
     cmd = ["gcloud", "logging", "read"] + args + [
         "--project=" + PROJECT, "--format=json", "--limit=2000"]
@@ -45,6 +83,29 @@ def run_gcloud(args: list[str]) -> str:
     if out.returncode != 0:
         raise RuntimeError(out.stderr.strip() or "gcloud logging read failed")
     return out.stdout
+
+
+class WatchUnavailable(RuntimeError):
+    """The logs could not be read at all."""
+
+
+def _entries(filt: str) -> list:
+    """Read log entries, preferring the API and falling back to the CLI.
+
+    Raises WatchUnavailable when neither path works: a watch that cannot see
+    must say so, never report "all clear".
+    """
+    api_error = None
+    try:
+        return _logging_api(filt)
+    except Exception as exc:
+        api_error = exc
+    try:
+        raw = run_gcloud([filt])
+        return json.loads(raw or "[]")
+    except Exception as exc:
+        raise WatchUnavailable(
+            f"could not read the logs: API said {api_error}; CLI said {exc}") from exc
 
 
 def main() -> int:
@@ -60,40 +121,87 @@ def main() -> int:
             f'AND resource.labels.service_name={SERVICE} '
             f'AND httpRequest.status>=500 '
             f'AND timestamp>="{since_iso}"')
-    raw = run_gcloud([filt])
     try:
-        entries = json.loads(raw or "[]")
-    except json.JSONDecodeError:
-        print("could not read the logs", file=sys.stderr)
-        return 0
+        entries = _entries(filt)
+    except WatchUnavailable as exc:
+        print(f"UMP error watch - {SERVICE}")
+        print(f"  ✗ COULD NOT READ THE LOGS - this is NOT an all-clear")
+        print(f"    {exc}")
+        return 2
+
+    # Which revision is serving traffic right now? Only errors on THAT
+    # revision are live problems; older ones are history.
+    current = ""
+    try:
+        import urllib.request
+        token = _metadata_token()
+        url = (f"https://run.googleapis.com/v2/projects/{PROJECT}/locations/{REGION}"
+               f"/services/{SERVICE}")
+        req = urllib.request.Request(url, headers={"Authorization": f"Bearer {token}"})
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+        current = ((data.get("latestReadyRevision") or "").rsplit("/", 1)[-1]).strip()
+    except Exception:
+        try:
+            out = subprocess.run(
+                ["gcloud", "run", "services", "describe", SERVICE,
+                 "--region=" + REGION, "--project=" + PROJECT,
+                 "--format=value(status.latestReadyRevisionName)"],
+                capture_output=True, text=True, timeout=60)
+            current = out.stdout.strip()
+        except Exception:
+            pass
 
     by_endpoint = Counter()
-    by_status = Counter()
+    by_revision = Counter()
     student_hits = 0
+    live_entries = []
     for entry in entries:
         req = entry.get("httpRequest") or {}
         status = req.get("status")
         url = req.get("requestUrl") or ""
         path = url.split("?")[0]
+        resource = entry.get("resource") or {}
+        labels = resource.get("labels") or {}
+        revision = labels.get("revision_name") or resource.get("revisionName") or ""
         by_endpoint[(status, path)] += 1
-        by_status[status] += 1
+        by_revision[revision] += 1
         if any(p in path for p in STUDENT_ENDPOINTS):
             student_hits += 1
+        if current and revision == current:
+            live_entries.append((status, path))
 
     print(f"UMP error watch - {SERVICE} - last {args.hours:g} h")
     print(f"  since {since_iso}")
+    if current:
+        print(f"  serving revision: {current}")
     if not entries:
         print("  ✓ no 5xx at all")
         return 0
 
-    print(f"  {len(entries)} 5xx responses")
+    if current:
+        if not live_entries:
+            print(f"  ✓ no 5xx on the revision that is serving traffic right now")
+            print(f"    ({len(entries)} older 5xx in the window, already fixed)")
+            return 0
+        print(f"  ✗ {len(live_entries)} 5xx on the CURRENT revision:")
+        for (status, path), count in Counter(live_entries).most_common(20):
+            flag = "  ← STUDENT-FACING" if any(p in path for p in STUDENT_ENDPOINTS) else ""
+            print(f"    {status}  {path}  x{count}{flag}")
+        live_student = sum(1 for _s, p in live_entries
+                           if any(x in p for x in STUDENT_ENDPOINTS))
+        if live_student:
+            print(f"\n  ✗ {live_student} student-facing failures — students are seeing errors")
+            return 1
+        return 0
+
+    print(f"  {len(entries)} 5xx responses (current revision unknown)")
     for (status, path), count in by_endpoint.most_common(20):
         flag = "  ← STUDENT-FACING" if any(p in path for p in STUDENT_ENDPOINTS) else ""
         print(f"    {status}  {path}  x{count}{flag}")
     if student_hits:
-        print(f"\n  ✗ {student_hits} student-facing failures — students are seeing errors")
+        print(f"\n  ✗ {student_hits} student-facing failures")
         return 1
-    print("\n  ⚠ 5xx seen, but none on a student endpoint")
     return 0
 
 
