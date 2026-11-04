@@ -17,7 +17,7 @@ const fmtTime = (iso) => {
   } catch { return ''; }
 };
 
-export default function Messages({ scopedStudentIds, onWorkspaceReply } = {}) {
+export default function Messages({ scopedStudentIds } = {}) {
   const [threads, setThreads] = useState(null);
   const [selected, setSelected] = useState(null); // studentId
   const [thread, setThread] = useState(null);
@@ -55,7 +55,6 @@ export default function Messages({ scopedStudentIds, onWorkspaceReply } = {}) {
   const send = async () => {
     const text = draft.trim();
     if (!text || !selected || sending || (scopedStudentIds && !scopedStudentIds.includes(selected))) return;
-    if (onWorkspaceReply) { onWorkspaceReply({ studentId: selected, text }); return; }
     setSending(true);
     try {
       const res = await replyToStudent(selected, text);
@@ -74,7 +73,7 @@ export default function Messages({ scopedStudentIds, onWorkspaceReply } = {}) {
 
   return (
     <div className="space-y-4" data-testid="messages-page">
-      <p className="text-xs text-slate-500">App inbox only. No WhatsApp integration. {onWorkspaceReply && 'Replies are copied to the reviewed composer above; nothing is sent until its separate confirmation.'}</p>
+      <p className="text-xs text-slate-500">App inbox only. No WhatsApp integration. A reply is sent to the student's app immediately.</p>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
       {/* Thread list */}
       <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden flex flex-col">
@@ -157,7 +156,7 @@ export default function Messages({ scopedStudentIds, onWorkspaceReply } = {}) {
                 disabled={!draft.trim() || sending}
                 className="h-10 px-4 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] disabled:opacity-40 text-white text-sm font-semibold inline-flex items-center gap-2"
               >
-                <Send className="w-4 h-4" /> {onWorkspaceReply ? 'Review reply' : 'Send'}
+                <Send className="w-4 h-4" /> Send
               </button>
             </div>
           </>

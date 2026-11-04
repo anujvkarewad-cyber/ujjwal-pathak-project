@@ -2,9 +2,9 @@ import React, { act } from 'react';
 import { createRoot } from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import WorkspaceActions from './WorkspaceActions';
-import { reviewWorkspaceOperation, commitWorkspaceOperation, getWorkspacePlan, reconcileWorkspacePlan, getWorkspaceAnnouncements } from '@/api/mentorWorkspace';
+import { reviewWorkspaceOperation, sendWorkspaceNow, commitWorkspaceOperation, getWorkspacePlan, reconcileWorkspacePlan, getWorkspaceAnnouncements } from '@/api/mentorWorkspace';
 jest.mock('@/api/mentorWorkspace', () => ({
-  reviewWorkspaceOperation: jest.fn(), commitWorkspaceOperation: jest.fn(),
+  reviewWorkspaceOperation: jest.fn(), sendWorkspaceNow: jest.fn(), commitWorkspaceOperation: jest.fn(),
   getWorkspacePlan: jest.fn(), reconcileWorkspacePlan: jest.fn(), getWorkspaceAnnouncements: jest.fn(),
 }));
 global.IS_REACT_ACT_ENVIRONMENT = true;
@@ -17,6 +17,7 @@ beforeEach(() => {
   jest.clearAllMocks(); sessionStorage.clear();
   host = document.createElement('div'); document.body.appendChild(host); root = createRoot(host);
   reviewWorkspaceOperation.mockResolvedValue(plan);
+  sendWorkspaceNow.mockResolvedValue({ ...plan, direct: true, state: 'completed', outcomes: [{ studentId: 'UMP0001', state: 'completed' }] });
   commitWorkspaceOperation.mockResolvedValue({ state: 'completed', outcomes: [{ studentId: 'UMP0001', state: 'completed' }] });
   getWorkspaceAnnouncements.mockResolvedValue({ announcements: [] });
 });
@@ -33,26 +34,26 @@ async function type(selector, value) {
   });
 }
 
-test('a private send requires selection, server review and a separate explicit confirmation', async () => {
+test('a private message needs a selection and then sends in one action, with no confirmation step', async () => {
   await mount();
-  await click(button('Review recipients & changes'));
-  expect(reviewWorkspaceOperation).not.toHaveBeenCalled();
+  await click(button('Send now'));
+  expect(sendWorkspaceNow).not.toHaveBeenCalled();
+  expect(host.textContent).toContain('Select at least one student.');
   await click(host.querySelectorAll('input[type="checkbox"]')[1]);
   await type('textarea', 'Private guidance');
-  await click(button('Review recipients & changes'));
-  expect(reviewWorkspaceOperation).toHaveBeenCalledWith(expect.objectContaining({ kind: 'message', studentIds: ['UMP0001'], scopes: [{ batch: 'Existing batch', group: 'group1' }], text: 'Private guidance' }));
+  await click(button('Send now'));
+  expect(sendWorkspaceNow).toHaveBeenCalledWith(expect.objectContaining({ kind: 'message', studentIds: ['UMP0001'], scopes: [{ batch: 'Existing batch', group: 'group1' }], text: 'Private guidance' }));
+  expect(reviewWorkspaceOperation).not.toHaveBeenCalled();
   expect(commitWorkspaceOperation).not.toHaveBeenCalled();
-  await click(button('Confirm message'));
-  expect(commitWorkspaceOperation).toHaveBeenCalledTimes(1);
   expect(sessionStorage.getItem('upm_workspace_pending_plan')).toBeNull();
+  expect(host.textContent).toContain('Outcome: completed');
 });
 
-test('an unknown commit outcome blocks resend and preserves the status reference', async () => {
+test('an unknown transfer commit outcome blocks resend and preserves the status reference', async () => {
   commitWorkspaceOperation.mockRejectedValue(new Error('Network outcome unknown'));
-  await mount({ focusStudentId: 'UMP0001' });
-  await type('textarea', 'Do not duplicate');
+  await mount({ focusStudentId: 'UMP0001', initialKind: 'transfer' });
   await click(button('Review recipients & changes'));
-  await click(button('Confirm message'));
+  await click(button('Confirm transfer'));
   expect(sessionStorage.getItem('upm_workspace_pending_plan')).toBe('test-review');
   expect(button('Review recipients & changes').disabled).toBe(true);
   expect(host.textContent).toContain('Do not resend');
@@ -74,13 +75,14 @@ test('a partial transfer is not retried; reconciliation is a separate explicit a
   expect(sessionStorage.getItem('upm_workspace_pending_plan')).toBeNull();
 });
 
-test('announcement review carries explicit exclusive targets, not an unscoped broadcast', async () => {
-  reviewWorkspaceOperation.mockResolvedValue({ ...plan, kind: 'announcement' });
+test('an announcement carries explicit exclusive targets, not an unscoped broadcast, and sends in one action', async () => {
+  sendWorkspaceNow.mockResolvedValue({ ...plan, kind: 'announcement', direct: true, state: 'completed', outcomes: [] });
   await mount({ mode: 'announcements' });
   await type('input[aria-label="Announcement title"]', 'Update');
   await type('textarea', 'App only');
-  await click(button('Review recipients & changes'));
-  expect(reviewWorkspaceOperation).toHaveBeenCalledWith(expect.objectContaining({ kind: 'announcement', scopes: [{ batch: 'Existing batch', group: 'group1' }], studentIds: [] }));
+  await click(button('Send now'));
+  expect(sendWorkspaceNow).toHaveBeenCalledWith(expect.objectContaining({ kind: 'announcement', scopes: [{ batch: 'Existing batch', group: 'group1' }], studentIds: [] }));
+  expect(reviewWorkspaceOperation).not.toHaveBeenCalled();
   expect(commitWorkspaceOperation).not.toHaveBeenCalled();
 });
 
