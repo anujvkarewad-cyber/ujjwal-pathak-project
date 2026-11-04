@@ -401,6 +401,221 @@ async def set_student_access(
     }
 
 
+def _slug_avatar(name: str, sid: str) -> str:
+    """Inline SVG avatar so the profile never renders a broken image."""
+    initials = "".join(part[0] for part in str(name or sid or "S").split()[:2]).upper() or "S"
+    svg = (
+        '<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96">'
+        '<rect width="96" height="96" rx="20" fill="#DBEAFE"/>'
+        '<text x="50%" y="54%" font-family="Arial,Helvetica,sans-serif" font-size="38" '
+        'font-weight="700" fill="#2563EB" text-anchor="middle" dominant-baseline="middle">'
+        + initials +
+        "</text></svg>"
+    )
+    return "data:image/svg+xml;utf8," + svg.replace("#", "%23").replace('"', "'")
+
+
+def _log_days(study_log: list) -> dict:
+    """date-string -> total hours, from the dashboard's study log entries."""
+    days: dict[str, float] = {}
+    for entry in study_log or []:
+        day = str((entry or {}).get("date") or "")[:10]
+        if not day:
+            continue
+        try:
+            hours = float((entry or {}).get("hours") or 0)
+        except (TypeError, ValueError):
+            hours = 0.0
+        days[day] = days.get(day, 0.0) + hours
+    return days
+
+
+@router.get("/students/directory")
+async def mentor_student_directory(_mentor=Depends(require_mentor)):
+    """Students page + tracker links — Mongo is the source of truth.
+
+    Before this endpoint the list came through the legacy Apps Script bridge.
+    The mentor build has no Apps Script URL configured, so that bridge served
+    mock rows: a real student clicked in the Daily Tracker opened
+    "Student not found" because their ID only exists in Mongo.
+    """
+    db = get_db()
+    accounts = await db[STUDENT_ACCOUNTS].find(
+        {},
+        {"_id": 0, "studentId": 1, "studentName": 1, "email": 1, "phone": 1,
+         "address": 1, "batch": 1, "group": 1, "attempt": 1, "caLevel": 1,
+         "joinedOn": 1, "master": 1, "status": 1, "removedAt": 1,
+         "accessEnabled": 1, "accessReason": 1},
+    ).to_list(length=5000)
+    stats_by_id: dict[str, dict] = {}
+    async for doc in db[DASHBOARD_STUDENTS].find({}, {"_id": 0, "studentId": 1, "stats": 1}):
+        stats_by_id[str(doc.get("studentId") or "").upper()] = doc.get("stats") or {}
+
+    students = []
+    batch_options, group_options, attempt_options = set(), set(), set()
+    for acc in accounts:
+        sid = str(acc.get("studentId") or "").strip().upper()
+        if not sid:
+            continue
+        stats = stats_by_id.get(sid, {})
+        if acc.get("batch"):
+            batch_options.add(acc["batch"])
+        if acc.get("group"):
+            group_options.add(acc["group"])
+        if acc.get("attempt"):
+            attempt_options.add(acc["attempt"])
+        removed = bool(acc.get("removedAt")) or str(acc.get("status") or "").lower() == "removed"
+        students.append({
+            "id": sid,
+            "studentId": sid,
+            "name": acc.get("studentName") or sid,
+            "email": acc.get("email") or "",
+            "phone": acc.get("phone") or "",
+            "city": acc.get("address") or "",
+            "batch": acc.get("batch") or "",
+            "group": acc.get("group") or "",
+            "attempt": acc.get("attempt") or "",
+            "level": acc.get("caLevel") or "",
+            "joinedOn": str(acc.get("joinedOn") or "")[:10],
+            "master": bool(acc.get("master")),
+            "status": "Removed" if removed else "Active",
+            "risk": "Low" if (stats.get("weeklyHours") or 0) > 0 else "High",
+            "accessEnabled": acc.get("accessEnabled") is not False,
+            "accessReason": acc.get("accessReason") or "",
+            "attendance": 0,
+            "studyHours": float(stats.get("averageHours") or 0),
+            "submissionRate": 0,
+            "lastSubmission": stats.get("lastSubmission"),
+        })
+    students.sort(key=lambda row: row["id"])
+    return {
+        "students": students,
+        "options": {
+            "batchOptions": ["All Batches", *sorted(batch_options)],
+            "groupOptions": ["All Groups", *sorted(group_options)],
+            "attemptOptions": ["All Attempts", *sorted(attempt_options)],
+            "statusOptions": ["All Status", "Active", "Removed"],
+        },
+        "source": "mongo",
+        "generatedAt": _now(),
+    }
+
+
+@router.get("/students/{student_id}/profile")
+async def mentor_student_profile(student_id: str, _mentor=Depends(require_mentor)):
+    """One student's profile for the mentor dashboard, straight from Mongo.
+
+    Shapes match what StudentProfile.jsx renders (weekly/monthly/tracker arrays,
+    mentor notes) so the page no longer depends on the legacy sheet bridge.
+    """
+    sid = normalize_student_id(student_id)
+    if not sid:
+        raise HTTPException(status_code=400, detail="A valid student ID is required.")
+    db = get_db()
+    acc = await db[STUDENT_ACCOUNTS].find_one({"studentId": sid})
+    if not acc:
+        raise HTTPException(status_code=404, detail="Student not found.")
+    dash = await db[DASHBOARD_STUDENTS].find_one({"studentId": sid}) or {}
+    stats = dash.get("stats") or {}
+    study_log = dash.get("studyLog") or []
+    days = _log_days(study_log)
+    today = datetime.now(IST).date()
+
+    window = [today - timedelta(days=offset) for offset in range(29, -1, -1)]
+    logged_30 = sum(1 for day in window if day.isoformat() in days)
+    attendance = round(logged_30 / 30 * 100)
+    last7 = [today - timedelta(days=offset) for offset in range(6, -1, -1)]
+    logged_7 = sum(1 for day in last7 if day.isoformat() in days)
+    submission_rate = round(logged_7 / 7 * 100)
+
+    weekly = [
+        {"day": day.strftime("%a"), "hours": round(days.get(day.isoformat(), 0.0), 2)}
+        for day in last7
+    ]
+    monthly = []
+    for report in (dash.get("reports") or [])[-6:]:
+        week_label = str((report or {}).get("weekOf") or "")
+        hours = float((report or {}).get("weeklyHours") or 0)
+        monthly.append({
+            "week": week_label,
+            "hours": round(hours, 2),
+            "attendance": min(100, round(hours / 7 / 8 * 100)) if hours else 0,
+        })
+    tracker = [
+        {
+            "date": day.isoformat(),
+            "hours": round(days.get(day.isoformat(), 0.0), 2),
+            "submitted": day.isoformat() in days,
+        }
+        for day in [today - timedelta(days=offset) for offset in range(4, -1, -1)]
+    ]
+    removed = bool(acc.get("removedAt")) or str(acc.get("status") or "").lower() == "removed"
+    name = acc.get("studentName") or sid
+    return {
+        "id": sid,
+        "studentId": sid,
+        "name": name,
+        "avatar": _slug_avatar(name, sid),
+        "email": acc.get("email") or "",
+        "phone": acc.get("phone") or "",
+        "city": acc.get("address") or "",
+        "joinedOn": str(acc.get("joinedOn") or "")[:10],
+        "batch": acc.get("batch") or "",
+        "group": acc.get("group") or "",
+        "attempt": acc.get("attempt") or "",
+        "level": acc.get("caLevel") or "",
+        "status": "Removed" if removed else "Active",
+        "risk": "Low" if (stats.get("weeklyHours") or 0) > 0 else "High",
+        "attendance": attendance,
+        "studyHours": float(stats.get("averageHours") or 0),
+        "submissionRate": submission_rate,
+        "totalHours": float(stats.get("totalHours") or 0),
+        "streak": int(stats.get("streak") or 0),
+        "lastSubmission": stats.get("lastSubmission"),
+        "accessEnabled": acc.get("accessEnabled") is not False,
+        "accessReason": acc.get("accessReason") or "",
+        "weekly": weekly,
+        "monthly": monthly,
+        "tracker": tracker,
+        "mentorNotes": [
+            {"id": note.get("id") or "", "date": str(note.get("date") or "")[:10], "note": note.get("note") or ""}
+            for note in (dash.get("mentorNotes") or [])
+        ],
+        "feedback": dash.get("feedback") or [],
+        "source": "mongo",
+    }
+
+
+class MentorNoteBody(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    note: str = ""
+
+
+@router.post("/students/{student_id}/note")
+async def add_mentor_note_mentor(student_id: str, body: MentorNoteBody, mentor=Depends(require_mentor)):
+    """Append a mentor note to the student's Mongo dashboard document."""
+    sid = normalize_student_id(student_id)
+    note = (body.note or "").strip()
+    if not sid or not note:
+        raise HTTPException(status_code=400, detail="A student ID and a note are required.")
+    db = get_db()
+    if not await db[STUDENT_ACCOUNTS].find_one({"studentId": sid}, {"_id": 1}):
+        raise HTTPException(status_code=404, detail="Student not found.")
+    entry = {
+        "id": f"NOTE-{uuid.uuid4().hex[:8]}",
+        "date": datetime.now(IST).date().isoformat(),
+        "note": note,
+        "by": mentor.get("sub") or "mentor",
+        "at": _now(),
+    }
+    await db[DASHBOARD_STUDENTS].update_one(
+        {"studentId": sid},
+        {"$push": {"mentorNotes": {"$each": [entry], "$position": 0}}, "$set": {"updatedAt": _now()}},
+        upsert=True,
+    )
+    return {"ok": True, "studentId": sid, "note": entry}
+
+
 @router.get("/students/{student_id}/admin-state")
 async def student_admin_state(student_id: str, _mentor=Depends(require_mentor)):
     """Admin card data for the student profile: access + removal state."""
@@ -1249,6 +1464,9 @@ def _build_missed_tracker_report(
         items.append({
             "studentId": sid,
             "studentName": str(account.get("studentName") or sid).strip() or sid,
+            # Access state per row so the batch/date grid can flip it inline.
+            "accessEnabled": account.get("accessEnabled") is not False,
+            "accessReason": account.get("accessReason") or "",
             "group": str(account.get("group") or "Unassigned").strip() or "Unassigned",
             "batch": str(account.get("batch") or "Unassigned").strip() or "Unassigned",
             "joinedOn": joined.isoformat() if joined else None,
@@ -1636,6 +1854,11 @@ async def tracker_day(
             "group": str(account.get("group") or "Unassigned").strip() or "Unassigned",
             "notExpected": not_expected,
             "effectiveStart": effective_start.isoformat() if effective_start else None,
+            # Access state travels with the row so the mentor can flip it right
+            # in the day view (absent field means ON - accounts created before
+            # the switch existed never stored a value).
+            "accessEnabled": account.get("accessEnabled") is not False,
+            "accessReason": account.get("accessReason") or "",
             "attendance": attendance_map.get((sid, selected)),
             "entry": _tracker_day_entry(
                 form_by_student.get(sid, []),
@@ -2282,6 +2505,31 @@ def _group_ok(note_group: str, student_group: str) -> bool:
     return str(note_group or "").strip().lower() == str(student_group or "").strip().lower()
 
 
+def _announcements_for_student(rows: list, account: Optional[dict]) -> list:
+    """Shared announcements a student may read: their own batch, or "All Batches".
+
+    An announcement published for one batch must not appear in another batch's
+    app. The shared reader used to hand every shared row to every student, so a
+    batch-targeted announcement leaked across the whole programme.
+    """
+    if not isinstance(rows, list):
+        return []
+    if not account:
+        return rows
+    batch = str(account.get("batch") or "").strip()
+    out = []
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        audience = str(row.get("audience") or "All Batches").strip()
+        if audience in ("", "All Batches", "All"):
+            out.append(row)
+            continue
+        if batch and audience.lower() == batch.lower():
+            out.append(row)
+    return out
+
+
 def _notes_for_student(notes: list, account: Optional[dict]) -> list:
     if not isinstance(notes, list):
         return []
@@ -2302,7 +2550,18 @@ def _notes_for_student(notes: list, account: Optional[dict]) -> list:
             continue
         audience = str(note.get("audience") or "All Batches")
         note_group = str(note.get("group") or "Both Groups")
-        batch_ok = audience in ("", "All Batches") or audience == batch
+        # "All Batches" means every batch in the programme, but a note can still
+        # name batches that must not receive it (e.g. a note published for the four
+        # CA batches is not for Super 30). Master accounts keep full visibility.
+        excluded = {str(b or "").strip().lower() for b in (note.get("excludeBatches") or [])}
+        if not account.get("master") and batch.strip().lower() in excluded:
+            continue
+        # A note published to several batches is ONE row with a batch list.
+        listed = {str(b or "").strip().lower() for b in (note.get("batches") or [])}
+        if listed:
+            batch_ok = batch.strip().lower() in listed
+        else:
+            batch_ok = audience in ("", "All Batches") or audience == batch
         group_ok = _group_ok(note_group, group)
         if batch_ok and group_ok:
             out.append(note)
@@ -2498,11 +2757,6 @@ async def get_dashboard_section(body: DashboardGetBody, principal=Depends(dashbo
         deny(403, "Student action denied.")
     payload = own_payload(principal, body.payload, body.studentId)
     student_id = principal["studentId"]
-    if action in {"getLeaderboard", "getAnnouncements", "notes.listForStudent"}:
-        # Authentication is not evidence of current audience/publication rights.
-        # Keep these readers closed until membership and public/private source
-        # classification are verified; do not invent cohort/mentor policy here.
-        deny(503, "Audience verification unavailable.")
     db = get_db()
 
     # Access OFF (or removed) blocks every student-facing read — the same
@@ -2534,6 +2788,10 @@ async def get_dashboard_section(body: DashboardGetBody, principal=Depends(dashbo
             rows = await _leaderboard_for_student(db, rows, student_id)
         elif action == "getAnnouncements":
             rows = await _visible_announcements(db, rows)
+            account = await db[STUDENT_ACCOUNTS].find_one(
+                {"studentId": student_id}, {"_id": 0, "batch": 1, "group": 1}
+            )
+            rows = _announcements_for_student(rows, account)
         return {"found": True, "result": rows}
 
     if action == "notes.listForStudent":
@@ -2855,6 +3113,19 @@ async def apply_dashboard_write(action: str, payload: dict, result: Any = None) 
         return {"ok": True, "success": True}
 
     return {"ok": False, "message": f"Unsupported write: {action}"}
+
+
+@router.post("/session-check")
+async def session_check(principal=Depends(dashboard_student)):
+    """Cheap "is this session still good?" for the gateway's proof upload.
+
+    dashboard_student already re-reads the account and access state on every
+    call, and its bcrypt proof is cached, so this costs one small DB read instead
+    of a fresh password hash. The proof upload used to call /api/student-auth/login
+    (full bcrypt, 25 s budget) before every file and failed with 503 when that
+    service was busy.
+    """
+    return {"ok": True, "studentId": principal["studentId"]}
 
 
 @router.post("/write")

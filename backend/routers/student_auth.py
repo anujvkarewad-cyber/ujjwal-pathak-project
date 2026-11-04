@@ -144,15 +144,29 @@ def _attempt_access_closed_message(attempt: str, batch: str = "") -> str:
 
 
 def normalize_student_id(raw: str) -> str:
+    """Read a student ID the way a student types it.
+
+    Students far more often mistype the two letters of the prefix than the
+    digits: on 04-Nov-2026, 15 of the 37 open failed logins were exactly this -
+    "UPM0092" (letters swapped), "UMPO350" (letter O instead of zero, tried 8
+    times) or "UMP00092" (one zero too many). Those were reported to the student
+    as "Student ID not found" even though the account existed.
+
+    Only the prefix, the letter O and surplus leading zeros are repaired; the
+    digits themselves are never guessed, so a real wrong ID still fails.
+    """
     value = str(raw or "").strip().upper()
     if not value:
         return ""
     dup = re.match(r"^(UMP\d+)\1+$", value)
     if dup:
         value = dup.group(1)
-    match = re.match(r"^UMP(\d+)$", value)
+    candidate = re.sub(r"^U[MPO]{2}(?=[0-9O])", "UMP", value)  # UPM / UMM / UMO prefixes
+    candidate = re.sub(r"^(UMP)([0-9O]+)$", lambda m: m.group(1) + m.group(2).replace("O", "0"), candidate)
+    match = re.match(r"^UMP(\d+)$", candidate)
     if match:
-        return "UMP" + match.group(1).zfill(4)
+        digits = match.group(1).lstrip("0") or "0"
+        return "UMP" + digits.zfill(4)
     return value
 
 
@@ -288,7 +302,11 @@ async def _check_credentials(student_id: str, password: str) -> dict:
     db = get_db()
     doc = await db[STUDENT_ACCOUNTS].find_one({"studentId": sid})
     if not doc:
-        return {"success": False, "message": "Student ID not found.", "code": "not_found"}
+        return {
+            "success": False,
+            "message": "Student ID not found. Your ID is UMP followed by 4 digits, e.g. UMP0123.",
+            "code": "not_found",
+        }
     # Soft-removed students (mentor removed them from the program) cannot log
     # in. Their data is kept so a mentor restore brings the account back.
     if doc.get("removedAt") or str(doc.get("status") or "").strip().lower() == "removed":

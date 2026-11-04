@@ -233,6 +233,24 @@ async def transfer_one(plan, row):
                 "message": "No automatic retry. Verify Students + Mongo; lock retained."}
 
 
+@router.post("/send")
+async def send_now(body: ReviewBody, mentor=Depends(require_mentor)):
+    """One-shot message/announcement: same guards as a review, then send at once.
+
+    The dashboard's batch/group composer used to need two taps ("Review
+    recipients & changes" → "Confirm message") for a plain reply. This endpoint
+    keeps every guard that mattered — roster read, recipient selection,
+    membership consistency, the communications release flag, a bound plan,
+    no automatic retry — and commits in the same request. Transfers are
+    deliberately excluded: those may not be one-tap.
+    """
+    if body.kind == "transfer":
+        raise HTTPException(400, "Transfers need an explicit review and confirmation.")
+    plan = await review(body, mentor)
+    outcome = await commit(plan["planId"], ConfirmBody(confirm="CONFIRM"), mentor)
+    return {**plan, **outcome, "direct": True}
+
+
 @router.post("/plans/{plan_id}/commit")
 async def commit(plan_id: str, body: ConfirmBody, mentor=Depends(require_mentor)):
     db = get_db()

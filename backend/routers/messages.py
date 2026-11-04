@@ -7,13 +7,16 @@ GET /api/messages/inbox and replies via POST /api/messages/reply.
 Every NEW student message can optionally notify the mentor on WhatsApp
 (config-driven; best-effort — never blocks or breaks the send).
 """
+import logging
+import os
 from datetime import datetime, timezone
 
+import push as push_service
 from routers.dashboard_access import dashboard_student, own_payload
 from fastapi import APIRouter, Depends, HTTPException, Query
 
 from auth import require_mentor
-from db import STUDENT_MESSAGES, get_db
+from db import STUDENT_ACCOUNTS, STUDENT_MESSAGES, get_db
 from models import MessageReplyRequest, MessageSendRequest
 
 try:
@@ -26,6 +29,70 @@ except Exception:  # pragma: no cover
         return ""
 
 router = APIRouter(prefix="/api/messages", tags=["messages"])
+logger = logging.getLogger(__name__)
+
+# ── "tell the mentor a student wrote" ──────────────────────────────────────
+# The mentor is on a phone, so an inbox that only updates when he opens it is
+# useless. Every student message now also fires an app push to the mentor's own
+# device(s). A "mentor device" is simply a phone signed in to one of the
+# accounts listed in MENTOR_ALERT_STUDENT_IDS (default: the demo/tutorial
+# account the owner already carries), so no new app build is needed.
+ALERTS = "mentor_alerts"
+
+
+def mentor_pager_ids() -> list:
+    raw = (os.environ.get("MENTOR_ALERT_STUDENT_IDS") or "UMP9900").strip()
+    return [part.strip().upper() for part in raw.split(",") if part.strip()]
+
+
+GROUP_LABELS = {"group1": "Group 1", "group2": "Group 2", "both": "Both"}
+
+
+async def placement(db, student_id: str, batch_hint: str = "") -> str:
+    """Where the student sits right now, e.g. "After Result Batch 1 / Group 2".
+
+    The mentor needs this to know who is writing without opening the dashboard, so
+    the notification carries it. Mongo mirrors the sheet membership (transfers write
+    both), and it is one indexed read instead of a full sheet read on every message.
+    """
+    account = await db[STUDENT_ACCOUNTS].find_one(
+        {"studentId": student_id}, {"batch": 1, "group": 1}
+    ) or {}
+    batch = str(account.get("batch") or batch_hint or "").strip()
+    raw_group = str(account.get("group") or "").strip()
+    key = raw_group.lower().replace(" ", "").replace("_", "")
+    group = GROUP_LABELS.get(key) or raw_group
+    if batch and group:
+        return f"{batch} / {group}"
+    return batch or group or "Batch not set"
+
+
+async def alert_mentor(db, student_id: str, who: str, text: str, unread: int, batch_hint: str = "") -> int:
+    """Push a short alert to the mentor's devices. Never raises, never blocks a send."""
+    where = await placement(db, student_id, batch_hint)
+    title = f"New message from {who}"
+    body = f"{where} — " + ((text or "").strip().replace("\n", " ")[:110] or "New message")
+    if unread > 1:
+        body = f"{body}  ({unread} unread)"
+    sent = 0
+    for pager in mentor_pager_ids():
+        if pager == student_id.upper():
+            continue  # the demo account talking to itself is not news
+        try:
+            sent += await push_service.push_to_student(
+                pager, title, body, link="home", tag=f"student-msg-{student_id}"
+            )
+        except Exception as exc:  # noqa: BLE001 - alerting is best effort
+            logger.warning("mentor alert push failed for %s (%s)", pager, type(exc).__name__)
+    try:
+        await db[ALERTS].insert_one({
+            "at": _now(), "kind": "student_message", "studentId": student_id,
+            "studentName": who, "placement": where, "excerpt": (text or "")[:300],
+            "pagers": mentor_pager_ids(), "providerAccepted": sent,
+        })
+    except Exception:  # pragma: no cover - audit must never break the send
+        pass
+    return sent
 
 
 def _now() -> str:
@@ -79,6 +146,17 @@ async def send_message(body: MessageSendRequest, principal=Depends(dashboard_stu
             )
         except Exception:
             pass
+
+    # Push alert so the mentor's phone buzzes even if the dashboard is closed.
+    who = body.studentName or body.studentId
+    try:
+        thread = await db[STUDENT_MESSAGES].find_one(
+            {"studentId": body.studentId}, {"unreadForMentor": 1}
+        ) or {}
+        await alert_mentor(db, body.studentId, who, body.text,
+                           int(thread.get("unreadForMentor") or 0), batch_hint=body.batch or "")
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("mentor alert skipped (%s)", type(exc).__name__)
 
     return {"ok": True, "message": message}
 

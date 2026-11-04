@@ -104,7 +104,10 @@ def test_photo_parse_without_a_key_tells_the_mentor_what_to_do(client, mentor_he
     )
     assert res.status_code == 503, res.text
     detail = res.json()["detail"]
-    assert "Groq" in detail and "type or paste" in detail
+    # The mentor is told what to do next (type or paste the rows); the message
+    # must not name the AI vendor.
+    assert "type or paste" in detail.lower()
+    assert "photo reading is not set up" in detail.lower()
 
 
 def test_vision_lineup_is_live_and_tunable(monkeypatch):

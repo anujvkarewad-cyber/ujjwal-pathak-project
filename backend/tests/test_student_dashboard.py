@@ -13,6 +13,32 @@ def seed_student_auth(client, mentor_headers, student_id="UMP0001"):
     return {"X-Student-Id":student_id,"X-Session-Password":"synthetic-dashboard"}
 
 
+def test_batch_announcement_never_reaches_another_batch(client, mentor_headers):
+    """A batch-targeted announcement must not appear in another batch's app."""
+    actor = seed_student_auth(client, mentor_headers, student_id="UMP0007")
+    run = __import__("asyncio").run
+    from db import STUDENT_ACCOUNTS, get_db
+
+    async def setup():
+        db = get_db()
+        await db[STUDENT_ACCOUNTS].update_one(
+            {"studentId": "UMP0007"},
+            {"$set": {"batch": "Before Result Batch 2"}}, upsert=True)
+        await db["dashboard_shared"].update_one(
+            {"_id": "shared"},
+            {"$set": {"announcements": [
+                {"id": "A-ALL", "title": "Everyone", "message": "m", "audience": "All Batches"},
+                {"id": "A-B1", "title": "Batch 1 only", "message": "m", "audience": "Before Result Batch 1"},
+            ]}}, upsert=True)
+    run(setup())
+
+    res = client.post("/api/student-dashboard/get", headers=actor, json={"action": "getAnnouncements"})
+    assert res.status_code == 200
+    ids = [a["id"] for a in res.json()["result"]]
+    assert "A-ALL" in ids, ids
+    assert "A-B1" not in ids, "a batch-targeted announcement leaked into another batch"
+
+
 def test_dashboard_import_and_reads(client, mentor_headers):
     actor = seed_student_auth(client, mentor_headers)
     imported = client.post(
@@ -43,7 +69,10 @@ def test_dashboard_import_and_reads(client, mentor_headers):
     assert status["announcements"] == 1
 
     announcements = client.post("/api/student-dashboard/get", headers=actor, json={"action":"getAnnouncements"})
-    assert announcements.status_code == 503  # Classification/membership evidence required.
+    assert announcements.status_code == 200  # classification/membership: 200 + found, never 5xx
+    # An announcement without an explicit audience is programme-wide.
+    assert announcements.json()["found"] is True
+    assert [a["id"] for a in announcements.json()["result"]] == ["A1"]
 
     stats = client.post("/api/student-dashboard/get", headers=actor,
         json={"action": "getStats", "payload": {"studentId": "UMP0001"}},
@@ -58,7 +87,10 @@ def test_dashboard_import_and_reads(client, mentor_headers):
     assert missing.status_code == 403  # An authenticated owner cannot probe a different ID.
 
     notes = client.post("/api/student-dashboard/get", headers=actor, json={"action":"notes.listForStudent","payload":{"studentId":"UMP0001"}})
-    assert notes.status_code == 503  # No guessed publication scope.
+    assert notes.status_code == 200  # no guessed publication scope: 200, never 5xx
+    # "All Batches" material is programme-wide, so it is served; a batch-targeted
+    # note is not (see the leak regression test below).
+    assert [n["id"] for n in notes.json()["result"]] == ["N1"]
 
     written = client.post("/api/student-dashboard/write", headers=actor,
         json={
@@ -83,4 +115,4 @@ def test_dashboard_import_and_reads(client, mentor_headers):
     )
     assert denied.status_code == 403
     anns = client.post("/api/student-dashboard/get", headers=actor, json={"action":"getAnnouncements"})
-    assert anns.status_code == 503
+    assert anns.status_code == 200

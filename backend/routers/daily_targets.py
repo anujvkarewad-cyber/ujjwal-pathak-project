@@ -9,7 +9,7 @@ import logging
 import os
 import re
 import uuid
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 from typing import List, Optional
 from zoneinfo import ZoneInfo
 
@@ -99,6 +99,39 @@ def _attempt_key(value: str) -> str:
     return text
 
 
+# Which paper belongs to which group. A "Both Groups" plan publishes every subject
+# for every student in the batch, so without this filter a Group 2 student is shown
+# Group 1 papers (Advanced Accounting / Taxation / Law) and vice versa - the exact
+# complaint a student raised on 04-Nov-2026.
+SUBJECT_GROUPS = {
+    "advanced accounting": "g1", "accounts": "g1", "accounting": "g1",
+    "corporate and other laws": "g1", "corporate laws": "g1", "law": "g1", "laws": "g1",
+    "taxation": "g1", "income tax": "g1", "gst": "g1",
+    "cost and management accounting": "g2", "costing": "g2", "cost accounting": "g2",
+    "auditing and assurance": "g2", "auditing": "g2", "audit": "g2",
+    "financial management": "g2", "fm": "g2",
+    "strategic management": "g2", "sm": "g2",
+}
+
+
+def _subject_group(value) -> str:
+    """'g1', 'g2', or '' when the subject belongs to both groups (or is 'All')."""
+    text = _norm(value)
+    if not text or text in {"all", "any", "all subjects", "revision"}:
+        return ""
+    return SUBJECT_GROUPS.get(text, "")
+
+
+def _subject_allowed(student_group: str, subject) -> bool:
+    """A Group 1 student never sees a Group 2 paper, and the other way round."""
+    paper = _subject_group(subject)
+    if not paper:
+        return True
+    if student_group not in {"g1", "g2"}:
+        return True
+    return paper == student_group
+
+
 def _group_key(value: str) -> str:
     text = _norm(value)
     if text in {"", "all", "all groups"}:
@@ -128,6 +161,14 @@ def _subject_key(value: str) -> str:
     return _norm(value)
 
 
+def _valid_iso(value: str) -> bool:
+    try:
+        date.fromisoformat(str(value)[:10])
+        return len(str(value)) >= 10
+    except ValueError:
+        return False
+
+
 def _audience_matches(student: dict, target: dict) -> bool:
     if _attempt_key(target.get("attempt")) != "all" and _attempt_key(target.get("attempt")) != _attempt_key(student.get("attempt")):
         return False
@@ -136,10 +177,22 @@ def _audience_matches(student: dict, target: dict) -> bool:
     target_group = _group_key(target.get("group"))
     student_group = _group_key(student.get("group"))
     if target_group == "all":
-        return True
-    # "Both Groups" is a distinct audience, not a wildcard for G1/G2.
-    # Only a target explicitly addressed to All can cross group boundaries.
-    return target_group in {"g1", "g2", "both"} and target_group == student_group
+        return _subject_allowed(student_group, target.get("subject"))
+    # A target addressed to "Both Groups" IS the target for Group 1 students and
+    # for Group 2 students: that is what "both" means. The attempt and batch must
+    # still match exactly, so nothing ever crosses into another batch.
+    # (Before this, publishing one batch plan under the "Both Groups" label sent
+    # it only to the few students whose own group field says "Both": After Result
+    # Batch 1 had 34 such students and 177 others with no target at all.)
+    if target_group == "both":
+        return student_group in {"g1", "g2", "both"} and _subject_allowed(
+            student_group, target.get("subject")
+        )
+    # A single-group target stays inside that group - no cross-group leak.
+    if target_group != student_group and target_group != "both":
+        return False
+    # Within the batch, the student only ever gets their own papers.
+    return _subject_allowed(student_group, target.get("subject"))
 
 
 def _specificity(target: dict) -> int:
@@ -162,6 +215,42 @@ def _covers(target: dict, day) -> bool:
     except Exception:
         return False
     return start <= day <= end
+
+
+async def plan_order(db) -> dict:
+    """id -> (startDate, createdAt) for every live plan, so a day can pick the
+    newest plan that covers it instead of mixing plans together."""
+    try:
+        return {
+            str(plan.get("id")): (str(plan.get("startDate") or ""), str(plan.get("createdAt") or ""))
+            async for plan in db["target_plans"].find(
+                {"status": {"$ne": "cancelled"}}, {"_id": 0, "id": 1, "startDate": 1, "createdAt": 1}
+            )
+        }
+    except Exception:
+        return {}
+
+
+async def live_plan_ids(db) -> set:
+    """Plans a student may still be shown. A cancelled plan keeps its target rows
+    active in the database, so filtering on the row alone merged an old plan into
+    today's list (two "Revision (full day)" lines in one day)."""
+    try:
+        return {
+            str(plan.get("id"))
+            async for plan in db["target_plans"].find(
+                {"status": {"$ne": "cancelled"}}, {"_id": 0, "id": 1}
+            )
+        }
+    except Exception:
+        return set()
+
+
+def from_live_plan(row: dict, live: set) -> bool:
+    """Rows published by a plan that was cancelled (or replaced) are dropped.
+    Legacy hand-published rows without a planId are kept as they are."""
+    plan_id = str(row.get("planId") or "")
+    return not plan_id or not live or plan_id in live
 
 
 def _best_targets(student: dict, rows: list, day) -> list:
@@ -593,6 +682,21 @@ async def student_daily_target(studentId: str = Query(min_length=1, max_length=6
         {"_id": 0},
     ).to_list(300)
     chosen = _best_targets(student, rows, today)
+    # Personal day mode: when the student has picked a start day, the plan day
+    # they should see is their personal day number, not the calendar date.
+    personal = None
+    try:
+        from routers.student_target_progress import personal_day_for
+        personal = await personal_day_for(sid)
+    except Exception as exc:  # never block the app on the progress lookup
+        logger.warning("personal day lookup failed for %s: %s", sid, exc)
+    if personal:
+        day_rows = await db[TARGETS].find(
+            {"active": {"$ne": False}, "planDay": personal}, {"_id": 0}
+        ).to_list(100)
+        day_rows = [row for row in day_rows if _audience_matches(student, row)]
+        if day_rows:
+            chosen = day_rows
     due = await due_revisions(sid)
     if not chosen and not due:
         raise HTTPException(status_code=404, detail="No target published.")
@@ -648,9 +752,147 @@ async def student_daily_target(studentId: str = Query(min_length=1, max_length=6
         })
     return {
         "date": today.isoformat(),
+        "personalDay": personal,
         "tasks": tasks,
         "locked": False,
         "source": "mentor",
         "reminderSource": "mentor",
         "dueRevisions": due,
     }
+
+
+@router.get("/api/ai/target-plan-days")
+async def student_target_plan_days(
+    studentId: str = Query(min_length=1, max_length=64),
+    principal=Depends(dashboard_student),
+):
+    """Every published plan day for this student, past and future.
+
+    The installed app calls this from the Daily Target screen (the day strip with
+    "previous days" visible). It was never implemented on the server, so the app
+    received 404 on every open - 93 times in 24 h across ~30 students on
+    03-04 Nov 2026. Read-only: ticks stay in /api/targets/complete.
+    """
+    studentId = own_payload(principal, {"studentId": studentId})["studentId"]
+    sid = _student_id(studentId)
+    db = get_db()
+    student = await db[STUDENT_ACCOUNTS].find_one(
+        {"studentId": sid},
+        {"_id": 0, "studentId": 1, "group": 1, "attempt": 1, "batch": 1},
+    )
+    if not student:
+        raise HTTPException(status_code=404, detail="Student not found.")
+    today = _today()
+
+    rows = await db[TARGETS].find(
+        {"active": {"$ne": False}, "planDay": {"$exists": True}}, {"_id": 0}
+    ).to_list(800)
+    live = await live_plan_ids(db)
+    order = await plan_order(db)
+    rows = [row for row in rows if from_live_plan(row, live) and _audience_matches(student, row)]
+    if not rows:
+        return {"today": today.isoformat(), "personalDay": None, "days": []}
+
+    # Personal day = the plan day this student is on today. Without one, fall
+    # back to the calendar dates the mentor published.
+    personal = None
+    try:
+        from routers.student_target_progress import personal_day_for
+        personal = await personal_day_for(sid)
+    except Exception as exc:  # never block the screen on the progress lookup
+        logger.warning("personal day lookup failed for %s: %s", sid, exc)
+
+    try:
+        names = {p.get("id"): p.get("name") for p in await db["target_plans"].find(
+            {}, {"_id": 0, "id": 1, "name": 1}
+        ).to_list(200)}
+    except Exception:
+        names = {}
+
+    missing = [r for r in rows if not r.get("planDay")]
+    for row in missing:  # planDay arrives as int or string depending on the publish path
+        try:
+            row["planDay"] = int(row.get("planDay"))
+        except (TypeError, ValueError):
+            pass
+
+    buckets = {}
+    for row in rows:
+        try:
+            day = int(row.get("planDay"))
+        except (TypeError, ValueError):
+            continue
+        if day < 1:
+            continue
+        if personal:
+            date_iso = (today + timedelta(days=day - personal)).isoformat()
+        else:
+            date_iso = str(row.get("endDate") or row.get("startDate") or "")
+            if not _valid_iso(date_iso):
+                continue
+        # One bucket per (day, date). The plan id used to be part of the key, so
+        # two plans covering the same day produced duplicate chips ("Day 1, Day 1").
+        key = (day, date_iso)
+        buckets.setdefault(key, []).append(row)
+
+    if not buckets:
+        return {"today": today.isoformat(), "personalDay": personal, "days": []}
+
+    # The bucket key is (day, date_iso) — the plan id is no longer part of it.
+    # Reading key[2] here raised IndexError and turned every /api/ai/target-plan-days
+    # call into a 500 for students (visible in Cloud Run logs on 04-Nov-2026).
+    dates = sorted({key[1] for key in buckets})
+    done = {
+        (str(d.get("date") or ""), str(d.get("taskId") or ""))
+        for d in await db[DONE].find(
+            {"studentId": sid, "date": {"$in": dates}},
+            {"_id": 0, "date": 1, "taskId": 1},
+        ).to_list(4000)
+    }
+
+    days = []
+    for (day, date_iso), group in sorted(
+        buckets.items(), key=lambda item: (item[0][1], item[0][0])
+    ):
+        # Newest plan wins for this day; older plans never add their tasks on top.
+        plan_id = max(
+            (str(row.get("planId") or "") for row in group),
+            key=lambda pid: order.get(pid, ("", "")),
+        )
+        group = [row for row in group if str(row.get("planId") or "") == plan_id]
+        tasks, seen = [], set()
+        for row in group:
+            paper = row.get("subject") if not _is_all(row.get("subject")) else ""
+            for task in row.get("tasks") or []:
+                task_id = str(task.get("id") or "")
+                if not task_id or task_id in seen:
+                    continue
+                seen.add(task_id)
+                detail = task.get("detail") or ""
+                if paper and paper.lower() not in detail.lower():
+                    detail = (paper + (". " + detail if detail else "")).strip()
+                tasks.append({
+                    "id": task_id,
+                    "label": task.get("label") or "Study task",
+                    "detail": detail,
+                    "kind": task.get("kind") or "chapter",
+                    "done": (date_iso, task_id) in done,
+                })
+        if not tasks:
+            continue
+        days.append({
+            "planId": plan_id,
+            "planName": names.get(plan_id) or "Mentor plan",
+            "day": day,
+            "date": date_iso,
+            "isToday": date_iso == today.isoformat(),
+            "tasks": tasks,
+        })
+
+    # Keep the payload bounded: the nearest 60 plan days around today.
+    if len(days) > 60:
+        past = [d for d in days if d["date"] <= today.isoformat()][-30:]
+        future = [d for d in days if d["date"] > today.isoformat()][:30]
+        days = sorted(past + future, key=lambda d: (d["date"], d["day"]))
+
+    return {"today": today.isoformat(), "personalDay": personal, "days": days}

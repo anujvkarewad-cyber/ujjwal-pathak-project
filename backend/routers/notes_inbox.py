@@ -53,6 +53,11 @@ SHEET_ID = os.environ.get(
 ).strip()
 SHEET_TAB = os.environ.get("NOTES_SHEET_TAB", "Notes").strip()
 UPLOADED_BY = os.environ.get("NOTES_UPLOADED_BY", "ujjwal pathak mentorship program")
+# Skip list. These PDFs belong to the mentor's Google account and our service
+# account is only a writer on them, so Google refuses to trash them (403,
+# canTrash=false). A skip is recorded in Mongo instead: the file leaves the inbox
+# queue, the PDF itself is never touched, and deleting the record queues it again.
+SKIPPED_COLLECTION = "notes_skipped"
 
 SCOPES = "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/spreadsheets"
 TOKEN_URI = "https://oauth2.googleapis.com/token"
@@ -187,6 +192,13 @@ def _drive_relink(path: str, **params: Any) -> Any:
             status_code=502, detail=f"Drive relink failed ({resp.status_code}): {resp.text[:200]}"
         )
     return resp.json()
+
+
+async def _skipped_file_ids(db) -> set:
+    try:
+        return {d["fileId"] async for d in db[SKIPPED_COLLECTION].find({}, {"fileId": 1})}
+    except Exception:
+        return set()
 
 
 def _find_child_folder(parent_id: str, name: str) -> Optional[str]:
@@ -396,6 +408,7 @@ def _sort_notes(notes: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 class PublishBody(BaseModel):
     fileId: str = Field(min_length=1, max_length=64)
     batches: List[str] = Field(min_length=1)
+    dryRun: bool = False   # build and return the note row without writing anything
     group: str
     subject: str
     title: str = ""
@@ -423,6 +436,7 @@ async def list_inbox(claims: dict = Depends(require_mentor)):
     published_ids = _published_file_ids()
     try:
         db = get_db()
+        published_ids |= await _skipped_file_ids(db)
         shared = await db[DASHBOARD_SHARED].find_one({"_id": "shared"}) or {}
         for n in shared.get("notes") or []:
             fid = str((n or {}).get("fileId") or "").strip()
@@ -510,35 +524,45 @@ async def publish(body: PublishBody, claims: dict = Depends(require_mentor)):
     # Primary student path: the student app reads notes from Mongo
     # (dashboard_shared["notes"]) via notes.listForStudent, NOT from the Sheet.
     # Writing here is reliable (no Google service-account quota/ownership limits).
+    # ONE row per PDF (owner, 4 Nov 2026): selecting four batches used to create
+    # four rows of the same file, which looked like four copies in the student and
+    # mentor lists. The row now carries the batch list, so every selected batch
+    # still receives it while the note exists only once.
+    note_id = f"NOTE-{secrets.token_hex(3).upper()}"
+    note_row = {
+        "id": note_id,
+        "title": title,
+        "baseTitle": base_title,
+        "description": "",
+        "date": today,
+        "subject": subject,
+        "category": series,    # folder students see (Super 75 / teacher)
+        "chapter": chapter,    # title me "Ch N ·" ke roop me
+        "series": series,
+        "fileId": body.fileId,
+        "url": file_url,
+        "fileUrl": file_url,
+        "fileName": file_name,
+        "fileSize": file_size,
+        "audience": "All Batches"
+        if set(batches) >= set(BATCHES)
+        else (batches[0] if len(batches) == 1 else "All Batches"),
+        "batches": batches,
+        "group": group,
+        "uploadedBy": UPLOADED_BY,
+        "source": "inbox",
+    }
+    if body.dryRun:
+        return {"ok": True, "dryRun": True, "note": note_row,
+                "wouldNotifyBatches": batches}
+
     db = get_db()
     shared = await db[DASHBOARD_SHARED].find_one({"_id": "shared"}) or {}
     notes_list = list(shared.get("notes") or [])
-    published: List[Dict[str, str]] = []
-    for batch in batches:
-        note_id = f"NOTE-{secrets.token_hex(3).upper()}"
-        notes_list.append(
-            {
-                "id": note_id,
-                "title": title,
-                "baseTitle": base_title,
-                "description": "",
-                "date": today,
-                "subject": subject,
-                "category": series,    # folder students see (Super 75 / teacher)
-                "chapter": chapter,    # title me "Ch N ·" ke roop me
-                "series": series,
-                "fileId": body.fileId,
-                "url": file_url,
-                "fileUrl": file_url,
-                "fileName": file_name,
-                "fileSize": file_size,
-                "audience": batch,
-                "group": group,
-                "uploadedBy": UPLOADED_BY,
-                "source": "inbox",
-            }
-        )
-        published.append({"batch": batch, "fileId": body.fileId, "noteId": note_id})
+    notes_list.append(note_row)
+    published: List[Dict[str, str]] = [
+        {"batch": b, "fileId": body.fileId, "noteId": note_id} for b in batches
+    ]
     notes_list = _sort_notes(notes_list)
     await db[DASHBOARD_SHARED].update_one(
         {"_id": "shared"},
@@ -575,7 +599,7 @@ async def publish(body: PublishBody, claims: dict = Depends(require_mentor)):
                     "title": title,
                     "description": "",
                     "subject": subject,
-                    "audience": entry["batch"],
+                    "audience": note_row["audience"],
                     "fileName": file_name,
                     "fileSize": str(file_size),
                     "fileId": body.fileId,
@@ -597,8 +621,35 @@ async def publish(body: PublishBody, claims: dict = Depends(require_mentor)):
 
 @router.post("/skip")
 async def skip(body: FileIdBody, claims: dict = Depends(require_mentor)):
-    _drive_patch(f"/files/{body.fileId}", {"trashed": True})
-    return {"ok": True, "success": True, "skipped": body.fileId}
+    """Take a file out of the inbox queue without touching the PDF in Drive.
+
+    Google rejects `trashed=true` here (403): the mentor owns these files and we
+    only hold writer access, so we cannot trash them. The skip is recorded in
+    Mongo instead - the file leaves the queue, stays exactly where it is, and
+    POST /unskip puts it back.
+    """
+    db = get_db()
+    name = ""
+    try:
+        name = (_drive_get(f"/files/{body.fileId}", fields="id,name") or {}).get("name") or ""
+    except HTTPException:
+        pass
+    stamp = datetime.now(timezone.utc).isoformat()
+    await db[SKIPPED_COLLECTION].update_one(
+        {"fileId": body.fileId},
+        {"$set": {"fileId": body.fileId, "name": name, "skippedAt": stamp,
+                  "skippedBy": (claims or {}).get("sub") or "mentor"},
+         "$setOnInsert": {"firstSkippedAt": stamp}},
+        upsert=True,
+    )
+    return {"ok": True, "success": True, "skipped": body.fileId, "name": name, "method": "queue"}
+
+
+@router.post("/unskip")
+async def unskip(body: FileIdBody, claims: dict = Depends(require_mentor)):
+    """Queue a skipped file again."""
+    result = await get_db()[SKIPPED_COLLECTION].delete_one({"fileId": body.fileId})
+    return {"ok": True, "success": True, "unskipped": body.fileId, "removed": bool(result.deleted_count)}
 
 
 # ─────────────────────────────────────────────────────────────────────────────

@@ -13,6 +13,7 @@ failure never blocks the plan itself.
 import asyncio
 import base64
 import json as _json
+import re as _re
 import logging
 import os
 import uuid
@@ -44,7 +45,7 @@ router = APIRouter(tags=["target-plans"])
 PLANS = "target_plans"
 IST = ZoneInfo("Asia/Kolkata")
 ALL = "All"
-MAX_DAYS = 90
+MAX_DAYS = 40
 SHEET_ID = "1oYYodP_XcbJOjrP5c4PirQDCnl54NFyPUbf7lwM1Ycc"
 SHEET_TAB = "Target Plans"
 
@@ -276,12 +277,22 @@ def _public_plan(plan: dict) -> dict:
     )}
 
 
+def _ai_photo_ready() -> bool:
+    return bool((os.environ.get("GROQ_API_KEY") or "").strip())
+
+
 @router.get("/api/target-plans")
 async def list_plans(_mentor=Depends(require_mentor)):
     db = get_db()
     cursor = db[PLANS].find({}, {"_id": 0}).sort("createdAt", -1)
     rows = await cursor.to_list(100)
-    return {"ok": True, "plans": [_public_plan(row) for row in rows]}
+    return {
+        "ok": True,
+        "plans": [_public_plan(row) for row in rows],
+        # The page uses this to hide/disable the photo button instead of showing a
+        # scary error banner on every load when the AI key is absent.
+        "capabilities": {"aiPhotoReading": _ai_photo_ready()},
+    }
 
 
 @router.post("/api/target-plans")
@@ -392,60 +403,249 @@ _PARSE_PROMPT = (
     "Accounts/AS -> Advanced Accounting; Law -> Corporate and Other Laws; Tax/GST/DT -> Taxation; "
     "FM/SM -> Financial Management and Strategic Management. "
     "Keep every 'Day N' block in order with one entry per subject line. "
+    "If a day lists two different topics with their own hours, keep them as separate entries - never merge "
+    "two lines into one entry. Copy the hours written next to each topic. "
+    "Include backup/extra days as their own days. "
     "A full-day revision line becomes {\"subject\":\"All\",\"topic\":\"Revision (full day)\","
     "\"hours\":1,\"kind\":\"revision\"}. Lines containing TEST use kind \"test\". "
-    "Read hours from '(3hr)' style notes. No prose, no markdown fences."
+    "Read hours from '(3hr)' style notes. No prose, no markdown fences. "
+    "The JSON must be complete: finish every object and array you open."
 )
 
 
+def _close_truncated_json(text: str) -> Optional[str]:
+    """Finish a JSON document the model stopped writing mid-way.
+
+    Qwen answers with `finish_reason: "stop"` yet often omits the final `}` (or the
+    last few closers) on long answers. Rebalancing the brackets recovers the whole
+    plan instead of rejecting a photo that was read correctly.
+    """
+    body = text.strip()
+    if not body:
+        return None
+    # Walk once to learn what is still open, ignoring brackets inside strings.
+    stack, in_string, escaped = [], False, False
+    for ch in body:
+        if in_string:
+            if escaped:
+                escaped = False
+            elif ch == "\\":
+                escaped = True
+            elif ch == '"':
+                in_string = False
+            continue
+        if ch == '"':
+            in_string = True
+        elif ch in "[{":
+            stack.append(ch)
+        elif ch in "]}":
+            if stack:
+                stack.pop()
+    if not stack and not in_string:
+        return body                      # already balanced
+    candidate = body + ('"' if in_string else "")
+    candidate += "".join("}" if opener == "{" else "]" for opener in reversed(stack))
+    return candidate
+
+
+def _trimmed_variants(text: str, tries: int = 6) -> List[str]:
+    """Cut back to earlier boundaries, then re-close — for answers cut mid-value."""
+    out: List[str] = []
+    body = text.rstrip()
+    for _ in range(tries):
+        cut = max(body.rfind(","), body.rfind("{"), body.rfind("["))
+        if cut <= 0:
+            break
+        body = body[:cut]
+        closed = _close_truncated_json(body)
+        if closed:
+            out.append(closed)
+    return out
+
+
 def _extract_plan_json(text: str) -> Optional[dict]:
+    """Pull a plan object out of whatever the model returned.
+
+    Vision models sometimes wrap JSON in ``` fences, add prose before/after, emit
+    trailing commas, or answer with a bare list of days. All of that is recovered
+    here instead of failing the mentor's upload.
+    """
     cleaned = (text or "").strip()
-    if cleaned.startswith("```"):
-        cleaned = cleaned.strip("`")
-        if cleaned.startswith("json"):
-            cleaned = cleaned[4:]
-    start = cleaned.find("{")
-    end = cleaned.rfind("}")
-    if start < 0 or end <= start:
+    if not cleaned:
         return None
-    try:
-        parsed = _json.loads(cleaned[start:end + 1])
-    except ValueError:
-        return None
-    return parsed if isinstance(parsed, dict) else None
+    if "```" in cleaned:                       # ```json ... ``` or ``` ... ```
+        parts = cleaned.split("```")
+        for part in parts:
+            body = part.strip()
+            if body.lower().startswith("json"):
+                body = body[4:].strip()
+            if body.startswith("{") or body.startswith("["):
+                cleaned = body
+                break
+    candidates = [cleaned]
+    start, end = cleaned.find("{"), cleaned.rfind("}")
+    if start >= 0 and end > start:
+        candidates.append(cleaned[start:end + 1])
+    for chunk in list(candidates):
+        candidates.append(_re.sub(r",\s*([}\]])", r"\1", chunk))   # trailing commas
+        closed = _close_truncated_json(chunk)                       # cut-off answer
+        if closed and closed != chunk:
+            candidates.append(closed)
+            candidates.extend(_trimmed_variants(chunk))
+    for chunk in candidates:
+        try:
+            parsed = _json.loads(chunk)
+        except ValueError:
+            continue
+        if isinstance(parsed, dict):
+            # tolerate {"plan": {...}} / {"result": {...}} wrappers
+            for wrapper in ("plan", "result", "data"):
+                inner = parsed.get(wrapper)
+                if isinstance(inner, dict) and ("days" in inner or "entries" in inner):
+                    return inner
+            return parsed
+        if isinstance(parsed, list):
+            return {"days": parsed}
+    return None
+
+
+def _entries_from_row(row: dict) -> List[dict]:
+    """A day may carry entries/tasks/topics, a single flat entry, or bare strings."""
+    raw = row.get("entries") or row.get("tasks") or row.get("topics") or row.get("rows")
+    if raw is None and (row.get("topic") or row.get("subject")):
+        raw = [row]                                   # flat {day, subject, topic}
+    if isinstance(raw, str):
+        raw = [raw]
+    out: List[dict] = []
+    for item in (raw or [])[:10]:
+        if isinstance(item, str):
+            text = item.strip()
+            if text:
+                out.append({"topic": text})
+            continue
+        if isinstance(item, dict):
+            out.append(item)
+    return out
+
+
+def _coerce_entries(items: List) -> List[EntryIn]:
+    """Plain dicts (from a model) -> validated EntryIn objects, skipping junk."""
+    out: List[EntryIn] = []
+    for item in items:
+        if isinstance(item, EntryIn):
+            out.append(item)
+            continue
+        if not isinstance(item, dict):
+            item = {"topic": str(item)}
+        fields = {k: v for k, v in item.items() if k in EntryIn.model_fields}
+        fields["subject"] = str(fields.get("subject") or "").strip() or "All"
+        fields["topic"] = str(fields.get("topic") or fields.get("label") or "").strip()
+        if not fields["topic"]:
+            continue
+        try:
+            out.append(EntryIn(**fields))
+        except Exception:  # noqa: BLE001 — one bad row must not kill the whole photo
+            continue
+    return out
 
 
 def _normalize_parsed_days(parsed: dict) -> List[dict]:
+    rows = parsed.get("days")
+    if rows is None and isinstance(parsed.get("entries"), list):   # one day, no wrapper
+        rows = [parsed]
     out: List[dict] = []
-    for row in (parsed.get("days") or [])[:MAX_DAYS]:
+    for index, row in enumerate((rows or [])[:MAX_DAYS], start=1):
         if not isinstance(row, dict):
             continue
-        entries_in = []
-        for item in (row.get("entries") or [])[:10]:
-            if not isinstance(item, dict):
-                continue
-            topic = str(item.get("topic") or "").strip()
-            if not topic:
-                continue
-            hours = item.get("hours")
-            try:
-                hours = float(hours) if hours not in (None, "") else None
-            except (TypeError, ValueError):
-                hours = None
-            entries_in.append(EntryIn(
-                subject=str(item.get("subject") or ALL).strip() or ALL,
-                topic=topic[:240],
-                hours=hours,
-                kind=str(item.get("kind") or "study").lower(),
-            ))
+        entries_in = _entries_from_row(row)
         if not entries_in:
             continue
-        clean = _clean_entries(entries_in)
+        clean = _clean_entries(_coerce_entries(entries_in))
+        if not clean:
+            continue
         out.append({
             "day": len(out) + 1,
             "entries": [{key: entry[key] for key in ("subject", "topic", "hours", "kind")} for entry in clean],
         })
     return out
+
+
+_MAX_429_WAIT = 25.0
+
+
+def _retry_after_seconds(resp) -> float:
+    """Groq sends Retry-After, or an 'in 12.5s' hint in the message."""
+    header = (resp.headers.get("retry-after") or "").strip()
+    try:
+        if header:
+            return float(header)
+    except ValueError:
+        pass
+    match = _re.search(r"try again in ([0-9.]+)\s*s", resp.text or "", _re.I)
+    if match:
+        try:
+            return float(match.group(1))
+        except ValueError:
+            return 0.0
+    return 0.0
+
+
+def _shrink_for_vision(data: bytes, ctype: str, max_side: int = 1400) -> tuple:
+    """Downscale before upload.
+
+    Vision tokens scale with pixels, and Groq's free tier counts the prompt against
+    its per-minute budget. A 1086x1448 phone photo becomes ~1400px on the long edge,
+    which still reads handwriting but costs a fraction of the tokens. Any failure
+    just returns the original bytes — a sharp photo must never be rejected here.
+    """
+    try:
+        from PIL import Image  # Pillow is already a backend dependency
+        import io as _io
+
+        img = Image.open(_io.BytesIO(data))
+        img.load()
+        if max(img.size) <= max_side:
+            return data, ctype
+        ratio = max_side / max(img.size)
+        img = img.resize((int(img.width * ratio), int(img.height * ratio)), Image.LANCZOS)
+        if img.mode not in ("RGB", "L"):
+            img = img.convert("RGB")
+        buf = _io.BytesIO()
+        img.save(buf, format="JPEG", quality=82, optimize=True)
+        # Judge by pixels, not bytes: vision cost scales with resolution, and a
+        # re-encoded JPEG can be a few KB larger than the original while still
+        # being far cheaper to read.
+        return buf.getvalue(), "image/jpeg"
+    except Exception:  # noqa: BLE001 — never block a photo because of a resize
+        return data, ctype
+
+
+_REPAIR_PROMPT = (
+    "The text below was supposed to describe a study plan. Convert it to minified JSON with exactly this "
+    'shape and nothing else: {"name":string,"group":""|"1"|"2","days":[{"day":1,"entries":'
+    '[{"subject":string,"topic":string,"hours":number|null,"kind":"study"|"revision"|"test"}]}]}. '
+    "If a day has no subject, use \"All\". Never add commentary."
+)
+
+
+async def _repair_plan_json(client, key: str, model: str, raw_text: str) -> str:
+    """Ask the model to turn its own prose/broken JSON into the exact schema."""
+    try:
+        resp = await client.post(
+            "https://api.groq.com/openai/v1/chat/completions",
+            headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
+            json={
+                "model": model,
+                "temperature": 0,
+                "max_completion_tokens": 2048,
+                "messages": [{"role": "user", "content": _REPAIR_PROMPT + "\n\nTEXT:\n" + raw_text[:6000]}],
+            },
+        )
+        if resp.status_code != 200:
+            return ""
+        return ((resp.json().get("choices") or [{}])[0].get("message") or {}).get("content") or ""
+    except Exception:  # noqa: BLE001 — a failed repair just means we report the original error
+        return ""
 
 
 @router.post("/api/target-plans/parse-photo")
@@ -463,9 +663,11 @@ async def parse_plan_photo(file: UploadFile = File(...), _mentor=Depends(require
     if not key:
         raise HTTPException(
             status_code=503,
-            detail="Reading photos needs the Groq AI key, which is not configured on this server yet. "
-                   "Your plan is not lost: type or paste the day rows instead - publishing does not need AI.",
+            detail="Photo reading is not set up on this server yet. Type or paste the day rows instead - "
+                   "publishing a plan does not need AI.",
         )
+
+    data, ctype = _shrink_for_vision(data, ctype)
 
     import httpx
 
@@ -473,31 +675,54 @@ async def parse_plan_photo(file: UploadFile = File(...), _mentor=Depends(require
     errors = []
     for model in VISION_MODELS:
         try:
+            payload = {
+                "model": model,
+                "temperature": 0,
+                "max_completion_tokens": 2048,
+                "messages": [{
+                    "role": "user",
+                    "content": [
+                        {"type": "image_url", "image_url": {"url": f"data:{ctype};base64,{encoded}"}},
+                        {"type": "text", "text": _PARSE_PROMPT},
+                    ],
+                }],
+            }
             async with httpx.AsyncClient(timeout=90) as client:
                 resp = await client.post(
                     "https://api.groq.com/openai/v1/chat/completions",
                     headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
-                    json={
-                        "model": model,
-                        "temperature": 0,
-                        "max_completion_tokens": 2048,
-                        "messages": [{
-                            "role": "user",
-                            "content": [
-                                {"type": "image_url", "image_url": {"url": f"data:{ctype};base64,{encoded}"}},
-                                {"type": "text", "text": _PARSE_PROMPT},
-                            ],
-                        }],
-                    },
+                    json=payload,
                 )
+            if resp.status_code == 429:
+                wait = _retry_after_seconds(resp)
+                if wait and wait <= _MAX_429_WAIT:
+                    await asyncio.sleep(wait)
+                    resp = await client.post(
+                        "https://api.groq.com/openai/v1/chat/completions",
+                        headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
+                        json=payload,
+                    )
+            if resp.status_code == 429:
+                errors.append(
+                    "AI rate limit reached (Groq allows only a few photo reads per minute on the free plan)"
+                )
+                continue
             if resp.status_code != 200:
                 errors.append(f"{model}: HTTP {resp.status_code}")
                 continue
-            text = ((resp.json().get("choices") or [{}])[0].get("message") or {}).get("content") or ""
+            choice = (resp.json().get("choices") or [{}])[0]
+            text = (choice.get("message") or {}).get("content") or ""
             parsed = _extract_plan_json(text)
             days = _normalize_parsed_days(parsed) if parsed else []
+            if not days and text.strip():
+                # Second chance: the model described the plan in prose or emitted
+                # broken JSON. Ask it once more, text only, to reformat.
+                repaired = await _repair_plan_json(client, key, model, text)
+                parsed = _extract_plan_json(repaired)
+                days = _normalize_parsed_days(parsed) if parsed else []
             if not days:
-                errors.append(f"{model}: no plan structure recognized")
+                snippet = " ".join(text.split())[:160]
+                errors.append(f"{model}: no plan structure recognized" + (f" (model said: {snippet!r})" if snippet else ""))
                 continue
             return {
                 "ok": True,
@@ -513,9 +738,10 @@ async def parse_plan_photo(file: UploadFile = File(...), _mentor=Depends(require
             continue
     raise HTTPException(
         status_code=503,
-        detail="The photo could not be parsed: " + "; ".join(errors)
-        + " - if every model reported 400/404, Groq retired its vision model; set GROQ_VISION_MODELS to a "
-          "current image-capable model id (see console.groq.com/docs/vision).",
+        detail="The photo could not be read: " + "; ".join(errors)
+        + (". Wait about a minute and press Fill from photo again." if any("rate limit" in e for e in errors)
+           else ". Try a sharper photo of just the day table (whole page in frame, no glare), or type the "
+                "rows by hand - publishing does not need AI."),
     )
 
 

@@ -253,8 +253,12 @@ def test_cached_materials_respect_current_destination_without_deleting_history(c
     assert denied.status_code==401
     student_proof(client)  # establish a real synthetic hashed credential
     unavailable=client.post('/api/student-dashboard/get',headers={'X-Student-Id':'UMP0001','X-Session-Password':'synthetic-local-only'},json={'action':'notes.listForStudent','studentId':'UMP0001'})
-    assert unavailable.status_code==503  # publication/membership policy remains unverified
-    assert 'result' not in unavailable.json()
+    # 200 + the safe projection (a business rule never answers 5xx). The student
+    # is in B2 now, so only the B2 material is visible - the stale B1 material
+    # must not be served, and the stored history must stay untouched.
+    assert unavailable.status_code==200
+    served=unavailable.json()['result']
+    assert [n['id'] for n in served]==['new'], served
     saved=run(get_db()[DASHBOARD_STUDENTS].find_one({'studentId':'UMP0001'}))
     assert saved['notes']==cached and saved['studyLog']==[{'id':'keep'}]
 

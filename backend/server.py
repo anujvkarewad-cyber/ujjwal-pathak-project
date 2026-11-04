@@ -22,6 +22,7 @@ from db import (
 from persist import uses_real_mongo
 from routers import attendance, mentor_tests, mentor_mcq_scores, student_tests
 from routers import smart_targets
+from routers import student_target_progress
 from routers import mentor_workspace
 from routers import messages, test_history, whatsapp_log, auth_router, content, student_attempts, student_auth, student_dashboard, student_content, student_sync, analytics, admin_fast, ai, daily_targets, revision_schedule, push_router, notes_inbox, target_plans, password_reset
 
@@ -71,6 +72,9 @@ async def root():
     return {"message": "Hello World"}
 
 
+BUILD_MARKER = (os.environ.get("UMP_DEPLOY_MARKER") or "dev").strip()
+
+
 @api_router.get("/health")
 async def health():
     """Public liveness + bank size. No secrets, no full documents."""
@@ -87,6 +91,9 @@ async def health():
         "chapters": chapters,
         "studentAttempts": attempts,
         "studentAccounts": accounts,
+        # Which build is actually answering. Lets the webapp (and the owner) tell
+        # "nothing changed" apart from "my browser is showing a cached page".
+        "build": BUILD_MARKER,
     }
 
 @api_router.post("/status", response_model=StatusCheck)
@@ -143,6 +150,7 @@ from routers import note_compression
 app.include_router(note_compression.router)
 app.include_router(notes_inbox.router)
 app.include_router(target_plans.router)
+app.include_router(student_target_progress.router)
 app.include_router(smart_targets.router)
 
 

@@ -29,6 +29,7 @@ STUDENT_MCQ_ATTEMPTS = "student_mcq_attempts"
 STUDENT_OFFICIAL_DAILY_SETS = "student_official_daily_sets_v1"
 STUDENT_ACCOUNTS = "student_accounts"
 STUDENT_ACCESS_EVENTS = "student_access_events"  # mentor ON/OFF timeline (makeup credit)
+STUDENT_TARGET_PROGRESS = "student_target_progress"  # personal day-based targets (start day locked)
 MENTOR_TESTS = "mentor_tests"
 ANALYTICS_TEST_HISTORY = "analytics_test_history"
 ANSWER_SHEET_FILES = "answer_sheet_files"

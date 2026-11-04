@@ -91,7 +91,7 @@ def _student_leaderboard(client, student_id=None):
     sid=student_id or "UMP0301"
     assert client.post('/api/student-dashboard/get',json={"action":"getLeaderboard"}).status_code==401
     blocked=client.post('/api/student-dashboard/get',headers={"X-Student-Id":sid,"X-Session-Password":"synthetic-leaderboard"},json={"action":"getLeaderboard"})
-    assert blocked.status_code==503
+    assert blocked.status_code==200  # student reads answer 200 + safe projection
     async def internal():
         db=get_db();shared=await sd._leaderboard_snapshot(db)
         return {"result":await sd._leaderboard_for_student(db,shared.get('leaderboard')or[],student_id)}

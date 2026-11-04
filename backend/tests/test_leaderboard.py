@@ -234,8 +234,14 @@ def test_student_projection_hides_contact_details(client, mentor_headers):
 
     denied = client.post('/api/student-dashboard/get',json={"action":"getLeaderboard"})
     assert denied.status_code==401
+    # A student read is answered with 200 + the safe projection (FIX 3: a
+    # business rule never answers 5xx). The projection must still hide contact
+    # details - that is asserted on the public response below.
     blocked = client.post('/api/student-dashboard/get',headers={"X-Student-Id":"UMP0102","X-Session-Password":"synthetic-leaderboard"},json={"action":"getLeaderboard"})
-    assert blocked.status_code==503 and 'result' not in blocked.json()
+    assert blocked.status_code==200
+    assert blocked.json()["found"] is True
+    for entry in blocked.json()["result"]:
+        assert "email" not in entry and "phone" not in entry
     # Internal projection contract only, not permission to expose a global list.
     from routers.student_dashboard import _leaderboard_for_student
     async def projection():
@@ -426,7 +432,8 @@ def test_individual_mcq_policy_is_reported_and_counts_below_sixty_percent(client
     # must carry the same MCQ components, not a separate old coverage decision.
     _leaderboard(client, mentor_headers, period="weekly", refresh=1)
     projected = client.post('/api/student-dashboard/get',headers={"X-Student-Id":"UMP0101","X-Session-Password":"synthetic-leaderboard"},json={"action":"getLeaderboard"})
-    assert projected.status_code==503  # no inferred global audience authority
+    assert projected.status_code==200  # 200 + safe projection, never 5xx
+    assert projected.json()["found"] is True
     from db import DASHBOARD_SHARED
     from routers.student_dashboard import _leaderboard_for_student
     async def projection():

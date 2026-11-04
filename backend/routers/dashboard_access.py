@@ -11,14 +11,48 @@ _PROOF_KEY = os.urandom(32)
 _PROOFS = {}
 _MAX_INFLIGHT_PROOFS = 16
 
+# Completed password proofs are cached briefly so one bcrypt verify (~250-400 ms
+# CPU) is not paid on every request. The stamp below binds the cache entry to the
+# student id, the presented password AND the stored credential material, so a
+# password change, hash re-issue or credential reset invalidates it automatically.
+# Access state (removedAt / accessEnabled / attempt window) is still re-read and
+# re-checked on every single request, so revocation stays immediate.
+_VERIFIED = {}
+try:
+    _VERIFIED_TTL = max(0.0, float(os.environ.get("AUTH_PROOF_TTL_SECONDS", "90")))
+except ValueError:
+    _VERIFIED_TTL = 90.0
+_VERIFIED_MAX = 4096
+
 def _proof_stamp(sid, password, account):
     fields = [sid, password, str(account.get("passwordHash") or ""), str(account.get("password") or "")]
     return hmac.new(_PROOF_KEY, repr(fields).encode(), hashlib.sha256).digest()
+
+def _cache_lookup(key, now):
+    until = _VERIFIED.get(key)
+    if until is None:
+        return False
+    if until > now:
+        return True
+    _VERIFIED.pop(key, None)
+    return False
+
+def _cache_store(key, now):
+    if _VERIFIED_TTL <= 0:
+        return
+    if len(_VERIFIED) >= _VERIFIED_MAX:
+        for stale in [k for k, exp in _VERIFIED.items() if exp <= now]:
+            _VERIFIED.pop(stale, None)
+        if len(_VERIFIED) >= _VERIFIED_MAX:
+            _VERIFIED.clear()
+    _VERIFIED[key] = now + _VERIFIED_TTL
 
 async def _verify_current_password(sid, password, account):
     from routers.student_auth import _password_ok
     loop = asyncio.get_running_loop()
     key = (loop, _proof_stamp(sid, password, account))
+    if _cache_lookup(key, loop.time()):
+        return True
     task = _PROOFS.get(key)
     if task is None:
         if sum(k[0] is loop for k in _PROOFS) >= _MAX_INFLIGHT_PROOFS:
@@ -28,7 +62,9 @@ async def _verify_current_password(sid, password, account):
         def discard(done):
             if _PROOFS.get(key) is done:
                 _PROOFS.pop(key, None)
-            if not done.cancelled():
+            if not done.cancelled() and done.exception() is None and done.result():
+                _cache_store(key, loop.time())
+            elif not done.cancelled():
                 done.exception()  # consume a late failure after caller cancellation
         task.add_done_callback(discard)
     return await asyncio.shield(task)
