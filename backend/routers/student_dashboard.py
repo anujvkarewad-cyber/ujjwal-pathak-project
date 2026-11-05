@@ -2667,6 +2667,119 @@ async def dashboard_status():
     }
 
 
+@router.get("/dashboard/kpis")
+async def dashboard_kpis(_mentor=Depends(require_mentor)):
+    """Live mentor dashboard KPI cards computed from Mongo (not mock data)."""
+    db = get_db()
+    accounts = await db[STUDENT_ACCOUNTS].find({}).to_list(length=5000)
+    stats_by_id: dict[str, dict] = {}
+    async for doc in db[DASHBOARD_STUDENTS].find({}, {"_id": 0, "studentId": 1, "stats": 1}):
+        stats_by_id[str(doc.get("studentId") or "").upper()] = doc.get("stats") or {}
+
+    total = 0
+    active = 0
+    at_risk = 0
+    pending = 0
+    hours_sum = 0.0
+    attendance_sum = 0
+    submission_sum = 0
+
+    today = datetime.now(IST).date()
+
+    for acc in accounts:
+        sid = str(acc.get("studentId") or "").strip().upper()
+        if not sid:
+            continue
+        removed = bool(acc.get("removedAt")) or str(acc.get("status") or "").lower() == "removed"
+        if removed:
+            continue
+        total += 1
+        stats = stats_by_id.get(sid, {})
+        attendance = float(stats.get("attendance") or 0)
+        submission = float(stats.get("submissionRate") or 0)
+        hours = float(stats.get("weeklyHours") or stats.get("averageHours") or 0)
+        if acc.get("accessEnabled") is False:
+            at_risk += 1
+        elif attendance >= 70:
+            active += 1
+        else:
+            at_risk += 1
+        # Pending = no submission today
+        last_sub = str(stats.get("lastSubmission") or "")[:10]
+        if last_sub != today.isoformat():
+            pending += 1
+        hours_sum += hours
+        attendance_sum += attendance
+        submission_sum += submission
+
+    return {
+        "total": total,
+        "active": active,
+        "atRisk": at_risk,
+        "pending": pending,
+        "avgHours": round(hours_sum / total, 1) if total else 0,
+        "avgAttendance": round(attendance_sum / total) if total else 0,
+        "weeklySub": round(submission_sum / total) if total else 0,
+        "source": "mongo",
+    }
+
+
+@router.get("/dashboard/performance-mix")
+async def dashboard_performance_mix(_mentor=Depends(require_mentor)):
+    """Student distribution by performance band, computed from Mongo stats.
+
+    Bands:
+      - Excellent: attendance >= 90 AND submissionRate >= 80
+      - Good:      attendance >= 80 AND submissionRate >= 70
+      - Average:   attendance >= 70 AND submissionRate >= 60
+      - At Risk:   attendance < 70 OR submissionRate < 60
+    """
+    db = get_db()
+    stats_by_id: dict[str, dict] = {}
+    async for doc in db[DASHBOARD_STUDENTS].find({}, {"_id": 0, "studentId": 1, "stats": 1}):
+        stats_by_id[str(doc.get("studentId") or "").upper()] = doc.get("stats") or {}
+
+    accounts = await db[STUDENT_ACCOUNTS].find({}).to_list(length=5000)
+
+    bands = {
+        "Excellent": 0,
+        "Good": 0,
+        "Average": 0,
+        "At Risk": 0,
+    }
+    for acc in accounts:
+        sid = str(acc.get("studentId") or "").strip().upper()
+        if not sid:
+            continue
+        removed = bool(acc.get("removedAt")) or str(acc.get("status") or "").lower() == "removed"
+        if removed:
+            continue
+        stats = stats_by_id.get(sid, {})
+        attendance = float(stats.get("attendance") or 0)
+        submission = float(stats.get("submissionRate") or 0)
+        if attendance >= 90 and submission >= 80:
+            bands["Excellent"] += 1
+        elif attendance >= 80 and submission >= 70:
+            bands["Good"] += 1
+        elif attendance >= 70 and submission >= 60:
+            bands["Average"] += 1
+        else:
+            bands["At Risk"] += 1
+
+    total = sum(bands.values())
+    colors = {
+        "Excellent": "#10B981",
+        "Good": "#2563EB",
+        "Average": "#F59E0B",
+        "At Risk": "#EF4444",
+    }
+    return [
+        {"name": name, "value": bands[name], "color": colors[name]}
+        for name in ["Excellent", "Good", "Average", "At Risk"]
+        if bands[name] > 0 or total == 0
+    ]
+
+
 @router.post("/import")
 async def import_dashboard(body: DashboardImportBody, request: Request):
     if not _import_allowed(request):
