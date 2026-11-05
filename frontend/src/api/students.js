@@ -1,7 +1,18 @@
 import { apiCall } from "./client";
 import { apiCall as backendApiCall } from "./backendClient";
 
-export const getStudents = () => apiCall("students.list");
+export const getStudents = () =>
+  backendApiCall("/api/student-dashboard/students/directory", {
+    method: "GET",
+  }).then((res) => ({
+    students: res.students || [],
+    options: res.options || {
+      batchOptions: ["All Batches"],
+      attemptOptions: ["All Attempts"],
+      groupOptions: ["All Groups"],
+      statusOptions: ["All Status", "Active", "Removed"],
+    },
+  }));
 export const getStudentById = (id) =>
   backendApiCall(
     `/api/student-dashboard/students/${encodeURIComponent(id)}/profile`,
