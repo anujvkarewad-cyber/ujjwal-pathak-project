@@ -106,7 +106,22 @@ jobs:
           PROJECT: ${{ vars.GCP_PROJECT || 'ump-dashboard' }}
           REGION: ${{ vars.GCP_REGION || 'asia-south1' }}
           SERVICE: ${{ vars.GCP_SERVICE || 'ujjwal-pathak-app' }}
-        run: ./scripts/deploy.sh "${{ github.event.inputs.target || 'both' }}"
+        # tee so the failing stage can be reported as an annotation below.
+        # The runner runs bash with -o pipefail, so the exit code still propagates.
+        run: ./scripts/deploy.sh "${{ github.event.inputs.target || 'both' }}" 2>&1 | tee "$RUNNER_TEMP/deploy.log"
+
+      # Run logs are only downloadable from a host some clients cannot reach, so
+      # the last lines of the deploy are echoed as an error annotation. That makes
+      # the failing gate readable through the check-runs API, not just the UI.
+      - name: Report failure detail
+        if: failure()
+        run: |
+          if [ -s "$RUNNER_TEMP/deploy.log" ]; then
+            detail=$(tail -n 25 "$RUNNER_TEMP/deploy.log" | tr '\n' '~' | sed 's/~/ /g' | cut -c1-5500)
+            echo "::error title=Deploy failed — last 25 log lines::${detail}"
+          else
+            echo "::error title=Deploy failed::no output was captured from scripts/deploy.sh"
+          fi
 
       - name: Summarise
         if: always()
