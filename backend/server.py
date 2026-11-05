@@ -20,6 +20,7 @@ from db import (
     get_db,
 )
 from persist import uses_real_mongo
+import sheet_coverage
 from routers import attendance, mentor_tests, mentor_mcq_scores, student_tests
 from routers import smart_targets
 from routers import student_target_progress
@@ -317,6 +318,24 @@ async def startup_db_client():
         import push_scheduler
 
         push_scheduler.start()
+
+    # Warm the Students-sheet password coverage once, in the background, so the
+    # mentor's Students screen never waits on the ledger. The sweep itself
+    # runs in a worker thread (bcrypt releases the GIL), so the service keeps
+    # answering requests while it runs.
+    if os.environ.get("DB_NAME") not in {"test_db", "pytest"}:
+        import asyncio as _asyncio
+
+        async def _warm_sheet_coverage() -> None:
+            try:
+                from routers import student_auth as sa
+
+                await sheet_coverage.refresh(sa._coverage_payload)
+                logger.info("[startup] sheet coverage warmed")
+            except Exception as exc:  # noqa: BLE001 - a warm-up failure must not block boot
+                logger.warning("[startup] sheet coverage warm-up skipped: %s", type(exc).__name__)
+
+        _asyncio.get_running_loop().create_task(_warm_sheet_coverage())
 
 @app.on_event("shutdown")
 async def shutdown_db_client():

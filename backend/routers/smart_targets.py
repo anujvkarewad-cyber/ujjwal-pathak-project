@@ -15,7 +15,7 @@ from pymongo.errors import DuplicateKeyError
 from auth import require_mentor
 from db import get_db, STUDENT_ACCOUNTS
 from routers.daily_targets import _audience_matches
-from routers.student_auth import authenticate_student, normalize_student_id, _sheet_students_rows
+from routers.student_auth import authenticate_student, normalize_student_id, _sheet_students_rows, STUDENTS_SHEET_ROW_LIMIT
 from routers.student_attempts import _validate_existing_student_login
 from routers.revision_schedule import PLAN as REVISIONS, _public, _today, _now, record_written_mark
 from routers.smart_target_engine import snapshot, view, complete_task
@@ -103,7 +103,7 @@ async def _authoritative_students():
     """
     from routers.daily_targets import _group_key
     raw = await _sheet_students_rows()
-    if not raw or len(raw) >= 400:
+    if not raw or len(raw) >= STUDENTS_SHEET_ROW_LIMIT:
         raise HTTPException(503, 'Students roster unavailable or bounded read limit reached. No target change allowed.')
     header = [str(v).strip().lower() for v in raw[0]]
     def col(*names):

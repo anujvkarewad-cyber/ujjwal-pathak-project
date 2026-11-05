@@ -30,8 +30,10 @@ def reset_database_between_tests():
     """Test isolation: the in-memory store is process-global, so wipe it."""
     import asyncio
 
+    import sheet_coverage
     from db import reset_db
 
+    sheet_coverage.reset()
     asyncio.run(reset_db())
     yield
 

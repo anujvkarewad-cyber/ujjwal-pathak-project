@@ -9,7 +9,9 @@ jest.mock('sonner', () => ({ toast: { success: jest.fn(), error: jest.fn() } }))
 
 global.IS_REACT_ACT_ENVIRONMENT = true;
 
-let host, root;
+let host;
+let root;
+
 const click = (el) => act(async () => { el.click(); });
 const type = (el, value) => act(async () => {
   Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(el, value);
@@ -24,7 +26,10 @@ beforeEach(() => {
   setStudentAccess.mockResolvedValue({ ok: true, accessEnabled: false });
 });
 
-afterEach(async () => { await act(async () => root.unmount()); host.remove(); });
+afterEach(async () => {
+  await act(async () => root.unmount());
+  host.remove();
+});
 
 async function mount(props = {}) {
   const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
@@ -35,11 +40,13 @@ async function mount(props = {}) {
   ));
 }
 
-test('turning access off needs a reason, and sends it with the student id', async () => {
+test('turning access off requires a reason and sends it with the student id', async () => {
   await mount({ enabled: true });
-  expect(host.querySelector('[data-testid="access-toggle-UMP0025"]').textContent).toContain('ON');
+  const toggle = host.querySelector('[data-testid="access-toggle-UMP0025"]');
+  expect(toggle.getAttribute('aria-checked')).toBe('true');
+  expect(toggle.textContent).toContain('ON');
 
-  await click(host.querySelector('[data-testid="access-toggle-UMP0025"]'));
+  await click(toggle);
   const confirm = host.querySelector('[data-testid="access-confirm-UMP0025"]');
   expect(confirm.disabled).toBe(true);
   expect(setStudentAccess).not.toHaveBeenCalled();
@@ -51,7 +58,17 @@ test('turning access off needs a reason, and sends it with the student id', asyn
   expect(setStudentAccess).toHaveBeenCalledWith('UMP0025', false, 'Stopped attending');
 });
 
-test('cancelling the reason box leaves access untouched', async () => {
+test('quick preset fills reason and allows turning off', async () => {
+  await mount({ enabled: true });
+  await click(host.querySelector('[data-testid="access-toggle-UMP0025"]'));
+  await click(host.querySelector('[data-testid="access-preset-UMP0025"]'));
+  expect(host.querySelector('[data-testid="access-confirm-UMP0025"]').disabled).toBe(false);
+  await click(host.querySelector('[data-testid="access-confirm-UMP0025"]'));
+
+  expect(setStudentAccess).toHaveBeenCalledWith('UMP0025', false, 'Daily tracker not submitted');
+});
+
+test('cancelling the reason form leaves access untouched', async () => {
   await mount({ enabled: true });
   await click(host.querySelector('[data-testid="access-toggle-UMP0025"]'));
   await click(host.querySelector('[data-testid="access-cancel-UMP0025"]'));
@@ -59,17 +76,19 @@ test('cancelling the reason box leaves access untouched', async () => {
   expect(host.querySelector('[data-testid="access-toggle-UMP0025"]')).not.toBeNull();
 });
 
-test('a blocked student is turned back on in one action, with no reason', async () => {
+test('a blocked student is turned back on in one click with empty reason', async () => {
   await mount({ enabled: false });
-  expect(host.querySelector('[data-testid="access-toggle-UMP0025"]').textContent).toContain('OFF');
+  const toggle = host.querySelector('[data-testid="access-toggle-UMP0025"]');
+  expect(toggle.getAttribute('aria-checked')).toBe('false');
+  expect(toggle.textContent).toContain('OFF');
 
-  await click(host.querySelector('[data-testid="access-toggle-UMP0025"]'));
+  await click(toggle);
 
   expect(setStudentAccess).toHaveBeenCalledWith('UMP0025', true, '');
   expect(host.querySelector('[data-testid="access-reason-UMP0025"]')).toBeNull();
 });
 
-test('a student with no app account shows no switch at all', async () => {
+test('a student without a mongo account shows dash instead of switch', async () => {
   await mount({ enabled: true, known: false });
   expect(host.querySelector('[data-testid="access-toggle-UMP0025"]')).toBeNull();
   expect(host.querySelector('[data-testid="access-unavailable-UMP0025"]')).not.toBeNull();

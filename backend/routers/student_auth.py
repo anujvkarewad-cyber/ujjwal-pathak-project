@@ -4,6 +4,7 @@ Passwords are stored as bcrypt hashes. A one-shot import copies the Students
 sheet into Mongo. The Vercel proxy tries this API first, then falls back to
 Apps Script only when the account is not in Mongo yet.
 """
+import asyncio
 import logging
 import os
 import re
@@ -16,6 +17,7 @@ from fastapi import APIRouter, Depends, HTTPException, Request
 from pydantic import BaseModel, ConfigDict, Field
 
 from auth import hash_password, require_mentor, verify_password
+import sheet_coverage
 from config import settings
 import login_failures
 import password_sheet_sync
@@ -241,7 +243,7 @@ class StudentImportItem(BaseModel):
 class StudentImportBody(BaseModel):
     model_config = ConfigDict(extra="ignore")
 
-    students: list[StudentImportItem] = Field(default_factory=list, max_length=500)
+    students: list[StudentImportItem] = Field(default_factory=list, max_length=2000)
 
 
 class StudentBatchChangeBody(BaseModel):
@@ -653,6 +655,9 @@ def _sheet_row_name(row: list, header: list) -> str:
 _coverage_cache: dict = {"at": None, "payload": None}
 
 
+STUDENTS_SHEET_ROW_LIMIT = 2000
+
+
 async def _sheet_students_rows() -> list:
     """The whole Students tab (one read) - shared by the drift and coverage checks."""
     from routers.notes_inbox import _google_token
@@ -663,7 +668,7 @@ async def _sheet_students_rows() -> list:
         raise HTTPException(status_code=503, detail=str(exc.detail)) from exc
     except Exception as exc:
         raise HTTPException(status_code=503, detail="Students sheet could not be read.") from exc
-    url = f"https://sheets.googleapis.com/v4/spreadsheets/{STUDENTS_SHEET_ID}/values/Students!A1:U400"
+    url = f"https://sheets.googleapis.com/v4/spreadsheets/{STUDENTS_SHEET_ID}/values/Students!A1:U{STUDENTS_SHEET_ROW_LIMIT}"
     try:
         async with httpx.AsyncClient(timeout=25.0, follow_redirects=True) as client:
             resp = await client.get(url, headers={"Authorization": f"Bearer {token}"})
@@ -681,7 +686,7 @@ async def _accounts_lite() -> list:
         {"studentId": 1, "studentName": 1, "batch": 1, "removedAt": 1, "passwordHash": 1, "password": 1},
     )
     try:
-        return await cursor.to_list(1000)
+        return await cursor.to_list(2000)
     except AttributeError:  # a test double without to_list
         return list(cursor)
 
@@ -816,6 +821,25 @@ async def apply_batch_drift(body: BatchDriftApplyBody, claims: dict = Depends(re
     }
 
 
+async def _coverage_payload() -> dict:
+    """Classify every sheet cell against its account hash.
+
+    The bcrypt work runs in a worker thread: bcrypt releases the GIL while it
+    computes, so the event loop keeps answering other requests instead of
+    standing still for two minutes.
+    """
+    rows = await _sheet_students_rows()
+    accounts = await _accounts_lite()
+    out = await asyncio.to_thread(password_sheet_sync.coverage_of, rows, accounts)
+    return {
+        "ok": True,
+        "checkedAt": _now(),
+        "accountsChecked": len(accounts),
+        "usablePct": round(100 * out["valid"] / out["total"], 1) if out["total"] else 0,
+        **out,
+    }
+
+
 @router.get("/students/password-coverage")
 async def get_password_coverage(refresh: bool = False, claims: dict = Depends(require_mentor)):
     """Mentor-only: how many Students-sheet password cells a student can actually use.
@@ -825,29 +849,8 @@ async def get_password_coverage(refresh: bool = False, claims: dict = Depends(re
     the progress meter for that: 'pending' shrinks by itself as students log in, and
     it is empty when every active student's sheet cell matches their live password.
     """
-    now = datetime.now(timezone.utc)
-    cached = _coverage_cache.get("payload")
-    if (
-        not refresh
-        and cached
-        and _coverage_cache.get("at")
-        and (now - _coverage_cache["at"]).total_seconds() < BATCH_DRIFT_TTL_SEC
-    ):
-        return {**cached, "cached": True}
-
-    rows = await _sheet_students_rows()
-    accounts = await _accounts_lite()
-    out = password_sheet_sync.coverage_of(rows, accounts)
-    payload = {
-        "ok": True,
-        "checkedAt": _now(),
-        "accountsChecked": len(accounts),
-        "usablePct": round(100 * out["valid"] / out["total"], 1) if out["total"] else 0,
-        **out,
-    }
-    _coverage_cache["at"] = now
-    _coverage_cache["payload"] = payload
-    return {**payload, "cached": False}
+    payload = await sheet_coverage.coverage_for(_coverage_payload, refresh=refresh)
+    return {**payload, "cached": bool(sheet_coverage.payload() is payload)}
 
 
 @router.get("/account-reset-status")

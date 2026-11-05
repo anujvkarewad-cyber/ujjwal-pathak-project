@@ -427,7 +427,7 @@ async def mentor_day(
     accounts = await db[STUDENT_ACCOUNTS].find(
         {"studentId": {"$in": sids}},
         {"_id": 0, "studentId": 1, "studentName": 1, "batch": 1, "group": 1},
-    ).to_list(length=500)
+    ).to_list(length=2000)
     by_sid = {str(row.get("studentId") or ""): row for row in accounts}
     wanted_batch = str(batch or "All Batches").strip()
     items = []

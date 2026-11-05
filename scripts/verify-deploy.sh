@@ -51,6 +51,8 @@ else
   # 2e. per-student access switch in Daily tracker · Dates (the data-testid prefix
   # survives minification, so this is proof the SPA was built from current source)
   if [[ "$js" == *"access-toggle-"* ]]; then ok "per-student access switch shipped"; else bad "per-student access switch MISSING — an older SPA is still being served"; fi
+  # 2g. student start-day progress & timeline UI in Target Plans
+  if [[ "$js" == *"start-day-progress"* && "$js" == *"start-day-timeline"* ]]; then ok "student start-day progress & timeline UI present"; else bad "student start-day progress & timeline UI MISSING from bundle"; fi
   # 2f. advisory only: the old batch-wide pill must not come back
   if [[ "$js" == *"ON/OFF"* ]]; then echo "  ! advisory: a batch-wide 'ON/OFF' control appears in this bundle — confirm it is not the removed batch access switch"; fi
 fi
@@ -61,7 +63,7 @@ if [[ -z "$spec" ]]; then
   bad "openapi.json unavailable"
 else
   for path in /api/mentor-workspace/send /api/mentor-workspace/review /api/notes-inbox \
-              /api/notes-inbox/skip /api/notes-inbox/unskip /api/messages/send /api/messages/reply; do
+              /api/notes-inbox/skip /api/notes-inbox/unskip /api/messages/send /api/messages/reply /api/student-targets/all-progress; do
     if printf '%s' "$spec" | grep -q "\"$path\""; then ok "route $path deployed"; else bad "route $path NOT deployed"; fi
   done
   # every protected route must demand a token (401 without one)
@@ -70,7 +72,7 @@ else
 fi
 
 # 4. SPA deep links must serve the app (not a 404) — students/profiles open by URL
-for path in "/" "/students" "/students/UMP0011" "/batches" "/messages" "/notes-inbox"; do
+for path in "/" "/students" "/students/UMP0011" "/batches" "/target-plans" "/messages" "/notes-inbox"; do
   code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 "$URL$path")
   if [[ "$code" == "200" ]]; then ok "page $path ($code)"; else bad "page $path returned $code"; fi
 done

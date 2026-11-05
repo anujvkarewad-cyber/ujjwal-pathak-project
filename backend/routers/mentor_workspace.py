@@ -19,7 +19,7 @@ from pymongo.errors import DuplicateKeyError
 from auth import require_mentor
 from config import settings
 from db import STUDENT_ACCOUNTS, STUDENT_MESSAGES, get_db
-from routers.student_auth import _sheet_students_rows, ALLOWED_STUDENT_BATCHES
+from routers.student_auth import _sheet_students_rows, ALLOWED_STUDENT_BATCHES, STUDENTS_SHEET_ROW_LIMIT
 
 router = APIRouter(prefix="/api/mentor-workspace", tags=["mentor-workspace"])
 PLANS = "mentor_workspace_plans"
@@ -45,7 +45,7 @@ def group_key(value):
 
 async def roster():
     raw = await _sheet_students_rows()
-    if not raw or len(raw) >= 400:
+    if not raw or len(raw) >= STUDENTS_SHEET_ROW_LIMIT:
         raise HTTPException(503, "Students source empty or bounded read reached its limit. No mutation allowed.")
     header = [str(x).strip().lower() for x in raw[0]]
     def column(*names):

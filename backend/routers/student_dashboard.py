@@ -204,7 +204,7 @@ async def list_removed_students(_mentor=Depends(require_mentor)):
     rows = await db[STUDENT_ACCOUNTS].find(
         {"$or": [{"status": "removed"}, {"removedAt": {"$exists": True}}]},
         {"_id": 0, "studentId": 1, "studentName": 1, "batch": 1, "group": 1, "removedAt": 1},
-    ).to_list(length=500)
+    ).to_list(length=2000)
     return JSONResponse({"removed": rows}, headers={"Cache-Control": "no-store"})
 
 
@@ -262,7 +262,7 @@ async def _mirror_access_to_sheet(sid: str, enabled: bool, reason: str) -> bool:
     try:
         read_url = (
             f"https://sheets.googleapis.com/v4/spreadsheets/{TRACKER_SHEET_ID}"
-            f"/values/Students!A1:Q400"
+            f"/values/Students!A1:Q2000"
         )
         resp = await asyncio.to_thread(
             requests.get, read_url, headers={"Authorization": f"Bearer {token}"}, timeout=20
@@ -1953,7 +1953,7 @@ async def tracker_missed_report(
             "removedAt": 1,
             "accessEnabled": 1,
         },
-    ).to_list(length=500)
+    ).to_list(length=2000)
     accounts, roster_source = await _tracker_roster(accounts)
     try:
         form_submissions = await asyncio.to_thread(_fetch_tracker_submissions_sync)
@@ -2065,7 +2065,7 @@ class DashboardImportBody(BaseModel):
     announcements: Optional[list] = None
     leaderboard: Optional[list] = None
     notes: Optional[list] = None
-    students: list[DashboardStudentItem] = Field(default_factory=list, max_length=500)
+    students: list[DashboardStudentItem] = Field(default_factory=list, max_length=2000)
 
 
 class DashboardGetBody(BaseModel):

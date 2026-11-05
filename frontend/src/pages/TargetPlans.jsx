@@ -1,6 +1,6 @@
 import SmartTargetFollow from '../components/SmartTargetFollow';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Ban, CalendarRange, Camera, Pencil, Plus, Save, Trash2 } from 'lucide-react';
+import { Ban, CalendarRange, Camera, Pencil, Plus, Save, Search, Trash2 } from 'lucide-react';
 import { fetchTargetOptions, previewTargetAudience } from '@/api/dailyTargets';
 import {
   cancelTargetPlan,
@@ -9,6 +9,10 @@ import {
   parseTargetPlanPhoto,
   publishTargetPlan,
   previewPersonalTargetAudience,
+  changeStudentStartDay,
+  fetchAllTargetProgress,
+  fetchStudentDayTimeline,
+  MAX_START_DAY,
 } from '@/api/targetPlans';
 
 const ALL = 'All';
@@ -17,7 +21,7 @@ const KINDS = [
   ['revision', 'Revision'],
   ['test', 'Test'],
 ];
-const MAX_DAYS = 90;
+const MAX_DAYS = MAX_START_DAY; // owner override: 40 days
 
 const IST_FMT = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Kolkata', year: 'numeric', month: '2-digit', day: '2-digit' });
 
@@ -159,9 +163,20 @@ export default function TargetPlans() {
   const [days, setDays] = useState([blankDay(), blankDay()]);
   const [audience, setAudience] = useState(null);
   const [busy, setBusy] = useState(false);
-  const [message, setMessage] = useState(null); // { kind: 'ok'|'err', text }
+  const [message, setMessage] = useState(null); // { kind: 'ok'|'err'|'info', text }
   const [editing, setEditing] = useState(null); // { planId, planName, day, entries }
   const photoInputRef = useRef(null);
+  const [progress, setProgress] = useState({ rows: [], total: 0, started: 0, notStarted: 0, maxDays: MAX_START_DAY });
+  // Whether this server can read plan photos. Unknown until /api/target-plans answers.
+  const [aiPhoto, setAiPhoto] = useState(null);
+  const [build, setBuild] = useState('dev');
+  const [progressBusy, setProgressBusy] = useState(false);
+  const [progressFilter, setProgressFilter] = useState('all'); // all | started | not-started
+  const [progressSearch, setProgressSearch] = useState('');
+  const [progressBatch, setProgressBatch] = useState(ALL);
+  // Day timeline of the student picked in the table (day + date strip, horizontal scroll).
+  const [timeline, setTimeline] = useState({ studentId: '', days: [], active: null, busy: false });
+  const [dayEdit, setDayEdit] = useState({}); // studentId -> pending day value
 
   const onPhoto = async (file) => {
     if (!file) return;
@@ -185,18 +200,130 @@ export default function TargetPlans() {
       })));
       setMessage({ kind: 'ok', text: `Photo parsed: ${res.days.length} days filled in. Review the rows below, then press Publish plan.` });
     } catch (err) {
-      setMessage({ kind: 'err', text: err.message || 'Photo parse failed.' });
+      const text = err.message || 'Photo parse failed.';
+      // Only a genuinely missing capability flips the button. A bad photo is not
+      // "photo reading not set up" — the feature works, the picture was unclear.
+      const missing = /not set up on this server|not configured on this server|AI key is not/i.test(text);
+      setMessage({ kind: missing ? 'info' : 'err', text });
+      if (missing) setAiPhoto(false);
+      else {
+        // Failed photo, working feature: keep the button usable and re-sync the flag.
+        fetchTargetPlans()
+          .then((res) => {
+            if (res.capabilities && typeof res.capabilities.aiPhotoReading === 'boolean') {
+              setAiPhoto(res.capabilities.aiPhotoReading);
+            }
+          })
+          .catch(() => {});
+      }
     } finally {
       setBusy(false);
       if (photoInputRef.current) photoInputRef.current.value = '';
     }
   };
 
-  const load = () => fetchTargetPlans().then((res) => setPlans(res.plans || [])).catch((err) => setMessage({ kind: 'err', text: err.message }));
+  useEffect(() => {
+    // One tiny unauthenticated call: which build is the server running?
+    fetch('/api/health')
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => { if (data?.build) setBuild(String(data.build)); })
+      .catch(() => {});
+  }, []);
+
+  const load = () => fetchTargetPlans()
+    .then((res) => {
+      setPlans(res.plans || []);
+      if (res.capabilities && typeof res.capabilities.aiPhotoReading === 'boolean') {
+        setAiPhoto(res.capabilities.aiPhotoReading);
+      }
+    })
+    .catch((err) => setMessage({ kind: 'err', text: err.message }));
+
+  const openTimeline = async (studentId, { quiet = false } = {}) => {
+    setTimeline((prev) => ({ ...prev, studentId, busy: true }));
+    try {
+      const data = await fetchStudentDayTimeline(studentId);
+      setTimeline({
+        studentId,
+        days: data.days || [],
+        active: data.currentDay || (data.days || [])[0]?.day || null,
+        busy: false,
+      });
+    } catch (err) {
+      setTimeline({ studentId, days: [], active: null, busy: false });
+      if (!quiet) setMessage({ kind: 'err', text: err.message || 'Could not load this student\u2019s days.' });
+    }
+  };
+
+  const loadProgress = () =>
+    fetchAllTargetProgress()
+      .then((res) => {
+        const rows = res?.rows || [];
+        setProgress({
+          rows,
+          total: res?.total || 0,
+          started: res?.started || 0,
+          notStarted: res?.notStarted || 0,
+          maxDays: res?.maxDays || MAX_START_DAY,
+        });
+        const first = rows.find((row) => row.started);
+        if (first && !timeline.studentId) {
+          openTimeline(first.studentId, { quiet: true });
+        }
+        return res;
+      })
+      .catch((err) => setMessage({ kind: 'err', text: err.message || 'Could not load student progress.' }));
+
+  const saveStartDay = async (studentId) => {
+    const raw = dayEdit[studentId];
+    const day = Number(raw);
+    if (!Number.isInteger(day) || day < 1 || day > (progress.maxDays || MAX_START_DAY)) {
+      setMessage({ kind: 'err', text: `Start day must be a whole number between 1 and ${progress.maxDays || MAX_START_DAY}.` });
+      return;
+    }
+    setProgressBusy(true);
+    setMessage(null);
+    try {
+      await changeStudentStartDay(studentId, day, 'changed from Target Plans page');
+      setMessage({ kind: 'ok', text: `Day ${day} saved for ${studentId}.` });
+      setDayEdit((prev) => ({ ...prev, [studentId]: '' }));
+      await loadProgress();
+      if (timeline.studentId === studentId) {
+        await openTimeline(studentId, { quiet: true });
+      }
+    } catch (err) {
+      setMessage({ kind: 'err', text: err.message || 'Could not change the start day.' });
+    } finally {
+      setProgressBusy(false);
+    }
+  };
+
+  const progressBatchChoices = useMemo(() => {
+    const set = new Set();
+    for (const r of progress.rows) {
+      if (r.batch) set.add(r.batch);
+    }
+    return [...set].sort();
+  }, [progress.rows]);
+
+  const visibleProgress = useMemo(() => {
+    const q = progressSearch.trim().toLowerCase();
+    return progress.rows.filter((r) => {
+      if (progressFilter === 'started' && !r.started) return false;
+      if (progressFilter === 'not-started' && r.started) return false;
+      if (progressBatch !== ALL && r.batch !== progressBatch) return false;
+      if (q) {
+        const hay = `${r.name || ''} ${r.studentId || ''} ${r.batch || ''} ${r.group || ''}`.toLowerCase();
+        if (!hay.includes(q)) return false;
+      }
+      return true;
+    });
+  }, [progress.rows, progressFilter, progressBatch, progressSearch]);
 
   useEffect(() => {
     fetchTargetOptions().then(setOptions).catch(() => setOptions({ attempts: [], groups: [], batches: [], subjects: [] }));
     load();
+    loadProgress();
   }, []);
 
   useEffect(() => {
@@ -314,12 +441,322 @@ export default function TargetPlans() {
         <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
           Create calendar targets or personal sequences with independent starts, backups and revision follow-up.
         </p>
+        <p className="mt-1 text-[11px] text-slate-400 dark:text-slate-500" data-testid="build-marker">
+          Day system build: <span className="font-semibold text-slate-500 dark:text-slate-400">{build}</span>
+          {build === 'dev' ? ' — if this says dev, the browser is showing a cached page; hard-refresh.' : ''}
+        </p>
       </div>
+
+      <section className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900" data-testid="start-day-progress">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <h2 className="font-heading text-base font-bold text-slate-900 dark:text-white">Student day progress</h2>
+            <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
+              Each student picks their own start day (1-{progress.maxDays || MAX_START_DAY}) on first login and it locks.
+              Days open one at a time: the next day unlocks only when the student marks the current one complete.
+              Only you can change the start day here.
+            </p>
+          </div>
+          <div className="flex items-center gap-2 text-xs font-semibold">
+            <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300">Started {progress.started}</span>
+            <span className="rounded-full bg-amber-50 px-2.5 py-1 text-amber-700 dark:bg-amber-950/50 dark:text-amber-300">Not started {progress.notStarted}</span>
+            <button type="button" onClick={loadProgress} disabled={progressBusy} className="inline-flex h-8 items-center rounded-lg border border-slate-200 px-3 text-xs font-semibold text-slate-600 disabled:opacity-50 dark:border-slate-700 dark:text-slate-300">
+              Refresh
+            </button>
+          </div>
+        </div>
+
+        <div className="mt-3 flex flex-wrap items-center gap-2">
+          <div className="flex gap-1.5">
+            {[['all', `All (${progress.total})`], ['started', `Started only (${progress.started})`], ['not-started', `Not started (${progress.notStarted})`]].map(([key, label]) => (
+              <button
+                key={key}
+                type="button"
+                onClick={() => setProgressFilter(key)}
+                className={`h-8 rounded-lg px-3 text-xs font-semibold ${progressFilter === key ? 'bg-[#2563EB] text-white' : 'border border-slate-200 text-slate-600 dark:border-slate-700 dark:text-slate-300'}`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+          <div className="relative min-w-48 flex-1 sm:max-w-xs">
+            <Search className="pointer-events-none absolute left-2.5 top-2 h-4 w-4 text-slate-400" />
+            <input
+              value={progressSearch}
+              onChange={(e) => setProgressSearch(e.target.value)}
+              placeholder="Search student or ID…"
+              aria-label="Search student progress"
+              className="h-8 w-full rounded-lg border border-slate-200 bg-white pl-8 pr-3 text-xs text-slate-800 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100"
+            />
+          </div>
+          <select
+            value={progressBatch}
+            onChange={(e) => setProgressBatch(e.target.value)}
+            aria-label="Filter student progress by batch"
+            className="h-8 rounded-lg border border-slate-200 bg-white px-2.5 text-xs font-semibold text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
+          >
+            <option value={ALL}>All batches</option>
+            {progressBatchChoices.map((b) => (
+              <option key={b} value={b}>{b}</option>
+            ))}
+          </select>
+        </div>
+
+        <div className="mt-3 max-h-[380px] overflow-auto rounded-xl border border-slate-100 dark:border-slate-800">
+          <table className="w-full text-left text-xs">
+            <thead className="sticky top-0 bg-slate-50 text-[11px] uppercase tracking-wide text-slate-500 dark:bg-slate-800 dark:text-slate-400">
+              <tr>
+                <th className="px-3 py-2">Student</th>
+                <th className="px-3 py-2">Batch / group</th>
+                <th className="px-3 py-2">Selected start</th>
+                <th className="px-3 py-2">Open day</th>
+                <th className="px-3 py-2">Days done</th>
+                <th className="px-3 py-2">Change start day</th>
+              </tr>
+            </thead>
+            <tbody>
+              {visibleProgress.length === 0 && (
+                <tr><td colSpan={6} className="px-3 py-6 text-center text-slate-500">Nothing to show yet.</td></tr>
+              )}
+              {visibleProgress.map((row) => (
+                <tr key={row.studentId} className="border-t border-slate-100 dark:border-slate-800">
+                  <td className="px-3 py-2">
+                    <div className="font-semibold text-slate-800 dark:text-slate-100">{row.name || row.studentId}</div>
+                    <div className="text-[11px] text-slate-500">{row.studentId}</div>
+                  </td>
+                  <td className="px-3 py-2 text-slate-600 dark:text-slate-300">
+                    <div>{row.batch || '-'}</div>
+                    <div className="text-[11px] text-slate-500">{row.group || '-'}</div>
+                  </td>
+                  <td className="px-3 py-2">
+                    {row.started && row.startDay ? (
+                      <div>
+                        <span className="rounded-md bg-blue-50 px-2 py-0.5 text-[11px] font-bold text-[#2563EB] dark:bg-blue-950/50 dark:text-blue-300">
+                          Day {row.startDay}
+                        </span>
+                        {row.startDate && (
+                          <div className="mt-0.5 text-[10.5px] text-slate-400">from {displayDate(row.startDate)}</div>
+                        )}
+                      </div>
+                    ) : (
+                      <span className="text-slate-400">—</span>
+                    )}
+                  </td>
+                  <td className="px-3 py-2">
+                    {row.started ? (
+                      <button
+                        type="button"
+                        onClick={() => openTimeline(row.studentId)}
+                        className="text-left"
+                        title="Show this student's day-by-day targets"
+                      >
+                        <span className="font-bold text-[#2563EB] underline decoration-dotted">Day {row.currentDay}</span>
+                        <span className="ml-1 text-[10.5px] font-semibold text-slate-400">view days ▸</span>
+                        <div className="text-[10.5px] text-slate-500">
+                          {row.finished ? `all ${progress.maxDays || MAX_START_DAY} days done` : `Day ${row.currentDay + 1} locked until done`}
+                        </div>
+                      </button>
+                    ) : (
+                      <span className="rounded-full bg-amber-50 px-2 py-0.5 text-[11px] font-semibold text-amber-700 dark:bg-amber-950/50 dark:text-amber-300">Not started</span>
+                    )}
+                  </td>
+                  <td className="px-3 py-2 text-slate-600 dark:text-slate-300">{row.completedDays}</td>
+                  <td className="px-3 py-2">
+                    <div className="flex items-center gap-1.5">
+                      <input
+                        type="number"
+                        min={1}
+                        max={progress.maxDays || MAX_START_DAY}
+                        value={dayEdit[row.studentId] ?? ''}
+                        onChange={(e) => setDayEdit((prev) => ({ ...prev, [row.studentId]: e.target.value }))}
+                        placeholder={row.startDay ? String(row.startDay) : 'Day'}
+                        className="h-8 w-16 rounded-lg border border-slate-200 px-2 text-xs dark:border-slate-700 dark:bg-slate-800"
+                        aria-label={`Start day for ${row.studentId}`}
+                      />
+                      <button
+                        type="button"
+                        onClick={() => saveStartDay(row.studentId)}
+                        disabled={progressBusy || !dayEdit[row.studentId]}
+                        className="h-8 rounded-lg bg-[#2563EB] px-2.5 text-[11px] font-bold text-white disabled:opacity-40"
+                      >
+                        Save
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {timeline.studentId && (
+        <section
+          className="mt-4 rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900"
+          data-testid="start-day-timeline"
+        >
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100">
+                Day timeline · {timeline.studentId}
+              </h3>
+              <p className="mt-1 max-w-2xl text-xs text-slate-500 dark:text-slate-400">
+                Days scroll sideways with their planned dates. A past day stays readable; the next day
+                opens only after the student marks the current one complete. You can see locked days
+                here because you publish them.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => setTimeline({ studentId: '', days: [], active: null, busy: false })}
+              className="h-8 rounded-lg border border-slate-200 px-2.5 text-[11px] font-semibold text-slate-600 dark:border-slate-700 dark:text-slate-300"
+            >
+              Close
+            </button>
+          </div>
+
+          {timeline.busy ? (
+            <p className="mt-3 text-xs text-slate-500">Loading…</p>
+          ) : timeline.days.length ? (
+            <>
+              <div className="mt-3 flex gap-1.5 overflow-x-auto pb-2">
+                {timeline.days.map((day) => {
+                  const isOpen = day.state === 'open';
+                  const isDone = day.state === 'complete';
+                  const isActive = day.day === timeline.active;
+                  return (
+                    <button
+                      key={day.day}
+                      type="button"
+                      disabled={day.beforeStart}
+                      title={day.beforeStart ? 'Before this student\u2019s start day' : `Day ${day.day}`}
+                      onClick={() => setTimeline((prev) => ({ ...prev, active: day.day }))}
+                      className={[
+                        'flex w-16 shrink-0 flex-col items-center rounded-xl border px-1 py-1.5',
+                        isDone
+                          ? 'border-emerald-500 bg-emerald-500 text-white'
+                          : isOpen
+                          ? 'border-[#2563EB] bg-[#2563EB] text-white'
+                          : 'border-slate-200 bg-slate-50 text-slate-400 dark:border-slate-700 dark:bg-slate-800',
+                        day.beforeStart ? 'opacity-40' : '',
+                        isActive ? 'ring-2 ring-slate-900 ring-offset-1 dark:ring-slate-100' : '',
+                      ].join(' ')}
+                    >
+                      <span className="text-[13px] font-extrabold leading-tight">{day.day}</span>
+                      <span className="text-[9.5px] font-semibold opacity-80">
+                        {day.plannedDate
+                          ? new Date(`${day.plannedDate}T00:00:00`).toLocaleDateString('en-IN', {
+                              day: 'numeric',
+                              month: 'short',
+                            })
+                          : ''}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {(() => {
+                const day = timeline.days.find((d) => d.day === timeline.active);
+                if (!day) return null;
+                return (
+                  <div className="mt-3 border-t border-slate-100 pt-3 dark:border-slate-800">
+                    <p className="text-xs font-bold text-slate-900 dark:text-slate-100">
+                      Day {day.day}
+                      {day.plannedDate
+                        ? ` · ${new Date(`${day.plannedDate}T00:00:00`).toLocaleDateString('en-IN', {
+                            day: 'numeric',
+                            month: 'short',
+                          })}`
+                        : ''}
+                      <span className="ml-2 rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-slate-500 dark:bg-slate-800 dark:text-slate-400">
+                        {day.state}
+                      </span>
+                    </p>
+                    {day.targets?.length ? (
+                      <ul className="mt-1.5 space-y-1">
+                        {day.targets.map((task, i) => (
+                          <li key={task.id || i} className="text-xs text-slate-600 dark:text-slate-300">
+                            <span className="font-semibold">{task.label}</span>
+                            {task.detail ? <span className="text-slate-400"> — {task.detail}</span> : null}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="mt-1 text-xs text-slate-400">
+                        {day.state === 'locked'
+                          ? 'Nothing published for this day yet.'
+                          : 'No targets published for this day.'}
+                      </p>
+                    )}
+
+                    {(() => {
+                      const previous = timeline.days
+                        .filter((d) => d.state === 'complete')
+                        .sort((a, b) => b.day - a.day);
+                      if (!previous.length) return null;
+                      return (
+                        <div className="mt-4 border-t border-slate-100 pt-3 dark:border-slate-800">
+                          <p className="text-xs font-bold text-slate-900 dark:text-slate-100">
+                            Previous days <span className="font-semibold text-slate-400">({previous.length})</span>
+                          </p>
+                          <div className="mt-1.5 max-h-64 space-y-2 overflow-y-auto pr-1">
+                            {previous.map((d) => (
+                              <div key={d.day} className="rounded-lg bg-slate-50 p-2 dark:bg-slate-800/60">
+                                <div className="flex items-center gap-2">
+                                  <span className="inline-flex h-3.5 w-3.5 items-center justify-center rounded-full bg-emerald-500 text-[8px] font-bold text-white">
+                                    ✓
+                                  </span>
+                                  <span className="text-[11.5px] font-bold text-slate-700 dark:text-slate-200">
+                                    Day {d.day}
+                                    {d.plannedDate
+                                      ? ` · ${new Date(`${d.plannedDate}T00:00:00`).toLocaleDateString('en-IN', {
+                                          day: 'numeric',
+                                          month: 'short',
+                                        })}`
+                                      : ''}
+                                  </span>
+                                  <span className="ml-auto text-[10px] font-semibold text-slate-400">
+                                    {d.targetCount} task{d.targetCount === 1 ? '' : 's'}
+                                  </span>
+                                </div>
+                                {d.targets?.length ? (
+                                  d.targets.map((task, i) => (
+                                    <p key={task.id || i} className="ml-5 mt-0.5 text-[11px] text-slate-500 dark:text-slate-400">
+                                      • {task.label}
+                                    </p>
+                                  ))
+                                ) : (
+                                  <p className="ml-5 mt-0.5 text-[11px] text-slate-400">
+                                    No targets were published for this day.
+                                  </p>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      );
+                    })()}
+                  </div>
+                );
+              })()}
+            </>
+          ) : (
+            <p className="mt-3 text-xs text-slate-500">This student has not picked a start day yet.</p>
+          )}
+        </section>
+      )}
 
       {message && (
         <div
           role="status"
-          className={`rounded-lg border px-4 py-3 text-sm ${message.kind === 'ok' ? 'border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-300' : 'border-rose-200 bg-rose-50 text-rose-700 dark:border-rose-900 dark:bg-rose-950/40 dark:text-rose-300'}`}
+          className={`rounded-lg border px-4 py-3 text-sm ${
+            message.kind === 'ok'
+              ? 'border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-300'
+              : message.kind === 'info'
+              ? 'border-amber-200 bg-amber-50 text-amber-800 dark:border-amber-900 dark:bg-amber-950/40 dark:text-amber-200'
+              : 'border-rose-200 bg-rose-50 text-rose-700 dark:border-rose-900 dark:bg-rose-950/40 dark:text-rose-300'
+          }`}
         >
           {message.text}
         </div>
@@ -331,7 +768,9 @@ export default function TargetPlans() {
             <div>
               <div className="text-sm font-bold text-slate-800 dark:text-slate-100">New plan</div>
               <div className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
-                Upload a poster or handwritten plan photo — days, subjects, topics and hours are filled in automatically.
+                {aiPhoto === false
+                  ? 'Fill the days below. Photo reading turns on automatically once an AI key is added to the server.'
+                  : 'Upload a poster or handwritten plan photo — days, subjects, topics and hours are filled in automatically.'}
               </div>
             </div>
             <div className="flex items-center gap-2">
@@ -346,14 +785,21 @@ export default function TargetPlans() {
               <button
                 type="button"
                 onClick={() => photoInputRef.current?.click()}
-                disabled={busy}
-                className="inline-flex h-10 items-center gap-2 rounded-lg border border-[#2563EB] px-4 text-sm font-bold text-[#2563EB] hover:bg-blue-50 disabled:opacity-50 dark:hover:bg-blue-950/40"
+                disabled={busy || aiPhoto === false}
+                title={aiPhoto === false ? 'Photo reading is not set up on this server. Type the day rows instead.' : 'Read a poster or handwritten photo'}
+                className="inline-flex h-10 items-center gap-2 rounded-lg border border-[#2563EB] px-4 text-sm font-bold text-[#2563EB] hover:bg-blue-50 disabled:opacity-40 disabled:hover:bg-transparent dark:hover:bg-blue-950/40"
                 data-testid="plan-photo-button"
               >
-                <Camera className="h-4 w-4" /> {busy ? 'Reading photo…' : 'Fill from photo'}
+                <Camera className="h-4 w-4" /> {busy ? 'Reading photo…' : aiPhoto === false ? 'Photo reading not set up' : 'Fill from photo'}
               </button>
             </div>
           </div>
+          {aiPhoto === false && (
+            <p className="mb-3 rounded-lg bg-amber-50 px-3 py-2 text-xs text-amber-800 dark:bg-amber-950/40 dark:text-amber-200">
+              Photo reading needs an AI key that is not set up on this server. Type or paste the day rows below —
+              publishing does not need AI.
+            </p>
+          )}
           <div className="mb-3 grid gap-3 sm:grid-cols-3">
             <label className="space-y-1"><span className={labelClass}>Delivery mode</span><select aria-label="Delivery mode" value={mode} onChange={e => setMode(e.target.value)} className={`${inputClass} w-full`}><option value="calendar">Calendar (existing mode)</option><option value="personal">Personal sequence — Smart Targets</option></select></label>
             {mode === 'personal' && <><label className="space-y-1"><span className={labelClass}>Included backup days</span><input aria-label="Included backup days" type="number" min="0" max="60" value={includedBackupDays} onChange={e => setIncludedBackupDays(e.target.value)} className={`${inputClass} w-full`} /></label><label className="space-y-1"><span className={labelClass}>Revision budget (minutes/day)</span><input aria-label="Revision budget" type="number" min="10" max="180" value={revisionBudgetMinutes} onChange={e => setRevisionBudgetMinutes(e.target.value)} className={`${inputClass} w-full`} /></label></>}

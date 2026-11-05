@@ -37,3 +37,31 @@ export const cancelTargetPlan = (planId) =>
   apiCall(`/api/target-plans/${encodeURIComponent(planId)}/cancel`, { method: 'POST' });
 
 export const previewPersonalTargetAudience = (body) => apiCall('/api/smart-targets/mentor/audience', { method: 'POST', body });
+
+// ── Personal day-based targets (start day locked) ────────────────────────────
+// Student calls carry the student session headers; mentor calls carry the JWT
+// that apiCall already attaches.
+export const startTargetProgress = (body, studentHeaders = {}) =>
+  apiCall('/api/student-targets/start', { method: 'POST', body, headers: studentHeaders });
+
+export const getTargetProgress = (studentId, studentHeaders = {}) =>
+  apiCall('/api/student-targets/progress', { params: studentId ? { studentId } : null, headers: studentHeaders });
+
+export const completeTargetDay = (body = {}, studentHeaders = {}) =>
+  apiCall('/api/student-targets/complete-day', { method: 'POST', body, headers: studentHeaders });
+
+export const changeStudentStartDay = (studentId, startDay, note = '') =>
+  apiCall(`/api/student-targets/${encodeURIComponent(studentId)}/start-day`, {
+    method: 'PATCH',
+    body: { startDay, note },
+  });
+
+export const fetchAllTargetProgress = () => apiCall('/api/student-targets/all-progress');
+
+/** One student's day ladder with planned dates. Mentor sees locked days too. */
+export const fetchStudentDayTimeline = (studentId, fromDay = 0) =>
+  apiCall(`/api/student-targets/${encodeURIComponent(studentId)}/day-timeline`, {
+    params: fromDay ? { fromDay } : null,
+  });
+
+export const MAX_START_DAY = 40;

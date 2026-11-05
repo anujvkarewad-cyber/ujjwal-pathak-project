@@ -46,6 +46,28 @@ def _fingerprint(plaintext: str) -> str:
     return hashlib.sha256(plaintext.encode("utf-8")).hexdigest()[:32]
 
 
+# ── verification memo ───────────────────────────────────────────────────────
+# bcrypt is deliberately slow (~0.3 s per check). Re-checking the same sheet
+# cell against the same account hash on every page view is what made the
+# mentor's Students screen take two minutes to open. A verdict only changes
+# when the cell or the hash changes, so it is remembered.
+_VERIFY_CACHE: dict = {}
+_VERIFY_CACHE_MAX = 5000
+
+
+def _verify_sheet_value(value: str, hashed: str) -> bool:
+    """Does this sheet cell still authenticate? (remembered)"""
+    key = _fingerprint(value) + "|" + _fingerprint(hashed)
+    cached = _VERIFY_CACHE.get(key)
+    if cached is not None:
+        return cached
+    ok = bcrypt.checkpw(value.encode(), hashed.encode())
+    if len(_VERIFY_CACHE) >= _VERIFY_CACHE_MAX:
+        _VERIFY_CACHE.clear()
+    _VERIFY_CACHE[key] = ok
+    return ok
+
+
 def _col_letter(index: int) -> str:
     out, n = "", index + 1
     while n:
@@ -90,7 +112,7 @@ async def _layout_for() -> dict:
     now = time.time()
     if _sheet_layout["rows"] and now - _sheet_layout["at"] < LAYOUT_TTL_SEC:
         return _sheet_layout
-    header_rows, id_rows = await asyncio.gather(_read_range("A1:U1"), _read_range("A1:A400"))
+    header_rows, id_rows = await asyncio.gather(_read_range("A1:U1"), _read_range("A1:A2000"))
     if not header_rows:
         raise RuntimeError("Students sheet header could not be read")
     names = [str(cell or "").strip().lower() for cell in header_rows[0]]
@@ -221,7 +243,7 @@ def coverage_of(sheet_rows: list, accounts: list) -> dict:
             pending.append({"studentId": sid, "studentName": str(account.get("studentName") or ""),
                             "state": "blank"})
             continue
-        works = bcrypt.checkpw(value.encode(), hashed.encode()) if hashed else value == str(account.get("password") or "")
+        works = _verify_sheet_value(value, hashed) if hashed else value == str(account.get("password") or "")
         if works:
             valid += 1
             continue

@@ -11,7 +11,7 @@ test('main navigation has no duplicate cohort tools and global administration st
   try {
     await act(async () => root.render(<Sidebar open={false} onClose={() => {}} />));
     const groups = host.querySelectorAll('nav details');
-    expect([...groups[0].querySelectorAll('a')].map(a => a.getAttribute('href'))).toEqual(['/', '/batches', '/notes-inbox', '/sheet-sources', '/settings']);
+    expect([...groups[0].querySelectorAll('a')].map(a => a.getAttribute('href'))).toEqual(['/', '/batches', '/target-plans', '/notes-inbox', '/sheet-sources', '/settings']);
     for (const name of ['students', 'daily-tracker', 'tests', 'notes', 'messages', 'announcements', 'leaderboard', 'password-reset']) expect(host.querySelector(`[data-testid="nav-${name}"]`)).toBeNull();
     expect(groups[1].open).toBe(false); expect(groups[2].open).toBe(false);
     const paths = [...host.querySelectorAll('nav a')].map(a => a.getAttribute('href'));

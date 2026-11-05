@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import {
   LayoutDashboard, Users, Settings, GraduationCap, Sparkles, ListChecks,
   Grid3X3, BookOpenCheck, Layers, FlaskConical, PackageCheck, History,
-  BarChart3, UserSearch, GitCompareArrows, School, Table2, UserX, TrendingUp, CheckSquare, Inbox,
+  BarChart3, UserSearch, GitCompareArrows, School, Table2, UserX, TrendingUp, CheckSquare, Inbox, CalendarRange,
 } from 'lucide-react';
 import { cn } from '@/utils/format';
 
@@ -10,6 +10,7 @@ import { cn } from '@/utils/format';
 const NAV = [
   { to: '/', label: 'Dashboard', icon: LayoutDashboard, testid: 'nav-dashboard' },
   { to: '/batches', label: 'Batches & groups', icon: Users, testid: 'nav-batches' },
+  { to: '/target-plans', label: 'Target Plans', icon: CalendarRange, testid: 'nav-target-plans' },
   { to: '/notes-inbox', label: 'Notes Inbox', icon: Inbox, testid: 'nav-notes-inbox' },
   { to: '/sheet-sources', label: 'Sheet Sources', icon: Table2, testid: 'nav-sheet-sources' },
   { to: '/settings', label: 'Settings', icon: Settings, testid: 'nav-settings' },

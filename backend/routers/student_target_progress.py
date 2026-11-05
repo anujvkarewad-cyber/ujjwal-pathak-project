@@ -344,7 +344,7 @@ async def build_timeline(record: dict, student: dict, from_day: int = 0,
         {"active": {"$ne": False},
          "planDay": {"$gte": first, "$lte": MAX_DAYS if include_locked else max(current, first)}},
         {"_id": 0},
-    ).to_list(400)
+    ).to_list(5000)
     live = await live_plan_ids(db)
     # Two bugs met here: a cancelled plan keeps its target rows active, and the
     # same task could arrive from more than one row - the day then listed six

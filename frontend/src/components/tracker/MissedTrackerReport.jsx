@@ -8,6 +8,7 @@ import {
   FileText,
   Minus,
   Pencil,
+  PowerOff,
   Search,
   Settings2,
   Trash2,
@@ -356,6 +357,7 @@ export default function MissedTrackerReport({ scopedBatch, scopedGroup } = {}) {
   const [showStartConfig, setShowStartConfig] = useState(false);
   const [editingStart, setEditingStart] = useState(null); // { id, value } — per-student override editor
   const [showRemoved, setShowRemoved] = useState(false);
+  const [showAccessOff, setShowAccessOff] = useState(false);
   const [adminNotice, setAdminNotice] = useState('');
   // Cell clicked in the grid -> mark / change / cancel leave|absent for that day.
   const [attendanceCell, setAttendanceCell] = useState(null);
@@ -372,11 +374,7 @@ export default function MissedTrackerReport({ scopedBatch, scopedGroup } = {}) {
       queryClient.invalidateQueries({ queryKey: ['tracker'] });
     },
   });
-  // The grid carries the access switch, so it needs the live access state. The
-  // tracker report does not include it; the roster does, and sharing the
-  // ['workspace-roster'] key means the Batches workspace and this table reuse one
-  // request. `mongoReady` false = no app account yet, so there is nothing to switch.
-  const { data: rosterData } = useQuery({
+  const { data: rosterData, isFetching: rosterFetching } = useQuery({
     queryKey: ['workspace-roster'],
     queryFn: getWorkspaceRoster,
     staleTime: 60000,
@@ -391,13 +389,20 @@ export default function MissedTrackerReport({ scopedBatch, scopedGroup } = {}) {
     }
     return map;
   }, [rosterData]);
-  // Roster still loading: show the switch (absorbed default is ON) instead of a
-  // false "no app account". Roster loaded but this id absent: nothing to switch.
-  const accessFor = (studentId) => {
-    const entry = accessById.get(String(studentId || '').trim().toUpperCase());
+  const accessFor = (row) => {
+    const entry = accessById.get(String(row?.studentId || '').trim().toUpperCase());
     if (entry) return entry;
-    return { enabled: true, known: !rosterData };
+    return { enabled: row?.accessEnabled !== false, known: !rosterData };
   };
+  const blockedInScope = useMemo(
+    () =>
+      filterTrackerItems(
+        (rosterData?.students || []).filter((s) => s.mongoReady && s.accessEnabled === false),
+        batchFilter,
+        groupFilter,
+      ),
+    [rosterData, batchFilter, groupFilter],
+  );
   const { data: removedData, isFetching: removedFetching } = useQuery({
     queryKey: ['tracker-removed-students'],
     queryFn: getRemovedStudents,
@@ -655,6 +660,14 @@ export default function MissedTrackerReport({ scopedBatch, scopedGroup } = {}) {
               </button>
               <button
                 type="button"
+                onClick={() => setShowAccessOff((value) => !value)}
+                className={`h-9 rounded-lg border px-3 text-xs font-semibold inline-flex items-center gap-1.5 ${showAccessOff ? 'border-amber-300 bg-amber-50 text-amber-800 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-300' : 'border-slate-200 text-slate-600 dark:border-slate-700 dark:text-slate-300'}`}
+                data-testid="tracker-access-off-toggle"
+              >
+                <PowerOff className="h-3.5 w-3.5" /> Access OFF{blockedInScope.length > 0 ? ` (${blockedInScope.length})` : ''}
+              </button>
+              <button
+                type="button"
                 onClick={() => setShowRemoved((value) => !value)}
                 className={`h-9 rounded-lg border px-3 text-xs font-semibold inline-flex items-center gap-1.5 ${showRemoved ? 'border-rose-200 bg-rose-50 text-rose-700 dark:border-rose-900 dark:bg-rose-950/40 dark:text-rose-300' : 'border-slate-200 text-slate-600 dark:border-slate-700 dark:text-slate-300'}`}
                 data-testid="tracker-removed-toggle"
@@ -686,6 +699,42 @@ export default function MissedTrackerReport({ scopedBatch, scopedGroup } = {}) {
           {adminNotice && (
             <div className="mx-5 mb-4 rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 text-xs font-semibold text-slate-700 dark:border-slate-700 dark:bg-slate-800/60 dark:text-slate-200" data-testid="tracker-admin-notice">
               {adminNotice}
+            </div>
+          )}
+
+          {showAccessOff && (
+            <div className="mx-5 mb-4 rounded-lg border border-amber-200 bg-amber-50/60 p-4 dark:border-amber-900 dark:bg-amber-950/30" data-testid="tracker-access-off-panel">
+              <div className="text-xs font-bold uppercase tracking-[0.14em] text-amber-900 dark:text-amber-300">
+                Students with app access OFF · {selectedBatchLabel} · {selectedGroupLabel}
+              </div>
+              <p className="mt-1 text-xs text-amber-800/90 dark:text-amber-300/90">
+                Students with access OFF cannot log into the Student App and are hidden from active missed-day counts.
+                Toggle any student back ON below to restore login and bring them back into this table.
+              </p>
+              {blockedInScope.length === 0 ? (
+                <p className="mt-3 text-xs text-slate-600 dark:text-slate-300">
+                  {rosterFetching && !rosterData ? 'Loading…' : 'Every student in this cohort currently has app access ON.'}
+                </p>
+              ) : (
+                <ul className="mt-3 space-y-2">
+                  {blockedInScope.map((student) => (
+                    <li
+                      key={student.id}
+                      className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-amber-100 bg-white px-3 py-2 dark:border-amber-900/60 dark:bg-slate-900"
+                    >
+                      <span className="text-xs text-slate-800 dark:text-slate-100">
+                        <b>{student.name || student.id}</b> · {student.id} · {student.batch || 'Unassigned'} · {student.group || 'Unassigned'}
+                      </span>
+                      <StudentAccessToggle
+                        studentId={student.id}
+                        studentName={student.name}
+                        enabled={false}
+                        known
+                      />
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           )}
 
@@ -803,6 +852,7 @@ export default function MissedTrackerReport({ scopedBatch, scopedGroup } = {}) {
               <thead>
                 <tr className="bg-slate-50 text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-500 dark:bg-slate-800/70 dark:text-slate-400">
                   <th className="sticky left-0 z-20 min-w-56 border-b border-r border-slate-200 bg-slate-50 px-5 py-3 text-left dark:border-slate-700 dark:bg-slate-800">Student</th>
+                  <th className="min-w-28 border-b border-r border-slate-200 px-3 py-3 text-center dark:border-slate-700" title="Student App login/access ON or OFF">Access</th>
                   <th className="min-w-24 border-b border-slate-200 px-3 py-3 text-left dark:border-slate-700">Group</th>
                   <th className="min-w-32 border-b border-l border-slate-200 px-3 py-3 text-left dark:border-slate-700">Start</th>
                   {dates.map((day) => (
@@ -814,7 +864,6 @@ export default function MissedTrackerReport({ scopedBatch, scopedGroup } = {}) {
                   <th className="min-w-20 border-b border-l border-slate-200 px-2 py-3 text-center dark:border-slate-700">Submitted</th>
                   <th className="min-w-24 border-b border-l border-slate-200 px-2 py-3 text-center dark:border-slate-700" title="Leave / absent days the student reported himself">Leave/Absent</th>
                   <th className="min-w-20 border-b border-l border-slate-200 px-2 py-3 text-center dark:border-slate-700">Missed</th>
-                  <th className="min-w-24 border-b border-l border-slate-200 px-2 py-3 text-center dark:border-slate-700" title="App access — turn it off when a student stops studying">Access</th>
                 </tr>
               </thead>
               <tbody>
@@ -830,6 +879,13 @@ export default function MissedTrackerReport({ scopedBatch, scopedGroup } = {}) {
                         {row.studentName}
                       </Link>
                       <div className="text-xs text-slate-500">{row.studentId} · {row.batch}</div>
+                    </td>
+                    <td className="border-b border-r border-slate-100 px-3 py-3 text-center align-middle dark:border-slate-800">
+                      <StudentAccessToggle
+                        studentId={row.studentId}
+                        studentName={row.studentName}
+                        {...accessFor(row)}
+                      />
                     </td>
                     <td className="border-b border-slate-100 px-3 py-3 text-xs text-slate-600 dark:border-slate-800 dark:text-slate-300">{row.group}</td>
                     <td className="border-b border-l border-slate-100 px-3 py-3 text-xs dark:border-slate-800">
@@ -932,13 +988,6 @@ export default function MissedTrackerReport({ scopedBatch, scopedGroup } = {}) {
                     </td>
                     <td className="border-b border-l border-slate-100 px-2 py-3 text-center dark:border-slate-800">
                       <span className="inline-flex min-w-9 justify-center rounded-full bg-rose-100 px-2.5 py-1 font-bold text-rose-700 dark:bg-rose-950/50 dark:text-rose-300">{row.missedDays}</span>
-                    </td>
-                    <td className="border-b border-l border-slate-100 px-2 py-3 text-center align-middle dark:border-slate-800">
-                      <StudentAccessToggle
-                        studentId={row.studentId}
-                        studentName={row.studentName}
-                        {...accessFor(row.studentId)}
-                      />
                     </td>
                   </tr>
                 ))}

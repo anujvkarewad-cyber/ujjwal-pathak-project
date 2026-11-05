@@ -21,6 +21,7 @@ This closes that loop in one screen:
 """
 from __future__ import annotations
 
+import asyncio
 import logging
 import re
 import secrets
@@ -31,6 +32,7 @@ from pydantic import BaseModel, ConfigDict, Field
 
 import login_failures
 import password_sheet_sync
+import sheet_coverage
 from auth import hash_password, require_mentor
 from db import ANALYTICS_AUDIT_SYNC, STUDENT_ACCOUNTS, get_db
 from routers.test_history import _bucket, _group_text
@@ -155,7 +157,16 @@ async def _accounts_and_states(db, rows: list, only: set | None = None) -> tuple
             continue
         accounts[sid] = acc
         docs.append(acc)
-    coverage = password_sheet_sync.coverage_of(rows or [], docs)
+    if only is None:
+        # Whole-ledger classification. It is served from the shared cache so
+        # this screen opens at once instead of standing still for the two
+        # minutes a full bcrypt sweep used to take.
+        from routers import student_auth as sa
+
+        coverage = await sheet_coverage.coverage_for(sa._coverage_payload, refresh=False)
+    else:
+        # A search covers a handful of students - classify just those.
+        coverage = await asyncio.to_thread(password_sheet_sync.coverage_of, rows or [], docs)
     state_of = {p["studentId"]: p["state"] for p in coverage.get("pending", [])}
     return accounts, state_of, coverage
 
