@@ -3,15 +3,11 @@ name: deploy-cloud-run
 # One deploy path, same as scripts/deploy.sh: contract guard → backend tests →
 # build gate → Cloud Build image → Cloud Run → verify the live URL.
 #
-# Auth (no long-lived keys preferred):
-#   Variables:  GCP_PROJECT (required), GCP_REGION (default asia-south1),
-#               GCP_SERVICE (default ujjwal-pathak-app),
-#               GCP_WORKLOAD_IDENTITY_PROVIDER + GCP_DEPLOY_SERVICE_ACCOUNT
-#   Secret:     GCP_SA_KEY — only used when the workload-identity variables are
-#               absent (JSON key of a service account). Never commit it.
-#
-# Until GCP_PROJECT is set the job is skipped, so the workflow cannot fail red on
-# a repo that has not been configured yet.
+# Auth: keyless workload identity, configured in the project already
+# (pool "github", provider "github", service account github-deploy@ump-dashboard).
+# The identifiers below are defaults, not secrets; every one can be overridden
+# with a repository variable of the same name (Settings → Variables) — useful if
+# the service is ever renamed or moved to another project.
 
 on:
   workflow_dispatch:
@@ -38,6 +34,7 @@ on:
       - "scripts/**"
       - "content-pipeline/dist/**"
       - "Dockerfile"
+      - ".github/workflows/deploy-cloud-run.yml"
 
 permissions:
   contents: read
@@ -53,7 +50,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 45
-    if: github.event_name == 'workflow_dispatch' || vars.GCP_PROJECT != ''
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -62,21 +58,21 @@ jobs:
           fetch-depth: 1
 
       - name: Auth to Google Cloud (workload identity)
-        if: vars.GCP_WORKLOAD_IDENTITY_PROVIDER != '' && vars.GCP_DEPLOY_SERVICE_ACCOUNT != ''
+        if: vars.GCP_USE_KEY != 'true'
         uses: google-github-actions/auth@v2
         with:
-          workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
-          service_account: ${{ vars.GCP_DEPLOY_SERVICE_ACCOUNT }}
+          workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER || 'projects/566076646952/locations/global/workloadIdentityPools/github/providers/github' }}
+          service_account: ${{ vars.GCP_DEPLOY_SERVICE_ACCOUNT || 'github-deploy@ump-dashboard.iam.gserviceaccount.com' }}
 
       - name: Auth to Google Cloud (service-account key)
-        if: vars.GCP_WORKLOAD_IDENTITY_PROVIDER == '' || vars.GCP_DEPLOY_SERVICE_ACCOUNT == ''
+        if: vars.GCP_USE_KEY == 'true'
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
 
       - uses: google-github-actions/setup-gcloud@v2
         with:
-          project_id: ${{ vars.GCP_PROJECT }}
+          project_id: ${{ vars.GCP_PROJECT || 'ump-dashboard' }}
 
       - name: Show what will be deployed
         run: |
@@ -107,7 +103,7 @@ jobs:
 
       - name: Deploy
         env:
-          PROJECT: ${{ vars.GCP_PROJECT }}
+          PROJECT: ${{ vars.GCP_PROJECT || 'ump-dashboard' }}
           REGION: ${{ vars.GCP_REGION || 'asia-south1' }}
           SERVICE: ${{ vars.GCP_SERVICE || 'ujjwal-pathak-app' }}
         run: ./scripts/deploy.sh "${{ github.event.inputs.target || 'both' }}"
