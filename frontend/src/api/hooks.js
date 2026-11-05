@@ -1,30 +1,39 @@
 // React Query hooks. All pages/components consume data via these hooks.
 // Swapping to Google Apps Script requires zero changes here — only api/config.js.
 
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import * as studentsApi from './students';
-import * as dashboardApi from './dashboard';
-import * as trackerApi from './tracker';
-import * as leaderboardApi from './leaderboard';
-import * as announcementsApi from './announcements';
-import * as notesApi from './notes';
-import * as reportsApi from './reports';
-import * as mentorApi from './mentor';
-import * as feedbackApi from './feedback';
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import * as studentsApi from "./students";
+import * as dashboardApi from "./dashboard";
+import * as trackerApi from "./tracker";
+import * as leaderboardApi from "./leaderboard";
+import * as announcementsApi from "./announcements";
+import * as notesApi from "./notes";
+import * as reportsApi from "./reports";
+import * as mentorApi from "./mentor";
+import * as feedbackApi from "./feedback";
+import * as studentAdminApi from "./studentAdmin";
 
 // ── Students ────────────────────────────────────────────────────────────
 export const useStudents = ({ enabled = true } = {}) =>
-  useQuery({ queryKey: ['students'], queryFn: studentsApi.getStudents, enabled });
+  useQuery({
+    queryKey: ["students"],
+    queryFn: studentsApi.getStudents,
+    enabled,
+  });
 
 export const useStudent = (id) =>
-  useQuery({ queryKey: ['student', id], queryFn: () => studentsApi.getStudentById(id), enabled: !!id });
+  useQuery({
+    queryKey: ["student", id],
+    queryFn: () => studentsApi.getStudentById(id),
+    enabled: !!id,
+  });
 
 export const useAddMentorNote = () => {
   const qc = useQueryClient();
   return useMutation({
     mutationFn: ({ id, note }) => studentsApi.addMentorNote(id, note),
     onSuccess: (_data, vars) => {
-      qc.invalidateQueries({ queryKey: ['student', vars.id] });
+      qc.invalidateQueries({ queryKey: ["student", vars.id] });
     },
   });
 };
@@ -34,34 +43,52 @@ export const useChangeStudentBatch = () => {
   return useMutation({
     mutationFn: studentsApi.changeStudentBatch,
     onSuccess: (_data, vars) => {
-      qc.invalidateQueries({ queryKey: ['student', vars.id] });
-      qc.invalidateQueries({ queryKey: ['students'] });
-      qc.invalidateQueries({ queryKey: ['dashboard'] });
-      qc.invalidateQueries({ queryKey: ['tracker'] });
+      qc.invalidateQueries({ queryKey: ["student", vars.id] });
+      qc.invalidateQueries({ queryKey: ["students"] });
+      qc.invalidateQueries({ queryKey: ["dashboard"] });
+      qc.invalidateQueries({ queryKey: ["tracker"] });
     },
   });
 };
 
 // ── Dashboard ───────────────────────────────────────────────────────────
 export const useDashboardKpis = () =>
-  useQuery({ queryKey: ['dashboard', 'kpis'], queryFn: dashboardApi.getKpis });
+  useQuery({ queryKey: ["dashboard", "kpis"], queryFn: dashboardApi.getKpis });
 export const useRecentActivity = () =>
-  useQuery({ queryKey: ['dashboard', 'recentActivity'], queryFn: dashboardApi.getRecentActivity });
+  useQuery({
+    queryKey: ["dashboard", "recentActivity"],
+    queryFn: dashboardApi.getRecentActivity,
+  });
 export const useWeeklyStudy = () =>
-  useQuery({ queryKey: ['dashboard', 'weeklyStudy'], queryFn: dashboardApi.getWeeklyStudy });
+  useQuery({
+    queryKey: ["dashboard", "weeklyStudy"],
+    queryFn: dashboardApi.getWeeklyStudy,
+  });
 export const useAttendanceTrend = () =>
-  useQuery({ queryKey: ['dashboard', 'attendanceTrend'], queryFn: dashboardApi.getAttendanceTrend });
+  useQuery({
+    queryKey: ["dashboard", "attendanceTrend"],
+    queryFn: dashboardApi.getAttendanceTrend,
+  });
 export const usePerformanceMix = () =>
-  useQuery({ queryKey: ['dashboard', 'performanceMix'], queryFn: dashboardApi.getPerformanceMix });
+  useQuery({
+    queryKey: ["dashboard", "performanceMix"],
+    queryFn: dashboardApi.getPerformanceMix,
+  });
 export const useBatchOverview = () =>
-  useQuery({ queryKey: ['dashboard', 'batchOverview'], queryFn: dashboardApi.getBatchOverview });
+  useQuery({
+    queryKey: ["dashboard", "batchOverview"],
+    queryFn: dashboardApi.getBatchOverview,
+  });
 export const useUpcomingTasks = () =>
-  useQuery({ queryKey: ['dashboard', 'upcomingTasks'], queryFn: dashboardApi.getUpcomingTasks });
+  useQuery({
+    queryKey: ["dashboard", "upcomingTasks"],
+    queryFn: dashboardApi.getUpcomingTasks,
+  });
 
 // ── Daily Tracker ───────────────────────────────────────────────────────
 export const useTrackerDay = ({ dayIndex, batch }) =>
   useQuery({
-    queryKey: ['tracker', dayIndex, batch],
+    queryKey: ["tracker", dayIndex, batch],
     queryFn: () => trackerApi.getTrackerDay({ dayIndex, batch }),
     enabled: dayIndex != null,
     staleTime: 0,
@@ -69,17 +96,22 @@ export const useTrackerDay = ({ dayIndex, batch }) =>
     refetchOnWindowFocus: true,
   });
 
-export const useMissedTrackerReport = ({ from, to, scope = 'range', enabled = true }) =>
+export const useMissedTrackerReport = ({
+  from,
+  to,
+  scope = "range",
+  enabled = true,
+}) =>
   useQuery({
-    queryKey: ['tracker', 'missed-report', scope, from, to],
+    queryKey: ["tracker", "missed-report", scope, from, to],
     queryFn: () => trackerApi.getMissedTrackerReport({ from, to, scope }),
-    enabled: enabled && (scope === 'joined-to-date' || Boolean(from && to)),
+    enabled: enabled && (scope === "joined-to-date" || Boolean(from && to)),
   });
 
 // Leave / absent self-reports for one day (mentor can cancel or override).
 export const useAttendanceDay = ({ date, enabled = true }) =>
   useQuery({
-    queryKey: ['tracker', 'attendance', date],
+    queryKey: ["tracker", "attendance", date],
     queryFn: () => trackerApi.getAttendanceDay({ date }),
     enabled: enabled && Boolean(date),
     staleTime: 15000,
@@ -87,13 +119,13 @@ export const useAttendanceDay = ({ date, enabled = true }) =>
 
 export const useStudentAttendance = (studentId) =>
   useQuery({
-    queryKey: ['tracker', 'attendance', 'student', studentId],
+    queryKey: ["tracker", "attendance", "student", studentId],
     queryFn: () => trackerApi.getStudentAttendance(studentId),
     enabled: Boolean(studentId),
   });
 
 const invalidateTracker = (queryClient) => {
-  queryClient.invalidateQueries({ queryKey: ['tracker'] });
+  queryClient.invalidateQueries({ queryKey: ["tracker"] });
 };
 
 export const useMarkMentorAbsent = () => {
@@ -123,21 +155,34 @@ export const useCancelAttendance = () => {
 // ── Leaderboard ─────────────────────────────────────────────────────────
 // Rank is computed server-side (composite score, unique ranks, per segment), so
 // the period AND the segment are part of the query key.
-export const useLeaderboard = ({ period = 'overall', segment = 'batch', batch, group, attempt } = {}) =>
+export const useLeaderboard = ({
+  period = "overall",
+  segment = "batch",
+  batch,
+  group,
+  attempt,
+} = {}) =>
   useQuery({
-    queryKey: ['leaderboard', period, segment, batch, group, attempt],
-    queryFn: () => leaderboardApi.getLeaderboard({ period, segment, batch, group, attempt }),
+    queryKey: ["leaderboard", period, segment, batch, group, attempt],
+    queryFn: () =>
+      leaderboardApi.getLeaderboard({ period, segment, batch, group, attempt }),
   });
 
 // ── Announcements ───────────────────────────────────────────────────────
 export const useAnnouncements = () =>
-  useQuery({ queryKey: ['announcements'], queryFn: announcementsApi.getAnnouncements });
+  useQuery({
+    queryKey: ["announcements"],
+    queryFn: announcementsApi.getAnnouncements,
+  });
 
 export const useCreateAnnouncement = () => {
   const qc = useQueryClient();
   return useMutation({
     mutationFn: announcementsApi.createAnnouncement,
-    onSuccess: () => { qc.invalidateQueries({ queryKey: ['announcements'] }); qc.invalidateQueries({ queryKey: ['workspace-announcements'] }); },
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ["announcements"] });
+      qc.invalidateQueries({ queryKey: ["workspace-announcements"] });
+    },
   });
 };
 
@@ -145,7 +190,10 @@ export const useTogglePinAnnouncement = () => {
   const qc = useQueryClient();
   return useMutation({
     mutationFn: (id) => announcementsApi.togglePinAnnouncement(id),
-    onSuccess: () => { qc.invalidateQueries({ queryKey: ['announcements'] }); qc.invalidateQueries({ queryKey: ['workspace-announcements'] }); },
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ["announcements"] });
+      qc.invalidateQueries({ queryKey: ["workspace-announcements"] });
+    },
   });
 };
 
@@ -154,23 +202,25 @@ export const useDeleteAnnouncement = () => {
   return useMutation({
     mutationFn: announcementsApi.deleteAnnouncement,
     onSuccess: async (_data, id) => {
-      await qc.cancelQueries({ queryKey: ['announcements'] });
-      qc.setQueryData(['announcements'], (rows = []) => rows.filter((row) => row.id !== id));
-      qc.invalidateQueries({ queryKey: ['announcements'] });
-      qc.invalidateQueries({ queryKey: ['workspace-announcements'] });
+      await qc.cancelQueries({ queryKey: ["announcements"] });
+      qc.setQueryData(["announcements"], (rows = []) =>
+        rows.filter((row) => row.id !== id),
+      );
+      qc.invalidateQueries({ queryKey: ["announcements"] });
+      qc.invalidateQueries({ queryKey: ["workspace-announcements"] });
     },
   });
 };
 
 // ── Notes (PDF study material) ────────────────────────────────────────────
 export const useNotes = () =>
-  useQuery({ queryKey: ['notes'], queryFn: notesApi.getNotes });
+  useQuery({ queryKey: ["notes"], queryFn: notesApi.getNotes });
 
 export const useCreateNote = () => {
   const qc = useQueryClient();
   return useMutation({
     mutationFn: notesApi.createNote,
-    onSuccess: () => qc.invalidateQueries({ queryKey: ['notes'] }),
+    onSuccess: () => qc.invalidateQueries({ queryKey: ["notes"] }),
   });
 };
 
@@ -178,7 +228,7 @@ export const useDeleteNote = () => {
   const qc = useQueryClient();
   return useMutation({
     mutationFn: (id) => notesApi.deleteNote(id),
-    onSuccess: () => qc.invalidateQueries({ queryKey: ['notes'] }),
+    onSuccess: () => qc.invalidateQueries({ queryKey: ["notes"] }),
   });
 };
 
@@ -186,38 +236,46 @@ export const useUpdateNote = () => {
   const qc = useQueryClient();
   return useMutation({
     mutationFn: ({ id, ...payload }) => notesApi.updateNote(id, payload),
-    onSuccess: () => qc.invalidateQueries({ queryKey: ['notes'] }),
+    onSuccess: () => qc.invalidateQueries({ queryKey: ["notes"] }),
   });
 };
 
 // ── Reports ─────────────────────────────────────────────────────────────
 export const useBatchReport = () =>
-  useQuery({ queryKey: ['reports', 'batch'], queryFn: reportsApi.getBatchReport });
+  useQuery({
+    queryKey: ["reports", "batch"],
+    queryFn: reportsApi.getBatchReport,
+  });
 export const useStudentReport = () =>
-  useQuery({ queryKey: ['reports', 'students'], queryFn: reportsApi.getStudentReport });
+  useQuery({
+    queryKey: ["reports", "students"],
+    queryFn: reportsApi.getStudentReport,
+  });
 
 // ── Mentor / Settings ───────────────────────────────────────────────────
 export const useMentorProfile = () =>
-  useQuery({ queryKey: ['mentor'], queryFn: mentorApi.getMentorProfile });
+  useQuery({ queryKey: ["mentor"], queryFn: mentorApi.getMentorProfile });
 
 export const useUpdateMentorProfile = () => {
   const qc = useQueryClient();
   return useMutation({
     mutationFn: mentorApi.updateMentorProfile,
-    onSuccess: () => qc.invalidateQueries({ queryKey: ['mentor'] }),
+    onSuccess: () => qc.invalidateQueries({ queryKey: ["mentor"] }),
   });
 };
 
 export const useNotificationSettings = () =>
-  useQuery({ queryKey: ['notifications'], queryFn: mentorApi.getNotificationSettings });
+  useQuery({
+    queryKey: ["notifications"],
+    queryFn: mentorApi.getNotificationSettings,
+  });
 
 export const useUpdateNotificationSettings = () => {
   const qc = useQueryClient();
 
   return useMutation({
     mutationFn: mentorApi.updateNotificationSettings,
-    onSuccess: () =>
-      qc.invalidateQueries({ queryKey: ['notifications'] }),
+    onSuccess: () => qc.invalidateQueries({ queryKey: ["notifications"] }),
   });
 };
 
@@ -231,9 +289,17 @@ export const useSendFeedback = () => {
 
 export const useStudentFeedback = (studentId) =>
   useQuery({
-    queryKey: ['feedback', studentId],
+    queryKey: ["feedback", studentId],
     queryFn: () => feedbackApi.getFeedback(studentId),
     enabled: !!studentId,
+  });
+
+// ── Access OFF students ─────────────────────────────────────────────────
+export const useAccessOffStudents = ({ enabled = true } = {}) =>
+  useQuery({
+    queryKey: ["access-off-students"],
+    queryFn: studentAdminApi.getAccessOffStudents,
+    enabled,
   });
 
 export const useMarkFeedbackRead = () => {
@@ -242,8 +308,7 @@ export const useMarkFeedbackRead = () => {
   return useMutation({
     mutationFn: feedbackApi.markFeedbackRead,
     onSuccess: () => {
-      qc.invalidateQueries({ queryKey: ['feedback'] });
+      qc.invalidateQueries({ queryKey: ["feedback"] });
     },
   });
 };
-

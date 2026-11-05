@@ -1,42 +1,173 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 import {
-  LayoutDashboard, Users, Settings, GraduationCap, Sparkles, ListChecks,
-  Grid3X3, BookOpenCheck, Layers, FlaskConical, PackageCheck, History,
-  BarChart3, UserSearch, GitCompareArrows, School, Table2, UserX, TrendingUp, CheckSquare, Inbox, CalendarRange,
-} from 'lucide-react';
-import { cn } from '@/utils/format';
+  LayoutDashboard,
+  Users,
+  Settings,
+  GraduationCap,
+  Sparkles,
+  ListChecks,
+  Grid3X3,
+  BookOpenCheck,
+  Layers,
+  FlaskConical,
+  PackageCheck,
+  History,
+  BarChart3,
+  UserSearch,
+  GitCompareArrows,
+  School,
+  Table2,
+  UserX,
+  TrendingUp,
+  CheckSquare,
+  Inbox,
+  CalendarRange,
+  PowerOff,
+} from "lucide-react";
+import { cn } from "@/utils/format";
 
 // Cohort tools live inside Batch → Group. Do not duplicate them globally.
 const NAV = [
-  { to: '/', label: 'Dashboard', icon: LayoutDashboard, testid: 'nav-dashboard' },
-  { to: '/batches', label: 'Batches & groups', icon: Users, testid: 'nav-batches' },
-  { to: '/target-plans', label: 'Target Plans', icon: CalendarRange, testid: 'nav-target-plans' },
-  { to: '/notes-inbox', label: 'Notes Inbox', icon: Inbox, testid: 'nav-notes-inbox' },
-  { to: '/sheet-sources', label: 'Sheet Sources', icon: Table2, testid: 'nav-sheet-sources' },
-  { to: '/settings', label: 'Settings', icon: Settings, testid: 'nav-settings' },
+  {
+    to: "/",
+    label: "Dashboard",
+    icon: LayoutDashboard,
+    testid: "nav-dashboard",
+  },
+  {
+    to: "/batches",
+    label: "Batches & groups",
+    icon: Users,
+    testid: "nav-batches",
+  },
+  {
+    to: "/target-plans",
+    label: "Target Plans",
+    icon: CalendarRange,
+    testid: "nav-target-plans",
+  },
+  {
+    to: "/access-off-students",
+    label: "Access OFF Students",
+    icon: PowerOff,
+    testid: "nav-access-off-students",
+  },
+  {
+    to: "/notes-inbox",
+    label: "Notes Inbox",
+    icon: Inbox,
+    testid: "nav-notes-inbox",
+  },
+  {
+    to: "/sheet-sources",
+    label: "Sheet Sources",
+    icon: Table2,
+    testid: "nav-sheet-sources",
+  },
+  {
+    to: "/settings",
+    label: "Settings",
+    icon: Settings,
+    testid: "nav-settings",
+  },
 ];
 
 // NEW — AI Content review & publishing center (additive; existing nav untouched)
 const AI_CONTENT_NAV = [
-  { to: '/ai-content/queue', label: 'Review Queue', icon: ListChecks, testid: 'nav-ai-queue' },
-  { to: '/ai-content/coverage', label: 'Chapter Coverage', icon: Grid3X3, testid: 'nav-ai-coverage' },
-  { to: '/ai-content/questions', label: 'Question Review', icon: BookOpenCheck, testid: 'nav-ai-questions' },
-  { to: '/ai-content/scenarios', label: 'Scenario Review', icon: Layers, testid: 'nav-ai-scenarios' },
-  { to: '/ai-content/references', label: 'Calibration References', icon: FlaskConical, testid: 'nav-ai-references' },
-  { to: '/ai-content/releases', label: 'Approved Releases', icon: PackageCheck, testid: 'nav-ai-releases' },
-  { to: '/ai-content/audit', label: 'Audit History', icon: History, testid: 'nav-ai-audit' },
+  {
+    to: "/ai-content/queue",
+    label: "Review Queue",
+    icon: ListChecks,
+    testid: "nav-ai-queue",
+  },
+  {
+    to: "/ai-content/coverage",
+    label: "Chapter Coverage",
+    icon: Grid3X3,
+    testid: "nav-ai-coverage",
+  },
+  {
+    to: "/ai-content/questions",
+    label: "Question Review",
+    icon: BookOpenCheck,
+    testid: "nav-ai-questions",
+  },
+  {
+    to: "/ai-content/scenarios",
+    label: "Scenario Review",
+    icon: Layers,
+    testid: "nav-ai-scenarios",
+  },
+  {
+    to: "/ai-content/references",
+    label: "Calibration References",
+    icon: FlaskConical,
+    testid: "nav-ai-references",
+  },
+  {
+    to: "/ai-content/releases",
+    label: "Approved Releases",
+    icon: PackageCheck,
+    testid: "nav-ai-releases",
+  },
+  {
+    to: "/ai-content/audit",
+    label: "Audit History",
+    icon: History,
+    testid: "nav-ai-audit",
+  },
 ];
 
 // NEW — student analytics (additive)
 const ANALYTICS_NAV = [
-  { to: '/analytics', label: 'All Students Overview', icon: BarChart3, testid: 'nav-an-overview' },
-  { to: '/analytics/students', label: 'Student Profile Analysis', icon: UserSearch, testid: 'nav-an-students' },
-  { to: '/analytics/groups', label: 'Group I / Group II', icon: GitCompareArrows, testid: 'nav-an-groups' },
-  { to: '/analytics/subjects', label: 'Subject Analysis', icon: School, testid: 'nav-an-subjects' },
-  { to: '/analytics/heatmap', label: 'Chapter Heatmap', icon: Table2, testid: 'nav-an-heatmap' },
-  { to: '/analytics/weak', label: 'Weak & At-Risk', icon: UserX, testid: 'nav-an-weak' },
-  { to: '/analytics/improvement', label: 'Improvement Tracking', icon: TrendingUp, testid: 'nav-an-improvement' },
-  { to: '/analytics/followups', label: 'Follow-up Actions', icon: CheckSquare, testid: 'nav-an-followups' },
+  {
+    to: "/analytics",
+    label: "All Students Overview",
+    icon: BarChart3,
+    testid: "nav-an-overview",
+  },
+  {
+    to: "/analytics/students",
+    label: "Student Profile Analysis",
+    icon: UserSearch,
+    testid: "nav-an-students",
+  },
+  {
+    to: "/analytics/groups",
+    label: "Group I / Group II",
+    icon: GitCompareArrows,
+    testid: "nav-an-groups",
+  },
+  {
+    to: "/analytics/subjects",
+    label: "Subject Analysis",
+    icon: School,
+    testid: "nav-an-subjects",
+  },
+  {
+    to: "/analytics/heatmap",
+    label: "Chapter Heatmap",
+    icon: Table2,
+    testid: "nav-an-heatmap",
+  },
+  {
+    to: "/analytics/weak",
+    label: "Weak & At-Risk",
+    icon: UserX,
+    testid: "nav-an-weak",
+  },
+  {
+    to: "/analytics/improvement",
+    label: "Improvement Tracking",
+    icon: TrendingUp,
+    testid: "nav-an-improvement",
+  },
+  {
+    to: "/analytics/followups",
+    label: "Follow-up Actions",
+    icon: CheckSquare,
+    testid: "nav-an-followups",
+  },
 ];
 
 export default function Sidebar({ open, onClose }) {
@@ -52,8 +183,8 @@ export default function Sidebar({ open, onClose }) {
       <aside
         data-testid="sidebar"
         className={cn(
-          'fixed lg:static inset-y-0 left-0 z-40 w-72 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col transform transition-transform duration-200',
-          open ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
+          "fixed lg:static inset-y-0 left-0 z-40 w-72 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col transform transition-transform duration-200",
+          open ? "translate-x-0" : "-translate-x-full lg:translate-x-0",
         )}
       >
         <div className="h-16 flex items-center gap-3 px-6 border-b border-slate-200 dark:border-slate-800">
@@ -61,20 +192,43 @@ export default function Sidebar({ open, onClose }) {
             <GraduationCap className="w-5 h-5 text-white" strokeWidth={2.2} />
           </div>
           <div className="leading-tight">
-            <div className="font-heading font-bold text-[15px] text-slate-900 dark:text-white">Ujjwal Pathak</div>
-            <div className="text-[11px] uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">Mentorship</div>
+            <div className="font-heading font-bold text-[15px] text-slate-900 dark:text-white">
+              Ujjwal Pathak
+            </div>
+            <div className="text-[11px] uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
+              Mentorship
+            </div>
           </div>
         </div>
 
         <nav className="flex-1 overflow-y-auto px-3 py-5 space-y-1">
           {[
-            { title: 'Main', items: NAV },
-            { title: 'Global content administration', items: AI_CONTENT_NAV, icon: Sparkles, collapsed: true },
-            { title: 'Global analytics', items: ANALYTICS_NAV, collapsed: true },
+            { title: "Main", items: NAV },
+            {
+              title: "Global content administration",
+              items: AI_CONTENT_NAV,
+              icon: Sparkles,
+              collapsed: true,
+            },
+            {
+              title: "Global analytics",
+              items: ANALYTICS_NAV,
+              collapsed: true,
+            },
           ].map(({ title, items, icon: GroupIcon, collapsed }) => (
-            <details key={title} open={collapsed ? undefined : true} className="group">
-              <summary className={`${collapsed ? 'cursor-pointer' : 'hidden'} px-3 pt-3 pb-2 text-[10px] uppercase tracking-[0.22em] font-semibold text-slate-400 dark:text-slate-500`}>{title}</summary>
-              <div className={`${collapsed ? 'hidden' : ''} px-3 pt-3 pb-2 text-[10px] uppercase tracking-[0.22em] font-semibold text-slate-400 dark:text-slate-500 flex items-center gap-1.5`}>
+            <details
+              key={title}
+              open={collapsed ? undefined : true}
+              className="group"
+            >
+              <summary
+                className={`${collapsed ? "cursor-pointer" : "hidden"} px-3 pt-3 pb-2 text-[10px] uppercase tracking-[0.22em] font-semibold text-slate-400 dark:text-slate-500`}
+              >
+                {title}
+              </summary>
+              <div
+                className={`${collapsed ? "hidden" : ""} px-3 pt-3 pb-2 text-[10px] uppercase tracking-[0.22em] font-semibold text-slate-400 dark:text-slate-500 flex items-center gap-1.5`}
+              >
                 {GroupIcon && <GroupIcon className="w-3 h-3" />}
                 {title}
               </div>
@@ -82,16 +236,16 @@ export default function Sidebar({ open, onClose }) {
                 <NavLink
                   key={to}
                   to={to}
-                  end={to === '/'}
+                  end={to === "/"}
                   onClick={onClose}
                   data-testid={testid}
                   className={({ isActive }) =>
                     cn(
-                      'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium',
-                      'transition-colors duration-150',
+                      "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium",
+                      "transition-colors duration-150",
                       isActive
-                        ? 'bg-[#2563EB] text-white shadow-sm shadow-blue-500/25'
-                        : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-white'
+                        ? "bg-[#2563EB] text-white shadow-sm shadow-blue-500/25"
+                        : "text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-white",
                     )
                   }
                 >
@@ -111,8 +265,12 @@ export default function Sidebar({ open, onClose }) {
               className="w-10 h-10 rounded-full object-cover ring-2 ring-slate-100 dark:ring-slate-800"
             />
             <div className="min-w-0">
-              <div className="font-semibold text-sm text-slate-900 dark:text-white truncate">Ujjwal Pathak</div>
-              <div className="text-xs text-slate-500 dark:text-slate-400 truncate">Mentor · CA</div>
+              <div className="font-semibold text-sm text-slate-900 dark:text-white truncate">
+                Ujjwal Pathak
+              </div>
+              <div className="text-xs text-slate-500 dark:text-slate-400 truncate">
+                Mentor · CA
+              </div>
             </div>
           </div>
         </div>
