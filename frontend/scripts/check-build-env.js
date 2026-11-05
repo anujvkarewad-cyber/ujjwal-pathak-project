@@ -9,6 +9,17 @@
 // real data (this is exactly how student profiles broke on 4 Nov 2026).
 //
 // A build without the URL is therefore refused here instead of shipping silently.
+// Read the same files CRA will read. Without this the guard only saw the shell
+// environment, so a clean checkout (and `scripts/deploy.sh`, which runs this as
+// gate 0c) failed even though .env.production has the URL. Exported variables
+// still win: dotenv never overwrites an existing process.env value.
+try {
+  require('dotenv').config({ path: ['.env.production', '.env'] });
+} catch (error) {
+  console.error('\n✗ Build blocked: cannot load .env.production — run npm install (dotenv) first.\n');
+  process.exit(1);
+}
+
 const url = (process.env.REACT_APP_APPS_SCRIPT_URL || '').trim();
 
 const fail = (message) => {
