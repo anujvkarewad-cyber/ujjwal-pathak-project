@@ -20,7 +20,9 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useMissedTrackerReport } from '@/api/hooks';
 import { getTrackerStartConfig, saveTrackerStartConfig } from '@/api/tracker';
 import { removeStudent, restoreStudent, getRemovedStudents } from '@/api/studentAdmin';
+import { getWorkspaceRoster } from '@/api/mentorWorkspace';
 import { Skeleton } from '@/components/common/Skeleton';
+import StudentAccessToggle from '@/components/students/StudentAccessToggle';
 import AttendanceModal from '@/components/tracker/AttendanceModal';
 import {
   ALL_TRACKER_BATCHES,
@@ -370,6 +372,32 @@ export default function MissedTrackerReport({ scopedBatch, scopedGroup } = {}) {
       queryClient.invalidateQueries({ queryKey: ['tracker'] });
     },
   });
+  // The grid carries the access switch, so it needs the live access state. The
+  // tracker report does not include it; the roster does, and sharing the
+  // ['workspace-roster'] key means the Batches workspace and this table reuse one
+  // request. `mongoReady` false = no app account yet, so there is nothing to switch.
+  const { data: rosterData } = useQuery({
+    queryKey: ['workspace-roster'],
+    queryFn: getWorkspaceRoster,
+    staleTime: 60000,
+  });
+  const accessById = useMemo(() => {
+    const map = new Map();
+    for (const student of rosterData?.students || []) {
+      map.set(String(student.id || '').trim().toUpperCase(), {
+        enabled: student.accessEnabled !== false,
+        known: Boolean(student.mongoReady),
+      });
+    }
+    return map;
+  }, [rosterData]);
+  // Roster still loading: show the switch (absorbed default is ON) instead of a
+  // false "no app account". Roster loaded but this id absent: nothing to switch.
+  const accessFor = (studentId) => {
+    const entry = accessById.get(String(studentId || '').trim().toUpperCase());
+    if (entry) return entry;
+    return { enabled: true, known: !rosterData };
+  };
   const { data: removedData, isFetching: removedFetching } = useQuery({
     queryKey: ['tracker-removed-students'],
     queryFn: getRemovedStudents,
@@ -786,6 +814,7 @@ export default function MissedTrackerReport({ scopedBatch, scopedGroup } = {}) {
                   <th className="min-w-20 border-b border-l border-slate-200 px-2 py-3 text-center dark:border-slate-700">Submitted</th>
                   <th className="min-w-24 border-b border-l border-slate-200 px-2 py-3 text-center dark:border-slate-700" title="Leave / absent days the student reported himself">Leave/Absent</th>
                   <th className="min-w-20 border-b border-l border-slate-200 px-2 py-3 text-center dark:border-slate-700">Missed</th>
+                  <th className="min-w-24 border-b border-l border-slate-200 px-2 py-3 text-center dark:border-slate-700" title="App access — turn it off when a student stops studying">Access</th>
                 </tr>
               </thead>
               <tbody>
@@ -904,11 +933,18 @@ export default function MissedTrackerReport({ scopedBatch, scopedGroup } = {}) {
                     <td className="border-b border-l border-slate-100 px-2 py-3 text-center dark:border-slate-800">
                       <span className="inline-flex min-w-9 justify-center rounded-full bg-rose-100 px-2.5 py-1 font-bold text-rose-700 dark:bg-rose-950/50 dark:text-rose-300">{row.missedDays}</span>
                     </td>
+                    <td className="border-b border-l border-slate-100 px-2 py-3 text-center align-middle dark:border-slate-800">
+                      <StudentAccessToggle
+                        studentId={row.studentId}
+                        studentName={row.studentName}
+                        {...accessFor(row.studentId)}
+                      />
+                    </td>
                   </tr>
                 ))}
                 {visibleItems.length === 0 && (
                   <tr>
-                    <td colSpan={dates.length + 6} className="px-5 py-10 text-center text-slate-500 dark:text-slate-400">
+                    <td colSpan={dates.length + 7} className="px-5 py-10 text-center text-slate-500 dark:text-slate-400">
                       {missedOnly && cohortReport?.studentsWithMissedDays === 0 && cohortReport?.rosterCount > 0
                         ? `Every student in ${selectedBatchLabel} · ${selectedGroupLabel} submitted on every expected day in this period.`
                         : 'No students match the selected batch, group, search or display filter.'}

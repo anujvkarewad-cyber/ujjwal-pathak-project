@@ -1,0 +1,127 @@
+name: deploy-cloud-run
+
+# One deploy path, same as scripts/deploy.sh: contract guard → backend tests →
+# build gate → Cloud Build image → Cloud Run → verify the live URL.
+#
+# Auth (no long-lived keys preferred):
+#   Variables:  GCP_PROJECT (required), GCP_REGION (default asia-south1),
+#               GCP_SERVICE (default ujjwal-pathak-app),
+#               GCP_WORKLOAD_IDENTITY_PROVIDER + GCP_DEPLOY_SERVICE_ACCOUNT
+#   Secret:     GCP_SA_KEY — only used when the workload-identity variables are
+#               absent (JSON key of a service account). Never commit it.
+#
+# Until GCP_PROJECT is set the job is skipped, so the workflow cannot fail red on
+# a repo that has not been configured yet.
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: "Branch, tag or SHA to deploy (blank = the branch you dispatched from)"
+        required: false
+        default: ""
+      target:
+        description: "What to ship"
+        type: choice
+        options: [both, frontend, backend]
+        default: both
+  push:
+    branches: [main]
+    paths:
+      - "backend/**"
+      - "frontend/src/**"
+      - "frontend/public/**"
+      - "frontend/package.json"
+      - "frontend/package-lock.json"
+      - "frontend/scripts/**"
+      - "frontend/.env.production"
+      - "scripts/**"
+      - "content-pipeline/dist/**"
+      - "Dockerfile"
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  # A second deploy never starts while one is running — Cloud Run updates would
+  # otherwise race and the older image could land last.
+  group: deploy-cloud-run
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    if: github.event_name == 'workflow_dispatch' || vars.GCP_PROJECT != ''
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.ref || github.ref }}
+          fetch-depth: 1
+
+      - name: Auth to Google Cloud (workload identity)
+        if: vars.GCP_WORKLOAD_IDENTITY_PROVIDER != '' && vars.GCP_DEPLOY_SERVICE_ACCOUNT != ''
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ vars.GCP_DEPLOY_SERVICE_ACCOUNT }}
+
+      - name: Auth to Google Cloud (service-account key)
+        if: vars.GCP_WORKLOAD_IDENTITY_PROVIDER == '' || vars.GCP_DEPLOY_SERVICE_ACCOUNT == ''
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - uses: google-github-actions/setup-gcloud@v2
+        with:
+          project_id: ${{ vars.GCP_PROJECT }}
+
+      - name: Show what will be deployed
+        run: |
+          echo "ref:    $(git rev-parse HEAD)"
+          echo "commit: $(git log -1 --pretty=%s)"
+          echo "target: ${{ github.event.inputs.target || 'both' }}"
+
+      # The deploy gates need both toolchains: pytest for the backend suite,
+      # npm for the SPA build-env guard (gate 0c reads .env.production).
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: backend/requirements*.txt
+
+      - name: Install backend dependencies
+        run: pip install -r backend/requirements.txt -r backend/requirements-dev.txt
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm ci --no-audit --no-fund
+
+      - name: Deploy
+        env:
+          PROJECT: ${{ vars.GCP_PROJECT }}
+          REGION: ${{ vars.GCP_REGION || 'asia-south1' }}
+          SERVICE: ${{ vars.GCP_SERVICE || 'ujjwal-pathak-app' }}
+        run: ./scripts/deploy.sh "${{ github.event.inputs.target || 'both' }}"
+
+      - name: Summarise
+        if: always()
+        run: |
+          {
+            echo "### Cloud Run deploy"
+            echo ""
+            echo "- commit: \`$(git rev-parse --short HEAD)\` $(git log -1 --pretty=%s)"
+            echo "- target: \`${{ github.event.inputs.target || 'both' }}\`"
+            echo "- result: \`${{ job.status }}\`"
+            echo ""
+            echo "The run ends with \`scripts/verify-deploy.sh\`, which fails the job if the"
+            echo "served bundle is stale (it asserts the \`access-toggle-\` marker is present)."
+          } >> "$GITHUB_STEP_SUMMARY"

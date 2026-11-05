@@ -47,6 +47,12 @@ else
 
   # 2d. the removed review detour must be gone
   if [[ "$js" == *"Review reply"* ]]; then bad "old 'Review reply' detour is still in the bundle"; else ok "old 'Review reply' detour removed"; fi
+
+  # 2e. per-student access switch in Daily tracker · Dates (the data-testid prefix
+  # survives minification, so this is proof the SPA was built from current source)
+  if [[ "$js" == *"access-toggle-"* ]]; then ok "per-student access switch shipped"; else bad "per-student access switch MISSING — an older SPA is still being served"; fi
+  # 2f. advisory only: the old batch-wide pill must not come back
+  if [[ "$js" == *"ON/OFF"* ]]; then echo "  ! advisory: a batch-wide 'ON/OFF' control appears in this bundle — confirm it is not the removed batch access switch"; fi
 fi
 
 # 3. backend surface — openapi.json is the authoritative route list
