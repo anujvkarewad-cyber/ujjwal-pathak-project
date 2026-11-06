@@ -108,7 +108,10 @@ jobs:
           SERVICE: ${{ vars.GCP_SERVICE || 'ujjwal-pathak-app' }}
         # tee so the failing stage can be reported as an annotation below.
         # The runner runs bash with -o pipefail, so the exit code still propagates.
-        run: ./scripts/deploy.sh "${{ github.event.inputs.target || 'both' }}" 2>&1 | tee "$RUNNER_TEMP/deploy.log"
+        shell: bash
+        run: |
+          set -o pipefail
+          ./scripts/deploy.sh "${{ github.event.inputs.target || 'both' }}" 2>&1 | tee "$RUNNER_TEMP/deploy.log"
 
       # Run logs are only downloadable from a host some clients cannot reach, so
       # the last lines of the deploy are echoed as an error annotation. That makes

@@ -49,7 +49,16 @@ live_image() {
     --format='value(spec.template.spec.containers[0].image)'
 }
 live_digest() {
-  gcloud artifacts docker images describe "$(live_image)" --project="$PROJECT" \
+  local image
+  image="$(live_image)"
+  # Cloud Run commonly returns the deployed image as TAG@sha256:DIGEST.
+  # Use that pinned digest directly; Artifact Registry may no longer resolve
+  # an old tag even though Cloud Run is still serving the digest.
+  if [[ "$image" == *@sha256:* ]]; then
+    printf '%s\n' "${image##*@}"
+    return 0
+  fi
+  gcloud artifacts docker images describe "$image" --project="$PROJECT" \
     --format='value(image_summary.digest)'
 }
 
