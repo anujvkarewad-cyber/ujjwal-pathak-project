@@ -71,6 +71,3 @@ export const getCoverage = (refresh = false) =>
     `/api/student-auth/students/password-coverage${refresh ? "?refresh=1" : ""}`,
   );
 
-// Students whose app access is OFF (mentor blocked them). Used by the
-// "Access Off" tab in the sidebar so the mentor can review and re-enable them.
-export const getAccessOffStudents = () =>
