@@ -22,6 +22,7 @@ import {
   CheckSquare,
   Inbox,
   CalendarRange,
+  PowerOff,
 } from "lucide-react";
 import { cn } from "@/utils/format";
 
@@ -44,6 +45,12 @@ const NAV = [
     label: "Target Plans",
     icon: CalendarRange,
     testid: "nav-target-plans",
+  },
+  {
+    to: "/access-off-students",
+    label: "Access OFF Students",
+    icon: PowerOff,
+    testid: "nav-access-off-students",
   },
   {
     to: "/notes-inbox",

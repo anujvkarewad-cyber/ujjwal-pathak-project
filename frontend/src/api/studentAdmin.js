@@ -48,6 +48,16 @@ export const getBatchDrift = (refresh = false) =>
     `/api/student-auth/students/batch-drift${refresh ? "?refresh=1" : ""}`,
   );
 
+// Students whose app access is OFF (mentor blocked them). Used by the
+// "Access Off" tab in the sidebar so the mentor can review and re-enable them.
+export const getAccessOffStudents = () =>
+  backendApiCall("/api/student-dashboard/students/access-off", {
+    method: "GET",
+  }).then((res) => ({
+    students: res.students || [],
+    count: res.count || 0,
+  }));
+
 export const applyBatchDrift = (studentIds) =>
   backendApiCall("/api/student-auth/students/batch-drift/apply", {
     method: "POST",

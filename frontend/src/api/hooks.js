@@ -11,6 +11,7 @@ import * as notesApi from "./notes";
 import * as reportsApi from "./reports";
 import * as mentorApi from "./mentor";
 import * as feedbackApi from "./feedback";
+import * as studentAdminApi from "./studentAdmin";
 
 // ── Students ────────────────────────────────────────────────────────────
 export const useStudents = ({ enabled = true } = {}) =>
@@ -291,6 +292,14 @@ export const useStudentFeedback = (studentId) =>
     queryKey: ["feedback", studentId],
     queryFn: () => feedbackApi.getFeedback(studentId),
     enabled: !!studentId,
+  });
+
+// ── Access OFF students ─────────────────────────────────────────────────
+export const useAccessOffStudents = ({ enabled = true } = {}) =>
+  useQuery({
+    queryKey: ["access-off-students"],
+    queryFn: studentAdminApi.getAccessOffStudents,
+    enabled,
   });
 
 export const useMarkFeedbackRead = () => {
