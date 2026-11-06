@@ -13,7 +13,6 @@ import Dashboard from "@/pages/Dashboard";
 import Students from "@/pages/Students";
 import BatchWorkspace from "@/pages/BatchWorkspace";
 import StudentProfile from "@/pages/StudentProfile";
-import AccessOffStudents from "@/pages/AccessOffStudents";
 import PasswordReset from "@/pages/PasswordReset";
 import DailyTracker from "@/pages/DailyTracker";
 import DailyTargets from "@/pages/DailyTargets";
@@ -88,7 +87,6 @@ function App() {
           <Route path="/batches" element={<BatchWorkspace />} />
           <Route path="/students" element={<Students />} />
           <Route path="/students/:id" element={<StudentProfile />} />
-          <Route path="/access-off-students" element={<AccessOffStudents />} />
           <Route path="/password-reset" element={<PasswordReset />} />
           <Route path="/daily-tracker" element={<DailyTracker />} />
           <Route path="/daily-targets" element={<DailyTargets />} />

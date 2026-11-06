@@ -2780,55 +2780,6 @@ async def dashboard_performance_mix(_mentor=Depends(require_mentor)):
     ]
 
 
-@router.get("/students/access-off")
-async def students_access_off(_mentor=Depends(require_mentor)):
-    """List all students whose app access is OFF (mentor blocked them).
-
-    Returns id, name, batch, group, accessReason and accessUpdatedAt so the
-    mentor can review and turn access back ON for any of them.
-    """
-    db = get_db()
-    accounts = await db[STUDENT_ACCOUNTS].find(
-        {"accessEnabled": False},
-        {
-            "_id": 0,
-            "studentId": 1,
-            "studentName": 1,
-            "batch": 1,
-            "group": 1,
-            "accessReason": 1,
-            "accessUpdatedAt": 1,
-            "accessUpdatedBy": 1,
-        },
-    ).to_list(length=5000)
-
-    stats_by_id: dict[str, dict] = {}
-    async for doc in db[DASHBOARD_STUDENTS].find({}, {"_id": 0, "studentId": 1, "stats": 1}):
-        stats_by_id[str(doc.get("studentId") or "").upper()] = doc.get("stats") or {}
-
-    items = []
-    for acc in accounts:
-        sid = str(acc.get("studentId") or "").strip().upper()
-        if not sid:
-            continue
-        stats = stats_by_id.get(sid, {})
-        items.append({
-            "id": sid,
-            "studentId": sid,
-            "name": acc.get("studentName") or sid,
-            "batch": acc.get("batch") or "",
-            "group": acc.get("group") or "",
-            "accessReason": acc.get("accessReason") or "",
-            "accessUpdatedAt": acc.get("accessUpdatedAt") or "",
-            "accessUpdatedBy": acc.get("accessUpdatedBy") or "",
-            "attendance": float((stats or {}).get("attendance") or 0),
-            "studyHours": float((stats or {}).get("averageHours") or 0),
-        })
-
-    items.sort(key=lambda r: (r["accessUpdatedAt"] or ""), reverse=True)
-    return {"students": items, "count": len(items), "source": "mongo"}
-
-
 @router.post("/import")
 async def import_dashboard(body: DashboardImportBody, request: Request):
     if not _import_allowed(request):
