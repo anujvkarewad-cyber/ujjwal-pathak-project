@@ -65,7 +65,11 @@ live_digest() {
 build_and_deploy() {
   local kind="$1" ctx="$2" tag="${REPO}:${1}-${TAG_SUFFIX}"
   echo "== building $kind from $ctx"
-  ( cd "$ctx" && gcloud builds submit --tag="$tag" --project="$PROJECT" --timeout=30m --quiet )
+  # Keep Cloud Build logs and source in a regional project-owned bucket.
+  # The Google-owned default logs bucket is outside this project's VPC-SC perimeter.
+  ( cd "$ctx" && gcloud builds submit --tag="$tag" --project="$PROJECT" \
+      --region="$REGION" --default-buckets-behavior=regional-user-owned-bucket \
+      --timeout=30m --quiet )
   echo "== deploying $tag"
   gcloud run services update "$SERVICE" --region="$REGION" --project="$PROJECT" --image="$tag" --quiet
   gcloud run services describe "$SERVICE" --region="$REGION" --project="$PROJECT" \
