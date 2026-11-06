@@ -163,7 +163,20 @@ async def _accounts_and_states(db, rows: list, only: set | None = None) -> tuple
         # minutes a full bcrypt sweep used to take.
         from routers import student_auth as sa
 
-                try:             coverage = await sheet_coverage.coverage_for(sa._coverage_payload, refresh=False)         except Exception as exc:  # noqa: BLE001 - keep the reset queue available when the sheet is down             logger.warning("[password-reset] coverage read failed: %s", type(exc).__name__)             # The queue can still report login failures from Mongo. Sheet state is             # unavailable, so don't claim any cells are valid or stale.             coverage = {                 "pending": [],                 "total": 0,                 "valid": 0,                 "marked": 0,                 "stale": 0,                 "blank": 0,             }
+        try:
+            coverage = await sheet_coverage.coverage_for(sa._coverage_payload, refresh=False)
+        except Exception as exc:  # noqa: BLE001 - keep the reset queue available when the sheet is down
+            logger.warning("[password-reset] coverage read failed: %s", type(exc).__name__)
+            # The queue can still report login failures from Mongo. Sheet state is
+            # unavailable, so don't claim any cells are valid or stale.
+            coverage = {
+                "pending": [],
+                "total": 0,
+                "valid": 0,
+                "marked": 0,
+                "stale": 0,
+                "blank": 0,
+            }
     else:
         # A search covers a handful of students - classify just those.
         coverage = await asyncio.to_thread(password_sheet_sync.coverage_of, rows or [], docs)
