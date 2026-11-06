@@ -45,8 +45,12 @@ REPO="asia-south1-docker.pkg.dev/${PROJECT}/cloud-run-source-deploy/${SERVICE}"
 TAG_SUFFIX="$(date -u +%Y%m%d-%H%M%S)"
 
 live_image() {
-  gcloud run services describe "$SERVICE" --region="$REGION" --project="$PROJECT" \
-    --format='value(spec.template.spec.containers[0].image)'
+  local revision
+  revision="$(gcloud run services describe "$SERVICE" --region="$REGION" --project="$PROJECT" \
+    --format='value(status.latestReadyRevisionName)')"
+  [[ -n "$revision" ]] || die "Cloud Run has no ready revision to use as base image"
+  gcloud run revisions describe "$revision" --region="$REGION" --project="$PROJECT" \
+    --format='value(spec.containers[0].image)'
 }
 live_digest() {
   local image
@@ -107,7 +111,7 @@ FROM $(live_image | cut -d@ -f1)@$BASE
 USER root
 COPY routers/ /app/backend/routers/
 COPY *.py /app/backend/
-RUN chmod -R 0644 /app/backend && chown -R appuser:appuser /app/backend
+RUN find /app/backend -type d -exec chmod 0755 {} + && find /app/backend -type f -name '*.py' -exec chmod 0644 {} + && chown -R appuser:appuser /app/backend
 USER appuser
 EOF
   build_and_deploy backend "$CTX"
