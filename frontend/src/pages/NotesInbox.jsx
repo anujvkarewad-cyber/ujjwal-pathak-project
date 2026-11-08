@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { Inbox, RefreshCw, Upload, SkipForward, FileText, AlertTriangle, CheckCircle2 } from 'lucide-react';
 import { getInbox, publishInboxFile, skipInboxFile } from '@/api/notesInbox';
 import { SERIES_OPTIONS, chaptersForSubject } from '@/constants/chapters';
+import { ENROLLMENT_BATCHES } from '@/constants/batches';
 
 // Series = the folder students see inside the subject ("Super 75" or a
 // teacher's name). Chapter = the ICAI chapter label; the app shows files of a
@@ -16,12 +17,7 @@ const loadSavedSeries = () => {
   }
 };
 
-const BATCHES = [
-  'Before Result Batch 1',
-  'Before Result Batch 2',
-  'After Result Batch 1',
-  'After Result Batch 2',
-];
+const BATCHES = ENROLLMENT_BATCHES;
 const GROUPS = ['Group 1', 'Group 2', 'Both Groups'];
 const SUBJECTS = ['Accounts', 'Law', 'DT', 'GST', 'Costing', 'Audit', 'FM', 'SM'];
 

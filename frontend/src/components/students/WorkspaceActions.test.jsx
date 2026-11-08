@@ -33,6 +33,13 @@ async function type(selector, value) {
     el.dispatchEvent(new Event('input', { bubbles: true }));
   });
 }
+async function choose(selector, value) {
+  const el = host.querySelector(selector);
+  await act(async () => {
+    el.value = value;
+    el.dispatchEvent(new Event('change', { bubbles: true }));
+  });
+}
 
 test('a private message needs a selection and then sends in one action, with no confirmation step', async () => {
   await mount();
@@ -51,7 +58,13 @@ test('a private message needs a selection and then sends in one action, with no 
 
 test('an unknown transfer commit outcome blocks resend and preserves the status reference', async () => {
   commitWorkspaceOperation.mockRejectedValue(new Error('Network outcome unknown'));
+  reviewWorkspaceOperation.mockResolvedValue({
+    ...plan,
+    kind: 'transfer',
+    destination: { batch: 'Before Result Batch 2', group: 'group1' },
+  });
   await mount({ focusStudentId: 'UMP0001', initialKind: 'transfer' });
+  await choose('select[aria-label="Destination batch"]', 'Before Result Batch 2');
   await click(button('Review recipients & changes'));
   await click(button('Confirm transfer'));
   expect(sessionStorage.getItem('upm_workspace_pending_plan')).toBe('test-review');
@@ -94,9 +107,22 @@ test('partial communication outcomes never offer transfer reconciliation or rese
   expect(commitWorkspaceOperation).not.toHaveBeenCalled();
 });
 
-test('profile transfer focus starts a selected reviewed transfer, never the legacy batch mutation', async () => {
+test('transfer requires an explicit destination from the approved enrollment list', async () => {
   await mount({ focusStudentId: 'UMP0001', initialKind: 'transfer' });
   await click(button('Review recipients & changes'));
-  expect(reviewWorkspaceOperation).toHaveBeenCalledWith(expect.objectContaining({ kind: 'transfer', studentIds: ['UMP0001'], scopes: [] }));
+  expect(reviewWorkspaceOperation).not.toHaveBeenCalled();
+  expect(host.textContent).toContain('Choose a valid enrollment batch.');
+});
+
+test('profile transfer uses the exact approved destination labels, including the classes batch', async () => {
+  await mount({ focusStudentId: 'UMP0001', initialKind: 'transfer' });
+  await choose('select[aria-label="Destination batch"]', 'After Result Batch 1 with Classes');
+  await click(button('Review recipients & changes'));
+  expect(reviewWorkspaceOperation).toHaveBeenCalledWith(expect.objectContaining({
+    kind: 'transfer',
+    studentIds: ['UMP0001'],
+    scopes: [],
+    destination: { batch: 'After Result Batch 1 with Classes', group: 'group1' },
+  }));
   expect(commitWorkspaceOperation).not.toHaveBeenCalled();
 });
