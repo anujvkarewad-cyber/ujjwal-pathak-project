@@ -1,15 +1,10 @@
 import { apiCall } from "./client";
 import { apiCall as backendApiCall } from "./backendClient";
 
+// The mentor dashboard uses one live backend snapshot for all cards and charts.
 export const getKpis = () =>
   backendApiCall("/api/student-dashboard/dashboard/kpis", { method: "GET" });
-export const getRecentActivity = () => apiCall("dashboard.recentActivity");
-export const getWeeklyStudy = () => apiCall("dashboard.weeklyStudy");
-export const getAttendanceTrend = () => apiCall("dashboard.attendanceTrend");
-export const getPerformanceMix = () =>
-  backendApiCall("/api/student-dashboard/dashboard/performance-mix", {
-    method: "GET",
-  });
-export const getBatchOverview = () => apiCall("dashboard.batchOverview");
-export const getUpcomingTasks = () => apiCall("dashboard.upcomingTasks");
+
+// Retained for the legacy top-bar notification control; dashboard analytics do
+// not use the local/demo adapter anymore.
 export const getMentorNotifications = () => apiCall("dashboard.notifications");

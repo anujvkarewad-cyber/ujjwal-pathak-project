@@ -32,7 +32,7 @@ export function AttendanceAreaChart({ data }) {
         </defs>
         <CartesianGrid strokeDasharray="3 3" stroke={gridColor} className="dark:!stroke-slate-800" />
         <XAxis dataKey="week" tick={axisTick} axisLine={false} tickLine={false} />
-        <YAxis tick={axisTick} axisLine={false} tickLine={false} domain={[60, 100]} />
+        <YAxis tick={axisTick} axisLine={false} tickLine={false} domain={[0, 100]} />
         <Tooltip content={<TooltipStyle suffix="%" />} cursor={{ stroke: '#2563EB', strokeWidth: 1, strokeDasharray: '4 4' }} />
         <Area type="monotone" dataKey="attendance" stroke="#2563EB" strokeWidth={2.5} fill="url(#attGrad)" />
       </AreaChart>
