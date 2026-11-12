@@ -52,38 +52,10 @@ export const useChangeStudentBatch = () => {
 };
 
 // ── Dashboard ───────────────────────────────────────────────────────────
+// Cards and charts intentionally share one live backend snapshot so their
+// roster, tracker source and reporting window cannot drift apart.
 export const useDashboardKpis = () =>
   useQuery({ queryKey: ["dashboard", "kpis"], queryFn: dashboardApi.getKpis });
-export const useRecentActivity = () =>
-  useQuery({
-    queryKey: ["dashboard", "recentActivity"],
-    queryFn: dashboardApi.getRecentActivity,
-  });
-export const useWeeklyStudy = () =>
-  useQuery({
-    queryKey: ["dashboard", "weeklyStudy"],
-    queryFn: dashboardApi.getWeeklyStudy,
-  });
-export const useAttendanceTrend = () =>
-  useQuery({
-    queryKey: ["dashboard", "attendanceTrend"],
-    queryFn: dashboardApi.getAttendanceTrend,
-  });
-export const usePerformanceMix = () =>
-  useQuery({
-    queryKey: ["dashboard", "performanceMix"],
-    queryFn: dashboardApi.getPerformanceMix,
-  });
-export const useBatchOverview = () =>
-  useQuery({
-    queryKey: ["dashboard", "batchOverview"],
-    queryFn: dashboardApi.getBatchOverview,
-  });
-export const useUpcomingTasks = () =>
-  useQuery({
-    queryKey: ["dashboard", "upcomingTasks"],
-    queryFn: dashboardApi.getUpcomingTasks,
-  });
 
 // ── Daily Tracker ───────────────────────────────────────────────────────
 export const useTrackerDay = ({ dayIndex, batch }) =>

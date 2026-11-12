@@ -21,6 +21,7 @@ from auth import require_mentor
 from config import settings
 import push as push_service
 from db import (
+    ANALYTICS_TEST_HISTORY,
     DASHBOARD_SHARED,
     DASHBOARD_STUDENTS,
     STUDENT_ACCOUNTS,
@@ -2667,117 +2668,442 @@ async def dashboard_status():
     }
 
 
-@router.get("/dashboard/kpis")
-async def dashboard_kpis(_mentor=Depends(require_mentor)):
-    """Live mentor dashboard KPI cards computed from Mongo (not mock data)."""
-    db = get_db()
-    accounts = await db[STUDENT_ACCOUNTS].find({}).to_list(length=5000)
-    stats_by_id: dict[str, dict] = {}
-    async for doc in db[DASHBOARD_STUDENTS].find({}, {"_id": 0, "studentId": 1, "stats": 1}):
-        stats_by_id[str(doc.get("studentId") or "").upper()] = doc.get("stats") or {}
-
-    total = 0
-    active = 0
-    at_risk = 0
-    pending = 0
-    hours_sum = 0.0
-    attendance_sum = 0
-    submission_sum = 0
-
-    today = datetime.now(IST).date()
-
-    for acc in accounts:
-        sid = str(acc.get("studentId") or "").strip().upper()
-        if not sid:
-            continue
-        removed = bool(acc.get("removedAt")) or str(acc.get("status") or "").lower() == "removed"
-        if removed:
-            continue
-        total += 1
-        stats = stats_by_id.get(sid, {})
-        attendance = float(stats.get("attendance") or 0)
-        submission = float(stats.get("submissionRate") or 0)
-        hours = float(stats.get("weeklyHours") or stats.get("averageHours") or 0)
-        if acc.get("accessEnabled") is False:
-            at_risk += 1
-        elif attendance >= 70:
-            active += 1
-        else:
-            at_risk += 1
-        # Pending = no submission today
-        last_sub = str(stats.get("lastSubmission") or "")[:10]
-        if last_sub != today.isoformat():
-            pending += 1
-        hours_sum += hours
-        attendance_sum += attendance
-        submission_sum += submission
-
-    return {
-        "total": total,
-        "active": active,
-        "atRisk": at_risk,
-        "pending": pending,
-        "avgHours": round(hours_sum / total, 1) if total else 0,
-        "avgAttendance": round(attendance_sum / total) if total else 0,
-        "weeklySub": round(submission_sum / total) if total else 0,
-        "source": "mongo",
-    }
+def _dashboard_timestamp_day(value: Any) -> Optional[date]:
+    """Convert a timestamp to its India calendar day; fall back to date parsing."""
+    if isinstance(value, datetime):
+        stamp = value
+    else:
+        text = str(value or "").strip()
+        try:
+            stamp = datetime.fromisoformat(text.replace("Z", "+00:00"))
+        except ValueError:
+            return _parse_tracker_day(value)
+    if stamp.tzinfo:
+        return stamp.astimezone(IST).date()
+    return stamp.date()
 
 
-@router.get("/dashboard/performance-mix")
-async def dashboard_performance_mix(_mentor=Depends(require_mentor)):
-    """Student distribution by performance band, computed from Mongo stats.
+def _dashboard_day_label(day: date, today: date) -> str:
+    if day == today:
+        return "Today"
+    if day == today - timedelta(days=1):
+        return "Yesterday"
+    return day.strftime("%d %b").lstrip("0")
 
-    Bands:
-      - Excellent: attendance >= 90 AND submissionRate >= 80
-      - Good:      attendance >= 80 AND submissionRate >= 70
-      - Average:   attendance >= 70 AND submissionRate >= 60
-      - At Risk:   attendance < 70 OR submissionRate < 60
+
+def _dashboard_period_counts(
+    account: dict,
+    student_id: str,
+    start: date,
+    end: date,
+    submitted_by_student: dict,
+    tracker_cfg: dict,
+    attendance_index: dict,
+) -> tuple[int, int, bool]:
+    """Return submitted days, countable expected days, and whether any were expected."""
+    effective_start, _source = _effective_tracker_start(account, tracker_cfg)
+    # Do not count days before the tracker's configured history begins; those
+    # rows cannot exist and must not turn older chart weeks into false misses.
+    expected_start = max(start, TRACKER_HISTORY_FLOOR)
+    if effective_start:
+        expected_start = max(expected_start, effective_start)
+    if expected_start > end:
+        return 0, 0, False
+    submitted_dates = submitted_by_student.get(student_id, set())
+    submitted_count = 0
+    countable_count = 0
+    cursor = expected_start
+    while cursor <= end:
+        is_submitted = cursor in submitted_dates
+        if is_submitted:
+            submitted_count += 1
+        kind = str((attendance_index.get((student_id, cursor), {}) or {}).get("kind") or "")
+        # A submitted log always wins over an absent/leave marker, matching the
+        # tracker day view and missed-attendance report.
+        if is_submitted or kind not in {"leave", "absent"}:
+            countable_count += 1
+        cursor += timedelta(days=1)
+    return submitted_count, countable_count, True
+
+
+async def _dashboard_app_activity(db, today: date) -> tuple[dict, list]:
+    """Read app activity sources used for the Today's Active KPI and feed."""
+    window_start = today - timedelta(days=6)
+    start_ms = int(datetime(
+        window_start.year, window_start.month, window_start.day, tzinfo=IST
+    ).astimezone(timezone.utc).timestamp() * 1000)
+    end_ms = int(datetime(
+        today.year, today.month, today.day, tzinfo=IST
+    ).astimezone(timezone.utc).timestamp() * 1000) + 24 * 60 * 60 * 1000
+
+    activity_days: dict[str, set[date]] = {}
+    events = []
+    try:
+        async for row in db[STUDENT_MCQ_ATTEMPTS].find(
+            {"completedAt": {"$gte": start_ms, "$lt": end_ms}},
+            {"studentId": 1, "completedAt": 1, "kind": 1},
+        ):
+            sid = normalize_student_id(row.get("studentId") or "")
+            day = _ist_day_from_ms(row.get("completedAt"))
+            if not sid or not day or day < window_start or day > today:
+                continue
+            activity_days.setdefault(sid, set()).add(day)
+            events.append({
+                "id": f"mcq-{sid}-{row.get('completedAt')}",
+                "studentId": sid,
+                "date": day,
+                "type": "submission",
+                "action": "completed an MCQ attempt",
+                "sortAt": int(row.get("completedAt") or 0),
+            })
+    except Exception as exc:  # app activity enriches the tracker; it cannot break it
+        logger.warning("dashboard MCQ activity read failed: %s", exc)
+
+    try:
+        async for row in db[ANALYTICS_TEST_HISTORY].find(
+            {"kind": "paper-test", "at_ms": {"$gte": start_ms, "$lt": end_ms}},
+            {"studentId": 1, "at_ms": 1, "at": 1},
+        ):
+            sid = normalize_student_id(row.get("studentId") or "")
+            day = _ist_day_from_ms(row.get("at_ms")) or _dashboard_timestamp_day(row.get("at"))
+            if not sid or not day or day < window_start or day > today:
+                continue
+            activity_days.setdefault(sid, set()).add(day)
+            events.append({
+                "id": f"paper-test-{sid}-{row.get('at_ms') or row.get('at')}",
+                "studentId": sid,
+                "date": day,
+                "type": "submission",
+                "action": "submitted a paper test",
+                "sortAt": int(row.get("at_ms") or 0),
+            })
+    except Exception as exc:  # optional test history cannot break the dashboard
+        logger.warning("dashboard paper-test activity read failed: %s", exc)
+
+    try:
+        async for row in db["login_failures"].find({}, {"_id": 1, "lastOkAt": 1}):
+            sid = normalize_student_id(row.get("_id") or row.get("studentId") or "")
+            day = _dashboard_timestamp_day(row.get("lastOkAt"))
+            if not sid or not day or day < window_start or day > today:
+                continue
+            activity_days.setdefault(sid, set()).add(day)
+            events.append({
+                "id": f"login-{sid}-{row.get('lastOkAt')}",
+                "studentId": sid,
+                "date": day,
+                "type": "event",
+                "action": "signed in to the student app",
+                "sortAt": str(row.get("lastOkAt") or ""),
+            })
+    except Exception as exc:  # login telemetry is best-effort
+        logger.warning("dashboard login activity read failed: %s", exc)
+    return activity_days, events
+
+
+def _dashboard_kpis_from_tracker(
+    accounts: list[dict],
+    tracker_rows: list[dict],
+    today: date,
+    tracker_cfg: Optional[dict] = None,
+    attendance_index: Optional[dict] = None,
+    app_activity_days: Optional[dict] = None,
+    app_activity_events: Optional[list] = None,
+) -> dict:
+    """Build dashboard cards and charts from tracker submissions and app activity.
+
+    ``dashboard_students.stats`` is not the source of truth for attendance or
+    submission rates: ``_recompute_stats`` does not persist those fields. Here we
+    count actual submitted days, respect the tracker start configuration and
+    excused leave/absent dates, and merge Mongo/Form hours without double-counting
+    the same source's duplicate rows or the same day mirrored into both sources.
     """
-    db = get_db()
-    stats_by_id: dict[str, dict] = {}
-    async for doc in db[DASHBOARD_STUDENTS].find({}, {"_id": 0, "studentId": 1, "stats": 1}):
-        stats_by_id[str(doc.get("studentId") or "").upper()] = doc.get("stats") or {}
+    roster = []
+    account_by_id = {}
+    for account in accounts:
+        sid = normalize_student_id(account.get("studentId") or "")
+        if not sid or _is_removed(account):
+            continue
+        roster.append((sid, account))
+        account_by_id[sid] = account
 
-    accounts = await db[STUDENT_ACCOUNTS].find({}).to_list(length=5000)
+    roster_ids = set(account_by_id)
+    tracker_cfg = tracker_cfg or {"batchStarts": dict(DEFAULT_BATCH_STARTS), "overrides": {}}
+    attendance_index = attendance_index or {}
+    app_activity_days = app_activity_days or {}
+    app_activity_events = app_activity_events or []
 
-    bands = {
-        "Excellent": 0,
-        "Good": 0,
-        "Average": 0,
-        "At Risk": 0,
+    # student -> date -> source -> hours. For a given source/day, sum multiple
+    # entries, then choose the larger Mongo/Form total as the tracker itself does.
+    by_student_day: dict[str, dict[date, dict[str, float]]] = {}
+    submitted_by_student: dict[str, set[date]] = {}
+    for row in tracker_rows:
+        sid = normalize_student_id(row.get("studentId") or "")
+        day = _parse_tracker_day(row.get("date"))
+        if not sid or sid not in roster_ids or not day or day > today:
+            continue
+        try:
+            hours = max(0.0, float(row.get("hours") or 0))
+        except (TypeError, ValueError):
+            hours = 0.0
+        source = str(row.get("source") or "form")
+        submitted_by_student.setdefault(sid, set()).add(day)
+        sources = by_student_day.setdefault(sid, {}).setdefault(day, {})
+        sources[source] = sources.get(source, 0.0) + hours
+
+    recent_start = today - timedelta(days=29)
+    rolling_week_start = today - timedelta(days=6)
+    today_activity_ids = {
+        sid for sid, dates in app_activity_days.items() if today in (dates or set())
     }
-    for acc in accounts:
-        sid = str(acc.get("studentId") or "").strip().upper()
-        if not sid:
-            continue
-        removed = bool(acc.get("removedAt")) or str(acc.get("status") or "").lower() == "removed"
-        if removed:
-            continue
-        stats = stats_by_id.get(sid, {})
-        attendance = float(stats.get("attendance") or 0)
-        submission = float(stats.get("submissionRate") or 0)
-        if attendance >= 90 and submission >= 80:
-            bands["Excellent"] += 1
-        elif attendance >= 80 and submission >= 70:
-            bands["Good"] += 1
-        elif attendance >= 70 and submission >= 60:
-            bands["Average"] += 1
-        else:
-            bands["At Risk"] += 1
+    today_activity_ids.update(
+        sid for sid, dates in submitted_by_student.items() if today in dates
+    )
 
-    total = sum(bands.values())
+    total = len(roster)
+    active = sum(1 for sid, _account in roster if sid in today_activity_ids)
+    pending = 0
+    at_risk = 0
+    hours_sum = 0.0
+    attendance_sum = weekly_submission_sum = 0.0
+    attendance_count = weekly_count = 0
+    bands = {"Excellent": 0, "Good": 0, "Average": 0, "At Risk": 0}
+    follow_ups = []
+    batch_stats = {}
+
+    # Pre-aggregate the same daily study totals used by the live tracker day view.
+    daily_hours: dict[date, float] = {}
+    weekly_hours_by_student: dict[str, float] = {}
+    for sid, days in by_student_day.items():
+        for day, source_hours in days.items():
+            day_hours = max(source_hours.values()) if source_hours else 0.0
+            if rolling_week_start <= day <= today:
+                weekly_hours_by_student[sid] = weekly_hours_by_student.get(sid, 0.0) + day_hours
+                daily_hours[day] = daily_hours.get(day, 0.0) + day_hours
+
+    for sid, account in roster:
+        submitted_dates = submitted_by_student.get(sid, set())
+        access_off = account.get("accessEnabled") is False
+        if access_off:
+            # Students whose app access is OFF are not expected to submit. Keep
+            # them in the roster/At Risk count, but out of tracker rates and pending.
+            today_submitted, today_countable, today_expected = 0, 0, False
+            recent_submitted, recent_countable, recent_expected = 0, 0, False
+            weekly_submitted, weekly_countable, weekly_expected = 0, 0, False
+        else:
+            today_submitted, today_countable, today_expected = _dashboard_period_counts(
+                account, sid, today, today, submitted_by_student, tracker_cfg, attendance_index
+            )
+            recent_submitted, recent_countable, recent_expected = _dashboard_period_counts(
+                account, sid, recent_start, today, submitted_by_student, tracker_cfg, attendance_index
+            )
+            weekly_submitted, weekly_countable, weekly_expected = _dashboard_period_counts(
+                account, sid, rolling_week_start, today, submitted_by_student, tracker_cfg, attendance_index
+            )
+        if today_expected and today_countable and not today_submitted:
+            pending += 1
+
+        attendance = (recent_submitted / recent_countable * 100) if recent_countable else None
+        weekly_submission = (weekly_submitted / weekly_countable * 100) if weekly_countable else None
+
+        weekly_hours = weekly_hours_by_student.get(sid, 0.0)
+        hours_sum += weekly_hours
+        if attendance is not None:
+            attendance_sum += attendance
+            attendance_count += 1
+        if weekly_submission is not None:
+            weekly_submission_sum += weekly_submission
+            weekly_count += 1
+
+        is_at_risk = access_off or (attendance is not None and attendance < 70) or (
+            weekly_submission is not None and weekly_submission < 60
+        )
+        if is_at_risk:
+            at_risk += 1
+
+        if access_off or (attendance is not None and attendance < 70) or (
+            weekly_submission is not None and weekly_submission < 60
+        ):
+            if recent_expected or access_off:
+                bands["At Risk"] += 1
+        elif attendance is not None and weekly_submission is not None:
+            if attendance >= 90 and weekly_submission >= 80:
+                bands["Excellent"] += 1
+            elif attendance >= 80 and weekly_submission >= 70:
+                bands["Good"] += 1
+            else:
+                bands["Average"] += 1
+
+        batch_name = str(account.get("batch") or "(Unassigned)").strip() or "(Unassigned)"
+        bucket = batch_stats.setdefault(batch_name, {"students": 0, "attendanceSum": 0.0, "attendanceCount": 0})
+        bucket["students"] += 1
+        if attendance is not None:
+            bucket["attendanceSum"] += attendance
+            bucket["attendanceCount"] += 1
+
+        if today_expected and today_countable and not today_submitted:
+            follow_ups.append({
+                "studentId": sid,
+                "student": str(account.get("studentName") or sid).strip() or sid,
+                "batch": batch_name,
+                "reason": "No tracker submitted today",
+                "attendance": round(attendance) if attendance is not None else None,
+                "priority": "high" if is_at_risk else "medium",
+            })
+
     colors = {
         "Excellent": "#10B981",
         "Good": "#2563EB",
         "Average": "#F59E0B",
         "At Risk": "#EF4444",
     }
-    return [
+    eligible_performance = sum(bands.values())
+    performance_mix = [
         {"name": name, "value": bands[name], "color": colors[name]}
         for name in ["Excellent", "Good", "Average", "At Risk"]
-        if bands[name] > 0 or total == 0
+        if bands[name] > 0 or eligible_performance == 0
     ]
+
+    weekly_study = [
+        {
+            "day": (today - timedelta(days=offset)).strftime("%a"),
+            "hours": round(daily_hours.get(today - timedelta(days=offset), 0.0) / total, 1) if total else 0,
+            "target": 7,
+        }
+        for offset in range(6, -1, -1)
+    ]
+
+    attendance_trend = []
+    current_week_start = week_start_of(today)
+    for weeks_back in range(7, -1, -1):
+        period_start = current_week_start - timedelta(days=7 * weeks_back)
+        period_end = min(period_start + timedelta(days=6), today)
+        submitted_total = expected_total = 0
+        for sid, account in roster:
+            submitted_days, countable_days, _expected = _dashboard_period_counts(
+                account, sid, period_start, period_end, submitted_by_student, tracker_cfg, attendance_index
+            )
+            submitted_total += submitted_days
+            expected_total += countable_days
+        if expected_total:
+            attendance_trend.append({
+                "week": period_start.strftime("%d %b").lstrip("0"),
+                "attendance": round(submitted_total / expected_total * 100),
+            })
+
+    batch_overview = [
+        {
+            "name": name,
+            "students": stats["students"],
+            "attendance": round(stats["attendanceSum"] / stats["attendanceCount"]) if stats["attendanceCount"] else 0,
+        }
+        for name, stats in sorted(batch_stats.items(), key=lambda item: (-item[1]["students"], item[0].lower()))
+    ]
+
+    recent_activity = []
+    for sid, days in submitted_by_student.items():
+        for day in days:
+            if day < today - timedelta(days=6):
+                continue
+            account = account_by_id[sid]
+            recent_activity.append({
+                "id": f"tracker-{sid}-{day.isoformat()}",
+                "studentId": sid,
+                "date": day,
+                "type": "submission",
+                "action": "submitted the daily tracker",
+                "sortAt": 0,
+            })
+    recent_activity.extend(
+        event for event in app_activity_events
+        if normalize_student_id(event.get("studentId") or "") in roster_ids
+        and isinstance(event.get("date"), date)
+        and today - timedelta(days=7) <= event["date"] <= today
+    )
+    for event in recent_activity:
+        sid = normalize_student_id(event.get("studentId") or "")
+        event["student"] = str((account_by_id.get(sid) or {}).get("studentName") or sid)
+        event["time"] = _dashboard_day_label(event["date"], today)
+    recent_activity.sort(key=lambda event: (event["date"], str(event.get("sortAt") or "")), reverse=True)
+
+    follow_ups.sort(key=lambda item: (item["priority"] != "high", item["attendance"] if item["attendance"] is not None else 101, item["student"].lower()))
+    return {
+        "total": total,
+        "active": active,
+        "atRisk": at_risk,
+        "pending": pending,
+        "avgHours": round(hours_sum / total, 1) if total else 0,
+        "avgAttendance": round(attendance_sum / attendance_count) if attendance_count else 0,
+        "weeklySub": round(weekly_submission_sum / weekly_count) if weekly_count else 0,
+        "performanceMix": performance_mix,
+        "weeklyStudy": weekly_study,
+        "attendanceTrend": attendance_trend,
+        "batchOverview": batch_overview,
+        "recentActivity": recent_activity[:10],
+        "followUps": follow_ups[:6],
+        "today": today.isoformat(),
+    }
+
+
+async def _dashboard_kpi_payload(db) -> dict:
+    today = datetime.now(IST).date()
+    accounts = await db[STUDENT_ACCOUNTS].find(
+        {},
+        {"_id": 0, "studentId": 1, "studentName": 1, "batch": 1, "joinedOn": 1,
+         "master": 1, "status": 1, "removedAt": 1, "accessEnabled": 1},
+    ).to_list(length=5000)
+    mongo_rows = await _fetch_mongo_tracker_submissions(db)
+    try:
+        form_rows = await asyncio.to_thread(_fetch_tracker_submissions_sync)
+    except Exception as exc:
+        # Do not turn an unavailable legacy tracker source into believable zeros.
+        logger.warning("dashboard tracker source unavailable: %s", exc)
+        payload = _dashboard_kpis_from_tracker(accounts, mongo_rows, today)
+        for field in (
+            "active", "atRisk", "pending", "avgHours", "avgAttendance", "weeklySub",
+            "performanceMix", "weeklyStudy", "attendanceTrend", "batchOverview",
+            "recentActivity", "followUps",
+        ):
+            payload[field] = None
+        payload["trackerDataAvailable"] = False
+        payload["trackerSource"] = f"Mongo study logs only — {TRACKER_FORM_SHEET} read unavailable"
+        payload["trackerRows"] = {"mongo": len(mongo_rows), "form": None}
+        payload["source"] = "partial"
+        return payload
+
+    tracker_cfg = await _tracker_start_config(db, create_if_missing=False)
+    attendance_start = today - timedelta(days=55)
+    attendance = await attendance_lib.attendance_index(db, attendance_start, today)
+    app_activity_days, app_activity_events = await _dashboard_app_activity(db, today)
+    payload = _dashboard_kpis_from_tracker(
+        accounts,
+        [*mongo_rows, *form_rows],
+        today,
+        tracker_cfg=tracker_cfg,
+        attendance_index=attendance,
+        app_activity_days=app_activity_days,
+        app_activity_events=app_activity_events,
+    )
+    payload["trackerDataAvailable"] = True
+    payload["trackerSource"] = f"Mongo study logs + {TRACKER_FORM_SHEET}"
+    payload["trackerRows"] = {"mongo": len(mongo_rows), "form": len(form_rows)}
+    payload["source"] = "mongo+tracker-sheet"
+    payload["generatedAt"] = _now()
+    return payload
+
+
+@router.get("/dashboard/kpis")
+async def dashboard_kpis(_mentor=Depends(require_mentor)):
+    """Live dashboard cards/charts from Mongo activity and tracker submissions."""
+    return await _dashboard_kpi_payload(get_db())
+
+
+@router.get("/dashboard/performance-mix")
+async def dashboard_performance_mix(_mentor=Depends(require_mentor)):
+    """Performance mix from the same live tracker sources as the dashboard cards."""
+    payload = await _dashboard_kpi_payload(get_db())
+    if not payload["trackerDataAvailable"]:
+        raise HTTPException(status_code=503, detail="Tracker data is unavailable; performance mix is not shown.")
+    return payload["performanceMix"]
 
 
 @router.get("/students/access-off")
