@@ -53,6 +53,18 @@ else
   if [[ "$js" == *"access-toggle-"* ]]; then ok "per-student access switch shipped"; else bad "per-student access switch MISSING — an older SPA is still being served"; fi
   # 2g. student start-day progress & timeline UI in Target Plans
   if [[ "$js" == *"start-day-progress"* && "$js" == *"start-day-timeline"* ]]; then ok "student start-day progress & timeline UI present"; else bad "student start-day progress & timeline UI MISSING from bundle"; fi
+
+  # Release-specific checks: these must be present before a new revision is
+  # considered live. The older generic access-toggle marker also existed in the
+  # stale bundle and was not enough to prove the current source was deployed.
+  for marker in "Published files" "Edit audience" \
+                "Optional. Leave blank to use an automatic chapter-based name." \
+                "test-chapter-group" "Choose at least one chapter for this subject." \
+                "Choose at least one chapter for this test." \
+                "After this test window closes, any uploaded question paper and answer sheet will appear in student Materials under" \
+                "This chapter selection filters the MCQ question bank for"; do
+    if [[ "$js" == *"$marker"* ]]; then ok "bundle includes '$marker'"; else bad "bundle is missing '$marker' — stale frontend is still serving"; fi
+  done
   # 2f. advisory only: the old batch-wide pill must not come back
   if [[ "$js" == *"ON/OFF"* ]]; then echo "  ! advisory: a batch-wide 'ON/OFF' control appears in this bundle — confirm it is not the removed batch access switch"; fi
 fi
@@ -66,6 +78,11 @@ else
               /api/notes-inbox/skip /api/notes-inbox/unskip /api/messages/send /api/messages/reply /api/student-targets/all-progress; do
     if printf '%s' "$spec" | grep -q "\"$path\""; then ok "route $path deployed"; else bad "route $path NOT deployed"; fi
   done
+  if printf '%s' "$spec" | python3 -c 'import json,sys; schema=json.load(sys.stdin)["components"]["schemas"]["TestCreate"]; required=schema.get("required", []); sys.exit(0 if "chapters" in required and "title" not in required else 1)'; then
+    ok "TestCreate requires chapters and allows an optional title"
+  else
+    bad "TestCreate schema is stale: chapters must be required and title optional"
+  fi
   # every protected route must demand a token (401 without one)
   code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 -X POST -H 'Content-Type: application/json' -d '{}' "$URL/api/mentor-workspace/send")
   if [[ "$code" == "401" || "$code" == "403" ]]; then ok "protected routes demand a token ($code)"; else bad "send route answered $code without a token"; fi

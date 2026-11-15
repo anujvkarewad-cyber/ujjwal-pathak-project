@@ -80,8 +80,8 @@ jobs:
           echo "commit: $(git log -1 --pretty=%s)"
           echo "target: ${{ github.event.inputs.target || 'both' }}"
 
-      # The deploy gates need both toolchains: pytest for the backend suite,
-      # npm for the SPA build-env guard (gate 0c reads .env.production).
+      # The deploy gates need both toolchains: pytest for backend behavior,
+      # npm for the SPA build-env guard and requested Inbox/test-authoring Jest tests.
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -136,6 +136,7 @@ jobs:
             echo "- target: \`${{ github.event.inputs.target || 'both' }}\`"
             echo "- result: \`${{ job.status }}\`"
             echo ""
-            echo "The run ends with \`scripts/verify-deploy.sh\`, which fails the job if the"
-            echo "served bundle is stale (it asserts the \`access-toggle-\` marker is present)."
+            echo "The run ends with \`scripts/verify-deploy.sh\`, which checks the live bundle"
+            echo "for Published files/audience editing and optional-name/required-chapter UI,"
+            echo "then checks the deployed TestCreate schema requires chapters, not title."
           } >> "$GITHUB_STEP_SUMMARY"

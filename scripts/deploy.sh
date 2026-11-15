@@ -36,6 +36,10 @@ if [[ "$WHAT" == "frontend" || "$WHAT" == "both" ]]; then
   echo "== 0c. frontend build env"
   ( cd "$ROOT/frontend" && node scripts/check-build-env.js ) \
     || die "frontend build env invalid — refusing to deploy"
+  echo "== 0d. requested Inbox and test-authoring UI tests"
+  ( cd "$ROOT/frontend" && CI=true npm test -- --runInBand --runTestsByPath \
+      src/pages/NotesInbox.test.jsx src/components/tests/TestAuthoring.test.jsx ) \
+    || die "requested frontend flow tests failed — refusing to deploy"
 fi
 
 PROJECT="${PROJECT:-ump-dashboard}"
@@ -69,11 +73,26 @@ live_digest() {
 build_and_deploy() {
   local kind="$1" ctx="$2" tag="${REPO}:${1}-${TAG_SUFFIX}"
   echo "== building $kind from $ctx"
-  # Keep Cloud Build logs and source in a regional project-owned bucket.
-  # The Google-owned default logs bucket is outside this project's VPC-SC perimeter.
-  ( cd "$ctx" && gcloud builds submit --tag="$tag" --project="$PROJECT" \
-      --region="$REGION" --default-buckets-behavior=regional-user-owned-bucket \
-      --timeout=30m --quiet )
+  # The project uses a user-specified Cloud Build service account. The implicit
+  # config created by `gcloud builds submit --tag` does not set logging, so
+  # Cloud Build rejects it before the build starts. Use an explicit config with
+  # CLOUD_LOGGING_ONLY, which satisfies the service-account logging requirement
+  # without needing a logs bucket or broader bucket permissions.
+  python3 - "$ctx/cloudbuild.json" "$tag" <<'PY'
+import json
+import sys
+from pathlib import Path
+
+config_path, image = sys.argv[1:]
+config = {
+    "steps": [{"name": "gcr.io/cloud-builders/docker", "args": ["build", "-t", image, "."]}],
+    "images": [image],
+    "options": {"logging": "CLOUD_LOGGING_ONLY"},
+}
+Path(config_path).write_text(json.dumps(config, indent=2) + chr(10))
+PY
+  ( cd "$ctx" && gcloud builds submit --config=cloudbuild.json --project="$PROJECT" \
+      --region="$REGION" --timeout=30m --quiet )
   echo "== deploying $tag"
   gcloud run services update "$SERVICE" --region="$REGION" --project="$PROJECT" --image="$tag" --quiet
   gcloud run services describe "$SERVICE" --region="$REGION" --project="$PROJECT" \
@@ -118,5 +137,39 @@ EOF
   rm -rf "$CTX"
 fi
 
-echo "== verifying the live service"
-"$ROOT/scripts/verify-deploy.sh"
+# A successful image build can still leave the service's old traffic assignment
+# in place. First tag and verify the new revision without sending it user traffic;
+# only promote it after its frontend AND backend pass the release-specific checks.
+VERIFY_TAG="predeploy"
+VERIFY_TAG_SET=0
+remove_verify_tag() {
+  if [[ "$VERIFY_TAG_SET" == "1" ]]; then
+    gcloud run services update-traffic "$SERVICE" --region="$REGION" --project="$PROJECT" \
+      --remove-tags="$VERIFY_TAG" --quiet || true
+  fi
+}
+trap remove_verify_tag EXIT
+
+echo "== tagging latest ready revision for no-traffic verification"
+gcloud run services update-traffic "$SERVICE" --region="$REGION" --project="$PROJECT" \
+  --update-tags="${VERIFY_TAG}=LATEST" --quiet
+VERIFY_TAG_SET=1
+
+SERVICE_JSON="$(gcloud run services describe "$SERVICE" --region="$REGION" --project="$PROJECT" --format=json)"
+PREVIEW_URL="$(printf '%s' "$SERVICE_JSON" | python3 -c 'import json,sys; data=json.load(sys.stdin); print(next((item.get("url", "") for item in data.get("status", {}).get("traffic", []) if item.get("tag") == "predeploy"), ""))')"
+[[ -n "$PREVIEW_URL" ]] || die "could not determine the pre-deploy revision URL"
+echo "== verifying candidate revision at $PREVIEW_URL (production traffic unchanged)"
+"$ROOT/scripts/verify-deploy.sh" "$PREVIEW_URL"
+
+# Promote only after the candidate passes. The command removes the temporary
+# tag and sends 100% of service traffic to the now-verified latest revision.
+echo "== promoting verified revision to 100% traffic"
+gcloud run services update-traffic "$SERVICE" --region="$REGION" --project="$PROJECT" \
+  --remove-tags="$VERIFY_TAG" --to-latest --quiet
+VERIFY_TAG_SET=0
+trap - EXIT
+
+SERVICE_URL="$(gcloud run services describe "$SERVICE" --region="$REGION" --project="$PROJECT" --format='value(status.url)')"
+[[ -n "$SERVICE_URL" ]] || die "could not determine the deployed Cloud Run service URL"
+echo "== verifying promoted service at $SERVICE_URL"
+"$ROOT/scripts/verify-deploy.sh" "$SERVICE_URL"
