@@ -194,6 +194,8 @@ export default function TestAuthoring({ scopedBatch, scopedGroup } = {}) {
   const [uploadError, setUploadError] = useState({ qp: '', as: '' });
 
   const editing = Boolean(form.testId);
+  const availableChapters = chaptersForSubject(form.subject);
+  const selectedChapters = form.chapters.filter((value) => availableChapters.some((chapter) => chapter.value === value));
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -268,7 +270,7 @@ export default function TestAuthoring({ scopedBatch, scopedGroup } = {}) {
   };
 
   const submit = async () => {
-    if (!form.title.trim()) { setFormError('Test ka naam likhein.'); return; }
+    if (!selectedChapters.length) { setFormError('Choose at least one chapter for this test.'); return; }
     setSaving(true);
     setFormError('');
     setNotice('');
@@ -277,7 +279,7 @@ export default function TestAuthoring({ scopedBatch, scopedGroup } = {}) {
         title: form.title.trim(),
         kind: form.kind,
         subject: form.subject,
-        chapters: form.chapters,
+        chapters: selectedChapters,
         batch: scopedBatch || form.batch,
         exclusiveGroup: editing ? !!form.exclusiveGroup : !!scopedGroup,
         group: scopedGroup || form.group,
@@ -402,7 +404,7 @@ export default function TestAuthoring({ scopedBatch, scopedGroup } = {}) {
 
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             <div className="sm:col-span-2 lg:col-span-3">
-              <Field label="Test name">
+              <Field label="Test name" hint="Optional. Leave blank to use an automatic chapter-based name.">
                 <input
                   className={inputCls}
                   value={form.title}
@@ -452,9 +454,16 @@ export default function TestAuthoring({ scopedBatch, scopedGroup } = {}) {
             </Field>
 
             <div className="sm:col-span-2 lg:col-span-3">
-              <Field label="Chapter(s)" hint="The question paper and answer paper appear together under these chapter(s) in student Materials after the test closes.">
-                <div role="group" aria-label="Test chapters" className="max-h-52 overflow-y-auto rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-2 grid gap-1 sm:grid-cols-2">
-                  {chaptersForSubject(form.subject).map((chapter) => (
+              <Field
+                label="Chapter(s) — required"
+                hint={selectedChapters.length
+                  ? form.kind === 'paper-test'
+                    ? `After this test window closes, any uploaded question paper and answer sheet will appear in student Materials under ${form.subject} → ${selectedChapters.join('; ')}.`
+                    : `This chapter selection filters the MCQ question bank for ${form.subject} → ${selectedChapters.join('; ')}.`
+                  : 'Choose at least one chapter for this subject. Closed paper-test materials will be added to the selected chapter(s).'}
+              >
+                <div role="group" aria-label="Test chapters" aria-required="true" data-testid="test-chapter-group" className="max-h-52 overflow-y-auto rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-2 grid gap-1 sm:grid-cols-2">
+                  {availableChapters.map((chapter) => (
                     <label key={`${chapter.module}-${chapter.value}`} className="flex items-start gap-2 rounded-md px-2 py-1.5 text-xs text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer">
                       <input
                         type="checkbox"
@@ -563,7 +572,7 @@ export default function TestAuthoring({ scopedBatch, scopedGroup } = {}) {
           ) : null}
 
           {formError ? (
-            <div className="rounded-lg border border-rose-200 dark:border-rose-900/60 bg-rose-50/70 dark:bg-rose-500/5 px-3 py-2 text-sm text-rose-700 dark:text-rose-300">
+            <div role="alert" className="rounded-lg border border-rose-200 dark:border-rose-900/60 bg-rose-50/70 dark:bg-rose-500/5 px-3 py-2 text-sm text-rose-700 dark:text-rose-300">
               {formError}
             </div>
           ) : null}
@@ -616,6 +625,7 @@ export default function TestAuthoring({ scopedBatch, scopedGroup } = {}) {
 
             <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-500 dark:text-slate-400">
               {t.subject ? <span>{t.subject}</span> : null}
+              {Array.isArray(t.chapters) && t.chapters.length ? <span>Materials: {t.chapters.join('; ')}</span> : null}
               <span>{t.batch || ALL_BATCHES}</span>
               <span>{t.group || 'Both Groups'}</span>
               {t.test_date ? (

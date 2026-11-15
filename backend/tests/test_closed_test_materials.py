@@ -183,3 +183,56 @@ def test_materials_respects_the_student_makeup_shift_before_releasing_papers(cli
     )
     assert materials.status_code == 200, materials.text
     assert not [row for row in materials.json().get("result", []) if row.get("testId") == "MAKEUP-MATERIAL-WINDOW"]
+
+
+def test_new_test_materials_appear_under_the_chapter_selected_at_creation(client, mentor_headers):
+    imported = client.post(
+        "/api/student-auth/import",
+        headers=mentor_headers,
+        json={"students": [{
+            "studentId": STUDENT_ID,
+            "password": PASSWORD,
+            "studentName": "Closed Window Fixture",
+            "attempt": "Jan 2027",
+            "batch": BATCH,
+            "group": GROUP,
+        }]},
+    )
+    assert imported.status_code == 200, imported.text
+    now = datetime.now(timezone.utc)
+    chapter = "Ch 13 — Amalgamation of Companies"
+    created = client.post(
+        "/api/mentor/tests",
+        headers=mentor_headers,
+        json={
+            "title": "",
+            "kind": "paper-test",
+            "subject": "Accounts",
+            "chapters": [chapter],
+            "batch": BATCH,
+            "group": GROUP,
+            "window_start": _iso(now - timedelta(hours=2)),
+            "window_end": _iso(now - timedelta(hours=1)),
+            "paper_url": "https://drive.google.com/file/d/selected-chapter-qp/view",
+            "answer_sheet_url": "https://drive.google.com/file/d/selected-chapter-as/view",
+        },
+    )
+    assert created.status_code == 201, created.text
+    test = created.json()["test"]
+    assert test["title"] == f"Practice test — {chapter}"
+    assert test["chapters"] == [chapter]
+
+    async def publish_for_student_materials():
+        db = get_db()
+        await db[MENTOR_TESTS].update_one({"testId": test["testId"]}, {"$set": {"published": True}})
+
+    _run(publish_for_student_materials())
+    materials = client.post(
+        "/api/student-dashboard/get",
+        headers={"X-Student-Id": STUDENT_ID, "X-Session-Password": PASSWORD},
+        json={"action": "notes.listForStudent", "payload": {"studentId": STUDENT_ID}},
+    )
+    assert materials.status_code == 200, materials.text
+    rows = [row for row in materials.json()["result"] if row.get("testId") == test["testId"]]
+    assert {row["chapter"] for row in rows} == {chapter}
+    assert {row["materialType"] for row in rows} == {"question-paper", "answer-paper"}

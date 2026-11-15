@@ -63,10 +63,10 @@ UPLOAD_MIME_OK = {
 class TestCreate(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
-    title: str = Field(min_length=2, max_length=TITLE_MAX)
+    title: Optional[str] = Field(default=None, max_length=TITLE_MAX)
     kind: Literal["mcq-test", "paper-test"] = "mcq-test"
     subject: Optional[str] = Field(default=None, max_length=SUBJECT_MAX)
-    chapters: list[str] = Field(default_factory=list)
+    chapters: list[str] = Field(min_length=1, max_length=40)
     batch: Optional[str] = Field(default=None, max_length=TARGET_MAX)
     group: Optional[str] = Field(default=None, max_length=TARGET_MAX)
     exclusiveGroup: bool = False
@@ -88,10 +88,10 @@ class TestCreate(BaseModel):
 class TestPatch(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
-    title: Optional[str] = Field(default=None, min_length=2, max_length=TITLE_MAX)
+    title: Optional[str] = Field(default=None, max_length=TITLE_MAX)
     kind: Optional[Literal["mcq-test", "paper-test"]] = None
     subject: Optional[str] = Field(default=None, max_length=SUBJECT_MAX)
-    chapters: Optional[list[str]] = None
+    chapters: Optional[list[str]] = Field(default=None, min_length=1, max_length=40)
     batch: Optional[str] = Field(default=None, max_length=TARGET_MAX)
     group: Optional[str] = Field(default=None, max_length=TARGET_MAX)
     exclusiveGroup: Optional[bool] = None
@@ -154,12 +154,29 @@ def clean_text(value: Optional[str], limit: int) -> Optional[str]:
 
 
 def clean_chapters(values: Optional[list[str]]) -> list[str]:
+    if isinstance(values, str):
+        values = [values]
     out: list[str] = []
     for item in values or []:
         text = clean_text(item, 120)
         if text and text not in out:
             out.append(text)
     return out[:40]
+
+
+def generated_test_title(payload: dict) -> str:
+    """Use the first required chapter as a readable title when the name is blank."""
+    chapters = clean_chapters(payload.get("chapters"))
+    if chapters:
+        return clean_text(f"Practice test — {chapters[0]}", TITLE_MAX) or "Practice test"
+    subject = clean_text(payload.get("subject"), SUBJECT_MAX)
+    return clean_text(f"{subject} test" if subject else "Practice test", TITLE_MAX) or "Practice test"
+
+
+def validate_required_chapter(payload: dict) -> Optional[str]:
+    if not clean_chapters(payload.get("chapters")):
+        return "Choose at least one chapter for this test."
+    return None
 
 
 def validate_paper_fields(payload: dict) -> Optional[str]:
@@ -187,12 +204,14 @@ def validate_window(payload: dict) -> Optional[str]:
 
 def build_document(payload: dict, *, test_id: str, now_ms: int, created_by: str = "mentor") -> dict:
     """Normalised mentor_tests document. Pure — safe to unit test."""
+    chapters = clean_chapters(payload.get("chapters"))
+    title = clean_text(payload.get("title"), TITLE_MAX) or generated_test_title({**payload, "chapters": chapters})
     doc = {
         "testId": test_id,
-        "title": clean_text(payload.get("title"), TITLE_MAX),
+        "title": title,
         "kind": payload.get("kind") or "mcq-test",
         "subject": clean_text(payload.get("subject"), SUBJECT_MAX),
-        "chapters": clean_chapters(payload.get("chapters")),
+        "chapters": chapters,
         "batch": clean_text(payload.get("batch"), TARGET_MAX),
         "group": clean_text(payload.get("group"), TARGET_MAX),
         "exclusiveGroup": bool(payload.get("exclusiveGroup")),
@@ -233,6 +252,8 @@ def apply_patch(doc: dict, patch: dict, *, now_ms: int) -> dict:
             updated[key] = clean_chapters(value)
         else:
             updated[key] = value
+    if not updated.get("title"):
+        updated["title"] = generated_test_title(updated)
     updated["updatedAt"] = now_ms
     return updated
 
@@ -274,7 +295,7 @@ async def create_test(body: TestCreate, claims: dict = Depends(require_mentor)):
     """Create a test. It stays unpublished until the mentor publishes it."""
     db = get_db()
     payload = body.model_dump()
-    err = validate_window(payload) or validate_paper_fields(payload) or validate_exclusive_audience(payload)
+    err = validate_required_chapter(payload) or validate_window(payload) or validate_paper_fields(payload) or validate_exclusive_audience(payload)
     if err:
         raise HTTPException(status_code=422, detail=err)
 
@@ -294,7 +315,8 @@ async def update_test(test_id: str, body: TestPatch, claims: dict = Depends(requ
     if not doc:
         raise HTTPException(status_code=404, detail="Test nahi mila")
     patch = {k: v for k, v in body.model_dump().items() if v is not None}
-    err = validate_window({**doc, **patch}) or validate_paper_fields({**doc, **patch}) or validate_exclusive_audience({**doc, **patch})
+    merged = {**doc, **patch}
+    err = validate_required_chapter(merged) or validate_window(merged) or validate_paper_fields(merged) or validate_exclusive_audience(merged)
     if err:
         raise HTTPException(status_code=422, detail=err)
     updated = apply_patch(doc, patch, now_ms=_now_ms())
