@@ -24,6 +24,7 @@ from db import (
     ANALYTICS_TEST_HISTORY,
     DASHBOARD_SHARED,
     DASHBOARD_STUDENTS,
+    MENTOR_TESTS,
     STUDENT_ACCOUNTS,
     STUDENT_MCQ_ATTEMPTS,
     get_db,
@@ -679,11 +680,12 @@ def _material_keys(row) -> set:
 
 
 def _note_merge_key(row) -> str:
-    """Identity of "the same note row" for the sheet->Mongo merge.
+    """Identity of a legacy Sheet row during the Sheet->Mongo merge.
 
-    Same PDF published to two batches is TWO notes (one row per batch), so the
-    batch (audience) and group must stay part of the key. Falls back to the id
-    when there is no fileId (hand-uploaded rows).
+    Older publications can have one row per audience, so audience and group
+    remain in the key to avoid collapsing those rows. Mentor-edited multi-batch
+    notes are canonical in Mongo and are protected from stale per-audience rows
+    before this key is applied. Rows without a fileId fall back to their id.
     """
     if not isinstance(row, dict):
         return ""
@@ -2560,7 +2562,7 @@ def _notes_for_student(notes: list, account: Optional[dict]) -> list:
         # A note published to several batches is ONE row with a batch list.
         listed = {str(b or "").strip().lower() for b in (note.get("batches") or [])}
         if listed:
-            batch_ok = batch.strip().lower() in listed
+            batch_ok = "all batches" in listed or "all" in listed or batch.strip().lower() in listed
         else:
             batch_ok = audience in ("", "All Batches") or audience == batch
         group_ok = _group_ok(note_group, group)
@@ -2571,6 +2573,90 @@ def _notes_for_student(notes: list, account: Optional[dict]) -> list:
     # chapter order me aati hain (upload order me nahi).
     out.sort(key=_note_order_key)
     return out
+
+
+async def _closed_test_materials_for_student(db, student_id: str, account: Optional[dict]) -> list:
+    """Expose a closed test's QP + answer paper in Materials, within its audience.
+
+    These are virtual material rows: the existing Drive files are reused, and
+    nothing is copied into Notes or uploaded a second time. A test with several
+    chapter tags appears under each tagged chapter; untagged legacy tests fall
+    back to the existing "Other material" folder.
+    """
+    if not student_id or not account:
+        return []
+    if not account.get("master") and not _attempt_access_allowed(
+        str(account.get("attempt") or ""), str(account.get("batch") or "")
+    ):
+        return []
+
+    # Share the exact audience, window, and access-makeup rules used by the test
+    # list/paper endpoints, so a student's Materials view cannot close earlier
+    # than their own extended window.
+    from routers.student_tests import direct_download_url, matches_target, window_state
+
+    now = datetime.now(timezone.utc)
+    now_ms = int(now.timestamp() * 1000)
+    lockouts = await access_lib.off_intervals(db, student_id, account)
+    result = []
+    async for test in db[MENTOR_TESTS].find({"published": True}).sort("createdAt", -1).limit(500):
+        if not matches_target(test, account):
+            continue
+        extra_minutes = access_lib.credit_for(lockouts, test, now)
+        student_view = access_lib.shifted_view(test, extra_minutes)
+        if window_state(student_view, now_ms) != "closed":
+            continue
+
+        question_url = str(test.get("paper_url") or "").strip()
+        answer_url = str(test.get("answer_sheet_url") or "").strip()
+        answer_text = str(test.get("answer_sheet_text") or "").strip()
+        resources = []
+        if question_url:
+            resources.append(("question-paper", "Question Paper", direct_download_url(question_url), ""))
+        if answer_url:
+            resources.append(("answer-paper", "Answer Paper", direct_download_url(answer_url), ""))
+        elif answer_text:
+            resources.append(("answer-paper", "Answer Paper", "", answer_text))
+        if not resources:
+            continue
+
+        raw_chapters = test.get("chapters") or []
+        if isinstance(raw_chapters, str):
+            raw_chapters = [raw_chapters]
+        chapters = list(dict.fromkeys(str(value).strip() for value in raw_chapters if str(value).strip()))
+        legacy_chapter = str(test.get("chapter") or "").strip()
+        if legacy_chapter and legacy_chapter not in chapters:
+            chapters.append(legacy_chapter)
+        if not chapters:
+            chapters = ["Other material"]
+
+        test_id = str(test.get("testId") or "").strip()
+        title = str(test.get("title") or "Mentor test").strip()
+        subject = str(test.get("subject") or "Other").strip() or "Other"
+        date = str(student_view.get("window_end") or test.get("test_date") or "")[:10]
+        description = f"Closed mentor test · {test_id}" if test_id else "Closed mentor test"
+        for chapter_index, chapter in enumerate(chapters):
+            for kind, label, url, text_content in resources:
+                row = {
+                    "id": f"mentor-test:{test_id}:{chapter_index}:{kind}",
+                    "testId": test_id,
+                    "title": f"{title} — {label}",
+                    "description": description,
+                    "date": date,
+                    "subject": subject,
+                    "category": "Mentor Tests",
+                    "series": "Mentor Tests",
+                    "chapter": chapter,
+                    "url": url,
+                    "fileUrl": url,
+                    "fileName": f"{title} - {label}",
+                    "source": "mentor-test",
+                    "materialType": kind,
+                }
+                if text_content:
+                    row["textContent"] = text_content
+                result.append(row)
+    return result
 
 
 _SUBJECT_ORDER = ["Accounts", "Law", "DT", "GST", "Costing", "Audit", "FM", "SM"]
@@ -3180,6 +3266,23 @@ async def import_dashboard(body: DashboardImportBody, request: Request):
         existing = [
             n for n in (shared_doc.get("notes") or []) if isinstance(n, dict)
         ]
+        # Mongo is authoritative for a published row whose batch list has been
+        # edited in the mentor dashboard. The Sheet mirror can still contain an
+        # older one-row-per-batch copy (or only the first row may have updated),
+        # so do not re-import those stale rows over the canonical Drive-file row.
+        canonical_file_ids = {
+            str(note.get("fileId") or "").strip()
+            for note in existing
+            if (note.get("batchAudienceEdited") or (
+                isinstance(note.get("batches"), list) and note.get("batches")
+            ))
+            and str(note.get("fileId") or "").strip()
+        }
+        if canonical_file_ids:
+            incoming = [
+                note for note in incoming
+                if str((note or {}).get("fileId") or "").strip() not in canonical_file_ids
+            ]
         seen = set()
         merged: list = []
         for note in incoming + existing:
@@ -3284,14 +3387,21 @@ async def get_dashboard_section(body: DashboardGetBody, principal=Depends(dashbo
 
     if action == "notes.listForStudent":
         student_doc = await db[DASHBOARD_STUDENTS].find_one({"studentId": student_id}) if student_id else None
-        if student_doc and isinstance(student_doc.get("notes"), list):
-            account = await db[STUDENT_ACCOUNTS].find_one({"studentId": student_id})
-            return {"found": True, "result": _notes_for_student(await _visible_materials(db, student_doc.get("notes") or []), account)}
-        shared = await db[DASHBOARD_SHARED].find_one({"_id": "shared"})
-        if not shared or "notes" not in shared:
-            return {"found": False}
         account = await db[STUDENT_ACCOUNTS].find_one({"studentId": student_id}) if student_id else None
-        return {"found": True, "result": _notes_for_student(await _visible_materials(db, shared.get("notes") or []), account)}
+        if student_doc and isinstance(student_doc.get("notes"), list):
+            source_notes = student_doc.get("notes") or []
+            has_note_source = True
+        else:
+            shared = await db[DASHBOARD_SHARED].find_one({"_id": "shared"})
+            has_note_source = bool(shared and "notes" in shared)
+            source_notes = (shared or {}).get("notes") or []
+
+        visible_notes = _notes_for_student(await _visible_materials(db, source_notes), account)
+        test_materials = await _closed_test_materials_for_student(db, student_id, account)
+        result = sorted(visible_notes + test_materials, key=_note_order_key)
+        if has_note_source or test_materials:
+            return {"found": True, "result": result}
+        return {"found": False}
 
     if action == "attendance.status":
         if not student_id:

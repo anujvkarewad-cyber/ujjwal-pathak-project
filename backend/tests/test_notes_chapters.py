@@ -266,3 +266,115 @@ def test_publish_never_saves_after_unconfirmed_drive_permission(client, mentor_h
     assert "synthetic-sensitive-provider-detail" not in res.text
     assert len(calls) == 1
     assert read_notes() == before
+
+
+def test_published_note_audience_can_change_to_multiple_batches_in_place(client, mentor_headers, monkeypatch):
+    from routers import notes_inbox
+
+    monkeypatch.setattr(notes_inbox, "_sheet_update_note_row", lambda *args, **kwargs: None)
+    second_batch = "Before Result Batch 2"
+    seed_notes([{
+        "id": "NOTE-AUDIENCE",
+        "title": "Ch 13 · AS 13 Practice",
+        "subject": "Accounts",
+        "category": "Super 75",
+        "chapter": "Ch 13 — Amalgamation of Companies",
+        "fileId": "DRIVE-FILE-1",
+        "fileUrl": "https://drive.google.com/file/d/DRIVE-FILE-1/view",
+        "audience": BATCH,
+        "batches": [BATCH],
+        "group": "Group 1",
+    }])
+
+    res = client.post(
+        "/api/notes-inbox/notes/update",
+        headers=mentor_headers,
+        json={"id": "NOTE-AUDIENCE", "batches": [BATCH, second_batch], "group": "Group 2"},
+    )
+    assert res.status_code == 200, res.text
+    stored = read_notes()
+    assert len(stored) == 1, "changing the audience must not duplicate the published note"
+    note = stored[0]
+    assert note["fileId"] == "DRIVE-FILE-1", "the original Drive file must be reused"
+    assert note["batches"] == [BATCH, second_batch]
+    assert note["audience"] == "All Batches"  # compatible display value; batches is authoritative
+    assert note["group"] == "Group 2"
+    assert [row["id"] for row in _notes_for_student(stored, {"batch": BATCH, "group": "Group 2", "attempt": "Jan 2027"})] == ["NOTE-AUDIENCE"]
+    assert [row["id"] for row in _notes_for_student(stored, {"batch": second_batch, "group": "Group 2", "attempt": "Jan 2027"})] == ["NOTE-AUDIENCE"]
+    assert _notes_for_student(stored, {"batch": "After Result Batch 1", "group": "Group 2", "attempt": "Jan 2027"}) == []
+
+
+def test_note_update_rejects_an_empty_batch_selection(client, mentor_headers):
+    res = client.post(
+        "/api/notes-inbox/notes/update",
+        headers=mentor_headers,
+        json={"id": "NOTE-ANY", "batches": []},
+    )
+    assert res.status_code == 400
+
+
+def test_sheet_sync_cannot_revert_a_note_edited_for_multiple_batches(client, mentor_headers):
+    second_batch = "Before Result Batch 2"
+    seed_notes([{
+        "id": "NOTE-AUDIENCE",
+        "title": "Ch 13 · AS 13 Practice",
+        "subject": "Accounts",
+        "category": "Super 75",
+        "chapter": "Ch 13 — Amalgamation of Companies",
+        "fileId": "DRIVE-FILE-1",
+        "fileUrl": "https://drive.google.com/file/d/DRIVE-FILE-1/view",
+        "audience": "All Batches",
+        "batches": [BATCH, second_batch],
+        "group": "Group 2",
+    }])
+
+    synced = client.post(
+        "/api/student-dashboard/import",
+        headers=mentor_headers,
+        json={"notes": [
+            {"id": "NOTE-AUDIENCE", "title": "Old sheet copy", "fileId": "DRIVE-FILE-1",
+             "audience": BATCH, "group": "Group 2"},
+            {"id": "NOTE-AUDIENCE-LEGACY", "title": "Old duplicate sheet copy", "fileId": "DRIVE-FILE-1",
+             "audience": second_batch, "group": "Group 2"},
+        ]},
+    )
+    assert synced.status_code == 200, synced.text
+
+    stored = read_notes()
+    assert len(stored) == 1
+    assert stored[0]["id"] == "NOTE-AUDIENCE"
+    assert stored[0]["batches"] == [BATCH, second_batch]
+    assert stored[0]["title"] == "Ch 13 · AS 13 Practice"
+    assert [note["id"] for note in _notes_for_student(stored, {
+        "batch": second_batch, "group": "Group 2", "attempt": "Jan 2027",
+    })] == ["NOTE-AUDIENCE"]
+
+
+def test_sheet_sync_cannot_revert_a_mentor_edited_all_batches_audience(client, mentor_headers):
+    seed_notes([{
+        "id": "NOTE-AUDIENCE",
+        "title": "Canonical mentor edit",
+        "subject": "Accounts",
+        "category": "Super 75",
+        "fileId": "DRIVE-FILE-ALL",
+        "fileUrl": "https://drive.google.com/file/d/DRIVE-FILE-ALL/view",
+        "audience": "All Batches",
+        "batchAudienceEdited": True,
+        "group": "Both Groups",
+    }])
+
+    synced = client.post(
+        "/api/student-dashboard/import",
+        headers=mentor_headers,
+        json={"notes": [
+            {"id": "NOTE-AUDIENCE", "title": "Old sheet copy", "fileId": "DRIVE-FILE-ALL",
+             "audience": BATCH, "group": "Both Groups"},
+        ]},
+    )
+    assert synced.status_code == 200, synced.text
+
+    stored = read_notes()
+    assert len(stored) == 1
+    assert stored[0]["title"] == "Canonical mentor edit"
+    assert stored[0]["audience"] == "All Batches"
+    assert stored[0]["batchAudienceEdited"] is True

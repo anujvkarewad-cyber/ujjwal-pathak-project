@@ -674,6 +674,7 @@ class NoteUpdateBody(BaseModel):
     subject: Optional[str] = None
     group: Optional[str] = None
     audience: Optional[str] = None
+    batches: Optional[List[str]] = Field(default=None, max_length=4)
     category: Optional[str] = None  # folder = Super 75 / teacher (series)
     chapter: Optional[str] = None   # title me "Ch N ·" prefix
     series: Optional[str] = None    # same as category
@@ -811,7 +812,7 @@ def _apply_note_changes(note: Dict[str, Any], **fields: Any) -> Dict[str, str]:
     """
     changed: Dict[str, str] = {}
 
-    for field in ("subject", "group", "audience"):
+    for field in ("subject", "group"):
         if field not in fields or fields[field] is None:
             continue
         value = str(fields[field]).strip()
@@ -819,6 +820,39 @@ def _apply_note_changes(note: Dict[str, Any], **fields: Any) -> Dict[str, str]:
             continue
         note[field] = value
         changed[field] = value
+
+    selected_batches = fields.get("batches")
+    selected_audience = fields.get("audience")
+    if selected_batches is not None:
+        batches = list(dict.fromkeys(str(value).strip() for value in selected_batches if str(value).strip()))
+        audience = batches[0] if len(batches) == 1 else "All Batches"
+        current_batches = [str(value).strip() for value in (note.get("batches") or []) if str(value).strip()]
+        if (batches != current_batches or str(note.get("audience") or "") != audience
+                or not note.get("batchAudienceEdited")):
+            note["batches"] = batches
+            note["audience"] = audience
+            note["batchAudienceEdited"] = True
+            # The Notes sheet has one legacy audience column; Mongo keeps the
+            # actual list while the mirror gets a compatible display value.
+            changed["audience"] = audience
+    elif selected_audience is not None:
+        value = str(selected_audience).strip()
+        if value:
+            # Keep universal visibility compatible with deployed student readers,
+            # which already honor the legacy audience field but don't know an
+            # "All Batches" list sentinel. Concrete multi-batch selections remain
+            # authoritative in `batches`.
+            desired_batches = [] if value == "All Batches" else [value]
+            current_batches = [str(item).strip() for item in (note.get("batches") or []) if str(item).strip()]
+            if (str(note.get("audience") or "") != value or current_batches != desired_batches
+                    or not note.get("batchAudienceEdited")):
+                note["audience"] = value
+                if desired_batches:
+                    note["batches"] = desired_batches
+                else:
+                    note.pop("batches", None)
+                note["batchAudienceEdited"] = True
+                changed["audience"] = value
 
     # ── folder = series (Super 75 ya teacher ka naam) ───────────────────────
     folder_label = fields.get("series") if fields.get("series") is not None else fields.get("category")
@@ -994,6 +1028,14 @@ async def update_published_note(body: NoteUpdateBody, claims: dict = Depends(req
         raise HTTPException(status_code=400, detail="Choose a subject from the list.")
     if body.audience is not None and body.audience.strip() not in BATCHES + ["All Batches"]:
         raise HTTPException(status_code=400, detail="Choose a valid batch.")
+    if body.batches is not None:
+        batches = list(dict.fromkeys(str(value).strip() for value in body.batches if str(value).strip()))
+        if not batches:
+            raise HTTPException(status_code=400, detail="Select at least one batch.")
+        if any(batch not in BATCHES for batch in batches):
+            raise HTTPException(status_code=400, detail="Choose valid batches.")
+    if body.audience is not None and body.batches is not None:
+        raise HTTPException(status_code=400, detail="Send either audience or batches, not both.")
 
     db = get_db()
     shared = await db[DASHBOARD_SHARED].find_one({"_id": "shared"}) or {}
@@ -1013,6 +1055,7 @@ async def update_published_note(body: NoteUpdateBody, claims: dict = Depends(req
         subject=body.subject,
         group=body.group,
         audience=body.audience,
+        batches=body.batches,
         category=body.category,
         chapter=body.chapter,
         series=body.series,

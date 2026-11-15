@@ -21,6 +21,7 @@ import {
 } from 'lucide-react';
 import { normalizeStudentGroup } from '@/utils/studentGroup';
 import { ALL_BATCHES, ENROLLMENT_BATCHES } from '@/constants/batches';
+import { chaptersForSubject } from '@/constants/chapters';
 import { cn } from '@/utils/format';
 import {
   createMentorTest,
@@ -56,6 +57,7 @@ const emptyForm = () => ({
   title: '',
   kind: 'paper-test',
   subject: SUBJECTS[0],
+  chapters: [],
   batch: BATCH_OPTIONS[0],
   group: GROUP_OPTIONS[0],
   test_date: '',
@@ -226,6 +228,7 @@ export default function TestAuthoring({ scopedBatch, scopedGroup } = {}) {
       title: test.title || '',
       kind: test.kind || 'paper-test',
       subject: test.subject || SUBJECTS[0],
+      chapters: Array.isArray(test.chapters) ? [...test.chapters] : [],
       batch: test.batch || ALL_BATCHES,
       group: test.group || 'Both Groups',
       test_date: test.test_date || '',
@@ -274,6 +277,7 @@ export default function TestAuthoring({ scopedBatch, scopedGroup } = {}) {
         title: form.title.trim(),
         kind: form.kind,
         subject: form.subject,
+        chapters: form.chapters,
         batch: scopedBatch || form.batch,
         exclusiveGroup: editing ? !!form.exclusiveGroup : !!scopedGroup,
         group: scopedGroup || form.group,
@@ -438,6 +442,7 @@ export default function TestAuthoring({ scopedBatch, scopedGroup } = {}) {
                 onChange={(e) => {
                   const subject = e.target.value;
                   set('subject', subject);
+                  set('chapters', []);
                   if (!scopedGroup) set('group', SUBJECT_GROUP_MAP[subject] || 'Both Groups');
                 }}
                 data-testid="test-subject"
@@ -445,6 +450,27 @@ export default function TestAuthoring({ scopedBatch, scopedGroup } = {}) {
                 {SUBJECTS.map((s) => <option key={s} value={s}>{s}</option>)}
               </select>
             </Field>
+
+            <div className="sm:col-span-2 lg:col-span-3">
+              <Field label="Chapter(s)" hint="The question paper and answer paper appear together under these chapter(s) in student Materials after the test closes.">
+                <div role="group" aria-label="Test chapters" className="max-h-52 overflow-y-auto rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-2 grid gap-1 sm:grid-cols-2">
+                  {chaptersForSubject(form.subject).map((chapter) => (
+                    <label key={`${chapter.module}-${chapter.value}`} className="flex items-start gap-2 rounded-md px-2 py-1.5 text-xs text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={form.chapters.includes(chapter.value)}
+                        onChange={(e) => set('chapters', e.target.checked
+                          ? [...new Set([...form.chapters, chapter.value])]
+                          : form.chapters.filter((value) => value !== chapter.value))}
+                        data-testid={`test-chapter-${chapter.value}`}
+                        className="mt-0.5 accent-[#2563EB]"
+                      />
+                      <span><span className="font-semibold text-slate-400">{chapter.module} · </span>{chapter.value}</span>
+                    </label>
+                  ))}
+                </div>
+              </Field>
+            </div>
 
             <Field label="Batch">
               <select className={inputCls} disabled={!!scopedBatch} value={form.batch} onChange={(e) => set('batch', e.target.value)} data-testid="test-batch">

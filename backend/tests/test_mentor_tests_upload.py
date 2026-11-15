@@ -168,6 +168,7 @@ def test_create_then_publish_a_paper_test_keeps_the_uploaded_links(client, mento
             "title": "Audit Chapter 3 Paper Test",
             "kind": "paper-test",
             "subject": "Audit",
+            "chapters": ["Ch 3 — Internal Control"],
             "batch": "Before Result Batch 1",
             "group": "Both Groups",
             "test_date": "2026-10-20",
@@ -183,6 +184,7 @@ def test_create_then_publish_a_paper_test_keeps_the_uploaded_links(client, mento
     test = created.json()["test"]
     assert test["published"] is False
     assert test["paper_url"].endswith("/FILE123/view")
+    assert test["chapters"] == ["Ch 3 — Internal Control"]
 
     listed = client.get("/api/mentor/tests", headers=mentor_headers)
     assert listed.status_code == 200
