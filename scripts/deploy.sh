@@ -48,30 +48,24 @@ SERVICE="${SERVICE:-ujjwal-pathak-app}"
 REPO="asia-south1-docker.pkg.dev/${PROJECT}/cloud-run-source-deploy/${SERVICE}"
 TAG_SUFFIX="$(date -u +%Y%m%d-%H%M%S)"
 
-live_image() {
-  local revision
-  revision="$(gcloud run services describe "$SERVICE" --region="$REGION" --project="$PROJECT" \
-    --format='value(status.latestReadyRevisionName)')"
-  [[ -n "$revision" ]] || die "Cloud Run has no ready revision to use as base image"
-  gcloud run revisions describe "$revision" --region="$REGION" --project="$PROJECT" \
-    --format='value(spec.containers[0].image)'
+revision_image() {
+  local revision="$1"
+  gcloud run revisions describe "$revision" --region="$REGION" --project="$PROJECT" --format='value(spec.containers[0].image)'
 }
-live_digest() {
+
+revision_digest() {
   local image
-  image="$(live_image)"
-  # Cloud Run commonly returns the deployed image as TAG@sha256:DIGEST.
-  # Use that pinned digest directly; Artifact Registry may no longer resolve
-  # an old tag even though Cloud Run is still serving the digest.
+  image="$(revision_image "$1")"
   if [[ "$image" == *@sha256:* ]]; then
     printf '%s\n' "${image##*@}"
     return 0
   fi
-  gcloud artifacts docker images describe "$image" --project="$PROJECT" \
-    --format='value(image_summary.digest)'
+  gcloud artifacts docker images describe "$image" --project="$PROJECT" --format='value(image_summary.digest)'
 }
 
 build_and_deploy() {
   local kind="$1" ctx="$2" tag="${REPO}:${1}-${TAG_SUFFIX}"
+  local revision_suffix="${kind}-${TAG_SUFFIX}-${GITHUB_RUN_ID:-local}"
   echo "== building $kind from $ctx"
   # The project uses a user-specified Cloud Build service account. The implicit
   # config created by `gcloud builds submit --tag` does not set logging, so
@@ -93,15 +87,22 @@ Path(config_path).write_text(json.dumps(config, indent=2) + chr(10))
 PY
   ( cd "$ctx" && gcloud builds submit --config=cloudbuild.json --project="$PROJECT" \
       --region="$REGION" --timeout=30m --quiet )
-  echo "== deploying $tag"
-  gcloud run services update "$SERVICE" --region="$REGION" --project="$PROJECT" --image="$tag" --quiet
-  gcloud run services describe "$SERVICE" --region="$REGION" --project="$PROJECT" \
-    --format='value(status.latestReadyRevisionName)'
+  echo "== creating $kind revision without production traffic: $tag"
+  # This is essential: without --no-traffic, a service update can immediately
+  # move traffic to the new revision before the pre-deploy checks finish.
+  gcloud run services update "$SERVICE" --region="$REGION" --project="$PROJECT" --image="$tag" --no-traffic --revision-suffix="$revision_suffix" --quiet
+  LAST_DEPLOYED_REVISION="${SERVICE}-${revision_suffix}"
+  DEPLOYED_REVISION="$(gcloud run revisions describe "$LAST_DEPLOYED_REVISION" --region="$REGION" --project="$PROJECT" --format='value(metadata.name)')"
+  [[ "$DEPLOYED_REVISION" == "$LAST_DEPLOYED_REVISION" ]] || die "expected revision $LAST_DEPLOYED_REVISION was not created"
+  echo "== ready revision $DEPLOYED_REVISION (no production traffic)"
 }
 
 if [[ "$WHAT" == "frontend" || "$WHAT" == "both" ]]; then
-  BASE="$(live_digest)"
-  echo "== current live digest $BASE"
+  BASE_REVISION="$(gcloud run services describe "$SERVICE" --region="$REGION" --project="$PROJECT" --format='value(status.latestReadyRevisionName)')"
+  [[ -n "$BASE_REVISION" ]] || die "Cloud Run has no ready revision to use as frontend base"
+  BASE_IMAGE="$(revision_image "$BASE_REVISION")"
+  BASE="$(revision_digest "$BASE_REVISION")"
+  echo "== current base revision $BASE_REVISION digest $BASE"
   CTX="$(mktemp -d)"
   # only committed code ships; the SPA source lives in frontend/
   git -C "$ROOT" archive HEAD frontend | tar -x -C "$CTX" --strip-components=1
@@ -111,7 +112,7 @@ WORKDIR /fe
 COPY . .
 RUN npm ci --no-audit --no-fund && CI=false GENERATE_SOURCEMAP=false npx craco build
 
-FROM $(live_image | cut -d@ -f1)@$BASE
+FROM ${BASE_IMAGE%%@*}@$BASE
 USER root
 COPY --from=fe /fe/build /app/frontend/build
 RUN chown -R appuser:appuser /app/frontend && chmod -R u+rwX,go+rX /app/frontend
@@ -122,11 +123,21 @@ EOF
 fi
 
 if [[ "$WHAT" == "backend" || "$WHAT" == "both" ]]; then
-  BASE="$(live_digest)"
+  if [[ -n "${LAST_DEPLOYED_REVISION:-}" ]]; then
+    # In a both-target deploy, layer backend changes on the exact frontend
+    # revision this run just created, not whichever revision happens to be LATEST.
+    BASE_REVISION="$LAST_DEPLOYED_REVISION"
+  else
+    BASE_REVISION="$(gcloud run services describe "$SERVICE" --region="$REGION" --project="$PROJECT" --format='value(status.latestReadyRevisionName)')"
+  fi
+  [[ -n "$BASE_REVISION" ]] || die "Cloud Run has no ready revision to use as backend base"
+  BASE_IMAGE="$(revision_image "$BASE_REVISION")"
+  BASE="$(revision_digest "$BASE_REVISION")"
+  echo "== backend base revision $BASE_REVISION digest $BASE"
   CTX="$(mktemp -d)"
   git -C "$ROOT" archive HEAD backend | tar -x -C "$CTX" --strip-components=1
   cat > "$CTX/Dockerfile" <<EOF
-FROM $(live_image | cut -d@ -f1)@$BASE
+FROM ${BASE_IMAGE%%@*}@$BASE
 USER root
 COPY routers/ /app/backend/routers/
 COPY *.py /app/backend/
@@ -150,9 +161,11 @@ remove_verify_tag() {
 }
 trap remove_verify_tag EXIT
 
-echo "== tagging latest ready revision for no-traffic verification"
+CANDIDATE_REVISION="${LAST_DEPLOYED_REVISION:-}"
+[[ -n "$CANDIDATE_REVISION" ]] || die "no candidate revision was recorded for verification"
+echo "== tagging exact candidate revision $CANDIDATE_REVISION for no-traffic verification"
 gcloud run services update-traffic "$SERVICE" --region="$REGION" --project="$PROJECT" \
-  --update-tags="${VERIFY_TAG}=LATEST" --quiet
+  --update-tags="${VERIFY_TAG}=${CANDIDATE_REVISION}" --quiet
 VERIFY_TAG_SET=1
 
 SERVICE_JSON="$(gcloud run services describe "$SERVICE" --region="$REGION" --project="$PROJECT" --format=json)"
@@ -161,11 +174,11 @@ PREVIEW_URL="$(printf '%s' "$SERVICE_JSON" | python3 -c 'import json,sys; data=j
 echo "== verifying candidate revision at $PREVIEW_URL (production traffic unchanged)"
 "$ROOT/scripts/verify-deploy.sh" "$PREVIEW_URL"
 
-# Promote only after the candidate passes. The command removes the temporary
-# tag and sends 100% of service traffic to the now-verified latest revision.
-echo "== promoting verified revision to 100% traffic"
+# Promote only the exact revision that passed verification, not whichever
+# revision happens to be LATEST if another deploy ran concurrently.
+echo "== promoting verified revision $CANDIDATE_REVISION to 100% traffic"
 gcloud run services update-traffic "$SERVICE" --region="$REGION" --project="$PROJECT" \
-  --remove-tags="$VERIFY_TAG" --to-latest --quiet
+  --remove-tags="$VERIFY_TAG" --to-revisions="${CANDIDATE_REVISION}=100" --quiet
 VERIFY_TAG_SET=0
 trap - EXIT
 
