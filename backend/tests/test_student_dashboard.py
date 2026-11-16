@@ -116,3 +116,46 @@ def test_dashboard_import_and_reads(client, mentor_headers):
     assert denied.status_code == 403
     anns = client.post("/api/student-dashboard/get", headers=actor, json={"action":"getAnnouncements"})
     assert anns.status_code == 200
+
+
+def test_shared_inbox_note_is_not_hidden_by_empty_student_snapshot(client, mentor_headers):
+    """An empty per-student snapshot must not mask an Inbox-published Mongo note."""
+    student_id = "UMP0042"
+    actor = seed_student_auth(client, mentor_headers, student_id=student_id)
+    run = __import__("asyncio").run
+    from db import DASHBOARD_SHARED, DASHBOARD_STUDENTS, STUDENT_ACCOUNTS, get_db
+
+    batch = "Before Result Batch 1"
+
+    async def setup():
+        db = get_db()
+        await db[STUDENT_ACCOUNTS].update_one(
+            {"studentId": student_id},
+            {"$set": {"attempt": "Jan 2027", "batch": batch, "group": "Group 1"}},
+            upsert=True,
+        )
+        await db[DASHBOARD_STUDENTS].update_one(
+            {"studentId": student_id}, {"$set": {"notes": []}}, upsert=True
+        )
+        await db[DASHBOARD_SHARED].update_one(
+            {"_id": "shared"},
+            {"$set": {"notes": [{
+                "id": "NOTE-INBOX-1",
+                "title": "Inbox-published Accounts PDF",
+                "subject": "Accounts",
+                "audience": batch,
+                "batches": [batch],
+                "group": "Group 1",
+                "fileId": "DRIVE-FILE-INBOX-1",
+            }] }},
+            upsert=True,
+        )
+
+    run(setup())
+    response = client.post(
+        "/api/student-dashboard/get",
+        headers=actor,
+        json={"action": "notes.listForStudent"},
+    )
+    assert response.status_code == 200, response.text
+    assert [note["id"] for note in response.json()["result"]] == ["NOTE-INBOX-1"]

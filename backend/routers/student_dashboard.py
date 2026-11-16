@@ -3388,13 +3388,44 @@ async def get_dashboard_section(body: DashboardGetBody, principal=Depends(dashbo
     if action == "notes.listForStudent":
         student_doc = await db[DASHBOARD_STUDENTS].find_one({"studentId": student_id}) if student_id else None
         account = await db[STUDENT_ACCOUNTS].find_one({"studentId": student_id}) if student_id else None
-        if student_doc and isinstance(student_doc.get("notes"), list):
-            source_notes = student_doc.get("notes") or []
-            has_note_source = True
-        else:
-            shared = await db[DASHBOARD_SHARED].find_one({"_id": "shared"})
-            has_note_source = bool(shared and "notes" in shared)
-            source_notes = (shared or {}).get("notes") or []
+        shared = await db[DASHBOARD_SHARED].find_one({"_id": "shared"})
+        shared_notes = [
+            note for note in ((shared or {}).get("notes") or []) if isinstance(note, dict)
+        ]
+        student_notes = [
+            note for note in ((student_doc or {}).get("notes") or []) if isinstance(note, dict)
+        ]
+
+        # Inbox publishes are global Mongo rows. Never let an old per-student
+        # snapshot (including an empty list) shadow them. Preserve student-only
+        # legacy rows, but drop stale per-batch copies where Mongo already has a
+        # canonical multi-batch row for the same Drive file.
+        canonical_file_ids = {
+            str(note.get("fileId") or "").strip()
+            for note in shared_notes
+            if (note.get("batchAudienceEdited") or (
+                isinstance(note.get("batches"), list) and note.get("batches")
+            ))
+            and str(note.get("fileId") or "").strip()
+        }
+        if canonical_file_ids:
+            student_notes = [
+                note for note in student_notes
+                if str(note.get("fileId") or "").strip() not in canonical_file_ids
+            ]
+
+        source_notes = []
+        seen_note_keys = set()
+        for note in shared_notes + student_notes:
+            key = _note_merge_key(note)
+            if key and key != "id:" and key in seen_note_keys:
+                continue
+            if key and key != "id:":
+                seen_note_keys.add(key)
+            source_notes.append(note)
+        has_note_source = bool(shared and "notes" in shared) or bool(
+            student_doc and isinstance(student_doc.get("notes"), list)
+        )
 
         visible_notes = _notes_for_student(await _visible_materials(db, source_notes), account)
         test_materials = await _closed_test_materials_for_student(db, student_id, account)
