@@ -64,6 +64,14 @@ export const applyBatchDrift = (studentIds) =>
     body: { studentIds },
   });
 
+// Create only the currently missing app accounts selected from the Students
+// sheet. The browser sends Student IDs only; sheet passwords stay server-side.
+export const importMissingAccounts = (studentIds) =>
+  backendApiCall("/api/student-auth/students/missing-accounts/import", {
+    method: "POST",
+    body: { studentIds },
+  });
+
 // Progress meter for the sheet password ledger: how many active students' sheet
 // cells still authenticate. Fills itself as those students sign in.
 export const getCoverage = (refresh = false) =>

@@ -653,6 +653,38 @@ def _sheet_row_name(row: list, header: list) -> str:
     return str(row[idx] if len(row) > idx else "").strip()
 
 
+def _missing_account_sheet_columns(headers: list) -> dict:
+    """Resolve the Students-sheet columns used by the mentor import button."""
+    names = [" ".join(str(cell or "").strip().lower().split()) for cell in headers]
+
+    def find(*aliases):
+        for alias in aliases:
+            if alias in names:
+                return names.index(alias)
+        return None
+
+    return {
+        "studentId": find("student id", "studentid"),
+        "studentName": find("student name", "full name", "name"),
+        "email": find("email", "email id", "e-mail", "email address"),
+        "caLevel": find("ca level", "level"),
+        "group": find("group"),
+        "attempt": find("attempt", "exam attempt"),
+        "batch": find("batch", "batch name"),
+        "password": find("passwords", "password", "temporary password", "temp password"),
+        "passwordChanged": find("password changed"),
+        "phone": find("whatsapp number", "whatsapp", "phone number", "mobile number", "phone", "mobile"),
+        "address": find("full address", "address"),
+        "joinedOn": find("joined on", "joined date", "joinedon"),
+    }
+
+
+def _missing_account_sheet_cell(row: list, column: Optional[int]) -> str:
+    if column is None or column >= len(row) or row[column] is None:
+        return ""
+    return str(row[column]).strip()
+
+
 _coverage_cache: dict = {"at": None, "payload": None}
 
 
@@ -738,6 +770,11 @@ class BatchDriftApplyBody(BaseModel):
     studentIds: list[str] = Field(default_factory=list)
 
 
+class MissingAccountsImportBody(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    studentIds: list[str] = Field(min_length=1, max_length=100)
+
+
 @router.post("/students/batch-drift/apply")
 async def apply_batch_drift(body: BatchDriftApplyBody, claims: dict = Depends(require_mentor)):
     """Mentor-only: copy the sheet's Batch into Mongo for the named students.
@@ -819,6 +856,168 @@ async def apply_batch_drift(body: BatchDriftApplyBody, claims: dict = Depends(re
             f"{len(done)} student(s) now follow the sheet."
             + (f" {len(failed)} could not be written." if failed else "")
         ),
+    }
+
+
+@router.post("/students/missing-accounts/import")
+async def import_missing_student_accounts(
+    body: MissingAccountsImportBody,
+    claims: dict = Depends(require_mentor),
+):
+    """Mentor-only: create selected app accounts that are still missing from Mongo.
+
+    The browser sends IDs only. The server re-reads the Students sheet, confirms
+    each ID is still a missing-account candidate, and inserts an account only if
+    it remains absent. Sheet passwords are hashed server-side and are never
+    returned, logged, or emailed. Existing accounts are never overwritten.
+    """
+    requested = []
+    for raw_id in body.studentIds:
+        sid = normalize_student_id(raw_id)
+        if not re.fullmatch(r"UMP\d{4,}", sid) or sid in BATCH_DRIFT_SKIP_IDS:
+            raise HTTPException(status_code=400, detail="Choose valid student IDs from the missing-account list.")
+        if sid not in requested:
+            requested.append(sid)
+
+    sheet_rows = await _sheet_students_rows()
+    if not sheet_rows:
+        raise HTTPException(status_code=503, detail="Students sheet is empty or unavailable.")
+    columns = _missing_account_sheet_columns(sheet_rows[0])
+    required = ("studentId", "studentName", "email", "attempt", "batch", "password")
+    missing_columns = [name for name in required if columns.get(name) is None]
+    if missing_columns:
+        raise HTTPException(
+            status_code=409,
+            detail="Students sheet is missing required columns for account import: " + ", ".join(missing_columns),
+        )
+
+    accounts = await _live_accounts()
+    diff = batch_drift_rows(sheet_rows, accounts)
+    if diff.get("skipped", {}).get("noHeader"):
+        raise HTTPException(status_code=409, detail="Students sheet needs Student ID and Batch headers before import.")
+    importable_ids = {normalize_student_id(row["studentId"]) for row in diff["needsImport"]}
+    existing_ids = {
+        normalize_student_id(account.get("studentId") or "")
+        for account in accounts
+        if account.get("studentId")
+    }
+
+    rows_by_id = {}
+    for sheet_row in sheet_rows[1:]:
+        sid = normalize_student_id(_missing_account_sheet_cell(sheet_row, columns["studentId"]))
+        if sid:
+            rows_by_id.setdefault(sid, []).append(sheet_row)
+
+    db = get_db()
+    mentor = claims.get("sub") or "mentor"
+    outcomes = []
+    from pymongo.errors import DuplicateKeyError
+
+    for sid in requested:
+        if sid not in importable_ids:
+            if sid in existing_ids:
+                outcomes.append({"studentId": sid, "status": "skipped", "reason": "App account already exists; it was left unchanged."})
+            else:
+                outcomes.append({"studentId": sid, "status": "skipped", "reason": "No longer in the current missing-account list; re-check the sheet."})
+            continue
+
+        matching_rows = rows_by_id.get(sid, [])
+        if len(matching_rows) != 1:
+            outcomes.append({"studentId": sid, "status": "skipped", "reason": "Student ID is duplicated in the Students sheet; resolve it before importing."})
+            continue
+
+        row = matching_rows[0]
+
+        def read(key):
+            return _missing_account_sheet_cell(row, columns.get(key))
+
+        name = read("studentName")
+        email = read("email")
+        attempt = read("attempt")
+        batch = read("batch")
+        password = read("password")
+        if not name:
+            outcomes.append({"studentId": sid, "status": "skipped", "reason": "Student name is blank in the Students sheet."})
+            continue
+        if not email or "@" not in email:
+            outcomes.append({"studentId": sid, "status": "skipped", "reason": "Email is blank or invalid in the Students sheet."})
+            continue
+        if batch not in ALLOWED_STUDENT_BATCHES:
+            outcomes.append({"studentId": sid, "status": "skipped", "reason": "Batch is blank or unrecognized in the Students sheet."})
+            continue
+        if not attempt or _attempt_ym(attempt, batch) is None:
+            outcomes.append({"studentId": sid, "status": "skipped", "reason": "Exam attempt is blank or unrecognized in the Students sheet."})
+            continue
+        if not password:
+            outcomes.append({"studentId": sid, "status": "skipped", "reason": "Password is blank in the Students sheet."})
+            continue
+        if len(password) > 256:
+            outcomes.append({"studentId": sid, "status": "skipped", "reason": "Password exceeds the supported length."})
+            continue
+        markers = tuple(prefix.upper() for prefix in password_sheet_sync.MARKER_PREFIXES)
+        if password.upper().startswith(markers):
+            outcomes.append({"studentId": sid, "status": "skipped", "reason": "Password cell contains a marker, not a usable password."})
+            continue
+
+        changed_raw = read("passwordChanged").lower()
+        password_changed = changed_raw in {"yes", "true", "1", "y"}
+        now = _now()
+        account_doc = {
+            "studentId": sid,
+            "studentName": name,
+            "email": email,
+            "caLevel": read("caLevel"),
+            "group": read("group"),
+            "attempt": attempt,
+            "batch": batch,
+            "phone": read("phone"),
+            "address": read("address"),
+            "joinedOn": read("joinedOn") or datetime.now(IST).date().isoformat(),
+            "passwordHash": hash_password(password),
+            "passwordChanged": password_changed,
+            "forcePasswordChange": not password_changed,
+            "createdAt": now,
+            "updatedAt": now,
+        }
+        try:
+            # insert_one + the unique Student ID index makes this create-only:
+            # a concurrent/imported account is never overwritten.
+            await db[STUDENT_ACCOUNTS].insert_one(account_doc)
+        except DuplicateKeyError:
+            outcomes.append({"studentId": sid, "status": "skipped", "reason": "App account appeared during import; it was left unchanged."})
+            continue
+        except Exception as exc:
+            logger.warning("[missing-account-import] %s failed (%s)", sid, type(exc).__name__)
+            outcomes.append({"studentId": sid, "status": "failed", "reason": "Account could not be created; check server logs."})
+            continue
+
+        try:
+            await db[STUDENT_ADMIN_AUDIT].insert_one({
+                "action": "student_account_import_from_sheet",
+                "studentId": sid,
+                "mentor": mentor,
+                "source": "missing_account_button",
+                "passwordChanged": password_changed,
+                "at": now,
+            })
+        except Exception as exc:
+            # Account creation already succeeded. Do not make the UI retry it.
+            logger.warning("[missing-account-import] audit write failed for %s (%s)", sid, type(exc).__name__)
+        outcomes.append({"studentId": sid, "studentName": name, "status": "created"})
+
+    _drift_cache["at"] = None
+    _drift_cache["payload"] = None
+    created = sum(outcome["status"] == "created" for outcome in outcomes)
+    skipped = sum(outcome["status"] == "skipped" for outcome in outcomes)
+    failed = sum(outcome["status"] == "failed" for outcome in outcomes)
+    message = f"Added {created} app account(s); skipped {skipped}; failed {failed}. No email was sent."
+    return {
+        "ok": failed == 0,
+        "createdCount": created,
+        "skippedCount": skipped,
+        "failedCount": failed,
+        "rows": outcomes,
+        "message": message,
     }
 
 

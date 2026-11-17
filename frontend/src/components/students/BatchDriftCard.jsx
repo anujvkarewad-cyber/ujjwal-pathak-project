@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import { RefreshCw, TriangleAlert, UserPlus } from 'lucide-react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'sonner';
-import { applyBatchDrift, getBatchDrift } from '@/api/studentAdmin';
+import { applyBatchDrift, getBatchDrift, importMissingAccounts } from '@/api/studentAdmin';
 import { cn } from '@/utils/format';
+
+const MISSING_ACCOUNT_IMPORT_LIMIT = 100;
 
 /**
  * Batch mismatch between the Students sheet and the student accounts.
@@ -37,9 +39,23 @@ export default function BatchDriftCard() {
     },
     onError: (error) => toast.error(error?.message || 'Batch sync failed.'),
   });
+  const importAccounts = useMutation({
+    mutationFn: (ids) => importMissingAccounts(ids),
+    onSuccess: (result) => {
+      queryClient.invalidateQueries({ queryKey: ['batch-drift'] });
+      queryClient.invalidateQueries({ queryKey: ['students'] });
+      queryClient.invalidateQueries({ queryKey: ['dashboard'] });
+      queryClient.invalidateQueries({ queryKey: ['tracker'] });
+      queryClient.invalidateQueries({ queryKey: ['leaderboard'] });
+      if (result?.failedCount) toast.error(result?.message || 'Some app accounts could not be added.');
+      else toast.success(result?.message || 'Missing app accounts added.');
+    },
+    onError: (error) => toast.error(error?.message || 'Account import failed.'),
+  });
 
   const drift = data?.drift || [];
   const needsImport = data?.needsImport || [];
+  const importIssues = (importAccounts.data?.rows || []).filter((row) => row.status !== 'created');
   if (isLoading) return null;
   if (!drift.length && !needsImport.length) return null;
 
@@ -48,6 +64,20 @@ export default function BatchDriftCard() {
   const toggle = (id) => {
     const current = picked === null ? drift.map((row) => row.studentId) : picked;
     setPicked(current.includes(id) ? current.filter((x) => x !== id) : [...current, id]);
+  };
+
+  const confirmAndImportMissing = () => {
+    const target = needsImport.slice(0, MISSING_ACCOUNT_IMPORT_LIMIT);
+    const ids = target.map((row) => row.studentId).filter(Boolean);
+    if (!ids.length || importAccounts.isPending) return;
+    const roster = target
+      .map((row) => `${row.studentName ? `${row.studentName} · ` : ''}${row.studentId}`)
+      .join('\n');
+    const remainder = needsImport.length - ids.length;
+    const confirmed = window.confirm(
+      `Create app accounts for these ${ids.length} students from the Students sheet?${remainder ? `\n\n${remainder} more will remain for a later click.` : ''}\n\n${roster}\n\nOnly IDs still missing in the app will be added. Existing accounts will not be changed. Passwords stay on the server and no email will be sent. Continue?`,
+    );
+    if (confirmed) importAccounts.mutate(ids);
   };
 
   return (
@@ -168,6 +198,39 @@ export default function BatchDriftCard() {
               </li>
             ))}
           </ul>
+          <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-slate-100 dark:border-slate-800 pt-3">
+            <span className="text-[11px] text-slate-500">
+              Adds only the missing accounts listed above, up to 100 per click. Existing accounts are left unchanged; no email is sent.
+            </span>
+            <button
+              type="button"
+              onClick={confirmAndImportMissing}
+              disabled={importAccounts.isPending || !needsImport.length}
+              data-testid="batch-drift-import-missing"
+              className="h-8 px-3.5 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-semibold transition-colors disabled:opacity-50 inline-flex items-center gap-1.5 whitespace-nowrap"
+            >
+              <UserPlus className="h-3.5 w-3.5" />
+              {importAccounts.isPending
+                ? 'Adding…'
+                : needsImport.length > MISSING_ACCOUNT_IMPORT_LIMIT
+                  ? `Add first ${MISSING_ACCOUNT_IMPORT_LIMIT} of ${needsImport.length}`
+                  : `Add ${needsImport.length} to app`}
+            </button>
+          </div>
+          {!!importIssues.length && (
+            <div
+              className="mt-3 rounded-lg border border-amber-200 bg-amber-50/60 p-2.5 text-[11px] text-amber-900 dark:border-amber-500/20 dark:bg-amber-500/5 dark:text-amber-200"
+              role="status"
+              data-testid="batch-drift-import-results"
+            >
+              <p className="font-semibold">Some rows need attention:</p>
+              <ul className="mt-1 space-y-1">
+                {importIssues.map((row) => (
+                  <li key={row.studentId}>{row.studentId}: {row.reason || row.status}</li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       )}
     </div>

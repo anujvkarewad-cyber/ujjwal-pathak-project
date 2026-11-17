@@ -183,3 +183,102 @@ def test_drift_sync_cannot_bypass_a_pending_workspace_transfer(client, mentor_he
     assert response.status_code == 200
     assert response.json()['synced'] == 0 and response.json()['ok'] is False
     assert _doc('UMP0132')['batch'] == 'Before Result Batch 2'
+
+
+IMPORT_SHEET = [
+    ["Student ID", "Student Name", "Email", "CA Level", "Group", "Attempt", "Batch", "Passwords", "Password Changed", "Whatsapp number", "Address"],
+    ["UMP0068", "Prinkal Goel", "prinkal@example.com", "CA Inter", "Group 1", "Jan 2027", "After Result Batch 2", "Temp0068", "No", "9000000068", "Pune"],
+    ["UMP0082", "Khushi Pipalwa", "khushi@example.com", "CA Inter", "Group 1", "May 2027", "After Result Batch 2", "CHANGED-IN-APP:ump0082", "Yes", "9000000082", "Pune"],
+    ["UMP0090", "No Attempt Student", "noattempt@example.com", "CA Inter", "Group 1", "", "After Result Batch 2", "Temp0090", "No", "9000000090", "Pune"],
+    ["UMP0132", "Existing Student", "existing@example.com", "CA Inter", "Group 1", "Jan 2027", "Before Result Batch 2", "Temp0132", "No", "9000000132", "Pune"],
+]
+
+
+@pytest.fixture
+def patched_import_sheet(monkeypatch):
+    import routers.student_auth as mod
+
+    async def fake():
+        return IMPORT_SHEET
+
+    monkeypatch.setattr(mod, "_sheet_students_rows", fake)
+    return mod
+
+
+def test_missing_account_import_creates_only_selected_missing_account_without_exposing_password(
+    client, mentor_headers, patched_import_sheet
+):
+    from auth import hash_password, verify_password
+    from db import STUDENT_ADMIN_AUDIT, get_db
+
+    _seed("UMP0132", "Before Result Batch 2", passwordHash=hash_password("existing-live-password"))
+    before_existing = _doc("UMP0132")
+    response = client.post(
+        "/api/student-auth/students/missing-accounts/import",
+        headers=mentor_headers,
+        json={"studentIds": ["UMP0068", "UMP0082", "UMP0132", "UMP0999"]},
+    )
+
+    assert response.status_code == 200, response.text
+    body = response.json()
+    assert body["createdCount"] == 1
+    assert body["skippedCount"] == 3
+    assert body["failedCount"] == 0
+    assert "Temp0068" not in response.text
+    assert "CHANGED-IN-APP" not in response.text
+
+    created = _doc("UMP0068")
+    assert created["studentName"] == "Prinkal Goel"
+    assert created["batch"] == "After Result Batch 2"
+    assert created["passwordChanged"] is False
+    assert created["forcePasswordChange"] is True
+    assert "password" not in created
+    assert verify_password("Temp0068", created["passwordHash"])
+
+    # A changed-password marker and an existing account are never imported or overwritten.
+    assert _doc("UMP0082") is None
+    existing_after = _doc("UMP0132")
+    assert existing_after["passwordHash"] == before_existing["passwordHash"]
+
+    audit = asyncio.run(get_db()[STUDENT_ADMIN_AUDIT].find({"studentId": "UMP0068"}).to_list(10))
+    assert len(audit) == 1
+    assert audit[0]["action"] == "student_account_import_from_sheet"
+    assert "password" not in audit[0]
+
+    # A second click is harmless: the fresh check sees an existing app account.
+    again = client.post(
+        "/api/student-auth/students/missing-accounts/import",
+        headers=mentor_headers,
+        json={"studentIds": ["UMP0068"]},
+    )
+    assert again.status_code == 200
+    assert again.json()["createdCount"] == 0
+    assert again.json()["skippedCount"] == 1
+    assert _doc("UMP0068")["passwordHash"] == created["passwordHash"]
+
+
+def test_missing_account_import_rejects_unusable_attempt_or_non_candidate(client, mentor_headers, patched_import_sheet):
+    _seed("UMP0132", "Before Result Batch 2")
+    response = client.post(
+        "/api/student-auth/students/missing-accounts/import",
+        headers=mentor_headers,
+        json={"studentIds": ["UMP0090", "UMP0132", "UMP0999"]},
+    )
+    assert response.status_code == 200, response.text
+    assert response.json()["createdCount"] == 0
+    assert all(row["status"] == "skipped" for row in response.json()["rows"])
+
+
+def test_missing_account_import_rejects_wildcards_and_requires_mentor(client, mentor_headers, patched_import_sheet):
+    wildcard = client.post(
+        "/api/student-auth/students/missing-accounts/import",
+        headers=mentor_headers,
+        json={"studentIds": ["*"]},
+    )
+    assert wildcard.status_code == 400
+    unauthenticated = client.post(
+        "/api/student-auth/students/missing-accounts/import",
+        headers={"Authorization": "Bearer invalid"},
+        json={"studentIds": ["UMP0068"]},
+    )
+    assert unauthenticated.status_code in (401, 403)
