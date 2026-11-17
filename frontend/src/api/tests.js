@@ -12,6 +12,11 @@ export const fetchStudentTestHistory = (studentId) =>
 // submitted / still missing. See backend routers/test_history.py.
 export const fetchTestHistoryGroups = () => apiCall('/api/test-history/groups');
 
+// Mentor-only detail view: one student's saved answers/scan plus the paper's
+// question paper, answer key, and marking scheme.
+export const fetchSubmissionReview = (studentId, testId) =>
+  apiCall('/api/test-history/review', { params: { student_id: studentId, test_id: testId } });
+
 // Manual-only: ping exactly the students listed as "still missing" for one test.
 // There is no scheduled/auto variant anywhere in the app - by owner decision 16-Oct-2026.
 export const notifyMissingSubmissions = (testKey, message) =>

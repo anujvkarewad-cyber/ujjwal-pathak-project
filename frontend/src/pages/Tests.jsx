@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { CheckCircle2, ChevronDown, ClipboardCheck, FileSearch, PenLine, Search, ShieldAlert, Timer, Users } from 'lucide-react';
 import { fetchTestHistory, fetchTestHistoryGroups, notifyMissingSubmissions } from '@/api/tests';
 import TestAuthoring from '@/components/tests/TestAuthoring';
+import SubmissionReviewDialog from '@/components/tests/SubmissionReviewDialog';
 import { Skeleton } from '@/components/common/Skeleton';
 import { cn } from '@/utils/format';
 
@@ -50,12 +51,12 @@ function RosterRow({ who, tone, right, hint }) {
           )}
         </div>
       </div>
-      {right ? <div className="text-xs text-slate-500 whitespace-nowrap text-right shrink-0">{right}</div> : null}
+      {right ? <div className="text-xs text-slate-500 text-right shrink-0">{right}</div> : null}
     </div>
   );
 }
 
-function GroupCard({ g, open, onToggle, degraded, scoped = false }) {
+function GroupCard({ g, open, onToggle, degraded, scoped = false, onReview }) {
   const [busy, setBusy] = useState(false);
   const [note, setNote] = useState('');
   const [status, setStatus] = useState('');
@@ -141,7 +142,7 @@ function GroupCard({ g, open, onToggle, degraded, scoped = false }) {
                 <div className="py-3 text-xs text-slate-400">Nobody has submitted this test yet.</div>
               ) : g.submitted.map((s) => (
                 <RosterRow key={s.studentId} who={s} right={(
-                  <div>
+                  <div className="flex flex-col items-end gap-1">
                     {s.score == null
                       ? <span className="text-amber-600 dark:text-amber-400 font-semibold">marks due</span>
                       : (
@@ -153,6 +154,17 @@ function GroupCard({ g, open, onToggle, degraded, scoped = false }) {
                     <div className="text-[11px] text-slate-400 font-normal">
                       {fmtDate(s.lastAt)}{s.attempts > 1 ? ` · ${s.attempts} attempts` : ''}{s.selfMarks ? ' · self marks' : ''}
                     </div>
+                    <button
+                      type="button"
+                      data-testid={`review-submission-${s.studentId}`}
+                      aria-label={`Review ${s.studentName || s.studentId}'s answers for ${g.title}`}
+                      title={g.testId ? 'Open answer review and reference sheets' : 'No test ID is available for this older record'}
+                      disabled={!g.testId}
+                      onClick={() => onReview?.(s)}
+                      className="rounded-md border border-blue-200 px-2 py-1 text-[11px] font-semibold text-blue-700 hover:bg-blue-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-blue-900 dark:text-blue-300 dark:hover:bg-blue-950/40"
+                    >
+                      Review work
+                    </button>
                   </div>
                 )} />
               ))}
@@ -254,6 +266,7 @@ function Submissions({ scopedStudentIds } = {}) {
   const [mode, setMode] = useState('byTest');   // 'byTest' | 'flat'
   const [onlyPending, setOnlyPending] = useState(false);
   const [openKey, setOpenKey] = useState(null);
+  const [selectedReview, setSelectedReview] = useState(null);
   const [scope, setScope] = useState({ source: 'sheet', note: '' });
 
   useEffect(() => {
@@ -435,6 +448,7 @@ function Submissions({ scopedStudentIds } = {}) {
                 scoped={!!scopedStudentIds}
                 degraded={scope.source !== 'sheet'}
                 onToggle={() => setOpenKey((k) => (k === g.key ? null : g.key))}
+                onReview={(submission) => setSelectedReview({ test: g, submission })}
               />
             ))
           )}
@@ -452,12 +466,13 @@ function Submissions({ scopedStudentIds } = {}) {
                 <th className="px-4 py-3 font-semibold">Type</th>
                 <th className="px-4 py-3 font-semibold">Marks</th>
                 <th className="px-4 py-3 font-semibold">Submitted</th>
+                <th className="px-4 py-3 font-semibold">Review</th>
               </tr>
             </thead>
             <tbody>
               {loading && Array.from({ length: 4 }).map((_, i) => (
                 <tr key={i} className="border-b border-slate-100 dark:border-slate-800/60">
-                  <td colSpan={5} className="px-4 py-3"><Skeleton className="h-6 w-full" /></td>
+                  <td colSpan={6} className="px-4 py-3"><Skeleton className="h-6 w-full" /></td>
                 </tr>
               ))}
               {!loading && filtered.map((e) => {
@@ -499,12 +514,27 @@ function Submissions({ scopedStudentIds } = {}) {
                       )}
                     </td>
                     <td className="px-4 py-3 text-xs text-slate-500 whitespace-nowrap">{fmtDate(e.at)}</td>
+                    <td className="px-4 py-3">
+                      <button
+                        type="button"
+                        data-testid={`review-flat-${e.studentId}-${e.testId || e.entryId || e.id}`}
+                        disabled={!e.testId}
+                        onClick={() => setSelectedReview({
+                          student: { studentId: e.studentId, studentName: e.studentName },
+                          test: { testId: e.testId, title: e.title, kind: e.kind },
+                        })}
+                        className="rounded-md border border-blue-200 px-2.5 py-1.5 text-xs font-semibold text-blue-700 hover:bg-blue-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-blue-900 dark:text-blue-300 dark:hover:bg-blue-950/40"
+                        title={e.testId ? 'Open answer review and reference sheets' : 'No test ID is available for this older record'}
+                      >
+                        Review
+                      </button>
+                    </td>
                   </tr>
                 );
               })}
               {!loading && filtered.length === 0 && (
                 <tr>
-                  <td colSpan={5} className="px-4 py-10 text-center text-sm text-slate-500">
+                  <td colSpan={6} className="px-4 py-10 text-center text-sm text-slate-500">
                     {entries.length === 0
                       ? 'No test submissions yet. When students give mentor tests in the app, every attempt — MCQ scores and paper self-evaluation marks — appears here.'
                       : 'No records match this filter.'}
@@ -521,6 +551,12 @@ function Submissions({ scopedStudentIds } = {}) {
           {error} — make sure the mentor backend is running.
         </div>
       ) : null}
+      <SubmissionReviewDialog
+        open={Boolean(selectedReview)}
+        onOpenChange={(nextOpen) => { if (!nextOpen) setSelectedReview(null); }}
+        student={selectedReview?.submission}
+        test={selectedReview?.test}
+      />
     </div>
   );
 }

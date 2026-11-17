@@ -14,11 +14,13 @@ Sync contract mirrors /api/progress-sync (student_sync.py):
 - Paper-test entries upsert in place per student+test (one submission,
   marks can be updated); MCQ attempts append (entry id is unique).
 """
+import re
 import time
 from datetime import datetime, timezone
 from typing import Optional
+from urllib.parse import urlsplit
 
-from fastapi import APIRouter, Body, Depends, Header, HTTPException, Request
+from fastapi import APIRouter, Body, Depends, Header, HTTPException, Query, Request
 
 from auth import require_mentor, verify_sync_token
 from config import settings
@@ -26,8 +28,10 @@ from db import (
     ANALYTICS_AUDIT_SYNC,
     ANALYTICS_CONSENTS,
     ANALYTICS_TEST_HISTORY,
+    ANSWER_SHEET_FILES,
     MENTOR_TESTS,
     STUDENT_ACCOUNTS,
+    STUDENT_MCQ_ATTEMPTS,
     get_db,
 )
 from models import TestHistorySyncRequest
@@ -246,6 +250,132 @@ async def notify_missing_submissions(
         "detail": {"testKey": test_key, "targets": len(reachable), "sent": sent, "noDevice": no_device},
     })
     return {"ok": True, "sent": sent, "targets": reachable, "noDevice": no_device}
+
+
+_DRIVE_REFERENCE_HOSTS = {"drive.google.com", "docs.google.com"}
+
+
+def _trusted_drive_reference(value) -> str:
+    """Only return mentor-owned Drive/Docs links to the browser for preview."""
+    text = str(value or "").strip()
+    if not text:
+        return ""
+    try:
+        parsed = urlsplit(text)
+    except ValueError:
+        return ""
+    host = (parsed.hostname or "").lower()
+    if parsed.scheme.lower() != "https" or host not in _DRIVE_REFERENCE_HOSTS:
+        return ""
+    return text
+
+
+def _uploaded_answer_file_id(value) -> str:
+    """Extract only our answer-sheet route; ownership is checked in Mongo below."""
+    text = str(value or "").strip()
+    if not text:
+        return ""
+    try:
+        path = urlsplit(text).path
+    except ValueError:
+        return ""
+    match = re.fullmatch(r"/api/student-tests/answer-sheet/([A-Za-z0-9_-]{1,128})/?", path)
+    return match.group(1) if match else ""
+
+
+@router.get("/test-history/review")
+async def mentor_submission_review(
+    student_id: str = Query(..., min_length=3, max_length=32),
+    test_id: str = Query(..., min_length=2, max_length=96),
+    claims: dict = Depends(require_mentor),
+):
+    """Return one student's answer review and the test's reference materials.
+
+    This is mentor-only. Paper submissions expose the student's uploaded scan only
+    when it is tied to that same student and test; MCQ answers come from the saved
+    server-graded attempt. Never return credentials or raw stored file bytes here.
+    """
+    sid = _clean_sid(student_id)
+    tid = str(test_id or "").strip()
+    if not sid or not tid:
+        raise HTTPException(status_code=422, detail="Student and test are required")
+
+    db = get_db()
+    history_rows = await db[ANALYTICS_TEST_HISTORY].find(
+        {"studentId": sid, "testId": tid}
+    ).sort("at", -1).to_list(length=100)
+    if not history_rows:
+        raise HTTPException(status_code=404, detail="Submission not found")
+    submission = history_rows[0]
+    test = await db[MENTOR_TESTS].find_one({"testId": tid}, {"_id": 0}) or {}
+
+    answer_url = ""
+    answer_file_id = _uploaded_answer_file_id(submission.get("answerUrl"))
+    answer_file_projection = {
+        "_id": 0, "fileId": 1, "filename": 1, "mimeType": 1, "createdAt": 1,
+    }
+    answer_file = None
+    if answer_file_id:
+        answer_file = await db[ANSWER_SHEET_FILES].find_one(
+            {"fileId": answer_file_id, "studentId": sid, "testId": tid},
+            answer_file_projection,
+        )
+    if answer_file is None:
+        answer_file = await db[ANSWER_SHEET_FILES].find_one(
+            {"studentId": sid, "testId": tid},
+            answer_file_projection,
+            sort=[("createdAt", -1)],
+        )
+    if answer_file and answer_file.get("fileId"):
+        answer_url = f"/api/student-tests/answer-sheet/{answer_file['fileId']}"
+    else:
+        # Compatibility for older app submissions that used a Drive upload URL.
+        answer_url = _trusted_drive_reference(submission.get("answerUrl"))
+
+    attempt = await db[STUDENT_MCQ_ATTEMPTS].find_one(
+        {
+            "studentId": sid,
+            "kind": "mentor-test",
+            "$or": [
+                {"attemptId": f"mentor-test:{tid}:{sid}"},
+                {"config.testId": tid},
+            ],
+        },
+        {"_id": 0, "review": 1, "questionIds": 1, "durationSeconds": 1, "completedAt": 1},
+    ) or {}
+    review = attempt.get("review") or submission.get("review") or []
+
+    return {
+        "ok": True,
+        "student": {
+            "studentId": sid,
+            "studentName": submission.get("studentName") or sid,
+        },
+        "test": {
+            "testId": tid,
+            "title": test.get("title") or submission.get("title") or "Test submission",
+            "kind": test.get("kind") or submission.get("kind") or "",
+            "subject": test.get("subject") or submission.get("subject") or "",
+            "questionPaperUrl": _trusted_drive_reference(test.get("paper_url")),
+            "answerSheetUrl": _trusted_drive_reference(test.get("answer_sheet_url")),
+            "answerSheetText": str(test.get("answer_sheet_text") or ""),
+            "markingScheme": str(test.get("marking_scheme") or ""),
+            "instructions": str(test.get("instructions") or ""),
+        },
+        "submission": {
+            "at": submission.get("at") or "",
+            "score": submission.get("score"),
+            "total": submission.get("total"),
+            "scorePct": submission.get("scorePct"),
+            "selfMarks": bool(submission.get("selfMarks")),
+            "remarks": str(submission.get("remarks") or ""),
+            "answerUrl": answer_url,
+        },
+        "mcqReview": review if isinstance(review, list) else [],
+        "reviewAvailable": bool(review),
+        "answerFileName": (answer_file or {}).get("filename") or "",
+        "answerFileMimeType": (answer_file or {}).get("mimeType") or "",
+    }
 
 
 @router.get("/test-history/{student_id}")
