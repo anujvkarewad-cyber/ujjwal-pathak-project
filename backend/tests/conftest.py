@@ -5,6 +5,11 @@ import sys
 from pathlib import Path
 
 BACKEND_DIR = Path(__file__).resolve().parent.parent
+TESTS_DIR = BACKEND_DIR / "tests"
+# Some legacy tests import helpers by bare module name (test_foo), while
+# others use tests.fixtures. Add both project roots so the configured xdist
+# worker resolves either style from this repository, not an installed package.
+sys.path.insert(0, str(TESTS_DIR))
 sys.path.insert(0, str(BACKEND_DIR))
 
 MENTOR_TEST_PASSWORD = "test-password-123"

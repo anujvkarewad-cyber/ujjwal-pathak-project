@@ -33,6 +33,7 @@ STUDENT_TARGET_PROGRESS = "student_target_progress"  # personal day-based target
 MENTOR_TESTS = "mentor_tests"
 ANALYTICS_TEST_HISTORY = "analytics_test_history"
 ANSWER_SHEET_FILES = "answer_sheet_files"
+MENTOR_TEST_FEEDBACK = "mentor_test_feedback"
 STUDENT_ADMIN_AUDIT = "student_admin_audit"
 DASHBOARD_SHARED = "dashboard_shared"
 DASHBOARD_STUDENTS = "dashboard_students"
@@ -126,6 +127,9 @@ async def ensure_indexes():
     await db[MIGRATIONS].create_index("key", unique=True)
     await db[ANSWER_SHEET_FILES].create_index("fileId", unique=True)
     await db[ANSWER_SHEET_FILES].create_index([("studentId", 1), ("testId", 1)])
+    await db[MENTOR_TEST_FEEDBACK].create_index(
+        [("studentId", 1), ("testId", 1)], unique=True
+    )
     # RAG knowledge base - for smooth search (4777 chunks)
     await db[KNOWLEDGE_CHUNKS].create_index("id", unique=True)
     await db[KNOWLEDGE_CHUNKS].create_index([("subject", 1)])

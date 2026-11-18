@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { CheckCircle2, CircleAlert, CircleX, ExternalLink, FileText, Loader2 } from 'lucide-react';
-import { fetchSubmissionReview } from '@/api/tests';
+import { fetchSubmissionReview, saveMentorTestFeedback } from '@/api/tests';
 import { apiUrl, AUTH_EVENT, getToken } from '@/api/backendClient';
 import {
   Dialog,
@@ -188,19 +188,31 @@ export default function SubmissionReviewDialog({ open, onOpenChange, student, te
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [activeMaterial, setActiveMaterial] = useState('student');
+  const [mentorRemark, setMentorRemark] = useState('');
+  const [savingRemark, setSavingRemark] = useState(false);
+  const [feedbackStatus, setFeedbackStatus] = useState('');
+  const [feedbackError, setFeedbackError] = useState('');
 
   useEffect(() => {
     let active = true;
     setData(null);
     setError('');
     setActiveMaterial('student');
+    setMentorRemark('');
+    setFeedbackStatus('');
+    setFeedbackError('');
     if (!open || !student?.studentId || !test?.testId) {
       setLoading(false);
       return () => { active = false; };
     }
     setLoading(true);
     fetchSubmissionReview(student.studentId, test.testId)
-      .then((result) => { if (active) setData(result); })
+      .then((result) => {
+        if (active) {
+          setData(result);
+          setMentorRemark(result?.mentorFeedback?.remark || '');
+        }
+      })
       .catch((reason) => { if (active) setError(reason?.message || 'Could not load submission review.'); })
       .finally(() => { if (active) setLoading(false); });
     return () => { active = false; };
@@ -214,6 +226,27 @@ export default function SubmissionReviewDialog({ open, onOpenChange, student, te
     ['scheme', 'Marking scheme'],
   ];
   const summary = data?.submission;
+
+  const saveRemark = async () => {
+    if (savingRemark || !student?.studentId || !test?.testId) return;
+    setSavingRemark(true);
+    setFeedbackStatus('');
+    setFeedbackError('');
+    try {
+      const saved = await saveMentorTestFeedback(student.studentId, test.testId, mentorRemark);
+      const remark = saved?.remark || '';
+      setMentorRemark(remark);
+      setData((current) => current ? {
+        ...current,
+        mentorFeedback: { ...(current.mentorFeedback || {}), remark, updatedAt: saved?.updatedAt || '' },
+      } : current);
+      setFeedbackStatus(remark ? 'Saved. The student will see this on their test.' : 'Remark removed.');
+    } catch (reason) {
+      setFeedbackError(reason?.message || 'Could not save the mentor remark.');
+    } finally {
+      setSavingRemark(false);
+    }
+  };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -271,6 +304,40 @@ export default function SubmissionReviewDialog({ open, onOpenChange, student, te
                 )}
               </>
             )}
+            <section className="rounded-xl border border-blue-200 bg-blue-50/60 p-4 dark:border-blue-900/70 dark:bg-blue-950/20" aria-label="Mentor remark">
+              <div className="mb-2 flex items-start justify-between gap-3">
+                <div>
+                  <h3 className="text-sm font-semibold text-slate-900 dark:text-white">Message for this student</h3>
+                  <p className="mt-0.5 text-xs text-slate-500">Shown on this test in the student app. Separate from their self-evaluation note; marks are not changed.</p>
+                </div>
+                <span className="shrink-0 text-[11px] text-slate-400">{mentorRemark.length}/2000</span>
+              </div>
+              <textarea
+                data-testid="mentor-test-remark"
+                value={mentorRemark}
+                onChange={(event) => { setMentorRemark(event.target.value); setFeedbackStatus(''); setFeedbackError(''); }}
+                maxLength={2000}
+                rows={3}
+                placeholder="Write your opinion or guidance about this test…"
+                className="w-full resize-y rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
+              />
+              <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
+                <div className="min-h-5 text-xs">
+                  {feedbackError ? <span role="alert" className="text-rose-700 dark:text-rose-300">{feedbackError}</span>
+                    : feedbackStatus ? <span role="status" className="text-emerald-700 dark:text-emerald-300">{feedbackStatus}</span>
+                      : <span className="text-slate-500">Only this student can see the saved remark.</span>}
+                </div>
+                <button
+                  type="button"
+                  data-testid="save-mentor-test-remark"
+                  onClick={saveRemark}
+                  disabled={savingRemark || (!mentorRemark.trim() && !data.mentorFeedback?.remark)}
+                  className="rounded-lg bg-blue-600 px-4 py-2 text-xs font-semibold text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  {savingRemark ? 'Saving…' : mentorRemark.trim() ? 'Save remark' : data.mentorFeedback?.remark ? 'Remove remark' : 'Save remark'}
+                </button>
+              </div>
+            </section>
             {summary?.at ? <p className="text-right text-[11px] text-slate-400">Submitted: {new Date(summary.at).toLocaleString('en-IN')}</p> : null}
           </div>
         ) : (

@@ -38,7 +38,8 @@ if [[ "$WHAT" == "frontend" || "$WHAT" == "both" ]]; then
     || die "frontend build env invalid — refusing to deploy"
   echo "== 0d. requested Inbox and test-authoring UI tests"
   ( cd "$ROOT/frontend" && CI=true npm test -- --runInBand --runTestsByPath \
-      src/pages/NotesInbox.test.jsx src/components/tests/TestAuthoring.test.jsx ) \
+      src/pages/NotesInbox.test.jsx src/components/tests/TestAuthoring.test.jsx \
+      src/components/tests/SubmissionReviewDialog.test.jsx ) \
     || die "requested frontend flow tests failed — refusing to deploy"
 fi
 

@@ -17,6 +17,14 @@ export const fetchTestHistoryGroups = () => apiCall('/api/test-history/groups');
 export const fetchSubmissionReview = (studentId, testId) =>
   apiCall('/api/test-history/review', { params: { student_id: studentId, test_id: testId } });
 
+// Save a mentor remark against one exact submitted student + test pair. The
+// backend stores this separately from the student's own self-evaluation note.
+export const saveMentorTestFeedback = (studentId, testId, remark) =>
+  apiCall('/api/test-history/feedback', {
+    method: 'POST',
+    body: { studentId, testId, remark },
+  });
+
 // Manual-only: ping exactly the students listed as "still missing" for one test.
 // There is no scheduled/auto variant anywhere in the app - by owner decision 16-Oct-2026.
 export const notifyMissingSubmissions = (testKey, message) =>

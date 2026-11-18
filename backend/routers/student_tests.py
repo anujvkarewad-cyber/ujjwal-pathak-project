@@ -43,6 +43,7 @@ from db import (
     ANSWER_SHEET_FILES,
     CONTENT_QUESTIONS,
     MENTOR_TESTS,
+    MENTOR_TEST_FEEDBACK,
     STUDENT_ACCOUNTS,
     STUDENT_MCQ_ATTEMPTS,
     get_db,
@@ -314,10 +315,16 @@ async def list_tests(body: StudentLogin):
     # that closed while their access was OFF must not stay closed after the mentor
     # unlocks them (owner decision 15-Oct-2026: "access on karte hi unhe dikhna chahiye").
     lockouts = await access_lib.off_intervals(db, sid, account)
+    published = await db[MENTOR_TESTS].find({"published": True}).sort("createdAt", -1).limit(200).to_list(length=200)
+    eligible = [test for test in published if matches_target(test, account)]
+    eligible_ids = [str(test.get("testId") or "") for test in eligible if test.get("testId")]
+    feedback_rows = await db[MENTOR_TEST_FEEDBACK].find({
+        "studentId": sid,
+        "testId": {"$in": eligible_ids},
+    }).to_list(length=200) if eligible_ids else []
+    feedback_by_test = {str(row.get("testId") or ""): row for row in feedback_rows}
     items = []
-    async for test in db[MENTOR_TESTS].find({"published": True}).sort("createdAt", -1).limit(200):
-        if not matches_target(test, account):
-            continue
+    for test in eligible:
         tid = test.get("testId")
         previous = done.get(tid)
         extra = access_lib.credit_for(lockouts, test)
@@ -346,6 +353,7 @@ async def list_tests(body: StudentLogin):
             "lastScore": previous.get("score") if previous else None,
             "lastTotal": previous.get("total") if previous else None,
             "lastAt": previous.get("at") if previous else None,
+            "mentorRemark": str(feedback_by_test.get(str(tid), {}).get("remark") or ""),
         })
     return {"ok": True, "studentId": sid, "tests": items, "batch": account.get("batch") or ""}
 
@@ -370,6 +378,11 @@ async def paper(body: PaperRequest):
     if state == "closed":
         raise HTTPException(status_code=409, detail="Is test ki window band ho gayi")
 
+    feedback = await db[MENTOR_TEST_FEEDBACK].find_one(
+        {"studentId": sid, "testId": body.testId}, {"_id": 0, "remark": 1}
+    ) or {}
+    mentor_remark = str(feedback.get("remark") or "")
+
     if (test.get("kind") or "mcq-test") == "paper-test":
         # Paper test: app me solve karne ke liye questions nahi hote — student
         # khud paper karta hai, phir answer sheet + marking scheme se check karke
@@ -393,6 +406,7 @@ async def paper(body: PaperRequest):
             "markingScheme": test.get("marking_scheme") or "",
             "markingSchemeUrl": direct_download_url(test.get("marking_scheme_url") or ""),
             "status": state,
+            "mentorRemark": mentor_remark,
         }
         return {
             "ok": True,
@@ -422,6 +436,7 @@ async def paper(body: PaperRequest):
             "maxMarks": test.get("total_marks") or len(chosen),
             "instructions": test.get("instructions") or "",
             "status": state,
+            "mentorRemark": mentor_remark,
         },
         "questions": [public_question(row, round(marks_each, 2)) for row in chosen],
     }

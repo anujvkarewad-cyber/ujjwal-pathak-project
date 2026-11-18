@@ -1,9 +1,9 @@
 import React, { act } from 'react';
 import { createRoot } from 'react-dom/client';
-import { fetchSubmissionReview } from '@/api/tests';
+import { fetchSubmissionReview, saveMentorTestFeedback } from '@/api/tests';
 import SubmissionReviewDialog from './SubmissionReviewDialog';
 
-jest.mock('@/api/tests', () => ({ fetchSubmissionReview: jest.fn() }));
+jest.mock('@/api/tests', () => ({ fetchSubmissionReview: jest.fn(), saveMentorTestFeedback: jest.fn() }));
 
 global.IS_REACT_ACT_ENVIRONMENT = true;
 
@@ -14,6 +14,7 @@ let root;
 
 beforeEach(() => {
   fetchSubmissionReview.mockReset();
+  saveMentorTestFeedback.mockReset();
   container = document.createElement('div');
   document.body.appendChild(container);
   root = createRoot(container);
@@ -93,4 +94,33 @@ test('explains when older MCQ records have no saved question-level answers', asy
   await renderDialog('mcq-test');
 
   expect(document.body.textContent).toMatch(/no saved question-by-question review/i);
+});
+
+test('mentor can save a student-visible remark without replacing the student note', async () => {
+  fetchSubmissionReview.mockResolvedValue({
+    student,
+    test: { ...testInfo, kind: 'paper-test' },
+    submission: { score: 7, total: 10, remarks: 'I was unsure about Q3.' },
+    mentorFeedback: { remark: '' },
+    reviewAvailable: false,
+    mcqReview: [],
+  });
+  saveMentorTestFeedback.mockResolvedValue({ remark: 'Good work. Review Q3 again.' });
+
+  await renderDialog('paper-test');
+  const textarea = document.querySelector('[data-testid="mentor-test-remark"]');
+  const setValue = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, 'value').set;
+  await act(async () => {
+    setValue.call(textarea, 'Good work. Review Q3 again.');
+    textarea.dispatchEvent(new Event('input', { bubbles: true }));
+  });
+  const saveButton = document.querySelector('[data-testid="save-mentor-test-remark"]');
+  await act(async () => {
+    saveButton.click();
+    await new Promise((resolve) => setTimeout(resolve, 0));
+  });
+
+  expect(saveMentorTestFeedback).toHaveBeenCalledWith(student.studentId, testInfo.testId, 'Good work. Review Q3 again.');
+  expect(document.body.textContent).toContain('Saved. The student will see this on their test.');
+  expect(document.body.textContent).toContain('I was unsure about Q3.');
 });

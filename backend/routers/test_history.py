@@ -21,6 +21,7 @@ from typing import Optional
 from urllib.parse import urlsplit
 
 from fastapi import APIRouter, Body, Depends, Header, HTTPException, Query, Request
+from pydantic import BaseModel, ConfigDict, Field
 
 from auth import require_mentor, verify_sync_token
 from config import settings
@@ -30,6 +31,7 @@ from db import (
     ANALYTICS_TEST_HISTORY,
     ANSWER_SHEET_FILES,
     MENTOR_TESTS,
+    MENTOR_TEST_FEEDBACK,
     STUDENT_ACCOUNTS,
     STUDENT_MCQ_ATTEMPTS,
     get_db,
@@ -39,6 +41,14 @@ import push as push_service
 from push import matches_audience  # still the rule for pushes; the sheet bucket rule below is what the rosters use
 
 router = APIRouter(prefix="/api", tags=["test-history"])
+
+
+class MentorTestFeedbackRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    studentId: str = Field(min_length=3, max_length=32)
+    testId: str = Field(min_length=2, max_length=96)
+    remark: str = Field(default="", max_length=2000)
+
 
 _last_sync: dict = {}
 
@@ -344,6 +354,10 @@ async def mentor_submission_review(
         {"_id": 0, "review": 1, "questionIds": 1, "durationSeconds": 1, "completedAt": 1},
     ) or {}
     review = attempt.get("review") or submission.get("review") or []
+    mentor_feedback = await db[MENTOR_TEST_FEEDBACK].find_one(
+        {"studentId": sid, "testId": tid},
+        {"_id": 0, "remark": 1, "updatedAt": 1},
+    ) or {}
 
     return {
         "ok": True,
@@ -373,8 +387,60 @@ async def mentor_submission_review(
         },
         "mcqReview": review if isinstance(review, list) else [],
         "reviewAvailable": bool(review),
+        "mentorFeedback": {
+            "remark": str(mentor_feedback.get("remark") or ""),
+            "updatedAt": str(mentor_feedback.get("updatedAt") or ""),
+        },
         "answerFileName": (answer_file or {}).get("filename") or "",
         "answerFileMimeType": (answer_file or {}).get("mimeType") or "",
+    }
+
+
+@router.post("/test-history/feedback")
+async def save_mentor_test_feedback(
+    body: MentorTestFeedbackRequest,
+    claims: dict = Depends(require_mentor),
+):
+    """Save or clear a mentor's private-to-that-student test remark.
+
+    Feedback is stored separately from analytics_test_history so it cannot
+    overwrite the student's own self-evaluation remarks or any marks.
+    """
+    sid = _clean_sid(body.studentId)
+    tid = str(body.testId or "").strip()
+    if not sid or not tid:
+        raise HTTPException(status_code=422, detail="Student and test are required")
+
+    db = get_db()
+    submission = await db[ANALYTICS_TEST_HISTORY].find_one(
+        {"studentId": sid, "testId": tid}, {"_id": 1}
+    )
+    if not submission:
+        raise HTTPException(status_code=404, detail="Submission not found")
+
+    remark = body.remark.strip()
+    key = {"studentId": sid, "testId": tid}
+    if not remark:
+        await db[MENTOR_TEST_FEEDBACK].delete_one(key)
+        return {"ok": True, "studentId": sid, "testId": tid, "remark": "", "updatedAt": ""}
+
+    updated_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    await db[MENTOR_TEST_FEEDBACK].update_one(
+        key,
+        {"$set": {
+            **key,
+            "remark": remark,
+            "updatedAt": updated_at,
+            "updatedBy": str(claims.get("sub") or "mentor")[:200],
+        }},
+        upsert=True,
+    )
+    return {
+        "ok": True,
+        "studentId": sid,
+        "testId": tid,
+        "remark": remark,
+        "updatedAt": updated_at,
     }
 
 
