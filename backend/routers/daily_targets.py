@@ -628,9 +628,39 @@ async def remove_target(target_id: str, _mentor=Depends(require_mentor)):
     return {"ok": True}
 
 
+def _tick_date(raw: str | None) -> str:
+    """Validate the date a tick belongs to.
+
+    Accepts only a real ISO calendar day inside the plan window (30 days back to
+    60 days ahead); anything else - missing, malformed, or far outside the plan -
+    resolves to today. This keeps the old single-day behaviour for every caller
+    that does not send a date, and stops a bad payload from writing ticks into a
+    random day.
+    """
+    fallback = _today().isoformat()
+    if not raw:
+        return fallback
+    try:
+        parsed = datetime.strptime(str(raw)[:10], "%Y-%m-%d").date()
+    except (TypeError, ValueError):
+        return fallback
+    delta = (parsed - _today()).days
+    if delta < -30 or delta > 60:
+        return fallback
+    return parsed.isoformat()
+
+
 class CompleteIn(BaseModel):
     studentId: str = Field(min_length=1, max_length=64)
     taskId: str = Field(min_length=1, max_length=80)
+    # The plan day this task belongs to. Omitted -> today, which is what the old
+    # single-day screen always sent. The day-wise screen sends the date of the day
+    # the student actually has open, so a tick lands on THAT day and not on today.
+    date: str | None = Field(default=None, max_length=10)
+    # False = untick. The screen has always had an Undo, but the endpoint only
+    # ever upserted, so undoing a tick left the server row in place and the task
+    # came back ticked on the next load (fixed 22-Nov-2026).
+    done: bool = True
 
 
 @router.post("/api/targets/complete")
@@ -649,11 +679,22 @@ async def complete_task(body: CompleteIn, principal=Depends(dashboard_student)):
             status_code=403,
             detail="Your app access is turned off by your mentor. Contact your mentor to turn it back on.",
         )
-    await get_db()[DONE].update_one(
-        {"studentId": sid, "date": _today().isoformat(), "taskId": body.taskId},
-        {"$set": {"doneAt": _now()}},
-        upsert=True,
-    )
+    # Ticks land on the day the student has open, not blindly on today. Before
+    # this, a student catching up on Day 7 while the calendar said Day 18 ticked
+    # Day 18's row: the day-wise screen never advanced and the real day stayed
+    # empty (found 22-Nov-2026). An unusable date falls back to today so a
+    # malformed client can never write a tick into an arbitrary date.
+    tick_date = _tick_date(body.date)
+    if body.done:
+        await get_db()[DONE].update_one(
+            {"studentId": sid, "date": tick_date, "taskId": body.taskId},
+            {"$set": {"doneAt": _now()}},
+            upsert=True,
+        )
+    else:
+        await get_db()[DONE].delete_one(
+            {"studentId": sid, "date": tick_date, "taskId": body.taskId}
+        )
     # Behavior push: celebrate when the day's targets are fully done (best-effort).
     try:
         import behavior_push
@@ -700,12 +741,17 @@ async def student_daily_target(studentId: str = Query(min_length=1, max_length=6
     due = await due_revisions(sid)
     if not chosen and not due:
         raise HTTPException(status_code=404, detail="No target published.")
+    # A tick belongs to the plan day it was made on, so read the done set for every
+    # day this response can mention - not just today. Otherwise a student who
+    # ticked Day 7 today saw it come back unticked on the next load.
+    day_dates = sorted({str(t.get("date") or "") for t in chosen if t.get("date")})
+    day_dates = [d for d in day_dates if d] or [today.isoformat()]
     done = {
         row.get("taskId")
         for row in await db[DONE].find(
-            {"studentId": sid, "date": today.isoformat()},
+            {"studentId": sid, "date": {"$in": day_dates}},
             {"_id": 0, "taskId": 1},
-        ).to_list(50)
+        ).to_list(200)
     }
     tasks = []
     for target in chosen:
