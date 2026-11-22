@@ -178,3 +178,65 @@ def test_a_single_group_plan_does_not_leak_to_the_other_group(client):
                     headers={"X-Student-Id": "LEAK-G1", "X-Session-Password": PASSWORD})
     assert len(g2.json()["days"]) == 1
     assert g1.json()["days"] == []
+
+
+def test_read_is_scoped_to_the_students_own_plans():
+    """The read must be narrowed by plan, not "fetch first N, filter later".
+
+    A fixed unsorted slice decided who saw their target: whichever batches fell
+    past the ceiling got a blank day strip (09-Nov-2026). The in-memory store
+    ignores cursor limits, so this pins the query shape instead of the count.
+    """
+    from routers.daily_targets import _scoped_target_query
+
+    query = _scoped_target_query(["tp-mine"])
+    assert query["active"] == {"$ne": False}
+    assert query["planDay"] == {"$exists": True}
+
+    plan_clause = next(c for c in query["$or"] if "planId" in c and "$in" in c["planId"])
+    assert plan_clause["planId"]["$in"] == ["tp-mine"], "another batch's plan must not be read at all"
+    # Legacy rows without a planId stay reachable, exactly as from_live_plan keeps them.
+    assert {"planId": {"$exists": False}} in query["$or"]
+
+
+def test_read_ceiling_is_far_above_the_live_collection():
+    """The row cap is a guard, never a filter.
+
+    The live collection held ~270 documents across five parallel batches when
+    this was fixed; the ceiling must stay far above that so it cannot silently
+    drop a batch again.
+    """
+    from routers.daily_targets import PLAN_DAYS_ROW_LIMIT
+
+    assert PLAN_DAYS_ROW_LIMIT >= 5000
+
+
+def test_day_strip_still_returns_day_with_noise_present(client):
+    """A plan published alongside many other rows still reaches its student."""
+    batch = "NOISE BATCH"
+    sid = "NOISE-STUDENT"
+    _student(sid, "Group 1", batch)
+    _publish("Group 1", batch, 1, plan_id="tp-noise-plan")
+
+    async def add_noise():
+        from db import get_db
+        await get_db()["target_plans"].update_one(
+            {"id": "tp-noise-plan"},
+            {"$set": {"id": "tp-noise-plan", "status": "active", "batch": batch,
+                      "group": "Group 1", "attempt": "Jan 2027"}}, upsert=True)
+        for index in range(300):
+            await get_db()["daily_targets"].update_one(
+                {"_id": f"noise-free-{index:04d}"},
+                {"$set": {"_id": f"noise-free-{index:04d}", "id": f"noise-free-{index:04d}",
+                          "active": True, "attempt": "Jan 2027", "batch": f"OTHER {index % 4}",
+                          "group": "Group 1", "planId": "tp-other", "planDay": (index % 40) + 1,
+                          "subject": "Accounts", "startDate": date.today().isoformat(),
+                          "endDate": date.today().isoformat(),
+                          "tasks": [{"id": f"n-{index}", "label": "noise", "detail": "",
+                                     "kind": "chapter"}]}}, upsert=True)
+
+    asyncio.run(add_noise())
+    res = client.get(f"/api/ai/target-plan-days?studentId={sid}",
+                     headers={"X-Student-Id": sid, "X-Session-Password": PASSWORD})
+    assert res.status_code == 200
+    assert len(res.json()["days"]) == 1

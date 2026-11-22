@@ -761,6 +761,36 @@ async def student_daily_target(studentId: str = Query(min_length=1, max_length=6
     }
 
 
+# Row ceiling for the day-strip read. Far above the whole live collection (~270
+# documents on 09-Nov-2026) so it is a guard, never a filter.
+PLAN_DAYS_ROW_LIMIT = 5000
+
+
+def _broad_target_query() -> dict:
+    return {"active": {"$ne": False}, "planDay": {"$exists": True}}
+
+
+def _scoped_target_query(plan_ids: list) -> dict:
+    """Only the plans this student is in - the read must never be "first N, then filter".
+
+    Fetching a fixed slice and filtering afterwards let the slice decide who sees
+    their target: whichever batches fell past the ceiling got a blank day strip,
+    and the order was whatever MongoDB happened to return (09-Nov-2026).
+
+    Legacy hand-published rows carry no planId; those are always kept, exactly as
+    from_live_plan() keeps them.
+    """
+    return {
+        "active": {"$ne": False},
+        "planDay": {"$exists": True},
+        "$or": [
+            {"planId": {"$in": list(plan_ids or [])}},
+            {"planId": {"$exists": False}},
+            {"planId": {"$in": ["", None]}},
+        ],
+    }
+
+
 @router.get("/api/ai/target-plan-days")
 async def student_target_plan_days(
     studentId: str = Query(min_length=1, max_length=64),
@@ -784,9 +814,26 @@ async def student_target_plan_days(
         raise HTTPException(status_code=404, detail="Student not found.")
     today = _today()
 
-    rows = await db[TARGETS].find(
-        {"active": {"$ne": False}, "planDay": {"$exists": True}}, {"_id": 0}
-    ).to_list(800)
+    # The old query pulled the first 800 active target rows with no sort and only
+    # filtered by audience afterwards, so whichever batches happened to sit past
+    # position 800 silently got an empty day strip - "everyone sees the same
+    # (empty) thing" (09-Nov-2026). Narrow the read to the plans this student is
+    # actually in, and raise the ceiling, so the cap can never bite a student.
+    live_plans = await db["target_plans"].find(
+        {"status": {"$ne": "cancelled"}},
+        {"_id": 0, "id": 1, "batch": 1, "group": 1, "attempt": 1},
+    ).to_list(500)
+    plan_ids = [str(plan.get("id")) for plan in live_plans if _audience_matches(student, plan)]
+    scoped = await db[TARGETS].find(
+        _scoped_target_query(plan_ids), {"_id": 0}
+    ).to_list(PLAN_DAYS_ROW_LIMIT)
+    # Safety net: if scoping found nothing (a plan with no audience fields, an
+    # unexpected publish path), fall back to the broad read rather than showing
+    # an empty plan. The cap is far above today's ~270 rows, so this is safe.
+    rows = scoped if scoped else await db[TARGETS].find(
+        _broad_target_query(), {"_id": 0}
+    ).to_list(PLAN_DAYS_ROW_LIMIT)
+
     live = await live_plan_ids(db)
     order = await plan_order(db)
     rows = [row for row in rows if from_live_plan(row, live) and _audience_matches(student, row)]
