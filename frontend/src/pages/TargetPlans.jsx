@@ -1,6 +1,18 @@
 import SmartTargetFollow from '../components/SmartTargetFollow';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Ban, CalendarRange, Camera, Pencil, Plus, Save, Search, Trash2 } from 'lucide-react';
+import {
+  Ban,
+  CalendarRange,
+  Camera,
+  ChevronRight,
+  FolderOpen,
+  Layers,
+  Pencil,
+  Plus,
+  Save,
+  Search,
+  Trash2,
+} from 'lucide-react';
 import { fetchTargetOptions, previewTargetAudience } from '@/api/dailyTargets';
 import {
   cancelTargetPlan,
@@ -42,6 +54,11 @@ function displayDate(iso) {
   return `${d}/${m}/${y.slice(2)}`;
 }
 
+function weekdayShort(iso) {
+  if (!iso) return '';
+  return new Date(`${iso}T00:00:00`).toLocaleDateString('en-IN', { weekday: 'short' });
+}
+
 function blankEntry() {
   return { subject: '', topic: '', hours: '', kind: 'study', customSubject: '' };
 }
@@ -56,6 +73,20 @@ function entryPayload(entry) {
     topic: (entry.topic || '').trim(),
     hours: entry.hours === '' || entry.hours == null ? null : Number(entry.hours),
     kind: entry.kind,
+  };
+}
+
+// Turn a stored entry into an editable draft. A subject that is no longer in the
+// dropdown becomes 'Other' with the original text kept, so saving never drops a line.
+function entryToDraft(entry, subjectChoices) {
+  const raw = entry.subject || '';
+  const known = raw === ALL || subjectChoices.includes(raw);
+  return {
+    subject: known ? raw : 'Other',
+    customSubject: known ? '' : raw,
+    topic: entry.topic || entry.label || '',
+    hours: entry.hours == null ? '' : entry.hours,
+    kind: entry.kind || 'study',
   };
 }
 
@@ -147,6 +178,33 @@ function EntryRows({ entries, onChange, subjectChoices, compact = false }) {
   );
 }
 
+/* Read-only mirror of one editor row: subject / topic / hours / type. */
+function EntryLines({ entries }) {
+  return (
+    <div className="space-y-1.5">
+      {entries.map((entry, index) => {
+        const kindLabel = (KINDS.find(([value]) => value === (entry.kind || 'study')) || KINDS[0])[1];
+        return (
+          <div key={index} className="flex flex-wrap items-center gap-2">
+            <div className="flex h-9 min-w-40 flex-1 items-center truncate rounded-lg border border-slate-200 bg-white px-2 text-sm text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100">
+              {entry.subject === ALL ? 'All (full-day line)' : entry.subject || '—'}
+            </div>
+            <div className="flex h-9 min-w-44 flex-[2] items-center truncate rounded-lg border border-slate-200 bg-white px-2 text-sm text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100">
+              {entry.topic || entry.label || '—'}
+            </div>
+            <div className="flex h-9 w-20 items-center justify-center rounded-lg border border-slate-200 bg-white px-2 text-sm text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100">
+              {entry.hours == null ? '—' : entry.hours}
+            </div>
+            <div className="flex h-9 w-28 items-center rounded-lg border border-slate-200 bg-white px-2 text-sm font-semibold text-slate-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300">
+              {kindLabel}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 export default function TargetPlans() {
   const today = todayIst();
   const [options, setOptions] = useState({ attempts: [], groups: [], batches: [], subjects: [] });
@@ -156,27 +214,39 @@ export default function TargetPlans() {
   const [includedBackupDays, setIncludedBackupDays] = useState(1);
   const [revisionBudgetMinutes, setRevisionBudgetMinutes] = useState(30);
   const [startDate, setStartDate] = useState(today);
-  const [firstDay, setFirstDay] = useState(1); // Journey day number of the FIRST uploaded day (e.g. 24 when continuing an ongoing plan)
+  const [firstDay, setFirstDay] = useState(1);
   const [attempt, setAttempt] = useState(ALL);
   const [group, setGroup] = useState(ALL);
   const [batch, setBatch] = useState(ALL);
   const [days, setDays] = useState([blankDay(), blankDay()]);
   const [audience, setAudience] = useState(null);
   const [busy, setBusy] = useState(false);
-  const [message, setMessage] = useState(null); // { kind: 'ok'|'err'|'info', text }
-  const [editing, setEditing] = useState(null); // { planId, planName, day, entries }
+  const [message, setMessage] = useState(null);
+  const [editing, setEditing] = useState(null);
   const photoInputRef = useRef(null);
   const [progress, setProgress] = useState({ rows: [], total: 0, started: 0, notStarted: 0, maxDays: MAX_START_DAY });
-  // Whether this server can read plan photos. Unknown until /api/target-plans answers.
   const [aiPhoto, setAiPhoto] = useState(null);
   const [build, setBuild] = useState('dev');
   const [progressBusy, setProgressBusy] = useState(false);
-  const [progressFilter, setProgressFilter] = useState('all'); // all | started | not-started
+  const [progressFilter, setProgressFilter] = useState('all');
   const [progressSearch, setProgressSearch] = useState('');
   const [progressBatch, setProgressBatch] = useState(ALL);
-  // Day timeline of the student picked in the table (day + date strip, horizontal scroll).
   const [timeline, setTimeline] = useState({ studentId: '', days: [], active: null, busy: false });
-  const [dayEdit, setDayEdit] = useState({}); // studentId -> pending day value
+  const [dayEdit, setDayEdit] = useState({});
+
+  // Published plans drill-down: closed -> batches -> groups -> plans -> days.
+  const [pubStep, setPubStep] = useState('closed');
+  const [pubBatch, setPubBatch] = useState(null);
+  const [pubGroup, setPubGroup] = useState(null);
+  const [pubPlanId, setPubPlanId] = useState(null);
+
+  const resetDrill = (step) => {
+    setPubStep(step);
+    if (step === 'batches') { setPubBatch(null); setPubGroup(null); setPubPlanId(null); }
+    if (step === 'groups') { setPubGroup(null); setPubPlanId(null); }
+    if (step === 'plans') { setPubPlanId(null); }
+    setEditing(null);
+  };
 
   const onPhoto = async (file) => {
     if (!file) return;
@@ -201,13 +271,10 @@ export default function TargetPlans() {
       setMessage({ kind: 'ok', text: `Photo parsed: ${res.days.length} days filled in. Review the rows below, then press Publish plan.` });
     } catch (err) {
       const text = err.message || 'Photo parse failed.';
-      // Only a genuinely missing capability flips the button. A bad photo is not
-      // "photo reading not set up" — the feature works, the picture was unclear.
       const missing = /not set up on this server|not configured on this server|AI key is not/i.test(text);
       setMessage({ kind: missing ? 'info' : 'err', text });
       if (missing) setAiPhoto(false);
       else {
-        // Failed photo, working feature: keep the button usable and re-sync the flag.
         fetchTargetPlans()
           .then((res) => {
             if (res.capabilities && typeof res.capabilities.aiPhotoReading === 'boolean') {
@@ -223,7 +290,6 @@ export default function TargetPlans() {
   };
 
   useEffect(() => {
-    // One tiny unauthenticated call: which build is the server running?
     fetch('/api/health')
       .then((res) => (res.ok ? res.json() : null))
       .then((data) => { if (data?.build) setBuild(String(data.build)); })
@@ -251,7 +317,7 @@ export default function TargetPlans() {
       });
     } catch (err) {
       setTimeline({ studentId, days: [], active: null, busy: false });
-      if (!quiet) setMessage({ kind: 'err', text: err.message || 'Could not load this student\u2019s days.' });
+      if (!quiet) setMessage({ kind: 'err', text: err.message || 'Could not load student days.' });
     }
   };
 
@@ -376,25 +442,18 @@ export default function TargetPlans() {
     }
   };
 
-  const openDayEditor = (plan) => {
-    const candidates = (plan.days || []).filter((day) => plan.mode === 'personal' || day.date >= today);
+  const openDayEditor = (plan, dayNumber) => {
+    const candidates = (plan.days || []).filter((day) => plan.mode === 'personal' || !day.date || day.date >= today);
     if (!candidates.length) {
       setMessage({ kind: 'err', text: 'This plan has no upcoming days left to edit.' });
       return;
     }
-    const first = candidates[0];
+    const target = dayNumber ? (plan.days || []).find((row) => row.day === dayNumber) : null;
+    const dayObj = target || candidates[0];
     setEditing({
       planId: plan.id,
-      planName: plan.name,
-      day: first.day,
-      options: candidates.map((day) => day.day),
-      entries: (first.entries || []).map((entry) => ({
-        subject: (options.subjects || []).includes(entry.subject) || entry.subject === ALL ? entry.subject : 'Other',
-        customSubject: (options.subjects || []).includes(entry.subject) || entry.subject === ALL ? '' : entry.subject,
-        topic: entry.topic || entry.label || '',
-        hours: entry.hours == null ? '' : entry.hours,
-        kind: entry.kind || 'study',
-      })),
+      day: dayObj.day,
+      entries: (dayObj.entries || []).map((entry) => entryToDraft(entry, subjectChoices)),
     });
   };
 
@@ -428,8 +487,52 @@ export default function TargetPlans() {
     }
   };
 
+  /* ── Published plans: derived shapes ── */
+  const planBatch = (plan) => plan.batch || 'Unassigned';
+
+  const pubBatches = useMemo(() => {
+    const seen = new Set();
+    for (const value of options.batches || []) {
+      if (value && value !== ALL) seen.add(value);
+    }
+    for (const plan of plans) seen.add(planBatch(plan));
+    return [...seen].sort((a, b) => a.localeCompare(b));
+  }, [options.batches, plans]);
+
+  const plansInBatch = useMemo(
+    () => (pubBatch ? plans.filter((p) => planBatch(p) === pubBatch) : []),
+    [plans, pubBatch],
+  );
+
+  const pubGroups = useMemo(() => {
+    const seen = new Set();
+    for (const value of options.groups || []) {
+      if (value && value !== ALL) seen.add(value);
+    }
+    for (const plan of plansInBatch) {
+      if (plan.group) seen.add(plan.group);
+    }
+    return [...seen].sort();
+  }, [options.groups, plansInBatch]);
+
+  const plansInGroup = useMemo(
+    () => plansInBatch.filter((p) => (p.group || '') === pubGroup),
+    [plansInBatch, pubGroup],
+  );
+
+  const pubPlan = useMemo(
+    () => plans.find((p) => p.id === pubPlanId) || null,
+    [plans, pubPlanId],
+  );
+
+  const pubDayRows = useMemo(() => {
+    if (!pubPlan) return [];
+    return (pubPlan.days || []).slice().sort((a, b) => a.day - b.day);
+  }, [pubPlan]);
+
   const inputClass = 'h-10 rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100';
   const labelClass = 'block text-xs font-semibold text-slate-500 dark:text-slate-400';
+  const crumbBtn = 'rounded px-1.5 py-0.5 text-xs font-bold text-[#2563EB] hover:bg-blue-50 dark:hover:bg-blue-950/40';
 
   return (
     <div className="space-y-6" data-testid="target-plans-page">
@@ -629,7 +732,7 @@ export default function TargetPlans() {
                       key={day.day}
                       type="button"
                       disabled={day.beforeStart}
-                      title={day.beforeStart ? 'Before this student\u2019s start day' : `Day ${day.day}`}
+                      title={day.beforeStart ? 'Before this student start day' : `Day ${day.day}`}
                       onClick={() => setTimeline((prev) => ({ ...prev, active: day.day }))}
                       className={[
                         'flex w-16 shrink-0 flex-col items-center rounded-xl border px-1 py-1.5',
@@ -817,7 +920,7 @@ export default function TargetPlans() {
             <label className="space-y-1">
               <span className={labelClass}>First day number</span>
               <input aria-label="First day number" type="number" min="1" max="90" value={firstDay} onChange={(e) => setFirstDay(e.target.value)} className={`${inputClass} w-full`} />
-              <span className="block text-xs text-slate-400">Ongoing plan continue karte time: e.g. 24. Naya plan: 1.</span>
+              <span className="block text-xs text-slate-400">When continuing an ongoing plan: e.g. 24. New plan: 1.</span>
             </label>
             <label className="space-y-1">
               <span className={labelClass}>Batch</span>
@@ -896,82 +999,281 @@ export default function TargetPlans() {
         </aside>
       </div>
 
-      <section className="space-y-3">
-        <h2 className="font-heading text-lg font-bold text-slate-900 dark:text-white">Published plans</h2>
-        {plans.length === 0 && (
-          <div className="rounded-xl border border-slate-200 bg-white p-6 text-sm text-slate-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
-            No plans published yet.
+      {/* ═════════ Published plans: batch → group → plan → days ═════════ */}
+      <section className="space-y-3" data-testid="published-plans">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <h2 className="font-heading text-lg font-bold text-slate-900 dark:text-white">Published plans</h2>
+          <div className="flex items-center gap-3 text-xs font-semibold text-slate-500 dark:text-slate-400">
+            <span>{plans.length} plan{plans.length === 1 ? '' : 's'}</span>
+            {pubStep !== 'closed' && (
+              <button
+                type="button"
+                onClick={() => resetDrill('closed')}
+                className="inline-flex h-8 items-center gap-1 rounded-lg border border-slate-200 px-2.5 text-xs font-semibold text-slate-600 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
+              >
+                Close
+              </button>
+            )}
+          </div>
+        </div>
+
+        {pubStep === 'closed' && (
+          <button
+            type="button"
+            onClick={() => resetDrill('batches')}
+            className="flex w-full flex-col items-center gap-2 rounded-2xl border border-dashed border-slate-300 bg-white px-6 py-8 text-center transition hover:border-[#2563EB] hover:bg-blue-50/40 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-blue-950/20"
+            data-testid="published-plans-open"
+          >
+            <span className="grid h-12 w-12 place-items-center rounded-xl bg-blue-50 text-[#2563EB] dark:bg-blue-950/50">
+              <FolderOpen className="h-6 w-6" />
+            </span>
+            <span className="text-sm font-bold text-slate-900 dark:text-white">Open published plans</span>
+            <span className="max-w-md text-xs text-slate-500 dark:text-slate-400">
+              Batch, then group, then plan. Every day of the plan opens with the dates that were
+              selected when it was published.
+            </span>
+          </button>
+        )}
+
+        {pubStep !== 'closed' && (
+          <div className="flex flex-wrap items-center gap-1 text-xs font-semibold text-slate-500 dark:text-slate-400">
+            <button type="button" className={crumbBtn} onClick={() => resetDrill('batches')}>Batches</button>
+            {pubBatch && (
+              <>
+                <ChevronRight className="h-3 w-3 text-slate-300" />
+                <button type="button" className={crumbBtn} onClick={() => resetDrill('groups')}>{pubBatch}</button>
+              </>
+            )}
+            {pubGroup && (
+              <>
+                <ChevronRight className="h-3 w-3 text-slate-300" />
+                <button type="button" className={crumbBtn} onClick={() => resetDrill('plans')}>{pubGroup}</button>
+              </>
+            )}
+            {pubPlan && (
+              <>
+                <ChevronRight className="h-3 w-3 text-slate-300" />
+                <span className="px-1.5 text-slate-700 dark:text-slate-200">Day-wise</span>
+              </>
+            )}
           </div>
         )}
-        {plans.map((plan) => (
-          <div key={plan.id} className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="font-semibold text-slate-900 dark:text-white">{plan.name}</span>
-                  <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold uppercase ${plan.status === 'active' ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300' : 'bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400'}`}>
-                    {plan.status}
+
+        {pubStep === 'batches' && (
+          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+            {pubBatches.map((bName) => {
+              const batchPlans = plans.filter((p) => planBatch(p) === bName);
+              const groupNames = new Set(batchPlans.map((p) => p.group).filter(Boolean));
+              const students = batchPlans.reduce((total, p) => total + (p.studentCount || 0), 0);
+              return (
+                <button
+                  key={bName}
+                  type="button"
+                  onClick={() => { setPubBatch(bName); setPubGroup(null); setPubPlanId(null); setPubStep('groups'); setEditing(null); }}
+                  className="rounded-2xl border border-slate-200 bg-white p-4 text-left transition hover:border-[#2563EB] hover:shadow-sm dark:border-slate-700 dark:bg-slate-900"
+                >
+                  <div className="flex items-start gap-2">
+                    <Layers className="mt-0.5 h-4 w-4 shrink-0 text-[#2563EB]" />
+                    <div className="min-w-0">
+                      <div className="truncate text-sm font-bold text-slate-900 dark:text-white">{bName}</div>
+                      <div className="mt-0.5 text-[11px] text-slate-500 dark:text-slate-400">
+                        {batchPlans.length} plan{batchPlans.length === 1 ? '' : 's'}
+                        {students ? ` · ${students} students` : ''}
+                      </div>
+                    </div>
+                  </div>
+                  {groupNames.size > 0 ? (
+                    <div className="mt-2.5 flex flex-wrap gap-1.5">
+                      {[...groupNames].sort().map((g) => {
+                        const count = batchPlans.filter((p) => p.group === g).length;
+                        return (
+                          <span key={g} className="rounded-md bg-slate-100 px-2 py-0.5 text-[10.5px] font-bold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                            {g} <span className="text-slate-400">{count}</span>
+                          </span>
+                        );
+                      })}
+                    </div>
+                  ) : (
+                    <div className="mt-2.5 text-[11px] font-semibold text-amber-600 dark:text-amber-400">No plan published yet</div>
+                  )}
+                  <div className="mt-3 inline-flex items-center gap-1 text-[11px] font-bold text-[#2563EB]">
+                    View groups <ChevronRight className="h-3 w-3" />
+                  </div>
+                </button>
+              );
+            })}
+            {pubBatches.length === 0 && (
+              <div className="rounded-xl border border-slate-200 bg-white p-6 text-sm text-slate-500 sm:col-span-2 xl:col-span-3 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+                No batches found yet.
+              </div>
+            )}
+          </div>
+        )}
+
+        {pubStep === 'groups' && (
+          <div className="grid gap-3 sm:grid-cols-3">
+            {pubGroups.map((gName) => {
+              const list = plansInBatch.filter((p) => (p.group || '') === gName);
+              const students = list.reduce((total, p) => total + (p.studentCount || 0), 0);
+              const activeCount = list.filter((p) => p.status === 'active').length;
+              const cancelledCount = list.filter((p) => p.status !== 'active').length;
+              return (
+                <button
+                  key={gName}
+                  type="button"
+                  onClick={() => { setPubGroup(gName); setPubPlanId(null); setPubStep('plans'); setEditing(null); }}
+                  className={`rounded-2xl border border-slate-200 bg-white p-4 text-left transition hover:border-[#2563EB] hover:shadow-sm dark:border-slate-700 dark:bg-slate-900 ${list.length ? '' : 'opacity-70'}`}
+                >
+                  <div className="flex items-center gap-2.5">
+                    <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-blue-50 text-[11px] font-extrabold text-[#2563EB] dark:bg-blue-950/50 dark:text-blue-300">
+                      {gName === 'Both' ? 'B' : (gName.match(/\d+/) || [gName.slice(0, 2)])[0]}
+                    </span>
+                    <div className="min-w-0">
+                      <div className="truncate text-sm font-bold text-slate-900 dark:text-white">{gName}</div>
+                      <div className="text-[11px] text-slate-500 dark:text-slate-400">
+                        {list.length ? `${activeCount} active${cancelledCount ? ` · ${cancelledCount} cancelled` : ''}` : 'No plan yet'}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-3 flex items-center gap-1.5 border-t border-slate-100 pt-2.5 text-[11px] font-bold text-slate-600 dark:border-slate-800 dark:text-slate-300">
+                    {list.length ? `${list.length} plan${list.length === 1 ? '' : 's'}${students ? ` · ${students} students` : ''}` : '0 plans'}
+                    {list.length ? <ChevronRight className="ml-auto h-3 w-3 text-[#2563EB]" /> : null}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        )}
+
+        {pubStep === 'plans' && (
+          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900">
+            {plansInGroup.length === 0 && (
+              <div className="p-6 text-sm text-slate-500 dark:text-slate-400">
+                No plan published for {pubGroup} in this batch yet. Publish one above and it will appear here.
+              </div>
+            )}
+            {plansInGroup.map((plan) => (
+              <button
+                key={plan.id}
+                type="button"
+                onClick={() => { setPubPlanId(plan.id); setPubStep('days'); setEditing(null); }}
+                className="flex w-full items-center gap-3 border-b border-slate-100 px-4 py-3 text-left transition last:border-b-0 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-800/60"
+              >
+                <span className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase ${plan.status === 'active' ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300' : 'bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400'}`}>
+                  {plan.status}
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block truncate text-sm font-semibold text-slate-900 dark:text-white">{plan.name}</span>
+                  <span className="mt-0.5 block text-xs text-slate-500 dark:text-slate-400">
+                    Attempt {plan.attempt} · {displayDate(plan.startDate)} · {(plan.days || []).length} days · {plan.studentCount} students
+                  </span>
+                </span>
+                <span className="shrink-0 text-xs font-bold text-[#2563EB]">View days</span>
+                <ChevronRight className="h-4 w-4 shrink-0 text-slate-400" />
+              </button>
+            ))}
+          </div>
+        )}
+
+        {pubStep === 'days' && pubPlan && (
+          <div className="rounded-xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900">
+            <div className="flex flex-wrap items-start justify-between gap-3 border-b border-slate-100 p-4 dark:border-slate-800">
+              <div className="min-w-0">
+                <div className="flex flex-wrap items-center gap-2">
+                  <h3 className="text-sm font-bold text-slate-900 dark:text-white">{pubPlan.name}</h3>
+                  <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold uppercase ${pubPlan.status === 'active' ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300' : 'bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400'}`}>
+                    {pubPlan.status}
                   </span>
                 </div>
-                <div className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                  {plan.batch} · Group {plan.group} · Attempt {plan.attempt} · {displayDate(plan.startDate)} se {(plan.days || []).length} din · {plan.studentCount} students
-                </div>
+                <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                  {planBatch(pubPlan)} · Group {pubPlan.group} · Attempt {pubPlan.attempt} · {pubPlan.studentCount} students · {pubDayRows.length} days published
+                </p>
               </div>
-              {plan.status === 'active' && (
-                <div className="flex gap-2">
-                  <button type="button" onClick={() => openDayEditor(plan)} className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-slate-200 px-3 text-xs font-semibold text-slate-600 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800">
+              {pubPlan.status === 'active' && (
+                <div className="flex shrink-0 items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => openDayEditor(pubPlan)}
+                    className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-slate-200 px-3 text-xs font-semibold text-slate-600 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
+                  >
                     <Pencil className="h-3.5 w-3.5" /> Edit upcoming day
                   </button>
-                  <button type="button" onClick={() => cancelPlan(plan)} className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-rose-200 px-3 text-xs font-semibold text-rose-600 hover:bg-rose-50 dark:border-rose-900 dark:hover:bg-rose-950/40">
+                  <button
+                    type="button"
+                    onClick={() => cancelPlan(pubPlan)}
+                    className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-rose-200 px-3 text-xs font-semibold text-rose-600 hover:bg-rose-50 dark:border-rose-900 dark:hover:bg-rose-950/40"
+                  >
                     <Ban className="h-3.5 w-3.5" /> Cancel plan
                   </button>
                 </div>
               )}
             </div>
-            {plan.mode === 'personal' && <SmartTargetFollow plan={plan} />}
-            {editing?.planId === plan.id && (
-              <div className="mt-4 rounded-lg border border-blue-200 bg-blue-50/60 p-3 dark:border-blue-900 dark:bg-blue-950/30">
-                <div className="mb-2 flex items-center gap-3">
-                  <label className="text-xs font-semibold text-slate-600 dark:text-slate-300">
-                    Day:
-                    <select
-                      value={editing.day}
-                      onChange={(e) => {
-                        const day = Number(e.target.value);
-                        const source = (plan.days || []).find((row) => row.day === day);
-                        setEditing({
-                          ...editing,
-                          day,
-                          entries: (source?.entries || []).map((entry) => ({
-                            subject: (options.subjects || []).includes(entry.subject) || entry.subject === ALL ? entry.subject : 'Other',
-                            customSubject: (options.subjects || []).includes(entry.subject) || entry.subject === ALL ? '' : entry.subject,
-                            topic: entry.topic || entry.label || '',
-                            hours: entry.hours == null ? '' : entry.hours,
-                            kind: entry.kind || 'study',
-                          })),
-                        });
-                      }}
-                      className="ml-2 h-9 rounded-lg border border-slate-200 bg-white px-2 text-sm dark:border-slate-700 dark:bg-slate-900"
-                    >
-                      {editing.options.map((day) => (
-                        <option key={day} value={day}>Day {day} · {displayDate(addDays(plan.startDate, day - 1))}</option>
-                      ))}
-                    </select>
-                  </label>
-                </div>
-                <EntryRows entries={editing.entries} onChange={(entries) => setEditing({ ...editing, entries })} subjectChoices={subjectChoices} />
-                <div className="mt-3 flex gap-2">
-                  <button type="button" onClick={saveDayEdit} disabled={busy} className="inline-flex h-9 items-center gap-1.5 rounded-lg bg-[#2563EB] px-4 text-xs font-bold text-white hover:bg-blue-700 disabled:opacity-50">
-                    <Save className="h-3.5 w-3.5" /> Save day
-                  </button>
-                  <button type="button" onClick={() => setEditing(null)} className="inline-flex h-9 items-center rounded-lg border border-slate-200 px-3 text-xs font-semibold text-slate-600 dark:border-slate-700 dark:text-slate-300">
-                    Close
-                  </button>
-                </div>
+
+            {pubPlan.mode === 'personal' && (
+              <div className="border-b border-slate-100 p-4 dark:border-slate-800">
+                <SmartTargetFollow plan={pubPlan} />
               </div>
             )}
+
+            <div className="p-4">
+              {pubDayRows.length === 0 && (
+                <p className="text-sm text-slate-500 dark:text-slate-400">No days were published in this plan.</p>
+              )}
+              {pubDayRows.map((row, index) => {
+                const iso = row.date || addDays(pubPlan.startDate, index);
+                const isPast = iso < today;
+                const isToday = iso === today;
+                const isEditing = editing && editing.planId === pubPlan.id && editing.day === row.day;
+                const canEdit = pubPlan.status === 'active' && !isPast && pubPlan.mode !== 'personal';
+                return (
+                  <div key={row.day} className={`border-b border-slate-100 py-3 last:border-b-0 dark:border-slate-800 ${isPast ? 'opacity-60' : ''}`}>
+                    <div className="mb-2 flex flex-wrap items-center gap-2">
+                      <span className="text-sm font-bold text-slate-900 dark:text-white">Day {row.day}</span>
+                      <span className="text-xs font-semibold text-slate-400">{displayDate(iso)}</span>
+                      <span className="text-[10px] font-semibold uppercase tracking-wide text-slate-400">{weekdayShort(iso)}</span>
+                      {isToday && (
+                        <span className="rounded-full bg-blue-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-[#2563EB] dark:bg-blue-950/50 dark:text-blue-300">Today</span>
+                      )}
+                      {!isPast && !isToday && (
+                        <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300">Upcoming</span>
+                      )}
+                      <span className="flex-1" />
+                      {canEdit && !isEditing && (
+                        <button
+                          type="button"
+                          onClick={() => openDayEditor(pubPlan, row.day)}
+                          className="inline-flex h-7 items-center gap-1 rounded-lg border border-slate-200 px-2 text-[11px] font-semibold text-slate-600 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
+                        >
+                          <Pencil className="h-3 w-3" /> Edit
+                        </button>
+                      )}
+                    </div>
+
+                    {isEditing ? (
+                      <div className="rounded-lg border border-blue-200 bg-blue-50/60 p-3 dark:border-blue-900 dark:bg-blue-950/30">
+                        <EntryRows
+                          entries={editing.entries}
+                          onChange={(entries) => setEditing({ ...editing, entries })}
+                          subjectChoices={subjectChoices}
+                        />
+                        <div className="mt-3 flex gap-2">
+                          <button type="button" onClick={saveDayEdit} disabled={busy} className="inline-flex h-9 items-center gap-1.5 rounded-lg bg-[#2563EB] px-4 text-xs font-bold text-white hover:bg-blue-700 disabled:opacity-50">
+                            <Save className="h-3.5 w-3.5" /> Save day
+                          </button>
+                          <button type="button" onClick={() => setEditing(null)} className="inline-flex h-9 items-center rounded-lg border border-slate-200 px-3 text-xs font-semibold text-slate-600 dark:border-slate-700 dark:text-slate-300">
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    ) : (
+                      <EntryLines entries={row.entries || []} />
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        ))}
+        )}
       </section>
     </div>
   );
