@@ -70,6 +70,12 @@ const NAV = [
     icon: Settings,
     testid: "nav-settings",
   },
+  {
+    to: "/live-quiz",
+    label: "Live Quiz",
+    icon: Layers,
+    testid: "nav-live-quiz",
+  },
 ];
 
 // NEW — AI Content review & publishing center (additive; existing nav untouched)

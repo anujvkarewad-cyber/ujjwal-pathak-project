@@ -70,6 +70,7 @@ import {
 import WeakAtRisk from "@/pages/analytics/WeakAtRisk";
 import ImprovementTracking from "@/pages/analytics/ImprovementTracking";
 import FollowUps from "@/pages/analytics/FollowUps";
+import LiveQuiz from "@/pages/LiveQuiz";
 
 function App() {
   return (
@@ -99,6 +100,7 @@ function App() {
           <Route path="/notes-inbox" element={<NotesInbox />} />
           <Route path="/reports" element={<Reports />} />
           <Route path="/tests" element={<Tests />} />
+          <Route path="/live-quiz" element={<LiveQuiz />} />
           <Route path="/workbooks" element={<Workbooks />} />
           <Route path="/mcq-scores" element={<McqScores />} />
           <Route path="/messages" element={<Messages />} />
