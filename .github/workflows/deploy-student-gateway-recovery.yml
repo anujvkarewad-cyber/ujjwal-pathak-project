@@ -2,6 +2,11 @@ name: deploy-student-gateway-recovery
 
 on:
   workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - "ops/student-gateway/**"
+      - ".github/workflows/deploy-student-gateway-recovery.yml"
 
 permissions:
   contents: read
