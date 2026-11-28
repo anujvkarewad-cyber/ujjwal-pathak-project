@@ -1,0 +1,127 @@
+name: deploy-student-gateway-recovery
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: deploy-student-gateway-recovery
+  cancel-in-progress: false
+
+jobs:
+  deploy-student-gateway:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout mentor repo
+        uses: actions/checkout@v4
+        with:
+          path: mentor-repo
+          fetch-depth: 1
+
+      - name: Checkout student-dashboard-frontend and apply recovery patch
+        run: |
+          git clone --depth 5 https://github.com/anujvkarewad-cyber/student-dashboard-frontend.git student-repo
+          cd student-repo
+          echo "student-dashboard-frontend base HEAD: $(git rev-parse HEAD)"
+          git apply --check ../mentor-repo/ops/student-gateway/student-dashboard-recovery.patch
+          git apply ../mentor-repo/ops/student-gateway/student-dashboard-recovery.patch
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Verify student gateway unit and bundle tests
+        working-directory: student-repo
+        run: |
+          node --check api/proxy.js
+          node --check app.js
+          node --test test/proxy-password-recovery.test.mjs test/proxy-password-change.test.mjs test/proxy-study-log.test.mjs
+          node scripts/test-web.js
+
+      - name: Auth to Google Cloud (workload identity)
+        if: vars.GCP_USE_KEY != 'true'
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER || 'projects/566076646952/locations/global/workloadIdentityPools/github/providers/github' }}
+          service_account: ${{ vars.GCP_DEPLOY_SERVICE_ACCOUNT || 'github-deploy@ump-dashboard.iam.gserviceaccount.com' }}
+
+      - name: Auth to Google Cloud (service-account key)
+        if: vars.GCP_USE_KEY == 'true'
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - uses: google-github-actions/setup-gcloud@v2
+        with:
+          project_id: ${{ vars.GCP_PROJECT || 'ump-dashboard' }}
+
+      - name: Deploy student-dashboard candidate, verify 4-tier recovery, and promote
+        working-directory: student-repo
+        env:
+          GCP_PROJECT_ID: ${{ vars.GCP_PROJECT || 'ump-dashboard' }}
+          GCP_REGION: ${{ vars.GCP_REGION || 'asia-south1' }}
+          GCP_WEB_SERVICE: student-dashboard
+        shell: bash
+        run: |
+          set -euo pipefail
+          {
+            old=$(gcloud run services describe "$GCP_WEB_SERVICE" --project "$GCP_PROJECT_ID" --region "$GCP_REGION" --format='json(status.traffic,status.url)')
+            url=$(jq -er '.status.url | select(startswith("https://"))' <<< "$old")
+            old_routes=$(jq -er '[.status.traffic[] | select((.percent // 0) > 0)] | if (map(.percent) | add) != 100 or any(.[]; (.revisionName // "") == "") then error("Cannot safely preserve traffic") else map(.revisionName + "=" + (.percent|tostring)) | join(",") end' <<< "$old")
+            tag="candidate-recovery"
+            promoting=0
+            rollback() {
+              code=$?
+              if [[ "$code" != 0 && "$promoting" == 1 ]]; then
+                echo 'Release health failed; restoring previous routing.' >&2
+                gcloud run services update-traffic "$GCP_WEB_SERVICE" --project "$GCP_PROJECT_ID" --region "$GCP_REGION" --to-revisions "$old_routes" --quiet || echo 'ROLLBACK FAILED: operator intervention required.' >&2
+              fi
+              exit "$code"
+            }
+            trap rollback EXIT
+
+            gcloud run deploy "$GCP_WEB_SERVICE" --source . --project "$GCP_PROJECT_ID" --region "$GCP_REGION" --no-traffic --tag "$tag" --quiet
+            candidate=$(gcloud run services describe "$GCP_WEB_SERVICE" --project "$GCP_PROJECT_ID" --region "$GCP_REGION" --format='json(status.traffic)')
+            candidate_url=$(jq -er --arg tag "$tag" '.status.traffic[] | select(.tag == $tag) | .url' <<< "$candidate")
+            revision=$(jq -er --arg tag "$tag" '.status.traffic[] | select(.tag == $tag) | .revisionName' <<< "$candidate")
+            expected_js=$(sha256sum app.js | cut -d' ' -f1)
+
+            smoke() {
+              local base="$1"
+              curl --fail --silent --show-error --max-time 60 "$base/api/health" | jq -e '.ok == true and .backendConfigured == true' >/dev/null
+              curl --fail --silent --show-error --max-time 60 "$base/" -o /dev/null
+              local served_js
+              served_js=$(curl --fail --silent --show-error --max-time 60 "$base/app.js" | sha256sum | cut -d' ' -f1)
+              [[ "$served_js" == "$expected_js" ]] || { echo 'Served app.js is not the tested source.' >&2; return 1; }
+              curl --fail --silent --show-error --max-time 60 -H 'Content-Type: application/json' \
+                -d '{"action":"forgotPassword","payload":{}}' "$base/api/proxy" \
+                | jq -e '.result.success == false and (.error == null)' >/dev/null
+              curl --fail --silent --show-error --max-time 60 -H 'Content-Type: application/json' \
+                -d '{"action":"verifyOTP","payload":{"studentId":"UMP999999","otp":"000000"}}' "$base/api/proxy" \
+                | jq -e '.result.success == false and (.result.message | test("No active code"))' >/dev/null
+            }
+
+            smoke "$candidate_url"
+            promoting=1
+            gcloud run services update-traffic "$GCP_WEB_SERVICE" --project "$GCP_PROJECT_ID" --region "$GCP_REGION" --to-revisions "$revision=100" --quiet
+            smoke "$url"
+            promoting=0
+
+            fp_probe=$(curl --fail --silent --show-error --max-time 60 -H 'Content-Type: application/json' \
+              -d '{"action":"forgotPassword","payload":{}}' "$url/api/proxy")
+            otp_e2e=$(curl --fail --silent --show-error --max-time 60 -H 'Content-Type: application/json' \
+              -d '{"action":"verifyOTP","payload":{"studentId":"UMP999999","otp":"000000"}}' "$url/api/proxy")
+            echo "::notice title=Student gateway live verification::url=${url} revision=${revision} fp_probe=${fp_probe} otp_e2e=${otp_e2e}"
+          } 2>&1 | tee "$RUNNER_TEMP/student-deploy.log"
+
+      - name: Report failure detail
+        if: failure()
+        run: |
+          if [ -s "$RUNNER_TEMP/student-deploy.log" ]; then
+            detail=$(tail -n 30 "$RUNNER_TEMP/student-deploy.log" | tr '\n' '~' | sed 's/~/ /g' | cut -c1-5500)
+            echo "::error title=Student gateway deploy failed::${detail}"
+          fi
