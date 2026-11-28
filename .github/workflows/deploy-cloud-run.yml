@@ -130,8 +130,10 @@ jobs:
         if: success()
         run: |
           health=$(curl -fsS --max-time 30 "https://ujjwal-pathak-app-566076646952.asia-south1.run.app/api/health" 2>/dev/null || echo "unavailable")
-          lq_code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 "https://ujjwal-pathak-app-566076646952.asia-south1.run.app/api/live-quiz-admin/pool" || echo "err")
-          echo "::notice title=Live health after deploy::health=${health} live_quiz_pool_http=${lq_code}"
+          fp_code=$(curl -s -o /dev/null -w '%{http_code}' -X POST -H "Content-Type: application/json" -d '{}' --max-time 30 "https://ujjwal-pathak-app-566076646952.asia-south1.run.app/api/student-auth/forgot-password" || echo "err")
+          otp_code=$(curl -s -o /dev/null -w '%{http_code}' -X POST -H "Content-Type: application/json" -d '{}' --max-time 30 "https://ujjwal-pathak-app-566076646952.asia-south1.run.app/api/student-auth/verify-otp" || echo "err")
+          rp_code=$(curl -s -o /dev/null -w '%{http_code}' -X POST -H "Content-Type: application/json" -d '{}' --max-time 30 "https://ujjwal-pathak-app-566076646952.asia-south1.run.app/api/student-auth/reset-password" || echo "err")
+          echo "::notice title=Live health after deploy::health=${health} recovery_routes=${fp_code}/${otp_code}/${rp_code}"
 
       - name: Summarise
         if: always()

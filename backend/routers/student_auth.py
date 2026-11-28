@@ -265,6 +265,31 @@ class ChangePasswordBody(BaseModel):
     newPassword: str = Field(min_length=1, max_length=256, repr=False)
 
 
+class ForgotPasswordBody(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
+    studentId: Optional[str] = Field(default=None, max_length=64)
+    email: Optional[str] = Field(default=None, max_length=254)
+    payload: Optional[dict] = None
+
+
+class VerifyOtpBody(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
+    studentId: Optional[str] = Field(default=None, max_length=64)
+    otp: Optional[str] = Field(default=None, max_length=32, repr=False)
+    payload: Optional[dict] = None
+
+
+class ResetPasswordBody(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
+    studentId: Optional[str] = Field(default=None, max_length=64)
+    password: Optional[str] = Field(default=None, max_length=512, repr=False)
+    newPassword: Optional[str] = Field(default=None, max_length=512, repr=False)
+    payload: Optional[dict] = None
+
+
 def _plausible_login_id(raw) -> str:
     """An id worth recording a failure against: uppercase, long enough, has a digit.
 
@@ -526,6 +551,146 @@ async def student_change_password(body: ChangePasswordBody):
     )
     password_sheet_sync.queue_sync(sid, new_pwd, flag_changed=True)
     return {"result": {"success": True, "message": "Password changed."}}
+
+
+async def _call_password_reset_script(action: str, payload: dict[str, Any]) -> dict[str, Any]:
+    """Relay a student account-recovery action to the Super 75 Password Reset Web App.
+
+    `STUDENT_ADMIN_SCRIPT_URL` points to the Super 75 Password Reset Apps Script
+    deployment, which reads/writes the Students, PasswordOTP and PasswordLog
+    tabs, emails verification codes via GmailApp, and syncs reset passwords back
+    to Mongo through `/api/student-auth/import`. Student-facing recovery never
+    attaches admin credentials and never leaks upstream URLs or stack traces.
+    """
+    url = (getattr(settings, "student_admin_script_url", "") or "").strip()
+    if not url:
+        raise HTTPException(
+            status_code=503,
+            detail="Account recovery is not configured right now.",
+        )
+
+    try:
+        async with httpx.AsyncClient(timeout=30.0, follow_redirects=True) as client:
+            response = await client.post(
+                url,
+                json={"action": action, "payload": payload},
+            )
+            response.raise_for_status()
+            envelope = response.json()
+    except Exception:
+        logger.warning(
+            "student_auth password recovery upstream call failed for action=%s",
+            action,
+        )
+        raise HTTPException(
+            status_code=502,
+            detail="Account recovery is temporarily unavailable. Please try again in a minute.",
+        )
+
+    raw_result = envelope.get("result") if isinstance(envelope, dict) else None
+    if not isinstance(raw_result, dict) or not isinstance(raw_result.get("success"), bool):
+        logger.warning(
+            "student_auth password recovery upstream returned unexpected envelope for action=%s",
+            action,
+        )
+        raise HTTPException(
+            status_code=502,
+            detail="Account recovery is temporarily unavailable. Please try again in a minute.",
+        )
+
+    out: dict[str, Any] = {
+        "success": raw_result["success"],
+        "message": str(
+            raw_result.get("message")
+            or ("Done." if raw_result["success"] else "Unable to complete request.")
+        ),
+    }
+    if raw_result.get("code"):
+        out["code"] = str(raw_result["code"])
+    return out
+
+
+@router.post("/forgot-password")
+async def student_forgot_password(body: ForgotPasswordBody):
+    nested = body.payload if isinstance(body.payload, dict) else {}
+    raw_sid = body.studentId if body.studentId is not None else nested.get("studentId")
+    raw_email = body.email if body.email is not None else nested.get("email")
+
+    sid = normalize_student_id(str(raw_sid or ""))
+    email = str(raw_email or "").strip().lower()
+    if not sid or not email or len(sid) > 64 or len(email) > 254:
+        return {
+            "result": {
+                "success": False,
+                "message": "Enter your Student ID and registered email.",
+            }
+        }
+
+    result = await _call_password_reset_script(
+        "forgotPassword",
+        {"studentId": sid, "email": email},
+    )
+    return {"result": result}
+
+
+@router.post("/verify-otp")
+async def student_verify_otp(body: VerifyOtpBody):
+    nested = body.payload if isinstance(body.payload, dict) else {}
+    raw_sid = body.studentId if body.studentId is not None else nested.get("studentId")
+    raw_otp = body.otp if body.otp is not None else nested.get("otp")
+
+    sid = normalize_student_id(str(raw_sid or ""))
+    otp = str(raw_otp or "").strip()
+    if not sid or len(sid) > 64 or not re.fullmatch(r"\d{6}", otp):
+        return {
+            "result": {
+                "success": False,
+                "message": "Enter the complete 6-digit code.",
+            }
+        }
+
+    result = await _call_password_reset_script(
+        "verifyOTP",
+        {"studentId": sid, "otp": otp},
+    )
+    return {"result": result}
+
+
+@router.post("/reset-password")
+async def student_reset_password(body: ResetPasswordBody):
+    nested = body.payload if isinstance(body.payload, dict) else {}
+    raw_sid = body.studentId if body.studentId is not None else nested.get("studentId")
+    raw_pwd = (
+        body.password
+        if body.password is not None
+        else (
+            body.newPassword
+            if body.newPassword is not None
+            else (
+                nested.get("password")
+                if nested.get("password") is not None
+                else nested.get("newPassword")
+            )
+        )
+    )
+
+    sid = normalize_student_id(str(raw_sid or ""))
+    pwd = str(raw_pwd or "").strip()
+    if not sid or len(sid) > 64:
+        return {"result": {"success": False, "message": "Student ID is missing."}}
+    if len(pwd) < 6 or len(pwd) > 256:
+        return {
+            "result": {
+                "success": False,
+                "message": "Password must be between 6 and 256 characters.",
+            }
+        }
+
+    result = await _call_password_reset_script(
+        "resetPassword",
+        {"studentId": sid, "password": pwd},
+    )
+    return {"result": result}
 
 
 @router.post("/import")
