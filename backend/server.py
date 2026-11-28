@@ -22,7 +22,6 @@ from db import (
 from persist import uses_real_mongo
 import sheet_coverage
 from routers import attendance, mentor_tests, mentor_mcq_scores, student_tests
-from routers import live_quiz_admin          # NEW — Live Quiz visibility (read-only)
 from routers import smart_targets
 from routers import student_target_progress
 from routers import mentor_workspace
@@ -160,9 +159,6 @@ app.include_router(smart_targets.router)
 from routers import workbook_practice
 app.include_router(workbook_practice.router)
 
-# Live Quiz mentor view: pool counts + per-student selection preview. Read-only, no writes.
-app.include_router(live_quiz_admin.router)
-
 @app.middleware("http")
 async def private_workbook_responses(request, call_next):
     path = request.url.path
@@ -283,7 +279,12 @@ async def startup_db_client():
         os.environ['BOOTSTRAP_DONE'] = '1'
     # Production only: tests use DB_NAME=test_db and seed their own fixtures.
     if os.environ.get("DB_NAME") not in {"test_db", "pytest"}:
+        from pool_purge import run_pool_purge_on_boot
         from repair import publish_if_empty, repair_store
+
+        purge_summary = await run_pool_purge_on_boot()
+        if purge_summary and purge_summary.get("applied"):
+            logger.info("[startup] live-quiz pool purge applied: %s", purge_summary)
 
         await repair_store()
         await ensure_unique_indexes()

@@ -19,7 +19,16 @@ echo "verify-deploy: $URL"
 
 # 1. health
 health=$(curl -fsS --max-time 30 "$URL/api/health" 2>/dev/null) || health=""
-if [[ "$health" == *'"ok":true'* ]]; then ok "health: $health"; else bad "health endpoint failed: ${health:-no response}"; fi
+if [[ "$health" == *'"ok":true'* ]]; then
+  ok "health: $health"
+  if printf '%s' "$health" | python3 -c 'import json,sys; d=json.load(sys.stdin); sys.exit(0 if int(d.get("questions", 0)) < 6000 else 1)'; then
+    ok "health question count confirms Nov-27 Live Quiz pool is purged"
+  else
+    bad "health question count still includes Live Quiz pool: $health"
+  fi
+else
+  bad "health endpoint failed: ${health:-no response}"
+fi
 
 # 2. the served bundle
 bundle=$(curl -fsS --max-time 60 "$URL/" | grep -o '/static/js/main\.[a-z0-9]*\.js' | head -1)
@@ -47,6 +56,13 @@ else
 
   # 2d. the removed review detour must be gone
   if [[ "$js" == *"Review reply"* ]]; then bad "old 'Review reply' detour is still in the bundle"; else ok "old 'Review reply' detour removed"; fi
+
+  # 2d-bis. removed Live Quiz tab / API client must not remain in the bundle
+  if [[ "$js" == *"/api/live-quiz-admin"* || "$js" == *"nav-live-quiz"* ]]; then
+    bad "removed Live Quiz UI/client is still in the bundle"
+  else
+    ok "Live Quiz UI/client removed from bundle"
+  fi
 
   # 2e. per-student access switch in Daily tracker · Dates (the data-testid prefix
   # survives minification, so this is proof the SPA was built from current source)
@@ -86,6 +102,15 @@ else
   # every protected route must demand a token (401 without one)
   code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 -X POST -H 'Content-Type: application/json' -d '{}' "$URL/api/mentor-workspace/send")
   if [[ "$code" == "401" || "$code" == "403" ]]; then ok "protected routes demand a token ($code)"; else bad "send route answered $code without a token"; fi
+
+  # retired Live Quiz admin router must be absent (404, not 200/401)
+  if printf '%s' "$spec" | grep -q '"/api/live-quiz-admin'; then
+    bad "retired /api/live-quiz-admin route still in openapi.json"
+  else
+    ok "retired /api/live-quiz-admin absent from openapi.json"
+  fi
+  lq_code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 "$URL/api/live-quiz-admin/pool")
+  if [[ "$lq_code" == "404" ]]; then ok "/api/live-quiz-admin/pool returns 404"; else bad "/api/live-quiz-admin/pool returned $lq_code (expected 404)"; fi
 fi
 
 # 4. SPA deep links must serve the app (not a 404) — students/profiles open by URL

@@ -168,3 +168,30 @@ async def purge_cohort_endpoint(body: CohortPurgeBody, _: dict = Depends(require
         dry_run=dry_run,
         delete_accounts=bool(body.deleteAccounts),
     )
+
+
+class LiveQuizPoolPurgeBody(BaseModel):
+    """Surgical cleanup of the Nov-2026 Live Quiz MCQ-book pool."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    dryRun: bool = True
+    confirm: str = Field(default="", max_length=64)
+
+
+@router.post("/purge-live-quiz-pool")
+async def purge_live_quiz_pool_endpoint(
+    body: LiveQuizPoolPurgeBody, _: dict = Depends(require_mentor)
+):
+    """Dry-run or re-run the Live Quiz MCQ-book pool removal."""
+    from pool_purge import purge_live_quiz_pool
+
+    dry_run = bool(body.dryRun)
+    if not dry_run and body.confirm.strip().upper() != "DELETE":
+        return {
+            "ok": False,
+            "reason": "confirmation_required",
+            "hint": 'Send {"dryRun": false, "confirm": "DELETE"} to actually delete.',
+        }
+    return await purge_live_quiz_pool(dry_run=dry_run, force=not dry_run)
+

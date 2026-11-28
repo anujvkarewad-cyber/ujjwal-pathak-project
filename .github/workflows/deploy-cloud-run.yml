@@ -126,6 +126,13 @@ jobs:
             echo "::error title=Deploy failed::no output was captured from scripts/deploy.sh"
           fi
 
+      - name: Report live health
+        if: success()
+        run: |
+          health=$(curl -fsS --max-time 30 "https://ujjwal-pathak-app-566076646952.asia-south1.run.app/api/health" 2>/dev/null || echo "unavailable")
+          lq_code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 "https://ujjwal-pathak-app-566076646952.asia-south1.run.app/api/live-quiz-admin/pool" || echo "err")
+          echo "::notice title=Live health after deploy::health=${health} live_quiz_pool_http=${lq_code}"
+
       - name: Summarise
         if: always()
         run: |

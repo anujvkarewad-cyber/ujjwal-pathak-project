@@ -114,6 +114,7 @@ RUN npm ci --no-audit --no-fund && CI=false GENERATE_SOURCEMAP=false npx craco b
 
 FROM ${BASE_IMAGE%%@*}@$BASE
 USER root
+RUN rm -rf /app/frontend/build
 COPY --from=fe /fe/build /app/frontend/build
 RUN chown -R appuser:appuser /app/frontend && chmod -R u+rwX,go+rX /app/frontend
 USER appuser
@@ -139,6 +140,7 @@ if [[ "$WHAT" == "backend" || "$WHAT" == "both" ]]; then
   cat > "$CTX/Dockerfile" <<EOF
 FROM ${BASE_IMAGE%%@*}@$BASE
 USER root
+RUN rm -rf /app/backend/routers /app/pool && rm -f /app/backend/*.py
 COPY routers/ /app/backend/routers/
 COPY *.py /app/backend/
 RUN find /app/backend -type d -exec chmod 0755 {} + && find /app/backend -type f -name '*.py' -exec chmod 0644 {} + && chown -R appuser:appuser /app/backend
