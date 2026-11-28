@@ -80,6 +80,32 @@ export const useMissedTrackerReport = ({
     enabled: enabled && (scope === "joined-to-date" || Boolean(from && to)),
   });
 
+export const useSolvedQuestionsReport = ({
+  from,
+  to,
+  batch = "All Batches",
+  group = "All Groups",
+  subject = "All Subjects",
+  enabled = true,
+}) =>
+  useQuery({
+    queryKey: ["tracker", "solved-questions", from, to, batch, group, subject],
+    queryFn: () =>
+      trackerApi.getSolvedQuestionsReport({ from, to, batch, group, subject }),
+    enabled: enabled && Boolean(from && to),
+    staleTime: 0,
+    refetchInterval: 30000,
+    refetchOnWindowFocus: true,
+  });
+
+export const useRemindSolvedQuestions = () => {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: trackerApi.remindSolvedQuestions,
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["tracker"] }),
+  });
+};
+
 // Leave / absent self-reports for one day (mentor can cancel or override).
 export const useAttendanceDay = ({ date, enabled = true }) =>
   useQuery({

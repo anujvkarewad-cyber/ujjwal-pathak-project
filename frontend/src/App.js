@@ -16,6 +16,7 @@ import StudentProfile from "@/pages/StudentProfile";
 import AccessOffStudents from "@/pages/AccessOffStudents";
 import PasswordReset from "@/pages/PasswordReset";
 import DailyTracker from "@/pages/DailyTracker";
+import SolvedQuestions from "@/pages/SolvedQuestions";
 import DailyTargets from "@/pages/DailyTargets";
 import TargetPlans from "@/pages/TargetPlans";
 import Leaderboard from "@/pages/Leaderboard";
@@ -91,6 +92,7 @@ function App() {
           <Route path="/access-off-students" element={<AccessOffStudents />} />
           <Route path="/password-reset" element={<PasswordReset />} />
           <Route path="/daily-tracker" element={<DailyTracker />} />
+          <Route path="/solved-questions" element={<SolvedQuestions />} />
           <Route path="/daily-targets" element={<DailyTargets />} />
           <Route path="/target-plans" element={<TargetPlans />} />
           <Route path="/leaderboard" element={<Leaderboard />} />

@@ -913,6 +913,167 @@ def _fetch_tracker_submissions_sync() -> list[dict]:
     return submissions
 
 
+SOLVED_QUESTION_SUBJECTS: tuple[str, ...] = (
+    "Accounts",
+    "Law",
+    "DT",
+    "GST",
+    "Costing",
+    "Audit",
+    "FM",
+    "SM",
+)
+
+SUBJECT_GROUP_KEY: dict[str, str] = {
+    "Accounts": "group1",
+    "Law": "group1",
+    "DT": "group1",
+    "GST": "group1",
+    "Costing": "group2",
+    "Audit": "group2",
+    "FM": "group2",
+    "SM": "group2",
+}
+
+_SOLVED_SUBJECT_ALIASES: dict[str, str] = {
+    "accounts": "Accounts",
+    "account": "Accounts",
+    "advaccounts": "Accounts",
+    "advancedaccounting": "Accounts",
+    "law": "Law",
+    "corporatelaw": "Law",
+    "dt": "DT",
+    "directtax": "DT",
+    "directtaxation": "DT",
+    "incometax": "DT",
+    "gst": "GST",
+    "indirecttax": "GST",
+    "indirecttaxation": "GST",
+    "idt": "GST",
+    "costing": "Costing",
+    "cost": "Costing",
+    "cma": "Costing",
+    "audit": "Audit",
+    "auditing": "Audit",
+    "fm": "FM",
+    "financialmanagement": "FM",
+    "sm": "SM",
+    "strategicmanagement": "SM",
+}
+
+
+def _canonical_solved_subject(value: Any) -> str:
+    key = re.sub(r"[^a-z0-9]+", "", str(value or "").strip().lower())
+    return _SOLVED_SUBJECT_ALIASES.get(key, "")
+
+
+def _resolve_mentor_proof_url(proof_url: Any) -> str:
+    raw = str(proof_url or "").strip()
+    if not raw:
+        return ""
+    if raw.startswith(("https://", "http://")):
+        return raw
+    if raw.startswith("/api/proof-file"):
+        match = re.search(r"[?&]fileId=([A-Za-z0-9_-]{5,200})", raw)
+        if match:
+            return f"https://drive.google.com/file/d/{match.group(1)}/view"
+    return raw
+
+
+def _normalize_solved_questions(raw: Any) -> dict[str, dict]:
+    """Normalize student subject-wise solved question counts and sheet metadata."""
+    collected: dict[str, dict] = {}
+    items: list[tuple[Any, Any]] = []
+    if isinstance(raw, dict):
+        items = list(raw.items())
+    elif isinstance(raw, list):
+        for entry in raw:
+            if isinstance(entry, dict):
+                items.append((entry.get("subject"), entry))
+
+    for subj_raw, val in items:
+        subj = _canonical_solved_subject(subj_raw)
+        if not subj:
+            continue
+        count_val: Any = val
+        sheet_name = ""
+        proof_url = ""
+        if isinstance(val, dict):
+            count_val = val.get("count") if val.get("count") is not None else val.get("questions")
+            sheet_name = str(val.get("sheetName") or val.get("topic") or "").strip()[:160]
+            proof_url = str(val.get("proofUrl") or val.get("sheetUrl") or "").strip()[:500]
+        try:
+            parsed = int(round(float(count_val)))
+        except (TypeError, ValueError):
+            continue
+        count = max(0, min(500, parsed))
+        entry_out: dict[str, Any] = {"count": count}
+        if sheet_name:
+            entry_out["sheetName"] = sheet_name
+        if proof_url:
+            entry_out["proofUrl"] = proof_url
+        collected[subj] = entry_out
+
+    return {subj: collected[subj] for subj in SOLVED_QUESTION_SUBJECTS if subj in collected}
+
+
+def _merge_day_solved_questions(rows: list[dict]) -> dict[str, dict]:
+    """Combine same-day submissions for a student without double-counting updates.
+
+    Mongo ``studyLog`` stores newest entries first; when ``submittedAt`` is present
+    on multiple same-day entries we keep the latest timestamp per subject.
+    """
+    merged: dict[str, tuple[str, dict]] = {}
+    for idx, row in enumerate(rows):
+        sq = _normalize_solved_questions(row.get("solvedQuestions"))
+        stamp = str(row.get("submittedAt") or row.get("submissionTime") or "")
+        # Earlier index in mongo_rows = newer entry when timestamps tie/empty.
+        rank_key = f"{stamp}|{999999 - idx:06d}"
+        for subj, detail in sq.items():
+            prev = merged.get(subj)
+            if prev is None or rank_key > prev[0]:
+                enriched = dict(detail)
+                if enriched.get("proofUrl"):
+                    enriched["mentorProofUrl"] = _resolve_mentor_proof_url(enriched.get("proofUrl"))
+                merged[subj] = (rank_key, enriched)
+    return {subj: merged[subj][1] for subj in SOLVED_QUESTION_SUBJECTS if subj in merged}
+
+
+def _student_group_bucket(group_value: Any) -> str:
+    text = str(group_value or "").strip().lower()
+    if "both" in text or ("1" in text and "2" in text) or ("i" in text and "ii" in text and "group" in text):
+        return "both"
+    if re.search(r"\b(group\s*1|group\s*i|g1)\b", text):
+        return "group1"
+    if re.search(r"\b(group\s*2|group\s*ii|g2)\b", text):
+        return "group2"
+    return "unassigned"
+
+
+def _matches_group_filter(student_group: Any, requested_group: str) -> bool:
+    req = str(requested_group or "All Groups").strip().lower()
+    if req in {"", "all", "all groups"}:
+        return True
+    bucket = _student_group_bucket(student_group)
+    if req in {"both", "both groups"}:
+        return bucket == "both"
+    if req in {"group1", "group 1", "group i"}:
+        return bucket == "group1"
+    if req in {"group2", "group 2", "group ii"}:
+        return bucket == "group2"
+    return str(student_group or "").strip().lower() == req
+
+
+def _subject_applicable_to_group(subject: str, student_group: Any) -> bool:
+    target_group = SUBJECT_GROUP_KEY.get(subject)
+    if not target_group:
+        return True
+    bucket = _student_group_bucket(student_group)
+    if bucket in {"both", "unassigned"}:
+        return True
+    return bucket == target_group
+
+
 async def _fetch_mongo_tracker_submissions(db) -> list[dict]:
     """Read app tracker/study-log rows already persisted in Mongo."""
     submissions = []
@@ -930,16 +1091,20 @@ async def _fetch_mongo_tracker_submissions(db) -> list[dict]:
                 hours = max(0.0, float(row.get("hours") or 0))
             except (TypeError, ValueError):
                 hours = 0.0
+            solved_questions = _normalize_solved_questions(row.get("solvedQuestions"))
             submissions.append({
                 "studentId": sid,
                 "date": day,
                 "hours": hours,
                 "subjects": str(row.get("topic") or "").strip(),
-                "tomorrowTarget": "",
-                "reason": "",
-                "mentorSupport": "",
+                "tomorrowTarget": str(row.get("tomorrowTarget") or "").strip(),
+                "reason": str(row.get("reason") or "").strip(),
+                "mentorSupport": str(row.get("mentorSupport") or "").strip(),
                 "proofUrl": str(row.get("proof") or "").strip(),
-                "submissionTime": "",
+                "submissionTime": str(row.get("submittedAt") or "").strip(),
+                "submittedAt": str(row.get("submittedAt") or "").strip(),
+                "solvedQuestions": solved_questions,
+                "totalSolved": sum(int(v.get("count") or 0) for v in solved_questions.values()),
                 "source": "mongo",
             })
     return submissions
@@ -1528,7 +1693,7 @@ def _tracker_day_entry(
     mongo_hours = sum(float(row.get("hours") or 0) for row in mongo_rows)
 
     def latest_value(field: str) -> str:
-        for row in reversed(form_rows + mongo_rows):
+        for row in list(mongo_rows) + list(reversed(form_rows)):
             value = str(row.get(field) or "").strip()
             if value:
                 return value
@@ -1539,6 +1704,9 @@ def _tracker_day_entry(
         value = str(row.get("subjects") or "").strip()
         if value and value not in subjects:
             subjects.append(value)
+    solved_questions = _merge_day_solved_questions(list(mongo_rows) + list(reversed(form_rows)))
+    total_solved = sum(int(v.get("count") or 0) for v in solved_questions.values())
+    proof_url = latest_value("proofUrl")
     # present > leave/absent (a submitted log always wins) > missed.
     kind = str((attendance or {}).get("kind") or "")
     if submitted:
@@ -1563,7 +1731,10 @@ def _tracker_day_entry(
         "reason": latest_value("reason"),
         "mentorSupport": latest_value("mentorSupport"),
         "submissionTime": latest_value("submissionTime"),
-        "proofUrl": latest_value("proofUrl"),
+        "proofUrl": proof_url,
+        "mentorProofUrl": _resolve_mentor_proof_url(proof_url),
+        "solvedQuestions": solved_questions,
+        "totalSolved": total_solved,
         "sources": sorted({str(row.get("source") or "") for row in form_rows + mongo_rows if row.get("source")}),
     }
 
@@ -1907,6 +2078,409 @@ async def tracker_day(
     }
 
 
+class SolvedQuestionsRemindBody(BaseModel):
+    studentIds: list[str] = Field(default_factory=list, min_length=1, max_length=400)
+    date: Optional[str] = None
+    subject: Optional[str] = None
+    message: Optional[str] = Field(default=None, max_length=400)
+
+
+@router.get("/solved-questions-report")
+async def solved_questions_report(
+    from_value: Optional[str] = Query(default=None, alias="from"),
+    to_value: Optional[str] = Query(default=None, alias="to"),
+    batch: str = Query(default="All Batches"),
+    group: str = Query(default="All Groups"),
+    subject: str = Query(default="All Subjects"),
+    _mentor=Depends(require_mentor),
+):
+    """Subject-wise daily solved questions & practice sheet submission tracker.
+
+    Compares active Jan 2027 students against daily tracker/solved-question logs
+    across [from, to], separating DT and GST into 8 canonical subjects and
+    respecting joining dates, batch start overrides, Leave/Absent, and Access Off.
+    """
+    today = datetime.now(IST).date()
+    from_day = _parse_tracker_day(from_value) if from_value else today
+    to_day = _parse_tracker_day(to_value) if to_value else from_day
+    if not from_day or not to_day or from_day > to_day:
+        raise HTTPException(status_code=400, detail="Valid from and to dates (YYYY-MM-DD, from <= to) are required.")
+    if (to_day - from_day).days > 93:
+        raise HTTPException(status_code=400, detail="Date range cannot exceed 93 days.")
+
+    raw_subject = str(subject or "All Subjects").strip()
+    canonical_subject = ""
+    if raw_subject and raw_subject.lower() not in {"all", "all subjects", "all 8 subjects"}:
+        canonical_subject = _canonical_solved_subject(raw_subject)
+        if not canonical_subject:
+            raise HTTPException(
+                status_code=400,
+                detail=f"Unknown subject. Choose one of: {', '.join(SOLVED_QUESTION_SUBJECTS)}.",
+            )
+
+    db = get_db()
+    cfg = await _tracker_start_config(db)
+    accounts = await db[STUDENT_ACCOUNTS].find(
+        {},
+        {
+            "_id": 0,
+            "studentId": 1,
+            "studentName": 1,
+            "attempt": 1,
+            "batch": 1,
+            "group": 1,
+            "joinedOn": 1,
+            "master": 1,
+            "status": 1,
+            "removedAt": 1,
+            "accessEnabled": 1,
+            "accessReason": 1,
+        },
+    ).to_list(length=5000)
+    accounts, roster_source = await _tracker_roster(accounts)
+    mongo_rows = await _fetch_mongo_tracker_submissions(db)
+    form_error = ""
+    try:
+        form_rows = await asyncio.to_thread(_fetch_tracker_submissions_sync)
+    except Exception as exc:
+        form_rows = []
+        form_error = type(exc).__name__
+
+    mongo_by_student_day: dict[tuple[str, date], list[dict]] = {}
+    form_by_student_day: dict[tuple[str, date], list[dict]] = {}
+    for row in mongo_rows:
+        day = row.get("date")
+        sid = normalize_student_id(row.get("studentId") or "")
+        if sid and isinstance(day, date) and from_day <= day <= to_day:
+            mongo_by_student_day.setdefault((sid, day), []).append(row)
+    for row in form_rows:
+        day = row.get("date")
+        sid = normalize_student_id(row.get("studentId") or "")
+        if sid and isinstance(day, date) and from_day <= day <= to_day:
+            form_by_student_day.setdefault((sid, day), []).append(row)
+
+    attendance_map = await attendance_lib.attendance_index(db, from_day, to_day)
+    requested_batch = str(batch or "All Batches").strip()
+    all_batches_seen: set[str] = set()
+    window_days = [from_day + timedelta(days=offset) for offset in range((to_day - from_day).days + 1)]
+
+    subject_totals = {
+        subj: {
+            "subject": subj,
+            "group": SUBJECT_GROUP_KEY.get(subj, ""),
+            "questionsSolved": 0,
+            "studentsSubmitted": 0,
+            "sheetsUploaded": 0,
+        }
+        for subj in SOLVED_QUESTION_SUBJECTS
+    }
+
+    items = []
+    for account in accounts:
+        if (
+            account.get("master")
+            or _is_removed(account)
+            or _access_blocked(account)
+            or _attempt_ym(account.get("attempt") or "", account.get("batch") or "") != (2027, 1)
+        ):
+            continue
+        sid = normalize_student_id(account.get("studentId") or "")
+        if not sid:
+            continue
+        account_batch = str(account.get("batch") or "Unassigned").strip() or "Unassigned"
+        account_group = str(account.get("group") or "Unassigned").strip() or "Unassigned"
+        all_batches_seen.add(account_batch)
+
+        if requested_batch not in {"", "All Batches"} and account_batch != requested_batch:
+            continue
+        if not _matches_group_filter(account_group, group):
+            continue
+
+        effective_start, _start_source = _effective_tracker_start(account, cfg)
+        expected_from = max(from_day, effective_start) if effective_start else from_day
+        expected_days = [d for d in window_days if d >= expected_from]
+
+        by_subject = {subj: 0 for subj in SOLVED_QUESTION_SUBJECTS}
+        subjects_logged_set: set[str] = set()
+        sheets: list[dict] = []
+        daily_entries: list[dict] = []
+        submitted_days_set: set[date] = set()
+        leave_days_list: list[str] = []
+        absent_days_list: list[str] = []
+        total_hours = 0.0
+
+        # Evaluate every day in the window so submissions made even before
+        # effectiveStart remain visible (matching MissedTrackerReport rule).
+        for day in window_days:
+            f_rows = form_by_student_day.get((sid, day), [])
+            m_rows = mongo_by_student_day.get((sid, day), [])
+            att = attendance_map.get((sid, day))
+            if f_rows or m_rows:
+                submitted_days_set.add(day)
+                entry = _tracker_day_entry(f_rows, m_rows, day, att)
+                total_hours += float(entry.get("hours") or 0)
+                sq = entry.get("solvedQuestions") or {}
+                for subj, detail in sq.items():
+                    cnt = int(detail.get("count") or 0)
+                    by_subject[subj] = by_subject.get(subj, 0) + cnt
+                    subjects_logged_set.add(subj)
+                    s_proof = str(detail.get("proofUrl") or "").strip()
+                    s_name = str(detail.get("sheetName") or "").strip()
+                    if s_proof or s_name:
+                        sheets.append({
+                            "date": day.isoformat(),
+                            "subject": subj,
+                            "count": cnt,
+                            "sheetName": s_name,
+                            "proofUrl": s_proof,
+                            "mentorProofUrl": _resolve_mentor_proof_url(s_proof),
+                        })
+                # Also detect canonical subjects mentioned in free-text subjects list
+                for part in str(entry.get("subjects") or "").split(","):
+                    canon = _canonical_solved_subject(part)
+                    if canon:
+                        subjects_logged_set.add(canon)
+                day_proof = str(entry.get("proofUrl") or "").strip()
+                if day_proof:
+                    sheets.append({
+                        "date": day.isoformat(),
+                        "subject": "Daily Proof",
+                        "count": int(entry.get("totalSolved") or 0),
+                        "sheetName": str(entry.get("subjects") or "Study Proof")[:120],
+                        "proofUrl": day_proof,
+                        "mentorProofUrl": _resolve_mentor_proof_url(day_proof),
+                    })
+                daily_entries.append({
+                    "date": day.isoformat(),
+                    "hours": entry.get("hours") or 0,
+                    "subjects": entry.get("subjects") or "",
+                    "totalSolved": int(entry.get("totalSolved") or 0),
+                    "solvedQuestions": sq,
+                    "proofUrl": day_proof,
+                    "mentorProofUrl": entry.get("mentorProofUrl") or "",
+                    "submissionTime": entry.get("submissionTime") or "",
+                })
+            elif day in expected_days:
+                kind = str((att or {}).get("kind") or "")
+                if kind == "leave":
+                    leave_days_list.append(day.isoformat())
+                elif kind == "absent":
+                    absent_days_list.append(day.isoformat())
+
+        not_expected = len(expected_days) == 0 and len(submitted_days_set) == 0
+        subject_applicable = (
+            True
+            if not canonical_subject
+            else (_subject_applicable_to_group(canonical_subject, account_group) or canonical_subject in subjects_logged_set)
+        )
+        # If mentor filtered by a specific subject (e.g. DT), skip students from
+        # the opposite group unless they explicitly logged that subject.
+        if canonical_subject and not subject_applicable:
+            continue
+
+        expected_submitted = sum(1 for d in expected_days if d in submitted_days_set)
+        excused_count = len(leave_days_list) + len(absent_days_list)
+        missed_days_count = max(0, len(expected_days) - expected_submitted - excused_count)
+
+        total_solved_all = sum(by_subject.values())
+        selected_solved = by_subject.get(canonical_subject, 0) if canonical_subject else total_solved_all
+        has_structured_solved = any(bool(d.get("solvedQuestions")) for d in daily_entries)
+        has_selected_subject = (
+            (canonical_subject in subjects_logged_set or by_subject.get(canonical_subject, 0) > 0)
+            if canonical_subject
+            else (has_structured_solved or total_solved_all > 0)
+        )
+
+        if not_expected:
+            status = "not_expected"
+        elif canonical_subject:
+            if has_selected_subject:
+                status = "submitted"
+            elif submitted_days_set:
+                status = "logged_other"
+            elif len(expected_days) > 0 and excused_count >= len(expected_days):
+                status = "leave" if leave_days_list else "absent"
+            else:
+                status = "not_submitted"
+        else:
+            if has_selected_subject:
+                status = "submitted"
+            elif submitted_days_set:
+                status = "logged_only"
+            elif len(expected_days) > 0 and excused_count >= len(expected_days):
+                status = "leave" if leave_days_list else "absent"
+            else:
+                status = "not_submitted"
+
+        if not not_expected:
+            for subj in SOLVED_QUESTION_SUBJECTS:
+                q_count = by_subject.get(subj, 0)
+                subject_totals[subj]["questionsSolved"] += q_count
+                if q_count > 0 or subj in subjects_logged_set:
+                    subject_totals[subj]["studentsSubmitted"] += 1
+                subj_sheets = sum(
+                    1 for s in sheets if s.get("subject") == subj and s.get("proofUrl")
+                )
+                subject_totals[subj]["sheetsUploaded"] += subj_sheets
+
+        latest_proof = ""
+        for d_entry in reversed(daily_entries):
+            if d_entry.get("proofUrl"):
+                latest_proof = d_entry["proofUrl"]
+                break
+
+        items.append({
+            "studentId": sid,
+            "studentName": str(account.get("studentName") or sid).strip() or sid,
+            "batch": account_batch,
+            "group": account_group,
+            "accessEnabled": account.get("accessEnabled") is not False,
+            "accessReason": account.get("accessReason") or "",
+            "joinedOn": _parse_tracker_day(account.get("joinedOn") or "").isoformat()
+            if _parse_tracker_day(account.get("joinedOn") or "")
+            else None,
+            "effectiveStart": effective_start.isoformat() if effective_start else None,
+            "notExpected": not_expected,
+            "status": status,
+            "submittedAnyLog": bool(submitted_days_set),
+            "submittedSolved": bool(has_selected_subject),
+            "expectedDays": len(expected_days),
+            "submittedDays": len(submitted_days_set),
+            "missedDays": missed_days_count,
+            "leaveDays": len(leave_days_list),
+            "absentDays": len(absent_days_list),
+            "hours": round(total_hours, 2),
+            "totalSolved": selected_solved,
+            "totalSolvedAllSubjects": total_solved_all,
+            "bySubject": by_subject,
+            "sheets": sheets,
+            "latestProofUrl": latest_proof,
+            "latestMentorProofUrl": _resolve_mentor_proof_url(latest_proof),
+            "dailyEntries": list(reversed(daily_entries)),
+        })
+
+    status_rank = {
+        "not_submitted": 0,
+        "logged_other": 1,
+        "logged_only": 2,
+        "submitted": 3,
+        "leave": 4,
+        "absent": 5,
+        "not_expected": 6,
+    }
+    items.sort(
+        key=lambda row: (
+            status_rank.get(row.get("status") or "", 9),
+            -int(row.get("totalSolved") or 0),
+            str(row.get("studentName") or "").lower(),
+            str(row.get("studentId") or ""),
+        )
+    )
+
+    expected_items = [r for r in items if not r.get("notExpected")]
+    submitted_any = sum(1 for r in expected_items if r.get("submittedAnyLog"))
+    submitted_solved = sum(1 for r in expected_items if r.get("status") == "submitted")
+    logged_only = sum(1 for r in expected_items if r.get("status") in {"logged_only", "logged_other"})
+    excused = sum(1 for r in expected_items if r.get("status") in {"leave", "absent"})
+    not_submitted = sum(1 for r in expected_items if r.get("status") == "not_submitted")
+    countable = max(0, len(expected_items) - excused)
+    rate = round(((submitted_solved + logged_only) / countable) * 100) if countable else 0
+    total_questions = sum(int(r.get("totalSolved") or 0) for r in expected_items)
+    total_sheets = sum(
+        sum(1 for s in (r.get("sheets") or []) if s.get("proofUrl"))
+        for r in expected_items
+    )
+
+    return {
+        "from": from_day.isoformat(),
+        "to": to_day.isoformat(),
+        "selectedBatch": requested_batch,
+        "selectedGroup": group,
+        "selectedSubject": canonical_subject or "All Subjects",
+        "subjects": list(SOLVED_QUESTION_SUBJECTS),
+        "batches": ["All Batches"] + sorted(all_batches_seen),
+        "summary": {
+            "expectedCount": len(expected_items),
+            "submittedCount": submitted_any,
+            "submittedSolvedCount": submitted_solved,
+            "loggedOnlyCount": logged_only,
+            "notSubmittedCount": not_submitted,
+            "excusedCount": excused,
+            "countable": countable,
+            "submissionRate": rate,
+            "totalQuestionsSolved": total_questions,
+            "totalSheetsUploaded": total_sheets,
+        },
+        "subjectTotals": [subject_totals[s] for s in SOLVED_QUESTION_SUBJECTS],
+        "items": items,
+        "sources": {
+            "formRows": len(form_rows),
+            "mongoRows": len(mongo_rows),
+            "formReadOk": not bool(form_error),
+            "roster": roster_source,
+        },
+        "generatedAt": _now(),
+    }
+
+
+@router.post("/solved-questions-remind")
+async def solved_questions_remind(
+    body: SolvedQuestionsRemindBody,
+    _mentor=Depends(require_mentor),
+):
+    """Send a push notification + in-app mentor reminder to non-submitting students."""
+    db = get_db()
+    target_date = str(body.date or _today())[:10]
+    canon_subj = _canonical_solved_subject(body.subject) if body.subject else ""
+    default_msg = (
+        f"Reminder: Please submit your {canon_subj} solved questions & practice sheet for {target_date} in Daily Study Log."
+        if canon_subj
+        else f"Reminder: Please submit today's subject-wise solved questions & practice sheet ({target_date}) in Daily Study Log."
+    )
+    msg_text = str(body.message or "").strip() or default_msg
+    now = _now()
+
+    seen: set[str] = set()
+    reminded: list[str] = []
+    for raw_sid in body.studentIds:
+        sid = normalize_student_id(raw_sid or "")
+        if not sid or sid in seen:
+            continue
+        seen.add(sid)
+        account = await db[STUDENT_ACCOUNTS].find_one({"studentId": sid})
+        if not account or account.get("master") or _is_removed(account) or _access_blocked(account):
+            continue
+        doc = await _student_doc(db, sid)
+        item = {
+            "id": f"FB-SQ-{datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S')}-{len(reminded) + 1}",
+            "studentId": sid,
+            "date": _today(),
+            "mentor": "Ujjwal Pathak",
+            "message": msg_text,
+        }
+        feedback = [item] + list(doc.get("feedback") or [])
+        await db[DASHBOARD_STUDENTS].update_one(
+            {"studentId": sid},
+            {"$set": {"studentId": sid, "feedback": feedback[:200], "updatedAt": now}},
+            upsert=True,
+        )
+        push_service.spawn(push_service.push_to_student(
+            sid,
+            "📝 Daily Solved Questions Reminder",
+            msg_text[:180],
+            link="tracker",
+            tag=f"solved-remind-{target_date}-{sid}",
+        ))
+        reminded.append(sid)
+
+    return {
+        "ok": True,
+        "remindedCount": len(reminded),
+        "studentIds": reminded,
+        "message": msg_text,
+    }
+
+
 @router.get("/tracker-missed-report")
 async def tracker_missed_report(
     from_value: Optional[str] = Query(default=None, alias="from"),
@@ -2097,6 +2671,13 @@ def _merge_logs(old, new) -> list:
     """One row per date+topic+hours. Extra proof-only copies from dual-write are collapsed."""
     best = {}
     order = []
+    optional_str_fields = (
+        "tomorrowTarget",
+        "reason",
+        "mentorSupport",
+        "targetCompleted",
+        "submittedAt",
+    )
     for row in list(new or []) + list(old or []):
         if not isinstance(row, dict):
             continue
@@ -2109,13 +2690,39 @@ def _merge_logs(old, new) -> list:
         proof = str(row.get("proof") or "")
         if not date and not hours:
             continue
+        solved_questions = _normalize_solved_questions(row.get("solvedQuestions"))
         key = (date, topic, hours)
         current = best.get(key)
         if current is None:
-            best[key] = {"date": date, "topic": topic, "hours": hours, "proof": proof}
+            merged_row: dict[str, Any] = {
+                "date": date,
+                "topic": topic,
+                "hours": hours,
+                "proof": proof,
+            }
+            if solved_questions:
+                merged_row["solvedQuestions"] = solved_questions
+                merged_row["totalSolved"] = sum(
+                    int(v.get("count") or 0) for v in solved_questions.values()
+                )
+            for field in optional_str_fields:
+                val = str(row.get(field) or "").strip()
+                if val:
+                    merged_row[field] = val
+            best[key] = merged_row
             order.append(key)
-        elif len(proof) > len(str(current.get("proof") or "")):
-            current["proof"] = proof
+        else:
+            if len(proof) > len(str(current.get("proof") or "")):
+                current["proof"] = proof
+            if solved_questions and not current.get("solvedQuestions"):
+                current["solvedQuestions"] = solved_questions
+                current["totalSolved"] = sum(
+                    int(v.get("count") or 0) for v in solved_questions.values()
+                )
+            for field in optional_str_fields:
+                val = str(row.get(field) or "").strip()
+                if val and not current.get(field):
+                    current[field] = val
     out = [best[key] for key in order]
     out.sort(key=lambda r: r.get("date") or "", reverse=True)
     return out[:400]
@@ -3500,12 +4107,32 @@ async def apply_dashboard_write(action: str, payload: dict, result: Any = None) 
         if isinstance(result, dict):
             proof = str(result.get("proofUrl") or "")
         proof = proof or str(payload.get("proofUrl") or "")
-        row = {
+        solved_questions = _normalize_solved_questions(payload.get("solvedQuestions"))
+        total_solved = sum(int(v.get("count") or 0) for v in solved_questions.values())
+        if not proof and solved_questions:
+            for detail in solved_questions.values():
+                if detail.get("proofUrl"):
+                    proof = str(detail["proofUrl"])
+                    break
+        row: dict[str, Any] = {
             "date": entry_date,
             "topic": str(payload.get("subjects") or payload.get("reason") or payload.get("topic") or ""),
             "hours": hours,
             "proof": proof,
         }
+        if solved_questions:
+            row["solvedQuestions"] = solved_questions
+            row["totalSolved"] = total_solved
+        for field, max_len in (
+            ("tomorrowTarget", 300),
+            ("reason", 300),
+            ("mentorSupport", 120),
+            ("targetCompleted", 40),
+        ):
+            val = str(payload.get(field) or "").strip()[:max_len]
+            if val:
+                row[field] = val
+        row["submittedAt"] = now
         doc = await _student_doc(db, sid)
         logs = _merge_logs(doc.get("studyLog") or [], [row])
         stats = _recompute_stats(logs, doc.get("stats") or {})
@@ -3516,7 +4143,14 @@ async def apply_dashboard_write(action: str, payload: dict, result: Any = None) 
             upsert=True,
         )
         await _rebuild_leaderboard(db)
-        return {"ok": True, "success": True, "proofUrl": proof, "stats": stats}
+        return {
+            "ok": True,
+            "success": True,
+            "proofUrl": proof,
+            "stats": stats,
+            "totalSolved": total_solved,
+            "solvedQuestions": solved_questions,
+        }
 
     if action == "deleteStudyLog":
         sid = normalize_student_id(payload.get("studentId") or "")
@@ -3739,7 +4373,15 @@ async def write_dashboard_section(body: DashboardWriteBody, principal=Depends(da
     applied = await apply_dashboard_write(action, payload, None)
     if not applied.get("ok"):
         return {"ok": False, "result": {"success": False, "message": applied.get("message") or "Write failed"}}
-    return {"ok": True, "result": applied.get("result") or {"success": True, "proofUrl": applied.get("proofUrl"), "stats": applied.get("stats")}}
+    fallback_result: dict[str, Any] = {
+        "success": True,
+        "proofUrl": applied.get("proofUrl"),
+        "stats": applied.get("stats"),
+    }
+    if applied.get("solvedQuestions") is not None:
+        fallback_result["totalSolved"] = int(applied.get("totalSolved") or 0)
+        fallback_result["solvedQuestions"] = applied.get("solvedQuestions") or {}
+    return {"ok": True, "result": applied.get("result") or fallback_result}
 
 
 async def _verified_daily_days(db):
