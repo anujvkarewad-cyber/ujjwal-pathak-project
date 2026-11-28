@@ -1,0 +1,341 @@
+From 6dd1b24f1f7af0a822ca4a524cf4b7047ade40ea Mon Sep 17 00:00:00 2001
+From: anujvkarewad-cyber
+ <306754172+anujvkarewad-cyber@users.noreply.github.com>
+Date: Sat, 28 Nov 2026 12:26:21 +0000
+Subject: [PATCH] fix(auth): route student password recovery through mentor API
+
+---
+ api/proxy.js                          | 111 ++++++++++--------
+ app.js                                |   5 +-
+ scripts/auto-deploy-student-web.sh    |   3 +
+ test/proxy-password-recovery.test.mjs | 158 ++++++++++++++++++++++++++
+ 4 files changed, 231 insertions(+), 46 deletions(-)
+ create mode 100644 test/proxy-password-recovery.test.mjs
+
+diff --git a/api/proxy.js b/api/proxy.js
+index e2a6e0f..66db210 100644
+--- a/api/proxy.js
++++ b/api/proxy.js
+@@ -33,6 +33,66 @@ const MONGO_DASHBOARD_ACTIONS = new Set([
+ const STUDENT_TOOLS = new Set(["messages.thread", "messages.send", "ai.ask", "ai.dailyTarget", "ai.evaluate", "revision.plan"]);
+ const STUDENT_WRITES = new Set(["addStudyLog", "deleteStudyLog", "attendance.markAbsent", "attendance.requestLeave", "attendance.cancelLeave", "feedback.read"]);
+ const BLOCKED_MENTOR_WRITES = new Set(["announcements.create", "notes.create", "notes.finalizeUpload", "notes.delete", "students.addNote", "feedback.send"]);
++const PASSWORD_RECOVERY_ROUTES = {
++  forgotPassword: "/api/student-auth/forgot-password",
++  verifyOTP: "/api/student-auth/verify-otp",
++  resetPassword: "/api/student-auth/reset-password"
++};
++
++async function servePasswordRecovery(req, res, action) {
++  const route = PASSWORD_RECOVERY_ROUTES[action];
++  if (!MENTOR_API_URL || !route) {
++    return res.status(503).json({
++      error: "Account recovery is not available right now. Please try again in a minute."
++    });
++  }
++  const payload = (req.body && req.body.payload) || {};
++  const forwardBody = {
++    studentId: String(payload.studentId || req.body?.studentId || "").trim()
++  };
++  if (action === "forgotPassword") {
++    forwardBody.email = String(payload.email || req.body?.email || "").trim();
++  } else if (action === "verifyOTP") {
++    forwardBody.otp = String(payload.otp || req.body?.otp || "").trim();
++  } else if (action === "resetPassword") {
++    forwardBody.password = String(
++      payload.password || payload.newPassword || req.body?.password || req.body?.newPassword || ""
++    );
++  }
++
++  const controller = new AbortController();
++  const timer = setTimeout(() => controller.abort(), 35000);
++  try {
++    const upstream = await fetch(`${MENTOR_API_URL}${route}`, {
++      method: "POST",
++      headers: { "Content-Type": "application/json" },
++      body: JSON.stringify(forwardBody),
++      signal: controller.signal
++    });
++    const data = await upstream.json().catch(() => null);
++    if (!upstream.ok) {
++      const detail =
++        (data && typeof data.detail === "string" && data.detail) ||
++        (data && typeof data.error === "string" && data.error) ||
++        "Account recovery is temporarily unavailable. Please try again in a minute.";
++      return res.status(upstream.status >= 500 ? upstream.status : 502).json({ error: detail });
++    }
++    const result = data && typeof data.result === "object" && data.result !== null ? data.result : null;
++    if (!result || typeof result.success !== "boolean") {
++      return res.status(502).json({
++        error: "Account recovery returned an unexpected response. Please try again."
++      });
++    }
++    return res.status(200).json({ result });
++  } catch (err) {
++    console.error("Password recovery forward failed:", action, err && err.message);
++    return res.status(502).json({
++      error: "Could not reach the account recovery service. Please try again in a moment."
++    });
++  } finally {
++    clearTimeout(timer);
++  }
++}
+ function studentHeaders(req) {
+   return {
+     "X-Student-Id": String(req.headers?.["x-student-id"] || req.headers?.["X-Student-Id"] || "").trim(),
+@@ -532,52 +592,13 @@ const updateAction = req.body?.action || req.query?.action;
+     }
+ 
+     if (updateAction === "validateStudent") return res.status(503).json({ error: "Student lookup verification unavailable." });
+-    if (!["forgotPassword", "verifyOTP", "resetPassword"].includes(updateAction)) {
+-      return res.status(403).json({ error: "Unreviewed action denied." });
+-    }
+-    if (!process.env.APPS_SCRIPT_URL) {
+-      // Study Log writes have already returned through the authoritative
+-      // acknowledgement handler above; only other legacy actions reach here.
+-      return res.status(503).json({
+-        error: `This action is not available right now (${updateAction || "unknown"}).`
+-      });
+-    }
+-
+-    const body = JSON.stringify(req.body);
+-    let response;
+-    let rawText;
+-    try {
+-      ({ response, rawText } = await postAppsScript(process.env.APPS_SCRIPT_URL, body));
+-    } catch (fetchErr) {
+-      return res.status(502).json({
+-        error: "Google server busy hai. 15 second wait karke ek baar phir try karo."
+-      });
+-    }
+-
+-    if (!response.ok) {
+-      return res.status(502).json({
+-        error: "Google server busy hai. 15 second wait karke ek baar phir try karo."
+-      });
+-    }
+-
+-    let data;
+-    try {
+-      data = JSON.parse(rawText);
+-    } catch (parseErr) {
+-      return res.status(502).json({
+-        error: "Apps Script returned a non-JSON response."
+-      });
++    if (Object.prototype.hasOwnProperty.call(PASSWORD_RECOVERY_ROUTES, updateAction)) {
++      // Account recovery is handled authoritatively via MENTOR_API_URL
++      // (/api/student-auth/{forgot-password,verify-otp,reset-password} -> Super 75 Password Reset).
++      // Never fall through to APPS_SCRIPT_URL, which is scoped to ump-proof-service (uploadProof only).
++      return await servePasswordRecovery(req, res, updateAction);
+     }
+-
+-    if (updateAction === "validateLogin") {
+-      const result = data && data.result;
+-      if (result && result.success === true && isClosedCohort(result)) {
+-        return res.status(200).json(sept26Closed());
+-      }
+-    }
+-
+-    return res.status(200).json(data);
+-
++    return res.status(403).json({ error: "Unreviewed action denied." });
+   } catch (err) {
+     return res.status(500).json({
+       error: err.message
+diff --git a/app.js b/app.js
+index 0d4a356..1e44576 100644
+--- a/app.js
++++ b/app.js
+@@ -2415,7 +2415,10 @@ const APP_VERSION = "2.8.7";
+     btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Sending OTP...</span>`;
+ 
+     try {
+-      await api.forgotPassword(studentId, email);
++      const fpResult = await api.forgotPassword(studentId, email);
++      if (fpResult && fpResult.success === false) {
++        throw new Error(fpResult.message || "Unable to send OTP.");
++      }
+ 
+       forgotModal.hidden = true;
+       otpModal.hidden = false;
+diff --git a/scripts/auto-deploy-student-web.sh b/scripts/auto-deploy-student-web.sh
+index 28535ba..da5302b 100644
+--- a/scripts/auto-deploy-student-web.sh
++++ b/scripts/auto-deploy-student-web.sh
+@@ -43,6 +43,9 @@ smoke() {
+   local served_js
+   served_js=$(curl --fail --silent --show-error --max-time 60 "$base/app.js" | sha256sum | cut -d' ' -f1)
+   [[ "$served_js" == "$expected_js" ]] || { echo 'Served app.js is not the tested source.' >&2; return 1; }
++  curl --fail --silent --show-error --max-time 60 -H 'Content-Type: application/json' \
++    -d '{"action":"forgotPassword","payload":{}}' "$base/api/proxy" \
++    | jq -e '.result.success == false and (.error == null)' >/dev/null
+ }
+ smoke "$candidate_url"
+ # Check freshness again after the potentially long Cloud Build.
+diff --git a/test/proxy-password-recovery.test.mjs b/test/proxy-password-recovery.test.mjs
+new file mode 100644
+index 0000000..c1d6b37
+--- /dev/null
++++ b/test/proxy-password-recovery.test.mjs
+@@ -0,0 +1,158 @@
++import assert from "node:assert/strict";
++import test from "node:test";
++
++process.env.MENTOR_API_URL = "https://mentor.example.test";
++process.env.APPS_SCRIPT_URL = "https://proof-only-script.must-not-run.invalid/exec";
++const { default: handler } = await import("../api/proxy.js");
++
++const makeReq = (action, payload) => ({
++  method: "POST",
++  headers: {},
++  body: { action, payload },
++  query: {},
++});
++
++const makeRes = () => ({
++  statusCode: 200,
++  body: undefined,
++  headers: {},
++  status(code) {
++    this.statusCode = code;
++    return this;
++  },
++  setHeader(name, value) {
++    this.headers[name.toLowerCase()] = value;
++    return this;
++  },
++  json(body) {
++    this.body = body;
++    return this;
++  },
++});
++
++const withFetch = async (implementation, fn) => {
++  const original = globalThis.fetch;
++  globalThis.fetch = implementation;
++  try {
++    await fn();
++  } finally {
++    globalThis.fetch = original;
++  }
++};
++
++test("forgotPassword, verifyOTP and resetPassword route to MENTOR_API_URL and never call APPS_SCRIPT_URL", async () => {
++  const calls = [];
++  await withFetch(async (url, init) => {
++    assert.ok(
++      !String(url).includes("proof-only-script"),
++      `Recovery must never hit APPS_SCRIPT_URL, got ${url}`
++    );
++    calls.push({ url, method: init.method, body: JSON.parse(init.body) });
++    if (url.endsWith("/api/student-auth/forgot-password")) {
++      return Response.json({
++        result: {
++          success: true,
++          message: "A verification code has been sent to iq***5@gmail.com.",
++        },
++      });
++    }
++    if (url.endsWith("/api/student-auth/verify-otp")) {
++      return Response.json({
++        result: {
++          success: true,
++          message: "Code verified. You can now set a new password.",
++        },
++      });
++    }
++    if (url.endsWith("/api/student-auth/reset-password")) {
++      return Response.json({
++        result: {
++          success: true,
++          message: "Password reset successful. Sign in with your new password.",
++        },
++      });
++    }
++    throw new Error(`Unexpected URL: ${url}`);
++  }, async () => {
++    const fpRes = makeRes();
++    await handler(
++      makeReq("forgotPassword", { studentId: "UMP10000", email: "iqrasayyed135@gmail.com" }),
++      fpRes
++    );
++    assert.equal(fpRes.statusCode, 200);
++    assert.deepEqual(fpRes.body, {
++      result: {
++        success: true,
++        message: "A verification code has been sent to iq***5@gmail.com.",
++      },
++    });
++
++    const otpRes = makeRes();
++    await handler(
++      makeReq("verifyOTP", { studentId: "UMP10000", otp: "482910" }),
++      otpRes
++    );
++    assert.equal(otpRes.statusCode, 200);
++    assert.equal(otpRes.body.result.success, true);
++
++    const rpRes = makeRes();
++    await handler(
++      makeReq("resetPassword", { studentId: "UMP10000", password: "NewStrongPass#2027" }),
++      rpRes
++    );
++    assert.equal(rpRes.statusCode, 200);
++    assert.equal(rpRes.body.result.success, true);
++  });
++
++  assert.deepEqual(calls, [
++    {
++      url: "https://mentor.example.test/api/student-auth/forgot-password",
++      method: "POST",
++      body: { studentId: "UMP10000", email: "iqrasayyed135@gmail.com" },
++    },
++    {
++      url: "https://mentor.example.test/api/student-auth/verify-otp",
++      method: "POST",
++      body: { studentId: "UMP10000", otp: "482910" },
++    },
++    {
++      url: "https://mentor.example.test/api/student-auth/reset-password",
++      method: "POST",
++      body: { studentId: "UMP10000", password: "NewStrongPass#2027" },
++    },
++  ]);
++});
++
++test("recovery preserves backend success:false rejections without falling back to APPS_SCRIPT_URL", async () => {
++  await withFetch(async (url) => {
++    assert.equal(url, "https://mentor.example.test/api/student-auth/verify-otp");
++    return Response.json({
++      result: { success: false, message: "Incorrect verification code. 4 attempts left." },
++    });
++  }, async () => {
++    const res = makeRes();
++    await handler(makeReq("verifyOTP", { studentId: "UMP10000", otp: "000000" }), res);
++    assert.equal(res.statusCode, 200);
++    assert.deepEqual(res.body, {
++      result: { success: false, message: "Incorrect verification code. 4 attempts left." },
++    });
++  });
++});
++
++test("recovery upstream outage returns 502 and never falls back to APPS_SCRIPT_URL", async () => {
++  let calls = 0;
++  await withFetch(async (url) => {
++    calls += 1;
++    assert.equal(url, "https://mentor.example.test/api/student-auth/forgot-password");
++    return Response.json({ detail: "Account recovery is temporarily unavailable." }, { status: 502 });
++  }, async () => {
++    const res = makeRes();
++    await handler(
++      makeReq("forgotPassword", { studentId: "UMP10000", email: "iqrasayyed135@gmail.com" }),
++      res
++    );
++    assert.equal(res.statusCode, 502);
++    assert.equal(res.body.error, "Account recovery is temporarily unavailable.");
++    assert.equal(calls, 1);
++  });
++});
+-- 
+2.39.5
+
