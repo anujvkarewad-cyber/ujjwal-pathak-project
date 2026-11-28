@@ -17,7 +17,6 @@ const TITLES = {
   '/notes-inbox': { title: 'Notes Inbox', subtitle: 'Publish waiting Drive PDFs to batches & groups' },
   '/reports': { title: 'Reports', subtitle: 'Detailed batch & student reports' },
   '/tests': { title: 'Tests', subtitle: 'Student test submissions and self-evaluation marks' },
-  '/live-quiz': { title: 'Live Quiz', subtitle: 'MCQ pool per subject · who gets which question' },
   '/workbooks': { title: 'Audit & SM workbooks', subtitle: 'Mentor-reviewed source mapping and practice answer keys' },
   '/messages': { title: 'Messages', subtitle: 'Student messages from the app — read and reply' },
   '/sheet-sources': { title: 'Sheet Sources', subtitle: 'Private workbook directory and source-health guidance' },
