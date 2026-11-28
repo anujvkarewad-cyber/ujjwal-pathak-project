@@ -9,6 +9,7 @@ const TITLES = {
   '/': { title: 'Dashboard', subtitle: 'Overview of your mentorship program' },
   '/students': { title: 'Students', subtitle: 'Manage all enrolled students' },
   '/daily-tracker': { title: 'Daily Tracker', subtitle: 'Track daily submissions across batches' },
+  '/solved-questions': { title: 'Solved Questions & Sheets', subtitle: 'Daily subject-wise solved questions (DT & GST separate) and practice sheet submissions' },
   '/daily-targets': { title: 'Daily Targets', subtitle: 'Upload a target by subject, group, batch, and attempt' },
   '/target-plans': { title: 'Target Plans', subtitle: 'Create and manage multi-day study plans' },
   '/leaderboard': { title: 'Leaderboard', subtitle: 'Top performers across time frames' },

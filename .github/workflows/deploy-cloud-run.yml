@@ -133,7 +133,8 @@ jobs:
           fp_code=$(curl -s -o /dev/null -w '%{http_code}' -X POST -H "Content-Type: application/json" -d '{}' --max-time 30 "https://ujjwal-pathak-app-566076646952.asia-south1.run.app/api/student-auth/forgot-password" || echo "err")
           otp_code=$(curl -s -o /dev/null -w '%{http_code}' -X POST -H "Content-Type: application/json" -d '{}' --max-time 30 "https://ujjwal-pathak-app-566076646952.asia-south1.run.app/api/student-auth/verify-otp" || echo "err")
           rp_code=$(curl -s -o /dev/null -w '%{http_code}' -X POST -H "Content-Type: application/json" -d '{}' --max-time 30 "https://ujjwal-pathak-app-566076646952.asia-south1.run.app/api/student-auth/reset-password" || echo "err")
-          echo "::notice title=Live health after deploy::health=${health} recovery_routes=${fp_code}/${otp_code}/${rp_code}"
+          sq_code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 "https://ujjwal-pathak-app-566076646952.asia-south1.run.app/api/student-dashboard/solved-questions-report" || echo "err")
+          echo "::notice title=Live health after deploy::health=${health} recovery_routes=${fp_code}/${otp_code}/${rp_code} solved_questions_route=${sq_code}"
 
       - name: Summarise
         if: always()

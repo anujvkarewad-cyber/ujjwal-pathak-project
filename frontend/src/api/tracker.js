@@ -48,3 +48,37 @@ export const cancelAttendance = ({ leaveId, studentId, date }) =>
     method: 'POST',
     body: { leaveId, studentId, date },
   });
+
+// ── Daily Subject-Wise Solved Questions & Practice Sheets ──────────────────
+export const SOLVED_QUESTION_SUBJECTS = [
+  'Accounts',
+  'Law',
+  'DT',
+  'GST',
+  'Costing',
+  'Audit',
+  'FM',
+  'SM',
+];
+
+export const resolveMentorProofUrl = (proofUrl) => {
+  const raw = String(proofUrl || '').trim();
+  if (!raw) return '';
+  if (raw.startsWith('https://') || raw.startsWith('http://')) return raw;
+  if (raw.startsWith('/api/proof-file')) {
+    const match = raw.match(/[?&]fileId=([A-Za-z0-9_-]{5,200})/);
+    if (match) return `https://drive.google.com/file/d/${match[1]}/view`;
+  }
+  return raw;
+};
+
+export const getSolvedQuestionsReport = ({ from, to, batch, group, subject }) =>
+  backendApiCall('/api/student-dashboard/solved-questions-report', {
+    params: { from, to, batch, group, subject },
+  });
+
+export const remindSolvedQuestions = ({ studentIds, date, subject, message }) =>
+  backendApiCall('/api/student-dashboard/solved-questions-remind', {
+    method: 'POST',
+    body: { studentIds, date, subject, message },
+  });

@@ -43,8 +43,9 @@ jobs:
         working-directory: student-repo
         run: |
           node --check api/proxy.js
+          node --check api.js
           node --check app.js
-          node --test test/proxy-password-recovery.test.mjs test/proxy-password-change.test.mjs test/proxy-study-log.test.mjs
+          node --test test/solved-questions-study-log.test.mjs test/private-proof-client.test.mjs test/proxy-password-recovery.test.mjs test/proxy-password-change.test.mjs test/proxy-study-log.test.mjs
           node scripts/test-web.js
 
       - name: Auth to Google Cloud (workload identity)
@@ -98,7 +99,11 @@ jobs:
             smoke() {
               local base="$1"
               curl --fail --silent --show-error --max-time 60 "$base/api/health" | jq -e '.ok == true and .backendConfigured == true' >/dev/null
-              curl --fail --silent --show-error --max-time 60 "$base/" -o /dev/null
+              local served_html
+              served_html=$(curl --fail --silent --show-error --max-time 60 "$base/")
+              grep -q 'value="DT"' <<< "$served_html" || { echo 'Served HTML missing DT subject chip.' >&2; return 1; }
+              grep -q 'value="GST"' <<< "$served_html" || { echo 'Served HTML missing GST subject chip.' >&2; return 1; }
+              grep -q 'id="tl-solved-section"' <<< "$served_html" || { echo 'Served HTML missing solved-questions section.' >&2; return 1; }
               local served_js
               served_js=$(curl --fail --silent --show-error --max-time 60 "$base/app.js" | sha256sum | cut -d' ' -f1)
               [[ "$served_js" == "$expected_js" ]] || { echo 'Served app.js is not the tested source.' >&2; return 1; }

@@ -8,6 +8,7 @@ import {
   useSendFeedback,
   useCancelAttendance,
 } from '@/api/hooks';
+import { resolveMentorProofUrl } from '@/api/tracker';
 import { Skeleton } from '@/components/common/Skeleton';
 import AttendanceModal from '@/components/tracker/AttendanceModal';
 import MissedTrackerReport from '@/components/tracker/MissedTrackerReport';
@@ -301,7 +302,19 @@ export default function DailyTracker({ scopedBatch, scopedGroup, providedStudent
         </td>
 
         <td className="px-5 py-3 text-slate-600 dark:text-slate-300">
-          {s.entry.subjects || "—"}
+          <div>{s.entry.subjects || "—"}</div>
+          {Number(s.entry.totalSolved || 0) > 0 && (
+            <div className="mt-1 flex flex-wrap gap-1">
+              {Object.entries(s.entry.solvedQuestions || {}).map(([subj, detail]) => (
+                <span
+                  key={subj}
+                  className="inline-flex items-center gap-1 rounded bg-emerald-50 dark:bg-emerald-500/10 px-1.5 py-0.5 text-[11px] font-semibold text-emerald-700 dark:text-emerald-300"
+                >
+                  {subj}: {detail?.count ?? 0}
+                </span>
+              ))}
+            </div>
+          )}
         </td>
 
         <td className="px-5 py-3 text-slate-600 dark:text-slate-300">
@@ -373,9 +386,15 @@ export default function DailyTracker({ scopedBatch, scopedGroup, providedStudent
         </td>
 
         <td className="px-5 py-3">
-  {s.entry.proofUrl ? (
+  {resolveMentorProofUrl(s.entry.mentorProofUrl || s.entry.proofUrl) ? (
   <button
-    onClick={() => window.open(s.entry.proofUrl, "_blank", "noopener,noreferrer")}
+    onClick={() =>
+      window.open(
+        resolveMentorProofUrl(s.entry.mentorProofUrl || s.entry.proofUrl),
+        "_blank",
+        "noopener,noreferrer",
+      )
+    }
     className="inline-flex items-center rounded-lg bg-blue-600 px-3 py-1 text-xs font-semibold text-white hover:bg-blue-700"
   >
     View Proof

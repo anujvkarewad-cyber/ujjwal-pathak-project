@@ -1,17 +1,34 @@
-From 6dd1b24f1f7af0a822ca4a524cf4b7047ade40ea Mon Sep 17 00:00:00 2001
-From: anujvkarewad-cyber
- <306754172+anujvkarewad-cyber@users.noreply.github.com>
-Date: Sat, 28 Nov 2026 12:26:21 +0000
-Subject: [PATCH] fix(auth): route student password recovery through mentor API
-
----
- api/proxy.js                          | 111 ++++++++++--------
- app.js                                |   5 +-
- scripts/auto-deploy-student-web.sh    |   3 +
- test/proxy-password-recovery.test.mjs | 158 ++++++++++++++++++++++++++
- 4 files changed, 231 insertions(+), 46 deletions(-)
- create mode 100644 test/proxy-password-recovery.test.mjs
-
+diff --git a/api.js b/api.js
+index 2c3ab7b..3fd92c3 100644
+--- a/api.js
++++ b/api.js
+@@ -237,9 +237,23 @@ window.UMP_API = {
+   },
+ 
+   async addStudyLog(studentId, entry) {
+-    if(!entry.proofFile) return callAPI("addStudyLog", {studentId,...entry});
+-    const proofUrl=await uploadStudyProof(studentId,entry.proofFile);
+-    const {proofFile,...fields}=entry;
++    let normalizedEntry = entry;
++    if (Array.isArray(entry.solvedQuestions) && entry.solvedQuestions.some(item => item && item.sheetFile)) {
++      const uploadedItems = [];
++      for (const item of entry.solvedQuestions) {
++        if (item && item.sheetFile) {
++          const sheetUrl = await uploadStudyProof(studentId, item.sheetFile);
++          const { sheetFile, ...restItem } = item;
++          uploadedItems.push({ ...restItem, proofUrl: sheetUrl });
++        } else {
++          uploadedItems.push(item);
++        }
++      }
++      normalizedEntry = { ...entry, solvedQuestions: uploadedItems };
++    }
++    if(!normalizedEntry.proofFile) return callAPI("addStudyLog", {studentId,...normalizedEntry});
++    const proofUrl=await uploadStudyProof(studentId,normalizedEntry.proofFile);
++    const {proofFile,...fields}=normalizedEntry;
+     return callAPI("addStudyLog",{studentId,...fields,proofUrl});
+   },
+ 
 diff --git a/api/proxy.js b/api/proxy.js
 index e2a6e0f..66db210 100644
 --- a/api/proxy.js
@@ -143,10 +160,317 @@ index e2a6e0f..66db210 100644
      return res.status(500).json({
        error: err.message
 diff --git a/app.js b/app.js
-index 0d4a356..1e44576 100644
+index 0d4a356..7d6f952 100644
 --- a/app.js
 +++ b/app.js
-@@ -2415,7 +2415,10 @@ const APP_VERSION = "2.8.7";
+@@ -1,4 +1,4 @@
+-const APP_VERSION = "2.8.7";
++const APP_VERSION = "2.8.8";
+ 
+ (function () {
+   "use strict";
+@@ -613,6 +613,11 @@ const APP_VERSION = "2.8.7";
+     $("[data-progressBar]").style.width = pct + "%";
+     $("[data-progressPct]").textContent = pct + "% to 1000 hr goal";
+ 
++    const dashTrackerBtn = document.getElementById("dashboard-open-tracker-btn");
++    if (dashTrackerBtn) {
++      dashTrackerBtn.onclick = openTrackerModal;
++    }
++
+     const ctx = document.getElementById("chart-weekly").getContext("2d");
+     const labels = lastNDates(7);
+     const data = st.last7 || Array(7).fill(0);
+@@ -705,14 +710,24 @@ const APP_VERSION = "2.8.7";
+     $$("[data-k='weekly']").forEach(el => el.textContent = fmt(st.weeklyHours, 1));
+ 
+     const tb = $("#tracker-tbody");
+-    tb.innerHTML = state.log.length ? state.log.map((row, idx) => `
++    tb.innerHTML = state.log.length ? state.log.map((row, idx) => {
++      const sqEntries = row && row.solvedQuestions && typeof row.solvedQuestions === "object"
++        ? Object.entries(row.solvedQuestions).filter(([, detail]) => detail && Number(detail.count) >= 0)
++        : [];
++      const sqHtml = sqEntries.length
++        ? `<div class="solved-log-badges">${sqEntries.map(([subj, detail]) =>
++            `<span class="solved-log-pill">${escapeHtml(subj)}: ${Number(detail.count) || 0} Q${detail.sheetName ? ` · ${escapeHtml(detail.sheetName)}` : ""}</span>`
++          ).join("")}</div>`
++        : "";
++      return `
+       <tr>
+         <td><b>${dayShort(row.date)}</b></td>
+-        <td>${escapeHtml(row.topic || "")}</td>
++        <td>${escapeHtml(row.topic || "")}${sqHtml}</td>
+         <td><b class="mono">${fmt(row.hours, 1)}</b></td>
+         <td>${row.proof && row.proof !== "#" ? `<button type="button" class="btn btn-secondary" data-view-proof="${idx}"><i class="fa-solid fa-arrow-up-right-from-square"></i> View</button>` : "—"}</td>
+         <td><button type="button" class="btn btn-secondary" data-del-log="${idx}" title="Delete this entry" style="padding:4px 10px;font-size:12px;color:#B91C1C">Delete</button></td>
+-      </tr>`).join("")
++      </tr>`;
++    }).join("")
+       : `<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:30px">No submissions yet — start logging your daily study!</td></tr>`;
+ 
+     $$('[data-view-proof]',tb).forEach(btn=>btn.addEventListener('click',async()=>{
+@@ -2012,8 +2027,94 @@ const APP_VERSION = "2.8.7";
+   const tlReasonGroup = document.getElementById("tl-reason-group");
+   const tlSubjectsGroup = document.getElementById("tl-subjects-group");
+   const tlTargetGroup = document.getElementById("tl-target-group");
++  const tlSolvedSection = document.getElementById("tl-solved-section");
++  const tlSolvedRows = document.getElementById("tl-solved-rows");
++  const CA_SOLVED_SUBJECTS = ["Accounts", "Law", "DT", "GST", "Costing", "Audit", "FM", "SM"];
++  const solvedDraftState = new Map();
++
++  function captureSolvedInputsToMemory() {
++    if (!tlSolvedRows) return;
++    tlSolvedRows.querySelectorAll("[data-solved-subject]").forEach((card) => {
++      const subj = card.getAttribute("data-solved-subject");
++      const countEl = card.querySelector("[data-solved-count]");
++      const sheetEl = card.querySelector("[data-solved-sheet]");
++      const fileEl = card.querySelector("[data-solved-file]");
++      const prev = solvedDraftState.get(subj) || {};
++      solvedDraftState.set(subj, {
++        count: countEl ? countEl.value : "",
++        sheetName: sheetEl ? sheetEl.value : "",
++        file: (fileEl && fileEl.files && fileEl.files[0]) || prev.file || null
++      });
++    });
++  }
++
++  function syncSolvedQuestionRows() {
++    if (!tlSolvedSection || !tlSolvedRows) return;
++    captureSolvedInputsToMemory();
++    const selectedCa = getCheckboxValues(tlSubjectsGroup).filter((s) => CA_SOLVED_SUBJECTS.includes(s));
++    if (!selectedCa.length) {
++      tlSolvedSection.hidden = true;
++      tlSolvedRows.innerHTML = "";
++      return;
++    }
++    tlSolvedSection.hidden = false;
++    tlSolvedRows.innerHTML = selectedCa.map((subj) => {
++      const saved = solvedDraftState.get(subj) || { count: "", sheetName: "", file: null };
++      const groupLabel = ["Accounts", "Law", "DT", "GST"].includes(subj) ? "Group 1" : "Group 2";
++      const slug = subj.toLowerCase().replace(/[^a-z0-9]+/g, "-");
++      return `
++        <div class="solved-subject-card" data-solved-subject="${escapeHtml(subj)}">
++          <div class="solved-subject-head">
++            <span>${escapeHtml(subj)}</span>
++            <span class="solved-subject-tag">${groupLabel}</span>
++          </div>
++          <div class="solved-subject-grid">
++            <input
++              type="number"
++              min="0"
++              max="500"
++              step="1"
++              inputmode="numeric"
++              id="tl-solved-count-${slug}"
++              data-solved-count="${escapeHtml(subj)}"
++              class="solved-input"
++              placeholder="Questions solved *"
++              value="${escapeHtml(saved.count || "")}"
++            >
++            <input
++              type="text"
++              maxlength="140"
++              id="tl-solved-sheet-${slug}"
++              data-solved-sheet="${escapeHtml(subj)}"
++              class="solved-input"
++              placeholder="Sheet / chapter / topic (optional)"
++              value="${escapeHtml(saved.sheetName || "")}"
++            >
++          </div>
++          <div class="solved-file-row">
++            <span><i class="fa-solid fa-file-arrow-up"></i> Subject sheet (optional):</span>
++            <input type="file" data-solved-file="${escapeHtml(subj)}" accept="image/*,.pdf">
++          </div>
++        </div>
++      `;
++    }).join("");
++
++    tlSolvedRows.querySelectorAll("input").forEach((inp) => {
++      inp.addEventListener("input", () => {
++        captureSolvedInputsToMemory();
++        clearModalError(tlError);
++        clearFieldError();
++      });
++      inp.addEventListener("change", () => {
++        captureSolvedInputsToMemory();
++        clearModalError(tlError);
++        clearFieldError();
++      });
++    });
++  }
+ 
+   [tlPlannedGroup, tlReasonGroup, tlSubjectsGroup, tlTargetGroup].forEach(wireChipGroup);
++  tlSubjectsGroup.addEventListener("change", syncSolvedQuestionRows);
+ 
+   // Hours ke quick chips (½h / 1h / 2h ...) — ek tap me value bhar jati hai.
+   if (tlHoursQuick) {
+@@ -2055,8 +2156,12 @@ const APP_VERSION = "2.8.7";
+     if (!(planned === "Yes" || planned === "Maybe")) {
+       resetChipGroup(tlSubjectsGroup);
+       resetChipGroup(tlTargetGroup);
++      solvedDraftState.clear();
++      syncSolvedQuestionRows();
+       tlProofFile.value = "";
+       tlTomorrow.value = "";
++    } else {
++      syncSolvedQuestionRows();
+     }
+   });
+ 
+@@ -2085,6 +2190,8 @@ const APP_VERSION = "2.8.7";
+     resetChipGroup(tlReasonGroup);
+     resetChipGroup(tlSubjectsGroup);
+     resetChipGroup(tlTargetGroup);
++    solvedDraftState.clear();
++    syncSolvedQuestionRows();
+     tlReasonOther.hidden = true;
+     tlReasonOther.value = "";
+     tlNoSection.hidden = true;
+@@ -2105,8 +2212,16 @@ const APP_VERSION = "2.8.7";
+       }
+       restoredTrackerProof = draft.file;
+       const planned = getRadioValue('tl-planned');
+-      tlNoSection.hidden = planned !== 'No'; tlYesSection.hidden = planned !== 'Yes';
++      tlNoSection.hidden = planned !== 'No'; tlYesSection.hidden = !(planned === 'Yes' || planned === 'Maybe');
+       tlReasonOther.hidden = getRadioValue('tl-reason') !== 'Other';
++      syncSolvedQuestionRows();
++      // Re-apply saved solved-question inputs after rendering dynamic rows
++      const dynamicFields = [...trackerModal.querySelectorAll('#tl-solved-rows input')];
++      for (const saved of draft.fields) {
++        const dyn = dynamicFields.find(item => saved.id && item.id === saved.id);
++        if (dyn) dyn.value = saved.value;
++      }
++      captureSolvedInputsToMemory();
+     }
+     trackerModal.hidden = false;
+   }
+@@ -2161,9 +2276,8 @@ const APP_VERSION = "2.8.7";
+     });
+   }
+ 
+-  function readProofFile() {
++  function readSelectedProofFile(file) {
+     return new Promise((resolve, reject) => {
+-      const file = (tlProofFile.files && tlProofFile.files[0]) || restoredTrackerProof;
+       if (!file) return resolve(null);
+ 
+       // Pehle compress karo, size check BAAD me — warna 20 MP ka normal phone
+@@ -2193,6 +2307,11 @@ const APP_VERSION = "2.8.7";
+     });
+   }
+ 
++  function readProofFile() {
++    const file = (tlProofFile.files && tlProofFile.files[0]) || restoredTrackerProof;
++    return readSelectedProofFile(file);
++  }
++
+   // 8 Oct (raat): #tl-error / #fp-error par class "login-error" lagi hai aur
+   // CSS me .login-error{display:none} hai — sirf `hidden=false` karne se text
+   // DIKHTA HI NAHI tha. Student ko lagta tha "submit button kaam nahi kar raha".
+@@ -2269,6 +2388,7 @@ const APP_VERSION = "2.8.7";
+     let targetDone = "";
+     let tomorrowTarget = "";
+     let proofFile = null;
++    let rawSolvedList = [];
+ 
+     if (planned === "No") {
+       const reasonChoice = getRadioValue("tl-reason");
+@@ -2292,13 +2412,55 @@ const APP_VERSION = "2.8.7";
+         highlightFieldError(tlSubjectsGroup);
+         return;
+       }
++
++      if (typeof captureSolvedInputsToMemory === "function") captureSolvedInputsToMemory();
++      const solvedSubjectsCatalog = typeof CA_SOLVED_SUBJECTS !== "undefined"
++        ? CA_SOLVED_SUBJECTS
++        : ["Accounts", "Law", "DT", "GST", "Costing", "Audit", "FM", "SM"];
++      const hasSolvedDom = typeof tlSolvedRows !== "undefined" && Boolean(tlSolvedRows);
++      const selectedCaSubjects = hasSolvedDom
++        ? subjectList.filter((s) => solvedSubjectsCatalog.includes(s))
++        : [];
++      for (const subj of selectedCaSubjects) {
++        const saved = (typeof solvedDraftState !== "undefined" && solvedDraftState.get(subj)) || {};
++        const countEl = tlSolvedRows.querySelector(`[data-solved-count="${subj}"]`);
++        const countStr = String(
++          countEl && countEl.value != null ? countEl.value : (saved.count == null ? "" : saved.count)
++        ).trim();
++        const sectionEl = typeof tlSolvedSection !== "undefined" ? tlSolvedSection : tlSubjectsGroup;
++        if (countStr === "" || !/^\d+$/.test(countStr)) {
++          setModalError(tlError, `Enter how many questions you solved today in ${subj} (enter 0 if theory/reading only).`);
++          highlightFieldError(countEl || sectionEl);
++          if (countEl && countEl.focus) countEl.focus();
++          return;
++        }
++        const parsedCount = Number(countStr);
++        if (!Number.isInteger(parsedCount) || parsedCount < 0 || parsedCount > 500) {
++          setModalError(tlError, `Questions solved for ${subj} must be between 0 and 500.`);
++          highlightFieldError(countEl || sectionEl);
++          if (countEl && countEl.focus) countEl.focus();
++          return;
++        }
++        const sheetEl = tlSolvedRows.querySelector(`[data-solved-sheet="${subj}"]`);
++        const fileEl = tlSolvedRows.querySelector(`[data-solved-file="${subj}"]`);
++        rawSolvedList.push({
++          subject: subj,
++          count: parsedCount,
++          sheetName: String((sheetEl && sheetEl.value) || saved.sheetName || "").trim(),
++          rawFile: (fileEl && fileEl.files && fileEl.files[0]) || saved.file || null
++        });
++      }
++
+       if (!targetDone) {
+         setModalError(tlError, "Please select whether you completed today's target.");
+         highlightFieldError(tlTargetGroup);
+         return;
+       }
+-      if (!tlProofFile.files.length) {
+-        setModalError(tlError, "Please attach today's study proof.");
++      const hasRestoredProof = typeof restoredTrackerProof !== "undefined" && Boolean(restoredTrackerProof);
++      const hasMainProof = Boolean((tlProofFile.files && tlProofFile.files.length) || hasRestoredProof);
++      const hasAnySubjectSheet = rawSolvedList.some((item) => Boolean(item.rawFile));
++      if (!hasMainProof && !hasAnySubjectSheet) {
++        setModalError(tlError, "Please attach today's solved sheet / study proof (photo or PDF).");
+         highlightFieldError(tlProofFile);
+         return;
+       }
+@@ -2320,8 +2482,21 @@ const APP_VERSION = "2.8.7";
+ 
+     try {
+       proofFile = planned === "No" ? null : await readProofFile();
++      const solvedQuestions = [];
++      for (const item of rawSolvedList) {
++        const sheetFile = item.rawFile && typeof readSelectedProofFile === "function"
++          ? await readSelectedProofFile(item.rawFile)
++          : null;
++        const entryItem = {
++          subject: item.subject,
++          count: item.count
++        };
++        if (item.sheetName) entryItem.sheetName = item.sheetName;
++        if (sheetFile) entryItem.sheetFile = sheetFile;
++        solvedQuestions.push(entryItem);
++      }
+ 
+-      const result = await api.addStudyLog(studentId, {
++      const payloadToSave = {
+         date,
+         hours,
+         studiedAsPlanned: planned,
+@@ -2331,7 +2506,12 @@ const APP_VERSION = "2.8.7";
+         tomorrowTarget,
+         mentorSupport,
+         proofFile
+-      });
++      };
++      if (solvedQuestions.length) {
++        payloadToSave.solvedQuestions = solvedQuestions;
++      }
++
++      const result = await api.addStudyLog(studentId, payloadToSave);
+ 
+       if (!result || result.success !== true) {
+         setModalError(tlError, (result && result.message) || "Server didn't save the entry — please try again.");
+@@ -2415,7 +2595,10 @@ const APP_VERSION = "2.8.7";
      btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Sending OTP...</span>`;
  
      try {
@@ -158,6 +482,80 @@ index 0d4a356..1e44576 100644
  
        forgotModal.hidden = true;
        otpModal.hidden = false;
+diff --git a/index.html b/index.html
+index 19fd1b7..a71bf5d 100644
+--- a/index.html
++++ b/index.html
+@@ -385,6 +385,9 @@
+ 
+ 
+         <div class="hero-badge" data-caLevel></div>
++        <button type="button" class="btn-primary sm" id="dashboard-open-tracker-btn" style="margin-top:8px;">
++          <i class="fa-solid fa-list-check"></i> Submit Daily Solved Qs &amp; Sheet
++        </button>
+ 
+     </div>
+ 
+@@ -500,7 +503,7 @@
+   <i class="fa-solid fa-rotate"></i>
+ </button>
+           <button type="button" class="btn-primary sm" id="open-tracker-form" data-testid="open-tracker-form-btn">
+-            <i class="fa-solid fa-plus"></i> Log study hours
++            <i class="fa-solid fa-plus"></i> Log study &amp; solved Qs
+           </button>
+         </div>
+       </div>
+@@ -1030,7 +1033,8 @@
+                 <div class="choice-group" id="tl-subjects-group" data-name="subjects">
+                     <label class="choice-chip"><input type="checkbox" value="Accounts"><span class="chip-icon"><i class="fa-solid fa-calculator"></i></span><span>Accounts</span></label>
+                     <label class="choice-chip"><input type="checkbox" value="Law"><span class="chip-icon"><i class="fa-solid fa-scale-balanced"></i></span><span>Law</span></label>
+-                    <label class="choice-chip"><input type="checkbox" value="Taxation"><span class="chip-icon"><i class="fa-solid fa-file-invoice-dollar"></i></span><span>Taxation</span></label>
++                    <label class="choice-chip"><input type="checkbox" value="DT"><span class="chip-icon"><i class="fa-solid fa-file-invoice-dollar"></i></span><span>DT</span></label>
++                    <label class="choice-chip"><input type="checkbox" value="GST"><span class="chip-icon"><i class="fa-solid fa-receipt"></i></span><span>GST</span></label>
+                     <label class="choice-chip"><input type="checkbox" value="Costing"><span class="chip-icon"><i class="fa-solid fa-coins"></i></span><span>Costing</span></label>
+                     <label class="choice-chip"><input type="checkbox" value="Audit"><span class="chip-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></span><span>Audit</span></label>
+                     <label class="choice-chip"><input type="checkbox" value="FM"><span class="chip-icon"><i class="fa-solid fa-chart-line"></i></span><span>FM</span></label>
+@@ -1041,6 +1045,12 @@
+                 </div>
+             </div>
+ 
++            <div class="field" id="tl-solved-section" hidden>
++                <span class="field-label">Subject-Wise Solved Questions &amp; Sheet *</span>
++                <small class="muted" style="display:block;margin-bottom:8px;">Enter how many questions you solved today in each selected subject (enter 0 if theory/reading only). Optional: enter sheet/topic name or attach a separate subject sheet.</small>
++                <div id="tl-solved-rows" class="solved-rows"></div>
++            </div>
++
+             <div class="field">
+                 <span class="field-label">Did you complete today's target? *</span>
+                 <div class="choice-group segmented" id="tl-target-group" data-name="targetDone">
+@@ -1051,12 +1061,12 @@
+             </div>
+ 
+             <div class="field">
+-                <span class="field-label">Upload today's study proof *</span>
++                <span class="field-label">Upload today's solved sheet / study proof *</span>
+                 <div class="field-control">
+                     <i class="fa-solid fa-paperclip"></i>
+                     <input type="file" id="tl-proof-file" accept="image/*,.pdf" autocomplete="off">
+                 </div>
+-                <small class="muted" style="display:block;margin-top:4px;">Photo or PDF, max 3 MB (1 file).</small>
++                <small class="muted" style="display:block;margin-top:4px;">Photo or PDF (combined solved sheet or study proof, max 10 MB).</small>
+             </div>
+ 
+             <div class="field">
+diff --git a/mobile/src/screens/AddStudyLogScreen.tsx b/mobile/src/screens/AddStudyLogScreen.tsx
+index c9f9c3b..aacdfc5 100644
+--- a/mobile/src/screens/AddStudyLogScreen.tsx
++++ b/mobile/src/screens/AddStudyLogScreen.tsx
+@@ -26,7 +26,7 @@ type LocalDraft = { date: string; hours: string; planned: Planned; reason: strin
+   tomorrowTarget: string; mentorSupport: string; proof: PickedProof | null };
+ const ownDrafts = new Map<string, LocalDraft>();
+ 
+-const subjectsList = ['Accounts', 'Law', 'Taxation', 'Costing', 'Audit', 'FM', 'SM', 'Revision', 'Mock Test', 'Question Bank Practice'];
++const subjectsList = ['Accounts', 'Law', 'DT', 'GST', 'Costing', 'Audit', 'FM', 'SM', 'Revision', 'Mock Test', 'Question Bank Practice'];
+ const reasons = ['Health Issue', 'Family Function', 'Office / Job', 'College', 'Travelling', 'Power / Internet Issue', 'Personal Work', 'Low Motivation', 'Other'];
+ const supportOptions = ['No', 'Subject Doubt', 'Time Management', 'Motivation', 'Study Planning', 'Personal Discussion'];
+ // Cloud Run accepts the original binary and enforces the same limit/type list.
 diff --git a/scripts/auto-deploy-student-web.sh b/scripts/auto-deploy-student-web.sh
 index 28535ba..da5302b 100644
 --- a/scripts/auto-deploy-student-web.sh
@@ -172,6 +570,100 @@ index 28535ba..da5302b 100644
  }
  smoke "$candidate_url"
  # Check freshness again after the potentially long Cloud Build.
+diff --git a/service-worker.js b/service-worker.js
+index 0738a9a..313e573 100644
+--- a/service-worker.js
++++ b/service-worker.js
+@@ -43,7 +43,7 @@ if (messaging) {
+ }
+ 
+ // ---------- PWA cache ----------
+-const CACHE_VERSION = "2.8.7"; // Smart Targets day strip restored (smart-targets-web.js)
++const CACHE_VERSION = "2.8.8"; // Subject-wise solved questions (DT & GST separate) + practice sheet tracker
+ const CACHE_NAME = `upm-static-${CACHE_VERSION}`;
+ const STATIC_FILES = ["/", "/style.css", "/manifest.json", "/learning-data.js", "/live-bank-loader.js", "/mcq-cloud-sync.js", "/learning-tools.js", "/icon/icon-192.png", "/icon/icon-512.png"];
+ 
+diff --git a/style.css b/style.css
+index 3f0030e..8965852 100644
+--- a/style.css
++++ b/style.css
+@@ -5256,3 +5256,76 @@ input:focus, textarea:focus, select:focus {
+ .ex-wa-row .ex-input { flex: 1; min-width: 140px; }
+ .ex-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+ @media (max-width: 640px) { .ex-grid2 { grid-template-columns: 1fr; } }
++
++/* Subject-wise solved questions & sheet rows inside Daily Study Log */
++.solved-rows { display: flex; flex-direction: column; gap: 10px; }
++.solved-subject-card {
++  border: 1px solid #E2E8F0;
++  border-radius: 12px;
++  padding: 10px 12px;
++  background: #F8FAFC;
++}
++.solved-subject-head {
++  display: flex;
++  align-items: center;
++  justify-content: space-between;
++  font-weight: 700;
++  font-size: 13.5px;
++  color: #0F172A;
++  margin-bottom: 8px;
++}
++.solved-subject-tag {
++  font-size: 11px;
++  font-weight: 700;
++  color: #2563EB;
++  background: #EFF6FF;
++  border-radius: 999px;
++  padding: 2px 8px;
++}
++.solved-subject-grid {
++  display: grid;
++  grid-template-columns: 135px 1fr;
++  gap: 8px;
++}
++@media (max-width: 520px) {
++  .solved-subject-grid { grid-template-columns: 1fr; }
++}
++.solved-input {
++  width: 100%;
++  border: 1px solid #CBD5E1;
++  border-radius: 9px;
++  padding: 8px 10px;
++  font-size: 13.5px;
++  background: #FFFFFF;
++  color: #0F172A;
++}
++.solved-input:focus {
++  outline: none;
++  border-color: #2563EB;
++  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
++}
++.solved-file-row {
++  margin-top: 7px;
++  display: flex;
++  align-items: center;
++  gap: 8px;
++  font-size: 12px;
++  color: #475569;
++}
++.solved-file-row input[type="file"] { font-size: 12px; max-width: 100%; }
++.solved-log-badges {
++  display: flex;
++  flex-wrap: wrap;
++  gap: 4px;
++  margin-top: 4px;
++}
++.solved-log-pill {
++  display: inline-block;
++  font-size: 11px;
++  font-weight: 700;
++  padding: 2px 7px;
++  border-radius: 6px;
++  background: #ECFDF5;
++  color: #047857;
++  border: 1px solid #A7F3D0;
++}
 diff --git a/test/proxy-password-recovery.test.mjs b/test/proxy-password-recovery.test.mjs
 new file mode 100644
 index 0000000..c1d6b37
@@ -336,6 +828,136 @@ index 0000000..c1d6b37
 +    assert.equal(calls, 1);
 +  });
 +});
--- 
-2.39.5
-
+diff --git a/test/solved-questions-study-log.test.mjs b/test/solved-questions-study-log.test.mjs
+new file mode 100644
+index 0000000..5eb8c48
+--- /dev/null
++++ b/test/solved-questions-study-log.test.mjs
+@@ -0,0 +1,127 @@
++import test from "node:test";
++import assert from "node:assert/strict";
++import fs from "node:fs";
++import path from "node:path";
++import vm from "node:vm";
++import { fileURLToPath } from "node:url";
++
++const __dirname = path.dirname(fileURLToPath(import.meta.url));
++const root = path.resolve(__dirname, "..");
++
++test("index.html separates DT and GST in Daily Study Log and includes solved-questions section", () => {
++  const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
++  const subjectBlock = html.match(/id="tl-subjects-group"[\s\S]*?<\/div>/)?.[0] || "";
++  assert.ok(subjectBlock.includes('value="DT"'), "Expected DT checkbox in #tl-subjects-group");
++  assert.ok(subjectBlock.includes('value="GST"'), "Expected GST checkbox in #tl-subjects-group");
++  assert.ok(!subjectBlock.includes('value="Taxation"'), "Taxation must be split into DT and GST");
++  assert.ok(html.includes('id="tl-solved-section"'), "Expected #tl-solved-section in modal");
++  assert.ok(html.includes('id="tl-solved-rows"'), "Expected #tl-solved-rows in modal");
++});
++
++test("api.addStudyLog forwards structured solvedQuestions and uploads per-subject sheetFile", async () => {
++  const apiSource = fs.readFileSync(path.join(root, "api.js"), "utf8");
++  const calls = [];
++  const storage = new Map([
++    ["ump_student", JSON.stringify({ studentId: "UMP1001", password: "Pass@1001" })],
++  ]);
++  const sandbox = {
++    window: { location: { origin: "https://student.example.test" }, addEventListener() {} },
++    Date,
++    AbortSignal,
++    Response,
++    localStorage: {
++      getItem: (k) => (storage.has(k) ? storage.get(k) : null),
++      setItem: (k, v) => storage.set(k, String(v)),
++      removeItem: (k) => storage.delete(k),
++    },
++    sessionStorage: {
++      getItem: (k) => (storage.has(k) ? storage.get(k) : null),
++      setItem: (k, v) => storage.set(k, String(v)),
++      removeItem: (k) => storage.delete(k),
++    },
++    atob: (b64) => Buffer.from(b64, "base64").toString("binary"),
++    Uint8Array,
++    Blob,
++    URL,
++    Error,
++    Object,
++    Array,
++    String,
++    Number,
++    Boolean,
++    JSON,
++    Promise,
++    setTimeout,
++    clearTimeout,
++    AbortController,
++    fetch: async (url, init = {}) => {
++      calls.push({ url, init });
++      if (url === "/api/proof-capabilities") {
++        return {
++          ok: true,
++          status: 200,
++          json: async () => ({ protocol: "private-v1", private: true, maxBytes: 10485760 }),
++        };
++      }
++      if (url === "/api/proof-upload") {
++        const idx = calls.filter((c) => c.url === "/api/proof-upload").length;
++        return {
++          ok: true,
++          status: 200,
++          json: async () => ({
++            success: true,
++            fileId: `file_${idx}`,
++            proofUrl: `/api/proof-file?fileId=file_${idx}`,
++          }),
++        };
++      }
++      if (url === "/api/proxy") {
++        return {
++          ok: true,
++          status: 200,
++          text: async () => JSON.stringify({ result: { success: true, totalSolved: 22 } }),
++          json: async () => ({ result: { success: true, totalSolved: 22 } }),
++        };
++      }
++      throw new Error(`Unexpected fetch URL: ${url}`);
++    },
++  };
++  sandbox.window.UMP_API = null;
++  vm.createContext(sandbox);
++  vm.runInContext(apiSource, sandbox);
++
++  const samplePdfBase64 = Buffer.from("%PDF-1.4 test sheet").toString("base64");
++  const res = await sandbox.window.UMP_API.addStudyLog("UMP1001", {
++    date: "2026-11-28",
++    hours: 5,
++    studiedAsPlanned: "Yes",
++    subjects: "DT, GST",
++    targetCompleted: "Yes",
++    solvedQuestions: [
++      {
++        subject: "DT",
++        count: 14,
++        sheetName: "PGBP Sheet 2",
++        sheetFile: { fileName: "dt.pdf", mimeType: "application/pdf", base64: samplePdfBase64 },
++      },
++      {
++        subject: "GST",
++        count: 8,
++        sheetName: "ITC Sheet 1",
++      },
++    ],
++  });
++
++  assert.equal(res.success, true);
++  const proxyCall = calls.find((c) => c.url === "/api/proxy");
++  assert.ok(proxyCall, "Expected /api/proxy call");
++  const sent = JSON.parse(proxyCall.init.body);
++  assert.equal(sent.action, "addStudyLog");
++  assert.equal(sent.payload.solvedQuestions.length, 2);
++  assert.equal(sent.payload.solvedQuestions[0].subject, "DT");
++  assert.equal(sent.payload.solvedQuestions[0].count, 14);
++  assert.equal(sent.payload.solvedQuestions[0].proofUrl, "/api/proof-file?fileId=file_1");
++  assert.equal(sent.payload.solvedQuestions[0].sheetFile, undefined);
++  assert.equal(sent.payload.solvedQuestions[1].subject, "GST");
++  assert.equal(sent.payload.solvedQuestions[1].count, 8);
++});

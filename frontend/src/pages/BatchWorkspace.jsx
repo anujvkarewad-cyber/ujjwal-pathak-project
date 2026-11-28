@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Link, useSearchParams } from 'react-router-dom';
-import { Users, CalendarDays, ClipboardList, Trophy, ArrowUpRight } from 'lucide-react';
+import { Users, CalendarDays, ClipboardList, Trophy, ArrowUpRight, BookOpenCheck } from 'lucide-react';
 import { getMissedTrackerReport } from '@/api/tracker';
 import { mergeWorkspaceStudentMetrics, workspaceMetricsWindow } from '@/utils/workspaceStudentMetrics';
 import { getWorkspaceRoster } from '@/api/mentorWorkspace';
@@ -14,12 +14,14 @@ import { currentBatchNames, workspaceStudents, WORKSPACE_GROUPS } from '@/utils/
 import StudentTable from '@/components/students/StudentTable';
 import MissedTrackerReport from '@/components/tracker/MissedTrackerReport';
 import DailyTracker from '@/pages/DailyTracker';
+import SolvedQuestions from '@/pages/SolvedQuestions';
 import Leaderboard from '@/pages/Leaderboard';
 
 const TABS = [
   ['students', 'Students', Users],
   ['grid', 'Daily tracker · Dates', CalendarDays],
   ['daily', 'Daily submissions', ClipboardList],
+  ['solved', 'Solved questions & sheets', BookOpenCheck],
   ['leaderboard', 'Leaderboard', Trophy],
   ['tests', 'Tests', ClipboardList], ['notes', 'Notes', ClipboardList],
   ['messages', 'Messages', ClipboardList], ['announcements', 'Announcements', ClipboardList],
@@ -27,6 +29,7 @@ const TABS = [
 ];
 // Only tools without a scoped workspace tab belong in this secondary directory.
 const EXISTING_TOOLS = [
+  ['/solved-questions', 'Solved questions & sheets'],
   ['/mcq-scores', 'MCQ scores'], ['/notes-inbox', 'Notes inbox'], ['/workbooks', 'Audit & SM workbooks'],
   ['/daily-targets', 'Daily targets'], ['/target-plans', 'Target plans'], ['/reports', 'Reports'],
 ];
@@ -72,6 +75,7 @@ export default function BatchWorkspace() {
       {tab === 'students' && <><WorkspaceActions initialKind={searchParams.get('action')} batch={batch} group={group} students={rows} batches={batches} focusStudentId={focused?.id} mode="students" /><StudentTable providedStudents={workspaceStudents(displayStudents, batch, group)} scopedBatch={batch} scopedGroup={groupSpec.trackerLabel} metricsLoading={metrics.isFetching} metricsError={metrics.error || (metrics.data && (metrics.data.rosterSource !== 'Students Sheet') ? new Error('Complete metric sources unavailable') : null)} onRetryMetrics={metrics.refetch} showMetricsSource /></>}
       {tab === 'grid' && <MissedTrackerReport scopedBatch={batch} scopedGroup={group} />}
       {tab === 'daily' && <DailyTracker providedStudents={students} scopedBatch={batch} scopedGroup={groupSpec.trackerLabel} hideGrid />}
+      {tab === 'solved' && <SolvedQuestions scopedBatch={batch} scopedGroup={groupSpec.trackerLabel} />}
       {tab === 'tests' && <Tests scopedBatch={batch} scopedGroup={groupSpec.trackerLabel} scopedStudentIds={rows.map(s => s.id)} />}
       {tab === 'notes' && <Notes scopedBatch={batch} scopedGroup={groupSpec.trackerLabel} />}
       {tab === 'messages' && <><WorkspaceActions key={replyDraft?.scope === batch + '|' + group ? replyDraft.nonce : 'no-reply'} batch={batch} group={group} students={rows} batches={batches} focusStudentId={replyDraft?.scope === batch + '|' + group ? replyDraft.studentId : focused?.id} initialText={replyDraft?.scope === batch + '|' + group ? replyDraft.text : ''} mode="messages" /><Messages scopedStudentIds={rows.map(s => s.id)} /></>}
